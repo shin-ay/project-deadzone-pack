@@ -702,7 +702,7 @@ hash = "0f68a5a19ceee4efb0bd57ff7c31f889602d56e1826893dc35f0aef79906f347"
 
 [[files]]
 file = "config/dynamictrees-common.toml"
-hash = "e3640664cf92444f5c8e99bece26f4bd4c2b32408df286f94ae76cdef9082a2f"
+hash = "b4829007e1510add31ac31a4573d2103abf47c1c8408fe3539ae6cf2ad181ba5"
 
 [[files]]
 file = "config/easy_npc/dialog_client.cfg"
@@ -6426,7 +6426,7 @@ hash = "4e704ebb389ed1d387f87481f537890f0e017fd592110305372d9a6974846935"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_clothier_v0_1.js"
-hash = "8e5570065583eb63b7b79591ac48665aec3d42f29b44c5580f204ed118f5ef37"
+hash = "8b26b03bec34ef9eeca7b94ab1fd227e9cbab99593b00b432cd620c80fe1d446"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_currency_v0_1.js"
@@ -6446,11 +6446,11 @@ hash = "9890ac3c73c26591bfb0e26f946a26d5b967118b1d731d60b7005c59e33e1cc0"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_field_medical_kit_v0_1.js"
-hash = "d7802c8b033493d9addaadfbfb7d512647d8bbbe5d5b1cadb1132c2ad1674ee6"
+hash = "3289eff355e8b9978ced10c37623b40adccef24dc43801941976682864919638"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_field_repair_v0_1.js"
-hash = "a8bd6be5a0984a67c16f319af7792d3f2aaf5999a0ee97c0fb40fb7205bc6f18"
+hash = "981ebc0f308623a22d8252b944236987f30d6a3a7fdcdcfb0a1fcffcecda82f8"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_firearms_perks_v0_1.js"
@@ -6639,6 +6639,10 @@ hash = "8b1318fbcb9a6717d7ee8e10829f334b562e48889caaee19ae83433152916aa8"
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_tutorial_progress_v0_1.js"
 hash = "7522f2236fe75a9256eeecf8388c08f6199410dc5a5581fc53ad6907002a5447"
+
+[[files]]
+file = "kubejs/server_scripts/project_deadzone_urgent_qol_v0_1.js"
+hash = "5a3082bb0292cd05f9ef37b1615937a94f6d8a8cbb47936bd9b33beb342cf373"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_usunit_alliance_v0_1.js"

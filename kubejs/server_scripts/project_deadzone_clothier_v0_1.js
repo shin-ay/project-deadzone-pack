@@ -4,7 +4,7 @@ const DZ_CLOTHIER_NEXT = "dz_clothier_next_rotation"
 const DZ_CLOTHIER_INTERVAL = 120 * 60 * 1000
 // Fixed position of the clothing stall inside deadzone_survivor_camp_edit.
 // The camp contains other yellow blocks, so a nearest-marker search is ambiguous.
-const DZ_CLOTHIER_OFFSET = {x:26, y:2, z:24}
+const DZ_CLOTHIER_OFFSET = {x:25, y:2, z:6}
 const DZ_CLOTHIER_ITEMS = [
   {id:"apocalypsenow:baseball_cap_red_helmet", price:4},
   {id:"apocalypsenow:cowboy_hat_helmet", price:6},
@@ -52,14 +52,6 @@ function dzClothierRotate(server, announce) {
 }
 
 function dzFindYellowMarker(player) {
-  let data = player.server.persistentData
-  if (data.getInt("dz_auto_basecamp_state") === 2) {
-    return {
-      x:data.getInt("dz_auto_basecamp_origin_x") + DZ_CLOTHIER_OFFSET.x,
-      y:data.getInt("dz_auto_basecamp_origin_y") + DZ_CLOTHIER_OFFSET.y,
-      z:data.getInt("dz_auto_basecamp_origin_z") + DZ_CLOTHIER_OFFSET.z
-    }
-  }
   let level = player.level
   let cx = Math.floor(player.x), cy = Math.floor(player.y), cz = Math.floor(player.z)
   let best = null, bestDistance = 999999
@@ -78,8 +70,27 @@ function dzFindYellowMarker(player) {
 function dzInstallClothier(player, silent) {
   let server = player.server
   let anchor = "@e[type=minecraft:marker,tag=dz_basecamp_clothier_anchor,limit=1]"
+  // The visible yellow concrete placed by the builder is authoritative. Old
+  // camps carried a stale hard-coded anchor beside Goro, which swapped shops.
+  let marker = dzFindYellowMarker(player)
+  if (marker) {
+    server.runCommandSilent("kill " + anchor)
+    player.runCommandSilent("summon minecraft:marker " + (marker.x+0.5) + " " + marker.y + " " + (marker.z+0.5) +
+      ' {Tags:["dz_basecamp_clothier_anchor"]}')
+    server.runCommandSilent("setblock " + marker.x + " " + marker.y + " " + marker.z + " air")
+  }
+  // Reposition stale anchors before an operator-triggered repair as well as
+  // during the periodic migration below.
+  let campData = server.persistentData
+  if (!marker && campData.getInt("dz_auto_basecamp_state") === 2 &&
+      server.runCommandSilent("execute if entity " + anchor) > 0) {
+    let ax = campData.getInt("dz_auto_basecamp_origin_x") + DZ_CLOTHIER_OFFSET.x + 0.5
+    let ay = campData.getInt("dz_auto_basecamp_origin_y") + DZ_CLOTHIER_OFFSET.y
+    let az = campData.getInt("dz_auto_basecamp_origin_z") + DZ_CLOTHIER_OFFSET.z + 0.5
+    server.runCommandSilent("tp " + anchor + " " + ax + " " + ay + " " + az)
+  }
   let hasAnchor = server.runCommandSilent("execute if entity " + anchor) > 0
-  let marker = hasAnchor ? null : dzFindYellowMarker(player)
+  marker = hasAnchor ? null : dzFindYellowMarker(player)
   if (!hasAnchor && !marker) {
     if (!silent) player.tell(Text.of("黄色コンクリートの配置マーカーが見つかりません。").red())
     return 0
@@ -90,19 +101,20 @@ function dzInstallClothier(player, silent) {
     ? "execute at " + anchor
     : "execute positioned " + (marker.x + 0.5) + " " + marker.y + " " + (marker.z + 0.5)
   let pos = hasAnchor ? "camp clothier anchor" : ((marker.x + 0.5) + " " + marker.y + " " + (marker.z + 0.5))
-  // Repair camps affected by the old nearest-NPC tagging bug.  The parts
-  // trader belongs one block west of the clothier anchor.
-  if (server.runCommandSilent("execute if entity @e[type=easy_npc:humanoid,tag=dz_basecamp_trader_parts,limit=1]") <= 0) {
-    player.runCommandSilent(execution +
-      " positioned ~-1 ~ ~ run easy_npc preset import_new custom easy_npc:preset/humanoid/deadzone_goro_parts.npc.nbt ~ ~ ~")
-    console.info("[PROJECT DEADZONE][Clothier] restored missing parts trader beside " + pos)
-  }
-  let imported = player.runCommandSilent(execution +
+  // Preset import needs operator permission.  Running it through the joining
+  // player silently fails for normal multiplayer users, leaving Yui absent.
+  let imported = server.runCommandSilent(execution +
     " run easy_npc preset import_new custom easy_npc:preset/humanoid/deadzone_yui_clothing.npc.nbt ~ ~ ~")
-  // The Yui preset already owns DZ_CLOTHIER_TAG.  Never tag the nearest
-  // untagged NPC here: Goro stands only one block away and used to be
-  // converted into a second Yui, removing the parts trader from the camp.
-  let tagged = player.runCommandSilent(execution +
+  // Some Easy NPC builds discard custom entity tags during preset import.
+  // Recover only the NPC spawned directly on the anchor and explicitly
+  // exclude Goro, who stands one block west of it.
+  server.runCommandSilent(execution +
+    " run tag @e[type=easy_npc:humanoid,tag=!dz_basecamp_trader_parts," +
+    "tag=!" + DZ_CLOTHIER_TAG + ",distance=..0.8,sort=nearest,limit=1] add " + DZ_CLOTHIER_TAG)
+  // Keep the two adjacent shops deterministic even if a preset has a small
+  // saved position offset.
+  server.runCommandSilent(execution + " run tp " + dzClothierSelector() + " ~ ~ ~")
+  let tagged = server.runCommandSilent(execution +
     " run execute if entity @e[type=easy_npc:humanoid,tag=" + DZ_CLOTHIER_TAG +
     ",distance=..1.5,limit=1]")
   if (imported <= 0 || tagged <= 0) {
@@ -112,6 +124,8 @@ function dzInstallClothier(player, silent) {
     return 0
   }
   let selector = dzClothierSelector()
+  // Older Yui presets accidentally carried the food-trader tag.  Keep shop
+  // roles exclusive even when an old preset is imported.
   server.runCommandSilent("tag " + selector + " remove dz_basecamp_trader_food")
   server.runCommandSilent(
     'data merge entity ' + selector +
@@ -145,6 +159,17 @@ ServerEvents.tick(event => {
   // Do not depend on dz_auto_basecamp_state: older/copied worlds can have the
   // building and anchor while that server-persistent flag is missing.
   let clothierAnchor = "@e[type=minecraft:marker,tag=dz_basecamp_clothier_anchor,limit=1]"
+  // Migrate camps generated with the obsolete clothing anchor at +26,+2,+24.
+  // The rebuilt clothing shop marker is +25,+2,+6. Keeping this authoritative
+  // also repairs copied multiplayer worlds without requiring a new camp.
+  let campData = event.server.persistentData
+  if (campData.getInt("dz_auto_basecamp_state") === 2 &&
+      event.server.runCommandSilent("execute if entity " + clothierAnchor) > 0) {
+    let ax = campData.getInt("dz_auto_basecamp_origin_x") + DZ_CLOTHIER_OFFSET.x + 0.5
+    let ay = campData.getInt("dz_auto_basecamp_origin_y") + DZ_CLOTHIER_OFFSET.y
+    let az = campData.getInt("dz_auto_basecamp_origin_z") + DZ_CLOTHIER_OFFSET.z + 0.5
+    event.server.runCommandSilent("tp " + clothierAnchor + " " + ax + " " + ay + " " + az)
+  }
   if (event.server.runCommandSilent("execute if entity " + clothierAnchor) > 0 &&
       event.server.runCommandSilent("execute if entity " + dzClothierSelector()) <= 0) {
     let players = event.server.players

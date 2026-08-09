@@ -3,6 +3,15 @@
 const DZ_FIELD_KIT = "kubejs:field_medical_kit"
 const DZ_FIELD_KIT_COOLDOWN_MS = 8000
 
+function dzFieldKitCureInfection(target) {
+  let effects = ["apocalypsenow:infection", "apocalypsenow:posinfectioneffect", "infectious:infection"]
+  let cured = false
+  effects.forEach(id => {
+    if (target.hasEffect(id)) { target.removeEffect(id); cured = true }
+  })
+  return cured
+}
+
 function dzConsumeFieldKitCharge(player, stack) {
   let nextDamage = stack.damageValue + 1
   if (nextDamage >= stack.maxDamage) {
@@ -30,7 +39,8 @@ ItemEvents.rightClicked(DZ_FIELD_KIT, event => {
     event.cancel()
     return
   }
-  if (player.health >= player.maxHealth) {
+  let infected = dzFieldKitCureInfection(player)
+  if (player.health >= player.maxHealth && !infected) {
     player.tell(Text.of("治療が必要な負傷はありません。").gray())
     event.cancel()
     return
@@ -41,6 +51,7 @@ ItemEvents.rightClicked(DZ_FIELD_KIT, event => {
   player.runCommandSilent("effect give @s minecraft:regeneration 5 1 true")
   player.runCommandSilent("playsound minecraft:item.honey_bottle.drink player @s ~ ~ ~ 0.65 1.15")
   dzConsumeFieldKitCharge(player, event.item)
+  if (infected) player.tell(Text.of("感染症の治療を完了しました。").green())
   event.cancel()
 })
 
@@ -63,7 +74,8 @@ ItemEvents.entityInteracted(event => {
     healer.tell(Text.of("再使用まで " + Math.ceil(cooldown.remaining / 1000) + " 秒").gray())
     return
   }
-  if (target.health >= target.maxHealth) {
+  let infected = dzFieldKitCureInfection(target)
+  if (target.health >= target.maxHealth && !infected) {
     healer.tell(Text.of(target.username + " に治療が必要な負傷はありません。").gray())
     return
   }
@@ -74,6 +86,7 @@ ItemEvents.entityInteracted(event => {
   target.runCommandSilent("playsound minecraft:item.honey_bottle.drink player @s ~ ~ ~ 0.65 1.15")
   healer.runCommandSilent("playsound minecraft:block.beacon.activate player @s ~ ~ ~ 0.35 1.6")
   dzConsumeFieldKitCharge(healer, event.item)
+  if (infected) healer.tell(Text.of(target.username + " の感染症を治療しました。").green())
   healer.tell(Text.of(target.username + " を治療しました（6 HP＋再生）。").aqua())
   target.tell(Text.of(healer.username + " から応急処置を受けました。").green())
 })

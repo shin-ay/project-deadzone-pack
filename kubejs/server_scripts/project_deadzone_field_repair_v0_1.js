@@ -141,6 +141,19 @@ ServerEvents.commandRegistry(event => {
     return 1
   }))
 
+  // Cheap emergency supply sold by the industrial/parts NPC. Easy NPC may
+  // execute this as the interacting player without granting operator rights.
+  root.then(Commands.literal("buy_kit").executes(ctx => {
+    let p=ctx.source.player
+    let price=2
+    let money=dzRepairCount(p,DZ_REPAIR_MONEY)
+    if(money<price){p.tell(Text.of("修理キットは Money x"+price+" です。所持 x"+money).red());return 0}
+    p.runCommandSilent("clear @s "+DZ_REPAIR_MONEY+" "+price)
+    p.give(Item.of("kubejs:field_repair_kit",1))
+    p.tell(Text.of("工具・工業部品担当から携帯修理キットを購入しました。").green())
+    return 1
+  }))
+
   root.then(Commands.literal("damage_test").requires(s=>s.hasPermission(2)).executes(ctx => {
     let p=ctx.source.player,stack=p.mainHandItem
     if (!stack || stack.isEmpty() || !stack.isDamageableItem()) {
