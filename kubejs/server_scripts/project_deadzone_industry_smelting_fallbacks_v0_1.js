@@ -1,23 +1,32 @@
-// PROJECT DEADZONE industrial smelting fallbacks v0.1
+// PROJECT DEADZONE industrial smelting fallbacks v0.2
 // Prevents early industry progression from deadlocking behind machines that
 // themselves require these basic metals. Machine processing remains faster.
 
 ServerEvents.recipes(event => {
+  // Use Forge tags instead of one mod's concrete dust ID. Material
+  // unification runs in the same recipe pass, so Mekanism/IE/Create dusts
+  // must all remain valid inputs to this bootstrap route.
   const materials = [
-    ['steel', 'immersiveengineering:dust_steel', 'immersiveengineering:ingot_steel'],
-    ['iron', 'immersiveengineering:dust_iron', 'minecraft:iron_ingot'],
-    ['copper', 'immersiveengineering:dust_copper', 'minecraft:copper_ingot'],
-    ['gold', 'immersiveengineering:dust_gold', 'minecraft:gold_ingot'],
-    ['lead', 'immersiveengineering:dust_lead', 'immersiveengineering:ingot_lead'],
-    ['nickel', 'immersiveengineering:dust_nickel', 'immersiveengineering:ingot_nickel'],
-    ['aluminum', 'immersiveengineering:dust_aluminum', 'immersiveengineering:ingot_aluminum'],
-    ['silver', 'immersiveengineering:dust_silver', 'immersiveengineering:ingot_silver'],
-    ['uranium', 'immersiveengineering:dust_uranium', 'immersiveengineering:ingot_uranium']
+    ['steel', 'steel', 'immersiveengineering:ingot_steel'],
+    ['iron', 'iron', 'minecraft:iron_ingot'],
+    ['copper', 'copper', 'minecraft:copper_ingot'],
+    ['gold', 'gold', 'minecraft:gold_ingot'],
+    ['lead', 'lead', 'immersiveengineering:ingot_lead'],
+    ['nickel', 'nickel', 'immersiveengineering:ingot_nickel'],
+    ['aluminum', 'aluminum', 'immersiveengineering:ingot_aluminum'],
+    ['silver', 'silver', 'immersiveengineering:ingot_silver'],
+    ['uranium', 'uranium', 'immersiveengineering:ingot_uranium'],
+    ['tin', 'tin', 'mekanism:ingot_tin'],
+    ['osmium', 'osmium', 'mekanism:ingot_osmium'],
+    ['zinc', 'zinc', 'create:zinc_ingot'],
+    ['bronze', 'bronze', 'mekanism:ingot_bronze'],
+    ['constantan', 'constantan', 'immersiveengineering:ingot_constantan'],
+    ['electrum', 'electrum', 'immersiveengineering:ingot_electrum']
   ]
 
   materials.forEach(entry => {
     const name = entry[0]
-    const dust = entry[1]
+    const dust = '#forge:dusts/' + entry[1]
     const ingot = entry[2]
     event.smelting(ingot, dust, 0.35, 200)
       .id('project_deadzone:industry/furnace_' + name + '_dust')
@@ -25,5 +34,5 @@ ServerEvents.recipes(event => {
       .id('project_deadzone:industry/blast_' + name + '_dust')
   })
 
-  console.info('[PROJECT DEADZONE][Industry] basic dust smelting fallbacks registered')
+  console.info('[PROJECT DEADZONE][Industry] tag-based dust smelting fallbacks registered')
 })
