@@ -284,6 +284,42 @@ function dz2Announce(player, stack, data) {
   player.runCommandSilent("particle minecraft:" + (quality === "legendary" ? "totem_of_undying" : "enchant") + " ~ ~1 ~ 0.35 0.55 0.35 0.05 18 force @s")
 }
 
+const DZ2_QUALITY_ORDER=["common","uncommon","rare","epic","legendary"]
+function dz2MasteryLevel(stack) {
+  let root=dz2Root(stack,false)
+  return root && root.contains("PDZMastery") ? Math.max(0,root.getCompound("PDZMastery").getInt("level")) : 0
+}
+function dz2GuaranteedQuality(player,stack) {
+  let level=dz2MasteryLevel(stack)
+  let floor=level>=20?3:level>=10?2:level>=5?1:0
+  let rolled=DZ2_QUALITY_ORDER.indexOf(dz2Quality(player,false))
+  return DZ2_QUALITY_ORDER[Math.max(floor,rolled)]
+}
+
+ItemEvents.rightClicked("kubejs:affix_calibrator",event=>{
+  let player=event.player
+  if(!player||player.level.clientSide)return
+  let target=player.offHandItem
+  if(!dz2Category(target)){
+    player.tell(Text.of("オフ手に銃・近接武器・工具・防具を持ってください。").red())
+    event.cancel();return
+  }
+  let existing=dz2Data(target),cost=existing?2:1
+  let points=player.persistentData.getInt("dz_affix_calibration_points")
+  if(points<cost){
+    player.tell(Text.of("AFFIX校正ポイント不足: "+points+" / "+cost+"（装備熟練Lv上昇で獲得）").red())
+    event.cancel();return
+  }
+  let quality=dz2GuaranteedQuality(player,target)
+  let root=dz2Root(target,true)
+  if(root)root.remove("PDZAffix")
+  dz2Roll(target,player,quality,false)
+  player.persistentData.putInt("dz_affix_calibration_points",points-cost)
+  player.tell(Text.of("[AFFIX校正] "+String(target.hoverName.string)+" → "+quality+" / 熟練Lv"+dz2MasteryLevel(target)+" / 残り "+(points-cost)+"pt").gold())
+  dz2Announce(player,target,dz2Data(target))
+  event.cancel()
+})
+
 // Roll world drops before they are picked up so Loot Beams can read the
 // per-stack `lootbeams.color` NBT while the item is still on the ground.
 // Inventory processing below remains as a fallback for crafted/given items.
@@ -476,6 +512,17 @@ EntityEvents.death(event => {
 ServerEvents.commandRegistry(event => {
   const {commands:Commands}=event
   let root=Commands.literal("deadzoneaffix").requires(source=>source.hasPermission(2))
+  root.then(Commands.literal("points").executes(ctx=>{
+    let p=ctx.source.player
+    p.tell(Text.of("AFFIX校正ポイント: "+p.persistentData.getInt("dz_affix_calibration_points")+"pt").aqua())
+    return 1
+  }))
+  root.then(Commands.literal("test_points_20").executes(ctx=>{
+    let p=ctx.source.player
+    p.persistentData.putInt("dz_affix_calibration_points",p.persistentData.getInt("dz_affix_calibration_points")+20)
+    p.tell(Text.of("テスト用AFFIX校正ポイント +20").green())
+    return 1
+  }))
   ;["common","uncommon","rare","epic","legendary"].forEach(quality => {
     root.then(Commands.literal("roll_"+quality).executes(ctx => {
       let p=ctx.source.player, stack=p.mainHandItem

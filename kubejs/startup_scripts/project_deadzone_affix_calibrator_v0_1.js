@@ -1,0 +1,11 @@
+StartupEvents.registry('item',event=>{
+  event.create('affix_calibrator')
+    .displayName('§6AFFIX校正器')
+    .texture('kubejs:item/career_gunsmith_gauge')
+    .maxStackSize(1)
+    .glow(true)
+    .tooltip('§7メイン手: 校正器 / オフ手: 対象装備')
+    .tooltip('§b右クリック: AFFIX付与またはリロール')
+    .tooltip('§e初回 1pt / リロール 2pt')
+    .tooltip('§d装備熟練Lvで最低レア度を保証')
+})

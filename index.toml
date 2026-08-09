@@ -5,11 +5,6 @@ file = "README_R4_JP.txt"
 hash = "02ba75b4b3c779b214882951c1e163c93c262c8b4c2566af7acc9c2d1fc0c943"
 
 [[files]]
-file = "body-camera-shader.pw.toml"
-hash = "44016f382e079ff6264ab05797f498e090c7c025fde6ab7ed18e27fee9676bae"
-metafile = true
-
-[[files]]
 file = "config/Apocalypse Now Config.toml"
 hash = "2b37a373f8b173834276caf0eadaa0b1f8981dc9ad6f4c2f535fb0486c31b9a7"
 
@@ -1047,7 +1042,7 @@ hash = "22ef4e55f5ed2f22c97bd9dba934dfec0beaa4b284e23c7c8493cda9c4d5e504"
 
 [[files]]
 file = "config/firstaid-server.toml"
-hash = "a885558d8b44743771e61fbd4647a5a213cb2bf8ec8079ad9cbb06b20803162d"
+hash = "d7388e66482fa1dc682922a46e2c3c6f70241f347a13cb61d62b082c3e38db71"
 
 [[files]]
 file = "config/flywheel-client.toml"
@@ -1775,7 +1770,7 @@ hash = "6328ac5786852b62153316c87e9d7ff4b55cf32ff9a82c9023567d73ad52039f"
 
 [[files]]
 file = "config/partyhealth-server.toml"
-hash = "0435285899648a86db983fefc23b67e8fb6ec00092f077b9fa778ba92cce811e"
+hash = "9355ec2b08658faad80147752c116dc0658e02a876e3e16ef368085b0e4c23a2"
 
 [[files]]
 file = "config/partyhud-clientv2.toml"
@@ -3014,6 +3009,10 @@ file = "kubejs/assets/kubejs/textures/item/example_item.png"
 hash = "45a5f56eba6066ad05c70988a32b72c50cfeb6e35857739bd582007011ea002b"
 
 [[files]]
+file = "kubejs/assets/partyhealth/lang/ja_jp.json"
+hash = "20fc495e7b5e656cbaed741e76eb5417d983e5a76a4075de59ab3c9c437c130c"
+
+[[files]]
 file = "kubejs/assets/project_deadzone/lang/en_us.json"
 hash = "76a1810e5099dc2221c8025ddb00fef0473f7f33504981fae7f07638bc217b09"
 
@@ -3068,6 +3067,10 @@ hash = "1776204694438dfce5c69f65df89b398a7c696adb2c9bfcd1ac6ee5ac57a307e"
 [[files]]
 file = "kubejs/client_scripts/project_deadzone_material_unification_jei_v0_1.js"
 hash = "4cd2b44781045084e2634fccf543c96c900a81061e8d4569c45e4528b8b21a66"
+
+[[files]]
+file = "kubejs/client_scripts/project_deadzone_medical_tooltips_v0_1.js"
+hash = "46fe05668396f81ecb52ab31f69bc89ddf603d21ec63b838aa9f6bcbce80120f"
 
 [[files]]
 file = "kubejs/config/client.properties"
@@ -6379,7 +6382,7 @@ hash = "733e97bc1453cd2771ca741ab2052bd0da84c67fb8d3f6f52249ce4845eed10f"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_affixes_v0_2.js"
-hash = "3c0b840d7755d54aa09955aa22be6376ef129922d73697256b1ace39c98c8b3b"
+hash = "8c3b6a19195a6fc369c10020dc3475b6f2c5bde87fb1c772cc7271a30a6f5b8f"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_ammo_reload_perks_v0_1.js"
@@ -6431,7 +6434,7 @@ hash = "50ff3c7ce1513cad37a2c37b8c76569ca933325d336feb9616ac5ed999cd483b"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_equipment_mastery_v0_1.js"
-hash = "bf72ecbc5e85e45e734aa5b8e687df8a01eed10771faa1a0fffac326269f6f63"
+hash = "4a98808127cf554e0bd98cba74f8031602825e6c3d7ef92646dc6dad3f95f93b"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_faction_strongholds_v0_1.js"
@@ -6615,7 +6618,7 @@ hash = "32e001d340b7fdf08f877441211655864d7279031ea514b733de7653d9a28041"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_t0_safezone_v0_1.js"
-hash = "3c4028ac2362a53343262c3f8c840757bda2cd29f0701d24b92ab2694f67e7ea"
+hash = "334b79a6691347bd9f30efa7f4c9bccddfb9ccc519a3214ef0b398100344b475"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_tacz_skill_xp_v0_1.js"
@@ -6652,6 +6655,10 @@ hash = "5cd74a964904467043ee9d2f9f4da984a424578ea05ef902c5d60fd69b864300"
 [[files]]
 file = "kubejs/startup_scripts/example.js"
 hash = "395c96d3ddd178821db851f387e91560e606ea752177f66d2016f12bd0542b8f"
+
+[[files]]
+file = "kubejs/startup_scripts/project_deadzone_affix_calibrator_v0_1.js"
+hash = "cd419829f9e0b42e70514bbfe8b012dd6e83b4aeb466720815c777c1b9a5f37a"
 
 [[files]]
 file = "kubejs/startup_scripts/project_deadzone_base_core_v0_1.js"
@@ -7059,8 +7066,8 @@ file = "mods/PROJECT_DEADZONE_JOB_UI-0.1.0.jar"
 hash = "a0b07395fde4445f2f3df38637aef9e0475919e8e125c64f2d04a04567bce268"
 
 [[files]]
-file = "mods/PROJECT_DEADZONE_UI-0.2.2.jar"
-hash = "3f09ba212b48287d74306aa18ac560b62ee3a5798d55698f48d5b9fc866597d5"
+file = "mods/PROJECT_DEADZONE_UI-0.2.3.jar"
+hash = "af1ba9a0af6942ff9b79db029210dcc9ad38bba1b8aafd67c193da10078e7ed9"
 
 [[files]]
 file = "mods/PROJECT_DEADZONE_Vehicle_Compatibility-1.4.0.jar"
@@ -7077,11 +7084,6 @@ hash = "a5ca9af3fa02c30c243b9896c3c069144936d0a0f37dbf6113d0b4ea63927fcb"
 [[files]]
 file = "mods/alexs-delight.pw.toml"
 hash = "99f6d4e46f784953d16aa1ce5f72327b21487dc0e27d3143c8a6b60c6d02381a"
-metafile = true
-
-[[files]]
-file = "mods/alexs-mobs-naturalist-compat.pw.toml"
-hash = "30097ae1bbf987085f9011387e0a2c16f16aba18904922eec79137c36239e652"
 metafile = true
 
 [[files]]
@@ -7117,11 +7119,6 @@ metafile = true
 [[files]]
 file = "mods/appleskin.pw.toml"
 hash = "8d0321177fed4a0b48554c40158b43db62f6cdaa768f584ef6a11575dfaa6223"
-metafile = true
-
-[[files]]
-file = "mods/aquaculture-delight.pw.toml"
-hash = "624514fd57a5bad649068f8f2d6c45d88228249a266bd61b45cb749c42499766"
 metafile = true
 
 [[files]]
@@ -7219,11 +7216,6 @@ hash = "0d0116969b348f57b63c0421f7748c835b09a07f0772e1af17b94c8c8c7e121a"
 metafile = true
 
 [[files]]
-file = "mods/camera-zoom-immersive-aircraft.pw.toml"
-hash = "2e25cc1badb869e3a807f8a8ed08c61a74fb85ad1da36514bd26d0b5f8e53761"
-metafile = true
-
-[[files]]
 file = "mods/caramelChat-mc1.20.1-forge-1.2.2.jar"
 hash = "321d491f8f0630baf44a55ba73d765871a18ff1290fc82d8ac9f72c0859c9c84"
 
@@ -7237,23 +7229,8 @@ file = "mods/chaoszpack v.1.4.1 TacZ_PROJECT_DEADZONE_v1.3.jar"
 hash = "ecadf8bc45bc94663c79353a13a2beb9aaa9d86dd07ea3ccb5c0aadf3f444946"
 
 [[files]]
-file = "mods/chaoszpack-remastered-structures.pw.toml"
-hash = "d16ccc38658093a74223a695e48808e23cff6f2a9c63901ee3849d212f082ba0"
-metafile = true
-
-[[files]]
-file = "mods/chaoszproject-bandits.pw.toml"
-hash = "48608fe6ddb74749697b26bd2750f3083a6dc8664cfb7e38806b25f3a8eadf7e"
-metafile = true
-
-[[files]]
 file = "mods/citadel.pw.toml"
 hash = "5a4b03567f23fe0aac7806bd7cc9734138bf5fc098e98c1bb552d5b288bef258"
-metafile = true
-
-[[files]]
-file = "mods/class-selection-mod.pw.toml"
-hash = "6db917c556020cae2f563aba704ec1bb90debdcf7aa16eea27ccd77e7b9c27b4"
 metafile = true
 
 [[files]]
@@ -7337,11 +7314,6 @@ hash = "c6662c88657d43c539c4094e26f7c3ae9fd84a707c8a7bbd3737ee74839f45c9"
 metafile = true
 
 [[files]]
-file = "mods/create-fps-enhanced.pw.toml"
-hash = "fd46ad8f1bfb071b6dc2e806f234e791aa7c007693e99003deaa70a8e529e55f"
-metafile = true
-
-[[files]]
 file = "mods/create-mechanical-companion.pw.toml"
 hash = "c944aad1be61a72cf1f8f306a66b1f75626eb60c31bd656e83780adc65e827cc"
 metafile = true
@@ -7396,11 +7368,6 @@ file = "mods/deadzone_mod_block_scanner.py"
 hash = "716a90cc886287cdb0da23733a3f8bd2c69ae3f95fa6ed677ceacf2a7e15d8d7"
 
 [[files]]
-file = "mods/decocraft.pw.toml"
-hash = "543d7760b3760917f1c82e8e55fbcb5f0bb920917634271e6d5bd9f1585106b2"
-metafile = true
-
-[[files]]
 file = "mods/delight-lib.pw.toml"
 hash = "3e6e3303d896bd62cec15d5c154a591b7448abcfe7960e74ef351b29e090a68a"
 metafile = true
@@ -7413,11 +7380,6 @@ metafile = true
 [[files]]
 file = "mods/diet.pw.toml"
 hash = "90791d91751fc9a54e339f07f23f71ecb159383c946234a1113cbfab8a34162e"
-metafile = true
-
-[[files]]
-file = "mods/displaycase.pw.toml"
-hash = "4d8452835e4d92041c6fadffdcd2bc0e2cdb4ac4e5927cc533ea71ffcc7f7537"
 metafile = true
 
 [[files]]
@@ -7453,11 +7415,6 @@ metafile = true
 [[files]]
 file = "mods/easy-npc-core.pw.toml"
 hash = "028f135d4f8b9a49278b05233859b3d817ee7171385e31a23e5ad8f9881d5095"
-metafile = true
-
-[[files]]
-file = "mods/easy-npc.pw.toml"
-hash = "a9d3a84be12835c12c6d606d8494733253d00289a3fc0a63e7e8179f4a5cb976"
 metafile = true
 
 [[files]]
@@ -7601,11 +7558,6 @@ hash = "20c8a249ae32573e34f5aa19beea3ef7bb5f8ae1c381663bdb4ecec5547604d3"
 metafile = true
 
 [[files]]
-file = "mods/immersive-vehicles-craftspeed.pw.toml"
-hash = "664a9f2488fb0be183eecd880943aea29c6dc587e23549c3ef6424b026168805"
-metafile = true
-
-[[files]]
 file = "mods/immersive-weathering-forge.pw.toml"
 hash = "0df8d2be472d58b97f73621390c6d3cbaf538de65e9092c03146f102bfed63fe"
 metafile = true
@@ -7663,11 +7615,6 @@ metafile = true
 [[files]]
 file = "mods/keerdm-zombie-apocalypse-essentials.pw.toml"
 hash = "b66cfbda9a91b0c72af71363cd38839d8378c730776383aab95e507247e425e0"
-metafile = true
-
-[[files]]
-file = "mods/keybind-atlas.pw.toml"
-hash = "bcd046bc81bd353451b68396c65d1270cab90e35205bc2442a142177fdb0d324"
 metafile = true
 
 [[files]]
@@ -7791,11 +7738,6 @@ hash = "89c8026b189d039ff8408fb42df8d738b2835aa9f96d7919a76dc34853e34543"
 metafile = true
 
 [[files]]
-file = "mods/more-protectables.pw.toml"
-hash = "e96a78835b03b18836760418bd5b5820e9b41643a17c273f495469c9557bbfc0"
-metafile = true
-
-[[files]]
 file = "mods/mouse-tweaks.pw.toml"
 hash = "e72f73611904e14d915418f0e3c6cb483cdc600e211375c2eceb393fec5b80f1"
 metafile = true
@@ -7912,11 +7854,6 @@ hash = "3320d0bc65375b8c0148fd8fa7cda87b604e691c1ad05dac104e209316cfc3f5"
 [[files]]
 file = "mods/polymorph.pw.toml"
 hash = "8c65958007f81cdf1a57dac999ec7ffdde17cce6154c9a2f75bbb389fd11efbf"
-metafile = true
-
-[[files]]
-file = "mods/pomkots-world.pw.toml"
-hash = "14f6bddd14e0f55738e30f6b34ccf1bb936d0387c2496500422eb1baa20f9a7b"
 metafile = true
 
 [[files]]
@@ -8174,11 +8111,6 @@ hash = "985647e0ff149ec86c3e129bb59a35a5471c55210b50beaa8cfcf58bd2e2614a"
 metafile = true
 
 [[files]]
-file = "mods/tacz-chaoscrafts-apocalyptic-arsernal.pw.toml"
-hash = "c4cb4778564bc61b59d8da2eb7b61d753d6158125560db6c9312dda90e5eda34"
-metafile = true
-
-[[files]]
 file = "mods/tacz-create.pw.toml"
 hash = "e417ff955d6d43c4df74f7859be0dbddf406d33e67c643150b5befd60a2f09fc"
 metafile = true
@@ -8196,11 +8128,6 @@ metafile = true
 [[files]]
 file = "mods/tacz-gucci-vuitton-attachments.pw.toml"
 hash = "a15342a63bf18e434f474e8a420af783aceb24b70ca261d0513857668b8eca84"
-metafile = true
-
-[[files]]
-file = "mods/tacz-hostiles.pw.toml"
-hash = "06090c298ac72aac30ad792ac16b9d0f9fd13201797a2346b49cba6b4b7e0f53"
 metafile = true
 
 [[files]]
@@ -8229,16 +8156,6 @@ hash = "28daa08173918614fc50fb14fb2b4a509103105ae22dff641b9e4e21cf70851b"
 metafile = true
 
 [[files]]
-file = "mods/tacz-sound-attracts-zombies.pw.toml"
-hash = "4328eedefcd9c64c69042a8edf07ab54566039a953636a697448d9dd9b3d6ca6"
-metafile = true
-
-[[files]]
-file = "mods/tacz-tactical-breaching.pw.toml"
-hash = "0f545d8b963d4dd8789e4506ff945605750a1d89cc9a468b88f6cce2934a3fe1"
-metafile = true
-
-[[files]]
 file = "mods/tacz-tweaks.pw.toml"
 hash = "b4d15c5213b212c0cbefbb5f426ec29a1ac0e051b7f41bd463b5c5a203d8ae8b"
 metafile = true
@@ -8251,11 +8168,6 @@ metafile = true
 [[files]]
 file = "mods/tacz-zombie-body-party-health.pw.toml"
 hash = "5bc3b81189d06fbfa142a161d4863dc8498c978c58085679f036fd57aa91e63c"
-metafile = true
-
-[[files]]
-file = "mods/talkingheads.pw.toml"
-hash = "b9ecdedbea681ddb39bcd335bf5a8b43816d69e7084a3d9b3ea8ebf72efc85e5"
 metafile = true
 
 [[files]]
@@ -8315,11 +8227,6 @@ metafile = true
 [[files]]
 file = "mods/transport-simulator-official-vehicle-set.pw.toml"
 hash = "fd5edfd59aadb46cf1316882ee7333503f4fd6ef71e375bb5df005c2a37bece9"
-metafile = true
-
-[[files]]
-file = "mods/unreal-racing-mts-iv.pw.toml"
-hash = "9b2839fd525e9f071401e9b05efaf1bca6c4119410dab06ebe67346650d70904"
 metafile = true
 
 [[files]]
@@ -10665,19 +10572,19 @@ hash = "c24d3911443c2ef90ab1a8b41dd1cb304958e52af6cba61d7cea6aa729a532c9"
 
 [[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_recipe_fortification_1.json"
-hash = "30cb6a96ff45b0728e798befcf4b8785e2613360f9828510a03ea53b5aa0f168"
+hash = "e9f617c19b3264c81f008da4ec3ccfd04f771711b0efa7df831273a7529ef2b0"
 
 [[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_recipe_fortification_2.json"
-hash = "1cd2297fd2297902140499388a6277fb05b3f8c670717c513146b51dee9d2d70"
+hash = "cc7f39598e881bc4f6c856e03e04aa9148de18f3659b35085a798c3d10d0cfa1"
 
 [[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_recipe_fortification_3.json"
-hash = "3662ca9c488d3d739b2172f3bfbc7b3283d7d53348fd3bc7ad57b55184840423"
+hash = "0411c650c88653a974ba1149b0bb0c789090e683414c48d518a8c51f1f3ed7d2"
 
 [[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_recipe_industry_1.json"
-hash = "2f22be5e75e48e55d31337be9191857976016a72066aceb999fbbccf01539209"
+hash = "c6c3120fa9be83bd84c958e6ad34dcc4db04004316e78d8721153351b9c8a829"
 
 [[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_recipe_industry_2.json"
@@ -10689,19 +10596,19 @@ hash = "187a486881a3110b12796dd5130ba9f7945c1d26030db6af7cb8840ca84af207"
 
 [[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_recipe_vehicle_1.json"
-hash = "18ff8f19c93359a85ed3bdf3951e7f787ad2824b2006b8394407f7226f83c9f1"
+hash = "92f84545bc92fdda9557dba07e89cc52e478de01588bf02be92df6053c970c08"
 
 [[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_recipe_vehicle_2.json"
-hash = "379eea6b189162345ccc1875a304c76c5a406bf701b2ba0215e886019bdc41f5"
+hash = "0effed01a1679fdb601a03c3893b67b982703507cddb3e04df000a0dbb8d165d"
 
 [[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_recipe_vehicle_3.json"
-hash = "4390d2e737496d692cc5803f706c6f9ba8dcde4a7170a7a91a3a7adf85696ddb"
+hash = "7323c90bb2a5b3285a52a2d32158ad7ff64a86810d75e7f1ae8ab6d89a11dee3"
 
 [[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_recipe_weapons_1.json"
-hash = "b40d3cdd468172fb75ab5c8bd4d89d54878c73103d1cea8f43d7752137eb9f59"
+hash = "1312cfa6c6243f22ccd55d02ef7bf6f25b5f6481568e733892eda8e253ebc31c"
 
 [[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_recipe_weapons_2.json"

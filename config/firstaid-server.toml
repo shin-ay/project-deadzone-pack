@@ -3,32 +3,32 @@
 ["Damage System"]
 	#Max health of the Head
 	#Range: 2 ~ 12
-	maxHealthHead = 8
+	maxHealthHead = 12
 	#Max health of the Left Arm
 	#Range: 2 ~ 12
-	maxHealthLeft_Arm = 7
+	maxHealthLeft_Arm = 12
 	#Max health of the Left Leg
 	#Range: 2 ~ 12
-	maxHealthLeft_Leg = 7
+	maxHealthLeft_Leg = 12
 	#Max health of the Left Foot
 	#Range: 2 ~ 12
-	maxHealthLeft_Foot = 5
+	maxHealthLeft_Foot = 10
 	#Max health of the Body
 	#Range: 2 ~ 12
-	maxHealthBody = 8
+	maxHealthBody = 12
 	#Max health of the Right Arm
 	#Range: 2 ~ 12
-	maxHealthRight_Arm = 7
+	maxHealthRight_Arm = 12
 	#Max health of the Right Leg
 	#Range: 2 ~ 12
-	maxHealthRight_Leg = 7
+	maxHealthRight_Leg = 12
 	#Max health of the Right Foot
 	#Range: 2 ~ 12
-	maxHealthRight_Foot = 5
+	maxHealthRight_Foot = 10
 	#True if the head can cause death if health drops to 0
-	causeDeathHead = true
+	causeDeathHead = false
 	#True if the body can cause death if health drops to 0
-	causeDeathBody = true
+	causeDeathBody = false
 
 ["Locational Armor"]
 

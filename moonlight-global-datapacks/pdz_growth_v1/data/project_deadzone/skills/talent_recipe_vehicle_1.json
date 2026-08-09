@@ -7,7 +7,7 @@
 
                      ],
     "directConnections":  [
-
+                              "project_deadzone:talent_transit_hub"
                           ],
     "longConnections":  [
 
@@ -21,10 +21,10 @@
                  "pdz_node_talent_recipe_vehicle_1"
              ],
     "backgroundTexture":  "skilltree:textures/icons/background/lesser.png",
-    "iconTexture":  "skilltree:textures/icons/boots_diamond.png",
+    "iconTexture":  "skilltree:textures/icons/boots_gold.png",
     "borderTexture":  "skilltree:textures/tooltip/lesser.png",
     "positionX":  -60.1,
     "positionY":  60.1,
     "buttonSize":  16,
-    "isStartingPoint":  true
+    "isStartingPoint":  false
 }

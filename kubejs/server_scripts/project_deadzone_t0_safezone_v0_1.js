@@ -1,60 +1,53 @@
-// PROJECT DEADZONE T0 onboarding safe zone v0.1
-// The camp is not a combat arena before players have selected a JOB and armed.
-// Story/facility spawns remain available outside the camp, and scripted camp
-// raiders are explicitly excluded so the post-T1 raid still works.
+// PROJECT DEADZONE T0 onboarding safe zone v0.2
+// Reject unwanted spawns individually with discard(). The old implementation
+// scanned a 1400x56x1400 box every five seconds and used /kill, triggering
+// death/drop/XP hooks in bulk and causing visible server stalls.
 
-const DZ_T0_SAFE_GUN_RADIUS = 160
-const DZ_T0_SAFE_MOB_RADIUS = 64
 const DZ_T0_SUBURB_RADIUS = 700
-let DZ_T0_SAFE_TICKS = 0
+const DZ_T0_CAMP_RADIUS = 64
+const DZ_T0_VERTICAL_RADIUS = 24
 
-function dzT0Tier(server) {
-  return server.persistentData.getInt("deadzone_world_tier")
+const DZ_T0_GUN_TYPES = [
+  "tacz_hostiles:scavenger", "tacz_hostiles:soldier",
+  "tacz_bandits:bandit", "simpleenemymod:ruunit",
+  "simpleenemymod:pmcunit"
+]
+const DZ_T0_RANGED_TYPES = ["minecraft:skeleton", "minecraft:stray"]
+const DZ_T0_CAMP_HOSTILES = [
+  "minecraft:zombie", "minecraft:husk", "minecraft:drowned", "minecraft:creeper",
+  "minecraft:spider", "minecraft:cave_spider", "minecraft:witch"
+]
+const DZ_T0_EXEMPT_TAGS = [
+  "dz_basecamp_raider", "dz_story_npc", "dz_story_boss", "dz_buddy",
+  "dz_survivor", "dz_basecamp_guard", "dz_usunit_friendly",
+  "dz_t0_convoy", "dz_named", "dz_elite"
+]
+
+function dzT0ProtectedSpawn(entity, radius) {
+  let data=entity.server.persistentData
+  if (data.getInt("dz_auto_basecamp_layout_version") <= 0) return false
+  let cx=data.getInt("dz_auto_basecamp_origin_x")+16
+  let cy=data.getInt("dz_auto_basecamp_origin_y")
+  let cz=data.getInt("dz_auto_basecamp_origin_z")+16
+  let dx=Number(entity.x)-cx, dy=Number(entity.y)-cy, dz=Number(entity.z)-cz
+  return Math.abs(dy)<=DZ_T0_VERTICAL_RADIUS && (dx*dx+dz*dz)<=radius*radius
 }
 
-function dzT0KillBoxAtCamp(server, selector, radius, down, height) {
-  let boxed = selector.substring(0, selector.length - 1) +
-    ",dx=" + (radius * 2) + ",dy=" + height + ",dz=" + (radius * 2) + "]"
-  server.runCommandSilent(
-    "execute at @e[type=minecraft:marker,tag=dz_basecamp_core_anchor,limit=1] " +
-    "positioned ~-" + radius + " ~-" + down + " ~-" + radius + " run kill " + boxed
-  )
+function dzT0Exempt(entity) {
+  for (let i=0;i<DZ_T0_EXEMPT_TAGS.length;i++) if (entity.tags.contains(DZ_T0_EXEMPT_TAGS[i])) return true
+  return false
 }
 
-ServerEvents.tick(event => {
-  DZ_T0_SAFE_TICKS++
-  if (DZ_T0_SAFE_TICKS % 100 !== 0) return
-  let server = event.server
-  // Geographical T0 remains a farming/recovery area after World Tier rises.
-  // Story raids use dz_basecamp_raider and are excluded below.
-  if (server.runCommandSilent(
-    "execute if entity @e[type=minecraft:marker,tag=dz_basecamp_core_anchor,limit=1]"
-  ) <= 0) return
+function dzT0DiscardLater(event, radius) {
+  let entity=event.entity
+  // Named/convoy promotion hooks run a few ticks after spawn. Waiting ten
+  // ticks lets those tags settle, while discard avoids death loot and XP.
+  entity.server.scheduleInTicks(10,()=>{
+    if (!entity || !entity.alive || dzT0Exempt(entity) || !dzT0ProtectedSpawn(entity,radius)) return
+    try { entity.discard() } catch (ignored) { entity.kill() }
+  })
+}
 
-  // Armed roaming NPCs stay in cities, facilities and explicit encounters.
-  ;[
-    "tacz_hostiles:scavenger", "tacz_hostiles:soldier",
-    "tacz_bandits:bandit", "simpleenemymod:ruunit",
-    "simpleenemymod:pmcunit"
-  ].forEach(type => dzT0KillBoxAtCamp(server,
-    "@e[type=" + type +
-    ",tag=!dz_basecamp_raider,tag=!dz_story_npc,tag=!dz_story_boss,tag=!dz_buddy" +
-    ",tag=!dz_survivor,tag=!dz_basecamp_guard,tag=!dz_usunit_friendly" +
-    ",tag=!dz_t0_convoy,tag=!dz_named,tag=!dz_elite]",
-    DZ_T0_SUBURB_RADIUS, 24, 56))
-
-  // T0 suburbs teach positioning against melee groups. Long-range crossfire
-  // starts in T1 towns, after players have found armor and ammunition.
-  ;["minecraft:skeleton", "minecraft:stray"].forEach(type => dzT0KillBoxAtCamp(server,
-    "@e[type=" + type + ",tag=!dz_named,tag=!dz_elite,tag=!dz_t0_convoy]",
-    DZ_T0_SUBURB_RADIUS, 24, 56))
-
-  // A smaller breathing room around the actual respawn/camp area.
-  ;[
-    "minecraft:zombie", "minecraft:husk", "minecraft:drowned",
-    "minecraft:skeleton", "minecraft:stray", "minecraft:creeper",
-    "minecraft:spider", "minecraft:cave_spider", "minecraft:witch"
-  ].forEach(type => dzT0KillBoxAtCamp(server,
-    "@e[type=" + type + ",tag=!dz_named,tag=!dz_elite,tag=!dz_t0_convoy]",
-    DZ_T0_SAFE_MOB_RADIUS, 16, 32))
-})
+DZ_T0_GUN_TYPES.forEach(type=>EntityEvents.spawned(type,event=>dzT0DiscardLater(event,DZ_T0_SUBURB_RADIUS)))
+DZ_T0_RANGED_TYPES.forEach(type=>EntityEvents.spawned(type,event=>dzT0DiscardLater(event,DZ_T0_SUBURB_RADIUS)))
+DZ_T0_CAMP_HOSTILES.forEach(type=>EntityEvents.spawned(type,event=>dzT0DiscardLater(event,DZ_T0_CAMP_RADIUS)))

@@ -21,7 +21,7 @@
                  "pdz_node_talent_recipe_vehicle_2"
              ],
     "backgroundTexture":  "skilltree:textures/icons/background/notable.png",
-    "iconTexture":  "skilltree:textures/icons/boots_diamond.png",
+    "iconTexture":  "skilltree:textures/icons/boots_gold.png",
     "borderTexture":  "skilltree:textures/tooltip/lesser.png",
     "positionX":  -88.39,
     "positionY":  88.39,

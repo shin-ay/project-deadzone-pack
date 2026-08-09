@@ -21,7 +21,7 @@
                  "pdz_node_talent_recipe_fortification_2"
              ],
     "backgroundTexture":  "skilltree:textures/icons/background/notable.png",
-    "iconTexture":  "skilltree:textures/icons/chestplate_diamond.png",
+    "iconTexture":  "skilltree:textures/icons/chestplate_bronze_fur.png",
     "borderTexture":  "skilltree:textures/tooltip/lesser.png",
     "positionX":  -88.39,
     "positionY":  -88.39,

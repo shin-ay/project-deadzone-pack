@@ -106,6 +106,7 @@ function pdzemAbsorb(player,announce) {
   let heldShare=targets.held?(targets.armor.length?Math.ceil(amount*0.5):amount):0,armorPool=amount-heldShare,totalLevels=0
   if(targets.held)totalLevels+=pdzemAdd(targets.held,heldShare,targets.heldType)
   if(targets.armor.length){let each=Math.floor(armorPool/targets.armor.length),extra=armorPool%targets.armor.length;targets.armor.forEach((stack,i)=>totalLevels+=pdzemAdd(stack,each+(i<extra?1:0),'armor'))}
+  if(totalLevels>0)player.persistentData.putInt('dz_affix_calibration_points',player.persistentData.getInt('dz_affix_calibration_points')+totalLevels)
   if(announce&&(totalLevels>0||amount>=10))player.tell(Text.of('[装備熟練] XP '+amount+'を装備へ吸収'+(totalLevels>0?' / Level Up +'+totalLevels:'')).aqua())
   return amount
 }
