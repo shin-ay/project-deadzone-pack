@@ -1,0 +1,43 @@
+﻿{
+    "id":  "project_deadzone:talent_rung_engineer_d10_g1",
+    "bonuses":  [
+                    {
+                        "type":  "skilltree:attribute",
+                        "attribute":  "minecraft:generic.max_health",
+                        "id":  "38f0ecd0-b939-2cd5-96f2-e27b984f468f",
+                        "name":  "PROJECT DEADZONE Talent",
+                        "amount":  0.25,
+                        "operation":  0,
+                        "player_multiplier":  {
+                                                  "type":  "skilltree:none"
+                                              },
+                        "player_condition":  {
+                                                 "type":  "skilltree:none"
+                                             }
+                    }
+                ],
+    "requirements":  [
+
+                     ],
+    "directConnections":  [
+                              "project_deadzone:talent_engineer_processing_10",
+                              "project_deadzone:talent_engineer_power_10"
+                          ],
+    "longConnections":  [
+
+                        ],
+    "oneWayConnections":  [
+
+                          ],
+    "tags":  [
+                 "pdz_talent_rung",
+                 "pdz_node_talent_rung_engineer_d10_g1"
+             ],
+    "backgroundTexture":  "skilltree:textures/icons/background/lesser.png",
+    "iconTexture":  "skilltree:textures/icons/arrow.png",
+    "borderTexture":  "skilltree:textures/tooltip/lesser.png",
+    "positionX":  522.51,
+    "positionY":  386.63,
+    "buttonSize":  16,
+    "isStartingPoint":  false
+}

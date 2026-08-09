@@ -1,0 +1,44 @@
+﻿{
+    "id":  "project_deadzone:talent_scout_scavenge_utility_17",
+    "bonuses":  [
+                    {
+                        "type":  "skilltree:attribute",
+                        "attribute":  "minecraft:generic.luck",
+                        "id":  "e79d1534-2536-715c-9e80-a6dc3c96abd7",
+                        "name":  "PROJECT DEADZONE Talent",
+                        "amount":  0.1,
+                        "operation":  0,
+                        "player_multiplier":  {
+                                                  "type":  "skilltree:none"
+                                              },
+                        "player_condition":  {
+                                                 "type":  "skilltree:none"
+                                             }
+                    }
+                ],
+    "requirements":  [
+
+                     ],
+    "directConnections":  [
+                              "project_deadzone:talent_scout_scavenge_utility_16"
+                          ],
+    "longConnections":  [
+
+                        ],
+    "oneWayConnections":  [
+
+                          ],
+    "tags":  [
+                 "pdz_talent_scavenge",
+                 "pdz_talent_doctrine_path",
+                 "pdz_doctrine_path_utility",
+                 "pdz_node_talent_scout_scavenge_utility_17"
+             ],
+    "backgroundTexture":  "skilltree:textures/icons/background/lesser.png",
+    "iconTexture":  "skilltree:textures/icons/treasure_chest_gold.png",
+    "borderTexture":  "skilltree:textures/tooltip/lesser.png",
+    "positionX":  -786.31,
+    "positionY":  -746.18,
+    "buttonSize":  16,
+    "isStartingPoint":  false
+}

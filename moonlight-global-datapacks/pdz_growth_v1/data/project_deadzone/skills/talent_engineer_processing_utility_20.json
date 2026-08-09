@@ -1,0 +1,44 @@
+﻿{
+    "id":  "project_deadzone:talent_engineer_processing_utility_20",
+    "bonuses":  [
+                    {
+                        "type":  "skilltree:attribute",
+                        "attribute":  "minecraft:generic.max_health",
+                        "id":  "eb8d7cb6-3ba5-4342-67f0-955d3d625369",
+                        "name":  "PROJECT DEADZONE Talent",
+                        "amount":  0.25,
+                        "operation":  0,
+                        "player_multiplier":  {
+                                                  "type":  "skilltree:none"
+                                              },
+                        "player_condition":  {
+                                                 "type":  "skilltree:none"
+                                             }
+                    }
+                ],
+    "requirements":  [
+
+                     ],
+    "directConnections":  [
+                              "project_deadzone:talent_engineer_processing_utility_19"
+                          ],
+    "longConnections":  [
+
+                        ],
+    "oneWayConnections":  [
+
+                          ],
+    "tags":  [
+                 "pdz_talent_processing",
+                 "pdz_talent_doctrine_path",
+                 "pdz_doctrine_path_utility",
+                 "pdz_node_talent_engineer_processing_utility_20"
+             ],
+    "backgroundTexture":  "skilltree:textures/icons/background/notable.png",
+    "iconTexture":  "skilltree:textures/icons/glove_iron.png",
+    "borderTexture":  "skilltree:textures/tooltip/lesser.png",
+    "positionX":  1002.14,
+    "positionY":  688.75,
+    "buttonSize":  22,
+    "isStartingPoint":  false
+}

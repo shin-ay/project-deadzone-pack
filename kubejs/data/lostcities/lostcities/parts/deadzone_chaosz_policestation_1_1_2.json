@@ -1,0 +1,217 @@
+{
+  "xsize": 16,
+  "zsize": 16,
+  "palette": {
+    "palette": [
+      {
+        "char": "",
+        "block": "minecraft:air"
+      },
+      {
+        "char": "",
+        "block": "minecraft:vine[east=false,north=true,south=false,up=false,west=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:vine[east=true,north=true,south=false,up=false,west=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:cracked_stone_bricks"
+      },
+      {
+        "char": "",
+        "block": "minecraft:mossy_stone_bricks"
+      },
+      {
+        "char": "",
+        "block": "minecraft:stone_bricks[weathering=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:stone_bricks[weathering=true]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:vine[east=true,north=false,south=false,up=false,west=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:vine[east=false,north=false,south=true,up=false,west=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:vine[east=false,north=false,south=true,up=false,west=true]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:vine[east=true,north=false,south=true,up=false,west=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:smooth_stone_slab[type=top,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:basalt[axis=x]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:cyan_terracotta"
+      },
+      {
+        "char": "",
+        "block": "minecraft:deepslate[axis=y]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:cobbled_deepslate"
+      },
+      {
+        "char": "",
+        "block": "minecraft:daylight_detector[inverted=false,power=15]",
+        "tag": {
+          "id": "minecraft:daylight_detector"
+        }
+      },
+      {
+        "char": "",
+        "block": "minecraft:smooth_stone_slab[type=bottom,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:mossy_cobblestone"
+      },
+      {
+        "char": "",
+        "block": "minecraft:cobblestone[weathering=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:cobblestone[weathering=true]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:blackstone"
+      },
+      {
+        "char": "",
+        "block": "minecraft:grass_block[snowy=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:grass"
+      }
+    ]
+  },
+  "slices": [
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  ]
+}

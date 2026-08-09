@@ -1,0 +1,13 @@
+name = "The Lost Cities Autoloader"
+filename = "lostcitiesautoloader-1.0.1-1.20.1.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "c4ba584e302b79dbd3870eacdd13dd3113de98eb"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 8303577
+project-id = 1312837

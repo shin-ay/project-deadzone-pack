@@ -1,0 +1,26 @@
+[
+    [
+        "industry_basics",
+        "machinist"
+    ],
+    [
+        "machinist",
+        "gunsmith"
+    ],
+    [
+        "gunsmith",
+        "master_gunsmith"
+    ],
+    [
+        "industry_basics",
+        "engineer"
+    ],
+    [
+        "engineer",
+        "automation"
+    ],
+    [
+        "automation",
+        "chief_engineer"
+    ]
+]

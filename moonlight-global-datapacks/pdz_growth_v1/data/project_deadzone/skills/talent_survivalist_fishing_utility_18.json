@@ -1,0 +1,44 @@
+﻿{
+    "id":  "project_deadzone:talent_survivalist_fishing_utility_18",
+    "bonuses":  [
+                    {
+                        "type":  "skilltree:attribute",
+                        "attribute":  "minecraft:generic.armor",
+                        "id":  "1a904f6c-aec3-7514-fff2-6868ffefec49",
+                        "name":  "PROJECT DEADZONE Talent",
+                        "amount":  0.1,
+                        "operation":  0,
+                        "player_multiplier":  {
+                                                  "type":  "skilltree:none"
+                                              },
+                        "player_condition":  {
+                                                 "type":  "skilltree:none"
+                                             }
+                    }
+                ],
+    "requirements":  [
+
+                     ],
+    "directConnections":  [
+                              "project_deadzone:talent_survivalist_fishing_utility_17"
+                          ],
+    "longConnections":  [
+
+                        ],
+    "oneWayConnections":  [
+
+                          ],
+    "tags":  [
+                 "pdz_talent_fishing",
+                 "pdz_talent_doctrine_path",
+                 "pdz_doctrine_path_utility",
+                 "pdz_node_talent_survivalist_fishing_utility_18"
+             ],
+    "backgroundTexture":  "skilltree:textures/icons/background/notable.png",
+    "iconTexture":  "skilltree:textures/icons/fishing_rod_gold.png",
+    "borderTexture":  "skilltree:textures/tooltip/lesser.png",
+    "positionX":  -882.78,
+    "positionY":  702.2,
+    "buttonSize":  22,
+    "isStartingPoint":  false
+}

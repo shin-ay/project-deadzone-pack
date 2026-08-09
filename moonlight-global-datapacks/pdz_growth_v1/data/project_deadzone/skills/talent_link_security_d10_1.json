@@ -1,0 +1,42 @@
+﻿{
+    "id":  "project_deadzone:talent_link_security_d10_1",
+    "bonuses":  [
+                    {
+                        "type":  "skilltree:attribute",
+                        "attribute":  "minecraft:generic.attack_speed",
+                        "id":  "2d0ae82e-070b-ee18-4333-3b47a3e176d7",
+                        "name":  "PROJECT DEADZONE Talent",
+                        "amount":  0.002,
+                        "operation":  1,
+                        "player_multiplier":  {
+                                                  "type":  "skilltree:none"
+                                              },
+                        "player_condition":  {
+                                                 "type":  "skilltree:none"
+                                             }
+                    }
+                ],
+    "requirements":  [
+
+                     ],
+    "directConnections":  [
+                              "project_deadzone:talent_security_control_10"
+                          ],
+    "longConnections":  [
+
+                        ],
+    "oneWayConnections":  [
+
+                          ],
+    "tags":  [
+                 "pdz_talent_bridge",
+                 "pdz_node_talent_link_security_d10_1"
+             ],
+    "backgroundTexture":  "skilltree:textures/icons/background/lesser.png",
+    "iconTexture":  "skilltree:textures/icons/arrow.png",
+    "borderTexture":  "skilltree:textures/tooltip/lesser.png",
+    "positionX":  572.85,
+    "positionY":  -307.16,
+    "buttonSize":  16,
+    "isStartingPoint":  false
+}

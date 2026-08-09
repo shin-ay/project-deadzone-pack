@@ -1,0 +1,44 @@
+﻿{
+    "id":  "project_deadzone:talent_engineer_automation_utility_17",
+    "bonuses":  [
+                    {
+                        "type":  "skilltree:attribute",
+                        "attribute":  "minecraft:generic.movement_speed",
+                        "id":  "ce8d3230-f2d7-7961-d4c2-c2bdd00e8b50",
+                        "name":  "PROJECT DEADZONE Talent",
+                        "amount":  0.0015,
+                        "operation":  1,
+                        "player_multiplier":  {
+                                                  "type":  "skilltree:none"
+                                              },
+                        "player_condition":  {
+                                                 "type":  "skilltree:none"
+                                             }
+                    }
+                ],
+    "requirements":  [
+
+                     ],
+    "directConnections":  [
+                              "project_deadzone:talent_engineer_automation_utility_16"
+                          ],
+    "longConnections":  [
+
+                        ],
+    "oneWayConnections":  [
+
+                          ],
+    "tags":  [
+                 "pdz_talent_automation",
+                 "pdz_talent_doctrine_path",
+                 "pdz_doctrine_path_utility",
+                 "pdz_node_talent_engineer_automation_utility_17"
+             ],
+    "backgroundTexture":  "skilltree:textures/icons/background/lesser.png",
+    "iconTexture":  "skilltree:textures/icons/glove_diamond.png",
+    "borderTexture":  "skilltree:textures/tooltip/lesser.png",
+    "positionX":  674.81,
+    "positionY":  848.35,
+    "buttonSize":  16,
+    "isStartingPoint":  false
+}

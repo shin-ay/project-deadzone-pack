@@ -1,0 +1,25 @@
+place template project_deadzone:deadzone_chaosz_aircraftcarrier_edit_x0_y0_z0 ~0 ~0 ~0
+place template project_deadzone:deadzone_chaosz_aircraftcarrier_edit_x0_y0_z1 ~0 ~0 ~48
+place template project_deadzone:deadzone_chaosz_aircraftcarrier_edit_x0_y1_z0 ~0 ~48 ~0
+place template project_deadzone:deadzone_chaosz_aircraftcarrier_edit_x0_y1_z1 ~0 ~48 ~48
+place template project_deadzone:deadzone_chaosz_aircraftcarrier_edit_x1_y0_z0 ~48 ~0 ~0
+place template project_deadzone:deadzone_chaosz_aircraftcarrier_edit_x1_y0_z1 ~48 ~0 ~48
+place template project_deadzone:deadzone_chaosz_aircraftcarrier_edit_x1_y1_z0 ~48 ~48 ~0
+place template project_deadzone:deadzone_chaosz_aircraftcarrier_edit_x1_y1_z1 ~48 ~48 ~48
+place template project_deadzone:deadzone_chaosz_aircraftcarrier_edit_x2_y0_z0 ~96 ~0 ~0
+place template project_deadzone:deadzone_chaosz_aircraftcarrier_edit_x2_y0_z1 ~96 ~0 ~48
+place template project_deadzone:deadzone_chaosz_aircraftcarrier_edit_x2_y1_z0 ~96 ~48 ~0
+place template project_deadzone:deadzone_chaosz_aircraftcarrier_edit_x2_y1_z1 ~96 ~48 ~48
+place template project_deadzone:deadzone_chaosz_aircraftcarrier_edit_x3_y0_z0 ~144 ~0 ~0
+place template project_deadzone:deadzone_chaosz_aircraftcarrier_edit_x3_y0_z1 ~144 ~0 ~48
+place template project_deadzone:deadzone_chaosz_aircraftcarrier_edit_x3_y1_z0 ~144 ~48 ~0
+place template project_deadzone:deadzone_chaosz_aircraftcarrier_edit_x3_y1_z1 ~144 ~48 ~48
+place template project_deadzone:deadzone_chaosz_aircraftcarrier_edit_x4_y0_z0 ~192 ~0 ~0
+place template project_deadzone:deadzone_chaosz_aircraftcarrier_edit_x4_y0_z1 ~192 ~0 ~48
+place template project_deadzone:deadzone_chaosz_aircraftcarrier_edit_x4_y1_z0 ~192 ~48 ~0
+place template project_deadzone:deadzone_chaosz_aircraftcarrier_edit_x4_y1_z1 ~192 ~48 ~48
+place template project_deadzone:deadzone_chaosz_aircraftcarrier_edit_x5_y0_z0 ~240 ~0 ~0
+place template project_deadzone:deadzone_chaosz_aircraftcarrier_edit_x5_y0_z1 ~240 ~0 ~48
+place template project_deadzone:deadzone_chaosz_aircraftcarrier_edit_x5_y1_z0 ~240 ~48 ~0
+place template project_deadzone:deadzone_chaosz_aircraftcarrier_edit_x5_y1_z1 ~240 ~48 ~48
+tellraw @s {"text":"空母を現在位置から組み立てました (256x72x96)","color":"green"}

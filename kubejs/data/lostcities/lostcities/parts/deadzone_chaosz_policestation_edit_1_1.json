@@ -1,0 +1,1041 @@
+{
+  "xsize": 16,
+  "zsize": 16,
+  "palette": {
+    "palette": [
+      {
+        "char": "",
+        "block": "minecraft:air"
+      },
+      {
+        "char": "",
+        "block": "minecraft:stone_bricks[weathering=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:dirt"
+      },
+      {
+        "char": "",
+        "block": "minecraft:deepslate[axis=y]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:blackstone"
+      },
+      {
+        "char": "",
+        "block": "minecraft:cracked_stone_bricks"
+      },
+      {
+        "char": "",
+        "block": "minecraft:mossy_stone_bricks"
+      },
+      {
+        "char": "",
+        "block": "minecraft:grass_block[snowy=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:cobweb"
+      },
+      {
+        "char": "",
+        "block": "minecraft:cobbled_deepslate"
+      },
+      {
+        "char": "",
+        "block": "minecraft:stone_bricks[weathering=true]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:basalt[axis=x]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:cyan_terracotta"
+      },
+      {
+        "char": "",
+        "block": "minecraft:redstone_lamp[lit=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:smooth_stone"
+      },
+      {
+        "char": "",
+        "block": "minecraft:vine[east=false,north=false,south=false,up=false,west=true]"
+      },
+      {
+        "char": "",
+        "block": "immersive_weathering:exposed_iron_bars[east=false,north=false,south=true,waterlogged=false,west=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:grass"
+      },
+      {
+        "char": "",
+        "block": "minecraft:smooth_stone_slab[type=top,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "immersive_weathering:exposed_iron_bars[east=false,north=true,south=true,waterlogged=false,west=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:gray_concrete_powder"
+      },
+      {
+        "char": "",
+        "block": "minecraft:oak_planks"
+      },
+      {
+        "char": "",
+        "block": "minecraft:spruce_planks"
+      },
+      {
+        "char": "",
+        "block": "minecraft:spawner",
+        "tag": {
+          "MaxNearbyEntities": 6,
+          "RequiredPlayerRange": 16,
+          "SpawnCount": 4,
+          "SpawnData": {
+            "entity": {}
+          },
+          "MaxSpawnDelay": 800,
+          "id": "minecraft:mob_spawner",
+          "SpawnRange": 4,
+          "Delay": 41,
+          "MinSpawnDelay": 200,
+          "SpawnPotentials": []
+        }
+      },
+      {
+        "char": "",
+        "block": "minecraft:mossy_cobblestone_slab[type=bottom,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:light_gray_carpet"
+      },
+      {
+        "char": "",
+        "block": "minecraft:mossy_cobblestone"
+      },
+      {
+        "char": "",
+        "block": "minecraft:petrified_oak_slab[type=bottom,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "immersive_weathering:weathered_iron_bars[east=false,north=true,south=true,waterlogged=false,west=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:cobblestone[weathering=false]"
+      },
+      {
+        "char": "",
+        "block": "refurbished_furniture:light_gray_sofa[facing=south,shape=left]"
+      },
+      {
+        "char": "",
+        "block": "mcwfurnitures:spruce_bookshelf[connection=bottom,facing=south]",
+        "tag": {
+          "Items": [],
+          "id": "mcwfurnitures:furniture_storage"
+        }
+      },
+      {
+        "char": "",
+        "block": "refurbished_furniture:spruce_chair[facing=north,tucked=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:cobblestone_slab[type=bottom,waterlogged=false,weathering=true]"
+      },
+      {
+        "char": "",
+        "block": "refurbished_furniture:light_gray_sofa[facing=south,shape=default]"
+      },
+      {
+        "char": "",
+        "block": "refurbished_furniture:spruce_drawer[facing=south,left=false,open=false,right=false]",
+        "tag": {
+          "Items": [],
+          "id": "refurbished_furniture:drawer"
+        }
+      },
+      {
+        "char": "",
+        "block": "refurbished_furniture:oak_table[east=false,north=false,south=false,west=false]"
+      },
+      {
+        "char": "",
+        "block": "refurbished_furniture:light_gray_sofa[facing=south,shape=right]"
+      },
+      {
+        "char": "",
+        "block": "refurbished_furniture:spruce_drawer[facing=north,left=false,open=false,right=false]",
+        "tag": {
+          "Items": [],
+          "id": "refurbished_furniture:drawer"
+        }
+      },
+      {
+        "char": "",
+        "block": "minecraft:vine[east=true,north=false,south=false,up=false,west=false]"
+      },
+      {
+        "char": "",
+        "block": "refurbished_furniture:spruce_chair[facing=south,tucked=false]"
+      },
+      {
+        "char": "",
+        "block": "doomsday_decoration:printer[facing=east,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "mcwfurnitures:spruce_bookshelf[connection=bottom,facing=west]",
+        "tag": {
+          "Items": [],
+          "id": "mcwfurnitures:furniture_storage"
+        }
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:glass_door[facing=south,half=lower,hinge=left,open=true,powered=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:vine[east=false,north=true,south=false,up=false,west=false]"
+      },
+      {
+        "char": "",
+        "block": "cfm:oak_park_bench[facing=north,type=left]"
+      },
+      {
+        "char": "",
+        "block": "cfm:oak_park_bench[facing=north,type=middle]"
+      },
+      {
+        "char": "",
+        "block": "cfm:oak_park_bench[facing=north,type=right]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:vine[east=true,north=true,south=false,up=false,west=false]"
+      },
+      {
+        "char": "",
+        "block": "mcwfurnitures:spruce_bookshelf[connection=middle,facing=south]",
+        "tag": {
+          "Items": [],
+          "id": "mcwfurnitures:furniture_storage"
+        }
+      },
+      {
+        "char": "",
+        "block": "refurbished_furniture:computer[facing=south,powered=false]",
+        "tag": {
+          "Connections": [],
+          "NodePos": -10445360431157,
+          "id": "refurbished_furniture:computer"
+        }
+      },
+      {
+        "char": "",
+        "block": "decocraft:office_phone_beige[facing=north]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:cobblestone_slab[type=bottom,waterlogged=false,weathering=false]"
+      },
+      {
+        "char": "",
+        "block": "refurbished_furniture:computer[facing=north,powered=false]",
+        "tag": {
+          "Connections": [],
+          "NodePos": -10445360422965,
+          "id": "refurbished_furniture:computer"
+        }
+      },
+      {
+        "char": "",
+        "block": "decocraft:office_phone_beige[facing=south]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:glass_pane[east=false,north=true,south=true,waterlogged=false,west=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:glass_pane[east=false,north=true,south=false,waterlogged=false,west=false]"
+      },
+      {
+        "char": "",
+        "block": "mcwfurnitures:spruce_bookshelf[connection=middle,facing=west]",
+        "tag": {
+          "Items": [],
+          "id": "mcwfurnitures:furniture_storage"
+        }
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:glass_door[facing=south,half=upper,hinge=left,open=true,powered=false]"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:iron_window[east=true,north=false,south=true,waterlogged=false,west=true]"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:planksc[facing=south]"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:planksd[facing=south]"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:plankse[facing=south]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:cobblestone[weathering=true]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:vine[east=false,north=false,south=true,up=false,west=false]"
+      },
+      {
+        "char": "",
+        "block": "mcwfurnitures:spruce_bookshelf[connection=top,facing=west]",
+        "tag": {
+          "Items": [],
+          "id": "mcwfurnitures:furniture_storage"
+        }
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:iron_window[east=true,north=false,south=false,waterlogged=false,west=true]"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:planksb[facing=south]"
+      },
+      {
+        "char": "",
+        "block": "mcwfurnitures:spruce_bookshelf[connection=top,facing=south]",
+        "tag": {
+          "Items": [],
+          "id": "mcwfurnitures:furniture_storage"
+        }
+      },
+      {
+        "char": "",
+        "block": "minecraft:vine[east=false,north=false,south=false,up=true,west=false]"
+      },
+      {
+        "char": "",
+        "block": "refurbished_furniture:dark_ceiling_light[face=ceiling,facing=south,powered=false]",
+        "tag": {
+          "Connections": [],
+          "NodePos": -11819749937203,
+          "id": "refurbished_furniture:ceiling_light"
+        }
+      },
+      {
+        "char": "",
+        "block": "minecraft:mossy_stone_brick_stairs[facing=south,half=top,shape=straight,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:iron_window[east=false,north=false,south=false,waterlogged=false,west=true]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:oak_fence[east=false,north=true,south=true,waterlogged=false,west=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:stone_brick_wall[east=none,north=low,south=none,up=true,waterlogged=false,weathering=false,west=none]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:oak_fence[east=false,north=true,south=false,waterlogged=false,west=false]"
+      },
+      {
+        "char": "",
+        "block": "refurbished_furniture:dark_ceiling_light[face=ceiling,facing=east,powered=false]",
+        "tag": {
+          "Connections": [],
+          "NodePos": -9345848799282,
+          "id": "refurbished_furniture:ceiling_light"
+        }
+      },
+      {
+        "char": "",
+        "block": "minecraft:mossy_stone_brick_stairs[facing=east,half=top,shape=straight,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:mossy_stone_brick_stairs[facing=south,half=bottom,shape=straight,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:mossy_stone_brick_stairs[facing=north,half=bottom,shape=straight,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:quartz_slab[type=bottom,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:daylight_detector[inverted=false,power=10]",
+        "tag": {
+          "id": "minecraft:daylight_detector"
+        }
+      },
+      {
+        "char": "",
+        "block": "minecraft:spruce_fence[east=false,north=false,south=false,waterlogged=false,west=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:oak_trapdoor[facing=west,half=top,open=true,powered=false,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:redstone_lamp[lit=true]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:oak_trapdoor[facing=east,half=top,open=true,powered=false,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:red_wall_banner[facing=south]",
+        "tag": {
+          "id": "minecraft:banner",
+          "Patterns": [
+            {
+              "Pattern": "ss",
+              "Color": 0
+            },
+            {
+              "Pattern": "tl",
+              "Color": 11
+            }
+          ]
+        }
+      },
+      {
+        "char": "",
+        "block": "minecraft:oak_trapdoor[facing=south,half=top,open=true,powered=false,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:mossy_stone_brick_stairs[facing=east,half=bottom,shape=straight,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:mossy_stone_brick_stairs[facing=west,half=bottom,shape=straight,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:vine[east=false,north=false,south=true,up=false,west=true]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:glass_pane[east=true,north=false,south=false,waterlogged=false,west=true]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:vine[east=true,north=false,south=false,up=true,west=false]"
+      },
+      {
+        "char": "",
+        "block": "refurbished_furniture:light_ceiling_light[face=ceiling,facing=east,powered=false]",
+        "tag": {
+          "Connections": [],
+          "NodePos": -9070970863664,
+          "id": "refurbished_furniture:ceiling_light"
+        }
+      },
+      {
+        "char": "",
+        "block": "minecraft:vine[east=true,north=false,south=true,up=false,west=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:daylight_detector[inverted=false,power=15]",
+        "tag": {
+          "id": "minecraft:daylight_detector"
+        }
+      },
+      {
+        "char": "",
+        "block": "minecraft:smooth_stone_slab[type=bottom,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:vine[east=true,north=false,south=true,up=true,west=false]"
+      },
+      {
+        "char": "",
+        "block": "refurbished_furniture:spruce_drawer[facing=south,left=false,open=false,right=false]",
+        "tag": {
+          "Items": [],
+          "id": "refurbished_furniture:drawer"
+        },
+        "loot": "project_deadzone:police_general_t2"
+      }
+    ]
+  },
+  "slices": [
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  ]
+}

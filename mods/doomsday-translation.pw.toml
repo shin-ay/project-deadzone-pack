@@ -1,0 +1,13 @@
+name = "Doomsday translation"
+filename = "doomsday_translations-1.0.7.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "0369e4846be45903a045339f354ff657b2983267"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 7341247
+project-id = 1366293

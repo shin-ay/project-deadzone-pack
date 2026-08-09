@@ -1,0 +1,42 @@
+﻿{
+    "id":  "project_deadzone:talent_link_mechanic_d6_1",
+    "bonuses":  [
+                    {
+                        "type":  "skilltree:attribute",
+                        "attribute":  "minecraft:generic.max_health",
+                        "id":  "e5b39e00-6edd-88cd-5c19-05dae97c8d11",
+                        "name":  "PROJECT DEADZONE Talent",
+                        "amount":  0.25,
+                        "operation":  0,
+                        "player_multiplier":  {
+                                                  "type":  "skilltree:none"
+                                              },
+                        "player_condition":  {
+                                                 "type":  "skilltree:none"
+                                             }
+                    }
+                ],
+    "requirements":  [
+
+                     ],
+    "directConnections":  [
+                              "project_deadzone:talent_mechanic_marine_6"
+                          ],
+    "longConnections":  [
+
+                        ],
+    "oneWayConnections":  [
+
+                          ],
+    "tags":  [
+                 "pdz_talent_bridge",
+                 "pdz_node_talent_link_mechanic_d6_1"
+             ],
+    "backgroundTexture":  "skilltree:textures/icons/background/lesser.png",
+    "iconTexture":  "skilltree:textures/icons/arrow.png",
+    "borderTexture":  "skilltree:textures/tooltip/lesser.png",
+    "positionX":  -143.94,
+    "positionY":  476.75,
+    "buttonSize":  16,
+    "isStartingPoint":  false
+}

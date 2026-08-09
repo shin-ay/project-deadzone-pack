@@ -1,0 +1,436 @@
+{
+  "xsize": 16,
+  "zsize": 16,
+  "palette": {
+    "palette": [
+      {
+        "char": "",
+        "block": "minecraft:air"
+      },
+      {
+        "char": "",
+        "block": "minecraft:bricks[weathering=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:bricks[weathering=true]"
+      },
+      {
+        "char": "",
+        "block": "immersive_weathering:cracked_bricks"
+      },
+      {
+        "char": "",
+        "block": "minecraft:polished_andesite"
+      },
+      {
+        "char": "",
+        "block": "immersive_weathering:mossy_bricks"
+      },
+      {
+        "char": "",
+        "block": "minecraft:vine[east=false,north=false,south=false,up=false,west=true]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:andesite"
+      },
+      {
+        "char": "",
+        "block": "minecraft:jungle_planks"
+      },
+      {
+        "char": "",
+        "block": "minecraft:granite"
+      },
+      {
+        "char": "",
+        "block": "minecraft:vine[east=false,north=true,south=false,up=false,west=true]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:vine[east=true,north=true,south=false,up=false,west=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:vine[east=true,north=false,south=false,up=false,west=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:mossy_stone_brick_stairs[facing=south,half=bottom,shape=straight,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:stone_brick_stairs[facing=south,half=bottom,shape=straight,waterlogged=false,weathering=false]"
+      },
+      {
+        "char": "",
+        "block": "doomsday_decoration:airconditioning_2[facing=east,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:vine[east=false,north=true,south=false,up=false,west=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:brick_stairs[facing=south,half=top,shape=straight,waterlogged=false,weathering=false]"
+      },
+      {
+        "char": "",
+        "block": "immersive_weathering:cracked_brick_stairs[facing=south,half=top,shape=straight,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "immersive_weathering:mossy_brick_stairs[facing=south,half=top,shape=straight,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "horror_element_mod:blood_7[facing=south,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "horror_element_mod:colonial_marine_body[facing=south,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "horror_element_mod:blood_9[facing=west,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:jungle_door[facing=west,half=lower,hinge=right,open=true,powered=false]"
+      },
+      {
+        "char": "",
+        "block": "horror_element_mod:blood_5[facing=south,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "doomsday_decoration:damageddoor_31[facing=east,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "horror_element_mod:sign_1[facing=east,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "tacz:gun_smith_table[facing=south,part=foot]",
+        "tag": {
+          "BlockId": "tacz:gun_smith_table",
+          "id": "tacz:gun_smith_table"
+        }
+      },
+      {
+        "char": "",
+        "block": "immersive_weathering:exposed_iron_bars[east=true,north=false,south=false,waterlogged=false,west=true]"
+      },
+      {
+        "char": "",
+        "block": "immersive_weathering:exposed_iron_bars[east=false,north=false,south=true,waterlogged=false,west=true]"
+      },
+      {
+        "char": "",
+        "block": "tacz:gun_smith_table[facing=south,part=head]",
+        "tag": {
+          "id": "tacz:gun_smith_table"
+        }
+      },
+      {
+        "char": "",
+        "block": "minecraft:vine[east=false,north=false,south=true,up=false,west=false]"
+      },
+      {
+        "char": "",
+        "block": "immersive_weathering:exposed_iron_bars[east=false,north=true,south=true,waterlogged=false,west=false]"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:spruce_crate",
+        "tag": {
+          "Items": [],
+          "id": "apocalypsenow:spruce_crate"
+        }
+      },
+      {
+        "char": "",
+        "block": "minecraft:jungle_door[facing=south,half=lower,hinge=left,open=true,powered=false]"
+      },
+      {
+        "char": "",
+        "block": "tacz:workbench_c[facing=west,half=lower]",
+        "tag": {
+          "BlockId": "ronmc:gun_locker",
+          "id": "tacz:gun_smith_table"
+        }
+      },
+      {
+        "char": "",
+        "block": "minecraft:spruce_door[facing=east,half=lower,hinge=left,open=true,powered=false]"
+      },
+      {
+        "char": "",
+        "block": "refurbished_furniture:light_gray_toilet[facing=east]",
+        "tag": {
+          "FluidTank": {
+            "FluidTank": {
+              "FluidName": "minecraft:empty",
+              "Amount": 0
+            }
+          },
+          "ForgeCaps": {},
+          "id": "refurbished_furniture:toilet"
+        }
+      },
+      {
+        "char": "",
+        "block": "doomsday_decoration:wireless[facing=west,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:black_concrete"
+      },
+      {
+        "char": "",
+        "block": "doomsday_decoration:remains_2[facing=north]"
+      },
+      {
+        "char": "",
+        "block": "horror_element_mod:blood_10[facing=south,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "doomsday_decoration:remains_8[facing=west]"
+      },
+      {
+        "char": "",
+        "block": "immersive_weathering:exposed_iron_bars[east=false,north=true,south=false,waterlogged=false,west=false]"
+      },
+      {
+        "char": "",
+        "block": "horror_element_mod:blood_2[facing=west,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "doomsday_decoration:blood[facing=west,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "horror_element_mod:blood_7[facing=west,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:vine[east=false,north=false,south=true,up=false,west=true]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:brick_stairs[facing=north,half=top,shape=straight,waterlogged=false,weathering=false]"
+      },
+      {
+        "char": "",
+        "block": "immersive_weathering:mossy_brick_stairs[facing=north,half=top,shape=straight,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:glass_pane[east=true,north=false,south=false,waterlogged=false,west=true]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:jungle_leaves[distance=7,persistent=true,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:medical_storage[facing=east,waterlogged=false]",
+        "tag": {
+          "Items": [],
+          "id": "apocalypsenow:medical_storage"
+        }
+      },
+      {
+        "char": "",
+        "block": "minecraft:jungle_door[facing=west,half=upper,hinge=right,open=true,powered=false]"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:safe[facing=west]",
+        "tag": {
+          "Items": [],
+          "id": "apocalypsenow:safe"
+        }
+      },
+      {
+        "char": "",
+        "block": "minecraft:jungle_door[facing=south,half=upper,hinge=left,open=true,powered=false]"
+      },
+      {
+        "char": "",
+        "block": "tacz:workbench_c[facing=west,half=upper]",
+        "tag": {
+          "id": "tacz:gun_smith_table"
+        }
+      },
+      {
+        "char": "",
+        "block": "minecraft:spruce_door[facing=east,half=upper,hinge=left,open=true,powered=false]"
+      },
+      {
+        "char": "",
+        "block": "doomsday_decoration:blood_2[facing=west,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "doomsday_decoration:remains_7[facing=west]"
+      },
+      {
+        "char": "",
+        "block": "doomsday_decoration:remains_777[facing=west]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:glass_pane[east=false,north=true,south=true,waterlogged=false,west=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:brick_stairs[facing=south,half=bottom,shape=straight,waterlogged=false,weathering=false]"
+      },
+      {
+        "char": "",
+        "block": "immersive_weathering:mossy_brick_stairs[facing=south,half=bottom,shape=straight,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:brick_stairs[facing=north,half=bottom,shape=straight,waterlogged=false,weathering=false]"
+      },
+      {
+        "char": "",
+        "block": "immersive_weathering:mossy_brick_stairs[facing=north,half=bottom,shape=straight,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:spruce_crate",
+        "tag": {
+          "Items": [],
+          "id": "apocalypsenow:spruce_crate"
+        },
+        "loot": "project_deadzone:gunstore_armory"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:medical_storage[facing=east,waterlogged=false]",
+        "tag": {
+          "Items": [],
+          "id": "apocalypsenow:medical_storage"
+        },
+        "loot": "project_deadzone:hospital"
+      }
+    ]
+  },
+  "slices": [
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  ]
+}

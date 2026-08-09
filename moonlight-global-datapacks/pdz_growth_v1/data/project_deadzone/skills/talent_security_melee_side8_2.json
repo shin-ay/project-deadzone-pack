@@ -1,0 +1,43 @@
+﻿{
+    "id":  "project_deadzone:talent_security_melee_side8_2",
+    "bonuses":  [
+                    {
+                        "type":  "skilltree:attribute",
+                        "attribute":  "minecraft:generic.attack_damage",
+                        "id":  "3efe7477-a637-c291-2c80-b515354d1e7f",
+                        "name":  "PROJECT DEADZONE Talent",
+                        "amount":  0.0090000000000000011,
+                        "operation":  1,
+                        "player_multiplier":  {
+                                                  "type":  "skilltree:none"
+                                              },
+                        "player_condition":  {
+                                                 "type":  "skilltree:none"
+                                             }
+                    }
+                ],
+    "requirements":  [
+
+                     ],
+    "directConnections":  [
+                              "project_deadzone:talent_security_melee_side8_1"
+                          ],
+    "longConnections":  [
+
+                        ],
+    "oneWayConnections":  [
+
+                          ],
+    "tags":  [
+                 "pdz_talent_melee_damage",
+                 "pdz_talent_optional_end",
+                 "pdz_node_talent_security_melee_side8_2"
+             ],
+    "backgroundTexture":  "skilltree:textures/icons/background/notable.png",
+    "iconTexture":  "skilltree:textures/icons/sword_gold.png",
+    "borderTexture":  "skilltree:textures/tooltip/lesser.png",
+    "positionX":  360.46,
+    "positionY":  -487.14,
+    "buttonSize":  22,
+    "isStartingPoint":  false
+}

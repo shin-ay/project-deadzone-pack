@@ -1,0 +1,260 @@
+{
+    "field_basics":  {
+                         "title":  "野外活動基礎",
+                         "description":  "Tier 0 / 必要消費SP 0\n渇き・疲労・環境への対処を学ぶ。\n\n実効果: 次Tierノードの取得条件を解放",
+                         "icon":  {
+                                      "type":  "item",
+                                      "data":  {
+                                                   "item":  "minecraft:campfire"
+                                               }
+                                  },
+                         "frame":  {
+                                       "type":  "advancement",
+                                       "data":  {
+                                                    "frame":  "task"
+                                                }
+                                   },
+                         "cost":  0,
+                         "rewards":  [
+                                         {
+                                             "type":  "puffish_skills:tag",
+                                             "data":  {
+                                                          "tag":  "dz_growth_survival_field_basics"
+                                                      }
+                                         }
+                                     ]
+                     },
+    "trailcraft":  {
+                       "title":  "トレイルクラフト",
+                       "description":  "Tier 1 / 必要消費SP 0\n野外行動と簡易キャンプの効率を上げる。\n\n実効果: +2% 移動速度",
+                       "icon":  {
+                                    "type":  "item",
+                                    "data":  {
+                                                 "item":  "minecraft:flint_and_steel"
+                                             }
+                                },
+                       "frame":  {
+                                     "type":  "advancement",
+                                     "data":  {
+                                                  "frame":  "task"
+                                              }
+                                 },
+                       "cost":  1,
+                       "rewards":  [
+                                       {
+                                           "type":  "puffish_skills:tag",
+                                           "data":  {
+                                                        "tag":  "dz_growth_survival_trailcraft"
+                                                    }
+                                       }
+                                   ]
+                   },
+    "pathfinder":  {
+                       "title":  "パスファインダー",
+                       "description":  "Tier 2 / 必要消費SP 1\n長距離探索時の移動と帰還を安定させる。\n\n実効果: +4% 移動速度",
+                       "icon":  {
+                                    "type":  "item",
+                                    "data":  {
+                                                 "item":  "minecraft:compass"
+                                             }
+                                },
+                       "frame":  {
+                                     "type":  "advancement",
+                                     "data":  {
+                                                  "frame":  "task"
+                                              }
+                                 },
+                       "cost":  1,
+                       "rewards":  [
+                                       {
+                                           "type":  "puffish_skills:tag",
+                                           "data":  {
+                                                        "tag":  "dz_growth_survival_pathfinder"
+                                                    }
+                                       }
+                                   ],
+                       "required_spent_points":  1
+                   },
+    "hardy":  {
+                  "title":  "タフネス",
+                  "description":  "Tier 2 / 必要消費SP 1\n負傷・悪天候下でも活動を継続しやすくする。\n\n実効果: +2 最大HP / +0.5 防具強度",
+                  "icon":  {
+                               "type":  "item",
+                               "data":  {
+                                            "item":  "minecraft:leather_chestplate"
+                                        }
+                           },
+                  "frame":  {
+                                "type":  "advancement",
+                                "data":  {
+                                             "frame":  "task"
+                                         }
+                            },
+                  "cost":  1,
+                  "rewards":  [
+                                  {
+                                      "type":  "puffish_skills:tag",
+                                      "data":  {
+                                                   "tag":  "dz_growth_survival_hardy"
+                                               }
+                                  }
+                              ],
+                  "required_spent_points":  1
+              },
+    "hunter":  {
+                   "title":  "ハンター",
+                   "description":  "Tier 3 / 必要消費SP 3\n野生動物の追跡と狩猟成果を高める。\n\n実効果: 次Tierノードの取得条件を解放",
+                   "icon":  {
+                                "type":  "item",
+                                "data":  {
+                                             "item":  "minecraft:bow"
+                                         }
+                            },
+                   "frame":  {
+                                 "type":  "advancement",
+                                 "data":  {
+                                              "frame":  "goal"
+                                          }
+                             },
+                   "cost":  1,
+                   "rewards":  [
+                                   {
+                                       "type":  "puffish_skills:tag",
+                                       "data":  {
+                                                    "tag":  "dz_growth_survival_hunter"
+                                                }
+                                   }
+                               ],
+                   "required_spent_points":  3
+               },
+    "tracker":  {
+                    "title":  "追跡者",
+                    "description":  "Tier 4 / 必要消費SP 5\n獲物や敵の痕跡を読み、索敵を強化する。\n\n実効果: +0.5 Luck",
+                    "icon":  {
+                                 "type":  "item",
+                                 "data":  {
+                                              "item":  "minecraft:spyglass"
+                                          }
+                             },
+                    "frame":  {
+                                  "type":  "advancement",
+                                  "data":  {
+                                               "frame":  "goal"
+                                           }
+                              },
+                    "cost":  2,
+                    "rewards":  [
+                                    {
+                                        "type":  "puffish_skills:tag",
+                                        "data":  {
+                                                     "tag":  "dz_growth_survival_tracker"
+                                                 }
+                                    }
+                                ],
+                    "required_spent_points":  5
+                },
+    "field_medic":  {
+                        "title":  "応急処置",
+                        "description":  "Tier 3 / 必要消費SP 3\n戦闘外の回復と救命を安定させる。\n\n実効果: 次Tierノードの取得条件を解放",
+                        "icon":  {
+                                     "type":  "item",
+                                     "data":  {
+                                                  "item":  "minecraft:honey_bottle"
+                                              }
+                                 },
+                        "frame":  {
+                                      "type":  "advancement",
+                                      "data":  {
+                                                   "frame":  "goal"
+                                               }
+                                  },
+                        "cost":  1,
+                        "rewards":  [
+                                        {
+                                            "type":  "puffish_skills:tag",
+                                            "data":  {
+                                                         "tag":  "dz_growth_survival_field_medic"
+                                                     }
+                                        }
+                                    ],
+                        "required_spent_points":  3
+                    },
+    "last_stand":  {
+                       "title":  "不屈",
+                       "description":  "Tier 4 / 必要消費SP 5\n瀕死時の生存力を高めるが攻撃特化には向かない。\n\n実効果: +2 最大HP / +1.0 防具強度",
+                       "icon":  {
+                                    "type":  "item",
+                                    "data":  {
+                                                 "item":  "minecraft:totem_of_undying"
+                                             }
+                                },
+                       "frame":  {
+                                     "type":  "advancement",
+                                     "data":  {
+                                                  "frame":  "goal"
+                                              }
+                                 },
+                       "cost":  2,
+                       "rewards":  [
+                                       {
+                                           "type":  "puffish_skills:tag",
+                                           "data":  {
+                                                        "tag":  "dz_growth_survival_last_stand"
+                                                    }
+                                       }
+                                   ],
+                       "required_spent_points":  5
+                   },
+    "apex_hunter":  {
+                        "title":  "荒野の追跡者",
+                        "description":  "Tier 5 / 必要消費SP 8\n狩猟・索敵・長距離追跡を完成させる。\n\n実効果: +5% 移動速度 / +1.0 Luck",
+                        "icon":  {
+                                     "type":  "item",
+                                     "data":  {
+                                                  "item":  "minecraft:recovery_compass"
+                                              }
+                                 },
+                        "frame":  {
+                                      "type":  "advancement",
+                                      "data":  {
+                                                   "frame":  "challenge"
+                                               }
+                                  },
+                        "cost":  3,
+                        "rewards":  [
+                                        {
+                                            "type":  "puffish_skills:tag",
+                                            "data":  {
+                                                         "tag":  "dz_growth_survival_apex_hunter"
+                                                     }
+                                        }
+                                    ],
+                        "required_spent_points":  8
+                    },
+    "field_survivor":  {
+                           "title":  "不屈の生還者",
+                           "description":  "Tier 5 / 必要消費SP 8\n重傷と悪環境から帰還する能力を完成させる。\n\n実効果: +4 最大HP / +1.5 防具強度",
+                           "icon":  {
+                                        "type":  "item",
+                                        "data":  {
+                                                     "item":  "minecraft:totem_of_undying"
+                                                 }
+                                    },
+                           "frame":  {
+                                         "type":  "advancement",
+                                         "data":  {
+                                                      "frame":  "challenge"
+                                                  }
+                                     },
+                           "cost":  3,
+                           "rewards":  [
+                                           {
+                                               "type":  "puffish_skills:tag",
+                                               "data":  {
+                                                            "tag":  "dz_growth_survival_field_survivor"
+                                                        }
+                                           }
+                                       ],
+                           "required_spent_points":  8
+                       }
+}

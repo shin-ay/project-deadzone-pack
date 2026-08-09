@@ -1,0 +1,44 @@
+﻿{
+    "id":  "project_deadzone:talent_security_control_power_16",
+    "bonuses":  [
+                    {
+                        "type":  "skilltree:attribute",
+                        "attribute":  "minecraft:generic.knockback_resistance",
+                        "id":  "07747b08-0254-9ba1-bd14-1f9c90ac9867",
+                        "name":  "PROJECT DEADZONE Talent",
+                        "amount":  0.01,
+                        "operation":  0,
+                        "player_multiplier":  {
+                                                  "type":  "skilltree:none"
+                                              },
+                        "player_condition":  {
+                                                 "type":  "skilltree:none"
+                                             }
+                    }
+                ],
+    "requirements":  [
+
+                     ],
+    "directConnections":  [
+                              "project_deadzone:talent_security_control_master_power"
+                          ],
+    "longConnections":  [
+
+                        ],
+    "oneWayConnections":  [
+
+                          ],
+    "tags":  [
+                 "pdz_talent_control",
+                 "pdz_talent_doctrine_path",
+                 "pdz_doctrine_path_power",
+                 "pdz_node_talent_security_control_power_16"
+             ],
+    "backgroundTexture":  "skilltree:textures/icons/background/lesser.png",
+    "iconTexture":  "skilltree:textures/icons/skull.png",
+    "borderTexture":  "skilltree:textures/tooltip/lesser.png",
+    "positionX":  857.09,
+    "positionY":  -589.06,
+    "buttonSize":  16,
+    "isStartingPoint":  false
+}

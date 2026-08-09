@@ -1,0 +1,31 @@
+﻿{
+    "id":  "project_deadzone:talent_survivalist_farming_power_17",
+    "bonuses":  [
+
+                ],
+    "requirements":  [
+
+                     ],
+    "directConnections":  [
+                              "project_deadzone:talent_survivalist_farming_power_16"
+                          ],
+    "longConnections":  [
+
+                        ],
+    "oneWayConnections":  [
+
+                          ],
+    "tags":  [
+                 "pdz_talent_farming",
+                 "pdz_talent_doctrine_path",
+                 "pdz_doctrine_path_power",
+                 "pdz_node_talent_survivalist_farming_power_17"
+             ],
+    "backgroundTexture":  "skilltree:textures/icons/background/lesser.png",
+    "iconTexture":  "skilltree:textures/icons/apple_green.png",
+    "borderTexture":  "skilltree:textures/tooltip/lesser.png",
+    "positionX":  -674.81,
+    "positionY":  848.35,
+    "buttonSize":  16,
+    "isStartingPoint":  false
+}

@@ -1,0 +1,43 @@
+﻿{
+    "id":  "project_deadzone:talent_link_survivalist_d10_4",
+    "bonuses":  [
+                    {
+                        "type":  "skilltree:attribute",
+                        "attribute":  "minecraft:generic.luck",
+                        "id":  "bf3c4995-8336-8328-a63f-66a5bb746e0d",
+                        "name":  "PROJECT DEADZONE Talent",
+                        "amount":  0.1,
+                        "operation":  0,
+                        "player_multiplier":  {
+                                                  "type":  "skilltree:none"
+                                              },
+                        "player_condition":  {
+                                                 "type":  "skilltree:none"
+                                             }
+                    }
+                ],
+    "requirements":  [
+
+                     ],
+    "directConnections":  [
+                              "project_deadzone:talent_link_survivalist_d10_3",
+                              "project_deadzone:talent_survivor_health_10"
+                          ],
+    "longConnections":  [
+
+                        ],
+    "oneWayConnections":  [
+
+                          ],
+    "tags":  [
+                 "pdz_talent_bridge",
+                 "pdz_node_talent_link_survivalist_d10_4"
+             ],
+    "backgroundTexture":  "skilltree:textures/icons/background/lesser.png",
+    "iconTexture":  "skilltree:textures/icons/arrow.png",
+    "borderTexture":  "skilltree:textures/tooltip/lesser.png",
+    "positionX":  -622.26,
+    "positionY":  187.87,
+    "buttonSize":  16,
+    "isStartingPoint":  false
+}

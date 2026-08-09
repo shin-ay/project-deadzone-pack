@@ -1,0 +1,514 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: "circle"
+	filename: "deadzone_mod_agriculture_01"
+	group: "51DC04D9192698A6"
+	icon: "farmersdelight:cooking_pot"
+	id: "5D6C5283B005AA24"
+	order_index: 8
+	quest_links: [ ]
+	quests: [
+		{
+			description: [
+				"略奪だけではキャンプの人数を支えられない。まずは複数の作物を育て、食料供給が一種類の収穫に依存しない畑を作ろう。"
+				"Survivalistが主担当。Scavengerは希少な種、Medicは栄養食、Engineerは後半の自動化を担当できる。"
+			]
+			icon: "farmersdelight:cabbage_seeds"
+			id: "5C02676DC1714BC8"
+			rewards: [
+				{
+					count: 2
+					id: "2D62EC6394ED6B76"
+					item: "apocalypsenow:money"
+					type: "item"
+				}
+				{
+					count: 4
+					id: "70D4E766A5273FA3"
+					item: "farmersdelight:tomato_seeds"
+					type: "item"
+				}
+				{
+					count: 4
+					id: "17E0D3FA47511CE8"
+					item: "farmersdelight:cabbage_seeds"
+					type: "item"
+				}
+			]
+			tasks: [
+				{
+					count: 8L
+					id: "3AB407B7C993C807"
+					item: "minecraft:wheat_seeds"
+					type: "item"
+				}
+				{
+					count: 4L
+					id: "479709E9BB59B44B"
+					item: "farmersdelight:tomato_seeds"
+					type: "item"
+				}
+				{
+					count: 4L
+					id: "2482E8631554649A"
+					item: "farmersdelight:cabbage_seeds"
+					type: "item"
+				}
+			]
+			title: "生存農業：種を絶やさない"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			description: ["Cutting BoardとKnifeで、少ない食材から使える部位を無駄なく取り出す。共同調理場の最初の道具だ。"]
+			icon: "farmersdelight:cutting_board"
+			id: "52F3D7D3D52D1F05"
+			dependencies: ["5C02676DC1714BC8"]
+			rewards: [
+				{
+					count: 3
+					id: "018D5A2A1BDE232B"
+					item: "apocalypsenow:money"
+					type: "item"
+				}
+				{
+					count: 2
+					id: "16E3C979ADD1E6B0"
+					item: "farmersdelight:rope"
+					type: "item"
+				}
+			]
+			tasks: [
+				{
+					id: "7579903A8B2A9FBC"
+					item: "farmersdelight:cutting_board"
+					type: "item"
+				}
+				{
+					id: "51EF72701551D500"
+					item: {
+						Count: 1
+						id: "farmersdelight:iron_knife"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+			]
+			title: "無駄のない解体"
+			x: 2.0d
+			y: -1.0d
+		}
+		{
+			description: ["腐敗した有機物を堆肥へ戻し、Rich Soilで収穫効率を上げる。安全圏の狭い畑ほど土壌の質が重要になる。"]
+			icon: "farmersdelight:rich_soil"
+			id: "6776C556A3834FAA"
+			dependencies: ["5C02676DC1714BC8"]
+			rewards: [
+				{
+					count: 3
+					id: "0EB96F6D6C1277AC"
+					item: "apocalypsenow:money"
+					type: "item"
+				}
+				{
+					count: 2
+					id: "0BBDC9B91A913155"
+					item: "farmersdelight:organic_compost"
+					type: "item"
+				}
+			]
+			tasks: [
+				{
+					count: 2L
+					id: "010B5F3C4D3941ED"
+					item: "farmersdelight:organic_compost"
+					type: "item"
+				}
+				{
+					count: 4L
+					id: "24F546942BC75A71"
+					item: "farmersdelight:rich_soil"
+					type: "item"
+				}
+			]
+			title: "土壌を再生する"
+			x: 2.0d
+			y: 1.0d
+		}
+		{
+			description: ["主食・野菜・水田作物をそろえる。収穫の一部は必ず次の種として共同倉庫へ戻そう。"]
+			icon: "farmersdelight:tomato"
+			id: "46A3E0BB5786F64B"
+			dependencies: ["52F3D7D3D52D1F05","6776C556A3834FAA"]
+			rewards: [
+				{
+					count: 4
+					id: "7EDB944230B803DC"
+					item: "apocalypsenow:money"
+					type: "item"
+				}
+				{
+					count: 4
+					id: "52571D0E02996481"
+					item: "farmersdelight:rice_panicle"
+					type: "item"
+				}
+			]
+			tasks: [
+				{
+					count: 8L
+					id: "5CEB2DDB5BA57C03"
+					item: "farmersdelight:tomato"
+					type: "item"
+				}
+				{
+					count: 8L
+					id: "5CF3F860CEB0F458"
+					item: "farmersdelight:cabbage"
+					type: "item"
+				}
+				{
+					count: 4L
+					id: "01F12CAA5896ACC5"
+					item: "farmersdelight:onion"
+					type: "item"
+				}
+				{
+					count: 8L
+					id: "158FD8E147F7D572"
+					item: "farmersdelight:rice_panicle"
+					type: "item"
+				}
+			]
+			title: "四種類の収穫"
+			x: 4.0d
+			y: 0.0d
+		}
+		{
+			description: ["StoveとSkilletで短時間の食事を作る。遠征前にすぐ補充できる携帯食を担当する工程。"]
+			icon: {
+				Count: 1
+				id: "farmersdelight:skillet"
+				tag: {
+					Damage: 0
+				}
+			}
+			id: "48D5CCCB8EA05989"
+			dependencies: ["46A3E0BB5786F64B"]
+			rewards: [
+				{
+					count: 4
+					id: "710FD9F8B156A760"
+					item: "apocalypsenow:money"
+					type: "item"
+				}
+				{
+					count: 4
+					id: "2EF7B358FD7EE625"
+					item: "minecraft:charcoal"
+					type: "item"
+				}
+			]
+			tasks: [
+				{
+					id: "218BB5F8171D0F1B"
+					item: "farmersdelight:stove"
+					type: "item"
+				}
+				{
+					id: "50CCA9B23D401198"
+					item: {
+						Count: 1
+						id: "farmersdelight:skillet"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+			]
+			title: "野戦調理"
+			x: 6.0d
+			y: -1.5d
+		}
+		{
+			description: ["Cooking Potは複数人分の食事をまとめて作れる。Medic向けの温かい回復食もここから始まる。"]
+			icon: "farmersdelight:cooking_pot"
+			id: "2A3AF2E328F1D016"
+			dependencies: ["46A3E0BB5786F64B"]
+			rewards: [
+				{
+					count: 5
+					id: "5E48DF4BA5EDC0E8"
+					item: "apocalypsenow:money"
+					type: "item"
+				}
+				{
+					count: 2
+					id: "157568E9D0FE7C29"
+					item: "farmersdelight:milk_bottle"
+					type: "item"
+				}
+			]
+			tasks: [{
+				id: "3F4228D6D77CBA3C"
+				item: "farmersdelight:cooking_pot"
+				type: "item"
+			}]
+			title: "共同炊事鍋"
+			x: 6.0d
+			y: 1.5d
+		}
+		{
+			description: ["同じ一品を大量に食べるだけでは長期遠征に向かない。肉・野菜・汁物を組み合わせた三種類の食事を用意する。"]
+			icon: "farmersdelight:beef_stew"
+			id: "3C5FE8893CEA9B0A"
+			dependencies: ["48D5CCCB8EA05989","2A3AF2E328F1D016"]
+			rewards: [
+				{
+					count: 6
+					id: "1EA78107B39BE725"
+					item: "apocalypsenow:money"
+					type: "item"
+				}
+				{
+					count: 4
+					id: "1E2D01309429A984"
+					item: "farmersdelight:canvas"
+					type: "item"
+				}
+			]
+			tasks: [
+				{
+					count: 2L
+					id: "4D377EAD088F6764"
+					item: "farmersdelight:beef_stew"
+					type: "item"
+				}
+				{
+					count: 2L
+					id: "336ACD64438626D5"
+					item: "farmersdelight:vegetable_soup"
+					type: "item"
+				}
+				{
+					count: 2L
+					id: "541A8C28714BE2BE"
+					item: "farmersdelight:mixed_salad"
+					type: "item"
+				}
+			]
+			title: "栄養を組み立てる"
+			x: 8.0d
+			y: 0.0d
+		}
+		{
+			description: ["襲撃や遠征に備え、調理済みの食事を共同備蓄へ回す。自分用の一食ではなく、部隊全体の在庫を作る目標だ。"]
+			icon: "farmersdelight:bamboo_basket"
+			id: "10A047E020CD143B"
+			dependencies: ["3C5FE8893CEA9B0A"]
+			rewards: [
+				{
+					count: 8
+					id: "72C23C01FBFE7703"
+					item: "apocalypsenow:money"
+					type: "item"
+				}
+				{
+					id: "7CB6A503E8937C8F"
+					item: "farmersdelight:bamboo_basket"
+					type: "item"
+				}
+			]
+			tasks: [
+				{
+					count: 4L
+					id: "7AC62C06A6D0E56A"
+					item: "farmersdelight:beef_stew"
+					type: "item"
+				}
+				{
+					count: 4L
+					id: "0EBEC18FC88AFE37"
+					item: "farmersdelight:chicken_soup"
+					type: "item"
+				}
+				{
+					count: 8L
+					id: "678E0CF834AED752"
+					item: "farmersdelight:cooked_rice"
+					type: "item"
+				}
+			]
+			title: "キャンプ共同備蓄"
+			x: 10.0d
+			y: 0.0d
+		}
+		{
+			description: ["Pam's HarvestCraftの作物で季節と地域に合う畑を増やす。希少種は交易品としても価値を持つ。"]
+			icon: "pamhc2crops:cornitem"
+			id: "73437B93FFD28BDF"
+			dependencies: ["46A3E0BB5786F64B"]
+			rewards: [
+				{
+					count: 6
+					id: "38272519E434AF3F"
+					item: "apocalypsenow:money"
+					type: "item"
+				}
+				{
+					count: 2
+					id: "47F4A974522C4978"
+					item: "pamhc2crops:garlicseeditem"
+					type: "item"
+				}
+				{
+					count: 2
+					id: "47BBD8CAFC7C736A"
+					item: "pamhc2crops:cottonseeditem"
+					type: "item"
+				}
+			]
+			tasks: [
+				{
+					count: 4L
+					id: "0D864C00931CC538"
+					item: "pamhc2crops:cornitem"
+					type: "item"
+				}
+				{
+					count: 4L
+					id: "766E0ED02D8F0999"
+					item: "pamhc2crops:beanitem"
+					type: "item"
+				}
+				{
+					count: 4L
+					id: "699324F141EACE65"
+					item: "pamhc2crops:garlicitem"
+					type: "item"
+				}
+				{
+					count: 4L
+					id: "12A8D0AD42AA7D29"
+					item: "pamhc2crops:cottonitem"
+					type: "item"
+				}
+			]
+			title: "季節作物と交易種"
+			x: 6.0d
+			y: 3.5d
+		}
+		{
+			description: ["Create Central Kitchenのガイドを読み、農業と工房を接続する。ここから食料担当は工業設備を使って大量供給できる。"]
+			icon: "create_central_kitchen:cooking_guide"
+			id: "6FB89A9A696BB981"
+			dependencies: ["10A047E020CD143B","73437B93FFD28BDF"]
+			rewards: [
+				{
+					count: 8
+					id: "36D2D1FCDE83DD98"
+					item: "apocalypsenow:money"
+					type: "item"
+				}
+				{
+					id: "042E40FC3EB7793E"
+					item: "create_central_kitchen:miners_cooking_guide"
+					type: "item"
+				}
+			]
+			tasks: [{
+				id: "1694A900289BEBB9"
+				item: "create_central_kitchen:cooking_guide"
+				type: "item"
+			}]
+			title: "厨房の機械化計画"
+			x: 12.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["6FB89A9A696BB981","285F9E9B1E751F17"]
+			description: ["Mixer、Basin、搬送設備を使って食品加工を自動化する。完成品だけでなく、ソースなどの中間素材を切らさないラインを目指す。"]
+			icon: "create_central_kitchen:tomato_sauce_bucket"
+			id: "271FE84F79CE5C22"
+			rewards: [
+				{
+					count: 10
+					id: "72BC476016267758"
+					item: "apocalypsenow:money"
+					type: "item"
+				}
+				{
+					id: "4C6E3154519CDCA3"
+					item: "create_central_kitchen:tomato_sauce_bucket"
+					type: "item"
+				}
+			]
+			tasks: [
+				{
+					id: "45674D8EB84492D8"
+					item: "create:mechanical_mixer"
+					type: "item"
+				}
+				{
+					id: "3A833C643A103300"
+					item: "create:basin"
+					type: "item"
+				}
+				{
+					count: 8L
+					id: "260A15B4C52B816D"
+					item: "farmersdelight:tomato_sauce"
+					type: "item"
+				}
+			]
+			title: "自動調理ライン"
+			x: 14.0d
+			y: 0.0d
+		}
+		{
+			description: ["キャンプの食料供給網が完成した。今後は襲撃後の炊き出し、NPC依頼、Medic用回復食、交易品へ発展する。"]
+			icon: "farmersdelight:roast_chicken_block"
+			id: "7348ECB7EB61DAC5"
+			dependencies: ["271FE84F79CE5C22"]
+			rewards: [
+				{
+					count: 15
+					id: "1C38C208D4D2E6EC"
+					item: "apocalypsenow:money"
+					type: "item"
+				}
+				{
+					id: "442F8D665B898257"
+					item: "farmersdelight:honey_glazed_ham_block"
+					type: "item"
+				}
+				{
+					id: "21D5F00B44EBBE69"
+					type: "xp"
+					xp: 15
+				}
+			]
+			tasks: [
+				{
+					count: 2L
+					id: "5F165B91A326A7A9"
+					item: "farmersdelight:roast_chicken_block"
+					type: "item"
+				}
+				{
+					count: 2L
+					id: "26A15152B818086E"
+					item: "farmersdelight:stuffed_pumpkin_block"
+					type: "item"
+				}
+			]
+			title: "食料供給網の完成"
+			x: 16.0d
+			y: 0.0d
+		}
+	]
+	title: "農業・食料供給"
+}

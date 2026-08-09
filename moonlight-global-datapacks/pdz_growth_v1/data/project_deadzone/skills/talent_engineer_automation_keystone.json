@@ -1,0 +1,30 @@
+﻿{
+    "id":  "project_deadzone:talent_engineer_automation_keystone",
+    "bonuses":  [
+
+                ],
+    "requirements":  [
+
+                     ],
+    "directConnections":  [
+                              "project_deadzone:talent_engineer_automation_10"
+                          ],
+    "longConnections":  [
+
+                        ],
+    "oneWayConnections":  [
+
+                          ],
+    "tags":  [
+                 "pdz_talent_automation",
+                 "pdz_talent_keystone",
+                 "pdz_node_talent_engineer_automation_keystone"
+             ],
+    "backgroundTexture":  "skilltree:textures/icons/background/keystone.png",
+    "iconTexture":  "skilltree:textures/icons/glove_diamond.png",
+    "borderTexture":  "skilltree:textures/tooltip/lesser.png",
+    "positionX":  462.52,
+    "positionY":  532.07,
+    "buttonSize":  32,
+    "isStartingPoint":  false
+}

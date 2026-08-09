@@ -1,0 +1,30 @@
+﻿{
+    "id":  "project_deadzone:talent_survivalist_farming_keystone",
+    "bonuses":  [
+
+                ],
+    "requirements":  [
+
+                     ],
+    "directConnections":  [
+                              "project_deadzone:talent_survivalist_farming_10"
+                          ],
+    "longConnections":  [
+
+                        ],
+    "oneWayConnections":  [
+
+                          ],
+    "tags":  [
+                 "pdz_talent_farming",
+                 "pdz_talent_keystone",
+                 "pdz_node_talent_survivalist_farming_keystone"
+             ],
+    "backgroundTexture":  "skilltree:textures/icons/background/keystone.png",
+    "iconTexture":  "skilltree:textures/icons/apple_green.png",
+    "borderTexture":  "skilltree:textures/tooltip/lesser.png",
+    "positionX":  -462.52,
+    "positionY":  532.07,
+    "buttonSize":  32,
+    "isStartingPoint":  false
+}

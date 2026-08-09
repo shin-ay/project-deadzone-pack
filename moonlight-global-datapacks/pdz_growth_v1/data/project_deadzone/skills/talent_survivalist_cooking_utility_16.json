@@ -1,0 +1,44 @@
+﻿{
+    "id":  "project_deadzone:talent_survivalist_cooking_utility_16",
+    "bonuses":  [
+                    {
+                        "type":  "skilltree:attribute",
+                        "attribute":  "minecraft:generic.movement_speed",
+                        "id":  "7a9e5f9a-216f-6798-0a71-0ea61ebd4d5a",
+                        "name":  "PROJECT DEADZONE Talent",
+                        "amount":  0.0015,
+                        "operation":  1,
+                        "player_multiplier":  {
+                                                  "type":  "skilltree:none"
+                                              },
+                        "player_condition":  {
+                                                 "type":  "skilltree:none"
+                                             }
+                    }
+                ],
+    "requirements":  [
+
+                     ],
+    "directConnections":  [
+                              "project_deadzone:talent_survivalist_cooking_master_utility"
+                          ],
+    "longConnections":  [
+
+                        ],
+    "oneWayConnections":  [
+
+                          ],
+    "tags":  [
+                 "pdz_talent_cooking",
+                 "pdz_talent_doctrine_path",
+                 "pdz_doctrine_path_utility",
+                 "pdz_node_talent_survivalist_cooking_utility_16"
+             ],
+    "backgroundTexture":  "skilltree:textures/icons/background/lesser.png",
+    "iconTexture":  "skilltree:textures/icons/soup_red.png",
+    "borderTexture":  "skilltree:textures/tooltip/lesser.png",
+    "positionX":  -589.06,
+    "positionY":  857.09,
+    "buttonSize":  16,
+    "isStartingPoint":  false
+}

@@ -1,0 +1,45 @@
+﻿{
+    "id":  "project_deadzone:talent_medic_healing_doctrine_utility",
+    "bonuses":  [
+                    {
+                        "type":  "skilltree:attribute",
+                        "attribute":  "minecraft:generic.movement_speed",
+                        "id":  "0a684dde-c59e-c70f-dc74-ff1ec4cffa79",
+                        "name":  "PROJECT DEADZONE Talent",
+                        "amount":  0.0015,
+                        "operation":  1,
+                        "player_multiplier":  {
+                                                  "type":  "skilltree:none"
+                                              },
+                        "player_condition":  {
+                                                 "type":  "skilltree:none"
+                                             }
+                    }
+                ],
+    "requirements":  [
+
+                     ],
+    "directConnections":  [
+                              "project_deadzone:talent_medic_healing_utility_20"
+                          ],
+    "longConnections":  [
+
+                        ],
+    "oneWayConnections":  [
+
+                          ],
+    "tags":  [
+                 "pdz_talent_healing",
+                 "pdz_talent_doctrine",
+                 "pdz_doctrine_medic_healing",
+                 "pdz_doctrine_utility",
+                 "pdz_node_talent_medic_healing_doctrine_utility"
+             ],
+    "backgroundTexture":  "skilltree:textures/icons/background/keystone.png",
+    "iconTexture":  "skilltree:textures/icons/potion_red.png",
+    "borderTexture":  "skilltree:textures/tooltip/lesser.png",
+    "positionX":  1248.73,
+    "positionY":  -231.44,
+    "buttonSize":  32,
+    "isStartingPoint":  false
+}

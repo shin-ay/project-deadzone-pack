@@ -1,0 +1,393 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": {
+        "min": 2,
+        "max": 4
+      },
+      "entries": [
+        {
+          "type": "item",
+          "name": "tacz:ammo",
+          "weight": 12,
+          "functions": [
+            {
+              "function": "set_nbt",
+              "tag": "{AmmoId:\"tacz:9mm\"}"
+            },
+            {
+              "function": "set_count",
+              "count": {
+                "min": 4,
+                "max": 10
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "tacz:ammo",
+          "weight": 8,
+          "functions": [
+            {
+              "function": "set_nbt",
+              "tag": "{AmmoId:\"tacz:45acp\"}"
+            },
+            {
+              "function": "set_count",
+              "count": {
+                "min": 3,
+                "max": 8
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "tacz:ammo",
+          "weight": 7,
+          "functions": [
+            {
+              "function": "set_nbt",
+              "tag": "{AmmoId:\"tacz:12g\"}"
+            },
+            {
+              "function": "set_count",
+              "count": {
+                "min": 2,
+                "max": 6
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "tacz:ammo",
+          "weight": 3,
+          "functions": [
+            {
+              "function": "set_nbt",
+              "tag": "{AmmoId:\"tacz:556x45\"}"
+            },
+            {
+              "function": "set_count",
+              "count": {
+                "min": 3,
+                "max": 8
+              }
+            }
+          ]
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "random_chance",
+          "chance": 0.9
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "item",
+          "name": "tacz:modern_kinetic_gun",
+          "weight": 35,
+          "functions": [
+            {
+              "function": "set_nbt",
+              "tag": "{GunFireMode:\"AUTO\",GunId:\"tacz:glock_17\",HasBulletInBarrel:1b}"
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "tacz:modern_kinetic_gun",
+          "weight": 20,
+          "functions": [
+            {
+              "function": "set_nbt",
+              "tag": "{GunFireMode:\"AUTO\",GunId:\"tacz:m1911\",HasBulletInBarrel:1b}"
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "tacz:modern_kinetic_gun",
+          "weight": 18,
+          "functions": [
+            {
+              "function": "set_nbt",
+              "tag": "{GunFireMode:\"AUTO\",GunId:\"tacz:cz75\",HasBulletInBarrel:1b}"
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "tacz:modern_kinetic_gun",
+          "weight": 15,
+          "functions": [
+            {
+              "function": "set_nbt",
+              "tag": "{GunFireMode:\"AUTO\",GunId:\"tacz:m870\",HasBulletInBarrel:1b}"
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "tacz:modern_kinetic_gun",
+          "weight": 6,
+          "functions": [
+            {
+              "function": "set_nbt",
+              "tag": "{GunFireMode:\"AUTO\",GunId:\"tacz:m1014\",HasBulletInBarrel:1b}"
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "tacz:modern_kinetic_gun",
+          "weight": 5,
+          "functions": [
+            {
+              "function": "set_nbt",
+              "tag": "{GunFireMode:\"AUTO\",GunId:\"tacz:hk_mp5a5\",HasBulletInBarrel:1b}"
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "tacz:modern_kinetic_gun",
+          "weight": 4,
+          "functions": [
+            {
+              "function": "set_nbt",
+              "tag": "{GunFireMode:\"AUTO\",GunId:\"tacz:ump45\",HasBulletInBarrel:1b}"
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "tacz:modern_kinetic_gun",
+          "weight": 4,
+          "functions": [
+            {
+              "function": "set_nbt",
+              "tag": "{GunFireMode:\"AUTO\",GunId:\"tacz:uzi\",HasBulletInBarrel:1b}"
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "tacz:modern_kinetic_gun",
+          "weight": 1,
+          "functions": [
+            {
+              "function": "set_nbt",
+              "tag": "{GunFireMode:\"AUTO\",GunId:\"tacz:p90\",HasBulletInBarrel:1b}"
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "tacz:modern_kinetic_gun",
+          "weight": 1,
+          "functions": [
+            {
+              "function": "set_nbt",
+              "tag": "{GunFireMode:\"AUTO\",GunId:\"tacz:m4a1\",HasBulletInBarrel:1b}"
+            }
+          ]
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "random_chance",
+          "chance": 0.75
+        }
+      ]
+    },
+    {
+      "rolls": {
+        "min": 1,
+        "max": 2
+      },
+      "entries": [
+        {
+          "type": "item",
+          "name": "tacz:attachment",
+          "weight": 6,
+          "functions": [
+            {
+              "function": "set_nbt",
+              "tag": "{AttachmentId:\"tacz:sight_acro_pistol\"}"
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "tacz:attachment",
+          "weight": 5,
+          "functions": [
+            {
+              "function": "set_nbt",
+              "tag": "{AttachmentId:\"tacz:sight_deltapoint_pistol\"}"
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "tacz:attachment",
+          "weight": 4,
+          "functions": [
+            {
+              "function": "set_nbt",
+              "tag": "{AttachmentId:\"tacz:grip_vertical_military\"}"
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "tacz:attachment",
+          "weight": 3,
+          "functions": [
+            {
+              "function": "set_nbt",
+              "tag": "{AttachmentId:\"tacz:grip_rk0\"}"
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "tacz:attachment",
+          "weight": 3,
+          "functions": [
+            {
+              "function": "set_nbt",
+              "tag": "{AttachmentId:\"tacz:muzzle_compensator_trident\"}"
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "tacz:attachment",
+          "weight": 2,
+          "functions": [
+            {
+              "function": "set_nbt",
+              "tag": "{AttachmentId:\"tacz:muzzle_brake_pioneer\"}"
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "tacz:attachment",
+          "weight": 2,
+          "functions": [
+            {
+              "function": "set_nbt",
+              "tag": "{AttachmentId:\"tacz:laser_compact\"}"
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "tacz:attachment",
+          "weight": 2,
+          "functions": [
+            {
+              "function": "set_nbt",
+              "tag": "{AttachmentId:\"tacz:light_extended_mag_1\"}"
+            }
+          ]
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "random_chance",
+          "chance": 0.45
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "item",
+          "name": "apocalypsenow:bandage",
+          "weight": 8,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 2
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "apocalypsenow:bandage",
+          "weight": 6,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 2
+              }
+            }
+          ]
+        },
+        {
+          "type": "item",
+          "name": "apocalypsenow:pain_killers",
+          "weight": 2,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 1
+              }
+            }
+          ]
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "random_chance",
+          "chance": 0.2
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "item",
+          "name": "minecraft:iron_helmet",
+          "weight": 4
+        },
+        {
+          "type": "item",
+          "name": "minecraft:shield",
+          "weight": 3
+        },
+        {
+          "type": "item",
+          "name": "minecraft:iron_chestplate",
+          "weight": 1
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "random_chance",
+          "chance": 0.12
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+﻿{
+    "id":  "project_deadzone:talent_survivalist_cooking_master_power",
+    "bonuses":  [
+
+                ],
+    "requirements":  [
+
+                     ],
+    "directConnections":  [
+                              "project_deadzone:talent_survivalist_cooking_15"
+                          ],
+    "longConnections":  [
+
+                        ],
+    "oneWayConnections":  [
+
+                          ],
+    "tags":  [
+                 "pdz_talent_cooking",
+                 "pdz_talent_mastery",
+                 "pdz_mastery_survivalist_cooking",
+                 "pdz_master_power",
+                 "pdz_node_talent_survivalist_cooking_master_power"
+             ],
+    "backgroundTexture":  "skilltree:textures/icons/background/keystone.png",
+    "iconTexture":  "skilltree:textures/icons/soup_red.png",
+    "borderTexture":  "skilltree:textures/tooltip/lesser.png",
+    "positionX":  -485.04,
+    "positionY":  857.3,
+    "buttonSize":  32,
+    "isStartingPoint":  false
+}

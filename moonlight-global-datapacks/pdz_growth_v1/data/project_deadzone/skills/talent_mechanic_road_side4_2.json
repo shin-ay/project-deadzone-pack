@@ -1,0 +1,30 @@
+﻿{
+    "id":  "project_deadzone:talent_mechanic_road_side4_2",
+    "bonuses":  [
+
+                ],
+    "requirements":  [
+
+                     ],
+    "directConnections":  [
+                              "project_deadzone:talent_mechanic_road_side4_1"
+                          ],
+    "longConnections":  [
+
+                        ],
+    "oneWayConnections":  [
+
+                          ],
+    "tags":  [
+                 "pdz_talent_road",
+                 "pdz_talent_optional_end",
+                 "pdz_node_talent_mechanic_road_side4_2"
+             ],
+    "backgroundTexture":  "skilltree:textures/icons/background/notable.png",
+    "iconTexture":  "skilltree:textures/icons/boots_bronze.png",
+    "borderTexture":  "skilltree:textures/tooltip/lesser.png",
+    "positionX":  67.11,
+    "positionY":  449.01,
+    "buttonSize":  22,
+    "isStartingPoint":  false
+}

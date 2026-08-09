@@ -1,0 +1,12 @@
+# PROJECT DEADZONE ChaosZ v1
+[profiles]
+specialBedBlock = "minecraft:diamond_block"
+selectedProfile = "deadzone_chaosz_v1"
+selectedCustomJson = ""
+todoQueueSize = 20
+forceSaplingGrowth = false
+avoidStructures = ["minecraft:mansion", "minecraft:jungle_pyramid", "minecraft:desert_pyramid", "minecraft:igloo", "minecraft:swamp_huts", "minecraft:pillager_outpost"]
+avoidStructuresAdjacent = false
+avoidVillagesAdjacent = false
+avoidVillages = true
+avoidFlattening = true

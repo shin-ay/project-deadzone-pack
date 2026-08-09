@@ -1,0 +1,44 @@
+﻿{
+    "id":  "project_deadzone:talent_scout_tracking_utility_16",
+    "bonuses":  [
+                    {
+                        "type":  "skilltree:attribute",
+                        "attribute":  "minecraft:generic.armor",
+                        "id":  "1f580e2d-e4f5-d367-c37e-039f8de8c2fe",
+                        "name":  "PROJECT DEADZONE Talent",
+                        "amount":  0.1,
+                        "operation":  0,
+                        "player_multiplier":  {
+                                                  "type":  "skilltree:none"
+                                              },
+                        "player_condition":  {
+                                                 "type":  "skilltree:none"
+                                             }
+                    }
+                ],
+    "requirements":  [
+
+                     ],
+    "directConnections":  [
+                              "project_deadzone:talent_scout_tracking_master_utility"
+                          ],
+    "longConnections":  [
+
+                        ],
+    "oneWayConnections":  [
+
+                          ],
+    "tags":  [
+                 "pdz_talent_tracking",
+                 "pdz_talent_doctrine_path",
+                 "pdz_doctrine_path_utility",
+                 "pdz_node_talent_scout_tracking_utility_16"
+             ],
+    "backgroundTexture":  "skilltree:textures/icons/background/lesser.png",
+    "iconTexture":  "skilltree:textures/icons/eye_green.png",
+    "borderTexture":  "skilltree:textures/tooltip/lesser.png",
+    "positionX":  -512.12,
+    "positionY":  -905.17,
+    "buttonSize":  16,
+    "isStartingPoint":  false
+}

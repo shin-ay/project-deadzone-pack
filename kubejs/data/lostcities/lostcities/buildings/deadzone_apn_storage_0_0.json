@@ -1,0 +1,27 @@
+{
+  "minfloors": 3,
+  "maxfloors": 3,
+  "mincellars": 0,
+  "maxcellars": 0,
+  "allowDoors": false,
+  "filler": "#",
+  "rubble": "}",
+  "parts": [
+    {
+      "part": "lostcities:deadzone_apn_storage_0_0_0",
+      "floor": 0
+    },
+    {
+      "part": "lostcities:deadzone_apn_storage_0_0_1",
+      "floor": 1
+    },
+    {
+      "part": "lostcities:deadzone_apn_storage_0_0_2",
+      "floor": 2
+    },
+    {
+      "part": "lostcities:deadzone_apn_storage_0_0_3",
+      "floor": 3
+    }
+  ]
+}

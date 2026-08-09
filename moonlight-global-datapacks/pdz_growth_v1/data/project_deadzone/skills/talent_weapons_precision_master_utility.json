@@ -1,0 +1,45 @@
+﻿{
+    "id":  "project_deadzone:talent_weapons_precision_master_utility",
+    "bonuses":  [
+                    {
+                        "type":  "skilltree:attribute",
+                        "attribute":  "minecraft:generic.max_health",
+                        "id":  "91410caf-a2a9-8744-4da1-2b4d0a9ad5f1",
+                        "name":  "PROJECT DEADZONE Talent",
+                        "amount":  0.25,
+                        "operation":  0,
+                        "player_multiplier":  {
+                                                  "type":  "skilltree:none"
+                                              },
+                        "player_condition":  {
+                                                 "type":  "skilltree:none"
+                                             }
+                    }
+                ],
+    "requirements":  [
+
+                     ],
+    "directConnections":  [
+                              "project_deadzone:talent_weapons_precision_15"
+                          ],
+    "longConnections":  [
+
+                        ],
+    "oneWayConnections":  [
+
+                          ],
+    "tags":  [
+                 "pdz_talent_gun_precision",
+                 "pdz_talent_mastery",
+                 "pdz_mastery_weapons_precision",
+                 "pdz_master_utility",
+                 "pdz_node_talent_weapons_precision_master_utility"
+             ],
+    "backgroundTexture":  "skilltree:textures/icons/background/keystone.png",
+    "iconTexture":  "skilltree:textures/icons/eye_green.png",
+    "borderTexture":  "skilltree:textures/tooltip/lesser.png",
+    "positionX":  -179.5,
+    "positionY":  -968.51,
+    "buttonSize":  32,
+    "isStartingPoint":  false
+}

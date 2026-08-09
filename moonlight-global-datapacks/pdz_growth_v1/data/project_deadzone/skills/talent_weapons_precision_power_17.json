@@ -1,0 +1,31 @@
+﻿{
+    "id":  "project_deadzone:talent_weapons_precision_power_17",
+    "bonuses":  [
+
+                ],
+    "requirements":  [
+
+                     ],
+    "directConnections":  [
+                              "project_deadzone:talent_weapons_precision_power_16"
+                          ],
+    "longConnections":  [
+
+                        ],
+    "oneWayConnections":  [
+
+                          ],
+    "tags":  [
+                 "pdz_talent_gun_precision",
+                 "pdz_talent_doctrine_path",
+                 "pdz_doctrine_path_power",
+                 "pdz_node_talent_weapons_precision_power_17"
+             ],
+    "backgroundTexture":  "skilltree:textures/icons/background/lesser.png",
+    "iconTexture":  "skilltree:textures/icons/eye_green.png",
+    "borderTexture":  "skilltree:textures/tooltip/lesser.png",
+    "positionX":  -289.69,
+    "positionY":  -1044.58,
+    "buttonSize":  16,
+    "isStartingPoint":  false
+}

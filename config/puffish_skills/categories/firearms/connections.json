@@ -1,0 +1,19 @@
+[
+  ["firearms_core_1", "firearms_core_2"],
+  ["firearms_core_2", "firearms_core_3"],
+  ["firearms_core_3", "firearms_core_4"],
+  ["firearms_core_4", "firearms_core_5"],
+  ["firearms_core_5", "firearms_core_6"],
+
+  ["firearms_core_1", "ammo_discipline"],
+  ["ammo_discipline", "tactical_reload"],
+  ["tactical_reload", "last_magazine"],
+
+  ["firearms_core_1", "steady_hand"],
+  ["steady_hand", "mobile_operator"],
+  ["mobile_operator", "controlled_burst"],
+
+  ["firearms_core_1", "field_maintenance"],
+  ["field_maintenance", "quick_recovery"],
+  ["quick_recovery", "field_gunsmith"]
+]

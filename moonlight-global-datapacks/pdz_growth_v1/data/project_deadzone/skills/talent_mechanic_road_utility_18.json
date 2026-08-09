@@ -1,0 +1,44 @@
+﻿{
+    "id":  "project_deadzone:talent_mechanic_road_utility_18",
+    "bonuses":  [
+                    {
+                        "type":  "skilltree:attribute",
+                        "attribute":  "minecraft:generic.max_health",
+                        "id":  "c5ebfe45-5468-67ea-a6ec-d87c67913c09",
+                        "name":  "PROJECT DEADZONE Talent",
+                        "amount":  0.25,
+                        "operation":  0,
+                        "player_multiplier":  {
+                                                  "type":  "skilltree:none"
+                                              },
+                        "player_condition":  {
+                                                 "type":  "skilltree:none"
+                                             }
+                    }
+                ],
+    "requirements":  [
+
+                     ],
+    "directConnections":  [
+                              "project_deadzone:talent_mechanic_road_utility_17"
+                          ],
+    "longConnections":  [
+
+                        ],
+    "oneWayConnections":  [
+
+                          ],
+    "tags":  [
+                 "pdz_talent_road",
+                 "pdz_talent_doctrine_path",
+                 "pdz_doctrine_path_utility",
+                 "pdz_node_talent_mechanic_road_utility_18"
+             ],
+    "backgroundTexture":  "skilltree:textures/icons/background/notable.png",
+    "iconTexture":  "skilltree:textures/icons/boots_bronze.png",
+    "borderTexture":  "skilltree:textures/tooltip/lesser.png",
+    "positionX":  29.53,
+    "positionY":  1127.61,
+    "buttonSize":  22,
+    "isStartingPoint":  false
+}

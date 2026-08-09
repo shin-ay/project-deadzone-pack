@@ -1,0 +1,155 @@
+Scavengingは 限られた物資から価値のあるものを見つける能力にしたい。
+
+Lv	能力イメージ
+0	通常Loot
+1	Scrap系の回収効率が少し向上
+2	食料・日用品を見つけやすい
+3	工具・基本素材の探索能力向上
+4	弾薬・医療品などの発見能力が少し向上
+5	コンテナから追加Lootを発見する可能性
+6	車両・工業系部品の探索能力向上
+7	希少Lootの発見能力向上
+8	軍事・医療・工業施設で専門Lootを見つけやすい
+9	非常に希少な物資を発見可能
+10	ほぼ全カテゴリの探索に熟達
+
+ただしLv10だから「チェストの中身が2倍」みたいにはしない。
+
+例えばLootJS側で、
+
+通常チェスト
+→ 本来のLoot
+
+Scavenging Lv5+
+→ 低確率で追加Scavenging Roll
+
+Lv8+
+→ 建物カテゴリに対応したRare Roll解禁
+
+くらいがいい。
+
+建物の種類も重要にしたい
+
+せっかくChaosZ / Lost Citiesを使っているので、
+
+どこを探索するかによって見つかるものが違う設計にしたい。
+
+Police Station
+→ 弾薬 / 防具 / 警察装備
+
+Hospital
+→ 医療品
+
+Garage
+→ 車両部品 / 工具
+
+Factory
+→ 工業部品
+
+House
+→ 食料 / 日用品
+
+Military
+→ 高級武器 / 軍用品
+
+Scavengingが高くても、住宅の台所から軍用ライフルが出るようにはしない。
+
+場所ごとのLootテーマは維持したまま、その場所で「見落とされていた物資」を発見する能力にする。
+
+XP獲得も探索中心
+
+チェストを開閉するだけでXPを稼げないように、
+
+同じコンテナからXPは1回だけ。
+
+さらに、
+
+初めてコンテナを探索     → XP
+新しい建物を探索         → XP
+希少アイテムを発見       → 大XP
+危険区域のLootを回収      → 大XP
+
+などにする。
+
+特に新規チャンク/新規建物を探索する方が効率がいいようにしたい。
+
+これなら拠点にチェストを置いて開閉するだけでは育たない。
+
+Specialist：Master Scavenger
+
+目玉能力は Resource Recovery。
+
+通常のScavenging Lv10よりさらに「捨てられているものから使える物資を回収する」能力を持たせる。
+
+MASTER SCAVENGER
+
+Scavenging Lv10永久保証
+追加Loot Roll
+Rare Loot発見率向上
+Scrap回収量向上
+隠し物資を発見可能
+特殊なSalvage Loot Table解禁
+危険区域で高品質Lootを発見しやすい
+
+ただし、Weapons ExpertのAmmo Conservationみたいに既存Lootを直接25%増やすだけにはしたくない。
+
+例えば普通のプレイヤーが、
+
+壊れた工具
+Scrap Metal
+空箱
+
+くらいしか見つけられない場所でもMaster Scavengerなら、
+
+Scrap Metal
++
+使用可能な工具部品
++
+少量の工業素材
+
+を追加で回収できる、という感じ。
+
+「隠し物資」はかなり面白そう
+
+Master Scavenger専用で、ごく低確率の特殊Lootを用意する。
+
+例えば、
+
+壁の裏に隠された弾薬
+放棄されたEmergency Cache
+車のトランクに残った工具
+生存者が隠した食料
+軍用施設の未回収装備
+
+など。
+
+これを専用Loot Tableとして用意すれば、同じLost Citiesを探索していてもMaster Scavengerだけ違うものが見える。
+
+マルチでも、
+
+「この病院まだ漁ってないからScavenger連れていこう」
+
+という理由ができる。
+
+Specialist Challenge
+
+これは探索距離だけではなく、
+
+Scavenging Lv10 + 大量の未探索コンテナ発見 + 複数種類の建物探索 + Rare Loot発見 + 危険区域から物資を持ち帰る
+
+くらい。
+
+最終試験は例えば、
+
+Police / Hospital / Industrial / Residential / Militaryの5カテゴリから指定物資を回収する
+
+というFTB Questにすると面白い。
+
+これで5つ。
+
+残りは、
+
+Fitness → Athlete
+Survival → Survivalist
+
+そして8スキル構成にするなら、もう1つについても最終確認したい。最初の案では8番目まで含めていたけど、現状の職業との対応を考えると Cookingを独立スキルにするか、Survivalへ統合するか が大きな設計ポイントになる。

@@ -1,0 +1,8 @@
+{
+  "enabled": false,
+  "requireBeforeClassSelection": false,
+  "requireBeforeSideSelection": false,
+  "definitions": [
+    "human|Human|Versatile survivor|minecraft:textures/item/player_head.png"
+  ]
+}

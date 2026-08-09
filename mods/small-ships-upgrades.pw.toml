@@ -1,0 +1,13 @@
+name = "Small Ships Upgrades"
+filename = "smallships_upgrades-forge-1.20.1-1.0.1.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "222e0a1c4c580e7b698fbda660b0545f5e1b64fc"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 7753118
+project-id = 1441109

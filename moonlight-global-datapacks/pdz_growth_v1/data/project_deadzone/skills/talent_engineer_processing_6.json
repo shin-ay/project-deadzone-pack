@@ -1,0 +1,29 @@
+﻿{
+    "id":  "project_deadzone:talent_engineer_processing_6",
+    "bonuses":  [
+
+                ],
+    "requirements":  [
+
+                     ],
+    "directConnections":  [
+                              "project_deadzone:talent_engineer_processing_5"
+                          ],
+    "longConnections":  [
+
+                        ],
+    "oneWayConnections":  [
+
+                          ],
+    "tags":  [
+                 "pdz_talent_processing",
+                 "pdz_node_talent_engineer_processing_6"
+             ],
+    "backgroundTexture":  "skilltree:textures/icons/background/lesser.png",
+    "iconTexture":  "skilltree:textures/icons/glove_iron.png",
+    "borderTexture":  "skilltree:textures/tooltip/lesser.png",
+    "positionX":  422.33,
+    "positionY":  263.9,
+    "buttonSize":  16,
+    "isStartingPoint":  false
+}

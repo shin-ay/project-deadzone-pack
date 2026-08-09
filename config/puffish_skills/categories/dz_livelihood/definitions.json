@@ -1,0 +1,336 @@
+{
+    "livelihood_basics":  {
+                              "title":  "生活技術基礎",
+                              "description":  "Tier 0 / 必要消費SP 0\n料理・釣り・農業の共通基礎。\n\n実効果: 次Tierノードの取得条件を解放",
+                              "icon":  {
+                                           "type":  "item",
+                                           "data":  {
+                                                        "item":  "minecraft:wheat"
+                                                    }
+                                       },
+                              "frame":  {
+                                            "type":  "advancement",
+                                            "data":  {
+                                                         "frame":  "task"
+                                                     }
+                                        },
+                              "cost":  0,
+                              "rewards":  [
+                                              {
+                                                  "type":  "puffish_skills:tag",
+                                                  "data":  {
+                                                               "tag":  "dz_growth_livelihood_livelihood_basics"
+                                                           }
+                                              }
+                                          ]
+                          },
+    "cook":  {
+                 "title":  "野戦料理",
+                 "description":  "Tier 1 / 必要消費SP 0\n限られた食材で満足度の高い料理を作る。\n\n実効果: 次Tierノードの取得条件を解放",
+                 "icon":  {
+                              "type":  "item",
+                              "data":  {
+                                           "item":  "minecraft:cooked_beef"
+                                       }
+                          },
+                 "frame":  {
+                               "type":  "advancement",
+                               "data":  {
+                                            "frame":  "task"
+                                        }
+                           },
+                 "cost":  1,
+                 "rewards":  [
+                                 {
+                                     "type":  "puffish_skills:tag",
+                                     "data":  {
+                                                  "tag":  "dz_growth_livelihood_cook"
+                                              }
+                                 }
+                             ]
+             },
+    "angler":  {
+                   "title":  "釣り師",
+                   "description":  "Tier 1 / 必要消費SP 0\n釣果と魚の品質を安定させる。\n\n実効果: 次Tierノードの取得条件を解放",
+                   "icon":  {
+                                "type":  "item",
+                                "data":  {
+                                             "item":  "minecraft:fishing_rod"
+                                         }
+                            },
+                   "frame":  {
+                                 "type":  "advancement",
+                                 "data":  {
+                                              "frame":  "task"
+                                          }
+                             },
+                   "cost":  1,
+                   "rewards":  [
+                                   {
+                                       "type":  "puffish_skills:tag",
+                                       "data":  {
+                                                    "tag":  "dz_growth_livelihood_angler"
+                                                }
+                                   }
+                               ]
+               },
+    "farmer":  {
+                   "title":  "農業従事者",
+                   "description":  "Tier 1 / 必要消費SP 0\n少ない面積で食料生産を安定させる。\n\n実効果: 次Tierノードの取得条件を解放",
+                   "icon":  {
+                                "type":  "item",
+                                "data":  {
+                                             "item":  "minecraft:iron_hoe"
+                                         }
+                            },
+                   "frame":  {
+                                 "type":  "advancement",
+                                 "data":  {
+                                              "frame":  "task"
+                                          }
+                             },
+                   "cost":  1,
+                   "rewards":  [
+                                   {
+                                       "type":  "puffish_skills:tag",
+                                       "data":  {
+                                                    "tag":  "dz_growth_livelihood_farmer"
+                                                }
+                                   }
+                               ]
+               },
+    "preservation":  {
+                         "title":  "保存食",
+                         "description":  "Tier 2 / 必要消費SP 3\n腐敗しにくい携帯食へ加工する。\n\n実効果: 次Tierノードの取得条件を解放",
+                         "icon":  {
+                                      "type":  "item",
+                                      "data":  {
+                                                   "item":  "minecraft:dried_kelp"
+                                               }
+                                  },
+                         "frame":  {
+                                       "type":  "advancement",
+                                       "data":  {
+                                                    "frame":  "task"
+                                                }
+                                   },
+                         "cost":  1,
+                         "rewards":  [
+                                         {
+                                             "type":  "puffish_skills:tag",
+                                             "data":  {
+                                                          "tag":  "dz_growth_livelihood_preservation"
+                                                      }
+                                         }
+                                     ],
+                         "required_spent_points":  3
+                     },
+    "fish_reader":  {
+                        "title":  "水域を読む",
+                        "description":  "Tier 2 / 必要消費SP 3\n天候・時間・水域に合わせて狙う魚を変える。\n\n実効果: 次Tierノードの取得条件を解放",
+                        "icon":  {
+                                     "type":  "item",
+                                     "data":  {
+                                                  "item":  "minecraft:tropical_fish"
+                                              }
+                                 },
+                        "frame":  {
+                                      "type":  "advancement",
+                                      "data":  {
+                                                   "frame":  "task"
+                                               }
+                                  },
+                        "cost":  1,
+                        "rewards":  [
+                                        {
+                                            "type":  "puffish_skills:tag",
+                                            "data":  {
+                                                         "tag":  "dz_growth_livelihood_fish_reader"
+                                                     }
+                                        }
+                                    ],
+                        "required_spent_points":  3
+                    },
+    "seed_keeper":  {
+                        "title":  "種子管理",
+                        "description":  "Tier 2 / 必要消費SP 3\n種と収穫物の損失を抑える。\n\n実効果: 次Tierノードの取得条件を解放",
+                        "icon":  {
+                                     "type":  "item",
+                                     "data":  {
+                                                  "item":  "minecraft:wheat_seeds"
+                                              }
+                                 },
+                        "frame":  {
+                                      "type":  "advancement",
+                                      "data":  {
+                                                   "frame":  "task"
+                                               }
+                                  },
+                        "cost":  1,
+                        "rewards":  [
+                                        {
+                                            "type":  "puffish_skills:tag",
+                                            "data":  {
+                                                         "tag":  "dz_growth_livelihood_seed_keeper"
+                                                     }
+                                        }
+                                    ],
+                        "required_spent_points":  3
+                    },
+    "team_meal":  {
+                      "title":  "チームミール",
+                      "description":  "Tier 3 / 必要消費SP 6\n仲間へ持続的な補助を与える料理を解禁する。\n\n実効果: 次Tierノードの取得条件を解放",
+                      "icon":  {
+                                   "type":  "item",
+                                   "data":  {
+                                                "item":  "minecraft:rabbit_stew"
+                                            }
+                               },
+                      "frame":  {
+                                    "type":  "advancement",
+                                    "data":  {
+                                                 "frame":  "goal"
+                                             }
+                                },
+                      "cost":  2,
+                      "rewards":  [
+                                      {
+                                          "type":  "puffish_skills:tag",
+                                          "data":  {
+                                                       "tag":  "dz_growth_livelihood_team_meal"
+                                                   }
+                                      }
+                                  ],
+                      "required_spent_points":  6
+                  },
+    "trophy_angler":  {
+                          "title":  "トロフィーアングラー",
+                          "description":  "Tier 3 / 必要消費SP 6\n大型・希少魚を狙う専門家になる。\n\n実効果: 次Tierノードの取得条件を解放",
+                          "icon":  {
+                                       "type":  "item",
+                                       "data":  {
+                                                    "item":  "minecraft:pufferfish"
+                                                }
+                                   },
+                          "frame":  {
+                                        "type":  "advancement",
+                                        "data":  {
+                                                     "frame":  "goal"
+                                                 }
+                                    },
+                          "cost":  2,
+                          "rewards":  [
+                                          {
+                                              "type":  "puffish_skills:tag",
+                                              "data":  {
+                                                           "tag":  "dz_growth_livelihood_trophy_angler"
+                                                       }
+                                          }
+                                      ],
+                          "required_spent_points":  6
+                      },
+    "field_kitchen":  {
+                          "title":  "自給拠点",
+                          "description":  "Tier 3 / 必要消費SP 6\n農業と調理を連携し拠点補給を強化する。\n\n実効果: 次Tierノードの取得条件を解放",
+                          "icon":  {
+                                       "type":  "item",
+                                       "data":  {
+                                                    "item":  "minecraft:hay_block"
+                                                }
+                                   },
+                          "frame":  {
+                                        "type":  "advancement",
+                                        "data":  {
+                                                     "frame":  "goal"
+                                                 }
+                                    },
+                          "cost":  2,
+                          "rewards":  [
+                                          {
+                                              "type":  "puffish_skills:tag",
+                                              "data":  {
+                                                           "tag":  "dz_growth_livelihood_field_kitchen"
+                                                       }
+                                          }
+                                      ],
+                          "required_spent_points":  6
+                      },
+    "master_chef":  {
+                        "title":  "野戦料理長",
+                        "description":  "Tier 5 / 必要消費SP 9\n料理とチーム補給を完成させる。\n\n実効果: LIVELIHOOD XP +20% / チーム料理系を強化",
+                        "icon":  {
+                                     "type":  "item",
+                                     "data":  {
+                                                  "item":  "minecraft:golden_carrot"
+                                              }
+                                 },
+                        "frame":  {
+                                      "type":  "advancement",
+                                      "data":  {
+                                                   "frame":  "challenge"
+                                               }
+                                  },
+                        "cost":  3,
+                        "rewards":  [
+                                        {
+                                            "type":  "puffish_skills:tag",
+                                            "data":  {
+                                                         "tag":  "dz_growth_livelihood_master_chef"
+                                                     }
+                                        }
+                                    ],
+                        "required_spent_points":  9
+                    },
+    "master_angler":  {
+                          "title":  "水域の主",
+                          "description":  "Tier 5 / 必要消費SP 9\n大型魚・希少魚を狙う釣り特化を完成させる。\n\n実効果: LIVELIHOOD XP +25% / 希少釣果系を強化",
+                          "icon":  {
+                                       "type":  "item",
+                                       "data":  {
+                                                    "item":  "minecraft:heart_of_the_sea"
+                                                }
+                                   },
+                          "frame":  {
+                                        "type":  "advancement",
+                                        "data":  {
+                                                     "frame":  "challenge"
+                                                 }
+                                    },
+                          "cost":  3,
+                          "rewards":  [
+                                          {
+                                              "type":  "puffish_skills:tag",
+                                              "data":  {
+                                                           "tag":  "dz_growth_livelihood_master_angler"
+                                                       }
+                                          }
+                                      ],
+                          "required_spent_points":  9
+                      },
+    "master_farmer":  {
+                          "title":  "拠点農務主任",
+                          "description":  "Tier 5 / 必要消費SP 9\n農業と持続的な食料生産を完成させる。\n\n実効果: LIVELIHOOD XP +20% / 農業収量系を強化",
+                          "icon":  {
+                                       "type":  "item",
+                                       "data":  {
+                                                    "item":  "minecraft:golden_hoe"
+                                                }
+                                   },
+                          "frame":  {
+                                        "type":  "advancement",
+                                        "data":  {
+                                                     "frame":  "challenge"
+                                                 }
+                                    },
+                          "cost":  3,
+                          "rewards":  [
+                                          {
+                                              "type":  "puffish_skills:tag",
+                                              "data":  {
+                                                           "tag":  "dz_growth_livelihood_master_farmer"
+                                                       }
+                                          }
+                                      ],
+                          "required_spent_points":  9
+                      }
+}

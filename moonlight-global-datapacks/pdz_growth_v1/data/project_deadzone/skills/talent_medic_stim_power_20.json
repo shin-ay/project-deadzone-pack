@@ -1,0 +1,31 @@
+﻿{
+    "id":  "project_deadzone:talent_medic_stim_power_20",
+    "bonuses":  [
+
+                ],
+    "requirements":  [
+
+                     ],
+    "directConnections":  [
+                              "project_deadzone:talent_medic_stim_power_19"
+                          ],
+    "longConnections":  [
+
+                        ],
+    "oneWayConnections":  [
+
+                          ],
+    "tags":  [
+                 "pdz_talent_stim",
+                 "pdz_talent_doctrine_path",
+                 "pdz_doctrine_path_power",
+                 "pdz_node_talent_medic_stim_power_20"
+             ],
+    "backgroundTexture":  "skilltree:textures/icons/background/notable.png",
+    "iconTexture":  "skilltree:textures/icons/potion_green.png",
+    "borderTexture":  "skilltree:textures/tooltip/lesser.png",
+    "positionX":  1195.64,
+    "positionY":  221.6,
+    "buttonSize":  22,
+    "isStartingPoint":  false
+}

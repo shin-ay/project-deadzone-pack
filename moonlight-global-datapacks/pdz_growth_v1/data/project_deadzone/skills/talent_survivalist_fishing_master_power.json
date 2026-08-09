@@ -1,0 +1,32 @@
+﻿{
+    "id":  "project_deadzone:talent_survivalist_fishing_master_power",
+    "bonuses":  [
+
+                ],
+    "requirements":  [
+
+                     ],
+    "directConnections":  [
+                              "project_deadzone:talent_survivalist_fishing_15"
+                          ],
+    "longConnections":  [
+
+                        ],
+    "oneWayConnections":  [
+
+                          ],
+    "tags":  [
+                 "pdz_talent_fishing",
+                 "pdz_talent_mastery",
+                 "pdz_mastery_survivalist_fishing",
+                 "pdz_master_power",
+                 "pdz_node_talent_survivalist_fishing_master_power"
+             ],
+    "backgroundTexture":  "skilltree:textures/icons/background/keystone.png",
+    "iconTexture":  "skilltree:textures/icons/fishing_rod_gold.png",
+    "borderTexture":  "skilltree:textures/tooltip/lesser.png",
+    "positionX":  -714.49,
+    "positionY":  678.03,
+    "buttonSize":  32,
+    "isStartingPoint":  false
+}

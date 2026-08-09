@@ -1,0 +1,45 @@
+﻿{
+    "id":  "project_deadzone:talent_survivalist_hunting_master_utility",
+    "bonuses":  [
+                    {
+                        "type":  "skilltree:attribute",
+                        "attribute":  "minecraft:generic.attack_speed",
+                        "id":  "df73c253-fcd5-9140-2726-c71abebc92ff",
+                        "name":  "PROJECT DEADZONE Talent",
+                        "amount":  0.002,
+                        "operation":  1,
+                        "player_multiplier":  {
+                                                  "type":  "skilltree:none"
+                                              },
+                        "player_condition":  {
+                                                 "type":  "skilltree:none"
+                                             }
+                    }
+                ],
+    "requirements":  [
+
+                     ],
+    "directConnections":  [
+                              "project_deadzone:talent_survivalist_hunting_15"
+                          ],
+    "longConnections":  [
+
+                        ],
+    "oneWayConnections":  [
+
+                          ],
+    "tags":  [
+                 "pdz_talent_hunting",
+                 "pdz_talent_mastery",
+                 "pdz_mastery_survivalist_hunting",
+                 "pdz_master_utility",
+                 "pdz_node_talent_survivalist_hunting_master_utility"
+             ],
+    "backgroundTexture":  "skilltree:textures/icons/background/keystone.png",
+    "iconTexture":  "skilltree:textures/icons/bone.png",
+    "borderTexture":  "skilltree:textures/tooltip/lesser.png",
+    "positionX":  -857.3,
+    "positionY":  485.04,
+    "buttonSize":  32,
+    "isStartingPoint":  false
+}

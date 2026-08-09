@@ -1,0 +1,14 @@
+{
+  "type":"minecraft:chest",
+  "pools":[{
+    "rolls":{"min":4,"max":6},
+    "entries":[
+      {"type":"minecraft:item","name":"mts:mtsofficialpack.nuts","weight":12,"functions":[{"function":"minecraft:set_count","count":{"min":4,"max":10}}]},
+      {"type":"minecraft:item","name":"mts:mtsofficialpack.piston","weight":10,"functions":[{"function":"minecraft:set_count","count":{"min":2,"max":4}}]},
+        {"type":"minecraft:item","name":"mts:mtsofficialpack.repairkit","weight":8},
+        {"type":"minecraft:item","name":"mts:mtsofficialpack.sparkplug","weight":5},
+        {"type":"minecraft:item","name":"mts:mtsofficialpack.blowtorch","weight":4},
+      {"type":"minecraft:item","name":"minecraft:iron_ingot","weight":7,"functions":[{"function":"minecraft:set_count","count":{"min":2,"max":5}}]}
+    ]
+  }]
+}

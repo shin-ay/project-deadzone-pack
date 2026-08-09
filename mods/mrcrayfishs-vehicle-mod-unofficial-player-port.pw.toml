@@ -1,0 +1,13 @@
+name = "ItsUniqueGamer's Mrcrayfish's Vehicle unofficial port"
+filename = "vehicle-mod-26w30b.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "c32a8295d4772c536b27bafac0658530458adea9"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 8511784
+project-id = 1341459

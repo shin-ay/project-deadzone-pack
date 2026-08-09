@@ -1,0 +1,43 @@
+{
+    "salvage_basics":  {
+                           "x":  0,
+                           "y":  160,
+                           "definition":  "salvage_basics",
+                           "root":  true
+                       },
+    "quick_hands":  {
+                        "x":  0,
+                        "y":  80,
+                        "definition":  "quick_hands"
+                    },
+    "urban_eye":  {
+                      "x":  "-128",
+                      "y":  0,
+                      "definition":  "urban_eye"
+                  },
+    "pack_rat":  {
+                     "x":  128,
+                     "y":  0,
+                     "definition":  "pack_rat"
+                 },
+    "rare_finder":  {
+                        "x":  "-128",
+                        "y":  "-96",
+                        "definition":  "rare_finder"
+                    },
+    "heavy_hauler":  {
+                         "x":  128,
+                         "y":  "-96",
+                         "definition":  "heavy_hauler"
+                     },
+    "master_appraiser":  {
+                             "x":  "-128",
+                             "y":  "-208",
+                             "definition":  "master_appraiser"
+                         },
+    "master_hauler":  {
+                          "x":  128,
+                          "y":  "-208",
+                          "definition":  "master_hauler"
+                      }
+}

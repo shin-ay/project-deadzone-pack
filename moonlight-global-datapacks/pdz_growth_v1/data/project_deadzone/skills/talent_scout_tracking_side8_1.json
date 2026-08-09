@@ -1,0 +1,30 @@
+﻿{
+    "id":  "project_deadzone:talent_scout_tracking_side8_1",
+    "bonuses":  [
+
+                ],
+    "requirements":  [
+
+                     ],
+    "directConnections":  [
+                              "project_deadzone:talent_scout_tracking_8"
+                          ],
+    "longConnections":  [
+
+                        ],
+    "oneWayConnections":  [
+
+                          ],
+    "tags":  [
+                 "pdz_talent_tracking",
+                 "pdz_talent_optional_end",
+                 "pdz_node_talent_scout_tracking_side8_1"
+             ],
+    "backgroundTexture":  "skilltree:textures/icons/background/lesser.png",
+    "iconTexture":  "skilltree:textures/icons/eye_green.png",
+    "borderTexture":  "skilltree:textures/tooltip/lesser.png",
+    "positionX":  -286.04,
+    "positionY":  -516.03,
+    "buttonSize":  16,
+    "isStartingPoint":  false
+}

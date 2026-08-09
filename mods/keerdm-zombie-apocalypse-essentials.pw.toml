@@ -1,0 +1,13 @@
+name = "Keerdm's Zombie Apocalypse Essentials"
+filename = "Keerdm Zombie Apocalypse Essentials (TACZ) 1.42.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "0bbdc50e6eee9991ac453767e0bb73796417939e"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 7740113
+project-id = 1061079

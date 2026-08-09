@@ -1,0 +1,31 @@
+{
+  "minfloors": 4,
+  "maxfloors": 4,
+  "mincellars": 0,
+  "maxcellars": 0,
+  "allowDoors": false,
+  "filler": "#",
+  "rubble": "}",
+  "parts": [
+    {
+      "part": "lostcities:deadzone_apn_mansion_2_1_0",
+      "floor": 0
+    },
+    {
+      "part": "lostcities:deadzone_apn_mansion_2_1_1",
+      "floor": 1
+    },
+    {
+      "part": "lostcities:deadzone_apn_mansion_2_1_2",
+      "floor": 2
+    },
+    {
+      "part": "lostcities:deadzone_apn_mansion_2_1_3",
+      "floor": 3
+    },
+    {
+      "part": "lostcities:deadzone_apn_mansion_2_1_4",
+      "floor": 4
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+    "livelihood_basics":  {
+                              "x":  0,
+                              "y":  160,
+                              "definition":  "livelihood_basics",
+                              "root":  true
+                          },
+    "cook":  {
+                 "x":  "-192",
+                 "y":  64,
+                 "definition":  "cook"
+             },
+    "angler":  {
+                   "x":  0,
+                   "y":  64,
+                   "definition":  "angler"
+               },
+    "farmer":  {
+                   "x":  192,
+                   "y":  64,
+                   "definition":  "farmer"
+               },
+    "preservation":  {
+                         "x":  "-192",
+                         "y":  "-32",
+                         "definition":  "preservation"
+                     },
+    "fish_reader":  {
+                        "x":  0,
+                        "y":  "-32",
+                        "definition":  "fish_reader"
+                    },
+    "seed_keeper":  {
+                        "x":  192,
+                        "y":  "-32",
+                        "definition":  "seed_keeper"
+                    },
+    "team_meal":  {
+                      "x":  "-192",
+                      "y":  "-128",
+                      "definition":  "team_meal"
+                  },
+    "trophy_angler":  {
+                          "x":  0,
+                          "y":  "-128",
+                          "definition":  "trophy_angler"
+                      },
+    "field_kitchen":  {
+                          "x":  192,
+                          "y":  "-128",
+                          "definition":  "field_kitchen"
+                      },
+    "master_chef":  {
+                        "x":  "-192",
+                        "y":  "-240",
+                        "definition":  "master_chef"
+                    },
+    "master_angler":  {
+                          "x":  0,
+                          "y":  "-240",
+                          "definition":  "master_angler"
+                      },
+    "master_farmer":  {
+                          "x":  192,
+                          "y":  "-240",
+                          "definition":  "master_farmer"
+                      }
+}

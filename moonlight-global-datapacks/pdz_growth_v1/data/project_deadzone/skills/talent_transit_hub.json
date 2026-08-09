@@ -1,0 +1,42 @@
+﻿{
+    "id":  "project_deadzone:talent_transit_hub",
+    "bonuses":  [
+                    {
+                        "type":  "skilltree:attribute",
+                        "attribute":  "minecraft:generic.movement_speed",
+                        "id":  "bca7251f-2a75-9cdc-1964-ca3241310979",
+                        "name":  "PROJECT DEADZONE Talent",
+                        "amount":  0.0015,
+                        "operation":  1,
+                        "player_multiplier":  {
+                                                  "type":  "skilltree:none"
+                                              },
+                        "player_condition":  {
+                                                 "type":  "skilltree:none"
+                                             }
+                    }
+                ],
+    "requirements":  [
+
+                     ],
+    "directConnections":  [
+
+                          ],
+    "longConnections":  [
+
+                        ],
+    "oneWayConnections":  [
+
+                          ],
+    "tags":  [
+                 "pdz_talent_transit_hub",
+                 "pdz_node_talent_transit_hub"
+             ],
+    "backgroundTexture":  "skilltree:textures/icons/background/notable.png",
+    "iconTexture":  "skilltree:textures/icons/heart_cyan.png",
+    "borderTexture":  "skilltree:textures/tooltip/lesser.png",
+    "positionX":  0,
+    "positionY":  0,
+    "buttonSize":  22,
+    "isStartingPoint":  true
+}

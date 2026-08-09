@@ -1,0 +1,128 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "deadzone_tutorial_01"
+	group: "51DC04D9192698A6"
+	icon: "ftbquests:book"
+	id: "7E21D5F11DE90362"
+	order_index: 0
+	quest_links: [ ]
+	quests: [
+		{
+			description: [
+				"PROJECT DEADZONEへようこそ。最初から全てを覚える必要はない。"
+				"まずJOBを選び、Survivor Campへ移動して装備と身体状態を確認しよう。"
+				"TAB：インベントリ / K：スキル / M：マップ / R：銃のリロード"
+			]
+			icon: "minecraft:recovery_compass"
+			id: "766FE33E74D2F108"
+			rewards: [{
+				id: "770125E7683E5304"
+				item: "minecraft:bread"
+				type: "item"
+			}]
+			tasks: [{
+				id: "1DA47AE1F5822908"
+				title: "ワールドへ参加した"
+				type: "custom"
+			}]
+			title: "生存者登録"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			description: [
+				"JOBは初期装備だけでなく、成長しやすい技能とパーティー内の役割を決める。"
+				"選択後も基礎技能と派生パークによって自分の遊び方を伸ばせる。"
+			]
+			icon: {
+				Count: 1
+				id: "minecraft:crossbow"
+				tag: {
+					Damage: 0
+				}
+			}
+			id: "7F38ED70B0F58477"
+			tasks: [{
+				id: "256672661AFD20B8"
+				title: "JOBを選択した"
+				type: "custom"
+			}]
+			title: "JOBを選ぶ"
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			description: [
+				"キャンプには取引、買取、Buddy雇用、サブクエスト、物資納品の担当者がいる。"
+				"序盤はキャンプ周辺が比較的安全だが、T1ボス討伐後は襲撃対象になる。"
+			]
+			icon: "minecraft:campfire"
+			id: "22F49EBF5BDC1FC1"
+			tasks: [{
+				id: "77FD35139430D844"
+				title: "Survivor Campへ到着した"
+				type: "custom"
+			}]
+			title: "活動拠点"
+			x: 4.0d
+			y: 0.0d
+		}
+		{
+			description: [
+				"水分、部位ダメージ、重量は通常HPとは別に管理される。"
+				"部位を治療し、水分を補給し、重い戦利品はバックパックや車両へ移そう。"
+				"探索準備は一度条件を満たせば、物資を収納しても達成状態が維持される。"
+			]
+			icon: "apocalypsenow:bandage"
+			id: "583CB8089686659D"
+			tasks: [{
+				id: "686E8959811429E1"
+				title: "探索準備を整えた"
+				type: "custom"
+			}]
+			title: "身体と物資の管理"
+			x: 6.0d
+			y: 0.0d
+		}
+		{
+			description: [
+				"死亡時は墓石に装備が保管され、Curiosスロットの装備も回収対象になる。"
+				"パーティーでは単独行動を避け、負傷・ダウンした仲間を優先して救助しよう。"
+			]
+			icon: "sophisticatedbackpacks:backpack"
+			id: "48EE6E011A263CC6"
+			rewards: [
+				{
+					count: 3
+					id: "028065CE0A2AB79A"
+					item: "apocalypsenow:money"
+					type: "item"
+				}
+				{
+					id: "7894750A39FD9B6F"
+					type: "xp"
+					xp: 5
+				}
+			]
+			tasks: [
+				{
+					consume_items: false
+					id: "59841E1496D31F19"
+					item: "sophisticatedbackpacks:backpack"
+					type: "item"
+				}
+				{
+					consume_items: false
+					id: "695FC41E3E751273"
+					item: "minecraft:compass"
+					type: "item"
+				}
+			]
+			title: "遠征の準備"
+			x: 8.0d
+			y: 0.0d
+		}
+	]
+	title: "生存者チュートリアル"
+}

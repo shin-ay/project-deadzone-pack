@@ -1,0 +1,29 @@
+﻿{
+    "id":  "project_deadzone:talent_survivalist_fishing_4",
+    "bonuses":  [
+
+                ],
+    "requirements":  [
+
+                     ],
+    "directConnections":  [
+                              "project_deadzone:talent_survivalist_fishing_3"
+                          ],
+    "longConnections":  [
+
+                        ],
+    "oneWayConnections":  [
+
+                          ],
+    "tags":  [
+                 "pdz_talent_fishing",
+                 "pdz_node_talent_survivalist_fishing_4"
+             ],
+    "backgroundTexture":  "skilltree:textures/icons/background/notable.png",
+    "iconTexture":  "skilltree:textures/icons/fishing_rod_gold.png",
+    "borderTexture":  "skilltree:textures/tooltip/lesser.png",
+    "positionX":  -318.49,
+    "positionY":  276.86,
+    "buttonSize":  22,
+    "isStartingPoint":  false
+}

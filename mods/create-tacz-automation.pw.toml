@@ -1,0 +1,13 @@
+name = "Create: TaCZ Automation"
+filename = "createtaczauto-1.5.1-forge-1.20.1.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "0f7a7697a8f884a5524fc50f633c28c8b0f1dd77"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 6844334
+project-id = 1084197

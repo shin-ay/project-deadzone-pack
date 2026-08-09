@@ -1,0 +1,45 @@
+﻿{
+    "id":  "project_deadzone:talent_survivalist_farming_master_utility",
+    "bonuses":  [
+                    {
+                        "type":  "skilltree:attribute",
+                        "attribute":  "minecraft:generic.movement_speed",
+                        "id":  "5e977c37-9530-c79e-9b60-1073b65595ca",
+                        "name":  "PROJECT DEADZONE Talent",
+                        "amount":  0.0015,
+                        "operation":  1,
+                        "player_multiplier":  {
+                                                  "type":  "skilltree:none"
+                                              },
+                        "player_condition":  {
+                                                 "type":  "skilltree:none"
+                                             }
+                    }
+                ],
+    "requirements":  [
+
+                     ],
+    "directConnections":  [
+                              "project_deadzone:talent_survivalist_farming_15"
+                          ],
+    "longConnections":  [
+
+                        ],
+    "oneWayConnections":  [
+
+                          ],
+    "tags":  [
+                 "pdz_talent_farming",
+                 "pdz_talent_mastery",
+                 "pdz_mastery_survivalist_farming",
+                 "pdz_master_utility",
+                 "pdz_node_talent_survivalist_farming_master_utility"
+             ],
+    "backgroundTexture":  "skilltree:textures/icons/background/keystone.png",
+    "iconTexture":  "skilltree:textures/icons/apple_green.png",
+    "borderTexture":  "skilltree:textures/tooltip/lesser.png",
+    "positionX":  -678.03,
+    "positionY":  714.49,
+    "buttonSize":  32,
+    "isStartingPoint":  false
+}

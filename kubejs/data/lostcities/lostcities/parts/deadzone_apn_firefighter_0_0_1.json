@@ -1,0 +1,239 @@
+{
+  "xsize": 16,
+  "zsize": 16,
+  "palette": {
+    "palette": [
+      {
+        "char": "",
+        "block": "minecraft:air"
+      },
+      {
+        "char": "",
+        "block": "minecraft:red_concrete"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:redconcretebricks"
+      },
+      {
+        "char": "",
+        "block": "minecraft:yellow_concrete"
+      },
+      {
+        "char": "",
+        "block": "minecraft:bookshelf",
+        "loot": "project_deadzone:chests/generic_low_filled"
+      },
+      {
+        "char": "",
+        "block": "minecraft:gray_concrete"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:paperstrash[facing=west]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:cobweb"
+      },
+      {
+        "char": "",
+        "block": "minecraft:oak_leaves[distance=7,persistent=true,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:stone_stairs[facing=west,half=bottom,shape=straight,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:dark_oak_trapdoor[facing=east,half=bottom,open=true,powered=false,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:iron_bars[east=false,north=false,south=false,waterlogged=false,west=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:smooth_stone"
+      },
+      {
+        "char": "",
+        "block": "minecraft:polished_andesite_stairs[facing=east,half=bottom,shape=straight,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:papertrash[facing=south]"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:papertrash[facing=west]"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:papertrash[facing=north]"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:papertrashvariant[facing=east]"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:pallet[waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:trash_bin",
+        "tag": {
+          "Items": [],
+          "id": "apocalypsenow:trash_bin"
+        }
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:paperstrashvariant_2[facing=west]"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:papertrash[facing=east]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:glass_pane[east=false,north=false,south=false,waterlogged=false,west=true]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:glass_pane[east=true,north=false,south=false,waterlogged=false,west=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:glass_pane[east=true,north=false,south=false,waterlogged=false,west=true]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:glass_pane[east=false,north=true,south=true,waterlogged=false,west=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:glass_pane[east=false,north=true,south=false,waterlogged=false,west=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:glass_pane[east=false,north=false,south=true,waterlogged=false,west=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:polished_andesite_slab[type=top,waterlogged=false]"
+      }
+    ]
+  },
+  "slices": [
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  ]
+}

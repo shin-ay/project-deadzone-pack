@@ -1,0 +1,213 @@
+Mechanics Lv0～10
+
+Mechanicsは単純な「修理速度+○%」だけではなく、レベルによって扱える修理の範囲が広がる設計が合う。
+
+Lv	能力イメージ
+0	車の知識なし。運転はできるが本格整備不可
+1	タイヤ交換など簡単な作業
+2	基本部品の交換・状態確認
+3	一般車の基本整備・軽度故障修理
+4	修理速度・部品回収効率向上
+5	エンジンなど主要部品の整備
+6	中度～重度故障への対応
+7	トラック・バス・大型車整備
+8	警察・救急・消防など特殊車両整備
+9	重度損傷部品の修復・高効率部品回収
+10	ほぼ全車両を完全整備可能
+
+Mechanicジョブなら Mechanics Lv3スタートなので、
+
+「タイヤがないから交換する」
+
+程度は最初からできる。
+
+他職でもLv0だから車に一切触れない、にはしたくない。運転や給油くらいは誰でもできるけど、修理にはMechanicsが必要という線引きがよさそう。
+
+廃車システムとの連携
+
+今のAutomatic Wreckがここで活きる。
+
+例えば見つけた車が、
+
+HEAVY WRECK
+
+タイヤ ×2欠損
+燃料なし
+エンジン故障
+
+だった場合。
+
+Mechanics Lv1なら、
+
+✓ タイヤ交換
+✕ エンジン修理
+
+Mechanics Lv5なら、
+
+✓ タイヤ交換
+✓ エンジン修理
+✓ 部品交換
+
+という感じ。
+
+つまり廃車の状態によって必要Mechanicsレベルが違う。
+
+これなら、前に作った LIGHT / MEDIUM / HEAVY / SALVAGE にも意味を持たせられる。
+
+SALVAGEは特別扱いしたい
+
+例えば、
+
+LIGHT → Mechanics 1～2
+MEDIUM → Mechanics 3～4
+HEAVY → Mechanics 5～6
+SALVAGE → 通常は部品取り
+
+くらい。
+
+SALVAGE車両は一般プレイヤーには「直す車」ではなく部品を取る車になる。
+
+Specialist：Master Mechanic
+
+ここで一気に変える。
+
+Master MechanicだけはSALVAGE判定の車両すら復活可能。
+
+これを目玉能力にしたい。
+
+SALVAGE
+
+一般プレイヤー
+→ 部品取りにしか使えない
+
+Mechanics Lv10
+→ 高度な部品回収は可能
+
+MASTER MECHANIC
+→ 時間と大量の部品があれば
+   車両そのものを復活可能
+
+これならSpecialistらしい。
+
+さらに資源効率能力として Parts Conservation を付ける。
+
+MASTER MECHANIC
+
+Mechanics Lv10永久保証
+修理素材消費 -25%
+部品回収時の破損率を大幅軽減
+修理速度 +30%
+SALVAGE車両を復活可能
+特殊車両を完全整備可能
+車両状態を詳細診断
+高度な車両部品の修復/再生
+
+特に部品回収は面白い。
+
+一般プレイヤーが廃車からタイヤを取った場合、
+
+タイヤ回収
+↓
+状態 55%
+
+Mechanics Lv10なら、
+
+↓
+状態 80%
+
+Master Mechanicなら、
+
+↓
+状態 95～100%
+
+みたいにできれば、廃車巡りそのものがMechanicの仕事になる。
+
+車を「作る」のはEngineerと分ける
+
+ここは今後重要。
+
+Mechanics
+→ 既存の車を維持・修復する
+
+Engineering
+→ 機械・設備・インフラを作る
+
+に分けたい。
+
+なのでMaster MechanicだからCreateやImmersive Engineeringまで全部得意、にはしない。
+
+逆にChief Engineerも車両のエンジン修理は苦手。
+
+マルチなら、
+
+Master Mechanic
+「この消防車なら直せる」
+
+Chief Engineer
+「じゃあガレージと給油設備を作る」
+
+Scavenger
+「必要な部品探してくる」
+
+みたいな役割分担が自然に成立する。
+
+Specialist Challenge
+
+Master Mechanicは例えば、
+
+Mechanics Lv10 + 車両修理100回 + タイヤ交換50回 + エンジン修理25回 + HEAVY車両を一定数復旧
+
+そして最終試験として、
+
+SALVAGE状態の車を1台完全復旧
+
+にするとかなりテーマに合う。
+
+これを達成して初めて Master Mechanic を選択可能。
+
+これなら今まで作った車両システムが、単なる景観要素じゃなくてキャラクター育成の主要コンテンツになる。
+
+車を「作る」のはEngineerと分ける
+
+ここは今後重要。
+
+Mechanics
+→ 既存の車を維持・修復する
+
+Engineering
+→ 機械・設備・インフラを作る
+
+に分けたい。
+
+なのでMaster MechanicだからCreateやImmersive Engineeringまで全部得意、にはしない。
+
+逆にChief Engineerも車両のエンジン修理は苦手。
+
+マルチなら、
+
+Master Mechanic
+「この消防車なら直せる」
+
+Chief Engineer
+「じゃあガレージと給油設備を作る」
+
+Scavenger
+「必要な部品探してくる」
+
+みたいな役割分担が自然に成立する。
+
+Specialist Challenge
+
+Master Mechanicは例えば、
+
+Mechanics Lv10 + 車両修理100回 + タイヤ交換50回 + エンジン修理25回 + HEAVY車両を一定数復旧
+
+そして最終試験として、
+
+SALVAGE状態の車を1台完全復旧
+
+にするとかなりテーマに合う。
+
+これを達成して初めて Master Mechanic を選択可能。
+
+これなら今まで作った車両システムが、単なる景観要素じゃなくてキャラクター育成の主要コンテンツになる。

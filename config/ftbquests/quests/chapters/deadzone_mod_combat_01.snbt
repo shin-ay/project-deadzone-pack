@@ -1,0 +1,104 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "deadzone_mod_combat_01"
+	group: "51DC04D9192698A6"
+	icon: {
+		Count: 1
+		id: "minecraft:crossbow"
+		tag: {
+			Damage: 0
+		}
+	}
+	id: "2C6878FEF638BF8D"
+	order_index: 9
+	quest_links: [ ]
+	quests: [
+		{
+			description: ["銃は本体だけでは使えない。対応弾薬、マガジン、リロード操作を確認しよう。Rでリロード。"]
+			icon: "tacz:modern_kinetic_gun"
+			id: "7542EEC66461563F"
+			tasks: [{
+				consume_items: false
+				id: "7D82F0AF0D65E9FE"
+				item: "tacz:modern_kinetic_gun"
+				type: "item"
+			}]
+			title: "TaCZ：銃器の基本"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			description: ["近接はEpic Fightの攻撃モーション・スタミナ・間合いを使う。銃を持っている時は銃モーションが優先される。"]
+			icon: {
+				Count: 1
+				id: "minecraft:iron_sword"
+				tag: {
+					Damage: 0
+				}
+			}
+			id: "6024D9976052A737"
+			tasks: [{
+				consume_items: false
+				id: "7B1C52E86B3B6B2D"
+				item: {
+					Count: 1
+					id: "minecraft:iron_sword"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			title: "Epic Fight：近接戦闘"
+			x: 2.0d
+			y: -1.0d
+		}
+		{
+			description: ["アーマーは部位ダメージと通常防御の両方に関係する。重量との釣り合いを考えて装備する。"]
+			icon: {
+				Count: 1
+				id: "minecraft:iron_chestplate"
+				tag: {
+					Damage: 0
+				}
+			}
+			id: "2A365C52273808E9"
+			tasks: [{
+				consume_items: false
+				id: "69C3459B515748D4"
+				item: {
+					Count: 1
+					id: "minecraft:iron_chestplate"
+					tag: {
+						Damage: 0
+					}
+				}
+				type: "item"
+			}]
+			title: "防具と重量"
+			x: 2.0d
+			y: 1.0d
+		}
+		{
+			description: ["Simple Enemiesの敵兵には低確率で光るElite個体が混ざる。通常兵より強いが、複数の高価値物資を落とす。"]
+			icon: {
+				Count: 1
+				id: "minecraft:golden_helmet"
+				tag: {
+					Damage: 0
+				}
+			}
+			id: "22B25F7F82A652C8"
+			tasks: [{
+				id: "2F4442897E1CC198"
+				title: "Elite兵を1体撃破した"
+				type: "custom"
+			}]
+			title: "戦場の中ボス"
+			x: 4.0d
+			y: 0.0d
+		}
+	]
+	title: "戦闘訓練"
+}

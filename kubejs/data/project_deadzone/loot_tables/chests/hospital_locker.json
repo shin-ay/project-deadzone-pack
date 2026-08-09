@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": { "type": "minecraft:uniform", "min": 2, "max": 4 },
+      "entries": [
+        { "type": "minecraft:item", "name": "apocalypsenow:bandage", "weight": 8 },
+        { "type": "minecraft:item", "name": "apocalypsenow:pain_killers", "weight": 5 },
+        { "type": "minecraft:item", "name": "minecraft:leather_chestplate", "weight": 4 },
+        { "type": "minecraft:item", "name": "minecraft:iron_ingot", "weight": 4 },
+        { "type": "minecraft:item", "name": "tacz:9mm", "weight": 5 },
+        { "type": "minecraft:item", "name": "tacz:45acp", "weight": 3 },
+        { "type": "minecraft:item", "name": "tacz:glock_17", "weight": 1 }
+      ]
+    }
+  ]
+}

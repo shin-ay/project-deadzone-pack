@@ -1,0 +1,58 @@
+﻿{
+    "id":  "project_deadzone:talent_security_control_utility_18",
+    "bonuses":  [
+                    {
+                        "type":  "skilltree:attribute",
+                        "attribute":  "minecraft:generic.knockback_resistance",
+                        "id":  "a55b6b83-14e5-fa6c-90a5-d76a428f9d10",
+                        "name":  "PROJECT DEADZONE Talent",
+                        "amount":  0.0075,
+                        "operation":  0,
+                        "player_multiplier":  {
+                                                  "type":  "skilltree:none"
+                                              },
+                        "player_condition":  {
+                                                 "type":  "skilltree:none"
+                                             }
+                    },
+                    {
+                        "type":  "skilltree:attribute",
+                        "attribute":  "minecraft:generic.luck",
+                        "id":  "ac7584fd-fbc5-c9cd-e84b-eb22b7da3831",
+                        "name":  "PROJECT DEADZONE Talent",
+                        "amount":  0.1,
+                        "operation":  0,
+                        "player_multiplier":  {
+                                                  "type":  "skilltree:none"
+                                              },
+                        "player_condition":  {
+                                                 "type":  "skilltree:none"
+                                             }
+                    }
+                ],
+    "requirements":  [
+
+                     ],
+    "directConnections":  [
+                              "project_deadzone:talent_security_control_utility_17"
+                          ],
+    "longConnections":  [
+
+                        ],
+    "oneWayConnections":  [
+
+                          ],
+    "tags":  [
+                 "pdz_talent_control",
+                 "pdz_talent_doctrine_path",
+                 "pdz_doctrine_path_utility",
+                 "pdz_node_talent_security_control_utility_18"
+             ],
+    "backgroundTexture":  "skilltree:textures/icons/background/notable.png",
+    "iconTexture":  "skilltree:textures/icons/skull.png",
+    "borderTexture":  "skilltree:textures/tooltip/lesser.png",
+    "positionX":  981.76,
+    "positionY":  -555.45,
+    "buttonSize":  22,
+    "isStartingPoint":  false
+}

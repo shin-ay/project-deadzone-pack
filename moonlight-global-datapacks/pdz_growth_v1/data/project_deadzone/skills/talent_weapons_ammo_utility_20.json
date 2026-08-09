@@ -1,0 +1,44 @@
+﻿{
+    "id":  "project_deadzone:talent_weapons_ammo_utility_20",
+    "bonuses":  [
+                    {
+                        "type":  "skilltree:attribute",
+                        "attribute":  "minecraft:generic.movement_speed",
+                        "id":  "9213d9ca-327f-93f1-f9b1-9c145a14a8fc",
+                        "name":  "PROJECT DEADZONE Talent",
+                        "amount":  0.0015,
+                        "operation":  1,
+                        "player_multiplier":  {
+                                                  "type":  "skilltree:none"
+                                              },
+                        "player_condition":  {
+                                                 "type":  "skilltree:none"
+                                             }
+                    }
+                ],
+    "requirements":  [
+
+                     ],
+    "directConnections":  [
+                              "project_deadzone:talent_weapons_ammo_utility_19"
+                          ],
+    "longConnections":  [
+
+                        ],
+    "oneWayConnections":  [
+
+                          ],
+    "tags":  [
+                 "pdz_talent_ammo",
+                 "pdz_talent_doctrine_path",
+                 "pdz_doctrine_path_utility",
+                 "pdz_node_talent_weapons_ammo_utility_20"
+             ],
+    "backgroundTexture":  "skilltree:textures/icons/background/notable.png",
+    "iconTexture":  "skilltree:textures/icons/arrow_steel.png",
+    "borderTexture":  "skilltree:textures/tooltip/lesser.png",
+    "positionX":  324.96,
+    "positionY":  -1171.77,
+    "buttonSize":  22,
+    "isStartingPoint":  false
+}

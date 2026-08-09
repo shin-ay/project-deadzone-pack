@@ -1,0 +1,44 @@
+﻿{
+    "id":  "project_deadzone:talent_scout_stealth_utility_19",
+    "bonuses":  [
+                    {
+                        "type":  "skilltree:attribute",
+                        "attribute":  "minecraft:generic.luck",
+                        "id":  "a851ae26-1950-ceb8-96ac-f2e8ba610383",
+                        "name":  "PROJECT DEADZONE Talent",
+                        "amount":  0.1,
+                        "operation":  0,
+                        "player_multiplier":  {
+                                                  "type":  "skilltree:none"
+                                              },
+                        "player_condition":  {
+                                                 "type":  "skilltree:none"
+                                             }
+                    }
+                ],
+    "requirements":  [
+
+                     ],
+    "directConnections":  [
+                              "project_deadzone:talent_scout_stealth_utility_18"
+                          ],
+    "longConnections":  [
+
+                        ],
+    "oneWayConnections":  [
+
+                          ],
+    "tags":  [
+                 "pdz_talent_stealth",
+                 "pdz_talent_doctrine_path",
+                 "pdz_doctrine_path_utility",
+                 "pdz_node_talent_scout_stealth_utility_19"
+             ],
+    "backgroundTexture":  "skilltree:textures/icons/background/lesser.png",
+    "iconTexture":  "skilltree:textures/icons/void.png",
+    "borderTexture":  "skilltree:textures/tooltip/lesser.png",
+    "positionX":  -965.88,
+    "positionY":  -663.83,
+    "buttonSize":  16,
+    "isStartingPoint":  false
+}

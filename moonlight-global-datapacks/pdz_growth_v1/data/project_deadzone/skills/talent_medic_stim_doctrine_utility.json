@@ -1,0 +1,45 @@
+﻿{
+    "id":  "project_deadzone:talent_medic_stim_doctrine_utility",
+    "bonuses":  [
+                    {
+                        "type":  "skilltree:attribute",
+                        "attribute":  "minecraft:generic.armor",
+                        "id":  "45764729-94c9-1335-363b-61db61e3e639",
+                        "name":  "PROJECT DEADZONE Talent",
+                        "amount":  0.1,
+                        "operation":  0,
+                        "player_multiplier":  {
+                                                  "type":  "skilltree:none"
+                                              },
+                        "player_condition":  {
+                                                 "type":  "skilltree:none"
+                                             }
+                    }
+                ],
+    "requirements":  [
+
+                     ],
+    "directConnections":  [
+                              "project_deadzone:talent_medic_stim_utility_20"
+                          ],
+    "longConnections":  [
+
+                        ],
+    "oneWayConnections":  [
+
+                          ],
+    "tags":  [
+                 "pdz_talent_stim",
+                 "pdz_talent_doctrine",
+                 "pdz_doctrine_medic_stim",
+                 "pdz_doctrine_utility",
+                 "pdz_node_talent_medic_stim_doctrine_utility"
+             ],
+    "backgroundTexture":  "skilltree:textures/icons/background/keystone.png",
+    "iconTexture":  "skilltree:textures/icons/potion_green.png",
+    "borderTexture":  "skilltree:textures/tooltip/lesser.png",
+    "positionX":  1223.81,
+    "positionY":  339.39,
+    "buttonSize":  32,
+    "isStartingPoint":  false
+}

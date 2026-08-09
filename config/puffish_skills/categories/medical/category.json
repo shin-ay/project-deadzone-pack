@@ -1,0 +1,15 @@
+{
+  "title": "Medical",
+  "description": "基礎ランクを伸ばすか、遊び方を変える専門Perkを選択する医療技術Skill Tree。",
+  "extra_description": "PROJECT DEADZONE 医療技術 Rework Prototype v0.2",
+  "icon": {
+    "type": "item",
+    "data": {
+      "item": "apocalypsenow:bandage"
+    }
+  },
+  "background": "minecraft:textures/gui/advancements/backgrounds/husbandry.png",
+  "unlocked_by_default": true,
+  "starting_points": 0,
+  "exclusive_root": false
+}

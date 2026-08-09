@@ -1,0 +1,59 @@
+﻿{
+    "id":  "project_deadzone:talent_security_melee_doctrine_utility",
+    "bonuses":  [
+                    {
+                        "type":  "skilltree:attribute",
+                        "attribute":  "minecraft:generic.attack_damage",
+                        "id":  "30acdb29-971c-b256-4d0a-f6552f4d52c8",
+                        "name":  "PROJECT DEADZONE Talent",
+                        "amount":  0.0045000000000000005,
+                        "operation":  1,
+                        "player_multiplier":  {
+                                                  "type":  "skilltree:none"
+                                              },
+                        "player_condition":  {
+                                                 "type":  "skilltree:none"
+                                             }
+                    },
+                    {
+                        "type":  "skilltree:attribute",
+                        "attribute":  "minecraft:generic.movement_speed",
+                        "id":  "4582c846-ba4f-3ba3-c23f-d52bfdabcb18",
+                        "name":  "PROJECT DEADZONE Talent",
+                        "amount":  0.0015,
+                        "operation":  1,
+                        "player_multiplier":  {
+                                                  "type":  "skilltree:none"
+                                              },
+                        "player_condition":  {
+                                                 "type":  "skilltree:none"
+                                             }
+                    }
+                ],
+    "requirements":  [
+
+                     ],
+    "directConnections":  [
+                              "project_deadzone:talent_security_melee_utility_20"
+                          ],
+    "longConnections":  [
+
+                        ],
+    "oneWayConnections":  [
+
+                          ],
+    "tags":  [
+                 "pdz_talent_melee_damage",
+                 "pdz_talent_doctrine",
+                 "pdz_doctrine_security_melee",
+                 "pdz_doctrine_utility",
+                 "pdz_node_talent_security_melee_doctrine_utility"
+             ],
+    "backgroundTexture":  "skilltree:textures/icons/background/keystone.png",
+    "iconTexture":  "skilltree:textures/icons/sword_gold.png",
+    "borderTexture":  "skilltree:textures/tooltip/lesser.png",
+    "positionX":  719.34,
+    "positionY":  -1046.64,
+    "buttonSize":  32,
+    "isStartingPoint":  false
+}

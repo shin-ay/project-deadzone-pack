@@ -1,0 +1,29 @@
+﻿{
+    "id":  "project_deadzone:talent_survivor_hazard_8",
+    "bonuses":  [
+
+                ],
+    "requirements":  [
+
+                     ],
+    "directConnections":  [
+                              "project_deadzone:talent_survivor_hazard_7"
+                          ],
+    "longConnections":  [
+
+                        ],
+    "oneWayConnections":  [
+
+                          ],
+    "tags":  [
+                 "pdz_talent_hazard",
+                 "pdz_node_talent_survivor_hazard_8"
+             ],
+    "backgroundTexture":  "skilltree:textures/icons/background/notable.png",
+    "iconTexture":  "skilltree:textures/icons/potion_green.png",
+    "borderTexture":  "skilltree:textures/tooltip/lesser.png",
+    "positionX":  -572.6,
+    "positionY":  40.04,
+    "buttonSize":  22,
+    "isStartingPoint":  false
+}

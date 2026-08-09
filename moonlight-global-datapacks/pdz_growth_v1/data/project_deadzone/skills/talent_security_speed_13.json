@@ -1,0 +1,43 @@
+﻿{
+    "id":  "project_deadzone:talent_security_speed_13",
+    "bonuses":  [
+                    {
+                        "type":  "skilltree:attribute",
+                        "attribute":  "minecraft:generic.attack_speed",
+                        "id":  "39db8f01-4beb-ffd5-9780-0cbfd9c7721e",
+                        "name":  "PROJECT DEADZONE Talent",
+                        "amount":  0.0075,
+                        "operation":  1,
+                        "player_multiplier":  {
+                                                  "type":  "skilltree:none"
+                                              },
+                        "player_condition":  {
+                                                 "type":  "skilltree:none"
+                                             }
+                    }
+                ],
+    "requirements":  [
+
+                     ],
+    "directConnections":  [
+                              "project_deadzone:talent_security_speed_12"
+                          ],
+    "longConnections":  [
+
+                        ],
+    "oneWayConnections":  [
+
+                          ],
+    "tags":  [
+                 "pdz_talent_melee_speed",
+                 "pdz_talent_advanced",
+                 "pdz_node_talent_security_speed_13"
+             ],
+    "backgroundTexture":  "skilltree:textures/icons/background/notable.png",
+    "iconTexture":  "skilltree:textures/icons/sword_iron.png",
+    "borderTexture":  "skilltree:textures/tooltip/lesser.png",
+    "positionX":  545.19,
+    "positionY":  -627.16,
+    "buttonSize":  22,
+    "isStartingPoint":  false
+}

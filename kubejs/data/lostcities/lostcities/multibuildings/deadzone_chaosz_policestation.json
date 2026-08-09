@@ -1,0 +1,16 @@
+{
+  "dimx": 2,
+  "dimz": 3,
+  "buildings": [
+    [
+      "lostcities:deadzone_chaosz_policestation_0_0",
+      "lostcities:deadzone_chaosz_policestation_0_1",
+      "lostcities:deadzone_chaosz_policestation_0_2"
+    ],
+    [
+      "lostcities:deadzone_chaosz_policestation_1_0",
+      "lostcities:deadzone_chaosz_policestation_1_1",
+      "lostcities:deadzone_chaosz_policestation_1_2"
+    ]
+  ]
+}

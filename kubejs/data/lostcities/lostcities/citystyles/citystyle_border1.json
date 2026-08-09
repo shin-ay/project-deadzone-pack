@@ -1,0 +1,342 @@
+{
+  "inherit": "citystyle_config",
+  "style": "standard_border",
+  "buildingsettings": {
+    "maxfloors": 6,
+    "maxcellars": 2,
+    "buildingchance": 0.025
+  },
+  "streetblocks": {
+    "border": "y",
+    "wall": "w",
+    "street": "S",
+    "streetbase": "b",
+    "streetvariant": "B",
+    "parts": {
+      "straight": [
+        "street_straight1_0_0_0",
+        "street_straight2_0_0_0",
+        "street_straight4_0_0_0",
+        "street_straight5_0_0_0",
+        "street_straight6_0_0_0",
+        "street_straight7_0_0_0",
+        "street_straight8_0_0_0",
+        "street_straight9_0_0_0",
+        "street_straight10_0_0_0",
+        "street_straight11_0_0_0",
+        "street_straight12_0_0_0"
+      ],
+      "bend": [
+        "street_bend1_0_0_0",
+        "street_bend2_0_0_0",
+        "street_bend3_0_0_0",
+        "street_bend4_0_0_0",
+        "street_bend5_0_0_0"
+      ],
+      "end": [
+        "street_end1_0_0_0",
+        "street_end2_0_0_0",
+        "street_end3_0_0_0"
+      ],
+      "full": [
+        "street_full1_0_0_0",
+        "street_full2_0_0_0"
+      ],
+      "none": [
+        "street_none1_0_0_0",
+        "street_none2_0_0_0"
+      ],
+      "t": [
+        "street_t1_0_0_0",
+        "street_t2_0_0_0",
+        "street_t3_0_0_0",
+        "street_t4_0_0_0",
+        "street_t5_0_0_0",
+        "street_t6_0_0_0",
+        "street_t7_0_0_0"
+      ],
+      "all": [
+        "street_all1_0_0_0",
+        "street_all2_0_0_0",
+        "street_all3_0_0_0"
+      ]
+    }
+  },
+  "parkblocks": {
+    "elevation": "x"
+  },
+  "corridorblocks": {
+    "roof": "x",
+    "glass": "+"
+  },
+  "railblocks": {
+    "railmain": "y"
+  },
+  "sphereblocks": {
+    "glass": "Z",
+    "border": "9",
+    "inner": "b"
+  },
+  "selectors": {
+    "buildings": [
+      {
+        "factor": 1.0,
+        "value": "building1"
+      }
+    ],
+    "bridges": [
+      {
+        "factor": 1.0,
+        "value": "bridge_open"
+      },
+      {
+        "factor": 1.0,
+        "value": "bridge_covered"
+      }
+    ],
+    "fronts": [
+      {
+        "factor": 0.3,
+        "value": "bus_stop1"
+      },
+      {
+        "factor": 0.3,
+        "value": "bus_stop2"
+      },
+      {
+        "factor": 0.3,
+        "value": "bus_stop3"
+      },
+      {
+        "factor": 1.0,
+        "value": "building_front4empty"
+      }
+    ],
+    "stairs": [
+      {
+        "factor": 1.0,
+        "value": "stairs1"
+      },
+      {
+        "factor": 1.0,
+        "value": "stairs2"
+      },
+      {
+        "factor": 1.0,
+        "value": "stairsnormal"
+      },
+      {
+        "factor": 1.0,
+        "value": "stairsbig"
+      }
+    ],
+    "fountains": [
+      {
+        "factor": 0,
+        "value": "fountain1"
+      },
+      {
+        "factor": 0,
+        "value": "fountain2"
+      },
+      {
+        "factor": 0,
+        "value": "fountain3"
+      }
+    ],
+    "parks": [
+      {
+        "factor": 1.0,
+        "value": "park_pool"
+      },
+      {
+        "factor": 1.0,
+        "value": "park_plants"
+      },
+      {
+        "factor": 1.0,
+        "value": "park_trees"
+      },
+      {
+        "factor": 1.0,
+        "value": "park_plants_pillars"
+      },
+      {
+        "factor": 1.0,
+        "value": "park_fountain1"
+      },
+      {
+        "factor": 1.0,
+        "value": "park_fountain2"
+      },
+      {
+        "factor": 1.0,
+        "value": "park_building"
+      },
+      {
+        "factor": 1.0,
+        "value": "park_building2"
+      }
+    ],
+    "raildungeons": [
+      {
+        "factor": 1.0,
+        "value": "rail_dungeon1"
+      },
+      {
+        "factor": 1.0,
+        "value": "rail_dungeon2"
+      }
+    ],
+    "multibuildings": [
+      {
+        "factor": 0.005,
+        "value": "lostcities:tallbuilding2"
+      },
+      {
+        "factor": 0.02,
+        "value": "lostcities:firestation12"
+      },
+      {
+        "factor": 0.05,
+        "value": "lostcities:smallshop"
+      },
+      {
+        "factor": 0.05,
+        "value": "lostcities:deadzone_gunstore"
+      },
+      {
+        "factor": 0.005,
+        "value": "lostcities:massivebuildingwithhelicopter"
+      },
+      {
+        "factor": 0,
+        "value": "lostcities:crashedhelicopter2"
+      },
+      {
+        "factor": 0.05,
+        "value": "lostcities:4buildingsrow"
+      },
+      {
+        "factor": 0.02,
+        "value": "lostcities:observatory"
+      },
+      {
+        "factor": 0.005,
+        "value": "lostcities:mediumbuildingczp1"
+      },
+      {
+        "factor": 0.005,
+        "value": "lostcities:skyscraper"
+      },
+      {
+        "factor": 0.005,
+        "value": "lostcities:skyscraper1"
+      },
+      {
+        "factor": 0.005,
+        "value": "lostcities:hugebuilding1"
+      },
+      {
+        "factor": 0.05,
+        "value": "lostcities:gasstation1"
+      },
+      {
+        "factor": 0.005,
+        "value": "lostcities:hugebuilding2"
+      },
+      {
+        "factor": 0,
+        "value": "lostcities:scatteredhouse1"
+      },
+      {
+        "factor": 0.025,
+        "value": "lostcities:shop2"
+      },
+      {
+        "factor": 0.01,
+        "value": "lostcities:shop3"
+      },
+      {
+        "factor": 0.05,
+        "value": "lostcities:walmart2"
+      },
+      {
+        "factor": 0.008,
+        "value": "lostcities:gianthospital"
+      },
+      {
+        "factor": 0.01,
+        "value": "lostcities:bigmall"
+      },
+      {
+        "factor": 0.01,
+        "value": "lostcities:deadzone_chaosz_policestation"
+      },
+      {
+        "factor": 0.5,
+        "value": "lostcities:subhousel3ya_1_2_combo"
+      },
+      {
+        "factor": 0.3,
+        "value": "lostcities:subhousel3ya_3_bend_street"
+      },
+      {
+        "factor": 0.3,
+        "value": "lostcities:subhousel3ya_4_and_5_combo"
+      },
+      {
+        "factor": 0.3,
+        "value": "lostcities:subhousel3ya_3_6_7_8_9_structurebundel"
+      },
+      {
+        "factor": 0.1,
+        "value": "lostcities:floodedmalll3ya"
+      },
+      {
+        "factor": 0.002,
+        "value": "wd1imp"
+      },
+      {
+        "factor": 0.01,
+        "value": "lostcities:bufschooll3ya"
+      },
+      {
+        "factor": 0.012,
+        "value": "lostcities:deadzone_apn_apartament"
+      },
+      {
+        "factor": 0.008,
+        "value": "lostcities:deadzone_apn_clinic"
+      },
+      {
+        "factor": 0.008,
+        "value": "lostcities:deadzone_apn_firefighter"
+      },
+      {
+        "factor": 0.025,
+        "value": "lostcities:deadzone_apn_house"
+      },
+      {
+        "factor": 0.004,
+        "value": "lostcities:deadzone_apn_mansion"
+      },
+      {
+        "factor": 0.018,
+        "value": "lostcities:deadzone_apn_market"
+      },
+      {
+        "factor": 0.014,
+        "value": "lostcities:deadzone_apn_medicalpost"
+      },
+      {
+        "factor": 0.007,
+        "value": "lostcities:deadzone_apn_police"
+      },
+      {
+        "factor": 0.014,
+        "value": "lostcities:deadzone_apn_storage"
+      }
+    ]
+  }
+}

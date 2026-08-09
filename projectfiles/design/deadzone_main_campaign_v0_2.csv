@@ -1,0 +1,10 @@
+Chapter,QuestId,TitleJA,WorldTier,PrimaryFacility,EnemyFaction,BossOrElite,CoreObjective,TierUnlock,RecipeUnlock,StoryReveal,RepeatableAfterClear
+0,last_broadcast,最後の放送,T0,Survivor Camp,none,none,"JOB選択・Starter Kit受領・避難所へ到達",none,"基本生存設備","周波数107.3から避難誘導が流れている","物資納品"
+1,first_72_hours,最初の72時間,T0,Gas Station,raider,Raider Scout,"水・食料・燃料を確保して偵察隊を排除",T1,"簡易防衛・T1銃整備","Raidersが都市の燃料輸送路を支配している","燃料回収"
+2,silent_city,沈黙した街,T1,Gun Shop,raider,Raider Enforcer,"Gun Shopを制圧し警察無線の記録を回収",none,"旧式民間銃・基礎弾薬","警察署から最後の救難信号が送られていた","弾薬部品回収"
+3,law_restored,失われた法,T1,Police Station,raider,Raider Warden,"通信室・証拠保管庫・武器庫を段階制圧",T2,"警察装備・基礎車両修理","Civil Defenseの生存部隊と病院の座標を発見","地域巡回"
+4,medical_network,途切れた医療網,T2,Hospital / Clinic,mixed,Corrupt Field Medic,"非常電源を復旧しMedicを救出して感染資料を回収",none,"高度医療・蘇生用品","感染悪化は自然変異だけではなく軍の研究と関係する","薬品納品"
+5,industrial_recovery,止まった生産線,T2,Factory / Create Facility,remnant,Remnant Engineer,"生産設備を復旧し暗号化された軍用部品を解析",T3,"Create中盤・車両部品・通信設備","Remnantが通信を妨害し研究施設への経路を隠している","修理・生産依頼"
+6,signal_blackout,ブラックアウト,T3,Radio Station,remnant,Remnant Marksman,"妨害装置を停止し通信塔を防衛",none,"Tactical Loot・新式銃部品","Remnant本隊と軍事基地の位置を特定","通信塔防衛"
+7,military_perimeter,軍事封鎖線,T3-T4,Military Base,remnant,Remnant Heavy / Officer,"外周・兵舎・車両庫・武器庫を段階攻略",T4,"軍用品・Superb Warfare基礎","DEADZONE Protocolは感染封鎖と軍事転用を同時に行う計画だった","哨戒隊討伐"
+8,deadzone_protocol,PROJECT DEADZONE,T4-T5,Laboratory / Command Facility,remnant,Spec Ops Commander / Campaign Boss,"研究記録を統合し感染源と司令施設を停止",T5,"最終Perk・最終レシピ・固有装備","脱出・封鎖維持・都市奪還の選択肢が開く","高難度作戦"

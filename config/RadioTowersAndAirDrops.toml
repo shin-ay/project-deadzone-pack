@@ -1,0 +1,33 @@
+#Average distance between two neighboring generation attempts.
+#Range: 0 ~ 4096
+AirDropSpacing = 170
+#Minimum distance between two neighboring attempts.
+#Range: 0 ~ 4096
+AirDropSeparation = 110
+#Defines the list of biomes where this structure can spawn.
+AirDropBiomes = ["plains", "snowy_plains", "sunflower_plains"]
+#Average distance between two neighboring generation attempts.
+#Range: 0 ~ 4096
+RadioTowerSpacing = 65
+#Minimum distance between two neighboring attempts.
+#Range: 0 ~ 4096
+RadioTowerSeparation = 40
+#Defines the list of biomes where this structure can spawn.
+RadioTowerBiomes = ["plains", "snowy_plains", "sunflower_plains"]
+#Average distance between two neighboring generation attempts.
+#Range: 0 ~ 4096
+RadioTower2Spacing = 110
+#Minimum distance between two neighboring attempts.
+#Range: 0 ~ 4096
+RadioTower2Separation = 70
+#Defines the list of biomes where this structure can spawn.
+RadioTower2Biomes = ["plains", "snowy_plains", "sunflower_plains"]
+#Average distance between two neighboring generation attempts.
+#Range: 0 ~ 4096
+RadioTowerOverrunSpacing = 230
+#Minimum distance between two neighboring attempts.
+#Range: 0 ~ 4096
+RadioTowerOverrunSeparation = 100
+#Defines the list of biomes where this structure can spawn.
+RadioTowerOverrunBiomes = ["plains", "snowy_plains", "sunflower_plains"]
+

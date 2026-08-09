@@ -1,0 +1,78 @@
+{
+  "armor_core_1": {
+    "x": 0,
+    "y": 64,
+    "definition": "armor_core_1",
+    "root": true
+  },
+  "armor_core_2": {
+    "x": 0,
+    "y": 0,
+    "definition": "armor_core_2"
+  },
+  "armor_core_3": {
+    "x": 0,
+    "y": -64,
+    "definition": "armor_core_3"
+  },
+  "armor_core_4": {
+    "x": 0,
+    "y": -128,
+    "definition": "armor_core_4"
+  },
+  "armor_core_5": {
+    "x": 0,
+    "y": -192,
+    "definition": "armor_core_5"
+  },
+  "armor_core_6": {
+    "x": 0,
+    "y": -256,
+    "definition": "armor_core_6"
+  },
+  "light_footed": {
+    "x": -160,
+    "y": 0,
+    "definition": "light_footed"
+  },
+  "mobile_bulwark": {
+    "x": -192,
+    "y": -112,
+    "definition": "mobile_bulwark"
+  },
+  "assault_armor": {
+    "x": -224,
+    "y": -224,
+    "definition": "assault_armor"
+  },
+  "reinforced_stance": {
+    "x": 160,
+    "y": 0,
+    "definition": "reinforced_stance"
+  },
+  "juggernaut": {
+    "x": 192,
+    "y": -112,
+    "definition": "juggernaut"
+  },
+  "immovable": {
+    "x": 224,
+    "y": -224,
+    "definition": "immovable"
+  },
+  "shock_absorption": {
+    "x": 320,
+    "y": 0,
+    "definition": "shock_absorption"
+  },
+  "last_stand": {
+    "x": 352,
+    "y": -112,
+    "definition": "last_stand"
+  },
+  "second_wind": {
+    "x": 384,
+    "y": -224,
+    "definition": "second_wind"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": 3,
+      "entries": [
+        { "type": "minecraft:loot_table", "name": "project_deadzone:chests/tier0_common", "weight": 150 },
+        { "type": "minecraft:loot_table", "name": "project_deadzone:chests/tier1_utility", "weight": 380 },
+        { "type": "minecraft:loot_table", "name": "project_deadzone:chests/tier2_specialist", "weight": 380 },
+        { "type": "minecraft:loot_table", "name": "project_deadzone:chests/tier3_advanced", "weight": 85 },
+        { "type": "minecraft:loot_table", "name": "project_deadzone:chests/tier4_classified", "weight": 5 }
+      ]
+    }
+  ]
+}

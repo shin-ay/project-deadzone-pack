@@ -1,0 +1,25 @@
+
+[HeavyBunkerSettings]
+	#Range: 10.0 ~ 1.0E7
+	blastResistance = 3600000.0
+	#Range: 1.0 ~ 10000.0
+	miningHardness = 250.0
+
+	[HeavyBunkerSettings.SiegeCoreExtension]
+		#Range: 4 ~ 64
+		bunkerCoreRadius = 24
+		#Range: 1 ~ 24
+		repairNodeRadius = 6
+		#Range: 20 ~ 72000
+		repairNodeIntervalTicks = 100
+		#Range: 40 ~ 72000
+		emergencyFoamLifetimeTicks = 600
+		#Range: 0 ~ 256
+		emergencyFoamMaxBlocks = 16
+		#Range: 1 ~ 16
+		explosionCrackRadius = 6
+		#Range: 0 ~ 8
+		resonanceHammerRadius = 1
+		#Range: 1 ~ 12
+		resonanceHammerSneakRadius = 2
+

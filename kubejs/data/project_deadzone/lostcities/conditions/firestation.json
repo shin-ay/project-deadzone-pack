@@ -1,0 +1,20 @@
+{
+  "values": [
+    {
+      "factor": 45,
+      "value": "project_deadzone:chests/firestation_equipment"
+    },
+    {
+      "factor": 30,
+      "value": "project_deadzone:chests/firestation_rescue"
+    },
+    {
+      "factor": 20,
+      "value": "project_deadzone:chests/firestation_workshop"
+    },
+    {
+      "factor": 5,
+      "value": "project_deadzone:chests/firestation_security"
+    }
+  ]
+}

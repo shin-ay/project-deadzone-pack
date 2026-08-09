@@ -1,0 +1,29 @@
+﻿{
+    "id":  "project_deadzone:talent_survivor_recovery_9",
+    "bonuses":  [
+
+                ],
+    "requirements":  [
+
+                     ],
+    "directConnections":  [
+                              "project_deadzone:talent_survivor_recovery_8"
+                          ],
+    "longConnections":  [
+
+                        ],
+    "oneWayConnections":  [
+
+                          ],
+    "tags":  [
+                 "pdz_talent_recovery",
+                 "pdz_node_talent_survivor_recovery_9"
+             ],
+    "backgroundTexture":  "skilltree:textures/icons/background/lesser.png",
+    "iconTexture":  "skilltree:textures/icons/cross_green.png",
+    "borderTexture":  "skilltree:textures/tooltip/lesser.png",
+    "positionX":  -596.31,
+    "positionY":  -137.67,
+    "buttonSize":  16,
+    "isStartingPoint":  false
+}

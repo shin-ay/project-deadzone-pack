@@ -1,0 +1,43 @@
+﻿{
+    "id":  "project_deadzone:talent_security_guard_side4_1",
+    "bonuses":  [
+                    {
+                        "type":  "skilltree:attribute",
+                        "attribute":  "minecraft:generic.armor",
+                        "id":  "45196c71-7ee0-2bf1-1664-60b2be47d0d4",
+                        "name":  "PROJECT DEADZONE Talent",
+                        "amount":  0.15,
+                        "operation":  0,
+                        "player_multiplier":  {
+                                                  "type":  "skilltree:none"
+                                              },
+                        "player_condition":  {
+                                                 "type":  "skilltree:none"
+                                             }
+                    }
+                ],
+    "requirements":  [
+
+                     ],
+    "directConnections":  [
+                              "project_deadzone:talent_security_guard_4"
+                          ],
+    "longConnections":  [
+
+                        ],
+    "oneWayConnections":  [
+
+                          ],
+    "tags":  [
+                 "pdz_talent_guard",
+                 "pdz_talent_optional_end",
+                 "pdz_node_talent_security_guard_side4_1"
+             ],
+    "backgroundTexture":  "skilltree:textures/icons/background/lesser.png",
+    "iconTexture":  "skilltree:textures/icons/chestplate_leather.png",
+    "borderTexture":  "skilltree:textures/tooltip/lesser.png",
+    "positionX":  315.07,
+    "positionY":  -304.26,
+    "buttonSize":  16,
+    "isStartingPoint":  false
+}

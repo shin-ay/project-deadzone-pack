@@ -1,0 +1,30 @@
+﻿{
+    "id":  "project_deadzone:talent_engineer_power_11",
+    "bonuses":  [
+
+                ],
+    "requirements":  [
+
+                     ],
+    "directConnections":  [
+                              "project_deadzone:talent_engineer_power_keystone"
+                          ],
+    "longConnections":  [
+
+                        ],
+    "oneWayConnections":  [
+
+                          ],
+    "tags":  [
+                 "pdz_talent_power",
+                 "pdz_talent_advanced",
+                 "pdz_node_talent_engineer_power_11"
+             ],
+    "backgroundTexture":  "skilltree:textures/icons/background/lesser.png",
+    "iconTexture":  "skilltree:textures/icons/torch.png",
+    "borderTexture":  "skilltree:textures/tooltip/lesser.png",
+    "positionX":  563.77,
+    "positionY":  490.08,
+    "buttonSize":  16,
+    "isStartingPoint":  false
+}

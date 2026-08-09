@@ -1,0 +1,13 @@
+name = "Ping"
+filename = "Ping-1.20.1-1.10.2.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "c3d7a0e483dc02876dbd658dfdb4f2d1132d8310"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 5658772
+project-id = 222967

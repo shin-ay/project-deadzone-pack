@@ -1,0 +1,13 @@
+name = "Simply Canteens"
+filename = "SimplyCanteens-1.20.1-1.1.0.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "87f215742099ca72f5d4f98508261a716667303e"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 5042358
+project-id = 943248

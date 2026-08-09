@@ -1,0 +1,53 @@
+{
+    "field_basics":  {
+                         "x":  0,
+                         "y":  160,
+                         "definition":  "field_basics",
+                         "root":  true
+                     },
+    "trailcraft":  {
+                       "x":  0,
+                       "y":  80,
+                       "definition":  "trailcraft"
+                   },
+    "pathfinder":  {
+                       "x":  "-128",
+                       "y":  0,
+                       "definition":  "pathfinder"
+                   },
+    "hardy":  {
+                  "x":  128,
+                  "y":  0,
+                  "definition":  "hardy"
+              },
+    "hunter":  {
+                   "x":  "-192",
+                   "y":  "-96",
+                   "definition":  "hunter"
+               },
+    "tracker":  {
+                    "x":  "-192",
+                    "y":  "-176",
+                    "definition":  "tracker"
+                },
+    "field_medic":  {
+                        "x":  192,
+                        "y":  "-96",
+                        "definition":  "field_medic"
+                    },
+    "last_stand":  {
+                       "x":  192,
+                       "y":  "-176",
+                       "definition":  "last_stand"
+                   },
+    "apex_hunter":  {
+                        "x":  "-192",
+                        "y":  "-272",
+                        "definition":  "apex_hunter"
+                    },
+    "field_survivor":  {
+                           "x":  192,
+                           "y":  "-272",
+                           "definition":  "field_survivor"
+                       }
+}

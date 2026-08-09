@@ -1,0 +1,2 @@
+/give @s deadzonevehiclecompat:vehicle_spawn_marker
+/deadzonevehicle scan

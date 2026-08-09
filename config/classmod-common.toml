@@ -1,0 +1,59 @@
+
+#Class Selection Mod Configuration
+[general]
+	#If true, players must select a class before they can play
+	forceClassSelection = true
+	#If true, players can only select their class on first join
+	allowClassChangeOnlyOnFirstJoin = true
+	#If true, the class selection GUI will automatically open on first join
+	showClassGuiOnFirstJoin = true
+	#Cooldown in seconds before a player can change their class again (0 = no cooldown)
+	#Range: 0 ~ 86400
+	classChangeCooldownSeconds = 0
+	#If true, starter kit items are given only when the player selects a class for the first time. If false, given every time they select or change class.
+	giveStarterKitOnlyFirstTime = true
+	#If true, players select a race before side/class selection.
+	enableRaceSelection = false
+	#If true, class selection is blocked until a race is selected.
+	requireRaceBeforeClassSelection = false
+	#If true, side selection is blocked until a race is selected.
+	requireRaceBeforeSideSelection = false
+	#If true, players select a side in a separate menu before class selection.
+	enableSideSelection = false
+	#If true, class selection is blocked until a side is selected.
+	requireSideBeforeClassSelection = false
+	#If true, the character profile/quenta menu opens after class selection.
+	enableCharacterProfileMenu = false
+	#If true, dedicated servers require /login or /register before playing.
+	enableAuthentication = false
+	#If true, enables the built-in private messenger and screenshot transfer.
+	enableMessenger = false
+	#Detailed race definitions: id|displayName|description|texture
+	#Texture supports ResourceLocation OR file name in .minecraft/classmod_images/races
+	#Example: human|Human|Adaptable people|human.png
+	raceDefinitions = ["human|Human|Versatile and ambitious people adapted to many lands|", "elf|Elf|Ancient race attuned to magic, forests and forgotten lore|", "dwarf|Dwarf|Stubborn mountain folk known for craft, stone and steel|"]
+	#Available side IDs shown in side selection menu. Example: alliance, horde, neutral
+	sideOptions = ["alliance", "horde"]
+	#Detailed side definitions: id|displayName|description|texture
+	#Texture supports ResourceLocation OR file name in .minecraft/classmod_images/sides
+	#Example: alliance|Alliance|Lawful kingdom faction|alliance.png
+	sideDefinitions = ["alliance|Alliance|Lawful kingdom faction|classmod:textures/gui/sides/alliance.png", "horde|Horde|Free clans and raiders|classmod:textures/gui/sides/horde.png"]
+
+[gui]
+	#Key to open the class selection GUI (use Minecraft key names)
+	openGuiKey = "key.keyboard.k"
+	#Enable GUI animations
+	enableAnimations = true
+	#Animation speed multiplier (1.0 = normal)
+	#Range: 0.1 ~ 3.0
+	animationSpeed = 1.0
+	#GUI background quality: 0=minimal (best FPS), 1=balanced, 2=full
+	#Range: 0 ~ 2
+	guiBackgroundQuality = 1
+	#If true, allows the in-GUI performance/FPS overlay to be toggled with its keybind.
+	enablePerformanceOverlay = false
+
+[admin]
+	#Key to open the admin configuration GUI (requires OP)
+	adminGuiKey = "key.keyboard.j"
+

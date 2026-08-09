@@ -1,0 +1,387 @@
+{
+  "mechanics_core_1": {
+    "title": "機械整備 基礎 Lv1",
+    "description": "機械整備の基礎能力を一段階高める。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "blocky_bikes:toolkit"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "task"
+      }
+    },
+    "cost": 0,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_mechanics_core_1"
+        }
+      }
+    ]
+  },
+  "mechanics_core_2": {
+    "title": "機械整備 基礎 Lv2",
+    "description": "機械整備の基礎能力を一段階高める。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "blocky_bikes:toolkit"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "task"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_mechanics_core_2"
+        }
+      }
+    ]
+  },
+  "mechanics_core_3": {
+    "title": "機械整備 基礎 Lv3",
+    "description": "機械整備でポイントを配分し、基礎能力をさらに高める。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "blocky_bikes:toolkit"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "goal"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_mechanics_core_3"
+        }
+      }
+    ],
+    "required_spent_points": 2
+  },
+  "mechanics_core_4": {
+    "title": "機械整備 基礎 Lv4",
+    "description": "機械整備でポイントを配分し、基礎能力をさらに高める。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "blocky_bikes:toolkit"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "goal"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_mechanics_core_4"
+        }
+      }
+    ],
+    "required_spent_points": 4
+  },
+  "mechanics_core_5": {
+    "title": "機械整備 基礎 Lv5",
+    "description": "機械整備でポイントを配分し、基礎能力をさらに高める。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "blocky_bikes:toolkit"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "challenge"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_mechanics_core_5"
+        }
+      }
+    ],
+    "required_spent_points": 6
+  },
+  "mechanics_core_6": {
+    "title": "機械整備 基礎 Lv6",
+    "description": "機械整備でポイントを配分し、基礎能力をさらに高める。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "blocky_bikes:toolkit"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "challenge"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_mechanics_core_6"
+        }
+      }
+    ],
+    "required_spent_points": 8
+  },
+  "field_repair": {
+    "title": "野戦修理",
+    "description": "修理工具でスニーク右クリックすると、オフハンド装備の耐久を8回復する。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:anvil"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "task"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_mechanics_repair_1"
+        }
+      }
+    ]
+  },
+  "master_mechanic": {
+    "title": "マスターメカニック",
+    "description": "現場修理による耐久回復量が16になる。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:smithing_table"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "goal"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_mechanics_repair_2"
+        }
+      }
+    ],
+    "required_spent_points": 3
+  },
+  "miracle_worker": {
+    "title": "ミラクルワーカー",
+    "description": "現場修理による耐久回復量が32になる。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:enchanted_book"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "challenge"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_mechanics_repair_3"
+        }
+      }
+    ],
+    "required_spent_points": 6
+  },
+  "parts_recovery": {
+    "title": "部品回収",
+    "description": "機械系ブロックをスニーク解体すると、25%で小部品を回収する。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:iron_nugget"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "task"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_mechanics_salvage_1"
+        }
+      }
+    ]
+  },
+  "strip_expert": {
+    "title": "分解の達人",
+    "description": "Salvage成功率が40%になり、銅部品も回収できる。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:piston"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "goal"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_mechanics_salvage_2"
+        }
+      }
+    ],
+    "required_spent_points": 3
+  },
+  "salvage_master": {
+    "title": "サルベージマスター",
+    "description": "Salvage成功率が60%になり、鉄部品の回収量が増える。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:observer"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "challenge"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_mechanics_salvage_3"
+        }
+      }
+    ],
+    "required_spent_points": 6
+  },
+  "bike_technician": {
+    "title": "二輪整備",
+    "description": "Blocky Bikesの二輪車両レシピを解禁する。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:minecart"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "task"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_mechanics_vehicle_1"
+        }
+      }
+    ]
+  },
+  "vehicle_specialist": {
+    "title": "車両スペシャリスト",
+    "description": "Vehicle Modの地上車両レシピを解禁する。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:furnace_minecart"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "goal"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_mechanics_vehicle_2"
+        }
+      }
+    ],
+    "required_spent_points": 3
+  },
+  "motor_pool_chief": {
+    "title": "車両主任",
+    "description": "Immersive Aircraftの航空機レシピを解禁する。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:powered_rail"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "challenge"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_mechanics_vehicle_3"
+        }
+      }
+    ],
+    "required_spent_points": 6
+  }
+}

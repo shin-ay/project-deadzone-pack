@@ -1,0 +1,258 @@
+{
+    "combat_basics":  {
+                          "title":  "戦闘基礎",
+                          "description":  "Tier 0 / 必要消費SP 0\n近接・銃器・防御の共通基礎。\n\n実効果: 次Tierノードの取得条件を解放",
+                          "icon":  {
+                                       "type":  "item",
+                                       "data":  {
+                                                    "item":  "minecraft:iron_sword"
+                                                }
+                                   },
+                          "frame":  {
+                                        "type":  "advancement",
+                                        "data":  {
+                                                     "frame":  "task"
+                                                 }
+                                    },
+                          "cost":  0,
+                          "rewards":  [
+                                          {
+                                              "type":  "puffish_skills:tag",
+                                              "data":  {
+                                                           "tag":  "dz_growth_combat_combat_basics"
+                                                       }
+                                          }
+                                      ]
+                      },
+    "melee_path":  {
+                       "title":  "近接戦闘",
+                       "description":  "Tier 1 / 必要消費SP 0\n接近戦のスタミナ管理と間合いを学ぶ。\n\n実効果: +5% 近接攻撃力 / +4% 攻撃速度 / -5% 銃器適性",
+                       "icon":  {
+                                    "type":  "item",
+                                    "data":  {
+                                                 "item":  "minecraft:iron_axe"
+                                             }
+                                },
+                       "frame":  {
+                                     "type":  "advancement",
+                                     "data":  {
+                                                  "frame":  "task"
+                                              }
+                                 },
+                       "cost":  1,
+                       "rewards":  [
+                                       {
+                                           "type":  "puffish_skills:tag",
+                                           "data":  {
+                                                        "tag":  "dz_growth_combat_melee_path"
+                                                    }
+                                       }
+                                   ]
+                   },
+    "gun_path":  {
+                     "title":  "銃器戦闘",
+                     "description":  "Tier 1 / 必要消費SP 0\n反動・照準・弾薬管理を学ぶ。\n\n実効果: -5% 近接攻撃力 / 銃器系上位ノードを解放",
+                     "icon":  {
+                                  "type":  "item",
+                                  "data":  {
+                                               "item":  "minecraft:crossbow"
+                                           }
+                              },
+                     "frame":  {
+                                   "type":  "advancement",
+                                   "data":  {
+                                                "frame":  "task"
+                                            }
+                               },
+                     "cost":  1,
+                     "rewards":  [
+                                     {
+                                         "type":  "puffish_skills:tag",
+                                         "data":  {
+                                                      "tag":  "dz_growth_combat_gun_path"
+                                                  }
+                                     }
+                                 ]
+                 },
+    "guardian_path":  {
+                          "title":  "防衛戦闘",
+                          "description":  "Tier 1 / 必要消費SP 0\n防具と遮蔽物を使い味方を守る。\n\n実効果: +2 最大HP / +1 防具値",
+                          "icon":  {
+                                       "type":  "item",
+                                       "data":  {
+                                                    "item":  "minecraft:shield"
+                                                }
+                                   },
+                          "frame":  {
+                                        "type":  "advancement",
+                                        "data":  {
+                                                     "frame":  "task"
+                                                 }
+                                    },
+                          "cost":  1,
+                          "rewards":  [
+                                          {
+                                              "type":  "puffish_skills:tag",
+                                              "data":  {
+                                                           "tag":  "dz_growth_combat_guardian_path"
+                                                       }
+                                          }
+                                      ]
+                      },
+    "berserker":  {
+                      "title":  "ブリーチャー",
+                      "description":  "Tier 2 / 必要消費SP 3\n近接火力と怯ませ性能を伸ばす。銃器適性は下がる。\n\n実効果: +10% 近接攻撃力 / +6% 攻撃速度 / -5% 銃器適性",
+                      "icon":  {
+                                   "type":  "item",
+                                   "data":  {
+                                                "item":  "minecraft:diamond_axe"
+                                            }
+                               },
+                      "frame":  {
+                                    "type":  "advancement",
+                                    "data":  {
+                                                 "frame":  "task"
+                                             }
+                                },
+                      "cost":  2,
+                      "rewards":  [
+                                      {
+                                          "type":  "puffish_skills:tag",
+                                          "data":  {
+                                                       "tag":  "dz_growth_combat_berserker"
+                                                   }
+                                      }
+                                  ],
+                      "required_spent_points":  3
+                  },
+    "operator":  {
+                     "title":  "オペレーター",
+                     "description":  "Tier 2 / 必要消費SP 3\n銃器精度とリロードを伸ばす。近接適性は下がる。\n\n実効果: -5% 近接攻撃力 / 銃器精度系上位ノードを解放",
+                     "icon":  {
+                                  "type":  "item",
+                                  "data":  {
+                                               "item":  "minecraft:spyglass"
+                                           }
+                              },
+                     "frame":  {
+                                   "type":  "advancement",
+                                   "data":  {
+                                                "frame":  "task"
+                                            }
+                               },
+                     "cost":  2,
+                     "rewards":  [
+                                     {
+                                         "type":  "puffish_skills:tag",
+                                         "data":  {
+                                                      "tag":  "dz_growth_combat_operator"
+                                                  }
+                                     }
+                                 ],
+                     "required_spent_points":  3
+                 },
+    "tank":  {
+                 "title":  "タンク",
+                 "description":  "Tier 2 / 必要消費SP 3\n重装備と被弾耐性を伸ばす。機動系強化は受けにくい。\n\n実効果: +4 最大HP / +2 防具値 / +1.5 防具強度 / +10% KB耐性",
+                 "icon":  {
+                              "type":  "item",
+                              "data":  {
+                                           "item":  "minecraft:diamond_chestplate"
+                                       }
+                          },
+                 "frame":  {
+                               "type":  "advancement",
+                               "data":  {
+                                            "frame":  "task"
+                                        }
+                           },
+                 "cost":  2,
+                 "rewards":  [
+                                 {
+                                     "type":  "puffish_skills:tag",
+                                     "data":  {
+                                                  "tag":  "dz_growth_combat_tank"
+                                              }
+                                 }
+                             ],
+                 "required_spent_points":  3
+             },
+    "executioner":  {
+                        "title":  "エクスキューショナー",
+                        "description":  "Tier 4 / 必要消費SP 9\n近接だけでも戦線を維持できる専門ビルド。\n\n実効果: +15% 近接攻撃力 / +8% 攻撃速度 / -10% 銃器適性",
+                        "icon":  {
+                                     "type":  "item",
+                                     "data":  {
+                                                  "item":  "minecraft:netherite_sword"
+                                              }
+                                 },
+                        "frame":  {
+                                      "type":  "advancement",
+                                      "data":  {
+                                                   "frame":  "goal"
+                                               }
+                                  },
+                        "cost":  3,
+                        "rewards":  [
+                                        {
+                                            "type":  "puffish_skills:tag",
+                                            "data":  {
+                                                         "tag":  "dz_growth_combat_executioner"
+                                                     }
+                                        }
+                                    ],
+                        "required_spent_points":  9
+                    },
+    "marksman":  {
+                     "title":  "マークスマン",
+                     "description":  "Tier 4 / 必要消費SP 9\n射撃に特化した高精度専門ビルド。\n\n実効果: -10% 近接攻撃力 / 射撃特化効果を解放",
+                     "icon":  {
+                                  "type":  "item",
+                                  "data":  {
+                                               "item":  "minecraft:spectral_arrow"
+                                           }
+                              },
+                     "frame":  {
+                                   "type":  "advancement",
+                                   "data":  {
+                                                "frame":  "goal"
+                                            }
+                               },
+                     "cost":  3,
+                     "rewards":  [
+                                     {
+                                         "type":  "puffish_skills:tag",
+                                         "data":  {
+                                                      "tag":  "dz_growth_combat_marksman"
+                                                  }
+                                     }
+                                 ],
+                     "required_spent_points":  9
+                 },
+    "bulwark":  {
+                    "title":  "ブルワーク",
+                    "description":  "Tier 5 / 必要消費SP 9\n味方の前線を維持する重装専門ビルド。\n\n実効果: +4 最大HP / +3 防具値 / +2 防具強度 / +15% KB耐性",
+                    "icon":  {
+                                 "type":  "item",
+                                 "data":  {
+                                              "item":  "minecraft:netherite_chestplate"
+                                          }
+                             },
+                    "frame":  {
+                                  "type":  "advancement",
+                                  "data":  {
+                                               "frame":  "challenge"
+                                           }
+                              },
+                    "cost":  3,
+                    "rewards":  [
+                                    {
+                                        "type":  "puffish_skills:tag",
+                                        "data":  {
+                                                     "tag":  "dz_growth_combat_bulwark"
+                                                 }
+                                    }
+                                ],
+                    "required_spent_points":  9
+                }
+}

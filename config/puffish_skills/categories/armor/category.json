@@ -1,0 +1,15 @@
+{
+  "title": "Armor",
+  "description": "基礎ランクを伸ばすか、遊び方を変える専門Perkを選択する防具運用Skill Tree。",
+  "extra_description": "PROJECT DEADZONE 防具運用 Rework Prototype v0.2",
+  "icon": {
+    "type": "item",
+    "data": {
+      "item": "minecraft:iron_chestplate"
+    }
+  },
+  "background": "minecraft:textures/gui/advancements/backgrounds/adventure.png",
+  "unlocked_by_default": true,
+  "starting_points": 0,
+  "exclusive_root": false
+}

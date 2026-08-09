@@ -1,0 +1,44 @@
+﻿{
+    "id":  "project_deadzone:talent_mechanic_repair_utility_16",
+    "bonuses":  [
+                    {
+                        "type":  "skilltree:attribute",
+                        "attribute":  "minecraft:generic.movement_speed",
+                        "id":  "a13b854e-a1c0-d4fa-dbc6-31bf5a65163b",
+                        "name":  "PROJECT DEADZONE Talent",
+                        "amount":  0.0015,
+                        "operation":  1,
+                        "player_multiplier":  {
+                                                  "type":  "skilltree:none"
+                                              },
+                        "player_condition":  {
+                                                 "type":  "skilltree:none"
+                                             }
+                    }
+                ],
+    "requirements":  [
+
+                     ],
+    "directConnections":  [
+                              "project_deadzone:talent_mechanic_repair_master_utility"
+                          ],
+    "longConnections":  [
+
+                        ],
+    "oneWayConnections":  [
+
+                          ],
+    "tags":  [
+                 "pdz_talent_repair",
+                 "pdz_talent_doctrine_path",
+                 "pdz_doctrine_path_utility",
+                 "pdz_node_talent_mechanic_repair_utility_16"
+             ],
+    "backgroundTexture":  "skilltree:textures/icons/background/lesser.png",
+    "iconTexture":  "skilltree:textures/icons/glove_steel.png",
+    "borderTexture":  "skilltree:textures/tooltip/lesser.png",
+    "positionX":  189.52,
+    "positionY":  1022.59,
+    "buttonSize":  16,
+    "isStartingPoint":  false
+}

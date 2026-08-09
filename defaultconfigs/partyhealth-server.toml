@@ -1,0 +1,92 @@
+
+#Party Health Server Configuration
+[features]
+	#Enable hydration bar (requires Legendary Survival Overhaul, or uses our internal system if LSO not present)
+	enableHydration = false
+	#Enable stamina/endurance bar
+	enableStamina = false
+	#Enable body damage system (uses LSO if present, otherwise our internal system)
+	enableBodyDamage = true
+
+#Body Damage Settings
+[bodyDamage]
+	#Maximum health for each body part
+	#Range: 1.0 ~ 100.0
+	bodyPartMaxHealth = 20.0
+	#Base damage multiplier for all body part damage
+	#This is applied FIRST before any other modifiers
+	#1.0 = normal damage, 0.5 = half damage, 2.0 = double damage
+	#Use this to globally adjust how much damage body parts receive
+	#Range: 0.1 ~ 10.0
+	bodyDamageMultiplier = 1.0
+	#Additional damage multiplier for unarmored body parts
+	#Applied after bodyDamageMultiplier
+	#Range: 1.0 ~ 5.0
+	unarmoredDamageMultiplier = 1.5
+	#Natural healing rate per second (percentage of max health)
+	#Range: 0.0 ~ 10.0
+	naturalHealRate = 0.5
+	#Delay in ticks before natural healing starts after taking damage
+	#Range: 0 ~ 6000
+	naturalHealDelay = 200
+
+#Armor Protection Settings
+#Controls how armor reduces damage to body parts
+[armorProtection]
+	#Body part health threshold for full armor protection
+	#If body part health is ABOVE this %, armor provides full protection
+	#Below this threshold, armor effectiveness is reduced
+	#0.75 = 75% health threshold
+	#Range: 0.0 ~ 1.0
+	protectionThreshold = 0.75
+	#Damage reduction % provided by helmet to HEAD
+	#0.30 = 30% damage reduction when wearing helmet
+	#Range: 0.0 ~ 1.0
+	helmetProtection = 0.3
+	#Damage reduction % provided by chestplate to CHEST and ARMS
+	#0.40 = 40% damage reduction when wearing chestplate
+	#Range: 0.0 ~ 1.0
+	chestplateProtection = 0.4
+	#Damage reduction % provided by leggings to LEGS
+	#0.30 = 30% damage reduction when wearing leggings
+	#Range: 0.0 ~ 1.0
+	leggingsProtection = 0.3
+	#Damage reduction % provided by boots to FEET
+	#0.25 = 25% damage reduction when wearing boots
+	#Range: 0.0 ~ 1.0
+	bootsProtection = 0.25
+	#Armor effectiveness multiplier when body part is below threshold
+	#0.5 = armor is 50% as effective when body part is damaged
+	#1.0 = no penalty, armor always at full effectiveness
+	#Range: 0.0 ~ 1.0
+	degradedEffectiveness = 0.5
+	#Enable chance to completely block damage based on armor value
+	#Only works when body part is above protection threshold
+	canBlockDamage = true
+	#Block chance per armor point (vanilla max is 20 armor points)
+	#0.02 = 2% block chance per armor point
+	#With 20 armor points: 40% chance to block damage completely
+	#Only applies when body part is above protection threshold
+	#Range: 0.0 ~ 0.1
+	blockChancePerPoint = 0.02
+
+#Heart Damage Settings
+[heartDamage]
+	#Max health reduction (in hearts) when a body part drops below 50%
+	#Uses attribute modifiers - max health is restored when healing above 50%
+	#1.0 = 1 heart = 2 HP reduction per body part below 50%
+	#With 8 body parts all below 50%: 8 hearts lost
+	#Range: 0.0 ~ 10.0
+	heartsLostSevere = 1.0
+	#Additional max health reduction (in hearts) when a body part reaches 0%
+	#This is CUMULATIVE with heartsLostSevere
+	#Uses attribute modifiers - max health is restored when healing above 0%
+	#1.0 = 1 heart = 2 HP additional reduction per broken body part
+	#A broken part loses: heartsLostSevere + heartsLostBroken
+	#Range: 0.0 ~ 20.0
+	heartsLostBroken = 1.0
+	#Damage multiplier applied to hearts when a BROKEN body part is hit again
+	#2.0 = double damage to hearts, 1.5 = 50% more damage
+	#Range: 1.0 ~ 10.0
+	brokenPartDamageMultiplier = 2.0
+

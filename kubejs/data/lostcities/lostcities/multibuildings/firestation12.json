@@ -1,0 +1,18 @@
+{
+  "dimx": 3,
+  "dimz": 2,
+  "buildings": [
+    [
+      "lostcities:firestation12_0_0",
+      "lostcities:firestation12_0_1"
+    ],
+    [
+      "lostcities:firestation12_1_0",
+      "lostcities:firestation12_1_1"
+    ],
+    [
+      "lostcities:firestation12_2_0",
+      "lostcities:firestation12_2_1"
+    ]
+  ]
+}

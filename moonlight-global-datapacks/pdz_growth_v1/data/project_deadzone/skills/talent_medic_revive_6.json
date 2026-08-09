@@ -1,0 +1,29 @@
+﻿{
+    "id":  "project_deadzone:talent_medic_revive_6",
+    "bonuses":  [
+
+                ],
+    "requirements":  [
+
+                     ],
+    "directConnections":  [
+                              "project_deadzone:talent_medic_revive_5"
+                          ],
+    "longConnections":  [
+
+                        ],
+    "oneWayConnections":  [
+
+                          ],
+    "tags":  [
+                 "pdz_talent_revive",
+                 "pdz_node_talent_medic_revive_6"
+             ],
+    "backgroundTexture":  "skilltree:textures/icons/background/lesser.png",
+    "iconTexture":  "skilltree:textures/icons/cross_green.png",
+    "borderTexture":  "skilltree:textures/tooltip/lesser.png",
+    "positionX":  496.79,
+    "positionY":  -34.74,
+    "buttonSize":  16,
+    "isStartingPoint":  false
+}

@@ -1,0 +1,32 @@
+﻿{
+    "id":  "project_deadzone:talent_survivor_recovery_doctrine_power",
+    "bonuses":  [
+
+                ],
+    "requirements":  [
+
+                     ],
+    "directConnections":  [
+                              "project_deadzone:talent_survivor_recovery_power_20"
+                          ],
+    "longConnections":  [
+
+                        ],
+    "oneWayConnections":  [
+
+                          ],
+    "tags":  [
+                 "pdz_talent_recovery",
+                 "pdz_talent_doctrine",
+                 "pdz_doctrine_survivor_recovery",
+                 "pdz_doctrine_power",
+                 "pdz_node_talent_survivor_recovery_doctrine_power"
+             ],
+    "backgroundTexture":  "skilltree:textures/icons/background/keystone.png",
+    "iconTexture":  "skilltree:textures/icons/cross_green.png",
+    "borderTexture":  "skilltree:textures/tooltip/lesser.png",
+    "positionX":  -1248.73,
+    "positionY":  -231.44,
+    "buttonSize":  32,
+    "isStartingPoint":  false
+}

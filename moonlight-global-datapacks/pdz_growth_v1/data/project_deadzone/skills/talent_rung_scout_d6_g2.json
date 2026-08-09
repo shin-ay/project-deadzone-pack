@@ -1,0 +1,43 @@
+﻿{
+    "id":  "project_deadzone:talent_rung_scout_d6_g2",
+    "bonuses":  [
+                    {
+                        "type":  "skilltree:attribute",
+                        "attribute":  "minecraft:generic.armor",
+                        "id":  "02b9d306-4a95-b5b8-eecd-29fe88c6fac6",
+                        "name":  "PROJECT DEADZONE Talent",
+                        "amount":  0.1,
+                        "operation":  0,
+                        "player_multiplier":  {
+                                                  "type":  "skilltree:none"
+                                              },
+                        "player_condition":  {
+                                                 "type":  "skilltree:none"
+                                             }
+                    }
+                ],
+    "requirements":  [
+
+                     ],
+    "directConnections":  [
+                              "project_deadzone:talent_scout_scavenge_6",
+                              "project_deadzone:talent_scout_mobility_6"
+                          ],
+    "longConnections":  [
+
+                        ],
+    "oneWayConnections":  [
+
+                          ],
+    "tags":  [
+                 "pdz_talent_rung",
+                 "pdz_node_talent_rung_scout_d6_g2"
+             ],
+    "backgroundTexture":  "skilltree:textures/icons/background/lesser.png",
+    "iconTexture":  "skilltree:textures/icons/arrow.png",
+    "borderTexture":  "skilltree:textures/tooltip/lesser.png",
+    "positionX":  -352.14,
+    "positionY":  -352.14,
+    "buttonSize":  16,
+    "isStartingPoint":  false
+}

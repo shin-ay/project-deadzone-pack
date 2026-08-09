@@ -1,0 +1,12 @@
+{
+  "priorityItems": [
+    {
+      "itemId": "minecraft:paper",
+      "nbtMatch": ""
+    },
+    {
+      "itemId": "minecraft:golden_apple",
+      "nbtMatch": ""
+    }
+  ]
+}

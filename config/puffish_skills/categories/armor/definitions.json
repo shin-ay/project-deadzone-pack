@@ -1,0 +1,387 @@
+{
+  "armor_core_1": {
+    "title": "防具運用 基礎 Lv1",
+    "description": "防具運用の基礎能力を一段階高める。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:iron_chestplate"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "task"
+      }
+    },
+    "cost": 0,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_armor_core_1"
+        }
+      }
+    ]
+  },
+  "armor_core_2": {
+    "title": "防具運用 基礎 Lv2",
+    "description": "防具運用の基礎能力を一段階高める。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:iron_chestplate"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "task"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_armor_core_2"
+        }
+      }
+    ]
+  },
+  "armor_core_3": {
+    "title": "防具運用 基礎 Lv3",
+    "description": "防具運用でポイントを配分し、基礎能力をさらに高める。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:iron_chestplate"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "goal"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_armor_core_3"
+        }
+      }
+    ],
+    "required_spent_points": 2
+  },
+  "armor_core_4": {
+    "title": "防具運用 基礎 Lv4",
+    "description": "防具運用でポイントを配分し、基礎能力をさらに高める。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:iron_chestplate"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "goal"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_armor_core_4"
+        }
+      }
+    ],
+    "required_spent_points": 4
+  },
+  "armor_core_5": {
+    "title": "防具運用 基礎 Lv5",
+    "description": "防具運用でポイントを配分し、基礎能力をさらに高める。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:iron_chestplate"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "challenge"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_armor_core_5"
+        }
+      }
+    ],
+    "required_spent_points": 6
+  },
+  "armor_core_6": {
+    "title": "防具運用 基礎 Lv6",
+    "description": "防具運用でポイントを配分し、基礎能力をさらに高める。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:iron_chestplate"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "challenge"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_armor_core_6"
+        }
+      }
+    ],
+    "required_spent_points": 8
+  },
+  "light_footed": {
+    "title": "軽快な装備",
+    "description": "防具装備中の移動速度が1.5%増加する。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:leather_boots"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "task"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_armor_mobility_1"
+        }
+      }
+    ]
+  },
+  "mobile_bulwark": {
+    "title": "機動防壁",
+    "description": "防具装備中の移動速度増加が3%になる。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:chainmail_boots"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "goal"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_armor_mobility_2"
+        }
+      }
+    ],
+    "required_spent_points": 3
+  },
+  "assault_armor": {
+    "title": "アサルトアーマー",
+    "description": "防具装備中の移動速度増加が4.5%になる。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:diamond_boots"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "challenge"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_armor_mobility_3"
+        }
+      }
+    ],
+    "required_spent_points": 6
+  },
+  "reinforced_stance": {
+    "title": "防御姿勢",
+    "description": "防御値を高め、スニーク中の被ダメージを5%軽減する。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:shield"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "task"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_armor_protection_1"
+        }
+      }
+    ]
+  },
+  "juggernaut": {
+    "title": "ジャガーノート",
+    "description": "防御値をさらに高め、スニーク中の被ダメージを8%軽減する。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:diamond_chestplate"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "goal"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_armor_protection_2"
+        }
+      }
+    ],
+    "required_spent_points": 3
+  },
+  "immovable": {
+    "title": "不動の防壁",
+    "description": "防御値を最大まで高め、スニーク中の被ダメージを12%軽減する。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:netherite_chestplate"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "challenge"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_armor_protection_3"
+        }
+      }
+    ],
+    "required_spent_points": 6
+  },
+  "shock_absorption": {
+    "title": "衝撃吸収",
+    "description": "ノックバック耐性を5%得る。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:slime_ball"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "task"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_armor_recovery_1"
+        }
+      }
+    ]
+  },
+  "last_stand": {
+    "title": "ラストスタンド",
+    "description": "HP35%以下で被弾すると5秒間再生する。再使用60秒。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:totem_of_undying"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "goal"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_armor_recovery_2"
+        }
+      }
+    ],
+    "required_spent_points": 3
+  },
+  "second_wind": {
+    "title": "セカンドウィンド",
+    "description": "防具装備中の致死ダメージを耐えHP4で復帰する。再使用15分。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:golden_apple"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "challenge"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_armor_recovery_3"
+        }
+      }
+    ],
+    "required_spent_points": 6
+  }
+}

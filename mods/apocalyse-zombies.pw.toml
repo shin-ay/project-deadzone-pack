@@ -1,0 +1,13 @@
+name = "Apocalypse Zombies"
+filename = "apocalypse_zombies-1.0.2-forge-1.20.1.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "a484aef24a3514713ad2af3eaa727a314a9a5a92"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 7538230
+project-id = 1106701

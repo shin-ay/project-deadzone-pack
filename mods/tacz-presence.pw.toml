@@ -1,0 +1,13 @@
+name = "TaCZ: Presence"
+filename = "tacz_presence-1.4.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "ac2fdc4c0445e2f1b693de2f77cf0563d7c158f1"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 7882246
+project-id = 1435817

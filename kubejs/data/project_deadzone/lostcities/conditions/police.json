@@ -1,0 +1,16 @@
+{
+  "values": [
+    {
+      "factor": 70,
+      "value": "project_deadzone:chests/police_locker"
+    },
+    {
+      "factor": 20,
+      "value": "project_deadzone:chests/police_armory"
+    },
+    {
+      "factor": 10,
+      "value": "project_deadzone:chests/police_evidence"
+    }
+  ]
+}

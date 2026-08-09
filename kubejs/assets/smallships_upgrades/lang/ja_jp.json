@@ -1,0 +1,17 @@
+{
+  "item.smallships_upgrades.cargo_upgrade": "船舶用・貨物室拡張",
+  "item.smallships_upgrades.health_upgrade": "船舶用・船体強化",
+  "item.smallships_upgrades.speed_upgrade": "船舶用・帆走強化",
+  "itemGroup.smallships_upgrades.items": "Small Ships アップグレード",
+  "text.autoconfig.smallships_upgrades.option.UpgradeCapsConfig": "船種別の上限",
+  "text.autoconfig.smallships_upgrades.option.UpgradeCapsConfig.cargo": "貨物拡張の最大数",
+  "text.autoconfig.smallships_upgrades.option.UpgradeCapsConfig.health": "船体強化の最大数",
+  "text.autoconfig.smallships_upgrades.option.UpgradeCapsConfig.name": "船の種類",
+  "text.autoconfig.smallships_upgrades.option.UpgradeCapsConfig.speed": "帆走強化の最大数",
+  "text.autoconfig.smallships_upgrades.option.caps": "アップグレード上限",
+  "text.autoconfig.smallships_upgrades.option.cargoIncrement": "貨物拡張1個あたりの収納増加行数",
+  "text.autoconfig.smallships_upgrades.option.healthIncrement": "船体強化1個あたりの最大耐久増加量",
+  "text.autoconfig.smallships_upgrades.option.speedIncrement": "帆走強化1個あたりの最大速度増加量",
+  "text.autoconfig.smallships_upgrades.option.upgradeRecyclePercentage": "破壊時に回収できるアップグレード割合",
+  "text.autoconfig.smallships_upgrades.title": "Small Ships アップグレード"
+}

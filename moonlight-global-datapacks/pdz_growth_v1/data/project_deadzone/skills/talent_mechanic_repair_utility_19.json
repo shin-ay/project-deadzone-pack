@@ -1,0 +1,44 @@
+﻿{
+    "id":  "project_deadzone:talent_mechanic_repair_utility_19",
+    "bonuses":  [
+                    {
+                        "type":  "skilltree:attribute",
+                        "attribute":  "minecraft:generic.luck",
+                        "id":  "48a610fd-afae-7d78-03ec-b48e21663f39",
+                        "name":  "PROJECT DEADZONE Talent",
+                        "amount":  0.1,
+                        "operation":  0,
+                        "player_multiplier":  {
+                                                  "type":  "skilltree:none"
+                                              },
+                        "player_condition":  {
+                                                 "type":  "skilltree:none"
+                                             }
+                    }
+                ],
+    "requirements":  [
+
+                     ],
+    "directConnections":  [
+                              "project_deadzone:talent_mechanic_repair_utility_18"
+                          ],
+    "longConnections":  [
+
+                        ],
+    "oneWayConnections":  [
+
+                          ],
+    "tags":  [
+                 "pdz_talent_repair",
+                 "pdz_talent_doctrine_path",
+                 "pdz_doctrine_path_utility",
+                 "pdz_node_talent_mechanic_repair_utility_19"
+             ],
+    "backgroundTexture":  "skilltree:textures/icons/background/lesser.png",
+    "iconTexture":  "skilltree:textures/icons/glove_steel.png",
+    "borderTexture":  "skilltree:textures/tooltip/lesser.png",
+    "positionX":  213.58,
+    "positionY":  1152.37,
+    "buttonSize":  16,
+    "isStartingPoint":  false
+}

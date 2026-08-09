@@ -1,0 +1,30 @@
+﻿{
+    "id":  "project_deadzone:talent_medic_aura_side8_1",
+    "bonuses":  [
+
+                ],
+    "requirements":  [
+
+                     ],
+    "directConnections":  [
+                              "project_deadzone:talent_medic_aura_8"
+                          ],
+    "longConnections":  [
+
+                        ],
+    "oneWayConnections":  [
+
+                          ],
+    "tags":  [
+                 "pdz_talent_medic_aura",
+                 "pdz_talent_optional_end",
+                 "pdz_node_talent_medic_aura_side8_1"
+             ],
+    "backgroundTexture":  "skilltree:textures/icons/background/lesser.png",
+    "iconTexture":  "skilltree:textures/icons/potion_yellow_big.png",
+    "borderTexture":  "skilltree:textures/tooltip/lesser.png",
+    "positionX":  585.6,
+    "positionY":  71.9,
+    "buttonSize":  16,
+    "isStartingPoint":  false
+}

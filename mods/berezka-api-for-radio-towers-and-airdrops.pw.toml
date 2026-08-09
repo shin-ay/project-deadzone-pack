@@ -1,0 +1,13 @@
+name = "Berezka API for Radio Towers and Airdrops"
+filename = "berezka_api_x_radiotowers-1.1.2-forge-1.20.1.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "5c88d31b023f7e1e7460b0ec82e1946f8e774731"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 8209746
+project-id = 1316100

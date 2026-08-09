@@ -1,0 +1,32 @@
+﻿{
+    "id":  "project_deadzone:talent_survivor_hazard_master_power",
+    "bonuses":  [
+
+                ],
+    "requirements":  [
+
+                     ],
+    "directConnections":  [
+                              "project_deadzone:talent_survivor_hazard_15"
+                          ],
+    "longConnections":  [
+
+                        ],
+    "oneWayConnections":  [
+
+                          ],
+    "tags":  [
+                 "pdz_talent_hazard",
+                 "pdz_talent_mastery",
+                 "pdz_mastery_survivor_hazard",
+                 "pdz_master_power",
+                 "pdz_node_talent_survivor_hazard_master_power"
+             ],
+    "backgroundTexture":  "skilltree:textures/icons/background/keystone.png",
+    "iconTexture":  "skilltree:textures/icons/potion_green.png",
+    "borderTexture":  "skilltree:textures/tooltip/lesser.png",
+    "positionX":  -978.67,
+    "positionY":  111.51,
+    "buttonSize":  32,
+    "isStartingPoint":  false
+}

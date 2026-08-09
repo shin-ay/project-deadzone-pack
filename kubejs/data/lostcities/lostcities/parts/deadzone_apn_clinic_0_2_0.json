@@ -1,0 +1,266 @@
+{
+  "xsize": 16,
+  "zsize": 16,
+  "palette": {
+    "palette": [
+      {
+        "char": "",
+        "block": "minecraft:air"
+      },
+      {
+        "char": "",
+        "block": "minecraft:spruce_planks"
+      },
+      {
+        "char": "",
+        "block": "minecraft:polished_diorite"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:white_concrete_bricks"
+      },
+      {
+        "char": "",
+        "block": "minecraft:blue_concrete"
+      },
+      {
+        "char": "",
+        "block": "minecraft:smooth_quartz_stairs[facing=east,half=bottom,shape=outer_left,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:smooth_quartz_stairs[facing=north,half=bottom,shape=straight,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:smooth_quartz_stairs[facing=west,half=bottom,shape=outer_right,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:white_concrete"
+      },
+      {
+        "char": "",
+        "block": "minecraft:oak_leaves[distance=7,persistent=true,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:spruce_stairs[facing=west,half=top,shape=straight,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:spruce_slab[type=top,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:spruce_stairs[facing=east,half=top,shape=straight,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:corpsecloth[facing=north]",
+        "tag": {
+          "Items": [],
+          "id": "apocalypsenow:corpsecloth"
+        }
+      },
+      {
+        "char": "",
+        "block": "minecraft:prismarine_brick_stairs[facing=east,half=bottom,shape=straight,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:birch_door[facing=north,half=lower,hinge=left,open=false,powered=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:spruce_stairs[facing=north,half=top,shape=straight,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:quartz_stairs[facing=west,half=bottom,shape=straight,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:spruce_stairs[facing=south,half=top,shape=straight,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:chest[facing=north,type=single,waterlogged=false]",
+        "tag": {
+          "id": "minecraft:chest"
+        }
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:glass_door[facing=south,half=lower,hinge=right,open=false,powered=false]"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:glass_door[facing=south,half=lower,hinge=left,open=false,powered=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:red_concrete"
+      },
+      {
+        "char": "",
+        "block": "minecraft:polished_diorite_slab[type=top,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:moss_carpet"
+      },
+      {
+        "char": "",
+        "block": "minecraft:potted_allium"
+      },
+      {
+        "char": "",
+        "block": "minecraft:potted_orange_tulip"
+      },
+      {
+        "char": "",
+        "block": "minecraft:birch_door[facing=north,half=upper,hinge=left,open=false,powered=false]"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:medical_storage[facing=east,waterlogged=false]",
+        "tag": {
+          "Items": [],
+          "id": "apocalypsenow:medical_storage"
+        },
+        "loot": "project_deadzone:chests/hospital_pharmacy"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:glass_door[facing=south,half=upper,hinge=right,open=false,powered=false]"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:glass_door[facing=south,half=upper,hinge=left,open=false,powered=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:light_blue_stained_glass_pane[east=true,north=false,south=false,waterlogged=false,west=true]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:light_blue_stained_glass_pane[east=false,north=false,south=false,waterlogged=false,west=true]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:smooth_stone_slab[type=bottom,waterlogged=false]"
+      }
+    ]
+  },
+  "slices": [
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "enableStatSharing": false,
+  "enableCommands": true,
+  "enableSnapshots": true,
+  "maxSnapshotsPerPlayer": 100
+}

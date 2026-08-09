@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "name": "project_deadzone:chests/hospital_ward",
+          "weight": 65
+        },
+        {
+          "type": "minecraft:loot_table",
+          "name": "project_deadzone:chests/hospital_pharmacy",
+          "weight": 25
+        },
+        {
+          "type": "minecraft:loot_table",
+          "name": "project_deadzone:chests/hospital_emergency",
+          "weight": 8
+        },
+        {
+          "type": "minecraft:loot_table",
+          "name": "project_deadzone:chests/hospital_security",
+          "weight": 2
+        }
+      ]
+    }
+  ]
+}

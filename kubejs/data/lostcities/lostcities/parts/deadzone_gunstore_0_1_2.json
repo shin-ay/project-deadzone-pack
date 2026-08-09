@@ -1,0 +1,225 @@
+{
+  "xsize": 16,
+  "zsize": 16,
+  "palette": {
+    "palette": [
+      {
+        "char": "",
+        "block": "minecraft:air"
+      },
+      {
+        "char": "",
+        "block": "minecraft:quartz_pillar[axis=y]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:smooth_stone_slab[type=top,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:vine[east=true,north=false,south=false,up=false,west=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:redstone_lamp[lit=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:vine[east=false,north=true,south=false,up=false,west=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:polished_andesite"
+      },
+      {
+        "char": "",
+        "block": "minecraft:andesite"
+      },
+      {
+        "char": "",
+        "block": "minecraft:grass_block[snowy=false]"
+      },
+      {
+        "char": "",
+        "block": "immersive_weathering:cracked_deepslate_tile_wall[east=none,north=none,south=tall,up=true,waterlogged=false,west=none]"
+      },
+      {
+        "char": "",
+        "block": "infectious:barbed_wire[facing=south,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "immersive_weathering:exposed_iron_bars[east=false,north=true,south=false,waterlogged=false,west=false]"
+      },
+      {
+        "char": "",
+        "block": "doomsday_decoration:sandbag_3[facing=south,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "doomsday_decoration:sandbag[facing=south,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "doomsday_decoration:sandbag_4[facing=south,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:grass"
+      },
+      {
+        "char": "",
+        "block": "doomsday_decoration:floodlight[facing=north,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "infectious:barbed_wire[facing=north,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:black_wool"
+      },
+      {
+        "char": "",
+        "block": "minecraft:white_wool"
+      },
+      {
+        "char": "",
+        "block": "minecraft:red_wool"
+      },
+      {
+        "char": "",
+        "block": "framedblocks:framed_double_slab[glowing=false,propagates_skylight=false,solid=true]",
+        "tag": {
+          "intangible": 0,
+          "glowing": 0,
+          "camo_two": {
+            "state": {
+              "Name": "minecraft:red_wool"
+            },
+            "type": "framedblocks:block"
+          },
+          "id": "framedblocks:framed_double_slab",
+          "reinforced": 0,
+          "updated": 3,
+          "camo": {
+            "state": {
+              "Name": "minecraft:white_wool"
+            },
+            "type": "framedblocks:block"
+          }
+        }
+      }
+    ]
+  },
+  "slices": [
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  ]
+}

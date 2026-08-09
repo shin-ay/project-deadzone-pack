@@ -1,0 +1,335 @@
+{
+    "mobility_basics":  {
+                            "title":  "車両運用基礎",
+                            "description":  "Tier 0 / 必要消費SP 0\n車・バイク・航空・船の共通知識。\n\n実効果: 次Tierノードの取得条件を解放",
+                            "icon":  {
+                                         "type":  "item",
+                                         "data":  {
+                                                      "item":  "minecraft:minecart"
+                                                  }
+                                     },
+                            "frame":  {
+                                          "type":  "advancement",
+                                          "data":  {
+                                                       "frame":  "task"
+                                                   }
+                                      },
+                            "cost":  0,
+                            "rewards":  [
+                                            {
+                                                "type":  "puffish_skills:tag",
+                                                "data":  {
+                                                             "tag":  "dz_growth_mobility_mobility_basics"
+                                                         }
+                                            }
+                                        ]
+                        },
+    "driver":  {
+                   "title":  "ドライバー",
+                   "description":  "Tier 1 / 必要消費SP 0\n道路車両の整備と運用を習得する。\n\n実効果: 次Tierノードの取得条件を解放",
+                   "icon":  {
+                                "type":  "item",
+                                "data":  {
+                                             "item":  "minecraft:leather_boots"
+                                         }
+                            },
+                   "frame":  {
+                                 "type":  "advancement",
+                                 "data":  {
+                                              "frame":  "task"
+                                          }
+                             },
+                   "cost":  1,
+                   "rewards":  [
+                                   {
+                                       "type":  "puffish_skills:tag",
+                                       "data":  {
+                                                    "tag":  "dz_growth_mobility_driver"
+                                                }
+                                   }
+                               ]
+               },
+    "rider":  {
+                  "title":  "ライダー",
+                  "description":  "Tier 1 / 必要消費SP 0\nバイクの軽量整備と機動運用を習得する。\n\n実効果: 次Tierノードの取得条件を解放",
+                  "icon":  {
+                               "type":  "item",
+                               "data":  {
+                                            "item":  "minecraft:saddle"
+                                        }
+                           },
+                  "frame":  {
+                                "type":  "advancement",
+                                "data":  {
+                                             "frame":  "task"
+                                         }
+                            },
+                  "cost":  1,
+                  "rewards":  [
+                                  {
+                                      "type":  "puffish_skills:tag",
+                                      "data":  {
+                                                   "tag":  "dz_growth_mobility_rider"
+                                               }
+                                  }
+                              ]
+              },
+    "sailor":  {
+                   "title":  "船員",
+                   "description":  "Tier 1 / 必要消費SP 0\n船舶の製作・航行・積載を習得する。\n\n実効果: 次Tierノードの取得条件を解放",
+                   "icon":  {
+                                "type":  "item",
+                                "data":  {
+                                             "item":  "minecraft:oak_boat"
+                                         }
+                            },
+                   "frame":  {
+                                 "type":  "advancement",
+                                 "data":  {
+                                              "frame":  "task"
+                                          }
+                             },
+                   "cost":  1,
+                   "rewards":  [
+                                   {
+                                       "type":  "puffish_skills:tag",
+                                       "data":  {
+                                                    "tag":  "dz_growth_mobility_sailor"
+                                                }
+                                   }
+                               ]
+               },
+    "pilot":  {
+                  "title":  "パイロット",
+                  "description":  "Tier 1 / 必要消費SP 0\n航空機の整備と操縦に必要な知識を得る。\n\n実効果: 次Tierノードの取得条件を解放",
+                  "icon":  {
+                               "type":  "item",
+                               "data":  {
+                                            "item":  "minecraft:firework_rocket"
+                                        }
+                           },
+                  "frame":  {
+                                "type":  "advancement",
+                                "data":  {
+                                             "frame":  "task"
+                                         }
+                            },
+                  "cost":  1,
+                  "rewards":  [
+                                  {
+                                      "type":  "puffish_skills:tag",
+                                      "data":  {
+                                                   "tag":  "dz_growth_mobility_pilot"
+                                               }
+                                  }
+                              ]
+              },
+    "road_engineer":  {
+                          "title":  "路上整備",
+                          "description":  "Tier 3 / 必要消費SP 3\n道路車両を現地修理する。\n\n実効果: 次Tierノードの取得条件を解放",
+                          "icon":  {
+                                       "type":  "item",
+                                       "data":  {
+                                                    "item":  "minecraft:iron_ingot"
+                                                }
+                                   },
+                          "frame":  {
+                                        "type":  "advancement",
+                                        "data":  {
+                                                     "frame":  "goal"
+                                                 }
+                                    },
+                          "cost":  2,
+                          "rewards":  [
+                                          {
+                                              "type":  "puffish_skills:tag",
+                                              "data":  {
+                                                           "tag":  "dz_growth_mobility_road_engineer"
+                                                       }
+                                          }
+                                      ],
+                          "required_spent_points":  3
+                      },
+    "bike_mechanic":  {
+                          "title":  "軽車両整備",
+                          "description":  "Tier 3 / 必要消費SP 3\nバイクを少ない部品で復旧する。\n\n実効果: 次Tierノードの取得条件を解放",
+                          "icon":  {
+                                       "type":  "item",
+                                       "data":  {
+                                                    "item":  "minecraft:chain"
+                                                }
+                                   },
+                          "frame":  {
+                                        "type":  "advancement",
+                                        "data":  {
+                                                     "frame":  "goal"
+                                                 }
+                                    },
+                          "cost":  2,
+                          "rewards":  [
+                                          {
+                                              "type":  "puffish_skills:tag",
+                                              "data":  {
+                                                           "tag":  "dz_growth_mobility_bike_mechanic"
+                                                       }
+                                          }
+                                      ],
+                          "required_spent_points":  3
+                      },
+    "naval_logistics":  {
+                            "title":  "海上兵站",
+                            "description":  "Tier 3 / 必要消費SP 3\n船舶の積載と航路を最適化する。\n\n実効果: 次Tierノードの取得条件を解放",
+                            "icon":  {
+                                         "type":  "item",
+                                         "data":  {
+                                                      "item":  "minecraft:chest_minecart"
+                                                  }
+                                     },
+                            "frame":  {
+                                          "type":  "advancement",
+                                          "data":  {
+                                                       "frame":  "goal"
+                                                   }
+                                      },
+                            "cost":  2,
+                            "rewards":  [
+                                            {
+                                                "type":  "puffish_skills:tag",
+                                                "data":  {
+                                                             "tag":  "dz_growth_mobility_naval_logistics"
+                                                         }
+                                            }
+                                        ],
+                            "required_spent_points":  3
+                        },
+    "airframe_repair":  {
+                            "title":  "機体整備",
+                            "description":  "Tier 3 / 必要消費SP 3\n航空機の機体と動力を整備する。\n\n実効果: 次Tierノードの取得条件を解放",
+                            "icon":  {
+                                         "type":  "item",
+                                         "data":  {
+                                                      "item":  "minecraft:anvil"
+                                                  }
+                                     },
+                            "frame":  {
+                                          "type":  "advancement",
+                                          "data":  {
+                                                       "frame":  "goal"
+                                                   }
+                                      },
+                            "cost":  2,
+                            "rewards":  [
+                                            {
+                                                "type":  "puffish_skills:tag",
+                                                "data":  {
+                                                             "tag":  "dz_growth_mobility_airframe_repair"
+                                                         }
+                                            }
+                                        ],
+                            "required_spent_points":  3
+                        },
+    "road_master":  {
+                        "title":  "コンボイドライバー",
+                        "description":  "Tier 5 / 必要消費SP 7\n道路車両運用を完成させる。\n\n実効果: MOBILITY XP +20%",
+                        "icon":  {
+                                     "type":  "item",
+                                     "data":  {
+                                                  "item":  "minecraft:powered_rail"
+                                              }
+                                 },
+                        "frame":  {
+                                      "type":  "advancement",
+                                      "data":  {
+                                                   "frame":  "challenge"
+                                               }
+                                  },
+                        "cost":  3,
+                        "rewards":  [
+                                        {
+                                            "type":  "puffish_skills:tag",
+                                            "data":  {
+                                                         "tag":  "dz_growth_mobility_road_master"
+                                                     }
+                                        }
+                                    ],
+                        "required_spent_points":  7
+                    },
+    "rider_master":  {
+                         "title":  "アウトライダー",
+                         "description":  "Tier 5 / 必要消費SP 7\nバイク機動戦と整備を完成させる。\n\n実効果: MOBILITY XP +20%",
+                         "icon":  {
+                                      "type":  "item",
+                                      "data":  {
+                                                   "item":  "minecraft:rabbit_foot"
+                                               }
+                                  },
+                         "frame":  {
+                                       "type":  "advancement",
+                                       "data":  {
+                                                    "frame":  "challenge"
+                                                }
+                                   },
+                         "cost":  3,
+                         "rewards":  [
+                                         {
+                                             "type":  "puffish_skills:tag",
+                                             "data":  {
+                                                          "tag":  "dz_growth_mobility_rider_master"
+                                                      }
+                                         }
+                                     ],
+                         "required_spent_points":  7
+                     },
+    "captain":  {
+                    "title":  "船長",
+                    "description":  "Tier 5 / 必要消費SP 7\n船舶運用と海上輸送を完成させる。\n\n実効果: MOBILITY XP +20%",
+                    "icon":  {
+                                 "type":  "item",
+                                 "data":  {
+                                              "item":  "minecraft:heart_of_the_sea"
+                                          }
+                             },
+                    "frame":  {
+                                  "type":  "advancement",
+                                  "data":  {
+                                               "frame":  "challenge"
+                                           }
+                              },
+                    "cost":  3,
+                    "rewards":  [
+                                    {
+                                        "type":  "puffish_skills:tag",
+                                        "data":  {
+                                                     "tag":  "dz_growth_mobility_captain"
+                                                 }
+                                    }
+                                ],
+                    "required_spent_points":  7
+                },
+    "ace_pilot":  {
+                      "title":  "エースパイロット",
+                      "description":  "Tier 5 / 必要消費SP 7\n航空機運用を完成させる。\n\n実効果: MOBILITY XP +20%",
+                      "icon":  {
+                                   "type":  "item",
+                                   "data":  {
+                                                "item":  "minecraft:elytra"
+                                            }
+                               },
+                      "frame":  {
+                                    "type":  "advancement",
+                                    "data":  {
+                                                 "frame":  "challenge"
+                                             }
+                                },
+                      "cost":  3,
+                      "rewards":  [
+                                      {
+                                          "type":  "puffish_skills:tag",
+                                          "data":  {
+                                                       "tag":  "dz_growth_mobility_ace_pilot"
+                                                   }
+                                      }
+                                  ],
+                      "required_spent_points":  7
+                  }
+}

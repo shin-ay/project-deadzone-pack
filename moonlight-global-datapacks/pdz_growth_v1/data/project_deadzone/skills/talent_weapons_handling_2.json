@@ -1,0 +1,29 @@
+﻿{
+    "id":  "project_deadzone:talent_weapons_handling_2",
+    "bonuses":  [
+
+                ],
+    "requirements":  [
+
+                     ],
+    "directConnections":  [
+                              "project_deadzone:talent_weapons_handling_1"
+                          ],
+    "longConnections":  [
+
+                        ],
+    "oneWayConnections":  [
+
+                          ],
+    "tags":  [
+                 "pdz_talent_gun_handling",
+                 "pdz_node_talent_weapons_handling_2"
+             ],
+    "backgroundTexture":  "skilltree:textures/icons/background/lesser.png",
+    "iconTexture":  "skilltree:textures/icons/glove_steel.png",
+    "borderTexture":  "skilltree:textures/tooltip/lesser.png",
+    "positionX":  24.14,
+    "positionY":  -345.16,
+    "buttonSize":  16,
+    "isStartingPoint":  false
+}

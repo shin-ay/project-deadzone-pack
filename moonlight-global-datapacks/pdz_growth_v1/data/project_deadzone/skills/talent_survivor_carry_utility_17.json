@@ -1,0 +1,44 @@
+﻿{
+    "id":  "project_deadzone:talent_survivor_carry_utility_17",
+    "bonuses":  [
+                    {
+                        "type":  "skilltree:attribute",
+                        "attribute":  "minecraft:generic.movement_speed",
+                        "id":  "364fbe87-cfc6-7a1b-ff04-310856624ed6",
+                        "name":  "PROJECT DEADZONE Talent",
+                        "amount":  0.0015,
+                        "operation":  1,
+                        "player_multiplier":  {
+                                                  "type":  "skilltree:none"
+                                              },
+                        "player_condition":  {
+                                                 "type":  "skilltree:none"
+                                             }
+                    }
+                ],
+    "requirements":  [
+
+                     ],
+    "directConnections":  [
+                              "project_deadzone:talent_survivor_carry_utility_16"
+                          ],
+    "longConnections":  [
+
+                        ],
+    "oneWayConnections":  [
+
+                          ],
+    "tags":  [
+                 "pdz_talent_carry",
+                 "pdz_talent_doctrine_path",
+                 "pdz_doctrine_path_utility",
+                 "pdz_node_talent_survivor_carry_utility_17"
+             ],
+    "backgroundTexture":  "skilltree:textures/icons/background/lesser.png",
+    "iconTexture":  "skilltree:textures/icons/treasure_chest.png",
+    "borderTexture":  "skilltree:textures/tooltip/lesser.png",
+    "positionX":  -1077.03,
+    "positionY":  -122.71,
+    "buttonSize":  16,
+    "isStartingPoint":  false
+}

@@ -1,0 +1,13 @@
+name = "Enhanced Celestials Tweaks"
+filename = "enhancedcelestialstweaks-forge-1.2.3-1.20.1.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "223eca086d1ec7ff48ae598cefbb433e491b5baa"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 8496826
+project-id = 1535760

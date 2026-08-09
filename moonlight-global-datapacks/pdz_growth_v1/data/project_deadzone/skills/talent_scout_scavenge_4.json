@@ -1,0 +1,29 @@
+﻿{
+    "id":  "project_deadzone:talent_scout_scavenge_4",
+    "bonuses":  [
+
+                ],
+    "requirements":  [
+
+                     ],
+    "directConnections":  [
+                              "project_deadzone:talent_scout_scavenge_3"
+                          ],
+    "longConnections":  [
+
+                        ],
+    "oneWayConnections":  [
+
+                          ],
+    "tags":  [
+                 "pdz_talent_scavenge",
+                 "pdz_node_talent_scout_scavenge_4"
+             ],
+    "backgroundTexture":  "skilltree:textures/icons/background/notable.png",
+    "iconTexture":  "skilltree:textures/icons/treasure_chest_gold.png",
+    "borderTexture":  "skilltree:textures/tooltip/lesser.png",
+    "positionX":  -318.49,
+    "positionY":  -276.86,
+    "buttonSize":  22,
+    "isStartingPoint":  false
+}

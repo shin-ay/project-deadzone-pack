@@ -1,0 +1,13 @@
+name = "Pufferfish's Skills [Fabric & Forge & NeoForge]"
+filename = "puffish_skills-0.18.1-1.20-forge.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "45fb0fb831a1d72873d2521881a33c426f3c8378"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 8408194
+project-id = 835091

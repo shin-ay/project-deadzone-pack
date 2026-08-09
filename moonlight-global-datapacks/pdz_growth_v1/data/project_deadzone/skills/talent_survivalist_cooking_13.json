@@ -1,0 +1,30 @@
+﻿{
+    "id":  "project_deadzone:talent_survivalist_cooking_13",
+    "bonuses":  [
+
+                ],
+    "requirements":  [
+
+                     ],
+    "directConnections":  [
+                              "project_deadzone:talent_survivalist_cooking_12"
+                          ],
+    "longConnections":  [
+
+                        ],
+    "oneWayConnections":  [
+
+                          ],
+    "tags":  [
+                 "pdz_talent_cooking",
+                 "pdz_talent_advanced",
+                 "pdz_node_talent_survivalist_cooking_13"
+             ],
+    "backgroundTexture":  "skilltree:textures/icons/background/notable.png",
+    "iconTexture":  "skilltree:textures/icons/soup_red.png",
+    "borderTexture":  "skilltree:textures/tooltip/lesser.png",
+    "positionX":  -440.36,
+    "positionY":  704.73,
+    "buttonSize":  22,
+    "isStartingPoint":  false
+}

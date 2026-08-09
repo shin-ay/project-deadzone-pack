@@ -1,0 +1,15 @@
+{
+  "type":"minecraft:chest",
+  "pools":[{
+    "rolls":{"min":4,"max":6},
+    "entries":[
+      {"type":"minecraft:item","name":"apocalypsenow:pack_of_canned_beans","weight":12},
+      {"type":"minecraft:item","name":"apocalypsenow:pack_of_canned_corn","weight":10},
+      {"type":"minecraft:item","name":"apocalypsenow:pack_of_canned_food","weight":10},
+      {"type":"minecraft:item","name":"apocalypsenow:pack_of_canned_fish","weight":8},
+      {"type":"minecraft:item","name":"survival_instinct:military_can","weight":8},
+      {"type":"minecraft:item","name":"survival_instinct:bean_can","weight":14,"functions":[{"function":"minecraft:set_count","count":{"min":2,"max":4}}]},
+      {"type":"minecraft:item","name":"apocalypsenow:chocolate_bar","weight":8,"functions":[{"function":"minecraft:set_count","count":{"min":2,"max":4}}]}
+    ]
+  }]
+}

@@ -1,0 +1,310 @@
+{
+  "xsize": 16,
+  "zsize": 16,
+  "palette": {
+    "palette": [
+      {
+        "char": "",
+        "block": "minecraft:air"
+      },
+      {
+        "char": "",
+        "block": "minecraft:blackstone"
+      },
+      {
+        "char": "",
+        "block": "minecraft:yellow_concrete"
+      },
+      {
+        "char": "",
+        "block": "minecraft:grass_block[snowy=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:quartz_block"
+      },
+      {
+        "char": "",
+        "block": "minecraft:deepslate[axis=y]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:cyan_terracotta"
+      },
+      {
+        "char": "",
+        "block": "minecraft:cobbled_deepslate"
+      },
+      {
+        "char": "",
+        "block": "minecraft:basalt[axis=x]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:polished_diorite"
+      },
+      {
+        "char": "",
+        "block": "minecraft:dirt"
+      },
+      {
+        "char": "",
+        "block": "minecraft:diorite"
+      },
+      {
+        "char": "",
+        "block": "minecraft:grass"
+      },
+      {
+        "char": "",
+        "block": "minecraft:vine[east=false,north=false,south=true,up=false,west=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:tall_grass[half=lower]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:mossy_stone_bricks"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:marketfridge[facing=west,waterlogged=false]",
+        "tag": {
+          "Items": [],
+          "id": "apocalypsenow:marketfridge"
+        }
+      },
+      {
+        "char": "",
+        "block": "minecraft:cracked_stone_bricks"
+      },
+      {
+        "char": "",
+        "block": "minecraft:birch_leaves[distance=7,persistent=true,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:oak_leaves[distance=7,persistent=true,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "doomsday_decoration:anticollisionbucket[waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:ice[facing=west,waterlogged=false]",
+        "tag": {
+          "Items": [],
+          "id": "apocalypsenow:ice"
+        }
+      },
+      {
+        "char": "",
+        "block": "immersive_weathering:weathered_iron_bars[east=true,north=false,south=false,waterlogged=false,west=false]"
+      },
+      {
+        "char": "",
+        "block": "immersive_weathering:weathered_iron_bars[east=true,north=false,south=false,waterlogged=false,west=true]"
+      },
+      {
+        "char": "",
+        "block": "immersive_weathering:weathered_iron_bars[east=false,north=false,south=false,waterlogged=false,west=true]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:stone_bricks[weathering=false]"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:trashbag"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:trashbagblueplastic"
+      },
+      {
+        "char": "",
+        "block": "minecraft:stone_bricks[weathering=true]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:cornflower"
+      },
+      {
+        "char": "",
+        "block": "minecraft:tall_grass[half=upper]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:vine[east=false,north=false,south=false,up=false,west=true]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:vine[east=false,north=true,south=false,up=false,west=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:red_concrete"
+      },
+      {
+        "char": "",
+        "block": "minecraft:vine[east=false,north=false,south=false,up=true,west=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:sandstone_slab[type=double,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:sandstone_slab[type=bottom,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:marketfridge[facing=west,waterlogged=false]",
+        "tag": {
+          "Items": [],
+          "id": "apocalypsenow:marketfridge"
+        },
+        "loot": "project_deadzone:gasstation_drink_t1"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:marketfridge[facing=west,waterlogged=false]",
+        "tag": {
+          "Items": [],
+          "id": "apocalypsenow:marketfridge"
+        },
+        "loot": "project_deadzone:gasstation_drink_t1"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:marketfridge[facing=west,waterlogged=false]",
+        "tag": {
+          "Items": [],
+          "id": "apocalypsenow:marketfridge"
+        },
+        "loot": "project_deadzone:gasstation_drink_t1"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:ice[facing=west,waterlogged=false]",
+        "tag": {
+          "Items": [],
+          "id": "apocalypsenow:ice"
+        },
+        "loot": "project_deadzone:gasstation_drink_t1"
+      }
+    ]
+  },
+  "slices": [
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  ]
+}

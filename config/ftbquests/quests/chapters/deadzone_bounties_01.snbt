@@ -1,0 +1,93 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "deadzone_bounties_01"
+	group: "51DC04D9192698A6"
+	icon: "minecraft:target"
+	id: "7C32BF319D45FE2F"
+	order_index: 10
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: ["1920AEAAF4D75E94"]
+			description: ["通常感染者に混じる変異個体の痕跡を集める。サンプルが揃えばキャンプで危険個体の情報を照合できる。"]
+			icon: "infectious:mutated_rotten_flesh"
+			id: "7B7E509DA0EF9E16"
+			tasks: [{
+				consume_items: true
+				count: 8L
+				id: "2239FEBBBDC2D8CB"
+				item: "infectious:mutated_rotten_flesh"
+				type: "item"
+			}]
+			title: "変異の痕跡"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			description: ["異常な筋力を持つTankを排除する。通常ゾンビより大きく、常時発光と名前表示で識別できる。"]
+			icon: {
+				Count: 1
+				id: "minecraft:iron_chestplate"
+				tag: {
+					Damage: 0
+				}
+			}
+			id: "10F903EB357EFC28"
+			rewards: [
+				{
+					count: 10
+					id: "4254F6D98427465E"
+					item: "apocalypsenow:money"
+					type: "item"
+				}
+				{
+					id: "171B6D3256F496AD"
+					type: "xp"
+					xp: 15
+				}
+			]
+			tasks: [{
+				id: "418F2D28C781506D"
+				title: "Siege Tankを撃破した"
+				type: "custom"
+			}]
+			title: "賞金首：Siege Tank"
+			x: 2.0d
+			y: -1.0d
+		}
+		{
+			description: ["感染が長期化した地域で確認されたAncient Abominationを排除する。近距離で囲まれず、退路を確保して戦おう。"]
+			icon: "minecraft:wither_skeleton_skull"
+			id: "717B2B8A66A44728"
+			rewards: [
+				{
+					count: 14
+					id: "73029846DF1D413B"
+					item: "apocalypsenow:money"
+					type: "item"
+				}
+				{
+					count: 2
+					id: "1DB58BCD767BDB2E"
+					item: "apocalypsenow:morphine"
+					type: "item"
+				}
+				{
+					id: "19E8179FB0184AC0"
+					type: "xp"
+					xp: 20
+				}
+			]
+			tasks: [{
+				id: "0DA79E495B547523"
+				title: "Ancient Abominationを撃破した"
+				type: "custom"
+			}]
+			title: "賞金首：Ancient Abomination"
+			x: 2.0d
+			y: 1.0d
+		}
+	]
+	title: "賞金首と危険個体"
+}

@@ -1,0 +1,45 @@
+﻿{
+    "id":  "project_deadzone:talent_scout_tracking_master_utility",
+    "bonuses":  [
+                    {
+                        "type":  "skilltree:attribute",
+                        "attribute":  "minecraft:generic.attack_speed",
+                        "id":  "f6dea533-16f0-5f73-4eb4-f59e55b2a50b",
+                        "name":  "PROJECT DEADZONE Talent",
+                        "amount":  0.002,
+                        "operation":  1,
+                        "player_multiplier":  {
+                                                  "type":  "skilltree:none"
+                                              },
+                        "player_condition":  {
+                                                 "type":  "skilltree:none"
+                                             }
+                    }
+                ],
+    "requirements":  [
+
+                     ],
+    "directConnections":  [
+                              "project_deadzone:talent_scout_tracking_15"
+                          ],
+    "longConnections":  [
+
+                        ],
+    "oneWayConnections":  [
+
+                          ],
+    "tags":  [
+                 "pdz_talent_tracking",
+                 "pdz_talent_mastery",
+                 "pdz_mastery_scout_tracking",
+                 "pdz_master_utility",
+                 "pdz_node_talent_scout_tracking_master_utility"
+             ],
+    "backgroundTexture":  "skilltree:textures/icons/background/keystone.png",
+    "iconTexture":  "skilltree:textures/icons/eye_green.png",
+    "borderTexture":  "skilltree:textures/tooltip/lesser.png",
+    "positionX":  -485.04,
+    "positionY":  -857.3,
+    "buttonSize":  32,
+    "isStartingPoint":  false
+}

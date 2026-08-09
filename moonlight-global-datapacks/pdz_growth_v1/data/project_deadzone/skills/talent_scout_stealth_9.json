@@ -1,0 +1,29 @@
+﻿{
+    "id":  "project_deadzone:talent_scout_stealth_9",
+    "bonuses":  [
+
+                ],
+    "requirements":  [
+
+                     ],
+    "directConnections":  [
+                              "project_deadzone:talent_scout_stealth_8"
+                          ],
+    "longConnections":  [
+
+                        ],
+    "oneWayConnections":  [
+
+                          ],
+    "tags":  [
+                 "pdz_talent_stealth",
+                 "pdz_node_talent_scout_stealth_9"
+             ],
+    "backgroundTexture":  "skilltree:textures/icons/background/lesser.png",
+    "iconTexture":  "skilltree:textures/icons/void.png",
+    "borderTexture":  "skilltree:textures/tooltip/lesser.png",
+    "positionX":  -519.01,
+    "positionY":  -324.31,
+    "buttonSize":  16,
+    "isStartingPoint":  false
+}

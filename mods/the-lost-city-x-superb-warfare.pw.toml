@@ -1,0 +1,13 @@
+name = "The Lost City X Superb Warfare"
+filename = "the_lost_city_superb_warfare-1.0.1.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "f3e104b9e66ef37eea0b3127f4cfcc03c66b43af"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 7393696
+project-id = 1403720

@@ -1,0 +1,20 @@
+{
+  "values": [
+    {
+      "factor": 65,
+      "value": "project_deadzone:chests/hospital_ward"
+    },
+    {
+      "factor": 25,
+      "value": "project_deadzone:chests/hospital_pharmacy"
+    },
+    {
+      "factor": 8,
+      "value": "project_deadzone:chests/hospital_emergency"
+    },
+    {
+      "factor": 2,
+      "value": "project_deadzone:chests/hospital_security"
+    }
+  ]
+}

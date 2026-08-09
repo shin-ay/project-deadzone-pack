@@ -1,0 +1,29 @@
+﻿{
+    "id":  "project_deadzone:talent_medic_healing_10",
+    "bonuses":  [
+
+                ],
+    "requirements":  [
+
+                     ],
+    "directConnections":  [
+                              "project_deadzone:talent_medic_healing_9"
+                          ],
+    "longConnections":  [
+
+                        ],
+    "oneWayConnections":  [
+
+                          ],
+    "tags":  [
+                 "pdz_talent_healing",
+                 "pdz_node_talent_medic_healing_10"
+             ],
+    "backgroundTexture":  "skilltree:textures/icons/background/lesser.png",
+    "iconTexture":  "skilltree:textures/icons/potion_red.png",
+    "borderTexture":  "skilltree:textures/tooltip/lesser.png",
+    "positionX":  633.34,
+    "positionY":  -146.22,
+    "buttonSize":  16,
+    "isStartingPoint":  false
+}

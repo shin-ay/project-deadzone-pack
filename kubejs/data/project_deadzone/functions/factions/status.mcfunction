@@ -1,0 +1,5 @@
+execute store result score #survivors dz_faction if entity @e[tag=dz_survivor]
+execute store result score #civildef dz_faction if entity @e[tag=dz_civildef]
+execute store result score #raiders dz_faction if entity @e[tag=dz_raider]
+execute store result score #remnant dz_faction if entity @e[tag=dz_remnant]
+tellraw @s [{"text":"[DEADZONE] Survivor=","color":"gray"},{"score":{"name":"#survivors","objective":"dz_faction"}},{"text":" CivilDefense="},{"score":{"name":"#civildef","objective":"dz_faction"}},{"text":" Raiders="},{"score":{"name":"#raiders","objective":"dz_faction"}},{"text":" Remnant="},{"score":{"name":"#remnant","objective":"dz_faction"}}]

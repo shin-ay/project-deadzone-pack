@@ -1,0 +1,5 @@
+{
+  "require_unlock_for_imbuing": false,
+  "require_unlock_for_curio_imbuing": false,
+  "debug_logging": false
+}

@@ -1,0 +1,29 @@
+﻿{
+    "id":  "project_deadzone:talent_survivalist_hunting_5",
+    "bonuses":  [
+
+                ],
+    "requirements":  [
+
+                     ],
+    "directConnections":  [
+                              "project_deadzone:talent_survivalist_hunting_4"
+                          ],
+    "longConnections":  [
+
+                        ],
+    "oneWayConnections":  [
+
+                          ],
+    "tags":  [
+                 "pdz_talent_hunting",
+                 "pdz_node_talent_survivalist_hunting_5"
+             ],
+    "backgroundTexture":  "skilltree:textures/icons/background/lesser.png",
+    "iconTexture":  "skilltree:textures/icons/bone.png",
+    "borderTexture":  "skilltree:textures/tooltip/lesser.png",
+    "positionX":  -390.1,
+    "positionY":  243.76,
+    "buttonSize":  16,
+    "isStartingPoint":  false
+}

@@ -1,0 +1,45 @@
+﻿{
+    "id":  "project_deadzone:talent_survivor_health_master_power",
+    "bonuses":  [
+                    {
+                        "type":  "skilltree:attribute",
+                        "attribute":  "minecraft:generic.max_health",
+                        "id":  "44edfd62-6620-36a2-ace5-5a6e8db60188",
+                        "name":  "PROJECT DEADZONE Talent",
+                        "amount":  0.75,
+                        "operation":  0,
+                        "player_multiplier":  {
+                                                  "type":  "skilltree:none"
+                                              },
+                        "player_condition":  {
+                                                 "type":  "skilltree:none"
+                                             }
+                    }
+                ],
+    "requirements":  [
+
+                     ],
+    "directConnections":  [
+                              "project_deadzone:talent_survivor_health_15"
+                          ],
+    "longConnections":  [
+
+                        ],
+    "oneWayConnections":  [
+
+                          ],
+    "tags":  [
+                 "pdz_talent_health",
+                 "pdz_talent_mastery",
+                 "pdz_mastery_survivor_health",
+                 "pdz_master_power",
+                 "pdz_node_talent_survivor_health_master_power"
+             ],
+    "backgroundTexture":  "skilltree:textures/icons/background/keystone.png",
+    "iconTexture":  "skilltree:textures/icons/potion_red_big.png",
+    "borderTexture":  "skilltree:textures/tooltip/lesser.png",
+    "positionX":  -949.18,
+    "positionY":  263.23,
+    "buttonSize":  32,
+    "isStartingPoint":  false
+}

@@ -1,0 +1,45 @@
+﻿{
+    "id":  "project_deadzone:talent_medic_aura_master_utility",
+    "bonuses":  [
+                    {
+                        "type":  "skilltree:attribute",
+                        "attribute":  "minecraft:generic.armor",
+                        "id":  "8e7ebecc-56bf-1670-b9db-ba2ac0086c00",
+                        "name":  "PROJECT DEADZONE Talent",
+                        "amount":  0.1,
+                        "operation":  0,
+                        "player_multiplier":  {
+                                                  "type":  "skilltree:none"
+                                              },
+                        "player_condition":  {
+                                                 "type":  "skilltree:none"
+                                             }
+                    }
+                ],
+    "requirements":  [
+
+                     ],
+    "directConnections":  [
+                              "project_deadzone:talent_medic_aura_15"
+                          ],
+    "longConnections":  [
+
+                        ],
+    "oneWayConnections":  [
+
+                          ],
+    "tags":  [
+                 "pdz_talent_medic_aura",
+                 "pdz_talent_mastery",
+                 "pdz_mastery_medic_aura",
+                 "pdz_master_utility",
+                 "pdz_node_talent_medic_aura_master_utility"
+             ],
+    "backgroundTexture":  "skilltree:textures/icons/background/keystone.png",
+    "iconTexture":  "skilltree:textures/icons/potion_yellow_big.png",
+    "borderTexture":  "skilltree:textures/tooltip/lesser.png",
+    "positionX":  978.67,
+    "positionY":  111.51,
+    "buttonSize":  32,
+    "isStartingPoint":  false
+}

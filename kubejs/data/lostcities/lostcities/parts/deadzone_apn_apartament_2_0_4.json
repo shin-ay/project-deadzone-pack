@@ -1,0 +1,384 @@
+{
+  "xsize": 16,
+  "zsize": 16,
+  "palette": {
+    "palette": [
+      {
+        "char": "",
+        "block": "minecraft:air"
+      },
+      {
+        "char": "",
+        "block": "minecraft:gray_terracotta"
+      },
+      {
+        "char": "",
+        "block": "minecraft:polished_andesite"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:vent[facing=up,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:stone_brick_stairs[facing=east,half=bottom,shape=straight,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:stone_brick_stairs[facing=south,half=top,shape=straight,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:black_terracotta"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:washing_machine[facing=south]",
+        "tag": {
+          "Items": [],
+          "id": "apocalypsenow:washing_machine"
+        }
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:metalshelvesfive[facing=south,waterlogged=false]",
+        "tag": {
+          "id": "apocalypsenow:metalshelvesfive"
+        },
+        "loot": "project_deadzone:chests/generic_low_filled"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:trash_bin",
+        "tag": {
+          "Items": [],
+          "id": "apocalypsenow:trash_bin"
+        }
+      },
+      {
+        "char": "",
+        "block": "minecraft:crafting_table"
+      },
+      {
+        "char": "",
+        "block": "minecraft:smoker[facing=south,lit=false]",
+        "tag": {
+          "CookTime": 0,
+          "BurnTime": 0,
+          "Items": [],
+          "id": "minecraft:smoker",
+          "CookTimeTotal": 0,
+          "RecipesUsed": {}
+        }
+      },
+      {
+        "char": "",
+        "block": "minecraft:gray_bed[facing=west,occupied=false,part=head]",
+        "tag": {
+          "id": "minecraft:bed"
+        }
+      },
+      {
+        "char": "",
+        "block": "minecraft:gray_bed[facing=west,occupied=false,part=foot]",
+        "tag": {
+          "id": "minecraft:bed"
+        }
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:papertrash[facing=south]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:chest[facing=west,type=single,waterlogged=false]",
+        "tag": {
+          "id": "minecraft:chest"
+        }
+      },
+      {
+        "char": "",
+        "block": "minecraft:deepslate_tile_stairs[facing=west,half=top,shape=straight,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:papertrash[facing=east]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:mangrove_door[facing=east,half=lower,hinge=left,open=true,powered=false]"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:papertrashvariant[facing=north]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:dark_oak_door[facing=south,half=lower,hinge=right,open=true,powered=false]"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:papertrash[facing=west]"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:paperstrashvariant_2[facing=east]"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:corpsecloth[facing=south]",
+        "tag": {
+          "Items": [],
+          "id": "apocalypsenow:corpsecloth"
+        }
+      },
+      {
+        "char": "",
+        "block": "minecraft:smooth_quartz_stairs[facing=north,half=bottom,shape=straight,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:cobweb"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:papersvariant_2[facing=east]"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:papertrashvariant[facing=east]"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:ventcover[facing=west,half=top,open=true,powered=false,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:vent[facing=west,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:vent_entrance[facing=east,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:metal_shelves[facing=north,waterlogged=false]",
+        "tag": {
+          "Items": [],
+          "id": "apocalypsenow:metal_shelves"
+        },
+        "loot": "project_deadzone:chests/generic_low_filled"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:washing_machine[facing=north]",
+        "tag": {
+          "Items": [],
+          "id": "apocalypsenow:washing_machine"
+        }
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:large_shelves[facing=north,waterlogged=false]",
+        "tag": {
+          "id": "apocalypsenow:large_shelves"
+        },
+        "loot": "project_deadzone:chests/generic_low_filled"
+      },
+      {
+        "char": "",
+        "block": "minecraft:deepslate_tile_stairs[facing=south,half=top,shape=straight,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:apartment_door[facing=south,half=lower,hinge=left,open=false,powered=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:glass_pane[east=true,north=false,south=false,waterlogged=false,west=true]"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:brokenpremiunradio[facing=east]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:mangrove_door[facing=east,half=upper,hinge=left,open=true,powered=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:dark_oak_door[facing=south,half=upper,hinge=right,open=true,powered=false]"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:metelshelvesfour[facing=north,waterlogged=false]",
+        "tag": {
+          "id": "apocalypsenow:metelshelvesfour"
+        },
+        "loot": "project_deadzone:chests/generic_low_filled"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:broken_plasma_tv[facing=north]"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:apartment_door[facing=south,half=upper,hinge=left,open=false,powered=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:glass_pane[east=false,north=true,south=false,waterlogged=false,west=false]"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:protection_grid[east=true,north=false,south=false,waterlogged=false,west=true]"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:protection_grid[east=false,north=false,south=true,waterlogged=false,west=true]"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:protection_grid[east=false,north=true,south=true,waterlogged=false,west=false]"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:ventblock"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:protection_grid[east=false,north=true,south=true,waterlogged=false,west=true]"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:corpsecloth[facing=east]",
+        "tag": {
+          "Items": [],
+          "id": "apocalypsenow:corpsecloth"
+        }
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:vent_turn[face=wall,facing=west,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:corpsecloth[facing=north]",
+        "tag": {
+          "Items": [],
+          "id": "apocalypsenow:corpsecloth"
+        }
+      }
+    ]
+  },
+  "slices": [
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  ]
+}

@@ -1,0 +1,13 @@
+name = "Big Signs"
+filename = "big_signs_v1.1-forge_1.20.1.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "1fd3be6798379bf4d7b3745fa011bf47800d2bf7"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 6036024
+project-id = 1158019

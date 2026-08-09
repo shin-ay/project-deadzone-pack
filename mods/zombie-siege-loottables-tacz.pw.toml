@@ -1,0 +1,13 @@
+name = "Zombie Siege (LootTables) TacZ"
+filename = "zombie_siege_tacz-1.1.2.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "019ed3f01e58f7e1ffa16dc73ee994c1bca1dbe2"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 7746966
+project-id = 1204093

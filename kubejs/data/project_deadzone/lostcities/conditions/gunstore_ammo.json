@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "factor": 85,
+      "value": "project_deadzone:chests/gunstore_ammo_common"
+    },
+    {
+      "factor": 15,
+      "value": "project_deadzone:chests/gunstore_ammo_rare"
+    }
+  ]
+}

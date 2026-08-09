@@ -1,0 +1,59 @@
+﻿{
+    "id":  "project_deadzone:talent_security_guard_doctrine_utility",
+    "bonuses":  [
+                    {
+                        "type":  "skilltree:attribute",
+                        "attribute":  "minecraft:generic.armor",
+                        "id":  "e0da6acc-0efd-4511-caef-17eeb5639bd4",
+                        "name":  "PROJECT DEADZONE Talent",
+                        "amount":  0.11249999999999999,
+                        "operation":  0,
+                        "player_multiplier":  {
+                                                  "type":  "skilltree:none"
+                                              },
+                        "player_condition":  {
+                                                 "type":  "skilltree:none"
+                                             }
+                    },
+                    {
+                        "type":  "skilltree:attribute",
+                        "attribute":  "minecraft:generic.max_health",
+                        "id":  "009c9b5e-fd34-be5e-bddf-5bf9aae14576",
+                        "name":  "PROJECT DEADZONE Talent",
+                        "amount":  0.25,
+                        "operation":  0,
+                        "player_multiplier":  {
+                                                  "type":  "skilltree:none"
+                                              },
+                        "player_condition":  {
+                                                 "type":  "skilltree:none"
+                                             }
+                    }
+                ],
+    "requirements":  [
+
+                     ],
+    "directConnections":  [
+                              "project_deadzone:talent_security_guard_utility_20"
+                          ],
+    "longConnections":  [
+
+                        ],
+    "oneWayConnections":  [
+
+                          ],
+    "tags":  [
+                 "pdz_talent_guard",
+                 "pdz_talent_doctrine",
+                 "pdz_doctrine_security_guard",
+                 "pdz_doctrine_utility",
+                 "pdz_node_talent_security_guard_doctrine_utility"
+             ],
+    "backgroundTexture":  "skilltree:textures/icons/background/keystone.png",
+    "iconTexture":  "skilltree:textures/icons/chestplate_leather.png",
+    "borderTexture":  "skilltree:textures/tooltip/lesser.png",
+    "positionX":  993.91,
+    "positionY":  -790.59,
+    "buttonSize":  32,
+    "isStartingPoint":  false
+}

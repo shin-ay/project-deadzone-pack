@@ -1,0 +1,246 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "deadzone_main_story_02"
+	group: "51DC04D9192698A6"
+	icon: "minecraft:lightning_rod"
+	id: "2A2CEA89BA913F97"
+	order_index: 4
+	quest_links: [ ]
+	quests: [
+		{
+			description: [
+				"警察署から回収したCivil Defenseの記録には、消防署から発信された救難信号が残っていた。"
+				"救助隊が残した中継器を確保し、都市通信網を再起動する。"
+			]
+			icon: "minecraft:bell"
+			id: "4AF84F15560BA03C"
+			shape: "hexagon"
+			size: 1.5d
+			subtitle: "灰の中から、短い救難信号が繰り返されている。"
+			tasks: [{
+				id: "57E70B48086EBED9"
+				title: "消防署の記録を確認した"
+				type: "custom"
+			}]
+			title: "Chapter 4：灰の救難信号"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			description: [
+				"消防署はRaider Ash Captainの回収部隊に占拠されている。"
+				"正面だけでなく車庫や上階からの射線に注意し、救助指令室へ進もう。"
+			]
+			icon: {
+				Count: 1
+				id: "minecraft:iron_axe"
+				tag: {
+					Damage: 0
+				}
+			}
+			id: "3001FAD121C4FCD2"
+			subtitle: "救助拠点を武器庫に変えた部隊を排除する。"
+			tasks: [{
+				id: "6019F6B01BDAA157"
+				title: "消防署へ到達した"
+				type: "custom"
+			}]
+			title: "封鎖された消防署"
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			description: [
+				"Ash Captainを撃破し、指令室と車庫を確保する。"
+				"回収した耐熱ケースには通信中継器の一部が保管されている。"
+			]
+			icon: "minecraft:blaze_powder"
+			id: "04AC90A6EDFF8450"
+			rewards: [
+				{
+					count: 16
+					id: "0014CD6A7F8AF7AE"
+					item: "apocalypsenow:money"
+					type: "item"
+				}
+				{
+					count: 4
+					id: "0F627FF46EF435F7"
+					item: "apocalypsenow:bandage"
+					type: "item"
+				}
+				{
+					id: "4887EE64AF452FA0"
+					type: "xp"
+					xp: 20
+				}
+			]
+			shape: "hexagon"
+			size: 1.5d
+			subtitle: "Raiderの現場指揮官を排除する。"
+			tasks: [{
+				id: "3DD3CF7EDD48323E"
+				title: "Raider Ash Captainを撃破した"
+				type: "custom"
+			}]
+			title: "救助指令室を奪還せよ"
+			x: 4.0d
+			y: 0.0d
+		}
+		{
+			description: [
+				"中継器には北東のRadio Towerへ向けた座標と、最後の避難輸送記録が残されている。"
+				"電力と交換部品を準備して通信塔へ向かう。"
+			]
+			icon: "minecraft:echo_shard"
+			id: "40020680E6A96AF6"
+			subtitle: "失われた通信網の接続先を特定する。"
+			tasks: [{
+				id: "20D7B5D9D3B8F71B"
+				title: "緊急中継器を回収した"
+				type: "custom"
+			}]
+			title: "残された避難座標"
+			x: 6.0d
+			y: 0.0d
+		}
+		{
+			description: [
+				"Radio Towerを復旧すれば、新しい施設情報と遠距離の救難信号を受信できる。"
+				"ただし送信を始めれば、こちらの位置も武装勢力に知られる。"
+			]
+			icon: "minecraft:lightning_rod"
+			id: "3EB8C6CE111AC5E6"
+			shape: "hexagon"
+			size: 1.5d
+			subtitle: "通信を取り戻し、次の目的地を見つける。"
+			tasks: [{
+				id: "0CAF413E1598C259"
+				title: "Radio Towerへ到達した"
+				type: "custom"
+			}]
+			title: "Chapter 5：信号を取り戻せ"
+			x: 8.0d
+			y: 0.0d
+		}
+		{
+			description: [
+				"予備電源と送信機を応急修理する。"
+				"必要量はマルチでも単純作業になりすぎない範囲に抑えている。"
+			]
+			icon: "minecraft:redstone"
+			id: "42670EF087DB07A6"
+			subtitle: "電源と送信回路を復旧する。"
+			tasks: [
+				{
+					consume_items: true
+					count: 16L
+					id: "34B9308955E8187C"
+					item: "minecraft:redstone"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 8L
+					id: "278CEF561EA6ACE6"
+					item: "minecraft:copper_ingot"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 4L
+					id: "6402307BDC78C9FD"
+					item: "minecraft:iron_ingot"
+					type: "item"
+				}
+			]
+			title: "応急送信機"
+			x: 10.0d
+			y: 0.0d
+		}
+		{
+			description: [
+				"送信開始と同時にRemnant Signal Hunterが通信塔を捕捉した。"
+				"設備を壊される前に護衛部隊と重装指揮官を排除する。"
+			]
+			icon: {
+				Count: 1
+				id: "minecraft:shield"
+				tag: {
+					Damage: 0
+				}
+			}
+			id: "34C3DD0D8725B787"
+			rewards: [
+				{
+					count: 24
+					id: "40281B7A8798596D"
+					item: "apocalypsenow:money"
+					type: "item"
+				}
+				{
+					count: 2
+					id: "534D34C6F5B972FE"
+					item: "minecraft:diamond"
+					type: "item"
+				}
+				{
+					id: "626035C1750C910F"
+					type: "xp"
+					xp: 30
+				}
+			]
+			shape: "hexagon"
+			size: 1.5d
+			subtitle: "通信塔を守り抜き、都市外への回線を開く。"
+			tasks: [{
+				id: "79CAA5F5F9EE8EAF"
+				title: "Remnant Signal Hunterを撃破した"
+				type: "custom"
+			}]
+			title: "送信中：位置を特定された"
+			x: 12.0d
+			y: 0.0d
+		}
+		{
+			description: [
+				"通信網が復旧し、警察・消防・生存者拠点の情報が一本につながった。"
+				"新たに病院からの自動送信と、軍事区域の暗号通信が検出されている。"
+			]
+			icon: "minecraft:filled_map"
+			id: "3FE9D0F62386FC0C"
+			rewards: [
+				{
+					count: 32
+					id: "319F688409E605DF"
+					item: "apocalypsenow:money"
+					type: "item"
+				}
+				{
+					count: 3
+					id: "061B3D70A08A802C"
+					item: "minecraft:diamond"
+					type: "item"
+				}
+				{
+					id: "63923735E4C2DE6E"
+					type: "xp"
+					xp: 40
+				}
+			]
+			shape: "hexagon"
+			size: 2.0d
+			subtitle: "都市作戦とTactical Lootへの道が開く。"
+			tasks: [{
+				id: "3F5E9A0078D51E7B"
+				title: "都市通信網を復旧した"
+				type: "custom"
+			}]
+			title: "T3：Operator"
+			x: 14.0d
+			y: 0.0d
+		}
+	]
+	title: "メインストーリー II：失われた信号"
+}

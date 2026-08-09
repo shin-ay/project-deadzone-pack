@@ -1,0 +1,253 @@
+{
+  "xsize": 16,
+  "zsize": 16,
+  "palette": {
+    "palette": [
+      {
+        "char": "",
+        "block": "minecraft:air"
+      },
+      {
+        "char": "",
+        "block": "minecraft:red_concrete"
+      },
+      {
+        "char": "",
+        "block": "minecraft:smooth_stone"
+      },
+      {
+        "char": "",
+        "block": "minecraft:yellow_concrete"
+      },
+      {
+        "char": "",
+        "block": "minecraft:black_concrete"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:redconcretebricks"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:large_shelves_fill[facing=south,waterlogged=false]",
+        "tag": {
+          "id": "apocalypsenow:large_shelves_fill"
+        },
+        "loot": "project_deadzone:chests/generic_low_filled"
+      },
+      {
+        "char": "",
+        "block": "minecraft:chest[facing=south,type=single,waterlogged=false]",
+        "tag": {
+          "id": "minecraft:chest"
+        }
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:large_shelves[facing=south,waterlogged=false]",
+        "tag": {
+          "id": "apocalypsenow:large_shelves"
+        },
+        "loot": "project_deadzone:chests/generic_low_filled"
+      },
+      {
+        "char": "",
+        "block": "minecraft:oak_leaves[distance=7,persistent=true,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:ironcrate",
+        "tag": {
+          "Items": [],
+          "id": "apocalypsenow:ironcrate"
+        },
+        "loot": "project_deadzone:chests/generic_high_filled"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:brokenoldradio[facing=west]"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:large_shelves_fill[facing=west,waterlogged=false]",
+        "tag": {
+          "id": "apocalypsenow:large_shelves_fill"
+        },
+        "loot": "project_deadzone:chests/generic_low_filled"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:large_shelves[facing=west,waterlogged=false]",
+        "tag": {
+          "id": "apocalypsenow:large_shelves"
+        },
+        "loot": "project_deadzone:chests/generic_low_filled"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:iron_ladder[facing=west]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:light_gray_concrete"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:large_shelves[facing=north,waterlogged=false]",
+        "tag": {
+          "id": "apocalypsenow:large_shelves"
+        },
+        "loot": "project_deadzone:chests/generic_low_filled"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:large_shelves_fill[facing=north,waterlogged=false]",
+        "tag": {
+          "id": "apocalypsenow:large_shelves_fill"
+        },
+        "loot": "project_deadzone:chests/generic_low_filled"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:papertrash[facing=west]"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:papersvariant_2[facing=east]"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:papertrashvariant[facing=east]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:iron_bars[east=false,north=false,south=false,waterlogged=false,west=false]"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:corpsesack[facing=south]",
+        "tag": {
+          "Items": [],
+          "id": "apocalypsenow:corpsesack"
+        }
+      },
+      {
+        "char": "",
+        "block": "minecraft:chest[facing=north,type=single,waterlogged=false]",
+        "tag": {
+          "id": "minecraft:chest"
+        }
+      }
+    ]
+  },
+  "slices": [
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  ]
+}

@@ -1,0 +1,387 @@
+{
+  "melee_core_1": {
+    "title": "近接戦闘 基礎 Lv1",
+    "description": "近接戦闘の基礎能力を一段階高める。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:iron_sword"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "task"
+      }
+    },
+    "cost": 0,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_melee_core_1"
+        }
+      }
+    ]
+  },
+  "melee_core_2": {
+    "title": "近接戦闘 基礎 Lv2",
+    "description": "近接戦闘の基礎能力を一段階高める。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:iron_sword"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "task"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_melee_core_2"
+        }
+      }
+    ]
+  },
+  "melee_core_3": {
+    "title": "近接戦闘 基礎 Lv3",
+    "description": "近接戦闘でポイントを配分し、基礎能力をさらに高める。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:iron_sword"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "goal"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_melee_core_3"
+        }
+      }
+    ],
+    "required_spent_points": 2
+  },
+  "melee_core_4": {
+    "title": "近接戦闘 基礎 Lv4",
+    "description": "近接戦闘でポイントを配分し、基礎能力をさらに高める。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:iron_sword"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "goal"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_melee_core_4"
+        }
+      }
+    ],
+    "required_spent_points": 4
+  },
+  "melee_core_5": {
+    "title": "近接戦闘 基礎 Lv5",
+    "description": "近接戦闘でポイントを配分し、基礎能力をさらに高める。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:iron_sword"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "challenge"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_melee_core_5"
+        }
+      }
+    ],
+    "required_spent_points": 6
+  },
+  "melee_core_6": {
+    "title": "近接戦闘 基礎 Lv6",
+    "description": "近接戦闘でポイントを配分し、基礎能力をさらに高める。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:iron_sword"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "challenge"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_melee_core_6"
+        }
+      }
+    ],
+    "required_spent_points": 8
+  },
+  "heavy_strikes": {
+    "title": "強打",
+    "description": "近接攻撃力を高める。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:iron_axe"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "task"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_melee_power_1"
+        }
+      }
+    ]
+  },
+  "executioner": {
+    "title": "エクスキューショナー",
+    "description": "負傷した敵へのフィニッシュ能力を得る。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:diamond_axe"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "goal"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_melee_power_2"
+        }
+      }
+    ],
+    "required_spent_points": 3
+  },
+  "finishing_blow": {
+    "title": "フィニッシングブロウ",
+    "description": "瀕死の敵を仕留める近接特化能力。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:netherite_axe"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "challenge"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_melee_power_3"
+        }
+      }
+    ],
+    "required_spent_points": 6
+  },
+  "crowd_control": {
+    "title": "群集制御",
+    "description": "攻撃のノックバックを高める。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:shield"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "task"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_melee_control_1"
+        }
+      }
+    ]
+  },
+  "stagger_specialist": {
+    "title": "よろめきの達人",
+    "description": "敵の体勢を崩しやすくする。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:stone_sword"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "goal"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_melee_control_2"
+        }
+      }
+    ],
+    "required_spent_points": 3
+  },
+  "line_breaker": {
+    "title": "ラインブレイカー",
+    "description": "集団の前線を押し返す制圧能力。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:netherite_sword"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "challenge"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_melee_control_3"
+        }
+      }
+    ],
+    "required_spent_points": 6
+  },
+  "endurance": {
+    "title": "近接持久力",
+    "description": "近接攻撃速度を高める。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:cooked_beef"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "task"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_melee_efficiency_1"
+        }
+      }
+    ]
+  },
+  "relentless": {
+    "title": "不屈の猛攻",
+    "description": "連続戦闘時の攻撃効率を高める。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:golden_sword"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "goal"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_melee_efficiency_2"
+        }
+      }
+    ],
+    "required_spent_points": 3
+  },
+  "battle_trance": {
+    "title": "バトルトランス",
+    "description": "攻撃を継続するほど有利になる戦闘能力。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:blaze_powder"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "challenge"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_melee_efficiency_3"
+        }
+      }
+    ],
+    "required_spent_points": 6
+  }
+}

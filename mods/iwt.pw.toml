@@ -1,0 +1,13 @@
+name = "Immersive Weathering: Tweaks [Performance Optimization]"
+filename = "immersive-weathering-tweaks-forge-1.1.0.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "72ead954d2edbd21e70f8c4f8a3c91f0d890215c"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 8478940
+project-id = 1607613

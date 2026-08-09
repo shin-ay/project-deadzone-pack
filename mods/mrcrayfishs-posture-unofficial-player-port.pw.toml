@@ -1,0 +1,13 @@
+name = "ItsUniqueGamer's MrCrayfish's Posture Unofficial Player Port"
+filename = "posture-1.5.0-1.20.1.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "e18ab431c059eaec67ccf64b4e3aa42ae7ed4905"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 8071118
+project-id = 1341498

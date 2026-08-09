@@ -1,0 +1,7 @@
+{
+  "allowStatSharing": false,
+  "allowStatEditing": false,
+  "statSharingCooldown": 5000,
+  "requireOpForCommands": true,
+  "logStatChanges": true
+}

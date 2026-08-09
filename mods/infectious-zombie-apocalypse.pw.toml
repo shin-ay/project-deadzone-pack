@@ -1,0 +1,13 @@
+name = "Infectious - Zombie Apocalypse"
+filename = "Infectious-forge-1.20.1-1.7.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "d44ec48b9131dc2830a7a88fbe733e4228499969"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 7121624
+project-id = 1168025

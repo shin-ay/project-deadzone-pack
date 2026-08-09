@@ -1,0 +1,30 @@
+﻿{
+    "id":  "project_deadzone:talent_engineer_gunsmith_side8_2",
+    "bonuses":  [
+
+                ],
+    "requirements":  [
+
+                     ],
+    "directConnections":  [
+                              "project_deadzone:talent_engineer_gunsmith_side8_1"
+                          ],
+    "longConnections":  [
+
+                        ],
+    "oneWayConnections":  [
+
+                          ],
+    "tags":  [
+                 "pdz_talent_gunsmith",
+                 "pdz_talent_optional_end",
+                 "pdz_node_talent_engineer_gunsmith_side8_2"
+             ],
+    "backgroundTexture":  "skilltree:textures/icons/background/notable.png",
+    "iconTexture":  "skilltree:textures/icons/arrow_diamond.png",
+    "borderTexture":  "skilltree:textures/tooltip/lesser.png",
+    "positionX":  279.82,
+    "positionY":  537.53,
+    "buttonSize":  22,
+    "isStartingPoint":  false
+}

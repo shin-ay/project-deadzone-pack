@@ -1,0 +1,39 @@
+{
+  "values": [
+    {
+      "factor": 10000,
+      "value": "lostcities:chests/raildungeonchest",
+      "inpart": "rail_dungeon1"
+    },
+    {
+      "factor": 10000,
+      "value": "lostcities:chests/raildungeonchest",
+      "inpart": "rail_dungeon2"
+    },
+    {
+      "factor": 100,
+      "value": "project_deadzone:chests/generic_high",
+      "range": "7,100"
+    },
+    {
+      "factor": 100,
+      "value": "project_deadzone:chests/generic_mid",
+      "range": "3,6"
+    },
+    {
+      "factor": 100,
+      "value": "project_deadzone:chests/generic_low",
+      "range": "-2,2"
+    },
+    {
+      "factor": 100,
+      "value": "project_deadzone:chests/generic_mid",
+      "range": "-4,-3"
+    },
+    {
+      "factor": 100,
+      "value": "project_deadzone:chests/generic_high",
+      "range": "-100,-5"
+    }
+  ]
+}

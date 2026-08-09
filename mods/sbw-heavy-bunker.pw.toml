@@ -1,0 +1,13 @@
+name = "[TACZ] Heavy Bunker"
+filename = "heavy_bunker-1.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "9f94e54aa493e38d19d2d789b441d7b06db02e57"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 8480920
+project-id = 1470596

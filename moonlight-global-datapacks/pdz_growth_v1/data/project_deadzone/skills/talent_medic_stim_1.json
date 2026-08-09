@@ -1,0 +1,29 @@
+﻿{
+    "id":  "project_deadzone:talent_medic_stim_1",
+    "bonuses":  [
+
+                ],
+    "requirements":  [
+
+                     ],
+    "directConnections":  [
+                              "project_deadzone:talent_start_medic"
+                          ],
+    "longConnections":  [
+
+                        ],
+    "oneWayConnections":  [
+
+                          ],
+    "tags":  [
+                 "pdz_talent_stim",
+                 "pdz_node_talent_medic_stim_1"
+             ],
+    "backgroundTexture":  "skilltree:textures/icons/background/lesser.png",
+    "iconTexture":  "skilltree:textures/icons/potion_green.png",
+    "borderTexture":  "skilltree:textures/tooltip/lesser.png",
+    "positionX":  300.11,
+    "positionY":  69.28,
+    "buttonSize":  16,
+    "isStartingPoint":  false
+}

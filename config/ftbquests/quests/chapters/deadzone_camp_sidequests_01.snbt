@@ -1,0 +1,289 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "deadzone_camp_sidequests_01"
+	group: "51DC04D9192698A6"
+	icon: "minecraft:campfire"
+	id: "09B81A3F6EE5AB92"
+	order_index: 2
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: ["1920AEAAF4D75E94"]
+			description: [
+				"ミナトは遠征計画に使える方位磁針を必要としている。"
+				"役割を決めるだけでなく、全員が帰還できる経路を準備しよう。"
+			]
+			icon: "minecraft:compass"
+			id: "72B0CD68492E6381"
+			rewards: [
+				{
+					count: 3
+					id: "2F46D15D87A9F5E3"
+					item: "apocalypsenow:money"
+					type: "item"
+				}
+				{
+					id: "71139277AECDBDD3"
+					type: "xp"
+					xp: 5
+				}
+			]
+			subtitle: "依頼人：ミナト"
+			tasks: [{
+				consume_items: true
+				id: "1F394D03A5B52BF0"
+				item: "minecraft:compass"
+				type: "item"
+			}]
+			title: "帰還経路の確保"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["1920AEAAF4D75E94"]
+			description: [
+				"レイが無線機の修理に使う導体と電子部品を探している。"
+				"通信網が安定すれば、新しい救難信号や危険情報を追跡できる。"
+			]
+			icon: "minecraft:redstone"
+			id: "010C657AF86BA4C7"
+			rewards: [
+				{
+					count: 4
+					id: "1CB2C208CA4F2BEE"
+					item: "apocalypsenow:money"
+					type: "item"
+				}
+				{
+					id: "628BB0921148633E"
+					type: "xp"
+					xp: 5
+				}
+			]
+			subtitle: "依頼人：レイ"
+			tasks: [
+				{
+					consume_items: true
+					count: 8L
+					id: "77F17D516D2CF7C8"
+					item: "minecraft:redstone"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 4L
+					id: "41823B4837D84DC8"
+					item: "minecraft:copper_ingot"
+					type: "item"
+				}
+			]
+			title: "途切れた周波数"
+			x: 2.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["1920AEAAF4D75E94"]
+			description: [
+				"ハンクはキャンプ周辺の感染者が増えている証拠を集めている。"
+				"腐肉を持ち帰り、警戒範囲を見直す判断材料にしよう。"
+			]
+			icon: {
+				Count: 1
+				id: "minecraft:iron_sword"
+				tag: {
+					Damage: 0
+				}
+			}
+			id: "298ABA85898F0923"
+			rewards: [
+				{
+					count: 2
+					id: "41A311076FB9278E"
+					item: "apocalypsenow:bandage"
+					type: "item"
+				}
+				{
+					count: 2
+					id: "68F5F584C13A38BF"
+					item: "apocalypsenow:money"
+					type: "item"
+				}
+			]
+			subtitle: "依頼人：ハンク"
+			tasks: [{
+				consume_items: true
+				count: 12L
+				id: "252F981C1453E140"
+				item: "minecraft:rotten_flesh"
+				type: "item"
+			}]
+			title: "外周警戒"
+			x: 2.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["1920AEAAF4D75E94"]
+			description: [
+				"マヤは共同備蓄を増やそうとしている。"
+				"保存できる食料と水を納品し、次の遠征に備えよう。"
+			]
+			icon: "minecraft:bread"
+			id: "42891C4DF6B27EC5"
+			rewards: [
+				{
+					count: 4
+					id: "40F0545D32255F36"
+					item: "apocalypsenow:money"
+					type: "item"
+				}
+				{
+					id: "11916F878459A43C"
+					type: "xp"
+					xp: 5
+				}
+			]
+			subtitle: "依頼人：マヤ"
+			tasks: [
+				{
+					consume_items: true
+					count: 8L
+					id: "4C6C56B080AECF16"
+					item: "minecraft:bread"
+					type: "item"
+				}
+				{
+					consume_items: true
+					id: "11CED87489DCB65D"
+					item: "survival_instinct:gallon_of_water"
+					type: "item"
+				}
+			]
+			title: "共同備蓄"
+			x: 4.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["1920AEAAF4D75E94"]
+			description: [
+				"シオリの治療所では基本的な処置用品が不足している。"
+				"余裕のある時に補充しておけば、次の負傷者を救える。"
+			]
+			icon: "apocalypsenow:bandage"
+			id: "35062B12DBB8E52F"
+			rewards: [
+				{
+					id: "3E796A705B12694B"
+					item: "apocalypsenow:pain_killers"
+					type: "item"
+				}
+				{
+					count: 3
+					id: "2432290F4EF68ACB"
+					item: "apocalypsenow:money"
+					type: "item"
+				}
+			]
+			subtitle: "依頼人：シオリ"
+			tasks: [{
+				consume_items: true
+				count: 6L
+				id: "0882FE6E20B99136"
+				item: "apocalypsenow:bandage"
+				type: "item"
+			}]
+			title: "治療所の不足品"
+			x: 4.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["1920AEAAF4D75E94"]
+			description: [
+				"ゴロウは拠点設備の補修用金属を集めている。"
+				"派手な機械より先に、壊れた設備を動かす材料が必要だ。"
+			]
+			icon: "minecraft:iron_ingot"
+			id: "4359BB2BF9598A02"
+			rewards: [
+				{
+					count: 5
+					id: "0BAC7C02349AB366"
+					item: "apocalypsenow:money"
+					type: "item"
+				}
+				{
+					id: "63AAE89D8DBAE38D"
+					type: "xp"
+					xp: 5
+				}
+			]
+			subtitle: "依頼人：ゴロウ"
+			tasks: [
+				{
+					consume_items: true
+					count: 8L
+					id: "5366A6B2A4A881D4"
+					item: "minecraft:iron_ingot"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 4L
+					id: "3FCDE86BBEFAB3B1"
+					item: "minecraft:copper_ingot"
+					type: "item"
+				}
+			]
+			title: "使える部品"
+			x: 6.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["1920AEAAF4D75E94"]
+			description: [
+				"レイがキャンプへ接近する武装集団を捕捉した。"
+				"二方向から来る襲撃部隊を排除し、住人とBase Coreを守り抜こう。"
+				"留守中には開始されず、キャンプにいる時だけ警告が発生する。"
+			]
+			icon: {
+				Count: 1
+				id: "minecraft:shield"
+				tag: {
+					Damage: 0
+				}
+			}
+			id: "41F0ABB18B9685AC"
+			rewards: [
+				{
+					count: 10
+					id: "2944D591B98FE3EC"
+					item: "apocalypsenow:money"
+					type: "item"
+				}
+				{
+					count: 3
+					id: "17A27881854DEB7B"
+					item: "apocalypsenow:bandage"
+					type: "item"
+				}
+				{
+					id: "211E1594B6EE97C5"
+					type: "xp"
+					xp: 10
+				}
+			]
+			shape: "hexagon"
+			size: 1.5d
+			subtitle: "キャンプ防衛イベント"
+			tasks: [{
+				id: "13E66C7A5F1B733F"
+				title: "最初の拠点襲撃を撃退する"
+				type: "custom"
+			}]
+			title: "こちら側の壁"
+			x: 8.0d
+			y: 0.0d
+		}
+	]
+	title: "Survivor Camp：住人からの依頼"
+}

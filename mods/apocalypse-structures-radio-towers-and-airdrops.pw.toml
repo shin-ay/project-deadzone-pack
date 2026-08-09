@@ -1,0 +1,13 @@
+name = "Apocalypse Structures: Radio Towers and Airdrops"
+filename = "radiotowers-1.0.10+1.20.1-forge.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "9e9d2573cd7bdb8b2ed2855680718a2dc5578caa"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 8543578
+project-id = 1193033

@@ -1,0 +1,41 @@
+
+#Vanilla HUD Bars - Toggle to show vanilla bars instead of mod bars
+[vanillaBars]
+	#Use vanilla health bar instead of mod health bar
+	useVanillaHealthBar = true
+	#Use vanilla hunger bar instead of mod hunger bar
+	useVanillaHungerBar = true
+	#Use vanilla armor bar instead of mod armor bar
+	useVanillaArmorBar = true
+	#Use vanilla air bar instead of mod air bar
+	useVanillaAirBar = true
+
+#Party HUD Settings
+[partyHud]
+	#Show body damage diagram for party members
+	showPartyBodyDamage = true
+	#Scale of the party HUD (1.0 = normal)
+	#Range: 0.5 ~ 2.0
+	scale = 0.55
+
+#Party Health Client Configuration
+[hud]
+	#Show hydration bar in HUD (if enabled on server)
+	showHydrationBar = false
+	#Show stamina bar in HUD (if enabled on server)
+	showStaminaBar = false
+	#Show body damage indicator in HUD (if enabled on server)
+	showBodyDamageHud = true
+
+#Body Damage Screen Settings
+[bodyDamageScreen]
+	#Scale of the body damage HUD (1.0 = normal)
+	#Range: 0.5 ~ 2.0
+	scale = 1.15
+	#X position of body damage HUD (-1 for default position)
+	#Range: -1 ~ 4096
+	posX = -1
+	#Y position of body damage HUD (-1 for default position)
+	#Range: -1 ~ 4096
+	posY = -1
+

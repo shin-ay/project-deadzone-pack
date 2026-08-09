@@ -1,0 +1,45 @@
+﻿{
+    "id":  "project_deadzone:talent_survivalist_hunting_doctrine_utility",
+    "bonuses":  [
+                    {
+                        "type":  "skilltree:attribute",
+                        "attribute":  "minecraft:generic.armor",
+                        "id":  "8acf0972-146a-de8e-36f4-0bbc6f19fb34",
+                        "name":  "PROJECT DEADZONE Talent",
+                        "amount":  0.1,
+                        "operation":  0,
+                        "player_multiplier":  {
+                                                  "type":  "skilltree:none"
+                                              },
+                        "player_condition":  {
+                                                 "type":  "skilltree:none"
+                                             }
+                    }
+                ],
+    "requirements":  [
+
+                     ],
+    "directConnections":  [
+                              "project_deadzone:talent_survivalist_hunting_utility_20"
+                          ],
+    "longConnections":  [
+
+                        ],
+    "oneWayConnections":  [
+
+                          ],
+    "tags":  [
+                 "pdz_talent_hunting",
+                 "pdz_talent_doctrine",
+                 "pdz_doctrine_survivalist_hunting",
+                 "pdz_doctrine_utility",
+                 "pdz_node_talent_survivalist_hunting_doctrine_utility"
+             ],
+    "backgroundTexture":  "skilltree:textures/icons/background/keystone.png",
+    "iconTexture":  "skilltree:textures/icons/bone.png",
+    "borderTexture":  "skilltree:textures/tooltip/lesser.png",
+    "positionX":  -1105.35,
+    "positionY":  625.38,
+    "buttonSize":  32,
+    "isStartingPoint":  false
+}

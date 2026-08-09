@@ -1,0 +1,13 @@
+name = "Kubejs Pufferfish Skills"
+filename = "pufferfishskillsjs-1.1.2.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "60c8e513eb80c3ec51b6e8670f6fac3f6c9bdee9"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 8411673
+project-id = 1569679

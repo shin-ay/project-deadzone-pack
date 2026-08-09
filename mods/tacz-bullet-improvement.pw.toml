@@ -1,0 +1,13 @@
+name = "[TaCZ] Tacz Bullet Improvement"
+filename = "TaczBulletImprovement-Forge-1.20.1-1.0.4.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "c5d64c6cff77153d2a0f456e56c3179191545432"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 8503373
+project-id = 1533335

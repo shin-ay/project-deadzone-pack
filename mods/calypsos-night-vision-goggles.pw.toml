@@ -1,0 +1,13 @@
+name = "Calypso's Night Vision Goggles"
+filename = "calypsos-nightvision-goggles-0.7.5-forge-1.20.1.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "44c81ce424c4753dd03deff947854225a1f58ab6"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 7400308
+project-id = 1346157

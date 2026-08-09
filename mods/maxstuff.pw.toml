@@ -1,0 +1,13 @@
+name = "[Tacz]Maxstuff"
+filename = "maxstuff-1.8.2_ammofix.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "1c07484877d7a77b712da03a9a6e495d82665351"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 8286279
+project-id = 1199923

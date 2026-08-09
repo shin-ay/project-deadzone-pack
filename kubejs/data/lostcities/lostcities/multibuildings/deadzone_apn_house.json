@@ -1,0 +1,14 @@
+{
+  "dimx": 2,
+  "dimz": 2,
+  "buildings": [
+    [
+      "lostcities:deadzone_apn_house_0_0",
+      "lostcities:deadzone_apn_house_0_1"
+    ],
+    [
+      "lostcities:deadzone_apn_house_1_0",
+      "lostcities:deadzone_apn_house_1_1"
+    ]
+  ]
+}

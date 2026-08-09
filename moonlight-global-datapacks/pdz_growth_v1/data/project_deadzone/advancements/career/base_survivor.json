@@ -1,0 +1,8 @@
+{
+    "criteria":  {
+                     "career":  {
+                                    "trigger":  "minecraft:impossible"
+                                }
+                 },
+    "requirements": [["career"]]
+}

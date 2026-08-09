@@ -1,0 +1,79 @@
+/*
+==============================================
+|             LC2H - Configuration           |
+|             Author: Admany                 |
+|             All Rights Reserved            |
+==============================================
+|  This config file auto-updates itself if   |
+|  there are config changes. You do NOT need |
+|  to delete it for new features or updates! |
+==============================================
+*/
+
+{
+  "_comment": "Edit this file to configure LC2H. For documentation, visit the mod's wiki.",
+
+  // === General Settings ===
+  // Enable async batching for double blocks
+  "enableAsyncDoubleBlockBatcher": true,
+  // Recommended: serialize nearby Lost Cities chunk-gen to avoid bugged/duplicated chunks (may reduce max throughput)
+  "enableLostCitiesGenerationLock": true,
+  // Recommended: prevent crashes from broken/invalid Lost Cities building parts (safe bounds checks)
+  "enableLostCitiesPartSliceCompat": true,
+  // Enable cache stats logging
+  "enableCacheStatsLogging": true,
+  // Enable removal of floating vegetation after terrain generation
+  "enableFloatingVegetationRemoval": false,
+  // Enable Lost Cities explosion debris spill into adjacent chunks (can add rubble around streets)
+  "enableExplosionDebris": false,
+  // Hide the experimental features warning screen
+  "hideExperimentalWarning": true,
+  // Enable debug logging for memory management and warmup operations
+  "enableDebugLogging": false,
+
+  // === Caching ===
+  // Max combined LC2H + Lost Cities cache budget (MB).
+  "cacheCombinedMaxMB": 512,
+  // If true, enforce combined max by evicting from the largest cache.
+  "cacheEnforceCombinedMax": true,
+  // If true, split the combined max evenly between LC2H and Lost Cities.
+  "cacheSplitEqual": false,
+  // Max LC2H cache budget (MB).
+  "cacheMaxMB": 384,
+  // Max Lost Cities cache budget (MB).
+  "cacheLostCitiesMaxMB": 384,
+  // Lost Cities RAM cache TTL (minutes).
+  "cacheLostCitiesTtlMinutes": 20,
+  // Lost Cities disk cache TTL (hours).
+  "cacheLostCitiesDiskTtlHours": 6,
+
+  // === Interface ===
+  // UI accent color in hex (example: 3A86FF)
+  "uiAccentColor": "3A86FF",
+  // Preferred LC2H config screen language (example: en_us, lt_lt).
+  "uiLocale": "en_us",
+
+  // === City Edge ===
+  // Enable smooth blending of city edges into surrounding terrain
+  "cityBlendEnabled": false,
+  // Blend width in blocks around city borders
+  "cityBlendWidth": 36,
+  // Blend softness (higher = softer falloff)
+  "cityBlendSoftness": 1.4,
+  // Prevent trees from generating near city borders (within the blend distance)
+  "cityBlendClearTrees": true,
+  // Prevent half-trees on city borders by blocking trees that would cross a city/vanilla seam
+  "cityBlendTreeSeamFix": true,
+  // Buffer (blocks) from a chunk edge to block seam-crossing trees
+  "cityBlendTreeSeamBuffer": 3,
+  // Multiplier for auto-detected tree spread at seams (raise for giant tree modpacks)
+  "treeSeamRadiusMultiplier": 1.0,
+  // Enable chunk seam ownership journal for cross-chunk Lost Cities writes
+  "seamOwnershipEnabled": true,
+  // Maximum deferred seam write intents per target chunk
+  "seamOwnershipMaxIntentsPerChunk": 8192,
+  // How long deferred seam write intents are kept before expiring (milliseconds)
+  "seamOwnershipIntentTtlMs": 600000,
+  // Maximum downward support depth for Lost Cities highway pillars (higher reaches seabed in deep oceans)
+  "highwaySupportMaxDepth": 192
+}

@@ -1,0 +1,13 @@
+name = "Apocalypse Zombies config"
+filename = "apocalypse_zombies_config-1.0.0.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "d6525604c95352b6d1e4c23b885f6235c9f87765"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 7546822
+project-id = 1448431

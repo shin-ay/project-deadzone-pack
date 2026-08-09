@@ -1,0 +1,78 @@
+{
+  "scavenging_core_1": {
+    "x": 0,
+    "y": 64,
+    "definition": "scavenging_core_1",
+    "root": true
+  },
+  "scavenging_core_2": {
+    "x": 0,
+    "y": 0,
+    "definition": "scavenging_core_2"
+  },
+  "scavenging_core_3": {
+    "x": 0,
+    "y": -64,
+    "definition": "scavenging_core_3"
+  },
+  "scavenging_core_4": {
+    "x": 0,
+    "y": -128,
+    "definition": "scavenging_core_4"
+  },
+  "scavenging_core_5": {
+    "x": 0,
+    "y": -192,
+    "definition": "scavenging_core_5"
+  },
+  "scavenging_core_6": {
+    "x": 0,
+    "y": -256,
+    "definition": "scavenging_core_6"
+  },
+  "keen_eye": {
+    "x": -160,
+    "y": 0,
+    "definition": "keen_eye"
+  },
+  "hidden_cache": {
+    "x": -192,
+    "y": -112,
+    "definition": "hidden_cache"
+  },
+  "treasure_sense": {
+    "x": -224,
+    "y": -224,
+    "definition": "treasure_sense"
+  },
+  "careful_salvage": {
+    "x": 160,
+    "y": 0,
+    "definition": "careful_salvage"
+  },
+  "resourceful": {
+    "x": 192,
+    "y": -112,
+    "definition": "resourceful"
+  },
+  "nothing_wasted": {
+    "x": 224,
+    "y": -224,
+    "definition": "nothing_wasted"
+  },
+  "pathfinder": {
+    "x": 320,
+    "y": 0,
+    "definition": "pathfinder"
+  },
+  "urban_scout": {
+    "x": 352,
+    "y": -112,
+    "definition": "urban_scout"
+  },
+  "city_ghost": {
+    "x": 384,
+    "y": -224,
+    "definition": "city_ghost"
+  }
+}

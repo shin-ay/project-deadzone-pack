@@ -1,0 +1,30 @@
+﻿{
+    "id":  "project_deadzone:talent_survivalist_hunting_keystone",
+    "bonuses":  [
+
+                ],
+    "requirements":  [
+
+                     ],
+    "directConnections":  [
+                              "project_deadzone:talent_survivalist_hunting_10"
+                          ],
+    "longConnections":  [
+
+                        ],
+    "oneWayConnections":  [
+
+                          ],
+    "tags":  [
+                 "pdz_talent_hunting",
+                 "pdz_talent_keystone",
+                 "pdz_node_talent_survivalist_hunting_keystone"
+             ],
+    "backgroundTexture":  "skilltree:textures/icons/background/keystone.png",
+    "iconTexture":  "skilltree:textures/icons/bone.png",
+    "borderTexture":  "skilltree:textures/tooltip/lesser.png",
+    "positionX":  -597.87,
+    "positionY":  373.59,
+    "buttonSize":  32,
+    "isStartingPoint":  false
+}

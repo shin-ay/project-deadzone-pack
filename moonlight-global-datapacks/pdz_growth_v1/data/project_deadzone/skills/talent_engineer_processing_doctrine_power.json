@@ -1,0 +1,32 @@
+﻿{
+    "id":  "project_deadzone:talent_engineer_processing_doctrine_power",
+    "bonuses":  [
+
+                ],
+    "requirements":  [
+
+                     ],
+    "directConnections":  [
+                              "project_deadzone:talent_engineer_processing_power_20"
+                          ],
+    "longConnections":  [
+
+                        ],
+    "oneWayConnections":  [
+
+                          ],
+    "tags":  [
+                 "pdz_talent_processing",
+                 "pdz_talent_doctrine",
+                 "pdz_doctrine_engineer_processing",
+                 "pdz_doctrine_power",
+                 "pdz_node_talent_engineer_processing_doctrine_power"
+             ],
+    "backgroundTexture":  "skilltree:textures/icons/background/keystone.png",
+    "iconTexture":  "skilltree:textures/icons/glove_iron.png",
+    "borderTexture":  "skilltree:textures/tooltip/lesser.png",
+    "positionX":  1105.35,
+    "positionY":  625.38,
+    "buttonSize":  32,
+    "isStartingPoint":  false
+}

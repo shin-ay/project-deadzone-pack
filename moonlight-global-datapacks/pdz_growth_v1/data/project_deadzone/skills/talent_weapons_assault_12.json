@@ -1,0 +1,30 @@
+﻿{
+    "id":  "project_deadzone:talent_weapons_assault_12",
+    "bonuses":  [
+
+                ],
+    "requirements":  [
+
+                     ],
+    "directConnections":  [
+                              "project_deadzone:talent_weapons_assault_11"
+                          ],
+    "longConnections":  [
+
+                        ],
+    "oneWayConnections":  [
+
+                          ],
+    "tags":  [
+                 "pdz_talent_gun_assault",
+                 "pdz_talent_advanced",
+                 "pdz_node_talent_weapons_assault_12"
+             ],
+    "backgroundTexture":  "skilltree:textures/icons/background/lesser.png",
+    "iconTexture":  "skilltree:textures/icons/arrow_emerald.png",
+    "borderTexture":  "skilltree:textures/tooltip/lesser.png",
+    "positionX":  -55.04,
+    "positionY":  -787.08,
+    "buttonSize":  16,
+    "isStartingPoint":  false
+}

@@ -1,0 +1,27 @@
+{
+  "entity": "minecraft:zombie",
+  "name": "汚染感染体『リーカー』",
+  "visualscale": 1.2,
+  "experience": 150,
+  "effects": { "minecraft:poison": 0 },
+  "attributes": {
+    "generic.max_health": 85,
+    "generic.follow_range": 42,
+    "generic.knockback_resistance": 0.45,
+    "generic.attack_damage": 5,
+    "generic.movement_speed": 0.27
+  },
+  "customattributes": { "dropgear": 0 },
+  "gear": {},
+  "ai-goals": {
+    "brutalbosses:meleehit": {
+      "potiononhit": "minecraft:poison",
+      "potionduration": 80,
+      "potionlevel": 1,
+      "knockback": 1
+    },
+    "brutalbosses:charge": {},
+    "brutalbosses:chasetarget": {}
+  },
+  "spawnatchest": {}
+}

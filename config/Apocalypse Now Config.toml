@@ -1,0 +1,69 @@
+
+[population_density]
+	#Change from 0.1 to 0.5 to increase the number of walkers that appear
+	"Increase in Population Density" = 0.0
+
+[walkers_runners_spawn]
+	#disables the spawn of walkers and runners in this mod
+	"Walkers and Runners Spawn" = true
+	#Disable only the runners 
+	"Runners Spawn" = true
+	#Disable only the walkers
+	"Walkers Spawn" = true
+
+[humans_spawn]
+	#disables the spawn of humans in this mod
+	"Humans Spawn" = true
+	#disables the spawn of looters in this mod
+	"Looters Spawn" = true
+
+[ambient_spawn]
+	#Disables the spawn of ambient creatures in this mod
+	"Ambient Spawn" = true
+
+["Effects Disable [Will not affect mod weapons and defenses]"]
+	#Disable Bleeding Effect
+	"Bleeding Effect" = true
+	#Disable Broken Leg Effect
+	"Broken Leg Effect" = true
+	#Disable Eletric Damage
+	"Electric Damage" = true
+	#Disable Infection Effect
+	"Infection Effect" = true
+	#Disable Zombification Effect
+	"Zombification Effect" = true
+	#Disable Scratch Effect
+	"Scratch Effect" = true
+	#Disable Bite Effect
+	"Bite Effect" = true
+	#Disable Severe Bleeding Effect
+	"Severe Bleeding Effect" = true
+	#Disable Pain Effect
+	"Pain Effect" = true
+	#Disables the radiation effect
+	"Radiation Effect" = true
+
+["undead get armor"]
+	#Disables the armor spawing on undeade like mob
+	"Undead Get Armor" = true
+
+["Hordes Spawn"]
+	#Disalbes the spawn of hordes
+	"Hordes Spawn" = true
+
+["Armors have effects"]
+	#Enables special effects from apnow armos
+	"Armos Have Effect" = true
+
+["Human Flesh Drop"]
+	#Disables the drop of human flesh from mobs and players
+	"Human Flesh Drop" = true
+
+["Enables all apnow effects"]
+	#Enables and disables all mod effects, turning this to false will disable all mod effect from working
+	"Enables mod effects" = true
+
+["Drop Box Smoke "]
+	#Enables the smoke that comes from the drop box
+	"Drop Box smoke" = true
+

@@ -1,0 +1,32 @@
+["Loot Beams"]
+render_name_color = true
+render_rarity = false
+render_rarity_color = false
+render_distance = 48.0
+color_overrides = []
+
+["Loot Beams".Beam]
+beam_radius = 0.42
+beam_height = 2.25
+beam_y_offset = 0.5
+common_shorter_beam = true
+beam_alpha = 0.72
+beam_fade_distance = 4.0
+solid_beam = true
+white_center = true
+glowing_beam = true
+glow_effect = true
+require_on_ground = true
+
+["Loot Beams".Items]
+items_glow = false
+all_items = false
+only_rare = false
+only_equipment = true
+whitelist = ["tacz:modern_kinetic_gun"]
+blacklist = []
+
+["Loot Beams".Nametags]
+render_nametags = true
+render_nametags_onlook = true
+render_stackcount = true

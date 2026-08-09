@@ -1,0 +1,13 @@
+name = "Berezka API for lost cities"
+filename = "berezka_api_for_lost_cities-0.5-beta2.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "28292fa2b658bcffe43f0b64bb05d83e6dbe034c"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 7434136
+project-id = 1337137

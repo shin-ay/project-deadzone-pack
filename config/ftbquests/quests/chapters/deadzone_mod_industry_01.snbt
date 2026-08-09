@@ -1,0 +1,468 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: "circle"
+	filename: "deadzone_mod_industry_01"
+	group: "51DC04D9192698A6"
+	icon: "create:cogwheel"
+	id: "4D6C5283B005AA23"
+	order_index: 7
+	quest_links: [ ]
+	quests: [
+		{
+			description: [
+				"地下へ潜り続けるだけが復旧ではない。廃材と安山岩から、キャンプで共有できる機械工房を作ろう。"
+				"この章は素材採取、動力、加工、搬送、自動化の順で進む。MechanicとEngineerが中心だが、必要素材の探索には全JOBが参加できる。"
+			]
+			icon: "create:andesite_alloy"
+			id: "6D0294D5C566AA55"
+			rewards: [
+				{
+					count: 2
+					id: "7A42000000000001"
+					item: "apocalypsenow:money"
+					type: "item"
+				}
+				{
+					count: 4
+					id: "7A42000000000002"
+					item: "create:zinc_nugget"
+					type: "item"
+				}
+			]
+			tasks: [{
+				count: 8L
+				id: "1BE3AF969F73CF3D"
+				item: "create:andesite_alloy"
+				type: "item"
+			}]
+			title: "工房計画：安山岩合金"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			description: ["回転を伝えるための最小部品。軸と歯車は今後ほぼすべての設備で使う。"]
+			icon: "create:cogwheel"
+			id: "4E3DE57BE4D2C4BD"
+			dependencies: ["6D0294D5C566AA55"]
+			rewards: [
+				{
+					count: 4
+					id: "15C58AC395C4FE48"
+					item: "create:shaft"
+					type: "item"
+				}
+				{
+					count: 2
+					id: "7A42000000000003"
+					item: "apocalypsenow:money"
+					type: "item"
+				}
+			]
+			tasks: [
+				{
+					count: 8L
+					id: "7EED13400D9191F7"
+					item: "create:shaft"
+					type: "item"
+				}
+				{
+					count: 4L
+					id: "2E0771373D100AD0"
+					item: "create:cogwheel"
+					type: "item"
+				}
+				{
+					count: 2L
+					id: "685F8902FC799A6D"
+					item: "create:large_cogwheel"
+					type: "item"
+				}
+			]
+			title: "動力伝達の基本"
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			description: ["水流が使える場所に最初の常設動力を作る。手回しは調整や非常用として残しておこう。"]
+			icon: "create:water_wheel"
+			id: "0E32A6429A887FB0"
+			dependencies: ["4E3DE57BE4D2C4BD"]
+			rewards: [
+				{
+					count: 3
+					id: "7A42000000000004"
+					item: "apocalypsenow:money"
+					type: "item"
+				}
+				{
+					count: 2
+					id: "7A42000000000005"
+					item: "create:cogwheel"
+					type: "item"
+				}
+			]
+			tasks: [
+				{
+					id: "097F192672F910AD"
+					item: "create:water_wheel"
+					type: "item"
+				}
+				{
+					id: "3EB50C3165FB7C24"
+					item: "create:hand_crank"
+					type: "item"
+				}
+			]
+			title: "最初の回転力"
+			x: 4.0d
+			y: 0.0d
+		}
+		{
+			description: ["回転速度と負荷を確認できれば、停止事故の原因を見つけやすくなる。工房の工具箱に必ず入れておこう。"]
+			icon: "create:goggles"
+			id: "2269DD763CB8E752"
+			dependencies: ["0E32A6429A887FB0"]
+			rewards: [{
+				count: 3
+				id: "7A42000000000006"
+				item: "apocalypsenow:money"
+				type: "item"
+			}]
+			tasks: [{
+				id: "29FEF1BB4AE71F86"
+				item: "create:goggles"
+				type: "item"
+			}]
+			title: "Engineerの目"
+			x: 4.0d
+			y: -2.0d
+		}
+		{
+			description: ["Millstoneで鉱石や作物を砕く。食料担当と工業担当が最初に共有できる設備だ。"]
+			icon: "create:millstone"
+			id: "0E89809FA91D6D33"
+			dependencies: ["0E32A6429A887FB0"]
+			rewards: [
+				{
+					count: 3
+					id: "7A42000000000007"
+					item: "apocalypsenow:money"
+					type: "item"
+				}
+				{
+					count: 8
+					id: "7A42000000000008"
+					item: "minecraft:wheat"
+					type: "item"
+				}
+			]
+			tasks: [{
+				id: "3D09963EEF9DD456"
+				item: "create:millstone"
+				type: "item"
+			}]
+			title: "粉砕工程"
+			x: 6.0d
+			y: -1.0d
+		}
+		{
+			description: ["PressとDepotで金属板を安定供給する。同名の板材はPDZの統一素材へ変換される。"]
+			icon: "create:mechanical_press"
+			id: "6DA910B6605F1C45"
+			dependencies: ["0E32A6429A887FB0"]
+			rewards: [
+				{
+					count: 2
+					id: "73FB8B854E9AF36F"
+					item: "minecraft:iron_ingot"
+					type: "item"
+				}
+				{
+					count: 3
+					id: "7A42000000000009"
+					item: "apocalypsenow:money"
+					type: "item"
+				}
+			]
+			tasks: [
+				{
+					id: "0EA498F24FDF84A9"
+					item: "create:mechanical_press"
+					type: "item"
+				}
+				{
+					id: "5F16C0C271A230CA"
+					item: "create:depot"
+					type: "item"
+				}
+			]
+			title: "金属板の量産"
+			x: 6.0d
+			y: 1.0d
+		}
+		{
+			description: ["MixerとBasinは合金・食料・薬品へ繋がる共同設備。工房の中心に設置すると使いやすい。"]
+			icon: "create:mechanical_mixer"
+			id: "285F9E9B1E751F17"
+			dependencies: ["0E89809FA91D6D33","6DA910B6605F1C45"]
+			rewards: [
+				{
+					count: 4
+					id: "7A4200000000000A"
+					item: "apocalypsenow:money"
+					type: "item"
+				}
+				{
+					id: "7A4200000000000B"
+					item: "create:whisk"
+					type: "item"
+				}
+			]
+			tasks: [
+				{
+					id: "1708C966499D1DAD"
+					item: "create:mechanical_mixer"
+					type: "item"
+				}
+				{
+					id: "6F231B811D379614"
+					item: "create:basin"
+					type: "item"
+				}
+			]
+			title: "共同加工槽"
+			x: 8.0d
+			y: 0.0d
+		}
+		{
+			description: ["BeltとChuteで人力運搬を減らす。マルチでは投入箱と完成品箱を分け、誰でも使えるラインにしよう。"]
+			icon: "create:belt_connector"
+			id: "62A487045A417185"
+			dependencies: ["6DA910B6605F1C45"]
+			rewards: [
+				{
+					count: 4
+					id: "7A4200000000000C"
+					item: "apocalypsenow:money"
+					type: "item"
+				}
+				{
+					id: "7A4200000000000D"
+					item: "create:belt_connector"
+					type: "item"
+				}
+			]
+			tasks: [
+				{
+					count: 2L
+					id: "7CC7D4F2FEE90EB8"
+					item: "create:belt_connector"
+					type: "item"
+				}
+				{
+					count: 2L
+					id: "7F3443AFE8AA0D8E"
+					item: "create:chute"
+					type: "item"
+				}
+			]
+			title: "搬送ライン"
+			x: 8.0d
+			y: 2.0d
+		}
+		{
+			description: ["Sawは木材加工、Drillは採掘、Fanは洗浄や加熱に使える。目的別モジュールとして保管しよう。"]
+			icon: "create:mechanical_saw"
+			id: "4671F32B10634F93"
+			dependencies: ["62A487045A417185"]
+			rewards: [
+				{
+					count: 5
+					id: "7A4200000000000E"
+					item: "apocalypsenow:money"
+					type: "item"
+				}
+				{
+					count: 2
+					id: "7A4200000000000F"
+					item: "create:electron_tube"
+					type: "item"
+				}
+			]
+			tasks: [
+				{
+					id: "5CF820079DEF17DF"
+					item: "create:mechanical_saw"
+					type: "item"
+				}
+				{
+					id: "2D4DBF7A1D3392D7"
+					item: "create:mechanical_drill"
+					type: "item"
+				}
+				{
+					id: "5718F0EC36DB0780"
+					item: "create:encased_fan"
+					type: "item"
+				}
+			]
+			title: "作業モジュール"
+			x: 10.0d
+			y: 2.0d
+		}
+		{
+			description: ["T1到達時にGas Stationから回収した封入済みBlaze Burnerを工房へ設置する。PDZではネザーへ行かず、施設攻略で工業熱源を解放する。"]
+			icon: "create:blaze_burner"
+			id: "276FC6A949C932CC"
+			dependencies: ["285F9E9B1E751F17","162BAA0F1AF6097C"]
+			rewards: [
+				{
+					count: 5
+					id: "7A42000000000010"
+					item: "apocalypsenow:money"
+					type: "item"
+				}
+				{
+					count: 4
+					id: "7A42000000000011"
+					item: "minecraft:copper_ingot"
+					type: "item"
+				}
+			]
+			tasks: [{
+				id: "44C965301600E1E2"
+				item: "create:blaze_burner"
+				type: "item"
+			}]
+			title: "熱源の確保"
+			x: 10.0d
+			y: -1.0d
+		}
+		{
+			description: ["Brassは精密制御への入口。T1以降の工業Lootと施設攻略から必要素材を集める。"]
+			icon: "create:brass_ingot"
+			id: "10FBBDB4204025B6"
+			dependencies: ["285F9E9B1E751F17","62A487045A417185"]
+			rewards: [
+				{
+					count: 6
+					id: "7A42000000000012"
+					item: "apocalypsenow:money"
+					type: "item"
+				}
+				{
+					count: 4
+					id: "7A42000000000013"
+					item: "create:zinc_ingot"
+					type: "item"
+				}
+			]
+			tasks: [{
+				count: 8L
+				id: "52C68E80BDB1B67B"
+				item: "create:brass_ingot"
+				type: "item"
+			}]
+			title: "黄銅時代"
+			x: 12.0d
+			y: 0.0d
+		}
+		{
+			description: ["Deploy工程を組み、Precision Mechanismを自作する。ここから弾薬設備、車両部品、電力設備へ分岐する。"]
+			icon: "create:precision_mechanism"
+			id: "0586500E16BCEB38"
+			dependencies: ["10FBBDB4204025B6"]
+			rewards: [
+				{
+					count: 8
+					id: "23758F7677B2D01F"
+					item: "apocalypsenow:money"
+					type: "item"
+				}
+				{
+					count: 2
+					id: "7A42000000000014"
+					item: "create:electron_tube"
+					type: "item"
+				}
+			]
+			tasks: [{
+				count: 2L
+				id: "217FE0D12D5D3087"
+				item: "create:precision_mechanism"
+				type: "item"
+			}]
+			title: "精密機構"
+			x: 14.0d
+			y: 0.0d
+		}
+		{
+			description: ["Mechanical Crafterで大型レシピへ進む。個人設備ではなく、全員が素材を持ち寄れる共同生産区画を完成させよう。"]
+			icon: "create:mechanical_crafter"
+			id: "4BC5D9E30186B5A3"
+			dependencies: ["0586500E16BCEB38"]
+			rewards: [
+				{
+					count: 10
+					id: "7A42000000000015"
+					item: "apocalypsenow:money"
+					type: "item"
+				}
+				{
+					id: "7A42000000000016"
+					item: "create:precision_mechanism"
+					type: "item"
+				}
+			]
+			tasks: [{
+				count: 9L
+				id: "52263294CA67B694"
+				item: "create:mechanical_crafter"
+				type: "item"
+			}]
+			title: "共同生産区画"
+			x: 16.0d
+			y: 0.0d
+		}
+		{
+			description: [
+				"Create基礎ライン完成。次は担当ごとの専門化へ進む。"
+				"Mechanic：車両・燃料　Engineer：電力・重工業　Survivalist：農業自動化　Medic：薬品生産　Weapons Expert：弾薬・防衛設備"
+			]
+			icon: "create:brass_casing"
+			id: "08A015955038522A"
+			dependencies: ["4BC5D9E30186B5A3"]
+			rewards: [
+				{
+					count: 12
+					id: "7696A5CC14AD3E3F"
+					item: "apocalypsenow:money"
+					type: "item"
+				}
+				{
+					id: "2280EDF08FAE0F07"
+					type: "xp"
+					xp: 12
+				}
+			]
+			tasks: [
+				{
+					count: 8L
+					id: "4CD68E3EEC2B5AEC"
+					item: "create:brass_casing"
+					type: "item"
+				}
+				{
+					count: 4L
+					id: "2D1CDAF0562A8F53"
+					item: "create:andesite_casing"
+					type: "item"
+				}
+			]
+			title: "工房稼働"
+			x: 18.0d
+			y: 0.0d
+		}
+	]
+	title: "工業復旧：Create基礎工房"
+}

@@ -1,0 +1,355 @@
+{
+  "xsize": 16,
+  "zsize": 16,
+  "palette": {
+    "palette": [
+      {
+        "char": "",
+        "block": "minecraft:air"
+      },
+      {
+        "char": "",
+        "block": "minecraft:dirt"
+      },
+      {
+        "char": "",
+        "block": "minecraft:grass_block[snowy=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:smooth_stone"
+      },
+      {
+        "char": "",
+        "block": "minecraft:white_concrete"
+      },
+      {
+        "char": "",
+        "block": "minecraft:red_concrete"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:empty_market_shelves[facing=east,waterlogged=false]",
+        "tag": {
+          "Items": [],
+          "id": "apocalypsenow:empty_market_shelves"
+        },
+        "loot": "project_deadzone:chests/gasstation_food_t1"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:paperstrash[facing=north]"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:papersvariant_2[facing=north]"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:ice[facing=west,waterlogged=false]",
+        "tag": {
+          "Items": [],
+          "id": "apocalypsenow:ice"
+        }
+      },
+      {
+        "char": "",
+        "block": "minecraft:light_blue_terracotta"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:papertrash[facing=south]"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:pallet[waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:pack_of_canned_chilie"
+      },
+      {
+        "char": "",
+        "block": "refurbished_furniture:oak_crate",
+        "loot": "project_deadzone:chests/gasstation_food_t1"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:papertrashvariant[facing=north]"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:washing_machine[facing=east]",
+        "tag": {
+          "Items": [],
+          "id": "apocalypsenow:washing_machine"
+        }
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:paperstrash[facing=west]"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:papertrash[facing=east]"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:glass_door[facing=west,half=lower,hinge=right,open=false,powered=false]"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:glass_door[facing=west,half=lower,hinge=left,open=false,powered=false]"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:paperstrashvariant_2[facing=north]"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:market_shelves[facing=north,waterlogged=false]",
+        "tag": {
+          "Items": [],
+          "id": "apocalypsenow:market_shelves"
+        },
+        "loot": "project_deadzone:chests/gasstation_food_t1"
+      },
+      {
+        "char": "",
+        "block": "minecraft:chest[facing=north,type=single,waterlogged=false]",
+        "tag": {
+          "id": "minecraft:chest"
+        }
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:empty_market_shelves[facing=north,waterlogged=false]",
+        "tag": {
+          "Items": [],
+          "id": "apocalypsenow:empty_market_shelves"
+        },
+        "loot": "project_deadzone:chests/gasstation_food_t1"
+      },
+      {
+        "char": "",
+        "block": "minecraft:polished_blackstone_slab[type=top,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:polished_blackstone_stairs[facing=east,half=top,shape=straight,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:market_shelves[facing=south,waterlogged=false]",
+        "tag": {
+          "Items": [],
+          "id": "apocalypsenow:market_shelves"
+        },
+        "loot": "project_deadzone:chests/gasstation_food_t1"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:empty_market_shelves[facing=south,waterlogged=false]",
+        "tag": {
+          "Items": [],
+          "id": "apocalypsenow:empty_market_shelves"
+        },
+        "loot": "project_deadzone:chests/gasstation_food_t1"
+      },
+      {
+        "char": "",
+        "block": "minecraft:chest[facing=south,type=single,waterlogged=false]",
+        "tag": {
+          "id": "minecraft:chest"
+        }
+      },
+      {
+        "char": "",
+        "block": "minecraft:polished_blackstone_stairs[facing=south,half=top,shape=straight,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:polished_granite_stairs[facing=south,half=bottom,shape=straight,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:corpsecloth[facing=north]",
+        "tag": {
+          "Items": [],
+          "id": "apocalypsenow:corpsecloth"
+        }
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:paperstrashvariant_2[facing=east]"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:paperstrash[facing=south]"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:papertrash[facing=west]"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:papertrashvariant[facing=east]"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:paperstrashvariant_2[facing=south]"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:papersvariant_2[facing=east]"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:paperstrashvariant_2[facing=west]"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:papertrashvariant[facing=south]"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:paperstrash[facing=east]"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:pack_of_milk_boxes"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:glass_door[facing=west,half=upper,hinge=right,open=false,powered=false]"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:glass_door[facing=west,half=upper,hinge=left,open=false,powered=false]"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:market_shelves[facing=east,waterlogged=false]",
+        "tag": {
+          "Items": [],
+          "id": "apocalypsenow:market_shelves"
+        },
+        "loot": "project_deadzone:chests/gasstation_food_t1"
+      },
+      {
+        "char": "",
+        "block": "minecraft:smooth_stone_slab[type=top,waterlogged=false]"
+      }
+    ]
+  },
+  "slices": [
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  ]
+}

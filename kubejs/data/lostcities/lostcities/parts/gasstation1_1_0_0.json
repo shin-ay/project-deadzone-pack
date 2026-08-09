@@ -1,0 +1,368 @@
+{
+  "xsize": 16,
+  "zsize": 16,
+  "palette": {
+    "palette": [
+      {
+        "char": "",
+        "block": "minecraft:air"
+      },
+      {
+        "char": "",
+        "block": "minecraft:cyan_terracotta"
+      },
+      {
+        "char": "",
+        "block": "minecraft:basalt[axis=x]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:deepslate[axis=y]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:blackstone"
+      },
+      {
+        "char": "",
+        "block": "minecraft:cobbled_deepslate"
+      },
+      {
+        "char": "",
+        "block": "minecraft:grass_block[snowy=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:diorite"
+      },
+      {
+        "char": "",
+        "block": "minecraft:quartz_block"
+      },
+      {
+        "char": "",
+        "block": "minecraft:dirt"
+      },
+      {
+        "char": "",
+        "block": "immersive_weathering:mossy_stone"
+      },
+      {
+        "char": "",
+        "block": "immersive_weathering:weathered_iron_bars[east=false,north=false,south=false,waterlogged=false,west=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:grass"
+      },
+      {
+        "char": "",
+        "block": "minecraft:smooth_stone_slab[type=bottom,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:azure_bluet"
+      },
+      {
+        "char": "",
+        "block": "minecraft:vine[east=false,north=false,south=true,up=false,west=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:cobblestone[weathering=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:vine[east=false,north=false,south=false,up=false,west=true]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:cobblestone_slab[type=double,waterlogged=false,weathering=false]"
+      },
+      {
+        "char": "",
+        "block": "mts:fuelpump[light=0]",
+        "tag": {
+          "textFluidLevel": "",
+          "inventory2": {
+            "Items": [],
+            "uniqueUUID": "5aa8445f-c117-49e7-844e-aaa65d7e72f7"
+          },
+          "placingPlayerID": "908f197c-46c7-4c8c-aad8-3782f26cb6fa",
+          "inventory": {
+            "Items": [],
+            "uniqueUUID": "610f9ace-e0ca-4ea1-902e-a4ce23e33b98"
+          },
+          "positionx": 30.0,
+          "positiony": -58.0,
+          "packID": "mts",
+          "positionz": 12.0,
+          "systemName": "fuelpump",
+          "anglesy": 180.0,
+          "subName": "",
+          "textFluidDispensed": "",
+          "textFluidName": "",
+          "id": "mts:builder_fluidtank",
+          "tank": {
+            "currentFluidMod": "wildcard",
+            "currentFluid": "",
+            "uniqueUUID": "73e135ff-60b5-4775-bf58-7708d24d8df0"
+          },
+          "uniqueUUID": "01cfe0bc-5e75-44b9-b247-93e79c1ac87a"
+        }
+      },
+      {
+        "char": "",
+        "block": "mts:fuelpump[light=0]",
+        "tag": {
+          "textFluidLevel": "",
+          "inventory2": {
+            "Items": [],
+            "uniqueUUID": "32882d52-7cfe-4d8c-bc76-905ff0b9147a"
+          },
+          "placingPlayerID": "908f197c-46c7-4c8c-aad8-3782f26cb6fa",
+          "inventory": {
+            "Items": [],
+            "uniqueUUID": "06150415-c647-467c-8f2d-75a38d8c1124"
+          },
+          "positionx": 31.0,
+          "positiony": -58.0,
+          "packID": "mts",
+          "positionz": 12.0,
+          "systemName": "fuelpump",
+          "subName": "",
+          "textFluidDispensed": "",
+          "textFluidName": "",
+          "id": "mts:builder_fluidtank",
+          "tank": {
+            "currentFluidMod": "wildcard",
+            "currentFluid": "",
+            "uniqueUUID": "c043d99a-ba89-44d4-9013-309aa1790b79"
+          },
+          "uniqueUUID": "a221b29e-0046-44bf-ab23-73f66038fa9c"
+        }
+      },
+      {
+        "char": "",
+        "block": "mts:fuelpump[light=0]",
+        "tag": {
+          "textFluidLevel": "",
+          "inventory2": {
+            "Items": [],
+            "uniqueUUID": "4cf75428-b2e2-4705-9466-f855a9639ef9"
+          },
+          "placingPlayerID": "908f197c-46c7-4c8c-aad8-3782f26cb6fa",
+          "inventory": {
+            "Items": [],
+            "uniqueUUID": "d164802e-d303-4d69-8205-1fd0a46cfd93"
+          },
+          "positionx": 34.0,
+          "positiony": -58.0,
+          "packID": "mts",
+          "positionz": 12.0,
+          "systemName": "fuelpump",
+          "anglesy": 180.0,
+          "subName": "",
+          "textFluidDispensed": "",
+          "textFluidName": "",
+          "id": "mts:builder_fluidtank",
+          "tank": {
+            "currentFluidMod": "wildcard",
+            "currentFluid": "",
+            "uniqueUUID": "38a4ab32-de89-47a5-8967-030621ddfe15"
+          },
+          "uniqueUUID": "b44dbd2d-9a71-4ca4-ae2e-83c8d1e12e99"
+        }
+      },
+      {
+        "char": "",
+        "block": "mts:fuelpump[light=0]",
+        "tag": {
+          "textFluidLevel": "",
+          "inventory2": {
+            "Items": [],
+            "uniqueUUID": "2101fd2f-f97a-4c18-bab1-1f528c41cd00"
+          },
+          "placingPlayerID": "908f197c-46c7-4c8c-aad8-3782f26cb6fa",
+          "inventory": {
+            "Items": [],
+            "uniqueUUID": "038b2f72-a27f-48f1-a788-ece15b40ac7a"
+          },
+          "positionx": 35.0,
+          "positiony": -58.0,
+          "packID": "mts",
+          "positionz": 12.0,
+          "systemName": "fuelpump",
+          "subName": "",
+          "textFluidDispensed": "",
+          "textFluidName": "",
+          "id": "mts:builder_fluidtank",
+          "tank": {
+            "currentFluidMod": "wildcard",
+            "currentFluid": "",
+            "uniqueUUID": "c2b4ddfa-5339-4a2f-b326-d14e936a07d7"
+          },
+          "uniqueUUID": "701b44a9-3189-4eb0-b9f7-b189da89a541"
+        }
+      },
+      {
+        "char": "",
+        "block": "minecraft:mossy_cobblestone"
+      },
+      {
+        "char": "",
+        "block": "minecraft:tall_grass[half=lower]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:vine[east=true,north=false,south=false,up=false,west=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:stone_bricks[weathering=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:mossy_stone_bricks"
+      },
+      {
+        "char": "",
+        "block": "minecraft:vine[east=false,north=true,south=false,up=false,west=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:glass"
+      },
+      {
+        "char": "",
+        "block": "minecraft:tall_grass[half=upper]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:red_concrete"
+      },
+      {
+        "char": "",
+        "block": "minecraft:cobweb"
+      },
+      {
+        "char": "",
+        "block": "minecraft:redstone_lamp[lit=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:vine[east=false,north=false,south=false,up=true,west=false]"
+      }
+    ]
+  },
+  "slices": [
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  ]
+}

@@ -1,0 +1,32 @@
+﻿{
+    "id":  "project_deadzone:talent_weapons_assault_doctrine_power",
+    "bonuses":  [
+
+                ],
+    "requirements":  [
+
+                     ],
+    "directConnections":  [
+                              "project_deadzone:talent_weapons_assault_power_20"
+                          ],
+    "longConnections":  [
+
+                        ],
+    "oneWayConnections":  [
+
+                          ],
+    "tags":  [
+                 "pdz_talent_gun_assault",
+                 "pdz_talent_doctrine",
+                 "pdz_doctrine_weapons_assault",
+                 "pdz_doctrine_power",
+                 "pdz_node_talent_weapons_assault_doctrine_power"
+             ],
+    "backgroundTexture":  "skilltree:textures/icons/background/keystone.png",
+    "iconTexture":  "skilltree:textures/icons/arrow_emerald.png",
+    "borderTexture":  "skilltree:textures/tooltip/lesser.png",
+    "positionX":  -143.77,
+    "positionY":  -1261.84,
+    "buttonSize":  32,
+    "isStartingPoint":  false
+}

@@ -1,0 +1,25 @@
+{
+  "entity": "minecraft:pillager",
+  "name": "Raider強襲兵『ブリーチャー』",
+  "visualscale": 1.2,
+  "experience": 180,
+  "protect_treasure": true,
+  "effects": {},
+  "attributes": {
+    "generic.max_health": 90,
+    "generic.follow_range": 64,
+    "generic.knockback_resistance": 0.65,
+    "generic.movement_speed": 0.31
+  },
+  "customattributes": {
+    "dropgear": 1,
+    "projectile_damage_bonus": 3
+  },
+  "gear": {
+    "mainhand": "{id: \"minecraft:crossbow\", Count: 1b, tag: {Damage: 0, Enchantments: [{lvl: 2s, id: \"minecraft:quick_charge\"}]}}",
+    "helmet": "{id: \"minecraft:iron_helmet\", Count: 1b, tag: {Damage: 0}}",
+    "chestplate": "{id: \"minecraft:iron_chestplate\", Count: 1b, tag: {Damage: 0}}"
+  },
+  "ai-goals": { "minecraft:crossbow": {} },
+  "spawnatchest": {}
+}

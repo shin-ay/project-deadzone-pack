@@ -1,0 +1,43 @@
+﻿{
+    "id":  "project_deadzone:talent_scout_mobility_12",
+    "bonuses":  [
+                    {
+                        "type":  "skilltree:attribute",
+                        "attribute":  "minecraft:generic.movement_speed",
+                        "id":  "19192fca-af54-1fc9-727e-a38097f4952d",
+                        "name":  "PROJECT DEADZONE Talent",
+                        "amount":  0.0025,
+                        "operation":  1,
+                        "player_multiplier":  {
+                                                  "type":  "skilltree:none"
+                                              },
+                        "player_condition":  {
+                                                 "type":  "skilltree:none"
+                                             }
+                    }
+                ],
+    "requirements":  [
+
+                     ],
+    "directConnections":  [
+                              "project_deadzone:talent_scout_mobility_11"
+                          ],
+    "longConnections":  [
+
+                        ],
+    "oneWayConnections":  [
+
+                          ],
+    "tags":  [
+                 "pdz_talent_mobility",
+                 "pdz_talent_advanced",
+                 "pdz_node_talent_scout_mobility_12"
+             ],
+    "backgroundTexture":  "skilltree:textures/icons/background/lesser.png",
+    "iconTexture":  "skilltree:textures/icons/boots_gold.png",
+    "borderTexture":  "skilltree:textures/tooltip/lesser.png",
+    "positionX":  -517.63,
+    "positionY":  -595.47,
+    "buttonSize":  16,
+    "isStartingPoint":  false
+}

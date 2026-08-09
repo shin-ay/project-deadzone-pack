@@ -1,0 +1,45 @@
+﻿{
+    "id":  "project_deadzone:talent_security_guard_master_power",
+    "bonuses":  [
+                    {
+                        "type":  "skilltree:attribute",
+                        "attribute":  "minecraft:generic.armor",
+                        "id":  "9a0ded31-d557-9f65-9e2d-7e1b0679dc1b",
+                        "name":  "PROJECT DEADZONE Talent",
+                        "amount":  0.22499999999999998,
+                        "operation":  0,
+                        "player_multiplier":  {
+                                                  "type":  "skilltree:none"
+                                              },
+                        "player_condition":  {
+                                                 "type":  "skilltree:none"
+                                             }
+                    }
+                ],
+    "requirements":  [
+
+                     ],
+    "directConnections":  [
+                              "project_deadzone:talent_security_guard_15"
+                          ],
+    "longConnections":  [
+
+                        ],
+    "oneWayConnections":  [
+
+                          ],
+    "tags":  [
+                 "pdz_talent_guard",
+                 "pdz_talent_mastery",
+                 "pdz_mastery_security_guard",
+                 "pdz_master_power",
+                 "pdz_node_talent_security_guard_master_power"
+             ],
+    "backgroundTexture":  "skilltree:textures/icons/background/keystone.png",
+    "iconTexture":  "skilltree:textures/icons/chestplate_leather.png",
+    "borderTexture":  "skilltree:textures/tooltip/lesser.png",
+    "positionX":  714.49,
+    "positionY":  -678.03,
+    "buttonSize":  32,
+    "isStartingPoint":  false
+}

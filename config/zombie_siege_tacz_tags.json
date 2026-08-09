@@ -1,0 +1,284 @@
+{
+  "tacz:glock_17": {
+    "weight": 7,
+    "ammoTag": "tacz:9mm",
+    "ammoMin": 4,
+    "ammoMax": 24
+  },
+  "tacz:m1911": {
+    "weight": 6,
+    "ammoTag": "tacz:45acp",
+    "ammoMin": 4,
+    "ammoMax": 24
+  },
+  "tacz:p320": {
+    "weight": 5,
+    "ammoTag": "tacz:45acp",
+    "ammoMin": 4,
+    "ammoMax": 24
+  },
+  "tacz:cz75": {
+    "weight": 4,
+    "ammoTag": "tacz:9mm",
+    "ammoMin": 4,
+    "ammoMax": 24
+  },
+  "tacz:b93r": {
+    "weight": 4,
+    "ammoTag": "tacz:9mm",
+    "ammoMin": 4,
+    "ammoMax": 24
+  },
+  "tacz:timeless50": {
+    "weight": 2,
+    "ammoTag": "tacz:50ae",
+    "ammoMin": 4,
+    "ammoMax": 24
+  },
+  "tacz:deagle": {
+    "weight": 3,
+    "ammoTag": "tacz:50ae",
+    "ammoMin": 4,
+    "ammoMax": 24
+  },
+  "tacz:deagle_golden": {
+    "weight": 1,
+    "ammoTag": "tacz:357mag",
+    "ammoMin": 4,
+    "ammoMax": 24
+  },
+  "tacz:m700": {
+    "weight": 4,
+    "ammoTag": "tacz:30_06",
+    "ammoMin": 1,
+    "ammoMax": 10
+  },
+  "tacz:m107": {
+    "weight": 1,
+    "ammoTag": "tacz:50bmg",
+    "ammoMin": 1,
+    "ammoMax": 5
+  },
+  "tacz:springfield1873": {
+    "weight": 6,
+    "ammoTag": "tacz:45_70",
+    "ammoMin": 1,
+    "ammoMax": 10
+  },
+  "tacz:m95": {
+    "weight": 1,
+    "ammoTag": "tacz:50bmg",
+    "ammoMin": 1,
+    "ammoMax": 5
+  },
+  "tacz:ai_awp": {
+    "weight": 4,
+    "ammoTag": "tacz:338",
+    "ammoMin": 1,
+    "ammoMax": 10
+  },
+  "tacz:sks_tactical": {
+    "weight": 4,
+    "ammoTag": "tacz:762x39",
+    "ammoMin": 8,
+    "ammoMax": 36
+  },
+  "tacz:type_81": {
+    "weight": 4,
+    "ammoTag": "tacz:762x39",
+    "ammoMin": 8,
+    "ammoMax": 36
+  },
+  "tacz:qbz_95": {
+    "weight": 4,
+    "ammoTag": "tacz:58x42",
+    "ammoMin": 8,
+    "ammoMax": 36
+  },
+  "tacz:ak47": {
+    "weight": 4,
+    "ammoTag": "tacz:762x39",
+    "ammoMin": 8,
+    "ammoMax": 36
+  },
+  "tacz:hk416d": {
+    "weight": 4,
+    "ammoTag": "tacz:556x45",
+    "ammoMin": 8,
+    "ammoMax": 36
+  },
+  "tacz:m4a1": {
+    "weight": 4,
+    "ammoTag": "tacz:556x45",
+    "ammoMin": 8,
+    "ammoMax": 36
+  },
+  "tacz:m16a1": {
+    "weight": 4,
+    "ammoTag": "tacz:556x45",
+    "ammoMin": 8,
+    "ammoMax": 36
+  },
+  "tacz:hk_g3": {
+    "weight": 4,
+    "ammoTag": "tacz:308",
+    "ammoMin": 8,
+    "ammoMax": 36
+  },
+  "tacz:m16a4": {
+    "weight": 4,
+    "ammoTag": "tacz:556x45",
+    "ammoMin": 8,
+    "ammoMax": 36
+  },
+  "tacz:spr15hb": {
+    "weight": 4,
+    "ammoTag": "tacz:556x45",
+    "ammoMin": 8,
+    "ammoMax": 36
+  },
+  "tacz:mk14": {
+    "weight": 4,
+    "ammoTag": "tacz:308",
+    "ammoMin": 8,
+    "ammoMax": 36
+  },
+  "tacz:scar_l": {
+    "weight": 4,
+    "ammoTag": "tacz:556x45",
+    "ammoMin": 8,
+    "ammoMax": 36
+  },
+  "tacz:scar_h": {
+    "weight": 4,
+    "ammoTag": "tacz:308",
+    "ammoMin": 8,
+    "ammoMax": 36
+  },
+  "tacz:g36k": {
+    "weight": 4,
+    "ammoTag": "tacz:556x45",
+    "ammoMin": 8,
+    "ammoMax": 36
+  },
+  "tacz:aug": {
+    "weight": 4,
+    "ammoTag": "tacz:556x45",
+    "ammoMin": 8,
+    "ammoMax": 36
+  },
+  "tacz:fn_fal": {
+    "weight": 4,
+    "ammoTag": "tacz:308",
+    "ammoMin": 8,
+    "ammoMax": 36
+  },
+  "tacz:qbz_191": {
+    "weight": 4,
+    "ammoTag": "tacz:58x42",
+    "ammoMin": 8,
+    "ammoMax": 36
+  },
+  "tacz:db_short": {
+    "weight": 6,
+    "ammoTag": "tacz:12g",
+    "ammoMin": 2,
+    "ammoMax": 6
+  },
+  "tacz:db_long": {
+    "weight": 6,
+    "ammoTag": "tacz:12g",
+    "ammoMin": 2,
+    "ammoMax": 6
+  },
+  "tacz:m870": {
+    "weight": 5,
+    "ammoTag": "tacz:12g",
+    "ammoMin": 2,
+    "ammoMax": 6
+  },
+  "tacz:spas_12": {
+    "weight": 4,
+    "ammoTag": "tacz:12g",
+    "ammoMin": 2,
+    "ammoMax": 8
+  },
+  "tacz:aa12": {
+    "weight": 3,
+    "ammoTag": "tacz:12g",
+    "ammoMin": 2,
+    "ammoMax": 12
+  },
+  "tacz:m1014": {
+    "weight": 10,
+    "ammoTag": "tacz:12g",
+    "ammoMin": 2,
+    "ammoMax": 10
+  },
+  "tacz:ump45": {
+    "weight": 6,
+    "ammoTag": "tacz:45acp",
+    "ammoMin": 8,
+    "ammoMax": 36
+  },
+  "tacz:uzi": {
+    "weight": 5,
+    "ammoTag": "tacz:9mm",
+    "ammoMin": 8,
+    "ammoMax": 36
+  },
+  "tacz:hk_mp5a5": {
+    "weight": 6,
+    "ammoTag": "tacz:9mm",
+    "ammoMin": 8,
+    "ammoMax": 36
+  },
+  "tacz:vector45": {
+    "weight": 5,
+    "ammoTag": "tacz:45acp",
+    "ammoMin": 8,
+    "ammoMax": 36
+  },
+  "tacz:p90": {
+    "weight": 5,
+    "ammoTag": "tacz:57x28",
+    "ammoMin": 8,
+    "ammoMax": 36
+  },
+  "tacz:rpk": {
+    "weight": 4,
+    "ammoTag": "tacz:762x39",
+    "ammoMin": 12,
+    "ammoMax": 48
+  },
+  "tacz:m249": {
+    "weight": 2,
+    "ammoTag": "tacz:556x45",
+    "ammoMin": 16,
+    "ammoMax": 64
+  },
+  "tacz:fn_evolys": {
+    "weight": 2,
+    "ammoTag": "tacz:308",
+    "ammoMin": 16,
+    "ammoMax": 64
+  },
+  "tacz:minigun": {
+    "weight": 1,
+    "ammoTag": "tacz:308",
+    "ammoMin": 32,
+    "ammoMax": 96
+  },
+  "tacz:m320": {
+    "weight": 1,
+    "ammoTag": "tacz:40mm",
+    "ammoMin": 0,
+    "ammoMax": 6
+  },
+  "tacz:rpg7": {
+    "weight": 1,
+    "ammoTag": "tacz:rpg_rocket",
+    "ammoMin": 0,
+    "ammoMax": 3
+  }
+}

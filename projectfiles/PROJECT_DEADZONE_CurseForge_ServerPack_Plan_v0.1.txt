@@ -1,0 +1,106 @@
+PROJECT DEADZONE - CurseForge共有 / サーバーパック方針
+=======================================================
+
+A. 友達への最速共有（開発中）
+----------------------------
+CurseForge App:
+  My Modpacks
+  → DEADZONE profile
+  → 右上メニュー
+  → Share Profile
+
+方法1:
+  Export as .zip
+  → 友達はCurseForgeのImportからZIPを読み込む。
+
+方法2:
+  Generate Code
+  → Profile Codeを友達へ送る。
+  → Codeは7日間のみ有効。
+
+開発中の少人数テストならProfile Codeが最も手軽。
+大きな更新をするたび新コードを発行する運用でもよい。
+
+
+B. 公開/長期テスト
+-----------------
+CurseForge上でModpack Projectとして公開/限定テスト版を管理する。
+
+推奨:
+  現段階は Alpha または Beta。
+  友人テストが安定したらReleaseへ。
+
+CurseForge Project提出用ZIPの基本:
+  manifest.json
+  overrides/
+
+overrides配下へ:
+  config/
+  kubejs/
+  defaultconfigs/
+  resourcepacks/（必要なもの）
+  その他MODPACK独自データ
+
+を入れる。
+
+
+C. SERVER PACK
+--------------
+Client Packとは別にServer Packを作る。
+
+基本的に入れる:
+  mods/
+  config/
+  defaultconfigs/
+  kubejs/
+  datapacksを自動適用する仕組み/サーバーworld用設定
+  Forge server起動ファイル
+  server.propertiesのテンプレート
+  README
+  必要に応じてops/whitelistの説明
+
+原則Serverから外す候補:
+  Client-only UI MOD
+  Shader
+  一部Resource Pack
+  Client専用Performance MOD
+  メニュー/GUIだけのMOD
+
+ただしClient-only/Server-requiredの判定はMODごとに確認すること。
+
+DEADZONEでは特に:
+  Lost Cities / ChaosZ / KubeJS worldgen
+  Vehicle Compatibility
+  Zombie関連
+  Loot/Skill/Job実装
+
+はサーバー側にも確実に必要。
+
+
+D. テスト時に収集したいサーバー情報
+----------------------------------
+・参加人数
+・平均/最低TPS
+・MSPT
+・サーバーメモリ使用量
+・チャンク生成時の負荷
+・Lost Cities都市へ新規侵入した瞬間のTPS
+・車両数
+・Zombie数
+・クラッシュ/警告ログ
+
+まず2人 → 4人程度へ増やして比較する。
+
+
+E. 開発中のおすすめ運用
+----------------------
+1. CurseForge側Client profileをMASTERにする。
+2. バージョン番号を必ず付ける。
+   例:
+     DEADZONE 0.2.0-test1
+     DEADZONE 0.2.0-test2
+
+3. 各テストでProfile CodeまたはExport ZIPを配布。
+4. 同じVersionのServer Packを用意。
+5. config / kubejs / MODLISTをClientとServerで同期。
+6. テスト終了後ログとフィードバックを回収。

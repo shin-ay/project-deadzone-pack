@@ -1,0 +1,134 @@
+
+[general_settings]
+	#When set to true, soldiers will spawn in villages. When set to false, the event is disabled
+	enableVillageGarrison = true
+
+[Factions]
+	#If true, Ru Units will be friendly with Players and PMC Units
+	ruUnitsFriendly = false
+	#If true, Us Units will be friendly with Players and PMC Units
+	usUnitsFriendly = true
+
+[unit_attributes]
+	#Max Health for All Units
+	#Range: 1.0 ~ 200.0
+	health = 20.0
+	#--------------------------------------------------
+	#Walk Speed for All Units
+	#Range: 0.05 ~ 1.5
+	speed = 0.27
+	#--------------------------------------------------
+	#Detection Range for All Units
+	#Range: 32.0 ~ 384.0
+	detectionRange = 96.0
+
+[ai_difficulty]
+	#AI Difficulty preset.
+	#Does NOT affect soldiers accuracy.
+	#Only affects tactical maneuver timers and movement speeds.
+	#
+	#NORMAL: More static soldiers, slower combat pacing.
+	#ADVANCED: More dynamic and aggressive soldiers.
+	#Allowed Values: NORMAL, ADVANCED
+	difficulty = "ADVANCED"
+
+[gun_ai_shooting_config]
+	#Maximum shooting distance
+	#Range: 10.0 ~ 384.0
+	maxShootDistance = 90.0
+	#Base bullet spread (lower = more accurate)
+	#Range: 0.0 ~ 10.0
+	baseSpread = 1.4
+	#Spread increase per block of distance to target (accuracy penalty at range)
+	#Range: 0.0 ~ 1.0
+	spreadIncrease = 0.012
+	#Maximum bullet spread limit
+	#Prevents accuracy penalties from increasing indefinitely at long range
+	#Range: 0.0 ~ 10.0
+	maxSpread = 1.2
+	#Minimum shots per burst
+	#Range: 1 ~ 20
+	minBurst = 3
+	#Maximum shots per burst
+	#Range: 1 ~ 30
+	maxBurst = 5
+	#Minimum cooldown between bursts (ticks)
+	#Range: 0 ~ 200
+	minBurstCooldown = 10
+	#Maximum cooldown between bursts (ticks)
+	#Range: 0 ~ 400
+	maxBurstCooldown = 15
+
+[event_spawn]
+	#--------------------------------------------------
+	#Global cooldown ticks between events. 20 ticks = 1 second. 4800 = 4 minutes
+	#Range: 100 ~ 72000
+	eventGlobalCooldownTicks = 4800
+	#Ticks between event evaluation attempts per player. 20 ticks = 1 second. Default: 3600 = 1 minute
+	#Range: 100 ~ 72000
+	eventTickWindow = 1200
+	#Base spawn chance for Patrol Event (per minute)
+	#Range: 0.01 ~ 1.0
+	patrolBaseChance = 0.1
+	#--------------------------------------------------
+	#Chance accumulation rate on failure for Patrol Event
+	#Range: 0.01 ~ 0.5
+	patrolFailureMultiplier = 0.15
+	#--------------------------------------------------
+	#Minimum squad size for Patrol Event
+	#Range: 1 ~ 10
+	patrolMinSize = 3
+	#Maximum squad size for Patrol Event
+	#Range: 1 ~ 20
+	patrolMaxSize = 4
+	#Base spawn chance for Combat Event (per minute)
+	#Range: 0.01 ~ 1.0
+	combatBaseChance = 0.08
+	#--------------------------------------------------
+	#Chance accumulation rate on failure for Combat Event
+	#Range: 0.01 ~ 0.5
+	combatFailureMultiplier = 0.12
+	#--------------------------------------------------
+	#Minimum squad size for Combat Event (per faction)
+	#Range: 1 ~ 10
+	combatMinSize = 3
+	#Maximum squad size for Combat Event (per faction)
+	#Range: 1 ~ 20
+	combatMaxSize = 5
+	#Base spawn chance for Cave Extraction Event (per minute)
+	#Range: 0.01 ~ 1.0
+	caveBaseChance = 0.02
+	#--------------------------------------------------
+	#Chance accumulation rate on failure for Cave Extraction Event
+	#Range: 0.01 ~ 0.5
+	caveFailureMultiplier = 0.2
+	#--------------------------------------------------
+	#Minimum squad size for Cave Extraction Event
+	#Range: 1 ~ 10
+	caveMinSize = 2
+	#--------------------------------------------------
+	#Maximum squad size for Cave Extraction Event
+	#Range: 1 ~ 20
+	caveMaxSize = 4
+
+[Drops]
+	#Enables or disables modified weapon drops for Units.
+	enableCustomDrops = true
+	#Probability that a Unit will drop its TACZ weapon upon death (0.0 to 1.0)
+	#Range: 0.0 ~ 1.0
+	gunDropChance = 1.0
+	#Probability that a Unit will drop extra ammo upon death (0.0 to 1.0).
+	#Range: 0.0 ~ 1.0
+	ammoDropChance = 0.5
+
+["Visual Effects"]
+	#Activate or deactivate the visual suppression effect
+	enableSuppression = true
+
+[misc_config]
+	#Item ID required to recruit a PMC
+	recruitItem = "minecraft:iron_ingot"
+	#Amount of items required to recruit a PMC
+	#Range: 1 ~ 64
+	recruitPrice = 12
+

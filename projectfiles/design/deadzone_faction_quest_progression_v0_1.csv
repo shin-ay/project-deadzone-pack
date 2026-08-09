@@ -1,0 +1,13 @@
+Stage,WorldTier,Building,Objective,EnemyFaction,BossOrElite,Unlock,RewardDirection,RepeatableContent
+Prologue,T0,Survivor Camp,"拠点へ到達しJOBを選択",none,none,"Starter Kit・Buddy募集","食料・水・基礎工具","物資納品"
+Local Supply,T0,Gas Station,"燃料倉庫を確保して周辺を探索",raider,Raider Scout,"車両用燃料・地図情報","燃料・修理材","燃料回収"
+First Arsenal,T0-T1,Gun Shop,"店内のRaidersを排除し武器庫を開放",raider,Raider Enforcer,"旧式民間銃・弾薬レシピ","T0-T1銃・弾薬","弾薬部品回収"
+Law Restored,T1,Police Station,"証拠保管庫と通信室を確保",raider,Raider Warden,"警察防具・MP5/M870系","防弾ベスト・無線機","地域巡回"
+Emergency Line,T1-T2,Fire Station,"消防設備を復旧し避難経路を確保",infected,Mutated Firefighter,"消防・環境防護装備","消火・救助用品","救助要請"
+Medical Network,T2,Hospital/Clinic,"発電と薬品庫を復旧してMedicを救出",raider,Corrupt Field Medic,"Medic強化・高度医療レシピ","医療品・蘇生用品","患者搬送・薬品納品"
+Civil Authority,T2,City Hall/Police HQ,"Civil Defenseと接触し地域を安定化",mixed,Civil Defense Officer,"Civil Defense評判・T2装備","M4/G36系へのアクセス","治安任務"
+Industrial Recovery,T2-T3,Factory/Create Facility,"生産ラインを復旧",remnant,Remnant Engineer,"Create中盤・車両部品","機械部品","修理・生産依頼"
+Signal Blackout,T3,Radio Station,"Remnant妨害電波を停止",remnant,Remnant Marksman,"地域情報・次拠点座標","無線装備・新式銃部品","通信塔防衛"
+Military Perimeter,T3-T4,Military Base,"外周・兵舎・武器庫を段階制圧",remnant,Remnant Heavy,"T3-T4軍用銃・軍用防具","新式銃・装甲板","哨戒隊討伐"
+Research Breach,T4,Laboratory/Bunker,"感染研究データを回収",remnant,Spec Ops Commander,"高度Hazmat・特殊弾薬","研究素材","サンプル回収"
+Deadzone Core,T5,Final Command Facility,"司令部と感染源を攻略",remnant,Campaign Boss,"最終レシピ・Endgame地域","Exo・固有武器","高難度作戦"

@@ -1,0 +1,32 @@
+﻿{
+    "id":  "project_deadzone:talent_medic_aura_master_power",
+    "bonuses":  [
+
+                ],
+    "requirements":  [
+
+                     ],
+    "directConnections":  [
+                              "project_deadzone:talent_medic_aura_15"
+                          ],
+    "longConnections":  [
+
+                        ],
+    "oneWayConnections":  [
+
+                          ],
+    "tags":  [
+                 "pdz_talent_medic_aura",
+                 "pdz_talent_mastery",
+                 "pdz_mastery_medic_aura",
+                 "pdz_master_power",
+                 "pdz_node_talent_medic_aura_master_power"
+             ],
+    "backgroundTexture":  "skilltree:textures/icons/background/keystone.png",
+    "iconTexture":  "skilltree:textures/icons/potion_yellow_big.png",
+    "borderTexture":  "skilltree:textures/tooltip/lesser.png",
+    "positionX":  984.66,
+    "positionY":  25.78,
+    "buttonSize":  32,
+    "isStartingPoint":  false
+}

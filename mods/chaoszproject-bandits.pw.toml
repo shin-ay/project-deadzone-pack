@@ -1,0 +1,13 @@
+name = "ChaosZProject: Bandits! - Pillager's Gun Addon"
+filename = "chaoszproject-bandits-1.0.0-1.20.1.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "ec58a560dca01c292a2c946470d8ebaebec94932"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 6562409
+project-id = 1272684

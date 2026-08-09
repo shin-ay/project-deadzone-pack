@@ -1,0 +1,13 @@
+name = "Basic Night Vision Goggles"
+filename = "basic_nvg-1.1.2-forge-1.20.1.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "e1dec55ee7b7bbfb1db5b284402f9612a46e6a39"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 6333352
+project-id = 1073439

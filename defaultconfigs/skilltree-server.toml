@@ -1,0 +1,15 @@
+["Skill Points"]
+	"Maximum skill points" = 200
+	"First skill point cost" = 15
+	"Last skill point cost" = 1400
+	"Use skill points costs array" = false
+	"Levelup costs" = [15]
+	"Show chat messages" = false
+	"Enable exprerience exchange for skill points" = false
+
+["Amnesia Scroll"]
+	"Amnesia scroll penalty" = 0.0
+	"Drop amnesia scrolls from the Ender Dragon" = false
+
+[Experience]
+	"Grindstone experience multiplier" = 0.0

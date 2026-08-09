@@ -1,0 +1,29 @@
+﻿{
+    "id":  "project_deadzone:talent_survivalist_farming_8",
+    "bonuses":  [
+
+                ],
+    "requirements":  [
+
+                     ],
+    "directConnections":  [
+                              "project_deadzone:talent_survivalist_farming_7"
+                          ],
+    "longConnections":  [
+
+                        ],
+    "oneWayConnections":  [
+
+                          ],
+    "tags":  [
+                 "pdz_talent_farming",
+                 "pdz_node_talent_survivalist_farming_8"
+             ],
+    "backgroundTexture":  "skilltree:textures/icons/background/notable.png",
+    "iconTexture":  "skilltree:textures/icons/apple_green.png",
+    "borderTexture":  "skilltree:textures/tooltip/lesser.png",
+    "positionX":  -376.58,
+    "positionY":  433.2,
+    "buttonSize":  22,
+    "isStartingPoint":  false
+}

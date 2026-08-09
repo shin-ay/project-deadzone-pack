@@ -1,0 +1,338 @@
+{
+  "xsize": 16,
+  "zsize": 16,
+  "palette": {
+    "palette": [
+      {
+        "char": "",
+        "block": "minecraft:air"
+      },
+      {
+        "char": "",
+        "block": "minecraft:gray_terracotta"
+      },
+      {
+        "char": "",
+        "block": "minecraft:polished_andesite"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:iron_ladder[facing=south]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:black_terracotta"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:apartment_door[facing=north,half=lower,hinge=left,open=false,powered=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:deepslate_tile_stairs[facing=west,half=top,shape=straight,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:smooth_quartz_stairs[facing=east,half=bottom,shape=straight,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:trash_bin",
+        "tag": {
+          "Items": [],
+          "id": "apocalypsenow:trash_bin"
+        }
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:washing_machine[facing=south]",
+        "tag": {
+          "Items": [],
+          "id": "apocalypsenow:washing_machine"
+        }
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:papertrash[facing=east]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:chest[facing=east,type=single,waterlogged=false]",
+        "tag": {
+          "id": "minecraft:chest"
+        }
+      },
+      {
+        "char": "",
+        "block": "minecraft:smooth_quartz_stairs[facing=south,half=bottom,shape=straight,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:smooth_quartz_stairs[facing=east,half=bottom,shape=inner_right,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:papertrashvariant[facing=east]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:mangrove_door[facing=east,half=lower,hinge=right,open=true,powered=false]"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:papertrash[facing=north]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:dark_oak_door[facing=north,half=lower,hinge=left,open=false,powered=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:dark_oak_door[facing=north,half=lower,hinge=right,open=true,powered=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:mangrove_door[facing=west,half=lower,hinge=right,open=true,powered=false]"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:paperstrash[facing=east]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:gray_bed[facing=east,occupied=false,part=foot]",
+        "tag": {
+          "id": "minecraft:bed"
+        }
+      },
+      {
+        "char": "",
+        "block": "minecraft:gray_bed[facing=east,occupied=false,part=head]",
+        "tag": {
+          "id": "minecraft:bed"
+        }
+      },
+      {
+        "char": "",
+        "block": "minecraft:smoker[facing=north,lit=false]",
+        "tag": {
+          "CookTime": 0,
+          "BurnTime": 0,
+          "Items": [],
+          "id": "minecraft:smoker",
+          "CookTimeTotal": 0,
+          "RecipesUsed": {}
+        }
+      },
+      {
+        "char": "",
+        "block": "minecraft:crafting_table"
+      },
+      {
+        "char": "",
+        "block": "minecraft:chest[facing=north,type=single,waterlogged=false]",
+        "tag": {
+          "id": "minecraft:chest"
+        }
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:large_shelves_fill[facing=south,waterlogged=false]",
+        "tag": {
+          "id": "apocalypsenow:large_shelves_fill"
+        },
+        "loot": "project_deadzone:chests/generic_low_filled"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:washing_machine[facing=north]",
+        "tag": {
+          "Items": [],
+          "id": "apocalypsenow:washing_machine"
+        }
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:gas_canister[facing=north]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:stone_brick_stairs[facing=north,half=top,shape=straight,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:apartment_door[facing=north,half=upper,hinge=left,open=false,powered=false]"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:broken_plasma_tv[facing=east]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:mangrove_door[facing=east,half=upper,hinge=right,open=true,powered=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:dark_oak_door[facing=north,half=upper,hinge=left,open=false,powered=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:dark_oak_door[facing=north,half=upper,hinge=right,open=true,powered=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:mangrove_door[facing=west,half=upper,hinge=right,open=true,powered=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:glass_pane[east=true,north=false,south=false,waterlogged=false,west=true]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:chest[facing=west,type=single,waterlogged=false]",
+        "tag": {
+          "id": "minecraft:chest"
+        }
+      },
+      {
+        "char": "",
+        "block": "minecraft:dark_oak_door[facing=north,half=lower,hinge=left,open=true,powered=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:mangrove_door[facing=west,half=lower,hinge=right,open=false,powered=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:deepslate_tile_stairs[facing=east,half=top,shape=straight,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:metal_shelves[facing=north,waterlogged=false]",
+        "tag": {
+          "Items": [],
+          "id": "apocalypsenow:metal_shelves"
+        },
+        "loot": "project_deadzone:chests/generic_low_filled"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:large_shelves[facing=north,waterlogged=false]",
+        "tag": {
+          "id": "apocalypsenow:large_shelves"
+        },
+        "loot": "project_deadzone:chests/generic_low_filled"
+      }
+    ]
+  },
+  "slices": [
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  ]
+}

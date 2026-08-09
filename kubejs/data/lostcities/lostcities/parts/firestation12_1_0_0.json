@@ -1,0 +1,254 @@
+{
+  "xsize": 16,
+  "zsize": 16,
+  "palette": {
+    "palette": [
+      {
+        "char": "",
+        "block": "minecraft:grass_block[snowy=false]"
+      },
+      {
+        "char": "",
+        "block": "immersive_weathering:mossy_stone"
+      },
+      {
+        "char": "",
+        "block": "minecraft:stone[weathering=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:polished_andesite"
+      },
+      {
+        "char": "",
+        "block": "minecraft:polished_andesite_slab[type=bottom,waterlogged=true]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:stone_slab[type=bottom,waterlogged=true,weathering=false]"
+      },
+      {
+        "char": "",
+        "block": "immersive_weathering:mossy_stone_slab[type=bottom,waterlogged=true]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:dirt"
+      },
+      {
+        "char": "",
+        "block": "minecraft:cyan_terracotta"
+      },
+      {
+        "char": "",
+        "block": "minecraft:gray_concrete"
+      },
+      {
+        "char": "",
+        "block": "minecraft:air"
+      },
+      {
+        "char": "",
+        "block": "minecraft:vine[east=false,north=true,south=false,up=false,west=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:grass"
+      },
+      {
+        "char": "",
+        "block": "minecraft:tall_grass[half=lower]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:vine[east=false,north=false,south=true,up=false,west=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:vine[east=true,north=false,south=true,up=false,west=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:polished_andesite_slab[type=double,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:vine[east=false,north=false,south=true,up=false,west=true]"
+      },
+      {
+        "char": "",
+        "block": "immersive_weathering:mossy_bricks"
+      },
+      {
+        "char": "",
+        "block": "minecraft:bricks[weathering=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:terracotta"
+      },
+      {
+        "char": "",
+        "block": "minecraft:granite"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:iron_locker[facing=south,waterlogged=false]",
+        "tag": {
+          "Items": [],
+          "id": "apocalypsenow:iron_locker"
+        }
+      },
+      {
+        "char": "",
+        "block": "mts:decor[light=0]",
+        "tag": {
+          "positiony": -58.0,
+          "packID": "mts",
+          "positionz": 49.0,
+          "systemName": "custombench",
+          "subName": "",
+          "id": "mts:builder_base",
+          "uniqueUUID": "0a7a0f6d-6b62-4daf-bcc7-9d43616533a0",
+          "positionx": -39.0
+        }
+      },
+      {
+        "char": "",
+        "block": "mts:decor[light=0]",
+        "tag": {
+          "positiony": -58.0,
+          "packID": "mts",
+          "positionz": 49.0,
+          "systemName": "wheelbench",
+          "subName": "",
+          "id": "mts:builder_base",
+          "uniqueUUID": "88411d43-2e4e-4acf-9dbd-a99c1a2825cd",
+          "positionx": -30.0
+        }
+      },
+      {
+        "char": "",
+        "block": "horror_element_mod:blood_1[facing=north,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:tall_grass[half=upper]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:bricks[weathering=true]"
+      }
+    ]
+  },
+  "slices": [
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  ]
+}

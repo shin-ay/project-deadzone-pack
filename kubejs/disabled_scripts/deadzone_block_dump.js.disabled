@@ -1,0 +1,81 @@
+// PROJECT DEADZONE - Block ID Dumper v5
+// Minecraft 1.20.1 / Forge 47.4.x / KubeJS 2001.6.5
+//
+// v5:
+// - Java.loadClass() 不使用
+// - ServerEvents.loaded 内で const/let を使わない
+// - 一度だけ実行するガード付き
+// - RegistryInfo.BLOCK.getIds() を直接走査
+//
+// 配置:
+//   kubejs/server_scripts/deadzone_block_dump.js
+
+global.deadzoneBlockDumpAlreadyRan = false
+
+ServerEvents.loaded(function(event) {
+  if (global.deadzoneBlockDumpAlreadyRan) {
+    console.info('[DEADZONE_BLOCK_DUMP] skipped: already ran')
+    return
+  }
+
+  global.deadzoneBlockDumpAlreadyRan = true
+
+  console.info('[DEADZONE_BLOCK_DUMP] ===== START =====')
+
+  try {
+    global.deadzoneTargetNamespaces = [
+      'refurbished_furniture',
+      'doomsday_decoration',
+      'horror_element_mod',
+      'immersive_weathering',
+      'createdeco',
+      'securitycraft',
+      'immersiveengineering',
+      'create',
+      'framedblocks',
+      'farmersdelight'
+    ]
+
+    global.deadzoneAllBlockIds = []
+
+    RegistryInfo.BLOCK.getIds().forEach(function(id) {
+      global.deadzoneAllBlockIds.push(String(id))
+    })
+
+    global.deadzoneAllBlockIds.sort()
+
+    global.deadzoneTotalBlockCount = 0
+
+    global.deadzoneTargetNamespaces.forEach(function(namespace) {
+      console.info('[DEADZONE_BLOCK_DUMP] --- namespace: ' + namespace + ' ---')
+
+      global.deadzoneNamespaceCount = 0
+
+      global.deadzoneAllBlockIds.forEach(function(blockId) {
+        if (blockId.indexOf(namespace + ':') === 0) {
+          console.info('[DEADZONE_BLOCK_DUMP] ' + blockId)
+          global.deadzoneNamespaceCount = global.deadzoneNamespaceCount + 1
+          global.deadzoneTotalBlockCount = global.deadzoneTotalBlockCount + 1
+        }
+      })
+
+      console.info(
+        '[DEADZONE_BLOCK_DUMP] --- ' +
+        namespace +
+        ': ' +
+        global.deadzoneNamespaceCount +
+        ' blocks ---'
+      )
+    })
+
+    console.info(
+      '[DEADZONE_BLOCK_DUMP] TOTAL: ' +
+      global.deadzoneTotalBlockCount +
+      ' blocks'
+    )
+    console.info('[DEADZONE_BLOCK_DUMP] ===== END =====')
+  } catch (e) {
+    console.error('[DEADZONE_BLOCK_DUMP] FAILED')
+    console.error('[DEADZONE_BLOCK_DUMP] ' + String(e))
+  }
+})

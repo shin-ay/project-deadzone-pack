@@ -1,0 +1,6 @@
+{
+  "multibuilding": "lostcities:gasstation1",
+  "terrainheight": "highest",
+  "terrainfix": "repeatslice",
+  "heightoffset": -1
+}

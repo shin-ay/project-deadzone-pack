@@ -1,0 +1,68 @@
+{
+    "mobility_basics":  {
+                            "x":  0,
+                            "y":  160,
+                            "definition":  "mobility_basics",
+                            "root":  true
+                        },
+    "driver":  {
+                   "x":  "-192",
+                   "y":  48,
+                   "definition":  "driver"
+               },
+    "rider":  {
+                  "x":  "-64",
+                  "y":  48,
+                  "definition":  "rider"
+              },
+    "sailor":  {
+                   "x":  64,
+                   "y":  48,
+                   "definition":  "sailor"
+               },
+    "pilot":  {
+                  "x":  192,
+                  "y":  48,
+                  "definition":  "pilot"
+              },
+    "road_engineer":  {
+                          "x":  "-192",
+                          "y":  "-48",
+                          "definition":  "road_engineer"
+                      },
+    "bike_mechanic":  {
+                          "x":  "-64",
+                          "y":  "-48",
+                          "definition":  "bike_mechanic"
+                      },
+    "naval_logistics":  {
+                            "x":  64,
+                            "y":  "-48",
+                            "definition":  "naval_logistics"
+                        },
+    "airframe_repair":  {
+                            "x":  192,
+                            "y":  "-48",
+                            "definition":  "airframe_repair"
+                        },
+    "road_master":  {
+                        "x":  "-192",
+                        "y":  "-176",
+                        "definition":  "road_master"
+                    },
+    "rider_master":  {
+                         "x":  "-64",
+                         "y":  "-176",
+                         "definition":  "rider_master"
+                     },
+    "captain":  {
+                    "x":  64,
+                    "y":  "-176",
+                    "definition":  "captain"
+                },
+    "ace_pilot":  {
+                      "x":  192,
+                      "y":  "-176",
+                      "definition":  "ace_pilot"
+                  }
+}

@@ -1,0 +1,18 @@
+// PROJECT DEADZONE military Curios prototype. Full restart required.
+StartupEvents.registry("item", event => {
+  event.create("military_radio")
+    .displayName("戦術無線機")
+    .texture("apocalypsenow:item/militaryradio")
+    .unstackable()
+    .tooltip("[背中] 敵勢力・増援情報を受信する")
+  event.create("medical_pouch")
+    .displayName("緊急医療ポーチ")
+    .texture("apocalypsenow:item/bloodbag")
+    .unstackable()
+    .tooltip("[胸] HP25%以下で再生能力IIを5秒付与（CT60秒）")
+  event.create("ammunition_pouch")
+    .displayName("弾薬ポーチ")
+    .texture("tacz:item/ammo_box")
+    .unstackable()
+    .tooltip("[腰] 銃撃キル時の対応弾薬回収率を+10%")
+})

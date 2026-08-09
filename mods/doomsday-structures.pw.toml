@@ -1,0 +1,13 @@
+name = "Doomsday Structures"
+filename = "doomsday_structures-1.0.0-forge-1.20.1.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "4fbb944c4290ec01d74b749fc8addd3c3cdf580b"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 7845238
+project-id = 1499576

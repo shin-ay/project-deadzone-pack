@@ -1,0 +1,128 @@
+# =============================================================================
+#  IV Better Collisions - Configuration
+#  Commandes / Commands : /ivbc reload  |  /ivbc status
+# =============================================================================
+
+
+[general]
+
+# [EN] Enable or disable the entire collision system.
+# [FR] Active ou desactive tout le systeme de collision.
+enabled = true
+
+
+[collision]
+
+# [EN] Push-out margin when a vehicle is ejected from a block (in blocks).
+#      Higher = stronger push, easier to unstuck, but looks less natural.
+#      Lower  = more realistic sliding, but vehicle may stay stuck.
+#      Example: 0.5 = half a block away from the obstacle.
+#
+# [FR] Marge de repoussement quand un vehicule est ejecte d'un bloc (en blocs).
+#      Plus haut = push plus fort, plus facile de se debloquer, mais moins naturel.
+#      Plus bas  = glissement plus realiste, mais risque de rester coince.
+#      Exemple : 0.5 = un demi-bloc de distance de l'obstacle.
+epsilon = 0.1
+
+# [EN] Maximum penetration depth that will be corrected (in blocks).
+#      Vehicles embedded deeper than this value are ignored.
+#      Useful to avoid moving vehicles placed intentionally inside structures.
+#      Higher = fixes extreme stuck cases. Lower = avoids unwanted teleports.
+#
+# [FR] Profondeur maximale de penetration qui sera corrigee (en blocs).
+#      Les vehicules enfonces plus profond que cette valeur sont ignores.
+#      Utile pour ne pas deplacer les vehicules places volontairement dans des structures.
+#      Plus haut = sauve les cas extremes. Plus bas = evite les teleportations non voulues.
+max_correction = 2.0
+
+# [EN] Number of correction passes per game tick.
+#      Each pass resolves one layer of collision. Multiple passes handle
+#      corners and stacked blocks (e.g. tree trunks side by side).
+#      Too high = unnecessary performance cost.
+#
+# [FR] Nombre de passes de correction par tick de jeu.
+#      Chaque passe resout une couche de collision. Plusieurs passes gerent
+#      les coins et les blocs empiles (ex : troncs d'arbres cote a cote).
+#      Trop haut = cout en performance inutile.
+max_passes = 5
+
+# [EN] Extra margin added around each red collision box (in blocks).
+#      Makes the collision envelope bigger to prevent high-speed clipping.
+#      The vehicle will stop this distance away from the wall surface.
+#      Higher = stronger protection but visible gap. 0 = no margin (original).
+#      Typical: 0.3-0.8.
+#
+# [FR] Marge supplementaire ajoutee autour de chaque box rouge de collision (en blocs).
+#      Agrandit l'enveloppe de collision pour empecher le clipping a haute vitesse.
+#      Le vehicule s'arretera a cette distance de la surface du mur.
+#      Plus haut = meilleure protection mais ecart visible. 0 = pas de marge.
+#      Typique : 0.3-0.8.
+wall_box_margin = 0.54
+
+
+[advanced]
+
+# [EN] Minimum vehicle age in ticks before collision corrections activate.
+#      20 ticks = 1 second. This delay prevents conflicts with the MTS
+#      spawn/placement system that adjusts vehicle position on first ticks.
+#      Higher = safer spawn, but short delay before protection kicks in.
+#      Lower  = immediate protection, but may conflict with MTS placement.
+#
+# [FR] Age minimum du vehicule en ticks avant d'activer les corrections.
+#      20 ticks = 1 seconde. Ce delai empeche les conflits avec le systeme
+#      de spawn/placement MTS qui ajuste la position dans les premiers ticks.
+#      Plus haut = spawn plus sur, mais petit delai avant la protection.
+#      Plus bas  = protection immediate, mais risque de conflit au placement.
+min_tick_age = 40
+
+
+[vehicle_collision]
+
+# [EN] Enable vehicle-to-vehicle solid collision.
+#      When two vehicles collide, their red BLOCK hitboxes act as solid surfaces.
+#      Both vehicles are pushed apart, weighted by mass (lighter moves more).
+#      Wheels stop on impact.
+#
+# [FR] Active la collision solide vehicule-contre-vehicule.
+#      Quand deux vehicules se percutent, leurs hitbox rouges BLOCK agissent comme
+#      des surfaces solides. Les deux vehicules sont repousses, pondere par la masse
+#      (le plus leger bouge plus). Les roues s'arretent a l'impact.
+v2v_enabled = true
+
+# [EN] Collision sphere radius around each vehicle center (in blocks).
+#      When two spheres overlap, the vehicles collide and push apart.
+#      Adjust based on your largest vehicle size. Typical: 2.0-5.0.
+# [FR] Rayon de la sphere de collision autour du centre du vehicule (en blocs).
+#      Quand deux spheres se chevauchent, les vehicules entrent en collision.
+#      Ajuster selon la taille de vos vehicules. Typique : 2.0-5.0.
+v2v_sphere_radius = 3.0
+
+# [EN] Friction applied to collision-induced motion each tick (0.0-1.0).
+#      After impact, the pushed vehicle gradually loses the injected momentum.
+#      Higher = faster slowdown. 0.15 = ~96% gone in 1 second. 0.05 = slow slide.
+# [FR] Friction appliquee a la motion de collision chaque tick (0.0-1.0).
+#      Apres l'impact, le vehicule pousse perd progressivement son momentum.
+#      Plus haut = arret plus rapide. 0.15 = ~96% parti en 1 sec. 0.05 = glisse lent.
+v2v_friction_factor = 0.15
+
+# [EN] Minimum gap after separation (in blocks). Prevents re-collision next tick.
+# [FR] Ecart minimum apres separation (en blocs). Empeche la re-collision au tick suivant.
+v2v_separation_epsilon = 0.02
+
+# [EN] Spin intensity on collision impact (degrees per unit of tangential velocity).
+#      When a vehicle is hit off-center (T-bone, glancing), it spins.
+#      Head-on = no spin. T-bone = maximum spin. Glancing = proportional.
+#      Higher = more dramatic rotation. 0 = disable spin entirely.
+#      Typical: 200.0-800.0.
+# [FR] Intensite de la rotation lors d'un impact (degres par unite de vitesse tangentielle).
+#      Quand un vehicule est frappe de cote (T-bone, frôlement), il tourne sur lui-meme.
+#      Frontal = pas de rotation. T-bone = rotation maximale. Frôlement = proportionnel.
+#      Plus haut = rotation plus dramatique. 0 = desactiver la rotation.
+#      Typique : 200.0-800.0.
+v2v_spin_factor = 600.0
+
+# [EN] Maximum distance between vehicle centers to check for collision.
+#      Vehicles further apart are skipped (performance optimization).
+# [FR] Distance maximale entre les centres des vehicules pour verifier la collision.
+#      Les vehicules plus eloignes sont ignores (optimisation de performance).
+v2v_broad_phase_radius = 30.0

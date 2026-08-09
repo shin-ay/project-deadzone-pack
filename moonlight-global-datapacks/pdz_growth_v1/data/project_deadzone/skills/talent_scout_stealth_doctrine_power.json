@@ -1,0 +1,32 @@
+﻿{
+    "id":  "project_deadzone:talent_scout_stealth_doctrine_power",
+    "bonuses":  [
+
+                ],
+    "requirements":  [
+
+                     ],
+    "directConnections":  [
+                              "project_deadzone:talent_scout_stealth_power_20"
+                          ],
+    "longConnections":  [
+
+                        ],
+    "oneWayConnections":  [
+
+                          ],
+    "tags":  [
+                 "pdz_talent_stealth",
+                 "pdz_talent_doctrine",
+                 "pdz_doctrine_scout_stealth",
+                 "pdz_doctrine_power",
+                 "pdz_node_talent_scout_stealth_doctrine_power"
+             ],
+    "backgroundTexture":  "skilltree:textures/icons/background/keystone.png",
+    "iconTexture":  "skilltree:textures/icons/void.png",
+    "borderTexture":  "skilltree:textures/tooltip/lesser.png",
+    "positionX":  -1105.35,
+    "positionY":  -625.38,
+    "buttonSize":  32,
+    "isStartingPoint":  false
+}

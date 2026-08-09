@@ -1,0 +1,387 @@
+{
+  "fitness_core_1": {
+    "title": "身体能力 基礎 Lv1",
+    "description": "身体能力の基礎能力を一段階高める。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:leather_boots"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "task"
+      }
+    },
+    "cost": 0,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_fitness_core_1"
+        }
+      }
+    ]
+  },
+  "fitness_core_2": {
+    "title": "身体能力 基礎 Lv2",
+    "description": "身体能力の基礎能力を一段階高める。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:leather_boots"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "task"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_fitness_core_2"
+        }
+      }
+    ]
+  },
+  "fitness_core_3": {
+    "title": "身体能力 基礎 Lv3",
+    "description": "身体能力でポイントを配分し、基礎能力をさらに高める。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:leather_boots"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "goal"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_fitness_core_3"
+        }
+      }
+    ],
+    "required_spent_points": 2
+  },
+  "fitness_core_4": {
+    "title": "身体能力 基礎 Lv4",
+    "description": "身体能力でポイントを配分し、基礎能力をさらに高める。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:leather_boots"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "goal"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_fitness_core_4"
+        }
+      }
+    ],
+    "required_spent_points": 4
+  },
+  "fitness_core_5": {
+    "title": "身体能力 基礎 Lv5",
+    "description": "身体能力でポイントを配分し、基礎能力をさらに高める。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:leather_boots"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "challenge"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_fitness_core_5"
+        }
+      }
+    ],
+    "required_spent_points": 6
+  },
+  "fitness_core_6": {
+    "title": "身体能力 基礎 Lv6",
+    "description": "身体能力でポイントを配分し、基礎能力をさらに高める。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:leather_boots"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "challenge"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_fitness_core_6"
+        }
+      }
+    ],
+    "required_spent_points": 8
+  },
+  "pack_training": {
+    "title": "荷重訓練",
+    "description": "最大重量を125に増加する。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:bundle"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "task"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_fitness_carry_1"
+        }
+      }
+    ]
+  },
+  "load_bearer": {
+    "title": "ロードベアラー",
+    "description": "最大重量を160に増加する。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:chest"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "goal"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_fitness_carry_2"
+        }
+      }
+    ],
+    "required_spent_points": 3
+  },
+  "human_mule": {
+    "title": "ヒューマンミュール",
+    "description": "最大重量を210に増加し、大量回収に特化する。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:barrel"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "challenge"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_fitness_carry_3"
+        }
+      }
+    ],
+    "required_spent_points": 6
+  },
+  "conditioning": {
+    "title": "持久力強化",
+    "description": "最大体力+1。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:sugar"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "task"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_fitness_endurance_1"
+        }
+      }
+    ]
+  },
+  "marathoner": {
+    "title": "マラソンランナー",
+    "description": "最大体力+2。走行時の疲労蓄積を軽減する。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:golden_boots"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "goal"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_fitness_endurance_2"
+        }
+      }
+    ],
+    "required_spent_points": 3
+  },
+  "second_lung": {
+    "title": "セカンドラング",
+    "description": "最大体力+3。疲労軽減を強化し、水中呼吸時間を延長する。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:heart_of_the_sea"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "challenge"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_fitness_endurance_3"
+        }
+      }
+    ],
+    "required_spent_points": 6
+  },
+  "agile_step": {
+    "title": "アジャイルステップ",
+    "description": "移動速度+2%。落下ダメージを15%軽減する。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:rabbit_foot"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "task"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_fitness_mobility_1"
+        }
+      }
+    ]
+  },
+  "evasive_movement": {
+    "title": "回避機動",
+    "description": "移動速度+4%。落下ダメージを30%軽減する。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:feather"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "goal"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_fitness_mobility_2"
+        }
+      }
+    ],
+    "required_spent_points": 3
+  },
+  "parkour_master": {
+    "title": "パルクールマスター",
+    "description": "移動速度+6%。落下ダメージを50%軽減し、高所着地後に短時間加速する。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:slime_block"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "challenge"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_fitness_mobility_3"
+        }
+      }
+    ],
+    "required_spent_points": 6
+  }
+}

@@ -1,0 +1,13 @@
+name = "Irlanda Core"
+filename = "irlandacore-1.0.0-forge-1.20.1.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "1ead08c9d471f023129e2e466005aa075126493b"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 5954564
+project-id = 1151700

@@ -1,0 +1,4 @@
+# Places a configured SAVE-mode Structure Block outside the 21x8x15 template.
+execute unless entity @e[type=minecraft:marker,tag=dz_remnant_relay_edit_origin,limit=1] run tellraw @s {"text":"Remnant Relayの編集原点がありません。先に /deadzonecore build_remnant を実行してください。","color":"red"}
+execute at @e[type=minecraft:marker,tag=dz_remnant_relay_edit_origin,limit=1] run setblock ~-12 ~ ~-8 minecraft:structure_block{mode:"SAVE",name:"project_deadzone:remnant_relay_edit",posX:2,posY:-1,posZ:1,sizeX:21,sizeY:8,sizeZ:15,rotation:"NONE",mirror:"NONE",ignoreEntities:1b,showair:0b,showboundingbox:1b,integrity:1.0f}
+execute if entity @e[type=minecraft:marker,tag=dz_remnant_relay_edit_origin,limit=1] run tellraw @s [{"text":"Remnant Relay保存ブロックを配置しました。名前: ","color":"green"},{"text":"project_deadzone:remnant_relay_edit","color":"aqua"},{"text":" / 範囲: 21x8x15","color":"yellow"}]

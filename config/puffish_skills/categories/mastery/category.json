@@ -1,0 +1,10 @@
+{
+  "title": "Field Mastery",
+  "description": "Shared passive skills purchased with converted surplus skill points.",
+  "extra_description": "Three surplus points from a capped skill become one Mastery point.",
+  "icon": {"type":"item","data":{"item":"minecraft:nether_star"}},
+  "background": "minecraft:textures/gui/advancements/backgrounds/adventure.png",
+  "unlocked_by_default": true,
+  "starting_points": 0,
+  "exclusive_root": false
+}

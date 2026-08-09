@@ -1,0 +1,21 @@
+{
+  "dimx": 3,
+  "dimz": 3,
+  "buildings": [
+    [
+      "lostcities:deadzone_apn_firefighter_0_0",
+      "lostcities:deadzone_apn_firefighter_0_1",
+      "lostcities:deadzone_apn_firefighter_0_2"
+    ],
+    [
+      "lostcities:deadzone_apn_firefighter_1_0",
+      "lostcities:deadzone_apn_firefighter_1_1",
+      "lostcities:deadzone_apn_firefighter_1_2"
+    ],
+    [
+      "lostcities:deadzone_apn_firefighter_2_0",
+      "lostcities:deadzone_apn_firefighter_2_1",
+      "lostcities:deadzone_apn_firefighter_2_2"
+    ]
+  ]
+}

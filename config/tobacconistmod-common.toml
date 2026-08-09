@@ -1,0 +1,6 @@
+
+[tobacco_effects]
+	#Additional effects applied when smoking. Format: effect_id,duration,amplifier
+	#additionalEffects = ["minecraft:luck,200,0", "minecraft:speed,100,0"]
+	additionalEffects = []
+

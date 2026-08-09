@@ -1,0 +1,45 @@
+﻿{
+    "id":  "project_deadzone:talent_weapons_assault_master_utility",
+    "bonuses":  [
+                    {
+                        "type":  "skilltree:attribute",
+                        "attribute":  "minecraft:generic.luck",
+                        "id":  "6b9fdcb2-7c22-045d-3c0f-ccd73f512101",
+                        "name":  "PROJECT DEADZONE Talent",
+                        "amount":  0.1,
+                        "operation":  0,
+                        "player_multiplier":  {
+                                                  "type":  "skilltree:none"
+                                              },
+                        "player_condition":  {
+                                                 "type":  "skilltree:none"
+                                             }
+                    }
+                ],
+    "requirements":  [
+
+                     ],
+    "directConnections":  [
+                              "project_deadzone:talent_weapons_assault_15"
+                          ],
+    "longConnections":  [
+
+                        ],
+    "oneWayConnections":  [
+
+                          ],
+    "tags":  [
+                 "pdz_talent_gun_assault",
+                 "pdz_talent_mastery",
+                 "pdz_mastery_weapons_assault",
+                 "pdz_master_utility",
+                 "pdz_node_talent_weapons_assault_master_utility"
+             ],
+    "backgroundTexture":  "skilltree:textures/icons/background/keystone.png",
+    "iconTexture":  "skilltree:textures/icons/arrow_emerald.png",
+    "borderTexture":  "skilltree:textures/tooltip/lesser.png",
+    "positionX":  -25.78,
+    "positionY":  -984.66,
+    "buttonSize":  32,
+    "isStartingPoint":  false
+}

@@ -1,0 +1,47 @@
+PROJECT DEADZONE - Epic Fight 本番導入テスト
+============================================
+
+導入構成
+--------
+- Forge 47.4.10
+- Epic Fight 20.14.17
+- TaCZ 1.1.8 hotfix
+- TaCZ Tweaks 2.14.2
+- Player Animation Library 1.0.2-rc1
+
+一時無効
+--------
+- Better Combat
+- Combat Roll
+- Animation Overhaul
+- Mob Player Animator
+
+確認項目
+--------
+1. タイトル画面まで正常に起動する
+2. MOD一覧にEpic Fight 20.14.17が表示される
+3. 既存テストワールドへ入れる
+4. Battle Modeへ切り替えられる
+5. 剣・斧などで通常コンボ、スタミナ、ガード、回避を確認する
+6. 一人称カメラへ全身モデルが入り込まない
+7. TaCZ銃の構え、射撃、ADS、リロード、持ち替えが正常
+8. 銃を持った状態でEpic Fightの姿勢がTaCZ表示を壊さない
+9. EキーのPROJECT DEADZONEステータスUIが表示される
+10. KキーのPuffish Skills画面が表示される
+11. JOB、Starter Kit、スキル取得データが維持されている
+12. 車両への乗降と運転が正常
+13. ゾンビなどの敵モーションと難易度が極端に崩れていない
+
+ログ確認
+--------
+logs/latest.logで次を検索:
+- epicfight
+- ERROR
+- Exception
+- Mixin
+- tacz
+
+既知の確認対象:
+Epic Fightのオンラインスキン用クロス物理が
+OBBColliderを見つけられない非致命的例外を出す場合がある。
+連続発生、クラッシュ、描画崩れがなければ経過観察。

@@ -1,0 +1,44 @@
+
+[airdrop]
+	#Forge item tag IDs merged into the catalog. Leave empty for defaults (foods, wool, logs). Vanilla iron/gold/copper/netherite ingots and diamond (etc.) are always added separately â€” they are NOT removed. Only add forge:ingots or forge:gems here if you want extra items from tags; use includeNonVanillaForgeTagItems for modded entries.
+	whitelistTags = []
+	#Item IDs to exclude from the catalog (e.g. minecraft:nether_star, minecraft:command_block).
+	blacklistItems = ["minecraft:nether_star", "minecraft:command_block", "minecraft:barrier", "minecraft:structure_block", "minecraft:jigsaw", "minecraft:bedrock", "minecraft:spectral_arrow", "minecraft:tipped_arrow"]
+	#Optional: filename in config/radiotowers/ for extra whitelist tags (one per line). E.g. whitelist.txt. Leave empty to disable.
+	whitelistFile = ""
+	#Optional: filename in config/radiotowers/ for extra blacklist item IDs (one per line). E.g. blacklist.txt. Leave empty to disable.
+	blacklistFile = ""
+	#Default difficulty points per item when loading from tags (1â€“20). Rare items use built-in higher values.
+	#Range: 1 ~ 20
+	defaultDifficultyPerItem = 2
+	#Maximum total points to allocate to loot per airdrop (cap on the meter and on what can be sent). Adjustable in config/radiotowers-common.toml.
+	#Range: 20 ~ 500
+	maxTotalDifficulty = 100
+	#When TaCZ mod is installed, its guns and ammo are added to the airdrop catalog by default. Set to false to exclude them. Custom catalog entries (below) are for adding other items, not for listing TaCZ.
+	includeTaczAmmo = true
+	#If TaCZ icons still show wrong or missing in the airdrop list (e.g. you never opened the TaCZ creative tab), set to true to show a neutral placeholder. Default false = show real icons from creative tab cache.
+	simplifyTaczIconsInAirdropList = false
+	#Extra items to add to the catalog (or override cost). Format: item_id=points (e.g. other_mod:custom_item=15). TaCZ guns/ammo are added automatically when the mod is installed; use this for items from other mods or extra entries.
+	customCatalogEntries = []
+	#Optional: filename in config/radiotowers/ for extra custom catalog entries, one 'item_id=points' per line. E.g. custom_catalog.txt. Leave empty to disable.
+	customCatalogFile = ""
+	#If false (default), forge:ingots / forge:gems / forge:gems/diamond / forge:foods only include minecraft: items from those tags. If true, all mods' items in those tags are eligible (can flood the list with rare ingots). Use customCatalogEntries or whitelistTags for specific mod items instead.
+	includeNonVanillaForgeTagItems = false
+	#If true, include End-gated items used in some recipes: minecraft:dragon_egg, minecraft:dragon_head, minecraft:dragon_breath. Default false.
+	enableEndRecipeItems = false
+	#Minutes of cooldown after a standard airdrop (loot-table / no defense wave). Default 3.
+	#Range: 0 ~ 120
+	standardAirdropCooldownMinutes = 3
+	#Minutes of cooldown after a catalog airdrop delivered via defense waves. Default 10.
+	#Range: 0 ~ 120
+	waveDeliveryCooldownMinutes = 10
+
+[waves]
+	#If true and Zombie Waves API is installed, calling an airdrop starts a zombie wave and the plane arrives when the wave completes. If false, the plane is spawned immediately with your selected loot (no waves, no API).
+	useZombieWavesForAirdrop = true
+	#Entity type IDs that should NOT be aggroed by airdrop waves when in range. E.g. minecraft:enderman, minecraft:creeper. Use F3+T or mods like JEI to see entity IDs.
+	aggroExcludeEntityIds = ["minecraft:enderman"]
+	#Minutes each defense wave lasts before time runs out. Default 3.
+	#Range: 1 ~ 60
+	waveDurationMinutes = 3
+

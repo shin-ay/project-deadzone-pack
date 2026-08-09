@@ -1,0 +1,22 @@
+{
+  "entity": "minecraft:zombie",
+  "name": "変異感染体『ブレイカー』",
+  "visualscale": 1.55,
+  "experience": 180,
+  "effects": {},
+  "attributes": {
+    "generic.max_health": 120,
+    "generic.follow_range": 48,
+    "generic.knockback_resistance": 0.8,
+    "generic.attack_damage": 8,
+    "generic.movement_speed": 0.25
+  },
+  "customattributes": { "dropgear": 0 },
+  "gear": {},
+  "ai-goals": {
+    "brutalbosses:charge": {},
+    "brutalbosses:whirlwind": { "knockback": 2, "cooldown": 180 },
+    "brutalbosses:aftercombatregen": { "amount": 0.5 }
+  },
+  "spawnatchest": {}
+}

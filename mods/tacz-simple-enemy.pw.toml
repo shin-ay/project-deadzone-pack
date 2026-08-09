@@ -1,0 +1,13 @@
+name = "TaCZ : Simple Enemy"
+filename = "simpleenemymod-1.20.1-0.1.5-beta.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "ca98f096a6220648afb8065e150baaf029df98dc"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 8289695
+project-id = 1471691

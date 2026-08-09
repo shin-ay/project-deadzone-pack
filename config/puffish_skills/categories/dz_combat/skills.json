@@ -1,0 +1,53 @@
+{
+    "combat_basics":  {
+                          "x":  0,
+                          "y":  176,
+                          "definition":  "combat_basics",
+                          "root":  true
+                      },
+    "melee_path":  {
+                       "x":  "-192",
+                       "y":  80,
+                       "definition":  "melee_path"
+                   },
+    "gun_path":  {
+                     "x":  0,
+                     "y":  80,
+                     "definition":  "gun_path"
+                 },
+    "guardian_path":  {
+                          "x":  192,
+                          "y":  80,
+                          "definition":  "guardian_path"
+                      },
+    "berserker":  {
+                      "x":  "-192",
+                      "y":  "-16",
+                      "definition":  "berserker"
+                  },
+    "operator":  {
+                     "x":  0,
+                     "y":  "-16",
+                     "definition":  "operator"
+                 },
+    "tank":  {
+                 "x":  192,
+                 "y":  "-16",
+                 "definition":  "tank"
+             },
+    "executioner":  {
+                        "x":  "-192",
+                        "y":  "-128",
+                        "definition":  "executioner"
+                    },
+    "marksman":  {
+                     "x":  0,
+                     "y":  "-128",
+                     "definition":  "marksman"
+                 },
+    "bulwark":  {
+                    "x":  192,
+                    "y":  "-128",
+                    "definition":  "bulwark"
+                }
+}

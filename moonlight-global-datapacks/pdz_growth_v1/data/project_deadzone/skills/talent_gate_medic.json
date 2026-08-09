@@ -1,0 +1,42 @@
+﻿{
+    "id":  "project_deadzone:talent_gate_medic",
+    "bonuses":  [
+                    {
+                        "type":  "skilltree:attribute",
+                        "attribute":  "minecraft:generic.movement_speed",
+                        "id":  "d8b2303b-dc63-ec60-03ec-c83e1dd6065a",
+                        "name":  "PROJECT DEADZONE Talent",
+                        "amount":  0.0015,
+                        "operation":  1,
+                        "player_multiplier":  {
+                                                  "type":  "skilltree:none"
+                                              },
+                        "player_condition":  {
+                                                 "type":  "skilltree:none"
+                                             }
+                    }
+                ],
+    "requirements":  [
+
+                     ],
+    "directConnections":  [
+                              "project_deadzone:talent_medic_revive_2"
+                          ],
+    "longConnections":  [
+                            "project_deadzone:talent_transit_hub"
+                        ],
+    "oneWayConnections":  [
+
+                          ],
+    "tags":  [
+                 "pdz_talent_transit_gate",
+                 "pdz_node_talent_gate_medic"
+             ],
+    "backgroundTexture":  "skilltree:textures/icons/background/notable.png",
+    "iconTexture":  "skilltree:textures/icons/heart_cyan.png",
+    "borderTexture":  "skilltree:textures/tooltip/lesser.png",
+    "positionX":  400,
+    "positionY":  0,
+    "buttonSize":  22,
+    "isStartingPoint":  false
+}

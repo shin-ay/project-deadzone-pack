@@ -1,0 +1,387 @@
+{
+  "reload_core_1": {
+    "title": "装填技術 基礎 Lv1",
+    "description": "装填技術の基礎能力を一段階高める。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:crossbow"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "task"
+      }
+    },
+    "cost": 0,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_reload_core_1"
+        }
+      }
+    ]
+  },
+  "reload_core_2": {
+    "title": "装填技術 基礎 Lv2",
+    "description": "装填技術の基礎能力を一段階高める。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:crossbow"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "task"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_reload_core_2"
+        }
+      }
+    ]
+  },
+  "reload_core_3": {
+    "title": "装填技術 基礎 Lv3",
+    "description": "装填技術でポイントを配分し、基礎能力をさらに高める。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:crossbow"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "goal"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_reload_core_3"
+        }
+      }
+    ],
+    "required_spent_points": 2
+  },
+  "reload_core_4": {
+    "title": "装填技術 基礎 Lv4",
+    "description": "装填技術でポイントを配分し、基礎能力をさらに高める。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:crossbow"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "goal"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_reload_core_4"
+        }
+      }
+    ],
+    "required_spent_points": 4
+  },
+  "reload_core_5": {
+    "title": "装填技術 基礎 Lv5",
+    "description": "装填技術でポイントを配分し、基礎能力をさらに高める。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:crossbow"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "challenge"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_reload_core_5"
+        }
+      }
+    ],
+    "required_spent_points": 6
+  },
+  "reload_core_6": {
+    "title": "装填技術 基礎 Lv6",
+    "description": "装填技術でポイントを配分し、基礎能力をさらに高める。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:crossbow"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "challenge"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_reload_core_6"
+        }
+      }
+    ],
+    "required_spent_points": 8
+  },
+  "quick_hands": {
+    "title": "クイックハンド",
+    "description": "リロード開始時、2秒間の移動速度支援を得る。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:rabbit_foot"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "task"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_reload_speed_1"
+        }
+      }
+    ]
+  },
+  "combat_reload": {
+    "title": "コンバットリロード",
+    "description": "リロード開始時、2秒間の移動速度と耐性支援を得る。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:clock"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "goal"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_reload_speed_2"
+        }
+      }
+    ],
+    "required_spent_points": 3
+  },
+  "speed_loader": {
+    "title": "スピードローダー",
+    "description": "リロード開始時、3秒間Speed IIと耐性支援を得る。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:sugar"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "challenge"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_reload_speed_3"
+        }
+      }
+    ],
+    "required_spent_points": 6
+  },
+  "magazine_discipline": {
+    "title": "マガジン管理",
+    "description": "リロード時10%で対応弾薬を1発保持する。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:bundle"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "task"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_reload_magazine_1"
+        }
+      }
+    ]
+  },
+  "retention": {
+    "title": "マガジン保持",
+    "description": "リロード時の弾薬保持率が20%になる。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:chest"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "goal"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_reload_magazine_2"
+        }
+      }
+    ],
+    "required_spent_points": 3
+  },
+  "ammo_cycle": {
+    "title": "アモサイクル",
+    "description": "リロード時の弾薬保持率が30%になる。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:hopper"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "challenge"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_reload_magazine_3"
+        }
+      }
+    ],
+    "required_spent_points": 6
+  },
+  "clearing_drills": {
+    "title": "排障訓練",
+    "description": "作動不良からの復帰を早める。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:tripwire_hook"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "task"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_reload_malfunction_1"
+        }
+      }
+    ]
+  },
+  "emergency_action": {
+    "title": "緊急復帰",
+    "description": "重大な作動不良の復帰時間を短縮する。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:flint_and_steel"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "goal"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_reload_malfunction_2"
+        }
+      }
+    ],
+    "required_spent_points": 3
+  },
+  "failure_proof": {
+    "title": "フェイルセーフ",
+    "description": "低確率で作動不良を即時解消する。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:fire_charge"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "challenge"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_reload_malfunction_3"
+        }
+      }
+    ],
+    "required_spent_points": 6
+  }
+}

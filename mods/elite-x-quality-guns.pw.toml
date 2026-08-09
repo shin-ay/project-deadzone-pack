@@ -1,0 +1,13 @@
+name = "Elite X Quality Guns (TACZ)"
+filename = "Elite X Quality Guns Forge v5.1 - 1.20.1.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "c665367582e8729bd9735fd0816d08157ef57f9a"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 7952352
+project-id = 1084662

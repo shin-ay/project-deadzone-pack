@@ -1,0 +1,14 @@
+{
+  "dimx": 2,
+  "dimz": 2,
+  "buildings": [
+    [
+      "lostcities:deadzone_gunstore_0_0",
+      "lostcities:deadzone_gunstore_0_1"
+    ],
+    [
+      "lostcities:deadzone_gunstore_1_0",
+      "lostcities:deadzone_gunstore_1_1"
+    ]
+  ]
+}

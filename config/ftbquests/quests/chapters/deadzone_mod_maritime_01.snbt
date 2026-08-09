@@ -1,0 +1,114 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: "circle"
+	filename: "deadzone_mod_maritime_01"
+	group: "51DC04D9192698A6"
+	icon: "smallships:oak_cog"
+	id: "6F3058C252B90174"
+	order_index: 14
+	quests: [
+		{
+			dependencies: ["162BAA0F1AF6097C","0FB9354E232CD1B9"]
+			description: [
+				"海岸沿いの探索と漁業を安定させるため、まずは小型帆船を建造する。帆を開閉し、速度を段階的に調整する操作を覚えよう。"
+				"船は十分な広さの水面に設置すること。陸上や浅すぎる場所では展開できない。"
+			]
+			icon: "smallships:sail"
+			id: "6600000000000001"
+			rewards: [{ count: 6, id: "6620000000000001", item: "apocalypsenow:money", type: "item" } { count: 2, id: "6620000000000002", item: "minecraft:lead", type: "item" }]
+			tasks: [{ id: "6610000000000001", item: "smallships:sail", type: "item" } { id: "6610000000000002", item: "smallships:oak_cog", type: "item" }]
+			title: "沿岸航行の準備"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["6600000000000001"]
+			description: ["Cogの収納を使い、魚・水・医療品を海岸の拠点まで運ぶ。単なる移動手段ではなく、海上の補給線として運用しよう。"]
+			icon: "smallships:oak_cog"
+			id: "6600000000000002"
+			rewards: [{ count: 8, id: "6620000000000003", item: "apocalypsenow:money", type: "item" } { count: 8, id: "6620000000000004", item: "minecraft:barrel", type: "item" }]
+			tasks: [{ id: "6610000000000003", item: "smallships:oak_cog", type: "item" } { count: 16L, id: "6610000000000004", item: "aquaculture:atlantic_cod", type: "item" }]
+			title: "沿岸補給船"
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["6600000000000002","74065A02DB68DAE2"]
+			description: ["T2海域への遠征には、より大きな船体と積載力が必要になる。Briggを建造し、複数人で長距離輸送を行える体制を整える。"]
+			icon: "smallships:oak_brigg"
+			id: "6600000000000003"
+			rewards: [{ count: 16, id: "6620000000000005", item: "apocalypsenow:money", type: "item" } { count: 16, id: "6620000000000006", item: "minecraft:iron_ingot", type: "item" }]
+			tasks: [{ id: "6610000000000005", item: "smallships:oak_brigg", type: "item" }]
+			title: "外洋貨物船"
+			x: 4.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["6600000000000003"]
+			description: ["貨物室を拡張して補給効率を高める。マルチでは探索班が拾った物資をまとめ、拠点へ一度に持ち帰るための中核装備になる。"]
+			icon: "smallships_upgrades:cargo_upgrade"
+			id: "6600000000000004"
+			rewards: [{ count: 12, id: "6620000000000007", item: "apocalypsenow:money", type: "item" } { id: "6620000000000008", item: "smallships_upgrades:cargo_upgrade", type: "item" }]
+			tasks: [{ id: "6610000000000006", item: "smallships_upgrades:cargo_upgrade", type: "item" }]
+			title: "貨物室拡張"
+			x: 6.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["6600000000000003"]
+			description: ["遠征時間を短縮し、追跡する敵や危険な水棲生物から離脱するため、帆走性能を強化する。速度は便利だが、狭い水路では事故にも注意。"]
+			icon: "smallships_upgrades:speed_upgrade"
+			id: "6600000000000005"
+			rewards: [{ count: 12, id: "6620000000000009", item: "apocalypsenow:money", type: "item" } { id: "662000000000000A", item: "smallships_upgrades:speed_upgrade", type: "item" }]
+			tasks: [{ id: "6610000000000007", item: "smallships_upgrades:speed_upgrade", type: "item" }]
+			title: "高速帆走"
+			x: 6.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["6600000000000003"]
+			description: ["危険海域では衝突や敵の攻撃で船体が損傷する。最大耐久を強化し、鉄塊と木材による現地修理の準備も忘れないこと。"]
+			icon: "smallships_upgrades:health_upgrade"
+			id: "6600000000000006"
+			rewards: [{ count: 12, id: "662000000000000B", item: "apocalypsenow:money", type: "item" } { id: "662000000000000C", item: "smallships_upgrades:health_upgrade", type: "item" }]
+			tasks: [{ id: "6610000000000008", item: "smallships_upgrades:health_upgrade", type: "item" } { count: 16L, id: "6610000000000009", item: "minecraft:iron_nugget", type: "item" }]
+			title: "船体補強"
+			x: 6.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["6600000000000004","6600000000000005","6600000000000006"]
+			description: ["船上砲を搭載し、敵対勢力や大型水棲生物に対抗する。ただし砲の搭載数が増えるほど船速は低下するため、輸送船と戦闘船の役割を分けよう。"]
+			icon: "smallships:cannon"
+			id: "6600000000000007"
+			rewards: [{ count: 20, id: "662000000000000D", item: "apocalypsenow:money", type: "item" } { count: 16, id: "662000000000000E", item: "smallships:cannon_ball", type: "item" }]
+			tasks: [{ count: 2L, id: "661000000000000A", item: "smallships:cannon", type: "item" } { count: 16L, id: "661000000000000B", item: "smallships:cannon_ball", type: "item" }]
+			title: "船上武装"
+			x: 8.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["6600000000000007"]
+			description: ["Galleyを戦闘船として仕上げる。船員、弾薬、修理材、医療品を分担して積み、単独行動ではなく遠征部隊として運用する。"]
+			icon: "smallships:oak_galley"
+			id: "6600000000000008"
+			rewards: [{ count: 28, id: "662000000000000F", item: "apocalypsenow:money", type: "item" } { id: "6620000000000010", item: "smallships_upgrades:health_upgrade", type: "item" }]
+			tasks: [{ id: "661000000000000C", item: "smallships:oak_galley", type: "item" } { count: 32L, id: "661000000000000D", item: "smallships:cannon_ball", type: "item" }]
+			title: "武装遠征船"
+			x: 10.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["6600000000000008","4243AC6BC9345628"]
+			description: ["外洋で得た魚・希少素材・戦利品を持ち帰り、海上輸送路を完成させる。ここから先は危険海域、海上勢力拠点、ネームド水棲敵の攻略へ繋がる。"]
+			icon: "minecraft:heart_of_the_sea"
+			id: "6600000000000009"
+			rewards: [{ count: 40, id: "6620000000000011", item: "apocalypsenow:money", type: "item" } { id: "6620000000000012", item: "minecraft:heart_of_the_sea", type: "item" } { id: "6620000000000013", item: "smallships_upgrades:speed_upgrade", type: "item" }]
+			tasks: [{ id: "661000000000000E", item: "minecraft:heart_of_the_sea", type: "item" } { id: "661000000000000F", item: "aquaculture:neptunium_ingot", type: "item" }]
+			title: "危険海域への航路"
+			x: 12.0d
+			y: 0.0d
+		}
+	]
+	title: "船舶・海上輸送"
+}

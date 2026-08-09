@@ -1,0 +1,45 @@
+﻿{
+    "id":  "project_deadzone:talent_engineer_power_master_utility",
+    "bonuses":  [
+                    {
+                        "type":  "skilltree:attribute",
+                        "attribute":  "minecraft:generic.movement_speed",
+                        "id":  "551a746c-e58d-8722-9eca-a433640acac5",
+                        "name":  "PROJECT DEADZONE Talent",
+                        "amount":  0.0015,
+                        "operation":  1,
+                        "player_multiplier":  {
+                                                  "type":  "skilltree:none"
+                                              },
+                        "player_condition":  {
+                                                 "type":  "skilltree:none"
+                                             }
+                    }
+                ],
+    "requirements":  [
+
+                     ],
+    "directConnections":  [
+                              "project_deadzone:talent_engineer_power_15"
+                          ],
+    "longConnections":  [
+
+                        ],
+    "oneWayConnections":  [
+
+                          ],
+    "tags":  [
+                 "pdz_talent_power",
+                 "pdz_talent_mastery",
+                 "pdz_mastery_engineer_power",
+                 "pdz_master_utility",
+                 "pdz_node_talent_engineer_power_master_utility"
+             ],
+    "backgroundTexture":  "skilltree:textures/icons/background/keystone.png",
+    "iconTexture":  "skilltree:textures/icons/torch.png",
+    "borderTexture":  "skilltree:textures/tooltip/lesser.png",
+    "positionX":  714.49,
+    "positionY":  678.03,
+    "buttonSize":  32,
+    "isStartingPoint":  false
+}

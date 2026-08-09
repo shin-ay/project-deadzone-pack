@@ -1,0 +1,269 @@
+{
+  "configVersion": 2,
+  "classes": [
+    {
+      "id": "survivor",
+      "displayName": "Survivor",
+      "description": "Balanced survivor. Reliable at scavenging, basic combat and everyday survival.",
+      "tags": [
+        "Balanced",
+        "Survival",
+        "Scavenging"
+      ],
+      "passiveDescription": "Survival Lv3 / Scavenging Lv2 / Melee Lv2 / Medical Lv1 / Firearms Lv1 / Fitness Lv3",
+      "iconItem": "minecraft:iron_axe",
+      "cardTexture": "classmod:textures/gui/card_default.png",
+      "accentColor": "#9AA06A",
+      "attributes": [],
+      "starterKit": [
+        {
+          "item": "minecraft:bread",
+          "count": 1
+        }
+      ],
+      "selectionCommands": [
+        {
+          "command": "deadzonejob apply survivor",
+          "executor": "SERVER",
+          "elevated": true
+        }
+      ],
+      "epicFightSkills": [],
+      "replaceEpicFightSkills": true,
+      "epicFightMode": "",
+      "epicFightStamina": -1.0,
+      "restrictions": []
+    },
+    {
+      "id": "weapons_expert",
+      "displayName": "Weapons Expert",
+      "description": "Firearms specialist focused on ammunition efficiency rather than raw damage.",
+      "tags": [
+        "Firearms",
+        "Ammo Economy",
+        "Combat"
+      ],
+      "passiveDescription": "Firearms Lv4 / Reload Lv3 / Scavenging Lv1 / Melee Lv1 / Survival Lv1 / Fitness Lv3",
+      "iconItem": "minecraft:crossbow",
+      "cardTexture": "classmod:textures/gui/card_default.png",
+      "accentColor": "#9B3A32",
+      "attributes": [],
+      "starterKit": [
+        {
+          "item": "minecraft:bread",
+          "count": 1
+        }
+      ],
+      "selectionCommands": [
+        {
+          "command": "deadzonejob apply weapons_expert",
+          "executor": "SERVER",
+          "elevated": true
+        }
+      ],
+      "epicFightSkills": [],
+      "replaceEpicFightSkills": true,
+      "epicFightMode": "",
+      "epicFightStamina": -1.0,
+      "restrictions": []
+    },
+    {
+      "id": "medic",
+      "displayName": "Medic",
+      "description": "Medical specialist who keeps the group alive when supplies are limited.",
+      "tags": [
+        "Medical",
+        "Support",
+        "Survival"
+      ],
+      "passiveDescription": "Medical Lv4 / Survival Lv2 / Scavenging Lv1 / Melee Lv1 / Fitness Lv3",
+      "iconItem": "apocalypsenow:bandage",
+      "cardTexture": "classmod:textures/gui/card_default.png",
+      "accentColor": "#D14B4B",
+      "attributes": [],
+      "starterKit": [
+        {
+          "item": "minecraft:bread",
+          "count": 1
+        }
+      ],
+      "selectionCommands": [
+        {
+          "command": "deadzonejob apply medic",
+          "executor": "SERVER",
+          "elevated": true
+        }
+      ],
+      "epicFightSkills": [],
+      "replaceEpicFightSkills": true,
+      "epicFightMode": "",
+      "epicFightStamina": -1.0,
+      "restrictions": []
+    },
+    {
+      "id": "mechanic",
+      "displayName": "Mechanic",
+      "description": "Vehicle and repair specialist for Immersive Vehicles and BlockyBikes.",
+      "tags": [
+        "Vehicle",
+        "Repair",
+        "Mechanics"
+      ],
+      "passiveDescription": "Mechanics Lv4 / Engineering Lv2 / Scavenging Lv2 / Survival Lv1 / Fitness Lv3",
+      "iconItem": "blocky_bikes:toolkit",
+      "cardTexture": "classmod:textures/gui/card_default.png",
+      "accentColor": "#C5893D",
+      "attributes": [],
+      "starterKit": [
+        {
+          "item": "minecraft:bread",
+          "count": 1
+        }
+      ],
+      "selectionCommands": [
+        {
+          "command": "deadzonejob apply mechanic",
+          "executor": "SERVER",
+          "elevated": true
+        }
+      ],
+      "epicFightSkills": [],
+      "replaceEpicFightSkills": true,
+      "epicFightMode": "",
+      "epicFightStamina": -1.0,
+      "restrictions": []
+    },
+    {
+      "id": "engineer",
+      "displayName": "Engineer",
+      "description": "Construction and industrial specialist. Later unlocks advanced Superb Warfare manufacturing.",
+      "tags": [
+        "Engineering",
+        "Industry",
+        "Crafting"
+      ],
+      "passiveDescription": "Engineering Lv4 / Mechanics Lv2 / Survival Lv1 / Scavenging Lv1 / Fitness Lv3",
+      "iconItem": "minecraft:iron_pickaxe",
+      "cardTexture": "classmod:textures/gui/card_default.png",
+      "accentColor": "#D0A644",
+      "attributes": [],
+      "starterKit": [
+        {
+          "item": "minecraft:bread",
+          "count": 1
+        }
+      ],
+      "selectionCommands": [
+        {
+          "command": "deadzonejob apply engineer",
+          "executor": "SERVER",
+          "elevated": true
+        }
+      ],
+      "epicFightSkills": [],
+      "replaceEpicFightSkills": true,
+      "epicFightMode": "",
+      "epicFightStamina": -1.0,
+      "restrictions": []
+    },
+    {
+      "id": "scout",
+      "displayName": "Scout",
+      "description": "Fast exploration and scavenging specialist for mapping dangerous urban areas.",
+      "tags": [
+        "Scavenging",
+        "Mobility",
+        "Exploration"
+      ],
+      "passiveDescription": "Scavenging Lv4 / Survival Lv2 / Firearms Lv1 / Melee Lv1 / Fitness Lv4",
+      "iconItem": "minecraft:spyglass",
+      "cardTexture": "classmod:textures/gui/card_default.png",
+      "accentColor": "#5C9B62",
+      "attributes": [],
+      "starterKit": [
+        {
+          "item": "minecraft:bread",
+          "count": 1
+        }
+      ],
+      "selectionCommands": [
+        {
+          "command": "deadzonejob apply scout",
+          "executor": "SERVER",
+          "elevated": true
+        }
+      ],
+      "epicFightSkills": [],
+      "replaceEpicFightSkills": true,
+      "epicFightMode": "",
+      "epicFightStamina": -1.0,
+      "restrictions": []
+    },
+    {
+      "id": "security",
+      "displayName": "Security",
+      "description": "Front-line defender specializing in melee combat, armor and holding dangerous positions.",
+      "tags": [
+        "Melee",
+        "Defense",
+        "Frontline"
+      ],
+      "passiveDescription": "Melee Lv4 / Armor Lv3 / Firearms Lv1 / Survival Lv1 / Fitness Lv4",
+      "iconItem": "minecraft:shield",
+      "cardTexture": "classmod:textures/gui/card_default.png",
+      "accentColor": "#4C668C",
+      "attributes": [],
+      "starterKit": [
+        {
+          "item": "minecraft:bread",
+          "count": 1
+        }
+      ],
+      "selectionCommands": [
+        {
+          "command": "deadzonejob apply security",
+          "executor": "SERVER",
+          "elevated": true
+        }
+      ],
+      "epicFightSkills": [],
+      "replaceEpicFightSkills": true,
+      "epicFightMode": "",
+      "epicFightStamina": -1.0,
+      "restrictions": []
+    },
+    {
+      "id": "survivalist",
+      "displayName": "Survivalist",
+      "description": "Long-term survival specialist focused on food, water, fieldcraft and wilderness living.",
+      "tags": [
+        "Survival",
+        "Fieldcraft",
+        "Scavenging"
+      ],
+      "passiveDescription": "Survival Lv4 / Scavenging Lv2 / Medical Lv1 / Melee Lv1 / Fitness Lv3",
+      "iconItem": "minecraft:campfire",
+      "cardTexture": "classmod:textures/gui/card_default.png",
+      "accentColor": "#7D6A4B",
+      "attributes": [],
+      "starterKit": [
+        {
+          "item": "minecraft:bread",
+          "count": 1
+        }
+      ],
+      "selectionCommands": [
+        {
+          "command": "deadzonejob apply survivalist",
+          "executor": "SERVER",
+          "elevated": true
+        }
+      ],
+      "epicFightSkills": [],
+      "replaceEpicFightSkills": true,
+      "epicFightMode": "",
+      "epicFightStamina": -1.0,
+      "restrictions": []
+    }
+  ]
+}

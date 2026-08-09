@@ -1,0 +1,43 @@
+﻿{
+    "id":  "project_deadzone:talent_rung_survivalist_d10_g3",
+    "bonuses":  [
+                    {
+                        "type":  "skilltree:attribute",
+                        "attribute":  "minecraft:generic.armor",
+                        "id":  "25dee567-f2a7-8fd0-2b0a-99f4243c0beb",
+                        "name":  "PROJECT DEADZONE Talent",
+                        "amount":  0.1,
+                        "operation":  0,
+                        "player_multiplier":  {
+                                                  "type":  "skilltree:none"
+                                              },
+                        "player_condition":  {
+                                                 "type":  "skilltree:none"
+                                             }
+                    }
+                ],
+    "requirements":  [
+
+                     ],
+    "directConnections":  [
+                              "project_deadzone:talent_survivalist_fishing_10",
+                              "project_deadzone:talent_survivalist_hunting_10"
+                          ],
+    "longConnections":  [
+
+                        ],
+    "oneWayConnections":  [
+
+                          ],
+    "tags":  [
+                 "pdz_talent_rung",
+                 "pdz_node_talent_rung_survivalist_d10_g3"
+             ],
+    "backgroundTexture":  "skilltree:textures/icons/background/lesser.png",
+    "iconTexture":  "skilltree:textures/icons/arrow.png",
+    "borderTexture":  "skilltree:textures/tooltip/lesser.png",
+    "positionX":  -522.51,
+    "positionY":  386.63,
+    "buttonSize":  16,
+    "isStartingPoint":  false
+}

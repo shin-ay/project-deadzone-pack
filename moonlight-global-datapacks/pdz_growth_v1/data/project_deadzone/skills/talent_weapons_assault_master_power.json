@@ -1,0 +1,32 @@
+﻿{
+    "id":  "project_deadzone:talent_weapons_assault_master_power",
+    "bonuses":  [
+
+                ],
+    "requirements":  [
+
+                     ],
+    "directConnections":  [
+                              "project_deadzone:talent_weapons_assault_15"
+                          ],
+    "longConnections":  [
+
+                        ],
+    "oneWayConnections":  [
+
+                          ],
+    "tags":  [
+                 "pdz_talent_gun_assault",
+                 "pdz_talent_mastery",
+                 "pdz_mastery_weapons_assault",
+                 "pdz_master_power",
+                 "pdz_node_talent_weapons_assault_master_power"
+             ],
+    "backgroundTexture":  "skilltree:textures/icons/background/keystone.png",
+    "iconTexture":  "skilltree:textures/icons/arrow_emerald.png",
+    "borderTexture":  "skilltree:textures/tooltip/lesser.png",
+    "positionX":  -111.51,
+    "positionY":  -978.67,
+    "buttonSize":  32,
+    "isStartingPoint":  false
+}

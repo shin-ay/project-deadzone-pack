@@ -1,0 +1,42 @@
+﻿{
+    "id":  "project_deadzone:talent_gate_survivalist",
+    "bonuses":  [
+                    {
+                        "type":  "skilltree:attribute",
+                        "attribute":  "minecraft:generic.movement_speed",
+                        "id":  "3d6376b1-e5cb-32ba-4c1c-0a1ab1c75f0e",
+                        "name":  "PROJECT DEADZONE Talent",
+                        "amount":  0.0015,
+                        "operation":  1,
+                        "player_multiplier":  {
+                                                  "type":  "skilltree:none"
+                                              },
+                        "player_condition":  {
+                                                 "type":  "skilltree:none"
+                                             }
+                    }
+                ],
+    "requirements":  [
+
+                     ],
+    "directConnections":  [
+                              "project_deadzone:talent_survivalist_farming_2"
+                          ],
+    "longConnections":  [
+                            "project_deadzone:talent_transit_hub"
+                        ],
+    "oneWayConnections":  [
+
+                          ],
+    "tags":  [
+                 "pdz_talent_transit_gate",
+                 "pdz_node_talent_gate_survivalist"
+             ],
+    "backgroundTexture":  "skilltree:textures/icons/background/notable.png",
+    "iconTexture":  "skilltree:textures/icons/heart_cyan.png",
+    "borderTexture":  "skilltree:textures/tooltip/lesser.png",
+    "positionX":  -282.84,
+    "positionY":  282.84,
+    "buttonSize":  22,
+    "isStartingPoint":  false
+}

@@ -1,0 +1,32 @@
+﻿{
+    "id":  "project_deadzone:talent_weapons_ammo_master_power",
+    "bonuses":  [
+
+                ],
+    "requirements":  [
+
+                     ],
+    "directConnections":  [
+                              "project_deadzone:talent_weapons_ammo_15"
+                          ],
+    "longConnections":  [
+
+                        ],
+    "oneWayConnections":  [
+
+                          ],
+    "tags":  [
+                 "pdz_talent_ammo",
+                 "pdz_talent_mastery",
+                 "pdz_mastery_weapons_ammo",
+                 "pdz_master_power",
+                 "pdz_node_talent_weapons_ammo_master_power"
+             ],
+    "backgroundTexture":  "skilltree:textures/icons/background/keystone.png",
+    "iconTexture":  "skilltree:textures/icons/arrow_steel.png",
+    "borderTexture":  "skilltree:textures/tooltip/lesser.png",
+    "positionX":  179.5,
+    "positionY":  -968.51,
+    "buttonSize":  32,
+    "isStartingPoint":  false
+}

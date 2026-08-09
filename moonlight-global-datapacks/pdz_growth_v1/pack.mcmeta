@@ -1,0 +1,18 @@
+﻿{
+    "pack":  {
+                 "pack_format":  15,
+                 "description":  "PROJECT DEADZONE Unified Talent Tree v3"
+             },
+    "filter":  {
+                   "block":  [
+                                 {
+                                     "namespace":  "skilltree",
+                                     "path":  "skill_trees/.*"
+                                 },
+                                 {
+                                     "namespace":  "skilltree",
+                                     "path":  "skills/.*"
+                                 }
+                             ]
+               }
+}

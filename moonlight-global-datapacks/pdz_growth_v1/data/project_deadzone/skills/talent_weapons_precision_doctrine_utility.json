@@ -1,0 +1,45 @@
+﻿{
+    "id":  "project_deadzone:talent_weapons_precision_doctrine_utility",
+    "bonuses":  [
+                    {
+                        "type":  "skilltree:attribute",
+                        "attribute":  "minecraft:generic.movement_speed",
+                        "id":  "6b5717c9-c0e4-70e7-6aff-b5c477908f9c",
+                        "name":  "PROJECT DEADZONE Talent",
+                        "amount":  0.0015,
+                        "operation":  1,
+                        "player_multiplier":  {
+                                                  "type":  "skilltree:none"
+                                              },
+                        "player_condition":  {
+                                                 "type":  "skilltree:none"
+                                             }
+                    }
+                ],
+    "requirements":  [
+
+                     ],
+    "directConnections":  [
+                              "project_deadzone:talent_weapons_precision_utility_20"
+                          ],
+    "longConnections":  [
+
+                        ],
+    "oneWayConnections":  [
+
+                          ],
+    "tags":  [
+                 "pdz_talent_gun_precision",
+                 "pdz_talent_doctrine",
+                 "pdz_doctrine_weapons_precision",
+                 "pdz_doctrine_utility",
+                 "pdz_node_talent_weapons_precision_doctrine_utility"
+             ],
+    "backgroundTexture":  "skilltree:textures/icons/background/keystone.png",
+    "iconTexture":  "skilltree:textures/icons/eye_green.png",
+    "borderTexture":  "skilltree:textures/tooltip/lesser.png",
+    "positionX":  -231.44,
+    "positionY":  -1248.73,
+    "buttonSize":  32,
+    "isStartingPoint":  false
+}

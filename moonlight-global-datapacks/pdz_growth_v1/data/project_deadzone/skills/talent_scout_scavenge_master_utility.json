@@ -1,0 +1,45 @@
+﻿{
+    "id":  "project_deadzone:talent_scout_scavenge_master_utility",
+    "bonuses":  [
+                    {
+                        "type":  "skilltree:attribute",
+                        "attribute":  "minecraft:generic.movement_speed",
+                        "id":  "20f258b1-9129-3d31-2749-e711b65e333b",
+                        "name":  "PROJECT DEADZONE Talent",
+                        "amount":  0.0015,
+                        "operation":  1,
+                        "player_multiplier":  {
+                                                  "type":  "skilltree:none"
+                                              },
+                        "player_condition":  {
+                                                 "type":  "skilltree:none"
+                                             }
+                    }
+                ],
+    "requirements":  [
+
+                     ],
+    "directConnections":  [
+                              "project_deadzone:talent_scout_scavenge_15"
+                          ],
+    "longConnections":  [
+
+                        ],
+    "oneWayConnections":  [
+
+                          ],
+    "tags":  [
+                 "pdz_talent_scavenge",
+                 "pdz_talent_mastery",
+                 "pdz_mastery_scout_scavenge",
+                 "pdz_master_utility",
+                 "pdz_node_talent_scout_scavenge_master_utility"
+             ],
+    "backgroundTexture":  "skilltree:textures/icons/background/keystone.png",
+    "iconTexture":  "skilltree:textures/icons/treasure_chest_gold.png",
+    "borderTexture":  "skilltree:textures/tooltip/lesser.png",
+    "positionX":  -714.49,
+    "positionY":  -678.03,
+    "buttonSize":  32,
+    "isStartingPoint":  false
+}

@@ -1,0 +1,30 @@
+﻿{
+    "id":  "project_deadzone:talent_mechanic_aviation_side8_1",
+    "bonuses":  [
+
+                ],
+    "requirements":  [
+
+                     ],
+    "directConnections":  [
+                              "project_deadzone:talent_mechanic_aviation_8"
+                          ],
+    "longConnections":  [
+
+                        ],
+    "oneWayConnections":  [
+
+                          ],
+    "tags":  [
+                 "pdz_talent_aviation",
+                 "pdz_talent_optional_end",
+                 "pdz_node_talent_mechanic_aviation_side8_1"
+             ],
+    "backgroundTexture":  "skilltree:textures/icons/background/lesser.png",
+    "iconTexture":  "skilltree:textures/icons/arrow_steel.png",
+    "borderTexture":  "skilltree:textures/tooltip/lesser.png",
+    "positionX":  -71.9,
+    "positionY":  585.6,
+    "buttonSize":  16,
+    "isStartingPoint":  false
+}

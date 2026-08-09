@@ -1,0 +1,78 @@
+{
+  "mechanics_core_1": {
+    "x": 0,
+    "y": 64,
+    "definition": "mechanics_core_1",
+    "root": true
+  },
+  "mechanics_core_2": {
+    "x": 0,
+    "y": 0,
+    "definition": "mechanics_core_2"
+  },
+  "mechanics_core_3": {
+    "x": 0,
+    "y": -64,
+    "definition": "mechanics_core_3"
+  },
+  "mechanics_core_4": {
+    "x": 0,
+    "y": -128,
+    "definition": "mechanics_core_4"
+  },
+  "mechanics_core_5": {
+    "x": 0,
+    "y": -192,
+    "definition": "mechanics_core_5"
+  },
+  "mechanics_core_6": {
+    "x": 0,
+    "y": -256,
+    "definition": "mechanics_core_6"
+  },
+  "field_repair": {
+    "x": -160,
+    "y": 0,
+    "definition": "field_repair"
+  },
+  "master_mechanic": {
+    "x": -192,
+    "y": -112,
+    "definition": "master_mechanic"
+  },
+  "miracle_worker": {
+    "x": -224,
+    "y": -224,
+    "definition": "miracle_worker"
+  },
+  "parts_recovery": {
+    "x": 160,
+    "y": 0,
+    "definition": "parts_recovery"
+  },
+  "strip_expert": {
+    "x": 192,
+    "y": -112,
+    "definition": "strip_expert"
+  },
+  "salvage_master": {
+    "x": 224,
+    "y": -224,
+    "definition": "salvage_master"
+  },
+  "bike_technician": {
+    "x": 320,
+    "y": 0,
+    "definition": "bike_technician"
+  },
+  "vehicle_specialist": {
+    "x": 352,
+    "y": -112,
+    "definition": "vehicle_specialist"
+  },
+  "motor_pool_chief": {
+    "x": 384,
+    "y": -224,
+    "definition": "motor_pool_chief"
+  }
+}

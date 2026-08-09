@@ -1,0 +1,13 @@
+name = "Preloading Tricks"
+filename = "preloading-tricks-3.7.3.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "bc8e412214a676d6c42b98037f01837928e605a8"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 8338959
+project-id = 1372086

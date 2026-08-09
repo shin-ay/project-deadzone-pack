@@ -1,0 +1,59 @@
+// PROJECT DEADZONE Simple Enemies elite variants v0.1
+// A small percentage of hostile human NPCs become visible mid-bosses. Their
+// durability is capped; difficulty comes from armor, speed and mixed rewards.
+
+const DZ_ELITE_TYPES = {
+  "simpleenemymod:ruunit": "RU Veteran",
+  "simpleenemymod:pmcunit": "PMC Specialist"
+}
+const DZ_ELITE_CHANCE_BY_REGION = [0.00, 0.02, 0.04, 0.06, 0.08]
+
+function dzEliteTier(server) {
+  return Math.max(0, Math.min(4, server.persistentData.getInt("deadzone_world_tier")))
+}
+
+function dzPromoteElite(entity, title) {
+  if (!entity || entity.level.clientSide || entity.tags.contains("dz_elite")) return
+  if (entity.tags.contains("dz_buddy") || entity.tags.contains("dz_survivor") ||
+      entity.tags.contains("dz_usunit_friendly")) return
+  try { if (entity.getOwnerUUID() != null) return } catch (ignored) {}
+  let regionTier = 0
+  try { regionTier = dzRegionTierAt(entity.server, entity.x, entity.z) }
+  catch (ignored) { regionTier = dzEliteTier(entity.server) }
+  let chance = DZ_ELITE_CHANCE_BY_REGION[Math.max(0,
+    Math.min(DZ_ELITE_CHANCE_BY_REGION.length - 1, regionTier))]
+  if (Math.random() >= chance) return
+  let tier = Math.max(dzEliteTier(entity.server), regionTier)
+  let health = Math.min(60, Math.max(30, Math.round(entity.maxHealth * 1.55 + tier * 5)))
+  let armor = Math.min(14, 5 + tier * 2)
+  entity.addTag("dz_elite")
+  entity.addTag("dz_elite_tier_" + tier)
+  entity.runCommandSilent("attribute @s minecraft:generic.max_health base set " + health)
+  entity.runCommandSilent("attribute @s minecraft:generic.armor base set " + armor)
+  entity.runCommandSilent("attribute @s minecraft:generic.knockback_resistance base set 0.55")
+  entity.runCommandSilent("effect give @s minecraft:speed infinite 0 true")
+  entity.runCommandSilent("effect give @s minecraft:glowing infinite 0 true")
+  entity.runCommandSilent("data merge entity @s {CustomName:'{\"text\":\"" + title + " [T" + tier + "]\",\"color\":\"gold\",\"bold\":true}',CustomNameVisible:1b,Health:" + health + ".0f}")
+  console.info("[PROJECT DEADZONE][Elite] promoted " + String(entity.type) + " T" + tier + " HP=" + health)
+}
+
+Object.keys(DZ_ELITE_TYPES).forEach(type => {
+  EntityEvents.spawned(type, event => dzPromoteElite(event.entity, DZ_ELITE_TYPES[type]))
+})
+
+EntityEvents.death(event => {
+  let entity = event.entity
+  if (!entity || entity.level.clientSide || !entity.tags.contains("dz_elite")) return
+  let tier = 0
+  for (let i = 0; i <= 4; i++) if (entity.tags.contains("dz_elite_tier_" + i)) tier = i
+  let money = 3 + tier * 2 + Math.floor(Math.random() * 3)
+  entity.block.popItem(Item.of("apocalypsenow:money", money))
+  entity.block.popItem(Item.of(tier >= 2 ? "apocalypsenow:pain_killers" : "apocalypsenow:bandage", tier >= 2 ? 2 : 3))
+  entity.block.popItem(Item.of(tier >= 3 ? "minecraft:gold_ingot" : "minecraft:iron_ingot", 2 + tier))
+  if (tier >= 2) entity.block.popItem(Item.of("immersiveengineering:component_iron", 1))
+  let killer = event.source ? event.source.actual : null
+  if (killer && killer.isPlayer && killer.isPlayer()) {
+    killer.server.runCommandSilent("ftbquests change_progress " + killer.username +
+      " complete D202608200003040")
+  }
+})

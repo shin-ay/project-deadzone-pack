@@ -1,0 +1,37 @@
+
+[loot]
+	# Should killed NPCs drop their armor/ammo/gunpowder? (guns never drop)
+	dropItems = true
+
+[combat]
+	# Max health of Scavengers and Soldiers (a player has 20).
+	#Range: 1.0 ~ 1024.0
+	npcMaxHealth = 80.0
+	# Damage multiplier for NPC guns. 1.0 = full damage, 0.5 = half, etc.
+	#Range: 0.0 ~ 10.0
+	npcGunDamageMultiplier = 0.5
+
+[patrol]
+	# Chance (0.0-1.0) a patrol spawns each time a player is checked.
+	#Range: 0.0 ~ 1.0
+	baseChance = 0.0
+	# How much extra spawn chance builds up after each failed check.
+	#Range: 0.0 ~ 5.0
+	failureMultiplier = 1.0
+	# How often (in ticks) a player is checked for a patrol spawn.
+	#Range: 20 ~ 720000
+	tickWindow = 6000
+	# How long (in ticks) a player is safe after a patrol spawns for them.
+	#Range: 0 ~ 720000
+	cooldownTicks = 6000
+	# Closest a patrol can spawn to the player, in blocks.
+	#Range: 8 ~ 128
+	minDistance = 24
+	# Furthest a patrol can spawn from the player, in blocks.
+	#Range: 8 ~ 256
+	maxDistance = 48
+
+[debug]
+	# Dev/debug tool - don't worry about this one.
+	enableDebugLogging = false
+

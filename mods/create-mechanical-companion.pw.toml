@@ -1,0 +1,13 @@
+name = "Create: Mechanical Companion"
+filename = "createmechanicalcompanion-1.8-1.20.1.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "60e82575bef46dae12700f19e3aff370858b8989"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 7145417
+project-id = 1264989

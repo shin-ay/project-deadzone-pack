@@ -1,0 +1,128 @@
+{
+  "survival_core_1": {
+    "x": 0,
+    "y": 64,
+    "definition": "survival_core_1",
+    "root": true
+  },
+  "survival_core_2": {
+    "x": 0,
+    "y": 0,
+    "definition": "survival_core_2"
+  },
+  "survival_core_3": {
+    "x": 0,
+    "y": -64,
+    "definition": "survival_core_3"
+  },
+  "survival_core_4": {
+    "x": 0,
+    "y": -128,
+    "definition": "survival_core_4"
+  },
+  "survival_core_5": {
+    "x": 0,
+    "y": -192,
+    "definition": "survival_core_5"
+  },
+  "survival_core_6": {
+    "x": 0,
+    "y": -256,
+    "definition": "survival_core_6"
+  },
+  "rationing": {
+    "x": -160,
+    "y": 0,
+    "definition": "rationing"
+  },
+  "efficient_metabolism": {
+    "x": -192,
+    "y": -112,
+    "definition": "efficient_metabolism"
+  },
+  "iron_stomach": {
+    "x": -224,
+    "y": -224,
+    "definition": "iron_stomach"
+  },
+  "campcraft": {
+    "x": 160,
+    "y": 0,
+    "definition": "campcraft"
+  },
+  "outdoorsman": {
+    "x": 192,
+    "y": -112,
+    "definition": "outdoorsman"
+  },
+  "wilderness_home": {
+    "x": 224,
+    "y": -224,
+    "definition": "wilderness_home"
+  },
+  "weathered": {
+    "x": 320,
+    "y": 0,
+    "definition": "weathered"
+  },
+  "adapted": {
+    "x": 352,
+    "y": -112,
+    "definition": "adapted"
+  },
+  "hazard_hardened": {
+    "x": 384,
+    "y": -224,
+    "definition": "hazard_hardened"
+  },
+  "angler": {
+    "x": -320,
+    "y": 0,
+    "definition": "angler"
+  },
+  "waterside_forager": {
+    "x": -352,
+    "y": -112,
+    "definition": "waterside_forager"
+  },
+  "self_sufficient_waterside": {
+    "x": -384,
+    "y": -224,
+    "definition": "self_sufficient_waterside"
+  },
+  "angler_bait_keeper": {
+    "x": -416,
+    "y": -336,
+    "definition": "angler_bait_keeper"
+  },
+  "angler_deep_reader": {
+    "x": -448,
+    "y": -448,
+    "definition": "angler_deep_reader"
+  },
+  "cook_field_kitchen": {
+    "x": -128,
+    "y": -336,
+    "definition": "cook_field_kitchen"
+  },
+  "cook_batch_cooking": {
+    "x": -64,
+    "y": -448,
+    "definition": "cook_batch_cooking"
+  },
+  "cook_preservation": {
+    "x": -192,
+    "y": -448,
+    "definition": "cook_preservation"
+  },
+  "cook_team_meal": {
+    "x": -64,
+    "y": -560,
+    "definition": "cook_team_meal"
+  },
+  "cook_waste_nothing": {
+    "x": -192,
+    "y": -560,
+    "definition": "cook_waste_nothing"
+  }
+}

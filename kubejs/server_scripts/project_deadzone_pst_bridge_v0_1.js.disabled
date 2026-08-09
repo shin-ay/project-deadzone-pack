@@ -1,0 +1,116 @@
+// PROJECT DEADZONE Passive Skill Tree bridge v0.1 - test only
+// Seeds JOB origins and exposes safe test/status commands.
+
+const PDZ_PST_PROVIDER = Java.loadClass('daripher.skilltree.capability.skill.PlayerSkillsProvider')
+
+const PDZ_PST_JOB = {
+  weapons_expert: ['combat_root','combat_firearms'],
+  security:       ['combat_root','combat_melee'],
+  medic:          ['combat_root','combat_medic'],
+  mechanic:       ['industry_root','industry_vehicle'],
+  engineer:       ['industry_root','industry_factory'],
+  survivor:       ['survival_root'],
+  scout:          ['survival_root'],
+  survivalist:    ['life_root','survival_root']
+}
+
+function pdzPstJob(player) {
+  let id=String(player.persistentData.getString('dz_job_id'))
+  return PDZ_PST_JOB[id] ? id : 'survivor'
+}
+
+function pdzPstGrant(player,id) {
+  player.server.runCommandSilent('skilltree grant_skill ' + player.username + ' project_deadzone:' + id)
+}
+
+function pdzPstSeed(player,force) {
+  if (!force && player.persistentData.getBoolean('pdz_pst_seed_v1')) return false
+  let job=pdzPstJob(player)
+  PDZ_PST_JOB[job].forEach(id => pdzPstGrant(player,id))
+  // Everyone can begin Life and Survival. Combat/Industry origin remains JOB-defined.
+  pdzPstGrant(player,'life_root')
+  pdzPstGrant(player,'survival_root')
+  player.server.runCommandSilent('skilltree points add ' + player.username + ' 6')
+  player.persistentData.putBoolean('pdz_pst_seed_v1',true)
+  player.persistentData.putString('pdz_pst_seed_job',job)
+  player.tell(Text.of('[成長] 新スキルツリーを初期化しました：' + job + ' / 初期SP 6').aqua())
+  return true
+}
+
+function pdzPstSkillIds(player) {
+  let out=[]
+  try {
+    let skills=PDZ_PST_PROVIDER.get(player).getPlayerSkills()
+    skills.forEach(skill => out.push(String(skill.getId())))
+  } catch (error) {}
+  return out
+}
+
+function pdzPstSyncNodeTags(player) {
+  let ids=pdzPstSkillIds(player).filter(id => id.startsWith('project_deadzone:'))
+  let wanted=ids.map(id => 'pdz_pst_node_' + id.substring('project_deadzone:'.length))
+  let stale=[]
+  player.tags.forEach(tag => {
+    let value=String(tag)
+    if (value.startsWith('pdz_pst_node_') && wanted.indexOf(value)<0) stale.push(value)
+  })
+  stale.forEach(tag => player.removeTag(tag))
+  wanted.forEach(tag => { if (!player.tags.contains(tag)) player.addTag(tag) })
+}
+
+function pdzPstTrackLine(player,track,name) {
+  let xp=player.persistentData.getInt('pdz_pst_xp_' + track)
+  let rank=player.persistentData.getInt('pdz_pst_rank_' + track)
+  let next=60 + Math.min(240,rank * 20)
+  return name + ': Rank ' + rank + ' (' + xp + '/' + next + ' XP)'
+}
+
+PlayerEvents.loggedIn(event => {
+  event.server.scheduleInTicks(60, () => pdzPstSeed(event.player,false))
+})
+
+PlayerEvents.tick(event => {
+  let p=event.player
+  if (p.level.clientSide || p.age % 100 !== 0) return
+  pdzPstSyncNodeTags(p)
+})
+
+ServerEvents.commandRegistry(event => {
+  const {commands:Commands}=event
+  let root=Commands.literal('deadzonegrowth')
+
+  root.then(Commands.literal('status').executes(ctx => {
+    let p=ctx.source.player
+    let cap=PDZ_PST_PROVIDER.get(p)
+    let ids=pdzPstSkillIds(p).filter(id => id.startsWith('project_deadzone:'))
+    p.tell(Text.of('新成長システム / JOB: ' + pdzPstJob(p)).gold())
+    p.tell(Text.of('未使用SP: ' + cap.getSkillPoints() + ' / 取得ノード: ' + ids.length).aqua())
+    p.tell(Text.of(pdzPstTrackLine(p,'combat','戦闘')).gray())
+    p.tell(Text.of(pdzPstTrackLine(p,'life','生活')).gray())
+    p.tell(Text.of(pdzPstTrackLine(p,'industry','工業')).gray())
+    p.tell(Text.of(pdzPstTrackLine(p,'survival','サバイバル')).gray())
+    if (ids.length>0) p.tell(Text.of(ids.join(', ')).gray())
+    return 1
+  }))
+
+  root.then(Commands.literal('seed').requires(s => s.hasPermission(2)).executes(ctx => {
+    let p=ctx.source.player
+    pdzPstSeed(p,true)
+    return 1
+  }))
+
+  root.then(Commands.literal('points_test').requires(s => s.hasPermission(2)).executes(ctx => {
+    let p=ctx.source.player
+    p.server.runCommandSilent('skilltree points add ' + p.username + ' 20')
+    p.tell(Text.of('新ツリー用テストSP +20').green())
+    return 1
+  }))
+
+  root.then(Commands.literal('list').executes(ctx => {
+    let p=ctx.source.player
+    pdzPstSkillIds(p).filter(id => id.startsWith('project_deadzone:')).forEach(id => p.tell(Text.of(id).gray()))
+    return 1
+  }))
+
+  event.register(root)
+})

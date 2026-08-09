@@ -1,0 +1,29 @@
+﻿{
+    "id":  "project_deadzone:talent_survivor_carry_6",
+    "bonuses":  [
+
+                ],
+    "requirements":  [
+
+                     ],
+    "directConnections":  [
+                              "project_deadzone:talent_survivor_carry_5"
+                          ],
+    "longConnections":  [
+
+                        ],
+    "oneWayConnections":  [
+
+                          ],
+    "tags":  [
+                 "pdz_talent_carry",
+                 "pdz_node_talent_survivor_carry_6"
+             ],
+    "backgroundTexture":  "skilltree:textures/icons/background/lesser.png",
+    "iconTexture":  "skilltree:textures/icons/treasure_chest.png",
+    "borderTexture":  "skilltree:textures/tooltip/lesser.png",
+    "positionX":  -496.79,
+    "positionY":  -34.74,
+    "buttonSize":  16,
+    "isStartingPoint":  false
+}

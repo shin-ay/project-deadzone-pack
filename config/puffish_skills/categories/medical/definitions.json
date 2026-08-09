@@ -1,0 +1,387 @@
+{
+  "medical_core_1": {
+    "title": "医療技術 基礎 Lv1",
+    "description": "医療技術の基礎能力を一段階高める。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "apocalypsenow:bandage"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "task"
+      }
+    },
+    "cost": 0,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_medical_core_1"
+        }
+      }
+    ]
+  },
+  "medical_core_2": {
+    "title": "医療技術 基礎 Lv2",
+    "description": "医療技術の基礎能力を一段階高める。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "apocalypsenow:bandage"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "task"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_medical_core_2"
+        }
+      }
+    ]
+  },
+  "medical_core_3": {
+    "title": "医療技術 基礎 Lv3",
+    "description": "医療技術でポイントを配分し、基礎能力をさらに高める。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "apocalypsenow:bandage"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "goal"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_medical_core_3"
+        }
+      }
+    ],
+    "required_spent_points": 2
+  },
+  "medical_core_4": {
+    "title": "医療技術 基礎 Lv4",
+    "description": "医療技術でポイントを配分し、基礎能力をさらに高める。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "apocalypsenow:bandage"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "goal"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_medical_core_4"
+        }
+      }
+    ],
+    "required_spent_points": 4
+  },
+  "medical_core_5": {
+    "title": "医療技術 基礎 Lv5",
+    "description": "医療技術でポイントを配分し、基礎能力をさらに高める。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "apocalypsenow:bandage"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "challenge"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_medical_core_5"
+        }
+      }
+    ],
+    "required_spent_points": 6
+  },
+  "medical_core_6": {
+    "title": "医療技術 基礎 Lv6",
+    "description": "医療技術でポイントを配分し、基礎能力をさらに高める。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "apocalypsenow:bandage"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "challenge"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_medical_core_6"
+        }
+      }
+    ],
+    "required_spent_points": 8
+  },
+  "first_responder": {
+    "title": "応急手当",
+    "description": "受ける治療量を増加させる。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:paper"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "task"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_medical_treatment_1"
+        }
+      }
+    ]
+  },
+  "trauma_care": {
+    "title": "外傷治療",
+    "description": "重傷時の治療効率をさらに高める。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:glistering_melon_slice"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "goal"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_medical_treatment_2"
+        }
+      }
+    ],
+    "required_spent_points": 3
+  },
+  "field_surgeon": {
+    "title": "フィールドサージャン",
+    "description": "重傷者を短時間で安定化できる。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:golden_apple"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "challenge"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_medical_treatment_3"
+        }
+      }
+    ],
+    "required_spent_points": 6
+  },
+  "careful_application": {
+    "title": "慎重な投与",
+    "description": "First Aid消耗品を使用時10%で温存する。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:glass_bottle"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "task"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_medical_conservation_1"
+        }
+      }
+    ]
+  },
+  "supply_saver": {
+    "title": "物資節約",
+    "description": "First Aid消耗品の温存率が20%になる。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:honey_bottle"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "goal"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_medical_conservation_2"
+        }
+      }
+    ],
+    "required_spent_points": 3
+  },
+  "pharmacist": {
+    "title": "薬剤師",
+    "description": "First Aid消耗品の温存率が30%になる。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:potion"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "challenge"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_medical_conservation_3"
+        }
+      }
+    ],
+    "required_spent_points": 6
+  },
+  "triage": {
+    "title": "トリアージ",
+    "description": "4ブロック以内で死亡した味方をHP4で救命する。再使用15分。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:clock"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "task"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_medical_revive_1"
+        }
+      }
+    ]
+  },
+  "combat_medic": {
+    "title": "コンバットメディック",
+    "description": "救命範囲6ブロック、HP6、再使用10分。短時間の耐性を付与。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:golden_apple"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "goal"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_medical_revive_2"
+        }
+      }
+    ],
+    "required_spent_points": 3
+  },
+  "life_saver": {
+    "title": "ライフセーバー",
+    "description": "救命範囲8ブロック、HP8、再使用5分。復帰後の耐性を強化。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:totem_of_undying"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "challenge"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_medical_revive_3"
+        }
+      }
+    ],
+    "required_spent_points": 6
+  }
+}

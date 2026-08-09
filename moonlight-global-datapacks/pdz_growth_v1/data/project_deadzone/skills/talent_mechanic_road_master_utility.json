@@ -1,0 +1,45 @@
+﻿{
+    "id":  "project_deadzone:talent_mechanic_road_master_utility",
+    "bonuses":  [
+                    {
+                        "type":  "skilltree:attribute",
+                        "attribute":  "minecraft:generic.movement_speed",
+                        "id":  "5e4c36b1-f963-0381-ea4d-78c124a86dc4",
+                        "name":  "PROJECT DEADZONE Talent",
+                        "amount":  0.0015,
+                        "operation":  1,
+                        "player_multiplier":  {
+                                                  "type":  "skilltree:none"
+                                              },
+                        "player_condition":  {
+                                                 "type":  "skilltree:none"
+                                             }
+                    }
+                ],
+    "requirements":  [
+
+                     ],
+    "directConnections":  [
+                              "project_deadzone:talent_mechanic_road_15"
+                          ],
+    "longConnections":  [
+
+                        ],
+    "oneWayConnections":  [
+
+                          ],
+    "tags":  [
+                 "pdz_talent_road",
+                 "pdz_talent_mastery",
+                 "pdz_mastery_mechanic_road",
+                 "pdz_master_utility",
+                 "pdz_node_talent_mechanic_road_master_utility"
+             ],
+    "backgroundTexture":  "skilltree:textures/icons/background/keystone.png",
+    "iconTexture":  "skilltree:textures/icons/boots_bronze.png",
+    "borderTexture":  "skilltree:textures/tooltip/lesser.png",
+    "positionX":  25.78,
+    "positionY":  984.66,
+    "buttonSize":  32,
+    "isStartingPoint":  false
+}

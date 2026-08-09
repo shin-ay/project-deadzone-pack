@@ -1,0 +1,45 @@
+﻿{
+    "id":  "project_deadzone:talent_scout_stealth_doctrine_utility",
+    "bonuses":  [
+                    {
+                        "type":  "skilltree:attribute",
+                        "attribute":  "minecraft:generic.movement_speed",
+                        "id":  "790a7e72-6c69-3958-2035-0608f3edf3b6",
+                        "name":  "PROJECT DEADZONE Talent",
+                        "amount":  0.0015,
+                        "operation":  1,
+                        "player_multiplier":  {
+                                                  "type":  "skilltree:none"
+                                              },
+                        "player_condition":  {
+                                                 "type":  "skilltree:none"
+                                             }
+                    }
+                ],
+    "requirements":  [
+
+                     ],
+    "directConnections":  [
+                              "project_deadzone:talent_scout_stealth_utility_20"
+                          ],
+    "longConnections":  [
+
+                        ],
+    "oneWayConnections":  [
+
+                          ],
+    "tags":  [
+                 "pdz_talent_stealth",
+                 "pdz_talent_doctrine",
+                 "pdz_doctrine_scout_stealth",
+                 "pdz_doctrine_utility",
+                 "pdz_node_talent_scout_stealth_doctrine_utility"
+             ],
+    "backgroundTexture":  "skilltree:textures/icons/background/keystone.png",
+    "iconTexture":  "skilltree:textures/icons/void.png",
+    "borderTexture":  "skilltree:textures/tooltip/lesser.png",
+    "positionX":  -1046.64,
+    "positionY":  -719.34,
+    "buttonSize":  32,
+    "isStartingPoint":  false
+}

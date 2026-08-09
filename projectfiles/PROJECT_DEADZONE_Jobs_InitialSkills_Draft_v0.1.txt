@@ -1,0 +1,284 @@
+PROJECT DEADZONE - 初期ジョブ / 初期スキル案 v0.1
+===================================================
+
+目的
+----
+友人とのマルチテスト前に、8ジョブの序盤性能を比較できる最低限の叩き台。
+数値は仮。ユーザー側で修正後、その内容を実装へ反映する。
+
+共通前提
+--------
+・全キャラクターは基礎Skillを持つ。
+・Fitnessは独立Jobにせず共通Skill。
+・初期Fitness Lv3を基本とし、重量ペナルティ/Carry Weight系の基礎に使う。
+・Weapons Expertは直接Damage Bonusではなく、Ammo Economyを強みにする。
+・CookingはSurvivalへ統合。
+・死亡時はCharacter XPを維持、Skill XPを減少させる案。
+・Skill Levelは死亡で下がる可能性があるが、Job初期値未満には落ちない想定。
+・Lv10以降にSpecialist分岐を追加予定。初回テストでは未実装でもよい。
+
+
+Skill候補
+---------
+Combat
+  Firearms        銃器全般の扱い
+  Melee           近接武器
+  Reload          リロード/武器操作
+  Armor           防具/被ダメージ関連
+
+Survival
+  Survival        食料・水・料理・野外活動を統合
+  Medical         治療
+  Scavenging      探索/物資発見
+  Fitness         Carry Weight / 重量ペナルティ軽減 / スタミナ系
+
+Technical
+  Mechanics       車両/修理
+  Engineering     建築・工業・Create系
+  Electronics     電子機器/技術系（将来候補）
+
+
+1. Survivor
+-----------
+役割:
+  初心者向けバランスJob。特化は弱いが序盤に困りにくい。
+
+初期Skill案:
+  Survival     Lv3
+  Scavenging   Lv2
+  Melee        Lv2
+  Medical      Lv1
+  Firearms     Lv1
+  Fitness      Lv3
+
+初期アイテム方針:
+  固定候補:
+    ・最低限の水 x1
+    ・最低限の食料 x1
+  ランダム候補:
+    ・簡易近接武器 x1
+    ・包帯/簡易治療品 x1
+    ・小型Utility item x0-1
+
+意図:
+  特殊Jobほど強くない代わりに、何もできない状況が少ない。
+
+
+2. Weapons Expert
+-----------------
+役割:
+  希少な弾薬を最も効率よく使える銃器担当。
+
+初期Skill案:
+  Firearms     Lv4
+  Reload       Lv3
+  Scavenging   Lv1
+  Melee        Lv1
+  Survival     Lv1
+  Fitness      Lv3
+
+固有効果候補:
+  Ammo Consumption Reduction
+  ※Damage Bonusは原則つけない。
+
+テスト開始値候補:
+  10～15%程度のAmmo Economy効果から開始。
+  強すぎる場合は5～10%へ。
+
+初期アイテム方針:
+  固定候補:
+    ・T1 firearm x1
+  ランダム候補:
+    ・対応弾薬 少量
+    ・Weapon cleaning/repair系 x0-1
+    ・簡易近接武器 x0-1
+
+注意:
+  初期Ammoを配りすぎると序盤の物資不足感を壊すため少量。
+
+
+3. Medic
+--------
+役割:
+  パーティの治療担当。
+
+初期Skill案:
+  Medical      Lv4
+  Survival     Lv2
+  Scavenging   Lv1
+  Melee        Lv1
+  Fitness      Lv3
+
+固有効果候補:
+  ・回復量増加
+  ・治療時間短縮
+  ・医療品消費効率
+  のうち1～2個。
+
+初期アイテム方針:
+  固定候補:
+    ・基本包帯 x2
+  ランダム候補:
+    ・消毒/上位治療品 x1
+    ・Painkiller等 x0-1
+    ・簡易近接武器 x1
+
+
+4. Mechanic
+-----------
+役割:
+  Immersive Vehicles車両の修理・復旧担当。
+
+初期Skill案:
+  Mechanics    Lv4
+  Engineering  Lv2
+  Scavenging   Lv2
+  Survival     Lv1
+  Fitness      Lv3
+
+固有効果候補:
+  ・車両Repair効率
+  ・部品消費軽減
+  ・車両状態確認能力
+  ・将来的なSalvage効率
+
+初期アイテム方針:
+  固定候補:
+    ・基本工具 x1
+  ランダム候補:
+    ・修理素材
+    ・車両部品
+    ・Utility tool
+
+注意:
+  初期から即座に完動車を作れる量は渡さない。
+
+
+5. Engineer
+-----------
+役割:
+  拠点建築・工業化担当。
+
+初期Skill案:
+  Engineering  Lv4
+  Mechanics    Lv2
+  Survival     Lv1
+  Scavenging   Lv1
+  Fitness      Lv3
+
+固有効果候補:
+  ・建築/工業Recipeの効率化
+  ・工具耐久/素材消費軽減
+  ・Create系進行補助
+
+初期アイテム方針:
+  固定候補:
+    ・基本工具 x1
+  ランダム候補:
+    ・木材/鉄素材少量
+    ・Create初期素材
+    ・建築Utility
+
+
+6. Scout
+--------
+役割:
+  探索・都市偵察・移動担当。
+
+初期Skill案:
+  Scavenging   Lv4
+  Survival     Lv2
+  Firearms     Lv1
+  Melee        Lv1
+  Fitness      Lv4
+
+固有効果候補:
+  ・重量ペナルティ軽減を少し強化
+  ・移動/探索関連Buff
+  ・将来的なLoot detection/Map支援
+
+初期アイテム方針:
+  固定候補:
+    ・軽量食料/水
+  ランダム候補:
+    ・双眼鏡/探索Utility
+    ・軽装備
+    ・簡易武器
+
+
+7. Security
+-----------
+役割:
+  前衛・防御・近接担当。
+
+初期Skill案:
+  Melee        Lv4
+  Armor        Lv3
+  Firearms     Lv1
+  Survival     Lv1
+  Fitness      Lv4
+
+固有効果候補:
+  ・近接スタミナ効率
+  ・Armor重量ペナルティ軽減
+  ・ノックバック/被弾耐性を小さく
+
+初期アイテム方針:
+  固定候補:
+    ・近接武器 x1
+  ランダム候補:
+    ・軽～中防具
+    ・Utility/Flashlight
+    ・簡易治療品
+
+
+8. Survivalist
+--------------
+役割:
+  食料・野外生活・長距離探索担当。
+
+初期Skill案:
+  Survival     Lv4
+  Scavenging   Lv2
+  Medical      Lv1
+  Melee        Lv1
+  Fitness      Lv3
+
+固有効果候補:
+  ・食料/水消費効率
+  ・Cooking/野外生活Bonus
+  ・天候/環境耐性（必要なら後から）
+
+初期アイテム方針:
+  固定候補:
+    ・食料 x1
+    ・水 x1
+  ランダム候補:
+    ・野外Utility
+    ・料理/火起こし系
+    ・簡易近接武器
+
+
+初回マルチテストで見る項目
+--------------------------
+1. Weapons ExpertのAmmo Economyが強すぎないか
+2. Medicが実際にパーティで必要になるか
+3. Mechanicが車両発見後に価値を持つか
+4. Engineerの序盤が弱すぎないか
+5. Scoutの探索性能が便利すぎないか
+6. Securityが銃環境でも役割を維持できるか
+7. SurvivalistとSurvivorの差別化
+8. 4人前後で自然に役割分担が起きるか
+
+ユーザー修正欄
+--------------
+Job名:
+Skill名:
+初期Lv:
+固有効果:
+固定初期アイテム:
+ランダム初期アイテム:
+その他:
+engneerについてhttps://www.curseforge.com/minecraft/mc-mods/superb-warfareのアイテムの作成（最終段階）
+Mechanicについてhttps://www.curseforge.com/minecraft/mc-mods/blockybikes このMODも追加したのでここに対する能力も追加したい。レシピが簡単だから、レシピ解放をある程度後半のレベルにするとか、レシピを少し重くしてengineerだけしか作れなくするとか。
+

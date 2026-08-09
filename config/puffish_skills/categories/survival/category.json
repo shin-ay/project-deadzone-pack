@@ -1,0 +1,15 @@
+{
+  "title": "Survival",
+  "description": "基礎ランクを伸ばすか、遊び方を変える専門Perkを選択する生存技術Skill Tree。",
+  "extra_description": "PROJECT DEADZONE 生存技術 Rework Prototype v0.2",
+  "icon": {
+    "type": "item",
+    "data": {
+      "item": "minecraft:campfire"
+    }
+  },
+  "background": "minecraft:textures/gui/advancements/backgrounds/husbandry.png",
+  "unlocked_by_default": true,
+  "starting_points": 0,
+  "exclusive_root": false
+}

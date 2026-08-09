@@ -1,0 +1,32 @@
+﻿{
+    "id":  "project_deadzone:talent_weapons_precision_master_power",
+    "bonuses":  [
+
+                ],
+    "requirements":  [
+
+                     ],
+    "directConnections":  [
+                              "project_deadzone:talent_weapons_precision_15"
+                          ],
+    "longConnections":  [
+
+                        ],
+    "oneWayConnections":  [
+
+                          ],
+    "tags":  [
+                 "pdz_talent_gun_precision",
+                 "pdz_talent_mastery",
+                 "pdz_mastery_weapons_precision",
+                 "pdz_master_power",
+                 "pdz_node_talent_weapons_precision_master_power"
+             ],
+    "backgroundTexture":  "skilltree:textures/icons/background/keystone.png",
+    "iconTexture":  "skilltree:textures/icons/eye_green.png",
+    "borderTexture":  "skilltree:textures/tooltip/lesser.png",
+    "positionX":  -263.23,
+    "positionY":  -949.18,
+    "buttonSize":  32,
+    "isStartingPoint":  false
+}

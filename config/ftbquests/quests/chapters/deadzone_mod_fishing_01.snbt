@@ -1,0 +1,556 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: "circle"
+	filename: "deadzone_mod_fishing_01"
+	group: "51DC04D9192698A6"
+	icon: "aquaculture:tackle_box"
+	id: "6D6C5283B005AA25"
+	order_index: 11
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: ["7C41CDCD88E7A5A7"]
+			description: [
+				"水辺の食料調達を専門化する。魚は食料だけでなく、交易、医療用素材、深海探索、希少装備へ繋がる資源だ。"
+				"SurvivalistとScavengerが採集、Medicが加工、Scoutが危険水域の捜索を担当しやすい。"
+			]
+			icon: {
+				Count: 1
+				id: "aquaculture:iron_fishing_rod"
+				tag: {
+					Damage: 0
+				}
+			}
+			id: "0FB9354E232CD1B9"
+			rewards: [
+				{
+					count: 3
+					id: "39772C0DC2DB393D"
+					item: "apocalypsenow:money"
+					type: "item"
+				}
+				{
+					count: 16
+					id: "1B9F80E4AB49C645"
+					item: {
+						Count: 1
+						id: "aquaculture:worm"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+			]
+			tasks: [
+				{
+					id: "46726A1AD9BF8BAF"
+					item: {
+						Count: 1
+						id: "aquaculture:iron_fishing_rod"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "4E9CDFAE57762203"
+					item: "aquaculture:tackle_box"
+					type: "item"
+				}
+				{
+					id: "77CBFC5B769FF29B"
+					item: {
+						Count: 1
+						id: "aquaculture:iron_fillet_knife"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+			]
+			title: "水域担当の装備"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			description: ["餌をLootだけに頼ると遠征ごとに釣りが止まる。Worm Farmと用途別Hookを用意して継続的に運用する。"]
+			icon: "aquaculture:worm_farm"
+			id: "6C5C173008D70B40"
+			dependencies: ["0FB9354E232CD1B9"]
+			rewards: [
+				{
+					count: 3
+					id: "699F49653CE56234"
+					item: "apocalypsenow:money"
+					type: "item"
+				}
+				{
+					id: "7A6B18BF6758E5B7"
+					item: "aquaculture:double_hook"
+					type: "item"
+				}
+			]
+			tasks: [
+				{
+					id: "4017D5FEEA77D9E2"
+					item: "aquaculture:worm_farm"
+					type: "item"
+				}
+				{
+					id: "64C3B9308053D398"
+					item: "aquaculture:iron_hook"
+					type: "item"
+				}
+				{
+					id: "3AD870A6FE2CA421"
+					item: "aquaculture:heavy_hook"
+					type: "item"
+				}
+			]
+			title: "餌と仕掛けの自給"
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			description: ["川、湖、湿地で基本魚種を集める。食料用と標本用を分け、全量を調理しないよう注意。"]
+			icon: "aquaculture:bluegill"
+			id: "5102FC109053F92C"
+			dependencies: ["6C5C173008D70B40"]
+			rewards: [
+				{
+					count: 5
+					id: "58BC4E196C5AB926"
+					item: "apocalypsenow:money"
+					type: "item"
+				}
+				{
+					count: 8
+					id: "1E680A19C766B02D"
+					item: {
+						Count: 1
+						id: "aquaculture:worm"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+			]
+			tasks: [
+				{
+					id: "137D0B4BCFBF1CBE"
+					item: "aquaculture:bluegill"
+					type: "item"
+				}
+				{
+					id: "7F10B2DE49ACB8D1"
+					item: "aquaculture:carp"
+					type: "item"
+				}
+				{
+					id: "7C99BBA08E066A63"
+					item: "aquaculture:catfish"
+					type: "item"
+				}
+				{
+					id: "452AD1655CD9B419"
+					item: "aquaculture:rainbow_trout"
+					type: "item"
+				}
+			]
+			title: "淡水魚図鑑"
+			x: 4.0d
+			y: -1.5d
+		}
+		{
+			description: ["海岸は視界が開ける代わりに危険生物と敵から狙われやすい。短時間で複数の海水魚を確保する。"]
+			icon: "aquaculture:tuna"
+			id: "4243AC6BC9345628"
+			dependencies: ["5102FC109053F92C"]
+			rewards: [
+				{
+					count: 6
+					id: "73854E679F3D58F7"
+					item: "apocalypsenow:money"
+					type: "item"
+				}
+				{
+					id: "4CE4EA4A40ACDEC2"
+					item: "aquaculture:light_hook"
+					type: "item"
+				}
+			]
+			tasks: [
+				{
+					id: "32D41E253FB12034"
+					item: "aquaculture:atlantic_cod"
+					type: "item"
+				}
+				{
+					id: "59079CE37EC17630"
+					item: "aquaculture:atlantic_herring"
+					type: "item"
+				}
+				{
+					id: "7D5F385ACC05F256"
+					item: "aquaculture:tuna"
+					type: "item"
+				}
+				{
+					id: "6085B13246C05C4A"
+					item: "aquaculture:pink_salmon"
+					type: "item"
+				}
+			]
+			title: "海岸漁業"
+			x: 6.0d
+			y: -1.5d
+		}
+		{
+			description: ["魚種に関係なくFilletへ加工できれば、共同倉庫と調理ラインの在庫を標準化できる。"]
+			icon: "aquaculture:fish_fillet_cooked"
+			id: "46AC7031F1C40480"
+			dependencies: ["5102FC109053F92C"]
+			rewards: [
+				{
+					count: 5
+					id: "6D5F89E7EA13310D"
+					item: "apocalypsenow:money"
+					type: "item"
+				}
+				{
+					count: 4
+					id: "173D9846D585C457"
+					item: "aquaculture:fish_bones"
+					type: "item"
+				}
+			]
+			tasks: [
+				{
+					count: 8L
+					id: "34033845B7C0A4EE"
+					item: "aquaculture:fish_fillet_raw"
+					type: "item"
+				}
+				{
+					count: 8L
+					id: "6B3A9662478904E0"
+					item: "aquaculture:fish_fillet_cooked"
+					type: "item"
+				}
+			]
+			title: "漁獲物の規格化"
+			x: 4.0d
+			y: 1.5d
+		}
+		{
+			description: ["Aquaculture Delightで保存性と栄養価を上げる。遠征食、キャンプ食、交易用の三種類を作り分けよう。"]
+			icon: "aquaculturedelight:fish_and_chips"
+			id: "3DC944C0C055C3D5"
+			dependencies: ["4243AC6BC9345628","46AC7031F1C40480"]
+			rewards: [
+				{
+					count: 7
+					id: "412663772E061C8F"
+					item: "apocalypsenow:money"
+					type: "item"
+				}
+				{
+					count: 2
+					id: "0CFF6F0A57EF041C"
+					item: "apocalypsenow:bandage"
+					type: "item"
+				}
+			]
+			tasks: [
+				{
+					count: 2L
+					id: "688C7FF94F973021"
+					item: "aquaculturedelight:fish_and_chips"
+					type: "item"
+				}
+				{
+					count: 2L
+					id: "645CD3D44A15FC0F"
+					item: "aquaculturedelight:poor_fisher_chowder"
+					type: "item"
+				}
+				{
+					count: 2L
+					id: "31BE39C1D461C181"
+					item: "aquaculturedelight:tuna_spaghetti"
+					type: "item"
+				}
+			]
+			title: "水産料理の専門化"
+			x: 8.0d
+			y: 0.0d
+		}
+		{
+			description: ["Crab Potで釣り竿では取りにくい甲殻類を集める。魚と異なるLootプールが、水辺拠点を作る理由になる。"]
+			icon: "hybrid_aquatic:crab_pot"
+			id: "7A91B820F516ED10"
+			dependencies: ["3DC944C0C055C3D5"]
+			rewards: [
+				{
+					count: 8
+					id: "23B8BDA2AB7732DA"
+					item: "apocalypsenow:money"
+					type: "item"
+				}
+				{
+					id: "1B7106EAC795AE3F"
+					item: {
+						Count: 1
+						id: "hybrid_aquatic:barbed_hook"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+			]
+			tasks: [
+				{
+					id: "66032023AE7F0B26"
+					item: "hybrid_aquatic:crab_pot"
+					type: "item"
+				}
+				{
+					count: 4L
+					id: "0E58BE8F64CD0999"
+					item: "hybrid_aquatic:cooked_crab"
+					type: "item"
+				}
+				{
+					count: 4L
+					id: "19C616B355E8BEEE"
+					item: "hybrid_aquatic:cooked_shrimp"
+					type: "item"
+				}
+			]
+			title: "罠漁と甲殻類"
+			x: 10.0d
+			y: -1.5d
+		}
+		{
+			description: ["珍しい魚、Message in a Bottle、Lockboxはキャンプで高く取引できる。食べる魚と売る魚を見極めよう。"]
+			icon: "aquaculture:lockbox"
+			id: "16FB82E8AB743A40"
+			dependencies: ["3DC944C0C055C3D5"]
+			rewards: [
+				{
+					count: 12
+					id: "5EF6F4DD84213DA3"
+					item: "apocalypsenow:money"
+					type: "item"
+				}
+				{
+					id: "3F6E642D65F4D36A"
+					item: "aquaculture:message_in_a_bottle"
+					type: "item"
+				}
+			]
+			tasks: [
+				{
+					id: "344FBF27B9653195"
+					item: "aquaculture:lockbox"
+					type: "item"
+				}
+				{
+					id: "05DC0D14A1D2AEB3"
+					item: "aquaculture:message_in_a_bottle"
+					type: "item"
+				}
+			]
+			title: "海から流れ着く情報"
+			x: 10.0d
+			y: 1.5d
+		}
+		{
+			description: ["深海へ入る前に潜水装備をそろえる。装備なしの潜水は探索ではなく、だいたい回収班の仕事を増やすだけ。"]
+			icon: {
+				Count: 1
+				id: "hybrid_aquatic:diving_helmet"
+				tag: {
+					Damage: 0
+				}
+			}
+			id: "73F13EE1091C727F"
+			dependencies: ["7A91B820F516ED10","16FB82E8AB743A40"]
+			rewards: [
+				{
+					count: 10
+					id: "00ECDE0AA7928F32"
+					item: "apocalypsenow:money"
+					type: "item"
+				}
+				{
+					id: "2BA356553D19B49C"
+					item: "hybrid_aquatic:diving_weight"
+					type: "item"
+				}
+			]
+			tasks: [
+				{
+					id: "58B0A54E6A5B4AE4"
+					item: {
+						Count: 1
+						id: "hybrid_aquatic:diving_helmet"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "670AF6ED36C2156F"
+					item: {
+						Count: 1
+						id: "hybrid_aquatic:diving_suit"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "2CA3F7C506583276"
+					item: {
+						Count: 1
+						id: "hybrid_aquatic:diving_leggings"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "62FB6B36AAE34410"
+					item: {
+						Count: 1
+						id: "hybrid_aquatic:diving_boots"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+			]
+			title: "危険水域への潜行"
+			x: 12.0d
+			y: 0.0d
+		}
+		{
+			description: ["暗い水域に生息する三種を持ち帰る。深海標本はMedicの研究と高Tier交易へ利用できる。"]
+			icon: "hybrid_aquatic:anglerfish"
+			id: "11F5569FE96CF84D"
+			dependencies: ["73F13EE1091C727F"]
+			rewards: [
+				{
+					count: 12
+					id: "6AEFBF71E7B940E6"
+					item: "apocalypsenow:money"
+					type: "item"
+				}
+				{
+					id: "5A4BE416409BD5CD"
+					item: "hybrid_aquatic:black_pearl"
+					type: "item"
+				}
+			]
+			tasks: [
+				{
+					id: "7023C3C638F3CBCC"
+					item: "hybrid_aquatic:anglerfish"
+					type: "item"
+				}
+				{
+					id: "4BB3EC344570A51D"
+					item: "hybrid_aquatic:dragonfish"
+					type: "item"
+				}
+				{
+					id: "13C9D1B4A1762E09"
+					item: "hybrid_aquatic:coelacanth"
+					type: "item"
+				}
+			]
+			title: "深海標本"
+			x: 14.0d
+			y: 0.0d
+		}
+		{
+			description: ["危険水域には通常個体を大きく上回るネームドが潜む。討伐して巨大な殻とBlack Pearlを回収する。"]
+			icon: "hybrid_aquatic:comically_large_nautilus_shell"
+			id: "69DE600AB7976C87"
+			dependencies: ["11F5569FE96CF84D"]
+			rewards: [
+				{
+					count: 18
+					id: "451A6334D3E90CE6"
+					item: "apocalypsenow:money"
+					type: "item"
+				}
+				{
+					count: 2
+					id: "059343409D588083"
+					item: "aquaculture:neptunium_nugget"
+					type: "item"
+				}
+			]
+			tasks: [
+				{
+					id: "4169C1561CFE69E2"
+					item: "hybrid_aquatic:comically_large_nautilus_shell"
+					type: "item"
+				}
+				{
+					id: "228E6FB2CAD4C3C8"
+					item: "hybrid_aquatic:black_pearl"
+					type: "item"
+				}
+			]
+			title: "水底のネームド"
+			x: 16.0d
+			y: 0.0d
+		}
+		{
+			description: ["水産供給網を確立した。以後、希少魚と深海素材はキャンプ取引、医療研究、Affix素材へ接続される。"]
+			icon: "aquaculture:neptunes_bounty"
+			id: "7382A39061FD7DFB"
+			dependencies: ["69DE600AB7976C87"]
+			rewards: [
+				{
+					count: 20
+					id: "05FE04DC684E54DA"
+					item: "apocalypsenow:money"
+					type: "item"
+				}
+				{
+					id: "5F11E824F52E6692"
+					item: "aquaculture:neptunes_bounty"
+					type: "item"
+				}
+				{
+					id: "7F3B8DC0CA145A8B"
+					type: "xp"
+					xp: 20
+				}
+			]
+			tasks: [{
+				count: 8L
+				id: "3DC2FC63C917077A"
+				item: "hybrid_aquatic:cooked_fish_steak"
+				type: "item"
+			}]
+			title: "水産供給網の完成"
+			x: 18.0d
+			y: 0.0d
+		}
+	]
+	title: "漁業・危険水域"
+}

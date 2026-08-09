@@ -1,0 +1,29 @@
+﻿{
+    "id":  "project_deadzone:talent_weapons_ammo_1",
+    "bonuses":  [
+
+                ],
+    "requirements":  [
+
+                     ],
+    "directConnections":  [
+                              "project_deadzone:talent_start_weapons"
+                          ],
+    "longConnections":  [
+
+                        ],
+    "oneWayConnections":  [
+
+                          ],
+    "tags":  [
+                 "pdz_talent_ammo",
+                 "pdz_node_talent_weapons_ammo_1"
+             ],
+    "backgroundTexture":  "skilltree:textures/icons/background/lesser.png",
+    "iconTexture":  "skilltree:textures/icons/arrow_steel.png",
+    "borderTexture":  "skilltree:textures/tooltip/lesser.png",
+    "positionX":  69.28,
+    "positionY":  -300.11,
+    "buttonSize":  16,
+    "isStartingPoint":  false
+}

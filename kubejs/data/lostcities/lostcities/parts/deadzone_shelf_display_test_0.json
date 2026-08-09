@@ -1,0 +1,199 @@
+{
+  "xsize": 16,
+  "zsize": 16,
+  "palette": {
+    "palette": [
+      {
+        "char": " ",
+        "block": "minecraft:air"
+      },
+      {
+        "char": "#",
+        "block": "minecraft:stone_bricks"
+      },
+      {
+        "char": "=",
+        "block": "minecraft:smooth_stone"
+      },
+      {
+        "char": "",
+        "block": "shelfmod:floor_shelf_dark_oak",
+        "tag": {
+          "Items": [
+            {
+              "Slot": 0,
+              "id": "minecraft:diamond",
+              "Count": 1
+            },
+            {
+              "Slot": 1,
+              "id": "minecraft:gold_ingot",
+              "Count": 3
+            }
+          ]
+        }
+      },
+      {
+        "char": "",
+        "block": "shelfmod:floor_shelf_dark_oak",
+        "tag": {
+          "LootTable": "project_deadzone:chests/shelf_display_test",
+          "LootTableSeed": 987654321
+        }
+      },
+      {
+        "char": "",
+        "block": "shelfmod:shelf_dark_oak",
+        "tag": {
+          "Items": [
+            {
+              "Slot": 0,
+              "id": "minecraft:diamond",
+              "Count": 1
+            },
+            {
+              "Slot": 1,
+              "id": "minecraft:gold_ingot",
+              "Count": 3
+            }
+          ]
+        }
+      },
+      {
+        "char": "",
+        "block": "shelfmod:shelf_dark_oak",
+        "tag": {
+          "LootTable": "project_deadzone:chests/shelf_display_test",
+          "LootTableSeed": 987654321
+        }
+      },
+      {
+        "char": "",
+        "block": "display_case:display_case",
+        "tag": {
+          "Items": [
+            {
+              "Slot": 0,
+              "id": "minecraft:diamond",
+              "Count": 1
+            },
+            {
+              "Slot": 1,
+              "id": "minecraft:gold_ingot",
+              "Count": 3
+            }
+          ]
+        }
+      },
+      {
+        "char": "",
+        "block": "display_case:display_case",
+        "tag": {
+          "LootTable": "project_deadzone:chests/shelf_display_test",
+          "LootTableSeed": 987654321
+        }
+      },
+      {
+        "char": "V",
+        "block": "minecraft:chest[facing=south,type=single,waterlogged=false]",
+        "loot": "project_deadzone:shelf_display_test",
+        "tag": {
+          "id": "minecraft:chest",
+          "Items": []
+        }
+      }
+    ]
+  },
+  "slices": [
+    [
+      "================",
+      "================",
+      "================",
+      "================",
+      "================",
+      "================",
+      "================",
+      "================",
+      "================",
+      "================",
+      "================",
+      "================",
+      "================",
+      "================",
+      "================",
+      "================"
+    ],
+    [
+      "################",
+      "#              #",
+      "#              #",
+      "#              #",
+      "#            #",
+      "#              #",
+      "#              #",
+      "#              #",
+      "#            #",
+      "#              #",
+      "#              #",
+      "#              #",
+      "#            #",
+      "#              #",
+      "#           V  #",
+      "#######  #######"
+    ],
+    [
+      "################",
+      "#              #",
+      "#              #",
+      "#              #",
+      "#              #",
+      "#              #",
+      "#              #",
+      "#              #",
+      "#              #",
+      "#              #",
+      "#              #",
+      "#              #",
+      "#              #",
+      "#              #",
+      "#              #",
+      "#######  #######"
+    ],
+    [
+      "################",
+      "#              #",
+      "#              #",
+      "#              #",
+      "#              #",
+      "#              #",
+      "#              #",
+      "#              #",
+      "#              #",
+      "#              #",
+      "#              #",
+      "#              #",
+      "#              #",
+      "#              #",
+      "#              #",
+      "#######  #######"
+    ],
+    [
+      "################",
+      "################",
+      "################",
+      "################",
+      "################",
+      "################",
+      "################",
+      "################",
+      "################",
+      "################",
+      "################",
+      "################",
+      "################",
+      "################",
+      "################",
+      "################"
+    ]
+  ]
+}

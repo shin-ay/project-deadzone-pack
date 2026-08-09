@@ -1,0 +1,30 @@
+﻿{
+    "id":  "project_deadzone:talent_start_mechanic",
+    "bonuses":  [
+
+                ],
+    "requirements":  [
+
+                     ],
+    "directConnections":  [
+
+                          ],
+    "longConnections":  [
+
+                        ],
+    "oneWayConnections":  [
+
+                          ],
+    "tags":  [
+                 "pdz_talent_origin",
+                 "pdz_origin_mechanic",
+                 "pdz_node_talent_start_mechanic"
+             ],
+    "backgroundTexture":  "skilltree:textures/icons/background/class.png",
+    "iconTexture":  "skilltree:textures/icons/glove_bronze.png",
+    "borderTexture":  "skilltree:textures/tooltip/lesser.png",
+    "positionX":  0,
+    "positionY":  210,
+    "buttonSize":  26,
+    "isStartingPoint":  false
+}

@@ -1,0 +1,15 @@
+{
+  "title": "Firearms",
+  "description": "基礎習熟を伸ばすか、遊び方を変える専門Perkを取るか選択する銃器Skill Tree。",
+  "extra_description": "PROJECT DEADZONE Firearms Rework Prototype v0.2",
+  "icon": {
+    "type": "item",
+    "data": {
+      "item": "minecraft:crossbow"
+    }
+  },
+  "background": "minecraft:textures/gui/advancements/backgrounds/adventure.png",
+  "unlocked_by_default": true,
+  "starting_points": 0,
+  "exclusive_root": false
+}

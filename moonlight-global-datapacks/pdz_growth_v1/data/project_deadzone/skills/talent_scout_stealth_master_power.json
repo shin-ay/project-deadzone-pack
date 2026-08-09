@@ -1,0 +1,32 @@
+﻿{
+    "id":  "project_deadzone:talent_scout_stealth_master_power",
+    "bonuses":  [
+
+                ],
+    "requirements":  [
+
+                     ],
+    "directConnections":  [
+                              "project_deadzone:talent_scout_stealth_15"
+                          ],
+    "longConnections":  [
+
+                        ],
+    "oneWayConnections":  [
+
+                          ],
+    "tags":  [
+                 "pdz_talent_stealth",
+                 "pdz_talent_mastery",
+                 "pdz_mastery_scout_stealth",
+                 "pdz_master_power",
+                 "pdz_node_talent_scout_stealth_master_power"
+             ],
+    "backgroundTexture":  "skilltree:textures/icons/background/keystone.png",
+    "iconTexture":  "skilltree:textures/icons/void.png",
+    "borderTexture":  "skilltree:textures/tooltip/lesser.png",
+    "positionX":  -857.3,
+    "positionY":  -485.04,
+    "buttonSize":  32,
+    "isStartingPoint":  false
+}

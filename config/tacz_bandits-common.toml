@@ -1,0 +1,13 @@
+
+[AggroSettings]
+	#If true, Bandits will attack other hostile mobs (Monsters).
+	banditsAttackMonsters = true
+	#If true, other hostile mobs (Monsters) will attack Bandits.
+	monstersAttackBandits = true
+
+[BehaviorSettings]
+	#If true, Bandits will break glass blocks to shoot.
+	canBreakWindows = true
+	#If true, Bandits will open doors.
+	canOpenDoors = true
+

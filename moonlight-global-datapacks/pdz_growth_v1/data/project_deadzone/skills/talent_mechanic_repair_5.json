@@ -1,0 +1,29 @@
+﻿{
+    "id":  "project_deadzone:talent_mechanic_repair_5",
+    "bonuses":  [
+
+                ],
+    "requirements":  [
+
+                     ],
+    "directConnections":  [
+                              "project_deadzone:talent_mechanic_repair_4"
+                          ],
+    "longConnections":  [
+
+                        ],
+    "oneWayConnections":  [
+
+                          ],
+    "tags":  [
+                 "pdz_talent_repair",
+                 "pdz_node_talent_mechanic_repair_5"
+             ],
+    "backgroundTexture":  "skilltree:textures/icons/background/lesser.png",
+    "iconTexture":  "skilltree:textures/icons/glove_steel.png",
+    "borderTexture":  "skilltree:textures/tooltip/lesser.png",
+    "positionX":  103.48,
+    "positionY":  448.21,
+    "buttonSize":  16,
+    "isStartingPoint":  false
+}

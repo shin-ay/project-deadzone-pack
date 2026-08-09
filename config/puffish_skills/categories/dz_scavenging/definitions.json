@@ -1,0 +1,208 @@
+{
+    "salvage_basics":  {
+                           "title":  "回収技術基礎",
+                           "description":  "Tier 0 / 必要消費SP 0\n廃墟から価値のある物資を見抜く。\n\n実効果: 次Tierノードの取得条件を解放",
+                           "icon":  {
+                                        "type":  "item",
+                                        "data":  {
+                                                     "item":  "minecraft:bundle"
+                                                 }
+                                    },
+                           "frame":  {
+                                         "type":  "advancement",
+                                         "data":  {
+                                                      "frame":  "task"
+                                                  }
+                                     },
+                           "cost":  0,
+                           "rewards":  [
+                                           {
+                                               "type":  "puffish_skills:tag",
+                                               "data":  {
+                                                            "tag":  "dz_growth_scavenging_salvage_basics"
+                                                        }
+                                           }
+                                       ]
+                       },
+    "quick_hands":  {
+                        "title":  "素早い回収",
+                        "description":  "Tier 1 / 必要消費SP 0\n短時間で安全に収納を調べる。\n\n実効果: +2% 移動速度",
+                        "icon":  {
+                                     "type":  "item",
+                                     "data":  {
+                                                  "item":  "minecraft:shears"
+                                              }
+                                 },
+                        "frame":  {
+                                      "type":  "advancement",
+                                      "data":  {
+                                                   "frame":  "task"
+                                               }
+                                  },
+                        "cost":  1,
+                        "rewards":  [
+                                        {
+                                            "type":  "puffish_skills:tag",
+                                            "data":  {
+                                                         "tag":  "dz_growth_scavenging_quick_hands"
+                                                     }
+                                        }
+                                    ]
+                    },
+    "urban_eye":  {
+                      "title":  "都市探索眼",
+                      "description":  "Tier 2 / 必要消費SP 1\n街の特殊収納と危険箇所を見抜く。\n\n実効果: +2% 移動速度 / +0.5 Luck",
+                      "icon":  {
+                                   "type":  "item",
+                                   "data":  {
+                                                "item":  "minecraft:spyglass"
+                                            }
+                               },
+                      "frame":  {
+                                    "type":  "advancement",
+                                    "data":  {
+                                                 "frame":  "task"
+                                             }
+                                },
+                      "cost":  1,
+                      "rewards":  [
+                                      {
+                                          "type":  "puffish_skills:tag",
+                                          "data":  {
+                                                       "tag":  "dz_growth_scavenging_urban_eye"
+                                                   }
+                                      }
+                                  ],
+                      "required_spent_points":  1
+                  },
+    "pack_rat":  {
+                     "title":  "パックラット",
+                     "description":  "Tier 2 / 必要消費SP 1\n携行能力と整理能力を伸ばす。\n\n実効果: +15 kg 携行上限（重量システム有効時）",
+                     "icon":  {
+                                  "type":  "item",
+                                  "data":  {
+                                               "item":  "minecraft:shulker_box"
+                                           }
+                              },
+                     "frame":  {
+                                   "type":  "advancement",
+                                   "data":  {
+                                                "frame":  "task"
+                                            }
+                               },
+                     "cost":  1,
+                     "rewards":  [
+                                     {
+                                         "type":  "puffish_skills:tag",
+                                         "data":  {
+                                                      "tag":  "dz_growth_scavenging_pack_rat"
+                                                  }
+                                     }
+                                 ],
+                     "required_spent_points":  1
+                 },
+    "rare_finder":  {
+                        "title":  "レア発見",
+                        "description":  "Tier 3 / 必要消費SP 3\n高品質Lootを引く可能性を高める。\n\n実効果: +1.5 Luck",
+                        "icon":  {
+                                     "type":  "item",
+                                     "data":  {
+                                                  "item":  "minecraft:emerald"
+                                              }
+                                 },
+                        "frame":  {
+                                      "type":  "advancement",
+                                      "data":  {
+                                                   "frame":  "goal"
+                                               }
+                                  },
+                        "cost":  2,
+                        "rewards":  [
+                                        {
+                                            "type":  "puffish_skills:tag",
+                                            "data":  {
+                                                         "tag":  "dz_growth_scavenging_rare_finder"
+                                                     }
+                                        }
+                                    ],
+                        "required_spent_points":  3
+                    },
+    "heavy_hauler":  {
+                         "title":  "重量物運搬",
+                         "description":  "Tier 3 / 必要消費SP 3\n車両部品などの重量物ペナルティを軽減する。\n\n実効果: +25 kg 携行上限（重量システム有効時）",
+                         "icon":  {
+                                      "type":  "item",
+                                      "data":  {
+                                                   "item":  "minecraft:anvil"
+                                               }
+                                  },
+                         "frame":  {
+                                       "type":  "advancement",
+                                       "data":  {
+                                                    "frame":  "goal"
+                                                }
+                                   },
+                         "cost":  2,
+                         "rewards":  [
+                                         {
+                                             "type":  "puffish_skills:tag",
+                                             "data":  {
+                                                          "tag":  "dz_growth_scavenging_heavy_hauler"
+                                                      }
+                                         }
+                                     ],
+                         "required_spent_points":  3
+                     },
+    "master_appraiser":  {
+                             "title":  "鑑定主任",
+                             "description":  "Tier 5 / 必要消費SP 6\n希少品を見抜く回収専門家になる。\n\n実効果: +2.0 Luck",
+                             "icon":  {
+                                          "type":  "item",
+                                          "data":  {
+                                                       "item":  "minecraft:emerald"
+                                                   }
+                                      },
+                             "frame":  {
+                                           "type":  "advancement",
+                                           "data":  {
+                                                        "frame":  "challenge"
+                                                    }
+                                       },
+                             "cost":  3,
+                             "rewards":  [
+                                             {
+                                                 "type":  "puffish_skills:tag",
+                                                 "data":  {
+                                                              "tag":  "dz_growth_scavenging_master_appraiser"
+                                                          }
+                                             }
+                                         ],
+                             "required_spent_points":  6
+                         },
+    "master_hauler":  {
+                          "title":  "重量物輸送主任",
+                          "description":  "Tier 5 / 必要消費SP 6\n大量の物資を安全に持ち帰る運搬専門家になる。\n\n実効果: +50 kg 携行上限（重量システム有効時）",
+                          "icon":  {
+                                       "type":  "item",
+                                       "data":  {
+                                                    "item":  "minecraft:netherite_scrap"
+                                                }
+                                   },
+                          "frame":  {
+                                        "type":  "advancement",
+                                        "data":  {
+                                                     "frame":  "challenge"
+                                                 }
+                                    },
+                          "cost":  3,
+                          "rewards":  [
+                                          {
+                                              "type":  "puffish_skills:tag",
+                                              "data":  {
+                                                           "tag":  "dz_growth_scavenging_master_hauler"
+                                                       }
+                                          }
+                                      ],
+                          "required_spent_points":  6
+                      }
+}

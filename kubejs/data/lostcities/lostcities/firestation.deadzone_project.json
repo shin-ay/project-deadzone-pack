@@ -1,0 +1,359 @@
+{
+  "editor": "PROJECT DEADZONE Interior Editor v0.9.2",
+  "structure_root": "C:\\Users\\shinc\\curseforge\\minecraft\\Instances\\PROJECT DEADZONE v0.1\\kubejs\\data\\lostcities\\lostcities",
+  "vehicle_markers": [
+    {
+      "x": 18,
+      "z": 8,
+      "floor": 0,
+      "local_y": 1,
+      "type": "Service Vehicle",
+      "facing": "south",
+      "length": 5,
+      "width": 3,
+      "clearance": 1
+    },
+    {
+      "x": 37,
+      "z": 8,
+      "floor": 0,
+      "local_y": 1,
+      "type": "Service Vehicle",
+      "facing": "south",
+      "length": 5,
+      "width": 3,
+      "clearance": 1
+    },
+    {
+      "x": 26,
+      "z": 23,
+      "floor": 0,
+      "local_y": 1,
+      "type": "Service Vehicle",
+      "facing": "south",
+      "length": 5,
+      "width": 3,
+      "clearance": 1
+    },
+    {
+      "x": 26,
+      "z": 8,
+      "floor": 0,
+      "local_y": 1,
+      "type": "Ambulance",
+      "facing": "south",
+      "length": 5,
+      "width": 3,
+      "clearance": 1
+    }
+  ],
+  "protection_settings": {
+    "structure": true,
+    "access": true,
+    "glass": true
+  },
+  "manual_unlocked_cells": [],
+  "loot_container_registry": {
+    "cfm:stripped_oak_bedside_cabinet": {
+      "confirmed_openable": true,
+      "category": "Weapons",
+      "tier": "T3",
+      "fill_chance": 60
+    },
+    "apocalypsenow:iron_locker": {
+      "confirmed_openable": true,
+      "category": "Weapons",
+      "tier": "T3",
+      "fill_chance": 60
+    },
+    "mcwfurnitures:oak_bookshelf": {
+      "confirmed_openable": true,
+      "category": "Tools",
+      "tier": "T2",
+      "fill_chance": 60
+    },
+    "mcwfurnitures:oak_lower_triple_drawer": {
+      "confirmed_openable": true,
+      "category": "Tools",
+      "tier": "T2",
+      "fill_chance": 60
+    },
+    "refurbished_furniture:oak_kitchen_drawer": {
+      "confirmed_openable": true,
+      "category": "Weapons",
+      "tier": "T2",
+      "fill_chance": 60
+    }
+  },
+  "loot_placements": [
+    {
+      "block": "cfm:stripped_oak_bedside_cabinet",
+      "x": 5,
+      "z": 7,
+      "floor": 0,
+      "local_y": 1,
+      "category": "Tools",
+      "tier": "T1",
+      "fill_chance": 60,
+      "confirmed_openable": true
+    },
+    {
+      "block": "apocalypsenow:iron_locker",
+      "x": 3,
+      "z": 5,
+      "floor": 0,
+      "local_y": 1,
+      "category": "Tools",
+      "tier": "T2",
+      "fill_chance": 60,
+      "confirmed_openable": true
+    },
+    {
+      "block": "mcwfurnitures:oak_bookshelf",
+      "x": 10,
+      "z": 13,
+      "floor": 1,
+      "local_y": 1,
+      "category": "Tools",
+      "tier": "T2",
+      "fill_chance": 60,
+      "confirmed_openable": true
+    },
+    {
+      "block": "cfm:stripped_oak_bedside_cabinet",
+      "x": 6,
+      "z": 15,
+      "floor": 1,
+      "local_y": 0,
+      "category": "Tools",
+      "tier": "T2",
+      "fill_chance": 60,
+      "confirmed_openable": true
+    },
+    {
+      "block": "mcwfurnitures:oak_lower_triple_drawer",
+      "x": 5,
+      "z": 10,
+      "floor": 1,
+      "local_y": 0,
+      "category": "Tools",
+      "tier": "T2",
+      "fill_chance": 60,
+      "confirmed_openable": true
+    },
+    {
+      "block": "mcwfurnitures:oak_lower_triple_drawer",
+      "x": 3,
+      "z": 5,
+      "floor": 1,
+      "local_y": 0,
+      "category": "Tools",
+      "tier": "T2",
+      "fill_chance": 60,
+      "confirmed_openable": true
+    },
+    {
+      "block": "mcwfurnitures:oak_lower_triple_drawer",
+      "x": 3,
+      "z": 6,
+      "floor": 1,
+      "local_y": 0,
+      "category": "Tools",
+      "tier": "T2",
+      "fill_chance": 60,
+      "confirmed_openable": true
+    },
+    {
+      "block": "mcwfurnitures:oak_lower_triple_drawer",
+      "x": 3,
+      "z": 7,
+      "floor": 1,
+      "local_y": 0,
+      "category": "Tools",
+      "tier": "T2",
+      "fill_chance": 60,
+      "confirmed_openable": true
+    },
+    {
+      "block": "refurbished_furniture:oak_kitchen_drawer",
+      "x": 10,
+      "z": 7,
+      "floor": 1,
+      "local_y": 4,
+      "category": "Food",
+      "tier": "T2",
+      "fill_chance": 60,
+      "confirmed_openable": true
+    },
+    {
+      "block": "refurbished_furniture:oak_kitchen_drawer",
+      "x": 4,
+      "z": 5,
+      "floor": 1,
+      "local_y": 4,
+      "category": "Food",
+      "tier": "T2",
+      "fill_chance": 60,
+      "confirmed_openable": true
+    },
+    {
+      "block": "refurbished_furniture:oak_kitchen_drawer",
+      "x": 5,
+      "z": 5,
+      "floor": 1,
+      "local_y": 4,
+      "category": "Food",
+      "tier": "T2",
+      "fill_chance": 60,
+      "confirmed_openable": true
+    },
+    {
+      "block": "refurbished_furniture:oak_kitchen_drawer",
+      "x": 6,
+      "z": 5,
+      "floor": 1,
+      "local_y": 4,
+      "category": "Food",
+      "tier": "T2",
+      "fill_chance": 60,
+      "confirmed_openable": true
+    },
+    {
+      "block": "refurbished_furniture:oak_kitchen_drawer",
+      "x": 3,
+      "z": 7,
+      "floor": 1,
+      "local_y": 4,
+      "category": "Weapons",
+      "tier": "T2",
+      "fill_chance": 60,
+      "confirmed_openable": true
+    },
+    {
+      "block": "refurbished_furniture:oak_kitchen_drawer",
+      "x": 3,
+      "z": 8,
+      "floor": 1,
+      "local_y": 4,
+      "category": "Weapons",
+      "tier": "T2",
+      "fill_chance": 60,
+      "confirmed_openable": true
+    },
+    {
+      "block": "cfm:stripped_oak_bedside_cabinet",
+      "x": 14,
+      "z": 12,
+      "floor": 1,
+      "local_y": 4,
+      "category": "Weapons",
+      "tier": "T2",
+      "fill_chance": 60,
+      "confirmed_openable": true
+    },
+    {
+      "block": "cfm:stripped_oak_bedside_cabinet",
+      "x": 13,
+      "z": 5,
+      "floor": 1,
+      "local_y": 4,
+      "category": "Weapons",
+      "tier": "T2",
+      "fill_chance": 60,
+      "confirmed_openable": true
+    },
+    {
+      "block": "cfm:stripped_oak_bedside_cabinet",
+      "x": 16,
+      "z": 5,
+      "floor": 1,
+      "local_y": 4,
+      "category": "Weapons",
+      "tier": "T2",
+      "fill_chance": 60,
+      "confirmed_openable": true
+    },
+    {
+      "block": "cfm:stripped_oak_bedside_cabinet",
+      "x": 19,
+      "z": 9,
+      "floor": 1,
+      "local_y": 4,
+      "category": "Weapons",
+      "tier": "T2",
+      "fill_chance": 60,
+      "confirmed_openable": true
+    },
+    {
+      "block": "cfm:stripped_oak_bedside_cabinet",
+      "x": 19,
+      "z": 5,
+      "floor": 1,
+      "local_y": 4,
+      "category": "Weapons",
+      "tier": "T2",
+      "fill_chance": 60,
+      "confirmed_openable": true
+    },
+    {
+      "block": "cfm:stripped_oak_bedside_cabinet",
+      "x": 19,
+      "z": 12,
+      "floor": 1,
+      "local_y": 4,
+      "category": "Weapons",
+      "tier": "T2",
+      "fill_chance": 60,
+      "confirmed_openable": true
+    },
+    {
+      "block": "cfm:stripped_oak_bedside_cabinet",
+      "x": 19,
+      "z": 15,
+      "floor": 1,
+      "local_y": 4,
+      "category": "Weapons",
+      "tier": "T2",
+      "fill_chance": 60,
+      "confirmed_openable": true
+    },
+    {
+      "block": "apocalypsenow:iron_locker",
+      "x": 10,
+      "z": 14,
+      "floor": 1,
+      "local_y": 4,
+      "category": "Weapons",
+      "tier": "T3",
+      "fill_chance": 60,
+      "confirmed_openable": true
+    },
+    {
+      "block": "apocalypsenow:iron_locker",
+      "x": 10,
+      "z": 15,
+      "floor": 1,
+      "local_y": 4,
+      "category": "Weapons",
+      "tier": "T3",
+      "fill_chance": 60,
+      "confirmed_openable": true
+    },
+    {
+      "block": "cfm:stripped_oak_bedside_cabinet",
+      "x": 19,
+      "z": 5,
+      "floor": 2,
+      "local_y": 2,
+      "category": "Weapons",
+      "tier": "T3",
+      "fill_chance": 60,
+      "confirmed_openable": true
+    }
+  ],
+  "furniture_registry": {},
+  "vehicle_settings": {
+    "clearance": 1,
+    "min_spacing": 8
+  }
+}

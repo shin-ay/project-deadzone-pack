@@ -1,0 +1,45 @@
+﻿{
+    "id":  "project_deadzone:talent_mechanic_marine_doctrine_utility",
+    "bonuses":  [
+                    {
+                        "type":  "skilltree:attribute",
+                        "attribute":  "minecraft:generic.armor",
+                        "id":  "560af3e9-ad1d-6801-6f9c-b1fe9e99070b",
+                        "name":  "PROJECT DEADZONE Talent",
+                        "amount":  0.1,
+                        "operation":  0,
+                        "player_multiplier":  {
+                                                  "type":  "skilltree:none"
+                                              },
+                        "player_condition":  {
+                                                 "type":  "skilltree:none"
+                                             }
+                    }
+                ],
+    "requirements":  [
+
+                     ],
+    "directConnections":  [
+                              "project_deadzone:talent_mechanic_marine_utility_20"
+                          ],
+    "longConnections":  [
+
+                        ],
+    "oneWayConnections":  [
+
+                          ],
+    "tags":  [
+                 "pdz_talent_marine",
+                 "pdz_talent_doctrine",
+                 "pdz_doctrine_mechanic_marine",
+                 "pdz_doctrine_utility",
+                 "pdz_node_talent_mechanic_marine_doctrine_utility"
+             ],
+    "backgroundTexture":  "skilltree:textures/icons/background/keystone.png",
+    "iconTexture":  "skilltree:textures/icons/fishing_rod_diamond.png",
+    "borderTexture":  "skilltree:textures/tooltip/lesser.png",
+    "positionX":  -339.39,
+    "positionY":  1223.81,
+    "buttonSize":  32,
+    "isStartingPoint":  false
+}

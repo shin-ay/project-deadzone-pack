@@ -1,0 +1,181 @@
+{
+    "industry_basics":  {
+                            "title":  "工業基礎",
+                            "description":  "Tier 0 / 必要消費SP 0\n素材加工と機械製作の共通知識。\n\n実効果: 次Tierノードの取得条件を解放",
+                            "icon":  {
+                                         "type":  "item",
+                                         "data":  {
+                                                      "item":  "minecraft:crafting_table"
+                                                  }
+                                     },
+                            "frame":  {
+                                          "type":  "advancement",
+                                          "data":  {
+                                                       "frame":  "task"
+                                                   }
+                                      },
+                            "cost":  0,
+                            "rewards":  [
+                                            {
+                                                "type":  "puffish_skills:tag",
+                                                "data":  {
+                                                             "tag":  "dz_growth_industry_industry_basics"
+                                                         }
+                                            }
+                                        ]
+                        },
+    "machinist":  {
+                      "title":  "機械加工",
+                      "description":  "Tier 1 / 必要消費SP 0\n精密部品と工具の加工を習得する。\n\n実効果: 次Tierノードの取得条件を解放",
+                      "icon":  {
+                                   "type":  "item",
+                                   "data":  {
+                                                "item":  "minecraft:iron_pickaxe"
+                                            }
+                               },
+                      "frame":  {
+                                    "type":  "advancement",
+                                    "data":  {
+                                                 "frame":  "task"
+                                             }
+                                },
+                      "cost":  1,
+                      "rewards":  [
+                                      {
+                                          "type":  "puffish_skills:tag",
+                                          "data":  {
+                                                       "tag":  "dz_growth_industry_machinist"
+                                                   }
+                                      }
+                                  ]
+                  },
+    "engineer":  {
+                     "title":  "設備工学",
+                     "description":  "Tier 1 / 必要消費SP 0\n動力・配管・大型設備を扱う。\n\n実効果: 次Tierノードの取得条件を解放",
+                     "icon":  {
+                                  "type":  "item",
+                                  "data":  {
+                                               "item":  "minecraft:piston"
+                                           }
+                              },
+                     "frame":  {
+                                   "type":  "advancement",
+                                   "data":  {
+                                                "frame":  "task"
+                                            }
+                               },
+                     "cost":  1,
+                     "rewards":  [
+                                     {
+                                         "type":  "puffish_skills:tag",
+                                         "data":  {
+                                                      "tag":  "dz_growth_industry_engineer"
+                                                  }
+                                     }
+                                 ]
+                 },
+    "gunsmith":  {
+                     "title":  "ガンスミス",
+                     "description":  "Tier 2 / 必要消費SP 2\n銃器整備と部品交換を習得する。\n\n実効果: 次Tierノードの取得条件を解放",
+                     "icon":  {
+                                  "type":  "item",
+                                  "data":  {
+                                               "item":  "minecraft:crossbow"
+                                           }
+                              },
+                     "frame":  {
+                                   "type":  "advancement",
+                                   "data":  {
+                                                "frame":  "task"
+                                            }
+                               },
+                     "cost":  2,
+                     "rewards":  [
+                                     {
+                                         "type":  "puffish_skills:tag",
+                                         "data":  {
+                                                      "tag":  "dz_growth_industry_gunsmith"
+                                                  }
+                                     }
+                                 ],
+                     "required_spent_points":  2
+                 },
+    "automation":  {
+                       "title":  "自動化",
+                       "description":  "Tier 2 / 必要消費SP 2\n反復工程を機械へ任せる。\n\n実効果: 次Tierノードの取得条件を解放",
+                       "icon":  {
+                                    "type":  "item",
+                                    "data":  {
+                                                 "item":  "minecraft:observer"
+                                             }
+                                },
+                       "frame":  {
+                                     "type":  "advancement",
+                                     "data":  {
+                                                  "frame":  "task"
+                                              }
+                                 },
+                       "cost":  2,
+                       "rewards":  [
+                                       {
+                                           "type":  "puffish_skills:tag",
+                                           "data":  {
+                                                        "tag":  "dz_growth_industry_automation"
+                                                    }
+                                       }
+                                   ],
+                       "required_spent_points":  2
+                   },
+    "master_gunsmith":  {
+                            "title":  "主任銃器技師",
+                            "description":  "Tier 5 / 必要消費SP 6\n銃器・弾薬・精密部品加工を完成させる。\n\n実効果: INDUSTRY XP +20% / 銃器・弾薬系を強化",
+                            "icon":  {
+                                         "type":  "item",
+                                         "data":  {
+                                                      "item":  "minecraft:netherite_ingot"
+                                                  }
+                                     },
+                            "frame":  {
+                                          "type":  "advancement",
+                                          "data":  {
+                                                       "frame":  "challenge"
+                                                   }
+                                      },
+                            "cost":  3,
+                            "rewards":  [
+                                            {
+                                                "type":  "puffish_skills:tag",
+                                                "data":  {
+                                                             "tag":  "dz_growth_industry_master_gunsmith"
+                                                         }
+                                            }
+                                        ],
+                            "required_spent_points":  6
+                        },
+    "chief_engineer":  {
+                           "title":  "自動化主任技師",
+                           "description":  "Tier 5 / 必要消費SP 6\n動力・設備・自動化を完成させる。\n\n実効果: INDUSTRY XP +20% / 工業・自動化系を強化",
+                           "icon":  {
+                                        "type":  "item",
+                                        "data":  {
+                                                     "item":  "minecraft:beacon"
+                                                 }
+                                    },
+                           "frame":  {
+                                         "type":  "advancement",
+                                         "data":  {
+                                                      "frame":  "challenge"
+                                                  }
+                                     },
+                           "cost":  3,
+                           "rewards":  [
+                                           {
+                                               "type":  "puffish_skills:tag",
+                                               "data":  {
+                                                            "tag":  "dz_growth_industry_chief_engineer"
+                                                        }
+                                           }
+                                       ],
+                           "required_spent_points":  6
+                       }
+}

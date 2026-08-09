@@ -1,0 +1,45 @@
+﻿{
+    "id":  "project_deadzone:talent_medic_revive_master_utility",
+    "bonuses":  [
+                    {
+                        "type":  "skilltree:attribute",
+                        "attribute":  "minecraft:generic.movement_speed",
+                        "id":  "5403bff9-7848-879f-1cc3-bb1302ca8b4d",
+                        "name":  "PROJECT DEADZONE Talent",
+                        "amount":  0.0015,
+                        "operation":  1,
+                        "player_multiplier":  {
+                                                  "type":  "skilltree:none"
+                                              },
+                        "player_condition":  {
+                                                 "type":  "skilltree:none"
+                                             }
+                    }
+                ],
+    "requirements":  [
+
+                     ],
+    "directConnections":  [
+                              "project_deadzone:talent_medic_revive_15"
+                          ],
+    "longConnections":  [
+
+                        ],
+    "oneWayConnections":  [
+
+                          ],
+    "tags":  [
+                 "pdz_talent_revive",
+                 "pdz_talent_mastery",
+                 "pdz_mastery_medic_revive",
+                 "pdz_master_utility",
+                 "pdz_node_talent_medic_revive_master_utility"
+             ],
+    "backgroundTexture":  "skilltree:textures/icons/background/keystone.png",
+    "iconTexture":  "skilltree:textures/icons/cross_green.png",
+    "borderTexture":  "skilltree:textures/tooltip/lesser.png",
+    "positionX":  984.66,
+    "positionY":  -25.78,
+    "buttonSize":  32,
+    "isStartingPoint":  false
+}

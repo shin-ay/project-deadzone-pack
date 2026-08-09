@@ -1,0 +1,29 @@
+﻿{
+    "id":  "project_deadzone:talent_mechanic_marine_8",
+    "bonuses":  [
+
+                ],
+    "requirements":  [
+
+                     ],
+    "directConnections":  [
+                              "project_deadzone:talent_mechanic_marine_7"
+                          ],
+    "longConnections":  [
+
+                        ],
+    "oneWayConnections":  [
+
+                          ],
+    "tags":  [
+                 "pdz_talent_marine",
+                 "pdz_node_talent_mechanic_marine_8"
+             ],
+    "backgroundTexture":  "skilltree:textures/icons/background/notable.png",
+    "iconTexture":  "skilltree:textures/icons/fishing_rod_diamond.png",
+    "borderTexture":  "skilltree:textures/tooltip/lesser.png",
+    "positionX":  -129.12,
+    "positionY":  559.29,
+    "buttonSize":  22,
+    "isStartingPoint":  false
+}

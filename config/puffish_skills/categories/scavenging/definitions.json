@@ -1,0 +1,387 @@
+{
+  "scavenging_core_1": {
+    "title": "探索技術 基礎 Lv1",
+    "description": "探索技術の基礎能力を一段階高める。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:compass"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "task"
+      }
+    },
+    "cost": 0,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_scavenging_core_1"
+        }
+      }
+    ]
+  },
+  "scavenging_core_2": {
+    "title": "探索技術 基礎 Lv2",
+    "description": "探索技術の基礎能力を一段階高める。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:compass"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "task"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_scavenging_core_2"
+        }
+      }
+    ]
+  },
+  "scavenging_core_3": {
+    "title": "探索技術 基礎 Lv3",
+    "description": "探索技術でポイントを配分し、基礎能力をさらに高める。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:compass"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "goal"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_scavenging_core_3"
+        }
+      }
+    ],
+    "required_spent_points": 2
+  },
+  "scavenging_core_4": {
+    "title": "探索技術 基礎 Lv4",
+    "description": "探索技術でポイントを配分し、基礎能力をさらに高める。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:compass"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "goal"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_scavenging_core_4"
+        }
+      }
+    ],
+    "required_spent_points": 4
+  },
+  "scavenging_core_5": {
+    "title": "探索技術 基礎 Lv5",
+    "description": "探索技術でポイントを配分し、基礎能力をさらに高める。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:compass"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "challenge"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_scavenging_core_5"
+        }
+      }
+    ],
+    "required_spent_points": 6
+  },
+  "scavenging_core_6": {
+    "title": "探索技術 基礎 Lv6",
+    "description": "探索技術でポイントを配分し、基礎能力をさらに高める。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:compass"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "challenge"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_scavenging_core_6"
+        }
+      }
+    ],
+    "required_spent_points": 8
+  },
+  "keen_eye": {
+    "title": "鋭い観察眼",
+    "description": "Loot Luck上昇。敵撃破時12%で現地物資を発見（15秒間隔）。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:ender_eye"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "task"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_scavenging_search_1"
+        }
+      }
+    ]
+  },
+  "hidden_cache": {
+    "title": "隠し物資",
+    "description": "Loot Luck上昇。物資発見率20%、回収候補が増える。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:ender_chest"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "goal"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_scavenging_search_2"
+        }
+      }
+    ],
+    "required_spent_points": 3
+  },
+  "treasure_sense": {
+    "title": "物資感知",
+    "description": "Loot Luck上昇。物資発見率30%、金属資材も発見できる。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:echo_shard"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "challenge"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_scavenging_search_3"
+        }
+      }
+    ],
+    "required_spent_points": 6
+  },
+  "careful_salvage": {
+    "title": "丁寧な回収",
+    "description": "ブロック回収速度+8%。木材・鉱石・作物から15%で副資材を回収。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:shears"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "task"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_scavenging_yield_1"
+        }
+      }
+    ]
+  },
+  "resourceful": {
+    "title": "リソースフル",
+    "description": "回収速度+16%、副資材回収率25%。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:hopper"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "goal"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_scavenging_yield_2"
+        }
+      }
+    ],
+    "required_spent_points": 3
+  },
+  "nothing_wasted": {
+    "title": "完全回収",
+    "description": "回収速度+24%、副資材回収率40%。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:netherite_scrap"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "challenge"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_scavenging_yield_3"
+        }
+      }
+    ],
+    "required_spent_points": 6
+  },
+  "pathfinder": {
+    "title": "パスファインダー",
+    "description": "探索中の移動速度+1%。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:map"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "task"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_scavenging_mapping_1"
+        }
+      }
+    ]
+  },
+  "urban_scout": {
+    "title": "都市偵察員",
+    "description": "移動速度+2%。コンパス携帯中に暗視を得る。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:recovery_compass"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "goal"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_scavenging_mapping_2"
+        }
+      }
+    ],
+    "required_spent_points": 3
+  },
+  "city_ghost": {
+    "title": "シティゴースト",
+    "description": "移動速度+3%。コンパス携帯中、12ブロック以内の敵を感知する。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:spyglass"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "challenge"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_scavenging_mapping_3"
+        }
+      }
+    ],
+    "required_spent_points": 6
+  }
+}

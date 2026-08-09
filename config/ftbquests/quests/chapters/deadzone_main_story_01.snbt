@@ -1,0 +1,367 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "deadzone_main_story_01"
+	group: "51DC04D9192698A6"
+	icon: "minecraft:recovery_compass"
+	id: "43A93722C5600224"
+	order_index: 1
+	quest_links: [ ]
+	quests: [
+		{
+			description: [
+				"大規模感染と都市封鎖から数週間。"
+				"緊急周波数107.3の放送を確認し、生存者の拠点を探そう。"
+			]
+			icon: "minecraft:recovery_compass"
+			id: "4262970F1B621A1D"
+			shape: "hexagon"
+			size: 1.5d
+			subtitle: "周波数107.3は、まだ同じ言葉を繰り返している。"
+			tasks: [{
+				id: "79A594E0347CB8C7"
+				title: "途切れた放送を確認した"
+				type: "custom"
+			}]
+			title: "Chapter 0：最後の放送"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["4262970F1B621A1D"]
+			description: ["JOBを選択してStarter Kitを受け取り、自分の役割を確認しよう。"]
+			icon: {
+				Count: 1
+				id: "minecraft:crossbow"
+				tag: {
+					Damage: 0
+				}
+			}
+			id: "52F2869C3820DF98"
+			subtitle: "自分の役割を選び、最初の装備を受け取る。"
+			tasks: [{
+				id: "7DC3721C14E28CA9"
+				title: "JOBとStarter Kitを確認した"
+				type: "custom"
+			}]
+			title: "生き残るための役割"
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["52F2869C3820DF98"]
+			description: ["避難所は物資補給、Buddy募集、次の任務を受ける活動拠点になる。"]
+			icon: "minecraft:campfire"
+			id: "1920AEAAF4D75E94"
+			subtitle: "生存者と最初の協力者を確認する。"
+			tasks: [{
+				id: "14269D36893694F9"
+				title: "Survivor Campへ到達した"
+				type: "custom"
+			}]
+			title: "Survivor Camp"
+			x: 4.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["1920AEAAF4D75E94"]
+			description: ["避難所の発電機を維持する燃料が足りない。Gas Stationを調査する。"]
+			icon: "minecraft:clock"
+			id: "23E782D769F4E809"
+			shape: "hexagon"
+			size: 1.5d
+			subtitle: "避難所の発電機を動かす燃料が必要だ。"
+			tasks: [{
+				id: "6C3CB7B29C88A47A"
+				title: "燃料確保の依頼を受けた"
+				type: "custom"
+			}]
+			title: "Chapter 1：最初の72時間"
+			x: 6.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["23E782D769F4E809"]
+			description: [
+				"次の4条件を同時に満たすと自動で完了する。"
+				"・食料：2個以上（缶詰、パン、調理済みの肉、栄養バー）"
+				"・飲料：1個以上（水入りボトル、1ガロン水、缶入り水など）"
+				"・治療用品：2個以上（包帯、絆創膏、鎮痛剤など）"
+				"・武器：1個以上（銃、剣、弓、斧、ナイフなど）"
+				"一度4条件を満たせば達成状態は保存され、その後アイテムを収納・消費しても取り消されない。"
+				"現在の状態は /deadzonestory prep_status で確認できる。"
+			]
+			icon: "minecraft:bread"
+			id: "633F4D540C6511A9"
+			subtitle: "街へ出る前に最低限の準備を整えよう。"
+			tasks: [{
+				id: "28D1E41F430CD898"
+				title: "探索準備を完了した"
+				type: "custom"
+			}]
+			title: "探索準備"
+			x: 8.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["633F4D540C6511A9"]
+			description: ["Raider Scoutを排除し、建物と燃料庫の安全を確保する。"]
+			icon: "minecraft:charcoal"
+			id: "19FC30DCB267A732"
+			rewards: [
+				{
+					count: 8
+					id: "330FCB55BB47ACC9"
+					item: "apocalypsenow:money"
+					type: "item"
+				}
+				{
+					count: 4
+					id: "4CA316D1E0776288"
+					item: "apocalypsenow:bandage"
+					type: "item"
+				}
+				{
+					id: "1F64CBDA2082BBD8"
+					type: "xp"
+					xp: 10
+				}
+			]
+			subtitle: "Raidersの偵察隊が燃料輸送路を監視している。"
+			tasks: [{
+				id: "42AEC3D45A019DD6"
+				title: "Gas Stationを確保した"
+				type: "custom"
+			}]
+			title: "Gas Stationを確保せよ"
+			x: 10.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["19FC30DCB267A732"]
+			description: ["燃料と周辺地図をSurvivor Campへ持ち帰り、避難所の電力を復旧する。"]
+			icon: "minecraft:map"
+			id: "162BAA0F1AF6097C"
+			rewards: [
+				{
+					count: 10
+					id: "1846190ABB64EFD2"
+					item: "apocalypsenow:money"
+					type: "item"
+				}
+				{
+					count: 2
+					id: "02A82EE3984EC263"
+					item: "minecraft:golden_apple"
+					type: "item"
+				}
+				{
+					id: "31A1000000000001"
+					item: "create:blaze_burner"
+					type: "item"
+				}
+				{
+					count: 18
+					id: "31A1000000000002"
+					item: "immersiveengineering:blastbrick"
+					type: "item"
+				}
+				{
+					count: 4
+					id: "31A1000000000003"
+					item: "minecraft:quartz"
+					type: "item"
+				}
+				{
+					count: 3
+					id: "31A1000000000004"
+					item: "mts:mtsofficialpack.solidfuel"
+					type: "item"
+				}
+			]
+			shape: "hexagon"
+			size: 1.5d
+			subtitle: "最初の活動範囲が開かれる。"
+			tasks: [{
+				id: "5A557E5D3026DA70"
+				title: "燃料と地図を持ち帰った"
+				type: "custom"
+			}]
+			title: "T1：Survivor"
+			x: 12.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["162BAA0F1AF6097C"]
+			description: ["地図にはGun ShopとPolice Stationを結ぶ補給経路が記録されていた。"]
+			icon: "minecraft:spyglass"
+			id: "500615465858A8D5"
+			subtitle: "Raidersの武器供給源を追う。"
+			tasks: [{
+				id: "1EA94AF57F99524E"
+				title: "Gun Shopの情報を確認した"
+				type: "custom"
+			}]
+			title: "Chapter 2：沈黙した街"
+			x: 14.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["500615465858A8D5"]
+			description: ["Raider Enforcerを撃破し、Gun Shopの武器庫まで制圧する。"]
+			icon: {
+				Count: 1
+				id: "minecraft:crossbow"
+				tag: {
+					Damage: 0
+				}
+			}
+			id: "7718CAD4F2ED6F3E"
+			rewards: [
+				{
+					count: 12
+					id: "1A7EA83F8B2480AD"
+					item: "apocalypsenow:money"
+					type: "item"
+				}
+				{
+					count: 3
+					id: "536072891E79B3B8"
+					item: "minecraft:iron_ingot"
+					type: "item"
+				}
+				{
+					id: "5BB3CCAB2F3748C4"
+					type: "xp"
+					xp: 15
+				}
+			]
+			subtitle: "Raider Enforcerが武器供給拠点を守っている。"
+			tasks: [{
+				id: "26A6B734055D955C"
+				title: "Raider Enforcerを撃破した"
+				type: "custom"
+			}]
+			title: "Gun Shop制圧"
+			x: 16.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["7718CAD4F2ED6F3E"]
+			description: ["壊れた警察無線機には、Police Stationからの最後の救難信号が残っている。"]
+			icon: "minecraft:echo_shard"
+			id: "6AD31D0364FE7B57"
+			subtitle: "警察署へ向かう手掛かりを回収する。"
+			tasks: [{
+				id: "7BF4C169EDA09199"
+				title: "警察無線の記録を回収した"
+				type: "custom"
+			}]
+			title: "残された通信記録"
+			x: 18.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["6AD31D0364FE7B57"]
+			description: ["Police StationはRaider Wardenの要塞になっている。"]
+			icon: "minecraft:iron_door"
+			id: "3786D5F3AF1D3EF4"
+			shape: "hexagon"
+			size: 1.5d
+			subtitle: "通信室、証拠保管庫、武器庫が内部に残されている。"
+			tasks: [{
+				id: "2DC1C7DA4B036871"
+				title: "Police Stationへ到達した"
+				type: "custom"
+			}]
+			title: "Chapter 3：失われた法"
+			x: 20.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["3786D5F3AF1D3EF4"]
+			description: ["留置区画、通信室、証拠保管庫を順に確保する。"]
+			icon: "minecraft:tripwire_hook"
+			id: "5C450F9A7EB25D5B"
+			subtitle: "狭い屋内と複数方向からの攻撃に備えよう。"
+			tasks: [{
+				id: "5E9A385A2E90B13C"
+				title: "警察署内を制圧した"
+				type: "custom"
+			}]
+			title: "Police Station突入"
+			x: 22.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["5C450F9A7EB25D5B"]
+			description: [
+				"Raider Wardenを倒し、Civil Defenseの記録を回収する。"
+				"この勝利によってT2装備への道が開く。"
+			]
+			icon: {
+				Count: 1
+				id: "minecraft:golden_helmet"
+				tag: {
+					Damage: 0
+				}
+			}
+			id: "74065A02DB68DAE2"
+			rewards: [
+				{
+					count: 18
+					id: "636D20BC832009C0"
+					item: "apocalypsenow:money"
+					type: "item"
+				}
+				{
+					count: 6
+					id: "099E64AAA7427177"
+					item: "apocalypsenow:bandage"
+					type: "item"
+				}
+				{
+					id: "71EF512628AE5C0F"
+					type: "xp"
+					xp: 25
+				}
+				{
+					count: 4
+					id: "31A2000000000001"
+					item: "create:blaze_cake"
+					type: "item"
+				}
+				{
+					count: 8
+					id: "31A2000000000002"
+					item: "minecraft:quartz"
+					type: "item"
+				}
+				{
+					count: 6
+					id: "31A2000000000003"
+					item: "minecraft:magma_cream"
+					type: "item"
+				}
+				{
+					count: 12
+					id: "31A2000000000004"
+					item: "minecraft:nether_brick"
+					type: "item"
+				}
+			]
+			shape: "hexagon"
+			size: 2.0d
+			subtitle: "都市の本格探索を開始する。"
+			tasks: [{
+				id: "21490231921E204F"
+				title: "Raider Wardenを撃破した"
+				type: "custom"
+			}]
+			title: "T2：Scavenger"
+			x: 24.0d
+			y: 0.0d
+		}
+	]
+	title: "メインストーリー I：沈黙した街"
+}

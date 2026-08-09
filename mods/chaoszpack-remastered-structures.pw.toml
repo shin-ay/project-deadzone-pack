@@ -1,0 +1,13 @@
+name = "ChaosZPack Remastered: Structures ! [Watchtowers]"
+filename = "chaoszpack_structures-1.0.2-1.20.1.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "5a9035e37afbd5901b10839a3b73e4395a97c0c5"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 6969081
+project-id = 1341107

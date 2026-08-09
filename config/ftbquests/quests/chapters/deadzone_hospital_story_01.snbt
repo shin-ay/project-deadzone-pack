@@ -1,0 +1,99 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "deadzone_hospital_story_01"
+	group: "51DC04D9192698A6"
+	icon: "apocalypsenow:bandage"
+	id: "728C1EE8201FFA92"
+	order_index: 3
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: ["74065A02DB68DAE2"]
+			description: [
+				"警察署の記録には、Hospitalから発信されたCivil Defenseの救難信号が残されていた。"
+				"薬品庫と生存者の状況を確認し、次の作戦に必要な医療物資を確保する。"
+			]
+			icon: "minecraft:map"
+			id: "0CC1C27F7969A440"
+			shape: "hexagon"
+			size: 1.5d
+			subtitle: "途切れた医療網を追跡する。"
+			tasks: [{
+				id: "2207C5D1DC7499B3"
+				title: "Hospitalの救難信号を特定した"
+				type: "custom"
+			}]
+			title: "Chapter 4：途切れた医療網"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			description: [
+				"Hospital内部では、負傷者を見捨てたRaider Medicが薬品保管区画を支配している。"
+				"正面ロビーだけでなく、階段・病室・裏口からの増援にも警戒する。"
+			]
+			icon: "apocalypsenow:bandage"
+			id: "0C7AEC6E25192AAA"
+			subtitle: "Hospitalへ到達し、薬品保管区画を探す。"
+			tasks: [{
+				id: "059C080F51D43F2D"
+				title: "Hospitalへ到達した"
+				type: "custom"
+			}]
+			title: "閉鎖病棟"
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			description: [
+				"Corrupt Field Medicを排除し、薬品庫と患者記録を回収する。"
+				"確保した医療物資は、今後の施設攻略と拠点防衛に使用できる。"
+			]
+			icon: "apocalypsenow:pain_killers"
+			id: "6984DA400E0E21C3"
+			rewards: [
+				{
+					count: 20
+					id: "18BCA26857F3BAE7"
+					item: "apocalypsenow:money"
+					type: "item"
+				}
+				{
+					count: 6
+					id: "1F19C22809B010AE"
+					item: "apocalypsenow:bandage"
+					type: "item"
+				}
+				{
+					count: 4
+					id: "2A545318A6435179"
+					item: "apocalypsenow:bandage"
+					type: "item"
+				}
+				{
+					id: "5AA64342A90518CA"
+					item: "apocalypsenow:pain_killers"
+					type: "item"
+				}
+				{
+					id: "63C395F258F213F8"
+					type: "xp"
+					xp: 30
+				}
+			]
+			shape: "hexagon"
+			size: 2.0d
+			subtitle: "薬品庫を確保し、医療供給を再開する。"
+			tasks: [{
+				id: "16AB46EE2BBC9CF5"
+				title: "Corrupt Field Medicを撃破した"
+				type: "custom"
+			}]
+			title: "薬品保管区画を奪還せよ"
+			x: 4.0d
+			y: 0.0d
+		}
+	]
+	title: "メインストーリー：途切れた医療網"
+}

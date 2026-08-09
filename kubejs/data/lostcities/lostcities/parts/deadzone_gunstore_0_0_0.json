@@ -1,0 +1,314 @@
+{
+  "xsize": 16,
+  "zsize": 16,
+  "palette": {
+    "palette": [
+      {
+        "char": "",
+        "block": "minecraft:air"
+      },
+      {
+        "char": "",
+        "block": "minecraft:blackstone"
+      },
+      {
+        "char": "",
+        "block": "minecraft:cobbled_deepslate"
+      },
+      {
+        "char": "",
+        "block": "minecraft:deepslate[axis=y]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:cyan_terracotta"
+      },
+      {
+        "char": "",
+        "block": "minecraft:basalt[axis=x]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:yellow_concrete"
+      },
+      {
+        "char": "",
+        "block": "minecraft:andesite"
+      },
+      {
+        "char": "",
+        "block": "minecraft:stone[weathering=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:grass_block[snowy=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:dirt"
+      },
+      {
+        "char": "",
+        "block": "immersive_weathering:mossy_stone"
+      },
+      {
+        "char": "",
+        "block": "minecraft:quartz_block"
+      },
+      {
+        "char": "",
+        "block": "minecraft:diorite"
+      },
+      {
+        "char": "",
+        "block": "minecraft:polished_diorite"
+      },
+      {
+        "char": "",
+        "block": "minecraft:iron_bars[east=true,north=false,south=false,waterlogged=false,west=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:iron_bars[east=true,north=false,south=false,waterlogged=false,west=true]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:iron_bars[east=false,north=false,south=false,waterlogged=false,west=true]"
+      },
+      {
+        "char": "",
+        "block": "doomsday_decoration:fire_hydrant[facing=east,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "immersive_weathering:oak_leaf_pile[age=0,layers=1]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:grass"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:construction_barricade[facing=east]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:tall_grass[half=lower]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:lily_of_the_valley"
+      },
+      {
+        "char": "",
+        "block": "minecraft:vine[east=false,north=false,south=true,up=false,west=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:tall_grass[half=upper]"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:metal_bars[facing=north]"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:planksb[facing=north]"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:planksd[facing=north]"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:planks_a[facing=north]"
+      },
+      {
+        "char": "",
+        "block": "big_signs:one_line_oak_wall_sign[facing=north,waterlogged=false]",
+        "tag": {
+          "back_text": {
+            "has_glowing_text": 0,
+            "color": "black",
+            "messages": [
+              "{\"text\":\"\"}",
+              "{\"text\":\"\"}",
+              "{\"text\":\"\"}",
+              "{\"text\":\"\"}"
+            ]
+          },
+          "is_waxed": 0,
+          "ForgeCaps": {
+            "supplementaries:antique_ink": {
+              "ink": 0
+            }
+          },
+          "id": "big_signs:one_line_sign",
+          "front_text": {
+            "has_glowing_text": 0,
+            "color": "black",
+            "messages": [
+              "{\"text\":\"\"}",
+              "{\"text\":\"O\"}",
+              "{\"text\":\"\"}",
+              "{\"text\":\"\"}"
+            ]
+          }
+        }
+      },
+      {
+        "char": "",
+        "block": "minecraft:black_concrete"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:plankse[facing=north]"
+      },
+      {
+        "char": "",
+        "block": "securitycraft:security_camera[being_viewed=false,facing=north,powered=false,waterlogged=false]",
+        "tag": {
+          "owner": "Natsumamire",
+          "ownerUUID": "908f197c-46c7-4c8c-aad8-3782f26cb6fa",
+          "Modules": [],
+          "disguiseEnabled": 0,
+          "allowlistEnabled": 0,
+          "rotationSpeed": 0.018,
+          "initial_y_rotation": 180.0,
+          "initial_x_rotation": 30.0,
+          "shouldRotate": 1,
+          "customRotation": 0.0,
+          "movementSpeed": 2.0,
+          "lens": [],
+          "shutDown": 0,
+          "smartEnabled": 0,
+          "initial_zoom": 1.0,
+          "camera_rotation": 1.0620000000000007,
+          "disabled": 0,
+          "id": "securitycraft:security_camera",
+          "redstoneEnabled": 0,
+          "opacity": 100,
+          "add_to_rotation": 1
+        }
+      },
+      {
+        "char": "",
+        "block": "minecraft:red_concrete"
+      },
+      {
+        "char": "",
+        "block": "deadzonevehiclecompat:vehicle_spawn_marker[facing=north]"
+      }
+    ]
+  },
+  "slices": [
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  ]
+}

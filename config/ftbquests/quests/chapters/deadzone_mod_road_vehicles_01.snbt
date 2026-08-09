@@ -1,0 +1,121 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: "circle"
+	filename: "deadzone_mod_road_vehicles_01"
+	group: "51DC04D9192698A6"
+	icon: "mts:mtsofficialpack.wheellarge"
+	id: "6F3058C252B90171"
+	order_index: 11
+	quests: [
+		{
+			description: ["道路脇の車は車体が残っていても、そのままでは走らない。工具を揃え、欠けた部品を一系統ずつ復旧する。"]
+			icon: "mts:mtsofficialpack.blowtorch"
+			id: "6500000000000001"
+			rewards: [{ count: 8, id: "6520000000000001", item: "apocalypsenow:money", type: "item" } { count: 2, id: "6520000000000002", item: "mts:mtsofficialpack.repairkit", type: "item" }]
+			tasks: [{ id: "6510000000000001", item: "mts:mtsofficialpack.blowtorch", type: "item" } { id: "6510000000000002", item: "mts:mtsofficialpack.repairkit", type: "item" }]
+			title: "廃車再生の準備"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["6500000000000001"]
+			description: ["まずは四輪を接地させる。同じ規格のタイヤを4本揃え、予備も確保する。見た目だけ直っても1本欠ければ動かない。"]
+			icon: "mts:mtsofficialpack.wheellarge"
+			id: "6501000000000011"
+			rewards: [{ count: 10, id: "6521000000000011", item: "apocalypsenow:money", type: "item" } { count: 2, id: "6521000000000012", item: "mts:mtsofficialpack.wheellarge", type: "item" }]
+			tasks: [{ count: 4L, id: "6511000000000011", item: "mts:mtsofficialpack.wheellarge", type: "item" }]
+			title: "四輪・タイヤの確保"
+			x: 2.0d
+			y: -3.0d
+		}
+		{
+			dependencies: ["6501000000000011"]
+			description: ["車体に合うエンジンを載せる。Spark Plugと配線も忘れず、始動できる状態まで組み上げよう。"]
+			icon: "mts:mtsofficialpack.engineamci4"
+			id: "6501000000000012"
+			rewards: [{ count: 12, id: "6521000000000013", item: "apocalypsenow:money", type: "item" } { id: "6521000000000014", item: "mts:mtsofficialpack.engineamci4", type: "item" } { count: 2, id: "6521000000000015", item: "mts:mtsofficialpack.sparkplug", type: "item" }]
+			tasks: [{ id: "6511000000000012", item: "mts:mtsofficialpack.engineamci4", type: "item" } { count: 2L, id: "6511000000000013", item: "mts:mtsofficialpack.sparkplug", type: "item" } { count: 4L, id: "6511000000000014", item: "mts:mtsofficialpack.copperwire", type: "item" }]
+			title: "四輪・エンジン始動"
+			x: 4.0d
+			y: -3.0d
+		}
+		{
+			dependencies: ["6501000000000012"]
+			description: ["走るための部品はエンジンだけではない。運転席と燃料系を取り付け、実際に人が操作できる車へ戻す。"]
+			icon: "mts:mtsofficialpack.carseat_grey"
+			id: "6501000000000013"
+			rewards: [{ count: 12, id: "6521000000000016", item: "apocalypsenow:money", type: "item" } { id: "6521000000000017", item: "mts:mtsofficialpack.carseat_grey", type: "item" } { id: "6521000000000018", item: "mts:mtsofficialpack.fuelpump", type: "item" }]
+			tasks: [{ id: "6511000000000015", item: "mts:mtsofficialpack.carseat_grey", type: "item" } { id: "6511000000000016", item: "mts:mtsofficialpack.fuelpump", type: "item" } { id: "6511000000000017", item: "mts:mtsofficialpack.auxiliary_tank", type: "item" }]
+			title: "四輪・座席と燃料系"
+			x: 6.0d
+			y: -3.0d
+		}
+		{
+			dependencies: ["6501000000000013"]
+			description: ["タイヤ、エンジン、座席、燃料系を揃えた。最後に燃料を補給して試走し、分隊輸送へ投入する。"]
+			icon: "mts:mtsofficialpack.repairkit"
+			id: "6501000000000014"
+			rewards: [{ count: 18, id: "6521000000000019", item: "apocalypsenow:money", type: "item" } { count: 4, id: "652100000000001A", item: "mts:mtsofficialpack.wheellarge", type: "item" } { id: "652100000000001B", item: "mts:mtsofficialpack.auxiliary_tank", type: "item" } { count: 2, id: "652100000000001C", item: "tfmg:gasoline_bucket", type: "item" }]
+			tasks: [{ count: 2L, id: "6511000000000018", item: "mts:mtsofficialpack.repairkit", type: "item" } { id: "6511000000000019", item: "tfmg:gasoline_bucket", type: "item" }]
+			title: "四輪・廃車復旧完了"
+			x: 8.0d
+			y: -3.0d
+		}
+		{
+			dependencies: ["6500000000000001"]
+			description: ["バイクは積載が少ない代わりに、瓦礫と狭い道を抜けやすい。まず工具、フレーム、前輪部品を確保する。"]
+			icon: "blocky_bikes:frame"
+			id: "6501000000000021"
+			rewards: [{ count: 9, id: "6521000000000021", item: "apocalypsenow:money", type: "item" } { id: "6521000000000022", item: "blocky_bikes:frame", type: "item" } { count: 2, id: "6521000000000023", item: "blocky_bikes:wheels", type: "item" }]
+			tasks: [{ id: "6511000000000021", item: "blocky_bikes:toolkit", type: "item" } { id: "6511000000000022", item: "blocky_bikes:frame", type: "item" } { count: 2L, id: "6511000000000023", item: "blocky_bikes:wheels", type: "item" } { id: "6511000000000024", item: "blocky_bikes:sparepartsforforks", type: "item" }]
+			title: "バイク・足回り再生"
+			x: 2.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["6501000000000021"]
+			description: ["入門用エンジンを作業台で組み立てる。Piston、Connecting Rod、CrankcaseをToolkitで一つの機関へまとめる。"]
+			icon: "blocky_bikes:jawa_250engine"
+			id: "6501000000000022"
+			rewards: [{ count: 11, id: "6521000000000024", item: "apocalypsenow:money", type: "item" } { id: "6521000000000025", item: "blocky_bikes:jawa_250engine", type: "item" }]
+			tasks: [{ id: "6511000000000025", item: "blocky_bikes:conventionalpiston", type: "item" } { id: "6511000000000026", item: "blocky_bikes:connectingrod", type: "item" } { id: "6511000000000027", item: "blocky_bikes:crankcaseformotorcycle_jawa_250", type: "item" } { id: "6511000000000028", item: "blocky_bikes:jawa_250engine", type: "item" }]
+			title: "バイク・エンジン再生"
+			x: 4.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["6501000000000022"]
+			description: ["低TierのJawa 250はMechanical Crafterを使わず、作業台で完成できる。上位車種は後半設備用として残る。"]
+			icon: "blocky_bikes:jawa_250"
+			id: "6501000000000023"
+			rewards: [{ count: 16, id: "6521000000000026", item: "apocalypsenow:money", type: "item" } { id: "6521000000000027", item: "blocky_bikes:gasolinecanister", type: "item" } { id: "6521000000000028", item: "blocky_bikes:toolkit", type: "item" }]
+			tasks: [{ id: "6511000000000029", item: "blocky_bikes:jawa_250", type: "item" }]
+			title: "バイク・入門車完成"
+			x: 6.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["6501000000000023"]
+			description: ["入門車で運用を学んだら、用途に合わせて軽量車を選ぶ。Simsonは市街地、ForterXは荒れた郊外向け。"]
+			icon: "blocky_bikes:forterx_125"
+			id: "6501000000000024"
+			rewards: [{ count: 18, id: "6521000000000029", item: "apocalypsenow:money", type: "item" } { count: 2, id: "652100000000002A", item: "blocky_bikes:gasolinecanister", type: "item" } { count: 2, id: "652100000000002B", item: "blocky_bikes:wheels", type: "item" }]
+			tasks: [{ id: "651100000000002A", item: "blocky_bikes:simson_s_51", type: "item" } { id: "651100000000002B", item: "blocky_bikes:forterx_125", type: "item" }]
+			title: "バイク・用途別車種"
+			x: 8.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["6501000000000014","6501000000000024"]
+			description: ["四輪輸送とバイク偵察の両方が稼働した。大量輸送と先行偵察を分担し、次は鉄道物流へ進む。"]
+			icon: "mts:mtsofficialpack.wheellarge"
+			id: "6500000000000004"
+			rewards: [{ count: 28, id: "6520000000000007", item: "apocalypsenow:money", type: "item" } { count: 2, id: "6520000000000008", item: "mts:mtsofficialpack.repairkit", type: "item" } { id: "652000000000001F", item: "blocky_bikes:jawa_250engine", type: "item" }]
+			tasks: [{ count: 4L, id: "6510000000000008", item: "mts:mtsofficialpack.wheellarge", type: "item" } { id: "6510000000000009", item: "blocky_bikes:jawa_250", type: "item" }]
+			title: "T1・道路輸送班"
+			x: 10.0d
+			y: 0.0d
+		}
+	]
+	title: "道路車両・バイク整備"
+}

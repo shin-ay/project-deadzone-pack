@@ -1,0 +1,38 @@
+{
+    "industry_basics":  {
+                            "x":  0,
+                            "y":  160,
+                            "definition":  "industry_basics",
+                            "root":  true
+                        },
+    "machinist":  {
+                      "x":  "-128",
+                      "y":  48,
+                      "definition":  "machinist"
+                  },
+    "engineer":  {
+                     "x":  128,
+                     "y":  48,
+                     "definition":  "engineer"
+                 },
+    "gunsmith":  {
+                     "x":  "-160",
+                     "y":  "-48",
+                     "definition":  "gunsmith"
+                 },
+    "automation":  {
+                       "x":  160,
+                       "y":  "-48",
+                       "definition":  "automation"
+                   },
+    "master_gunsmith":  {
+                            "x":  "-160",
+                            "y":  "-176",
+                            "definition":  "master_gunsmith"
+                        },
+    "chief_engineer":  {
+                           "x":  160,
+                           "y":  "-176",
+                           "definition":  "chief_engineer"
+                       }
+}

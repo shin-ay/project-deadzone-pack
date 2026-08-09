@@ -1,0 +1,78 @@
+debugLogging = true
+
+[riderProtection]
+	#Cancel ordinary hostile-mob melee attacks against IV riders.
+	protectRiders = true
+	#Maximum source-mob distance for a protected melee attack.
+	#Range: 1.0 ~ 12.0
+	meleeProtectionRange = 5.0
+	#Exact entity IDs whose melee attacks may hit occupants.
+	#Example: apocalypse_zombies:tank
+	meleeBypassEntities = []
+	#Whole namespaces that bypass melee protection. Prefer exact IDs when possible.
+	meleeBypassNamespaces = []
+
+[mobVehicleCollision]
+	pushHostileMobs = true
+	#Range: 1 ~ 40
+	pushIntervalTicks = 4
+	#Range: 4.0 ~ 32.0
+	vehicleSearchRadius = 12.0
+	#Range: 0.0 ~ 2.0
+	pushMargin = 0.35
+	#Range: 0.05 ~ 2.0
+	pushStrength = 0.45
+
+[vehicleImpact]
+	enableImpactDamage = true
+	#Range: 0.01 ~ 3.0
+	mediumSpeedThreshold = 0.22
+	#Range: 0.02 ~ 5.0
+	highSpeedThreshold = 0.48
+	#Range: 0.0 ~ 100.0
+	mediumImpactDamage = 6.0
+	#Range: 0.0 ~ 100.0
+	highImpactDamage = 14.0
+	#Range: 0.0 ~ 5.0
+	impactKnockback = 1.25
+	#Range: 1 ~ 100
+	impactCooldownTicks = 12
+
+[automaticWrecks]
+	#Automatically apply a wreck state once to newly encountered IV vehicles.
+	enabled = true
+	#How often each player triggers a nearby IV vehicle scan.
+	#Range: 20 ~ 1200
+	scanIntervalTicks = 100
+	#Radius around players used for automatic vehicle discovery.
+	#Range: 16.0 ~ 256.0
+	scanRadius = 64.0
+	#Maximum unprocessed vehicles wrecked per player scan pass.
+	#Range: 1 ~ 32
+	maxVehiclesPerPass = 4
+
+[vehicleSpawnMarkers]
+	#Convert PROJECT DEADZONE vehicle spawn markers into IV vehicles.
+	enabled = true
+	#Marker scan interval per player.
+	#Range: 20 ~ 1200
+	scanIntervalTicks = 100
+	#Horizontal block radius searched around each player.
+	#Range: 4 ~ 64
+	horizontalRadius = 24
+	#Vertical block radius searched around each player.
+	#Range: 2 ~ 32
+	verticalRadius = 8
+	#Maximum markers converted per player per scan.
+	#Range: 1 ~ 16
+	maxMarkersPerPass = 2
+	#Radius used to count existing Immersive Vehicles before converting markers.
+	#Range: 16.0 ~ 512.0
+	vehicleLimitRadius = 128.0
+	#Maximum number of Immersive Vehicles allowed within vehicleLimitRadius. When this limit is reached, markers remain in place and are retried later.
+	#Range: 1 ~ 500
+	vehicleLimit = 30
+	#Minimum horizontal distance in blocks between a spawn marker and an existing IV vehicle. Markers that are too close remain invisible and are retried later.
+	#Range: 2.0 ~ 32.0
+	minimumVehicleSpacing = 8.0
+

@@ -1,0 +1,32 @@
+﻿{
+    "id":  "project_deadzone:talent_survivor_recovery_master_power",
+    "bonuses":  [
+
+                ],
+    "requirements":  [
+
+                     ],
+    "directConnections":  [
+                              "project_deadzone:talent_survivor_recovery_15"
+                          ],
+    "longConnections":  [
+
+                        ],
+    "oneWayConnections":  [
+
+                          ],
+    "tags":  [
+                 "pdz_talent_recovery",
+                 "pdz_talent_mastery",
+                 "pdz_mastery_survivor_recovery",
+                 "pdz_master_power",
+                 "pdz_node_talent_survivor_recovery_master_power"
+             ],
+    "backgroundTexture":  "skilltree:textures/icons/background/keystone.png",
+    "iconTexture":  "skilltree:textures/icons/cross_green.png",
+    "borderTexture":  "skilltree:textures/tooltip/lesser.png",
+    "positionX":  -968.51,
+    "positionY":  -179.5,
+    "buttonSize":  32,
+    "isStartingPoint":  false
+}

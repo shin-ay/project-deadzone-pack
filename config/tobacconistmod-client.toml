@@ -1,0 +1,6 @@
+
+[curios]
+	#Chance divisor for Curios mouth smoke. Lower = more smoke.
+	#Range: 1 ~ 24
+	particleDensity = 6
+

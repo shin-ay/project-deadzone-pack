@@ -1,0 +1,13 @@
+name = "KeybindsPurger"
+filename = "KeybindsPurger-1.4.0-forge-1.20.1.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "2f7a2087dff81e4be730ebf26082eaf1d2c49630"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 7733191
+project-id = 1099143

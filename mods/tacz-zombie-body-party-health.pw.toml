@@ -1,0 +1,13 @@
+name = "[TACZ] Zombie Body / Party Health"
+filename = "partyhealth-1.0.7.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "38a4643b632bc38b4986aa2eced2e6f68212874f"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 7672175
+project-id = 1409743

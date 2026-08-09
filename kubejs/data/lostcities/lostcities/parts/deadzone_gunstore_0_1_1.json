@@ -1,0 +1,350 @@
+{
+  "xsize": 16,
+  "zsize": 16,
+  "palette": {
+    "palette": [
+      {
+        "char": "",
+        "block": "minecraft:air"
+      },
+      {
+        "char": "",
+        "block": "minecraft:vine[east=true,north=false,south=false,up=false,west=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:polished_andesite"
+      },
+      {
+        "char": "",
+        "block": "minecraft:bricks[weathering=false]"
+      },
+      {
+        "char": "",
+        "block": "immersive_weathering:mossy_bricks"
+      },
+      {
+        "char": "",
+        "block": "minecraft:granite"
+      },
+      {
+        "char": "",
+        "block": "minecraft:andesite"
+      },
+      {
+        "char": "",
+        "block": "minecraft:vine[east=false,north=true,south=false,up=false,west=false]"
+      },
+      {
+        "char": "",
+        "block": "immersive_weathering:mossy_brick_stairs[facing=south,half=top,shape=straight,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:brick_stairs[facing=south,half=top,shape=straight,waterlogged=false,weathering=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:brick_stairs[facing=south,half=top,shape=straight,waterlogged=false,weathering=true]"
+      },
+      {
+        "char": "",
+        "block": "immersive_weathering:mossy_brick_stairs[facing=east,half=top,shape=straight,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "refurbished_furniture:oak_crate[open=false]",
+        "tag": {
+          "Items": [],
+          "id": "refurbished_furniture:crate"
+        }
+      },
+      {
+        "char": "",
+        "block": "refurbished_furniture:oak_chair[facing=west,tucked=false]"
+      },
+      {
+        "char": "",
+        "block": "refurbished_furniture:oak_table[east=false,north=false,south=true,west=false]"
+      },
+      {
+        "char": "",
+        "block": "refurbished_furniture:oak_chair[facing=east,tucked=false]"
+      },
+      {
+        "char": "",
+        "block": "refurbished_furniture:oak_table[east=false,north=true,south=false,west=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:brick_stairs[facing=east,half=top,shape=straight,waterlogged=false,weathering=false]"
+      },
+      {
+        "char": "",
+        "block": "horror_element_mod:blood_6[facing=east,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "horror_element_mod:blood_3[facing=east,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "horror_element_mod:marine_body[facing=east,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:vine[east=false,north=false,south=true,up=false,west=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:jungle_planks"
+      },
+      {
+        "char": "",
+        "block": "minecraft:jungle_door[facing=south,half=lower,hinge=left,open=true,powered=false]"
+      },
+      {
+        "char": "",
+        "block": "refurbished_furniture:light_gray_toilet[facing=west]",
+        "tag": {
+          "FluidTank": {
+            "FluidTank": {
+              "FluidName": "minecraft:empty",
+              "Amount": 0
+            }
+          },
+          "ForgeCaps": {},
+          "id": "refurbished_furniture:toilet"
+        }
+      },
+      {
+        "char": "",
+        "block": "minecraft:spruce_door[facing=west,half=lower,hinge=left,open=true,powered=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:black_concrete"
+      },
+      {
+        "char": "",
+        "block": "minecraft:vine[east=false,north=false,south=false,up=false,west=true]"
+      },
+      {
+        "char": "",
+        "block": "refurbished_furniture:black_basin[facing=east]",
+        "tag": {
+          "FluidTank": {
+            "FluidTank": {
+              "FluidName": "minecraft:empty",
+              "Amount": 0
+            }
+          },
+          "ForgeCaps": {},
+          "id": "refurbished_furniture:basin"
+        }
+      },
+      {
+        "char": "",
+        "block": "refurbished_furniture:black_basin[facing=west]",
+        "tag": {
+          "FluidTank": {
+            "FluidTank": {
+              "FluidName": "minecraft:empty",
+              "Amount": 0
+            }
+          },
+          "ForgeCaps": {},
+          "id": "refurbished_furniture:basin"
+        }
+      },
+      {
+        "char": "",
+        "block": "immersive_weathering:mossy_brick_stairs[facing=north,half=top,shape=straight,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:brick_stairs[facing=north,half=bottom,shape=straight,waterlogged=false,weathering=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:brick_stairs[facing=north,half=top,shape=straight,waterlogged=false,weathering=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:glass_pane[east=true,north=false,south=true,waterlogged=false,west=true]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:glass_pane[east=true,north=false,south=false,waterlogged=false,west=true]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:glass_pane[east=true,north=true,south=true,waterlogged=false,west=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:glass_pane[east=false,north=true,south=true,waterlogged=false,west=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:jungle_door[facing=south,half=upper,hinge=left,open=true,powered=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:spruce_door[facing=west,half=upper,hinge=left,open=true,powered=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:jungle_leaves[distance=7,persistent=true,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:vine[east=true,north=true,south=false,up=false,west=false]"
+      },
+      {
+        "char": "",
+        "block": "immersive_weathering:mossy_brick_stairs[facing=south,half=bottom,shape=straight,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:brick_stairs[facing=east,half=bottom,shape=straight,waterlogged=false,weathering=false]"
+      },
+      {
+        "char": "",
+        "block": "immersive_weathering:mossy_brick_stairs[facing=east,half=bottom,shape=straight,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "immersive_weathering:mossy_brick_stairs[facing=north,half=bottom,shape=straight,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "refurbished_furniture:oak_crate[open=false]",
+        "tag": {
+          "Items": [],
+          "id": "refurbished_furniture:crate"
+        },
+        "loot": "project_deadzone:gunstore_ammo_rare"
+      },
+      {
+        "char": "",
+        "block": "refurbished_furniture:oak_crate[open=false]",
+        "tag": {
+          "Items": [],
+          "id": "refurbished_furniture:crate"
+        },
+        "loot": "project_deadzone:gunstore_ammo"
+      }
+    ]
+  },
+  "slices": [
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  ]
+}

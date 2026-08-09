@@ -1,0 +1,13 @@
+name = "Radio Towers and Guns [TaCZ]"
+filename = "radio_towers_and_tacz-1.0.0.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "9ea604cbd0803fd7d7aed096b14c079bac3d1389"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 7109302
+project-id = 1365648

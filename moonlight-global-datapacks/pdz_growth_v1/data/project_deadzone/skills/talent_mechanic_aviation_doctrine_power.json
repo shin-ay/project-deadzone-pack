@@ -1,0 +1,32 @@
+﻿{
+    "id":  "project_deadzone:talent_mechanic_aviation_doctrine_power",
+    "bonuses":  [
+
+                ],
+    "requirements":  [
+
+                     ],
+    "directConnections":  [
+                              "project_deadzone:talent_mechanic_aviation_power_20"
+                          ],
+    "longConnections":  [
+
+                        ],
+    "oneWayConnections":  [
+
+                          ],
+    "tags":  [
+                 "pdz_talent_aviation",
+                 "pdz_talent_doctrine",
+                 "pdz_doctrine_mechanic_aviation",
+                 "pdz_doctrine_power",
+                 "pdz_node_talent_mechanic_aviation_doctrine_power"
+             ],
+    "backgroundTexture":  "skilltree:textures/icons/background/keystone.png",
+    "iconTexture":  "skilltree:textures/icons/arrow_steel.png",
+    "borderTexture":  "skilltree:textures/tooltip/lesser.png",
+    "positionX":  -33.24,
+    "positionY":  1269.56,
+    "buttonSize":  32,
+    "isStartingPoint":  false
+}

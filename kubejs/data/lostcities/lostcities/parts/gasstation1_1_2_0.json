@@ -1,0 +1,828 @@
+{
+  "xsize": 16,
+  "zsize": 16,
+  "palette": {
+    "palette": [
+      {
+        "char": "",
+        "block": "minecraft:air"
+      },
+      {
+        "char": "",
+        "block": "minecraft:quartz_pillar[axis=y]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:quartz_block"
+      },
+      {
+        "char": "",
+        "block": "minecraft:dirt"
+      },
+      {
+        "char": "",
+        "block": "minecraft:smooth_stone_slab[type=double,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:blackstone"
+      },
+      {
+        "char": "",
+        "block": "minecraft:basalt[axis=x]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:deepslate[axis=y]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:yellow_concrete"
+      },
+      {
+        "char": "",
+        "block": "minecraft:cobbled_deepslate"
+      },
+      {
+        "char": "",
+        "block": "immersive_weathering:mossy_stone"
+      },
+      {
+        "char": "",
+        "block": "minecraft:grass_block[snowy=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:cyan_terracotta"
+      },
+      {
+        "char": "",
+        "block": "minecraft:spawner",
+        "tag": {
+          "MaxNearbyEntities": 6,
+          "RequiredPlayerRange": 16,
+          "SpawnCount": 4,
+          "SpawnData": {
+            "entity": {}
+          },
+          "MaxSpawnDelay": 800,
+          "id": "minecraft:mob_spawner",
+          "SpawnRange": 4,
+          "Delay": 298,
+          "MinSpawnDelay": 200,
+          "SpawnPotentials": []
+        }
+      },
+      {
+        "char": "",
+        "block": "minecraft:spawner",
+        "tag": {
+          "MaxNearbyEntities": 6,
+          "RequiredPlayerRange": 16,
+          "SpawnCount": 4,
+          "SpawnData": {
+            "entity": {}
+          },
+          "MaxSpawnDelay": 800,
+          "id": "minecraft:mob_spawner",
+          "SpawnRange": 4,
+          "Delay": 60,
+          "MinSpawnDelay": 200,
+          "SpawnPotentials": []
+        }
+      },
+      {
+        "char": "",
+        "block": "minecraft:cracked_stone_bricks"
+      },
+      {
+        "char": "",
+        "block": "minecraft:vine[east=false,north=false,south=false,up=false,west=true]"
+      },
+      {
+        "char": "",
+        "block": "doomsday_decoration:shopping_cart[facing=north,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:grass"
+      },
+      {
+        "char": "",
+        "block": "minecraft:heavy_weighted_pressure_plate[power=0]"
+      },
+      {
+        "char": "",
+        "block": "immersive_weathering:exposed_iron_door[facing=west,half=lower,hinge=right,open=false,powered=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:vine[east=false,north=false,south=true,up=false,west=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:stone_bricks[weathering=false]"
+      },
+      {
+        "char": "",
+        "block": "immersive_weathering:exposed_iron_door[facing=south,half=lower,hinge=left,open=false,powered=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:mossy_stone_bricks"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:empty_market_shelves[facing=south,waterlogged=false]",
+        "tag": {
+          "Items": [],
+          "id": "apocalypsenow:empty_market_shelves"
+        }
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:market_shelves[facing=south,waterlogged=false]",
+        "tag": {
+          "Items": [],
+          "id": "apocalypsenow:market_shelves"
+        }
+      },
+      {
+        "char": "",
+        "block": "doomsday_decoration:shopping_cart[facing=west,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:vine[east=true,north=false,south=false,up=false,west=false]"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:market_shelves[facing=north,waterlogged=false]",
+        "tag": {
+          "Items": [],
+          "id": "apocalypsenow:market_shelves"
+        }
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:empty_market_shelves[facing=north,waterlogged=false]",
+        "tag": {
+          "Items": [],
+          "id": "apocalypsenow:empty_market_shelves"
+        }
+      },
+      {
+        "char": "",
+        "block": "doomsday_decoration:sandbag_4[facing=north,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "doomsday_decoration:sandbag[facing=north,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "doomsday_decoration:remains_11[facing=south]"
+      },
+      {
+        "char": "",
+        "block": "horror_element_mod:blood_3[facing=east,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "refurbished_furniture:oak_table[east=true,north=false,south=false,west=false]"
+      },
+      {
+        "char": "",
+        "block": "refurbished_furniture:oak_table[east=true,north=false,south=false,west=true]"
+      },
+      {
+        "char": "",
+        "block": "refurbished_furniture:oak_table[east=false,north=false,south=false,west=true]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:stone_brick_stairs[facing=south,half=top,shape=straight,waterlogged=false,weathering=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:birch_leaves[distance=7,persistent=true,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:stone_brick_slab[type=bottom,waterlogged=false,weathering=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:mossy_stone_brick_slab[type=bottom,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:vine[east=false,north=true,south=false,up=false,west=false]"
+      },
+      {
+        "char": "",
+        "block": "immersive_weathering:exposed_iron_door[facing=west,half=upper,hinge=right,open=false,powered=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:vine[east=false,north=false,south=true,up=false,west=true]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:oak_wall_sign[facing=north,waterlogged=false]",
+        "tag": {
+          "back_text": {
+            "has_glowing_text": 0,
+            "color": "black",
+            "messages": [
+              "{\"text\":\"\"}",
+              "{\"text\":\"\"}",
+              "{\"text\":\"\"}",
+              "{\"text\":\"\"}"
+            ]
+          },
+          "is_waxed": 0,
+          "ForgeCaps": {
+            "supplementaries:antique_ink": {
+              "ink": 0
+            }
+          },
+          "id": "minecraft:sign",
+          "front_text": {
+            "has_glowing_text": 0,
+            "color": "black",
+            "messages": [
+              "{\"text\":\"Out Of Service\"}",
+              "{\"text\":\"\"}",
+              "{\"text\":\"\"}",
+              "{\"text\":\"\"}"
+            ]
+          }
+        }
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:planksd[facing=north]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:oak_wall_sign[facing=west,waterlogged=false]",
+        "tag": {
+          "back_text": {
+            "has_glowing_text": 0,
+            "color": "black",
+            "messages": [
+              "{\"text\":\"\"}",
+              "{\"text\":\"\"}",
+              "{\"text\":\"\"}",
+              "{\"text\":\"\"}"
+            ]
+          },
+          "is_waxed": 0,
+          "ForgeCaps": {
+            "supplementaries:antique_ink": {
+              "ink": 0
+            }
+          },
+          "id": "minecraft:sign",
+          "front_text": {
+            "has_glowing_text": 0,
+            "color": "black",
+            "messages": [
+              "{\"text\":\"\"}",
+              "{\"extra\":[{\"text\":\"PUMP\"}],\"text\":\"\"}",
+              "{\"extra\":[{\"text\":\"4\"}],\"text\":\"\"}",
+              "{\"text\":\"\"}"
+            ]
+          }
+        }
+      },
+      {
+        "char": "",
+        "block": "immersive_weathering:exposed_iron_door[facing=south,half=upper,hinge=left,open=false,powered=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:glass_pane[east=true,north=false,south=true,waterlogged=false,west=true]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:glass_pane[east=false,north=true,south=true,waterlogged=false,west=true]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:glass_pane[east=true,north=false,south=true,waterlogged=false,west=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:glass_pane[east=true,north=false,south=false,waterlogged=false,west=true]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:oak_wall_sign[facing=south,waterlogged=false]",
+        "tag": {
+          "back_text": {
+            "has_glowing_text": 0,
+            "color": "black",
+            "messages": [
+              "{\"text\":\"\"}",
+              "{\"text\":\"\"}",
+              "{\"text\":\"\"}",
+              "{\"text\":\"\"}"
+            ]
+          },
+          "is_waxed": 0,
+          "ForgeCaps": {
+            "supplementaries:antique_ink": {
+              "ink": 0
+            }
+          },
+          "id": "minecraft:sign",
+          "front_text": {
+            "has_glowing_text": 0,
+            "color": "black",
+            "messages": [
+              "{\"extra\":[{\"text\":\"ID required\"}],\"text\":\"\"}",
+              "{\"extra\":[{\"text\":\"for alchoholic\"}],\"text\":\"\"}",
+              "{\"extra\":[{\"text\":\"beverages\"}],\"text\":\"\"}",
+              "{\"text\":\"\"}"
+            ]
+          }
+        }
+      },
+      {
+        "char": "",
+        "block": "refurbished_furniture:oak_storage_jar[facing=south]",
+        "tag": {
+          "Items": [],
+          "id": "refurbished_furniture:storage_jar"
+        }
+      },
+      {
+        "char": "",
+        "block": "refurbished_furniture:oak_storage_jar[facing=east]",
+        "tag": {
+          "Items": [],
+          "id": "refurbished_furniture:storage_jar"
+        }
+      },
+      {
+        "char": "",
+        "block": "minecraft:glass_pane[east=true,north=true,south=false,waterlogged=false,west=true]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:oak_trapdoor[facing=west,half=bottom,open=true,powered=false,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:redstone_lamp[lit=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:glass_pane[east=false,north=false,south=false,waterlogged=false,west=true]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:vine[east=false,north=false,south=false,up=true,west=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:glass_pane[east=true,north=false,south=false,waterlogged=false,west=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:oak_trapdoor[facing=south,half=bottom,open=true,powered=false,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "simplylight:wall_lamp[facing=south,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:vine[east=true,north=false,south=true,up=false,west=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:red_concrete"
+      },
+      {
+        "char": "",
+        "block": "securitycraft:security_camera[being_viewed=false,facing=north,powered=false,waterlogged=false]",
+        "tag": {
+          "owner": "Natsumamire",
+          "ownerUUID": "908f197c-46c7-4c8c-aad8-3782f26cb6fa",
+          "Modules": [],
+          "disguiseEnabled": 0,
+          "allowlistEnabled": 0,
+          "rotationSpeed": 0.018,
+          "initial_y_rotation": 180.0,
+          "initial_x_rotation": 30.0,
+          "shouldRotate": 1,
+          "customRotation": 0.0,
+          "movementSpeed": 2.0,
+          "lens": [],
+          "shutDown": 0,
+          "smartEnabled": 0,
+          "initial_zoom": 1.0,
+          "camera_rotation": -1.0620000000000005,
+          "disabled": 0,
+          "id": "securitycraft:security_camera",
+          "redstoneEnabled": 0,
+          "opacity": 100,
+          "add_to_rotation": 1
+        }
+      },
+      {
+        "char": "",
+        "block": "minecraft:stone_bricks[weathering=true]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:vine[east=true,north=true,south=false,up=false,west=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:sandstone_slab[type=bottom,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:sandstone_slab[type=double,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:oak_leaves[distance=7,persistent=true,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "refurbished_furniture:jungle_crate[open=false]",
+        "tag": {
+          "Items": [],
+          "id": "refurbished_furniture:crate"
+        }
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:empty_market_shelves[facing=south,waterlogged=false]",
+        "tag": {
+          "Items": [],
+          "id": "apocalypsenow:empty_market_shelves"
+        },
+        "loot": "project_deadzone:gasstation_food_t1"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:market_shelves[facing=north,waterlogged=false]",
+        "tag": {
+          "Items": [],
+          "id": "apocalypsenow:market_shelves"
+        },
+        "loot": "project_deadzone:gasstation_food_t1"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:empty_market_shelves[facing=north,waterlogged=false]",
+        "tag": {
+          "Items": [],
+          "id": "apocalypsenow:empty_market_shelves"
+        },
+        "loot": "project_deadzone:gasstation_food_t1"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:empty_market_shelves[facing=north,waterlogged=false]",
+        "tag": {
+          "Items": [],
+          "id": "apocalypsenow:empty_market_shelves"
+        },
+        "loot": "project_deadzone:gasstation_food_t1"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:empty_market_shelves[facing=north,waterlogged=false]",
+        "tag": {
+          "Items": [],
+          "id": "apocalypsenow:empty_market_shelves"
+        },
+        "loot": "project_deadzone:gasstation_food_t1"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:market_shelves[facing=south,waterlogged=false]",
+        "tag": {
+          "Items": [],
+          "id": "apocalypsenow:market_shelves"
+        },
+        "loot": "project_deadzone:gasstation_food_t1"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:empty_market_shelves[facing=south,waterlogged=false]",
+        "tag": {
+          "Items": [],
+          "id": "apocalypsenow:empty_market_shelves"
+        },
+        "loot": "project_deadzone:gasstation_food_t1"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:empty_market_shelves[facing=south,waterlogged=false]",
+        "tag": {
+          "Items": [],
+          "id": "apocalypsenow:empty_market_shelves"
+        },
+        "loot": "project_deadzone:gasstation_food_t1"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:empty_market_shelves[facing=south,waterlogged=false]",
+        "tag": {
+          "Items": [],
+          "id": "apocalypsenow:empty_market_shelves"
+        },
+        "loot": "project_deadzone:gasstation_food_t1"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:empty_market_shelves[facing=north,waterlogged=false]",
+        "tag": {
+          "Items": [],
+          "id": "apocalypsenow:empty_market_shelves"
+        },
+        "loot": "project_deadzone:gasstation_food_t1"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:market_shelves[facing=north,waterlogged=false]",
+        "tag": {
+          "Items": [],
+          "id": "apocalypsenow:market_shelves"
+        },
+        "loot": "project_deadzone:gasstation_food_t1"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:empty_market_shelves[facing=north,waterlogged=false]",
+        "tag": {
+          "Items": [],
+          "id": "apocalypsenow:empty_market_shelves"
+        },
+        "loot": "project_deadzone:gasstation_food_t1"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:empty_market_shelves[facing=north,waterlogged=false]",
+        "tag": {
+          "Items": [],
+          "id": "apocalypsenow:empty_market_shelves"
+        },
+        "loot": "project_deadzone:gasstation_food_t1"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:empty_market_shelves[facing=south,waterlogged=false]",
+        "tag": {
+          "Items": [],
+          "id": "apocalypsenow:empty_market_shelves"
+        },
+        "loot": "project_deadzone:gasstation_food_t1"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:empty_market_shelves[facing=south,waterlogged=false]",
+        "tag": {
+          "Items": [],
+          "id": "apocalypsenow:empty_market_shelves"
+        },
+        "loot": "project_deadzone:gasstation_food_t1"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:empty_market_shelves[facing=south,waterlogged=false]",
+        "tag": {
+          "Items": [],
+          "id": "apocalypsenow:empty_market_shelves"
+        },
+        "loot": "project_deadzone:gasstation_food_t1"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:empty_market_shelves[facing=north,waterlogged=false]",
+        "tag": {
+          "Items": [],
+          "id": "apocalypsenow:empty_market_shelves"
+        },
+        "loot": "project_deadzone:gasstation_food_t1"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:empty_market_shelves[facing=north,waterlogged=false]",
+        "tag": {
+          "Items": [],
+          "id": "apocalypsenow:empty_market_shelves"
+        },
+        "loot": "project_deadzone:gasstation_food_t1"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:empty_market_shelves[facing=north,waterlogged=false]",
+        "tag": {
+          "Items": [],
+          "id": "apocalypsenow:empty_market_shelves"
+        },
+        "loot": "project_deadzone:gasstation_food_t1"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:empty_market_shelves[facing=north,waterlogged=false]",
+        "tag": {
+          "Items": [],
+          "id": "apocalypsenow:empty_market_shelves"
+        },
+        "loot": "project_deadzone:gasstation_medical_t1"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:empty_market_shelves[facing=north,waterlogged=false]",
+        "tag": {
+          "Items": [],
+          "id": "apocalypsenow:empty_market_shelves"
+        },
+        "loot": "project_deadzone:gasstation_medical_t1"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:empty_market_shelves[facing=north,waterlogged=false]",
+        "tag": {
+          "Items": [],
+          "id": "apocalypsenow:empty_market_shelves"
+        },
+        "loot": "project_deadzone:gasstation_medical_t1"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:empty_market_shelves[facing=north,waterlogged=false]",
+        "tag": {
+          "Items": [],
+          "id": "apocalypsenow:empty_market_shelves"
+        },
+        "loot": "project_deadzone:gasstation_medical_t1"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:empty_market_shelves[facing=north,waterlogged=false]",
+        "tag": {
+          "Items": [],
+          "id": "apocalypsenow:empty_market_shelves"
+        },
+        "loot": "project_deadzone:gasstation_medical_t1"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:empty_market_shelves[facing=north,waterlogged=false]",
+        "tag": {
+          "Items": [],
+          "id": "apocalypsenow:empty_market_shelves"
+        },
+        "loot": "project_deadzone:gasstation_medical_t1"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:empty_market_shelves[facing=south,waterlogged=false]",
+        "tag": {
+          "Items": [],
+          "id": "apocalypsenow:empty_market_shelves"
+        },
+        "loot": "project_deadzone:gasstation_food_t2"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:empty_market_shelves[facing=south,waterlogged=false]",
+        "tag": {
+          "Items": [],
+          "id": "apocalypsenow:empty_market_shelves"
+        },
+        "loot": "project_deadzone:gasstation_food_t2"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:empty_market_shelves[facing=south,waterlogged=false]",
+        "tag": {
+          "Items": [],
+          "id": "apocalypsenow:empty_market_shelves"
+        },
+        "loot": "project_deadzone:gasstation_food_t2"
+      }
+    ]
+  },
+  "slices": [
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  ]
+}

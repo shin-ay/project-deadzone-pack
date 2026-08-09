@@ -1,0 +1,20 @@
+{
+  "firearms_core_1": {"x": 0, "y": 64, "definition": "firearms_core_1", "root": true},
+  "firearms_core_2": {"x": 0, "y": 0, "definition": "firearms_core_2"},
+  "firearms_core_3": {"x": 0, "y": -64, "definition": "firearms_core_3"},
+  "firearms_core_4": {"x": 0, "y": -128, "definition": "firearms_core_4"},
+  "firearms_core_5": {"x": 0, "y": -192, "definition": "firearms_core_5"},
+  "firearms_core_6": {"x": 0, "y": -256, "definition": "firearms_core_6"},
+
+  "ammo_discipline": {"x": -128, "y": 0, "definition": "ammo_discipline"},
+  "tactical_reload": {"x": -160, "y": -96, "definition": "tactical_reload"},
+  "last_magazine": {"x": -192, "y": -224, "definition": "last_magazine"},
+
+  "steady_hand": {"x": 128, "y": 0, "definition": "steady_hand"},
+  "mobile_operator": {"x": 160, "y": -96, "definition": "mobile_operator"},
+  "controlled_burst": {"x": 192, "y": -224, "definition": "controlled_burst"},
+
+  "field_maintenance": {"x": 256, "y": 32, "definition": "field_maintenance"},
+  "quick_recovery": {"x": 288, "y": -96, "definition": "quick_recovery"},
+  "field_gunsmith": {"x": 320, "y": -224, "definition": "field_gunsmith"}
+}

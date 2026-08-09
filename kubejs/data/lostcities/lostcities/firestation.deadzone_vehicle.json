@@ -1,0 +1,63 @@
+{
+  "format": "project_deadzone_vehicle_markers_v1",
+  "notes": "Editor export. Coordinates are structure-local X/Z plus Building Floor/Local Y.",
+  "minVehicleSpacing": 8,
+  "markers": [
+    {
+      "id": "vehicle_marker_000",
+      "category": "SERVICE",
+      "editorType": "Service Vehicle",
+      "x": 18,
+      "z": 8,
+      "buildingFloor": 0,
+      "localY": 1,
+      "facing": "south",
+      "length": 5,
+      "width": 3,
+      "clearance": 1,
+      "wreckPreferred": false
+    },
+    {
+      "id": "vehicle_marker_001",
+      "category": "SERVICE",
+      "editorType": "Service Vehicle",
+      "x": 37,
+      "z": 8,
+      "buildingFloor": 0,
+      "localY": 1,
+      "facing": "south",
+      "length": 5,
+      "width": 3,
+      "clearance": 1,
+      "wreckPreferred": false
+    },
+    {
+      "id": "vehicle_marker_002",
+      "category": "SERVICE",
+      "editorType": "Service Vehicle",
+      "x": 26,
+      "z": 23,
+      "buildingFloor": 0,
+      "localY": 1,
+      "facing": "south",
+      "length": 5,
+      "width": 3,
+      "clearance": 1,
+      "wreckPreferred": false
+    },
+    {
+      "id": "vehicle_marker_003",
+      "category": "EMERGENCY",
+      "editorType": "Ambulance",
+      "x": 26,
+      "z": 8,
+      "buildingFloor": 0,
+      "localY": 1,
+      "facing": "south",
+      "length": 5,
+      "width": 3,
+      "clearance": 1,
+      "wreckPreferred": false
+    }
+  ]
+}

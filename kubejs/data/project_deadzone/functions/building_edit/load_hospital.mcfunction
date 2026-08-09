@@ -1,0 +1,40 @@
+kill @e[type=minecraft:marker,tag=dz_hospital_edit_origin]
+summon minecraft:marker ~ ~ ~ {Tags:["dz_hospital_edit_origin","dz_building_edit_origin"]}
+place template project_deadzone:deadzone_chaosz_gianthospital_edit_x0_y0_z0 ~0 ~0 ~0
+place template project_deadzone:deadzone_chaosz_gianthospital_edit_x0_y0_z1 ~0 ~0 ~48
+place template project_deadzone:deadzone_chaosz_gianthospital_edit_x0_y0_z2 ~0 ~0 ~96
+place template project_deadzone:deadzone_chaosz_gianthospital_edit_x0_y1_z0 ~0 ~48 ~0
+place template project_deadzone:deadzone_chaosz_gianthospital_edit_x0_y1_z1 ~0 ~48 ~48
+place template project_deadzone:deadzone_chaosz_gianthospital_edit_x0_y1_z2 ~0 ~48 ~96
+place template project_deadzone:deadzone_chaosz_gianthospital_edit_x0_y2_z0 ~0 ~96 ~0
+place template project_deadzone:deadzone_chaosz_gianthospital_edit_x0_y2_z1 ~0 ~96 ~48
+place template project_deadzone:deadzone_chaosz_gianthospital_edit_x0_y2_z2 ~0 ~96 ~96
+place template project_deadzone:deadzone_chaosz_gianthospital_edit_x0_y3_z0 ~0 ~144 ~0
+place template project_deadzone:deadzone_chaosz_gianthospital_edit_x0_y3_z1 ~0 ~144 ~48
+place template project_deadzone:deadzone_chaosz_gianthospital_edit_x0_y3_z2 ~0 ~144 ~96
+place template project_deadzone:deadzone_chaosz_gianthospital_edit_x1_y0_z0 ~48 ~0 ~0
+place template project_deadzone:deadzone_chaosz_gianthospital_edit_x1_y0_z1 ~48 ~0 ~48
+place template project_deadzone:deadzone_chaosz_gianthospital_edit_x1_y0_z2 ~48 ~0 ~96
+place template project_deadzone:deadzone_chaosz_gianthospital_edit_x1_y1_z0 ~48 ~48 ~0
+place template project_deadzone:deadzone_chaosz_gianthospital_edit_x1_y1_z1 ~48 ~48 ~48
+place template project_deadzone:deadzone_chaosz_gianthospital_edit_x1_y1_z2 ~48 ~48 ~96
+place template project_deadzone:deadzone_chaosz_gianthospital_edit_x1_y2_z0 ~48 ~96 ~0
+place template project_deadzone:deadzone_chaosz_gianthospital_edit_x1_y2_z1 ~48 ~96 ~48
+place template project_deadzone:deadzone_chaosz_gianthospital_edit_x1_y2_z2 ~48 ~96 ~96
+place template project_deadzone:deadzone_chaosz_gianthospital_edit_x1_y3_z0 ~48 ~144 ~0
+place template project_deadzone:deadzone_chaosz_gianthospital_edit_x1_y3_z1 ~48 ~144 ~48
+place template project_deadzone:deadzone_chaosz_gianthospital_edit_x1_y3_z2 ~48 ~144 ~96
+place template project_deadzone:deadzone_chaosz_gianthospital_edit_x2_y0_z0 ~96 ~0 ~0
+place template project_deadzone:deadzone_chaosz_gianthospital_edit_x2_y0_z1 ~96 ~0 ~48
+place template project_deadzone:deadzone_chaosz_gianthospital_edit_x2_y0_z2 ~96 ~0 ~96
+place template project_deadzone:deadzone_chaosz_gianthospital_edit_x2_y1_z0 ~96 ~48 ~0
+place template project_deadzone:deadzone_chaosz_gianthospital_edit_x2_y1_z1 ~96 ~48 ~48
+place template project_deadzone:deadzone_chaosz_gianthospital_edit_x2_y1_z2 ~96 ~48 ~96
+place template project_deadzone:deadzone_chaosz_gianthospital_edit_x2_y2_z0 ~96 ~96 ~0
+place template project_deadzone:deadzone_chaosz_gianthospital_edit_x2_y2_z1 ~96 ~96 ~48
+place template project_deadzone:deadzone_chaosz_gianthospital_edit_x2_y2_z2 ~96 ~96 ~96
+place template project_deadzone:deadzone_chaosz_gianthospital_edit_x2_y3_z0 ~96 ~144 ~0
+place template project_deadzone:deadzone_chaosz_gianthospital_edit_x2_y3_z1 ~96 ~144 ~48
+place template project_deadzone:deadzone_chaosz_gianthospital_edit_x2_y3_z2 ~96 ~144 ~96
+tellraw @s {"text":"巨大病院を現在位置から組み立てました (128x156x112)","color":"green"}
+tellraw @s [{"text":"保存区画を表示: ","color":"yellow"},{"text":"[クリック]","color":"aqua","underlined":true,"clickEvent":{"action":"run_command","value":"/function project_deadzone:building_edit/guide_hospital"}}]

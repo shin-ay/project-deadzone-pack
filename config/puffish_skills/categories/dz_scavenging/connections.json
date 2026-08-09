@@ -1,0 +1,30 @@
+[
+    [
+        "salvage_basics",
+        "quick_hands"
+    ],
+    [
+        "quick_hands",
+        "urban_eye"
+    ],
+    [
+        "quick_hands",
+        "pack_rat"
+    ],
+    [
+        "urban_eye",
+        "rare_finder"
+    ],
+    [
+        "rare_finder",
+        "master_appraiser"
+    ],
+    [
+        "pack_rat",
+        "heavy_hauler"
+    ],
+    [
+        "heavy_hauler",
+        "master_hauler"
+    ]
+]

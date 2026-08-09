@@ -1,0 +1,15 @@
+{
+    "title":  "SCAVENGING / 回収",
+    "description":  "JOBとは別に成長する汎用Skill Tree。明るいノードでもSP・前提・Tier条件をすべて満たす必要があります。",
+    "extra_description":  "PROJECT DEADZONE Growth MVP v0.1 / 旧進捗はまだ削除せず変換プレビューで保護します。",
+    "icon":  {
+                 "type":  "item",
+                 "data":  {
+                              "item":  "minecraft:bundle"
+                          }
+             },
+    "background":  "minecraft:textures/gui/advancements/backgrounds/adventure.png",
+    "unlocked_by_default":  true,
+    "starting_points":  0,
+    "exclusive_root":  false
+}

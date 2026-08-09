@@ -1,0 +1,45 @@
+Master Mechanicとの違い
+
+ここは明確にしておこう。
+
+Master Mechanic
+→ 🚗 移動手段を復活させる
+→ 車・エンジン・タイヤ・車両部品
+
+Chief Engineer
+→ ⚡ 文明を復活させる
+→ 電力・加工・自動化・工場
+
+だから終盤の拠点では、
+
+Scavenger
+   ↓ 資源回収
+
+Chief Engineer
+   ↓ 発電・加工・設備
+
+Master Mechanic
+   ↓ 車両復旧
+
+車で遠征
+   ↓
+
+さらに資源回収
+
+という循環が作れる。
+
+Specialist Challenge
+
+Engineering Lv10に加えて、
+
+Create設備を一定種類稼働 + IE設備を一定種類稼働 + 大型設備完成 + 一定量の電力生産/材料加工
+
+あたりを条件にする。
+
+最終試験は、
+
+「自立した電力＋加工ラインを完成させる」
+
+がChief Engineerらしくて良さそう。
+
+これで4つ目。

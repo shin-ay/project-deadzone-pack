@@ -1,0 +1,13 @@
+name = "Naturalist Delight"
+filename = "farmerd_naturalist_compat-0.3-1.20.1.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "e2111505de9062c452de5685d149acdaec3f1d9c"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 8555848
+project-id = 1236964

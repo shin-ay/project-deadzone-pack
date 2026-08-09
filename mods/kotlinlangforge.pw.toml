@@ -1,0 +1,13 @@
+name = "KotlinLangForge"
+filename = "KotlinLangForge-kff-compat-2.12.2-k2.4.10-2.0+forge.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "4c617ecca5a04f572c6b6496edb52cd7cd1a2f79"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 8460759
+project-id = 1244682

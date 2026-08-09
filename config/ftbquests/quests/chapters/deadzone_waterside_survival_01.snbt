@@ -1,0 +1,145 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "deadzone_waterside_survival_01"
+	group: "51DC04D9192698A6"
+	icon: {
+		Count: 1
+		id: "minecraft:fishing_rod"
+		tag: {
+			Damage: 0
+		}
+	}
+	id: "0E4EADC762552314"
+	order_index: 5
+	quest_links: [ ]
+	quests: [
+		{
+			description: [
+				"正面から危険な市街地へ入らなくても、川や湖から食料を確保できる。"
+				"釣り竿を用意し、魚を3匹確保しよう。"
+			]
+			icon: {
+				Count: 1
+				id: "minecraft:fishing_rod"
+				tag: {
+					Damage: 0
+				}
+			}
+			id: "1800F54BE271A0B8"
+			rewards: [
+				{
+					id: "5C30D55761A9D830"
+					item: {
+						Count: 1
+						id: "aquaculture:iron_fishing_rod"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					count: 2
+					id: "5A30AF5A7362A501"
+					item: "apocalypsenow:money"
+					type: "item"
+				}
+			]
+			tasks: [
+				{
+					consume_items: false
+					id: "4D2DAC6DBA098265"
+					item: {
+						Count: 1
+						id: "minecraft:fishing_rod"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 3L
+					id: "03D695B9032A24E2"
+					item: "minecraft:cod"
+					type: "item"
+				}
+			]
+			title: "静かな食料調達"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			description: [
+				"魚はそのまま抱えるより、保存しやすい切り身に加工した方が遠征に向いている。"
+				"調理済みの魚の切り身を4個納品しよう。"
+			]
+			icon: "aquaculture:fish_fillet_cooked"
+			id: "0F2E4A09D47DA127"
+			rewards: [
+				{
+					count: 8
+					id: "4F0187EC4A7E6006"
+					item: {
+						Count: 1
+						id: "aquaculture:worm"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "1CFF18629C7EFC43"
+					type: "xp"
+					xp: 5
+				}
+			]
+			tasks: [{
+				consume_items: true
+				count: 4L
+				id: "75BF451636BA0271"
+				item: "aquaculture:fish_fillet_cooked"
+				type: "item"
+			}]
+			title: "釣果の加工"
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			description: [
+				"キャンプでは腹を満たすだけでなく、傷ついた仲間が食べやすい温かい料理も必要だ。"
+				"Aquaculture Delightの漁師風チャウダーを2個納品しよう。"
+			]
+			icon: "aquaculturedelight:poor_fisher_chowder"
+			id: "7C41CDCD88E7A5A7"
+			rewards: [
+				{
+					count: 6
+					id: "672B1E9D5F513684"
+					item: "apocalypsenow:money"
+					type: "item"
+				}
+				{
+					count: 2
+					id: "66F16681D9DC8EC9"
+					item: "apocalypsenow:bandage"
+					type: "item"
+				}
+			]
+			tasks: [{
+				consume_items: true
+				count: 2L
+				id: "667C7BF2BED522B5"
+				item: "aquaculturedelight:poor_fisher_chowder"
+				type: "item"
+			}]
+			title: "キャンプの魚料理"
+			x: 4.0d
+			y: 0.0d
+		}
+	]
+	title: "水辺のサバイバル"
+}

@@ -1,0 +1,78 @@
+{
+  "medical_core_1": {
+    "x": 0,
+    "y": 64,
+    "definition": "medical_core_1",
+    "root": true
+  },
+  "medical_core_2": {
+    "x": 0,
+    "y": 0,
+    "definition": "medical_core_2"
+  },
+  "medical_core_3": {
+    "x": 0,
+    "y": -64,
+    "definition": "medical_core_3"
+  },
+  "medical_core_4": {
+    "x": 0,
+    "y": -128,
+    "definition": "medical_core_4"
+  },
+  "medical_core_5": {
+    "x": 0,
+    "y": -192,
+    "definition": "medical_core_5"
+  },
+  "medical_core_6": {
+    "x": 0,
+    "y": -256,
+    "definition": "medical_core_6"
+  },
+  "first_responder": {
+    "x": -160,
+    "y": 0,
+    "definition": "first_responder"
+  },
+  "trauma_care": {
+    "x": -192,
+    "y": -112,
+    "definition": "trauma_care"
+  },
+  "field_surgeon": {
+    "x": -224,
+    "y": -224,
+    "definition": "field_surgeon"
+  },
+  "careful_application": {
+    "x": 160,
+    "y": 0,
+    "definition": "careful_application"
+  },
+  "supply_saver": {
+    "x": 192,
+    "y": -112,
+    "definition": "supply_saver"
+  },
+  "pharmacist": {
+    "x": 224,
+    "y": -224,
+    "definition": "pharmacist"
+  },
+  "triage": {
+    "x": 320,
+    "y": 0,
+    "definition": "triage"
+  },
+  "combat_medic": {
+    "x": 352,
+    "y": -112,
+    "definition": "combat_medic"
+  },
+  "life_saver": {
+    "x": 384,
+    "y": -224,
+    "definition": "life_saver"
+  }
+}

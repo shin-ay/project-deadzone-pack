@@ -1,0 +1,967 @@
+{
+  "xsize": 16,
+  "zsize": 16,
+  "palette": {
+    "palette": [
+      {
+        "char": "",
+        "block": "minecraft:air"
+      },
+      {
+        "char": "",
+        "block": "minecraft:basalt[axis=x]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:blackstone"
+      },
+      {
+        "char": "",
+        "block": "minecraft:cyan_terracotta"
+      },
+      {
+        "char": "",
+        "block": "minecraft:mossy_cobblestone"
+      },
+      {
+        "char": "",
+        "block": "minecraft:grass_block[snowy=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:cobblestone[weathering=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:cobbled_deepslate"
+      },
+      {
+        "char": "",
+        "block": "minecraft:andesite"
+      },
+      {
+        "char": "",
+        "block": "minecraft:polished_andesite"
+      },
+      {
+        "char": "",
+        "block": "minecraft:deepslate[axis=y]"
+      },
+      {
+        "char": "",
+        "block": "immersive_weathering:mossy_stone"
+      },
+      {
+        "char": "",
+        "block": "minecraft:stone[weathering=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:stone_bricks[weathering=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:mossy_stone_brick_wall[east=none,north=none,south=none,up=true,waterlogged=false,west=none]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:grass"
+      },
+      {
+        "char": "",
+        "block": "minecraft:jungle_planks"
+      },
+      {
+        "char": "",
+        "block": "immersive_weathering:mossy_bricks"
+      },
+      {
+        "char": "",
+        "block": "minecraft:vine[east=false,north=true,south=false,up=false,west=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:vine[east=false,north=false,south=false,up=false,west=true]"
+      },
+      {
+        "char": "",
+        "block": "refurbished_furniture:dark_oak_table[east=true,north=false,south=true,west=false]"
+      },
+      {
+        "char": "",
+        "block": "refurbished_furniture:dark_oak_table[east=true,north=false,south=true,west=true]"
+      },
+      {
+        "char": "",
+        "block": "refurbished_furniture:dark_oak_table[east=false,north=false,south=true,west=true]"
+      },
+      {
+        "char": "",
+        "block": "refurbished_furniture:dark_oak_table[east=true,north=true,south=false,west=false]"
+      },
+      {
+        "char": "",
+        "block": "refurbished_furniture:dark_oak_table[east=true,north=true,south=false,west=true]"
+      },
+      {
+        "char": "",
+        "block": "refurbished_furniture:dark_oak_table[east=false,north=true,south=false,west=true]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:stone_brick_wall[east=none,north=none,south=none,up=true,waterlogged=false,weathering=false,west=none]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:tall_grass[half=lower]"
+      },
+      {
+        "char": "",
+        "block": "mcwdoors:metal_reinforced_door[facing=west,half=lower,hinge=right,open=false,powered=false]"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:metal_shelves_three[facing=north,waterlogged=false]",
+        "tag": {
+          "Items": [],
+          "id": "apocalypsenow:metal_shelves_three"
+        }
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:metal_shelves[facing=north,waterlogged=false]",
+        "tag": {
+          "Items": [],
+          "id": "apocalypsenow:metal_shelves"
+        }
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:metal_shelvels_two[facing=north,waterlogged=false]",
+        "tag": {
+          "Items": [],
+          "id": "apocalypsenow:metal_shelvels_two"
+        }
+      },
+      {
+        "char": "",
+        "block": "immersive_weathering:oak_leaf_pile[age=0,layers=1]"
+      },
+      {
+        "char": "",
+        "block": "mcwdoors:metal_reinforced_door[facing=west,half=lower,hinge=left,open=false,powered=false]"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:metalshelvesfive[facing=north,waterlogged=false]",
+        "tag": {
+          "Items": [],
+          "id": "apocalypsenow:metalshelvesfive"
+        }
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:metelshelvesfour[facing=north,waterlogged=false]",
+        "tag": {
+          "Items": [],
+          "id": "apocalypsenow:metelshelvesfour"
+        }
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:metalshelvesone[facing=north,waterlogged=false]",
+        "tag": {
+          "Items": [],
+          "id": "apocalypsenow:metalshelvesone"
+        }
+      },
+      {
+        "char": "",
+        "block": "minecraft:vine[east=true,north=false,south=false,up=false,west=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:vine[east=false,north=false,south=true,up=false,west=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:deepslate[axis=x]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:polished_deepslate"
+      },
+      {
+        "char": "",
+        "block": "mcwwindows:oak_window2[facing=south,windowstate=closed]"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:plankse[facing=west]"
+      },
+      {
+        "char": "",
+        "block": "mcwwindows:oak_window2[facing=east,windowstate=closed]"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:metal_bars[facing=west]"
+      },
+      {
+        "char": "",
+        "block": "display_case:display_case[waterlogged=false]",
+        "tag": {
+          "Item": [
+            {},
+            {
+              "id": "display_case:display_case_lid",
+              "Count": 1
+            }
+          ],
+          "Waxed": 0,
+          "id": "display_case:display_case",
+          "Rotation": 45734
+        }
+      },
+      {
+        "char": "",
+        "block": "display_case:display_case[waterlogged=false]",
+        "tag": {
+          "Item": [
+            {},
+            {
+              "id": "display_case:display_case_lid",
+              "Count": 1
+            }
+          ],
+          "Waxed": 0,
+          "id": "display_case:display_case",
+          "Rotation": 45742
+        }
+      },
+      {
+        "char": "",
+        "block": "display_case:display_case[waterlogged=false]",
+        "tag": {
+          "Item": [
+            {},
+            {
+              "id": "display_case:display_case_lid",
+              "Count": 1
+            }
+          ],
+          "Waxed": 0,
+          "id": "display_case:display_case",
+          "Rotation": 45746
+        }
+      },
+      {
+        "char": "",
+        "block": "display_case:display_case[waterlogged=false]",
+        "tag": {
+          "Item": [
+            {},
+            {
+              "id": "display_case:display_case_lid",
+              "Count": 1
+            }
+          ],
+          "Waxed": 0,
+          "id": "display_case:display_case",
+          "Rotation": 45751
+        }
+      },
+      {
+        "char": "",
+        "block": "display_case:display_case[waterlogged=false]",
+        "tag": {
+          "Item": [
+            {},
+            {
+              "id": "display_case:display_case_lid",
+              "Count": 1
+            }
+          ],
+          "Waxed": 0,
+          "id": "display_case:display_case",
+          "Rotation": 45773
+        }
+      },
+      {
+        "char": "",
+        "block": "display_case:display_case[waterlogged=false]",
+        "tag": {
+          "Item": [
+            {},
+            {
+              "id": "display_case:display_case_lid",
+              "Count": 1
+            }
+          ],
+          "Waxed": 0,
+          "id": "display_case:display_case",
+          "Rotation": 45768
+        }
+      },
+      {
+        "char": "",
+        "block": "display_case:display_case[waterlogged=false]",
+        "tag": {
+          "Item": [
+            {},
+            {
+              "id": "display_case:display_case_lid",
+              "Count": 1
+            }
+          ],
+          "Waxed": 0,
+          "id": "display_case:display_case",
+          "Rotation": 45763
+        }
+      },
+      {
+        "char": "",
+        "block": "display_case:display_case[waterlogged=false]",
+        "tag": {
+          "Item": [
+            {},
+            {
+              "id": "display_case:display_case_lid",
+              "Count": 1
+            }
+          ],
+          "Waxed": 0,
+          "id": "display_case:display_case",
+          "Rotation": 45756
+        }
+      },
+      {
+        "char": "",
+        "block": "minecraft:tall_grass[half=upper]"
+      },
+      {
+        "char": "",
+        "block": "mcwdoors:metal_reinforced_door[facing=west,half=upper,hinge=right,open=false,powered=false]"
+      },
+      {
+        "char": "",
+        "block": "mcwdoors:metal_reinforced_door[facing=west,half=upper,hinge=left,open=false,powered=false]"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:planksc[facing=west]"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:planksb[facing=west]"
+      },
+      {
+        "char": "",
+        "block": "mcwwindows:oak_window2[facing=west,windowstate=closed]"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:planks_a[facing=west]"
+      },
+      {
+        "char": "",
+        "block": "securitycraft:display_case[face=wall,facing=north,waterlogged=false]",
+        "tag": {
+          "owner": "Natsumamire",
+          "sendAllowlistMessage": 0,
+          "ShouldBeOpen": 0,
+          "ownerUUID": "908f197c-46c7-4c8c-aad8-3782f26cb6fa",
+          "Modules": [],
+          "allowlistEnabled": 0,
+          "cooldownLeft": -1,
+          "harmingEnabled": 0,
+          "smartEnabled": 0,
+          "denylistEnabled": 0,
+          "sendDenylistMessage": 1,
+          "disabled": 0,
+          "DisplayedStack": {
+            "id": "minecraft:air",
+            "Count": 0
+          },
+          "id": "securitycraft:display_case",
+          "smartModuleCooldown": 100
+        }
+      },
+      {
+        "char": "",
+        "block": "immersive_weathering:cracked_bricks"
+      },
+      {
+        "char": "",
+        "block": "securitycraft:security_camera[being_viewed=false,facing=south,powered=false,waterlogged=false]",
+        "tag": {
+          "owner": "Natsumamire",
+          "ownerUUID": "908f197c-46c7-4c8c-aad8-3782f26cb6fa",
+          "Modules": [],
+          "disguiseEnabled": 0,
+          "allowlistEnabled": 0,
+          "rotationSpeed": 0.018,
+          "initial_y_rotation": 0.0,
+          "initial_x_rotation": 30.0,
+          "shouldRotate": 1,
+          "customRotation": 0.0,
+          "movementSpeed": 2.0,
+          "lens": [],
+          "shutDown": 0,
+          "smartEnabled": 0,
+          "initial_zoom": 1.0,
+          "camera_rotation": 0.7920000000000003,
+          "disabled": 0,
+          "id": "securitycraft:security_camera",
+          "redstoneEnabled": 0,
+          "opacity": 100,
+          "add_to_rotation": 0
+        }
+      },
+      {
+        "char": "",
+        "block": "securitycraft:security_camera[being_viewed=false,facing=west,powered=false,waterlogged=false]",
+        "tag": {
+          "owner": "Natsumamire",
+          "ownerUUID": "908f197c-46c7-4c8c-aad8-3782f26cb6fa",
+          "Modules": [],
+          "disguiseEnabled": 0,
+          "allowlistEnabled": 0,
+          "rotationSpeed": 0.018,
+          "initial_y_rotation": 90.0,
+          "initial_x_rotation": 30.0,
+          "shouldRotate": 1,
+          "customRotation": 0.0,
+          "movementSpeed": 2.0,
+          "lens": [],
+          "shutDown": 0,
+          "smartEnabled": 0,
+          "initial_zoom": 1.0,
+          "camera_rotation": 0.3060000000000001,
+          "disabled": 0,
+          "id": "securitycraft:security_camera",
+          "redstoneEnabled": 0,
+          "opacity": 100,
+          "add_to_rotation": 1
+        }
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:planksd[facing=west]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:vine[east=false,north=false,south=false,up=true,west=false]"
+      },
+      {
+        "char": "",
+        "block": "securitycraft:security_camera[being_viewed=false,facing=north,powered=false,waterlogged=false]",
+        "tag": {
+          "owner": "Natsumamire",
+          "ownerUUID": "908f197c-46c7-4c8c-aad8-3782f26cb6fa",
+          "Modules": [],
+          "disguiseEnabled": 0,
+          "allowlistEnabled": 0,
+          "rotationSpeed": 0.018,
+          "initial_y_rotation": 180.0,
+          "initial_x_rotation": 30.0,
+          "shouldRotate": 1,
+          "customRotation": 0.0,
+          "movementSpeed": 2.0,
+          "lens": [],
+          "shutDown": 0,
+          "smartEnabled": 0,
+          "initial_zoom": 1.0,
+          "camera_rotation": 1.512000000000001,
+          "disabled": 0,
+          "id": "securitycraft:security_camera",
+          "redstoneEnabled": 0,
+          "opacity": 100,
+          "add_to_rotation": 1
+        }
+      },
+      {
+        "char": "",
+        "block": "minecraft:bricks[weathering=true]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:smooth_stone_slab[type=top,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:redstone_lamp[lit=false]"
+      },
+      {
+        "char": "",
+        "block": "simplylight:illuminant_orange_block_on[on=true]"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:metal_shelves_three[facing=north,waterlogged=false]",
+        "tag": {
+          "Items": [],
+          "id": "apocalypsenow:metal_shelves_three"
+        },
+        "loot": "project_deadzone:gunstore_ammo"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:metal_shelvels_two[facing=north,waterlogged=false]",
+        "tag": {
+          "Items": [],
+          "id": "apocalypsenow:metal_shelvels_two"
+        },
+        "loot": "project_deadzone:gunstore_ammo"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:metal_shelves[facing=north,waterlogged=false]",
+        "tag": {
+          "Items": [],
+          "id": "apocalypsenow:metal_shelves"
+        },
+        "loot": "project_deadzone:gunstore_ammo"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:metalshelvesfive[facing=north,waterlogged=false]",
+        "tag": {
+          "Items": [],
+          "id": "apocalypsenow:metalshelvesfive"
+        },
+        "loot": "project_deadzone:gunstore_ammo"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:metal_shelves[facing=north,waterlogged=false]",
+        "tag": {
+          "Items": [],
+          "id": "apocalypsenow:metal_shelves"
+        },
+        "loot": "project_deadzone:gunstore_ammo"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:metal_shelves[facing=north,waterlogged=false]",
+        "tag": {
+          "Items": [],
+          "id": "apocalypsenow:metal_shelves"
+        },
+        "loot": "project_deadzone:gunstore_ammo"
+      },
+      {
+        "char": "",
+        "block": "display_case:display_case[waterlogged=false]",
+        "tag": {
+          "Item": [
+            {},
+            {
+              "id": "display_case:display_case_lid",
+              "Count": 1
+            }
+          ],
+          "Waxed": 0,
+          "id": "display_case:display_case",
+          "Rotation": 45773
+        },
+        "loot": "project_deadzone:gunstore_weapons"
+      },
+      {
+        "char": "",
+        "block": "display_case:display_case[waterlogged=false]",
+        "tag": {
+          "Item": [
+            {},
+            {
+              "id": "display_case:display_case_lid",
+              "Count": 1
+            }
+          ],
+          "Waxed": 0,
+          "id": "display_case:display_case",
+          "Rotation": 45768
+        },
+        "loot": "project_deadzone:gunstore_weapons"
+      },
+      {
+        "char": "",
+        "block": "display_case:display_case[waterlogged=false]",
+        "tag": {
+          "Item": [
+            {},
+            {
+              "id": "display_case:display_case_lid",
+              "Count": 1
+            }
+          ],
+          "Waxed": 0,
+          "id": "display_case:display_case",
+          "Rotation": 45742
+        },
+        "loot": "project_deadzone:gunstore_weapons"
+      },
+      {
+        "char": "",
+        "block": "display_case:display_case[waterlogged=false]",
+        "tag": {
+          "Item": [
+            {},
+            {
+              "id": "display_case:display_case_lid",
+              "Count": 1
+            }
+          ],
+          "Waxed": 0,
+          "id": "display_case:display_case",
+          "Rotation": 45746
+        },
+        "loot": "project_deadzone:gunstore_weapons"
+      },
+      {
+        "char": "",
+        "block": "display_case:display_case[waterlogged=false]",
+        "tag": {
+          "Item": [
+            {},
+            {
+              "id": "display_case:display_case_lid",
+              "Count": 1
+            }
+          ],
+          "Waxed": 0,
+          "id": "display_case:display_case",
+          "Rotation": 45763
+        },
+        "loot": "project_deadzone:gunstore_weapons"
+      },
+      {
+        "char": "",
+        "block": "display_case:display_case[waterlogged=false]",
+        "tag": {
+          "Item": [
+            {},
+            {
+              "id": "display_case:display_case_lid",
+              "Count": 1
+            }
+          ],
+          "Waxed": 0,
+          "id": "display_case:display_case",
+          "Rotation": 45751
+        },
+        "loot": "project_deadzone:gunstore_weapons"
+      },
+      {
+        "char": "",
+        "block": "securitycraft:display_case[face=wall,facing=north,waterlogged=false]",
+        "tag": {
+          "owner": "Natsumamire",
+          "sendAllowlistMessage": 0,
+          "ShouldBeOpen": 0,
+          "ownerUUID": "908f197c-46c7-4c8c-aad8-3782f26cb6fa",
+          "Modules": [],
+          "allowlistEnabled": 0,
+          "cooldownLeft": -1,
+          "harmingEnabled": 0,
+          "smartEnabled": 0,
+          "denylistEnabled": 0,
+          "sendDenylistMessage": 1,
+          "disabled": 0,
+          "DisplayedStack": {
+            "id": "minecraft:air",
+            "Count": 0
+          },
+          "id": "securitycraft:display_case",
+          "smartModuleCooldown": 100
+        },
+        "loot": "project_deadzone:gunstore_armory"
+      },
+      {
+        "char": "",
+        "block": "securitycraft:display_case[face=wall,facing=north,waterlogged=false]",
+        "tag": {
+          "owner": "Natsumamire",
+          "sendAllowlistMessage": 0,
+          "ShouldBeOpen": 0,
+          "ownerUUID": "908f197c-46c7-4c8c-aad8-3782f26cb6fa",
+          "Modules": [],
+          "allowlistEnabled": 0,
+          "cooldownLeft": -1,
+          "harmingEnabled": 0,
+          "smartEnabled": 0,
+          "denylistEnabled": 0,
+          "sendDenylistMessage": 1,
+          "disabled": 0,
+          "DisplayedStack": {
+            "id": "minecraft:air",
+            "Count": 0
+          },
+          "id": "securitycraft:display_case",
+          "smartModuleCooldown": 100
+        },
+        "loot": "project_deadzone:gunstore_armory"
+      },
+      {
+        "char": "",
+        "block": "securitycraft:display_case[face=wall,facing=north,waterlogged=false]",
+        "tag": {
+          "owner": "Natsumamire",
+          "sendAllowlistMessage": 0,
+          "ShouldBeOpen": 0,
+          "ownerUUID": "908f197c-46c7-4c8c-aad8-3782f26cb6fa",
+          "Modules": [],
+          "allowlistEnabled": 0,
+          "cooldownLeft": -1,
+          "harmingEnabled": 0,
+          "smartEnabled": 0,
+          "denylistEnabled": 0,
+          "sendDenylistMessage": 1,
+          "disabled": 0,
+          "DisplayedStack": {
+            "id": "minecraft:air",
+            "Count": 0
+          },
+          "id": "securitycraft:display_case",
+          "smartModuleCooldown": 100
+        },
+        "loot": "project_deadzone:gunstore_armory"
+      },
+      {
+        "char": "",
+        "block": "securitycraft:display_case[face=wall,facing=north,waterlogged=false]",
+        "tag": {
+          "owner": "Natsumamire",
+          "sendAllowlistMessage": 0,
+          "ShouldBeOpen": 0,
+          "ownerUUID": "908f197c-46c7-4c8c-aad8-3782f26cb6fa",
+          "Modules": [],
+          "allowlistEnabled": 0,
+          "cooldownLeft": -1,
+          "harmingEnabled": 0,
+          "smartEnabled": 0,
+          "denylistEnabled": 0,
+          "sendDenylistMessage": 1,
+          "disabled": 0,
+          "DisplayedStack": {
+            "id": "minecraft:air",
+            "Count": 0
+          },
+          "id": "securitycraft:display_case",
+          "smartModuleCooldown": 100
+        },
+        "loot": "project_deadzone:gunstore_armory"
+      },
+      {
+        "char": "",
+        "block": "securitycraft:display_case[face=wall,facing=north,waterlogged=false]",
+        "tag": {
+          "owner": "Natsumamire",
+          "sendAllowlistMessage": 0,
+          "ShouldBeOpen": 0,
+          "ownerUUID": "908f197c-46c7-4c8c-aad8-3782f26cb6fa",
+          "Modules": [],
+          "allowlistEnabled": 0,
+          "cooldownLeft": -1,
+          "harmingEnabled": 0,
+          "smartEnabled": 0,
+          "denylistEnabled": 0,
+          "sendDenylistMessage": 1,
+          "disabled": 0,
+          "DisplayedStack": {
+            "id": "minecraft:air",
+            "Count": 0
+          },
+          "id": "securitycraft:display_case",
+          "smartModuleCooldown": 100
+        },
+        "loot": "project_deadzone:gunstore_armory"
+      },
+      {
+        "char": "",
+        "block": "securitycraft:display_case[face=wall,facing=north,waterlogged=false]",
+        "tag": {
+          "owner": "Natsumamire",
+          "sendAllowlistMessage": 0,
+          "ShouldBeOpen": 0,
+          "ownerUUID": "908f197c-46c7-4c8c-aad8-3782f26cb6fa",
+          "Modules": [],
+          "allowlistEnabled": 0,
+          "cooldownLeft": -1,
+          "harmingEnabled": 0,
+          "smartEnabled": 0,
+          "denylistEnabled": 0,
+          "sendDenylistMessage": 1,
+          "disabled": 0,
+          "DisplayedStack": {
+            "id": "minecraft:air",
+            "Count": 0
+          },
+          "id": "securitycraft:display_case",
+          "smartModuleCooldown": 100
+        },
+        "loot": "project_deadzone:gunstore_armory"
+      },
+      {
+        "char": "",
+        "block": "securitycraft:display_case[face=wall,facing=north,waterlogged=false]",
+        "tag": {
+          "owner": "Natsumamire",
+          "sendAllowlistMessage": 0,
+          "ShouldBeOpen": 0,
+          "ownerUUID": "908f197c-46c7-4c8c-aad8-3782f26cb6fa",
+          "Modules": [],
+          "allowlistEnabled": 0,
+          "cooldownLeft": -1,
+          "harmingEnabled": 0,
+          "smartEnabled": 0,
+          "denylistEnabled": 0,
+          "sendDenylistMessage": 1,
+          "disabled": 0,
+          "DisplayedStack": {
+            "id": "minecraft:air",
+            "Count": 0
+          },
+          "id": "securitycraft:display_case",
+          "smartModuleCooldown": 100
+        },
+        "loot": "project_deadzone:gunstore_armory"
+      },
+      {
+        "char": "",
+        "block": "securitycraft:display_case[face=wall,facing=north,waterlogged=false]",
+        "tag": {
+          "owner": "Natsumamire",
+          "sendAllowlistMessage": 0,
+          "ShouldBeOpen": 0,
+          "ownerUUID": "908f197c-46c7-4c8c-aad8-3782f26cb6fa",
+          "Modules": [],
+          "allowlistEnabled": 0,
+          "cooldownLeft": -1,
+          "harmingEnabled": 0,
+          "smartEnabled": 0,
+          "denylistEnabled": 0,
+          "sendDenylistMessage": 1,
+          "disabled": 0,
+          "DisplayedStack": {
+            "id": "minecraft:air",
+            "Count": 0
+          },
+          "id": "securitycraft:display_case",
+          "smartModuleCooldown": 100
+        },
+        "loot": "project_deadzone:gunstore_weapons"
+      }
+    ]
+  },
+  "slices": [
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  ]
+}

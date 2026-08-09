@@ -1,0 +1,30 @@
+﻿{
+    "id":  "project_deadzone:talent_start_medic",
+    "bonuses":  [
+
+                ],
+    "requirements":  [
+
+                     ],
+    "directConnections":  [
+
+                          ],
+    "longConnections":  [
+
+                        ],
+    "oneWayConnections":  [
+
+                          ],
+    "tags":  [
+                 "pdz_talent_origin",
+                 "pdz_origin_medic",
+                 "pdz_node_talent_start_medic"
+             ],
+    "backgroundTexture":  "skilltree:textures/icons/background/class.png",
+    "iconTexture":  "skilltree:textures/icons/cross_red.png",
+    "borderTexture":  "skilltree:textures/tooltip/lesser.png",
+    "positionX":  210,
+    "positionY":  0,
+    "buttonSize":  26,
+    "isStartingPoint":  false
+}

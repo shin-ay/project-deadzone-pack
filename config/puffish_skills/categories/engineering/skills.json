@@ -1,0 +1,78 @@
+{
+  "engineering_core_1": {
+    "x": 0,
+    "y": 64,
+    "definition": "engineering_core_1",
+    "root": true
+  },
+  "engineering_core_2": {
+    "x": 0,
+    "y": 0,
+    "definition": "engineering_core_2"
+  },
+  "engineering_core_3": {
+    "x": 0,
+    "y": -64,
+    "definition": "engineering_core_3"
+  },
+  "engineering_core_4": {
+    "x": 0,
+    "y": -128,
+    "definition": "engineering_core_4"
+  },
+  "engineering_core_5": {
+    "x": 0,
+    "y": -192,
+    "definition": "engineering_core_5"
+  },
+  "engineering_core_6": {
+    "x": 0,
+    "y": -256,
+    "definition": "engineering_core_6"
+  },
+  "workshop_basics": {
+    "x": -160,
+    "y": 0,
+    "definition": "workshop_basics"
+  },
+  "industrial_engineer": {
+    "x": -192,
+    "y": -112,
+    "definition": "industrial_engineer"
+  },
+  "automation_expert": {
+    "x": -224,
+    "y": -224,
+    "definition": "automation_expert"
+  },
+  "field_construction": {
+    "x": 160,
+    "y": 0,
+    "definition": "field_construction"
+  },
+  "fortification_expert": {
+    "x": 192,
+    "y": -112,
+    "definition": "fortification_expert"
+  },
+  "stronghold_architect": {
+    "x": 224,
+    "y": -224,
+    "definition": "stronghold_architect"
+  },
+  "arms_fabrication": {
+    "x": 320,
+    "y": 0,
+    "definition": "arms_fabrication"
+  },
+  "weapons_engineer": {
+    "x": 352,
+    "y": -112,
+    "definition": "weapons_engineer"
+  },
+  "ordnance_master": {
+    "x": 384,
+    "y": -224,
+    "definition": "ordnance_master"
+  }
+}

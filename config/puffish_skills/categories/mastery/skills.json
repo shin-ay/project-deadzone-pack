@@ -1,0 +1,9 @@
+{
+  "mastery_root":{"x":0,"y":64,"definition":"mastery_root","root":true},
+  "mastery_vitality":{"x":-192,"y":-64,"definition":"mastery_vitality"},
+  "mastery_mobility":{"x":-128,"y":-176,"definition":"mastery_mobility"},
+  "mastery_resilience":{"x":-64,"y":-64,"definition":"mastery_resilience"},
+  "mastery_appraiser":{"x":64,"y":-64,"definition":"mastery_appraiser"},
+  "mastery_hydration":{"x":128,"y":-176,"definition":"mastery_hydration"},
+  "mastery_recovery":{"x":192,"y":-64,"definition":"mastery_recovery"}
+}

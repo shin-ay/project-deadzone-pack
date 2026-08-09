@@ -1,0 +1,13 @@
+name = "project-1364036"
+filename = "beautifulstats-forge-1.2-SNAPSHOT.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "cd57663639f14819494c14d9950bf6b78899a160"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 7149586
+project-id = 1364036

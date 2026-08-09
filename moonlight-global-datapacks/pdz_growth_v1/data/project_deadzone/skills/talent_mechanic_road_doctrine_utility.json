@@ -1,0 +1,45 @@
+﻿{
+    "id":  "project_deadzone:talent_mechanic_road_doctrine_utility",
+    "bonuses":  [
+                    {
+                        "type":  "skilltree:attribute",
+                        "attribute":  "minecraft:generic.attack_speed",
+                        "id":  "6225c946-df2e-87a3-977c-3529b3a4dfd6",
+                        "name":  "PROJECT DEADZONE Talent",
+                        "amount":  0.002,
+                        "operation":  1,
+                        "player_multiplier":  {
+                                                  "type":  "skilltree:none"
+                                              },
+                        "player_condition":  {
+                                                 "type":  "skilltree:none"
+                                             }
+                    }
+                ],
+    "requirements":  [
+
+                     ],
+    "directConnections":  [
+                              "project_deadzone:talent_mechanic_road_utility_20"
+                          ],
+    "longConnections":  [
+
+                        ],
+    "oneWayConnections":  [
+
+                          ],
+    "tags":  [
+                 "pdz_talent_road",
+                 "pdz_talent_doctrine",
+                 "pdz_doctrine_mechanic_road",
+                 "pdz_doctrine_utility",
+                 "pdz_node_talent_mechanic_road_doctrine_utility"
+             ],
+    "backgroundTexture":  "skilltree:textures/icons/background/keystone.png",
+    "iconTexture":  "skilltree:textures/icons/boots_bronze.png",
+    "borderTexture":  "skilltree:textures/tooltip/lesser.png",
+    "positionX":  33.24,
+    "positionY":  1269.56,
+    "buttonSize":  32,
+    "isStartingPoint":  false
+}

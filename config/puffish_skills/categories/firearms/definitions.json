@@ -1,0 +1,135 @@
+{
+  "firearms_core_1": {
+    "title": "銃器基礎 Lv1",
+    "description": "銃器を安全に扱う基礎訓練。銃撃ダメージ+1%。",
+    "icon": {"type": "item", "data": {"item": "minecraft:crossbow"}},
+    "frame": {"type": "advancement", "data": {"frame": "task"}},
+    "cost": 0,
+    "rewards": [{"type": "puffish_skills:tag", "data": {"tag": "dz_firearms_core_1"}}]
+  },
+  "firearms_core_2": {
+    "title": "銃器基礎 Lv2",
+    "description": "銃器操作の基礎能力を高める。銃撃ダメージ合計+2%。",
+    "icon": {"type": "item", "data": {"item": "minecraft:crossbow"}},
+    "frame": {"type": "advancement", "data": {"frame": "task"}},
+    "cost": 1,
+    "rewards": [{"type": "puffish_skills:tag", "data": {"tag": "dz_firearms_core_2"}}]
+  },
+  "firearms_core_3": {
+    "title": "銃器基礎 Lv3",
+    "description": "合計2ポイント消費で取得可能。銃撃ダメージ合計+3%。",
+    "icon": {"type": "item", "data": {"item": "minecraft:crossbow"}},
+    "frame": {"type": "advancement", "data": {"frame": "goal"}},
+    "cost": 1,
+    "required_spent_points": 2,
+    "rewards": [{"type": "puffish_skills:tag", "data": {"tag": "dz_firearms_core_3"}}]
+  },
+  "firearms_core_4": {
+    "title": "銃器基礎 Lv4",
+    "description": "合計4ポイント消費で取得可能。銃撃ダメージ合計+4%。",
+    "icon": {"type": "item", "data": {"item": "minecraft:crossbow"}},
+    "frame": {"type": "advancement", "data": {"frame": "goal"}},
+    "cost": 1,
+    "required_spent_points": 4,
+    "rewards": [{"type": "puffish_skills:tag", "data": {"tag": "dz_firearms_core_4"}}]
+  },
+  "firearms_core_5": {
+    "title": "銃器基礎 Lv5",
+    "description": "合計6ポイント消費で取得可能。銃撃ダメージ合計+5%。",
+    "icon": {"type": "item", "data": {"item": "minecraft:crossbow"}},
+    "frame": {"type": "advancement", "data": {"frame": "challenge"}},
+    "cost": 1,
+    "required_spent_points": 6,
+    "rewards": [{"type": "puffish_skills:tag", "data": {"tag": "dz_firearms_core_5"}}]
+  },
+  "firearms_core_6": {
+    "title": "銃器基礎 Lv6",
+    "description": "合計8ポイント消費で取得可能。銃撃ダメージ合計+6%。",
+    "icon": {"type": "item", "data": {"item": "minecraft:crossbow"}},
+    "frame": {"type": "advancement", "data": {"frame": "challenge"}},
+    "cost": 1,
+    "required_spent_points": 8,
+    "rewards": [{"type": "puffish_skills:tag", "data": {"tag": "dz_firearms_core_6"}}]
+  },
+
+  "ammo_discipline": {
+    "title": "弾薬管理",
+    "description": "銃キル時15%で、その銃に対応する弾薬を1発回収する。",
+    "icon": {"type": "item", "data": {"item": "minecraft:arrow"}},
+    "frame": {"type": "advancement", "data": {"frame": "task"}},
+    "cost": 1,
+    "rewards": [{"type": "puffish_skills:tag", "data": {"tag": "dz_firearms_ammo_1"}}]
+  },
+  "tactical_reload": {
+    "title": "タクティカルリロード",
+    "description": "銃キル時の対応弾薬回収率が25%になる。",
+    "icon": {"type": "item", "data": {"item": "minecraft:bundle"}},
+    "frame": {"type": "advancement", "data": {"frame": "goal"}},
+    "cost": 1,
+    "required_spent_points": 3,
+    "rewards": [{"type": "puffish_skills:tag", "data": {"tag": "dz_firearms_ammo_2"}}]
+  },
+  "last_magazine": {
+    "title": "ラストマガジン",
+    "description": "弾薬回収率が35%。ヘッドショットキルでは2発回収する。",
+    "icon": {"type": "item", "data": {"item": "minecraft:spectral_arrow"}},
+    "frame": {"type": "advancement", "data": {"frame": "challenge"}},
+    "cost": 1,
+    "required_spent_points": 6,
+    "rewards": [{"type": "puffish_skills:tag", "data": {"tag": "dz_firearms_ammo_3"}}]
+  },
+
+  "steady_hand": {
+    "title": "安定姿勢",
+    "description": "静止中のヘッドショットダメージが8%増加する。",
+    "icon": {"type": "item", "data": {"item": "minecraft:spyglass"}},
+    "frame": {"type": "advancement", "data": {"frame": "task"}},
+    "cost": 1,
+    "rewards": [{"type": "puffish_skills:tag", "data": {"tag": "dz_firearms_handling_1"}}]
+  },
+  "mobile_operator": {
+    "title": "モバイルオペレーター",
+    "description": "移動中のヘッドショットダメージも8%増加する。",
+    "icon": {"type": "item", "data": {"item": "minecraft:leather_boots"}},
+    "frame": {"type": "advancement", "data": {"frame": "goal"}},
+    "cost": 1,
+    "required_spent_points": 3,
+    "rewards": [{"type": "puffish_skills:tag", "data": {"tag": "dz_firearms_handling_2"}}]
+  },
+  "controlled_burst": {
+    "title": "コントロールドバースト",
+    "description": "同じ敵への連続命中でダメージ+2%。1.5秒で途切れ、最大+10%。",
+    "icon": {"type": "item", "data": {"item": "minecraft:firework_rocket"}},
+    "frame": {"type": "advancement", "data": {"frame": "challenge"}},
+    "cost": 1,
+    "required_spent_points": 6,
+    "rewards": [{"type": "puffish_skills:tag", "data": {"tag": "dz_firearms_handling_3"}}]
+  },
+
+  "field_maintenance": {
+    "title": "野戦整備",
+    "description": "安全地帯へ戻らず、現地で銃器の状態を整える。整備系統の入口。",
+    "icon": {"type": "item", "data": {"item": "minecraft:iron_ingot"}},
+    "frame": {"type": "advancement", "data": {"frame": "task"}},
+    "cost": 1,
+    "rewards": [{"type": "puffish_skills:tag", "data": {"tag": "dz_firearms_maintenance_1"}}]
+  },
+  "quick_recovery": {
+    "title": "クイックリカバリー",
+    "description": "ジャムや操作ミスから素早く復帰する戦術Perk。実効果は銃器連携段階で実装。",
+    "icon": {"type": "item", "data": {"item": "minecraft:flint_and_steel"}},
+    "frame": {"type": "advancement", "data": {"frame": "goal"}},
+    "cost": 1,
+    "required_spent_points": 3,
+    "rewards": [{"type": "puffish_skills:tag", "data": {"tag": "dz_firearms_maintenance_2"}}]
+  },
+  "field_gunsmith": {
+    "title": "フィールドガンスミス",
+    "description": "希少な設備なしで高度な銃器整備を行う。探索中の継戦能力を変える上位Perk。",
+    "icon": {"type": "item", "data": {"item": "minecraft:anvil"}},
+    "frame": {"type": "advancement", "data": {"frame": "challenge"}},
+    "cost": 1,
+    "required_spent_points": 6,
+    "rewards": [{"type": "puffish_skills:tag", "data": {"tag": "dz_firearms_maintenance_3"}}]
+  }
+}

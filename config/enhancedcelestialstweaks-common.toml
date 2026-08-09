@@ -1,0 +1,713 @@
+
+#General settings.
+[general]
+	#Master toggle for all tweaks.
+	enabled = true
+	#Log applied tweaks to the console.
+	log_tweaks = false
+	#Make all events visual-only.
+	events_visual_only = false
+	#Rebuild the lunar forecast on server start so config changes apply to scheduled events.
+	recompute_forecast_on_start = true
+
+#Overworld dimension settings.
+[overworld]
+	#Whether events require clear skies.
+	#Allowed Values: DEFAULT, TRUE, FALSE
+	require_clear_skies = "DEFAULT"
+	#Minimum days between events. -1 keeps default.
+	#Range: -1 ~ 9223372036854775807
+	min_days_between_events = -1
+	#Maximum days between events. -1 keeps default.
+	#Range: -1 ~ 9223372036854775807
+	max_days_between_events = -1
+	#Day length in ticks. -1 keeps default.
+	#Range: -1 ~ 9223372036854775807
+	day_length = -1
+	#Year length in days. -1 keeps default.
+	#Range: -1 ~ 9223372036854775807
+	year_length_in_days = -1
+
+#Per-event tweaks. Set chance_multiplier to 0 to disable an event.
+[events]
+
+	[events.blood_moon]
+		#Multiplier on the event's spawn chance. 0 disables it.
+		#Range: 0.0 ~ 1000.0
+		chance_multiplier = 1.0
+		#Minimum nights between this event. -1 keeps default.
+		#Range: > -1
+		min_nights_between = -1
+		#Moon phases (0-7) this event can occur on. Empty keeps default.
+		valid_moon_phases = []
+		#Global multiplier applied to every mob category's spawn rate during this event, including categories set by mob_category_multipliers.
+		#Range: 0.0 ~ 1000.0
+		mob_spawn_multiplier = 1.0
+		#Multiplier on the mob-spawn cap during this event. 1.0 = vanilla. -1 = no cap, mobs keep spawning.
+		#Range: -1.0 ~ 10000.0
+		mob_cap_multiplier = 1.0
+		#Whether this event blocks sleeping.
+		#Allowed Values: DEFAULT, TRUE, FALSE
+		block_sleeping = "DEFAULT"
+		#Use the biome's normal spawn list during this event.
+		#Allowed Values: DEFAULT, TRUE, FALSE
+		use_biome_spawn_settings = "DEFAULT"
+		#Force mobs to spawn on the surface during this event.
+		#Allowed Values: DEFAULT, TRUE, FALSE
+		force_surface_spawning = "DEFAULT"
+		#Allow slimes to spawn anywhere during this event.
+		#Allowed Values: DEFAULT, TRUE, FALSE
+		slimes_spawn_everywhere = "DEFAULT"
+		#Force weather while this event is active. DEFAULT keeps vanilla weather.
+		#Allowed Values: DEFAULT, CLEAR, RAIN, THUNDER
+		weather_override = "DEFAULT"
+		#Allow vanilla weather to return after the event ends.
+		restore_weather_after_event = true
+		#Per-category spawn multipliers. Format: "CATEGORY:value"
+		mob_category_multipliers = ["MONSTER:2.25"]
+		#Mobs to add during this event. Format: "target;weight;min;max". target = entity id, #entity_tag, or @modid (all of a mod's mobs).
+		spawn_additions = []
+		#Entities blocked from spawning during this event. Each entry = entity id, #entity_tag, or @modid.
+		spawn_removals = []
+		#Dimensions to add this event to. Format: "namespace:dimension_id". Uses overworld settings as template.
+		added_dimensions = []
+		#Maximum block light level monsters can spawn at during this event. 0 = vanilla.
+		#Range: 0 ~ 15
+		monster_spawn_light_level = 0
+		#Multiplier on the vanilla chance for monsters to spawn with gear (armor + weapons).
+		#Range: 0.0 ~ 1000.0
+		mob_gear_chance_multiplier = 1.0
+		#Whether mobs drop the gear given to them by this event.
+		mob_drops_event_gear = false
+		#Chance multiplier for non-common drops (uncommon, rare, epic) during this event.
+		#Range: 1.0 ~ 100.0
+		rare_drop_multiplier = 1.0
+		#Only mobs spawned by the event are affected by rare_drop_multiplier.
+		rare_drop_only_event_mobs = true
+		#Multiplier on experience dropped by mobs killed during this event.
+		#Range: 0.0 ~ 1000.0
+		xp_drop_multiplier = 1.0
+		#Only mobs spawned by the event are affected by xp_drop_multiplier.
+		xp_only_event_mobs = true
+		#Multiplier on max health for mobs spawned during this event.
+		#Range: 0.01 ~ 1000.0
+		mob_health_multiplier = 1.0
+		#Multiplier on attack damage for mobs spawned during this event.
+		#Range: 0.01 ~ 1000.0
+		mob_damage_multiplier = 1.0
+		#Multiplier on movement speed for mobs spawned during this event.
+		#Range: 0.01 ~ 1000.0
+		mob_speed_multiplier = 1.0
+		#Multiplier on swim speed for mobs spawned during this event.
+		#Range: 0.01 ~ 1000.0
+		mob_swim_speed_multiplier = 1.0
+		#Prevent mobs spawned during this event from despawning.
+		prevent_mob_despawn = false
+		#Despawn all mobs spawned during this event after the event ends.
+		force_despawn_after_event = false
+		#Seconds after the event ends before forced despawn happens.
+		#Range: > 0
+		force_despawn_delay_seconds = 180
+		#Status effects applied while the event is active. Format: "effect_id;amplifier;duration[;target]"
+		mob_effects = []
+		#How many ticks the night lasts during this event (vanilla = 12000).
+		#Range: 1 ~ 9223372036854775807
+		night_length_ticks = 12000
+		#Moon texture hex color. Empty = white.
+		moon_color = "990000"
+		#Sky/light hex color during the event. Empty = white.
+		sky_color = "990000"
+		#Moon texture override (ResourceLocation). Empty = vanilla phases.
+		moon_texture = ""
+		#Multiplier on the moon's rendered size during this event. 1.0 = default.
+		#Range: 0.01 ~ 100.0
+		moon_size_multiplier = 1.0
+		#Message shown when the event starts. Supports & color codes. Empty = no message.
+		start_message = "&cThe \"Blood Moon\" rises... Distant sounds of the undead can be heard..."
+		#Message shown when the event ends. Supports & color codes. Empty = no message.
+		end_message = "&cThe \"Blood Moon\" sets... The undead begin to burn..."
+
+	[events.super_blood_moon]
+		#Multiplier on the event's spawn chance. 0 disables it.
+		#Range: 0.0 ~ 1000.0
+		chance_multiplier = 1.0
+		#Minimum nights between this event. -1 keeps default.
+		#Range: > -1
+		min_nights_between = -1
+		#Moon phases (0-7) this event can occur on. Empty keeps default.
+		valid_moon_phases = []
+		#Global multiplier applied to every mob category's spawn rate during this event, including categories set by mob_category_multipliers.
+		#Range: 0.0 ~ 1000.0
+		mob_spawn_multiplier = 1.0
+		#Multiplier on the mob-spawn cap during this event. 1.0 = vanilla. -1 = no cap, mobs keep spawning.
+		#Range: -1.0 ~ 10000.0
+		mob_cap_multiplier = 1.0
+		#Whether this event blocks sleeping.
+		#Allowed Values: DEFAULT, TRUE, FALSE
+		block_sleeping = "DEFAULT"
+		#Use the biome's normal spawn list during this event.
+		#Allowed Values: DEFAULT, TRUE, FALSE
+		use_biome_spawn_settings = "DEFAULT"
+		#Force mobs to spawn on the surface during this event.
+		#Allowed Values: DEFAULT, TRUE, FALSE
+		force_surface_spawning = "DEFAULT"
+		#Allow slimes to spawn anywhere during this event.
+		#Allowed Values: DEFAULT, TRUE, FALSE
+		slimes_spawn_everywhere = "DEFAULT"
+		#Force weather while this event is active. DEFAULT keeps vanilla weather.
+		#Allowed Values: DEFAULT, CLEAR, RAIN, THUNDER
+		weather_override = "DEFAULT"
+		#Allow vanilla weather to return after the event ends.
+		restore_weather_after_event = true
+		#Per-category spawn multipliers. Format: "CATEGORY:value"
+		mob_category_multipliers = ["MONSTER:4.5"]
+		#Mobs to add during this event. Format: "target;weight;min;max". target = entity id, #entity_tag, or @modid (all of a mod's mobs).
+		spawn_additions = []
+		#Entities blocked from spawning during this event. Each entry = entity id, #entity_tag, or @modid.
+		spawn_removals = []
+		#Dimensions to add this event to. Format: "namespace:dimension_id". Uses overworld settings as template.
+		added_dimensions = []
+		#Maximum block light level monsters can spawn at during this event. 0 = vanilla.
+		#Range: 0 ~ 15
+		monster_spawn_light_level = 0
+		#Multiplier on the vanilla chance for monsters to spawn with gear (armor + weapons).
+		#Range: 0.0 ~ 1000.0
+		mob_gear_chance_multiplier = 1.0
+		#Whether mobs drop the gear given to them by this event.
+		mob_drops_event_gear = false
+		#Chance multiplier for non-common drops (uncommon, rare, epic) during this event.
+		#Range: 1.0 ~ 100.0
+		rare_drop_multiplier = 1.0
+		#Only mobs spawned by the event are affected by rare_drop_multiplier.
+		rare_drop_only_event_mobs = true
+		#Multiplier on experience dropped by mobs killed during this event.
+		#Range: 0.0 ~ 1000.0
+		xp_drop_multiplier = 1.0
+		#Only mobs spawned by the event are affected by xp_drop_multiplier.
+		xp_only_event_mobs = true
+		#Multiplier on max health for mobs spawned during this event.
+		#Range: 0.01 ~ 1000.0
+		mob_health_multiplier = 1.0
+		#Multiplier on attack damage for mobs spawned during this event.
+		#Range: 0.01 ~ 1000.0
+		mob_damage_multiplier = 1.0
+		#Multiplier on movement speed for mobs spawned during this event.
+		#Range: 0.01 ~ 1000.0
+		mob_speed_multiplier = 1.0
+		#Multiplier on swim speed for mobs spawned during this event.
+		#Range: 0.01 ~ 1000.0
+		mob_swim_speed_multiplier = 1.0
+		#Prevent mobs spawned during this event from despawning.
+		prevent_mob_despawn = false
+		#Despawn all mobs spawned during this event after the event ends.
+		force_despawn_after_event = false
+		#Seconds after the event ends before forced despawn happens.
+		#Range: > 0
+		force_despawn_delay_seconds = 180
+		#Status effects applied while the event is active. Format: "effect_id;amplifier;duration[;target]"
+		mob_effects = []
+		#How many ticks the night lasts during this event (vanilla = 12000).
+		#Range: 1 ~ 9223372036854775807
+		night_length_ticks = 12000
+		#Moon texture hex color. Empty = white.
+		moon_color = "ff0000"
+		#Sky/light hex color during the event. Empty = white.
+		sky_color = "ff0000"
+		#Moon texture override (ResourceLocation). Empty = vanilla phases.
+		moon_texture = ""
+		#Multiplier on the moon's rendered size during this event. 1.0 = default.
+		#Range: 0.01 ~ 100.0
+		moon_size_multiplier = 1.0
+		#Message shown when the event starts. Supports & color codes. Empty = no message.
+		start_message = "&c&lThe \"Super Blood Moon\" rises... Distant sounds of the undead can be heard..."
+		#Message shown when the event ends. Supports & color codes. Empty = no message.
+		end_message = "&cThe \"Super Blood Moon\" sets... The undead begin to burn..."
+
+	[events.harvest_moon]
+		#Multiplier on the event's spawn chance. 0 disables it.
+		#Range: 0.0 ~ 1000.0
+		chance_multiplier = 1.0
+		#Minimum nights between this event. -1 keeps default.
+		#Range: > -1
+		min_nights_between = -1
+		#Moon phases (0-7) this event can occur on. Empty keeps default.
+		valid_moon_phases = []
+		#Global multiplier applied to every mob category's spawn rate during this event, including categories set by mob_category_multipliers.
+		#Range: 0.0 ~ 1000.0
+		mob_spawn_multiplier = 1.0
+		#Multiplier on the mob-spawn cap during this event. 1.0 = vanilla. -1 = no cap, mobs keep spawning.
+		#Range: -1.0 ~ 10000.0
+		mob_cap_multiplier = 1.0
+		#Whether this event blocks sleeping.
+		#Allowed Values: DEFAULT, TRUE, FALSE
+		block_sleeping = "DEFAULT"
+		#Use the biome's normal spawn list during this event.
+		#Allowed Values: DEFAULT, TRUE, FALSE
+		use_biome_spawn_settings = "DEFAULT"
+		#Force mobs to spawn on the surface during this event.
+		#Allowed Values: DEFAULT, TRUE, FALSE
+		force_surface_spawning = "DEFAULT"
+		#Allow slimes to spawn anywhere during this event.
+		#Allowed Values: DEFAULT, TRUE, FALSE
+		slimes_spawn_everywhere = "DEFAULT"
+		#Force weather while this event is active. DEFAULT keeps vanilla weather.
+		#Allowed Values: DEFAULT, CLEAR, RAIN, THUNDER
+		weather_override = "DEFAULT"
+		#Allow vanilla weather to return after the event ends.
+		restore_weather_after_event = true
+		#Per-category spawn multipliers. Format: "CATEGORY:value"
+		mob_category_multipliers = []
+		#Mobs to add during this event. Format: "target;weight;min;max". target = entity id, #entity_tag, or @modid (all of a mod's mobs).
+		spawn_additions = []
+		#Entities blocked from spawning during this event. Each entry = entity id, #entity_tag, or @modid.
+		spawn_removals = []
+		#Dimensions to add this event to. Format: "namespace:dimension_id". Uses overworld settings as template.
+		added_dimensions = []
+		#Maximum block light level monsters can spawn at during this event. 0 = vanilla.
+		#Range: 0 ~ 15
+		monster_spawn_light_level = 0
+		#Multiplier on the vanilla chance for monsters to spawn with gear (armor + weapons).
+		#Range: 0.0 ~ 1000.0
+		mob_gear_chance_multiplier = 1.0
+		#Whether mobs drop the gear given to them by this event.
+		mob_drops_event_gear = false
+		#Chance multiplier for non-common drops (uncommon, rare, epic) during this event.
+		#Range: 1.0 ~ 100.0
+		rare_drop_multiplier = 1.0
+		#Only mobs spawned by the event are affected by rare_drop_multiplier.
+		rare_drop_only_event_mobs = true
+		#Multiplier on experience dropped by mobs killed during this event.
+		#Range: 0.0 ~ 1000.0
+		xp_drop_multiplier = 1.0
+		#Only mobs spawned by the event are affected by xp_drop_multiplier.
+		xp_only_event_mobs = true
+		#Multiplier on max health for mobs spawned during this event.
+		#Range: 0.01 ~ 1000.0
+		mob_health_multiplier = 1.0
+		#Multiplier on attack damage for mobs spawned during this event.
+		#Range: 0.01 ~ 1000.0
+		mob_damage_multiplier = 1.0
+		#Multiplier on movement speed for mobs spawned during this event.
+		#Range: 0.01 ~ 1000.0
+		mob_speed_multiplier = 1.0
+		#Multiplier on swim speed for mobs spawned during this event.
+		#Range: 0.01 ~ 1000.0
+		mob_swim_speed_multiplier = 1.0
+		#Prevent mobs spawned during this event from despawning.
+		prevent_mob_despawn = false
+		#Despawn all mobs spawned during this event after the event ends.
+		force_despawn_after_event = false
+		#Seconds after the event ends before forced despawn happens.
+		#Range: > 0
+		force_despawn_delay_seconds = 180
+		#Status effects applied while the event is active. Format: "effect_id;amplifier;duration[;target]"
+		mob_effects = []
+		#How many ticks the night lasts during this event (vanilla = 12000).
+		#Range: 1 ~ 9223372036854775807
+		night_length_ticks = 12000
+		#Moon texture hex color. Empty = white.
+		moon_color = "665828"
+		#Sky/light hex color during the event. Empty = white.
+		sky_color = "99833b"
+		#Moon texture override (ResourceLocation). Empty = vanilla phases.
+		moon_texture = ""
+		#Multiplier on the moon's rendered size during this event. 1.0 = default.
+		#Range: 0.01 ~ 100.0
+		moon_size_multiplier = 1.0
+		#Message shown when the event starts. Supports & color codes. Empty = no message.
+		start_message = "&eThe \"Harvest Moon\" rises... Your crops provide a better harvest."
+		#Message shown when the event ends. Supports & color codes. Empty = no message.
+		end_message = "&eThe \"Harvest Moon\" sets..."
+		#Multiply drops for items in the configured tags while this event is active.
+		enable_crop_drop_boost = true
+		#Item tags to multiply drops for. Format: "tag_id;multiplier".
+		crop_drop_tags = ["enhancedcelestials:harvest_moon_crops;2.0"]
+
+	[events.super_harvest_moon]
+		#Multiplier on the event's spawn chance. 0 disables it.
+		#Range: 0.0 ~ 1000.0
+		chance_multiplier = 1.0
+		#Minimum nights between this event. -1 keeps default.
+		#Range: > -1
+		min_nights_between = -1
+		#Moon phases (0-7) this event can occur on. Empty keeps default.
+		valid_moon_phases = []
+		#Global multiplier applied to every mob category's spawn rate during this event, including categories set by mob_category_multipliers.
+		#Range: 0.0 ~ 1000.0
+		mob_spawn_multiplier = 1.0
+		#Multiplier on the mob-spawn cap during this event. 1.0 = vanilla. -1 = no cap, mobs keep spawning.
+		#Range: -1.0 ~ 10000.0
+		mob_cap_multiplier = 1.0
+		#Whether this event blocks sleeping.
+		#Allowed Values: DEFAULT, TRUE, FALSE
+		block_sleeping = "DEFAULT"
+		#Use the biome's normal spawn list during this event.
+		#Allowed Values: DEFAULT, TRUE, FALSE
+		use_biome_spawn_settings = "DEFAULT"
+		#Force mobs to spawn on the surface during this event.
+		#Allowed Values: DEFAULT, TRUE, FALSE
+		force_surface_spawning = "DEFAULT"
+		#Allow slimes to spawn anywhere during this event.
+		#Allowed Values: DEFAULT, TRUE, FALSE
+		slimes_spawn_everywhere = "DEFAULT"
+		#Force weather while this event is active. DEFAULT keeps vanilla weather.
+		#Allowed Values: DEFAULT, CLEAR, RAIN, THUNDER
+		weather_override = "DEFAULT"
+		#Allow vanilla weather to return after the event ends.
+		restore_weather_after_event = true
+		#Per-category spawn multipliers. Format: "CATEGORY:value"
+		mob_category_multipliers = []
+		#Mobs to add during this event. Format: "target;weight;min;max". target = entity id, #entity_tag, or @modid (all of a mod's mobs).
+		spawn_additions = []
+		#Entities blocked from spawning during this event. Each entry = entity id, #entity_tag, or @modid.
+		spawn_removals = []
+		#Dimensions to add this event to. Format: "namespace:dimension_id". Uses overworld settings as template.
+		added_dimensions = []
+		#Maximum block light level monsters can spawn at during this event. 0 = vanilla.
+		#Range: 0 ~ 15
+		monster_spawn_light_level = 0
+		#Multiplier on the vanilla chance for monsters to spawn with gear (armor + weapons).
+		#Range: 0.0 ~ 1000.0
+		mob_gear_chance_multiplier = 1.0
+		#Whether mobs drop the gear given to them by this event.
+		mob_drops_event_gear = false
+		#Chance multiplier for non-common drops (uncommon, rare, epic) during this event.
+		#Range: 1.0 ~ 100.0
+		rare_drop_multiplier = 1.0
+		#Only mobs spawned by the event are affected by rare_drop_multiplier.
+		rare_drop_only_event_mobs = true
+		#Multiplier on experience dropped by mobs killed during this event.
+		#Range: 0.0 ~ 1000.0
+		xp_drop_multiplier = 1.0
+		#Only mobs spawned by the event are affected by xp_drop_multiplier.
+		xp_only_event_mobs = true
+		#Multiplier on max health for mobs spawned during this event.
+		#Range: 0.01 ~ 1000.0
+		mob_health_multiplier = 1.0
+		#Multiplier on attack damage for mobs spawned during this event.
+		#Range: 0.01 ~ 1000.0
+		mob_damage_multiplier = 1.0
+		#Multiplier on movement speed for mobs spawned during this event.
+		#Range: 0.01 ~ 1000.0
+		mob_speed_multiplier = 1.0
+		#Multiplier on swim speed for mobs spawned during this event.
+		#Range: 0.01 ~ 1000.0
+		mob_swim_speed_multiplier = 1.0
+		#Prevent mobs spawned during this event from despawning.
+		prevent_mob_despawn = false
+		#Despawn all mobs spawned during this event after the event ends.
+		force_despawn_after_event = false
+		#Seconds after the event ends before forced despawn happens.
+		#Range: > 0
+		force_despawn_delay_seconds = 180
+		#Status effects applied while the event is active. Format: "effect_id;amplifier;duration[;target]"
+		mob_effects = []
+		#How many ticks the night lasts during this event (vanilla = 12000).
+		#Range: 1 ~ 9223372036854775807
+		night_length_ticks = 12000
+		#Moon texture hex color. Empty = white.
+		moon_color = "ffdb63"
+		#Sky/light hex color during the event. Empty = white.
+		sky_color = "ffdb63"
+		#Moon texture override (ResourceLocation). Empty = vanilla phases.
+		moon_texture = ""
+		#Multiplier on the moon's rendered size during this event. 1.0 = default.
+		#Range: 0.01 ~ 100.0
+		moon_size_multiplier = 1.0
+		#Message shown when the event starts. Supports & color codes. Empty = no message.
+		start_message = "&e&lThe \"Super Harvest Moon\" rises... Your crops provide an exceptional harvest."
+		#Message shown when the event ends. Supports & color codes. Empty = no message.
+		end_message = "&eThe \"Super Harvest Moon\" sets..."
+		#Multiply drops for items in the configured tags while this event is active.
+		enable_crop_drop_boost = true
+		#Item tags to multiply drops for. Format: "tag_id;multiplier".
+		crop_drop_tags = ["enhancedcelestials:harvest_moon_crops;4.0"]
+
+	[events.blue_moon]
+		#Multiplier on the event's spawn chance. 0 disables it.
+		#Range: 0.0 ~ 1000.0
+		chance_multiplier = 1.0
+		#Minimum nights between this event. -1 keeps default.
+		#Range: > -1
+		min_nights_between = -1
+		#Moon phases (0-7) this event can occur on. Empty keeps default.
+		valid_moon_phases = []
+		#Global multiplier applied to every mob category's spawn rate during this event, including categories set by mob_category_multipliers.
+		#Range: 0.0 ~ 1000.0
+		mob_spawn_multiplier = 1.0
+		#Multiplier on the mob-spawn cap during this event. 1.0 = vanilla. -1 = no cap, mobs keep spawning.
+		#Range: -1.0 ~ 10000.0
+		mob_cap_multiplier = 1.0
+		#Whether this event blocks sleeping.
+		#Allowed Values: DEFAULT, TRUE, FALSE
+		block_sleeping = "DEFAULT"
+		#Use the biome's normal spawn list during this event.
+		#Allowed Values: DEFAULT, TRUE, FALSE
+		use_biome_spawn_settings = "DEFAULT"
+		#Force mobs to spawn on the surface during this event.
+		#Allowed Values: DEFAULT, TRUE, FALSE
+		force_surface_spawning = "DEFAULT"
+		#Allow slimes to spawn anywhere during this event.
+		#Allowed Values: DEFAULT, TRUE, FALSE
+		slimes_spawn_everywhere = "DEFAULT"
+		#Force weather while this event is active. DEFAULT keeps vanilla weather.
+		#Allowed Values: DEFAULT, CLEAR, RAIN, THUNDER
+		weather_override = "DEFAULT"
+		#Allow vanilla weather to return after the event ends.
+		restore_weather_after_event = true
+		#Per-category spawn multipliers. Format: "CATEGORY:value"
+		mob_category_multipliers = []
+		#Mobs to add during this event. Format: "target;weight;min;max". target = entity id, #entity_tag, or @modid (all of a mod's mobs).
+		spawn_additions = []
+		#Entities blocked from spawning during this event. Each entry = entity id, #entity_tag, or @modid.
+		spawn_removals = []
+		#Dimensions to add this event to. Format: "namespace:dimension_id". Uses overworld settings as template.
+		added_dimensions = []
+		#Maximum block light level monsters can spawn at during this event. 0 = vanilla.
+		#Range: 0 ~ 15
+		monster_spawn_light_level = 0
+		#Multiplier on the vanilla chance for monsters to spawn with gear (armor + weapons).
+		#Range: 0.0 ~ 1000.0
+		mob_gear_chance_multiplier = 1.0
+		#Whether mobs drop the gear given to them by this event.
+		mob_drops_event_gear = false
+		#Chance multiplier for non-common drops (uncommon, rare, epic) during this event.
+		#Range: 1.0 ~ 100.0
+		rare_drop_multiplier = 1.0
+		#Only mobs spawned by the event are affected by rare_drop_multiplier.
+		rare_drop_only_event_mobs = true
+		#Multiplier on experience dropped by mobs killed during this event.
+		#Range: 0.0 ~ 1000.0
+		xp_drop_multiplier = 1.0
+		#Only mobs spawned by the event are affected by xp_drop_multiplier.
+		xp_only_event_mobs = true
+		#Multiplier on max health for mobs spawned during this event.
+		#Range: 0.01 ~ 1000.0
+		mob_health_multiplier = 1.0
+		#Multiplier on attack damage for mobs spawned during this event.
+		#Range: 0.01 ~ 1000.0
+		mob_damage_multiplier = 1.0
+		#Multiplier on movement speed for mobs spawned during this event.
+		#Range: 0.01 ~ 1000.0
+		mob_speed_multiplier = 1.0
+		#Multiplier on swim speed for mobs spawned during this event.
+		#Range: 0.01 ~ 1000.0
+		mob_swim_speed_multiplier = 1.0
+		#Prevent mobs spawned during this event from despawning.
+		prevent_mob_despawn = false
+		#Despawn all mobs spawned during this event after the event ends.
+		force_despawn_after_event = false
+		#Seconds after the event ends before forced despawn happens.
+		#Range: > 0
+		force_despawn_delay_seconds = 180
+		#Status effects applied while the event is active. Format: "effect_id;amplifier;duration[;target]"
+		mob_effects = ["minecraft:luck;0;1210"]
+		#How many ticks the night lasts during this event (vanilla = 12000).
+		#Range: 1 ~ 9223372036854775807
+		night_length_ticks = 12000
+		#Moon texture hex color. Empty = white.
+		moon_color = "009999"
+		#Sky/light hex color during the event. Empty = white.
+		sky_color = "009999"
+		#Moon texture override (ResourceLocation). Empty = vanilla phases.
+		moon_texture = ""
+		#Multiplier on the moon's rendered size during this event. 1.0 = default.
+		#Range: 0.01 ~ 100.0
+		moon_size_multiplier = 1.0
+		#Message shown when the event starts. Supports & color codes. Empty = no message.
+		start_message = "&bThe \"Blue Moon\" rises... You feel lucky!"
+		#Message shown when the event ends. Supports & color codes. Empty = no message.
+		end_message = "&bThe \"Blue Moon\" sets... You don't feel lucky anymore..."
+
+	[events.super_blue_moon]
+		#Multiplier on the event's spawn chance. 0 disables it.
+		#Range: 0.0 ~ 1000.0
+		chance_multiplier = 1.0
+		#Minimum nights between this event. -1 keeps default.
+		#Range: > -1
+		min_nights_between = -1
+		#Moon phases (0-7) this event can occur on. Empty keeps default.
+		valid_moon_phases = []
+		#Global multiplier applied to every mob category's spawn rate during this event, including categories set by mob_category_multipliers.
+		#Range: 0.0 ~ 1000.0
+		mob_spawn_multiplier = 1.0
+		#Multiplier on the mob-spawn cap during this event. 1.0 = vanilla. -1 = no cap, mobs keep spawning.
+		#Range: -1.0 ~ 10000.0
+		mob_cap_multiplier = 1.0
+		#Whether this event blocks sleeping.
+		#Allowed Values: DEFAULT, TRUE, FALSE
+		block_sleeping = "DEFAULT"
+		#Use the biome's normal spawn list during this event.
+		#Allowed Values: DEFAULT, TRUE, FALSE
+		use_biome_spawn_settings = "DEFAULT"
+		#Force mobs to spawn on the surface during this event.
+		#Allowed Values: DEFAULT, TRUE, FALSE
+		force_surface_spawning = "DEFAULT"
+		#Allow slimes to spawn anywhere during this event.
+		#Allowed Values: DEFAULT, TRUE, FALSE
+		slimes_spawn_everywhere = "DEFAULT"
+		#Force weather while this event is active. DEFAULT keeps vanilla weather.
+		#Allowed Values: DEFAULT, CLEAR, RAIN, THUNDER
+		weather_override = "DEFAULT"
+		#Allow vanilla weather to return after the event ends.
+		restore_weather_after_event = true
+		#Per-category spawn multipliers. Format: "CATEGORY:value"
+		mob_category_multipliers = []
+		#Mobs to add during this event. Format: "target;weight;min;max". target = entity id, #entity_tag, or @modid (all of a mod's mobs).
+		spawn_additions = []
+		#Entities blocked from spawning during this event. Each entry = entity id, #entity_tag, or @modid.
+		spawn_removals = []
+		#Dimensions to add this event to. Format: "namespace:dimension_id". Uses overworld settings as template.
+		added_dimensions = []
+		#Maximum block light level monsters can spawn at during this event. 0 = vanilla.
+		#Range: 0 ~ 15
+		monster_spawn_light_level = 0
+		#Multiplier on the vanilla chance for monsters to spawn with gear (armor + weapons).
+		#Range: 0.0 ~ 1000.0
+		mob_gear_chance_multiplier = 1.0
+		#Whether mobs drop the gear given to them by this event.
+		mob_drops_event_gear = false
+		#Chance multiplier for non-common drops (uncommon, rare, epic) during this event.
+		#Range: 1.0 ~ 100.0
+		rare_drop_multiplier = 1.0
+		#Only mobs spawned by the event are affected by rare_drop_multiplier.
+		rare_drop_only_event_mobs = true
+		#Multiplier on experience dropped by mobs killed during this event.
+		#Range: 0.0 ~ 1000.0
+		xp_drop_multiplier = 1.0
+		#Only mobs spawned by the event are affected by xp_drop_multiplier.
+		xp_only_event_mobs = true
+		#Multiplier on max health for mobs spawned during this event.
+		#Range: 0.01 ~ 1000.0
+		mob_health_multiplier = 1.0
+		#Multiplier on attack damage for mobs spawned during this event.
+		#Range: 0.01 ~ 1000.0
+		mob_damage_multiplier = 1.0
+		#Multiplier on movement speed for mobs spawned during this event.
+		#Range: 0.01 ~ 1000.0
+		mob_speed_multiplier = 1.0
+		#Multiplier on swim speed for mobs spawned during this event.
+		#Range: 0.01 ~ 1000.0
+		mob_swim_speed_multiplier = 1.0
+		#Prevent mobs spawned during this event from despawning.
+		prevent_mob_despawn = false
+		#Despawn all mobs spawned during this event after the event ends.
+		force_despawn_after_event = false
+		#Seconds after the event ends before forced despawn happens.
+		#Range: > 0
+		force_despawn_delay_seconds = 180
+		#Status effects applied while the event is active. Format: "effect_id;amplifier;duration[;target]"
+		mob_effects = ["minecraft:luck;4;1210"]
+		#How many ticks the night lasts during this event (vanilla = 12000).
+		#Range: 1 ~ 9223372036854775807
+		night_length_ticks = 12000
+		#Moon texture hex color. Empty = white.
+		moon_color = "00ffff"
+		#Sky/light hex color during the event. Empty = white.
+		sky_color = "00ffff"
+		#Moon texture override (ResourceLocation). Empty = vanilla phases.
+		moon_texture = ""
+		#Multiplier on the moon's rendered size during this event. 1.0 = default.
+		#Range: 0.01 ~ 100.0
+		moon_size_multiplier = 1.0
+		#Message shown when the event starts. Supports & color codes. Empty = no message.
+		start_message = "&bThe \"Super Blue Moon\" rises... You feel very lucky!"
+		#Message shown when the event ends. Supports & color codes. Empty = no message.
+		end_message = "&bThe \"Super Blue Moon\" sets... You don't feel very lucky anymore..."
+
+	[events.super_moon]
+		#Multiplier on the event's spawn chance. 0 disables it.
+		#Range: 0.0 ~ 1000.0
+		chance_multiplier = 1.0
+		#Minimum nights between this event. -1 keeps default.
+		#Range: > -1
+		min_nights_between = -1
+		#Moon phases (0-7) this event can occur on. Empty keeps default.
+		valid_moon_phases = []
+		#Global multiplier applied to every mob category's spawn rate during this event, including categories set by mob_category_multipliers.
+		#Range: 0.0 ~ 1000.0
+		mob_spawn_multiplier = 1.0
+		#Multiplier on the mob-spawn cap during this event. 1.0 = vanilla. -1 = no cap, mobs keep spawning.
+		#Range: -1.0 ~ 10000.0
+		mob_cap_multiplier = 1.0
+		#Whether this event blocks sleeping.
+		#Allowed Values: DEFAULT, TRUE, FALSE
+		block_sleeping = "DEFAULT"
+		#Use the biome's normal spawn list during this event.
+		#Allowed Values: DEFAULT, TRUE, FALSE
+		use_biome_spawn_settings = "DEFAULT"
+		#Force mobs to spawn on the surface during this event.
+		#Allowed Values: DEFAULT, TRUE, FALSE
+		force_surface_spawning = "DEFAULT"
+		#Allow slimes to spawn anywhere during this event.
+		#Allowed Values: DEFAULT, TRUE, FALSE
+		slimes_spawn_everywhere = "DEFAULT"
+		#Force weather while this event is active. DEFAULT keeps vanilla weather.
+		#Allowed Values: DEFAULT, CLEAR, RAIN, THUNDER
+		weather_override = "DEFAULT"
+		#Allow vanilla weather to return after the event ends.
+		restore_weather_after_event = true
+		#Per-category spawn multipliers. Format: "CATEGORY:value"
+		mob_category_multipliers = []
+		#Mobs to add during this event. Format: "target;weight;min;max". target = entity id, #entity_tag, or @modid (all of a mod's mobs).
+		spawn_additions = []
+		#Entities blocked from spawning during this event. Each entry = entity id, #entity_tag, or @modid.
+		spawn_removals = []
+		#Dimensions to add this event to. Format: "namespace:dimension_id". Uses overworld settings as template.
+		added_dimensions = []
+		#Maximum block light level monsters can spawn at during this event. 0 = vanilla.
+		#Range: 0 ~ 15
+		monster_spawn_light_level = 0
+		#Multiplier on the vanilla chance for monsters to spawn with gear (armor + weapons).
+		#Range: 0.0 ~ 1000.0
+		mob_gear_chance_multiplier = 1.0
+		#Whether mobs drop the gear given to them by this event.
+		mob_drops_event_gear = false
+		#Chance multiplier for non-common drops (uncommon, rare, epic) during this event.
+		#Range: 1.0 ~ 100.0
+		rare_drop_multiplier = 1.0
+		#Only mobs spawned by the event are affected by rare_drop_multiplier.
+		rare_drop_only_event_mobs = true
+		#Multiplier on experience dropped by mobs killed during this event.
+		#Range: 0.0 ~ 1000.0
+		xp_drop_multiplier = 1.0
+		#Only mobs spawned by the event are affected by xp_drop_multiplier.
+		xp_only_event_mobs = true
+		#Multiplier on max health for mobs spawned during this event.
+		#Range: 0.01 ~ 1000.0
+		mob_health_multiplier = 1.0
+		#Multiplier on attack damage for mobs spawned during this event.
+		#Range: 0.01 ~ 1000.0
+		mob_damage_multiplier = 1.0
+		#Multiplier on movement speed for mobs spawned during this event.
+		#Range: 0.01 ~ 1000.0
+		mob_speed_multiplier = 1.0
+		#Multiplier on swim speed for mobs spawned during this event.
+		#Range: 0.01 ~ 1000.0
+		mob_swim_speed_multiplier = 1.0
+		#Prevent mobs spawned during this event from despawning.
+		prevent_mob_despawn = false
+		#Despawn all mobs spawned during this event after the event ends.
+		force_despawn_after_event = false
+		#Seconds after the event ends before forced despawn happens.
+		#Range: > 0
+		force_despawn_delay_seconds = 180
+		#Status effects applied while the event is active. Format: "effect_id;amplifier;duration[;target]"
+		mob_effects = []
+		#How many ticks the night lasts during this event (vanilla = 12000).
+		#Range: 1 ~ 9223372036854775807
+		night_length_ticks = 12000
+		#Moon texture hex color. Empty = white.
+		moon_color = "ffffff"
+		#Sky/light hex color during the event. Empty = white.
+		sky_color = "6766ff"
+		#Moon texture override (ResourceLocation). Empty = vanilla phases.
+		moon_texture = ""
+		#Multiplier on the moon's rendered size during this event. 1.0 = default.
+		#Range: 0.01 ~ 100.0
+		moon_size_multiplier = 1.0
+		#Message shown when the event starts. Supports & color codes. Empty = no message.
+		start_message = "&dThe \"Super Moon\" rises... Slimes begin to spawn nearby."
+		#Message shown when the event ends. Supports & color codes. Empty = no message.
+		end_message = "&dThe \"Super Moon\" sets..."
+

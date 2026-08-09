@@ -1,0 +1,37 @@
+﻿
+#--------------------------------------------------------
+#Client Party Settings
+#Type /party reload in-game to reload this configuration.
+#--------------------------------------------------------
+[party-ui]
+	#End the potion effects on the client without the server packet
+	#If true, the client won't wait for the server to send a potion effect packet to remove the potion effects from the UI.
+	#If false, the potion effects will stay on the client until the server says the client no longer has it.
+	endPotionEffects = true
+	#Enables the Player Frame under specific conditions.
+	#ON - Enables the Player Frame.
+	#PARTY - Enables the Player Frame only when the player is in a party.
+	#OFF - Disables the Player Frame.
+	#Allowed Values: ON, PARTY, OFF
+	playerRender = "ON"
+	#Renders armor toughness as text in paranthesis next to the armor value if it's not zero.
+	toughnessRender = true
+	#Makes all the models drawn on the party frame face forward if true.
+	#Self model is drawn when the head element has Head Type at 1, or 2 for the entire party.
+	forceModelRotation = true
+	#Offset of the front-facing model if forceModelRotation is enabled.
+	#Negative values make the model face right, while positive values make the model face left.
+	#Range: -180 ~ 180
+	rotationOffset = -30
+
+[mod-options]
+	#This allows you to set the type of automatic syncing you'd like for GameStages support
+	#When prompted from a party invite. Syncing only occurs if players allow it.
+	#ALL - Prompt disabled, all game stages are synced. Only works if server allows it.
+	#FUTURE - Prompt disabled, future game stages are synced. Only works if server allows it.
+	#NONE - Prompt disabled, no game stages are synced at all.
+	#PROMPT - A prompt asking for sync permission is sent each time you join a party.
+	#Allowed Values: ALL, FUTURE, NONE
+	defaultSync = "ALL"
+
+

@@ -1,0 +1,13 @@
+name = "[TACZ Addons] Daffa's Arsenal"
+filename = "daffas_arsenal-3.6.0.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "053df5021fbb88ea54c09757de848bb33537c77a"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 8366756
+project-id = 1254350

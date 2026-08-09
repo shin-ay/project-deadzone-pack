@@ -1,0 +1,21 @@
+{
+  "dimx": 3,
+  "dimz": 3,
+  "buildings": [
+    [
+      "lostcities:gasstation1_0_0",
+      "lostcities:gasstation1_0_1",
+      "lostcities:gasstation1_0_2"
+    ],
+    [
+      "lostcities:gasstation1_1_0",
+      "lostcities:gasstation1_1_1",
+      "lostcities:gasstation1_1_2"
+    ],
+    [
+      "lostcities:gasstation1_2_0",
+      "lostcities:gasstation1_2_1",
+      "lostcities:gasstation1_2_2"
+    ]
+  ]
+}

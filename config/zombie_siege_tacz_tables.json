@@ -1,0 +1,22 @@
+{
+  "useWhitelist": false,
+  "tables": [
+    "minecraft:chests/fake1",
+    "minecraft:chests/fake2",
+    "minecraft:chests/fake3"
+  ],
+  "dropChances": {
+    "minecraft": {
+      "emptyWeight": 75,
+      "gunOnlyWeight": 5,
+      "ammoOnlyWeight": 15,
+      "bothWeight": 5
+    },
+    "doomsday_functionality": {
+      "emptyWeight": 75,
+      "gunOnlyWeight": 5,
+      "ammoOnlyWeight": 15,
+      "bothWeight": 5
+    }
+  }
+}

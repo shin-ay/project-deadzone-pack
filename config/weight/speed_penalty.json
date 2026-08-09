@@ -1,0 +1,25 @@
+{
+  "speed_penalty_rules": [
+    {
+      "percent": 1.5,
+      "multiplier": 0.55
+    },
+    {
+      "percent": 1.2,
+      "multiplier": 0.75
+    },
+    {
+      "percent": 1.0,
+      "multiplier": 0.9
+    },
+    {
+      "percent": 0.8,
+      "multiplier": 0.97
+    },
+    {
+      "percent": 0.0,
+      "multiplier": 1.0
+    }
+  ],
+  "default_multiplier": 1.0
+}

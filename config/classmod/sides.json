@@ -1,0 +1,7 @@
+{
+  "enabled": false,
+  "requireBeforeClassSelection": false,
+  "definitions": [
+    "neutral|Neutral|Independent survivor|classmod:textures/gui/sides/alliance.png"
+  ]
+}

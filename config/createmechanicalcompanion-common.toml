@@ -1,0 +1,54 @@
+#List of entities the wolf won't attack
+wolfBlacklist = ["minecraft:creeper", "minecraft:ghast", "mekanism:robit"]
+#Amount of health restored by using the Wrench on the Mechanical Companion (Default value = 2.0)
+#Range: 0.0 ~ 1.7976931348623157E308
+wrenchHealAmount = 2.0
+#Armor value provided by Reinforced Plates [0-20] (Default value = 4)
+#Range: 0 ~ 20
+reinforcedPlatesArmorValue = 4
+#Health increase provided by Reinforced Plates (Default value = 0)
+#Range: > 0
+reinforcedPlatesHealthIncrease = 0
+#Knockback resistance provided by Reinforced Plates [0.0 - 1.0] (Default value = 0.1)
+#Range: 0.0 ~ 1.0
+reinforcedPlatesKnockBackResistance = 0.1
+#Armor value provided by Netherite Plates [0-20] (Default value = 6)
+#Range: 0 ~ 20
+netheritePlatesArmorValue = 6
+#Health increase provided by Netherite Plates (Default value = 10)
+#Range: > 0
+netheritePlatesHealthIncrease = 10
+#Knockback resistance provided by Netherite Plates [0.0 - 1.0] (Default value = 0.2)
+#Range: 0.0 ~ 1.0
+netheritePlatesKnockBackResistance = 0.2
+#Cooldown time of the Mounted Crossbow (Default value = 60)
+#Range: > 0
+mountedCrossbowCooldown = 60
+#Damage dealt by the Tesla Tail (Default value = 2.0)
+#Range: 0.0 ~ 1.7976931348623157E308
+teslaTailDamage = 2.0
+#Duration that the target is set on fire by the Smelting Fangs (Default value = 5)
+#Range: > 0
+smeltingFangsFireDuration = 5
+#Speed boost provided by the Booster Rocket (Default value = 0.3)
+#Range: 0.0 ~ 1.7976931348623157E308
+boosterRocketSpeedIncrease = 0.3
+#Duration of the speed boost from the Booster Rocket (Default value = 40)
+#Range: > 0
+boosterRocketDuration = 40
+#Cooldown time for the Booster Rocket (Default value = 180)
+#Range: > 0
+boosterRocketCooldown = 180
+#Cooldown time (in seconds) for the Quantum Drive (Default value = 40)
+#Range: > 0
+quantumDriveCooldown = 40
+#Amount of health restored by the Regenerative Casing (Default value = 0.05)
+#Range: 0.0 ~ 1.7976931348623157E308
+regenerativeCasingHealAmount = 0.05
+#Detection range of the Mob Radar (Default value = 32)
+#Range: > 0
+mobRadarRange = 32
+#Cooldown time for the Mob Radar (Default value = 200)
+#Range: > 0
+mobRadarCooldown = 200
+

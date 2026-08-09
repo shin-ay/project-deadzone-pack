@@ -1,0 +1,13 @@
+name = "Blocky Bikes"
+filename = "blocky_bikes-0.0.7-forge-1.20.1.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "cb13c4160602d1970cc1efef1b97c9327419581e"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 7885060
+project-id = 1259933

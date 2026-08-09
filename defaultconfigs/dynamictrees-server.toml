@@ -1,0 +1,9 @@
+# PROJECT DEADZONE baseline for newly created worlds.
+# Dynamic Trees fills omitted keys with its normal defaults.
+
+[trees]
+	# Faster early-game logging without making axes irrelevant.
+	maxTreeHardness = 10.0
+	treeHardnessMultiplier = 0.35
+	growthMultiplier = 0.5
+	harvestMultiplier = 1.0

@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        { "type": "minecraft:item", "name": "apocalypsenow:pain_killers", "weight": 10, "functions": [{ "function": "minecraft:set_count", "count": { "min": 1, "max": 2 } }] },
+        { "type": "minecraft:item", "name": "survival_instinct:bear_trap", "weight": 5 },
+        { "type": "minecraft:item", "name": "minecraft:gold_ingot", "weight": 5, "functions": [{ "function": "minecraft:set_count", "count": { "min": 1, "max": 2 } }] },
+        { "type": "minecraft:item", "name": "minecraft:shield", "weight": 4 },
+        { "type": "minecraft:item", "name": "minecraft:iron_helmet", "weight": 4 },
+        { "type": "minecraft:item", "name": "immersiveengineering:hammer", "weight": 3 },
+        { "type": "minecraft:item", "name": "immersiveengineering:wirecutter", "weight": 3 },
+        { "type": "minecraft:item", "name": "immersiveengineering:survey_tools", "weight": 2 },
+        { "type": "minecraft:item", "name": "minecraft:quartz", "weight": 5, "functions": [{ "function": "minecraft:set_count", "count": { "min": 2, "max": 4 } }] },
+        { "type": "minecraft:item", "name": "minecraft:blaze_powder", "weight": 3, "functions": [{ "function": "minecraft:set_count", "count": { "min": 1, "max": 2 } }] },
+        { "type": "minecraft:item", "name": "minecraft:nether_brick", "weight": 4, "functions": [{ "function": "minecraft:set_count", "count": { "min": 2, "max": 5 } }] },
+        { "type": "minecraft:item", "name": "minecraft:magma_cream", "weight": 2, "functions": [{ "function": "minecraft:set_count", "count": { "min": 1, "max": 2 } }] },
+        { "type": "minecraft:item", "name": "create:blaze_cake", "weight": 1 }
+      ]
+    }
+  ]
+}

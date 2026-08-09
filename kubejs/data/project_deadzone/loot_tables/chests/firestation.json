@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "name": "project_deadzone:chests/firestation_equipment",
+          "weight": 45
+        },
+        {
+          "type": "minecraft:loot_table",
+          "name": "project_deadzone:chests/firestation_rescue",
+          "weight": 30
+        },
+        {
+          "type": "minecraft:loot_table",
+          "name": "project_deadzone:chests/firestation_workshop",
+          "weight": 20
+        },
+        {
+          "type": "minecraft:loot_table",
+          "name": "project_deadzone:chests/firestation_security",
+          "weight": 5
+        }
+      ]
+    }
+  ]
+}

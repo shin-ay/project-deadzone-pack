@@ -1,0 +1,32 @@
+﻿{
+    "id":  "project_deadzone:talent_engineer_power_doctrine_power",
+    "bonuses":  [
+
+                ],
+    "requirements":  [
+
+                     ],
+    "directConnections":  [
+                              "project_deadzone:talent_engineer_power_power_20"
+                          ],
+    "longConnections":  [
+
+                        ],
+    "oneWayConnections":  [
+
+                          ],
+    "tags":  [
+                 "pdz_talent_power",
+                 "pdz_talent_doctrine",
+                 "pdz_doctrine_engineer_power",
+                 "pdz_doctrine_power",
+                 "pdz_node_talent_engineer_power_doctrine_power"
+             ],
+    "backgroundTexture":  "skilltree:textures/icons/background/keystone.png",
+    "iconTexture":  "skilltree:textures/icons/torch.png",
+    "borderTexture":  "skilltree:textures/tooltip/lesser.png",
+    "positionX":  993.91,
+    "positionY":  790.59,
+    "buttonSize":  32,
+    "isStartingPoint":  false
+}

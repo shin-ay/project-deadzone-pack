@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        { "type": "minecraft:empty", "weight": 30 },
+        { "type": "minecraft:loot_table", "name": "project_deadzone:chests/generic_low_filled", "weight": 70 }
+      ]
+    }
+  ]
+}

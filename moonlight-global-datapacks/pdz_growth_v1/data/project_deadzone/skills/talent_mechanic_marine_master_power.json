@@ -1,0 +1,32 @@
+﻿{
+    "id":  "project_deadzone:talent_mechanic_marine_master_power",
+    "bonuses":  [
+
+                ],
+    "requirements":  [
+
+                     ],
+    "directConnections":  [
+                              "project_deadzone:talent_mechanic_marine_15"
+                          ],
+    "longConnections":  [
+
+                        ],
+    "oneWayConnections":  [
+
+                          ],
+    "tags":  [
+                 "pdz_talent_marine",
+                 "pdz_talent_mastery",
+                 "pdz_mastery_mechanic_marine",
+                 "pdz_master_power",
+                 "pdz_node_talent_mechanic_marine_master_power"
+             ],
+    "backgroundTexture":  "skilltree:textures/icons/background/keystone.png",
+    "iconTexture":  "skilltree:textures/icons/fishing_rod_diamond.png",
+    "borderTexture":  "skilltree:textures/tooltip/lesser.png",
+    "positionX":  -179.5,
+    "positionY":  968.51,
+    "buttonSize":  32,
+    "isStartingPoint":  false
+}

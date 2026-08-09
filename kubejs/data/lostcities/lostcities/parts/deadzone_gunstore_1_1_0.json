@@ -1,0 +1,851 @@
+{
+  "xsize": 16,
+  "zsize": 16,
+  "palette": {
+    "palette": [
+      {
+        "char": "",
+        "block": "minecraft:air"
+      },
+      {
+        "char": "",
+        "block": "minecraft:polished_andesite"
+      },
+      {
+        "char": "",
+        "block": "minecraft:mossy_cobblestone"
+      },
+      {
+        "char": "",
+        "block": "minecraft:cobblestone[weathering=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:andesite"
+      },
+      {
+        "char": "",
+        "block": "minecraft:stone[weathering=false]"
+      },
+      {
+        "char": "",
+        "block": "immersive_weathering:mossy_stone"
+      },
+      {
+        "char": "",
+        "block": "minecraft:grass_block[snowy=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:stone[weathering=true]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:dirt"
+      },
+      {
+        "char": "",
+        "block": "mcwdoors:metal_reinforced_door[facing=north,half=lower,hinge=left,open=false,powered=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:jungle_planks"
+      },
+      {
+        "char": "",
+        "block": "mcwdoors:metal_reinforced_door[facing=north,half=lower,hinge=right,open=false,powered=false]"
+      },
+      {
+        "char": "",
+        "block": "immersive_weathering:mossy_bricks"
+      },
+      {
+        "char": "",
+        "block": "minecraft:polished_deepslate"
+      },
+      {
+        "char": "",
+        "block": "minecraft:deepslate[axis=y]"
+      },
+      {
+        "char": "",
+        "block": "immersive_weathering:weathered_iron_bars[east=false,north=true,south=false,waterlogged=false,west=true]"
+      },
+      {
+        "char": "",
+        "block": "horror_element_mod:blood_1[facing=north,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "securitycraft:reinforced_polished_andesite",
+        "tag": {
+          "owner": "Natsumamire",
+          "ownerUUID": "908f197c-46c7-4c8c-aad8-3782f26cb6fa",
+          "id": "securitycraft:ownable"
+        }
+      },
+      {
+        "char": "",
+        "block": "immersive_weathering:oak_leaf_pile[age=0,layers=1]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:vine[east=false,north=true,south=false,up=false,west=false]"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:cardboard_box",
+        "tag": {
+          "Items": [],
+          "id": "apocalypsenow:cardboard_box"
+        }
+      },
+      {
+        "char": "",
+        "block": "minecraft:bricks[weathering=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:vine[east=false,north=false,south=false,up=false,west=true]"
+      },
+      {
+        "char": "",
+        "block": "securitycraft:iron_door_reinforced[facing=west,half=lower,hinge=right,open=false]",
+        "tag": {
+          "owner": "Natsumamire",
+          "ownerUUID": "908f197c-46c7-4c8c-aad8-3782f26cb6fa",
+          "id": "securitycraft:ownable"
+        }
+      },
+      {
+        "char": "",
+        "block": "horror_element_mod:impaled_head[facing=east,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:grass"
+      },
+      {
+        "char": "",
+        "block": "minecraft:granite"
+      },
+      {
+        "char": "",
+        "block": "minecraft:tall_grass[half=lower]"
+      },
+      {
+        "char": "",
+        "block": "cfm:stripped_dark_oak_kitchen_counter[facing=west,type=right_corner]"
+      },
+      {
+        "char": "",
+        "block": "cfm:stripped_dark_oak_kitchen_counter[facing=north,type=default]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:mossy_stone_brick_stairs[facing=south,half=bottom,shape=straight,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "cfm:stripped_dark_oak_kitchen_counter[facing=west,type=default]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:stone_brick_stairs[facing=north,half=top,shape=straight,waterlogged=false,weathering=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:mossy_stone_brick_stairs[facing=north,half=top,shape=straight,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "immersive_weathering:oak_leaf_pile[age=0,layers=4]"
+      },
+      {
+        "char": "",
+        "block": "immersive_weathering:oak_leaf_pile[age=0,layers=2]"
+      },
+      {
+        "char": "",
+        "block": "mcwfurnitures:dark_oak_double_drawer"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:military_storage[facing=east,waterlogged=false]",
+        "tag": {
+          "Items": [],
+          "id": "apocalypsenow:military_storage"
+        }
+      },
+      {
+        "char": "",
+        "block": "doomsday_decoration:airconditioning_2[facing=east,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "horror_element_mod:blood_7[facing=east,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "cfm:stripped_dark_oak_kitchen_counter[facing=south,type=right_corner]"
+      },
+      {
+        "char": "",
+        "block": "cfm:stripped_dark_oak_kitchen_counter[facing=south,type=default]"
+      },
+      {
+        "char": "",
+        "block": "doomsday_decoration:remains_4[facing=east]"
+      },
+      {
+        "char": "",
+        "block": "horror_element_mod:blood_5[facing=east,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "horror_element_mod:blood_9[facing=east,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:vine[east=true,north=false,south=false,up=false,west=false]"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:iron_locker[facing=north,waterlogged=false]",
+        "tag": {
+          "Items": [],
+          "id": "apocalypsenow:iron_locker"
+        }
+      },
+      {
+        "char": "",
+        "block": "horror_element_mod:blood_7[facing=north,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "doomsday_decoration:cart[facing=north,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:birch_fence[east=false,north=true,south=true,waterlogged=false,west=false]"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:trashcann[facing=south,waterlogged=false]",
+        "tag": {
+          "Items": [],
+          "id": "apocalypsenow:trashcann"
+        }
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:trashcan_1[facing=south,waterlogged=false]",
+        "tag": {
+          "Items": [],
+          "id": "apocalypsenow:trashcan_1"
+        }
+      },
+      {
+        "char": "",
+        "block": "minecraft:spruce_fence_gate[facing=east,in_wall=true,open=false,powered=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:vine[east=false,north=false,south=true,up=false,west=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:spruce_fence_gate[facing=west,in_wall=true,open=false,powered=false]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:stone_brick_wall[east=low,north=low,south=none,up=true,waterlogged=false,weathering=false,west=none]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:stripped_birch_wood[axis=x]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:mossy_stone_brick_wall[east=none,north=low,south=none,up=true,waterlogged=false,west=low]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:mossy_stone_brick_wall[east=none,north=none,south=none,up=true,waterlogged=false,west=none]"
+      },
+      {
+        "char": "",
+        "block": "mcwdoors:metal_reinforced_door[facing=north,half=upper,hinge=left,open=false,powered=false]"
+      },
+      {
+        "char": "",
+        "block": "mcwdoors:metal_reinforced_door[facing=north,half=upper,hinge=right,open=false,powered=false]"
+      },
+      {
+        "char": "",
+        "block": "immersive_weathering:cracked_bricks"
+      },
+      {
+        "char": "",
+        "block": "minecraft:deepslate[axis=x]"
+      },
+      {
+        "char": "",
+        "block": "mcwwindows:oak_window2[facing=north,windowstate=closed]"
+      },
+      {
+        "char": "",
+        "block": "securitycraft:iron_door_reinforced[facing=west,half=upper,hinge=right,open=false]",
+        "tag": {
+          "owner": "Natsumamire",
+          "ownerUUID": "908f197c-46c7-4c8c-aad8-3782f26cb6fa",
+          "id": "securitycraft:ownable"
+        }
+      },
+      {
+        "char": "",
+        "block": "minecraft:tall_grass[half=upper]"
+      },
+      {
+        "char": "",
+        "block": "display_case:display_case[waterlogged=false]",
+        "tag": {
+          "Item": [
+            {},
+            {
+              "id": "display_case:display_case_lid",
+              "Count": 1
+            }
+          ],
+          "Waxed": 0,
+          "id": "display_case:display_case",
+          "Rotation": 46826
+        }
+      },
+      {
+        "char": "",
+        "block": "display_case:display_case[waterlogged=false]",
+        "tag": {
+          "Item": [
+            {},
+            {
+              "id": "display_case:display_case_lid",
+              "Count": 1
+            }
+          ],
+          "Waxed": 0,
+          "id": "display_case:display_case",
+          "Rotation": 46810
+        }
+      },
+      {
+        "char": "",
+        "block": "display_case:display_case[waterlogged=false]",
+        "tag": {
+          "Item": [
+            {},
+            {
+              "id": "display_case:display_case_lid",
+              "Count": 1
+            }
+          ],
+          "Waxed": 0,
+          "id": "display_case:display_case",
+          "Rotation": 46832
+        }
+      },
+      {
+        "char": "",
+        "block": "immersive_weathering:exposed_iron_bars[east=false,north=false,south=false,waterlogged=false,west=false]"
+      },
+      {
+        "char": "",
+        "block": "display_case:display_case[waterlogged=false]",
+        "tag": {
+          "Item": [
+            {},
+            {
+              "id": "display_case:display_case_lid",
+              "Count": 1
+            }
+          ],
+          "Waxed": 0,
+          "id": "display_case:display_case",
+          "Rotation": 46892
+        }
+      },
+      {
+        "char": "",
+        "block": "display_case:display_case[waterlogged=false]",
+        "tag": {
+          "Item": [
+            {},
+            {
+              "id": "display_case:display_case_lid",
+              "Count": 1
+            }
+          ],
+          "Waxed": 0,
+          "id": "display_case:display_case",
+          "Rotation": 46898
+        }
+      },
+      {
+        "char": "",
+        "block": "display_case:display_case[waterlogged=false]",
+        "tag": {
+          "Item": [
+            {},
+            {
+              "id": "display_case:display_case_lid",
+              "Count": 1
+            }
+          ],
+          "Waxed": 0,
+          "id": "display_case:display_case",
+          "Rotation": 46906
+        }
+      },
+      {
+        "char": "",
+        "block": "display_case:display_case[waterlogged=false]",
+        "tag": {
+          "Item": [
+            {},
+            {
+              "id": "display_case:display_case_lid",
+              "Count": 1
+            }
+          ],
+          "Waxed": 0,
+          "id": "display_case:display_case",
+          "Rotation": 46746
+        }
+      },
+      {
+        "char": "",
+        "block": "minecraft:deepslate[axis=z]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:stone_brick_wall[east=none,north=none,south=none,up=true,waterlogged=false,weathering=false,west=none]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:vine[east=false,north=true,south=false,up=false,west=true]"
+      },
+      {
+        "char": "",
+        "block": "shelfmod:floor_shelf_dark_oak"
+      },
+      {
+        "char": "",
+        "block": "minecraft:stone_brick_stairs[facing=south,half=bottom,shape=straight,waterlogged=false,weathering=false]"
+      },
+      {
+        "char": "",
+        "block": "immersive_weathering:exposed_iron_bars[east=false,north=false,south=true,waterlogged=false,west=false]"
+      },
+      {
+        "char": "",
+        "block": "immersive_weathering:exposed_iron_bars[east=false,north=true,south=false,waterlogged=false,west=false]"
+      },
+      {
+        "char": "",
+        "block": "shelfmod:floor_shelf_dark_oak"
+      },
+      {
+        "char": "",
+        "block": "minecraft:vine[east=true,north=true,south=false,up=false,west=false]"
+      },
+      {
+        "char": "",
+        "block": "minetraps:razor_wire[facing=east]"
+      },
+      {
+        "char": "",
+        "block": "minecraft:smooth_stone_slab[type=top,waterlogged=false]"
+      },
+      {
+        "char": "",
+        "block": "simplylight:illuminant_red_block_on[on=true]"
+      },
+      {
+        "char": "",
+        "block": "display_case:display_case[waterlogged=false]",
+        "tag": {
+          "Item": [
+            {},
+            {
+              "id": "display_case:display_case_lid",
+              "Count": 1
+            }
+          ],
+          "Waxed": 0,
+          "id": "display_case:display_case",
+          "Rotation": 46810
+        },
+        "loot": "project_deadzone:gunstore_weapons"
+      },
+      {
+        "char": "",
+        "block": "display_case:display_case[waterlogged=false]",
+        "tag": {
+          "Item": [
+            {},
+            {
+              "id": "display_case:display_case_lid",
+              "Count": 1
+            }
+          ],
+          "Waxed": 0,
+          "id": "display_case:display_case",
+          "Rotation": 46826
+        },
+        "loot": "project_deadzone:gunstore_weapons"
+      },
+      {
+        "char": "",
+        "block": "display_case:display_case[waterlogged=false]",
+        "tag": {
+          "Item": [
+            {},
+            {
+              "id": "display_case:display_case_lid",
+              "Count": 1
+            }
+          ],
+          "Waxed": 0,
+          "id": "display_case:display_case",
+          "Rotation": 46898
+        },
+        "loot": "project_deadzone:gunstore_weapons"
+      },
+      {
+        "char": "",
+        "block": "display_case:display_case[waterlogged=false]",
+        "tag": {
+          "Item": [
+            {},
+            {
+              "id": "display_case:display_case_lid",
+              "Count": 1
+            }
+          ],
+          "Waxed": 0,
+          "id": "display_case:display_case",
+          "Rotation": 46746
+        },
+        "loot": "project_deadzone:gunstore_weapons"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:cardboard_box",
+        "tag": {
+          "Items": [],
+          "id": "apocalypsenow:cardboard_box"
+        },
+        "loot": "project_deadzone:gunstore_armory"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:cardboard_box",
+        "tag": {
+          "Items": [],
+          "id": "apocalypsenow:cardboard_box"
+        },
+        "loot": "project_deadzone:gunstore_armory"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:cardboard_box",
+        "tag": {
+          "Items": [],
+          "id": "apocalypsenow:cardboard_box"
+        },
+        "loot": "project_deadzone:gunstore_armory"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:cardboard_box",
+        "tag": {
+          "Items": [],
+          "id": "apocalypsenow:cardboard_box"
+        },
+        "loot": "project_deadzone:gunstore_ammo_rare"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:cardboard_box",
+        "tag": {
+          "Items": [],
+          "id": "apocalypsenow:cardboard_box"
+        },
+        "loot": "project_deadzone:gunstore_ammo_rare"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:cardboard_box",
+        "tag": {
+          "Items": [],
+          "id": "apocalypsenow:cardboard_box"
+        },
+        "loot": "project_deadzone:gunstore_ammo_rare"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:cardboard_box",
+        "tag": {
+          "Items": [],
+          "id": "apocalypsenow:cardboard_box"
+        },
+        "loot": "project_deadzone:gunstore_ammo_rare"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:military_storage[facing=east,waterlogged=false]",
+        "tag": {
+          "Items": [],
+          "id": "apocalypsenow:military_storage"
+        },
+        "loot": "project_deadzone:gunstore_ammo_rare"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:military_storage[facing=east,waterlogged=false]",
+        "tag": {
+          "Items": [],
+          "id": "apocalypsenow:military_storage"
+        },
+        "loot": "project_deadzone:gunstore_ammo_rare"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:military_storage[facing=east,waterlogged=false]",
+        "tag": {
+          "Items": [],
+          "id": "apocalypsenow:military_storage"
+        },
+        "loot": "project_deadzone:gunstore_armory"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:military_storage[facing=east,waterlogged=false]",
+        "tag": {
+          "Items": [],
+          "id": "apocalypsenow:military_storage"
+        },
+        "loot": "project_deadzone:gunstore_armory"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:iron_locker[facing=north,waterlogged=false]",
+        "tag": {
+          "Items": [],
+          "id": "apocalypsenow:iron_locker"
+        },
+        "loot": "project_deadzone:police"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:iron_locker[facing=north,waterlogged=false]",
+        "tag": {
+          "Items": [],
+          "id": "apocalypsenow:iron_locker"
+        },
+        "loot": "project_deadzone:gunstore_supplies_only"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:iron_locker[facing=north,waterlogged=false]",
+        "tag": {
+          "Items": [],
+          "id": "apocalypsenow:iron_locker"
+        },
+        "loot": "project_deadzone:gunstore_supplies_only"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:military_storage[facing=east,waterlogged=false]",
+        "tag": {
+          "Items": [],
+          "id": "apocalypsenow:military_storage"
+        },
+        "loot": "project_deadzone:gunstore_ammo"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:military_storage[facing=east,waterlogged=false]",
+        "tag": {
+          "Items": [],
+          "id": "apocalypsenow:military_storage"
+        },
+        "loot": "project_deadzone:gunstore_ammo"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:cardboard_box",
+        "tag": {
+          "Items": [],
+          "id": "apocalypsenow:cardboard_box"
+        },
+        "loot": "project_deadzone:gunstore_ammo"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:cardboard_box",
+        "tag": {
+          "Items": [],
+          "id": "apocalypsenow:cardboard_box"
+        },
+        "loot": "project_deadzone:gunstore_ammo_rare"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:cardboard_box",
+        "tag": {
+          "Items": [],
+          "id": "apocalypsenow:cardboard_box"
+        },
+        "loot": "project_deadzone:gunstore_ammo_rare"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:cardboard_box",
+        "tag": {
+          "Items": [],
+          "id": "apocalypsenow:cardboard_box"
+        },
+        "loot": "project_deadzone:gunstore_ammo_rare"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:cardboard_box",
+        "tag": {
+          "Items": [],
+          "id": "apocalypsenow:cardboard_box"
+        },
+        "loot": "project_deadzone:gunstore_armory"
+      },
+      {
+        "char": "",
+        "block": "apocalypsenow:cardboard_box",
+        "tag": {
+          "Items": [],
+          "id": "apocalypsenow:cardboard_box"
+        },
+        "loot": "project_deadzone:gunstore_weapons"
+      }
+    ]
+  },
+  "slices": [
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  ]
+}

@@ -1,0 +1,387 @@
+{
+  "engineering_core_1": {
+    "title": "工学技術 基礎 Lv1",
+    "description": "工学技術の基礎能力を一段階高める。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:iron_pickaxe"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "task"
+      }
+    },
+    "cost": 0,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_engineering_core_1"
+        }
+      }
+    ]
+  },
+  "engineering_core_2": {
+    "title": "工学技術 基礎 Lv2",
+    "description": "工学技術の基礎能力を一段階高める。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:iron_pickaxe"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "task"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_engineering_core_2"
+        }
+      }
+    ]
+  },
+  "engineering_core_3": {
+    "title": "工学技術 基礎 Lv3",
+    "description": "工学技術でポイントを配分し、基礎能力をさらに高める。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:iron_pickaxe"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "goal"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_engineering_core_3"
+        }
+      }
+    ],
+    "required_spent_points": 2
+  },
+  "engineering_core_4": {
+    "title": "工学技術 基礎 Lv4",
+    "description": "工学技術でポイントを配分し、基礎能力をさらに高める。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:iron_pickaxe"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "goal"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_engineering_core_4"
+        }
+      }
+    ],
+    "required_spent_points": 4
+  },
+  "engineering_core_5": {
+    "title": "工学技術 基礎 Lv5",
+    "description": "工学技術でポイントを配分し、基礎能力をさらに高める。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:iron_pickaxe"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "challenge"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_engineering_core_5"
+        }
+      }
+    ],
+    "required_spent_points": 6
+  },
+  "engineering_core_6": {
+    "title": "工学技術 基礎 Lv6",
+    "description": "工学技術でポイントを配分し、基礎能力をさらに高める。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:iron_pickaxe"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "challenge"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_engineering_core_6"
+        }
+      }
+    ],
+    "required_spent_points": 8
+  },
+  "workshop_basics": {
+    "title": "工房基礎",
+    "description": "Createのプレス・ミキサー・Depotと、IEの工房・溶鉱炉を解禁する。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:stonecutter"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "task"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_engineering_industry_1"
+        }
+      }
+    ]
+  },
+  "industrial_engineer": {
+    "title": "産業技師",
+    "description": "粉砕・Deployer・Metal Pressなど中級自動化設備を解禁する。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:blast_furnace"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "goal"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_engineering_industry_2"
+        }
+      }
+    ],
+    "required_spent_points": 3
+  },
+  "automation_expert": {
+    "title": "自動化技師",
+    "description": "Mechanical Crafter・蒸気機関・Arc Furnaceなどを解禁する。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:comparator"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "challenge"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_engineering_industry_3"
+        }
+      }
+    ],
+    "required_spent_points": 6
+  },
+  "field_construction": {
+    "title": "野戦建築",
+    "description": "Building GadgetとExchanging Gadgetを解禁する。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:bricks"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "task"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_engineering_fortification_1"
+        }
+      }
+    ]
+  },
+  "fortification_expert": {
+    "title": "要塞化の達人",
+    "description": "Copy/Cut Paste GadgetとGun Turretを解禁する。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:iron_bars"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "goal"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_engineering_fortification_2"
+        }
+      }
+    ],
+    "required_spent_points": 3
+  },
+  "stronghold_architect": {
+    "title": "拠点設計者",
+    "description": "Destruction GadgetとChemical Turretを解禁する。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:reinforced_deepslate"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "challenge"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_engineering_fortification_3"
+        }
+      }
+    ],
+    "required_spent_points": 6
+  },
+  "arms_fabrication": {
+    "title": "武器製造",
+    "description": "基本兵器部品のHammerとDrumを解禁する。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:crossbow"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "task"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_engineering_weapons_1"
+        }
+      }
+    ]
+  },
+  "weapons_engineer": {
+    "title": "兵器技師",
+    "description": "上位兵器部品のBarrelを解禁する。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:smithing_table"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "goal"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_engineering_weapons_2"
+        }
+      }
+    ],
+    "required_spent_points": 3
+  },
+  "ordnance_master": {
+    "title": "兵器主任",
+    "description": "Superb Warfareの製造レシピを解禁する。",
+    "icon": {
+      "type": "item",
+      "data": {
+        "item": "minecraft:dispenser"
+      }
+    },
+    "frame": {
+      "type": "advancement",
+      "data": {
+        "frame": "challenge"
+      }
+    },
+    "cost": 1,
+    "rewards": [
+      {
+        "type": "puffish_skills:tag",
+        "data": {
+          "tag": "dz_engineering_weapons_3"
+        }
+      }
+    ],
+    "required_spent_points": 6
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "values": [
+    {
+      "factor": 60,
+      "value": "project_deadzone:chests/gunstore_ammo_common"
+    },
+    {
+      "factor": 10,
+      "value": "project_deadzone:chests/gunstore_ammo_rare"
+    },
+    {
+      "factor": 20,
+      "value": "project_deadzone:chests/gunstore_weapons"
+    },
+    {
+      "factor": 10,
+      "value": "project_deadzone:chests/gunstore_supplies"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+
+["Client Configs for Encumbered:"]
+	#
+	#Set the horizontal offset for the anvil UI. default: 0
+	anvil_ui_x_offset = 0
+	#
+	#Set the vertical offset for the anvil UI. default: 0
+	anvil_ui_y_offset = 0
+	#
+	#Whether or not the anvil icon appears. default: true
+	toggle_anvil_icon = true
+	#
+	#Whether or not the weight text appears. default: true
+	toggle_weight_text = true
+

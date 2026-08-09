@@ -1,0 +1,130 @@
+
+#Client-only settings.
+[general]
+	#Text shown above the hotbar when sleep is blocked by a lunar event. Supports & color codes.
+	#Client-only: overrides the message on your own client. On a server each player sets their own value, and players without this mod see Enhanced Celestials' default text.
+	#Enhanced Celestials forces the base color to red, so a leading color code may have no effect; use & codes mid-text for per-segment coloring.
+	sleep_prevented_message = "You may not rest now because the current lunar event prevents it."
+
+#Per-event client-only visuals and sound.
+[events]
+
+	[events.blood_moon]
+		#Fog hex color during the event. Empty = vanilla.
+		fog_color = ""
+		#Fog density multiplier during the event. 1.0 = vanilla.
+		#Range: 0.01 ~ 100.0
+		fog_density_multiplier = 1.0
+		#Sound event id played during the event. Empty = no music.
+		soundtrack = "enhancedcelestials:blood_moon"
+		#Soundtrack volume.
+		#Range: 0.0 ~ 10.0
+		soundtrack_volume = 1.0
+		#Soundtrack pitch.
+		#Range: 0.1 ~ 10.0
+		soundtrack_pitch = 1.0
+		#Loop the soundtrack while the event is active.
+		soundtrack_loop = true
+
+	[events.super_blood_moon]
+		#Fog hex color during the event. Empty = vanilla.
+		fog_color = ""
+		#Fog density multiplier during the event. 1.0 = vanilla.
+		#Range: 0.01 ~ 100.0
+		fog_density_multiplier = 1.0
+		#Sound event id played during the event. Empty = no music.
+		soundtrack = "enhancedcelestials:blood_moon"
+		#Soundtrack volume.
+		#Range: 0.0 ~ 10.0
+		soundtrack_volume = 1.0
+		#Soundtrack pitch.
+		#Range: 0.1 ~ 10.0
+		soundtrack_pitch = 1.0
+		#Loop the soundtrack while the event is active.
+		soundtrack_loop = true
+
+	[events.harvest_moon]
+		#Fog hex color during the event. Empty = vanilla.
+		fog_color = ""
+		#Fog density multiplier during the event. 1.0 = vanilla.
+		#Range: 0.01 ~ 100.0
+		fog_density_multiplier = 1.0
+		#Sound event id played during the event. Empty = no music.
+		soundtrack = "enhancedcelestials:harvest_moon"
+		#Soundtrack volume.
+		#Range: 0.0 ~ 10.0
+		soundtrack_volume = 1.0
+		#Soundtrack pitch.
+		#Range: 0.1 ~ 10.0
+		soundtrack_pitch = 1.0
+		#Loop the soundtrack while the event is active.
+		soundtrack_loop = true
+
+	[events.super_harvest_moon]
+		#Fog hex color during the event. Empty = vanilla.
+		fog_color = ""
+		#Fog density multiplier during the event. 1.0 = vanilla.
+		#Range: 0.01 ~ 100.0
+		fog_density_multiplier = 1.0
+		#Sound event id played during the event. Empty = no music.
+		soundtrack = "enhancedcelestials:harvest_moon"
+		#Soundtrack volume.
+		#Range: 0.0 ~ 10.0
+		soundtrack_volume = 1.0
+		#Soundtrack pitch.
+		#Range: 0.1 ~ 10.0
+		soundtrack_pitch = 1.0
+		#Loop the soundtrack while the event is active.
+		soundtrack_loop = true
+
+	[events.blue_moon]
+		#Fog hex color during the event. Empty = vanilla.
+		fog_color = ""
+		#Fog density multiplier during the event. 1.0 = vanilla.
+		#Range: 0.01 ~ 100.0
+		fog_density_multiplier = 1.0
+		#Sound event id played during the event. Empty = no music.
+		soundtrack = "enhancedcelestials:blue_moon"
+		#Soundtrack volume.
+		#Range: 0.0 ~ 10.0
+		soundtrack_volume = 1.0
+		#Soundtrack pitch.
+		#Range: 0.1 ~ 10.0
+		soundtrack_pitch = 1.0
+		#Loop the soundtrack while the event is active.
+		soundtrack_loop = true
+
+	[events.super_blue_moon]
+		#Fog hex color during the event. Empty = vanilla.
+		fog_color = ""
+		#Fog density multiplier during the event. 1.0 = vanilla.
+		#Range: 0.01 ~ 100.0
+		fog_density_multiplier = 1.0
+		#Sound event id played during the event. Empty = no music.
+		soundtrack = "enhancedcelestials:blue_moon"
+		#Soundtrack volume.
+		#Range: 0.0 ~ 10.0
+		soundtrack_volume = 1.0
+		#Soundtrack pitch.
+		#Range: 0.1 ~ 10.0
+		soundtrack_pitch = 1.0
+		#Loop the soundtrack while the event is active.
+		soundtrack_loop = true
+
+	[events.super_moon]
+		#Fog hex color during the event. Empty = vanilla.
+		fog_color = ""
+		#Fog density multiplier during the event. 1.0 = vanilla.
+		#Range: 0.01 ~ 100.0
+		fog_density_multiplier = 1.0
+		#Sound event id played during the event. Empty = no music.
+		soundtrack = ""
+		#Soundtrack volume.
+		#Range: 0.0 ~ 10.0
+		soundtrack_volume = 1.0
+		#Soundtrack pitch.
+		#Range: 0.1 ~ 10.0
+		soundtrack_pitch = 1.0
+		#Loop the soundtrack while the event is active.
+		soundtrack_loop = true
+
