@@ -23,9 +23,56 @@ const DZ_RECIPE_STAGE_UNLOCK_TEXT = {
   dz_mechanics_vehicle_3: "Immersive Aircraft"
 }
 
+const DZ_RECIPE_TALENT_UNLOCKS = {
+  dz_engineering_industry_1: ['talent_recipe_industry_1', 0],
+  dz_engineering_industry_2: ['talent_recipe_industry_2', 1],
+  dz_engineering_industry_3: ['talent_recipe_industry_3', 2],
+  dz_engineering_fortification_1: ['talent_recipe_fortification_1', 0],
+  dz_engineering_fortification_2: ['talent_recipe_fortification_2', 1],
+  dz_engineering_fortification_3: ['talent_recipe_fortification_3', 2],
+  dz_engineering_weapons_1: ['talent_recipe_weapons_1', 0],
+  dz_engineering_weapons_2: ['talent_recipe_weapons_2', 1],
+  dz_engineering_weapons_3: ['talent_recipe_weapons_3', 2],
+  dz_mechanics_vehicle_1: ['talent_recipe_vehicle_1', 0],
+  dz_mechanics_vehicle_2: ['talent_recipe_vehicle_2', 1],
+  dz_mechanics_vehicle_3: ['talent_recipe_vehicle_3', 2]
+}
+
+const DZ_RECIPE_JOB_UNLOCKS = {
+  ground_tech: [['dz_mechanics_vehicle_1', 0]],
+  convoy_master: [['dz_mechanics_vehicle_2', 1]],
+  armor_mechanic: [['dz_mechanics_vehicle_2', 1]],
+  ace_pilot: [['dz_mechanics_vehicle_3', 2]],
+  crew_chief: [['dz_mechanics_vehicle_3', 2]],
+  automation: [['dz_engineering_industry_1', 0]],
+  systems_engineer: [['dz_engineering_industry_2', 1]],
+  industrial_architect: [['dz_engineering_industry_2', 1], ['dz_engineering_industry_3', 2], ['dz_engineering_fortification_1', 1], ['dz_engineering_fortification_2', 2]],
+  gunsmith: [['dz_engineering_weapons_1', 0]],
+  weapon_engineer: [['dz_engineering_weapons_2', 1], ['dz_engineering_weapons_3', 2]],
+  ordnance_specialist: [['dz_engineering_weapons_2', 1], ['dz_engineering_weapons_3', 2], ['dz_engineering_fortification_2', 1], ['dz_engineering_fortification_3', 2]]
+}
+
+function dzRecipeWorldTier(player) {
+  for (let i = 5; i >= 0; i--) if (player.stages.has('deadzone_tier_' + i)) return i
+  return 0
+}
+
+function dzRecipeCareerOwns(player, stage, worldTier) {
+  let careers = [String(player.persistentData.getString('dz_career_t2')), String(player.persistentData.getString('dz_career_t3'))]
+  return careers.some(id => (DZ_RECIPE_JOB_UNLOCKS[id] || []).some(entry => entry[0] === stage && worldTier >= entry[1]))
+}
+
+function dzRecipeTalentOwns(player, stage, worldTier) {
+  let entry = DZ_RECIPE_TALENT_UNLOCKS[stage]
+  return !!entry && worldTier >= entry[1] && player.tags.contains('pdz_talent_node_' + entry[0])
+}
+
 function dzSyncRecipeStages(player) {
+  let worldTier = dzRecipeWorldTier(player)
   DZ_RECIPE_SKILL_STAGES.forEach(stage => {
-    let unlocked = player.tags.contains(stage)
+    let unlocked = dzRecipeTalentOwns(player, stage, worldTier) || dzRecipeCareerOwns(player, stage, worldTier)
+    if (unlocked && !player.tags.contains(stage)) player.addTag(stage)
+    if (!unlocked && player.tags.contains(stage)) player.removeTag(stage)
     let active = player.stages.has(stage)
     if (unlocked && !active) {
       player.stages.add(stage)

@@ -1272,7 +1272,19 @@
                      "project_deadzone:talent_scout_tracking_utility_18",
                      "project_deadzone:talent_scout_tracking_utility_19",
                      "project_deadzone:talent_scout_tracking_utility_20",
-                     "project_deadzone:talent_scout_tracking_doctrine_utility"
+                     "project_deadzone:talent_scout_tracking_doctrine_utility",
+                     "project_deadzone:talent_recipe_industry_1",
+                     "project_deadzone:talent_recipe_industry_2",
+                     "project_deadzone:talent_recipe_industry_3",
+                     "project_deadzone:talent_recipe_vehicle_1",
+                     "project_deadzone:talent_recipe_vehicle_2",
+                     "project_deadzone:talent_recipe_vehicle_3",
+                     "project_deadzone:talent_recipe_fortification_1",
+                     "project_deadzone:talent_recipe_fortification_2",
+                     "project_deadzone:talent_recipe_fortification_3",
+                     "project_deadzone:talent_recipe_weapons_1",
+                     "project_deadzone:talent_recipe_weapons_2",
+                     "project_deadzone:talent_recipe_weapons_3"
                  ],
     "id":  "project_deadzone:talent",
     "skillLimitations":  {

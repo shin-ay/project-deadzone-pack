@@ -1272,5 +1272,17 @@
     "skill.project_deadzone.talent_scout_tracking_utility_19.name":  "追跡・適応教義 4\n§7効果: 索敵・ネームド発見率 +1% / 最大HP +0.25 §b[適応教義]",
     "skill.project_deadzone.talent_scout_tracking_utility_20.name":  "追跡・適応教義 5\n§7効果: 索敵・ネームド発見率 +1.5% / 移動速度 +0.15% §b[適応教義]",
     "skill.project_deadzone.talent_scout_tracking_doctrine_utility.name":  "ハンターズセンス・適応Doctrine\n§7効果: 主効果と生存能力を両立 / 強敵・施設・希少痕跡の発見を補助",
+    "skill.project_deadzone.talent_recipe_industry_1.name":  "工業ライセンス T1\n§7効果: 工房基礎設備のレシピを解放 / 必要World Tier: T0",
+    "skill.project_deadzone.talent_recipe_industry_2.name":  "工業ライセンス T2\n§7効果: 中級自動化設備のレシピを解放 / 必要World Tier: T1",
+    "skill.project_deadzone.talent_recipe_industry_3.name":  "工業ライセンス T3\n§7効果: 高度自動化設備のレシピを解放 / 必要World Tier: T2",
+    "skill.project_deadzone.talent_recipe_vehicle_1.name":  "車両ライセンス T1\n§7効果: Blocky Bikesのレシピを解放 / 必要World Tier: T0",
+    "skill.project_deadzone.talent_recipe_vehicle_2.name":  "車両ライセンス T2\n§7効果: Vehicle Mod地上車両のレシピを解放 / 必要World Tier: T1",
+    "skill.project_deadzone.talent_recipe_vehicle_3.name":  "車両ライセンス T3\n§7効果: Immersive Aircraftのレシピを解放 / 必要World Tier: T2",
+    "skill.project_deadzone.talent_recipe_fortification_1.name":  "要塞ライセンス T1\n§7効果: 野戦建築ガジェットのレシピを解放 / 必要World Tier: T0",
+    "skill.project_deadzone.talent_recipe_fortification_2.name":  "要塞ライセンス T2\n§7効果: 複製建築・Gun Turretのレシピを解放 / 必要World Tier: T1",
+    "skill.project_deadzone.talent_recipe_fortification_3.name":  "要塞ライセンス T3\n§7効果: 解体建築・Chemical Turretのレシピを解放 / 必要World Tier: T2",
+    "skill.project_deadzone.talent_recipe_weapons_1.name":  "兵器ライセンス T1\n§7効果: 基本兵器部品のレシピを解放 / 必要World Tier: T0",
+    "skill.project_deadzone.talent_recipe_weapons_2.name":  "兵器ライセンス T2\n§7効果: 上位兵器部品のレシピを解放 / 必要World Tier: T1",
+    "skill.project_deadzone.talent_recipe_weapons_3.name":  "兵器ライセンス T3\n§7効果: Superb Warfare製造のレシピを解放 / 必要World Tier: T2",
     "project_deadzone:talent":  "タレント"
 }

@@ -1,0 +1,30 @@
+﻿{
+    "id":  "project_deadzone:talent_recipe_fortification_1",
+    "bonuses":  [
+
+                ],
+    "requirements":  [
+
+                     ],
+    "directConnections":  [
+
+                          ],
+    "longConnections":  [
+
+                        ],
+    "oneWayConnections":  [
+
+                          ],
+    "tags":  [
+                 "pdz_talent_recipe_license",
+                 "pdz_recipe_fortification_1",
+                 "pdz_node_talent_recipe_fortification_1"
+             ],
+    "backgroundTexture":  "skilltree:textures/icons/background/lesser.png",
+    "iconTexture":  "skilltree:textures/icons/chestplate_diamond.png",
+    "borderTexture":  "skilltree:textures/tooltip/lesser.png",
+    "positionX":  -60.1,
+    "positionY":  -60.1,
+    "buttonSize":  16,
+    "isStartingPoint":  true
+}
