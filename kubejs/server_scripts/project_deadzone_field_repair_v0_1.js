@@ -27,8 +27,8 @@ function dzRepairTargetValid(stack) {
 
 function dzRepairCosts(player,stack) {
   let ratio=Number(stack.damageValue)/Math.max(1,Number(stack.maxDamage))
-  let money=Math.max(2,Math.ceil(ratio*20))
-  let steel=Math.max(1,Math.ceil(ratio*4))
+  let money=Math.max(1,Math.ceil(ratio*8))
+  let steel=Math.max(1,Math.ceil(ratio*2))
   let job=dzRepairJob(player)
   if (job==="mechanic") {
     money=Math.max(1,Math.ceil(money*0.65))

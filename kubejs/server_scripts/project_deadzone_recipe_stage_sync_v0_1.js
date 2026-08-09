@@ -70,7 +70,7 @@ function dzRecipeTalentOwns(player, stage, worldTier) {
 function dzSyncRecipeStages(player) {
   let worldTier = dzRecipeWorldTier(player)
   DZ_RECIPE_SKILL_STAGES.forEach(stage => {
-    let unlocked = dzRecipeTalentOwns(player, stage, worldTier) || dzRecipeCareerOwns(player, stage, worldTier)
+    let unlocked = true // recipes are baseline; talents now grant efficiency/yield
     if (unlocked && !player.tags.contains(stage)) player.addTag(stage)
     if (!unlocked && player.tags.contains(stage)) player.removeTag(stage)
     let active = player.stages.has(stage)

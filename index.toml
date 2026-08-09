@@ -3010,7 +3010,7 @@ hash = "45a5f56eba6066ad05c70988a32b72c50cfeb6e35857739bd582007011ea002b"
 
 [[files]]
 file = "kubejs/assets/partyhealth/lang/ja_jp.json"
-hash = "20fc495e7b5e656cbaed741e76eb5417d983e5a76a4075de59ab3c9c437c130c"
+hash = "a5061416e2c61017a89e1e2e1eae48848fb7efa17df748076336c1bd21f0399b"
 
 [[files]]
 file = "kubejs/assets/project_deadzone/lang/en_us.json"
@@ -6434,7 +6434,7 @@ hash = "50ff3c7ce1513cad37a2c37b8c76569ca933325d336feb9616ac5ed999cd483b"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_equipment_mastery_v0_1.js"
-hash = "4a98808127cf554e0bd98cba74f8031602825e6c3d7ef92646dc6dad3f95f93b"
+hash = "07ec861213f048eb768239570fffb7a22ba4927e925c22ab0387e300c739b02c"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_faction_strongholds_v0_1.js"
@@ -6450,7 +6450,7 @@ hash = "d7802c8b033493d9addaadfbfb7d512647d8bbbe5d5b1cadb1132c2ad1674ee6"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_field_repair_v0_1.js"
-hash = "2e4301a5384004c9e05e56f1508611e06d88b7117d595bd8b0903e2aeee936bf"
+hash = "a8bd6be5a0984a67c16f319af7792d3f2aaf5999a0ee97c0fb40fb7205bc6f18"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_firearms_perks_v0_1.js"
@@ -6494,7 +6494,7 @@ hash = "0a99eee1a54c2f5a1d4eb9fe389935585a67fb67b30c289167676a4f3ab329e4"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_job_career_v0_1.js"
-hash = "068d8ad64829762855c12fa01fe8be273f4d6a1b98ed5737d3efdf2326e248a5"
+hash = "10b06e474f9fe71e3de78e12e21146f9fc0c88b5b880085feca9ebf390df44ec"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_job_unlocks_v0_1.js"
@@ -6550,7 +6550,7 @@ hash = "ae1515f5e658b984684ef1abde4787f9f1b3f0f97ef48d8adb244a284ccdf0b0"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_recipe_stage_sync_v0_1.js"
-hash = "ac36aba74ced91784b66a8944889fe46ea07201dbceef0a1786cf89c2962501d"
+hash = "8be96c333ef9552f6417a87d5ce27917d7e288f5237638623be62104ba7cb718"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_region_tiers_v0_1.js"
@@ -6686,7 +6686,7 @@ hash = "cacfed6a8e065b20a29319d13bdfc4336771cd9fab70ca1d5d28b8d6b2ffbdb2"
 
 [[files]]
 file = "kubejs/startup_scripts/project_deadzone_growth_fishing_v0_1.js"
-hash = "9d40dcdfe2a7741918afdaddafdaf618163e3f1c061d24fe4cce0e8da0c01138"
+hash = "1b23643fbef9f4bf8bc7baf14f54c89776980309c7c44e70c404601e3b85f5fc"
 
 [[files]]
 file = "kubejs/startup_scripts/project_deadzone_military_curios_v0_1.js"

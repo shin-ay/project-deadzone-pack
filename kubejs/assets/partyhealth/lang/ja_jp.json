@@ -15,10 +15,10 @@
   "bodypart.right_foot": "右足",
   "damage_level.healthy": "正常",
   "damage_level.light": "軽傷",
-  "damage_level.moderate": "中傷",
+  "damage_level.moderate": "中等傷",
   "damage_level.severe": "重傷",
   "damage_level.broken": "破壊",
   "message.partyhealth.healing_success": "%sを%s%%治療しました",
   "message.partyhealth.healing_cooldown": "この治療アイテムは再使用待ちです",
-  "message.partyhealth.no_damage": "治療が必要な損傷はありません"
+  "message.partyhealth.no_damage": "治療が必要な負傷はありません"
 }

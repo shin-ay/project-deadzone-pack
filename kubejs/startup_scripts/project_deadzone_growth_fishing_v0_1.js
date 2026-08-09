@@ -21,7 +21,7 @@ ForgeEvents.onEvent('net.minecraftforge.event.entity.player.ItemFishedEvent', ev
   p.server.runCommandSilent('puffish_skills experience add ' + p.username + ' dz_livelihood ' + amount)
   // One-shot server bridge token. Without this, players could type the
   // internal event command repeatedly and farm JOB XP without fishing.
-  p.persistentData.putLong('dz_career_bridge_fishing_until',p.level.gameTime+20)
+  p.persistentData.putLong('dz_career_bridge_fishing_until',Date.now()+1500)
   p.server.runCommandSilent('execute as '+p.username+' run deadzonecareer event_fishing')
   p.server.runCommandSilent('title ' + p.username + ' actionbar {"text":"+' + amount + ' LIVELIHOOD XP（釣り）","color":"aqua"}')
 

@@ -141,7 +141,7 @@ EntityEvents.hurt(event=>{
   let total=0
   ;[PDZEM_SLOT.HEAD,PDZEM_SLOT.CHEST,PDZEM_SLOT.LEGS,PDZEM_SLOT.FEET].forEach(slot=>{let data=pdzemData(victim.getItemBySlot(slot),false);if(data)total+=Math.max(0,data.getInt('level'))*0.0035})
   let reduced=Math.max(0,Number(event.damage))*(1-Math.min(0.42,total))
-  if(reduced<Number(event.damage))event.damage=reduced
+  if(reduced<Number(event.damage))event.setDamage(reduced)
 })
 
 ServerEvents.commandRegistry(event=>{

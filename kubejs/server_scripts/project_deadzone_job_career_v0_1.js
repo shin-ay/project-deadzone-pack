@@ -437,13 +437,13 @@ ServerEvents.commandRegistry(event => {
   root.then(Commands.literal('event_fishing').executes(ctx=>{
     let p=ctx.source.player,d=p.persistentData,until=d.getLong('dz_career_bridge_fishing_until')
     d.remove('dz_career_bridge_fishing_until')
-    if (until<=p.level.gameTime) return 0
+    if (until<=Date.now()) return 0
     pdzCareerAddXp(p,4,'fishing',false);return 1
   }))
   root.then(Commands.literal('event_treatment').executes(ctx=>{
     let p=ctx.source.player,d=p.persistentData,until=d.getLong('dz_career_bridge_treatment_until')
     d.remove('dz_career_bridge_treatment_until')
-    if (until<=p.level.gameTime) return 0
+    if (until<=Date.now()) return 0
     pdzCareerAddXp(p,3,'support',false);return 1
   }))
   root.then(Commands.literal('prepare_t2_test').requires(s=>s.hasPermission(2)).executes(ctx=>{
