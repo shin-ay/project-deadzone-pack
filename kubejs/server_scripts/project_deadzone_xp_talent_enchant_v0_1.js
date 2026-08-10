@@ -4,7 +4,7 @@
 const PDZ_XPT_HIGHWATER = 'pdz_talent_xp_highwater_level_v1'
 const PDZ_XPT_INITIALIZED = 'pdz_talent_xp_initialized_v1'
 const PDZ_XPT_BLOCKED_STATIONS = [
-  'minecraft:enchanting_table','minecraft:grindstone'
+  'minecraft:grindstone'
 ]
 
 function pdzXpTalentLevel(player) {

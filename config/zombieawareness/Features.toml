@@ -6,7 +6,7 @@
 	#Spawn scent/blood sense sources for monsters to track
 	awareness_Scent = true
 	#Monsters see light near player and move towards it
-	awareness_Light = true
+	awareness_Light = false
 	#Growling zombies attracts other zombies
 	noisyZombies = true
 	#Pistons cause sound sense sources attracting monsters

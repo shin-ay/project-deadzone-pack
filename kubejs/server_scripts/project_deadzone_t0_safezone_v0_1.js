@@ -25,6 +25,9 @@ const DZ_T0_EXEMPT_TAGS = [
 
 function dzT0ProtectedSpawn(entity, radius) {
   let data=entity.server.persistentData
+  if (data.getInt("deadzone_world_tier") > 0) return false
+  let day=Math.floor(Number(entity.level.getDayTime())/24000)+1
+  if (day > 5) return false
   if (data.getInt("dz_auto_basecamp_layout_version") <= 0) return false
   let cx=data.getInt("dz_auto_basecamp_origin_x")+16
   let cy=data.getInt("dz_auto_basecamp_origin_y")

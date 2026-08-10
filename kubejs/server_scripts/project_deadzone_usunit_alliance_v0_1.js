@@ -4,8 +4,8 @@
 
 const DZ_USUNIT_TYPE = "simpleenemymod:usunit"
 const DZ_USUNIT_FACTION_TAGS = ["dz_civildef", "dz_remnant", "dz_raider"]
-const DZ_USUNIT_NATURAL_KEEP_CHANCE = 0.28
-const DZ_USUNIT_LOADED_CAP = 8
+const DZ_USUNIT_NATURAL_KEEP_CHANCE = 0.12
+const DZ_USUNIT_LOADED_CAP = 4
 
 function dzUsunitHasOwner(entity) {
   try {

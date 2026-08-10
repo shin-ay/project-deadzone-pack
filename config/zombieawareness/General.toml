@@ -8,17 +8,17 @@
 	awareness_Light_OnlyZombies = true
 	#Custom targetting sight range on top of vanilla sight based targetting
 	#Range: > -2147483648
-	sightRange = 16
+	sightRange = 8
 	#Always target closest player [performance sensitive]
 	omniscient = false
 	#skips line of sight check on targetting [performance sensitive]
 	seeThroughWalls = false
 	#Effects how far monsters will sense scents from
 	#Range: > -2147483648
-	scentStrength = 60
+	scentStrength = 84
 	#Effects how far monsters will sense sound sources from
 	#Range: > -2147483648
-	soundStrength = 60
+	soundStrength = 76
 	#max rate of spawning sound sources in milliseconds
 	#Range: > -2147483648
 	frequentSoundThreshold = 1000
@@ -63,5 +63,5 @@
 	blockBreakEvent_PlayersOnly = false
 	#Every 2 seconds, the percent chance a mob has to look for an active sense in range, 100 = nearly instant, 10 = slowly over time, performance sensitive setting, higher = more frequent pathfind attempts
 	#Range: > -2147483648
-	findSense_PercentChance = 10
+	findSense_PercentChance = 24
 

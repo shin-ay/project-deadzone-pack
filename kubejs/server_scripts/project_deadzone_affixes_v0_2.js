@@ -63,6 +63,11 @@ const DZ2_TRAITS = {
   ],
   maintenance: [
     ["self_repair", "自己修復機構", 1.0, 1.0]
+  ],
+  utility: [
+    ["durability_save", "耐久消費軽減", 0.05, 0.22],
+    ["utility", "取り回し", 0.04, 0.18],
+    ["salvage", "副産物発見率", 0.03, 0.14]
   ]
 }
 
@@ -101,6 +106,11 @@ function dz2Category(stack) {
       stack.hasTag("minecraft:leg_armor") || stack.hasTag("minecraft:foot_armor")) return "armor"
   if (stack.hasTag("minecraft:pickaxes") || stack.hasTag("minecraft:shovels") ||
       stack.hasTag("minecraft:hoes")) return "mining"
+  if (stack.hasTag("minecraft:bows") || stack.hasTag("minecraft:crossbows") ||
+      id === "minecraft:trident") return "gun"
+  if (id === "minecraft:shield" || id === "minecraft:fishing_rod" ||
+      id === "minecraft:shears" || id.indexOf("wrench") >= 0 ||
+      id.indexOf("drill") >= 0 || id.indexOf("saw") >= 0) return "utility"
   if (stack.hasTag("minecraft:axes") || stack.hasTag("minecraft:swords") ||
       id.indexOf("knife") >= 0 || id.indexOf("machete") >= 0 ||
       id.indexOf("bat") >= 0 || id.indexOf("hammer") >= 0 ||
@@ -116,7 +126,9 @@ function dz2Category(stack) {
        id.indexOf("scythe") >= 0 || id.indexOf("sytche") >= 0 ||
        id.indexOf("wrench") >= 0 || id.indexOf("baseball_bat") >= 0 ||
        id.indexOf("cricket_bat") >= 0)) return "melee"
-  return null
+  // Affixes replace enchanting entirely: no durable equipment may fall
+  // through the category audit just because a mod omitted vanilla tags.
+  return "utility"
 }
 
 function dz2Quality(player, crafted) {
