@@ -83,7 +83,9 @@ function dzSyncRecipeStages(player) {
 }
 
 PlayerEvents.tick(event => {
-  if (event.player.age % 40 === 0) dzSyncRecipeStages(event.player)
+  // Recipes are now baseline. A once-per-minute repair pass is enough; the
+  // previous two-second loop needlessly repeated 24 stage checks per player.
+  if (event.player.age % 1200 === 0) dzSyncRecipeStages(event.player)
 })
 PlayerEvents.loggedIn(event => dzSyncRecipeStages(event.player))
 PlayerEvents.respawned(event => dzSyncRecipeStages(event.player))

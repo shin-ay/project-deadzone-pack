@@ -7,6 +7,8 @@ const DZ_SHOPS = [
     fixed:[{id:"survival_instinct:bean_can",count:2,price:1,uses:24},{id:"survival_instinct:gallon_of_water",count:1,price:1,uses:24}],
     pool:[{id:"minecraft:bread",count:3,price:1,uses:16},{id:"minecraft:apple",count:4,price:1,uses:12},{id:"minecraft:baked_potato",count:4,price:1,uses:12},{id:"minecraft:cooked_beef",count:3,price:2,uses:10},{id:"minecraft:honey_bottle",count:2,price:2,uses:8}],
     buyback:[
+      {id:"minecraft:cod",count:8,money:1,uses:8,tier:0},{id:"minecraft:salmon",count:6,money:1,uses:8,tier:0},
+      {id:"minecraft:tropical_fish",count:4,money:1,uses:5,tier:0},{id:"minecraft:pufferfish",count:3,money:1,uses:4,tier:1},
       {id:"minecraft:wheat_seeds",count:64,money:1,uses:2,tier:0},{id:"minecraft:beetroot_seeds",count:64,money:1,uses:2,tier:0},
       {id:"minecraft:rotten_flesh",count:48,money:1,uses:3,tier:0},{id:"minecraft:wheat",count:32,money:1,uses:3,tier:0},
       {id:"minecraft:potato",count:32,money:1,uses:3,tier:0},{id:"minecraft:carrot",count:32,money:1,uses:3,tier:0},
@@ -21,7 +23,14 @@ const DZ_SHOPS = [
       {id:"apocalypsenow:bandage",count:8,money:1,uses:4,tier:1},{id:"apocalypsenow:bandage",count:4,money:1,uses:4,tier:1},
       {id:"apocalypsenow:pain_killers",count:2,money:1,uses:3,tier:2},{id:"apocalypsenow:morphine",count:1,money:2,uses:2,tier:3}]},
   {key:"parts",tag:"dz_basecamp_trader_parts",
-    fixed:[{id:"immersiveengineering:hemp_fiber",count:3,price:1,uses:20},{id:"survival_instinct:rope",count:2,price:2,uses:12}],
+    fixed:[
+      {id:"immersiveengineering:hemp_fiber",count:3,price:1,uses:20},
+      {id:"survival_instinct:rope",count:2,price:2,uses:12},
+      // Always available. Players should never be locked out of the mastery
+      // loop just because the random tool stock omitted a repair option.
+      {id:"kubejs:field_repair_kit",count:1,price:2,uses:24},
+      {id:"kubejs:affix_calibrator",count:1,price:6,uses:8}
+    ],
     pool:[{id:"minecraft:iron_ingot",count:3,price:2,uses:12},{id:"minecraft:copper_ingot",count:4,price:2,uses:12},{id:"immersiveengineering:hammer",count:1,price:8,uses:2},{id:"immersiveengineering:wirecutter",count:1,price:8,uses:2},{id:"create:wrench",count:1,price:10,uses:1},{id:"mts:mtsofficialpack.blowtorch",count:1,price:12,uses:1}],
     buyback:[
       {id:"minecraft:string",count:32,money:1,uses:3,tier:0},{id:"minecraft:leather",count:16,money:1,uses:3,tier:0},

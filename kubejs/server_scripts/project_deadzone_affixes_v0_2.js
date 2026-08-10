@@ -471,6 +471,17 @@ ItemEvents.crafted(event => {
   let stack=event.item, player=event.player
   if (!player || player.level.clientSide || !dz2Category(stack)) return
   let root=dz2Root(stack,true)
+  // Damaged crafting output is the vanilla same-item repair path. Restore the
+  // old roll cached by urgent_qol instead of treating repair as a fresh drop.
+  if (Number(stack.damageValue)>0) {
+    let key=String(stack.id).replace(/[^a-zA-Z0-9_]/g,'_')
+    let cache=player.persistentData.getCompound('dz_affix_repair_cache')
+    if (root && cache.contains(key)) {
+      root.put('PDZAffix',cache.getCompound(key).copy())
+      dz2WriteDisplay(stack,root.getCompound('PDZAffix'))
+      return
+    }
+  }
   if (root) root.remove("PDZAffix")
   dz2Roll(stack,player,null,true)
   dz2Announce(player,stack,dz2Data(stack))

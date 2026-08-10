@@ -64,23 +64,32 @@ PlayerEvents.tick(event=>{
     let mastery=root.getCompound('PDZMastery')
     if(!old || mastery.getInt('total_xp')>=old.getInt('total_xp')) cache.put(key,mastery.copy())
     p.persistentData.put('dz_mastery_repair_cache',cache)
+    // Keep the immutable roll too. Vanilla same-item repair creates a new
+    // stack and would otherwise silently replace the player's long-used roll.
+    if(root.contains('PDZAffix')) {
+      let affixCache=p.persistentData.getCompound('dz_affix_repair_cache')
+      affixCache.put(key,root.getCompound('PDZAffix').copy())
+      p.persistentData.put('dz_affix_repair_cache',affixCache)
+    }
     let cap=Math.max(0,Number(stack.maxDamage)-1)
     if (Number(stack.damageValue)>=Number(stack.maxDamage)) stack.damageValue=cap
   })
 
-  // Converted zombies occasionally inherit dz_npc/dz_npc_downed from their
-  // source NPC. They are not authored faction NPCs and must never stay at 1 HP.
-  if(p.age%200===0) p.level.entities.forEach(entity=>{
-    if(!entity.tags || !entity.tags.contains('dz_npc_downed'))return
-    let faction=entity.tags.contains('dz_survivor')||entity.tags.contains('dz_civildef')||
-      entity.tags.contains('dz_raider')||entity.tags.contains('dz_remnant')
-    let id=String(entity.type)
-    let hostile=id.indexOf('zombie')>=0||id.indexOf('infectious:')===0||
-      id==='minecraft:skeleton'||id==='minecraft:stray'||id==='minecraft:husk'||id==='minecraft:drowned'
-    if(faction&&!hostile)return
-    entity.tags.remove('dz_npc_downed');entity.tags.remove('dz_npc_revive_in_progress')
-    entity.tags.remove('dz_npc_bleedout_armed')
-    entity.mergeNbt({Invulnerable:0,NoAI:0})
+})
+
+// Converted hostiles occasionally inherit NPC down tags. The old version
+// scanned every entity once per player, which scaled terribly in multiplayer.
+// One selector pass per server is both deterministic and much cheaper.
+let dzqHostileCleanupTicks=0
+ServerEvents.tick(event=>{
+  if(++dzqHostileCleanupTicks<200)return
+  dzqHostileCleanupTicks=0
+  ;['minecraft:zombie','minecraft:husk','minecraft:drowned','minecraft:skeleton','minecraft:stray'].forEach(type=>{
+    let selector='@e[type='+type+',tag=dz_npc_downed]'
+    event.server.runCommandSilent('tag '+selector+' remove dz_npc_downed')
+    event.server.runCommandSilent('tag '+selector+' remove dz_npc_revive_in_progress')
+    event.server.runCommandSilent('tag '+selector+' remove dz_npc_bleedout_armed')
+    event.server.runCommandSilent('execute as '+selector+' run data merge entity @s {Invulnerable:0b,NoAI:0b}')
   })
 })
 
@@ -95,6 +104,8 @@ ItemEvents.crafted(event=>{
   let cache=p.persistentData.getCompound('dz_mastery_repair_cache')
   let key=String(stack.id).replace(/[^a-zA-Z0-9_]/g,'_')
   if(cache.contains(key))root.put('PDZMastery',cache.getCompound(key).copy())
+  let affixCache=p.persistentData.getCompound('dz_affix_repair_cache')
+  if(affixCache.contains(key))root.put('PDZAffix',affixCache.getCompound(key).copy())
 })
 
 // Dynamic Trees can become extremely stingy under seasonal multipliers.
