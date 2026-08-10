@@ -1,8 +1,8 @@
-// PROJECT DEADZONE US Unit alliance v0.1
-// Unrecruited US Units (Simple Enemy Mod PMC units) are friendly survivors.
+// PROJECT DEADZONE US Unit alliance v0.2
+// Unrecruited US Units are friendly survivors.
 // RU Units remain hostile. Explicit story-faction units keep their own setup.
 
-const DZ_USUNIT_TYPE = "simpleenemymod:pmcunit"
+const DZ_USUNIT_TYPE = "simpleenemymod:usunit"
 const DZ_USUNIT_FACTION_TAGS = ["dz_civildef", "dz_remnant", "dz_raider"]
 const DZ_USUNIT_NATURAL_KEEP_CHANCE = 0.28
 const DZ_USUNIT_LOADED_CAP = 8
@@ -58,7 +58,7 @@ EntityEvents.spawned(DZ_USUNIT_TYPE, event => {
 // Simple Enemy Mod may refresh its target after spawn, so periodically repair
 // the alliance state for loaded natural US Units and recruited buddies.
 ServerEvents.tick(event => {
-  if (event.server.tickCount % 100 !== 0) return
+  if (event.server.tickCount % 20 !== 0) return
   let retained = {}
   event.server.players.forEach(player => {
     player.level.entities.forEach(entity => {
@@ -93,4 +93,35 @@ EntityEvents.hurt(event => {
   if (String(victim.type) === "minecraft:player" ||
       (victim.tags && (victim.tags.contains("dz_survivor") ||
         victim.tags.contains("dz_friendly")))) event.cancel()
+})
+
+ServerEvents.commandRegistry(event => {
+  const {commands: Commands} = event
+  let root = Commands.literal("deadzoneusunit").requires(source => source.hasPermission(2))
+
+  root.then(Commands.literal("repair").executes(ctx => {
+    let player = ctx.source.player
+    let repaired = 0
+    player.level.entities.forEach(entity => {
+      if (String(entity.type) !== DZ_USUNIT_TYPE || dzUsunitIsManagedFaction(entity)) return
+      dzUsunitMakeFriendly(entity)
+      repaired++
+    })
+    player.tell(Text.of("[USUNIT] loaded friendly units repaired: " + repaired).green())
+    return repaired
+  }))
+
+  root.then(Commands.literal("status").executes(ctx => {
+    let player = ctx.source.player
+    let total = 0, friendly = 0
+    player.level.entities.forEach(entity => {
+      if (String(entity.type) !== DZ_USUNIT_TYPE) return
+      total++
+      if (entity.tags.contains("dz_friendly") && entity.tags.contains("dz_survivor")) friendly++
+    })
+    player.tell(Text.of("[USUNIT] loaded=" + total + " / friendly=" + friendly).aqua())
+    return total
+  }))
+
+  event.register(root)
 })
