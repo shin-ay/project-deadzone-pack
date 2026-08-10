@@ -6382,11 +6382,11 @@ hash = "733e97bc1453cd2771ca741ab2052bd0da84c67fb8d3f6f52249ce4845eed10f"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_affix_workbench_v0_1.js"
-hash = "2144440788b719f032d578ffbae4b6e829567860cfffa38893b998fb93191950"
+hash = "c4ca02a194ce0f55a1da5ec23427c3c8d6782365d35a5409551ae356ff861bd1"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_affixes_v0_2.js"
-hash = "cba03487440ee80f60d678e3f5cc4459990efc90f19ad09c8b3398329b70af16"
+hash = "09fabb23752679e569da48a96f9ae6ab046eb3bdf04b8adee732fcf6942c399b"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_ammo_reload_perks_v0_1.js"
@@ -6434,7 +6434,7 @@ hash = "8b26b03bec34ef9eeca7b94ab1fd227e9cbab99593b00b432cd620c80fe1d446"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_combat_spacing_v0_1.js"
-hash = "b43cfab4ca097ed04a32a53e7e714f1c78de322e65612de62fd6ee16e5af98e2"
+hash = "cc8faf64521dd2bb4f50d17b177cdb99dd30894ff6ce0f65c8a1e75ffced8ebf"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_currency_v0_1.js"
@@ -7091,7 +7091,7 @@ hash = "35b4e0b8703039ef92a1f4a7096a28fda557c2ff8edff18f797e4018fce3a43a"
 
 [[files]]
 file = "mods/PROJECT_DEADZONE_JOB_UI-0.1.0.jar"
-hash = "a0b07395fde4445f2f3df38637aef9e0475919e8e125c64f2d04a04567bce268"
+hash = "f4c5d30e2e9dc907e1ea73e13e1b6dacc71c21ada514f7f7e9d8e492516a2cd8"
 
 [[files]]
 file = "mods/PROJECT_DEADZONE_UI-0.2.3.jar"

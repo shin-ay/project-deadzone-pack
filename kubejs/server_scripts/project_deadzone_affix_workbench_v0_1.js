@@ -8,7 +8,9 @@ function pdzAffixForgeMenu(p){
   p.tell(Text.of('[Reroll same rarity]').aqua().clickRunCommand('/deadzoneaffixforge reroll'))
   p.tell(Text.of('[Imbue unaffixed equipment]').green().clickRunCommand('/deadzoneaffixforge imbue'))
 }
-BlockEvents.rightClicked('minecraft:enchanting_table',event=>{if(event.level.clientSide)return;event.cancel();pdzAffixForgeMenu(event.player)})
+// The required client mod opens the dedicated screen. Keep the command menu
+// as an emergency fallback without printing it on every table interaction.
+BlockEvents.rightClicked('minecraft:enchanting_table',event=>{if(event.level.clientSide)return;event.cancel()})
 ServerEvents.commandRegistry(event=>{
   const {commands:Commands}=event;let root=Commands.literal('deadzoneaffixforge')
   root.then(Commands.literal('menu').executes(ctx=>{pdzAffixForgeMenu(ctx.source.player);return 1}))

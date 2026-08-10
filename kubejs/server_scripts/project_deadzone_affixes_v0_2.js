@@ -30,6 +30,7 @@ const DZ2_TRAITS = {
     ["ammo_save", "弾薬回収率", 0.04, 0.18]
   ],
   melee: [
+    ["knockback", "Impact Force", 0.08, 0.35],
     ["damage", "近接ダメージ", 0.03, 0.16],
     ["attack_speed", "攻撃速度", 0.03, 0.12],
     ["infected", "感染体ダメージ", 0.05, 0.22],
