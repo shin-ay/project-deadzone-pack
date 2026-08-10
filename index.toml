@@ -1034,7 +1034,7 @@ hash = "c164439c632aa7c95c07edec5cfef74b8e2d5671a8445a781deeb4de7ad0c8b6"
 
 [[files]]
 file = "config/firstaid-client.toml"
-hash = "e2db80a4aae1a6620ea760f79ff666749ac986dbd0bc8f501f7c6bbf4964b1eb"
+hash = "5fcd268ea407102c1107b5423b1a09040e14a731e38ca2ac267247cdaedbfcfb"
 
 [[files]]
 file = "config/firstaid-common.toml"
@@ -7071,7 +7071,7 @@ hash = "35b4e0b8703039ef92a1f4a7096a28fda557c2ff8edff18f797e4018fce3a43a"
 
 [[files]]
 file = "mods/PROJECT_DEADZONE_JOB_UI-0.1.0.jar"
-hash = "01aa6fd50aea507fb03afd9d5e15ce1d51de9b0fad07e42092aa5692e349c1b7"
+hash = "f362536ecb53eb8dbaaea977ad8c8100256720cd00f621c89d199817d33631cd"
 
 [[files]]
 file = "mods/PROJECT_DEADZONE_UI-0.2.3.jar"
