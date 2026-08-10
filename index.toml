@@ -6666,7 +6666,7 @@ hash = "4be7bb07343ac9f3f4f3271edea898c5a3dabfce312c03f769d78cd4f79913b0"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_world_evolution_v0_1.js"
-hash = "eec70d196b651a418535bc3cdf73010ea39133b93e16f36316b4ef2c40ad86df"
+hash = "25944eebf596af31addefd6b3a4e2eaf5f27516df53ce6f3c890276661eef9f1"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_world_loot_v0_1.js"

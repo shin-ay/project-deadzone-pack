@@ -1,5 +1,7 @@
 // Shared threat progression: story may advance early; elapsed days prevent permanent T0.
-const PDZ_DAY_TIER = [[6,1],[14,2],[28,3],[50,4]]
+// Elapsed days are only a slow safety net. Story progression may advance sooner.
+// This pacing leaves enough time for multiplayer building, farming and side content.
+const PDZ_DAY_TIER = [[10,1],[25,2],[50,3],[90,4]]
 ServerEvents.tick(event => {
   let server=event.server
   if (server.tickCount%1200!==0 || !server.players || server.players.length===0) return
