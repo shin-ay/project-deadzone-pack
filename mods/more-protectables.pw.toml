@@ -1,0 +1,13 @@
+name = "SecurityCraft: More Protectables"
+filename = "moreprotectables-1.20.1-1.2.3.10.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "31a4e9504e1e8fc82496043d0202f1c1ea744f79"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 5842423
+project-id = 1122568
