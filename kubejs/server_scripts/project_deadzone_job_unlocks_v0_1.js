@@ -1,6 +1,6 @@
 // PROJECT DEADZONE JOB Unlocks v0.1 - test profile
-// Career promotion grants one-time field equipment and an alternate route to
-// the existing RecipeStages progression. World Tier remains the hard gate.
+// Career promotion grants one-time field equipment and production bonuses.
+// Recipes themselves are universal and are never gated by JOB or World Tier.
 
 const PDZ_JOB_STAGE_UNLOCKS = {
   ground_tech:[['dz_mechanics_vehicle_1',0]],
@@ -86,8 +86,8 @@ const PDZ_JOB_T3_EQUIPMENT_EFFECT = {
   bio_support:'毒を自動除去', rescue_operator:'周囲の味方へ移動支援',
   convoy_master:'車両部品の回収率上昇', armor_mechanic:'車両・装甲部品の回収率上昇',
   ace_pilot:'常時落下制御', crew_chief:'車両・航空部品の回収率上昇',
-  systems_engineer:'工業部品の回収率上昇', industrial_architect:'工業・要塞レシピと部品回収',
-  weapon_engineer:'弾薬部品回収・上位武器レシピ', ordnance_specialist:'弾薬・爆発物部品の回収',
+  systems_engineer:'工業部品の追加生産と回収', industrial_architect:'工業・要塞部品の追加生産と回収',
+  weapon_engineer:'弾薬部品の追加生産と回収', ordnance_specialist:'弾薬・爆発物部品の追加生産と回収',
   pathfinder:'長距離移動で加速', spotter:'広範囲の敵を索敵表示',
   ghost:'しゃがみ中に高速隠密', saboteur:'撃破後に短時間隠密',
   bulwark:'瀕死時に強力な耐性', sentinel:'周囲の味方へ防御Aura',

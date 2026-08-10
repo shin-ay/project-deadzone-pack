@@ -6382,7 +6382,7 @@ hash = "733e97bc1453cd2771ca741ab2052bd0da84c67fb8d3f6f52249ce4845eed10f"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_affixes_v0_2.js"
-hash = "8c3b6a19195a6fc369c10020dc3475b6f2c5bde87fb1c772cc7271a30a6f5b8f"
+hash = "f44a3ee19bb21680b8bcbfb32dba8856eeb3755784ee74a9b1b52c7e197e1a45"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_ammo_reload_perks_v0_1.js"
@@ -6418,7 +6418,7 @@ hash = "e75ef9a343954d5806a5194eb2bb5805bc8f064ffefb9e7e30a88e6df30669ce"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_camp_shop_rotation_v0_1.js"
-hash = "0b4880c5ef445b45199849797f1576363cf0af6663f591899551a4046a024a48"
+hash = "d2b81919d00b2df4caeef0ee30c1a4e9da379aab3b8b29c2c827ed71c9b5b07a"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_career_equipment_use_v0_1.js"
@@ -6485,8 +6485,12 @@ file = "kubejs/server_scripts/project_deadzone_hydration_bridge_v0_1.js"
 hash = "c950eae8a2ad0469df1f6d2020c7d4762855b28e812993dbdffd1b1dd3b1d55f"
 
 [[files]]
+file = "kubejs/server_scripts/project_deadzone_industry_crafting_bonus_v0_1.js"
+hash = "639c481a0b0d52cc61bd4f43717c504c7733d9f6bdba7e076ea6cc449bcf9c90"
+
+[[files]]
 file = "kubejs/server_scripts/project_deadzone_industry_smelting_fallbacks_v0_1.js"
-hash = "954213ddb268c5026ca7153709befce3dfc9bf7d8303c9adc862fba2b0eda01a"
+hash = "cf117644b6c1c45a55d30336648ba3fe6300e6d34159a5e57e493bd895d2f392"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_job_abilities_v0_1.js"
@@ -6498,7 +6502,7 @@ hash = "10b06e474f9fe71e3de78e12e21146f9fc0c88b5b880085feca9ebf390df44ec"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_job_unlocks_v0_1.js"
-hash = "ca5a28e61326fc6b4f30e5eb5af1dc82dd0322d5319aeeb4d329a3e6db47d673"
+hash = "4895bdb18c7dae487a79a657c22ff03613c2788991b6155e2e0620b9530cf54d"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_jobs_v0_2_2.js"
@@ -6550,7 +6554,7 @@ hash = "ae1515f5e658b984684ef1abde4787f9f1b3f0f97ef48d8adb244a284ccdf0b0"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_recipe_stage_sync_v0_1.js"
-hash = "8be96c333ef9552f6417a87d5ce27917d7e288f5237638623be62104ba7cb718"
+hash = "7715f008309a8b7b7c198ad3b7d7ea08acb7c21fcf44ef0fa3be29bc34a8aa52"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_region_tiers_v0_1.js"
@@ -6642,11 +6646,11 @@ hash = "7522f2236fe75a9256eeecf8388c08f6199410dc5a5581fc53ad6907002a5447"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_urgent_qol_v0_1.js"
-hash = "5a3082bb0292cd05f9ef37b1615937a94f6d8a8cbb47936bd9b33beb342cf373"
+hash = "fb5aacd3f6238c7594082b322d3267e310757b99233de1f031599532191553ab"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_usunit_alliance_v0_1.js"
-hash = "847331745c73ebcac8a61ffed6c40ede42429f0dbaa5a8f1015cef103dfc23f4"
+hash = "8bb578a2d9a8e0967863ceda15271357fa36b1dc5465239992cb788e6dd980aa"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_world_loot_v0_1.js"
@@ -13848,7 +13852,7 @@ hash = "d2956469dabdbfe47b6fd4b1edfe09594549614c4b6917ce72bdac77fd3bf7cb"
 
 [[files]]
 file = "scripts/project_deadzone_recipe_progression_v0_1.zs"
-hash = "d090b488d9898cff0e560dbeb5d12945059940b6362ce269638a403903549673"
+hash = "7d50a0a49101ed76821ae0862db4ae064356e4bb3597823ef831d9adc9a3c623"
 
 [[files]]
 file = "sildurs-enhanced-default.pw.toml"
