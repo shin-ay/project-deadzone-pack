@@ -1753,26 +1753,6 @@ file = "config/pamhc2trees.toml"
 hash = "d8d203aa6939fb29602b29d00b15f9e8ffe3b7c3db67077cc29c8472cce2e0b2"
 
 [[files]]
-file = "config/partyhealth-client.toml"
-hash = "ea3d3ba2f0a36712d5f9bd8cfd8d7e0bb27a10ac3d5308461d9c8d6f09df1ec1"
-
-[[files]]
-file = "config/partyhealth-client.toml.ui_backup"
-hash = "697914664a4b1a01992d16dbb3380467cb2f49d0c5fb5f5f545770d3fe6eda2b"
-
-[[files]]
-file = "config/partyhealth-healing-items.json"
-hash = "7ce9fcc462757c8c4bcf1d4b0746e7f40c7379c53da7eb166edb43e5c72460bb"
-
-[[files]]
-file = "config/partyhealth-quickheal-priority.json"
-hash = "6328ac5786852b62153316c87e9d7ff4b55cf32ff9a82c9023567d73ad52039f"
-
-[[files]]
-file = "config/partyhealth-server.toml"
-hash = "9355ec2b08658faad80147752c116dc0658e02a876e3e16ef368085b0e4c23a2"
-
-[[files]]
 file = "config/partyhud-clientv2.toml"
 hash = "54aa4b3c075d67246f75bb6e7bb59190187bc77735491d97579ebfe99a21633b"
 
@@ -3007,10 +2987,6 @@ hash = "230f9af2a70ed574e5acb04c4c99a7cd0b61cc03b6f6d0735d4bc8cc3d275c51"
 [[files]]
 file = "kubejs/assets/kubejs/textures/item/example_item.png"
 hash = "45a5f56eba6066ad05c70988a32b72c50cfeb6e35857739bd582007011ea002b"
-
-[[files]]
-file = "kubejs/assets/partyhealth/lang/ja_jp.json"
-hash = "a5061416e2c61017a89e1e2e1eae48848fb7efa17df748076336c1bd21f0399b"
 
 [[files]]
 file = "kubejs/assets/project_deadzone/lang/en_us.json"
@@ -7496,6 +7472,11 @@ hash = "5bd0506bc0be25116b234f2b5af9447f60d82ae1cb6c5be4e12d8841f6c2501c"
 metafile = true
 
 [[files]]
+file = "mods/first-aid.pw.toml"
+hash = "23b34b1ede5d26a29cbe0226d71b4de26c9b7f837e47914630f7da00961f3be7"
+metafile = true
+
+[[files]]
 file = "mods/framedblocks.pw.toml"
 hash = "a06a97ba002c875926da3c83ef2027388c4e8a66e01b8bf1fd3d69be54bd6e64"
 metafile = true
@@ -8191,11 +8172,6 @@ metafile = true
 [[files]]
 file = "mods/tacz-weapons-and-tactics-mod.pw.toml"
 hash = "aca7de14aa01b8082c14d3ced2dbd155afa61e2bb4befe53cbcc9e93ec4333a5"
-metafile = true
-
-[[files]]
-file = "mods/tacz-zombie-body-party-health.pw.toml"
-hash = "5bc3b81189d06fbfa142a161d4863dc8498c978c58085679f036fd57aa91e63c"
 metafile = true
 
 [[files]]
