@@ -6534,7 +6534,7 @@ hash = "a506f43baae955ec164b9c4ef24a6c0a828b423ad140d21ecff59c0f14ec97b5"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_player_damage_guard_v0_1.js"
-hash = "44654525c9d8e22e09a3592ef4e15fac4efe2f420a95a1e338b3e0d6259c6332"
+hash = "d5bcd867cb58fb22fff6ad0dc5fadaae72da691af65091111f13961c2c8aa2eb"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_player_zombie_recovery_v0_1.js"
