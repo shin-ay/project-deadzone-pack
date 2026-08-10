@@ -2589,6 +2589,10 @@ file = "config/solcarrot-client.toml"
 hash = "6906f6e7b3e2764c6f157baa09bf47a4e261880cd3f1990ac12d64b280ce1fc1"
 
 [[files]]
+file = "config/sona-common.toml"
+hash = "40526685700a2cc1186b239375fdae21f3f1d0dbed7a3c88892077363913b804"
+
+[[files]]
 file = "config/sophisticatedbackpacks-common.toml"
 hash = "6674ec92f625296aa8accc93d71fdf1eecfc8050111c5ae7b6d9a94b4fe14506"
 
@@ -2855,6 +2859,10 @@ hash = "ba9e686f322cc42bb8ed81005c223ab199602b9bf528edc8cbf1b072a784aef9"
 [[files]]
 file = "config/zombieawareness/PlayerRulesAndLists.toml"
 hash = "e766740f523b7da0d0cdc9db47f6e69c16489509c6b5e1eee63742c295f5f508"
+
+[[files]]
+file = "config/zombiekit-common.toml"
+hash = "203d638bc91dc9647c4011d50226454c2b18260f5d51bfb32eb7d9135cbe7e60"
 
 [[files]]
 file = "defaultconfigs/dynamictrees-server.toml"
@@ -6526,7 +6534,7 @@ hash = "a506f43baae955ec164b9c4ef24a6c0a828b423ad140d21ecff59c0f14ec97b5"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_player_damage_guard_v0_1.js"
-hash = "d5bcd867cb58fb22fff6ad0dc5fadaae72da691af65091111f13961c2c8aa2eb"
+hash = "44654525c9d8e22e09a3592ef4e15fac4efe2f420a95a1e338b3e0d6259c6332"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_player_zombie_recovery_v0_1.js"
@@ -7183,6 +7191,15 @@ metafile = true
 file = "mods/berezka-library.pw.toml"
 hash = "0548f7d5125c4607d8d50b021c7a5d89755b7a731713c20c60c6701c9b44df57"
 metafile = true
+
+[[files]]
+file = "mods/better-combat-by-daedelus.pw.toml"
+hash = "f6a0e47845c06a47bbd3471318c2b95e83ad4e3d1759c84d0a2a3bf6437ca33a"
+metafile = true
+
+[[files]]
+file = "mods/bettercombat-forge-1.8.6+1.20.1.jar.disabled"
+hash = "e147e13732e0fac83aee209487fdeb10a03e52c33e1b1439dbce01a80f3e8dbb"
 
 [[files]]
 file = "mods/big-lost-city.pw.toml"
@@ -8105,6 +8122,11 @@ hash = "8d3e9ef52ac3b65fb976629b55652ca30f9ad8b7ff37925c3111ae78386e1a97"
 metafile = true
 
 [[files]]
+file = "mods/sona-survival-101.pw.toml"
+hash = "6bc6214c56d03161e6329dc02e57330898b8257d7ddc1afd7ce3ef16b77383a4"
+metafile = true
+
+[[files]]
 file = "mods/sophisticated-backpacks.pw.toml"
 hash = "abf41d9c699229abdf6a60648e83a062b319a2d7cece5031ac44a9cece5333c8"
 metafile = true
@@ -8366,6 +8388,11 @@ metafile = true
 [[files]]
 file = "mods/zombie-siege-loottables-tacz.pw.toml"
 hash = "0c10621b653d32d0cb877de993db50586c75be09868f29429ff6dbf8defecb06"
+metafile = true
+
+[[files]]
+file = "mods/zombie-survival-kit.pw.toml"
+hash = "502a43c7efa112daa8ec2e68378a35a568eb946f00314d81d60b9310fe9004d9"
 metafile = true
 
 [[files]]

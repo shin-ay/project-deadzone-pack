@@ -1,0 +1,249 @@
+
+["Weapon & Armor"]
+
+	["Weapon & Armor".BaseballBat]
+		#Range: 1.0 ~ 5000.0
+		"Baseball Bat Damage" = 9.0
+		#Range: 1.0 ~ 5000.0
+		"Studded Baseball Bat Damage" = 12.0
+		#Range: 1.0 ~ 5000.0
+		"Netherite Baseball Bat Damage" = 15.0
+		#Range: 0.0 ~ 8.0
+		"Baseball Bat Speed" = 1.3
+
+	["Weapon & Armor".Chainsaw]
+		#Damage per tick
+		#Range: 0.0 ~ 5000.0
+		"Chainsaw Damage" = 1.2
+		#Ticks required to reduce the power of a chainsaw by 4%
+		#1 sec = 20 ticks
+		#Range: > 1
+		"Chainsaw Power" = 480
+
+	["Weapon & Armor".Crowbar]
+		#Range: 1.0 ~ 5000.0
+		"Crowbar Damage" = 15.0
+		#Range: 1.0 ~ 5000.0
+		"Netherite Crowbar Damage" = 24.0
+		#Range: 0.0 ~ 8.0
+		"Crowbar Speed" = 1.6
+
+	["Weapon & Armor".FireAxe]
+		#Range: 1.0 ~ 5000.0
+		"FireAxe Damage" = 18.0
+		#Range: 1.0 ~ 5000.0
+		"Netherite FireAxe Damage" = 27.0
+		#Range: 0.0 ~ 8.0
+		"FireAxe Speed" = 0.8
+
+	["Weapon & Armor".Knife]
+		#Range: 1.0 ~ 5000.0
+		"Knife Damage" = 9.0
+		#Range: 1.0 ~ 5000.0
+		"Netherite Knife Damage" = 12.0
+		#Range: 1.0 ~ 5000.0
+		"Triangular Thorn Damage" = 15.0
+		#Range: 0.0 ~ 8.0
+		"Knife Speed" = 2.5
+		#Range: 0.0 ~ 8.0
+		"Netherite Knife and Triangular Thorn Speed" = 3.0
+		#Range: 1.0 ~ 5000.0
+		"Assassinate Multiplier" = 2.5
+
+	["Weapon & Armor".Machete]
+		#Range: 1.0 ~ 5000.0
+		"Machete Damage" = 12.0
+		#Range: 1.0 ~ 5000.0
+		"Netherite Machete Damage" = 18.0
+		#Range: 0.0 ~ 8.0
+		"Machete Speed" = 1.6
+
+	["Weapon & Armor".Rake]
+		#Range: 1.0 ~ 5000.0
+		"Rake Damage" = 10.0
+		#Range: 1.0 ~ 5000.0
+		"Netherite Rake Damage" = 15.0
+		#Range: 0.0 ~ 8.0
+		"Rake Speed" = 1.0
+		#Increased attack distance for rakes.
+		#Range: 0.0 ~ 1.0
+		"Rake Attack Range" = 0.25
+		#Increased attack distance for netherite rakes.
+		#Range: 0.0 ~ 1.0
+		"Netherite Rake Attack Range" = 0.5
+
+	["Weapon & Armor".Wrench]
+		#Range: 1.0 ~ 5000.0
+		"Wrench Damage" = 9.0
+		#Cooldown on wrench power-up throws.
+		#Range: > 1
+		"Wrench Cooldown (Second)" = 7
+
+	["Weapon & Armor".Flamethrower]
+		#The damage of flamethrower with fuel canister.
+		#Range: 1 ~ 5000
+		"Fuel Damage" = 5
+		#The damage of flamethrower with napalm fuel canister.
+		#Range: 1 ~ 5000
+		"Napalm Fuel Damage" = 7
+		#The damage of flamethrower with high temperature fuel canister.
+		#Range: 1 ~ 5000
+		"High Temperature Fuel Damage" = 10
+		#Fuel consumed per tick.(total fuel amount is 10000)
+		#Range: 1.0 ~ 10000.0
+		"Fuel Consumption Rate" = 2.5
+
+	["Weapon & Armor"."EXO suit"]
+		#Whether the exoskeleton suit can fly.
+		"Fly Function" = true
+		#X offset of exo suit HUD
+		#Range: 0 ~ 2048
+		"X offset" = 120
+		#Y offset of exo suit HUD
+		#Range: 0 ~ 2048
+		"Y offset" = 90
+
+	["Weapon & Armor".Parts]
+		#damage coefficient of parts
+		#Range: 0.0 ~ 5000.0
+		"Damage Coefficient" = 1.0
+
+	["Weapon & Armor".Misc]
+		#Whether or not the sweeping attacks of baseball bats and machetes deal damage based on their attack damage despite not having the Sweeping Edge enchantment.
+		"Sweep Improvement" = true
+		#Sweeping attacks without enchantment deal a percentage of the weapon's attack damage.
+		#Range: 0.0 ~ 1.0
+		"Sweep Multiplier" = 0.5
+
+[Items]
+
+	[Items.Bandage]
+		#Injury value a bandage will recover.
+		#Range: 1 ~ 100
+		"Bandage Heal" = 10
+		#Bandage value a bandage will recover.
+		#Range: 1 ~ 50
+		"Dress Wound Value" = 30
+
+	[Items."Medical Kit"]
+		#Injury value a medical kit will recover.
+		#Range: 1 ~ 100
+		"Medical Kit Heal" = 25
+		#Bandage value a medical kit will recover.
+		#Range: 1 ~ 50
+		"Medical Kit Bandage" = 50
+
+	[Items."Suspicious Drug"]
+		#Infection values reduced by suspicious drugs. Halves the effect when it causes side effects.
+		#Range: 1 ~ 100
+		"Infection Heal" = 30
+		#Suspicious drug's chance of producing side effects.
+		#Range: 0.0 ~ 1.0
+		"Side Effects Chance" = 0.2
+
+	[Items."Energy Rod"]
+		#How much each energy rod can energize the exo suit.
+		#Range: 1 ~ 100
+		"Energy Charge" = 20
+
+	[Items."Flare Gun"]
+		#How many warheads can a flare split into.
+		#WARNING: Excessive number of warheads can cause the game to lag.
+		#Range: 1 ~ 1000
+		"Warhead Number" = 200
+
+	[Items."Pocket Radio"]
+		#How far away can a pocket radio search a structure.
+		#Range: 1 ~ 10000
+		"Signal Range" = 500
+
+[Blocks]
+
+	[Blocks."Landmine & GasTank"]
+		#Whether landmines and gas tanks explode in a chain.
+		"Landmine Chain" = true
+		#Range of chain explosions.
+		#Range: 1 ~ 5
+		"Chain Range" = 2
+
+	[Blocks."Ultra Wide Band Radar"]
+		#Range: 2 ~ 128
+		"Radar Detection Range" = 48
+		#When the radar is running after how many ticks the power consumption is 1%.
+		#1 sec = 20 ticks
+		#Range: 1 ~ 5000
+		"Radar Power" = 60
+
+	[Blocks."Barbed Wire"]
+		#The probability that a barbed wire fence would be broken every tick when entities is trapped in it.
+		#1 sec = 20 ticks
+		#Range: 0.0 ~ 1.0
+		"Broken Probability" = 5.0E-4
+
+	[Blocks.Charger]
+		#The charger will charge the battery by 1% after how many ticks.
+		#1 sec = 20 ticks
+		#Range: 1 ~ 5000
+		"Charging Rate" = 120
+
+	[Blocks."Shortwave Radio"]
+		#Survivors recruited by shortwave radio are randomly selected in the forge:survivors tag.
+		#Probability of spawning illagers when shortwave radio spawns survivors.
+		#Range: 0.0 ~ 1.0
+		"Spawning Illager Probability" = 0.05
+		#The charger will charge the battery by 1% after how many ticks.
+		#Range: 1 ~ 20
+		"Number of illagers" = 8
+		#Probability of spawning vindicator.
+		#Range: 0.0 ~ 1.0
+		"Spawning Vindicator Probability" = 0.3
+
+[Entities]
+
+	[Entities."Heavy Machine Gun"]
+		#Entities tagged with forge:machine_gunner will use heavy machine guns.
+		#Heavy machine gun bullet damage.
+		#Range: 1 ~ 5000
+		Damage = 18
+		#How much bullet damage ignores armor.
+		#Range: 0.0 ~ 1.0
+		"Armor Piercing Rate" = 0.5
+		#Whether bullet damage ignores damage invulnerability time.
+		"Ignoring Invulnerability" = true
+
+	[Entities."UV Lamp"]
+		#UV lamps in this mode will ignite undead within range that are not resistant to UV light.
+		"High Performance Mode" = false
+		#When the lamp is running after how many ticks the power consumption is 1%.
+		#1 sec = 20 ticks
+		#Range: 1 ~ 5000
+		"Lamp Power" = 120
+
+	[Entities.Mortar]
+		#Whether the mortar shell can break block.
+		"Mortar Shell Destruction" = false
+		#Explosion level of the mortar shell.
+		#Range: 1 ~ 50
+		"Mortar Shell Explosion Level" = 5
+		#Damage of the napalm mortar shell.
+		#Range: 1 ~ 5000
+		"Napalm Shell Damage" = 20
+		#Burn duration in seconds on LivingEntity caused by the napalm mortar shell. Burning deals 4 damage per second.
+		#Range: 0 ~ 5000
+		"Napalm burn duration" = 20
+		#Radius of the napalm mortar shell.
+		#Range: 1 ~ 50
+		"Napalm Radius" = 10
+
+	[Entities.Misc]
+		#Whether Illagers will be enemy to other monsters.
+		"Illager Independence" = true
+		#Monsters that don't hostile to illagers.
+		"Illager Whitelist" = ["savageandravage:creepie", "minecraft:vex"]
+		#Probability that a zombie is equipped with weapons from this module at spawn.
+		#Range: 0.0 ~ 1.0
+		"Weapon Chance" = 0.05
+		#Probability that a zombie is equipped with bomb suit from this module at spawn.
+		#Range: 0.0 ~ 1.0
+		"Bomb Chance" = 0.02
+
