@@ -1039,7 +1039,7 @@ hash = "c164439c632aa7c95c07edec5cfef74b8e2d5671a8445a781deeb4de7ad0c8b6"
 
 [[files]]
 file = "config/firstaid-client.toml"
-hash = "2b3ddb55f64c6a436877897ea2a21161e6ba8146156116f0091b5a7a41f9159d"
+hash = "e2db80a4aae1a6620ea760f79ff666749ac986dbd0bc8f501f7c6bbf4964b1eb"
 
 [[files]]
 file = "config/firstaid-common.toml"
@@ -1779,7 +1779,7 @@ hash = "66afd32595b00de5d2837780a5866d600e296d9200a4e4fb1b6a2ef94693c909"
 
 [[files]]
 file = "config/playerrevive.json"
-hash = "e6d0213803ccc0993845117fd77deed519f1c5d2f26b89130af23c58aae2ba59"
+hash = "418bcdb98cec82f0566e207db97c5a07a3605c3b542238136e4c86af42d354ed"
 
 [[files]]
 file = "config/playerrevive_compat-common.toml"
@@ -7076,7 +7076,7 @@ hash = "35b4e0b8703039ef92a1f4a7096a28fda557c2ff8edff18f797e4018fce3a43a"
 
 [[files]]
 file = "mods/PROJECT_DEADZONE_JOB_UI-0.1.0.jar"
-hash = "f4c5d30e2e9dc907e1ea73e13e1b6dacc71c21ada514f7f7e9d8e492516a2cd8"
+hash = "01aa6fd50aea507fb03afd9d5e15ce1d51de9b0fad07e42092aa5692e349c1b7"
 
 [[files]]
 file = "mods/PROJECT_DEADZONE_UI-0.2.3.jar"
@@ -7188,15 +7188,6 @@ metafile = true
 file = "mods/berezka-library.pw.toml"
 hash = "0548f7d5125c4607d8d50b021c7a5d89755b7a731713c20c60c6701c9b44df57"
 metafile = true
-
-[[files]]
-file = "mods/better-combat-by-daedelus.pw.toml"
-hash = "f6a0e47845c06a47bbd3471318c2b95e83ad4e3d1759c84d0a2a3bf6437ca33a"
-metafile = true
-
-[[files]]
-file = "mods/bettercombat-forge-1.8.6+1.20.1.jar.disabled"
-hash = "e147e13732e0fac83aee209487fdeb10a03e52c33e1b1439dbce01a80f3e8dbb"
 
 [[files]]
 file = "mods/big-lost-city.pw.toml"
