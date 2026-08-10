@@ -5,11 +5,6 @@ file = "README_R4_JP.txt"
 hash = "02ba75b4b3c779b214882951c1e163c93c262c8b4c2566af7acc9c2d1fc0c943"
 
 [[files]]
-file = "body-camera-shader.pw.toml"
-hash = "44016f382e079ff6264ab05797f498e090c7c025fde6ab7ed18e27fee9676bae"
-metafile = true
-
-[[files]]
 file = "config/Apocalypse Now Config.toml"
 hash = "2b37a373f8b173834276caf0eadaa0b1f8981dc9ad6f4c2f535fb0486c31b9a7"
 
@@ -8247,11 +8242,6 @@ metafile = true
 [[files]]
 file = "mods/tacz-sound-attracts-zombies.pw.toml"
 hash = "4328eedefcd9c64c69042a8edf07ab54566039a953636a697448d9dd9b3d6ca6"
-metafile = true
-
-[[files]]
-file = "mods/tacz-tactical-breaching.pw.toml"
-hash = "0f545d8b963d4dd8789e4506ff945605750a1d89cc9a468b88f6cce2934a3fe1"
 metafile = true
 
 [[files]]
