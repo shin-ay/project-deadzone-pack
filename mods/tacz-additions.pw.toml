@@ -1,0 +1,13 @@
+name = "TaCZ Additions"
+filename = "taczadditions-1.20.1-1.2.2.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "e57602399e90f3273e68d7069c521c5a18fe69dc"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 8558895
+project-id = 1356005

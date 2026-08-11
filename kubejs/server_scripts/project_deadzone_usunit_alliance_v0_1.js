@@ -3,7 +3,9 @@
 // RU Units remain hostile. Explicit story-faction units keep their own setup.
 
 const DZ_USUNIT_TYPE = "simpleenemymod:usunit"
-const DZ_USUNIT_FACTION_TAGS = ["dz_civildef", "dz_remnant", "dz_raider"]
+// Civil Defense and Remnant US units are allies too. Only explicitly hostile
+// authored units are excluded from the alliance repair.
+const DZ_USUNIT_HOSTILE_TAGS = ["dz_raider", "dz_hostile", "dz_enemy"]
 const DZ_USUNIT_NATURAL_KEEP_CHANCE = 0.12
 const DZ_USUNIT_LOADED_CAP = 4
 
@@ -17,7 +19,7 @@ function dzUsunitHasOwner(entity) {
 }
 
 function dzUsunitIsManagedFaction(entity) {
-  return DZ_USUNIT_FACTION_TAGS.some(tag => entity.tags.contains(tag))
+  return DZ_USUNIT_HOSTILE_TAGS.some(tag => entity.tags.contains(tag))
 }
 
 function dzUsunitMakeFriendly(entity) {
@@ -28,6 +30,7 @@ function dzUsunitMakeFriendly(entity) {
   entity.tags.add("dz_usunit_natural")
   entity.tags.add("dz_survivor")
   entity.tags.add("dz_friendly")
+  entity.tags.add("dz_usunit_friendly")
   entity.runCommandSilent("team join dz_survivors @s")
 
   try {
@@ -81,6 +84,7 @@ ServerEvents.tick(event => {
 EntityEvents.hurt(event => {
   let victim = event.entity
   let attacker = event.source.actual
+  let direct = event.source.direct
   if (String(victim.type) === DZ_USUNIT_TYPE && victim.tags.contains("dz_friendly") && attacker &&
       (String(attacker.type) === "minecraft:player" ||
         (attacker.tags && (attacker.tags.contains("dz_survivor") ||
@@ -88,6 +92,8 @@ EntityEvents.hurt(event => {
     event.cancel()
     return
   }
+  if ((!attacker || String(attacker.type) !== DZ_USUNIT_TYPE) &&
+      direct && String(direct.type) === DZ_USUNIT_TYPE) attacker = direct
   if (!attacker || String(attacker.type) !== DZ_USUNIT_TYPE ||
       !attacker.tags.contains("dz_friendly")) return
   if (String(victim.type) === "minecraft:player" ||

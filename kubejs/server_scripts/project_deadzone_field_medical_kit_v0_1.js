@@ -1,6 +1,8 @@
-// PROJECT DEADZONE Field Medical Kit v0.2
-// Self treatment plus Medic-only treatment of another player.
+// PROJECT DEADZONE Field Medical Kit v0.3
+// The kit supplies First Aid dressings. Limb selection and healing are owned
+// by First Aid, so generic healing can no longer erase locational damage.
 const DZ_FIELD_KIT = "kubejs:field_medical_kit"
+const DZ_FIRSTAID_DRESSING = "firstaid:bandage"
 const DZ_FIELD_KIT_COOLDOWN_MS = 8000
 
 function dzFieldKitCureInfection(target) {
@@ -19,7 +21,7 @@ function dzConsumeFieldKitCharge(player, stack) {
     player.tell(Text.of("フィールド医療キットを使い切りました。").red())
   } else {
     stack.damageValue = nextDamage
-    player.tell(Text.of("応急処置を実施しました。残り " + (stack.maxDamage - nextDamage) + " 回").green())
+    player.tell(Text.of("応急処置用品を取り出しました。残り " + (stack.maxDamage - nextDamage) + " 回").green())
   }
 }
 
@@ -29,74 +31,49 @@ function dzFieldKitRemaining(player) {
   return { now: now, remaining: DZ_FIELD_KIT_COOLDOWN_MS - (now - last) }
 }
 
+function dzIssueDressing(healer, target, stack) {
+  let cooldown = dzFieldKitRemaining(healer)
+  if (cooldown.remaining > 0) {
+    healer.tell(Text.of("再使用まで " + Math.ceil(cooldown.remaining / 1000) + " 秒").gray())
+    return false
+  }
+  healer.persistentData.putLong("dz_field_medical_kit_last_ms", cooldown.now)
+  target.give(DZ_FIRSTAID_DRESSING)
+  target.tell(Text.of("First Aid画面で負傷部位を選び、包帯を使用してください。").aqua())
+  healer.runCommandSilent("playsound minecraft:item.armor.equip_leather player @s ~ ~ ~ 0.65 1.15")
+  dzConsumeFieldKitCharge(healer, stack)
+  return true
+}
+
 ItemEvents.rightClicked(DZ_FIELD_KIT, event => {
   let player = event.player
   if (player.level.clientSide) return
-
-  let cooldown = dzFieldKitRemaining(player)
-  if (cooldown.remaining > 0) {
-    player.tell(Text.of("再使用まで " + Math.ceil(cooldown.remaining / 1000) + " 秒").gray())
-    event.cancel()
-    return
-  }
-  let infected = dzFieldKitCureInfection(player)
-  if (player.health >= player.maxHealth && !infected) {
-    player.tell(Text.of("治療が必要な負傷はありません。").gray())
-    event.cancel()
-    return
-  }
-
-  player.persistentData.putLong("dz_field_medical_kit_last_ms", cooldown.now)
-  player.heal(4)
-  player.runCommandSilent("effect give @s minecraft:regeneration 5 1 true")
-  player.runCommandSilent("playsound minecraft:item.honey_bottle.drink player @s ~ ~ ~ 0.65 1.15")
-  dzConsumeFieldKitCharge(player, event.item)
-  if (infected) player.tell(Text.of("感染症の治療を完了しました。").green())
   event.cancel()
+  let infected = dzFieldKitCureInfection(player)
+  if (dzIssueDressing(player, player, event.item) && infected) {
+    player.tell(Text.of("感染症の治療も完了しました。").green())
+  }
 })
 
 ItemEvents.entityInteracted(event => {
   let healer = event.player
   let target = event.target
   if (!healer || healer.level.clientSide || !target) return
-  if (String(event.item.id) !== DZ_FIELD_KIT) return
-  if (String(target.type) !== "minecraft:player") return
-
+  if (String(event.item.id) !== DZ_FIELD_KIT || String(target.type) !== "minecraft:player") return
   event.cancel()
   if (String(healer.persistentData.getString("dz_job_id")) !== "medic") {
-    healer.tell(Text.of("他者への処置にはMedicの専門知識が必要です。").red())
+    healer.tell(Text.of("他人への処置にはMedicの専門知識が必要です。").red())
     return
   }
   if (String(target.uuid) === String(healer.uuid)) return
-
-  let cooldown = dzFieldKitRemaining(healer)
-  if (cooldown.remaining > 0) {
-    healer.tell(Text.of("再使用まで " + Math.ceil(cooldown.remaining / 1000) + " 秒").gray())
-    return
-  }
   let infected = dzFieldKitCureInfection(target)
-  if (target.health >= target.maxHealth && !infected) {
-    healer.tell(Text.of(target.username + " に治療が必要な負傷はありません。").gray())
-    return
-  }
-
-  healer.persistentData.putLong("dz_field_medical_kit_last_ms", cooldown.now)
-  target.heal(6)
-  target.runCommandSilent("effect give @s minecraft:regeneration 5 1 true")
-  target.runCommandSilent("playsound minecraft:item.honey_bottle.drink player @s ~ ~ ~ 0.65 1.15")
-  healer.runCommandSilent("playsound minecraft:block.beacon.activate player @s ~ ~ ~ 0.35 1.6")
-  dzConsumeFieldKitCharge(healer, event.item)
-  if (infected) healer.tell(Text.of(target.username + " の感染症を治療しました。").green())
-  healer.tell(Text.of(target.username + " を治療しました（6 HP＋再生）。").aqua())
-  target.tell(Text.of(healer.username + " から応急処置を受けました。").green())
+  if (!dzIssueDressing(healer, target, event.item)) return
+  if (infected) healer.tell(Text.of(target.username + " の感染症も治療しました。").green())
+  healer.tell(Text.of(target.username + " に応急処置用品を渡しました。").aqua())
 })
 
 ServerEvents.recipes(event => {
-  event.shaped(DZ_FIELD_KIT, [
-    "BMB",
-    "LCL",
-    "BMB"
-  ], {
+  event.shaped(DZ_FIELD_KIT, ["BMB", "LCL", "BMB"], {
     B: "apocalypsenow:bandage",
     M: "apocalypsenow:morphine",
     L: "minecraft:leather",
