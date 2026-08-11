@@ -3046,7 +3046,7 @@ hash = "4cd2b44781045084e2634fccf543c96c900a81061e8d4569c45e4528b8b21a66"
 
 [[files]]
 file = "kubejs/client_scripts/project_deadzone_medical_tooltips_v0_1.js"
-hash = "46fe05668396f81ecb52ab31f69bc89ddf603d21ec63b838aa9f6bcbce80120f"
+hash = "b74b7e69c93c695335b19728826d423eb2c4c00ae399f588f687233a9aa23786"
 
 [[files]]
 file = "kubejs/config/client.properties"
@@ -5813,6 +5813,10 @@ file = "kubejs/data/project_deadzone/loot_tables/chests/tier4_classified.json"
 hash = "a056cdfd718a4028ceedb979219b01e45049e9fb021096d877220d92970d8f2e"
 
 [[files]]
+file = "kubejs/data/project_deadzone/loot_tables/entities/ash_jackals_quartermaster.json"
+hash = "77a5dfe628adb0c53face37088d6d75aa1692f61ae373b2e6c305d250a449d52"
+
+[[files]]
 file = "kubejs/data/project_deadzone/loot_tables/npc/basecamp_staff.json"
 hash = "5ed439fe5ad708bb87c19e18f40b66874c56811cc7ebdfe05b703a85bdba6bb7"
 
@@ -6418,7 +6422,11 @@ hash = "50ff3c7ce1513cad37a2c37b8c76569ca933325d336feb9616ac5ed999cd483b"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_equipment_mastery_v0_1.js"
-hash = "07ec861213f048eb768239570fffb7a22ba4927e925c22ab0387e300c739b02c"
+hash = "4a98808127cf554e0bd98cba74f8031602825e6c3d7ef92646dc6dad3f95f93b"
+
+[[files]]
+file = "kubejs/server_scripts/project_deadzone_faction_activity_v0_1.js"
+hash = "f06e93b349a59d6e03b6ea7d40f7769f57fac9ae805e639f2648d543f353bb78"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_faction_strongholds_v0_1.js"
@@ -6610,7 +6618,7 @@ hash = "e4086c96069faa967dc05d48b13431aa2b0fc23c85e1b26934f1eb094a9e8804"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_t0_convoy_v0_1.js"
-hash = "32e001d340b7fdf08f877441211655864d7279031ea514b733de7653d9a28041"
+hash = "fbe9f88fbb843aaf45bc6e80f8b407ddfa425d36cbe21be44df81e0b14f5a910"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_t0_safezone_v0_1.js"
@@ -6646,11 +6654,11 @@ hash = "fb5aacd3f6238c7594082b322d3267e310757b99233de1f031599532191553ab"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_usunit_alliance_v0_1.js"
-hash = "4be7bb07343ac9f3f4f3271edea898c5a3dabfce312c03f769d78cd4f79913b0"
+hash = "0f2effb86e78856c471684c2eff9d31521a84f8e3bf1bee512dcbe294fd1db30"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_world_evolution_v0_1.js"
-hash = "25944eebf596af31addefd6b3a4e2eaf5f27516df53ce6f3c890276661eef9f1"
+hash = "b64952e09b580bf2f337f52612ff795782d0783a52b1af42be98ad1fb47b36ff"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_world_loot_v0_1.js"
@@ -8183,6 +8191,11 @@ hash = "0d4e1e7356b72cf0cbf9cada4945cbe598b80b64c2149da7a04a6ca0e2437938"
 metafile = true
 
 [[files]]
+file = "mods/tacz-additions.pw.toml"
+hash = "07ca76ecd8a1a8da66d0ee6fa2872d118cdd79f02c7eca2091df2420112175eb"
+metafile = true
+
+[[files]]
 file = "mods/tacz-addon.pw.toml"
 hash = "ea2df81d1e15c729957dbb1fede244daf705f0f1fe23ffb2438d22eff8264c86"
 metafile = true
@@ -8270,6 +8283,11 @@ metafile = true
 [[files]]
 file = "mods/tacz-weapons-and-tactics-mod.pw.toml"
 hash = "aca7de14aa01b8082c14d3ced2dbd155afa61e2bb4befe53cbcc9e93ec4333a5"
+metafile = true
+
+[[files]]
+file = "mods/tacza.pw.toml"
+hash = "1781ddb048de867f9b2274f11c64f95b5c70d8eaa325a4ffe6f28a03785b0725"
 metafile = true
 
 [[files]]
@@ -13785,6 +13803,10 @@ hash = "fcef09558e3242d3fc549319846967359006e3d7b702c6b81b84e65516833328"
 [[files]]
 file = "projectfiles/PROJECT_DEADZONE_Batch_Test_20260802_Hospital.md"
 hash = "189adb68566dba03592c1186f53bd6bfb212e9d84ec058f348c61cfeb20f54fd"
+
+[[files]]
+file = "projectfiles/PROJECT_DEADZONE_Boss_Faction_Convoy_Design_v0.1.md"
+hash = "7a8fa235da358ee0eb09215964789b5cd657ea331e65b4acc447d6468e6cec1f"
 
 [[files]]
 file = "projectfiles/PROJECT_DEADZONE_Buddy_Recruitment_Test_v0.1.md"

@@ -41,6 +41,10 @@ function dzConvoySpawn(player) {
 }
 
 ServerEvents.tick(event => {
+  // v0.2: periodic player-centred encounters are retired. The persistent
+  // faction activity framework now plans convoys between registered sites.
+  // /deadzoneencounter convoy remains available as a manual compatibility test.
+  return
   DZ_CONVOY_TICKS++
   if (DZ_CONVOY_TICKS % 6000 !== 0) return
   let server = event.server
