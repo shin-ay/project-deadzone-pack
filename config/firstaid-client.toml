@@ -24,7 +24,7 @@
 	xOffset = -12
 	#The offset on the y axis
 	#Range: -32768 ~ 32767
-	yOffset = -72
+	yOffset = -180
 	#Determines the transparency of the overlay. 200 = Maximum transparency, 0 = Fully opaque
 	#Range: 0 ~ 200
 	alpha = 50

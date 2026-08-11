@@ -1034,7 +1034,7 @@ hash = "c164439c632aa7c95c07edec5cfef74b8e2d5671a8445a781deeb4de7ad0c8b6"
 
 [[files]]
 file = "config/firstaid-client.toml"
-hash = "befd8ebcad025a5795605aaf2a010f474c5c448168abfbc4064f5d97682b3d64"
+hash = "cefe4b92fa5a92925edc05d5d611db56ced9a0b82394e4ded7d30cbc468dc246"
 
 [[files]]
 file = "config/firstaid-common.toml"
@@ -1042,7 +1042,7 @@ hash = "22ef4e55f5ed2f22c97bd9dba934dfec0beaa4b284e23c7c8493cda9c4d5e504"
 
 [[files]]
 file = "config/firstaid-server.toml"
-hash = "af62bd67fb08e46a47784a146aa5f0612fe9d702623e61dfea6682144a6e1280"
+hash = "8c3bcdcba5833be8786e95c3c6ec8c0376394168a16453b347698bef46523c74"
 
 [[files]]
 file = "config/flywheel-client.toml"
