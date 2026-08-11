@@ -1,4 +1,15 @@
 ItemEvents.tooltip(event => {
+  event.add('legendarysurvivaloverhaul:bandage', [
+    Text.green('LSO部位治療: 3回分 / 部位HPを3ずつ回復'),
+    Text.aqua('部位ステータス画面で負傷部位を選択して使用'),
+    Text.gray('治療時間: 15秒 / 回復促進: 60秒'),
+    Text.darkGray('通常HPではなく、選択した部位へ作用します')
+  ])
+  event.add('kubejs:field_medical_kit', [
+    Text.green('右クリック: LSO包帯を1個取り出す'),
+    Text.aqua('Medicは他プレイヤーへ右クリックして包帯を渡せます'),
+    Text.gray('感染症がある場合は同時に治療します')
+  ])
   event.add('apocalypsenow:bandage', [
     Text.gray('用途: 軽傷の部位治療'),
     Text.aqua('Body Statusで負傷部位を選択してから使用'),
