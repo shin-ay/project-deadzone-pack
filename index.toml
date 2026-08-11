@@ -1033,18 +1033,6 @@ file = "config/ferritecore-mixin.toml"
 hash = "c164439c632aa7c95c07edec5cfef74b8e2d5671a8445a781deeb4de7ad0c8b6"
 
 [[files]]
-file = "config/firstaid-client.toml"
-hash = "cefe4b92fa5a92925edc05d5d611db56ced9a0b82394e4ded7d30cbc468dc246"
-
-[[files]]
-file = "config/firstaid-common.toml"
-hash = "22ef4e55f5ed2f22c97bd9dba934dfec0beaa4b284e23c7c8493cda9c4d5e504"
-
-[[files]]
-file = "config/firstaid-server.toml"
-hash = "8c3bcdcba5833be8786e95c3c6ec8c0376394168a16453b347698bef46523c74"
-
-[[files]]
 file = "config/flywheel-client.toml"
 hash = "0c767e68a9702d1141ce8e0f5940c06c4a9ef5a06508e81b0f37ac011a765ed7"
 
@@ -1515,6 +1503,10 @@ hash = "3a5ae9334c11cf7b4507dc118888d231d149c4f7952ad73bc8580e7e014e546b"
 [[files]]
 file = "config/lc2h/lc2h_config.json"
 hash = "792cce4245d18b918d98a317e35021ef9ec5e7db2cf3d990b40ca22a65d18e54"
+
+[[files]]
+file = "config/legendarysurvivaloverhaul-common.toml"
+hash = "57815b20b811354ac72dbacd289e2ddc40acdfff78292300a7346ed644de1f5f"
 
 [[files]]
 file = "config/libtooltips-client.toml"
@@ -6534,7 +6526,7 @@ hash = "a506f43baae955ec164b9c4ef24a6c0a828b423ad140d21ecff59c0f14ec97b5"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_player_damage_guard_v0_1.js"
-hash = "51d4c4a9a93ba2df60d1f68e82948c0991803484e98d38bb75812cf057008511"
+hash = "40a1cfdd8ce23e3e77213495bd495c34dcef975dba021f68228606dc40a5a990"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_player_zombie_recovery_v0_1.js"
@@ -7534,11 +7526,6 @@ hash = "5bd0506bc0be25116b234f2b5af9447f60d82ae1cb6c5be4e12d8841f6c2501c"
 metafile = true
 
 [[files]]
-file = "mods/first-aid.pw.toml"
-hash = "23b34b1ede5d26a29cbe0226d71b4de26c9b7f837e47914630f7da00961f3be7"
-metafile = true
-
-[[files]]
 file = "mods/framedblocks.pw.toml"
 hash = "a06a97ba002c875926da3c83ef2027388c4e8a66e01b8bf1fd3d69be54bd6e64"
 metafile = true
@@ -7716,6 +7703,11 @@ metafile = true
 [[files]]
 file = "mods/kubejs.pw.toml"
 hash = "ed086cdfde6ba4bb175468a76f3df3b9517aea3fe95b09bed0f1fa70f7caeb6a"
+metafile = true
+
+[[files]]
+file = "mods/legendary-survival-overhaul.pw.toml"
+hash = "3d2ba45f2586438819ce7a876a1b671834b5df0ae07d6c04cbb0eca0c794ac02"
 metafile = true
 
 [[files]]
@@ -8323,11 +8315,6 @@ metafile = true
 [[files]]
 file = "mods/the-roads-more-travelled.pw.toml"
 hash = "5d4c1ecdc79bdee796ec8880c95d311ef4a0a6a81e672aabf305a5d88f82b60d"
-metafile = true
-
-[[files]]
-file = "mods/thirst-was-taken.pw.toml"
-hash = "435e86380f442b28ab298cb300fa0f51d1772e854252c31726b17ccb1ec5041e"
 metafile = true
 
 [[files]]

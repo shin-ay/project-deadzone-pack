@@ -1,0 +1,83 @@
+[core]
+"Temperature Enabled" = true
+"Thirst Enabled" = true
+"Health Overhaul Enabled" = true
+"Localized Body Damage Enabled" = true
+"Temperature Difficulty Mode" = "EASY"
+
+[temperature]
+"Dangerous Heat Temperature Effects" = false
+"Dangerous Cold Temperature Effects" = false
+"Altitude Modifier" = -2.0
+
+[temperature.temperature-immunity]
+"Temperature Immunity On Death Enabled" = true
+"Temperature Immunity On Death Time" = 6000
+"Temperature Immunity On First Spawn Enabled" = true
+"Temperature Immunity On First Spawn Time" = 6000
+
+[temperature.secondary_effects]
+"Heat Temperature Secondary Effects" = true
+"Cold Temperature Secondary Effects" = true
+"Heat Thirst Effect Modifier" = 0.05
+"Cold Hunger Modifier" = 0.05
+
+[temperature.wetness]
+"Wetness Enabled" = true
+"Wetness Modifier" = -3.0
+
+[temperature.biomes]
+"Biomes affect Temperature" = true
+"Biome Temperature Multiplier" = 8.0
+
+[temperature.weather]
+"Rain Temperature Modifier" = -1.0
+"Snow Temperature Modifier" = -2.5
+
+[temperature.time]
+"Time Based Temperature Modifier" = 1.0
+"Biome Time Multiplier" = 1.25
+"Shade Time Modifier" = -2.0
+
+[temperature.advanced.temperature-modification]
+"Temperature Tick Time" = 40
+"Maximum Temperature Modification" = 0.5
+"Minimum Temperature Modification" = 0.1
+
+[temperature.integration.serene-seasons]
+"Serene Seasons Enabled" = false
+
+[thirst]
+"Dangerous Dehydration" = false
+"Dehydration Damage Scaling" = 0.1
+
+[thirst.exhaustion]
+"Base Hydration Exhaustion" = 0.02
+"Sprinting Hydration Exhaustion" = 0.06
+"On Jump Hydration Exhaustion" = 0.08
+"On Block Break Hydration Exhaustion" = 0.04
+"On Attack Hydration Exhaustion" = 0.12
+
+[health-overhaul.broken-hearts]
+"Minimum Amount Of Player's Heart With Broken Hearts (Broken Heart Resilience)" = 4
+"Added Broken Hearts Per Injured Limb" = 0.05
+"Broken Hearts Per Injured Limb Mode" = "PLAYER_DYNAMIC"
+
+[body-damage]
+"Headshot Multiplier" = 1.25
+"Body Damage Multiplier" = 0.7
+
+[body-damage.healing-limbs.passive-regeneration]
+" Passive Limb Regeneration On Full Health" = false
+
+[body-damage.healing-limbs.proportional-regeneration]
+"Proportional Limb Regen Min Heal Value" = 0.0
+"Proportional Limb Regen Max Heal Value" = 0.0
+
+[body-parts-health]
+"Body Part Health Mode" = "DYNAMIC"
+"Head Part Health" = 0.75
+"Arms Part Health" = 0.75
+"Chest Part Health" = 1.0
+"Legs Part Health" = 0.75
+"Feet Part Health" = 0.6

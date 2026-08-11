@@ -1,6 +1,5 @@
-// PROJECT DEADZONE - player one-shot guard and First Aid diagnostics.
-// First Aid owns limb health; this only prevents an unexplained full-health
-// one-shot while recording the damage source and amount needed for balancing.
+// PROJECT DEADZONE - damage diagnostics only.
+// Legendary Survival Overhaul owns health, limb damage and lethal conditions.
 
 function pdzDamageSourceId(source) {
   try { return String(source.type()) } catch (ignored) {}
@@ -60,7 +59,6 @@ EntityEvents.hurt(event => {
   let health = Math.max(0, Number(player.health))
   let maxHealth = Math.max(1, Number(player.maxHealth))
   let absorption = Math.max(0, Number(player.absorptionAmount || 0))
-  let nearFull = health >= maxHealth * 0.80
   let lethal = incoming >= health + absorption
   let attacker = pdzDamageEntityName(event.source.actual)
   let direct = pdzDamageEntityName(event.source.direct)
@@ -87,15 +85,6 @@ EntityEvents.hurt(event => {
     try { player.persistentData.putLong('dz_last_damage_tick', player.level.gameTime) } catch (ignored) {}
   }
 
-  // A healthy player must enter the First Aid / PlayerRevive flow instead of
-  // vanishing to a single ordinary hit. Low-health and repeated hits remain lethal.
-  if (nearFull && lethal) {
-    let capped = Math.max(1, maxHealth * 0.45)
-    event.damage = Math.min(incoming, capped)
-    console.warn('[PDZ DamageGuard] capped full-health lethal hit for '
-      + player.username + ': ' + incoming.toFixed(2) + ' -> ' + capped.toFixed(2)
-      + ' source=' + source)
-  }
 })
 
 EntityEvents.death(event => {

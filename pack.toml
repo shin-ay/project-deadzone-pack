@@ -1,12 +1,12 @@
 name = "PROJECT DEADZONE dev"
 author = "PROJECT DEADZONE Team"
-version = "R4-20260809"
+version = "R4-LSO-ALPHA-20260811"
 pack-format = "packwiz:1.1.0"
 
 [index]
 file = "index.toml"
 hash-format = "sha256"
-hash = "af68d1fa280621eca87abad108b16cf1052bbee2bc79fa4cb30ca5ebed4f113f"
+hash = "4a36de0b81c97792eea80724e982c6de71665b881ae42075f2fcdddf94115cbc"
 
 [versions]
 forge = "47.4.10"
