@@ -1,8 +1,7 @@
 // PROJECT DEADZONE Field Medical Kit v0.3
-// The kit supplies First Aid dressings. Limb selection and healing are owned
-// by First Aid, so generic healing can no longer erase locational damage.
+// The kit supplies Legendary Survival Overhaul dressings.
 const DZ_FIELD_KIT = "kubejs:field_medical_kit"
-const DZ_FIRSTAID_DRESSING = "firstaid:bandage"
+const DZ_FIRSTAID_DRESSING = "legendarysurvivaloverhaul:bandage"
 const DZ_FIELD_KIT_COOLDOWN_MS = 8000
 
 function dzFieldKitCureInfection(target) {
@@ -39,7 +38,7 @@ function dzIssueDressing(healer, target, stack) {
   }
   healer.persistentData.putLong("dz_field_medical_kit_last_ms", cooldown.now)
   target.give(DZ_FIRSTAID_DRESSING)
-  target.tell(Text.of("First Aid画面で負傷部位を選び、包帯を使用してください。").aqua())
+  target.tell(Text.of("部位ステータス画面で負傷部位を選び、包帯を使用してください。").aqua())
   healer.runCommandSilent("playsound minecraft:item.armor.equip_leather player @s ~ ~ ~ 0.65 1.15")
   dzConsumeFieldKitCharge(healer, stack)
   return true

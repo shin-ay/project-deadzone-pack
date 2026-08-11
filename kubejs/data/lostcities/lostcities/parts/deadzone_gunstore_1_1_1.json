@@ -156,11 +156,7 @@
       },
       {
         "char": "",
-        "block": "tacz:workbench_c[facing=west,half=lower]",
-        "tag": {
-          "BlockId": "ronmc:gun_locker",
-          "id": "tacz:gun_smith_table"
-        }
+        "block": "tacz:workbench_c[facing=west,half=lower]"
       },
       {
         "char": "",
@@ -262,10 +258,7 @@
       },
       {
         "char": "",
-        "block": "tacz:workbench_c[facing=west,half=upper]",
-        "tag": {
-          "id": "tacz:gun_smith_table"
-        }
+        "block": "tacz:workbench_c[facing=west,half=upper]"
       },
       {
         "char": "",

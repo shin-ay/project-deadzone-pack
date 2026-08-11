@@ -19,8 +19,8 @@
 [temperature.secondary_effects]
 "Heat Temperature Secondary Effects" = true
 "Cold Temperature Secondary Effects" = true
-"Heat Thirst Effect Modifier" = 0.05
-"Cold Hunger Modifier" = 0.05
+"Heat Thirst Effect Modifier" = 0.015
+"Cold Hunger Modifier" = 0.015
 
 [temperature.wetness]
 "Wetness Enabled" = true
@@ -28,7 +28,7 @@
 
 [temperature.biomes]
 "Biomes affect Temperature" = true
-"Biome Temperature Multiplier" = 8.0
+"Biome Temperature Multiplier" = 2.5
 
 [temperature.weather]
 "Rain Temperature Modifier" = -1.0

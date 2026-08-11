@@ -12,7 +12,8 @@ const DZ_JOBS = {
       ["apocalypsenow:bandage",2],
       ["survival_instinct:rope",4]
     ],
-    random: []
+    random: [],
+    gunStarter: true
   },
   weapons_expert: {
     name: "Weapons Expert",
@@ -22,7 +23,7 @@ const DZ_JOBS = {
       ["survival_instinct:tactical_knife",1]
     ],
     random: [],
-    gunStarter: true
+    smgStarter: true
   },
   medic: {
     name: "Medic",
@@ -34,7 +35,8 @@ const DZ_JOBS = {
       ["apocalypsenow:adrenaline_syringe",1],
       ["apocalypsenow:medicalkit",1]
     ],
-    random: []
+    random: [],
+    gunStarter: true
   },
   mechanic: {
     name: "Mechanic",
@@ -45,7 +47,8 @@ const DZ_JOBS = {
       ["mts:mtsofficialpack.sparkplug",2],
       ["mts:mtsofficialpack.copperwire",4]
     ],
-    random: []
+    random: [],
+    gunStarter: true
   },
   engineer: {
     name: "Engineer",
@@ -56,7 +59,8 @@ const DZ_JOBS = {
       ["immersiveengineering:wirecutter",1],
       ["create:wrench",1]
     ],
-    random: []
+    random: [],
+    gunStarter: true
   },
   scout: {
     name: "Scout",
@@ -67,7 +71,8 @@ const DZ_JOBS = {
       ["sophisticatedbackpacks:pickup_upgrade",1],
       ["immersiveengineering:survey_tools",1]
     ],
-    random: []
+    random: [],
+    gunStarter: true
   },
   security: {
     name: "Security",
@@ -87,9 +92,10 @@ const DZ_JOBS = {
       ["survival_instinct:hunt_knife",1],
       ["survival_instinct:bear_trap",2],
       ["survival_instinct:medkit_bag",1],
-      ["thirst:sand_filter",1]
+      ["legendarysurvivaloverhaul:water_purifier",1]
     ],
-    random: []
+    random: [],
+    gunStarter: true
   }
 }
 
@@ -146,11 +152,19 @@ function dzGiveGun(player) {
   player.tell(Text.of(`Starter ammo: ${ammoCount} rounds (${g.ammo})`).gray())
 }
 
+function dzGiveSmg(player) {
+  player.give(Item.of("tacz:modern_kinetic_gun",
+    '{GunFireMode:"AUTO",GunId:"tacz:hk_mp5a5",HasBulletInBarrel:1b}'))
+  player.give(Item.of("tacz:ammo", 60, '{AmmoId:"tacz:9mm"}'))
+  player.tell(Text.of("Starter weapon: HK MP5A5 / 9mm x60").gold())
+}
+
 function dzGiveStarterKit(player, job) {
   DZ_COMMON_STARTER.forEach(x => dzGive(player,x))
   job.fixed.forEach(x => dzGive(player,x))
   job.random.forEach(pool => dzGive(player,dzPick(pool)))
   if (job.gunStarter) dzGiveGun(player)
+  if (job.smgStarter) dzGiveSmg(player)
 }
 
 function dzPuffishCommand(player, command) {
