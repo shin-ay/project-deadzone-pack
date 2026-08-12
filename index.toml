@@ -6498,7 +6498,7 @@ hash = "639c481a0b0d52cc61bd4f43717c504c7733d9f6bdba7e076ea6cc449bcf9c90"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_industry_smelting_fallbacks_v0_1.js"
-hash = "cf117644b6c1c45a55d30336648ba3fe6300e6d34159a5e57e493bd895d2f392"
+hash = "3872d69cb24983a153ab1e3e4b084f52ae928e4c2db1a75d29a04c68cd39f972"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_job_abilities_v0_1.js"
@@ -6526,7 +6526,7 @@ hash = "f561079c18f1428be26a6d032b08c35af6d99a1f415b53d6fd16d6e53e4f5ccc"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_material_unification_v0_1.js"
-hash = "f200c2c0bc69736216c24f84ed78442d2680997504cee9a617a0a410961e37d7"
+hash = "b933944cc8f9513ad6ce0a3541ea81282860c02d0131a9f32b1823858e4ba1d4"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_mechanical_companion_v0_1.js"

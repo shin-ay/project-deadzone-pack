@@ -47,7 +47,9 @@ const DZ_MATERIAL_EQUIVALENTS = {
   "immersiveengineering:plate_gold": ["create:golden_sheet"]
 }
 
-ServerEvents.recipes(event => {
+// Disabled 2026-08-12: global input/output replacement broke cross-mod
+// progression recipes. Shared materials now remain in their owning mods.
+if (false) ServerEvents.recipes(event => {
   Object.keys(DZ_MATERIAL_EQUIVALENTS).forEach(canonical => {
     DZ_MATERIAL_EQUIVALENTS[canonical].forEach(duplicate => {
       // Existing recipes may name the duplicate directly instead of using a
@@ -76,7 +78,7 @@ ServerEvents.recipes(event => {
   console.info("[PROJECT DEADZONE][Materials] shared ore and metal recipe outputs unified to Immersive Engineering")
 })
 
-LootJS.modifiers(event => {
+if (false) LootJS.modifiers(event => {
   const duplicateOreDrops = {
     "mekanism:lead_ore": ["mekanism:raw_lead", "mekanism:lead_ore"],
     "mekanism:deepslate_lead_ore": ["mekanism:raw_lead", "mekanism:deepslate_lead_ore"],

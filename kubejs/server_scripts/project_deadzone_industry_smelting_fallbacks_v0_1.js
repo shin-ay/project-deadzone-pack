@@ -2,7 +2,8 @@
 // Prevents early industry progression from deadlocking behind machines that
 // themselves require these basic metals. Machine processing remains faster.
 
-ServerEvents.recipes(event => {
+// Disabled 2026-08-12 together with material unification.
+if (false) ServerEvents.recipes(event => {
   // Use Forge tags instead of one mod's concrete dust ID. Material
   // unification runs in the same recipe pass, so Mekanism/IE/Create dusts
   // must all remain valid inputs to this bootstrap route.
