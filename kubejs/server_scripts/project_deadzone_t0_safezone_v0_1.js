@@ -4,7 +4,10 @@
 // death/drop/XP hooks in bulk and causing visible server stalls.
 
 const DZ_T0_SUBURB_RADIUS = 700
-const DZ_T0_CAMP_RADIUS = 64
+// Basecamp is a permanent onboarding/trading safe zone.  Do not tie this
+// radius to world tier or elapsed days: players must always be able to use
+// camp services without newly spawned hostiles appearing inside the walls.
+const DZ_T0_CAMP_RADIUS = 100
 const DZ_T0_VERTICAL_RADIUS = 24
 
 const DZ_T0_GUN_TYPES = [
@@ -36,6 +39,31 @@ function dzT0ProtectedSpawn(entity, radius) {
   return Math.abs(dy)<=DZ_T0_VERTICAL_RADIUS && (dx*dx+dz*dz)<=radius*radius
 }
 
+function dzCampProtectedSpawn(entity, radius) {
+  let data=entity.server.persistentData
+  if (data.getInt("dz_auto_basecamp_layout_version") <= 0) return false
+  let cx=data.getInt("dz_auto_basecamp_origin_x")+16
+  let cy=data.getInt("dz_auto_basecamp_origin_y")
+  let cz=data.getInt("dz_auto_basecamp_origin_z")+16
+  let dx=Number(entity.x)-cx, dy=Number(entity.y)-cy, dz=Number(entity.z)-cz
+  // Keep underground exploration outside the camp footprint dangerous, but
+  // cover the full camp structure and nearby surface approaches.
+  return Math.abs(dy)<=40 && (dx*dx+dz*dz)<=radius*radius
+}
+
+function dzIsHostileMob(entity) {
+  try { if (entity.isMonster && entity.isMonster()) return true } catch (ignored) {}
+  try {
+    let category=String(entity.minecraftEntity.getType().getCategory().getName())
+    if (category==="monster") return true
+  } catch (ignored) {}
+  let id=String(entity.type)
+  return id.indexOf("infectious:")===0 || id.indexOf("apocalypsenow:")===0 ||
+    id.indexOf("apocalypse_zombies:")===0 || id.indexOf("mutantszombies:")===0 ||
+    id.indexOf("tacz_hostiles:")===0 || id.indexOf("tacz_bandits:")===0 ||
+    id==="simpleenemymod:ruunit" || id==="simpleenemymod:pmcunit"
+}
+
 function dzT0Exempt(entity) {
   for (let i=0;i<DZ_T0_EXEMPT_TAGS.length;i++) if (entity.tags.contains(DZ_T0_EXEMPT_TAGS[i])) return true
   return false
@@ -51,6 +79,28 @@ function dzT0DiscardLater(event, radius) {
   })
 }
 
+function dzCampDiscardLater(event) {
+  let entity=event.entity
+  entity.server.scheduleInTicks(1,()=>{
+    if (!entity || !entity.alive || dzT0Exempt(entity) || !dzIsHostileMob(entity) ||
+        !dzCampProtectedSpawn(entity,DZ_T0_CAMP_RADIUS)) return
+    try { entity.discard() } catch (ignored) { entity.kill() }
+  })
+}
+
+// Catch modded monsters as well as vanilla monsters.  discard() prevents
+// loot/XP/death hooks, avoiding the lag spikes caused by repeated /kill.
+EntityEvents.spawned(event=>dzCampDiscardLater(event))
+
 DZ_T0_GUN_TYPES.forEach(type=>EntityEvents.spawned(type,event=>dzT0DiscardLater(event,DZ_T0_SUBURB_RADIUS)))
 DZ_T0_RANGED_TYPES.forEach(type=>EntityEvents.spawned(type,event=>dzT0DiscardLater(event,DZ_T0_SUBURB_RADIUS)))
-DZ_T0_CAMP_HOSTILES.forEach(type=>EntityEvents.spawned(type,event=>dzT0DiscardLater(event,DZ_T0_CAMP_RADIUS)))
+// Explicit vanilla registrations are kept as a compatibility fallback for
+// loaders where the generic mob-category accessor is unavailable.
+DZ_T0_CAMP_HOSTILES.forEach(type=>EntityEvents.spawned(type,event=>{
+  let entity=event.entity
+  entity.server.scheduleInTicks(1,()=>{
+    if (!entity || !entity.alive || dzT0Exempt(entity) ||
+        !dzCampProtectedSpawn(entity,DZ_T0_CAMP_RADIUS)) return
+    try { entity.discard() } catch (ignored) { entity.kill() }
+  })
+}))

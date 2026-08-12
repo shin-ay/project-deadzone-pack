@@ -2842,7 +2842,7 @@ hash = "6b24cabcba88b3fc214f9eb02f8ddb110d88632aca954832a8929b052e62666f"
 
 [[files]]
 file = "config/zombieawareness/General.toml"
-hash = "e2b6a7990c51a229cb9e50118c263c07aedf5aae3089a3ab1ab300a3e3a5e89c"
+hash = "9701a9ef57f6a76cf27df9b51a8a29e3509c8806f1776263f8dc96374cddafbe"
 
 [[files]]
 file = "config/zombieawareness/MobLists.toml"
@@ -6650,7 +6650,7 @@ hash = "fbe9f88fbb843aaf45bc6e80f8b407ddfa425d36cbe21be44df81e0b14f5a910"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_t0_safezone_v0_1.js"
-hash = "3aacddce6445e6ce704023cf362aad67f866c2a7de3dd6f0de748b3d47015b8d"
+hash = "4e5f2b4a0a610de2c91d85818a1ef8561a8e89b08e972fceaba2494955b85283"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_tacz_skill_xp_v0_1.js"
