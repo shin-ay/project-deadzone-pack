@@ -16,6 +16,12 @@ team add dz_remnant
 team modify dz_remnant color dark_red
 team modify dz_remnant friendlyFire false
 team modify dz_remnant seeFriendlyInvisibles true
+team add dz_aegis
+team modify dz_aegis color light_purple
+team modify dz_aegis friendlyFire false
+team add dz_warden
+team modify dz_warden color gold
+team modify dz_warden friendlyFire false
 scoreboard players set #survivors dz_faction 0
 scoreboard players set #civildef dz_faction 0
 scoreboard players set #raiders dz_faction 0

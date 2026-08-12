@@ -5466,7 +5466,7 @@ hash = "490be20ea25f0010d583153b561b6b52b81ac69cc79ff6d95be71ff63b0d702d"
 
 [[files]]
 file = "kubejs/data/project_deadzone/functions/factions/setup.mcfunction"
-hash = "340eff0e20376d822919dcc8436a9ef7c6a479d3cfde9db15640009080275792"
+hash = "a95fe1800532a87de143a0542145fc221e79d8550242aa08047f429f3992405c"
 
 [[files]]
 file = "kubejs/data/project_deadzone/functions/factions/spawn/civildef_guard.mcfunction"
@@ -6551,6 +6551,10 @@ hash = "84e4e057f75e12b020845856a059d4be5b0959b501b30697069347bd1ee9e792"
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_onboarding_v0_1.js"
 hash = "a506f43baae955ec164b9c4ef24a6c0a828b423ad140d21ecff59c0f14ec97b5"
+
+[[files]]
+file = "kubejs/server_scripts/project_deadzone_outpost_garrisons_v0_1.js"
+hash = "abd53351c0e19027c5c57a4a9a6aef884d2e69a35792a68cfd37be54a9733e0b"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_player_damage_guard_v0_1.js"
@@ -13837,7 +13841,7 @@ hash = "189adb68566dba03592c1186f53bd6bfb212e9d84ec058f348c61cfeb20f54fd"
 
 [[files]]
 file = "projectfiles/PROJECT_DEADZONE_Boss_Faction_Convoy_Design_v0.1.md"
-hash = "1f6f443d9d913dbec172d03305a95752a7d7569e5dace1d766f81643dbaf4a5d"
+hash = "2c42742e19df74536c2793cceba08f7efecd824945aed1e8483d1e9e862797f9"
 
 [[files]]
 file = "projectfiles/PROJECT_DEADZONE_Buddy_Recruitment_Test_v0.1.md"
