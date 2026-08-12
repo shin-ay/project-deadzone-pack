@@ -6554,7 +6554,7 @@ hash = "a506f43baae955ec164b9c4ef24a6c0a828b423ad140d21ecff59c0f14ec97b5"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_outpost_garrisons_v0_1.js"
-hash = "abd53351c0e19027c5c57a4a9a6aef884d2e69a35792a68cfd37be54a9733e0b"
+hash = "6ca54832046e03240686035e4682e862b5be24581ef35d5b4c8cc9963d8d02a2"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_player_damage_guard_v0_1.js"
