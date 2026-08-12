@@ -13832,6 +13832,18 @@ file = "moonlight-global-datapacks/pdz_growth_v1/pack.mcmeta"
 hash = "0ebb0c12eb7a11c4de1071a98531a7a293bb942f70354d263c84bb527c281da2"
 
 [[files]]
+file = "pdz_tools/keymap/APPLY_KEYMAP.bat"
+hash = "5fa78b2a6238c0c818839c48080a52fe5db9348798a94eedd76830c3853c179f"
+
+[[files]]
+file = "pdz_tools/keymap/README.txt"
+hash = "0c495d9a5093dab8c4df214f5c2c5ebdf89e80403442b8202b111e59ff95211a"
+
+[[files]]
+file = "pdz_tools/keymap/apply_keymap.ps1"
+hash = "0588d4891889881918cb065e2e7de863801f00297ad58e584b84643fa4761eb7"
+
+[[files]]
 file = "projectfiles/PROJECT_DEADZONE_Batch_Test_20260802_Contracts.md"
 hash = "fcef09558e3242d3fc549319846967359006e3d7b702c6b81b84e65516833328"
 
