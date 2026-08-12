@@ -6438,7 +6438,7 @@ hash = "07ec861213f048eb768239570fffb7a22ba4927e925c22ab0387e300c739b02c"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_faction_activity_v0_1.js"
-hash = "6f393de0651347170e4276f1c0d649ed0fe62e6f954492ac451053fcd53edf98"
+hash = "cc5fa6560df90082b091cb887768d1c43269f4e9a0e949d5b4db2c171b1383b4"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_faction_strongholds_v0_1.js"
@@ -13837,7 +13837,7 @@ hash = "189adb68566dba03592c1186f53bd6bfb212e9d84ec058f348c61cfeb20f54fd"
 
 [[files]]
 file = "projectfiles/PROJECT_DEADZONE_Boss_Faction_Convoy_Design_v0.1.md"
-hash = "f2d94db1253e2062817d5de936a707eba0ef0b20a815b8a643c4502f403a7d0e"
+hash = "1f6f443d9d913dbec172d03305a95752a7d7569e5dace1d766f81643dbaf4a5d"
 
 [[files]]
 file = "projectfiles/PROJECT_DEADZONE_Buddy_Recruitment_Test_v0.1.md"

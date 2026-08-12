@@ -113,6 +113,13 @@ function pdzActRouteScore(source,target,kind) {
     if(target.role==='medical'||target.role==='trade'||target.role==='shelter')score+=20
     score+=Number(target.alert||0)*0.75
     score+=Math.max(0,12-Number(target.defenders||0))*2.5
+  }else if(kind==='assault'){
+    if(source.role==='security'||source.role==='logistics'||source.role==='communications')score+=32
+    if(source.size==='large')score+=18
+    else if(source.size==='medium')score+=10
+    if(target.role==='security'||target.role==='communications'||target.role==='trade')score+=18
+    score+=Math.max(0,18-Number(target.defenders||0))*2.2
+    score+=Math.max(0,55-Number(target.supply||0))*0.25
   }
   return score
 }
@@ -156,7 +163,10 @@ function pdzActScan(server) {
     seen[id]=true
     let prior=map[id]||{}, type=marker.persistentData.getString('dz_wild_type')||'manual', size=pdzActSize(type)
     let structure=marker.persistentData.getString('dz_wild_structure')||'manual:site'
-    let faction=marker.persistentData.getString('dz_wild_faction')||'independent'
+    let markerFaction=marker.persistentData.getString('dz_wild_faction')||'independent'
+    // Captured ownership is authoritative. Otherwise the original structure
+    // marker would restore its old faction every time this ledger is scanned.
+    let faction=prior.ownerLocked&&prior.faction?String(prior.faction):markerFaction
     let trade=marker.persistentData.getString('dz_wild_trade')||''
     let role=marker.persistentData.getString('dz_wild_role')||pdzActRole(type,structure,faction,trade)
     let named=marker.persistentData.getString('dz_wild_named')||pdzActNamed(type,role,faction)
@@ -166,7 +176,8 @@ function pdzActScan(server) {
       structure:structure,type:type,faction:faction,size:size,role:role,named:named,trade:trade,
       supply:prior.supply===undefined?Math.min(100,pdzActInitialSupply(id,size)+pdzActRoleBonus(role)):prior.supply,
       alert:prior.alert===undefined?0:prior.alert,defenders:prior.defenders===undefined?0:prior.defenders,
-      coreAlive:prior.coreAlive===undefined?true:prior.coreAlive,lastActivity:prior.lastActivity||0,lastSeen:Date.now()}
+      coreAlive:prior.coreAlive===undefined?true:prior.coreAlive,lastActivity:prior.lastActivity||0,lastSeen:Date.now(),
+      ownerLocked:!!prior.ownerLocked,capturedAt:prior.capturedAt||0,capturedBy:prior.capturedBy||'',previousFaction:prior.previousFaction||''}
   }))
   let result=Object.keys(map).map(id=>map[id])
   pdzActWrite(server,PDZ_ACT_LEDGER,result)
@@ -193,6 +204,31 @@ function pdzActPickFactionRoute(server,factions,minDistance,maxDistance,kind) {
     let d=Math.sqrt(pdzActDist2(sites[i],sites[j]))
     if(d>=minDistance&&d<=maxDistance) choices.push({source:sites[i],target:sites[j],distance:d,score:pdzActRouteScore(sites[i],sites[j],kind||'patrol')})
   }
+  choices.sort((a,b)=>b.score-a.score)
+  return choices.length?choices[Math.floor(Math.random()*Math.min(3,choices.length))]:null
+}
+function pdzActFactionBloc(faction) {
+  faction=String(faction||'independent')
+  if(['cdf','civildef','survivor'].indexOf(faction)>=0)return 'survivor'
+  return faction
+}
+function pdzActHostile(attacker,target) {
+  let a=pdzActFactionBloc(attacker),b=pdzActFactionBloc(target)
+  if(a===b||a==='independent'||b==='independent')return false
+  if(a==='infected'||b==='infected')return true
+  return true
+}
+function pdzActPickAssaultRoute(server,attackerFaction) {
+  let attackerBloc=pdzActFactionBloc(attackerFaction)
+  let sites=pdzActScan(server).filter(s=>s.coreAlive&&Number.isFinite(Number(s.x))&&Number.isFinite(Number(s.z))),choices=[]
+  sites.forEach(source=>sites.forEach(target=>{
+    if(source.id===target.id||source.dimension!==target.dimension)return
+    if(pdzActFactionBloc(source.faction)!==attackerBloc||!pdzActHostile(attackerBloc,target.faction))return
+    if(Number(source.supply||0)<18||Number(source.defenders||0)<3)return
+    let d=Math.sqrt(pdzActDist2(source,target))
+    if(d<192||d>1600)return
+    choices.push({source:source,target:target,distance:d,score:pdzActRouteScore(source,target,'assault')})
+  }))
   choices.sort((a,b)=>b.score-a.score)
   return choices.length?choices[Math.floor(Math.random()*Math.min(3,choices.length))]:null
 }
@@ -300,6 +336,31 @@ function pdzActCreateConvoy(server,player) {
   return a
 }
 
+function pdzActCreateAssault(server,player,attackerFaction) {
+  if(!pdzActCanCreate(server,player))return null
+  attackerFaction=String(attackerFaction||'raider')
+  let route=pdzActPickAssaultRoute(server,attackerFaction)
+  if(!route){if(player)pdzActTell(player,'[ACTIVITY] No hostile outpost route is available for '+attackerFaction+'.','red');return null}
+  let now=Date.now(),duration=Math.max(210000,Math.floor(route.distance*900))
+  let base=route.source.size==='large'?11:(route.source.size==='medium'?8:5)
+  let strength=Math.max(4,Math.floor(base+Number(route.source.defenders||0)*0.45+Number(route.source.supply||0)*0.06))
+  let a={version:2,id:pdzActNewId(),type:'OUTPOST_ASSAULT',faction:attackerFaction,state:'PLANNED',dimension:route.source.dimension,
+    sourceId:route.source.id,targetId:route.target.id,targetFaction:route.target.faction,sx:route.source.x,sy:route.source.y,sz:route.source.z,
+    tx:route.target.x,ty:route.target.y,tz:route.target.z,x:route.source.x,y:route.source.y,z:route.source.z,
+    sourceRole:route.source.role,targetRole:route.target.role,attackStrength:strength,
+    created:now,departAt:now+15000,startAt:now+15000,arriveAt:now+15000+duration,materialized:false,lastUpdate:now}
+  let list=pdzActRead(server,PDZ_ACT_LIST);list.push(a);pdzActWrite(server,PDZ_ACT_LIST,list)
+  let ledger=pdzActRead(server,PDZ_ACT_LEDGER).map(s=>{
+    if(s.id===a.sourceId){s.supply=Math.max(0,Number(s.supply||0)-18);s.defenders=Math.max(1,Number(s.defenders||0)-3);s.lastActivity=now}
+    if(s.id===a.targetId)s.alert=Math.min(100,Number(s.alert||0)+35)
+    return s
+  })
+  pdzActWrite(server,PDZ_ACT_LEDGER,ledger)
+  server.runCommandSilent('tellraw @a [{"text":"[WAR REPORT] ","color":"dark_red","bold":true},{"text":"'+attackerFaction+' assault force is moving toward a hostile outpost.","color":"gold"}]')
+  if(player)pdzActTell(player,'[ACTIVITY] Created assault '+a.id+' / '+Math.floor(route.distance)+'m','green')
+  return a
+}
+
 function pdzActPlayerNear(server,a,range) {
   let best=null,bestD=range*range
   server.players.forEach(p=>{
@@ -364,7 +425,54 @@ function pdzActMaterializeTrade(server,a,player) {
   player.runCommandSilent('playsound minecraft:entity.wandering_trader.ambient player @s ~ ~ ~ 0.8 1.0')
 }
 
+function pdzActMaterializeAssault(server,a,player) {
+  let tag='dz_activity_'+a.id.replace(/[^A-Za-z0-9_]/g,'_')
+  let at='execute in '+a.dimension+' positioned '+Math.floor(a.x)+' '+Math.floor(a.y)+' '+Math.floor(a.z)+' positioned over motion_blocking_no_leaves run '
+  if(pdzActFactionBloc(a.faction)==='remnant'){
+    server.runCommandSilent(at+'function project_deadzone:factions/squad/remnant_roles')
+    server.runCommandSilent(at+'tag @e[tag=dz_remnant,tag=!dz_activity_bound,sort=nearest,limit=5,distance=..24] add '+tag)
+    server.runCommandSilent(at+'team join dz_remnant @e[tag='+tag+',distance=..24]')
+  }else{
+    server.runCommandSilent(at+'function project_deadzone:factions/squad/raiders_roles')
+    server.runCommandSilent(at+'tag @e[tag=dz_raider,tag=!dz_activity_bound,sort=nearest,limit=6,distance=..24] add '+tag)
+    server.runCommandSilent(at+'team join dz_raiders @e[tag='+tag+',distance=..24]')
+  }
+  server.runCommandSilent(at+'tag @e[tag='+tag+',distance=..24] add dz_activity')
+  server.runCommandSilent(at+'tag @e[tag='+tag+',distance=..24] add dz_activity_bound')
+  a.materialized=true;a.state='ENGAGED';a.entityTag=tag;a.lastUpdate=Date.now();a.despawnAt=Date.now()+240000
+  player.tell(Text.of('[WAR REPORT] '+a.faction+' assault force contact nearby.').red())
+  player.runCommandSilent('playsound minecraft:block.note_block.didgeridoo master @s ~ ~ ~ 0.9 0.55')
+}
+
+function pdzActResolveAssault(server,a,observedStrength) {
+  let ledger=pdzActRead(server,PDZ_ACT_LEDGER),target=null
+  ledger.forEach(s=>{if(s.id===a.targetId)target=s})
+  if(!target){a.state='CANCELLED';a.outcome='TARGET_LOST';return}
+  let sizeBase=target.size==='large'?12:(target.size==='medium'?8:5)
+  let attack=Math.max(1,Number(observedStrength===undefined?a.attackStrength:observedStrength)||1)+(Math.random()*7)
+  let defense=sizeBase+Number(target.defenders||0)+Number(target.supply||0)*0.07+(Math.random()*8)
+  let captured=attack>defense
+  ledger=ledger.map(s=>{
+    if(s.id!==a.targetId)return s
+    s.lastActivity=Date.now();s.alert=captured?55:Math.max(15,Number(s.alert||0)-12)
+    if(captured){
+      s.previousFaction=s.faction;s.faction=a.faction;s.ownerLocked=true;s.capturedAt=Date.now();s.capturedBy=a.id
+      s.defenders=Math.max(2,Math.floor(attack-defense/2));s.supply=Math.max(8,Math.floor(Number(s.supply||0)*0.35));s.coreAlive=true
+    }else{
+      s.defenders=Math.max(1,Math.floor(Number(s.defenders||0)-Math.max(1,attack*0.35)))
+      s.supply=Math.max(0,Math.floor(Number(s.supply||0)-Math.max(3,attack*0.25)))
+    }
+    return s
+  })
+  pdzActWrite(server,PDZ_ACT_LEDGER,ledger)
+  a.state=captured?'ARRIVED':'RETREATED';a.outcome=captured?'CAPTURED':'REPELLED';a.lastUpdate=Date.now()
+  server.runCommandSilent('deadzoneterritory rebuild')
+  if(captured)server.runCommandSilent('tellraw @a [{"text":"[TERRITORY] ","color":"red","bold":true},{"text":"'+a.faction+' captured '+target.role+' outpost at '+Math.floor(target.x)+', '+Math.floor(target.z)+'.","color":"gold"}]')
+  else server.runCommandSilent('tellraw @a [{"text":"[TERRITORY] ","color":"aqua","bold":true},{"text":"Defenders repelled '+a.faction+' at '+Math.floor(target.x)+', '+Math.floor(target.z)+'.","color":"white"}]')
+}
+
 function pdzActMaterialize(server,a,player) {
+  if(a.type==='OUTPOST_ASSAULT'){pdzActMaterializeAssault(server,a,player);return}
   if(a.type==='CDF_PATROL'){pdzActMaterializePatrol(server,a,player);return}
   if(a.type==='REINFORCEMENT'){pdzActMaterializeReinforcement(server,a,player);return}
   if(a.type==='INFECTED_HORDE'){pdzActMaterializeHorde(server,a,player);return}
@@ -397,7 +505,8 @@ function pdzActAdvance(server,force) {
     if(['ARRIVED','DESTROYED','CANCELLED','RETREATED'].indexOf(a.state)>=0)return
     if(a.materialized){
       let near=pdzActPlayerNear(server,a,128)
-      if(near&&server.runCommandSilent('execute in '+a.dimension+' positioned '+Math.floor(a.x)+' '+Math.floor(a.y)+' '+Math.floor(a.z)+' if entity @e[tag='+a.entityTag+',distance=..256]')===0){
+      let alive=server.runCommandSilent('execute in '+a.dimension+' positioned '+Math.floor(a.x)+' '+Math.floor(a.y)+' '+Math.floor(a.z)+' if entity @e[tag='+a.entityTag+',distance=..256]')
+      if(near&&alive===0){
         a.state='DESTROYED';a.lastUpdate=now;changed=true
         if(a.type==='CDF_PATROL')
           server.runCommandSilent('tellraw @a [{"text":"[RADIO] ","color":"aqua"},{"text":"Contact with a CDF patrol has been lost.","color":"red"}]')
@@ -405,6 +514,11 @@ function pdzActAdvance(server,force) {
           server.runCommandSilent('deadzoneterritory rebuild')
           server.runCommandSilent('tellraw @a [{"text":"[ACTIVITY] ","color":"gold"},{"text":"Hostile activity destroyed.","color":"green"}]')
         }
+      }
+      if(a.type==='OUTPOST_ASSAULT'&&a.state!=='DESTROYED'&&now>=Number(a.despawnAt||0)){
+        let surviving=Math.max(1,Math.floor(Number(a.attackStrength||5)*(alive>0?0.75:0.15)))
+        server.runCommandSilent('execute in '+a.dimension+' run kill @e[tag='+a.entityTag+']')
+        pdzActResolveAssault(server,a,surviving);changed=true
       }
       if((a.type==='CDF_PATROL'||a.type==='REINFORCEMENT'||a.type==='TRADE_CARAVAN')&&a.state!=='DESTROYED'&&now>=Number(a.despawnAt||0)){
         server.runCommandSilent('execute in '+a.dimension+' run tp @e[tag='+a.entityTag+'] '+Math.floor(a.tx)+' '+Math.floor(a.ty)+' '+Math.floor(a.tz))
@@ -427,6 +541,9 @@ function pdzActAdvance(server,force) {
     let span=Math.max(1,a.arriveAt-a.startAt),t=Math.max(0,Math.min(1,(now-a.startAt)/span))
     a.state=t<=0.03?'DEPARTING':'EN_ROUTE';a.x=a.sx+(a.tx-a.sx)*t;a.y=a.sy+(a.ty-a.sy)*t;a.z=a.sz+(a.tz-a.sz)*t;a.lastUpdate=now;changed=true
     if(t>=1){
+      if(a.type==='OUTPOST_ASSAULT'){
+        pdzActResolveAssault(server,a);changed=true;return
+      }
       a.state='ARRIVED'
       let delivered=a.type==='TRADE_CARAVAN'?10:((a.type==='CDF_PATROL'||a.type==='REINFORCEMENT')?5:20)
       let ledger=pdzActRead(server,PDZ_ACT_LEDGER).map(s=>s.id===a.targetId?pdzActApplyArrival(s,a,delivered):s)
@@ -477,7 +594,8 @@ function pdzActDirectorPulse(server,player,forced) {
   // Only select activities for which a route currently exists.  This avoids
   // repeating red "need two sites" messages on servers with a partial ledger.
   let friendly=pdzActPickFactionRoute(server,['cdf','civildef','survivor','independent'],128,1200)
-  let raider=pdzActPickRoute(server),pool=[]
+  let raider=pdzActPickRoute(server),raiderAssault=tier>=1?pdzActPickAssaultRoute(server,'raider'):null
+  let remnantAssault=tier>=2?pdzActPickAssaultRoute(server,'remnant'):null,pool=[]
   if(friendly){
     let tradeWeight=tier<=0?5:(tier===1?4:3)
     let patrolWeight=tier<=0?4:3
@@ -490,6 +608,8 @@ function pdzActDirectorPulse(server,player,forced) {
     let hostileWeight=tier<=0?1:(tier===1?3:5)
     for(let i=0;i<hostileWeight;i++)pool.push('raider')
   }
+  if(raiderAssault)for(let i=0;i<(tier===1?1:3);i++)pool.push('raider_assault')
+  if(remnantAssault)for(let i=0;i<2;i++)pool.push('remnant_assault')
   if(!pool.length){
     server.persistentData.putLong(PDZ_ACT_AUTO_NEXT,now+5*60*1000)
     if(forced&&player)pdzActTell(player,'[DIRECTOR] No valid outpost route is currently available.','red')
@@ -499,6 +619,8 @@ function pdzActDirectorPulse(server,player,forced) {
   if(type==='trade')created=pdzActCreateTradeCaravan(server,player)
   else if(type==='patrol')created=pdzActCreatePatrol(server,player)
   else if(type==='reinforcement')created=pdzActCreateReinforcement(server,player)
+  else if(type==='raider_assault')created=pdzActCreateAssault(server,player,'raider')
+  else if(type==='remnant_assault')created=pdzActCreateAssault(server,player,'remnant')
   else created=pdzActCreateConvoy(server,player)
   server.persistentData.putLong(PDZ_ACT_AUTO_NEXT,now+pdzActDirectorCooldown(tier))
   if(created)console.info('[PDZ ACTIVITY] director created '+created.type+' '+created.id+' at world tier '+tier)
@@ -550,6 +672,8 @@ ServerEvents.commandRegistry(event=>{
   root.then(Commands.literal('spawn').then(Commands.literal('cdf_reinforcement').executes(ctx=>pdzActCreateReinforcement(ctx.source.server,ctx.source.player)?1:0)))
   root.then(Commands.literal('spawn').then(Commands.literal('infected_horde').executes(ctx=>pdzActCreateHorde(ctx.source.server,ctx.source.player,true)?1:0)))
   root.then(Commands.literal('spawn').then(Commands.literal('trade_caravan').executes(ctx=>pdzActCreateTradeCaravan(ctx.source.server,ctx.source.player)?1:0)))
+  root.then(Commands.literal('spawn').then(Commands.literal('raider_assault').executes(ctx=>pdzActCreateAssault(ctx.source.server,ctx.source.player,'raider')?1:0)))
+  root.then(Commands.literal('spawn').then(Commands.literal('remnant_assault').executes(ctx=>pdzActCreateAssault(ctx.source.server,ctx.source.player,'remnant')?1:0)))
   root.then(Commands.literal('auto').then(Commands.literal('on').executes(ctx=>{
     ctx.source.server.persistentData.putBoolean(PDZ_ACT_AUTO_ENABLED,true)
     ctx.source.server.persistentData.putLong(PDZ_ACT_AUTO_NEXT,Date.now()+60000)

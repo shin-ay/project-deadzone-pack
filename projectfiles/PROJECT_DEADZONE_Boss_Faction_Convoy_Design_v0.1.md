@@ -255,3 +255,13 @@ Biome Apexは自然湧きの置換ではなく、周辺にプレイヤーが一�
 - Activity: Raider Supply Convoy、CDF Patrol、Infected Noise Horde
 
 このセットで、感染者Story Boss、人型Named、Biome Apex、動く勢力活動の4系統を一度に検証できる。
+# 実装追記 v0.4（拠点襲撃・占領）
+
+- `OUTPOST_ASSAULT` を追加。T1以降は Raider、T2以降は Remnant が敵対拠点へ襲撃隊を送る。
+- `/deadzoneactivity spawn raider_assault`
+- `/deadzoneactivity spawn remnant_assault`
+- 192～1600mにある敵対拠点から、守備・補給・施設価値を加味して目的地を選択する。
+- 96m以内にプレイヤーが入ると襲撃部隊を実体化。遠方では拠点規模・守備兵・補給・襲撃戦力による仮想戦闘で決着する。
+- 攻撃成功時は拠点の所有勢力、守備兵、補給、警戒度を更新し、領土情報を再構築する。
+- 占領済み拠点には `ownerLocked` を保存し、構造物マーカーの再走査で旧勢力へ巻き戻らないようにした。
+- 実体化した襲撃隊をプレイヤーが全滅させた場合は攻撃失敗。生存したまま接触時間が終了すると残存戦力で攻防判定へ進む。
