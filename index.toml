@@ -1162,7 +1162,7 @@ hash = "41bb0b1222c5879fd8f8d1b88d84881adbed559fd12897b5c598dff49ba62abb"
 
 [[files]]
 file = "config/hordes-common.toml"
-hash = "247cf151909666ce3918afa52c5acfe149fa25cc0e98342493536733c5d003cd"
+hash = "690ed2a3d8fa5836783013a39539e9456648cdfa788bfed1888aa7f527ec657c"
 
 [[files]]
 file = "config/hordes/assets/hordes/attributes.json"
