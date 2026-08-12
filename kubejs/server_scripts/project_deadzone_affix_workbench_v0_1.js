@@ -3,11 +3,21 @@ const PDZ_AFFIX_SCRAP={common:'kubejs:affix_scrap_common',uncommon:'kubejs:affix
 const PDZ_AFFIX_COST={common:2,uncommon:3,rare:4,epic:5,legendary:6}
 function pdzAffixCount(p,id){return p.runCommandSilent('clear @s '+id+' 0')}
 function pdzAffixForgeMenu(p){
-  p.tell(Text.of('=== AFFIX WORKBENCH ===').gold())
-  p.tell(Text.of('[Dismantle held equipment]').red().clickRunCommand('/deadzoneaffixforge salvage'))
-  p.tell(Text.of('[Reroll same rarity]').aqua().clickRunCommand('/deadzoneaffixforge reroll'))
-  p.tell(Text.of('[Imbue unaffixed equipment]').green().clickRunCommand('/deadzoneaffixforge imbue'))
+  p.tell(Text.of('\u2550\u2550\u2550 AFFIX WORKBENCH \u2550\u2550\u2550').gold())
+  p.tell(Text.of('\u30e1\u30a4\u30f3\u30cf\u30f3\u30c9\u306b\u5bfe\u8c61\u88c5\u5099\u3092\u6301\u3063\u3066\u64cd\u4f5c\u3057\u307e\u3059\u3002').gray())
+  p.tell(Text.of('[ \u89e3\u4f53 / DISMANTLE ]').red().clickRunCommand('/deadzoneaffixforge salvage').hover(Text.of('\u88c5\u5099\u3092\u7834\u68c4\u3057\u3001\u30ec\u30a2\u5ea6\u306b\u5fdc\u3058\u305fAffix\u7d20\u6750\u3092\u56de\u53ce')))
+  p.tell(Text.of('[ \u518d\u62bd\u9078 / REROLL ]').aqua().clickRunCommand('/deadzoneaffixforge reroll').hover(Text.of('\u540c\u3058\u30ec\u30a2\u5ea6\u306e\u307e\u307e\u52b9\u679c\u3092\u518d\u62bd\u9078')))
+  p.tell(Text.of('[ \u4ed8\u4e0e / IMBUE ]').green().clickRunCommand('/deadzoneaffixforge imbue').hover(Text.of('Affix\u306e\u306a\u3044\u88c5\u5099\u306bRare Affix\u3092\u4ed8\u4e0e')))
 }
+
+BlockEvents.rightClicked('kubejs:affix_workbench', event => {
+  let p=event.player
+  if(!p || p.level.clientSide) return
+  pdzAffixForgeMenu(p)
+  p.runCommandSilent('playsound minecraft:block.smithing_table.use player @s ~ ~ ~ 0.7 0.9')
+  event.server.runCommandSilent('particle minecraft:electric_spark '+event.block.x+' '+(event.block.y+1)+' '+event.block.z+' 0.35 0.2 0.35 0.02 10 force '+p.username)
+  event.cancel()
+})
 // Vanilla enchanting coexists with Affixes. The enchanting table is no longer
 // intercepted; Affix crafting remains available through its dedicated UI/menu.
 ServerEvents.commandRegistry(event=>{
@@ -37,4 +47,17 @@ ServerEvents.commandRegistry(event=>{
   }))
   event.register(root)
 })
-ServerEvents.recipes(event=>event.shaped('minecraft:enchanting_table',[' D ','OBO','OOO'],{D:'minecraft:diamond',O:'minecraft:obsidian',B:'minecraft:book'}))
+ServerEvents.recipes(event=>{
+  event.shaped('kubejs:affix_workbench',[
+    'CRC',
+    'PSP',
+    'IBI'
+  ],{
+    C:'kubejs:affix_scrap_common',
+    R:'kubejs:affix_scrap_rare',
+    P:'#forge:plates/iron',
+    S:'minecraft:smithing_table',
+    I:'#forge:ingots/iron',
+    B:'minecraft:blast_furnace'
+  }).id('project_deadzone:affix_workbench')
+})

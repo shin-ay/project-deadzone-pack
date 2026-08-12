@@ -6370,7 +6370,7 @@ hash = "733e97bc1453cd2771ca741ab2052bd0da84c67fb8d3f6f52249ce4845eed10f"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_affix_workbench_v0_1.js"
-hash = "a70da21281f3e113770ab1c368d7e1204dc11bd8a1c927d68f6c289d91ae85c4"
+hash = "0704e4c651a070b3a0808d1240ba4d6b6374a78fe7d271ac1f09a4c203091708"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_affixes_v0_2.js"
@@ -6715,6 +6715,10 @@ hash = "cd419829f9e0b42e70514bbfe8b012dd6e83b4aeb466720815c777c1b9a5f37a"
 [[files]]
 file = "kubejs/startup_scripts/project_deadzone_affix_materials_v0_1.js"
 hash = "f64da8700b0ef17eb8d1ca4cb4a5a6455a8b2f4708fe6e611fab45256dfdc3ad"
+
+[[files]]
+file = "kubejs/startup_scripts/project_deadzone_affix_workbench_block_v0_1.js"
+hash = "219aa20b977afdfde00c7ec5fe31f16a1761d70c21793e57e60ac34485882041"
 
 [[files]]
 file = "kubejs/startup_scripts/project_deadzone_base_core_v0_1.js"
