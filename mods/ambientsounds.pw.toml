@@ -5,7 +5,7 @@ side = "both"
 [download]
 hash-format = "sha1"
 hash = "87ea0cd8ec56763185ee0db09eec7c676969e4da"
-mode = "metadata:curseforge"
+url = "https://edge.forgecdn.net/files/8042/994/AmbientSounds_FORGE_v6.3.8_mc1.20.1.jar"
 
 [update]
 [update.curseforge]

@@ -7162,7 +7162,7 @@ metafile = true
 
 [[files]]
 file = "mods/ambientsounds.pw.toml"
-hash = "73c8f00ddae69b929cfdc313b808ce547e610b8336dbe54660b62d258c5e3a01"
+hash = "0bfdbad9eacbb9bbb715a2434134a33cb59b33862bc1fbe221f9be869490fb1f"
 metafile = true
 
 [[files]]
@@ -8396,7 +8396,7 @@ metafile = true
 
 [[files]]
 file = "mods/turret-tacz-addon.pw.toml"
-hash = "98f7cfc92b1b91841310ddd11a6b5ee041327be128d299b9d5658bd6783a5bc3"
+hash = "1f9ca3018620459e0bbcad0dc24c3645b2371c3b5adb12bd85b395c64be347b6"
 metafile = true
 
 [[files]]
@@ -8431,17 +8431,17 @@ metafile = true
 
 [[files]]
 file = "mods/yungs-api.pw.toml"
-hash = "9fb6a1a06b18f2ce7b0811200339d997925cb39bde220fbaea4d5c8067376c12"
+hash = "fbeadc1786ad33ec02b802a8f3eb77c024719d9f942b4ff6f464aa9f2d5f1eeb"
 metafile = true
 
 [[files]]
 file = "mods/yungs-better-dungeons.pw.toml"
-hash = "31fca121c5b55c624ed203937c8f9b4d13cfe32f80bb85405aa4c65238378b15"
+hash = "b56a8d8ce5b4588c19d744546787b83fe9e8766fa9ca0faa0e245386fdd3c500"
 metafile = true
 
 [[files]]
 file = "mods/yungs-cave-biomes.pw.toml"
-hash = "2c300c8f7129aabbfd0a5d913edd31baf1ee2641907d220ccc6981a6be204432"
+hash = "c365dfa8085ad5b896653d09fa6ed0a64b2df8459486f93560d64a34732415f8"
 metafile = true
 
 [[files]]

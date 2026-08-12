@@ -5,7 +5,7 @@ side = "both"
 [download]
 hash-format = "sha1"
 hash = "5dac5706e6ebf92699c7a41f7d7014c95449f182"
-mode = "metadata:curseforge"
+url = "https://edge.forgecdn.net/files/8023/155/turret-tacz-0.8.3-early-beta.jar"
 
 [update]
 [update.curseforge]

@@ -5,7 +5,7 @@ side = "both"
 [download]
 hash-format = "sha1"
 hash = "c0a57a7d5a0cea0297f82a482490fc1e7933695f"
-mode = "metadata:curseforge"
+url = "https://edge.forgecdn.net/files/6606/910/YungsCaveBiomes-1.20.1-Forge-2.0.5.jar"
 
 [update]
 [update.curseforge]

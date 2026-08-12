@@ -5,7 +5,7 @@ side = "both"
 [download]
 hash-format = "sha1"
 hash = "67a9e1c2ff126ab54cea8e0709d178915243039e"
-mode = "metadata:curseforge"
+url = "https://edge.forgecdn.net/files/5271/360/YungsBetterDungeons-1.20-Forge-4.0.4.jar"
 
 [update]
 [update.curseforge]
