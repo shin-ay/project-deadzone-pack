@@ -216,6 +216,26 @@ Biome Apexは自然湧きの置換ではなく、周辺にプレイヤーが一�
 4. 車列構成をTier・参加人数・難易度で変動
 5. Affix素材・弾薬・通貨の専用Loot Tableを接続
 
+### v0.2 拠点役割基盤（2026-08-12）
+
+- 各拠点へ勢力・規模とは別に戦略役割を保存する。
+- 役割: `medical` / `communications` / `research` / `logistics` / `security` / `food` / `nest` / `trade` / `machine_node` / `shelter`。
+- 既存拠点も次回`/deadzoneactivity scan`で役割が自動補完される。
+- 施設と役割からNamed候補を台帳へ保存する。
+- `/deadzoneactivity sites`で役割、規模、Supply、Named候補を一覧表示する。
+- 次段階では役割を守備隊、補給内容、施設ボス、クエスト自動完了条件へ接続する。
+
+### v0.3 CDF増援活動（2026-08-12）
+
+- `REINFORCEMENT`活動を既存の仮想移動基盤へ追加。
+- Security / Communicationsの中・大拠点を増援出発地として優先する。
+- Alert 15以上、またはDefenders 8未満の友好拠点を救援対象にする。
+- Medical / Trade / Shelter拠点への救援を優先する。
+- プレイヤー96m以内でCDF兵3名とMedic 1名を実体化する。
+- 到着時はAlertを18低下、Defendersを4～7回復する。
+- T0では自動抽選を低確率、T1以降は比重を上げる。
+- 管理コマンド: `/deadzoneactivity spawn cdf_reinforcement`。
+
 ## 10. 実装順
 
 1. 既存 `dz_wilderness_site` マーカーから拠点台帳を生成する。

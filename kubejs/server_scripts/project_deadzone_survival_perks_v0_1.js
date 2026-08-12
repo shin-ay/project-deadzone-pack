@@ -1,9 +1,8 @@
 // PROJECT DEADZONE Survival Perks v0.1
-// Integrates with Thirst Was Taken through its public capability.
-
-const DZ_THIRST_CAPABILITIES = Java.loadClass(
-  "dev.ghen.thirst.foundation.common.capability.ModCapabilities"
-)
+// The pack now uses Legendary Survival Overhaul.  Do not load the removed
+// Thirst Was Taken capability here: a top-level Java.loadClass failure stops
+// this entire script from loading.  LSO hydration tuning lives in its config.
+const DZ_THIRST_CAPABILITIES = null
 
 function dzSurvivalTier(player, branch) {
   for (let tier = 3; tier >= 1; tier--) {
@@ -13,7 +12,7 @@ function dzSurvivalTier(player, branch) {
 }
 
 function dzReduceThirstExhaustion(player, tier) {
-  if (tier < 2) return
+  if (tier < 2 || !DZ_THIRST_CAPABILITIES) return
   try {
     let thirst = player.getCapability(DZ_THIRST_CAPABILITIES.PLAYER_THIRST)
       .resolve().orElse(null)

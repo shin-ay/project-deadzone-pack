@@ -8,7 +8,7 @@
 	order_index: 10
 	quests: [
 		{
-			dependencies: ["08A015955038522A"]
+			dependencies: ["6D0294D5C566AA55"]
 			description: ["Create工房を電力・重工業へ拡張する。まずはIEの工具をそろえ、マルチブロック設備を正しく組み立てられる状態にする。"]
 			icon: "immersiveengineering:hammer"
 			id: "6400000000000001"

@@ -56,6 +56,23 @@ ServerEvents.recipes(event => {
       event.replaceOutput({}, duplicate, canonical)
     })
   })
+
+  // Basic bootstrap route for unified industrial dusts.  These recipes must
+  // not depend on an Arc Furnace that itself requires the resulting metals.
+  // Advanced machines remain faster and more efficient; this is the 1:1
+  // progression-safe fallback.
+  const furnaceDusts = {
+    "immersiveengineering:dust_iron": "minecraft:iron_ingot",
+    "immersiveengineering:dust_gold": "minecraft:gold_ingot",
+    "immersiveengineering:dust_copper": "minecraft:copper_ingot",
+    "immersiveengineering:dust_lead": "immersiveengineering:ingot_lead",
+    "immersiveengineering:dust_nickel": "immersiveengineering:ingot_nickel",
+    "immersiveengineering:dust_aluminum": "immersiveengineering:ingot_aluminum",
+    "immersiveengineering:dust_steel": "immersiveengineering:ingot_steel"
+  }
+  Object.keys(furnaceDusts).forEach(dust => {
+    event.smelting(furnaceDusts[dust], dust).xp(0.15).id("project_deadzone:smelting/" + dust.split(":")[1])
+  })
   console.info("[PROJECT DEADZONE][Materials] shared ore and metal recipe outputs unified to Immersive Engineering")
 })
 
