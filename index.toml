@@ -7246,15 +7246,6 @@ hash = "0548f7d5125c4607d8d50b021c7a5d89755b7a731713c20c60c6701c9b44df57"
 metafile = true
 
 [[files]]
-file = "mods/better-combat-by-daedelus.pw.toml"
-hash = "f6a0e47845c06a47bbd3471318c2b95e83ad4e3d1759c84d0a2a3bf6437ca33a"
-metafile = true
-
-[[files]]
-file = "mods/bettercombat-forge-1.8.6+1.20.1.jar.disabled"
-hash = "e147e13732e0fac83aee209487fdeb10a03e52c33e1b1439dbce01a80f3e8dbb"
-
-[[files]]
 file = "mods/big-lost-city.pw.toml"
 hash = "fd19bf499c9b1a237729fa3d4aee16fdd118c21baf0c03c663cde266b4f12662"
 metafile = true
