@@ -6442,7 +6442,7 @@ hash = "f475f51a72f3d3f1de0a3ea51c1c97a0701f57df8053033bf4104ba727c9e5d4"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_faction_activity_v0_1.js"
-hash = "cc5fa6560df90082b091cb887768d1c43269f4e9a0e949d5b4db2c171b1383b4"
+hash = "836aeaa1f0e5cbae368a95ec9d8f5148b17b76cc9c0d5f8817f443df0d111f30"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_faction_strongholds_v0_1.js"
@@ -6690,7 +6690,7 @@ hash = "0f2effb86e78856c471684c2eff9d31521a84f8e3bf1bee512dcbe294fd1db30"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_wilderness_sites_v0_1.js"
-hash = "f2db4e283c31c3cf04c5ad50036d7fa11e3907eb439b773ac563622695cdd01a"
+hash = "ea4b09cc7919d8c9996836276aa251957a430f35abee68bcb84bb52ffae4d6fa"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_world_evolution_v0_1.js"
@@ -7158,6 +7158,11 @@ metafile = true
 [[files]]
 file = "mods/alexs-mobs.pw.toml"
 hash = "5e1239fd67c97c042d09cf38664698c9d1a3cfbc50d779fc550c461cf6aeb565"
+metafile = true
+
+[[files]]
+file = "mods/ambientsounds.pw.toml"
+hash = "73c8f00ddae69b929cfdc313b808ce547e610b8336dbe54660b62d258c5e3a01"
 metafile = true
 
 [[files]]
@@ -8399,6 +8404,11 @@ hash = "fd5edfd59aadb46cf1316882ee7333503f4fd6ef71e375bb5df005c2a37bece9"
 metafile = true
 
 [[files]]
+file = "mods/turret-tacz-addon.pw.toml"
+hash = "98f7cfc92b1b91841310ddd11a6b5ee041327be128d299b9d5658bd6783a5bc3"
+metafile = true
+
+[[files]]
 file = "mods/unreal-racing-mts-iv.pw.toml"
 hash = "9b2839fd525e9f071401e9b05efaf1bca6c4119410dab06ebe67346650d70904"
 metafile = true
@@ -8426,6 +8436,21 @@ metafile = true
 [[files]]
 file = "mods/yacl.pw.toml"
 hash = "c08817fe8025a9d62c8f7abd5f56a54b90673e5ab60f39ae8fa1d70d5ace529b"
+metafile = true
+
+[[files]]
+file = "mods/yungs-api.pw.toml"
+hash = "9fb6a1a06b18f2ce7b0811200339d997925cb39bde220fbaea4d5c8067376c12"
+metafile = true
+
+[[files]]
+file = "mods/yungs-better-dungeons.pw.toml"
+hash = "31fca121c5b55c624ed203937c8f9b4d13cfe32f80bb85405aa4c65238378b15"
+metafile = true
+
+[[files]]
+file = "mods/yungs-cave-biomes.pw.toml"
+hash = "2c300c8f7129aabbfd0a5d913edd31baf1ee2641907d220ccc6981a6be204432"
 metafile = true
 
 [[files]]
@@ -13836,6 +13861,10 @@ file = "moonlight-global-datapacks/pdz_growth_v1/pack.mcmeta"
 hash = "0ebb0c12eb7a11c4de1071a98531a7a293bb942f70354d263c84bb527c281da2"
 
 [[files]]
+file = "options.txt"
+hash = "933c5993722045e58be2233e92d26615be4b1d66c3cd5b8588ce6e5092ff4ad1"
+
+[[files]]
 file = "pdz_tools/keymap/APPLY_KEYMAP.bat"
 hash = "5fa78b2a6238c0c818839c48080a52fe5db9348798a94eedd76830c3853c179f"
 
@@ -14026,6 +14055,14 @@ hash = "bfdca7dfdf8a383c0ad48c9fb706ccd9b1d671038584cc82baa771289cf415ba"
 [[files]]
 file = "projectfiles/導入MOD.txt"
 hash = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+
+[[files]]
+file = "resourcepacks/PDZ_Audio_Test_v0.1/assets/minecraft/sounds.json"
+hash = "9be2dac3e9c94ee235134c650d545aaccfd26f3cad73a13265b1b8bdf648b770"
+
+[[files]]
+file = "resourcepacks/PDZ_Audio_Test_v0.1/pack.mcmeta"
+hash = "6e8c29078a44576dfbc080a07d502cccbb19d495e9e6c074ce40c755195a1122"
 
 [[files]]
 file = "rhino.local.properties"

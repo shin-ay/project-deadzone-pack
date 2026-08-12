@@ -6,6 +6,9 @@ const PDZ_WILD_REGISTRIES = Java.loadClass('net.minecraft.core.registries.Regist
 const PDZ_WILD_RL = Java.loadClass('net.minecraft.resources.ResourceLocation')
 const PDZ_WILD_BLOCKPOS = Java.loadClass('net.minecraft.core.BlockPos')
 const PDZ_WILD_STRING_ARG = Java.loadClass('com.mojang.brigadier.arguments.StringArgumentType')
+let PDZ_WILD_LOSTCITIES = null
+try { PDZ_WILD_LOSTCITIES = Java.loadClass('mcjty.lostcities.LostCities') }
+catch (ignored) { console.warn('[PROJECT DEADZONE] Lost Cities API unavailable; city occupation disabled') }
 
 const PDZ_WILD_SITES = {
   // Apocalypse Now structures intentionally kept as wilderness locations.
@@ -40,6 +43,18 @@ const PDZ_WILD_SITES = {
   'horror_element_mod:militaryritual':   {type:'failed_military_site', preferred:'remnant'},
   'horror_element_mod:psycho_house':     {type:'hostile_house', preferred:'infected'},
 
+  // Underground campaign layer. These structures now participate in the
+  // same persistent faction/outpost ledger as surface locations.
+  'underground_bunkers:underground_bunker': {type:'underground_bunker', preferred:'raider'},
+  'jeffs_cursed_walking_structures:deepslatebunker': {type:'deep_military_bunker', preferred:'remnant'},
+  'jeffs_cursed_walking_structures:nuclearbunker': {type:'nuclear_shelter', preferred:'aegis'},
+  'jeffs_cursed_walking_structures:nuclearsilo': {type:'nuclear_silo', preferred:'remnant'},
+  'jeffs_cursed_walking_structures:nuclearreactor': {type:'underground_reactor', preferred:'warden'},
+  'jeffs_cursed_walking_structures:starterbunker': {type:'civilian_bunker', preferred:'survivor', trade:'survivor'},
+  'yungbetterdungeons:catacombs': {type:'infected_catacombs', preferred:'infected'},
+  'yungbetterdungeons:fortress_of_the_undead': {type:'infected_fortress', preferred:'infected'},
+  'yungbetterdungeons:spider_cave': {type:'infected_cavern', preferred:'infected'},
+
   // Vanilla structures.
   'minecraft:pillager_outpost':       {type:'outpost', preferred:'raider'},
   'minecraft:mansion':                {type:'mansion', preferred:'raider'},
@@ -69,6 +84,10 @@ const PDZ_WILD_COLORS = {
   aegis:'light_purple', warden:'gold', infected:'dark_green', independent:'yellow'
 }
 
+function pdzWildColoredText(value,color) {
+  return Text.of(value).color(color || 'gray')
+}
+
 // Strategic roles are deliberately separate from faction and building size.
 // Story, convoy and Named systems can therefore react to what a site does
 // without hard-coding every structure ID again.
@@ -76,9 +95,9 @@ function pdzWildRole(type,structure,faction,trade) {
   let value=(String(type||'')+' '+String(structure||'')).toLowerCase()
   if(value.indexOf('hospital')>=0||value.indexOf('clinic')>=0||value.indexOf('medic')>=0) return 'medical'
   if(value.indexOf('radio')>=0||value.indexOf('watch')>=0||value.indexOf('observation')>=0) return 'communications'
-  if(value.indexOf('laboratory')>=0||value.indexOf('labyrinth')>=0||value.indexOf('test_area')>=0) return 'research'
+  if(value.indexOf('laboratory')>=0||value.indexOf('labyrinth')>=0||value.indexOf('test_area')>=0||value.indexOf('reactor')>=0) return 'research'
   if(value.indexOf('scrapyard')>=0||value.indexOf('mine')>=0||value.indexOf('gas_station')>=0) return 'logistics'
-  if(value.indexOf('military')>=0||value.indexOf('command')>=0||value.indexOf('outpost')>=0||value.indexOf('checkpoint')>=0) return 'security'
+  if(value.indexOf('military')>=0||value.indexOf('command')>=0||value.indexOf('outpost')>=0||value.indexOf('checkpoint')>=0||value.indexOf('bunker')>=0||value.indexOf('silo')>=0) return 'security'
   if(value.indexOf('farm')>=0) return 'food'
   if(value.indexOf('infected')>=0||value.indexOf('graveyard')>=0||value.indexOf('hostile')>=0) return 'nest'
   if(trade||value.indexOf('shops')>=0||value.indexOf('settlement')>=0||value.indexOf('camp')>=0) return 'trade'
@@ -110,31 +129,53 @@ function pdzWildBiomeId(player) {
   } catch (ignored) { return 'minecraft:plains' }
 }
 
-function pdzWildBiomeGroup(id) {
+function pdzWildBiomeProfile(id) {
   id=String(id)
-  if (id.indexOf('desert')>=0 || id.indexOf('badlands')>=0) return ['raider','remnant']
-  if (id.indexOf('savanna')>=0) return ['raider','independent']
-  if (id.indexOf('swamp')>=0 || id.indexOf('mangrove')>=0) return ['infected','aegis']
-  if (id.indexOf('jungle')>=0) return ['aegis','infected']
-  if (id.indexOf('snow')>=0 || id.indexOf('frozen')>=0 || id.indexOf('taiga')>=0) return ['remnant','civildef']
-  if (id.indexOf('mountain')>=0 || id.indexOf('peak')>=0 || id.indexOf('stony')>=0 || id.indexOf('windswept')>=0) return ['remnant','warden']
-  if (id.indexOf('ocean')>=0 || id.indexOf('river')>=0 || id.indexOf('beach')>=0 || id.indexOf('coast')>=0) return ['independent','raider']
-  if (id.indexOf('dark_forest')>=0) return ['raider','infected']
-  if (id.indexOf('forest')>=0) return ['survivor','raider']
-  return ['survivor','civildef']
+  if (id.indexOf('desert')>=0 || id.indexOf('badlands')>=0) return {id:'arid',factions:{raider:38,remnant:24,independent:14,infected:14,aegis:6,warden:4},roles:{logistics:1.5,security:1.25,trade:0.8,medical:0.6}}
+  if (id.indexOf('savanna')>=0) return {id:'savanna',factions:{raider:30,independent:24,survivor:18,civildef:10,infected:12,warden:6},roles:{trade:1.35,logistics:1.25,food:1.15}}
+  if (id.indexOf('swamp')>=0 || id.indexOf('mangrove')>=0) return {id:'wetland',factions:{infected:38,aegis:24,independent:14,survivor:8,raider:8,warden:8},roles:{nest:1.7,research:1.4,medical:1.2}}
+  if (id.indexOf('jungle')>=0) return {id:'jungle',factions:{aegis:32,infected:30,warden:12,independent:10,raider:10,survivor:6},roles:{research:1.6,nest:1.4,communications:0.7}}
+  if (id.indexOf('snow')>=0 || id.indexOf('frozen')>=0 || id.indexOf('taiga')>=0) return {id:'cold',factions:{remnant:34,civildef:26,survivor:14,infected:12,aegis:8,independent:6},roles:{security:1.45,communications:1.4,shelter:1.2}}
+  if (id.indexOf('mountain')>=0 || id.indexOf('peak')>=0 || id.indexOf('stony')>=0 || id.indexOf('windswept')>=0) return {id:'highland',factions:{remnant:30,warden:26,aegis:16,raider:12,infected:10,independent:6},roles:{security:1.45,communications:1.5,research:1.25}}
+  if (id.indexOf('ocean')>=0 || id.indexOf('river')>=0 || id.indexOf('beach')>=0 || id.indexOf('coast')>=0) return {id:'coast',factions:{independent:32,raider:24,survivor:16,remnant:10,infected:10,warden:8},roles:{trade:1.5,logistics:1.4,food:1.3}}
+  if (id.indexOf('dark_forest')>=0) return {id:'dark_forest',factions:{raider:30,infected:30,aegis:14,warden:10,survivor:10,independent:6},roles:{nest:1.45,security:1.2,research:1.15}}
+  if (id.indexOf('forest')>=0) return {id:'forest',factions:{survivor:32,raider:22,infected:18,civildef:12,independent:10,remnant:6},roles:{shelter:1.4,food:1.35,trade:1.15}}
+  return {id:'temperate',factions:{survivor:28,civildef:24,raider:16,independent:12,infected:12,remnant:8},roles:{trade:1.25,food:1.2,security:1.1}}
+}
+
+function pdzWildWeightedFaction(seed,weights) {
+  let keys=Object.keys(weights),total=0
+  keys.forEach(key=>total+=Math.max(0,Number(weights[key]||0)))
+  if(total<=0)return 'independent'
+  let roll=(pdzWildHash(seed)%100000)/100000*total
+  for(let i=0;i<keys.length;i++){
+    roll-=Math.max(0,Number(weights[keys[i]]||0))
+    if(roll<0)return keys[i]
+  }
+  return keys[keys.length-1]
 }
 
 function pdzWildPickFaction(siteId,def,player) {
-  let biome=pdzWildBiomeGroup(pdzWildBiomeId(player))
+  let biomeId=pdzWildBiomeId(player),profile=pdzWildBiomeProfile(biomeId)
   let key=String(player.level.dimension)+'|'+siteId+'|'+Math.floor(player.x/32)+'|'+Math.floor(player.z/32)
-  let roll=pdzWildHash(key)%100
-  // Facility identity matters, but the wilderness remains replayable.
-  if (roll<45) return def.preferred
-  if (roll<65) return biome[0]
-  if (roll<80) return biome[1]
-  if (roll<92) return 'infected'
-  if (roll<98) return 'independent'
-  return 'warden'
+  let weights={}
+  Object.keys(profile.factions).forEach(faction=>weights[faction]=profile.factions[faction])
+  // A building's intended identity remains the strongest single influence,
+  // while biome politics can still produce occupied or contested variants.
+  weights[def.preferred]=Number(weights[def.preferred]||0)+42
+  let role=pdzWildRole(def.type,siteId,def.preferred,def.trade||'')
+  if(role==='nest')weights.infected=Number(weights.infected||0)+38
+  if(role==='research')weights.aegis=Number(weights.aegis||0)+24
+  if(role==='security'){
+    weights.remnant=Number(weights.remnant||0)+12
+    weights.civildef=Number(weights.civildef||0)+10
+    weights.raider=Number(weights.raider||0)+10
+  }
+  if(role==='trade'||role==='food'){
+    weights.survivor=Number(weights.survivor||0)+14
+    weights.independent=Number(weights.independent||0)+12
+  }
+  return pdzWildWeightedFaction(key,weights)
 }
 
 function pdzWildMarkerNear(player,radius) {
@@ -145,6 +186,64 @@ function pdzWildMarkerNear(player,radius) {
     if(d<best){best=d;found=e}
   })
   return found
+}
+
+function pdzWildMarkerByInstance(player,instanceKey,radius) {
+  let found=null,best=radius*radius
+  player.level.entities.forEach(e=>{
+    if(!e.tags||!e.tags.contains('dz_wilderness_site'))return
+    if(e.persistentData.getString('dz_wild_instance')!==instanceKey)return
+    let dx=e.x-player.x,dy=e.y-player.y,dz=e.z-player.z,d=dx*dx+dy*dy+dz*dz
+    if(d<best){best=d;found=e}
+  })
+  return found
+}
+
+function pdzWildTerritoryFaction(player,x,z) {
+  try {
+    let raw=player.server.persistentData.getString('dz_territory_cells_v1')
+    if(!raw)return ''
+    let cells=JSON.parse(raw),gx=Math.floor(x/128),gz=Math.floor(z/128),dim=String(player.level.dimension)
+    for(let i=0;i<cells.length;i++)if(String(cells[i].dimension)===dim&&Number(cells[i].gx)===gx&&Number(cells[i].gz)===gz)return String(cells[i].faction||'')
+  } catch(ignored) {}
+  return ''
+}
+
+function pdzWildLostClassify(buildingId) {
+  let id=String(buildingId||'').toLowerCase()
+  if(id.indexOf('hospital')>=0||id.indexOf('clinic')>=0||id.indexOf('medical')>=0)return {type:'hospital',preferred:'civildef',trade:'civildef',role:'medical',garrison:true}
+  if(id.indexOf('police')>=0)return {type:'police_station',preferred:'civildef',role:'security',garrison:true}
+  if(id.indexOf('fire')>=0)return {type:'fire_station',preferred:'civildef',role:'security',garrison:true}
+  if(id.indexOf('military')>=0||id.indexOf('bunker')>=0||id.indexOf('command')>=0)return {type:'military',preferred:'remnant',role:'security',garrison:true}
+  if(id.indexOf('factory')>=0||id.indexOf('industrial')>=0||id.indexOf('warehouse')>=0||id.indexOf('storage')>=0)return {type:'industrial',preferred:'raider',role:'logistics',garrison:true}
+  if(id.indexOf('gun')>=0||id.indexOf('weapon')>=0)return {type:'gun_store',preferred:'raider',role:'logistics',garrison:true}
+  if(id.indexOf('gasstation')>=0||id.indexOf('gas_station')>=0)return {type:'gas_station',preferred:'independent',trade:'independent',role:'logistics',garrison:true}
+  if(id.indexOf('shop')>=0||id.indexOf('market')>=0||id.indexOf('mall')>=0||id.indexOf('walmart')>=0)return {type:'commercial',preferred:'independent',trade:'independent',role:'trade',garrison:false}
+  if(id.indexOf('apart')>=0||id.indexOf('house')>=0||id.indexOf('residen')>=0)return {type:'residential',preferred:'survivor',role:'shelter',garrison:false}
+  return {type:'city_building',preferred:'independent',role:'shelter',garrison:false}
+}
+
+function pdzWildLostCurrent(player) {
+  if(!PDZ_WILD_LOSTCITIES)return null
+  try {
+    let info=PDZ_WILD_LOSTCITIES.lostCitiesImp.getLostInfo(player.level)
+    if(!info)return null
+    let cx=Math.floor(player.x/16),cz=Math.floor(player.z/16),chunk=info.getChunkInfo(cx,cz)
+    if(!chunk||!chunk.isCity())return null
+    let building=chunk.getBuildingId()
+    if(!building)return null
+    let rootX=cx,rootZ=cz,multi=chunk.getMultiBuildingInfo()
+    if(multi){rootX=cx-Number(multi.offsetX());rootZ=cz-Number(multi.offsetZ())}
+    let buildingId=String(building),def=pdzWildLostClassify(buildingId)
+    return {buildingId:buildingId,def:def,rootX:rootX,rootZ:rootZ,x:rootX*16+8,z:rootZ*16+8,
+      instance:String(player.level.dimension)+'|lostcities|'+rootX+'|'+rootZ+'|'+buildingId}
+  } catch(err) {
+    if(!player.persistentData.getBoolean('dz_lostcities_api_warned')){
+      player.persistentData.putBoolean('dz_lostcities_api_warned',true)
+      console.warn('[PROJECT DEADZONE] Lost Cities occupation lookup failed: '+err)
+    }
+    return null
+  }
 }
 
 function pdzWildInside(player,siteId) {
@@ -163,36 +262,47 @@ function pdzWildFindCurrent(player) {
   return null
 }
 
-function pdzWildCreateMarker(player,siteId,forcedFaction) {
-  let nearby=pdzWildMarkerNear(player,112)
-  if(nearby && nearby.persistentData.getString('dz_wild_structure')===siteId) return nearby
-  let def=PDZ_WILD_SITES[siteId] || {type:'manual',preferred:'independent',trade:'independent'}
+function pdzWildCreateMarker(player,siteId,forcedFaction,instanceKey,anchor,overrideDef) {
+  let nearby=instanceKey?pdzWildMarkerByInstance(player,instanceKey,384):pdzWildMarkerNear(player,112)
+  if(nearby && (instanceKey||nearby.persistentData.getString('dz_wild_structure')===siteId)) return nearby
+  let def=overrideDef||PDZ_WILD_SITES[siteId] || {type:'manual',preferred:'independent',trade:'independent'}
   let faction=forcedFaction || pdzWildPickFaction(siteId,def,player)
   let temp='dz_wilderness_pending_'+Math.floor(Math.random()*1000000)
-  player.runCommandSilent('summon minecraft:armor_stand ~ ~ ~ {Invisible:1b,Invulnerable:1b,NoGravity:1b,Marker:1b,Tags:["dz_wilderness_site","'+temp+'"]}')
+  let summon=anchor?('execute positioned '+Math.floor(anchor.x)+' '+Math.floor(player.y)+' '+Math.floor(anchor.z)+' run summon '):'summon '
+  player.runCommandSilent(summon+'minecraft:armor_stand ~ ~ ~ {Invisible:1b,Invulnerable:1b,NoGravity:1b,Marker:1b,Tags:["dz_wilderness_site","'+temp+'"]}')
   let marker=null
   player.level.entities.forEach(e=>{if(e.tags && e.tags.contains(temp)) marker=e})
   if(!marker) return null
   marker.tags.remove(temp)
   marker.tags.add('dz_wilderness_'+faction)
   marker.persistentData.putString('dz_wild_structure',siteId)
+  marker.persistentData.putString('dz_wild_instance',instanceKey||'')
   marker.persistentData.putString('dz_wild_type',def.type)
   marker.persistentData.putString('dz_wild_faction',faction)
   marker.persistentData.putString('dz_wild_biome',pdzWildBiomeId(player))
+  marker.persistentData.putString('dz_wild_biome_profile',pdzWildBiomeProfile(pdzWildBiomeId(player)).id)
   marker.persistentData.putString('dz_wild_trade',def.trade || '')
-  let role=pdzWildRole(def.type,siteId,faction,def.trade||'')
+  let role=def.role||pdzWildRole(def.type,siteId,faction,def.trade||'')
   marker.persistentData.putString('dz_wild_role',role)
+  marker.persistentData.putBoolean('dz_wild_garrison',def.garrison!==false)
   marker.persistentData.putString('dz_wild_named',pdzWildNamedCandidate(def.type,role,faction))
   marker.persistentData.putLong('dz_wild_created',Date.now())
   player.tell(Text.of('[AREA DISCOVERED] ').gold()
     .append(Text.of(def.type+' / ').white())
-    .append(Text.of(PDZ_WILD_NAMES[faction]||faction)[PDZ_WILD_COLORS[faction]||'gray']()))
+    .append(pdzWildColoredText(PDZ_WILD_NAMES[faction]||faction,PDZ_WILD_COLORS[faction])))
   return marker
 }
 
 function pdzWildScan(player) {
   let current=pdzWildFindCurrent(player)
-  if(!current) return null
+  if(!current){
+    let lost=pdzWildLostCurrent(player)
+    if(!lost)return null
+    let existing=pdzWildMarkerByInstance(player,lost.instance,384)
+    if(existing)return existing
+    let faction=pdzWildTerritoryFaction(player,lost.x,lost.z)||null
+    return pdzWildCreateMarker(player,lost.buildingId,faction,lost.instance,{x:lost.x,z:lost.z},lost.def)
+  }
   let near=pdzWildMarkerNear(player,112)
   if(near && near.persistentData.getString('dz_wild_structure')===current) return near
   return pdzWildCreateMarker(player,current,null)
@@ -208,7 +318,7 @@ function pdzWildStatus(player) {
   let faction=marker.persistentData.getString('dz_wild_faction')
   player.tell(Text.of('=== WILDERNESS SITE ===').gold())
   player.tell(Text.of('施設: '+marker.persistentData.getString('dz_wild_type')).white())
-  player.tell(Text.of('勢力: '+(PDZ_WILD_NAMES[faction]||faction))[PDZ_WILD_COLORS[faction]||'gray']())
+  player.tell(pdzWildColoredText('勢力: '+(PDZ_WILD_NAMES[faction]||faction),PDZ_WILD_COLORS[faction]))
   player.tell(Text.of('構造物: '+marker.persistentData.getString('dz_wild_structure')).darkGray())
   let role=marker.persistentData.getString('dz_wild_role')
   if(!role) role=pdzWildRole(marker.persistentData.getString('dz_wild_type'),marker.persistentData.getString('dz_wild_structure'),faction,marker.persistentData.getString('dz_wild_trade'))
@@ -320,11 +430,31 @@ ServerEvents.commandRegistry(event=>{
   const {commands:Commands}=event
   let root=Commands.literal('deadzonewild')
   root.then(Commands.literal('status').executes(ctx=>{pdzWildStatus(ctx.source.player);return 1}))
+  root.then(Commands.literal('biome').executes(ctx=>{
+    let p=ctx.source.player,id=pdzWildBiomeId(p),profile=pdzWildBiomeProfile(id)
+    p.tell(Text.of('=== BIOME FACTION PROFILE ===').gold())
+    p.tell(Text.of(id+' / '+profile.id).aqua())
+    Object.keys(profile.factions).sort((a,b)=>profile.factions[b]-profile.factions[a]).forEach(f=>p.tell(Text.of((PDZ_WILD_NAMES[f]||f)+': '+profile.factions[f]).yellow()))
+    p.tell(Text.of('Favored facilities: '+Object.keys(profile.roles).sort((a,b)=>profile.roles[b]-profile.roles[a]).join(', ')).green())
+    return 1
+  }))
   root.then(Commands.literal('scan').executes(ctx=>{
     let p=ctx.source.player,m=pdzWildScan(p)
     if(!m)p.tell(Text.of('対応する生成物の内部で実行してください。').red())
     else pdzWildStatus(p)
     return m?1:0
+  }))
+  root.then(Commands.literal('lostcity').executes(ctx=>{
+    let p=ctx.source.player,lost=pdzWildLostCurrent(p)
+    if(!lost){p.tell(Text.of('Lost Cities building: none at current position').gray());return 0}
+    let faction=pdzWildTerritoryFaction(p,lost.x,lost.z)||pdzWildPickFaction(lost.buildingId,lost.def,p)
+    p.tell(Text.of('=== LOST CITIES OCCUPATION ===').gold())
+    p.tell(Text.of('Building: '+lost.buildingId).white())
+    p.tell(Text.of('Class: '+lost.def.type+' / '+lost.def.role).aqua())
+    p.tell(pdzWildColoredText('Owner: '+(PDZ_WILD_NAMES[faction]||faction),PDZ_WILD_COLORS[faction]))
+    p.tell(Text.of('Garrison: '+(lost.def.garrison?'enabled':'light occupation only')).yellow())
+    p.tell(Text.of('Instance: '+lost.instance).darkGray())
+    return 1
   }))
   root.then(Commands.literal('bind').requires(s=>s.hasPermission(2))
     .then(Commands.argument('site',PDZ_WILD_STRING_ARG.word()).executes(ctx=>{

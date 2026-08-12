@@ -5,7 +5,6 @@ crash-reports/
 screenshots/
 voicechat_recordings/
 xaero/
-options.txt
 servers.dat*
 usercache.json
 usernamecache.json
@@ -22,7 +21,9 @@ config/QuantifiedAPI/cache/
 
 # External bundles are added through explicit packwiz metadata later
 tacz/
-resourcepacks/
+resourcepacks/*
+!resourcepacks/PDZ_Audio_Test_v0.1/
+!resourcepacks/PDZ_Audio_Test_v0.1/**
 shaderpacks/
 
 # Repository documentation is not installed into the game instance

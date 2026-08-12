@@ -5,6 +5,7 @@ const PDZ_ACT_STRING = Java.loadClass('com.mojang.brigadier.arguments.StringArgu
 const PDZ_ACT_LEDGER = 'dz_activity_outpost_ledger_v1'
 const PDZ_ACT_LIST = 'dz_activity_list_v1'
 const PDZ_ACT_RANGE = 96
+const PDZ_ACT_WALK_RANGE = 224
 const PDZ_ACT_LIMIT = 3
 const PDZ_ACT_AUTO_ENABLED = 'dz_activity_director_enabled_v1'
 const PDZ_ACT_AUTO_NEXT = 'dz_activity_director_next_v1'
@@ -55,6 +56,8 @@ function pdzActWrite(server,key,v) {
 function pdzActDim(e) { return String(e.level.dimension) }
 function pdzActDist2(a,b) { let x=a.x-b.x,z=a.z-b.z; return x*x+z*z }
 function pdzActSiteId(e) {
+  let instance=e.persistentData.getString('dz_wild_instance')
+  if(instance) return String(instance)
   return pdzActDim(e)+'|'+Math.floor(e.x)+'|'+Math.floor(e.z)+'|'+(e.persistentData.getString('dz_wild_structure')||'manual:site')
 }
 function pdzActSize(type) {
@@ -158,6 +161,9 @@ function pdzActScan(server) {
   old.forEach(s=>map[s.id]=s)
   server.players.forEach(player=>player.level.entities.forEach(marker=>{
     if(!marker.tags||!marker.tags.contains('dz_wilderness_site')) return
+    // Ordinary Lost Cities homes and shops inherit an owner, but they are not
+    // strategic outposts. Keeping them out of the ledger avoids map/convoy spam.
+    if(marker.persistentData.contains('dz_wild_garrison')&&!marker.persistentData.getBoolean('dz_wild_garrison')) return
     let id=pdzActSiteId(marker)
     if(seen[id]) return
     seen[id]=true
@@ -371,27 +377,116 @@ function pdzActPlayerNear(server,a,range) {
   return best
 }
 
+function pdzActAir(level,x,y,z){
+  let id=String(level.getBlock(x,y,z).id)
+  return id==='minecraft:air'||id==='minecraft:cave_air'||id==='minecraft:void_air'
+}
+function pdzActBadFloor(id){
+  id=String(id)
+  return id==='minecraft:air'||id==='minecraft:cave_air'||id==='minecraft:void_air'||
+    id.indexOf('water')>=0||id.indexOf('lava')>=0||id.indexOf('leaves')>=0||
+    id.indexOf('vine')>=0||id.indexOf('fence')>=0||id.indexOf('_wall')>=0||
+    id.indexOf('pane')>=0||id.indexOf('bars')>=0
+}
+function pdzActCovered(level,x,y,z){
+  for(let dy=2;dy<=8;dy++)if(!pdzActAir(level,x,y+dy,z))return true
+  return false
+}
+function pdzActSafeSpots(a,player,wanted){
+  let level=player.level,cx=Math.floor(a.x),cy=Math.floor(player.y),cz=Math.floor(a.z)
+  let covered=[],open=[],seen={}
+  for(let radius=0;radius<=14;radius+=2){
+    for(let dx=-radius;dx<=radius;dx+=2)for(let dz=-radius;dz<=radius;dz+=2){
+      if(radius>0&&Math.abs(dx)!==radius&&Math.abs(dz)!==radius)continue
+      for(let y=cy+4;y>=cy-18;y--){
+        let key=(cx+dx)+'|'+y+'|'+(cz+dz)
+        if(seen[key])continue
+        seen[key]=true
+        if(!pdzActAir(level,cx+dx,y,cz+dz)||!pdzActAir(level,cx+dx,y+1,cz+dz))continue
+        if(pdzActBadFloor(level.getBlock(cx+dx,y-1,cz+dz).id))continue
+        let s={x:cx+dx+0.5,y:y,z:cz+dz+0.5}
+        if(pdzActCovered(level,cx+dx,y,cz+dz))covered.push(s);else open.push(s)
+        break
+      }
+    }
+  }
+  // Route activities prefer open ground; building assaults prefer covered
+  // floors so defenders/attackers do not appear on the roof.
+  let assault=a.type==='OUTPOST_ASSAULT',result=assault?(covered.length?covered:open):(open.length?open:covered)
+  return result.slice(0,Math.max(1,wanted))
+}
+function pdzActSpawnBase(a,player,wanted){
+  let spots=pdzActSafeSpots(a,player,wanted)
+  if(!spots.length)return {spots:[],base:''}
+  let s=spots[0]
+  return {spots:spots,base:'execute in '+a.dimension+' positioned '+s.x+' '+s.y+' '+s.z+' run '}
+}
+function pdzActRelocate(level,tag,spots){
+  if(!spots.length)return 0
+  let found=[]
+  level.entities.forEach(e=>{if(e.tags&&e.tags.contains(tag))found.push(e)})
+  found.forEach((e,i)=>{let s=spots[i%spots.length];try{e.teleportTo(s.x,s.y,s.z)}catch(ignored){}})
+  return found.length
+}
+// Nearby columns are no longer advanced by coarse coordinate jumps.  Their
+// entities walk in small ground-checked steps; only unloaded travel remains
+// virtual.  This keeps the server cheap without showing a convoy teleporting.
+function pdzActPhysicalWalk(server,a){
+  if(!a.materialized||!a.entityTag)return false
+  let targetX=Number(a.tx),targetZ=Number(a.tz),moved=0,alive=0
+  server.players.forEach(p=>{
+    if(String(p.level.dimension)!==a.dimension)return
+    p.level.entities.forEach(e=>{
+      if(!e.tags||!e.tags.contains(a.entityTag))return
+      alive++
+      let dx=targetX-e.x,dz=targetZ-e.z,dist=Math.sqrt(dx*dx+dz*dz)
+      if(dist<2)return
+      let step=Math.min(0.75,dist),nx=e.x+dx/dist*step,nz=e.z+dz/dist*step
+      let by=Math.floor(e.y),bx=Math.floor(nx),bz=Math.floor(nz),ny=null
+      for(let y=by+2;y>=by-3;y--){
+        if(pdzActAir(p.level,bx,y,bz)&&pdzActAir(p.level,bx,y+1,bz)&&!pdzActBadFloor(p.level.getBlock(bx,y-1,bz).id)){ny=y;break}
+      }
+      if(ny===null)return
+      try{e.teleportTo(nx,ny,nz);moved++}catch(ignored){}
+    })
+  })
+  if(alive>0){
+    a.x=a.x+(targetX-a.x)*0.015;a.z=a.z+(targetZ-a.z)*0.015;a.lastUpdate=Date.now()
+    if(Math.sqrt((targetX-a.x)*(targetX-a.x)+(targetZ-a.z)*(targetZ-a.z))<5)a.arriveAt=Date.now()
+  }
+  return moved>0
+}
+function pdzActDeferUnsafe(a,player){
+  a.materialized=false;a.state='EN_ROUTE';a.lastUpdate=Date.now()
+  console.warn('[PDZ ACTIVITY] No safe floor/headroom for '+a.id+' near '+Math.floor(a.x)+','+Math.floor(a.z)+'; materialisation deferred')
+  if(player)player.tell(Text.of('[RADIO] Contact route obstructed; unit remains virtual.').gray())
+}
+
 function pdzActMaterializePatrol(server,a,player) {
   let tag='dz_activity_'+a.id.replace(/[^A-Za-z0-9_]/g,'_')
-  let at='execute in '+a.dimension+' positioned '+Math.floor(a.x)+' '+Math.floor(a.y)+' '+Math.floor(a.z)+' run '
+  let placement=pdzActSpawnBase(a,player,4);if(!placement.spots.length){pdzActDeferUnsafe(a,player);return}
+  let at=placement.base
   for(let i=0;i<4;i++)server.runCommandSilent(at+'function project_deadzone:factions/test/single_civildef')
   server.runCommandSilent(at+'tag @e[tag=dz_civildef,tag=!dz_activity,sort=nearest,limit=4,distance=..20] add dz_activity')
   server.runCommandSilent(at+'tag @e[tag=dz_activity,tag=dz_civildef,sort=nearest,limit=4,distance=..20] add '+tag)
   server.runCommandSilent(at+'tag @e[tag='+tag+',distance=..20] add dz_friendly')
   server.runCommandSilent(at+'team join dz_survivors @e[tag='+tag+',distance=..20]')
+  pdzActRelocate(player.level,tag,placement.spots)
   a.materialized=true;a.state='ENGAGED';a.entityTag=tag;a.lastUpdate=Date.now();a.despawnAt=Date.now()+240000
   player.tell(Text.of('[RADIO] CDF patrol contact nearby.').aqua())
 }
 
 function pdzActMaterializeReinforcement(server,a,player) {
   let tag='dz_activity_'+a.id.replace(/[^A-Za-z0-9_]/g,'_')
-  let at='execute in '+a.dimension+' positioned '+Math.floor(a.x)+' '+Math.floor(a.y)+' '+Math.floor(a.z)+' positioned over motion_blocking_no_leaves run '
+  let placement=pdzActSpawnBase(a,player,4);if(!placement.spots.length){pdzActDeferUnsafe(a,player);return}
+  let at=placement.base
   for(let i=0;i<3;i++)server.runCommandSilent(at+'function project_deadzone:factions/test/single_civildef')
   server.runCommandSilent(at+'function project_deadzone:factions/test/single_civildef_medic')
   server.runCommandSilent(at+'tag @e[tag=dz_civildef,tag=!dz_activity,sort=nearest,limit=4,distance=..24] add dz_activity')
   server.runCommandSilent(at+'tag @e[tag=dz_activity,tag=dz_civildef,sort=nearest,limit=4,distance=..24] add '+tag)
   server.runCommandSilent(at+'tag @e[tag='+tag+',distance=..24] add dz_friendly')
   server.runCommandSilent(at+'team join dz_survivors @e[tag='+tag+',distance=..24]')
+  pdzActRelocate(player.level,tag,placement.spots)
   a.materialized=true;a.state='ENGAGED';a.entityTag=tag;a.lastUpdate=Date.now();a.despawnAt=Date.now()+240000
   player.tell(Text.of('[RADIO] CDF reinforcement column nearby.').aqua())
   player.runCommandSilent('playsound minecraft:block.note_block.bell player @s ~ ~ ~ 0.7 1.25')
@@ -399,13 +494,15 @@ function pdzActMaterializeReinforcement(server,a,player) {
 
 function pdzActMaterializeHorde(server,a,player) {
   let tag='dz_activity_'+a.id.replace(/[^A-Za-z0-9_]/g,'_')
-  let at='execute in '+a.dimension+' positioned '+Math.floor(a.x)+' '+Math.floor(a.y)+' '+Math.floor(a.z)+' run '
+  let placement=pdzActSpawnBase(a,player,6);if(!placement.spots.length){pdzActDeferUnsafe(a,player);return}
+  let at=placement.base
   let mobs=['infectious:zombie_runner','minecraft:zombie','infectious:zombie_runner','minecraft:zombie','infectious:screamer','minecraft:zombie']
   mobs.forEach((mob,index)=>{
     let ox=(index%3)*2-2,oz=Math.floor(index/3)*3-2
     server.runCommandSilent(at+'summon '+mob+' ~'+ox+' ~ ~'+oz+' {PersistenceRequired:1b,Tags:["dz_activity","dz_infected","'+tag+'"]}')
   })
   server.runCommandSilent(at+'team join dz_infected @e[tag='+tag+',distance=..24]')
+  pdzActRelocate(player.level,tag,placement.spots)
   a.materialized=true;a.state='ENGAGED';a.entityTag=tag;a.lastUpdate=Date.now()
   server.runCommandSilent('tellraw @a [{"text":"[HORDE] ","color":"dark_red","bold":true},{"text":"An infected group has followed the noise.","color":"red"}]')
   player.runCommandSilent('playsound minecraft:entity.zombie_villager.converted player @s ~ ~ ~ 0.7 0.55')
@@ -415,11 +512,13 @@ function pdzActMaterializeTrade(server,a,player) {
   let tag='dz_activity_'+a.id.replace(/[^A-Za-z0-9_]/g,'_')
   // Resolve the current surface only when the caravan becomes physical.
   // Virtual routes may cross hills, so reusing the source Y can bury NPCs.
-  let at='execute in '+a.dimension+' positioned '+Math.floor(a.x)+' '+Math.floor(a.y)+' '+Math.floor(a.z)+' positioned over motion_blocking_no_leaves run '
+  let placement=pdzActSpawnBase(a,player,3);if(!placement.spots.length){pdzActDeferUnsafe(a,player);return}
+  let at=placement.base
   server.runCommandSilent(at+'function project_deadzone:factions/activity/spawn_trade_caravan')
   server.runCommandSilent(at+'tag @e[tag=dz_trade_caravan,tag=!dz_activity_bound,sort=nearest,limit=3,distance=..24] add '+tag)
   server.runCommandSilent(at+'tag @e[tag='+tag+',distance=..24] add dz_activity_bound')
   server.runCommandSilent(at+'team join dz_survivors @e[tag='+tag+',distance=..24]')
+  pdzActRelocate(player.level,tag,placement.spots)
   a.materialized=true;a.state='TRADING';a.entityTag=tag;a.lastUpdate=Date.now();a.despawnAt=Date.now()+300000
   player.tell(Text.of('[RADIO] Independent traders have stopped nearby for five minutes.').yellow())
   player.runCommandSilent('playsound minecraft:entity.wandering_trader.ambient player @s ~ ~ ~ 0.8 1.0')
@@ -427,7 +526,8 @@ function pdzActMaterializeTrade(server,a,player) {
 
 function pdzActMaterializeAssault(server,a,player) {
   let tag='dz_activity_'+a.id.replace(/[^A-Za-z0-9_]/g,'_')
-  let at='execute in '+a.dimension+' positioned '+Math.floor(a.x)+' '+Math.floor(a.y)+' '+Math.floor(a.z)+' positioned over motion_blocking_no_leaves run '
+  let placement=pdzActSpawnBase(a,player,7);if(!placement.spots.length){pdzActDeferUnsafe(a,player);return}
+  let at=placement.base
   if(pdzActFactionBloc(a.faction)==='remnant'){
     server.runCommandSilent(at+'function project_deadzone:factions/squad/remnant_roles')
     server.runCommandSilent(at+'tag @e[tag=dz_remnant,tag=!dz_activity_bound,sort=nearest,limit=5,distance=..24] add '+tag)
@@ -439,6 +539,7 @@ function pdzActMaterializeAssault(server,a,player) {
   }
   server.runCommandSilent(at+'tag @e[tag='+tag+',distance=..24] add dz_activity')
   server.runCommandSilent(at+'tag @e[tag='+tag+',distance=..24] add dz_activity_bound')
+  pdzActRelocate(player.level,tag,placement.spots)
   a.materialized=true;a.state='ENGAGED';a.entityTag=tag;a.lastUpdate=Date.now();a.despawnAt=Date.now()+240000
   player.tell(Text.of('[WAR REPORT] '+a.faction+' assault force contact nearby.').red())
   player.runCommandSilent('playsound minecraft:block.note_block.didgeridoo master @s ~ ~ ~ 0.9 0.55')
@@ -478,7 +579,8 @@ function pdzActMaterialize(server,a,player) {
   if(a.type==='INFECTED_HORDE'){pdzActMaterializeHorde(server,a,player);return}
   if(a.type==='TRADE_CARAVAN'){pdzActMaterializeTrade(server,a,player);return}
   let tag='dz_activity_'+a.id.replace(/[^A-Za-z0-9_]/g,'_')
-  let at='execute in '+a.dimension+' positioned '+Math.floor(a.x)+' '+Math.floor(a.y)+' '+Math.floor(a.z)+' run '
+  let placement=pdzActSpawnBase(a,player,7);if(!placement.spots.length){pdzActDeferUnsafe(a,player);return}
+  let at=placement.base
   // Use the Raider faction's own humanoid base. A mutant brute ignores parts
   // of scoreboard-team allegiance and caused the escort to kill its leader.
   server.runCommandSilent(at+'function project_deadzone:factions/spawn/raider_warden')
@@ -494,6 +596,7 @@ function pdzActMaterialize(server,a,player) {
   server.runCommandSilent(at+'tag @e[tag=dz_raider,tag=!dz_activity,sort=nearest,limit=6,distance=..20] add dz_activity')
   server.runCommandSilent(at+'tag @e[tag=dz_raider,tag=dz_activity,sort=nearest,limit=6,distance=..20] add '+tag)
   server.runCommandSilent(at+'team join dz_raiders @e[tag='+tag+',distance=..20]')
+  pdzActRelocate(player.level,tag,placement.spots)
   server.runCommandSilent('tellraw @a [{"text":"[CONTACT] ","color":"red","bold":true},{"text":"Ash Jackals convoy at '+Math.floor(a.x)+', '+Math.floor(a.z)+'","color":"gold"}]')
   a.materialized=true;a.state='ENGAGED';a.entityTag=tag;a.lastUpdate=Date.now()
   player.runCommandSilent('playsound minecraft:block.note_block.bit master @s ~ ~ ~ 0.8 0.6')
@@ -504,6 +607,7 @@ function pdzActAdvance(server,force) {
   list.forEach(a=>{
     if(['ARRIVED','DESTROYED','CANCELLED','RETREATED'].indexOf(a.state)>=0)return
     if(a.materialized){
+      pdzActPhysicalWalk(server,a)
       let near=pdzActPlayerNear(server,a,128)
       let alive=server.runCommandSilent('execute in '+a.dimension+' positioned '+Math.floor(a.x)+' '+Math.floor(a.y)+' '+Math.floor(a.z)+' if entity @e[tag='+a.entityTag+',distance=..256]')
       if(near&&alive===0){
@@ -521,8 +625,10 @@ function pdzActAdvance(server,force) {
         pdzActResolveAssault(server,a,surviving);changed=true
       }
       if((a.type==='CDF_PATROL'||a.type==='REINFORCEMENT'||a.type==='TRADE_CARAVAN')&&a.state!=='DESTROYED'&&now>=Number(a.despawnAt||0)){
-        server.runCommandSilent('execute in '+a.dimension+' run tp @e[tag='+a.entityTag+'] '+Math.floor(a.tx)+' '+Math.floor(a.ty)+' '+Math.floor(a.tz))
-        if(a.type==='TRADE_CARAVAN')server.runCommandSilent('execute in '+a.dimension+' run kill @e[tag='+a.entityTag+']')
+        // Never snap a visible column to its destination.  It returns to the
+        // virtual ledger only after every player is well outside visual range.
+        if(pdzActPlayerNear(server,a,PDZ_ACT_WALK_RANGE)){a.despawnAt=now+30000;return}
+        server.runCommandSilent('execute in '+a.dimension+' run kill @e[tag='+a.entityTag+']')
         a.state='ARRIVED';a.lastUpdate=now;changed=true
         if(a.type==='TRADE_CARAVAN'){
           let ledger=pdzActRead(server,PDZ_ACT_LEDGER).map(s=>s.id===a.targetId?pdzActApplyArrival(s,a,10):s)
@@ -630,6 +736,11 @@ function pdzActDirectorPulse(server,player,forced) {
 let PDZ_ACT_TICKS=0
 ServerEvents.tick(event=>{
   PDZ_ACT_TICKS++
+  if(PDZ_ACT_TICKS%10===0){
+    let live=pdzActRead(event.server,PDZ_ACT_LIST),changed=false
+    live.forEach(a=>{if(a.materialized&&pdzActPhysicalWalk(event.server,a))changed=true})
+    if(changed)pdzActWrite(event.server,PDZ_ACT_LIST,live)
+  }
   if(PDZ_ACT_TICKS%200!==0)return
   pdzActAdvance(event.server,false)
   if(PDZ_ACT_TICKS%1200===0){
