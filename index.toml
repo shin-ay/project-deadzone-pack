@@ -1766,7 +1766,7 @@ hash = "66afd32595b00de5d2837780a5866d600e296d9200a4e4fb1b6a2ef94693c909"
 
 [[files]]
 file = "config/playerrevive.json"
-hash = "418bcdb98cec82f0566e207db97c5a07a3605c3b542238136e4c86af42d354ed"
+hash = "18801840ebf572505ac530dae237422e831e0c9e9e54d05f186dec7c1b34e9ca"
 
 [[files]]
 file = "config/playerrevive_compat-common.toml"
@@ -6370,7 +6370,7 @@ hash = "733e97bc1453cd2771ca741ab2052bd0da84c67fb8d3f6f52249ce4845eed10f"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_affix_workbench_v0_1.js"
-hash = "c4ca02a194ce0f55a1da5ec23427c3c8d6782365d35a5409551ae356ff861bd1"
+hash = "a70da21281f3e113770ab1c368d7e1204dc11bd8a1c927d68f6c289d91ae85c4"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_affixes_v0_2.js"
@@ -6391,6 +6391,10 @@ hash = "850f17945e44502c50c72622c05666f5e1fe34c863da696b52484ef6e546a317"
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_base_core_v0_1.js"
 hash = "413dc9e542563f09f13a6f8f7b576b67f4bcef2beba19b714330fc059241b792"
+
+[[files]]
+file = "kubejs/server_scripts/project_deadzone_basecamp_guard_safety_v0_1.js"
+hash = "63641724716efec1a93e459af0c679da4de2bd0b973b3b70ab8e9e00dcc499f9"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_basecamp_raid_v0_1.js"
@@ -6434,7 +6438,7 @@ hash = "bff3f0126ed070c0169f4910761fb191aac8f586984980ea1138a627fa258317"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_equipment_mastery_v0_1.js"
-hash = "07ec861213f048eb768239570fffb7a22ba4927e925c22ab0387e300c739b02c"
+hash = "f475f51a72f3d3f1de0a3ea51c1c97a0701f57df8053033bf4104ba727c9e5d4"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_faction_activity_v0_1.js"
@@ -6446,7 +6450,7 @@ hash = "14df6738b649c8bfd3e6ee2bf5773a28e17ddd817fadc9f173399cd438ee0be6"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_faction_territory_v0_1.js"
-hash = "bff488ace11cc84ee98433a0f5ebd8b427e72348ba265190d07ff0d66ccf0fb7"
+hash = "c5d2e051d0f580d6e127a7a3e0bded477718db793f5d702cfa859314aedf3967"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_faction_test_commands_v0_1.js"
@@ -6518,7 +6522,7 @@ hash = "e864976477a4746a5c5db80eb95227178fd7b5e7280b0812c2e6dcba3d1eb0b3"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_journeymap_sync_v0_1.js"
-hash = "4aee8c7ad57249a6765019e1fd91f9a6e96bb5b423c6986545c6d2611f59e973"
+hash = "cbb2be73e0d58201dcbcde7782878b4e710476347d8e84adada974942973c5a1"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_mastery_v0_1.js"
@@ -6698,7 +6702,7 @@ hash = "00974ec028b70e89cace861112f3d47faef964919a74fa3b159af3e4a85277d1"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_xp_talent_enchant_v0_1.js"
-hash = "aeb591562c85e6189a2a0630ab0ecdd09cfd86e624c5d021a45644494aa60d72"
+hash = "7e81521f653324d4e3caaa85a1feefacd3d90fb536c34ebc20f88d35d11fa661"
 
 [[files]]
 file = "kubejs/startup_scripts/example.js"

@@ -8,9 +8,8 @@ function pdzAffixForgeMenu(p){
   p.tell(Text.of('[Reroll same rarity]').aqua().clickRunCommand('/deadzoneaffixforge reroll'))
   p.tell(Text.of('[Imbue unaffixed equipment]').green().clickRunCommand('/deadzoneaffixforge imbue'))
 }
-// The required client mod opens the dedicated screen. Keep the command menu
-// as an emergency fallback without printing it on every table interaction.
-BlockEvents.rightClicked('minecraft:enchanting_table',event=>{if(event.level.clientSide)return;event.cancel()})
+// Vanilla enchanting coexists with Affixes. The enchanting table is no longer
+// intercepted; Affix crafting remains available through its dedicated UI/menu.
 ServerEvents.commandRegistry(event=>{
   const {commands:Commands}=event;let root=Commands.literal('deadzoneaffixforge')
   root.then(Commands.literal('menu').executes(ctx=>{pdzAffixForgeMenu(ctx.source.player);return 1}))

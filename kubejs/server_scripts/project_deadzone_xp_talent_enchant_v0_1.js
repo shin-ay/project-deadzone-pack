@@ -3,9 +3,10 @@
 
 const PDZ_XPT_HIGHWATER = 'pdz_talent_xp_highwater_level_v1'
 const PDZ_XPT_INITIALIZED = 'pdz_talent_xp_initialized_v1'
-const PDZ_XPT_BLOCKED_STATIONS = [
-  'minecraft:grindstone'
-]
+// Enchantments now coexist with PDZ Affixes. Vanilla XP is no longer consumed
+// automatically and all vanilla enchanting/repair stations remain available.
+const PDZ_XPT_ENCHANT_RETIREMENT_ENABLED = false
+const PDZ_XPT_BLOCKED_STATIONS = []
 
 function pdzXpTalentLevel(player) {
   try { return Math.max(0,Math.floor(Number(player.xpLevel))) } catch (ignored) {}
@@ -30,6 +31,7 @@ function pdzXpTalentSync(player,announce) {
 }
 
 PlayerEvents.tick(event=>{
+  if (!PDZ_XPT_ENCHANT_RETIREMENT_ENABLED) return
   let p=event.player
   if (p.level.clientSide || p.age%20!==7) return
   // Items outside the Affix categories (books, fishing rods and unusual mod
@@ -53,13 +55,17 @@ PlayerEvents.tick(event=>{
 })
 
 BlockEvents.rightClicked(event=>{
+  if (!PDZ_XPT_ENCHANT_RETIREMENT_ENABLED) return
   if (event.player.level.clientSide || PDZ_XPT_BLOCKED_STATIONS.indexOf(String(event.block.id))<0) return
   event.cancel()
   event.player.tell(Text.of('[PROJECT DEADZONE] エンチャントはAffixへ統合されています。').yellow())
   event.player.tell(Text.of('XPはTalent成長に使用し、修理は携帯修理または工業担当NPCを利用します。').gray())
 })
 
-ServerEvents.recipes(event=>PDZ_XPT_BLOCKED_STATIONS.forEach(id=>event.remove({output:id})))
+ServerEvents.recipes(event=>{
+  if (!PDZ_XPT_ENCHANT_RETIREMENT_ENABLED) return
+  PDZ_XPT_BLOCKED_STATIONS.forEach(id=>event.remove({output:id}))
+})
 
 ServerEvents.commandRegistry(event=>{
   const {commands:Commands}=event
@@ -67,7 +73,7 @@ ServerEvents.commandRegistry(event=>{
   root.then(Commands.literal('status').executes(ctx=>{
     let p=ctx.source.player
     p.tell(Text.of('XP Level: '+pdzXpTalentLevel(p)+' / Talent SP変換: 無効').aqua())
-    p.tell(Text.of('通常XPは装備熟練度システム用に予約されています。').gray())
+    p.tell(Text.of('通常XPは自動吸収されません。エンチャント等へ自由に使用できます。').gray())
     return 1
   }))
   root.then(Commands.literal('sync').executes(ctx=>{

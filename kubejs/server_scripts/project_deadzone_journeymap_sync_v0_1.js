@@ -6,12 +6,18 @@ const PDZ_JM_SITES = 'dz_activity_outpost_ledger_v1'
 const PDZ_JM_ACTIVITIES = 'dz_activity_list_v1'
 const PDZ_JM_TERRITORY_RANGE = 2048
 const PDZ_JM_ACTIVITY_RANGE = 1536
+let PDZ_JM_BAD_KEYS = {}
 
 function pdzJmRead(server, key) {
   let raw = server.persistentData.getString(key)
   if (!raw) return []
   try { let value = JSON.parse(raw); return Array.isArray(value) ? value : [] }
-  catch (err) { console.error('[PDZ MAP] Invalid '+key+': '+err); return [] }
+  catch (err) {
+    if (!PDZ_JM_BAD_KEYS[key]) console.warn('[PDZ MAP] Reset invalid '+key+': '+err)
+    PDZ_JM_BAD_KEYS[key] = true
+    server.persistentData.putString(key, '[]')
+    return []
+  }
 }
 
 function pdzJmNear(player, value, range) {
@@ -33,6 +39,7 @@ function pdzJmSync(player) {
     return pdzJmNear(player, activity, PDZ_JM_ACTIVITY_RANGE)
   })
   player.sendData('pdz_journeymap_sync', {payload:JSON.stringify({version:1,cells:cells,sites:sites,activities:activities})})
+  return {cells:cells.length,sites:sites.length,activities:activities.length}
 }
 
 let PDZ_JM_TICKS = 0
@@ -48,10 +55,12 @@ PlayerEvents.loggedIn(event => {
 
 ServerEvents.commandRegistry(event => {
   const {commands:Commands} = event
-  event.register(Commands.literal('deadzonemap').requires(source => source.hasPermission(2))
+  // Sync only sends already range-filtered strategic data to the caller, so it
+  // is safe for normal players and can also be used by automatic refreshes.
+  event.register(Commands.literal('deadzonemap')
     .then(Commands.literal('sync').executes(ctx => {
-      pdzJmSync(ctx.source.player)
-      ctx.source.player.tell(Text.of('[PDZ MAP] JourneyMap overlay synchronized.').green())
+      let result=pdzJmSync(ctx.source.player)
+      ctx.source.player.tell(Text.of('[PDZ MAP] JourneyMap synchronized: '+result.cells+' territory cells / '+result.sites+' sites / '+result.activities+' activities.').green())
       return 1
     })))
 })

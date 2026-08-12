@@ -9,6 +9,8 @@ const PDZ_TERR_CELLS = 'dz_territory_cells_v1'
 const PDZ_TERR_META = 'dz_territory_meta_v1'
 const PDZ_TERR_CELL = 128
 const PDZ_TERR_CONTEST_MARGIN = 0.12
+const PDZ_TERR_AUTO_INTERVAL = 1200
+const PDZ_TERR_SIGNATURE = 'dz_territory_ledger_signature_v1'
 
 function pdzTerrRead(server, key) {
   let raw = server.persistentData.getString(key)
@@ -37,6 +39,18 @@ function pdzTerrFaction(site) {
   let value = String(site.faction || 'independent').toLowerCase()
   if (value === 'raiders') value = 'raider'
   return value
+}
+
+function pdzTerrSignature(sites) {
+  let rows = sites.filter(site => site && site.coreAlive !== false).map(site => [
+    String(site.id || ''), String(site.faction || ''), String(site.size || ''),
+    Math.floor(Number(site.x || 0)), Math.floor(Number(site.z || 0)),
+    Math.floor(Number(site.supply || 0)), Math.floor(Number(site.alert || 0)),
+    Math.floor(Number(site.defenders || 0)), site.coreAlive === false ? 0 : 1
+  ].join(':')).sort()
+  let text = rows.join('|'), hash = 5381
+  for (let i = 0; i < text.length; i++) hash = ((hash * 33) ^ text.charCodeAt(i)) & 0x7fffffff
+  return rows.length + ':' + hash.toString(36)
 }
 
 function pdzTerrBuild(server) {
@@ -90,9 +104,39 @@ function pdzTerrBuild(server) {
   server.persistentData.putString(PDZ_TERR_META, JSON.stringify({
     version: 1, cellSize: PDZ_TERR_CELL, rebuilt: Date.now(), sites: sites.length, cells: cells.length
   }))
+  server.persistentData.putString(PDZ_TERR_SIGNATURE, pdzTerrSignature(sites))
   console.info('[PDZ TERRITORY] Rebuilt '+cells.length+' cells from '+sites.length+' active cores')
   return cells
 }
+
+function pdzTerrSyncAll(server) {
+  // The JourneyMap bridge remains the renderer. Reusing its registered command
+  // keeps territory ownership independent from the client map implementation.
+  server.players.forEach(player => player.runCommandSilent('deadzonemap sync'))
+}
+
+function pdzTerrAuto(server, force) {
+  let sites = pdzTerrRead(server, PDZ_TERR_LEDGER).filter(site => site.coreAlive !== false)
+  let signature = pdzTerrSignature(sites)
+  let cells = pdzTerrRead(server, PDZ_TERR_CELLS)
+  if (!force && cells.length > 0 && server.persistentData.getString(PDZ_TERR_SIGNATURE) === signature) return false
+  pdzTerrBuild(server)
+  pdzTerrSyncAll(server)
+  return true
+}
+
+let PDZ_TERR_TICKS = 0
+ServerEvents.tick(event => {
+  PDZ_TERR_TICKS++
+  if (PDZ_TERR_TICKS % PDZ_TERR_AUTO_INTERVAL !== 0 || event.server.players.length === 0) return
+  pdzTerrAuto(event.server, false)
+})
+
+PlayerEvents.loggedIn(event => {
+  event.server.scheduleInTicks(140, () => {
+    if (pdzTerrAuto(event.server, false)) event.player.tell(Text.of('[TERRITORY] Strategic map rebuilt from the current outpost ledger.').aqua())
+  })
+})
 
 function pdzTerrAt(server, player) {
   let dimension = String(player.level.dimension)
@@ -126,7 +170,25 @@ ServerEvents.commandRegistry(event => {
 
   root.then(Commands.literal('rebuild').executes(ctx => {
     let cells = pdzTerrBuild(ctx.source.server)
-    ctx.source.player.tell(Text.of('[TERRITORY] Rebuilt '+cells.length+' map cells.').green())
+    pdzTerrSyncAll(ctx.source.server)
+    if (ctx.source.player) ctx.source.player.tell(Text.of('[TERRITORY] Rebuilt '+cells.length+' map cells.').green())
+    else console.info('[PDZ TERRITORY] Rebuilt '+cells.length+' map cells from server/automation source.')
+    return cells.length
+  }))
+
+  root.then(Commands.literal('diagnose').executes(ctx => {
+    let server = ctx.source.server
+    let sites = pdzTerrRead(server, PDZ_TERR_LEDGER).filter(site => site.coreAlive !== false)
+    let cells = pdzTerrRead(server, PDZ_TERR_CELLS)
+    let stored = server.persistentData.getString(PDZ_TERR_SIGNATURE)
+    let current = pdzTerrSignature(sites)
+    let nearby = cells.filter(cell => cell.dimension === String(ctx.source.player.level.dimension) &&
+      Math.pow(Number(cell.x || 0) + Number(cell.size || 128) / 2 - ctx.source.player.x, 2) +
+      Math.pow(Number(cell.z || 0) + Number(cell.size || 128) / 2 - ctx.source.player.z, 2) <= 2048 * 2048).length
+    ctx.source.player.tell(Text.of('=== TERRITORY DIAGNOSTIC ===').gold())
+    ctx.source.player.tell(Text.of('Active cores: '+sites.length+' / Cells: '+cells.length+' / Nearby map cells: '+nearby).aqua())
+    ctx.source.player.tell(Text.of('Ledger signature: '+current+(stored === current ? ' [CURRENT]' : ' [STALE]'))[stored === current ? 'green' : 'red']())
+    ctx.source.player.tell(Text.of('Renderer: JourneyMap / Sync radius: 2048m').yellow())
     return cells.length
   }))
 

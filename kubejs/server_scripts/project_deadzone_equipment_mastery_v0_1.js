@@ -7,6 +7,9 @@ const PDZEM_LIST=Java.loadClass('net.minecraft.nbt.ListTag')
 const PDZEM_STRING=Java.loadClass('net.minecraft.nbt.StringTag')
 const PDZEM_SLOT=Java.loadClass('net.minecraft.world.entity.EquipmentSlot')
 const PDZEM_MAX_LEVEL=30
+// Legacy per-item mastery is frozen for migration. Existing NBT is retained,
+// but vanilla XP, combat bonuses and automatic repairs are no longer applied.
+const PDZEM_LEGACY_ENABLED=false
 const PDZEM_TYPE_NAMES={firearm:'銃器',melee:'近接武器',mining:'採掘工具',logging:'伐採工具',digging:'掘削工具',fishing:'釣具',armor:'防具',tool:'汎用工具'}
 
 function pdzemRoot(stack,create) {
@@ -112,6 +115,7 @@ function pdzemAbsorb(player,announce) {
 }
 
 PlayerEvents.tick(event=>{
+  if(!PDZEM_LEGACY_ENABLED)return
   let p=event.player
   if(p.level.clientSide)return
   if(p.age%20===13)pdzemAbsorb(p,true)
@@ -131,6 +135,7 @@ PlayerEvents.tick(event=>{
 })
 
 EntityEvents.hurt(event=>{
+  if(!PDZEM_LEGACY_ENABLED)return
   let attacker=event.source?event.source.actual:null
   if(attacker&&attacker.isPlayer&&attacker.isPlayer()&&!attacker.level.clientSide){
     let data=pdzemData(attacker.mainHandItem,false)
@@ -147,8 +152,8 @@ EntityEvents.hurt(event=>{
 ServerEvents.commandRegistry(event=>{
   const {commands:Commands}=event
   let root=Commands.literal('deadzoneequipment')
-  root.then(Commands.literal('status').executes(ctx=>{let p=ctx.source.player,data=pdzemData(p.mainHandItem,false);if(!data)p.tell(Text.of('メインハンド装備には熟練度がありません。通常XPを得ると自動吸収します。').yellow());else p.tell(Text.of('装備熟練 '+(PDZEM_TYPE_NAMES[String(data.getString('type'))]||'装備')+' Lv'+data.getInt('level')+' / XP '+data.getInt('xp')+'/'+pdzemNeed(data.getInt('level'))+' / 累計 '+data.getInt('total_xp')).aqua());return 1}))
-  root.then(Commands.literal('absorb').executes(ctx=>{pdzemAbsorb(ctx.source.player,true);return 1}))
-  root.then(Commands.literal('test_xp_100').requires(s=>s.hasPermission(2)).executes(ctx=>{let p=ctx.source.player;p.server.runCommandSilent('experience add '+p.username+' 100 points');p.server.scheduleInTicks(2,()=>pdzemAbsorb(p,true));return 1}))
+  root.then(Commands.literal('status').executes(ctx=>{let p=ctx.source.player,data=pdzemData(p.mainHandItem,false);p.tell(Text.of('旧アイテム個別熟練は凍結中です。通常XPの自動吸収は停止しました。').yellow());if(data)p.tell(Text.of('移行予定データ: '+(PDZEM_TYPE_NAMES[String(data.getString('type'))]||'装備')+' Lv'+data.getInt('level')+' / 累計 '+data.getInt('total_xp')).gray());return 1}))
+  root.then(Commands.literal('absorb').executes(ctx=>{ctx.source.player.tell(Text.of('XP自動吸収は停止済みです。').yellow());return 0}))
+  root.then(Commands.literal('test_xp_100').requires(s=>s.hasPermission(2)).executes(ctx=>{ctx.source.player.tell(Text.of('旧熟練テストは停止済みです。').yellow());return 0}))
   event.register(root)
 })
