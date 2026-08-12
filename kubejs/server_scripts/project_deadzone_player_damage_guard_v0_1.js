@@ -49,6 +49,13 @@ EntityEvents.hurt(event => {
   let player = event.entity
   if (!player || !player.isPlayer || !player.isPlayer() || player.level.clientSide) return
 
+
+  // Stop post-death damage from racing PlayerRevive and grave finalization.
+  if (Number(player.health) <= 0) {
+    event.cancel()
+    return
+  }
+
   let incoming = Math.max(0, Number(event.damage))
   if (!isFinite(incoming) || incoming <= 0) return
 

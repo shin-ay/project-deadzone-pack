@@ -2873,6 +2873,10 @@ file = "defaultconfigs/ftbxmodcompat/ftbxmodcompat.snbt"
 hash = "9e5046ac0b9f6d27945b689657835bff24310aec7b11f7461c972b514d0e0658"
 
 [[files]]
+file = "defaultconfigs/gravestone-server.toml"
+hash = "d47016cecb3f9006a370833b394ab7acf98f1abf5d354b3f5f7aa397870b5231"
+
+[[files]]
 file = "defaultconfigs/lostcities-server_deadzone-chaosz-v1.toml"
 hash = "87eb4dd97a976bc1390397e64c1b4cac1d8ae56e1f203e7f5403e272e0444fd8"
 
@@ -6562,7 +6566,7 @@ hash = "6ca54832046e03240686035e4682e862b5be24581ef35d5b4c8cc9963d8d02a2"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_player_damage_guard_v0_1.js"
-hash = "40a1cfdd8ce23e3e77213495bd495c34dcef975dba021f68228606dc40a5a990"
+hash = "82206a4b7a3cc57da43c58642c31026025cf86c9d4d2cda8a273f9668cf1bba0"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_player_zombie_recovery_v0_1.js"
