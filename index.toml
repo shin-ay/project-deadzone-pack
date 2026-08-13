@@ -7154,6 +7154,10 @@ file = "mods/PROJECT_DEADZONE_VineClimbControl-0.1.1.jar"
 hash = "a5ca9af3fa02c30c243b9896c3c069144936d0a0f37dbf6113d0b4ea63927fcb"
 
 [[files]]
+file = "mods/UndergroundBunkers-1.0.5-1.20.x-forge.jar"
+hash = "b9f9a25648f6abf3747c4f1e9c0a0438baac474c71ad5b0981a8613481982d58"
+
+[[files]]
 file = "mods/alexs-delight.pw.toml"
 hash = "99f6d4e46f784953d16aa1ce5f72327b21487dc0e27d3143c8a6b60c6d02381a"
 metafile = true
