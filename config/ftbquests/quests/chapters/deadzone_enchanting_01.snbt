@@ -1,0 +1,71 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: "circle"
+	filename: "deadzone_enchanting_01"
+	group: "51DC04D9192698A6"
+	icon: "minecraft:enchanting_table"
+	id: "7D2A10E1C4A80101"
+	order_index: 13
+	quest_links: [ ]
+	quests: [
+		{
+			description: [
+				"旧世界の強化設備を復旧する。エンチャントは装備のランダムAffixとは別枠で、プレイヤーが狙って積み上げる強化だ。"
+				"まずエンチャントテーブルを確保し、ラピスと経験値を扱える状態にする。"
+			]
+			icon: "minecraft:enchanting_table"
+			id: "7D2A10E1C4A80110"
+			rewards: [
+				{ count: 12 id: "7D2A10E1C4A80111" item: "minecraft:lapis_lazuli" type: "item" }
+				{ id: "7D2A10E1C4A80112" type: "xp" xp: 15 }
+			]
+			tasks: [{ consume_items: false id: "7D2A10E1C4A80113" item: "minecraft:enchanting_table" type: "item" }]
+			title: "失われた強化設備"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["7D2A10E1C4A80110"]
+			description: [
+				"Apotheosisの本棚は、出力・安定性・希少効果の出現率を個別に変化させる。"
+				"Hellshelfを確保し、レベル30を越える設備の土台を作る。"
+			]
+			icon: "apotheosis:hellshelf"
+			id: "7D2A10E1C4A80120"
+			rewards: [{ count: 8 id: "7D2A10E1C4A80121" item: "minecraft:lapis_lazuli" type: "item" }]
+			tasks: [{ consume_items: false id: "7D2A10E1C4A80122" item: "apotheosis:hellshelf" type: "item" }]
+			title: "出力限界の突破"
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["7D2A10E1C4A80120"]
+			description: [
+				"Enchantment Libraryは本の効果を蓄積し、必要なレベルで取り出せる。"
+				"不要な本も捨てずに保管し、チーム全体の強化資源として循環させよう。"
+			]
+			icon: "apotheosis:library"
+			id: "7D2A10E1C4A80130"
+			rewards: [{ count: 6 id: "7D2A10E1C4A80131" item: "minecraft:book" type: "item" }]
+			tasks: [{ consume_items: false id: "7D2A10E1C4A80132" item: "apotheosis:library" type: "item" }]
+			title: "共有強化アーカイブ"
+			x: 4.0d
+			y: -1.0d
+		}
+		{
+			dependencies: ["7D2A10E1C4A80120"]
+			description: [
+				"TaCZ銃にはFirepower、Precision、Deep Impact、Capacityなどの固有エンチャントを付与できる。"
+				"Affixは拾った銃の個性、エンチャントは自分で育てる方向性として共存する。"
+			]
+			icon: "minecraft:enchanted_book"
+			id: "7D2A10E1C4A80140"
+			rewards: [{ id: "7D2A10E1C4A80141" type: "xp" xp: 25 }]
+			tasks: [{ id: "7D2A10E1C4A80142" title: "TaCZ銃へ固有エンチャントを付与" type: "custom" }]
+			title: "火器チューニング"
+			x: 4.0d
+			y: 1.0d
+		}
+	]
+	title: "装備強化・エンチャント"
+}

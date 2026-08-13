@@ -1,0 +1,13 @@
+name = "Epic RPG: Average DPS"
+filename = "averagedps-forge-1.2.0.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "74b19b102a0b5e8d4d3526ce322cd4bb67e9eecb"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 8564004
+project-id = 1349155

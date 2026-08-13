@@ -473,6 +473,10 @@ file = "config/animation_overhaul/local_player.json5"
 hash = "fe9d61e0f3d0ee52069e5527b801f2f9077c5c223fe78d66d933fec246c5a91f"
 
 [[files]]
+file = "config/apotheosis/apotheosis.cfg"
+hash = "c6900e2a95805e324e6863c5d46337c8808d3fae6fdb4a7de820ef2edcbc9be9"
+
+[[files]]
 file = "config/appleskin-client.toml"
 hash = "e6609ffbea927ee6390b1317bb6f3abb3f31ee591ca5c1d5e748f5e625fefea1"
 
@@ -1071,6 +1075,10 @@ hash = "3f4eb4346d7f46945d287df51df4e73af66c19d2d40c708eb558ac54e909b109"
 [[files]]
 file = "config/ftbquests/quests/chapters/deadzone_camp_sidequests_01.snbt"
 hash = "1d6c3ebb56b45172d098b1dc538ed6e59fddfa38717c7323e50ae6466cc2a3ac"
+
+[[files]]
+file = "config/ftbquests/quests/chapters/deadzone_enchanting_01.snbt"
+hash = "976fb0107c01ccf088dffae85766a1db93d4d45ca5c2221492dd2cc0c8fcaa46"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/deadzone_hospital_story_01.snbt"
@@ -3151,6 +3159,14 @@ hash = "2f29445d797b609f41c01a287ccfa37788de939a7959ed8efd0bba7a940994dc"
 [[files]]
 file = "kubejs/data/apocalypsenow/worldgen/structure_set/storage_st.json"
 hash = "a96b88c6660c4978918bb9ce4851801d73dcdd7ef8b026c0feba92c353ef302c"
+
+[[files]]
+file = "kubejs/data/bountiful/bounty_decrees/project_deadzone/deadzone_fieldwork.json"
+hash = "b12061a0c6a9f586eeb95ce4039a0a898e4dfb8b71167553cd6e759e909a06a2"
+
+[[files]]
+file = "kubejs/data/bountiful/bounty_pools/project_deadzone/deadzone_field_rews.json"
+hash = "2270853bb32a1d30c9c177567a7fb2898f793e55c9e7437d0b9e91e3dc334d85"
 
 [[files]]
 file = "kubejs/data/brutalbosses/bosses/rabbitboss.json"
@@ -7227,6 +7243,16 @@ hash = "6e04bd9ab5efe7315853b169b2725b522f042360753fc05b96f04d7ba09271eb"
 metafile = true
 
 [[files]]
+file = "mods/apotheosis.pw.toml"
+hash = "c281ef574be46e4df3f7ed04b0a4b5f6d1b2a836b7d1d94c4a30be9c85d3adcb"
+metafile = true
+
+[[files]]
+file = "mods/apothic-attributes.pw.toml"
+hash = "5f3996f32795f87086cd2e34ac1d7cc281411fe0c8799cb589706680107171ee"
+metafile = true
+
+[[files]]
 file = "mods/appleskin.pw.toml"
 hash = "8d0321177fed4a0b48554c40158b43db62f6cdaa768f584ef6a11575dfaa6223"
 metafile = true
@@ -7254,6 +7280,11 @@ metafile = true
 [[files]]
 file = "mods/attributefix.pw.toml"
 hash = "828d571a91296e2ee3be1ec509619ea01f6a61a03958461fbe543bd377daa194"
+metafile = true
+
+[[files]]
+file = "mods/average-dps.pw.toml"
+hash = "35fe7786f4ca0d8acc648ee74d9780a5cbf6ee43729e3bb5dd1c6473d0c0ace5"
 metafile = true
 
 [[files]]
@@ -7304,6 +7335,11 @@ metafile = true
 [[files]]
 file = "mods/bookshelf.pw.toml"
 hash = "49f9d94df22724949d2ce1ae70b73461dfe7d92ce6ad6ceae9739cef0b34a089"
+metafile = true
+
+[[files]]
+file = "mods/bountiful.pw.toml"
+hash = "2798fc9c61947e92e1e43c8b031429b811e45aa79a421b7fba9fe81754e319a2"
 metafile = true
 
 [[files]]
@@ -7549,6 +7585,16 @@ hash = "b299c3a87b88255dcdc93723d729dac99709d39fdaeecb81396b8788e9b4569b"
 metafile = true
 
 [[files]]
+file = "mods/easy-anvils.pw.toml"
+hash = "546a2e07dfe2ef19c83779b3a4123d49fa83d803a2873cb1d0d946bbb25b88ea"
+metafile = true
+
+[[files]]
+file = "mods/easy-magic.pw.toml"
+hash = "079dbc9be43f9fa6ab866f21532d441f05421752a5d1ed52d358f6858d6fc2c2"
+metafile = true
+
+[[files]]
 file = "mods/easy-npc-config-ui.pw.toml"
 hash = "1bc3dfcc0f56f6ae288da9c88cf997cb8ed3896db841aa7558f5ce7c248da563"
 metafile = true
@@ -7571,6 +7617,11 @@ metafile = true
 [[files]]
 file = "mods/embeddium.pw.toml"
 hash = "a1575677daaaf6ea6dac12e5a10073e34025e5ca2c35b6d36ad4a5a0edbc0e82"
+metafile = true
+
+[[files]]
+file = "mods/enchantment-descriptions.pw.toml"
+hash = "e4c69a3551a4343fc76fb135266aecac0042863693f04d2c58a26c71b6e988d9"
 metafile = true
 
 [[files]]
@@ -7766,6 +7817,11 @@ metafile = true
 [[files]]
 file = "mods/journeymap.pw.toml"
 hash = "1bd5ce018243c907ffcc64dbd09dd8de2af22eb0b959c256ec42ad0ceeb77066"
+metafile = true
+
+[[files]]
+file = "mods/kambrik.pw.toml"
+hash = "b7d3d553250955d3b3a669647e66ef6c4c7a31ee07f04e308432acdebb87adb0"
 metafile = true
 
 [[files]]
@@ -8004,8 +8060,18 @@ hash = "2ce53a704e67995bb5e9fbd42e59004e47ffc6487e2867131500dafd355b6b3e"
 metafile = true
 
 [[files]]
+file = "mods/patchouli.pw.toml"
+hash = "b2cb681aaf3e6085148392a06d40899239dc299aaf5ce0adf168fc225d922c97"
+metafile = true
+
+[[files]]
 file = "mods/ping.pw.toml"
 hash = "95f37f25194402246b7ed309e2b8549e3d2b9f1f0baa19fd04cbe6862437326b"
+metafile = true
+
+[[files]]
+file = "mods/placebo.pw.toml"
+hash = "045d582e2c534c5bb96d7336b4ae2cd12692c6de29b19ae5f1dbfd8759c03b03"
 metafile = true
 
 [[files]]
@@ -8080,6 +8146,11 @@ metafile = true
 [[files]]
 file = "mods/radio-towers-and-guns-tacz.pw.toml"
 hash = "2612c14e794ab51364efa865616c5170ed898a2a7e954428085c88f8501264b0"
+metafile = true
+
+[[files]]
+file = "mods/realm-rpg-quests-rewards.pw.toml"
+hash = "d8445c41a11d0e813ccf86a7b5a3ba0677280a1c1cab6054dfe2445cdb8f0744"
 metafile = true
 
 [[files]]
@@ -13938,6 +14009,10 @@ hash = "b1e2acfe074a61bf4ea20ec885f7e1dcc64bb55226ee2953b6bfd25e660bb40e"
 [[files]]
 file = "projectfiles/PROJECT_DEADZONE_EPIC_FIGHT_v0.1_TEST.txt"
 hash = "63c034a15a2e475fcb8cd82458e966e9c928fd018ab6c1a3b297c10fca5c6f0b"
+
+[[files]]
+file = "projectfiles/PROJECT_DEADZONE_Enchanting_Quest_Design_v0.1.md"
+hash = "99dc789131839ec1df9a0cb0992da0651fdbf7e679ecee393ce2e361a1bbe55b"
 
 [[files]]
 file = "projectfiles/PROJECT_DEADZONE_Jobs_InitialSkills_Draft_v0.1.txt"

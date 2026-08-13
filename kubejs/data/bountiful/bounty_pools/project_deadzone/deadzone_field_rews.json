@@ -1,0 +1,34 @@
+{
+  "content": {
+    "pdz_rew_lapis": {
+      "type": "item",
+      "content": "minecraft:lapis_lazuli",
+      "amount": { "min": 3, "max": 12 },
+      "unitWorth": 180,
+      "weightMult": 1.4
+    },
+    "pdz_rew_books": {
+      "type": "item",
+      "content": "minecraft:book",
+      "amount": { "min": 1, "max": 5 },
+      "unitWorth": 320
+    },
+    "pdz_rew_medical": {
+      "type": "item",
+      "content": "minecraft:golden_apple",
+      "amount": { "min": 1, "max": 1 },
+      "unitWorth": 2800,
+      "rarity": "RARE",
+      "weightMult": 0.25
+    },
+    "pdz_rew_enchant_book": {
+      "type": "item",
+      "content": "minecraft:enchanted_book",
+      "amount": { "min": 1, "max": 1 },
+      "unitWorth": 4200,
+      "rarity": "EPIC",
+      "nbt": "{StoredEnchantments:[{lvl:1s,id:\"minecraft:unbreaking\"}]}",
+      "weightMult": 0.12
+    }
+  }
+}
