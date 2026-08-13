@@ -16,9 +16,9 @@ const DZ_STORY_QUESTS = {
   policeArrival: "3786D5F3AF1D3EF4",
   policeAssault: "5C450F9A7EB25D5B",
   policestation: "74065A02DB68DAE2",
-  hospitalBriefing: "D34D220000000101",
-  hospitalArrival: "D34D220000000102",
-  hospital: "D34D220000000103",
+  hospitalBriefing: "0CC1C27F7969A440",
+  hospitalArrival: "0C7AEC6E25192AAA",
+  hospital: "6984DA400E0E21C3",
   fireBriefing: "4AF84F15560BA03C",
   fireArrival: "3001FAD121C4FCD2",
   firestation: "04AC90A6EDFF8450",
@@ -26,7 +26,24 @@ const DZ_STORY_QUESTS = {
   radioArrival: "3EB8C6CE111AC5E6",
   radioRepair: "42670EF087DB07A6",
   radioTower: "34C3DD0D8725B787",
-  tier3: "3FE9D0F62386FC0C"
+  tier3: "3FE9D0F62386FC0C",
+  t2FactoryArrival: "D220260813000101",
+  t2FactoryRestore: "D220260813000102",
+  t2RelayArrival: "D220260813000103",
+  t2RelayCapture: "D220260813000104",
+  t2FactionChoice: "D220260813000105",
+  t2AegisRecord: "D220260813000106",
+  t2Primordial: "D220260813000107",
+  t2Complete: "D220260813000108",
+  t3Military: "D320260813000101",
+  t3Laboratory: "D320260813000102",
+  t3Reactor: "D320260813000103",
+  t3WardenCores: "D320260813000104",
+  t3ArgusFragment: "D320260813000105",
+  t3ChoirDiscovery: "D320260813000106",
+  t3ChoirVessel: "D320260813000107",
+  t3ArgusChoice: "D320260813000108",
+  t3Complete: "D320260813000109"
 }
 
 function dzCompleteStoryQuest(server, questId, message) {
@@ -35,17 +52,60 @@ function dzCompleteStoryQuest(server, questId, message) {
 }
 
 function dzCompletePlayerStoryQuest(player, key, questId) {
-  let flag = "dz_story_auto_" + key
+  // v3: FTB Quests can reject completion while a dependency is still locked.
+  // Older revisions stored the flag even after a rejected command, leaving the
+  // player permanently stuck. Record completion only when the command succeeds
+  // and keep retrying otherwise. A versioned flag also repairs affected saves.
+  let flag = "dz_story_auto_v3_" + key
   if (player.persistentData.getBoolean(flag)) return
-  player.server.runCommandSilent("ftbquests change_progress " + player.username +
+  let result = player.server.runCommandSilent("ftbquests change_progress " + player.username +
     " complete " + questId)
-  player.persistentData.putBoolean(flag, true)
+  if (result > 0) {
+    player.persistentData.putBoolean(flag, true)
+    console.info("[DEADZONE STORY] Auto-completed " + key + " for " + player.username)
+  }
 }
 
 function dzNearbyStoryBoss(player, tag, distance) {
   return player.server.runCommandSilent("execute as " + player.username +
     " at @s if entity @e[tag=" + tag + ",distance=.." + distance +
     ",limit=1]") > 0
+}
+
+function dzNearbyStoryMarker(player, predicate, distance) {
+  let found = false
+  let max = distance * distance
+  player.level.entities.forEach(entity => {
+    if (found || !entity.tags || !entity.tags.contains("dz_wilderness_site")) return
+    let dx = entity.x - player.x, dy = entity.y - player.y, dz = entity.z - player.z
+    if (dx * dx + dy * dy + dz * dz > max) return
+    if (predicate(entity)) found = true
+  })
+  return found
+}
+
+function dzNearestStoryMarker(player, predicate, distance) {
+  let best = null, bestDistance = distance * distance
+  player.level.entities.forEach(entity => {
+    if (!entity.tags || !entity.tags.contains("dz_wilderness_site")) return
+    if (!predicate(entity)) return
+    let dx = entity.x - player.x, dy = entity.y - player.y, dz = entity.z - player.z
+    let current = dx * dx + dy * dy + dz * dz
+    if (current <= bestDistance) { best = entity; bestDistance = current }
+  })
+  return best
+}
+
+function dzNearbyStronghold(player, type, distance) {
+  let found = false
+  let max = distance * distance
+  player.level.entities.forEach(entity => {
+    if (found || !entity.tags || !entity.tags.contains("dz_stronghold_core")) return
+    if (entity.persistentData.getString("dz_stronghold_type") !== type) return
+    let dx = entity.x - player.x, dy = entity.y - player.y, dz = entity.z - player.z
+    if (dx * dx + dy * dy + dz * dz <= max) found = true
+  })
+  return found
 }
 
 const DZ_PREP_FOOD = [
@@ -130,7 +190,11 @@ function dzIsFacilityBoss(entity) {
     || entity.tags.contains("dz_story_boss_policestation")
     || entity.tags.contains("dz_story_boss_hospital")
     || entity.tags.contains("dz_story_boss_firestation")
-    || entity.tags.contains("dz_story_boss_radio_tower"))
+    || entity.tags.contains("dz_story_boss_radio_tower")
+    || entity.tags.contains("dz_story_boss_primordial")
+    || entity.tags.contains("dz_story_boss_reactor_saint")
+    || entity.tags.contains("dz_story_boss_argus_fragment")
+    || entity.tags.contains("dz_story_boss_choir_vessel"))
 }
 
 function dzFacilityPartySize(server, boss) {
@@ -238,6 +302,54 @@ PlayerEvents.tick(event => {
     dzCompletePlayerStoryQuest(player, "radio_intel", DZ_STORY_QUESTS.radioIntel)
     dzCompletePlayerStoryQuest(player, "radio_arrival", DZ_STORY_QUESTS.radioArrival)
   }
+  // Act 2 uses the persistent facility/stronghold ledgers already present in
+  // DEADZONE. No second site detector is introduced here.
+  if (dzNearbyStoryMarker(player, marker => {
+    let type = marker.persistentData.getString("dz_wild_type")
+    let role = marker.persistentData.getString("dz_wild_role")
+    return type === "industrial" || role === "logistics"
+  }, 128)) dzCompletePlayerStoryQuest(player, "t2_factory_arrival", DZ_STORY_QUESTS.t2FactoryArrival)
+
+  if (dzNearbyStronghold(player, "remnant", 128))
+    dzCompletePlayerStoryQuest(player, "t2_relay_arrival", DZ_STORY_QUESTS.t2RelayArrival)
+
+  if (player.tags.contains("dz_captured_remnant_core"))
+    dzCompletePlayerStoryQuest(player, "t2_relay_capture", DZ_STORY_QUESTS.t2RelayCapture)
+
+  if (player.persistentData.getString("dz_story_t2_support") !== "")
+    dzCompletePlayerStoryQuest(player, "t2_faction_choice", DZ_STORY_QUESTS.t2FactionChoice)
+
+  if (dzNearbyStoryMarker(player, marker => {
+    let type = marker.persistentData.getString("dz_wild_type")
+    let role = marker.persistentData.getString("dz_wild_role")
+    let faction = marker.persistentData.getString("dz_wild_faction")
+    return faction === "aegis" && (role === "research" || type.indexOf("laboratory") >= 0 ||
+      type.indexOf("underground") >= 0)
+  }, 128)) dzCompletePlayerStoryQuest(player, "t2_aegis_record", DZ_STORY_QUESTS.t2AegisRecord)
+
+  if (dzNearbyStoryMarker(player, marker => {
+    let type = marker.persistentData.getString("dz_wild_type")
+    return type.indexOf("military") >= 0 || type.indexOf("command") >= 0 ||
+      type.indexOf("nuclear_shelter") >= 0
+  }, 160)) dzCompletePlayerStoryQuest(player, "t3_military", DZ_STORY_QUESTS.t3Military)
+
+  if (dzNearbyStoryMarker(player, marker => {
+    let type = marker.persistentData.getString("dz_wild_type")
+    let role = marker.persistentData.getString("dz_wild_role")
+    let faction = marker.persistentData.getString("dz_wild_faction")
+    return faction === "aegis" && (type.indexOf("laboratory") >= 0 || role === "research")
+  }, 160)) dzCompletePlayerStoryQuest(player, "t3_laboratory", DZ_STORY_QUESTS.t3Laboratory)
+
+  if (player.persistentData.getInt("dz_story_warden_core_count") >= 3)
+    dzCompletePlayerStoryQuest(player, "t3_warden_cores", DZ_STORY_QUESTS.t3WardenCores)
+
+  if (dzNearbyStoryMarker(player, marker => {
+    let faction = marker.persistentData.getString("dz_wild_faction")
+    let type = marker.persistentData.getString("dz_wild_type")
+    let role = marker.persistentData.getString("dz_wild_role")
+    return faction === "infected" && (role === "nest" || type.indexOf("infect") >= 0 ||
+      type.indexOf("laboratory") >= 0)
+  }, 160)) dzCompletePlayerStoryQuest(player, "t3_choir_discovery", DZ_STORY_QUESTS.t3ChoirDiscovery)
   // A full entity scan for every player every second was expensive on a
   // five-player server. Bosses only need this initialization once, so check at
   // a five-second cadence instead.
@@ -250,7 +362,30 @@ PlayerEvents.tick(event => {
 
 EntityEvents.death(event => {
   let npc = event.entity
-  if (!npc || npc.level.clientSide || !npc.tags.contains("dz_npc")) return
+  if (!npc || npc.level.clientSide) return
+
+  if (npc.tags.contains("dz_story_boss_primordial")) {
+    dzStoryBossCheckpoint(event.server, "primordial", DZ_STORY_QUESTS.t2Primordial,
+      "[PROJECT DEADZONE] 原初感染体を撃破。T2の感染輸送記録を確保", 3,
+      DZ_STORY_QUESTS.t2Complete)
+    return
+  }
+  if (npc.tags.contains("dz_story_boss_reactor_saint")) {
+    dzStoryBossCheckpoint(event.server, "reactor_saint", DZ_STORY_QUESTS.t3Reactor,
+      "[PROJECT DEADZONE] REACTOR SAINTを撃破。除染経路を確保", 0, null)
+    return
+  }
+  if (npc.tags.contains("dz_story_boss_argus_fragment")) {
+    dzStoryBossCheckpoint(event.server, "argus_fragment", DZ_STORY_QUESTS.t3ArgusFragment,
+      "[PROJECT DEADZONE] ARGUS Fragmentを撃破", 0, null)
+    return
+  }
+  if (npc.tags.contains("dz_story_boss_choir_vessel")) {
+    dzStoryBossCheckpoint(event.server, "choir_vessel", DZ_STORY_QUESTS.t3ChoirVessel,
+      "[PROJECT DEADZONE] CHOIR VESSELを撃破。ARGUS-9最終判断を解禁", 0, null)
+    return
+  }
+  if (!npc.tags.contains("dz_npc")) return
 
   if (npc.tags.contains("dz_story_boss_gasstation")) {
     event.server.persistentData.putBoolean("dz_story_gasstation_secured", true)
@@ -287,7 +422,11 @@ ServerEvents.commandRegistry(event => {
     policestation: "project_deadzone:story/spawn_policestation_boss",
     hospital: "project_deadzone:story/spawn_hospital_boss",
     firestation: "project_deadzone:story/spawn_firestation_boss",
-    radio_tower: "project_deadzone:story/spawn_radio_tower_boss"
+    radio_tower: "project_deadzone:story/spawn_radio_tower_boss",
+    primordial: "project_deadzone:story/spawn_primordial_boss",
+    reactor_saint: "project_deadzone:story/spawn_reactor_saint",
+    argus_fragment: "project_deadzone:story/spawn_argus_fragment",
+    choir_vessel: "project_deadzone:story/spawn_choir_vessel"
   }
 
   Object.keys(tests).forEach(name => {
@@ -302,7 +441,8 @@ ServerEvents.commandRegistry(event => {
   root.then(Commands.literal("status").executes(ctx => {
     let server = ctx.source.server
     ctx.source.player.tell(Text.of("=== STORY FACILITY STATUS ===").gold())
-    ;["gasstation","gunshop","policestation","hospital","firestation","radio_tower"].forEach(key => {
+    ;["gasstation","gunshop","policestation","hospital","firestation","radio_tower","primordial",
+      "reactor_saint","argus_fragment","choir_vessel"].forEach(key => {
       let done = server.persistentData.getBoolean("dz_story_boss_complete_" + key)
       let line = Text.of((done ? "✓ " : "－ ") + key)
       ctx.source.player.tell(done ? line.green() : line.gray())
@@ -322,6 +462,10 @@ ServerEvents.commandRegistry(event => {
       ["HOSPITAL", "/deadzonestoryboss hospital"],
       ["FIRE STATION", "/deadzonestoryboss firestation"],
       ["RADIO TOWER / T3", "/deadzonestoryboss radio_tower"]
+      ,["PRIMORDIAL / T2", "/deadzonestoryboss primordial"]
+      ,["REACTOR SAINT / T3", "/deadzonestoryboss reactor_saint"]
+      ,["ARGUS FRAGMENT / T3", "/deadzonestoryboss argus_fragment"]
+      ,["CHOIR VESSEL / T3", "/deadzonestoryboss choir_vessel"]
     ].forEach(entry => player.tell(Text.of("[ " + entry[0] + " ]").aqua()
       .clickRunCommand(entry[1]).hover(Text.of(entry[1]))))
     return 1
@@ -346,5 +490,110 @@ ServerEvents.commandRegistry(event => {
     dzTellPreparation(ctx.source.player)
     return 1
   }))
+  story.then(Commands.literal("support").executes(ctx => {
+    let player = ctx.source.player
+    player.tell(Text.of("=== T2 支援勢力を選択 ===").gold())
+    ;[
+      ["CDF：防具・地図・友軍巡回", "civildef", "aqua"],
+      ["Raiders：密輸武器・Affix素材・車両部品", "raider", "red"],
+      ["Remnant：軍用品・T3座標・重工業部品", "remnant", "dark_red"]
+    ].forEach(entry => player.tell(Text.of("[ " + entry[0] + " ]")[entry[2]]()
+      .clickRunCommand("/deadzonestory choose_" + entry[1])
+      .hover(Text.of("この勢力をT2の支援先として選ぶ"))))
+    player.tell(Text.of("選択後も他勢力の施設攻略は可能。価格・巡回・報酬経路が変化します。").gray())
+    return 1
+  }))
+  ;[
+    ["civildef", "CDF"], ["raider", "Raiders"], ["remnant", "Remnant"]
+  ].forEach(entry => story.then(Commands.literal("choose_" + entry[0]).executes(ctx => {
+    let player = ctx.source.player
+    if (player.persistentData.getString("dz_story_t2_support") !== "") {
+      player.tell(Text.of("支援先は既に選択済みです: " + player.persistentData.getString("dz_story_t2_support")).red())
+      return 0
+    }
+    player.persistentData.putString("dz_story_t2_support", entry[0])
+    player.addTag("dz_t2_support_" + entry[0])
+    player.server.persistentData.putInt("dz_t2_support_" + entry[0],
+      player.server.persistentData.getInt("dz_t2_support_" + entry[0]) + 1)
+    dzCompletePlayerStoryQuest(player, "t2_faction_choice", DZ_STORY_QUESTS.t2FactionChoice)
+    player.server.runCommandSilent('tellraw @a [{"text":"[STORY] ","color":"gold","bold":true},{"text":"' +
+      player.username + ' がT2支援先に ' + entry[1] + ' を選択した","color":"yellow"}]')
+    return 1
+  })))
+  story.then(Commands.literal("warden_disable").executes(ctx => {
+    let player = ctx.source.player
+    let marker = dzNearestStoryMarker(player, entity =>
+      entity.persistentData.getString("dz_wild_faction") === "warden", 48)
+    if (!marker) {
+      player.tell(Text.of("48m以内にWARDEN施設中枢がありません。").red())
+      return 0
+    }
+    let instance = marker.persistentData.getString("dz_wild_instance")
+    if (!instance) instance = marker.persistentData.getString("dz_wild_structure") + "|" +
+      Math.floor(marker.x) + "|" + Math.floor(marker.z)
+    let raw = player.persistentData.getString("dz_story_warden_cores")
+    let cores = raw ? raw.split(";") : []
+    if (cores.indexOf(instance) >= 0) {
+      player.tell(Text.of("このWARDEN中枢は既に停止済みです。").yellow())
+      return 0
+    }
+    cores.push(instance)
+    player.persistentData.putString("dz_story_warden_cores", cores.join(";"))
+    player.persistentData.putInt("dz_story_warden_core_count", cores.length)
+    marker.persistentData.putBoolean("dz_warden_core_disabled", true)
+    player.runCommandSilent("playsound minecraft:block.beacon.deactivate player @s ~ ~ ~ 1 0.7")
+    player.tell(Text.of("WARDEN中枢を停止: " + cores.length + " / 3").aqua())
+    if (cores.length >= 3)
+      dzCompletePlayerStoryQuest(player, "t3_warden_cores", DZ_STORY_QUESTS.t3WardenCores)
+    return 1
+  }))
+  story.then(Commands.literal("argus").executes(ctx => {
+    let player = ctx.source.player
+    let server = player.server
+    let ready = server.persistentData.getBoolean("dz_story_boss_complete_reactor_saint")
+      && server.persistentData.getBoolean("dz_story_boss_complete_argus_fragment")
+      && server.persistentData.getBoolean("dz_story_boss_complete_choir_vessel")
+      && player.persistentData.getInt("dz_story_warden_core_count") >= 3
+    if (!ready) {
+      player.tell(Text.of("ARGUS-9の最終処理はまだ実行できません。").red())
+      player.tell(Text.of("必要条件: REACTOR SAINT / ARGUS Fragment / CHOIR VESSEL撃破、WARDEN中枢3基停止").gray())
+      return 0
+    }
+    player.tell(Text.of("=== ARGUS-9 最終処理 ===").gold())
+    ;[
+      ["破壊：機械敵を弱体化／Buddy強化を失う", "destroy", "red"],
+      ["再設定：機械Buddy・タレット強化／監視網を残す", "reprogram", "aqua"],
+      ["分離：機械網を地域単位へ分割／中立機械が増える", "separate", "yellow"]
+    ].forEach(entry => player.tell(Text.of("[ " + entry[0] + " ]")[entry[2]]()
+      .clickRunCommand("/deadzonestory argus_" + entry[1])
+      .hover(Text.of("取り返しのつかない世界選択"))))
+    return 1
+  }))
+  ;[
+    ["destroy", "ARGUS-9を破壊した"],
+    ["reprogram", "ARGUS-9をSurvivor Networkへ再設定した"],
+    ["separate", "ARGUS-9を地域ノードへ分離した"]
+  ].forEach(entry => story.then(Commands.literal("argus_" + entry[0]).executes(ctx => {
+    let player = ctx.source.player
+    let ready = player.server.persistentData.getBoolean("dz_story_boss_complete_reactor_saint")
+      && player.server.persistentData.getBoolean("dz_story_boss_complete_argus_fragment")
+      && player.server.persistentData.getBoolean("dz_story_boss_complete_choir_vessel")
+      && player.persistentData.getInt("dz_story_warden_core_count") >= 3
+    if (!ready) {
+      player.tell(Text.of("前提未達のためARGUS-9を処理できません。").red())
+      return 0
+    }
+    if (player.server.persistentData.getString("dz_story_argus_outcome") !== "") {
+      player.tell(Text.of("ARGUS-9の処理は既に確定しています: " +
+        player.server.persistentData.getString("dz_story_argus_outcome")).red())
+      return 0
+    }
+    player.server.persistentData.putString("dz_story_argus_outcome", entry[0])
+    player.server.runCommandSilent("ftbquests change_progress @a complete " + DZ_STORY_QUESTS.t3ArgusChoice)
+    player.server.runCommandSilent("ftbquests change_progress @a complete " + DZ_STORY_QUESTS.t3Complete)
+    player.server.runCommandSilent('tellraw @a [{"text":"[DEADZONE PROTOCOL] ","color":"gold","bold":true},' +
+      '{"text":"' + entry[1] + '","color":"yellow"}]')
+    return 1
+  })))
   event.register(story)
 })

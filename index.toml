@@ -1065,6 +1065,10 @@ file = "config/ftbquests/quests/chapters/deadzone_bounties_01.snbt"
 hash = "a82a932ef9934c4208bc9d00addbd33c02811af94fdfac78a2f9a48264e1d0eb"
 
 [[files]]
+file = "config/ftbquests/quests/chapters/deadzone_camp_personal_02.snbt"
+hash = "3f4eb4346d7f46945d287df51df4e73af66c19d2d40c708eb558ac54e909b109"
+
+[[files]]
 file = "config/ftbquests/quests/chapters/deadzone_camp_sidequests_01.snbt"
 hash = "1d6c3ebb56b45172d098b1dc538ed6e59fddfa38717c7323e50ae6466cc2a3ac"
 
@@ -1079,6 +1083,10 @@ hash = "f32485b56e19b83d1dd49a9401b44957d3ce81127464e4171ce07d537e1606e5"
 [[files]]
 file = "config/ftbquests/quests/chapters/deadzone_main_story_02.snbt"
 hash = "c1cc59e963c23f456e0b253ff307ed151ba10247a1dd30f5315067a60d360fa7"
+
+[[files]]
+file = "config/ftbquests/quests/chapters/deadzone_main_story_t3.snbt"
+hash = "8b1a2a32aa1f23ec9b1da093dc15f7dcf570ead49089b6523e457b528a667780"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/deadzone_mod_agriculture_01.snbt"
@@ -5617,6 +5625,14 @@ file = "kubejs/data/project_deadzone/functions/factions/test/spawn_roles.mcfunct
 hash = "615a09690d19e1374cc8d23a4ec63e53e64d41204abd9961e92e3d56d0ccaeee"
 
 [[files]]
+file = "kubejs/data/project_deadzone/functions/story/spawn_argus_fragment.mcfunction"
+hash = "1af8a6f67bbfde84da26e0655d148c2d818c18fb967900966ed2d58680e2705c"
+
+[[files]]
+file = "kubejs/data/project_deadzone/functions/story/spawn_choir_vessel.mcfunction"
+hash = "b7cc5b50307f09f82b6d36e55fee69d2e4bc52dc664acb6ce1525feb2aeaea73"
+
+[[files]]
 file = "kubejs/data/project_deadzone/functions/story/spawn_firestation_boss.mcfunction"
 hash = "d3ccc417783b32e67be31d442fe83b3a8990ce58bc4488e698677a015708875e"
 
@@ -5639,6 +5655,10 @@ hash = "72bc2f605eeeb09cd2971b0239bc351aa5f10c6007bb5308a50f540c22a13965"
 [[files]]
 file = "kubejs/data/project_deadzone/functions/story/spawn_radio_tower_boss.mcfunction"
 hash = "6527269407519279f1a15d55ce3ec23745dd231f9a7b878006e64b52d1246f2a"
+
+[[files]]
+file = "kubejs/data/project_deadzone/functions/story/spawn_reactor_saint.mcfunction"
+hash = "8c7cae7da583185b59483cbf94a8cc520683aa15e1c8c430046637419b747c3a"
 
 [[files]]
 file = "kubejs/data/project_deadzone/loot_tables/chests/firestation.json"
@@ -6638,7 +6658,7 @@ hash = "025877f941768e21ce4a7540d57f8fc96b7fc586b02e869d553814d4c975c843"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_story_progress_v0_1.js"
-hash = "1d13b10d1e3580d0af49cef3715b6276732d9b6af3918193368af3d6a4283f5c"
+hash = "f8fb063d0a8f60b3d13b314564f42edf59c7bce3fc96b34d339a736b0795c0b4"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_story_progression_v0_1.js"
@@ -13966,6 +13986,10 @@ hash = "4f12271c2a8d06996957c7ef901eed8d6b6f2134bf824d0106e46bac06b73538"
 [[files]]
 file = "projectfiles/PROJECT_DEADZONE_Story_Facility_Roadmap_v0.1.md"
 hash = "baf88025ef245e87a0afff0a46b3831f45413116f9c63428e8362597808e6a7b"
+
+[[files]]
+file = "projectfiles/PROJECT_DEADZONE_Story_Implementation_Matrix_v1.0.md"
+hash = "96829333f08b8be3e16b0c3becc61578674224b4b23ae8b5ff8d7e4ef693f6b5"
 
 [[files]]
 file = "projectfiles/PROJECT_DEADZONE_UI_v0.1_TEST.txt"
