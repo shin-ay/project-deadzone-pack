@@ -6430,7 +6430,7 @@ hash = "4d9b96fa9e6083bd555b99065c5e901b74fa092c0f60257c3750f477d420e8a4"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_buddy_system_v0_2.js"
-hash = "27219fd0bc2d59b739b583a2161cb148f7e35c9dea8534198f76a679d96709e5"
+hash = "799c92ba0b98faeec743206a24504de1a7dd83da7e3c6ba3d2acb75042cbfc96"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_camp_contracts_v0_1.js"
@@ -6467,6 +6467,10 @@ hash = "f475f51a72f3d3f1de0a3ea51c1c97a0701f57df8053033bf4104ba727c9e5d4"
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_faction_activity_v0_1.js"
 hash = "836aeaa1f0e5cbae368a95ec9d8f5148b17b76cc9c0d5f8817f443df0d111f30"
+
+[[files]]
+file = "kubejs/server_scripts/project_deadzone_faction_npc_identity_v0_1.js"
+hash = "6ef65bc14f5c0e82f6b458ccd9330d8b67da25cc35207961c4c12a30a3a5fd9f"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_faction_strongholds_v0_1.js"
@@ -6574,7 +6578,7 @@ hash = "6259227d34e56a4bced5492941c631ea5d560d8b5fa80f02a090b8d0707b11e9"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_npc_revive_v0_1.js"
-hash = "84e4e057f75e12b020845856a059d4be5b0959b501b30697069347bd1ee9e792"
+hash = "9ad212920727a72720a2c312099c5c8cf7613d832023813f09e78b3712673baf"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_onboarding_v0_1.js"
@@ -6678,7 +6682,7 @@ hash = "fbe9f88fbb843aaf45bc6e80f8b407ddfa425d36cbe21be44df81e0b14f5a910"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_t0_safezone_v0_1.js"
-hash = "4e5f2b4a0a610de2c91d85818a1ef8561a8e89b08e972fceaba2494955b85283"
+hash = "874568d540e66db2d2555a263b1e67fe8e3c339a398795fd970fb20cc4d7cbd0"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_tacz_skill_xp_v0_1.js"

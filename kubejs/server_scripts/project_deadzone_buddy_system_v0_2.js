@@ -163,6 +163,12 @@ EntityEvents.death(DZ_BUDDY_TYPE, event => {
   let buddy = event.entity
   if (!dzIsBuddy(buddy)) return
 
+  // Buddy down/revive was retired together with faction NPC revive.
+  // Clear the ownership slot and allow the normal death event to continue.
+  let deadBuddyOwner = dzBuddyOwner(buddy.server, dzBuddyOwnerUuid(buddy))
+  if (deadBuddyOwner) deadBuddyOwner.persistentData.putString(DZ_BUDDY_UUID_KEY, "")
+  return
+
   event.cancel()
   buddy.health = 1
   buddy.tags.add("dz_buddy")

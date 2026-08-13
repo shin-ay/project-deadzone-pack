@@ -17,6 +17,9 @@ function dzNpcFaction(entity) {
 }
 
 function dzIsValidFactionNpc(entity) {
+  // NPC down/revive was retired. PlayerRevive is authoritative for players;
+  // faction NPCs and hostile mobs must follow their normal death path.
+  return false
   if (!entity || !entity.tags || !entity.tags.contains("dz_npc")) return false
   // A bare dz_npc tag is not enough: converted/infected entities can inherit
   // tags from their source. Only the four authored faction NPCs may be downed.

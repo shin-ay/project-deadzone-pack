@@ -69,38 +69,29 @@ function dzT0Exempt(entity) {
   return false
 }
 
-function dzT0DiscardLater(event, radius) {
+function dzT0RejectSpawn(event, radius) {
   let entity=event.entity
-  // Named/convoy promotion hooks run a few ticks after spawn. Waiting ten
-  // ticks lets those tags settle, while discard avoids death loot and XP.
-  entity.server.scheduleInTicks(10,()=>{
-    if (!entity || !entity.alive || dzT0Exempt(entity) || !dzT0ProtectedSpawn(entity,radius)) return
-    try { entity.discard() } catch (ignored) { entity.kill() }
-  })
+  if (!entity || dzT0Exempt(entity) || !dzT0ProtectedSpawn(entity,radius)) return
+  event.cancel()
 }
 
-function dzCampDiscardLater(event) {
+function dzCampRejectSpawn(event) {
   let entity=event.entity
-  entity.server.scheduleInTicks(1,()=>{
-    if (!entity || !entity.alive || dzT0Exempt(entity) || !dzIsHostileMob(entity) ||
-        !dzCampProtectedSpawn(entity,DZ_T0_CAMP_RADIUS)) return
-    try { entity.discard() } catch (ignored) { entity.kill() }
-  })
+  if (!entity || dzT0Exempt(entity) || !dzIsHostileMob(entity) ||
+      !dzCampProtectedSpawn(entity,DZ_T0_CAMP_RADIUS)) return
+  event.cancel()
 }
 
 // Catch modded monsters as well as vanilla monsters.  discard() prevents
 // loot/XP/death hooks, avoiding the lag spikes caused by repeated /kill.
-EntityEvents.spawned(event=>dzCampDiscardLater(event))
+EntityEvents.spawned(event=>dzCampRejectSpawn(event))
 
-DZ_T0_GUN_TYPES.forEach(type=>EntityEvents.spawned(type,event=>dzT0DiscardLater(event,DZ_T0_SUBURB_RADIUS)))
-DZ_T0_RANGED_TYPES.forEach(type=>EntityEvents.spawned(type,event=>dzT0DiscardLater(event,DZ_T0_SUBURB_RADIUS)))
+DZ_T0_GUN_TYPES.forEach(type=>EntityEvents.spawned(type,event=>dzT0RejectSpawn(event,DZ_T0_SUBURB_RADIUS)))
+DZ_T0_RANGED_TYPES.forEach(type=>EntityEvents.spawned(type,event=>dzT0RejectSpawn(event,DZ_T0_SUBURB_RADIUS)))
 // Explicit vanilla registrations are kept as a compatibility fallback for
 // loaders where the generic mob-category accessor is unavailable.
 DZ_T0_CAMP_HOSTILES.forEach(type=>EntityEvents.spawned(type,event=>{
   let entity=event.entity
-  entity.server.scheduleInTicks(1,()=>{
-    if (!entity || !entity.alive || dzT0Exempt(entity) ||
-        !dzCampProtectedSpawn(entity,DZ_T0_CAMP_RADIUS)) return
-    try { entity.discard() } catch (ignored) { entity.kill() }
-  })
+  if (!entity || dzT0Exempt(entity) || !dzCampProtectedSpawn(entity,DZ_T0_CAMP_RADIUS)) return
+  event.cancel()
 }))
