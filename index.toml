@@ -6694,7 +6694,7 @@ hash = "0f2effb86e78856c471684c2eff9d31521a84f8e3bf1bee512dcbe294fd1db30"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_wilderness_sites_v0_1.js"
-hash = "ea4b09cc7919d8c9996836276aa251957a430f35abee68bcb84bb52ffae4d6fa"
+hash = "971730b5fafc17eb8ce99530820d91af51ccac3de3f9c9e5b1ddfb31fd78c53d"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_world_evolution_v0_1.js"

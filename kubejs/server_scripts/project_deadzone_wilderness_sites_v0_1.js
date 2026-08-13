@@ -6,6 +6,7 @@ const PDZ_WILD_REGISTRIES = Java.loadClass('net.minecraft.core.registries.Regist
 const PDZ_WILD_RL = Java.loadClass('net.minecraft.resources.ResourceLocation')
 const PDZ_WILD_BLOCKPOS = Java.loadClass('net.minecraft.core.BlockPos')
 const PDZ_WILD_STRING_ARG = Java.loadClass('com.mojang.brigadier.arguments.StringArgumentType')
+const PDZ_WILD_REGISTRY_KEY = 'dz_wild_site_registry_v2'
 let PDZ_WILD_LOSTCITIES = null
 try { PDZ_WILD_LOSTCITIES = Java.loadClass('mcjty.lostcities.LostCities') }
 catch (ignored) { console.warn('[PROJECT DEADZONE] Lost Cities API unavailable; city occupation disabled') }
@@ -119,6 +120,25 @@ function pdzWildHash(text) {
   let h=5381
   for (let i=0;i<text.length;i++) h=((h*33)^text.charCodeAt(i))&0x7fffffff
   return h
+}
+
+function pdzWildReadRegistry(server) {
+  let raw=server.persistentData.getString(PDZ_WILD_REGISTRY_KEY)
+  if(!raw)return {}
+  try {let value=JSON.parse(raw);return value&&typeof value==='object'?value:{}}
+  catch(err){console.error('[PDZ WILD] invalid site registry: '+err);return {}}
+}
+
+function pdzWildWriteRegistry(server,value) {
+  server.persistentData.putString(PDZ_WILD_REGISTRY_KEY,JSON.stringify(value))
+}
+
+function pdzWildInstanceKey(player,siteId,instanceKey,anchor) {
+  if(instanceKey)return String(instanceKey)
+  let x=anchor?Number(anchor.x):Number(player.x),z=anchor?Number(anchor.z):Number(player.z)
+  // Standalone structures do not expose their start chunk here. Quantising to
+  // a 64m cell is stable across players walking inside the same small site.
+  return String(player.level.dimension)+'|structure|'+siteId+'|'+Math.floor(x/64)+'|'+Math.floor(z/64)
 }
 
 function pdzWildBiomeId(player) {
@@ -246,29 +266,63 @@ function pdzWildLostCurrent(player) {
   }
 }
 
-function pdzWildInside(player,siteId) {
+function pdzWildStructureInfo(player,siteId) {
   try {
     let registry=player.level.registryAccess().registryOrThrow(PDZ_WILD_REGISTRIES.STRUCTURE)
     let structure=registry.get(new PDZ_WILD_RL(siteId))
-    if (!structure) return false
+    if (!structure) return null
     let pos=new PDZ_WILD_BLOCKPOS(Math.floor(player.x),Math.floor(player.y),Math.floor(player.z))
-    return player.level.structureManager().getStructureWithPieceAt(pos,structure).isValid()
-  } catch (ignored) { return false }
+    let start=player.level.structureManager().getStructureWithPieceAt(pos,structure)
+    if(!start||!start.isValid())return null
+    let box=start.getBoundingBox()
+    let minX=Number(box.minX()),minY=Number(box.minY()),minZ=Number(box.minZ())
+    let maxX=Number(box.maxX()),maxY=Number(box.maxY()),maxZ=Number(box.maxZ())
+    let x=Math.floor((minX+maxX)/2),z=Math.floor((minZ+maxZ)/2)
+    return {siteId:siteId,x:x,y:minY+1,z:z,minX:minX,minY:minY,minZ:minZ,maxX:maxX,maxY:maxY,maxZ:maxZ,
+      instance:String(player.level.dimension)+'|structure|'+siteId+'|'+minX+'|'+minY+'|'+minZ}
+  } catch (ignored) { return null }
 }
 
 function pdzWildFindCurrent(player) {
   let ids=Object.keys(PDZ_WILD_SITES)
-  for (let i=0;i<ids.length;i++) if (pdzWildInside(player,ids[i])) return ids[i]
+  for (let i=0;i<ids.length;i++) {
+    let info=pdzWildStructureInfo(player,ids[i])
+    if(info)return info
+  }
   return null
 }
 
 function pdzWildCreateMarker(player,siteId,forcedFaction,instanceKey,anchor,overrideDef) {
-  let nearby=instanceKey?pdzWildMarkerByInstance(player,instanceKey,384):pdzWildMarkerNear(player,112)
-  if(nearby && (instanceKey||nearby.persistentData.getString('dz_wild_structure')===siteId)) return nearby
+  let stableKey=pdzWildInstanceKey(player,siteId,instanceKey,anchor)
+  let nearby=pdzWildMarkerByInstance(player,stableKey,512)
+  if(nearby)return nearby
   let def=overrideDef||PDZ_WILD_SITES[siteId] || {type:'manual',preferred:'independent',trade:'independent'}
-  let faction=forcedFaction || pdzWildPickFaction(siteId,def,player)
+  let registry=pdzWildReadRegistry(player.server),prior=registry[stableKey]||null
+  let ax=anchor?Math.floor(anchor.x):Math.floor(player.x),az=anchor?Math.floor(anchor.z):Math.floor(player.z)
+  let ay=prior&&Number.isFinite(Number(prior.y))?Math.floor(Number(prior.y)):Math.floor(player.y)
+  let legacyFaction=''
+  // v0.1 used the player's moving position as a facility ID. Adopt and remove
+  // those nearby duplicates when the stable structure-start ID is first seen.
+  player.level.entities.forEach(e=>{
+    if(!e.tags)return
+    let isMarker=e.tags.contains('dz_wilderness_site'),isTrader=e.tags.contains('dz_wilderness_trader')
+    if(!isMarker&&!isTrader)return
+    if(e.persistentData.getString('dz_wild_structure')!==String(siteId))return
+    let dx=e.x-ax,dz=e.z-az
+    if(dx*dx+dz*dz>56*56)return
+    if(isMarker&&!legacyFaction)legacyFaction=e.persistentData.getString('dz_wild_faction')
+    e.discard()
+  })
+  let faction=(prior&&prior.faction)||forcedFaction||legacyFaction||pdzWildPickFaction(siteId,def,player)
+  // Claim the instance before summoning. This closes the multiplayer race in
+  // which several players discovered one building on the same server tick.
+  if(!prior){
+    registry[stableKey]={instance:stableKey,structure:String(siteId),type:String(def.type),faction:faction,
+      x:ax,y:ay,z:az,discoveredAt:Date.now(),activated:false,traderSpawned:false}
+    pdzWildWriteRegistry(player.server,registry)
+  }
   let temp='dz_wilderness_pending_'+Math.floor(Math.random()*1000000)
-  let summon=anchor?('execute positioned '+Math.floor(anchor.x)+' '+Math.floor(player.y)+' '+Math.floor(anchor.z)+' run summon '):'summon '
+  let summon='execute positioned '+ax+' '+ay+' '+az+' run summon '
   player.runCommandSilent(summon+'minecraft:armor_stand ~ ~ ~ {Invisible:1b,Invulnerable:1b,NoGravity:1b,Marker:1b,Tags:["dz_wilderness_site","'+temp+'"]}')
   let marker=null
   player.level.entities.forEach(e=>{if(e.tags && e.tags.contains(temp)) marker=e})
@@ -276,7 +330,7 @@ function pdzWildCreateMarker(player,siteId,forcedFaction,instanceKey,anchor,over
   marker.tags.remove(temp)
   marker.tags.add('dz_wilderness_'+faction)
   marker.persistentData.putString('dz_wild_structure',siteId)
-  marker.persistentData.putString('dz_wild_instance',instanceKey||'')
+  marker.persistentData.putString('dz_wild_instance',stableKey)
   marker.persistentData.putString('dz_wild_type',def.type)
   marker.persistentData.putString('dz_wild_faction',faction)
   marker.persistentData.putString('dz_wild_biome',pdzWildBiomeId(player))
@@ -287,7 +341,7 @@ function pdzWildCreateMarker(player,siteId,forcedFaction,instanceKey,anchor,over
   marker.persistentData.putBoolean('dz_wild_garrison',def.garrison!==false)
   marker.persistentData.putString('dz_wild_named',pdzWildNamedCandidate(def.type,role,faction))
   marker.persistentData.putLong('dz_wild_created',Date.now())
-  player.tell(Text.of('[AREA DISCOVERED] ').gold()
+  if(!prior)player.tell(Text.of('[AREA DISCOVERED] ').gold()
     .append(Text.of(def.type+' / ').white())
     .append(pdzWildColoredText(PDZ_WILD_NAMES[faction]||faction,PDZ_WILD_COLORS[faction])))
   return marker
@@ -303,9 +357,9 @@ function pdzWildScan(player) {
     let faction=pdzWildTerritoryFaction(player,lost.x,lost.z)||null
     return pdzWildCreateMarker(player,lost.buildingId,faction,lost.instance,{x:lost.x,z:lost.z},lost.def)
   }
-  let near=pdzWildMarkerNear(player,112)
-  if(near && near.persistentData.getString('dz_wild_structure')===current) return near
-  return pdzWildCreateMarker(player,current,null)
+  let existing=pdzWildMarkerByInstance(player,current.instance,512)
+  if(existing)return existing
+  return pdzWildCreateMarker(player,current.siteId,null,current.instance,{x:current.x,y:current.y,z:current.z})
 }
 
 function pdzWildStatus(player) {
@@ -333,27 +387,87 @@ function pdzWildOffer(buyId,buyCount,sellId,sellCount,maxUses) {
   return '{buy:{id:"'+buyId+'",Count:'+buyCount+'b},buyB:{},sell:{id:"'+sellId+'",Count:'+sellCount+'b},uses:0,maxUses:'+maxUses+',rewardExp:0b,priceMultiplier:0.0f,demand:0,specialPrice:0,xp:0}'
 }
 
+function pdzWildBarter(buyId,buyCount,buyBId,buyBCount,sellId,sellCount,maxUses) {
+  let second=buyBId?'{id:"'+buyBId+'",Count:'+buyBCount+'b}':'{}'
+  return '{buy:{id:"'+buyId+'",Count:'+buyCount+'b},buyB:'+second+',sell:{id:"'+sellId+'",Count:'+sellCount+'b},uses:0,maxUses:'+maxUses+',rewardExp:0b,priceMultiplier:0.0f,demand:0,specialPrice:0,xp:0}'
+}
+
 function pdzWildTraderOffers(kind) {
   if(kind==='civildef') return [
     pdzWildOffer('apocalypsenow:money',2,'minecraft:bread',4,12),
     pdzWildOffer('apocalypsenow:money',3,'apocalypsenow:bandage',2,8),
-    pdzWildOffer('minecraft:iron_ingot',8,'apocalypsenow:money',1,6)
+    pdzWildOffer('minecraft:iron_ingot',8,'apocalypsenow:money',1,6),
+    pdzWildOffer('minecraft:gunpowder',12,'minecraft:iron_ingot',4,8),
+    pdzWildBarter('minecraft:copper_ingot',12,'minecraft:redstone',8,'kubejs:field_repair_kit',1,5),
+    pdzWildOffer('minecraft:leather',10,'apocalypsenow:bandage',2,6),
+    pdzWildOffer('minecraft:coal',20,'minecraft:iron_ingot',3,8),
+    pdzWildOffer('minecraft:paper',24,'apocalypsenow:money',1,8)
   ]
   if(kind==='survivor') return [
     pdzWildOffer('apocalypsenow:money',1,'minecraft:bread',5,16),
     pdzWildOffer('minecraft:cod',8,'apocalypsenow:money',1,8),
-    pdzWildOffer('minecraft:leather',12,'apocalypsenow:money',1,6)
+    pdzWildOffer('minecraft:leather',12,'apocalypsenow:money',1,6),
+    pdzWildOffer('minecraft:wheat',20,'minecraft:cooked_beef',4,10),
+    pdzWildOffer('minecraft:potato',24,'minecraft:bread',6,10),
+    pdzWildBarter('minecraft:string',12,'minecraft:leather',4,'apocalypsenow:bandage',2,7),
+    pdzWildOffer('minecraft:charcoal',16,'minecraft:torch',24,10),
+    pdzWildOffer('minecraft:bone',16,'minecraft:leather',3,8)
   ]
   if(kind==='raider') return [
     pdzWildOffer('apocalypsenow:money',5,'kubejs:affix_scrap_uncommon',1,5),
     pdzWildOffer('apocalypsenow:money',12,'kubejs:affix_scrap_rare',1,2),
-    pdzWildOffer('minecraft:gold_ingot',6,'apocalypsenow:money',2,4)
+    pdzWildOffer('minecraft:gold_ingot',6,'apocalypsenow:money',2,4),
+    pdzWildBarter('minecraft:gunpowder',16,'minecraft:iron_ingot',6,'kubejs:affix_scrap_uncommon',1,5),
+    pdzWildOffer('minecraft:copper_ingot',24,'kubejs:field_repair_kit',1,5),
+    pdzWildOffer('minecraft:coal',24,'minecraft:gunpowder',8,7),
+    pdzWildOffer('minecraft:leather',16,'minecraft:iron_ingot',5,6),
+    pdzWildOffer('minecraft:redstone',24,'apocalypsenow:money',2,5)
   ]
   return [
     pdzWildOffer('apocalypsenow:money',2,'minecraft:cooked_beef',4,10),
     pdzWildOffer('apocalypsenow:money',4,'kubejs:field_repair_kit',1,6),
-    pdzWildOffer('minecraft:copper_ingot',12,'apocalypsenow:money',1,8)
+    pdzWildOffer('minecraft:copper_ingot',12,'apocalypsenow:money',1,8),
+    pdzWildOffer('minecraft:cod',10,'minecraft:iron_ingot',3,8),
+    pdzWildOffer('minecraft:salmon',8,'minecraft:leather',4,8),
+    pdzWildBarter('minecraft:coal',16,'minecraft:copper_ingot',8,'kubejs:field_repair_kit',1,6),
+    pdzWildOffer('minecraft:wheat',24,'minecraft:string',8,10),
+    pdzWildOffer('minecraft:rotten_flesh',32,'minecraft:bone',8,6)
   ]
+}
+
+function pdzWildAir(level,x,y,z){
+  let id=String(level.getBlock(x,y,z).id)
+  return id==='minecraft:air'||id==='minecraft:cave_air'||id==='minecraft:void_air'
+}
+
+function pdzWildBadFloor(id){
+  id=String(id)
+  return id==='minecraft:air'||id==='minecraft:cave_air'||id==='minecraft:void_air'||
+    id.indexOf('water')>=0||id.indexOf('lava')>=0||id.indexOf('leaves')>=0||
+    id.indexOf('vine')>=0||id.indexOf('fence')>=0||id.indexOf('_wall')>=0||
+    id.indexOf('pane')>=0||id.indexOf('bars')>=0
+}
+
+function pdzWildTraderSpot(marker){
+  let level=marker.level,cx=Math.floor(marker.x),cy=Math.floor(marker.y),cz=Math.floor(marker.z)
+  let indoor=[],outdoor=[]
+  for(let radius=0;radius<=14;radius+=2){
+    for(let dx=-radius;dx<=radius;dx+=2)for(let dz=-radius;dz<=radius;dz+=2){
+      if(radius>0&&Math.abs(dx)!==radius&&Math.abs(dz)!==radius)continue
+      for(let y=cy+6;y>=Math.max(-60,cy-48);y--){
+        let x=cx+dx,z=cz+dz
+        if(!pdzWildAir(level,x,y,z)||!pdzWildAir(level,x,y+1,z))continue
+        if(pdzWildBadFloor(level.getBlock(x,y-1,z).id))continue
+        let covered=false
+        for(let up=2;up<=9;up++)if(!pdzWildAir(level,x,y+up,z)){covered=true;break}
+        let spot={x:x+0.5,y:y,z:z+0.5}
+        if(covered)indoor.push(spot);else outdoor.push(spot)
+        break
+      }
+    }
+  }
+  // Traders prefer an interior floor and never inherit the player's altitude.
+  return indoor.length?indoor[0]:(outdoor.length?outdoor[0]:null)
 }
 
 function pdzWildPlaceTrader(player) {
@@ -365,23 +479,31 @@ function pdzWildPlaceTrader(player) {
   if(faction==='raider') kind='raider'
   kind=kind||'independent'
   let siteKey=marker.persistentData.getString('dz_wild_structure')
+  let instanceKey=marker.persistentData.getString('dz_wild_instance')||pdzWildInstanceKey(player,siteKey,'',{x:marker.x,z:marker.z})
+  let registry=pdzWildReadRegistry(player.server),record=registry[instanceKey]||null
+  if(record&&record.traderSpawned){player.tell(Text.of('この拠点の商人は既に登録済みです。').yellow());return false}
   // Avoid duplicate traders around the same facility.
   let duplicate=false
   player.level.entities.forEach(e=>{
-    if(e.tags && e.tags.contains('dz_wilderness_trader') && e.persistentData.getString('dz_wild_structure')===siteKey) duplicate=true
+    if(e.tags && e.tags.contains('dz_wilderness_trader') && e.persistentData.getString('dz_wild_instance')===instanceKey) duplicate=true
   })
   if(duplicate){player.tell(Text.of('この拠点の商人は既に配置済みです。').yellow());return false}
+  let spot=pdzWildTraderSpot(marker)
+  if(!spot){player.tell(Text.of('商人用の安全な床を施設内に発見できませんでした。').red());return false}
   let name={survivor:'生存者交易員',civildef:'CDF補給担当',raider:'Ash Jackals 闇商人',independent:'独立キャラバン'}[kind]||'交易員'
   let offers=pdzWildTraderOffers(kind).join(',')
   let temp='dz_wild_trader_pending_'+Math.floor(Math.random()*1000000)
   let nbt='{NoAI:1b,Invulnerable:1b,PersistenceRequired:1b,DespawnDelay:2147483647,CustomNameVisible:1b,CustomName:\'{"text":"'+name+'","color":"gold"}\',Tags:["dz_wilderness_trader","'+temp+'"],Offers:{Recipes:['+offers+']}}'
-  player.runCommandSilent('summon minecraft:wandering_trader ~ ~ ~ '+nbt)
+  player.runCommandSilent('execute positioned '+spot.x+' '+spot.y+' '+spot.z+' run summon minecraft:wandering_trader ~ ~ ~ '+nbt)
   player.level.entities.forEach(e=>{
     if(e.tags && e.tags.contains(temp)){
-      e.tags.remove(temp);e.persistentData.putString('dz_wild_structure',siteKey);e.persistentData.putString('dz_wild_trade',kind)
+      e.tags.remove(temp);e.persistentData.putString('dz_wild_structure',siteKey);e.persistentData.putString('dz_wild_instance',instanceKey);e.persistentData.putString('dz_wild_trade',kind)
     }
   })
-  player.tell(Text.of(name+'を現在位置に配置しました。').green())
+  if(!record)record={instance:instanceKey,structure:siteKey,type:marker.persistentData.getString('dz_wild_type'),faction:faction,x:marker.x,y:marker.y,z:marker.z,discoveredAt:Date.now(),activated:false}
+  record.traderSpawned=true;record.traderX=spot.x;record.traderY=spot.y;record.traderZ=spot.z
+  registry[instanceKey]=record;pdzWildWriteRegistry(player.server,registry)
+  player.tell(Text.of(name+'を施設内の安全地点へ配置しました。').green())
   return true
 }
 
@@ -410,8 +532,36 @@ function pdzWildActivate(player) {
     return false
   }
   marker.persistentData.putBoolean('dz_wild_activated',true)
+  let instanceKey=marker.persistentData.getString('dz_wild_instance'),registry=pdzWildReadRegistry(player.server)
+  if(instanceKey&&registry[instanceKey]){registry[instanceKey].activated=true;pdzWildWriteRegistry(player.server,registry)}
   player.tell(Text.of((PDZ_WILD_NAMES[faction]||faction)+'拠点を有効化しました。').green())
   return true
+}
+
+function pdzWildRepairNear(player) {
+  let info=pdzWildFindCurrent(player)
+  if(!info){
+    let lost=pdzWildLostCurrent(player)
+    if(lost)info={siteId:lost.buildingId,instance:lost.instance,x:lost.x,y:player.y,z:lost.z,def:lost.def}
+  }
+  if(!info){player.tell(Text.of('現在地では施設を特定できません。').red());return false}
+  let siteId=info.siteId,instance=info.instance,count=0
+  player.level.entities.forEach(e=>{
+    if(!e.tags||!(e.tags.contains('dz_wilderness_site')||e.tags.contains('dz_wilderness_trader')))return
+    if(e.persistentData.getString('dz_wild_structure')!==String(siteId))return
+    let dx=e.x-info.x,dz=e.z-info.z
+    if(dx*dx+dz*dz<=96*96){e.discard();count++}
+  })
+  let registry=pdzWildReadRegistry(player.server)
+  Object.keys(registry).forEach(key=>{
+    let r=registry[key]
+    if(key===instance||(r&&String(r.structure)===String(siteId)&&Math.pow(Number(r.x)-info.x,2)+Math.pow(Number(r.z)-info.z,2)<=96*96))delete registry[key]
+  })
+  pdzWildWriteRegistry(player.server,registry)
+  let def=info.def||PDZ_WILD_SITES[siteId]
+  let marker=pdzWildCreateMarker(player,siteId,null,instance,{x:info.x,y:info.y,z:info.z},def)
+  player.tell(Text.of('施設台帳を再構築しました。削除: '+count+' / 固定ID: '+instance).green())
+  return marker!==null
 }
 
 PlayerEvents.tick(event=>{
@@ -464,6 +614,7 @@ ServerEvents.commandRegistry(event=>{
     })))
   root.then(Commands.literal('trader').requires(s=>s.hasPermission(2)).executes(ctx=>pdzWildPlaceTrader(ctx.source.player)?1:0))
   root.then(Commands.literal('activate').requires(s=>s.hasPermission(2)).executes(ctx=>pdzWildActivate(ctx.source.player)?1:0))
+  root.then(Commands.literal('repair_near').requires(s=>s.hasPermission(2)).executes(ctx=>pdzWildRepairNear(ctx.source.player)?1:0))
   root.then(Commands.literal('force_faction').requires(s=>s.hasPermission(2))
     .then(Commands.argument('faction',PDZ_WILD_STRING_ARG.word()).executes(ctx=>{
       let p=ctx.source.player,m=pdzWildMarkerNear(p,112)
