@@ -8149,11 +8149,6 @@ hash = "2612c14e794ab51364efa865616c5170ed898a2a7e954428085c88f8501264b0"
 metafile = true
 
 [[files]]
-file = "mods/realm-rpg-quests-rewards.pw.toml"
-hash = "d8445c41a11d0e813ccf86a7b5a3ba0677280a1c1cab6054dfe2445cdb8f0744"
-metafile = true
-
-[[files]]
 file = "mods/recipe-stages.pw.toml"
 hash = "5163f0269a2aec05fe845f4d97f084ddb47fd45a941cad6116e2dc9a46eb136b"
 metafile = true
