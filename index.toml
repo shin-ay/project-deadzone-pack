@@ -7244,12 +7244,12 @@ metafile = true
 
 [[files]]
 file = "mods/apotheosis.pw.toml"
-hash = "c281ef574be46e4df3f7ed04b0a4b5f6d1b2a836b7d1d94c4a30be9c85d3adcb"
+hash = "ac39233748808c02ded2b3aa5e31a2182b552acb25566019d84233fed7703a92"
 metafile = true
 
 [[files]]
 file = "mods/apothic-attributes.pw.toml"
-hash = "5f3996f32795f87086cd2e34ac1d7cc281411fe0c8799cb589706680107171ee"
+hash = "1b679c896084c64a694773588708fd49f9d396a458c95035cf21da6ec7898773"
 metafile = true
 
 [[files]]
@@ -7284,7 +7284,7 @@ metafile = true
 
 [[files]]
 file = "mods/average-dps.pw.toml"
-hash = "35fe7786f4ca0d8acc648ee74d9780a5cbf6ee43729e3bb5dd1c6473d0c0ace5"
+hash = "27a85ffaf4e856d6ed967d28e8d0b8c22328614103f2150d31dff4c34902ff17"
 metafile = true
 
 [[files]]
@@ -7339,7 +7339,7 @@ metafile = true
 
 [[files]]
 file = "mods/bountiful.pw.toml"
-hash = "2798fc9c61947e92e1e43c8b031429b811e45aa79a421b7fba9fe81754e319a2"
+hash = "fd89ed093b10df5f35896e648049dabbe2da7be2abb52805ae0d24c380755832"
 metafile = true
 
 [[files]]
@@ -7586,12 +7586,12 @@ metafile = true
 
 [[files]]
 file = "mods/easy-anvils.pw.toml"
-hash = "546a2e07dfe2ef19c83779b3a4123d49fa83d803a2873cb1d0d946bbb25b88ea"
+hash = "e661f8a65b5d15c5ce9ea507572c76217157037216a78f008e883d955484c8c7"
 metafile = true
 
 [[files]]
 file = "mods/easy-magic.pw.toml"
-hash = "079dbc9be43f9fa6ab866f21532d441f05421752a5d1ed52d358f6858d6fc2c2"
+hash = "cf79d3e12609dd8f65021bbe999e66f576532653fe7f9946fdf069c336b09181"
 metafile = true
 
 [[files]]
@@ -7621,7 +7621,7 @@ metafile = true
 
 [[files]]
 file = "mods/enchantment-descriptions.pw.toml"
-hash = "e4c69a3551a4343fc76fb135266aecac0042863693f04d2c58a26c71b6e988d9"
+hash = "e5936e80065e7d1e6ad1a4280a0fae48f8c95628028fa5f839238ab7b8872213"
 metafile = true
 
 [[files]]
@@ -7821,7 +7821,7 @@ metafile = true
 
 [[files]]
 file = "mods/kambrik.pw.toml"
-hash = "b7d3d553250955d3b3a669647e66ef6c4c7a31ee07f04e308432acdebb87adb0"
+hash = "507e3e5b915edfeec4b6471d1e216fc5e5f708530bd4b8aba496f1a02b78cef9"
 metafile = true
 
 [[files]]
@@ -8061,7 +8061,7 @@ metafile = true
 
 [[files]]
 file = "mods/patchouli.pw.toml"
-hash = "b2cb681aaf3e6085148392a06d40899239dc299aaf5ce0adf168fc225d922c97"
+hash = "970f41ff81d6a5e2348282be5b5b91d282c7cc67fd0c83764b709b2c8a9429b3"
 metafile = true
 
 [[files]]
@@ -8071,7 +8071,7 @@ metafile = true
 
 [[files]]
 file = "mods/placebo.pw.toml"
-hash = "045d582e2c534c5bb96d7336b4ae2cd12692c6de29b19ae5f1dbfd8759c03b03"
+hash = "7895b7bb0de8a8541c4c5952f6731a70ab00d488e0c22e55944382b3da0f253e"
 metafile = true
 
 [[files]]
