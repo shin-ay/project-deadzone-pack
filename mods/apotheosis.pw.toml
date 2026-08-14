@@ -5,7 +5,7 @@ side = "both"
 [download]
 hash-format = "sha1"
 hash = "e508c4724a24f0c80836818fcdd3df6424b1fc40"
-mode = "metadata:modrinth"
+url = "https://cdn.modrinth.com/data/rqFWfVlz/versions/tT3CLYvK/Apotheosis-1.20.1-7.4.8.jar"
 
 [update]
 [update.modrinth]

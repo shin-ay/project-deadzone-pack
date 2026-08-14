@@ -5,7 +5,7 @@ side = "both"
 [download]
 hash-format = "sha1"
 hash = "d44a8b549b27713a92d59148729bf374ff3e25f0"
-mode = "metadata:modrinth"
+url = "https://cdn.modrinth.com/data/OZBR5JT5/versions/4pRdDqEb/EasyAnvils-v8.0.2-1.20.1-Forge.jar"
 
 [update]
 [update.modrinth]

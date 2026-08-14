@@ -5,7 +5,7 @@ side = "both"
 [download]
 hash-format = "sha1"
 hash = "e85f53de2e582a79ce25ff1df1e7b5b5fc08440f"
-mode = "metadata:modrinth"
+url = "https://cdn.modrinth.com/data/tCkE8p2N/versions/6SkuAGoz/Placebo-1.20.1-8.6.3.jar"
 
 [update]
 [update.modrinth]

@@ -5,7 +5,7 @@ side = "both"
 [download]
 hash-format = "sha1"
 hash = "48cdc22a0f6698c9059f437538e5546f74900541"
-mode = "metadata:modrinth"
+url = "https://cdn.modrinth.com/data/zfbCkvdZ/versions/er56DwLJ/Kambrik-6.1.1%2B1.20.1-forge.jar"
 
 [update]
 [update.modrinth]
