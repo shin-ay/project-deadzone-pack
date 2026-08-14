@@ -7162,6 +7162,22 @@ file = "modernfix/structureCacheV1/supplementaries_way_sign_62ca40a11e.nbt"
 hash = "dd266661d5e5ea5edf7c6785d1410f57da85e868910407d40ac1d45fc2aa0ffa"
 
 [[files]]
+file = "mods/Ancient-Obelisks-1.20.1-1.2.4.jar"
+hash = "192eda71fdf11af885c9fd621b94fd90116eb665c43eafa1026ce5b8e8d7c591"
+
+[[files]]
+file = "mods/Dungeon-Realm-1.20.1-1.1.9.jar"
+hash = "216d5fcde3d3fe16e5b04457b9a90838f8e5639fcf87da10b1cefb71eb0a8785"
+
+[[files]]
+file = "mods/Library_of_Exile-1.20.1-2.1.7.jar"
+hash = "a2706ebae369a44a3bf4540961bfcba8caf6bb1a7c2112c7f7d72bdc4d908752"
+
+[[files]]
+file = "mods/Mine_and_Slash-1.20.1-6.4.2.jar"
+hash = "a5e90a9f1b20271f906f1ee7dcbcb7067ed92e795ff1538fe522b087acb060c0"
+
+[[files]]
 file = "mods/NoChatReports-FORGE-1.20.1-v2.2.2.jar"
 hash = "ef7fa5096dfd492c3d3ae7228888ca4b92ce07d9b8e302297ceb2ceb1f8d238c"
 
@@ -7192,6 +7208,10 @@ hash = "b98547cb8b5df794e5a3844b273c2b5680985f300dc4e1f7617beaeebaa58291"
 [[files]]
 file = "mods/PROJECT_DEADZONE_VineClimbControl-0.1.1.jar"
 hash = "a5ca9af3fa02c30c243b9896c3c069144936d0a0f37dbf6113d0b4ea63927fcb"
+
+[[files]]
+file = "mods/The-Harvest-1.20.1-1.1.4.jar"
+hash = "32ceef7afc350c42dbe93564facdd64db07bb6ae94a3f30badb933391b942c2e"
 
 [[files]]
 file = "mods/UndergroundBunkers-1.0.5-1.20.x-forge.jar"
