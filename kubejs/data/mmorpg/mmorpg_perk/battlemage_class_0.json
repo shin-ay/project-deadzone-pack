@@ -1,0 +1,15 @@
+{
+    "type":  "MAJOR",
+    "icon":  "mmorpg:textures/gui/talent_icons/asc/battlemage.png",
+    "id":  "battlemage_class_0",
+    "is_entry":  false,
+    "max_lvls":  1,
+    "stats":  [
+                  {
+                      "type":  "PERCENT",
+                      "scale_to_lvl":  false,
+                      "stat":  "stat_roll_quality",
+                      "v1":  8
+                  }
+              ]
+}

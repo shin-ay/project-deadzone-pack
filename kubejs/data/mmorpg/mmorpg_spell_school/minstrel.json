@@ -1,0 +1,58 @@
+{
+    "id":  "minstrel",
+    "lvl_reqs":  [
+                     1,
+                     5,
+                     10,
+                     15,
+                     20,
+                     25,
+                     30
+                 ],
+    "perks":  {
+                  "healing_aura":  {
+                                       "x":  1,
+                                       "y":  0
+                                   },
+                  "wish":  {
+                               "x":  3,
+                               "y":  0
+                           },
+                  "song_of_perseverance":  {
+                                               "x":  5,
+                                               "y":  0
+                                           },
+                  "p_cdr":  {
+                                "x":  8,
+                                "y":  0
+                            },
+                  "p_heal_str":  {
+                                     "x":  9,
+                                     "y":  0
+                                 },
+                  "p_heal_to_spell":  {
+                                          "x":  8,
+                                          "y":  1
+                                      },
+                  "p_health_mins":  {
+                                        "x":  9,
+                                        "y":  1
+                                    },
+                  "p_inc_aoe":  {
+                                    "x":  8,
+                                    "y":  2
+                                },
+                  "p_low_hp_heal":  {
+                                        "x":  9,
+                                        "y":  2
+                                    },
+                  "p_mana_cost":  {
+                                      "x":  8,
+                                      "y":  3
+                                  },
+                  "p_song_duration":  {
+                                          "x":  9,
+                                          "y":  3
+                                      }
+              }
+}

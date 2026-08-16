@@ -1,0 +1,27 @@
+{
+    "type":  "MAJOR",
+    "icon":  "mmorpg:textures/gui/stat_icons/game_changers/steady_hand.png",
+    "id":  "pdz_keystone_last_survivor",
+    "is_entry":  false,
+    "max_lvls":  1,
+    "stats":  [
+                  {
+                      "type":  "PERCENT",
+                      "scale_to_lvl":  false,
+                      "stat":  "health",
+                      "v1":  15
+                  },
+                  {
+                      "type":  "FLAT",
+                      "scale_to_lvl":  false,
+                      "stat":  "all_resist",
+                      "v1":  10
+                  },
+                  {
+                      "type":  "MORE",
+                      "scale_to_lvl":  false,
+                      "stat":  "projectile_damage",
+                      "v1":  -10
+                  }
+              ]
+}

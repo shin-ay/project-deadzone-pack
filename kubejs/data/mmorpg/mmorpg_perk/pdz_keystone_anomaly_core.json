@@ -1,0 +1,27 @@
+{
+    "type":  "MAJOR",
+    "icon":  "mmorpg:textures/gui/stat_icons/game_changers/elemental_purity.png",
+    "id":  "pdz_keystone_anomaly_core",
+    "is_entry":  false,
+    "max_lvls":  1,
+    "stats":  [
+                  {
+                      "type":  "MORE",
+                      "scale_to_lvl":  false,
+                      "stat":  "ailment_damage",
+                      "v1":  25
+                  },
+                  {
+                      "type":  "PERCENT",
+                      "scale_to_lvl":  false,
+                      "stat":  "magic_shield",
+                      "v1":  15
+                  },
+                  {
+                      "type":  "MORE",
+                      "scale_to_lvl":  false,
+                      "stat":  "health",
+                      "v1":  -10
+                  }
+              ]
+}

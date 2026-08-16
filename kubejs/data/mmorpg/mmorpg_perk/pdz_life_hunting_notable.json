@@ -1,0 +1,15 @@
+{
+    "type":  "SPECIAL",
+    "icon":  "mmorpg:textures/gui/stat_icons/misc/boss_loot_quantity.png",
+    "id":  "pdz_life_hunting_notable",
+    "is_entry":  false,
+    "max_lvls":  1,
+    "stats":  [
+                  {
+                      "type":  "FLAT",
+                      "scale_to_lvl":  false,
+                      "stat":  "boss_loot_quantity",
+                      "v1":  3
+                  }
+              ]
+}

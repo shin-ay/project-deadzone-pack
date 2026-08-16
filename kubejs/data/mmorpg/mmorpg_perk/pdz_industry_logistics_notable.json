@@ -1,0 +1,15 @@
+{
+    "type":  "SPECIAL",
+    "icon":  "mmorpg:textures/gui/stat_icons/misc/currency_find.png",
+    "id":  "pdz_industry_logistics_notable",
+    "is_entry":  false,
+    "max_lvls":  1,
+    "stats":  [
+                  {
+                      "type":  "FLAT",
+                      "scale_to_lvl":  false,
+                      "stat":  "currency_find",
+                      "v1":  3
+                  }
+              ]
+}

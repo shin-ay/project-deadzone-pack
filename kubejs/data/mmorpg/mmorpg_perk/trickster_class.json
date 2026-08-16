@@ -1,0 +1,8 @@
+{
+  "type": "MAJOR",
+  "icon": "mmorpg:textures/gui/talent_icons/asc/trickster.png",
+  "id": "trickster_class",
+  "is_entry": false,
+  "max_lvls": 1,
+  "stats": []
+}

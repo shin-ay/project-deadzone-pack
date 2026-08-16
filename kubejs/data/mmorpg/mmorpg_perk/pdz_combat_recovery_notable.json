@@ -1,0 +1,15 @@
+{
+    "type":  "SPECIAL",
+    "icon":  "mmorpg:textures/gui/stat_icons/main/health_regen.png",
+    "id":  "pdz_combat_recovery_notable",
+    "is_entry":  false,
+    "max_lvls":  1,
+    "stats":  [
+                  {
+                      "type":  "FLAT",
+                      "scale_to_lvl":  false,
+                      "stat":  "health_regen",
+                      "v1":  7.5
+                  }
+              ]
+}

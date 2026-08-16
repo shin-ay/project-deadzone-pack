@@ -1,0 +1,15 @@
+{
+    "type":  "MAJOR",
+    "icon":  "mmorpg:textures/gui/talent_icons/asc/hunter.png",
+    "id":  "hunter_class_0",
+    "is_entry":  false,
+    "max_lvls":  1,
+    "stats":  [
+                  {
+                      "type":  "PERCENT",
+                      "scale_to_lvl":  false,
+                      "stat":  "move_speed",
+                      "v1":  6
+                  }
+              ]
+}

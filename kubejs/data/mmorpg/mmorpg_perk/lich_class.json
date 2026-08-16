@@ -1,0 +1,8 @@
+{
+  "type": "MAJOR",
+  "icon": "mmorpg:textures/gui/talent_icons/asc/lich.png",
+  "id": "lich_class",
+  "is_entry": false,
+  "max_lvls": 1,
+  "stats": []
+}

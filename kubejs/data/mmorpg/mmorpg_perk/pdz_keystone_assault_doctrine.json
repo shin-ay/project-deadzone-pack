@@ -1,0 +1,27 @@
+{
+    "type":  "MAJOR",
+    "icon":  "mmorpg:textures/gui/stat_icons/game_changers/sniper.png",
+    "id":  "pdz_keystone_assault_doctrine",
+    "is_entry":  false,
+    "max_lvls":  1,
+    "stats":  [
+                  {
+                      "type":  "MORE",
+                      "scale_to_lvl":  false,
+                      "stat":  "projectile_damage",
+                      "v1":  25
+                  },
+                  {
+                      "type":  "MORE",
+                      "scale_to_lvl":  false,
+                      "stat":  "all_any_wep_damage",
+                      "v1":  10
+                  },
+                  {
+                      "type":  "MORE",
+                      "scale_to_lvl":  false,
+                      "stat":  "health_regen",
+                      "v1":  -15
+                  }
+              ]
+}
