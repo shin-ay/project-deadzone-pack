@@ -6805,6 +6805,10 @@ file = "kubejs/startup_scripts/project_deadzone_affix_workbench_block_v0_1.js"
 hash = "219aa20b977afdfde00c7ec5fe31f16a1761d70c21793e57e60ac34485882041"
 
 [[files]]
+file = "kubejs/startup_scripts/project_deadzone_ballistic_effects_v0_1.js"
+hash = "e6de16d93188fab9bb224322cbed3a26d87b3262af8b08885bf147a725293585"
+
+[[files]]
 file = "kubejs/startup_scripts/project_deadzone_base_core_v0_1.js"
 hash = "5dd8d2d8753624648dababf714c9dbb59a04ac2059085f4b45213e11678ad910"
 
