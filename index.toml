@@ -8659,14 +8659,6 @@ file = "mods/workers-1.20.1-2.0.3.jar"
 hash = "c7c59a7a87bf51ec5ffbadfe5340f854f92397591a52ab5af1df8bffd71d941e"
 
 [[files]]
-file = "mods/xaerominimap-forge-1.20.1-26.4.2.jar"
-hash = "8143f332ed20a61a518692b42c793e021b6bd2d0d9d61cf3938fb9cfa07eb59c"
-
-[[files]]
-file = "mods/xaeroworldmap-forge-1.20.1-1.44.2.jar"
-hash = "cc20a74887923eecf5b614ffbf5a58e6c749d98a657003bde4a77d04212dee0d"
-
-[[files]]
 file = "mods/yacl.pw.toml"
 hash = "c08817fe8025a9d62c8f7abd5f56a54b90673e5ab60f39ae8fa1d70d5ace529b"
 metafile = true
