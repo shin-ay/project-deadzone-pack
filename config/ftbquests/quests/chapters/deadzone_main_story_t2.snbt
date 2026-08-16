@@ -1,0 +1,298 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "deadzone_main_story_t2"
+	group: "51DC04D9192698A6"
+	icon: "apocalypsenow:badge"
+	id: "306DDFE5681E2BA3"
+	order_index: 7
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: [
+				"6984DA400E0E21C3"
+				"3FE9D0F62386FC0C"
+			]
+			description: [
+				"Hospitalの記録と復旧した無線網が、一つの工業区画を示している。"
+				"Factoryへ接近し、Radio Tower用部品を生産できる設備が残っているか確認する。"
+			]
+			icon: "create:mechanical_press"
+			id: "242968A2B6D41253"
+			shape: "hexagon"
+			size: 1.5d
+			subtitle: "工場の生産線を見つける"
+			tasks: [{
+				id: "33D4D791BFD296A9"
+				title: "Factoryの工業区画へ到達する"
+				type: "custom"
+			}]
+			title: "Act 2：止まった生産線"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["242968A2B6D41253"]
+			description: [
+				"Factoryの設備を復旧し、無線中継器に必要な部品を確保する。"
+				"銅インゴット8個、鉄インゴット8個、電子管2個を納品する。"
+			]
+			icon: "create:electron_tube"
+			id: "2FD5B06423F44541"
+			rewards: [{
+				count: 4
+				id: "56550572B751D143"
+				item: "immersiveengineering:ingot_steel"
+				type: "item"
+			}]
+			tasks: [
+				{
+					consume_items: true
+					count: 8L
+					id: "5BBDF0490102C1C1"
+					item: "minecraft:copper_ingot"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 8L
+					id: "679888BB9D91913D"
+					item: "minecraft:iron_ingot"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 2L
+					id: "1CCD338265B1DF1E"
+					item: "create:electron_tube"
+					type: "item"
+				}
+			]
+			title: "Factoryを再起動する"
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["2FD5B06423F44541"]
+			description: [
+				"復旧した設備から、Remnant Relayへ向かう暗号通信が見つかった。"
+				"Relayへ到達し、Protocol座標断片を保持するCoreを探す。"
+			]
+			icon: "apocalypsenow:aabattery"
+			id: "13A8A2B1178471CD"
+			tasks: [{
+				id: "6179E59182B3F8F2"
+				title: "Remnant Relayへ到達する"
+				type: "custom"
+			}]
+			title: "命令の亡霊"
+			x: 4.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["13A8A2B1178471CD"]
+			description: [
+				"Relayの外部装置、Spawner、守備隊を排除してCoreを解除する。"
+				"Coreを破壊するとRemnantの巡回が停止し、Protocol座標断片を回収できる。"
+			]
+			icon: "apocalypsenow:bomb_defusing_kit"
+			id: "6327A52D90F0014B"
+			rewards: [{
+				count: 8
+				id: "5C849E0A7FB11F18"
+				item: "apocalypsenow:money"
+				type: "item"
+			}]
+			tasks: [{
+				id: "4AC6FFCB7AC82869"
+				title: "Remnant RelayのCoreを制圧する"
+				type: "custom"
+			}]
+			title: "Protocol座標断片"
+			x: 6.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["6327A52D90F0014B"]
+			description: [
+				"CDF、Raiders、Remnantが同じ無線鍵を要求している。"
+				"チャットで /deadzonestory support を実行し、支援先の説明を確認して選択する。"
+				"選ばなかった勢力の施設は消えないが、価格、巡回、報酬経路が変化する。"
+			]
+			icon: "apocalypsenow:badge"
+			id: "63BC8CE6C398AEE6"
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{
+				id: "086A6BE83E0DC5C2"
+				title: "三勢力から支援先を選ぶ"
+				type: "custom"
+			}]
+			title: "三つの命令"
+			x: 8.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["63BC8CE6C398AEE6"]
+			description: [
+				"CDFの避難民回廊へ向かい、現地の防衛隊と接触する。"
+				"防具・地図・安定した補給を得られる代わりに、民間人の退避を優先するルート。"
+			]
+			icon: "apocalypsenow:army_helmet"
+			id: "A21D90C4E7F126B1"
+			rewards: [{
+				count: 2
+				id: "A21D90C4E7F126B2"
+				item: "apocalypsenow:armorplate"
+				type: "item"
+			}]
+			tasks: [{
+				id: "A21D90C4E7F126B3"
+				title: "CDF管理施設で防衛隊と接触する"
+				type: "custom"
+			}]
+			title: "CDFルート：避難回廊"
+			x: 10.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["63BC8CE6C398AEE6"]
+			description: [
+				"Ash Jackalsの補給拠点を襲い、密輸台帳とAffix素材を奪う。"
+				"危険は高いが、武器・車両部品を早く確保できる攻撃的なルート。"
+			]
+			icon: "apocalypsenow:ballistic_mask_helmet"
+			id: "B34E61A8D2057FC2"
+			rewards: [{
+				count: 6
+				id: "B34E61A8D2057FC3"
+				item: "apocalypsenow:money"
+				type: "item"
+			}]
+			tasks: [{
+				id: "B34E61A8D2057FC4"
+				title: "Raider拠点のCoreを制圧する"
+				type: "custom"
+			}]
+			title: "Raidersルート：奪われた補給線"
+			x: 10.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["63BC8CE6C398AEE6"]
+			description: [
+				"Remnant Relayの中枢を解析し、旧軍のProtocol断片を復元する。"
+				"重工業部品とT3座標を得やすいが、機械守備隊との戦闘が待っている。"
+			]
+			icon: "apocalypsenow:aabattery"
+			id: "C45F72B9E31680D3"
+			rewards: [{
+				count: 4
+				id: "C45F72B9E31680D4"
+				item: "immersiveengineering:component_electronic"
+				type: "item"
+			}]
+			tasks: [{
+				id: "C45F72B9E31680D5"
+				title: "Remnant拠点のCoreを確保する"
+				type: "custom"
+			}]
+			title: "Remnantルート：失われた命令系統"
+			x: 10.0d
+			y: 2.0d
+		}
+		{
+			dependencies: [
+				"A21D90C4E7F126B1"
+				"B34E61A8D2057FC2"
+				"C45F72B9E31680D3"
+			]
+			min_required_dependencies: 1
+			description: [
+				"選択した勢力との契約が成立し、AEGIS研究坑道へ至る手段を確保した。"
+				"他勢力の依頼はサブクエストとして残るため、マルチでも取り返しはつく。"
+			]
+			icon: "apocalypsenow:badge"
+			id: "D56083CAF42791E4"
+			shape: "hexagon"
+			tasks: [{
+				id: "D56083CAF42791E5"
+				title: "選択ルートの固有任務を完了する"
+				type: "custom"
+			}]
+			title: "合流点：地下研究坑道へ"
+			x: 12.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["D56083CAF42791E4"]
+			description: [
+				"Protocol座標は地下研究坑道を示している。"
+				"AEGISの廃棄記録を追い、施設間で感染体が意図的に輸送された証拠を確保する。"
+			]
+			icon: "apocalypsenow:antibiotics"
+			id: "64FC20257BDD84CF"
+			tasks: [{
+				id: "7808EB9C6D2050BF"
+				title: "地下研究坑道でAEGIS廃棄記録を発見する"
+				type: "custom"
+			}]
+			title: "廃棄された患者記録"
+			x: 14.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["64FC20257BDD84CF"]
+			description: [
+				"記録保管区画を守るStory Boss『原初感染体』を撃破する。"
+				"咆哮と増援に備え、5人編成では役割を分けて戦う。"
+			]
+			icon: "apocalypsenow:bloodyrags"
+			id: "0573B0233758DF83"
+			rewards: [
+				{
+					count: 16
+					id: "6078853B50B0C249"
+					item: "apocalypsenow:money"
+					type: "item"
+				}
+				{
+					count: 6
+					id: "6B6ACA64001BA9B7"
+					item: "apocalypsenow:bandage"
+					type: "item"
+				}
+			]
+			shape: "hexagon"
+			size: 2.0d
+			tasks: [{
+				id: "741C810E2A399D7D"
+				title: "原初感染体を撃破する"
+				type: "custom"
+			}]
+			title: "T2 Story Boss：原初感染体"
+			x: 16.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["0573B0233758DF83"]
+			description: [
+				"感染体の輸送記録とProtocol座標を確保した。"
+				"Military Base、地下司令壕、AEGIS Laboratoryへ続くT3攻略が解禁される。"
+			]
+			icon: "apocalypsenow:advanced_hazmat_suit_helmet"
+			id: "17F1D932ED1B4A01"
+			shape: "hexagon"
+			size: 2.0d
+			tasks: [{
+				id: "15B4E15FEF0F430A"
+				title: "World Tier 3を解禁する"
+				type: "custom"
+			}]
+			title: "Act 2完了：三つの命令"
+			x: 18.0d
+			y: 0.0d
+		}
+	]
+	title: "メインストーリー III：三つの命令"
+}

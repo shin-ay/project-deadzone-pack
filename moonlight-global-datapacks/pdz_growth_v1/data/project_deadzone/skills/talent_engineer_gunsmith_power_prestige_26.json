@@ -1,0 +1,31 @@
+﻿{
+    "id":  "project_deadzone:talent_engineer_gunsmith_power_prestige_26",
+    "bonuses":  [
+
+                ],
+    "requirements":  [
+
+                     ],
+    "directConnections":  [
+                              "project_deadzone:talent_engineer_gunsmith_power_prestige_25"
+                          ],
+    "longConnections":  [
+
+                        ],
+    "oneWayConnections":  [
+
+                          ],
+    "tags":  [
+                 "pdz_talent_gunsmith",
+                 "pdz_talent_prestige_path",
+                 "pdz_prestige_path_power",
+                 "pdz_node_talent_engineer_gunsmith_power_prestige_26"
+             ],
+    "backgroundTexture":  "skilltree:textures/icons/background/notable.png",
+    "iconTexture":  "skilltree:textures/icons/arrow_diamond.png",
+    "borderTexture":  "skilltree:textures/tooltip/lesser.png",
+    "positionX":  883.59,
+    "positionY":  1285.64,
+    "buttonSize":  22,
+    "isStartingPoint":  false
+}

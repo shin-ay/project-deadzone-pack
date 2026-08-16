@@ -1,0 +1,58 @@
+﻿{
+    "id":  "project_deadzone:talent_security_guard_utility_prestige_22",
+    "bonuses":  [
+                    {
+                        "type":  "skilltree:attribute",
+                        "attribute":  "minecraft:generic.armor",
+                        "id":  "1cb35f0d-0c96-6f75-9b78-b5ee34c1d19e",
+                        "name":  "PROJECT DEADZONE Talent",
+                        "amount":  0.075,
+                        "operation":  0,
+                        "player_multiplier":  {
+                                                  "type":  "skilltree:none"
+                                              },
+                        "player_condition":  {
+                                                 "type":  "skilltree:none"
+                                             }
+                    },
+                    {
+                        "type":  "skilltree:attribute",
+                        "attribute":  "minecraft:generic.luck",
+                        "id":  "9e0273ed-7ade-bad7-2fd0-9e4f98cca776",
+                        "name":  "PROJECT DEADZONE Talent",
+                        "amount":  0.1,
+                        "operation":  0,
+                        "player_multiplier":  {
+                                                  "type":  "skilltree:none"
+                                              },
+                        "player_condition":  {
+                                                 "type":  "skilltree:none"
+                                             }
+                    }
+                ],
+    "requirements":  [
+
+                     ],
+    "directConnections":  [
+                              "project_deadzone:talent_security_guard_utility_prestige_21"
+                          ],
+    "longConnections":  [
+
+                        ],
+    "oneWayConnections":  [
+
+                          ],
+    "tags":  [
+                 "pdz_talent_guard",
+                 "pdz_talent_prestige_path",
+                 "pdz_prestige_path_utility",
+                 "pdz_node_talent_security_guard_utility_prestige_22"
+             ],
+    "backgroundTexture":  "skilltree:textures/icons/background/lesser.png",
+    "iconTexture":  "skilltree:textures/icons/chestplate_leather.png",
+    "borderTexture":  "skilltree:textures/tooltip/lesser.png",
+    "positionX":  1076.87,
+    "positionY":  -856.58,
+    "buttonSize":  16,
+    "isStartingPoint":  false
+}

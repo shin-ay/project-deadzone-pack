@@ -1,0 +1,31 @@
+﻿{
+    "id":  "project_deadzone:talent_medic_aura_power_prestige_24",
+    "bonuses":  [
+
+                ],
+    "requirements":  [
+
+                     ],
+    "directConnections":  [
+                              "project_deadzone:talent_medic_aura_power_prestige_23"
+                          ],
+    "longConnections":  [
+
+                        ],
+    "oneWayConnections":  [
+
+                          ],
+    "tags":  [
+                 "pdz_talent_medic_aura",
+                 "pdz_talent_prestige_path",
+                 "pdz_prestige_path_power",
+                 "pdz_node_talent_medic_aura_power_prestige_24"
+             ],
+    "backgroundTexture":  "skilltree:textures/icons/background/lesser.png",
+    "iconTexture":  "skilltree:textures/icons/potion_yellow_big.png",
+    "borderTexture":  "skilltree:textures/tooltip/lesser.png",
+    "positionX":  1467.5,
+    "positionY":  38.43,
+    "buttonSize":  16,
+    "isStartingPoint":  false
+}

@@ -1,0 +1,31 @@
+﻿{
+    "id":  "project_deadzone:talent_weapons_assault_power_prestige_22",
+    "bonuses":  [
+
+                ],
+    "requirements":  [
+
+                     ],
+    "directConnections":  [
+                              "project_deadzone:talent_weapons_assault_power_prestige_21"
+                          ],
+    "longConnections":  [
+
+                        ],
+    "oneWayConnections":  [
+
+                          ],
+    "tags":  [
+                 "pdz_talent_gun_assault",
+                 "pdz_talent_prestige_path",
+                 "pdz_prestige_path_power",
+                 "pdz_node_talent_weapons_assault_power_prestige_22"
+             ],
+    "backgroundTexture":  "skilltree:textures/icons/background/lesser.png",
+    "iconTexture":  "skilltree:textures/icons/arrow_emerald.png",
+    "borderTexture":  "skilltree:textures/tooltip/lesser.png",
+    "positionX":  -155.77,
+    "positionY":  -1367.15,
+    "buttonSize":  16,
+    "isStartingPoint":  false
+}

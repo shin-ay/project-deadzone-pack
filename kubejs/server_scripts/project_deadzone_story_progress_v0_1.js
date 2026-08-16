@@ -27,23 +27,29 @@ const DZ_STORY_QUESTS = {
   radioRepair: "42670EF087DB07A6",
   radioTower: "34C3DD0D8725B787",
   tier3: "3FE9D0F62386FC0C",
-  t2FactoryArrival: "D220260813000101",
-  t2FactoryRestore: "D220260813000102",
-  t2RelayArrival: "D220260813000103",
-  t2RelayCapture: "D220260813000104",
-  t2FactionChoice: "D220260813000105",
-  t2AegisRecord: "D220260813000106",
-  t2Primordial: "D220260813000107",
-  t2Complete: "D220260813000108",
-  t3Military: "D320260813000101",
-  t3Laboratory: "D320260813000102",
-  t3Reactor: "D320260813000103",
-  t3WardenCores: "D320260813000104",
-  t3ArgusFragment: "D320260813000105",
-  t3ChoirDiscovery: "D320260813000106",
-  t3ChoirVessel: "D320260813000107",
-  t3ArgusChoice: "D320260813000108",
-  t3Complete: "D320260813000109"
+  // Keep these IDs synchronized with deadzone_main_story_t2/t3.snbt.
+  // The former placeholder IDs made valid world events target nonexistent quests.
+  t2FactoryArrival: "242968A2B6D41253",
+  t2FactoryRestore: "2FD5B06423F44541",
+  t2RelayArrival: "13A8A2B1178471CD",
+  t2RelayCapture: "6327A52D90F0014B",
+  t2FactionChoice: "63BC8CE6C398AEE6",
+  t2CivildefRoute: "A21D90C4E7F126B1",
+  t2RaiderRoute: "B34E61A8D2057FC2",
+  t2RemnantRoute: "C45F72B9E31680D3",
+  t2RouteConverge: "D56083CAF42791E4",
+  t2AegisRecord: "64FC20257BDD84CF",
+  t2Primordial: "0573B0233758DF83",
+  t2Complete: "17F1D932ED1B4A01",
+  t3Military: "1ABE30FB04136438",
+  t3Laboratory: "0E2A157FFF57D90A",
+  t3Reactor: "46488BBA671011F5",
+  t3WardenCores: "719E23C2245BB557",
+  t3ArgusFragment: "22426D3E145D5513",
+  t3ChoirDiscovery: "5B4D3EBFA1026614",
+  t3ChoirVessel: "0E8A3FB0BED9A091",
+  t3ArgusChoice: "5EF7DA85993329F7",
+  t3Complete: "65F53D8012470726"
 }
 
 function dzCompleteStoryQuest(server, questId, message) {
@@ -57,13 +63,15 @@ function dzCompletePlayerStoryQuest(player, key, questId) {
   // player permanently stuck. Record completion only when the command succeeds
   // and keep retrying otherwise. A versioned flag also repairs affected saves.
   let flag = "dz_story_auto_v3_" + key
-  if (player.persistentData.getBoolean(flag)) return
+  if (player.persistentData.getBoolean(flag)) return true
   let result = player.server.runCommandSilent("ftbquests change_progress " + player.username +
     " complete " + questId)
   if (result > 0) {
     player.persistentData.putBoolean(flag, true)
     console.info("[DEADZONE STORY] Auto-completed " + key + " for " + player.username)
+    return true
   }
+  return false
 }
 
 function dzNearbyStoryBoss(player, tag, distance) {
@@ -319,13 +327,33 @@ PlayerEvents.tick(event => {
   if (player.persistentData.getString("dz_story_t2_support") !== "")
     dzCompletePlayerStoryQuest(player, "t2_faction_choice", DZ_STORY_QUESTS.t2FactionChoice)
 
+  // The selected support route changes the objective instead of merely changing
+  // its label. One completed route is enough to reopen the shared AEGIS trail.
+  let support = player.persistentData.getString("dz_story_t2_support")
+  if (support === "civildef" && dzNearbyStoryMarker(player, marker =>
+      marker.persistentData.getString("dz_wild_faction") === "civildef", 128)) {
+    if (dzCompletePlayerStoryQuest(player, "t2_route_civildef", DZ_STORY_QUESTS.t2CivildefRoute))
+      player.persistentData.putBoolean("dz_story_t2_route_complete", true)
+  }
+  if (support === "raider" && player.tags.contains("dz_captured_raider_core")) {
+    if (dzCompletePlayerStoryQuest(player, "t2_route_raider", DZ_STORY_QUESTS.t2RaiderRoute))
+      player.persistentData.putBoolean("dz_story_t2_route_complete", true)
+  }
+  if (support === "remnant" && player.tags.contains("dz_captured_remnant_core")) {
+    if (dzCompletePlayerStoryQuest(player, "t2_route_remnant", DZ_STORY_QUESTS.t2RemnantRoute))
+      player.persistentData.putBoolean("dz_story_t2_route_complete", true)
+  }
+  if (player.persistentData.getBoolean("dz_story_t2_route_complete"))
+    dzCompletePlayerStoryQuest(player, "t2_route_converge", DZ_STORY_QUESTS.t2RouteConverge)
+
   if (dzNearbyStoryMarker(player, marker => {
     let type = marker.persistentData.getString("dz_wild_type")
     let role = marker.persistentData.getString("dz_wild_role")
     let faction = marker.persistentData.getString("dz_wild_faction")
     return faction === "aegis" && (role === "research" || type.indexOf("laboratory") >= 0 ||
       type.indexOf("underground") >= 0)
-  }, 128)) dzCompletePlayerStoryQuest(player, "t2_aegis_record", DZ_STORY_QUESTS.t2AegisRecord)
+  }, 128) && player.persistentData.getBoolean("dz_story_t2_route_complete"))
+    dzCompletePlayerStoryQuest(player, "t2_aegis_record", DZ_STORY_QUESTS.t2AegisRecord)
 
   if (dzNearbyStoryMarker(player, marker => {
     let type = marker.persistentData.getString("dz_wild_type")

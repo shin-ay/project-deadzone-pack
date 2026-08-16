@@ -4,9 +4,9 @@
 const PDZ_GAR_LEDGER='dz_activity_outpost_ledger_v1'
 // Warn before combat materialises. 160m gives the player time to read the
 // faction/role, while guards only become physical inside 80m.
-const PDZ_GAR_NOTICE=160
-const PDZ_GAR_NEAR=80
-const PDZ_GAR_RELEASE=176
+const PDZ_GAR_NOTICE=224
+const PDZ_GAR_NEAR=112
+const PDZ_GAR_RELEASE=240
 const PDZ_GAR_RESPAWN=15*60*1000
 const PDZ_GAR_PLACEMENT_VERSION=2
 
@@ -29,12 +29,21 @@ function pdzGarNotice(server,marker,id,faction,role){
   let near=pdzGarNearPlayer(server,marker,PDZ_GAR_NOTICE)
   if(!near)return null
   let key=pdzGarNoticeKey(id)
-  if(!near.persistentData.getBoolean(key)){
+  let hostile=!(faction==='survivor'||faction==='civildef'||faction==='cdf'||faction==='independent')
+  let first=!near.persistentData.getBoolean(key)
+  let entered=near.persistentData.getString('dz_current_named_site')!==String(id)
+  if(first){
     near.persistentData.putBoolean(key,true)
-    let hostile=!(faction==='survivor'||faction==='civildef'||faction==='cdf'||faction==='independent')
     let relation=hostile?'HOSTILE':'CONTACT'
     let line='[OUTPOST] '+relation+': '+faction+' / '+role+' detected at '+Math.round(Math.sqrt((near.x-marker.x)*(near.x-marker.x)+(near.z-marker.z)*(near.z-marker.z)))+'m.'
     near.tell(hostile?Text.of(line).red():Text.of(line).aqua())
+  }
+  if(entered){
+    near.persistentData.putString('dz_current_named_site',String(id))
+    let place=marker.persistentData.getString('dz_wild_name')||'名称未登録地点'
+    near.runCommandSilent('title @s times 10 55 15')
+    near.runCommandSilent('title @s title {"text":"'+place+'","color":"'+(hostile?'red':'gold')+'","bold":true}')
+    near.runCommandSilent('title @s subtitle {"text":"'+(hostile?'敵対勢力圏':'安全な接触地点')+' / '+faction+'","color":"gray"}')
     near.runCommandSilent('playsound minecraft:block.note_block.pling player @s ~ ~ ~ 0.45 '+(hostile?'0.65':'1.25'))
   }
   return near
@@ -85,7 +94,9 @@ function pdzGarSafeSpots(marker,wanted){
   for(let radius=0;radius<=12;radius+=2){
     for(let dx=-radius;dx<=radius;dx+=2)for(let dz=-radius;dz<=radius;dz+=2){
       if(radius>0&&Math.abs(dx)!==radius&&Math.abs(dz)!==radius)continue
-      for(let y=cy+2;y>=cy-14;y--){
+      // Stay on the facility's registered floor band. A deep downward search
+      // treated caves and subway levels as valid interiors.
+      for(let y=cy+3;y>=cy-4;y--){
         let key=(cx+dx)+'|'+y+'|'+(cz+dz)
         if(seen[key])continue
         seen[key]=true
@@ -116,6 +127,24 @@ function pdzGarRun(player,command,tag,limit,base){
   player.runCommandSilent(command)
   player.runCommandSilent(base+'tag @e[tag=dz_npc,tag=!dz_garrison_bound,sort=nearest,limit='+limit+',distance=..32] add '+tag)
   player.runCommandSilent(base+'tag @e[tag='+tag+',distance=..32] add dz_garrison_bound')
+}
+function pdzGarIsSettlementSeed(marker){
+  return String(marker.persistentData.getString('dz_wild_structure')||'').indexOf('zombiekit:')===0
+}
+function pdzGarRecruitResidents(marker,player,faction,tag,spots){
+  if(!pdzGarIsSettlementSeed(marker))return 0
+  if(!(faction==='survivor'||faction==='civildef'||faction==='cdf'||faction==='independent'))return 0
+  // Recruits keeps ownership and relation logic authoritative. These residents
+  // are neutral settlement life, while PDZ faction squads remain the guards.
+  let residentTag=tag+'_resident',types=faction==='civildef'||faction==='cdf'
+    ? ['recruits:recruit','recruits:bowman']
+    : ['recruits:recruit','recruits:nomad']
+  let count=Math.min(2,Math.max(1,spots.length))
+  for(let i=0;i<count;i++){
+    let s=spots[(spots.length-1-i+spots.length)%spots.length]
+    player.runCommandSilent('execute positioned '+s.x+' '+s.y+' '+s.z+' run summon '+types[i%types.length]+' ~ ~ ~ {PersistenceRequired:1b,Tags:["dz_settlement_resident","dz_external_faction_npc","dz_garrison_bound","'+tag+'","'+residentTag+'"]}')
+  }
+  return count
 }
 function pdzGarSpawn(marker,player,faction,size,role,tag){
   let count=pdzGarCount(size),spots=pdzGarSafeSpots(marker,count)
@@ -148,11 +177,12 @@ function pdzGarSpawn(marker,player,faction,size,role,tag){
     for(let i=0;i<count;i++)player.runCommandSilent(base+'summon infectious:mecha_zombie ~'+((i%3)*3-3)+' ~ ~'+(Math.floor(i/3)*3-2)+' {PersistenceRequired:1b,CustomName:\'{"text":"WARDEN Drone","color":"gold"}\',Tags:["dz_npc","dz_warden","dz_hostile","dz_garrison_bound","'+tag+'"]}')
     player.runCommandSilent(base+'team join dz_warden @e[tag='+tag+',distance=..40]')
   }
+  pdzGarRecruitResidents(marker,player,faction,tag,spots)
   pdzGarRelocate(marker.level,tag,spots)
   // Trading locations get a trader in addition to guards. Existing duplicate
   // protection in the wilderness script prevents stacking merchants.
   if(marker.persistentData.getString('dz_wild_trade')&&faction!=='infected'&&faction!=='aegis'&&faction!=='warden'){
-    try { if(typeof pdzWildPlaceTrader==='function')pdzWildPlaceTrader(player) }
+    try { if(typeof pdzWildPlaceTrader==='function')pdzWildPlaceTrader(player,marker) }
     catch(err){console.warn('[PDZ GARRISON] trader placement deferred: '+err)}
   }
   marker.persistentData.putBoolean('dz_garrison_active',true)
@@ -164,7 +194,10 @@ function pdzGarPulse(server){
   let ledger=pdzGarRead(server),owners={}
   ledger.forEach(s=>owners[String(s.id)]=s)
   let seen={}
-  server.players.forEach(player=>player.level.entities.forEach(marker=>{
+  server.players.forEach(player=>{
+    let closeToAny=false
+    player.level.entities.forEach(marker=>{
+    if(marker.tags&&marker.tags.contains('dz_wilderness_site')&&(marker.x-player.x)*(marker.x-player.x)+(marker.z-player.z)*(marker.z-player.z)<=PDZ_GAR_NOTICE*PDZ_GAR_NOTICE)closeToAny=true
     if(!marker.tags||!marker.tags.contains('dz_wilderness_site')||seen[String(marker.uuid)])return
     if(marker.persistentData.contains('dz_wild_garrison')&&!marker.persistentData.getBoolean('dz_wild_garrison'))return
     seen[String(marker.uuid)]=true
@@ -200,7 +233,9 @@ function pdzGarPulse(server){
     // Occupation changes immediately replace the next physical garrison.
     marker.persistentData.putString('dz_wild_faction',String(faction))
     pdzGarSpawn(marker,near,String(faction),site.size||pdzGarSize(marker.persistentData.getString('dz_wild_type')),role,tag)
-  }))
+    })
+    if(!closeToAny)player.persistentData.remove('dz_current_named_site')
+  })
 }
 
 let PDZ_GAR_TICKS=0

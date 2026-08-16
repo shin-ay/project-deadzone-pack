@@ -13,7 +13,7 @@
 	#PARTY - Enables the Player Frame only when the player is in a party.
 	#OFF - Disables the Player Frame.
 	#Allowed Values: ON, PARTY, OFF
-	playerRender = "ON"
+	playerRender = "OFF"
 	#Renders armor toughness as text in paranthesis next to the armor value if it's not zero.
 	toughnessRender = true
 	#Makes all the models drawn on the party frame face forward if true.

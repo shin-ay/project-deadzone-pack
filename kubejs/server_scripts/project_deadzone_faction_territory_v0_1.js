@@ -128,14 +128,14 @@ function pdzTerrAuto(server, force) {
 let PDZ_TERR_TICKS = 0
 ServerEvents.tick(event => {
   PDZ_TERR_TICKS++
-  if (PDZ_TERR_TICKS % PDZ_TERR_AUTO_INTERVAL !== 0 || event.server.players.length === 0) return
-  pdzTerrAuto(event.server, false)
+  // Native Village Expansion ownership is authoritative. Keep the PDZ ledger
+  // and commands for story strongholds/convoys, but do not continuously rebuild
+  // a second competing territory simulation.
+  return
 })
 
 PlayerEvents.loggedIn(event => {
-  event.server.scheduleInTicks(140, () => {
-    if (pdzTerrAuto(event.server, false)) event.player.tell(Text.of('[TERRITORY] Strategic map rebuilt from the current outpost ledger.').aqua())
-  })
+  // Manual /deadzoneterritory rebuild remains available for legacy map checks.
 })
 
 function pdzTerrAt(server, player) {

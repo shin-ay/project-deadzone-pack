@@ -3,17 +3,18 @@
 	default_quest_shape: ""
 	filename: "deadzone_main_story_02"
 	group: "51DC04D9192698A6"
-	icon: "minecraft:lightning_rod"
+	icon: "apocalypsenow:aabattery"
 	id: "2A2CEA89BA913F97"
-	order_index: 4
+	order_index: 6
 	quest_links: [ ]
 	quests: [
 		{
+			dependencies: ["74065A02DB68DAE2"]
 			description: [
 				"警察署から回収したCivil Defenseの記録には、消防署から発信された救難信号が残っていた。"
 				"救助隊が残した中継器を確保し、都市通信網を再起動する。"
 			]
-			icon: "minecraft:bell"
+			icon: "apocalypsenow:adrenaline_syringe"
 			id: "4AF84F15560BA03C"
 			shape: "hexagon"
 			size: 1.5d
@@ -28,6 +29,7 @@
 			y: 0.0d
 		}
 		{
+			dependencies: ["4AF84F15560BA03C"]
 			description: [
 				"消防署はRaider Ash Captainの回収部隊に占拠されている。"
 				"正面だけでなく車庫や上階からの射線に注意し、救助指令室へ進もう。"
@@ -51,11 +53,12 @@
 			y: 0.0d
 		}
 		{
+			dependencies: ["3001FAD121C4FCD2"]
 			description: [
 				"Ash Captainを撃破し、指令室と車庫を確保する。"
 				"回収した耐熱ケースには通信中継器の一部が保管されている。"
 			]
-			icon: "minecraft:blaze_powder"
+			icon: "apocalypsenow:ballistic_mask_helmet"
 			id: "04AC90A6EDFF8450"
 			rewards: [
 				{
@@ -89,11 +92,12 @@
 			y: 0.0d
 		}
 		{
+			dependencies: ["04AC90A6EDFF8450"]
 			description: [
 				"中継器には北東のRadio Towerへ向けた座標と、最後の避難輸送記録が残されている。"
 				"電力と交換部品を準備して通信塔へ向かう。"
 			]
-			icon: "minecraft:echo_shard"
+			icon: "apocalypsenow:badge"
 			id: "40020680E6A96AF6"
 			subtitle: "失われた通信網の接続先を特定する。"
 			tasks: [{
@@ -106,11 +110,12 @@
 			y: 0.0d
 		}
 		{
+			dependencies: ["40020680E6A96AF6"]
 			description: [
 				"Radio Towerを復旧すれば、新しい施設情報と遠距離の救難信号を受信できる。"
 				"ただし送信を始めれば、こちらの位置も武装勢力に知られる。"
 			]
-			icon: "minecraft:lightning_rod"
+			icon: "apocalypsenow:aabattery"
 			id: "3EB8C6CE111AC5E6"
 			shape: "hexagon"
 			size: 1.5d
@@ -125,11 +130,12 @@
 			y: 0.0d
 		}
 		{
+			dependencies: ["3EB8C6CE111AC5E6"]
 			description: [
 				"予備電源と送信機を応急修理する。"
 				"必要量はマルチでも単純作業になりすぎない範囲に抑えている。"
 			]
-			icon: "minecraft:redstone"
+			icon: "apocalypsenow:bomb_defusing_kit"
 			id: "42670EF087DB07A6"
 			subtitle: "電源と送信回路を復旧する。"
 			tasks: [
@@ -160,6 +166,7 @@
 			y: 0.0d
 		}
 		{
+			dependencies: ["42670EF087DB07A6"]
 			description: [
 				"送信開始と同時にRemnant Signal Hunterが通信塔を捕捉した。"
 				"設備を壊される前に護衛部隊と重装指揮官を排除する。"
@@ -204,11 +211,12 @@
 			y: 0.0d
 		}
 		{
+			dependencies: ["34C3DD0D8725B787"]
 			description: [
 				"通信網が復旧し、警察・消防・生存者拠点の情報が一本につながった。"
 				"新たに病院からの自動送信と、軍事区域の暗号通信が検出されている。"
 			]
-			icon: "minecraft:filled_map"
+			icon: "apocalypsenow:badge"
 			id: "3FE9D0F62386FC0C"
 			rewards: [
 				{

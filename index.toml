@@ -1086,15 +1086,19 @@ hash = "1ffbd31e95f79ea545a101b401cb1b949ca39cbf639e3482b9653a4af9956867"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/deadzone_main_story_01.snbt"
-hash = "f32485b56e19b83d1dd49a9401b44957d3ce81127464e4171ce07d537e1606e5"
+hash = "d9a49ddb5cccac9c322839d4853105f9ca96829b5e62d98279e1fd33f540a6ac"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/deadzone_main_story_02.snbt"
-hash = "c1cc59e963c23f456e0b253ff307ed151ba10247a1dd30f5315067a60d360fa7"
+hash = "d50f173529939c1eea9b79c1726979feb2435e094ae4d080affa194a1bd7fba3"
+
+[[files]]
+file = "config/ftbquests/quests/chapters/deadzone_main_story_t2.snbt"
+hash = "7d46147107399ae1bbd484d65fb2eaf5511c3a5c719157e7aea87f6be5c58eb9"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/deadzone_main_story_t3.snbt"
-hash = "8b1a2a32aa1f23ec9b1da093dc15f7dcf570ead49089b6523e457b528a667780"
+hash = "f3bfe883f09469069413f1f8647eed4cae6f60040d707edbe02c000b732cb41e"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/deadzone_mod_agriculture_01.snbt"
@@ -1626,7 +1630,7 @@ hash = "63141bd6d9248c60b9900bd0e0b05b8fdbac3a14e244a1bf5caeecfc5d48cafa"
 
 [[files]]
 file = "config/lostcities/profiles/deadzone_chaosz_v1.json"
-hash = "4e763327b59f90bab85d133a6424bc801dc4aecc287ccac6976653aa1cdf73b3"
+hash = "910baaccec419e68f16eac70f0457d6a5da2b56622408a66be26ba2504f255e6"
 
 [[files]]
 file = "config/lostcities/profiles/deadzone_v2.json"
@@ -1695,6 +1699,10 @@ hash = "4e6a04bad1226d0691f13d43adca9ba261c9237305f1f6757f08040a678b448e"
 [[files]]
 file = "config/lrtactical-common.toml"
 hash = "bbc36c3d894b632e919513f30373a90a9ea1db9ee4f7651d69393f863726b779"
+
+[[files]]
+file = "config/mca.json"
+hash = "209d78c554a7af3b82506e535ca8addafc802aabbce41adf341ed8349ca8209f"
 
 [[files]]
 file = "config/midnightlib.json"
@@ -2489,8 +2497,12 @@ file = "config/radiotowers-common.toml"
 hash = "e8cfecc1a88706f15e1a45c92fa46b0749f3516168bded413a07ecc1692fc662"
 
 [[files]]
+file = "config/realmrpg/quests/monster_hunter.json"
+hash = "d924d314289ed43ed0f4da46b65af0cd9ba81fa441e5680e84b42f645063f075"
+
+[[files]]
 file = "config/recruits-client.toml"
-hash = "fa9582c1ab60ec94dade049cd59f00be3bd132a5764e3f920a2cb722b1c19e76"
+hash = "2b9cb904e1f3be489da920cb2715296b8dea35f5f531e83a7af99e5bde84a510"
 
 [[files]]
 file = "config/refurbished_furniture.client.toml"
@@ -2514,11 +2526,11 @@ hash = "b389265c37589ce6ff1581890fd2c0766b6477e223447a9670ba153008d331e1"
 
 [[files]]
 file = "config/sedparties-client.toml"
-hash = "5b71f035dc96a4a5e3ad3e8d609bb40d269fd893eda217253777e7fc18537dd7"
+hash = "2d635281b329372f28dc18b25a529f169763d7acd4aa9097ff6d3471c6d8559a"
 
 [[files]]
 file = "config/sedparties-client.toml.ui_backup"
-hash = "cc3ff321a952997b8222668a5eb4f64e6c2eea54959bdda8e77517785f174da2"
+hash = "67e9be36c9005a02eadf49c46b5f93577735fee4eed38ef888c40c60fb60b94b"
 
 [[files]]
 file = "config/sedparties-common.toml"
@@ -2598,7 +2610,7 @@ hash = "6906f6e7b3e2764c6f157baa09bf47a4e261880cd3f1990ac12d64b280ce1fc1"
 
 [[files]]
 file = "config/sona-common.toml"
-hash = "40526685700a2cc1186b239375fdae21f3f1d0dbed7a3c88892077363913b804"
+hash = "4d653d12fd255d79a69857f7f01eb6c227c275d226e6aaf6bde286dadd477816"
 
 [[files]]
 file = "config/sophisticatedbackpacks-common.toml"
@@ -3043,6 +3055,10 @@ hash = "c089f5951bfcc2662a3178ec60870be30e184bf5ce7c8426723993af91ef0336"
 [[files]]
 file = "kubejs/assets/project_deadzone/textures/icons/skill_tree/talent.png"
 hash = "f91d69d9f4b8b30c1fe6418c12923f61b48c5d2935b6437c7db4084e23ba26b1"
+
+[[files]]
+file = "kubejs/assets/realmrpg_quests/lang/ja_jp.json"
+hash = "3ee60002cfc413017aba6d0a3cbb15bc0de8bbf4d12abfd0563bc194b778865c"
 
 [[files]]
 file = "kubejs/assets/smallships/lang/ja_jp.json"
@@ -5137,6 +5153,10 @@ file = "kubejs/data/minecraft/tags/worldgen/biome/has_structure/village_taiga.js
 hash = "bef4d172fc1bfb34d342e79090726c4a0c272dd404783c3ea022b992e0e0415e"
 
 [[files]]
+file = "kubejs/data/minecraft/worldgen/structure_set/villages.json"
+hash = "7c815e9a96365cc9ac027fe014652b09a8d52c598b7724b8410ecf70c6d0ff68"
+
+[[files]]
 file = "kubejs/data/project_deadzone/bosses/hulking_infected.json"
 hash = "c88ce388f3d485594d3c2991460f89e4977afa3a7b82279c812f4a911d351820"
 
@@ -5639,6 +5659,10 @@ hash = "4179d77096d3224c625eab70bceb838634e17ef6dbe6ea85f2823342673511cb"
 [[files]]
 file = "kubejs/data/project_deadzone/functions/factions/test/spawn_roles.mcfunction"
 hash = "615a09690d19e1374cc8d23a4ec63e53e64d41204abd9961e92e3d56d0ccaeee"
+
+[[files]]
+file = "kubejs/data/project_deadzone/functions/settlement/locate_guide.mcfunction"
+hash = "bba19bb6049246ffae64850a23988b176a4083eeb1dfb46d3fb902f4c16145c2"
 
 [[files]]
 file = "kubejs/data/project_deadzone/functions/story/spawn_argus_fragment.mcfunction"
@@ -6393,6 +6417,10 @@ file = "kubejs/data/project_deadzone/tags/worldgen/biome/no_apn_standalone.json"
 hash = "bef4d172fc1bfb34d342e79090726c4a0c272dd404783c3ea022b992e0e0415e"
 
 [[files]]
+file = "kubejs/data/underground_bunkers/worldgen/template_pool/underground_bunker/underground_bunker_start.json"
+hash = "4038ce6c33a3aab94de8a97d0c9b6dbb3da9268906825a537eddb8cd20ff2e35"
+
+[[files]]
 file = "kubejs/disabled_scripts/deadzone_block_dump.js.disabled"
 hash = "d35c1ca8e1e4596d48b55aa998086b0738e1ccdd3243628b16271f1e4fc905c1"
 
@@ -6414,7 +6442,7 @@ hash = "0704e4c651a070b3a0808d1240ba4d6b6374a78fe7d271ac1f09a4c203091708"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_affixes_v0_2.js"
-hash = "09fabb23752679e569da48a96f9ae6ab046eb3bdf04b8adee732fcf6942c399b"
+hash = "bedc439bac7c6ec254ed755fdb222722b3259a288ebbb694568938bc891a633b"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_ammo_reload_perks_v0_1.js"
@@ -6447,6 +6475,10 @@ hash = "4d9b96fa9e6083bd555b99065c5e901b74fa092c0f60257c3750f477d420e8a4"
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_buddy_system_v0_2.js"
 hash = "799c92ba0b98faeec743206a24504de1a7dd83da7e3c6ba3d2acb75042cbfc96"
+
+[[files]]
+file = "kubejs/server_scripts/project_deadzone_butchery_grave_compat_v0_1.js"
+hash = "8b4a73c358882cdf14b1afe6dd96cf35cf8e9cccb992dadd596903d2addeb5c0"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_camp_contracts_v0_1.js"
@@ -6482,7 +6514,7 @@ hash = "f475f51a72f3d3f1de0a3ea51c1c97a0701f57df8053033bf4104ba727c9e5d4"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_faction_activity_v0_1.js"
-hash = "836aeaa1f0e5cbae368a95ec9d8f5148b17b76cc9c0d5f8817f443df0d111f30"
+hash = "0472f49cb1411893141aecd2c01df5be5066d360338ccd3a1acb0459a3686ce0"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_faction_npc_identity_v0_1.js"
@@ -6494,7 +6526,7 @@ hash = "14df6738b649c8bfd3e6ee2bf5773a28e17ddd817fadc9f173399cd438ee0be6"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_faction_territory_v0_1.js"
-hash = "c5d2e051d0f580d6e127a7a3e0bded477718db793f5d702cfa859314aedf3967"
+hash = "b7d67d8811ec8d66791354422e2d7fd28654264bc4ecb6b5d79c7f2087c6a580"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_faction_test_commands_v0_1.js"
@@ -6593,6 +6625,10 @@ file = "kubejs/server_scripts/project_deadzone_military_curios_v0_1.js"
 hash = "6259227d34e56a4bced5492941c631ea5d560d8b5fa80f02a090b8d0707b11e9"
 
 [[files]]
+file = "kubejs/server_scripts/project_deadzone_mns_equipment_requirements_v0_1.js"
+hash = "c8960646f9949f99cfe6c85f0f23df72dec48015d9e90e93f5944c7c1fe3bacb"
+
+[[files]]
 file = "kubejs/server_scripts/project_deadzone_npc_revive_v0_1.js"
 hash = "9ad212920727a72720a2c312099c5c8cf7613d832023813f09e78b3712673baf"
 
@@ -6602,7 +6638,7 @@ hash = "a506f43baae955ec164b9c4ef24a6c0a828b423ad140d21ecff59c0f14ec97b5"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_outpost_garrisons_v0_1.js"
-hash = "6ca54832046e03240686035e4682e862b5be24581ef35d5b4c8cc9963d8d02a2"
+hash = "1fe871e837e749847a83d0a54fd542e3f859538dc4ef0cf45d6b5abfca6077a6"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_player_damage_guard_v0_1.js"
@@ -6645,6 +6681,10 @@ file = "kubejs/server_scripts/project_deadzone_seafood_bridge_v0_1.js"
 hash = "d87c67f17d674ac06e73d03e62ea4c088523ecdcea4ba0fcf134a527301c9a2a"
 
 [[files]]
+file = "kubejs/server_scripts/project_deadzone_settlement_npc_compat_v0_1.js"
+hash = "a58e2f65ec1dcd1d388e5062170e59c21b77248b939532ecfef94198355e0ae0"
+
+[[files]]
 file = "kubejs/server_scripts/project_deadzone_side_bosses_v0_1.js"
 hash = "495dd185f42924162e8eb0427d3e19158962c94b0d8e1f7c066d366e6664cb23"
 
@@ -6678,7 +6718,7 @@ hash = "025877f941768e21ce4a7540d57f8fc96b7fc586b02e869d553814d4c975c843"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_story_progress_v0_1.js"
-hash = "f8fb063d0a8f60b3d13b314564f42edf59c7bce3fc96b34d339a736b0795c0b4"
+hash = "1c95aa886065f76a9eff01c3ba4fa8a5ca84eb828e10bdcd1a50d63e6983babc"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_story_progression_v0_1.js"
@@ -6734,7 +6774,7 @@ hash = "0f2effb86e78856c471684c2eff9d31521a84f8e3bf1bee512dcbe294fd1db30"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_wilderness_sites_v0_1.js"
-hash = "971730b5fafc17eb8ce99530820d91af51ccac3de3f9c9e5b1ddfb31fd78c53d"
+hash = "c1af7038ed72272a4926be48b48151cf795c710b7f3b37e746bffa785383e5d1"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_world_evolution_v0_1.js"
@@ -7170,12 +7210,20 @@ file = "mods/Dungeon-Realm-1.20.1-1.1.9.jar"
 hash = "216d5fcde3d3fe16e5b04457b9a90838f8e5639fcf87da10b1cefb71eb0a8785"
 
 [[files]]
+file = "mods/GeophilicReforged-v1.2.0.jar"
+hash = "ad95a25d38477c38eb43304d9e49a5040684b39c6b02a131d7778203883b1ef3"
+
+[[files]]
 file = "mods/Library_of_Exile-1.20.1-2.1.7.jar"
 hash = "a2706ebae369a44a3bf4540961bfcba8caf6bb1a7c2112c7f7d72bdc4d908752"
 
 [[files]]
 file = "mods/Mine_and_Slash-1.20.1-6.4.2.jar"
 hash = "a5e90a9f1b20271f906f1ee7dcbcb7067ed92e795ff1538fe522b087acb060c0"
+
+[[files]]
+file = "mods/Mine_and_lash-Compatibility-1.20.1-1.0.0.jar"
+hash = "47dd8eb3038701a86b52ab11592de1d7b25bdf84cfffebd5dd95227e6b2f0f1c"
 
 [[files]]
 file = "mods/NoChatReports-FORGE-1.20.1-v2.2.2.jar"
@@ -7191,11 +7239,7 @@ hash = "35b4e0b8703039ef92a1f4a7096a28fda557c2ff8edff18f797e4018fce3a43a"
 
 [[files]]
 file = "mods/PROJECT_DEADZONE_JOB_UI-0.1.0.jar"
-hash = "7b9cd0121bc53109c27bdb3a9d043a13ff348927590a113f29c8b0716e366892"
-
-[[files]]
-file = "mods/PROJECT_DEADZONE_UI-0.2.3.jar"
-hash = "eb0ff8a1e48e77b6e683f0e6e119050d6e7c052cdcdc0efaff78aea4119094fc"
+hash = "3bc0d567e8c408c600877a5d64e4fbcc074d9334ebe5bae5e1971535ee81d31c"
 
 [[files]]
 file = "mods/PROJECT_DEADZONE_Vehicle_Compatibility-1.4.0.jar"
@@ -7210,12 +7254,24 @@ file = "mods/PROJECT_DEADZONE_VineClimbControl-0.1.1.jar"
 hash = "a5ca9af3fa02c30c243b9896c3c069144936d0a0f37dbf6113d0b4ea63927fcb"
 
 [[files]]
+file = "mods/Terralith_1.20.x_v2.5.4.jar"
+hash = "8f65f309d8f2723754bf4b60c7b5763d3ab6ed04b01c172109ba6564e981b95f"
+
+[[files]]
 file = "mods/The-Harvest-1.20.1-1.1.4.jar"
 hash = "32ceef7afc350c42dbe93564facdd64db07bb6ae94a3f30badb933391b942c2e"
 
 [[files]]
 file = "mods/UndergroundBunkers-1.0.5-1.20.x-forge.jar"
 hash = "b9f9a25648f6abf3747c4f1e9c0a0438baac474c71ad5b0981a8613481982d58"
+
+[[files]]
+file = "mods/YungsBetterMineshafts-1.20-Forge-4.0.4.jar"
+hash = "6632e7bcc58325098e85bcb755483de7cb3af92a5ea548f3b5c0162cbf0dc1dc"
+
+[[files]]
+file = "mods/[TACZ ONLY] jeffs_cursed_walking_structures-1.0.6-forge-1.20.1.jar"
+hash = "c9fb06c1137e06a64c6178a39fd05324365411368b924d7e77ebf8a87f61b1b3"
 
 [[files]]
 file = "mods/alexs-delight.pw.toml"
@@ -7233,8 +7289,8 @@ hash = "5e1239fd67c97c042d09cf38664698c9d1a3cfbc50d779fc550c461cf6aeb565"
 metafile = true
 
 [[files]]
-file = "mods/ambientsounds.pw.toml"
-hash = "0bfdbad9eacbb9bbb715a2434134a33cb59b33862bc1fbe221f9be869490fb1f"
+file = "mods/ambience-mini.pw.toml"
+hash = "855f26e14952711fd1e8dd63f554ec1a7b06221c2aec52fc1beff680699398d1"
 metafile = true
 
 [[files]]
@@ -7370,6 +7426,16 @@ metafile = true
 [[files]]
 file = "mods/building-gadgets.pw.toml"
 hash = "528a5c2d50126e1b2906b47449b40a996fce3b4a50b9a0460533f2b7b74f5c99"
+metafile = true
+
+[[files]]
+file = "mods/butchery-alexs-mobs.pw.toml"
+hash = "a343b40998e9131a0db805265e54b4e6fb9a3ae4bf28d498a55e0eda7dea92b0"
+metafile = true
+
+[[files]]
+file = "mods/butchery.pw.toml"
+hash = "8f2d2639fde836a447322cba5671991f37a8de16fa7bcd4b20968b7c95578c88"
 metafile = true
 
 [[files]]
@@ -7595,6 +7661,10 @@ hash = "e33625186846520238b3b176f4b289dd0f85b4e84db3b91b0b287e1afb9621aa"
 metafile = true
 
 [[files]]
+file = "mods/dummmmmmy-1.20-2.0.12-forge.jar"
+hash = "bd7f168ec56f14a25d36d9d0dc4d281e88f77b1ba678907b5c570e5c051a5ca4"
+
+[[files]]
 file = "mods/dynamic-trees-for-natures-spirit.pw.toml"
 hash = "9c74ac86374e5f8769d846cdd4a2937652edc98b12f3508641ede0b4fbad18c4"
 metafile = true
@@ -7643,6 +7713,10 @@ metafile = true
 file = "mods/enchantment-descriptions.pw.toml"
 hash = "0e7dc171b342813da2ab2129c501deeb2422d508949da0461a7acbf3461e65c3"
 metafile = true
+
+[[files]]
+file = "mods/enchantmentcontrol-1.2.1-forge.jar"
+hash = "1891154baad44c34e70cb29e2e6eefe18a9b701af0f94cfd86326357d7df1968"
 
 [[files]]
 file = "mods/enhanced-celestials-tweaks.pw.toml"
@@ -7767,11 +7841,6 @@ metafile = true
 [[files]]
 file = "mods/immersive-engineering.pw.toml"
 hash = "6439c6f409308c4a89a12708b54cef41aa5382dc78e6f352b3e8005e96a21a8e"
-metafile = true
-
-[[files]]
-file = "mods/immersive-melodies.pw.toml"
-hash = "20c8a249ae32573e34f5aa19beea3ef7bb5f8ae1c381663bdb4ecec5547604d3"
 metafile = true
 
 [[files]]
@@ -7957,6 +8026,11 @@ metafile = true
 [[files]]
 file = "mods/melody.pw.toml"
 hash = "0b9cc190139b0eb2d5f0153f05717ed53edd499ad2a3eeee99ea75d22fd0ef1c"
+metafile = true
+
+[[files]]
+file = "mods/minecraft-comes-alive-reborn.pw.toml"
+hash = "2355739e29d6568e4eac040f178f450230f1d75efa23d25b431124415684ff3c"
 metafile = true
 
 [[files]]
@@ -8149,6 +8223,11 @@ hash = "3ae63c3e117bd2be113f4a95f26c32947cdf2242326fc425c8ca56c17b580403"
 metafile = true
 
 [[files]]
+file = "mods/puffish-biome-dither.pw.toml"
+hash = "a1a3ac2f960866271867639d202fc475f9cb92a48b338df62ffd134c8eeceda0"
+metafile = true
+
+[[files]]
 file = "mods/puffish-skills.pw.toml"
 hash = "48c8c2d28e8e8ba274b9f89e279d300b33f85631c7591cddb8484abde8944959"
 metafile = true
@@ -8169,9 +8248,17 @@ hash = "2612c14e794ab51364efa865616c5170ed898a2a7e954428085c88f8501264b0"
 metafile = true
 
 [[files]]
+file = "mods/realmrpg_quests-0.1.1-forge-1.20.1.jar"
+hash = "15cd8dc07d6519ba1d355c58bf0ff833b3add8f05454441c7cd61ecb082b480a"
+
+[[files]]
 file = "mods/recipe-stages.pw.toml"
 hash = "5163f0269a2aec05fe845f4d97f084ddb47fd45a941cad6116e2dc9a46eb136b"
 metafile = true
+
+[[files]]
+file = "mods/recruits-1.20.1-1.15.2.jar"
+hash = "4b53c1b752e886ba10985aad2df30d668971810230eb77867e07428a21d1af7f"
 
 [[files]]
 file = "mods/refurbished-furniture.pw.toml"
@@ -8338,6 +8425,11 @@ hash = "a84128f1f8352a1e8239cfdc6e82cfe44bfd80585b0adffb0c3e9f4804fa0389"
 metafile = true
 
 [[files]]
+file = "mods/streams-reflowing.pw.toml"
+hash = "4341c1e57f6acb570785f7deceb649f8633e01681a3128c190006ca87a8de2ae"
+metafile = true
+
+[[files]]
 file = "mods/superb-warfare.pw.toml"
 hash = "42b6ba778eedb22ecf1d9926862c002d920202aeba79542f049a860cbf3ac008"
 metafile = true
@@ -8428,11 +8520,6 @@ hash = "2efee7b4e5ffe1b14c48a453c3f4dde15cac7614b41c1a371284a6acfae39ec5"
 metafile = true
 
 [[files]]
-file = "mods/tacz-sbw-playerrevive-gun-mod-compitability.pw.toml"
-hash = "7c4cf987f6e3d01705a9f9e42dac621130cba2302780daffbb6934414979f300"
-metafile = true
-
-[[files]]
 file = "mods/tacz-simple-enemy.pw.toml"
 hash = "28daa08173918614fc50fb14fb2b4a509103105ae22dff641b9e4e21cf70851b"
 metafile = true
@@ -8451,6 +8538,14 @@ metafile = true
 file = "mods/tacz-weapons-and-tactics-mod.pw.toml"
 hash = "aca7de14aa01b8082c14d3ced2dbd155afa61e2bb4befe53cbcc9e93ec4333a5"
 metafile = true
+
+[[files]]
+file = "mods/tacz_eo-1.2.0+1.20.1-forge.jar"
+hash = "1dcc24ad18368c5e1bd49502a01df05641ddbe8aaa9787fe9b52c2870c5ab240"
+
+[[files]]
+file = "mods/tacz_tactical_breaching-forge-1.20.1-1.0.3.jar"
+hash = "9e32f8e94c38ff89dd63cee7913b46a946cce400d15eed4180b82237ed661099"
 
 [[files]]
 file = "mods/tacza.pw.toml"
@@ -8517,6 +8612,11 @@ hash = "fd5edfd59aadb46cf1316882ee7333503f4fd6ef71e375bb5df005c2a37bece9"
 metafile = true
 
 [[files]]
+file = "mods/travelers-titles.pw.toml"
+hash = "dec5a52502d55acaa36a0b3f21a533a43e392e5bfd7e9053bed347e8dba8b8bc"
+metafile = true
+
+[[files]]
 file = "mods/turret-tacz-addon.pw.toml"
 hash = "1f9ca3018620459e0bbcad0dc24c3645b2371c3b5adb12bd85b395c64be347b6"
 metafile = true
@@ -8537,6 +8637,10 @@ hash = "81e8b4f0b328134982bf1d27721048ea0451368227ec17d27c8c93ee8a848645"
 metafile = true
 
 [[files]]
+file = "mods/village_recruits-1.0.7.93TC-80.jar"
+hash = "de0e866d7cadfd01d7e9a3c169a5d4318cc89eb50c7591c7419f0d8cae97a289"
+
+[[files]]
 file = "mods/visual-workbench.pw.toml"
 hash = "c1bf8d194ef2c39c6046fa53861571b7c569277923b35e6d95a58ee4644eedb6"
 metafile = true
@@ -8545,6 +8649,18 @@ metafile = true
 file = "mods/vminus.pw.toml"
 hash = "c3954a7cc5a8cb778bfe04abdb38bfc7da2e160ec72f1ff7fbac195fecf0ea57"
 metafile = true
+
+[[files]]
+file = "mods/workers-1.20.1-2.0.3.jar"
+hash = "c7c59a7a87bf51ec5ffbadfe5340f854f92397591a52ab5af1df8bffd71d941e"
+
+[[files]]
+file = "mods/xaerominimap-forge-1.20.1-26.4.2.jar"
+hash = "8143f332ed20a61a518692b42c793e021b6bd2d0d9d61cf3938fb9cfa07eb59c"
+
+[[files]]
+file = "mods/xaeroworldmap-forge-1.20.1-1.44.2.jar"
+hash = "cc20a74887923eecf5b614ffbf5a58e6c749d98a657003bde4a77d04212dee0d"
 
 [[files]]
 file = "mods/yacl.pw.toml"
@@ -8827,7 +8943,7 @@ hash = "f284716c5c1064f4c103d66804afd330565d2a8502131400c1c0926599b5d7a5"
 
 [[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skill_trees/talent.json"
-hash = "8036460143902cb253f9acc05a30d0d574c0cc8e89678d2ef7833a52bffe3d60"
+hash = "41bbdd7791b6157fa1a4e2ba1019f5577b1fb98ad8fb7ecd5b5b81c885fda7f1"
 
 [[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_engineer_automation_1.json"
@@ -8930,6 +9046,34 @@ file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/ta
 hash = "a14f9d3e42a3a565004e65d2ce330dd84017e3170b175e38932db4d28f7351f9"
 
 [[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_engineer_automation_power_prestige_21.json"
+hash = "46b9f576311567c2c4cb5709fb915b68acfb14ff884a5d7202c2e5a1542638f0"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_engineer_automation_power_prestige_22.json"
+hash = "a282d6c36a6882d28f066cb31ee29a1b0d2a5d849eb9da9047fd617d5a6a3d86"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_engineer_automation_power_prestige_23.json"
+hash = "f35b991fb123e9ee9d942fa5340eb2277e0bd115853b7a87fd12443830857770"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_engineer_automation_power_prestige_24.json"
+hash = "2259a75d219733b005b98d6a5679524b0a41314b139b82298b1792acc243da54"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_engineer_automation_power_prestige_25.json"
+hash = "deb053c971174f9ae18bd6e64fabd2c7e788408ed0375e5bf6ecf6f38da5758d"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_engineer_automation_power_prestige_26.json"
+hash = "da9d37b57fbd10086e82fb7a78a5ed83a2bbb0b538e782881fd975e93062cb9c"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_engineer_automation_power_prestige_27.json"
+hash = "013735187bc9c1f63e9205b0fffc13d935f13587a251f5b1dfba7731d049d097"
+
+[[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_engineer_automation_side4_1.json"
 hash = "dce99220c07d583742e8aa19be187540fa4e84a42997f0dd1d1a67943ccb8da9"
 
@@ -8964,6 +9108,34 @@ hash = "e4d8dbf34ec5827abcfdf046b03c2560555045942fd952151c1291727a4eb0f1"
 [[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_engineer_automation_utility_20.json"
 hash = "720f720461f23685ea3dfeb5d4cfe020f1becf7ac9153c5a6744f241fa3cd50e"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_engineer_automation_utility_prestige_21.json"
+hash = "b50d2fc0f9bb13ef4d390cb5e9852413595506c5db1a3010c16037cb6fa657e2"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_engineer_automation_utility_prestige_22.json"
+hash = "a50272858958c049c1dd6bba10600fb29d85b6fb3f4558f974c34b019f0b7d24"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_engineer_automation_utility_prestige_23.json"
+hash = "84df7b111aeedf2a637c4f506eb4ec73ac90d2ece0ce3b1f16b379b44d479016"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_engineer_automation_utility_prestige_24.json"
+hash = "7370076c2500df496bdf248579bc1c6e3e0840a006a8b5636dbc2f84d38e5aee"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_engineer_automation_utility_prestige_25.json"
+hash = "67b4cd42baafe9b6152f18800c31026e7b1dd38af9f3d533d29bf95c8ab5ca8b"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_engineer_automation_utility_prestige_26.json"
+hash = "8fcf127d84900bf3c242092d1d71ae024ff4f887cc9c9a008de01b857a4f4440"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_engineer_automation_utility_prestige_27.json"
+hash = "6e998afe425e8cb8e0db71d2b056359ecf7edf01c234c68aa93fac2b6e9ccc27"
 
 [[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_engineer_gunsmith_1.json"
@@ -9066,6 +9238,34 @@ file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/ta
 hash = "aba22fd572e9ccf64abd3f9615e13aeb82d0f3ebb4af3135e77b70ad867c9c45"
 
 [[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_engineer_gunsmith_power_prestige_21.json"
+hash = "dace92acbe42f7d5a4bc4e3eadcb7c411008090f4b1bba8554bb222acaf6caac"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_engineer_gunsmith_power_prestige_22.json"
+hash = "525bcef1e70c5ff04d95f67c2d1b6c8b22345ba9b39a8147b6dcaee9402b7d14"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_engineer_gunsmith_power_prestige_23.json"
+hash = "074632666a36934b09d883d25995a9b6123f504047080e3a767fde0d092d363a"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_engineer_gunsmith_power_prestige_24.json"
+hash = "853627cea1ad68b40f31d2c8ee934a676e620d0e90d483b88da9f4a2a5c279a1"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_engineer_gunsmith_power_prestige_25.json"
+hash = "b20bba90a9cd4f9c8d745ff7ca4ab7ea23f93f4dc76a7820980be0f4f1da5376"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_engineer_gunsmith_power_prestige_26.json"
+hash = "1bfa1a01e7a11e3d9b4cdfcc342aaa25bd3704d3e17601b9233d9c3dba1c0ee1"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_engineer_gunsmith_power_prestige_27.json"
+hash = "785e8d281e706eba38abbb576d0cb252769cad2129ac5ea94ea57165030cc799"
+
+[[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_engineer_gunsmith_side4_1.json"
 hash = "04782c7e24f6861209c47813e01b2eb6cfccd301bc783765bbbfec39b777ea94"
 
@@ -9100,6 +9300,34 @@ hash = "90900627a3e79ad72719d41680269e798e6e2ce170b420f343139cf051181ace"
 [[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_engineer_gunsmith_utility_20.json"
 hash = "447be2ad371fa44adeab25336d9d3a6b73dd862823c8d928b9a20854d5f73a4b"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_engineer_gunsmith_utility_prestige_21.json"
+hash = "0fc84c729c1bd60ae24389c846e643c35fbea74d781c9e9baa0ec77cac439424"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_engineer_gunsmith_utility_prestige_22.json"
+hash = "e969748768bebdf2413b5e67ea9b238268eaf25265566b9b9b22399a51772310"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_engineer_gunsmith_utility_prestige_23.json"
+hash = "54e2134b313989040f5a62bfde56c30dafdf042b32530dc02c8bc9b38be82d2d"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_engineer_gunsmith_utility_prestige_24.json"
+hash = "643ab64a7306cbc899220afba37f9dd3196f681bdf1832a3ed336d2037fc2e07"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_engineer_gunsmith_utility_prestige_25.json"
+hash = "70875cdde4e6706b1687d34d694414ef85c40eee3c200e918b3844c35db46b44"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_engineer_gunsmith_utility_prestige_26.json"
+hash = "f3d44a85601c7deb5ae3a6a99389808e9da6d84ed9586f8b40a30f10a3a06723"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_engineer_gunsmith_utility_prestige_27.json"
+hash = "326bddccb1ba9ac2a00bb957c602a65c256259a034bd398f1e50519579c41a05"
 
 [[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_engineer_power_1.json"
@@ -9202,6 +9430,34 @@ file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/ta
 hash = "55edae885ee1a3bf15c2695a5d9dd68dfc877391b9ccf2e86a716fad0d3dbfbf"
 
 [[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_engineer_power_power_prestige_21.json"
+hash = "1a413a355c3c527a9332588692eac7b36c126274e2affc7a4c4fb578abf417eb"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_engineer_power_power_prestige_22.json"
+hash = "6c7c91cbc78ad00b6358ae9d04468c05c6d91efdb4d35242f741e95a4ed0f80f"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_engineer_power_power_prestige_23.json"
+hash = "22eba2c9d7360d5131e8cf6fb5158b9398bb8a91c15e6f0410846042d06635f7"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_engineer_power_power_prestige_24.json"
+hash = "dd916e1b0a55de5a130c793c2a17b8c794b9f8648601d6b43e6550b1e81f2a1c"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_engineer_power_power_prestige_25.json"
+hash = "767a7fc431fa61e7f2aa07626d0b1ecb7b2c70890bd474e385df16549825e4d8"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_engineer_power_power_prestige_26.json"
+hash = "cf12d645db4ce346d4709cbe48da05ad458912cf347d986953e3afe6874d8fb5"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_engineer_power_power_prestige_27.json"
+hash = "b75a47dc30497e88b8c75c91407a4d01f0a372ff466fd364aaf842612b0ff394"
+
+[[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_engineer_power_side4_1.json"
 hash = "fa62f36b168b426cbf290cd775efe05dbbab6b8f484e9901835437bc7ae5ae6e"
 
@@ -9236,6 +9492,34 @@ hash = "c1f4401b3ac1a5379ec0ca6f2dc274a1d0494878e3fc813d0b3ca25625ef45f4"
 [[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_engineer_power_utility_20.json"
 hash = "1be43a1aa6e73126a6ed0233efc976de9606aac6d4e1fbf50cf2d10fe5dfd1ad"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_engineer_power_utility_prestige_21.json"
+hash = "0e454f33b872a386c2031e159a282d4064aacad38a6028ec9a0662e9ae3c5bae"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_engineer_power_utility_prestige_22.json"
+hash = "b5053c7721f2f3acdf3508ac89be4809326d720943add77177bb00782fa31fe2"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_engineer_power_utility_prestige_23.json"
+hash = "9190105b2a2ab7f0be4797757ca528e955c51140ffa9216547b1450bc6934856"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_engineer_power_utility_prestige_24.json"
+hash = "95a9af1f663e4d18908fa6784c2bb1cc35252f893db298131756549d9c45575a"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_engineer_power_utility_prestige_25.json"
+hash = "6042dcfd170dcd77c4e66b7406713dadd9f15a66b47f727878f614608465915d"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_engineer_power_utility_prestige_26.json"
+hash = "62d6be7458a252cf3531c583d1d3d32f59d7bc959f17646253b63827b86cde4e"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_engineer_power_utility_prestige_27.json"
+hash = "3630034ea462fbb3c11fb07716c4833edadf06ce2ced04168566dfee2cc07c0e"
 
 [[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_engineer_processing_1.json"
@@ -9338,6 +9622,34 @@ file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/ta
 hash = "82e435b5d43a9dc54fd6062fcb4cf8add0f95f0d5c632364a3b0a9da80950672"
 
 [[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_engineer_processing_power_prestige_21.json"
+hash = "ad739d3567123547d18cfbb259eaab1952748eabdf0621f46f0410bc8595ac49"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_engineer_processing_power_prestige_22.json"
+hash = "ecb0f87e04966dc33bcf7582a7656734eee0df69df374760e201eb9b1724392b"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_engineer_processing_power_prestige_23.json"
+hash = "dabd60de2eba9221101e7e3ee1f8ba93fb8122fd1c650c320f31a9a588912c60"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_engineer_processing_power_prestige_24.json"
+hash = "45c9c21b32f03acb0a81bb3e4d6b638cdfc2b1ca631490fd4bedc21b22d472f8"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_engineer_processing_power_prestige_25.json"
+hash = "d7ee4598989cdd74f2a5c95969252524dff5c0cbba439c819011d0ab2d3aa1a7"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_engineer_processing_power_prestige_26.json"
+hash = "3b2d1d5af07ac4dff710ceed55988e7cfb02d77aa7d0e71f0561fa413a3fdf5d"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_engineer_processing_power_prestige_27.json"
+hash = "639c57b25246fc067b0049730085859a90acad454ea8aaee316df5a477b05896"
+
+[[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_engineer_processing_side4_1.json"
 hash = "0d00b57a5c1e862aff98d832cbc1c9f8be96a06c0b75aec2fc3e171197643218"
 
@@ -9372,6 +9684,34 @@ hash = "c0bb9b4d1855b3e0a308f11ccef311159b57e4c174ef8b54cdd6f6817b6df10b"
 [[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_engineer_processing_utility_20.json"
 hash = "984838e603bdcf089e8b659b109243e82a62d200e99b57c11c639e1bbb739abc"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_engineer_processing_utility_prestige_21.json"
+hash = "fbe282b7eccec0eebd2ebac620259871285311e0b8b73950f2f9bf5848a9c674"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_engineer_processing_utility_prestige_22.json"
+hash = "edfb49dfe6a56ad1f91caf51792becf2ce719c0f6db76eec7da4e0e601c6fc7d"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_engineer_processing_utility_prestige_23.json"
+hash = "c9b9e0f590346c1c1aa19766871f254953591a16834e27fa938a12b22bfa8db7"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_engineer_processing_utility_prestige_24.json"
+hash = "b027b0d634b2f50eac735ab466007133e5b8ce59bd611c55b8c1c0b463ef245a"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_engineer_processing_utility_prestige_25.json"
+hash = "d7610a269adac2c29cf26becf57802080c3fb2d96c01b3897eafe800f9d48877"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_engineer_processing_utility_prestige_26.json"
+hash = "111e989cd4c080c9f85f5b13b50c362a069dec40e7002697db441093d0e7d3cc"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_engineer_processing_utility_prestige_27.json"
+hash = "8c2a1528a5822c8eae92bdcf95851ac754e024f63c48279c39468a6c317f0cdf"
 
 [[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_gate_engineer.json"
@@ -9890,6 +10230,34 @@ file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/ta
 hash = "cfc8ab5c506e911f4c00da54e680627c3f531012ec798f2a7432d459715d5ef5"
 
 [[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_mechanic_aviation_power_prestige_21.json"
+hash = "d5d6d6c5e21fa5c477bdd6734982aace992d85d22d00325bb3f1c21f966de236"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_mechanic_aviation_power_prestige_22.json"
+hash = "b22d14e40b060289ea5157eb6f049d37c95e5670e3d17535d7560a6b50ed8b5c"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_mechanic_aviation_power_prestige_23.json"
+hash = "d4e94a9853825978dc20f11ab6880b6e56f2369980c836732f11cd944f98dc23"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_mechanic_aviation_power_prestige_24.json"
+hash = "c10c15759f7a35412007bdea2412f24b20c0883391f24df45ec40080a2b00564"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_mechanic_aviation_power_prestige_25.json"
+hash = "54e6663ce49c06827f5c6f13df3b5746149a02dcae30d74d0e8cecc3408f5c42"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_mechanic_aviation_power_prestige_26.json"
+hash = "9f8e9652dc28a152881d291bd0daac05a980079c4af557697a47d83c0c2430e4"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_mechanic_aviation_power_prestige_27.json"
+hash = "ce80c39c178ef15b200d6208d9dace0211d63575ba3fe354d10c949fb474f042"
+
+[[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_mechanic_aviation_side4_1.json"
 hash = "36921f22827561b65b5a8d97276d359b73f8e52c9ae85e5113cd863295af1b63"
 
@@ -9924,6 +10292,34 @@ hash = "e34f3731e932a7690d5ec56a5debea2090fd1a9abcadeb2f8438c5814883d3a2"
 [[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_mechanic_aviation_utility_20.json"
 hash = "e29b8a383df241d38b4a5e10b39e316f1dc5beeab7c416a3d37c12c5f61cad33"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_mechanic_aviation_utility_prestige_21.json"
+hash = "a43e4236e12576ccc72907d17a1d47663d78477ae695c3489b8670611b4abafb"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_mechanic_aviation_utility_prestige_22.json"
+hash = "800c6c3d25a880cddb0aa92651d62156c12fbe4df20bbcbf6e177b36097466d8"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_mechanic_aviation_utility_prestige_23.json"
+hash = "83ceb6920bd7341c91ad253555d3669b6132ef4b7cfc6c763debf0b13bc97c45"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_mechanic_aviation_utility_prestige_24.json"
+hash = "033142f9963f2869bc886e48122276ff7dd0aacdd09fd4b3d968889a7dde81d2"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_mechanic_aviation_utility_prestige_25.json"
+hash = "417db60119faa7c958d7095c4019823358dbbc4be1b891729b6fe3aa78fa6256"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_mechanic_aviation_utility_prestige_26.json"
+hash = "81a50adf7b54af595919cc269bcfb447acef64d0e8ac523c8d0d95800c1f8527"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_mechanic_aviation_utility_prestige_27.json"
+hash = "a7fe195b043a29fccedfa6bdeb880d992c3c324ede5f1d84e08144bd80829f56"
 
 [[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_mechanic_marine_1.json"
@@ -10026,6 +10422,34 @@ file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/ta
 hash = "13cfca9343b9f798a1612294d8c08c74d41f537371f9cad5d592e489a49e4181"
 
 [[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_mechanic_marine_power_prestige_21.json"
+hash = "4a58d358bd59ad89aa38df3ec66f9d03427fb1e251c12e2e2cf625fc0308e9d3"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_mechanic_marine_power_prestige_22.json"
+hash = "81e2162f0505f6fa4aeff8def377a84fddce61d8f4b66d873926b518333cccca"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_mechanic_marine_power_prestige_23.json"
+hash = "3c5f8078c12bf5afa9e6d510a8c3f96cad3f8afd2d5c05b0394638284a21846f"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_mechanic_marine_power_prestige_24.json"
+hash = "ba89405ad7ef46df17c406457209edd916db0a53165a0ed9168ddfdb57fa6301"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_mechanic_marine_power_prestige_25.json"
+hash = "ab02c29bfd2024fdee3a54400facb998e3c8f974ef0c8d0a0757bc6860397364"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_mechanic_marine_power_prestige_26.json"
+hash = "45c9da282045f7b78566ee59ed2c8288b09a19e44261e0697d2aa92e920d74dd"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_mechanic_marine_power_prestige_27.json"
+hash = "7680c8960881ad8f9567336c315a68b3ab1e826799656445723776014f166b94"
+
+[[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_mechanic_marine_side4_1.json"
 hash = "fa0fe5f466a297278eb40638e1c51df2e5d381a0132811fc217988d79acf62a1"
 
@@ -10060,6 +10484,34 @@ hash = "07ecc29c95fa73e4f0bd74ef98a67c19835c2598e854dcc7da263b79680781f0"
 [[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_mechanic_marine_utility_20.json"
 hash = "77f1ed4fea687986ce13840d9f80d09f8d773c3f933e676bd54f7793ab1e90c0"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_mechanic_marine_utility_prestige_21.json"
+hash = "d0692af6b88c5cf2c24eb7ad5773527878ff575679243f6adf31a5e4aecfcb2a"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_mechanic_marine_utility_prestige_22.json"
+hash = "cfbc4f4b2a15c7308bdd28cefb94f1ed7de1f5d83c110fea9f71fdcc07191c8e"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_mechanic_marine_utility_prestige_23.json"
+hash = "c1ccab872b87e42727ef44aea7b44771dcd64595e920ca6ca7cde68ca6a5a825"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_mechanic_marine_utility_prestige_24.json"
+hash = "4de4fbee2184495c426575bb2aa0f1392d284e0dcdf12b370103c34fd5adb9c3"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_mechanic_marine_utility_prestige_25.json"
+hash = "3d6576857ffd0daa4ca7302d15beab75600824c76b6581bde3184de83ac118ca"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_mechanic_marine_utility_prestige_26.json"
+hash = "b0969440618973926180a75b1d64a8f43368c7981fee078d0eaa3448d2022de1"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_mechanic_marine_utility_prestige_27.json"
+hash = "45096f3b1b66cb0466b78b3b976d49b0d9a796ed3e8e0f889de693109d42fcbc"
 
 [[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_mechanic_repair_1.json"
@@ -10162,6 +10614,34 @@ file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/ta
 hash = "9eafb0b71c763a223c499829d778fb3c7fc7c990e9429fb1f4b7752e4f6a062e"
 
 [[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_mechanic_repair_power_prestige_21.json"
+hash = "40a29939be05e822701af283bc60b5a50d0e3fd8e139d01be619837ce414dbf0"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_mechanic_repair_power_prestige_22.json"
+hash = "6625f0e66b0bcae89c28917ec54ec86492ab148899d0322e6f04bfe852614bda"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_mechanic_repair_power_prestige_23.json"
+hash = "b45bc5011260356796af701d14abbb1a820299dcfc9db8a57ce23178b96d2e25"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_mechanic_repair_power_prestige_24.json"
+hash = "66e065d3e6c50f9fb4caa9cab11a00460e1e64c65d3c548c53b30df6eeb8371a"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_mechanic_repair_power_prestige_25.json"
+hash = "250a5bd6776ec3d85d096059a723bfde9435d8d104e0e968a021526ffb1285bc"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_mechanic_repair_power_prestige_26.json"
+hash = "cd9d9f2ade8e103528371dc9b92f5df2c1b8e978f296249c9cffeabaf76b1dcc"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_mechanic_repair_power_prestige_27.json"
+hash = "dbcd4a4d99041bed5db9d113eccea30a701b182f7baeea4c89508453c18bea51"
+
+[[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_mechanic_repair_side4_1.json"
 hash = "4aae9ed9bfafd8b4a1e4e6373fd34fe8a7c0ffb33d5617e220997df4fe9233ca"
 
@@ -10196,6 +10676,34 @@ hash = "833e7ce7c9118ce320c45bb01503ecdf0d0c03c0400722587d34373fc856025f"
 [[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_mechanic_repair_utility_20.json"
 hash = "06b86ac2d24f93da9820ae8ca9ef6331079811571539199dde43592b60436ef0"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_mechanic_repair_utility_prestige_21.json"
+hash = "8831f0767e23a68475d2e95671d39df4c0634caa5863e3758ac59292c02a2fb8"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_mechanic_repair_utility_prestige_22.json"
+hash = "1f07fafa3746f41fd5d09cfc46db47e5b49d6cc5918f0bd01252099c15db69f2"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_mechanic_repair_utility_prestige_23.json"
+hash = "f1ab33606a41dd2e2af0884bb72504cd7a2f9a5d51e0f02c37fff7ee9a01bbf4"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_mechanic_repair_utility_prestige_24.json"
+hash = "a8b0641abdfa69879bb41267b488d7e15b9573373b94eb57e66ab250ddd07fc9"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_mechanic_repair_utility_prestige_25.json"
+hash = "3fdfb50ae12dc1687924060e65875b7b97df7dbea87e667d4898d8eda7e3a0b1"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_mechanic_repair_utility_prestige_26.json"
+hash = "5ac8de3aea853997864d59df4aeb7e9dabb0f0d9f67c6e0d1545bcf7f509e295"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_mechanic_repair_utility_prestige_27.json"
+hash = "b38868348ed1feb59aecbf3d90a7f0a0072b7a382fda6fb46d1508b5d974d572"
 
 [[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_mechanic_road_1.json"
@@ -10298,6 +10806,34 @@ file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/ta
 hash = "1d612e6b1e6408a00f4b09f7e4bbb411a7642265bd3a2c4671bcd71bc6541deb"
 
 [[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_mechanic_road_power_prestige_21.json"
+hash = "46c317ec6b339cf3b9d484377f5622d41532ecb9689e87dea0b05736adc1a286"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_mechanic_road_power_prestige_22.json"
+hash = "e568bdcfbccbbad6f87cdabc1639dd963c05a5617203c873b15528c688a73780"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_mechanic_road_power_prestige_23.json"
+hash = "7fccbf8057af816ee46c8f90ead061158a44176ead0422938e64f3db1cba0480"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_mechanic_road_power_prestige_24.json"
+hash = "4fa7288f1fa3f173a56f06f3b85607649b843e9d3bb1d519d4996d6a5077e2eb"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_mechanic_road_power_prestige_25.json"
+hash = "3e68dc81e8048cd493edfb182fac76b9c1ec374da1599a683f9ea4e61b781e4c"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_mechanic_road_power_prestige_26.json"
+hash = "0ed21618af45bb223ea0446b8f683091fffe5392b6d5dac99c6c69b5aaf507ae"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_mechanic_road_power_prestige_27.json"
+hash = "dd0b17289b8372b7dac590af092e02b27f521df25bb36ac44e2a7ebf2cabf626"
+
+[[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_mechanic_road_side4_1.json"
 hash = "f1071c7d19d75e92e90f8c13134cbb7fa760d2c2767b792fb45769821af24b4b"
 
@@ -10332,6 +10868,34 @@ hash = "4fec2c86cd16c82ba837bc74867cb408f6cf7984da24d0aec25509a2912cb130"
 [[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_mechanic_road_utility_20.json"
 hash = "21726e7d5a3e6b679ed53c74e8ee214f0f2af34da317b282256eb3d258bd7187"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_mechanic_road_utility_prestige_21.json"
+hash = "512fa9a14680848134df70db5fd42c954c27240c915562141ba7ea2871088d08"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_mechanic_road_utility_prestige_22.json"
+hash = "a10d94305b44834198824f5da8b9ffc1db68fe4eef11b33c72b4d97feb554ce7"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_mechanic_road_utility_prestige_23.json"
+hash = "e183070d2885b0c8878b5f6d0b71bff5a63d2bdc44f5fbe2b5791ca79d23ced9"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_mechanic_road_utility_prestige_24.json"
+hash = "90dbea905f165ce114536abbae75959e9edf479cc07b9d7b3275b7c77cb4eaad"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_mechanic_road_utility_prestige_25.json"
+hash = "b43db7dcdf6e92d3c02d020931510abc4ba6fc148d27f2b0cf363034236829d7"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_mechanic_road_utility_prestige_26.json"
+hash = "a99e05269fd03149a2107f0b9d5a7e2a9d4c26577c2a0b46abf1c408ed724162"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_mechanic_road_utility_prestige_27.json"
+hash = "1f96d0b5d39e9afb228c4d049b96ae94c771abba34874bbe11d9d4dbf078a231"
 
 [[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_medic_aura_1.json"
@@ -10434,6 +10998,34 @@ file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/ta
 hash = "a58238037fbb04cd87c747ae47fed89db7aab86f53888c36e24825f48abdf3e5"
 
 [[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_medic_aura_power_prestige_21.json"
+hash = "6cf3f6078ad58c91b2abb454aa53ae34469ee9242e0c0c8535b32a7805b2d3c1"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_medic_aura_power_prestige_22.json"
+hash = "d5719db6bf128918f9e459ca23f5d35e1c64dc9801edd7e286b58826b0238ba4"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_medic_aura_power_prestige_23.json"
+hash = "084a855adf90bb1f327ef6fe1d7f05b59a2d5d907b5cac4df969cdc3867704be"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_medic_aura_power_prestige_24.json"
+hash = "597fa8f50794fdc159abe3a425e913aa7158be9f18e691c63a0f97c7331ceb14"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_medic_aura_power_prestige_25.json"
+hash = "07186bde4e3bdb04e5684cbd9338b5d8bf0944ffd5ae491c434cff1243f27d50"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_medic_aura_power_prestige_26.json"
+hash = "641d78b501e4ebacda76146ed3f4df27dbd4682a6ec8774ccdaf082c237d9d58"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_medic_aura_power_prestige_27.json"
+hash = "90798f7a3ae1b653901dbfd3ee676c7c4b168601b5cd694e472e00e108f8dbf5"
+
+[[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_medic_aura_side4_1.json"
 hash = "bb7b0b5bbb1231dc6b4804fe733ffa580cf1179d8229ff78dbdf2e826794a7d9"
 
@@ -10468,6 +11060,34 @@ hash = "7254555fcd2409b86ab56883453dd476a827a0c92a4df32c4b640e70cdede2ce"
 [[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_medic_aura_utility_20.json"
 hash = "9daf25e699edfdf16f3a368f7e8b838a49192d1c4b3a977b3ef8228fdc5882d0"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_medic_aura_utility_prestige_21.json"
+hash = "16df780fb1f7bb555b9c1b9eb61b94161042b608e0bf209136f025af4be07902"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_medic_aura_utility_prestige_22.json"
+hash = "8a8ecce8b4197925287e8edd700447bfea9b2d3875806c0c7029ae15df1b1efb"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_medic_aura_utility_prestige_23.json"
+hash = "99db0665921153e11bb501d60d33d46d04e5d98423a425820f6a3f80b3884d5a"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_medic_aura_utility_prestige_24.json"
+hash = "b1328f67b7eb0966503576763b2e25df8919e3f3ccec827b906fe41e5f9017a1"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_medic_aura_utility_prestige_25.json"
+hash = "0462d27f800f4205fe7b925a5e7f8ca199f9054b0c814ec705675f81d7224fee"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_medic_aura_utility_prestige_26.json"
+hash = "9a4be81d87decf192676a85bd6bce435fa4b35a22cf8bee4afc34078f4c0a011"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_medic_aura_utility_prestige_27.json"
+hash = "9bf3138f1498255ba045326e14bee1f92447ffa136c81803b62cf0a26d9d6480"
 
 [[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_medic_healing_1.json"
@@ -10570,6 +11190,34 @@ file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/ta
 hash = "21e6bcb2d0df71112efec29df8fc80019941b59fe85861cb494153722d2f7e1e"
 
 [[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_medic_healing_power_prestige_21.json"
+hash = "7fa3f47e2361d96dd662d628cd395874e5c4a8345a29781ea5203f10de6d2246"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_medic_healing_power_prestige_22.json"
+hash = "09d59e7887040799309aab120a3246814daabf26da98de98bb2a228073fe505d"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_medic_healing_power_prestige_23.json"
+hash = "8ff8616df027b26e7510e6c90f8ec11e9efba0a372e5a6b64c043f501d84d9df"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_medic_healing_power_prestige_24.json"
+hash = "9627b16297926ed50e23ec05b6afa472f6fa424cc9cdf0207f0648bbb92c6e89"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_medic_healing_power_prestige_25.json"
+hash = "b2053ddd0b2799e74d8ed0c8381b5c16cda6ae071572e9ff9e5321e64066fad0"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_medic_healing_power_prestige_26.json"
+hash = "603eb4350861a820454291e0f37776e71614d93c7cc48b55a178ace1cac6d723"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_medic_healing_power_prestige_27.json"
+hash = "ea87eda3286932f744d4db619900e9d34503a78d29cc4976d443000ff2ec2b1f"
+
+[[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_medic_healing_side4_1.json"
 hash = "c5149815038aa91dddcc1c6fff7d3af5b034b054e50cb4004c335d937835ce2b"
 
@@ -10604,6 +11252,34 @@ hash = "6d04c0b4ac5ed578452819c2e5cbd36651190875054087a04dfa584977f3079e"
 [[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_medic_healing_utility_20.json"
 hash = "5b1f826e5fd6355ab5f33f2cf789639bf1aff9833802aff57662260d4042223b"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_medic_healing_utility_prestige_21.json"
+hash = "6c5dfeb672b904c20422f09514a7fce6e34299b93af76985b10c355c48afb88d"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_medic_healing_utility_prestige_22.json"
+hash = "ad0d2b5a4ce36a30a1d3ef75118b376dfe62fd0c9fe0713f21c3d6a45c4d6bc2"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_medic_healing_utility_prestige_23.json"
+hash = "1133ab85d5037013220abd335d3ef4a20c4e1d008caa726132574abe2d780802"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_medic_healing_utility_prestige_24.json"
+hash = "b4804d720b0425209be08e863b8940246a12c39e47a16ff07efbe183d1998c37"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_medic_healing_utility_prestige_25.json"
+hash = "2904c6eb0eb3f25e6c58148dd6fcf8efc9d01651078fe2cee3691f4b6cff2a2c"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_medic_healing_utility_prestige_26.json"
+hash = "d73ebcefc50e2e1a9a9654c2c7ddf4d6027262bf5dd1615376feb6b16eb53496"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_medic_healing_utility_prestige_27.json"
+hash = "a7940c5a737fa12a2b76a36fb02d6852e052a5941a277381b420547200c10f84"
 
 [[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_medic_revive_1.json"
@@ -10706,6 +11382,34 @@ file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/ta
 hash = "cc0c520f3f88e9d3c25a83298169e80a04e1b8b64025dfc7430ddb76b35890fc"
 
 [[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_medic_revive_power_prestige_21.json"
+hash = "caca88173c4acfbdefa59f4bdeb96b4c0b5f00e3ca0069b82f9b1650e3b9ff47"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_medic_revive_power_prestige_22.json"
+hash = "b63841008dcd6e0775b6fe278d1e33e69187a7a84774314975073c75d883e119"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_medic_revive_power_prestige_23.json"
+hash = "389a43eade15db3ff32a5e1aa1574d6ad9f7ff0203a7e626d61e5e8cd13705c4"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_medic_revive_power_prestige_24.json"
+hash = "660e81bfd6d035a895d006b9aa88b12ef0f181fd4078516b9b26f5e785da33b0"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_medic_revive_power_prestige_25.json"
+hash = "d33ee1940fbb526fdf0559466e834f7d0a8a6fef9971dd806dcdacd85e287107"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_medic_revive_power_prestige_26.json"
+hash = "9fa87a7e13cd9a9873fdc071ba49aa8366c387548f237302566570e17da704b4"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_medic_revive_power_prestige_27.json"
+hash = "06c705ee63ffe77759785f2e2d74e96affdae955badd5ddccfd2493642e9aa22"
+
+[[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_medic_revive_side4_1.json"
 hash = "4479639d7b832b38425f8e3022c997499a935fb15e31a7ee6f5ce77c56508dca"
 
@@ -10740,6 +11444,34 @@ hash = "d953b588bfd38a753bc4653e2fe352998b57e76d06fa25107545fe2444946f85"
 [[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_medic_revive_utility_20.json"
 hash = "c839f028f681bc4a55cbd8d1e32d70896606345ab086400b80013951d46e2d19"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_medic_revive_utility_prestige_21.json"
+hash = "3bd55ee89db00094a21f4f872bbc049a4ed581a7c972654dc74dc58b69c3fc91"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_medic_revive_utility_prestige_22.json"
+hash = "8042d57105e4d151652d65b86bea495d3acbb12963802610c0b3a93aeae2cca9"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_medic_revive_utility_prestige_23.json"
+hash = "cedacae160b45b49d9eb5ab8389f35b0aa99c3d0ec71b67935290fceb069d008"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_medic_revive_utility_prestige_24.json"
+hash = "606311bc163ab32bfa3d1663ba93e2e2928038f9f4327beb80851e2c04007b1d"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_medic_revive_utility_prestige_25.json"
+hash = "51eab1388c2a49a2a441667a15a71285beffb9bca3bc0acef88b89d69cbc4422"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_medic_revive_utility_prestige_26.json"
+hash = "78fb7b5d859a6ac987ae24d8f09806d30d2b875f39e7ce9527468feb0c0fb1a2"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_medic_revive_utility_prestige_27.json"
+hash = "94828573ddd674ec7429681b4c555aa327830a63e194471b8aff817922e52e45"
 
 [[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_medic_stim_1.json"
@@ -10842,6 +11574,34 @@ file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/ta
 hash = "c38d548ad1aa5a7c61542e050f44c853a9569946e7640db719e701edfb19f8bf"
 
 [[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_medic_stim_power_prestige_21.json"
+hash = "c9eb4f917b1fe7c0ec5d5759b6605ccf15da0ec9ae724dc7ebf81f5ae860e031"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_medic_stim_power_prestige_22.json"
+hash = "5c8382ae4e0b7d27ad77c5bccde3c9e60d89ce09981e07b71c01721fef826485"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_medic_stim_power_prestige_23.json"
+hash = "797ad9a83b1d971e11dc10825545e1a0610221ce15f9ce4f6a1bceb793db91cf"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_medic_stim_power_prestige_24.json"
+hash = "660032c260a5d5556d840d8b368037f024b9eda672fdeebabcf3ff05b9d64f22"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_medic_stim_power_prestige_25.json"
+hash = "1a527b84650f153e9af87a97232074f714c7a73ef97b429fb05f9968fe69ab02"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_medic_stim_power_prestige_26.json"
+hash = "66fc6b295f0a82a7e595f524a6a01f63c854d675d6c45425b2d489e14f6ebc20"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_medic_stim_power_prestige_27.json"
+hash = "454bd233111dcf626a21852082ba8b2916fd2262fd6d5c61bc30a56e69bd057a"
+
+[[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_medic_stim_side4_1.json"
 hash = "6154a9b9bb49b9efd57ee11ff7c3efc55ee9df463588f62c2c9588c6b483db8c"
 
@@ -10876,6 +11636,34 @@ hash = "70efe3649d72ab653fcb41c1d7385c8792e0b01a1a233d946f716602e1c85fe1"
 [[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_medic_stim_utility_20.json"
 hash = "c24d3911443c2ef90ab1a8b41dd1cb304958e52af6cba61d7cea6aa729a532c9"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_medic_stim_utility_prestige_21.json"
+hash = "4e6119b3d1454ec3a8ffa9ce3dc13ab0d3e0c8199e9f61bc4087229dea0b21f5"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_medic_stim_utility_prestige_22.json"
+hash = "3fe835b15d2d63a3704827d88cb6c84720d6789e8fe0206c21cf0e30be19af74"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_medic_stim_utility_prestige_23.json"
+hash = "8fe21380b97a0ffd1f37182be03e5d75d15829713bcbe092d8fee9d6b3ece6a9"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_medic_stim_utility_prestige_24.json"
+hash = "b5ed95a8e0ec339e680dde9021e6409b46cc71403c623a29cfaef6672a276473"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_medic_stim_utility_prestige_25.json"
+hash = "de570575a42515681b5abcd2a71d04ddfc29c79f651523e3e4242997707b2022"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_medic_stim_utility_prestige_26.json"
+hash = "a15886116693ef1bf75be594748837fc104bcbdc6f12f3e5b7ed6205871e55c2"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_medic_stim_utility_prestige_27.json"
+hash = "7de0aeafef215b2df59b4be11ecb999619b26278f1f9d2549c2eeb34284c76fb"
 
 [[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_recipe_fortification_1.json"
@@ -11314,6 +12102,34 @@ file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/ta
 hash = "3d60ad0898a6238c88cb77fe11c90128b8331d68ac4a2be75efab7ba954a8bda"
 
 [[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_scout_mobility_power_prestige_21.json"
+hash = "60998cd0fecd1d2f972449ba74bec071407d59e3adf76bac0e2954e00bae2680"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_scout_mobility_power_prestige_22.json"
+hash = "163120f517d1b0612777a24a5f1dbdecacca7c7fdfade17f36569b88490b25dc"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_scout_mobility_power_prestige_23.json"
+hash = "9688bdf58060dcbafa45feabd47c9d710a7b9c6d21588143456eb130b4129ced"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_scout_mobility_power_prestige_24.json"
+hash = "3626015c626058c3e7818a1d350e7ff326cdcbcc571b9770af004e5cf2a2c728"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_scout_mobility_power_prestige_25.json"
+hash = "904ff291338800a9f1d7caf6124514610704b84d97e0a401deb28757673752bb"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_scout_mobility_power_prestige_26.json"
+hash = "82a78a53fc9c8aa91d27261ae126f8a4b18c287e4a5542316851df39803ef281"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_scout_mobility_power_prestige_27.json"
+hash = "8d90778f4495817e85c3a32e49f42c407692eafcd1a55d321da39ae32e03b730"
+
+[[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_scout_mobility_side4_1.json"
 hash = "6f2187998a7c6c81b66250d7621acff0377442161bf049c6f94272c615ce817e"
 
@@ -11348,6 +12164,34 @@ hash = "82dc3447bd16e8333173e11021eeee985ee5340469433232824c63cd01c702b1"
 [[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_scout_mobility_utility_20.json"
 hash = "c7b193f0985b662509f2fe6dabae06c1a38a0b518d2ce2316d555ab42cf9f839"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_scout_mobility_utility_prestige_21.json"
+hash = "12d1b1507612456d2ed36585078c0dfb1c31c68d51d91deccb7689f0e0b6f794"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_scout_mobility_utility_prestige_22.json"
+hash = "213d09499802e6d69c1bd57a97691b0931cc7c82f495d329ea52e596acc70551"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_scout_mobility_utility_prestige_23.json"
+hash = "c1b826efae922600c79df247b0472eefb7eb7a4c4a63c717760059ede4405454"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_scout_mobility_utility_prestige_24.json"
+hash = "4ddab0bf392b30727c320a7bb73e27efcf668a6721dca2b6ce82ff654d83107b"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_scout_mobility_utility_prestige_25.json"
+hash = "da24e13c12d56e3d04b2ce99a315f54e710d5ffbdfaeb26f5080b913e2d1b8c3"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_scout_mobility_utility_prestige_26.json"
+hash = "d4de8ddbce566bb84958d78ec4fe4e4517352fe3d5673111e7389e6da5f5fa42"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_scout_mobility_utility_prestige_27.json"
+hash = "0ed54a83e2fd8c0a9dac58e31d6a2418ee66a47411c4b147f887599dfe3d1b0f"
 
 [[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_scout_scavenge_1.json"
@@ -11450,6 +12294,34 @@ file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/ta
 hash = "f64987fe6a3e102fdaf1d831474d98c1009fec56933393cbd6df30cf4a259038"
 
 [[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_scout_scavenge_power_prestige_21.json"
+hash = "a3aa7ff27254c70452c9a83cb27d1634e80a883b485133753c106d4b027bda34"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_scout_scavenge_power_prestige_22.json"
+hash = "50079f3dc0a79863fee10555e0dc1858b2de99919c0269ac8f20c5ec1c035232"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_scout_scavenge_power_prestige_23.json"
+hash = "f4e8041d701a9715773bf8df02fd600879f97a2c849dd2b2f0621ba8460b4a48"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_scout_scavenge_power_prestige_24.json"
+hash = "00e442bd7811a1696afec7d369373f8d860af33e560e5bb23d21de8ec86ec881"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_scout_scavenge_power_prestige_25.json"
+hash = "01147be94fca653f32937fb4ce85421b5a5555a9f88bdd738974b22103a10f76"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_scout_scavenge_power_prestige_26.json"
+hash = "a7b700a5edfbff70a66d679bf46e5f3b8893f1f2c97004e8e050644078ec7cdc"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_scout_scavenge_power_prestige_27.json"
+hash = "0162afafa9477a7d6e0b17caf0c76aa7cdc34b2ef0a01a9bcc51c59e04da6b19"
+
+[[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_scout_scavenge_side4_1.json"
 hash = "f391fb52c5aabf4045a034d748742717939269c224cf7148137d73d3f431ef85"
 
@@ -11484,6 +12356,34 @@ hash = "ea6ebc67ab4a3bef380c706377b077f598525b05e077044cfcb830ae27cbebf9"
 [[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_scout_scavenge_utility_20.json"
 hash = "6e17f8af303ed30ca07bc0133d4c36b0fecc79589d246879cb41f6016def135d"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_scout_scavenge_utility_prestige_21.json"
+hash = "ada4460cf19bda6a93e1db2bd03811cd4524c09c6a3d3545c4c92ad0dc790dec"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_scout_scavenge_utility_prestige_22.json"
+hash = "9112f20bd8c9353332e84468c7b5f0c83ec5d477686c7a80d3cff22e3865adbc"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_scout_scavenge_utility_prestige_23.json"
+hash = "11c51b6ebd0950440f2c39cf66f0a7d3596ab66b3438767622c01f1493adab5e"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_scout_scavenge_utility_prestige_24.json"
+hash = "24e823674a093ca768fa14f716f9e5591fbb4bedd02fbe4f3fefd565c8596532"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_scout_scavenge_utility_prestige_25.json"
+hash = "e8b072a34ad446814740ae868c3fa9006b5762dc842a01231be9f767ba9b5f40"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_scout_scavenge_utility_prestige_26.json"
+hash = "6636ce10d66486b9bea13df4a8dcc087bc2539311f96e9053168ef9e30ffd082"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_scout_scavenge_utility_prestige_27.json"
+hash = "57575071a438f487c782bd2c1ba074975b70c805ca159f6b66bbe1abd8b12b0a"
 
 [[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_scout_stealth_1.json"
@@ -11586,6 +12486,34 @@ file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/ta
 hash = "058975f5b2cd49e21493283d9b37a2f7c8586422d3c878f971cd5dc6aff9e0b0"
 
 [[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_scout_stealth_power_prestige_21.json"
+hash = "b92b41360f63a1dec531358443ab8fa53ad2b877313d66b1ffbe8fe2ffc4bb04"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_scout_stealth_power_prestige_22.json"
+hash = "1e7f9b0e1911901470bffc4a29aef6b462b1b3e37c19cf9a4d91a6f5db0dbdbe"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_scout_stealth_power_prestige_23.json"
+hash = "a83691ccf37457c46c80e74051d853703196636037264a06250f654760ec53cc"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_scout_stealth_power_prestige_24.json"
+hash = "68ad79ba1ed9a353ee18fcdc7ec008d5bd7e093888a6525a8e946ef47117b871"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_scout_stealth_power_prestige_25.json"
+hash = "3e2c75dcf26caf552aeb258b5694a9b24cf317f06647eeb2b3c89807d8e5536f"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_scout_stealth_power_prestige_26.json"
+hash = "fd50612bbc61048459607bccfb539f19ced6d67722e1f25396636799ac6bbd6d"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_scout_stealth_power_prestige_27.json"
+hash = "674465a2e9c505c8b9f8cc09d9cf402626a9b79728cac1de394b62cc9699f09c"
+
+[[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_scout_stealth_side4_1.json"
 hash = "2102bfe1b17a3c25eb955c8ad6ce02029e29c643a5d23388e1f386533c8459e2"
 
@@ -11620,6 +12548,34 @@ hash = "52ee76077af2740c5a73ea9927ba2023a230bb55e99b9fb97f49b3b9273c2c9d"
 [[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_scout_stealth_utility_20.json"
 hash = "c5cab5bec74014a62549318033c536a9fc2f9bcb42b1814fb45ae294b1fd63b5"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_scout_stealth_utility_prestige_21.json"
+hash = "2e1e922a7b251a55a0fae17ffb82b2b534377f0e86472439f99a1eed60c192b7"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_scout_stealth_utility_prestige_22.json"
+hash = "7ccedb38c9085140054f6702d527238a5940ec40533c89ebfc718d15bd13595e"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_scout_stealth_utility_prestige_23.json"
+hash = "c08223c77cecce56311b75afecc68778de71ef702be4ca70fc12b9d83ab9f3c7"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_scout_stealth_utility_prestige_24.json"
+hash = "07d81603819c81bffb36235aa28d7eb9272d2bb950ab2dd303d7d38fc368b3d3"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_scout_stealth_utility_prestige_25.json"
+hash = "32430b7b5674055d550a61fff133ef96725e809106da277431f17a28357ab33c"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_scout_stealth_utility_prestige_26.json"
+hash = "3507881af0bee2b5f6faa1600006fdf0a0441815dbf27abadfbaf0af43802da2"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_scout_stealth_utility_prestige_27.json"
+hash = "a134749a9f9d72a4d292239b820eabdf75bc9b6c5706afc054eee91ab84f8dff"
 
 [[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_scout_tracking_1.json"
@@ -11722,6 +12678,34 @@ file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/ta
 hash = "568af0a7da3624585a251a3a6a99b9feb7991da737ed4c4d956d3d261965258d"
 
 [[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_scout_tracking_power_prestige_21.json"
+hash = "5f69780cbf24d2d63169b6c22f900f9fc8b2eb7c1a062612ee5b746d7c294899"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_scout_tracking_power_prestige_22.json"
+hash = "11b4759591fe4f4642a2a28eeeb61c13afea13f051ce7fba7470ee5fc4e2b6f7"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_scout_tracking_power_prestige_23.json"
+hash = "0b187f4eb87d3c69529e4b02b4ffb6f3a12343105e0c94613718c237dd7701b7"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_scout_tracking_power_prestige_24.json"
+hash = "f28e6ec534e67d55fbe5e30d4a149d25e6373bc2234988b325a249b6dc849526"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_scout_tracking_power_prestige_25.json"
+hash = "064343776b6eccca70a9bf617d654138ad7049d76118a89af8294078912221d6"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_scout_tracking_power_prestige_26.json"
+hash = "976020c4709df0bea4f6f861e9c2b5bb467923ce2cc11f83eb485b2e9ab253df"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_scout_tracking_power_prestige_27.json"
+hash = "10ea5c8aafbcbe145e19a4d75c08b9d81b994b166c4c13f99b716057317eff88"
+
+[[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_scout_tracking_side4_1.json"
 hash = "086330a5dcb8a3e526ef8256f6d1266faaf1fc8bb66e3594ed91f87f234b58eb"
 
@@ -11756,6 +12740,34 @@ hash = "7456be3176589adf0058c42d2ec19bbc0b6fd512356c6f779a3c5e2b779a7f50"
 [[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_scout_tracking_utility_20.json"
 hash = "2238ab4549d18b8f6bac12a5858e7e8f8000c572098d80c4d609172c480c7cfb"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_scout_tracking_utility_prestige_21.json"
+hash = "3362949538ea808d0d4d7e4bd6fe0943bc04ee86b5d762da75f9a59d973b898f"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_scout_tracking_utility_prestige_22.json"
+hash = "59a1b06cb06898c8cbdfa09e3f333d3d755622751a0e6f893b530251f3d27bde"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_scout_tracking_utility_prestige_23.json"
+hash = "ab7c4ac1d2bf4c86f83e3b3ba0144a3873b799091f78730d81ff185caf3f3f3c"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_scout_tracking_utility_prestige_24.json"
+hash = "206f4c86ca75601cb1934289504458fead9eaa3d0a2b3f6ba7d991d4e4e99e7b"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_scout_tracking_utility_prestige_25.json"
+hash = "e7ee4f2cfbb8a6d5e65d91fe6e2be3da0da00769eab104eafe5fc4e72f9da1c1"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_scout_tracking_utility_prestige_26.json"
+hash = "8abc5d959e12957d8812ed025095edebb7a973492fd3b0118a558707c2b950d9"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_scout_tracking_utility_prestige_27.json"
+hash = "663024b01b158e74408042190484d84c17241a7fe0a71fa962303d3c7e44280a"
 
 [[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_security_control_1.json"
@@ -11858,6 +12870,34 @@ file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/ta
 hash = "bedd24f1902c7489fb90101b93e1c750245c101200eb4e3649d8c5d6299ddb22"
 
 [[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_security_control_power_prestige_21.json"
+hash = "013e8af81fab1868eba11f47b935d39ada631ec7a00e31a77ff8cdc05956ac87"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_security_control_power_prestige_22.json"
+hash = "ae0e7aea2603d71ece526d5e3df396cd02d97e46bab1d447c4c21ad77cbeb161"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_security_control_power_prestige_23.json"
+hash = "a0880d26d67a35156158169666e9db4b17760032ca08bf7ae26ba6b3e11bf578"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_security_control_power_prestige_24.json"
+hash = "e77cad23e2ed5ca80cb039aec7c1628dc538e1900c399c2ebe7245d47246d22e"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_security_control_power_prestige_25.json"
+hash = "5863e31701937d907ae02e9c149f75d93db964c6708edabd748ad9fe89586251"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_security_control_power_prestige_26.json"
+hash = "dcf453ed1860c1a1d195ad13c724c7d328bbf55ebdb18d7fb4cefbbb14091e79"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_security_control_power_prestige_27.json"
+hash = "b0c0092016a52fc15196e06ba80958f5057ec25b55d3b8b11997b0680c27fcf4"
+
+[[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_security_control_side4_1.json"
 hash = "8aa11ab4277d401af5b6fca7d312e5ab2b678d3e1b50b1f8be9eae4f85f6dab6"
 
@@ -11892,6 +12932,34 @@ hash = "03545dbdb9b318fda089e46d74774c795b2ed1d4c1319a97c56155ed45f6f1b0"
 [[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_security_control_utility_20.json"
 hash = "e7beeee6a8742ce2c1f1fedec1f62de9fdb11bd2a387d4f8629b050745d9e925"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_security_control_utility_prestige_21.json"
+hash = "1c3552e4a575f2cddbad0d60ffa4a344c6bbca47adc1c5476006a0c70956a1c3"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_security_control_utility_prestige_22.json"
+hash = "30e8ef791f09e2b8a2a32a1775ae24ea611a1fa5e69f0e9675c13e4ef3dc7ddc"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_security_control_utility_prestige_23.json"
+hash = "3ccd0d095dc76299fb3e7787d6eb8973eee7af66250e4ad9f7e2ce940096b673"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_security_control_utility_prestige_24.json"
+hash = "7d5789966f32cd4326d9b8a7b419c82a456ae96a4b241e7c20f778dab53e83c3"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_security_control_utility_prestige_25.json"
+hash = "84c9243a83a01b87893620c8c402e3ca95ad848592a0a914e5c31bb3629139ac"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_security_control_utility_prestige_26.json"
+hash = "e57b53c6aabdb5143cdd3eff441c69e430514b967801ba67e582631ce6c3363e"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_security_control_utility_prestige_27.json"
+hash = "13fd19714b06cefde009672f38c1b9bbed3459760fa2c570515a2192392fc42e"
 
 [[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_security_guard_1.json"
@@ -11994,6 +13062,34 @@ file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/ta
 hash = "15638aa1f82f8d1508a1154447afee8cdf88bdc452f51a370283f4dea7802897"
 
 [[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_security_guard_power_prestige_21.json"
+hash = "da5de42785e3616bcf3df69014b9463acfa0d091049648e3874fba9aa83b6eee"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_security_guard_power_prestige_22.json"
+hash = "9c4ba36e0d398430954a4ea0476929e8a8c6c54904669b0ba031e8d3adb85cd7"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_security_guard_power_prestige_23.json"
+hash = "e9b66dfda7a51ebbd41908f1aacf5a8b3e4f0c63d0ac2362322d8dbed89db9ad"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_security_guard_power_prestige_24.json"
+hash = "429917ebc1c241390fc30ac4fa5c219d868938259798797c0386a493fa2725c3"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_security_guard_power_prestige_25.json"
+hash = "a53f8253dfc6df9ad722bc5d58a6258289555d17682034a42d7b176c16fca001"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_security_guard_power_prestige_26.json"
+hash = "e72be98acaccb310e5bfde562f263992d5f32c99807d971ab0b1f8ada29ce1a4"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_security_guard_power_prestige_27.json"
+hash = "c43f19a5fd642257fc1cafd76ce8b5738a24b9ff5510e86a9d8e0d0dd8c9be14"
+
+[[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_security_guard_side4_1.json"
 hash = "fefec8e67b2927cf8a0d526b3e12f8301c5af34b883c03d1816f899a7366c400"
 
@@ -12028,6 +13124,34 @@ hash = "b9305e9a0dd738c04c7710993b7656cc552e4858a45639005b1774d1937f2df3"
 [[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_security_guard_utility_20.json"
 hash = "bbd662bc840c2ff205a24391bdf2fe04780f0d70942e15cc6b3a10ec4caf8be2"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_security_guard_utility_prestige_21.json"
+hash = "08c0ae9949e2f006fd488788dee7167d3753a7e945c7a8d5c7fbf978140a5b8b"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_security_guard_utility_prestige_22.json"
+hash = "7ade8c8dc0b2f6fa3d4202578199d0ea078c166b77334c2f80028463ecb152d4"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_security_guard_utility_prestige_23.json"
+hash = "f8e02c0693f39ea438555f86ec55463c8df99ea9509ab31e5cfa098ea27790ff"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_security_guard_utility_prestige_24.json"
+hash = "9dcb455bb793827feeb551a477313b98ba322bb7496a4050c8598953de6a2716"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_security_guard_utility_prestige_25.json"
+hash = "13b08be3b3e770a0a52d56eca1751e4c71456c210594ac827c30e184bb7ee503"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_security_guard_utility_prestige_26.json"
+hash = "86b0dd9d410ef95d00b44bcec8be210a77aa1589a10d820d6c4857a07448b3fd"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_security_guard_utility_prestige_27.json"
+hash = "1e5717a8c728a626da51b949ef39e8f42d7b9250d28a59886f5be1118079b2b7"
 
 [[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_security_melee_1.json"
@@ -12130,6 +13254,34 @@ file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/ta
 hash = "bcfea17b24767732571ea00565be8d09afa2fd46779a1fa1e48c9f63bb097973"
 
 [[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_security_melee_power_prestige_21.json"
+hash = "2c079d853e7fdc8def2b01adef130aa4eb3da6fd1f6431de395375cff7c9a36b"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_security_melee_power_prestige_22.json"
+hash = "bd6724c63ad036ca3110e7628ba7ecb728bcdf41901d702e2e069e1264e1d89b"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_security_melee_power_prestige_23.json"
+hash = "155124f6888b5a83afe36938d4eb51f401f0cb32aeb7382b90c82f76f186829a"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_security_melee_power_prestige_24.json"
+hash = "837f80d8a30ce480854a54ed882d3221138effdebabcdf8d602db588c8c1eb36"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_security_melee_power_prestige_25.json"
+hash = "eac1ad7716b220187544346c6c170586c4317f25a4a6d630eee5c5390ea43662"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_security_melee_power_prestige_26.json"
+hash = "d5688d4174a9dfad4bab0ba65c0165fe4203e67cfa2e2c5c502a64d312fdbf19"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_security_melee_power_prestige_27.json"
+hash = "c3c8d408b125f0d4c0c8d8bed476c14b5941e4122cdb315f88037b6b8cf80880"
+
+[[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_security_melee_side4_1.json"
 hash = "3cd5b45f609644a1a26a78a530917841d8dc46a664e38fe95863e1f069ed31a1"
 
@@ -12164,6 +13316,34 @@ hash = "3d0dff0f6302b60a7ece561c2205c84e7f50d1df487546b07a446226cd135b7a"
 [[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_security_melee_utility_20.json"
 hash = "037211666a94d67bc4f323961a4a0b2a1f5f3bf9a139897d1dec0ad91c685fdd"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_security_melee_utility_prestige_21.json"
+hash = "852b09793cf24ad9b8f99530c2cf65118b04614be223919546df4439826850b9"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_security_melee_utility_prestige_22.json"
+hash = "806bb9743299e84656b4266b8435df4955cc9b91837236f00b92467a6a23a6d4"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_security_melee_utility_prestige_23.json"
+hash = "51126f8f274363e82be66502ba0f0761249e213ba0255745a91ad8dfe5d19fd1"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_security_melee_utility_prestige_24.json"
+hash = "d1bfe5695802a4dd578572a0258bf87949d454ac5d493e8ff15a7a14cfece0bc"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_security_melee_utility_prestige_25.json"
+hash = "654c29c2d88cad6ca84f289123057b7c9c9b76d0e39b073382b42b9ac0308f68"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_security_melee_utility_prestige_26.json"
+hash = "3eba07b5d4531e4c89f130867a50c106a6403adf46d0f4853c854be72d4fac40"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_security_melee_utility_prestige_27.json"
+hash = "e2e3fa48df2281015fe907ff109f0e6c1a984f6f310d089298b0a011902dd895"
 
 [[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_security_speed_1.json"
@@ -12266,6 +13446,34 @@ file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/ta
 hash = "9b722afb735a4f8dfc559913de76a1232527a7f4cd39cdb583fad5e6a4410de5"
 
 [[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_security_speed_power_prestige_21.json"
+hash = "67e3ea10f5b1830fe753d8d65184382fad7e86f374188802c3b3648bdf6f5ef2"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_security_speed_power_prestige_22.json"
+hash = "43c3ca7553cd345e5a3a06ae40ff8a47be36e8be96e217e5db8cad8ac952f428"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_security_speed_power_prestige_23.json"
+hash = "5395a17bc781bf9e8d77ec1e2cf9bcb944cc798f285c825489e6df2192ffbd1c"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_security_speed_power_prestige_24.json"
+hash = "ebb8194abd4caf97eb208925856bbb121a391476aff1aa1a0e05ef83197a425f"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_security_speed_power_prestige_25.json"
+hash = "5bc4b2643ee247281fa8d6b797de64dd2fb3d50585528835359c0edd3960f3f8"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_security_speed_power_prestige_26.json"
+hash = "871b4bc0861c6b4f7f8257a57189bd5eebf12fa1d7ef1de24d2a03c5f77763a1"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_security_speed_power_prestige_27.json"
+hash = "8e9a1c2f7765927737979ba293709dcbc6b92f6fd2a8a90cef0f7938cdef775e"
+
+[[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_security_speed_side4_1.json"
 hash = "eca58834f56a9691663e48a6ba0ce4bc038bb55af80ef8fc45044a7fdde10eed"
 
@@ -12300,6 +13508,34 @@ hash = "29d30ef559cc53927fb00e4050bb1fb8379fd5d32d787f2874ba6a903b186670"
 [[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_security_speed_utility_20.json"
 hash = "d2f41183f2c73ffd60d26beceb9f4103072a60be139d28f64b0a9e875a79ce1b"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_security_speed_utility_prestige_21.json"
+hash = "fdc06e46fee471f151b1190c194d1b89440e3d7c16460bb65d93af89a7401b8f"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_security_speed_utility_prestige_22.json"
+hash = "09d977370e2b595a0723cff2b337da32024670af6466b75ede6badbd2b0d120b"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_security_speed_utility_prestige_23.json"
+hash = "40eaa9ae1cb220f70fe947e80e3dbe84aee0a7ca192746132c2dbfc5a2ab69ce"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_security_speed_utility_prestige_24.json"
+hash = "7b5217f5d817c80aa62ea0b20d1d775c2dd675458551c33c560c795c5aa3d40f"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_security_speed_utility_prestige_25.json"
+hash = "727b9dfdf0843cc15f1d1d4eb5b6d76b836baa819e0ea863cea1ab9edb78e1a5"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_security_speed_utility_prestige_26.json"
+hash = "670b4d2cb0c8519999fdc5fab24b3860bca0feec08c08231a827a1c68f107bae"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_security_speed_utility_prestige_27.json"
+hash = "2fc5d1271fe968278f5af2722b3bdd9d4fd6bfc881d21ab062f107bb39a7643e"
 
 [[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_start_engineer.json"
@@ -12434,6 +13670,34 @@ file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/ta
 hash = "12d7cbb647a4829b72e1ab9125728fde3b703e7136c1d0a83ba926d405857b21"
 
 [[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivalist_cooking_power_prestige_21.json"
+hash = "d89915ca574e1626845a58a1234b2c799fde0793d4708780c99576e1777c65f7"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivalist_cooking_power_prestige_22.json"
+hash = "29bc4ac1d50aa0ca2db13d1ee91a6cfd94f045a7e8a74f6376852235cc7a871a"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivalist_cooking_power_prestige_23.json"
+hash = "195c565b97f46de34221e96c546e0b1d67fa00f146aaa45c84da17b0c28815cf"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivalist_cooking_power_prestige_24.json"
+hash = "dcee3b587062fbe7d887974b58369041eef1050aae5550b10585df3d92cc628d"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivalist_cooking_power_prestige_25.json"
+hash = "a8af980a7738475a9115f57bbc5d55a05137e97eaf9f4040da9b14ddbf559357"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivalist_cooking_power_prestige_26.json"
+hash = "b75993fc33f07e9d4fa695fe26ae10d42f52f835cc130ce0d51f1af96f88f732"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivalist_cooking_power_prestige_27.json"
+hash = "2532ded8f137cd14bb1d82e69191d1d2f807041c8944710c9c9f20990b95146b"
+
+[[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivalist_cooking_side4_1.json"
 hash = "a2114bab3b5d9a8e356dabbf527848233cc6d211f54bf66fb81c0d17cc1ed5dc"
 
@@ -12468,6 +13732,34 @@ hash = "61d852cd36debbfa313291d11ece42ceb62b210ca982fe1dacc7473cfd2a9e3c"
 [[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivalist_cooking_utility_20.json"
 hash = "56bd8dde0cc5df79d93d2f72d27fac2bc3b05876a1c913579edd524545a2c3f6"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivalist_cooking_utility_prestige_21.json"
+hash = "26cd4b70d0349cbb7dd1df8b238c8ce6cba5044fa69e2ee4f853b655d25a8d08"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivalist_cooking_utility_prestige_22.json"
+hash = "b466b80a26a2b53f989a75d69722d5db130fd50a4c8d2cf3b946c1de785f3de5"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivalist_cooking_utility_prestige_23.json"
+hash = "93c8c512cff93864c07e671e1cd2fee4ad03bcce3c541f5da8ebd46dd50f8726"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivalist_cooking_utility_prestige_24.json"
+hash = "ee27a2ee3806179b3ec0285189fbcb374d02f36c63b9467184363cc5b6e4887d"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivalist_cooking_utility_prestige_25.json"
+hash = "eb9a8aa1344f84e0bae2976d5d29416ea5701f0b800c5ef7e74cff3437b6cd42"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivalist_cooking_utility_prestige_26.json"
+hash = "2e3e9a1ae3ec6c4c0f962f6aca3982f2a265e2359c0818d4350499a885f8549c"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivalist_cooking_utility_prestige_27.json"
+hash = "546dbbf7ef14375a985ca8b896ee232edb9d4317c9c6339c838b3031b2668211"
 
 [[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivalist_farming_1.json"
@@ -12570,6 +13862,34 @@ file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/ta
 hash = "63ee5ad926bd784240b84257cf30b5642134ea65673d8e791e1075d87ecc063e"
 
 [[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivalist_farming_power_prestige_21.json"
+hash = "3e29b54aac304b452fb3f1f6a4b99011033cf9a54898e11e235c6a45415e10e6"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivalist_farming_power_prestige_22.json"
+hash = "7ef8e460dec96adcd8fffeacd991ac5d6e62d1651d97a338cda6774c7460f923"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivalist_farming_power_prestige_23.json"
+hash = "acd07d0764fbc5b9457b2ed8fd729e4572b8bbba13d4f87ca288d94cc49af7f6"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivalist_farming_power_prestige_24.json"
+hash = "e698ec305eea7682f595208f0ddac32d4d28585cca4468f1cb5fce85f12d5bb2"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivalist_farming_power_prestige_25.json"
+hash = "761f0f1f7f45a305253bfd9f6b90a0ff8383f79cf0713214ad9c23409fc9156b"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivalist_farming_power_prestige_26.json"
+hash = "36203440bad619f1be7abb7af4cdbc01feeed0ea7e74ac7fb6194d4c04f3dbae"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivalist_farming_power_prestige_27.json"
+hash = "e8fb0fa779e662c7c2349719b3f36ad299a4b76c3be16eaaaba0d725befeda9e"
+
+[[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivalist_farming_side4_1.json"
 hash = "42455df68841cca99c89fd0fd3343b3153339a1299bad7cac298dce9c46597ed"
 
@@ -12604,6 +13924,34 @@ hash = "f71571af192f2aa6c3e19efde1f9c4ba672d42c56af1047a7967c7e844d3254f"
 [[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivalist_farming_utility_20.json"
 hash = "c52ad338e369ccf6cfa0d7a2d35b9a48eb5324200e7c61b7fa06eee9748d49ea"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivalist_farming_utility_prestige_21.json"
+hash = "f864eff4373d1d7d7f8730dd238b8b25229670cb48b40a847fae7bf0dec3cf1f"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivalist_farming_utility_prestige_22.json"
+hash = "6556d71f8a6889330df5253337ef381b9af15ac804b92b907fa547b4cc269761"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivalist_farming_utility_prestige_23.json"
+hash = "fec54bb018e3f8ee3ddddd68ec3659c8c491e5b355e00fff979c0a1e5199adc4"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivalist_farming_utility_prestige_24.json"
+hash = "6437c07413622e8fe126dbe38afe2ee567b4f2eeaad04825a155a35e103ba2d8"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivalist_farming_utility_prestige_25.json"
+hash = "bee1dd56544c5479e4560b5053af7aecb87e2cbf31737d262b12981afc3c57ad"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivalist_farming_utility_prestige_26.json"
+hash = "825cc09e6c22059d4bc61f767e79205c46b12d1355155275bf5a397780a9ea85"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivalist_farming_utility_prestige_27.json"
+hash = "6becd2932ffd00f2466c07421c51f65c31cc1d2693a78bd18dd8f23d91591576"
 
 [[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivalist_fishing_1.json"
@@ -12706,6 +14054,34 @@ file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/ta
 hash = "d090d7fa15dfbde9503443bbfea8f96749f9ff6bb7b825c54723bde296cb269c"
 
 [[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivalist_fishing_power_prestige_21.json"
+hash = "c8415f305eb8b6b1d2f1407c86775a504414864e3fc6f49326236a9247cf3a39"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivalist_fishing_power_prestige_22.json"
+hash = "a75f0e21c2de37705d075ab0b3948eede52cadb663b3c6a72e1b07f9cc8a40ad"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivalist_fishing_power_prestige_23.json"
+hash = "77c34528013745cbaa28771a9948afbd46199d572bd875260cfd87e6cbe69f62"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivalist_fishing_power_prestige_24.json"
+hash = "2979a9bc09c39588f7ddf122f5e2a172efaa9308255fdc2785ab9ab002509e7e"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivalist_fishing_power_prestige_25.json"
+hash = "27ae434030bb05b6a2e968f3943263a0bdfd22252bb113eea11e9ceeea1da475"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivalist_fishing_power_prestige_26.json"
+hash = "8c2e8b9fad8663b38520e9bcbd146f32b42fc121939aaa4810788eaa6c97c4ef"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivalist_fishing_power_prestige_27.json"
+hash = "4630e0d0ea87eef34f3a2f8409a66ddd82f0f9dad49ad0b0ac8837e7dd5ec88c"
+
+[[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivalist_fishing_side4_1.json"
 hash = "3df4cd357085111f70bd4cb12a8a11aa04902f1138ba5db569edc9ca643f06a5"
 
@@ -12740,6 +14116,34 @@ hash = "bb3ad2822b49f8011b802508665ff10c490c61ad02507b0b7706633a24aa6870"
 [[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivalist_fishing_utility_20.json"
 hash = "ffd80775b15cb73f0eae2a6b35187faee7966adc6ed2684e240003cdb2c4d8b3"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivalist_fishing_utility_prestige_21.json"
+hash = "a4f901d677b8cf32ab4ac7e3704a296213bc49eb2be817d7f1b8a5ed43dd889f"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivalist_fishing_utility_prestige_22.json"
+hash = "4d1e0d1ede30add98021ab3c0792ebb07d1a6b0c5b3cb775d5d84d71354f3f9b"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivalist_fishing_utility_prestige_23.json"
+hash = "52e1b3367b7db08226cb4bbc21455dca70a19998cc8be1e2cd9e1d034fdb74c7"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivalist_fishing_utility_prestige_24.json"
+hash = "d7d34472dcfc617345f4d552b84daf05c02dad81c734b0e5b8c8dfd7ec15c1e4"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivalist_fishing_utility_prestige_25.json"
+hash = "85a9304e03ce9825bbd20e50397f4adcf975b929a4fa683912344f7dd4a5b7ec"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivalist_fishing_utility_prestige_26.json"
+hash = "7f98ae4c18da611c33789f41256071acef800ff6ada511d229dcef810c6e0b26"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivalist_fishing_utility_prestige_27.json"
+hash = "104c5b0f882f236ef0e3e91536361f933d9e71c886ce1b8a9254b59c0f7aee65"
 
 [[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivalist_hunting_1.json"
@@ -12842,6 +14246,34 @@ file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/ta
 hash = "3675f5e004692aab48f7930f25d605a474e49c951c95e1de23c1a457e117888e"
 
 [[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivalist_hunting_power_prestige_21.json"
+hash = "52caf17f5beb7c02ac7d172930b1f2d9ff7432b41fd96078881ccdc31e0ce05e"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivalist_hunting_power_prestige_22.json"
+hash = "e61528337b66718dec9bd4042a78e509aaf32430d8ec65aba4d1f03e696c1486"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivalist_hunting_power_prestige_23.json"
+hash = "db036ec2d68412cc35a88d3ba9fe9c1bc020e5b33c88c04c5976ac58dccc5033"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivalist_hunting_power_prestige_24.json"
+hash = "06c0d147bd4b820b8223fc8880c13c60e87d00573a46d0566aacb774466f766c"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivalist_hunting_power_prestige_25.json"
+hash = "58ce199a34c938c1931de8a377866b9e389862b891ac59be199bac337a32441b"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivalist_hunting_power_prestige_26.json"
+hash = "2ba74e4deeb063316e540af9331e38f039e875373f623ed5e31eb0ad965c9905"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivalist_hunting_power_prestige_27.json"
+hash = "d2aeadb2e9a424dda0c2eb970c69e0878091150384799422a04804915ddaf7d7"
+
+[[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivalist_hunting_side4_1.json"
 hash = "29fbbc3eba750ef68f1e4d3d7fe9d293d592aae884aa3fe98d043ff01bc7870a"
 
@@ -12876,6 +14308,34 @@ hash = "8293f7486ce2944f7ab3e879308c9ee1f06a47eaae5a99fa027cc4e5a5c2360c"
 [[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivalist_hunting_utility_20.json"
 hash = "b161a3d995c661e6c4360958025071d8463ce898c0bcbc1967b502b6b0c7be05"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivalist_hunting_utility_prestige_21.json"
+hash = "7d69527d373a5e6010c50b039855a3d770ac81c1143f67bf605721e3a04ea0e1"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivalist_hunting_utility_prestige_22.json"
+hash = "a9e3e569c1842c057c36e58ead836b81185cdf9c8735818b30b9fe60912bbf75"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivalist_hunting_utility_prestige_23.json"
+hash = "9329aa999c7714d9480f419443981dbc04044df2f03a8e6fd912c8fdbc76e20b"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivalist_hunting_utility_prestige_24.json"
+hash = "11efdf9dfcd160c21e8286146a61488558e4088e9757980053fb86022907d6db"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivalist_hunting_utility_prestige_25.json"
+hash = "84b124815f89c0582fbff0f8e09f63a0f5d4373929dd9603103da4e02435c283"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivalist_hunting_utility_prestige_26.json"
+hash = "e5ae20b477e0975a977d6175bfcaca290930265556a71204cbf79aa14aaedaf1"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivalist_hunting_utility_prestige_27.json"
+hash = "834ba389069e08e66cc5f44d5ae36bbff65ff338019531503a91149ba4e41501"
 
 [[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivor_carry_1.json"
@@ -12978,6 +14438,34 @@ file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/ta
 hash = "bb080e9becac7ef6b169a68d247e2fdb4fa9858a712a624066a1f0836a24cb6f"
 
 [[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivor_carry_power_prestige_21.json"
+hash = "7008d1de68c75ccdc474ad4e85417f0b651faa745f788cdf8c38425cd7433360"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivor_carry_power_prestige_22.json"
+hash = "0954e07099d3d165fc72c346b93a293de223cdc781e95ee289aaefcc7c0609bb"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivor_carry_power_prestige_23.json"
+hash = "6d507883f303664429334439efefa312181ebdc1ca1e27863f7d0e05ea8534d7"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivor_carry_power_prestige_24.json"
+hash = "344727774bdc7b0840e43eb145f1a8a0d4780e8f8fb4bf07b0fab7e26459eae9"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivor_carry_power_prestige_25.json"
+hash = "82e15a6dd86260a649cf08363221a0d4015b2166003cc792f74d6b6a9d722f82"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivor_carry_power_prestige_26.json"
+hash = "a0dcea0886b0161aea07ac62afc4d2a9333f90ef5300c7a791d30b48b65f2d49"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivor_carry_power_prestige_27.json"
+hash = "70d4cf9260b21ae0c9ea46c459a0911dcea2c48853ebbe4b13a2d19a75fa21e0"
+
+[[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivor_carry_side4_1.json"
 hash = "fad6b90a246940730d9a9964a86e45169e8ce766f54ac50c6764015d65c5a12d"
 
@@ -13012,6 +14500,34 @@ hash = "b06e4ec9bcc31600ea1290c60d2298f55badd686f29db38e5f44307b8d4f2cab"
 [[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivor_carry_utility_20.json"
 hash = "477c7c14d619507b5156994d84ed0b77ee05ca8e5a3db9cfcdaacbbadb106f0b"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivor_carry_utility_prestige_21.json"
+hash = "1707539d0b72ac1d7e6b955a44fce748dbb790aadd87370c27b8d257ef672096"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivor_carry_utility_prestige_22.json"
+hash = "817e81dc836266d246464ea05028d7163767a21d55105455dce9e1ec091bb133"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivor_carry_utility_prestige_23.json"
+hash = "c98ad0c564441b8c1a3a6ebed6113dbc3bc229bb0dee31d95611562a85a0bec6"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivor_carry_utility_prestige_24.json"
+hash = "5ec70390fa541832b62f04a6de5db5b949e453abec50e053d78527c25f825d64"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivor_carry_utility_prestige_25.json"
+hash = "261ebf2aff74929703e15e2678f25a070ca9760c57c0e3cc4bbb675c9714fe89"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivor_carry_utility_prestige_26.json"
+hash = "6e73299fa0e57bb2782cf53b63f23b87b7890bc9f9da8b7b4743a57fcabb8a12"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivor_carry_utility_prestige_27.json"
+hash = "4bdc7033bc26a99548eb1ad2fd5547b17ff6feb045f59718fce36f3514a15949"
 
 [[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivor_hazard_1.json"
@@ -13114,6 +14630,34 @@ file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/ta
 hash = "8be72255af720372da1a9472aa9c8b46fb0bad5a6e5a100609f49184fd56c16b"
 
 [[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivor_hazard_power_prestige_21.json"
+hash = "685acc73ddf139241a549b55431dc75f322dd4dc7a7bf54e3547cf25247cb347"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivor_hazard_power_prestige_22.json"
+hash = "f1b5ef642bc10ee80a2a8cc21491cb904beb382658dc5b65a45af245f502741b"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivor_hazard_power_prestige_23.json"
+hash = "c752bb5d54e214c5d32ce16d062316bdc62d9d0417f2aaf2d8824b25c4c8fe2e"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivor_hazard_power_prestige_24.json"
+hash = "6e80dac599263ce5065c966d7fbf2fef355040ef5d0aedf56cd98969d517a85d"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivor_hazard_power_prestige_25.json"
+hash = "1d1ea0a0dc48204d6f5cb010da25c95d604df6c78bb520deb678c08ca0a94656"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivor_hazard_power_prestige_26.json"
+hash = "cc9dfe3162e5e1b8fcce246c85735c686b45dd6239e9de8d566778ade270e6e9"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivor_hazard_power_prestige_27.json"
+hash = "62ec26444c37f411d3dcb138a2a241abb7e34e6fce8fe05282e790a29a15c0ec"
+
+[[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivor_hazard_side4_1.json"
 hash = "9a340c49b0d19b80344974154f087228a73ffc1cda16d2c632997fe3a28c9699"
 
@@ -13148,6 +14692,34 @@ hash = "9ab6e7aec470aba3832e56f04e6311a5c0d14850fba7c284602d2cc1817ebdf1"
 [[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivor_hazard_utility_20.json"
 hash = "694e42772f45c7a5d8bbf02e9834757d82156adc7fb5b2248dfe31b2b3b39270"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivor_hazard_utility_prestige_21.json"
+hash = "2c17212760ba212bfbbbfe02e3477699b2596c0938ba4b8e199eaed7635832a8"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivor_hazard_utility_prestige_22.json"
+hash = "ae7b124f38581910f2253db507e9c7aca65dcfa6b6d4a8263b1056faea7c4a15"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivor_hazard_utility_prestige_23.json"
+hash = "409e290fa2cf86233591fc3370d97d8b28d478d618f97866cde38292c623e7ec"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivor_hazard_utility_prestige_24.json"
+hash = "c4fe31f51de60b156de2f6d9e4b39ebd68aa4e4566f92549cf6d900ba65ad63d"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivor_hazard_utility_prestige_25.json"
+hash = "7cb04530074c5d9ebce2edb51bf89de4ec396286b107c82d768c10307000432f"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivor_hazard_utility_prestige_26.json"
+hash = "f7c2011e9701d172cf1a05b8c62acecfdaabb76798c10a0b6a4a6bc2ee15a384"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivor_hazard_utility_prestige_27.json"
+hash = "c08528fa454129381c705c5786a07338b7a73cca5d41e85e00a0b34bcd5fad82"
 
 [[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivor_health_1.json"
@@ -13250,6 +14822,34 @@ file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/ta
 hash = "5df06664778ac7fe52c5a18e31dab6fc264ae95a76ff3061afb68332a307e06d"
 
 [[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivor_health_power_prestige_21.json"
+hash = "aa647715037cb354a43929a8fa0a926d23d74e1ff270bec50ebee9c22ff30ccf"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivor_health_power_prestige_22.json"
+hash = "b11da36eb04905b4698aef8c1e3b9d7d4eb0573ce21bb0d449990bb1e6f7b2b5"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivor_health_power_prestige_23.json"
+hash = "6f0e94a76df93ce90d1f5b53fec5b8f0d43232c7be8840f7c6e5631f20e32416"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivor_health_power_prestige_24.json"
+hash = "276420b0d1c1d15e573e2e31aab9f5cf844b6647bb3ddb7573d7973b4106b6da"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivor_health_power_prestige_25.json"
+hash = "eb6b6d774731b98bdcd3c7de38d3a6aee100027c23831e53f0e178fb4ab6ac3d"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivor_health_power_prestige_26.json"
+hash = "7d55d75bb0c88e89ee1ca0fa442336b48070a52d679114215c64e732bc7ab562"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivor_health_power_prestige_27.json"
+hash = "6f986398fc882a0c04babc0d4d5fc8c6bd83f6f651a4a68087f9410be101f467"
+
+[[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivor_health_side4_1.json"
 hash = "871ae9bf8a170c148bf72cf17b356a8c351867d9a1ba10bb1c6eeaf7119f30e9"
 
@@ -13284,6 +14884,34 @@ hash = "6f8350ef496c74f6736ad4f7fb71d6f0a920073d61219e49b215c999249cb5e6"
 [[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivor_health_utility_20.json"
 hash = "f50ec93c667799f2f770a5014adc675e019a8ca5727131f46c56cd8880f7e54d"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivor_health_utility_prestige_21.json"
+hash = "323e107d23036c7c7f6d5dc0e5f2608206ce4c3dc5a401a370b4010b4a19663f"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivor_health_utility_prestige_22.json"
+hash = "4fd18e338316b84a4e0420aadfa34ab91429ed8a7978c21f566977ab1ae70c5c"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivor_health_utility_prestige_23.json"
+hash = "85d854b613b16e46f83cc26ff238862675ca5f88834613043987c9a281fa9e3a"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivor_health_utility_prestige_24.json"
+hash = "a4747a2ae03017cbcda65d1704dfd6fcfbbb19c3fe5dddac219652d4cb9c2003"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivor_health_utility_prestige_25.json"
+hash = "814d6a9208d1f5955f6ac0dff0e2ded13a438f47a9f5ae8c05ee6d95eff75de5"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivor_health_utility_prestige_26.json"
+hash = "bb2d484901a67dfa6811204825cc48dbedf94f68734767402b9307a1f86c2e07"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivor_health_utility_prestige_27.json"
+hash = "e80fccaf202c41af5627ea40ae86b81f4b50fb87037dc8423b3de3249dd6f538"
 
 [[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivor_recovery_1.json"
@@ -13386,6 +15014,34 @@ file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/ta
 hash = "435f1f0c0ad9a84cfeb2aa890fd77393d651e5dfca5bda491e204f1ad0606ff9"
 
 [[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivor_recovery_power_prestige_21.json"
+hash = "87ce7f7c0a678937385f0fed5b94b311fe450d7c6e81f4caeca2d1d390a0b4f3"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivor_recovery_power_prestige_22.json"
+hash = "9e8d21676230c7e62fcbcdfd5c9f5306b20332d4d2b436d9b161fb6ce0d81412"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivor_recovery_power_prestige_23.json"
+hash = "9fca523ba5eadaddaaf38f5af5ebaae6a5e5b6b0f7ab015ecf58c153f0bdfd28"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivor_recovery_power_prestige_24.json"
+hash = "27b2ace62f591d16955a4ab05156f41766af218955254b222f5848b0c4e8d44f"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivor_recovery_power_prestige_25.json"
+hash = "23fae42b21aa2cabf27196b6f3cdba45c05a4977accb7ab4a53f40e785916dbc"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivor_recovery_power_prestige_26.json"
+hash = "7f8af9faf6866997f0cefcad5df2629b9fb288771645d360ae0966857830d987"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivor_recovery_power_prestige_27.json"
+hash = "a0d58938ddfb5424bdeaffb2b35fdb573f2a52e0205af8ce6826a83036d670ea"
+
+[[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivor_recovery_side4_1.json"
 hash = "f01cee7d4e5c50a16664e7f9134ba0f12b6ed9c8fe85f1b9c9176d9390878ca3"
 
@@ -13420,6 +15076,34 @@ hash = "bb3d95385a1a80b8dd2c7de44f2d48ebb4f4a9c03871bcda461a1ffb68d1680a"
 [[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivor_recovery_utility_20.json"
 hash = "c6db5dec16261135e35153c48f1d05ee6fd0f0aa0cbddd4c45f9594fde8f6412"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivor_recovery_utility_prestige_21.json"
+hash = "81d0cdb215f76e902f10f55b1a2e7485835f81d7df0e2f8feaaa3a78aa581fd1"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivor_recovery_utility_prestige_22.json"
+hash = "8413a2b6361147745b3145fa7b206ad6d5600377463f8cb139c2aeba901a11b9"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivor_recovery_utility_prestige_23.json"
+hash = "bd9be7d8cf9b9b93c1698687081eed258cc49374b39ebd116e830175f9acfe46"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivor_recovery_utility_prestige_24.json"
+hash = "047cc171cf8958baa9bc8835afd221828fc59afd33c2f20c5aaf81881360f68b"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivor_recovery_utility_prestige_25.json"
+hash = "afd45ba67821684769d48c770f80f20ee8d93ed81b5dcf0c46d4a93f9f6e2ac5"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivor_recovery_utility_prestige_26.json"
+hash = "345f29017d56f477592ba87ce43b6b4882323d7beaabfd65c36be15d2722b0e1"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_survivor_recovery_utility_prestige_27.json"
+hash = "89855e19ec2d1fd651e2f7ae828330f15f5ecd025aa45d06e8462de55822a432"
 
 [[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_transit_hub.json"
@@ -13526,6 +15210,34 @@ file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/ta
 hash = "bc72944e78bfea1be859322527f42e3dd94d15157292f89a38b075587218298a"
 
 [[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_weapons_ammo_power_prestige_21.json"
+hash = "95853043f1a818ea4601cae701984b77f21ad89ad63e4ee8e3e38e49c6cbf211"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_weapons_ammo_power_prestige_22.json"
+hash = "08f3b5762ab7cbbedf4a6c2917830d1afd165d3d255bb635a8064a900b90ec33"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_weapons_ammo_power_prestige_23.json"
+hash = "2bb35101087c9944c91603e07d8b6a0e561fea4cfc9b6b84a77e0f0c19eb837f"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_weapons_ammo_power_prestige_24.json"
+hash = "c3c9f838416c081d87918459c256debb98a2ee2cca20cdee5c724419fb32b65e"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_weapons_ammo_power_prestige_25.json"
+hash = "5059d647e0bac42c59f008595ffde6609c346aa3cb60c2ff08e0493a9a26cfab"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_weapons_ammo_power_prestige_26.json"
+hash = "c8a9da5cfc63de8ee64297b290b593ea09de7f365f24e3f259115c2c1f48e28e"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_weapons_ammo_power_prestige_27.json"
+hash = "13c06778b29cfdb77bdb2f34e5e37bdec4d01456148c1a0157e4d13acbc6aa18"
+
+[[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_weapons_ammo_side4_1.json"
 hash = "d12c9aaf065fb95cf3e54e0f2785bbaa324cff260df93b5698adc70fe5ecf6f3"
 
@@ -13560,6 +15272,34 @@ hash = "38c379e397bdbe66a541c448f79bcaf7c047b40e1ae2de1d511b375e95c13d80"
 [[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_weapons_ammo_utility_20.json"
 hash = "8dc12b162645feb8f9eb5e3c8d9729f2789e9e952cddd0a7ce5ac53b6b829ee6"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_weapons_ammo_utility_prestige_21.json"
+hash = "9244298654111de944e28a056bcf42026f4c22897b5dd08f3ec9b41497ecf7b1"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_weapons_ammo_utility_prestige_22.json"
+hash = "69a5d11d667b6f9a7f22c8d737a909def2a75bf1c833d886c28734c288d21205"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_weapons_ammo_utility_prestige_23.json"
+hash = "93a5623ef7aa105ef1078ae379d776d28fc917db3a160736eeee5f908cfa9a1a"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_weapons_ammo_utility_prestige_24.json"
+hash = "d6c7ee5e90b5aca4576fb545bb7888403ae07f4b1fc1239beb0e37be32157d7b"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_weapons_ammo_utility_prestige_25.json"
+hash = "3ef4d89ec04e15e995483c247ae6f5767e44acf1adcf3251c75a71d3426cce43"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_weapons_ammo_utility_prestige_26.json"
+hash = "2e5c64cd93b3a6247b311868c8edb860575244fc01a2f6aca17c3fd01c4b45c6"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_weapons_ammo_utility_prestige_27.json"
+hash = "bd0ddbf147ac9c8c6b9e107d7e81ff0b2738d182415f702a071a104c30ee0340"
 
 [[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_weapons_assault_1.json"
@@ -13662,6 +15402,34 @@ file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/ta
 hash = "effb989eea368732b521b2a118eac5c30a8fa6a19e1b9f7266cfc4eab74ef63a"
 
 [[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_weapons_assault_power_prestige_21.json"
+hash = "7dde0cf612f6de9cc7b3fd5d6e27d47cb97e35cdf0a5d00d0ba55bde7e1dba09"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_weapons_assault_power_prestige_22.json"
+hash = "87e88d1e1e9e46cbd53dafd9190937791bf6503d89fc5869d0ddb98799f487c4"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_weapons_assault_power_prestige_23.json"
+hash = "44f7c80a4c709d9a72cf537044a5bcab26d266196727a94cfb6cb88d8f456605"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_weapons_assault_power_prestige_24.json"
+hash = "76a89188ea5c0a388aee3d64fc83e6a3e3b83597bff89a33b18232e65eae58e7"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_weapons_assault_power_prestige_25.json"
+hash = "8d25a8ae2f3cf6099eb118d0359baf340dac84304b8d26a0a7562048c64402c6"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_weapons_assault_power_prestige_26.json"
+hash = "ffc0d76355c797704b559345526664835f4c337f0d2aa750e7b39bab7f6606e8"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_weapons_assault_power_prestige_27.json"
+hash = "a2ab428cfe97c1d6249f5fa590394081e8fc66ede5c73974c3503e149fc79189"
+
+[[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_weapons_assault_side4_1.json"
 hash = "8d64c8b0be1433753bab9d242477cefa64bbf6b5b2d036d3b16c43865d860e9b"
 
@@ -13696,6 +15464,34 @@ hash = "0eb303e75f22b76e8dd73c621226d71fc8d59fbb37ae8c8dcb5f9880c2b353ec"
 [[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_weapons_assault_utility_20.json"
 hash = "50e27ccae456a9e4494cc6f2cd0482971b0d3565636b23fb822c77a57e79b841"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_weapons_assault_utility_prestige_21.json"
+hash = "46e7417969fbd705b2b5954c8dfe72b5f66ba084f543b6fba15ca90b3cd1531b"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_weapons_assault_utility_prestige_22.json"
+hash = "4096a9662a8e5f804df11479a31216272de5fb6a6a8d5a2eb346185f66f8507b"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_weapons_assault_utility_prestige_23.json"
+hash = "787edafdb76671572a14a1d087697af234ee4e48f95c87960a5e54e6d5d62378"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_weapons_assault_utility_prestige_24.json"
+hash = "1058097ee16ef3faef008f77172a765bd069e5cd178d256785816648d4a6193a"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_weapons_assault_utility_prestige_25.json"
+hash = "b812657830119208b31aa9e9b5f266e6c8b17b516e00a03d52e2b544b3fc59c3"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_weapons_assault_utility_prestige_26.json"
+hash = "d6c611f26db91557e1fdaae4b43c875fb7c6d8873f2443b139e73e456f8b6c31"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_weapons_assault_utility_prestige_27.json"
+hash = "3aba81c8e32b68df8c419a0a0d6fe72a6fea4390493a6d1fd880e70bfc159397"
 
 [[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_weapons_handling_1.json"
@@ -13798,6 +15594,34 @@ file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/ta
 hash = "1fcddccfbd5576915dd029be1169f582a01ec5a0b3154f3850f0c8c421211a0b"
 
 [[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_weapons_handling_power_prestige_21.json"
+hash = "bd262c7e0b112f1135628c2e1ae3ce9ceff506d84c0a6b8371e7e0baab5ff410"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_weapons_handling_power_prestige_22.json"
+hash = "8bc6a97cbc0eb659a2ddc7400ae2ba7849d1b8174e39d24785f3a0efb55d037f"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_weapons_handling_power_prestige_23.json"
+hash = "eab6284ca4b27fe3da7eb760babf747b2bfa03c8928663f7987aae11c3d022ea"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_weapons_handling_power_prestige_24.json"
+hash = "3cf99f5b110be5f8ccc78d3a4e8ff97ac71d8faf8a8dbb0d2225c10f17b0e348"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_weapons_handling_power_prestige_25.json"
+hash = "e92bbd32f396d4ca1415e1ed480d45d3b8fabdce2d10f4d42bb06f94911aab8e"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_weapons_handling_power_prestige_26.json"
+hash = "323d05d897855b3de0324c3538b44985e1e06a06132347b4505e581083a30e77"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_weapons_handling_power_prestige_27.json"
+hash = "941355a1701041eac30f2eff0534ea5bebd649f84b5e89202a659a1f7bc380c2"
+
+[[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_weapons_handling_side4_1.json"
 hash = "c4271d92e37efdaa3b5a57c6a4951243c7429cb48adae77cef804ef86977570b"
 
@@ -13832,6 +15656,34 @@ hash = "e7368956c885533ff37563461b36e8bff858bf8b8b47ab0ffbc0d0cf359ff711"
 [[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_weapons_handling_utility_20.json"
 hash = "0332b77e8bba9443b8868cfd52cc7edf96ea89f3021b74d0e96ac5d61ffd7a66"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_weapons_handling_utility_prestige_21.json"
+hash = "b5b5e4562e6c8056b955fc07dbc604d574abf2820c5da56dbcdf12fcd2b05324"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_weapons_handling_utility_prestige_22.json"
+hash = "1ef9f01e3ad2f1ea9e2b5c4bde295cdb43d191036995a46f832d5dd7ce4c64b2"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_weapons_handling_utility_prestige_23.json"
+hash = "bf75dfc5c155560792e660d03580a6c3f0337831a167ca773f55ac876ee9d4e4"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_weapons_handling_utility_prestige_24.json"
+hash = "2b6200604d2aa6e8fa00a91fc8bb0d5bb8990eddf42f24e2e5b5fa9fa23a2db9"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_weapons_handling_utility_prestige_25.json"
+hash = "ca4c999e7b20b6884a1bce650511ab66501d80799308af9b6b05faf7224d925e"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_weapons_handling_utility_prestige_26.json"
+hash = "6e7fa1aae3230f8e705a1d00d4056474a5125d42e315f0b5ca19e22291d43341"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_weapons_handling_utility_prestige_27.json"
+hash = "858740020765f5ab4ecccd26a47fe4d26919c3682b612f3ea7f3c815f0be9023"
 
 [[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_weapons_precision_1.json"
@@ -13934,6 +15786,34 @@ file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/ta
 hash = "6a03858b401ff00f252139ecd464986875708b8f4a9cae12405ce5212b7d1ced"
 
 [[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_weapons_precision_power_prestige_21.json"
+hash = "2ae794007c48c59f9b1f09db0199db0e297564f4ce8dd6af185fca65eb006b48"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_weapons_precision_power_prestige_22.json"
+hash = "32326f8245ab7340bd9a73567a33067f648788fc87ae37496d3012c5484326e8"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_weapons_precision_power_prestige_23.json"
+hash = "b228fae294b09a5050ab912e91063c59f86aa0f4a6f3c6b49016c9a35bc09cad"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_weapons_precision_power_prestige_24.json"
+hash = "2dcfbbfa864d4f3e9d45bb06556d25a890f068c6314500397807c00ce775d3b5"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_weapons_precision_power_prestige_25.json"
+hash = "246f950e19b3f57a7e4d1c7bbb49baaa70b36bab141243cf76c2ccfaa08f3c17"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_weapons_precision_power_prestige_26.json"
+hash = "0d566ac407ba4a2654c8f65a90985b7d0ffe9d4005e051e96fd8e52489fe1855"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_weapons_precision_power_prestige_27.json"
+hash = "651102b92717628f5b867dbd74d9bcd0c1ca6faf1b26178928082b8a98fcf868"
+
+[[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_weapons_precision_side4_1.json"
 hash = "81d44f988df7349d032cf929c2817142035b6610523a80f610a2826d1e33727b"
 
@@ -13970,12 +15850,40 @@ file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/ta
 hash = "ebcda4659aaf8de56dbbc88f09ead5200e6ad4f376a101e76131fd32ffccce94"
 
 [[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_weapons_precision_utility_prestige_21.json"
+hash = "45845f72f743b750b4e4654c51ea207cd64b16c2b72f702d535eabdc1614ec47"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_weapons_precision_utility_prestige_22.json"
+hash = "9603bb86e319acb2ae3bd89f51be60baedd9146387db368c37f0fa20faa3eed1"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_weapons_precision_utility_prestige_23.json"
+hash = "da3644a2a03776329768f0323f471d39ad45f7e1f4d4c23268c2582df71e9732"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_weapons_precision_utility_prestige_24.json"
+hash = "f4bdad69c98d4875a0a9ea897d771520c2d6d5a58ba3c57235ed6c6cae5ab68f"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_weapons_precision_utility_prestige_25.json"
+hash = "045819846559a8c0889f2a2bb4cf701862061dda9fea4718b1f38bccb72911b7"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_weapons_precision_utility_prestige_26.json"
+hash = "32974cb71639f3a70ea8853d70ffcc62048bf20745886d5ab758f74c837e9ff5"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/project_deadzone/skills/talent_weapons_precision_utility_prestige_27.json"
+hash = "839f6cfc36d6090f6a7fe0fd4948921dadc32475092fe582992093ed886798d9"
+
+[[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/pack.mcmeta"
 hash = "0ebb0c12eb7a11c4de1071a98531a7a293bb942f70354d263c84bb527c281da2"
 
 [[files]]
 file = "options.txt"
-hash = "933c5993722045e58be2233e92d26615be4b1d66c3cd5b8588ce6e5092ff4ad1"
+hash = "7f1094e96ccd1ee67c4e9c2e2738d7fcfa4daabfc9332f0b7b5cd7545ec63bb2"
 
 [[files]]
 file = "pdz_tools/keymap/APPLY_KEYMAP.bat"
@@ -14072,6 +15980,10 @@ hash = "07dfe69cdc7ed1ea8b63567a8e53b22956562436306a58328d3ec60ce80b5282"
 [[files]]
 file = "projectfiles/PROJECT_DEADZONE_Remaining_Tasks_v0.1.md"
 hash = "b910e04ad6e1de2b8adee6e4ada7136274d570f62a2ebdf65319e458fac348fa"
+
+[[files]]
+file = "projectfiles/PROJECT_DEADZONE_Settlement_Story_Audio_Update_20260816.md"
+hash = "ff599288bac42573240d08b1ec1bbbf6ccc22e969284ba4d47d69a99e2cd6277"
 
 [[files]]
 file = "projectfiles/PROJECT_DEADZONE_Skill_Tier_Gate_Test_v0.1.md"

@@ -1,0 +1,13 @@
+name = "[WIP] Butchery: Alex's Mobs Addon"
+filename = "butchery_alexs_mobs-1.0.1-BETA-forge-1.20.1.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "e2ca465fbff43417692acb6ecac9c844141f9890"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 7596320
+project-id = 1451453

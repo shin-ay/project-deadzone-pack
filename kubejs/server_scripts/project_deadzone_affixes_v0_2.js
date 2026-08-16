@@ -8,6 +8,20 @@ const DZ2_STRING = Java.loadClass("net.minecraft.nbt.StringTag")
 const DZ2_COMPOUND = Java.loadClass("net.minecraft.nbt.CompoundTag")
 const DZ2_UUID = Java.loadClass("java.util.UUID")
 
+// Mine and Slash migration mode: existing PDZ rolls still work, while newly
+// dropped or crafted equipment is left for Mine and Slash to generate.
+// Mine and Slash only converts items that it recognises as a base gear type.
+// The pack contains many MCreator/custom equipment items (Infectious, Survival
+// Instinct, Apocalypse Now, etc.), so those items need the PDZ compatibility
+// roll or they would have neither system.  Native M&S gear is left untouched.
+const DZ2_AUTO_ROLL_ENABLED = true
+
+function dz2MnsRequiredLevel(player) {
+  let tier=0
+  try { tier=Math.max(player.server.persistentData.getInt("deadzone_world_tier"),player.persistentData.getInt("dz_region_tier")) } catch (ignored) {}
+  return [1,5,10,20,30][Math.max(0,Math.min(4,tier))]
+}
+
 const DZ2_QUALITY = {
   common:    {jp:"コモン", color:"gray", traits:1, scale:0.55},
   uncommon:  {jp:"アンコモン", color:"green", traits:2, scale:0.75},
@@ -100,11 +114,12 @@ function dz2IsGun(stack) {
 }
 
 function dz2Category(stack) {
-  if (!stack || stack.isEmpty() || !stack.isDamageableItem()) return null
+  if (!stack || stack.isEmpty()) return null
   if (dz2IsGun(stack)) return "gun"
   let id = String(stack.id)
   if (stack.hasTag("minecraft:head_armor") || stack.hasTag("minecraft:chest_armor") ||
       stack.hasTag("minecraft:leg_armor") || stack.hasTag("minecraft:foot_armor")) return "armor"
+  if (!stack.isDamageableItem()) return null
   if (stack.hasTag("minecraft:pickaxes") || stack.hasTag("minecraft:shovels") ||
       stack.hasTag("minecraft:hoes")) return "mining"
   if (stack.hasTag("minecraft:bows") || stack.hasTag("minecraft:crossbows") ||
@@ -195,6 +210,10 @@ function dz2WriteDisplay(stack, data) {
   let category = data.getString("category")
   let lore = new DZ2_LIST()
   lore.add(DZ2_STRING.valueOf(dz2Json("[ " + q.jp + " ]", q.color)))
+  let rootForReq=dz2Root(stack,false)
+  if (rootForReq && rootForReq.contains("PDZMnsRequiredLevel")) {
+    lore.add(DZ2_STRING.valueOf(dz2Json("Mine and Slash Lv " + rootForReq.getInt("PDZMnsRequiredLevel") + " 必要", "yellow")))
+  }
   let displayTraits=(DZ2_TRAITS[category] || []).slice()
   if (category === "armor") {
     displayTraits=displayTraits.concat(DZ2_TRAITS.armor_head || [], DZ2_TRAITS.armor_chest || [], DZ2_TRAITS.armor_legs || [], DZ2_TRAITS.armor_feet || [])
@@ -278,6 +297,7 @@ function dz2Roll(stack, player, forcedQuality, crafted) {
   }
   let root=dz2Root(stack,true)
   if (!root) return false
+  if (!root.contains("PDZMnsRequiredLevel")) root.putInt("PDZMnsRequiredLevel",dz2MnsRequiredLevel(player))
   root.put("PDZAffix", data)
   dz2WriteDisplay(stack, data)
   return true
@@ -337,6 +357,7 @@ ItemEvents.rightClicked("kubejs:affix_calibrator",event=>{
 // per-stack `lootbeams.color` NBT while the item is still on the ground.
 // Inventory processing below remains as a fallback for crafted/given items.
 EntityEvents.spawned("minecraft:item", event => {
+  if (!DZ2_AUTO_ROLL_ENABLED) return
   let entity=event.entity
   if (!entity || entity.level.clientSide) return
   event.server.scheduleInTicks(1, () => {
@@ -380,7 +401,7 @@ PlayerEvents.tick(event => {
       }
       continue
     }
-    if (dz2Roll(stack,player,null,false)) { changed=true; dz2Announce(player,stack,dz2Data(stack)) }
+    if (DZ2_AUTO_ROLL_ENABLED && dz2Roll(stack,player,null,false)) { changed=true; dz2Announce(player,stack,dz2Data(stack)) }
   }
   if (changed) inv.setChanged()
 })
@@ -495,6 +516,7 @@ ItemEvents.crafted(event => {
       return
     }
   }
+  if (!DZ2_AUTO_ROLL_ENABLED) return
   if (root) root.remove("PDZAffix")
   dz2Roll(stack,player,null,true)
   dz2Announce(player,stack,dz2Data(stack))

@@ -3,7 +3,7 @@
 	default_quest_shape: ""
 	filename: "deadzone_main_story_01"
 	group: "51DC04D9192698A6"
-	icon: "minecraft:recovery_compass"
+	icon: "apocalypsenow:badge"
 	id: "43A93722C5600224"
 	order_index: 1
 	quest_links: [ ]
@@ -13,7 +13,7 @@
 				"大規模感染と都市封鎖から数週間。"
 				"緊急周波数107.3の放送を確認し、生存者の拠点を探そう。"
 			]
-			icon: "minecraft:recovery_compass"
+			icon: "apocalypsenow:aabattery"
 			id: "4262970F1B621A1D"
 			shape: "hexagon"
 			size: 1.5d
@@ -51,7 +51,7 @@
 		{
 			dependencies: ["52F2869C3820DF98"]
 			description: ["避難所は物資補給、Buddy募集、次の任務を受ける活動拠点になる。"]
-			icon: "minecraft:campfire"
+			icon: "apocalypsenow:army_helmet"
 			id: "1920AEAAF4D75E94"
 			subtitle: "生存者と最初の協力者を確認する。"
 			tasks: [{
@@ -66,7 +66,7 @@
 		{
 			dependencies: ["1920AEAAF4D75E94"]
 			description: ["避難所の発電機を維持する燃料が足りない。Gas Stationを調査する。"]
-			icon: "minecraft:clock"
+			icon: "apocalypsenow:aabattery"
 			id: "23E782D769F4E809"
 			shape: "hexagon"
 			size: 1.5d
@@ -91,7 +91,7 @@
 				"一度4条件を満たせば達成状態は保存され、その後アイテムを収納・消費しても取り消されない。"
 				"現在の状態は /deadzonestory prep_status で確認できる。"
 			]
-			icon: "minecraft:bread"
+			icon: "apocalypsenow:armorplate"
 			id: "633F4D540C6511A9"
 			subtitle: "街へ出る前に最低限の準備を整えよう。"
 			tasks: [{
@@ -106,7 +106,7 @@
 		{
 			dependencies: ["633F4D540C6511A9"]
 			description: ["Raider Scoutを排除し、建物と燃料庫の安全を確保する。"]
-			icon: "minecraft:charcoal"
+			icon: "apocalypsenow:bottle"
 			id: "19FC30DCB267A732"
 			rewards: [
 				{
@@ -140,7 +140,7 @@
 		{
 			dependencies: ["19FC30DCB267A732"]
 			description: ["燃料と周辺地図をSurvivor Campへ持ち帰り、避難所の電力を復旧する。"]
-			icon: "minecraft:map"
+			icon: "apocalypsenow:badge"
 			id: "162BAA0F1AF6097C"
 			rewards: [
 				{
@@ -194,7 +194,7 @@
 		{
 			dependencies: ["162BAA0F1AF6097C"]
 			description: ["地図にはGun ShopとPolice Stationを結ぶ補給経路が記録されていた。"]
-			icon: "minecraft:spyglass"
+			icon: "apocalypsenow:balaclava"
 			id: "500615465858A8D5"
 			subtitle: "Raidersの武器供給源を追う。"
 			tasks: [{
@@ -249,7 +249,7 @@
 		{
 			dependencies: ["7718CAD4F2ED6F3E"]
 			description: ["壊れた警察無線機には、Police Stationからの最後の救難信号が残っている。"]
-			icon: "minecraft:echo_shard"
+			icon: "apocalypsenow:badge"
 			id: "6AD31D0364FE7B57"
 			subtitle: "警察署へ向かう手掛かりを回収する。"
 			tasks: [{
@@ -264,7 +264,7 @@
 		{
 			dependencies: ["6AD31D0364FE7B57"]
 			description: ["Police StationはRaider Wardenの要塞になっている。"]
-			icon: "minecraft:iron_door"
+			icon: "apocalypsenow:army_chestplate"
 			id: "3786D5F3AF1D3EF4"
 			shape: "hexagon"
 			size: 1.5d
@@ -281,7 +281,7 @@
 		{
 			dependencies: ["3786D5F3AF1D3EF4"]
 			description: ["留置区画、通信室、証拠保管庫を順に確保する。"]
-			icon: "minecraft:tripwire_hook"
+			icon: "apocalypsenow:bomb_defusing_kit"
 			id: "5C450F9A7EB25D5B"
 			subtitle: "狭い屋内と複数方向からの攻撃に備えよう。"
 			tasks: [{

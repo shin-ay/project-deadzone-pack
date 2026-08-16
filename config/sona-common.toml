@@ -308,7 +308,7 @@
 	"Bypass Invulnerable Dot" = true
 	#Loot containers have a chance of being locked when they are generated.
 	#Range: 0.0 ~ 100.0
-	"Loot Container Locked Percent" = 10.0
+	"Loot Container Locked Percent" = 0.0
 	#The Items can break the lock.
 	#Format: "zombiekit:crowbar, 30" ("" required) means that iron_crowbar has a 30% chance of opening locked chests every time right click locked container.
 	#

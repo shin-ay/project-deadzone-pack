@@ -9,6 +9,7 @@ const PDZ_ACT_WALK_RANGE = 224
 const PDZ_ACT_LIMIT = 3
 const PDZ_ACT_AUTO_ENABLED = 'dz_activity_director_enabled_v1'
 const PDZ_ACT_AUTO_NEXT = 'dz_activity_director_next_v1'
+const PDZ_ACT_NATIVE_SETTLEMENT_MIGRATED = 'dz_native_settlement_activity_migrated_v1'
 
 function pdzActRead(server,key) {
   let raw=server.persistentData.getString(key)
@@ -736,6 +737,13 @@ function pdzActDirectorPulse(server,player,forced) {
 let PDZ_ACT_TICKS=0
 ServerEvents.tick(event=>{
   PDZ_ACT_TICKS++
+  // One-time migration: Village Expansion / Recruits now own ordinary patrol,
+  // settlement and war simulation. PDZ manual tests and scripted convoys remain.
+  if(!event.server.persistentData.getBoolean(PDZ_ACT_NATIVE_SETTLEMENT_MIGRATED)){
+    event.server.persistentData.putBoolean(PDZ_ACT_AUTO_ENABLED,false)
+    event.server.persistentData.putBoolean(PDZ_ACT_NATIVE_SETTLEMENT_MIGRATED,true)
+    console.info('[PROJECT DEADZONE][Activity] automatic legacy director disabled; native settlement AI is authoritative.')
+  }
   if(PDZ_ACT_TICKS%10===0){
     let live=pdzActRead(event.server,PDZ_ACT_LIST),changed=false
     live.forEach(a=>{if(a.materialized&&pdzActPhysicalWalk(event.server,a))changed=true})

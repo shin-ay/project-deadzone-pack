@@ -1,0 +1,15 @@
+{
+  "name": "underground_bunkers:underground_bunker/underground_bunker_start",
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "location": "underground_bunkers:underground_bunker/underground_bunkers_room_0",
+        "processors": "underground_bunkers:underground_bunker_processor",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    }
+  ]
+}

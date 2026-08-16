@@ -3,141 +3,198 @@
 	default_quest_shape: ""
 	filename: "deadzone_main_story_t3"
 	group: "51DC04D9192698A6"
-	icon: "minecraft:nether_star"
-	id: "D320260813000001"
-	order_index: 6
+	icon: "apocalypsenow:advanced_hazmat_suit_helmet"
+	id: "6B75036863EC83AD"
+	order_index: 9
 	quest_links: [ ]
 	quests: [
 		{
-			dependencies: ["D220260813000108"]
+			dependencies: ["17F1D932ED1B4A01"]
 			description: [
 				"原初感染体の記録には、DEADZONE Protocolを実行できる軍用権限が残されていた。"
 				"Military Baseまたは地下司令壕へ到達し、Protocol認証端末を探す。"
 			]
-			icon: "minecraft:iron_helmet"
-			id: "D320260813000101"
+			icon: {
+				Count: 1
+				id: "minecraft:iron_helmet"
+				tag: {
+					Damage: 0
+				}
+			}
+			id: "1ABE30FB04136438"
 			shape: "hexagon"
 			size: 1.5d
-			tasks: [{id: "D320260813001101" title: "Military Baseまたは地下司令壕へ到達する" type: "custom"}]
+			tasks: [{
+				id: "6F885D74A13EE68D"
+				title: "Military Baseまたは地下司令壕へ到達する"
+				type: "custom"
+			}]
 			title: "Act 3：封鎖された命令"
 			x: 0.0d
 			y: 0.0d
 		}
 		{
-			dependencies: ["D320260813000101"]
+			dependencies: ["1ABE30FB04136438"]
 			description: [
 				"軍用区画の認証記録を回収し、AEGIS Laboratoryの座標を復元する。"
 				"AEGISまたは地下研究施設へ到達する。"
 			]
-			icon: "minecraft:ender_eye"
-			id: "D320260813000102"
-			tasks: [{id: "D320260813001102" title: "AEGIS Laboratoryへ到達する" type: "custom"}]
+			icon: "apocalypsenow:army_helmet"
+			id: "0E2A157FFF57D90A"
+			tasks: [{
+				id: "448ED9E3DB64BB8F"
+				title: "AEGIS Laboratoryへ到達する"
+				type: "custom"
+			}]
 			title: "クロス博士の計画"
 			x: 2.0d
 			y: 0.0d
 		}
 		{
-			dependencies: ["D320260813000102"]
+			dependencies: ["0E2A157FFF57D90A"]
 			description: [
 				"Laboratoryを汚染するREACTOR SAINTを撃破する。"
 				"放射線区域に長時間留まらず、周囲の除染設備を利用する。"
 			]
-			icon: "minecraft:blaze_powder"
-			id: "D320260813000103"
-			rewards: [{count: 4 id: "D320260813002101" item: "apocalypsenow:bandage" type: "item"}]
+			icon: "apocalypsenow:adrenaline_syringe"
+			id: "46488BBA671011F5"
+			rewards: [{
+				count: 4
+				id: "6BBA4A79773F58B4"
+				item: "apocalypsenow:bandage"
+				type: "item"
+			}]
 			shape: "hexagon"
 			size: 2.0d
-			tasks: [{id: "D320260813001103" title: "REACTOR SAINTを撃破する" type: "custom"}]
+			tasks: [{
+				id: "7269F3A7B7998F45"
+				title: "REACTOR SAINTを撃破する"
+				type: "custom"
+			}]
 			title: "T3 Story Boss：REACTOR SAINT"
 			x: 4.0d
 			y: 0.0d
 		}
 		{
-			dependencies: ["D320260813000103"]
+			dependencies: ["46488BBA671011F5"]
 			description: [
 				"ARGUS-9へ接続するには、異なるWARDEN施設の中枢を3基停止する必要がある。"
 				"同じ施設を往復しても進捗には数えられない。"
 			]
-			icon: "minecraft:comparator"
-			id: "D320260813000104"
-			tasks: [{id: "D320260813001104" title: "異なるWARDEN中枢を3基停止する" type: "custom"}]
+			icon: "apocalypsenow:bomb_defusing_kit"
+			id: "719E23C2245BB557"
+			tasks: [{
+				id: "2E17C47155DC6C8E"
+				title: "異なるWARDEN中枢を3基停止する"
+				type: "custom"
+			}]
 			title: "WARDEN隔離網"
 			x: 6.0d
 			y: 0.0d
 		}
 		{
-			dependencies: ["D320260813000104"]
+			dependencies: ["719E23C2245BB557"]
 			description: [
 				"三中枢の停止によりARGUS Fragmentが実体化した。"
 				"機械増援を減らしてから露出したコアを攻撃する。"
 			]
-			icon: "minecraft:observer"
-			id: "D320260813000105"
+			icon: "apocalypsenow:aabattery"
+			id: "22426D3E145D5513"
 			shape: "hexagon"
 			size: 2.0d
-			tasks: [{id: "D320260813001105" title: "ARGUS Fragmentを撃破する" type: "custom"}]
+			tasks: [{
+				id: "306DFA349B59504F"
+				title: "ARGUS Fragmentを撃破する"
+				type: "custom"
+			}]
 			title: "T3 Story Boss：ARGUS Fragment"
 			x: 8.0d
 			y: 0.0d
 		}
 		{
-			dependencies: ["D320260813000105"]
+			dependencies: ["22426D3E145D5513"]
 			description: [
 				"WARDENの記録は感染集合体THE CHOIRがARGUS-9へ干渉していたことを示している。"
 				"感染中枢へ向かい、CHOIR VESSELを探す。"
 			]
-			icon: "minecraft:sculk_sensor"
-			id: "D320260813000106"
-			tasks: [{id: "D320260813001106" title: "感染中枢を発見する" type: "custom"}]
+			icon: "apocalypsenow:advanced_hazmat_suit_chestplate"
+			id: "5B4D3EBFA1026614"
+			tasks: [{
+				id: "72E7A28FF2D72EC0"
+				title: "感染中枢を発見する"
+				type: "custom"
+			}]
 			title: "最初の声"
 			x: 10.0d
 			y: 0.0d
 		}
 		{
-			dependencies: ["D320260813000106"]
+			dependencies: ["5B4D3EBFA1026614"]
 			description: [
 				"CHOIR VESSELは周囲の感染者と同期している。"
 				"増援とScreamerを処理し、露出した本体を撃破する。"
 			]
-			icon: "minecraft:sculk_catalyst"
-			id: "D320260813000107"
+			icon: "apocalypsenow:bloodyrags"
+			id: "0E8A3FB0BED9A091"
 			shape: "hexagon"
 			size: 2.0d
-			tasks: [{id: "D320260813001107" title: "CHOIR VESSELを撃破する" type: "custom"}]
+			tasks: [{
+				id: "2A172406330EF1BB"
+				title: "CHOIR VESSELを撃破する"
+				type: "custom"
+			}]
 			title: "T3 Story Boss：CHOIR VESSEL"
 			x: 12.0d
 			y: 0.0d
 		}
 		{
-			dependencies: ["D320260813000107"]
+			dependencies: ["0E8A3FB0BED9A091"]
 			description: [
 				"ARGUS-9の最終処理を選択する。"
 				"/deadzonestory argus を実行し、破壊・再設定・分離の影響を確認する。"
 			]
-			icon: "minecraft:beacon"
-			id: "D320260813000108"
+			icon: "apocalypsenow:badge"
+			id: "5EF7DA85993329F7"
 			shape: "hexagon"
 			size: 1.5d
-			tasks: [{id: "D320260813001108" title: "ARGUS-9の処理方法を選ぶ" type: "custom"}]
+			tasks: [{
+				id: "049E0A1A80F4B58D"
+				title: "ARGUS-9の処理方法を選ぶ"
+				type: "custom"
+			}]
 			title: "DEADZONE Protocol"
 			x: 14.0d
 			y: 0.0d
 		}
 		{
-			dependencies: ["D320260813000108"]
+			dependencies: ["5EF7DA85993329F7"]
 			description: [
 				"T3地域の封鎖網は安定した。しかし、THE CHOIRのFirst Voiceはまだ残っている。"
 				"現行長期テスト版のメイン到達点。勢力拠点、Named、Biome Apex、Affix装備を周回できる。"
 			]
-			icon: "minecraft:nether_star"
-			id: "D320260813000109"
+			icon: "apocalypsenow:ballistic_mask_helmet"
+			id: "65F53D8012470726"
 			rewards: [
-				{count: 24 id: "D320260813002102" item: "apocalypsenow:money" type: "item"}
-				{count: 8 id: "D320260813002103" item: "immersiveengineering:ingot_steel" type: "item"}
+				{
+					count: 24
+					id: "252D9CCF2B20AB54"
+					item: "apocalypsenow:money"
+					type: "item"
+				}
+				{
+					count: 8
+					id: "1DA339E48CA8DDC3"
+					item: "immersiveengineering:ingot_steel"
+					type: "item"
+				}
 			]
 			shape: "hexagon"
 			size: 2.5d
-			tasks: [{id: "D320260813001109" title: "T3地域を安定化する" type: "custom"}]
+			tasks: [{
+				id: "0730EAE1DBAF8F17"
+				title: "T3地域を安定化する"
+				type: "custom"
+			}]
 			title: "現行終点：残された声"
 			x: 16.0d
 			y: 0.0d
