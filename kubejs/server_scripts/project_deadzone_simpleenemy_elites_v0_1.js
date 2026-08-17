@@ -3,6 +3,7 @@
 // durability is capped; difficulty comes from armor, speed and mixed rewards.
 
 const DZ_ELITE_TYPES = {
+  "minecraft:zombie": "変異感染者",
   "simpleenemymod:ruunit": "RU Veteran",
   "simpleenemymod:pmcunit": "PMC Specialist"
 }
@@ -53,7 +54,20 @@ EntityEvents.death(event => {
   if (tier >= 2) entity.block.popItem(Item.of("immersiveengineering:component_iron", 1))
   let killer = event.source ? event.source.actual : null
   if (killer && killer.isPlayer && killer.isPlayer()) {
-    killer.server.runCommandSilent("ftbquests change_progress " + killer.username +
+    let all = Math.min(10, killer.persistentData.getInt("dz_bounty_rare_kills") + 1)
+    killer.persistentData.putInt("dz_bounty_rare_kills", all)
+    killer.tell(Text.of("危険個体狩り: " + all + "/10").yellow())
+    if (all >= 10) killer.server.runCommandSilent("ftbquests change_progress " + killer.username +
       " complete D202608200003040")
+
+    let armed = entity.tags.contains("dz_elite") &&
+      (String(entity.type) === "simpleenemymod:ruunit" || String(entity.type) === "simpleenemymod:pmcunit")
+    if (armed) {
+      let armedCount = Math.min(5, killer.persistentData.getInt("dz_bounty_armed_elite_kills") + 1)
+      killer.persistentData.putInt("dz_bounty_armed_elite_kills", armedCount)
+      killer.tell(Text.of("武装勢力の精鋭: " + armedCount + "/5").gold())
+      if (armedCount >= 5) killer.server.runCommandSilent("ftbquests change_progress " + killer.username +
+        " complete D202608200003042")
+    }
   }
 })

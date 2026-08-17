@@ -2,23 +2,61 @@
 	default_hide_dependency_lines: false
 	default_quest_shape: "circle"
 	filename: "deadzone_mod_power_industry_01"
-	group: "51DC04D9192698A6"
+	group: "A170000000000005"
 	icon: "immersiveengineering:capacitor_lv"
 	id: "6E6C5283B005AA26"
-	order_index: 10
+	order_index: 18
+	quest_links: [ ]
 	quests: [
 		{
 			dependencies: ["6D0294D5C566AA55"]
+			subtitle: "解放条件: 「工房計画：安山岩合金」を完了"
 			description: ["Create工房を電力・重工業へ拡張する。まずはIEの工具をそろえ、マルチブロック設備を正しく組み立てられる状態にする。"]
-			icon: "immersiveengineering:hammer"
+			icon: {
+				Count: 1
+				id: "immersiveengineering:hammer"
+				tag: {
+					Damage: 0
+				}
+			}
 			id: "6400000000000001"
 			rewards: [
-				{ count: 4, id: "6420000000000001", item: "apocalypsenow:money", type: "item" }
-				{ count: 4, id: "6420000000000002", item: "immersiveengineering:hemp_fiber", type: "item" }
+				{
+					count: 36
+					id: "6420000000000001"
+					item: "apocalypsenow:money"
+					type: "item"
+				}
+				{
+					count: 4
+					id: "6420000000000002"
+					item: "immersiveengineering:hemp_fiber"
+					type: "item"
+				}
 			]
 			tasks: [
-				{ id: "6410000000000001", item: "immersiveengineering:hammer", type: "item" }
-				{ id: "6410000000000002", item: "immersiveengineering:wirecutter", type: "item" }
+				{
+					id: "6410000000000001"
+					item: {
+						Count: 1
+						id: "immersiveengineering:hammer"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "6410000000000002"
+					item: {
+						Count: 1
+						id: "immersiveengineering:wirecutter"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
 			]
 			title: "重工業担当の工具"
 			x: 0.0d
@@ -26,61 +64,136 @@
 		}
 		{
 			dependencies: ["6400000000000001"]
+			subtitle: "解放条件: 「重工業担当の工具」を完了"
 			description: ["Coke Ovenは鋼鉄と防腐木材の基礎設備。石炭をCoal CokeとCreosoteへ分離する。"]
 			icon: "immersiveengineering:cokebrick"
 			id: "6400000000000002"
 			rewards: [
-				{ count: 5, id: "6420000000000003", item: "apocalypsenow:money", type: "item" }
-				{ count: 4, id: "6420000000000004", item: "immersiveengineering:cokebrick", type: "item" }
+				{
+					count: 45
+					id: "6420000000000003"
+					item: "apocalypsenow:money"
+					type: "item"
+				}
+				{
+					count: 4
+					id: "6420000000000004"
+					item: "immersiveengineering:cokebrick"
+					type: "item"
+				}
 			]
-			tasks: [{ count: 27L, id: "6410000000000003", item: "immersiveengineering:cokebrick", type: "item" }]
+			tasks: [{
+				count: 27L
+				id: "6410000000000003"
+				item: "immersiveengineering:cokebrick"
+				type: "item"
+			}]
 			title: "T0：Coke Oven"
 			x: 2.0d
 			y: 0.0d
 		}
 		{
 			dependencies: ["6400000000000002"]
+			subtitle: "解放条件: 「T0：Coke Oven」を完了"
 			description: ["Coal Cokeは高温精錬、Creosoteは屋外設備と電柱用のTreated Woodへ使う。両方を捨てずに保管する。"]
 			icon: "immersiveengineering:coal_coke"
 			id: "6400000000000003"
 			rewards: [
-				{ count: 5, id: "6420000000000005", item: "apocalypsenow:money", type: "item" }
-				{ id: "6420000000000006", item: "immersiveengineering:creosote_bucket", type: "item" }
+				{
+					count: 45
+					id: "6420000000000005"
+					item: "apocalypsenow:money"
+					type: "item"
+				}
+				{
+					id: "6420000000000006"
+					item: "immersiveengineering:creosote_bucket"
+					type: "item"
+				}
 			]
 			tasks: [
-				{ count: 8L, id: "6410000000000004", item: "immersiveengineering:coal_coke", type: "item" }
-				{ count: 8L, id: "6410000000000005", item: "immersiveengineering:treated_wood_horizontal", type: "item" }
+				{
+					count: 8L
+					id: "6410000000000004"
+					item: "immersiveengineering:coal_coke"
+					type: "item"
+				}
+				{
+					count: 8L
+					id: "6410000000000005"
+					item: "immersiveengineering:treated_wood_horizontal"
+					type: "item"
+				}
 			]
 			title: "燃料と防腐木材"
 			x: 4.0d
 			y: 0.0d
 		}
 		{
-			dependencies: ["6400000000000003","162BAA0F1AF6097C"]
+			dependencies: [
+				"6400000000000003"
+				"162BAA0F1AF6097C"
+			]
 			description: ["World Tier 1でBlast Furnace工程を開始する。27個のBlast Brickから鋼鉄精錬設備を組み上げる。"]
 			icon: "immersiveengineering:blastbrick"
 			id: "6400000000000004"
 			rewards: [
-				{ count: 7, id: "6420000000000007", item: "apocalypsenow:money", type: "item" }
-				{ count: 4, id: "6420000000000008", item: "immersiveengineering:coal_coke", type: "item" }
+				{
+					count: 63
+					id: "6420000000000007"
+					item: "apocalypsenow:money"
+					type: "item"
+				}
+				{
+					count: 4
+					id: "6420000000000008"
+					item: "immersiveengineering:coal_coke"
+					type: "item"
+				}
 			]
-			tasks: [{ count: 27L, id: "6410000000000006", item: "immersiveengineering:blastbrick", type: "item" }]
+			tasks: [{
+				count: 27L
+				id: "6410000000000006"
+				item: "immersiveengineering:blastbrick"
+				type: "item"
+			}]
 			title: "T1：Blast Furnace"
 			x: 6.0d
 			y: 0.0d
 		}
 		{
 			dependencies: ["6400000000000004"]
+			subtitle: "解放条件: 「T1：Blast Furnace」を完了"
 			description: ["鋼鉄を武器だけに使わず、Componentと設備増設用に備蓄する。PDZでは各MODのSteelをIE素材へ統一する。"]
 			icon: "immersiveengineering:ingot_steel"
 			id: "6400000000000005"
 			rewards: [
-				{ count: 8, id: "6420000000000009", item: "apocalypsenow:money", type: "item" }
-				{ count: 2, id: "642000000000000A", item: "immersiveengineering:component_steel", type: "item" }
+				{
+					count: 64
+					id: "6420000000000009"
+					item: "apocalypsenow:money"
+					type: "item"
+				}
+				{
+					count: 2
+					id: "642000000000000A"
+					item: "immersiveengineering:component_steel"
+					type: "item"
+				}
 			]
 			tasks: [
-				{ count: 8L, id: "6410000000000007", item: "immersiveengineering:ingot_steel", type: "item" }
-				{ count: 4L, id: "6410000000000008", item: "immersiveengineering:component_iron", type: "item" }
+				{
+					count: 8L
+					id: "6410000000000007"
+					item: "immersiveengineering:ingot_steel"
+					type: "item"
+				}
+				{
+					count: 4L
+					id: "6410000000000008"
+					item: "immersiveengineering:component_iron"
+					type: "item"
+				}
 			]
 			title: "鋼鉄の共通規格"
 			x: 8.0d
@@ -88,16 +201,37 @@
 		}
 		{
 			dependencies: ["6400000000000005"]
+			subtitle: "解放条件: 「鋼鉄の共通規格」を完了"
 			description: ["LV ConnectorとWire Coilでキャンプ内の低圧配電網を作る。露出配線は事故と襲撃被害の原因になる。"]
 			icon: "immersiveengineering:wirecoil_copper"
 			id: "6400000000000006"
 			rewards: [
-				{ count: 7, id: "642000000000000B", item: "apocalypsenow:money", type: "item" }
-				{ count: 4, id: "642000000000000C", item: "immersiveengineering:connector_lv_relay", type: "item" }
+				{
+					count: 63
+					id: "642000000000000B"
+					item: "apocalypsenow:money"
+					type: "item"
+				}
+				{
+					count: 4
+					id: "642000000000000C"
+					item: "immersiveengineering:connector_lv_relay"
+					type: "item"
+				}
 			]
 			tasks: [
-				{ count: 8L, id: "6410000000000009", item: "immersiveengineering:wirecoil_copper", type: "item" }
-				{ count: 4L, id: "641000000000000A", item: "immersiveengineering:connector_lv", type: "item" }
+				{
+					count: 8L
+					id: "6410000000000009"
+					item: "immersiveengineering:wirecoil_copper"
+					type: "item"
+				}
+				{
+					count: 4L
+					id: "641000000000000A"
+					item: "immersiveengineering:connector_lv"
+					type: "item"
+				}
 			]
 			title: "低圧配電網"
 			x: 10.0d
@@ -105,44 +239,96 @@
 		}
 		{
 			dependencies: ["6400000000000005"]
+			subtitle: "解放条件: 「鋼鉄の共通規格」を完了"
 			description: ["Dynamoで回転力を電力へ変換し、Create工房とIE設備を相互接続する。"]
 			icon: "immersiveengineering:dynamo"
 			id: "6400000000000007"
 			rewards: [
-				{ count: 8, id: "642000000000000D", item: "apocalypsenow:money", type: "item" }
-				{ count: 4, id: "642000000000000E", item: "createaddition:copper_wire", type: "item" }
+				{
+					count: 64
+					id: "642000000000000D"
+					item: "apocalypsenow:money"
+					type: "item"
+				}
+				{
+					count: 4
+					id: "642000000000000E"
+					item: "createaddition:copper_wire"
+					type: "item"
+				}
 			]
-			tasks: [{ id: "641000000000000B", item: "immersiveengineering:dynamo", type: "item" }]
+			tasks: [{
+				id: "641000000000000B"
+				item: "immersiveengineering:dynamo"
+				type: "item"
+			}]
 			title: "回転力から電力へ"
 			x: 10.0d
 			y: 1.5d
 		}
 		{
-			dependencies: ["6400000000000006","6400000000000007"]
+			dependencies: [
+				"6400000000000006"
+				"6400000000000007"
+			]
 			description: ["発電量が変動しても設備を止めないようLV Capacitorへ蓄電する。共同設備には必ず予備電力を持たせる。"]
 			icon: "immersiveengineering:capacitor_lv"
 			id: "6400000000000008"
 			rewards: [
-				{ count: 9, id: "642000000000000F", item: "apocalypsenow:money", type: "item" }
-				{ id: "6420000000000010", item: "createaddition:capacitor", type: "item" }
+				{
+					count: 64
+					id: "642000000000000F"
+					item: "apocalypsenow:money"
+					type: "item"
+				}
+				{
+					id: "6420000000000010"
+					item: "createaddition:capacitor"
+					type: "item"
+				}
 			]
-			tasks: [{ count: 2L, id: "641000000000000C", item: "immersiveengineering:capacitor_lv", type: "item" }]
+			tasks: [{
+				count: 2L
+				id: "641000000000000C"
+				item: "immersiveengineering:capacitor_lv"
+				type: "item"
+			}]
 			title: "予備電力"
 			x: 12.0d
 			y: 0.0d
 		}
 		{
 			dependencies: ["6400000000000008"]
+			subtitle: "解放条件: 「予備電力」を完了"
 			description: ["Rolling MillでWireとRodを量産し、手作業の部品加工から卒業する。"]
 			icon: "createaddition:rolling_mill"
 			id: "6400000000000009"
 			rewards: [
-				{ count: 9, id: "6420000000000011", item: "apocalypsenow:money", type: "item" }
-				{ count: 8, id: "6420000000000012", item: "createaddition:copper_wire", type: "item" }
+				{
+					count: 64
+					id: "6420000000000011"
+					item: "apocalypsenow:money"
+					type: "item"
+				}
+				{
+					count: 8
+					id: "6420000000000012"
+					item: "createaddition:copper_wire"
+					type: "item"
+				}
 			]
 			tasks: [
-				{ id: "641000000000000D", item: "createaddition:rolling_mill", type: "item" }
-				{ count: 8L, id: "641000000000000E", item: "createaddition:copper_wire", type: "item" }
+				{
+					id: "641000000000000D"
+					item: "createaddition:rolling_mill"
+					type: "item"
+				}
+				{
+					count: 8L
+					id: "641000000000000E"
+					item: "createaddition:copper_wire"
+					type: "item"
+				}
 			]
 			title: "電装部品ライン"
 			x: 14.0d
@@ -150,17 +336,40 @@
 		}
 		{
 			dependencies: ["6400000000000009"]
+			subtitle: "解放条件: 「電装部品ライン」を完了"
 			description: ["Alternator、Electric Motor、Accumulatorで電力と回転力を双方向に扱う。工房の配置自由度が大きく上がる。"]
 			icon: "createaddition:electric_motor"
 			id: "640000000000000A"
 			rewards: [
-				{ count: 12, id: "6420000000000013", item: "apocalypsenow:money", type: "item" }
-				{ count: 2, id: "6420000000000014", item: "createaddition:connector", type: "item" }
+				{
+					count: 64
+					id: "6420000000000013"
+					item: "apocalypsenow:money"
+					type: "item"
+				}
+				{
+					count: 2
+					id: "6420000000000014"
+					item: "createaddition:connector"
+					type: "item"
+				}
 			]
 			tasks: [
-				{ id: "641000000000000F", item: "createaddition:alternator", type: "item" }
-				{ id: "6410000000000010", item: "createaddition:electric_motor", type: "item" }
-				{ id: "6410000000000011", item: "createaddition:accumulator", type: "item" }
+				{
+					id: "641000000000000F"
+					item: "createaddition:alternator"
+					type: "item"
+				}
+				{
+					id: "6410000000000010"
+					item: "createaddition:electric_motor"
+					type: "item"
+				}
+				{
+					id: "6410000000000011"
+					item: "createaddition:accumulator"
+					type: "item"
+				}
 			]
 			title: "工房の電動化"
 			x: 16.0d
@@ -168,30 +377,65 @@
 		}
 		{
 			dependencies: ["6400000000000008"]
+			subtitle: "解放条件: 「予備電力」を完了"
 			description: ["Thermoelectric Generatorは静かで常時稼働できる。キャンプ照明や医療設備の基礎電源に向く。"]
 			icon: "immersiveengineering:thermoelectric_generator"
 			id: "640000000000000B"
 			rewards: [
-				{ count: 10, id: "6420000000000015", item: "apocalypsenow:money", type: "item" }
-				{ count: 4, id: "6420000000000016", item: "immersiveengineering:plate_copper", type: "item" }
+				{
+					count: 64
+					id: "6420000000000015"
+					item: "apocalypsenow:money"
+					type: "item"
+				}
+				{
+					count: 4
+					id: "6420000000000016"
+					item: "immersiveengineering:plate_copper"
+					type: "item"
+				}
 			]
-			tasks: [{ id: "6410000000000012", item: "immersiveengineering:thermoelectric_generator", type: "item" }]
+			tasks: [{
+				id: "6410000000000012"
+				item: "immersiveengineering:thermoelectric_generator"
+				type: "item"
+			}]
 			title: "静かな基礎電源"
 			x: 14.0d
 			y: 1.5d
 		}
 		{
-			dependencies: ["640000000000000A","74065A02DB68DAE2"]
+			dependencies: [
+				"640000000000000A"
+				"74065A02DB68DAE2"
+			]
 			description: ["World Tier 2で作物と廃材からBiodieselを生産する。農業担当と工業担当が共同で維持できる燃料だ。"]
 			icon: "createdieselgenerators:biodiesel_bucket"
 			id: "640000000000000C"
 			rewards: [
-				{ count: 14, id: "6420000000000017", item: "apocalypsenow:money", type: "item" }
-				{ id: "6420000000000018", item: "createdieselgenerators:biodiesel_bucket", type: "item" }
+				{
+					count: 64
+					id: "6420000000000017"
+					item: "apocalypsenow:money"
+					type: "item"
+				}
+				{
+					id: "6420000000000018"
+					item: "createdieselgenerators:biodiesel_bucket"
+					type: "item"
+				}
 			]
 			tasks: [
-				{ id: "6410000000000013", item: "createdieselgenerators:bulk_fermenter", type: "item" }
-				{ id: "6410000000000014", item: "createdieselgenerators:biodiesel_bucket", type: "item" }
+				{
+					id: "6410000000000013"
+					item: "createdieselgenerators:bulk_fermenter"
+					type: "item"
+				}
+				{
+					id: "6410000000000014"
+					item: "createdieselgenerators:biodiesel_bucket"
+					type: "item"
+				}
 			]
 			title: "T2：再生燃料"
 			x: 18.0d
@@ -199,66 +443,151 @@
 		}
 		{
 			dependencies: ["640000000000000C"]
+			subtitle: "解放条件: 「T2：再生燃料」を完了"
 			description: ["Diesel Engineで高負荷設備用の回転力を確保する。燃料備蓄がない状態で常用しないこと。"]
 			icon: "createdieselgenerators:diesel_engine"
 			id: "640000000000000D"
 			rewards: [
-				{ count: 15, id: "6420000000000019", item: "apocalypsenow:money", type: "item" }
-				{ id: "642000000000001A", item: "createdieselgenerators:oil_barrel", type: "item" }
+				{
+					count: 64
+					id: "6420000000000019"
+					item: "apocalypsenow:money"
+					type: "item"
+				}
+				{
+					id: "642000000000001A"
+					item: "createdieselgenerators:oil_barrel"
+					type: "item"
+				}
 			]
-			tasks: [{ id: "6410000000000015", item: "createdieselgenerators:diesel_engine", type: "item" }]
+			tasks: [{
+				id: "6410000000000015"
+				item: "createdieselgenerators:diesel_engine"
+				type: "item"
+			}]
 			title: "高負荷用エンジン"
 			x: 20.0d
 			y: -1.5d
 		}
 		{
 			dependencies: ["640000000000000D"]
+			subtitle: "解放条件: 「高負荷用エンジン」を完了"
 			description: ["Oil ScannerとDistillation Controllerで原油資源を探し、燃料を精製する。ここから車両物流へ接続する。"]
 			icon: "createdieselgenerators:distillation_controller"
 			id: "640000000000000E"
 			rewards: [
-				{ count: 18, id: "642000000000001B", item: "apocalypsenow:money", type: "item" }
-				{ id: "642000000000001C", item: "createdieselgenerators:diesel_bucket", type: "item" }
+				{
+					count: 64
+					id: "642000000000001B"
+					item: "apocalypsenow:money"
+					type: "item"
+				}
+				{
+					id: "642000000000001C"
+					item: "createdieselgenerators:diesel_bucket"
+					type: "item"
+				}
 			]
 			tasks: [
-				{ id: "6410000000000016", item: "createdieselgenerators:oil_scanner", type: "item" }
-				{ id: "6410000000000017", item: "createdieselgenerators:distillation_controller", type: "item" }
+				{
+					id: "6410000000000016"
+					item: "createdieselgenerators:oil_scanner"
+					type: "item"
+				}
+				{
+					id: "6410000000000017"
+					item: "createdieselgenerators:distillation_controller"
+					type: "item"
+				}
 			]
 			title: "燃料精製設備"
 			x: 22.0d
 			y: -1.5d
 		}
 		{
-			dependencies: ["640000000000000A","640000000000000E"]
+			dependencies: [
+				"640000000000000A"
+				"640000000000000E"
+			]
 			description: ["TFMGのSteel MechanismとCircuit Boardを量産する。重工業設備の共通中間素材として共同倉庫へ備蓄する。"]
 			icon: "tfmg:steel_mechanism"
 			id: "640000000000000F"
 			rewards: [
-				{ count: 18, id: "642000000000001D", item: "apocalypsenow:money", type: "item" }
-				{ count: 2, id: "642000000000001E", item: "tfmg:circuit_board", type: "item" }
+				{
+					count: 64
+					id: "642000000000001D"
+					item: "apocalypsenow:money"
+					type: "item"
+				}
+				{
+					count: 2
+					id: "642000000000001E"
+					item: "tfmg:circuit_board"
+					type: "item"
+				}
 			]
 			tasks: [
-				{ count: 4L, id: "6410000000000018", item: "tfmg:steel_mechanism", type: "item" }
-				{ count: 4L, id: "6410000000000019", item: "tfmg:circuit_board", type: "item" }
+				{
+					count: 4L
+					id: "6410000000000018"
+					item: "tfmg:steel_mechanism"
+					type: "item"
+				}
+				{
+					count: 4L
+					id: "6410000000000019"
+					item: "tfmg:circuit_board"
+					type: "item"
+				}
 			]
 			title: "重工業の中間部品"
 			x: 24.0d
 			y: 0.0d
 		}
 		{
-			dependencies: ["640000000000000F","3FE9D0F62386FC0C"]
+			dependencies: [
+				"640000000000000F"
+				"3FE9D0F62386FC0C"
+			]
 			description: ["World Tier 3の重工業区画を完成させる。大型発電、車両整備、防衛設備を同時運用できる基盤になる。"]
 			icon: "tfmg:generator"
 			id: "6400000000000010"
 			rewards: [
-				{ count: 30, id: "642000000000001F", item: "apocalypsenow:money", type: "item" }
-				{ id: "6420000000000020", item: "tfmg:electric_motor", type: "item" }
-				{ id: "6420000000000021", type: "xp", xp: 30 }
+				{
+					count: 64
+					id: "642000000000001F"
+					item: "apocalypsenow:money"
+					type: "item"
+				}
+				{
+					id: "6420000000000020"
+					item: "tfmg:electric_motor"
+					type: "item"
+				}
+				{
+					id: "6420000000000021"
+					type: "xp"
+					xp: 120
+				}
 			]
 			tasks: [
-				{ id: "641000000000001A", item: "tfmg:generator", type: "item" }
-				{ count: 8L, id: "641000000000001B", item: "tfmg:steel_casing", type: "item" }
-				{ count: 2L, id: "641000000000001C", item: "tfmg:steel_fluid_tank", type: "item" }
+				{
+					id: "641000000000001A"
+					item: "tfmg:generator"
+					type: "item"
+				}
+				{
+					count: 8L
+					id: "641000000000001B"
+					item: "tfmg:steel_casing"
+					type: "item"
+				}
+				{
+					count: 2L
+					id: "641000000000001C"
+					item: "tfmg:steel_fluid_tank"
+					type: "item"
+				}
 			]
 			title: "T3：重工業区画"
 			x: 26.0d

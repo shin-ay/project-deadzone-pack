@@ -2,178 +2,308 @@
 	default_hide_dependency_lines: false
 	default_quest_shape: ""
 	filename: "deadzone_field_archives_01"
-	group: "51DC04D9192698A6"
+	group: "A170000000000002"
 	icon: "apocalypsenow:aabattery"
-	id: "B17C5E903B42D681"
-	order_index: 11
+	id: "701100FD399D4361"
+	order_index: 12
 	quest_links: [ ]
 	quests: [
 		{
 			dependencies: ["19FC30DCB267A732"]
+			subtitle: "解放条件: 「Gas Stationを確保せよ」を完了"
 			description: [
 				"給油記録の最後の一週間だけ、救急車への給油量が異常に多い。"
 				"避難開始より前に、AEGISが感染者をHospitalへ運び込んでいた痕跡だ。"
 			]
 			icon: "apocalypsenow:bottle"
-			id: "B101000000000001"
-			rewards: [{ count: 2 id: "B101200000000001" item: "apocalypsenow:money" type: "item" }]
-			tasks: [{ id: "B101100000000001" title: "給油記録を読んだ" type: "custom" }]
+			id: "178EC15EC6B0445A"
+			rewards: [{
+				count: 24
+				id: "3CA80A314D0DE80D"
+				item: "apocalypsenow:money"
+				type: "item"
+			}]
+			tasks: [{
+				id: "68FB9529D5D6E981"
+				title: "給油記録を読んだ"
+				type: "custom"
+			}]
 			title: "現場記録：存在しない救急車"
 			x: 0.0d
 			y: -4.0d
 		}
 		{
 			dependencies: ["7718CAD4F2ED6F3E"]
+			subtitle: "解放条件: 「Gun Shop制圧」を完了"
 			description: [
 				"Gun Shopの台帳には、民間人へ売った銃よりCDFへ返却した銃の方が多く記録されている。"
 				"店主は武器を隠したのではない。武装解除された避難民へ返していた。"
 			]
 			icon: "apocalypsenow:balaclava"
-			id: "B101000000000002"
-			rewards: [{ count: 2 id: "B101200000000002" item: "apocalypsenow:money" type: "item" }]
-			tasks: [{ id: "B101100000000002" title: "二重台帳を読んだ" type: "custom" }]
+			id: "0E0AB0CB658E9281"
+			rewards: [{
+				count: 24
+				id: "3D1C0CA9A227DB13"
+				item: "apocalypsenow:money"
+				type: "item"
+			}]
+			tasks: [{
+				id: "15DB92ABBE7FBEEF"
+				title: "二重台帳を読んだ"
+				type: "custom"
+			}]
 			title: "現場記録：二冊の台帳"
 			x: 2.0d
 			y: -4.0d
 		}
 		{
 			dependencies: ["74065A02DB68DAE2"]
+			subtitle: "解放条件: 「T2：Scavenger」を完了"
 			description: [
 				"留置場の壁には囚人名ではなく、保護を求めた家族の人数が刻まれていた。"
 				"警察署は崩壊直前まで、命令に反して避難民を匿っていた。"
 			]
 			icon: "apocalypsenow:badge"
-			id: "B101000000000003"
-			rewards: [{ count: 2 id: "B101200000000003" item: "apocalypsenow:bandage" type: "item" }]
-			tasks: [{ id: "B101100000000003" title: "留置場の記録を確認した" type: "custom" }]
+			id: "7E0F5CCAD61CDBFD"
+			rewards: [{
+				count: 2
+				id: "6B5F1C2E7A5486C7"
+				item: "apocalypsenow:bandage"
+				type: "item"
+			}]
+			tasks: [{
+				id: "1FE7CDEC8E6C3306"
+				title: "留置場の記録を確認した"
+				type: "custom"
+			}]
 			title: "現場記録：最後の保護房"
 			x: 4.0d
 			y: -4.0d
 		}
 		{
 			dependencies: ["04AC90A6EDFF8450"]
+			subtitle: "解放条件: 「救助指令室を奪還せよ」を完了"
 			description: [
 				"消防署の出動表には、火災ではなく『歌声』への出動が三件残る。"
 				"全隊が同じ地下入口へ向かい、帰還欄だけが空白になっている。"
 			]
 			icon: "apocalypsenow:adrenaline_syringe"
-			id: "B101000000000004"
-			rewards: [{ count: 3 id: "B101200000000004" item: "apocalypsenow:bandage" type: "item" }]
-			tasks: [{ id: "B101100000000004" title: "出動表を確認した" type: "custom" }]
+			id: "0996C1964E2C3851"
+			rewards: [{
+				count: 3
+				id: "37570B81075C0858"
+				item: "apocalypsenow:bandage"
+				type: "item"
+			}]
+			tasks: [{
+				id: "3057C920EAB2A8DB"
+				title: "出動表を確認した"
+				type: "custom"
+			}]
 			title: "現場記録：火のない出動"
 			x: 6.0d
 			y: -4.0d
 		}
-
 		{
 			dependencies: ["6984DA400E0E21C3"]
+			subtitle: "解放条件: 「薬品保管区画を奪還せよ」を完了"
 			description: [
 				"患者番号M-13は一人の名前ではない。同じ適応反応を示した十三人の総称だった。"
 				"十二人は死亡。最後の一人だけ、退院先が記録されていない。"
 			]
 			icon: "apocalypsenow:antibiotics"
-			id: "B101000000000005"
-			rewards: [{ count: 2 id: "B101200000000005" item: "apocalypsenow:pain_killers" type: "item" }]
-			tasks: [{ id: "B101100000000005" title: "M-13症例を照合した" type: "custom" }]
+			id: "5A92EF15FA9EBD5E"
+			rewards: [{
+				count: 2
+				id: "24D7E14146935F6F"
+				item: "apocalypsenow:pain_killers"
+				type: "item"
+			}]
+			tasks: [{
+				id: "562834216B5498FF"
+				title: "M-13症例を照合した"
+				type: "custom"
+			}]
 			title: "現場記録：十三番目の患者"
 			x: 0.0d
 			y: 0.0d
 		}
 		{
 			dependencies: ["2FD5B06423F44541"]
+			subtitle: "解放条件: 「Factoryを再起動する」を完了"
 			description: [
 				"Factoryの生産指示は、避難設備から隔離ゲート部品へ途中で切り替わっている。"
 				"現場の作業員は命令を遅らせ、余った部品を民間無線へ回していた。"
 			]
 			icon: "create:mechanical_press"
-			id: "B101000000000006"
-			rewards: [{ count: 4 id: "B101200000000006" item: "immersiveengineering:ingot_steel" type: "item" }]
-			tasks: [{ id: "B101100000000006" title: "改竄された生産表を確認した" type: "custom" }]
+			id: "4815DFB89EE75934"
+			rewards: [{
+				count: 4
+				id: "1482223EEF43C5ED"
+				item: "immersiveengineering:ingot_steel"
+				type: "item"
+			}]
+			tasks: [{
+				id: "1359E30CF6C72CA4"
+				title: "改竄された生産表を確認した"
+				type: "custom"
+			}]
 			title: "現場記録：遅すぎるサボタージュ"
 			x: 2.0d
 			y: 0.0d
 		}
 		{
 			dependencies: ["6327A52D90F0014B"]
+			subtitle: "解放条件: 「Protocol座標断片」を完了"
 			description: [
 				"Relayには敵通信だけでなく、民間人の会話を評価したログが残されていた。"
 				"恐怖、反抗、服従。Remnantは救助ではなく、統治の予行演習をしていた。"
 			]
 			icon: "immersiveengineering:component_electronic"
-			id: "B101000000000007"
-			rewards: [{ count: 4 id: "B101200000000007" item: "apocalypsenow:money" type: "item" }]
-			tasks: [{ id: "B101100000000007" title: "観察ログを復号した" type: "custom" }]
+			id: "06B5F5B7229F7687"
+			rewards: [{
+				count: 36
+				id: "3432672E3339C216"
+				item: "apocalypsenow:money"
+				type: "item"
+			}]
+			tasks: [{
+				id: "52252ED8F9CE89F4"
+				title: "観察ログを復号した"
+				type: "custom"
+			}]
 			title: "現場記録：聞かれていた会話"
 			x: 4.0d
 			y: 0.0d
 		}
 		{
 			dependencies: ["34C3DD0D8725B787"]
+			subtitle: "解放条件: 「送信中：位置を特定された」を完了"
 			description: [
 				"Radio Towerの自動放送は救難信号を送る一方で、各地の生存者数をWARDENへ報告していた。"
 				"助けを呼ぶ声そのものが、機械へ標的を教えていた。"
 			]
 			icon: "apocalypsenow:aabattery"
-			id: "B101000000000008"
-			rewards: [{ count: 4 id: "B101200000000008" item: "apocalypsenow:money" type: "item" }]
-			tasks: [{ id: "B101100000000008" title: "二重送信を発見した" type: "custom" }]
+			id: "1F88FCE58EB8B18B"
+			rewards: [{
+				count: 36
+				id: "3F70F603D64077B7"
+				item: "apocalypsenow:money"
+				type: "item"
+			}]
+			tasks: [{
+				id: "3640A8AA97044C5D"
+				title: "二重送信を発見した"
+				type: "custom"
+			}]
 			title: "現場記録：救難信号の裏側"
 			x: 6.0d
 			y: 0.0d
 		}
-
 		{
 			dependencies: ["1ABE30FB04136438"]
+			subtitle: "解放条件: 「Act 3：封鎖された命令」を完了"
 			description: [
 				"司令壕の地図には、守る都市ではなく切り捨てる順番が色分けされていた。"
 				"Survivor Campの区域は、最初から救助計画に含まれていない。"
 			]
-			icon: "apocalypsenow:army_chestplate"
-			id: "B101000000000009"
-			rewards: [{ count: 4 id: "B101200000000009" item: "apocalypsenow:armorplate" type: "item" }]
-			tasks: [{ id: "B101100000000009" title: "切り捨て区域を確認した" type: "custom" }]
+			icon: {
+				Count: 1
+				id: "apocalypsenow:army_chestplate"
+				tag: {
+					Damage: 0
+				}
+			}
+			id: "33682171A1BB0AF4"
+			rewards: [{
+				count: 4
+				id: "28350560CF312819"
+				item: "apocalypsenow:armorplate"
+				type: "item"
+			}]
+			tasks: [{
+				id: "5F368D62E8C2B200"
+				title: "切り捨て区域を確認した"
+				type: "custom"
+			}]
 			title: "現場記録：救われない区域"
 			x: 0.0d
 			y: 4.0d
 		}
 		{
 			dependencies: ["46488BBA671011F5"]
+			subtitle: "解放条件: 「T3 Story Boss：REACTOR SAINT」を完了"
 			description: [
 				"REACTOR SAINTは事故で生まれたのではない。放射線下で感染群体を維持する試験の成功例だった。"
 				"AEGISは失敗を隠したのではなく、成功を封印した。"
 			]
-			icon: "apocalypsenow:advanced_hazmat_suit_helmet"
-			id: "B10100000000000A"
-			rewards: [{ count: 3 id: "B10120000000000A" item: "apocalypsenow:antibiotics" type: "item" }]
-			tasks: [{ id: "B10110000000000A" title: "研究炉の成功記録を確認した" type: "custom" }]
+			icon: {
+				Count: 1
+				id: "apocalypsenow:advanced_hazmat_suit_helmet"
+				tag: {
+					Damage: 0
+				}
+			}
+			id: "35BE4945FDF5FD50"
+			rewards: [{
+				count: 3
+				id: "1F2D8CEBE05D6180"
+				item: "apocalypsenow:antibiotics"
+				type: "item"
+			}]
+			tasks: [{
+				id: "45A30D4C16A21C95"
+				title: "研究炉の成功記録を確認した"
+				type: "custom"
+			}]
 			title: "現場記録：封印された成功"
 			x: 2.0d
 			y: 4.0d
 		}
 		{
 			dependencies: ["22426D3E145D5513"]
+			subtitle: "解放条件: 「T3 Story Boss：ARGUS Fragment」を完了"
 			description: [
 				"ARGUS Fragmentの損傷ログには、子どもの声を敵性判定できなかった記録がある。"
 				"判断停止の一秒が避難車両を逃し、その一秒を欠陥として自己修正している。"
 			]
 			icon: "immersiveengineering:capacitor_lv"
-			id: "B10100000000000B"
-			rewards: [{ count: 2 id: "B10120000000000B" item: "create:electron_tube" type: "item" }]
-			tasks: [{ id: "B10110000000000B" title: "判断停止ログを復元した" type: "custom" }]
+			id: "1BE007B79FDAEB4B"
+			rewards: [{
+				count: 2
+				id: "414F0E62FBFAA675"
+				item: "create:electron_tube"
+				type: "item"
+			}]
+			tasks: [{
+				id: "451B42A4541235F3"
+				title: "判断停止ログを復元した"
+				type: "custom"
+			}]
 			title: "現場記録：一秒の欠陥"
 			x: 4.0d
 			y: 4.0d
 		}
 		{
 			dependencies: ["0E8A3FB0BED9A091"]
+			subtitle: "解放条件: 「T3 Story Boss：CHOIR VESSEL」を完了"
 			description: [
 				"CHOIR VESSELの周囲で回収した音声には、死亡者の名前と帰宅経路が混ざっている。"
 				"群体は言葉を理解しているのではない。失った記憶を繰り返し、意味へ近づいている。"
 			]
 			icon: "apocalypsenow:bloodyrags"
-			id: "B10100000000000C"
-			rewards: [{ count: 4 id: "B10120000000000C" item: "apocalypsenow:bandage" type: "item" }]
-			tasks: [{ id: "B10110000000000C" title: "First Voiceの断片を記録した" type: "custom" }]
+			id: "31CA39E7151ACCF5"
+			rewards: [{
+				count: 4
+				id: "237BF935C4C01559"
+				item: "apocalypsenow:bandage"
+				type: "item"
+			}]
+			tasks: [{
+				id: "7E1993AD50347374"
+				title: "First Voiceの断片を記録した"
+				type: "custom"
+			}]
 			title: "現場記録：帰宅を繰り返す声"
 			x: 6.0d
 			y: 4.0d

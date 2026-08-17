@@ -2,10 +2,10 @@
 	default_hide_dependency_lines: false
 	default_quest_shape: ""
 	filename: "deadzone_mod_survival_01"
-	group: "51DC04D9192698A6"
+	group: "A170000000000004"
 	icon: "apocalypsenow:bandage"
 	id: "28F7180EA8318342"
-	order_index: 6
+	order_index: 11
 	quest_links: [ ]
 	quests: [
 		{

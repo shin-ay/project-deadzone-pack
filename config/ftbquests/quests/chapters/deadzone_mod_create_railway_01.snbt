@@ -2,62 +2,195 @@
 	default_hide_dependency_lines: false
 	default_quest_shape: "circle"
 	filename: "deadzone_mod_create_railway_01"
-	group: "51DC04D9192698A6"
+	group: "A170000000000005"
 	icon: "create:track_station"
 	id: "6F3058C252B90172"
-	order_index: 12
+	order_index: 21
+	quest_links: [ ]
 	quests: [
 		{
 			dependencies: ["6500000000000004"]
+			subtitle: "解放条件: 「T1・道路輸送班」を完了"
 			description: ["道路輸送だけでは敵と地形に止められる。拠点間を結ぶ線路を敷き、重量物資を安定して運ぶ準備を始める。"]
 			icon: "create:track"
 			id: "6500000000000005"
-			rewards: [{ count: 12, id: "6520000000000009", item: "apocalypsenow:money", type: "item" } { count: 32, id: "652000000000000A", item: "create:track", type: "item" }]
-			tasks: [{ count: 32L, id: "651000000000000A", item: "create:track", type: "item" }]
+			rewards: [
+				{
+					count: 64
+					id: "6520000000000009"
+					item: "apocalypsenow:money"
+					type: "item"
+				}
+				{
+					count: 32
+					id: "652000000000000A"
+					item: "create:track"
+					type: "item"
+				}
+			]
+			tasks: [{
+				count: 32L
+				id: "651000000000000A"
+				item: "create:track"
+				type: "item"
+			}]
 			title: "補給線を敷く"
 			x: 0.0d
 			y: 0.0d
 		}
 		{
 			dependencies: ["6500000000000005"]
+			subtitle: "解放条件: 「補給線を敷く」を完了"
 			description: ["駅と信号は列車を安全に回す基礎設備。発着地点と閉塞区間を作り、正面衝突を防ぐ。"]
 			icon: "create:track_station"
 			id: "6500000000000006"
-			rewards: [{ count: 14, id: "652000000000000B", item: "apocalypsenow:money", type: "item" } { count: 2, id: "652000000000000C", item: "create:track_station", type: "item" } { count: 4, id: "6520000000000020", item: "create:track_signal", type: "item" }]
-			tasks: [{ count: 2L, id: "651000000000000B", item: "create:track_station", type: "item" } { count: 2L, id: "651000000000000C", item: "create:track_signal", type: "item" }]
+			rewards: [
+				{
+					count: 64
+					id: "652000000000000B"
+					item: "apocalypsenow:money"
+					type: "item"
+				}
+				{
+					count: 2
+					id: "652000000000000C"
+					item: "create:track_station"
+					type: "item"
+				}
+				{
+					count: 4
+					id: "6520000000000020"
+					item: "create:track_signal"
+					type: "item"
+				}
+			]
+			tasks: [
+				{
+					count: 2L
+					id: "651000000000000B"
+					item: "create:track_station"
+					type: "item"
+				}
+				{
+					count: 2L
+					id: "651000000000000C"
+					item: "create:track_signal"
+					type: "item"
+				}
+			]
 			title: "駅と信号"
 			x: 2.0d
 			y: 0.0d
 		}
 		{
 			dependencies: ["6500000000000006"]
+			subtitle: "解放条件: 「駅と信号」を完了"
 			description: ["時刻表を組めば列車は人が付き添わなくても巡回できる。定期補給便を作り、単純運搬から仲間を解放しよう。"]
 			icon: "create:schedule"
 			id: "6500000000000007"
-			rewards: [{ count: 16, id: "652000000000000D", item: "apocalypsenow:money", type: "item" } { count: 3, id: "652000000000000E", item: "create:schedule", type: "item" }]
-			tasks: [{ count: 2L, id: "651000000000000D", item: "create:schedule", type: "item" }]
+			rewards: [
+				{
+					count: 64
+					id: "652000000000000D"
+					item: "apocalypsenow:money"
+					type: "item"
+				}
+				{
+					count: 3
+					id: "652000000000000E"
+					item: "create:schedule"
+					type: "item"
+				}
+			]
+			tasks: [{
+				count: 2L
+				id: "651000000000000D"
+				item: "create:schedule"
+				type: "item"
+			}]
 			title: "定期補給便"
 			x: 4.0d
 			y: -1.5d
 		}
 		{
 			dependencies: ["6500000000000006"]
+			subtitle: "解放条件: 「駅と信号」を完了"
 			description: ["Portable Storage Interfaceで列車と倉庫を自動接続する。停車時間を短くし、襲撃される隙を減らす。"]
 			icon: "create:portable_storage_interface"
 			id: "6500000000000008"
-			rewards: [{ count: 16, id: "652000000000000F", item: "apocalypsenow:money", type: "item" } { count: 4, id: "6520000000000010", item: "create:portable_storage_interface", type: "item" } { count: 4, id: "6520000000000021", item: "create:item_vault", type: "item" }]
-			tasks: [{ count: 4L, id: "651000000000000E", item: "create:portable_storage_interface", type: "item" } { count: 6L, id: "651000000000000F", item: "create:item_vault", type: "item" }]
+			rewards: [
+				{
+					count: 64
+					id: "652000000000000F"
+					item: "apocalypsenow:money"
+					type: "item"
+				}
+				{
+					count: 4
+					id: "6520000000000010"
+					item: "create:portable_storage_interface"
+					type: "item"
+				}
+				{
+					count: 4
+					id: "6520000000000021"
+					item: "create:item_vault"
+					type: "item"
+				}
+			]
+			tasks: [
+				{
+					count: 4L
+					id: "651000000000000E"
+					item: "create:portable_storage_interface"
+					type: "item"
+				}
+				{
+					count: 6L
+					id: "651000000000000F"
+					item: "create:item_vault"
+					type: "item"
+				}
+			]
 			title: "自動積み替え"
 			x: 4.0d
 			y: 1.5d
 		}
 		{
-			dependencies: ["6500000000000007","6500000000000008","162BAA0F1AF6097C"]
+			dependencies: [
+				"6500000000000007"
+				"6500000000000008"
+				"162BAA0F1AF6097C"
+			]
 			description: ["T1鉄道網が完成した。複線化や支線増設に使える重い資材を、参加者全員が個別報酬として受け取れる。"]
 			icon: "create:track_station"
 			id: "6500000000000009"
-			rewards: [{ count: 24, id: "6520000000000011", item: "apocalypsenow:money", type: "item" } { count: 64, id: "6520000000000012", item: "create:track", type: "item" } { count: 4, id: "6520000000000022", item: "create:track_station", type: "item" }]
-			tasks: [{ count: 8L, id: "6510000000000010", item: "create:track_signal", type: "item" }]
+			rewards: [
+				{
+					count: 64
+					id: "6520000000000011"
+					item: "apocalypsenow:money"
+					type: "item"
+				}
+				{
+					count: 64
+					id: "6520000000000012"
+					item: "create:track"
+					type: "item"
+				}
+				{
+					count: 4
+					id: "6520000000000022"
+					item: "create:track_station"
+					type: "item"
+				}
+			]
+			tasks: [{
+				count: 8L
+				id: "6510000000000010"
+				item: "create:track_signal"
+				type: "item"
+			}]
 			title: "T1・地域鉄道網"
 			x: 6.0d
 			y: 0.0d

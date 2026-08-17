@@ -1,92 +1,99 @@
 {
 	default_hide_dependency_lines: false
-	default_quest_shape: ""
+	default_quest_shape: "circle"
 	filename: "deadzone_bounties_01"
-	group: "51DC04D9192698A6"
+	group: "A170000000000003"
 	icon: "minecraft:target"
 	id: "7C32BF319D45FE2F"
-	order_index: 10
+	order_index: 2
 	quest_links: [ ]
 	quests: [
 		{
 			dependencies: ["1920AEAAF4D75E94"]
-			description: ["通常感染者に混じる変異個体の痕跡を集める。サンプルが揃えばキャンプで危険個体の情報を照合できる。"]
+			subtitle: "解放条件: 「Survivor Camp」を完了"
+			description: [
+				"通常感染者に混じる変異個体の痕跡を回収する、最初の賞金首任務。"
+				"賞金首はメインストーリーとは独立して進行でき、複数の依頼を同時に追跡できる。"
+			]
 			icon: "infectious:mutated_rotten_flesh"
 			id: "7B7E509DA0EF9E16"
-			tasks: [{
-				consume_items: true
-				count: 8L
-				id: "2239FEBBBDC2D8CB"
-				item: "infectious:mutated_rotten_flesh"
-				type: "item"
-			}]
-			title: "変異の痕跡"
+			rewards: [
+				{ count: 12 id: "B170000000000001" item: "apocalypsenow:money" type: "item" }
+				{ count: 3 id: "B170000000000002" item: "apocalypsenow:bandage" type: "item" }
+				{ id: "B170000000000003" type: "xp" xp: 30 }
+			]
+			tasks: [{ consume_items: true count: 8L id: "2239FEBBBDC2D8CB" item: "infectious:mutated_rotten_flesh" type: "item" }]
+			title: "賞金首入門：変異の痕跡"
 			x: 0.0d
 			y: 0.0d
 		}
 		{
-			description: ["異常な筋力を持つTankを排除する。通常ゾンビより大きく、常時発光と名前表示で識別できる。"]
-			icon: {
-				Count: 1
-				id: "minecraft:iron_chestplate"
-				tag: {
-					Damage: 0
-				}
-			}
-			id: "10F903EB357EFC28"
-			rewards: [
-				{
-					count: 10
-					id: "4254F6D98427465E"
-					item: "apocalypsenow:money"
-					type: "item"
-				}
-				{
-					id: "171B6D3256F496AD"
-					type: "xp"
-					xp: 15
-				}
+			dependencies: ["7B7E509DA0EF9E16"]
+			subtitle: "解放条件: 「賞金首入門：変異の痕跡」を完了"
+			description: [
+				"金色の名前と発光で識別できるRare級の危険個体を10体排除する。"
+				"通常個体では進行しない。途中経過は撃破時のチャットに表示される。"
 			]
-			tasks: [{
-				id: "418F2D28C781506D"
-				title: "Siege Tankを撃破した"
-				type: "custom"
-			}]
-			title: "賞金首：Siege Tank"
+			icon: "minecraft:zombie_head"
+			id: "D202608200003030"
+			rewards: [
+				{ count: 24 id: "B170000000000011" item: "apocalypsenow:money" type: "item" }
+				{ count: 2 id: "B170000000000012" item: "kubejs:affix_scrap_rare" type: "item" }
+				{ id: "B170000000000013" type: "xp" xp: 80 }
+			]
+			tasks: [{ id: "D202608200003040" title: "Rare級の感染者・敵兵を10体撃破した" type: "custom" }]
+			title: "危険個体狩り：Rare級10体"
 			x: 2.0d
-			y: -1.0d
+			y: 0.0d
 		}
 		{
-			description: ["感染が長期化した地域で確認されたAncient Abominationを排除する。近距離で囲まれず、退路を確保して戦おう。"]
-			icon: "minecraft:wither_skeleton_skull"
+			dependencies: ["7B7E509DA0EF9E16"]
+			subtitle: "解放条件: 「賞金首入門：変異の痕跡」を完了／Region Tier 1以上推奨"
+			description: ["RU VeteranまたはPMC Specialistを5体排除する。銃撃戦になるため遮蔽物と医療品を準備すること。"]
+			icon: "tacz:modern_kinetic_gun"
+			id: "D202608200003041"
+			rewards: [
+				{ count: 30 id: "B170000000000021" item: "apocalypsenow:money" type: "item" }
+				{ count: 2 id: "B170000000000022" item: "immersiveengineering:component_iron" type: "item" }
+				{ id: "B170000000000023" type: "xp" xp: 100 }
+			]
+			tasks: [{ id: "D202608200003042" title: "敵兵のRare級個体を5体撃破した" type: "custom" }]
+			title: "賞金首：武装勢力の精鋭"
+			x: 3.5d
+			y: -1.5d
+		}
+		{
+			dependencies: ["D202608200003030"]
+			subtitle: "解放条件: 「危険個体狩り：Rare級10体」を完了／Region Tier 1以上推奨"
+			description: ["異常な筋力を持つSiege Tankを排除する。正面で受けず、部位損傷と退路を管理して戦おう。"]
+			icon: "apocalypsenow:army_helmet"
+			id: "10F903EB357EFC28"
+			rewards: [
+				{ count: 40 id: "4254F6D98427465E" item: "apocalypsenow:money" type: "item" }
+				{ count: 3 id: "B170000000000031" item: "kubejs:affix_scrap_rare" type: "item" }
+				{ id: "171B6D3256F496AD" type: "xp" xp: 140 }
+			]
+			tasks: [{ id: "D202608200004020" title: "Siege Tankを撃破した" type: "custom" }]
+			title: "賞金首：Siege Tank"
+			x: 5.0d
+			y: -0.8d
+		}
+		{
+			dependencies: ["D202608200003030"]
+			subtitle: "解放条件: 「危険個体狩り：Rare級10体」を完了／Region Tier 2以上推奨"
+			description: ["感染が長期化した地域で確認されたAncient Abominationを排除する。退路と継続火力が必要になる。"]
+			icon: "infectious:mutated_rotten_flesh"
 			id: "717B2B8A66A44728"
 			rewards: [
-				{
-					count: 14
-					id: "73029846DF1D413B"
-					item: "apocalypsenow:money"
-					type: "item"
-				}
-				{
-					count: 2
-					id: "1DB58BCD767BDB2E"
-					item: "apocalypsenow:morphine"
-					type: "item"
-				}
-				{
-					id: "19E8179FB0184AC0"
-					type: "xp"
-					xp: 20
-				}
+				{ count: 52 id: "73029846DF1D413B" item: "apocalypsenow:money" type: "item" }
+				{ count: 4 id: "1DB58BCD767BDB2E" item: "apocalypsenow:morphine" type: "item" }
+				{ count: 2 id: "B170000000000041" item: "kubejs:affix_scrap_epic" type: "item" }
+				{ id: "19E8179FB0184AC0" type: "xp" xp: 180 }
 			]
-			tasks: [{
-				id: "0DA79E495B547523"
-				title: "Ancient Abominationを撃破した"
-				type: "custom"
-			}]
+			tasks: [{ id: "D202608200004030" title: "Ancient Abominationを撃破した" type: "custom" }]
 			title: "賞金首：Ancient Abomination"
-			x: 2.0d
-			y: 1.0d
+			x: 5.0d
+			y: 0.8d
 		}
 	]
 	title: "賞金首と危険個体"

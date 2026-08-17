@@ -2,7 +2,7 @@
 	default_hide_dependency_lines: false
 	default_quest_shape: ""
 	filename: "deadzone_camp_sidequests_01"
-	group: "51DC04D9192698A6"
+	group: "A170000000000003"
 	icon: "apocalypsenow:badge"
 	id: "09B81A3F6EE5AB92"
 	order_index: 2
@@ -10,6 +10,7 @@
 	quests: [
 		{
 			dependencies: ["1920AEAAF4D75E94"]
+			subtitle: "解放条件: 「Survivor Camp」を完了"
 			description: [
 				"ミナトは遠征計画に使える方位磁針を必要としている。"
 				"役割を決めるだけでなく、全員が帰還できる経路を準備しよう。"
@@ -18,7 +19,7 @@
 			id: "72B0CD68492E6381"
 			rewards: [
 				{
-					count: 3
+					count: 27
 					id: "2F46D15D87A9F5E3"
 					item: "apocalypsenow:money"
 					type: "item"
@@ -26,7 +27,7 @@
 				{
 					id: "71139277AECDBDD3"
 					type: "xp"
-					xp: 5
+					xp: 40
 				}
 			]
 			subtitle: "依頼人：ミナト"
@@ -42,6 +43,7 @@
 		}
 		{
 			dependencies: ["1920AEAAF4D75E94"]
+			subtitle: "解放条件: 「Survivor Camp」を完了"
 			description: [
 				"レイが無線機の修理に使う導体と電子部品を探している。"
 				"通信網が安定すれば、新しい救難信号や危険情報を追跡できる。"
@@ -50,7 +52,7 @@
 			id: "010C657AF86BA4C7"
 			rewards: [
 				{
-					count: 4
+					count: 36
 					id: "1CB2C208CA4F2BEE"
 					item: "apocalypsenow:money"
 					type: "item"
@@ -58,7 +60,7 @@
 				{
 					id: "628BB0921148633E"
 					type: "xp"
-					xp: 5
+					xp: 40
 				}
 			]
 			subtitle: "依頼人：レイ"
@@ -84,11 +86,18 @@
 		}
 		{
 			dependencies: ["1920AEAAF4D75E94"]
+			subtitle: "解放条件: 「Survivor Camp」を完了"
 			description: [
 				"ハンクはキャンプ周辺の感染者が増えている証拠を集めている。"
 				"腐肉を持ち帰り、警戒範囲を見直す判断材料にしよう。"
 			]
-			icon: "apocalypsenow:ballistic_mask_helmet"
+			icon: {
+				Count: 1
+				id: "apocalypsenow:ballistic_mask_helmet"
+				tag: {
+					Damage: 0
+				}
+			}
 			id: "298ABA85898F0923"
 			rewards: [
 				{
@@ -98,7 +107,7 @@
 					type: "item"
 				}
 				{
-					count: 2
+					count: 24
 					id: "68F5F584C13A38BF"
 					item: "apocalypsenow:money"
 					type: "item"
@@ -118,6 +127,7 @@
 		}
 		{
 			dependencies: ["1920AEAAF4D75E94"]
+			subtitle: "解放条件: 「Survivor Camp」を完了"
 			description: [
 				"マヤは共同備蓄を増やそうとしている。"
 				"保存できる食料と水を納品し、次の遠征に備えよう。"
@@ -126,7 +136,7 @@
 			id: "42891C4DF6B27EC5"
 			rewards: [
 				{
-					count: 4
+					count: 36
 					id: "40F0545D32255F36"
 					item: "apocalypsenow:money"
 					type: "item"
@@ -134,7 +144,7 @@
 				{
 					id: "11916F878459A43C"
 					type: "xp"
-					xp: 5
+					xp: 40
 				}
 			]
 			subtitle: "依頼人：マヤ"
@@ -159,6 +169,7 @@
 		}
 		{
 			dependencies: ["1920AEAAF4D75E94"]
+			subtitle: "解放条件: 「Survivor Camp」を完了"
 			description: [
 				"シオリの治療所では基本的な処置用品が不足している。"
 				"余裕のある時に補充しておけば、次の負傷者を救える。"
@@ -172,7 +183,7 @@
 					type: "item"
 				}
 				{
-					count: 3
+					count: 27
 					id: "2432290F4EF68ACB"
 					item: "apocalypsenow:money"
 					type: "item"
@@ -192,6 +203,7 @@
 		}
 		{
 			dependencies: ["1920AEAAF4D75E94"]
+			subtitle: "解放条件: 「Survivor Camp」を完了"
 			description: [
 				"ゴロウは拠点設備の補修用金属を集めている。"
 				"派手な機械より先に、壊れた設備を動かす材料が必要だ。"
@@ -200,7 +212,7 @@
 			id: "4359BB2BF9598A02"
 			rewards: [
 				{
-					count: 5
+					count: 45
 					id: "0BAC7C02349AB366"
 					item: "apocalypsenow:money"
 					type: "item"
@@ -208,7 +220,7 @@
 				{
 					id: "63AAE89D8DBAE38D"
 					type: "xp"
-					xp: 5
+					xp: 40
 				}
 			]
 			subtitle: "依頼人：ゴロウ"
@@ -234,6 +246,7 @@
 		}
 		{
 			dependencies: ["1920AEAAF4D75E94"]
+			subtitle: "解放条件: 「Survivor Camp」を完了"
 			description: [
 				"レイがキャンプへ接近する武装集団を捕捉した。"
 				"二方向から来る襲撃部隊を排除し、住人とBase Coreを守り抜こう。"
@@ -243,7 +256,7 @@
 			id: "41F0ABB18B9685AC"
 			rewards: [
 				{
-					count: 10
+					count: 64
 					id: "2944D591B98FE3EC"
 					item: "apocalypsenow:money"
 					type: "item"
@@ -257,7 +270,7 @@
 				{
 					id: "211E1594B6EE97C5"
 					type: "xp"
-					xp: 10
+					xp: 40
 				}
 			]
 			shape: "hexagon"

@@ -2,14 +2,15 @@
 	default_hide_dependency_lines: false
 	default_quest_shape: "circle"
 	filename: "deadzone_mod_fishing_01"
-	group: "51DC04D9192698A6"
+	group: "A170000000000004"
 	icon: "aquaculture:tackle_box"
 	id: "6D6C5283B005AA25"
-	order_index: 11
+	order_index: 19
 	quest_links: [ ]
 	quests: [
 		{
 			dependencies: ["7C41CDCD88E7A5A7"]
+			subtitle: "解放条件: 「キャンプの魚料理」を完了"
 			description: [
 				"水辺の食料調達を専門化する。魚は食料だけでなく、交易、医療用素材、深海探索、希少装備へ繋がる資源だ。"
 				"SurvivalistとScavengerが採集、Medicが加工、Scoutが危険水域の捜索を担当しやすい。"
@@ -24,7 +25,7 @@
 			id: "0FB9354E232CD1B9"
 			rewards: [
 				{
-					count: 3
+					count: 27
 					id: "39772C0DC2DB393D"
 					item: "apocalypsenow:money"
 					type: "item"
@@ -76,13 +77,14 @@
 			y: 0.0d
 		}
 		{
+			dependencies: ["0FB9354E232CD1B9"]
+			subtitle: "解放条件: 「水域担当の装備」を完了"
 			description: ["餌をLootだけに頼ると遠征ごとに釣りが止まる。Worm Farmと用途別Hookを用意して継続的に運用する。"]
 			icon: "aquaculture:worm_farm"
 			id: "6C5C173008D70B40"
-			dependencies: ["0FB9354E232CD1B9"]
 			rewards: [
 				{
-					count: 3
+					count: 27
 					id: "699F49653CE56234"
 					item: "apocalypsenow:money"
 					type: "item"
@@ -115,13 +117,14 @@
 			y: 0.0d
 		}
 		{
+			dependencies: ["6C5C173008D70B40"]
+			subtitle: "解放条件: 「餌と仕掛けの自給」を完了"
 			description: ["川、湖、湿地で基本魚種を集める。食料用と標本用を分け、全量を調理しないよう注意。"]
 			icon: "aquaculture:bluegill"
 			id: "5102FC109053F92C"
-			dependencies: ["6C5C173008D70B40"]
 			rewards: [
 				{
-					count: 5
+					count: 45
 					id: "58BC4E196C5AB926"
 					item: "apocalypsenow:money"
 					type: "item"
@@ -166,13 +169,14 @@
 			y: -1.5d
 		}
 		{
+			dependencies: ["5102FC109053F92C"]
+			subtitle: "解放条件: 「淡水魚図鑑」を完了"
 			description: ["海岸は視界が開ける代わりに危険生物と敵から狙われやすい。短時間で複数の海水魚を確保する。"]
 			icon: "aquaculture:tuna"
 			id: "4243AC6BC9345628"
-			dependencies: ["5102FC109053F92C"]
 			rewards: [
 				{
-					count: 6
+					count: 54
 					id: "73854E679F3D58F7"
 					item: "apocalypsenow:money"
 					type: "item"
@@ -210,13 +214,14 @@
 			y: -1.5d
 		}
 		{
+			dependencies: ["5102FC109053F92C"]
+			subtitle: "解放条件: 「淡水魚図鑑」を完了"
 			description: ["魚種に関係なくFilletへ加工できれば、共同倉庫と調理ラインの在庫を標準化できる。"]
 			icon: "aquaculture:fish_fillet_cooked"
 			id: "46AC7031F1C40480"
-			dependencies: ["5102FC109053F92C"]
 			rewards: [
 				{
-					count: 5
+					count: 45
 					id: "6D5F89E7EA13310D"
 					item: "apocalypsenow:money"
 					type: "item"
@@ -247,13 +252,16 @@
 			y: 1.5d
 		}
 		{
+			dependencies: [
+				"4243AC6BC9345628"
+				"46AC7031F1C40480"
+			]
 			description: ["Aquaculture Delightで保存性と栄養価を上げる。遠征食、キャンプ食、交易用の三種類を作り分けよう。"]
 			icon: "aquaculturedelight:fish_and_chips"
 			id: "3DC944C0C055C3D5"
-			dependencies: ["4243AC6BC9345628","46AC7031F1C40480"]
 			rewards: [
 				{
-					count: 7
+					count: 63
 					id: "412663772E061C8F"
 					item: "apocalypsenow:money"
 					type: "item"
@@ -290,13 +298,14 @@
 			y: 0.0d
 		}
 		{
+			dependencies: ["3DC944C0C055C3D5"]
+			subtitle: "解放条件: 「水産料理の専門化」を完了"
 			description: ["Crab Potで釣り竿では取りにくい甲殻類を集める。魚と異なるLootプールが、水辺拠点を作る理由になる。"]
 			icon: "hybrid_aquatic:crab_pot"
 			id: "7A91B820F516ED10"
-			dependencies: ["3DC944C0C055C3D5"]
 			rewards: [
 				{
-					count: 8
+					count: 64
 					id: "23B8BDA2AB7732DA"
 					item: "apocalypsenow:money"
 					type: "item"
@@ -337,13 +346,14 @@
 			y: -1.5d
 		}
 		{
+			dependencies: ["3DC944C0C055C3D5"]
+			subtitle: "解放条件: 「水産料理の専門化」を完了"
 			description: ["珍しい魚、Message in a Bottle、Lockboxはキャンプで高く取引できる。食べる魚と売る魚を見極めよう。"]
 			icon: "aquaculture:lockbox"
 			id: "16FB82E8AB743A40"
-			dependencies: ["3DC944C0C055C3D5"]
 			rewards: [
 				{
-					count: 12
+					count: 64
 					id: "5EF6F4DD84213DA3"
 					item: "apocalypsenow:money"
 					type: "item"
@@ -371,6 +381,10 @@
 			y: 1.5d
 		}
 		{
+			dependencies: [
+				"7A91B820F516ED10"
+				"16FB82E8AB743A40"
+			]
 			description: ["深海へ入る前に潜水装備をそろえる。装備なしの潜水は探索ではなく、だいたい回収班の仕事を増やすだけ。"]
 			icon: {
 				Count: 1
@@ -380,10 +394,9 @@
 				}
 			}
 			id: "73F13EE1091C727F"
-			dependencies: ["7A91B820F516ED10","16FB82E8AB743A40"]
 			rewards: [
 				{
-					count: 10
+					count: 64
 					id: "00ECDE0AA7928F32"
 					item: "apocalypsenow:money"
 					type: "item"
@@ -445,13 +458,14 @@
 			y: 0.0d
 		}
 		{
+			dependencies: ["73F13EE1091C727F"]
+			subtitle: "解放条件: 「危険水域への潜行」を完了"
 			description: ["暗い水域に生息する三種を持ち帰る。深海標本はMedicの研究と高Tier交易へ利用できる。"]
 			icon: "hybrid_aquatic:anglerfish"
 			id: "11F5569FE96CF84D"
-			dependencies: ["73F13EE1091C727F"]
 			rewards: [
 				{
-					count: 12
+					count: 64
 					id: "6AEFBF71E7B940E6"
 					item: "apocalypsenow:money"
 					type: "item"
@@ -484,13 +498,14 @@
 			y: 0.0d
 		}
 		{
+			dependencies: ["11F5569FE96CF84D"]
+			subtitle: "解放条件: 「深海標本」を完了"
 			description: ["危険水域には通常個体を大きく上回るネームドが潜む。討伐して巨大な殻とBlack Pearlを回収する。"]
 			icon: "hybrid_aquatic:comically_large_nautilus_shell"
 			id: "69DE600AB7976C87"
-			dependencies: ["11F5569FE96CF84D"]
 			rewards: [
 				{
-					count: 18
+					count: 64
 					id: "451A6334D3E90CE6"
 					item: "apocalypsenow:money"
 					type: "item"
@@ -519,13 +534,14 @@
 			y: 0.0d
 		}
 		{
+			dependencies: ["69DE600AB7976C87"]
+			subtitle: "解放条件: 「水底のネームド」を完了"
 			description: ["水産供給網を確立した。以後、希少魚と深海素材はキャンプ取引、医療研究、Affix素材へ接続される。"]
 			icon: "aquaculture:neptunes_bounty"
 			id: "7382A39061FD7DFB"
-			dependencies: ["69DE600AB7976C87"]
 			rewards: [
 				{
-					count: 20
+					count: 64
 					id: "05FE04DC684E54DA"
 					item: "apocalypsenow:money"
 					type: "item"
@@ -538,7 +554,7 @@
 				{
 					id: "7F3B8DC0CA145A8B"
 					type: "xp"
-					xp: 20
+					xp: 80
 				}
 			]
 			tasks: [{

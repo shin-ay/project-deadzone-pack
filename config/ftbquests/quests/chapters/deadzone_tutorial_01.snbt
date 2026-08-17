@@ -2,7 +2,7 @@
 	default_hide_dependency_lines: false
 	default_quest_shape: ""
 	filename: "deadzone_tutorial_01"
-	group: "51DC04D9192698A6"
+	group: "A170000000000001"
 	icon: "ftbquests:book"
 	id: "7E21D5F11DE90362"
 	order_index: 0
@@ -94,7 +94,7 @@
 			id: "48EE6E011A263CC6"
 			rewards: [
 				{
-					count: 3
+					count: 27
 					id: "028065CE0A2AB79A"
 					item: "apocalypsenow:money"
 					type: "item"
@@ -102,7 +102,7 @@
 				{
 					id: "7894750A39FD9B6F"
 					type: "xp"
-					xp: 5
+					xp: 40
 				}
 			]
 			tasks: [

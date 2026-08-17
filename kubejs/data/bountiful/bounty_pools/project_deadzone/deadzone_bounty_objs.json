@@ -1,0 +1,8 @@
+{
+  "content": {
+    "pdz_obj_infected": { "type": "entity", "content": "minecraft:zombie", "amount": { "min": 8, "max": 24 }, "unitWorth": 260, "timeMult": 7.0, "weightMult": 1.8 },
+    "pdz_obj_ruunit": { "type": "entity", "content": "simpleenemymod:ruunit", "amount": { "min": 2, "max": 6 }, "unitWorth": 1450, "timeMult": 10.0, "rarity": "UNCOMMON", "weightMult": 0.65 },
+    "pdz_obj_pmcunit": { "type": "entity", "content": "simpleenemymod:pmcunit", "amount": { "min": 2, "max": 5 }, "unitWorth": 1800, "timeMult": 11.0, "rarity": "RARE", "weightMult": 0.4 },
+    "pdz_obj_mutated_sample": { "type": "item", "content": "infectious:mutated_rotten_flesh", "amount": { "min": 4, "max": 12 }, "unitWorth": 700, "rarity": "UNCOMMON", "weightMult": 0.8 }
+  }
+}

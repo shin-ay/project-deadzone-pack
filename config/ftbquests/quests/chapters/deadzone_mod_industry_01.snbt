@@ -2,10 +2,10 @@
 	default_hide_dependency_lines: false
 	default_quest_shape: "circle"
 	filename: "deadzone_mod_industry_01"
-	group: "51DC04D9192698A6"
+	group: "A170000000000005"
 	icon: "create:cogwheel"
 	id: "4D6C5283B005AA23"
-	order_index: 7
+	order_index: 13
 	quest_links: [ ]
 	quests: [
 		{
@@ -17,7 +17,7 @@
 			id: "6D0294D5C566AA55"
 			rewards: [
 				{
-					count: 2
+					count: 24
 					id: "7A42000000000001"
 					item: "apocalypsenow:money"
 					type: "item"
@@ -40,10 +40,11 @@
 			y: 0.0d
 		}
 		{
+			dependencies: ["6D0294D5C566AA55"]
+			subtitle: "解放条件: 「工房計画：安山岩合金」を完了"
 			description: ["回転を伝えるための最小部品。軸と歯車は今後ほぼすべての設備で使う。"]
 			icon: "create:cogwheel"
 			id: "4E3DE57BE4D2C4BD"
-			dependencies: ["6D0294D5C566AA55"]
 			rewards: [
 				{
 					count: 4
@@ -52,7 +53,7 @@
 					type: "item"
 				}
 				{
-					count: 2
+					count: 24
 					id: "7A42000000000003"
 					item: "apocalypsenow:money"
 					type: "item"
@@ -83,13 +84,14 @@
 			y: 0.0d
 		}
 		{
+			dependencies: ["4E3DE57BE4D2C4BD"]
+			subtitle: "解放条件: 「動力伝達の基本」を完了"
 			description: ["水流が使える場所に最初の常設動力を作る。手回しは調整や非常用として残しておこう。"]
 			icon: "create:water_wheel"
 			id: "0E32A6429A887FB0"
-			dependencies: ["4E3DE57BE4D2C4BD"]
 			rewards: [
 				{
-					count: 3
+					count: 27
 					id: "7A42000000000004"
 					item: "apocalypsenow:money"
 					type: "item"
@@ -118,12 +120,13 @@
 			y: 0.0d
 		}
 		{
+			dependencies: ["0E32A6429A887FB0"]
+			subtitle: "解放条件: 「最初の回転力」を完了"
 			description: ["回転速度と負荷を確認できれば、停止事故の原因を見つけやすくなる。工房の工具箱に必ず入れておこう。"]
 			icon: "create:goggles"
 			id: "2269DD763CB8E752"
-			dependencies: ["0E32A6429A887FB0"]
 			rewards: [{
-				count: 3
+				count: 27
 				id: "7A42000000000006"
 				item: "apocalypsenow:money"
 				type: "item"
@@ -138,13 +141,14 @@
 			y: -2.0d
 		}
 		{
+			dependencies: ["0E32A6429A887FB0"]
+			subtitle: "解放条件: 「最初の回転力」を完了"
 			description: ["Millstoneで鉱石や作物を砕く。食料担当と工業担当が最初に共有できる設備だ。"]
 			icon: "create:millstone"
 			id: "0E89809FA91D6D33"
-			dependencies: ["0E32A6429A887FB0"]
 			rewards: [
 				{
-					count: 3
+					count: 27
 					id: "7A42000000000007"
 					item: "apocalypsenow:money"
 					type: "item"
@@ -166,19 +170,20 @@
 			y: -1.0d
 		}
 		{
+			dependencies: ["0E32A6429A887FB0"]
+			subtitle: "解放条件: 「最初の回転力」を完了"
 			description: ["PressとDepotで金属板を安定供給する。同名の板材はPDZの統一素材へ変換される。"]
 			icon: "create:mechanical_press"
 			id: "6DA910B6605F1C45"
-			dependencies: ["0E32A6429A887FB0"]
 			rewards: [
 				{
-					count: 2
+					count: 8
 					id: "73FB8B854E9AF36F"
 					item: "minecraft:iron_ingot"
 					type: "item"
 				}
 				{
-					count: 3
+					count: 27
 					id: "7A42000000000009"
 					item: "apocalypsenow:money"
 					type: "item"
@@ -201,13 +206,16 @@
 			y: 1.0d
 		}
 		{
+			dependencies: [
+				"0E89809FA91D6D33"
+				"6DA910B6605F1C45"
+			]
 			description: ["MixerとBasinは合金・食料・薬品へ繋がる共同設備。工房の中心に設置すると使いやすい。"]
 			icon: "create:mechanical_mixer"
 			id: "285F9E9B1E751F17"
-			dependencies: ["0E89809FA91D6D33","6DA910B6605F1C45"]
 			rewards: [
 				{
-					count: 4
+					count: 36
 					id: "7A4200000000000A"
 					item: "apocalypsenow:money"
 					type: "item"
@@ -235,13 +243,14 @@
 			y: 0.0d
 		}
 		{
+			dependencies: ["6DA910B6605F1C45"]
+			subtitle: "解放条件: 「金属板の量産」を完了"
 			description: ["BeltとChuteで人力運搬を減らす。マルチでは投入箱と完成品箱を分け、誰でも使えるラインにしよう。"]
 			icon: "create:belt_connector"
 			id: "62A487045A417185"
-			dependencies: ["6DA910B6605F1C45"]
 			rewards: [
 				{
-					count: 4
+					count: 36
 					id: "7A4200000000000C"
 					item: "apocalypsenow:money"
 					type: "item"
@@ -271,13 +280,14 @@
 			y: 2.0d
 		}
 		{
+			dependencies: ["62A487045A417185"]
+			subtitle: "解放条件: 「搬送ライン」を完了"
 			description: ["Sawは木材加工、Drillは採掘、Fanは洗浄や加熱に使える。目的別モジュールとして保管しよう。"]
 			icon: "create:mechanical_saw"
 			id: "4671F32B10634F93"
-			dependencies: ["62A487045A417185"]
 			rewards: [
 				{
-					count: 5
+					count: 45
 					id: "7A4200000000000E"
 					item: "apocalypsenow:money"
 					type: "item"
@@ -311,13 +321,16 @@
 			y: 2.0d
 		}
 		{
+			dependencies: [
+				"285F9E9B1E751F17"
+				"162BAA0F1AF6097C"
+			]
 			description: ["T1到達時にGas Stationから回収した封入済みBlaze Burnerを工房へ設置する。PDZではネザーへ行かず、施設攻略で工業熱源を解放する。"]
 			icon: "create:blaze_burner"
 			id: "276FC6A949C932CC"
-			dependencies: ["285F9E9B1E751F17","162BAA0F1AF6097C"]
 			rewards: [
 				{
-					count: 5
+					count: 45
 					id: "7A42000000000010"
 					item: "apocalypsenow:money"
 					type: "item"
@@ -339,13 +352,16 @@
 			y: -1.0d
 		}
 		{
+			dependencies: [
+				"285F9E9B1E751F17"
+				"62A487045A417185"
+			]
 			description: ["Brassは精密制御への入口。T1以降の工業Lootと施設攻略から必要素材を集める。"]
 			icon: "create:brass_ingot"
 			id: "10FBBDB4204025B6"
-			dependencies: ["285F9E9B1E751F17","62A487045A417185"]
 			rewards: [
 				{
-					count: 6
+					count: 54
 					id: "7A42000000000012"
 					item: "apocalypsenow:money"
 					type: "item"
@@ -368,13 +384,14 @@
 			y: 0.0d
 		}
 		{
+			dependencies: ["10FBBDB4204025B6"]
+			subtitle: "解放条件: 「黄銅時代」を完了"
 			description: ["Deploy工程を組み、Precision Mechanismを自作する。ここから弾薬設備、車両部品、電力設備へ分岐する。"]
 			icon: "create:precision_mechanism"
 			id: "0586500E16BCEB38"
-			dependencies: ["10FBBDB4204025B6"]
 			rewards: [
 				{
-					count: 8
+					count: 64
 					id: "23758F7677B2D01F"
 					item: "apocalypsenow:money"
 					type: "item"
@@ -397,13 +414,14 @@
 			y: 0.0d
 		}
 		{
+			dependencies: ["0586500E16BCEB38"]
+			subtitle: "解放条件: 「精密機構」を完了"
 			description: ["Mechanical Crafterで大型レシピへ進む。個人設備ではなく、全員が素材を持ち寄れる共同生産区画を完成させよう。"]
 			icon: "create:mechanical_crafter"
 			id: "4BC5D9E30186B5A3"
-			dependencies: ["0586500E16BCEB38"]
 			rewards: [
 				{
-					count: 10
+					count: 64
 					id: "7A42000000000015"
 					item: "apocalypsenow:money"
 					type: "item"
@@ -425,16 +443,17 @@
 			y: 0.0d
 		}
 		{
+			dependencies: ["4BC5D9E30186B5A3"]
+			subtitle: "解放条件: 「共同生産区画」を完了"
 			description: [
 				"Create基礎ライン完成。次は担当ごとの専門化へ進む。"
 				"Mechanic：車両・燃料　Engineer：電力・重工業　Survivalist：農業自動化　Medic：薬品生産　Weapons Expert：弾薬・防衛設備"
 			]
 			icon: "create:brass_casing"
 			id: "08A015955038522A"
-			dependencies: ["4BC5D9E30186B5A3"]
 			rewards: [
 				{
-					count: 12
+					count: 64
 					id: "7696A5CC14AD3E3F"
 					item: "apocalypsenow:money"
 					type: "item"
@@ -442,7 +461,7 @@
 				{
 					id: "2280EDF08FAE0F07"
 					type: "xp"
-					xp: 12
+					xp: 48
 				}
 			]
 			tasks: [

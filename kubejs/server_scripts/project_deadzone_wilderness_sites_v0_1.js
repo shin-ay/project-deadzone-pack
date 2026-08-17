@@ -58,12 +58,12 @@ const PDZ_WILD_SITES = {
 
   // Underground campaign layer. These structures now participate in the
   // same persistent faction/outpost ledger as surface locations.
-  'underground_bunkers:underground_bunker': {type:'underground_bunker', preferred:'raider'},
-  'jeffs_cursed_walking_structures:deepslatebunker': {type:'deep_military_bunker', preferred:'remnant'},
-  'jeffs_cursed_walking_structures:nuclearbunker': {type:'nuclear_shelter', preferred:'aegis'},
-  'jeffs_cursed_walking_structures:nuclearsilo': {type:'nuclear_silo', preferred:'remnant'},
-  'jeffs_cursed_walking_structures:nuclearreactor': {type:'underground_reactor', preferred:'warden'},
-  'jeffs_cursed_walking_structures:starterbunker': {type:'civilian_bunker', preferred:'survivor', trade:'survivor'},
+  'underground_bunkers:underground_bunker': {type:'underground_bunker', preferred:'raider', minRegionTier:2},
+  'jeffs_cursed_walking_structures:deepslatebunker': {type:'deep_military_bunker', preferred:'remnant', minRegionTier:3},
+  'jeffs_cursed_walking_structures:nuclearbunker': {type:'nuclear_shelter', preferred:'aegis', minRegionTier:3},
+  'jeffs_cursed_walking_structures:nuclearsilo': {type:'nuclear_silo', preferred:'remnant', minRegionTier:3},
+  'jeffs_cursed_walking_structures:nuclearreactor': {type:'underground_reactor', preferred:'warden', minRegionTier:3},
+  'jeffs_cursed_walking_structures:starterbunker': {type:'civilian_bunker', preferred:'survivor', trade:'survivor', minRegionTier:1},
   'yungbetterdungeons:catacombs': {type:'infected_catacombs', preferred:'infected'},
   'yungbetterdungeons:fortress_of_the_undead': {type:'infected_fortress', preferred:'infected'},
   'yungbetterdungeons:spider_cave': {type:'infected_cavern', preferred:'infected'},
@@ -397,6 +397,22 @@ function pdzWildCreateMarker(player,siteId,forcedFaction,instanceKey,anchor,over
   let ay=prior&&Number.isFinite(Number(prior.y))?Math.floor(Number(prior.y)):
     (anchor&&Number.isFinite(Number(anchor.y))?Math.floor(Number(anchor.y)):
       Math.floor(player.level.getHeight(PDZ_WILD_HEIGHTMAP.WORLD_SURFACE,ax,az)))
+  // Underground campaign facilities are allowed to exist as inert scenery in
+  // worldgen, but they do not activate, spawn factions, unlock loot or count
+  // for quests before their intended Region Tier. Static structure sets cannot
+  // read the camp position, so activation is the reliable dynamic gate.
+  let currentRegionTier=0
+  try { currentRegionTier=Number(dzRegionTierAt(player,ax,az)||0) } catch(ignored) {}
+  let requiredRegionTier=Number(def.minRegionTier||0)
+  if(requiredRegionTier>currentRegionTier){
+    let noticeKey='dz_site_tier_blocked_'+pdzWildHash(stableKey)
+    if(!player.persistentData.getBoolean(noticeKey)){
+      player.persistentData.putBoolean(noticeKey,true)
+      player.tell(Text.of('[封鎖施設] ').darkGray()
+        .append(Text.of('この施設は Region T'+requiredRegionTier+' 到達後に攻略可能です。').yellow()))
+    }
+    return null
+  }
   let legacyFaction=''
   // v0.1 used the player's moving position as a facility ID. Adopt and remove
   // those nearby duplicates when the stable structure-start ID is first seen.

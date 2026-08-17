@@ -1,0 +1,153 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "deadzone_career_progression"
+	group: "A170000000000005"
+	icon: "minecraft:compass"
+	id: "6D7A1C0B93E4F821"
+	order_index: 3
+	quest_links: [ ]
+	quests: [
+		{
+			description: [
+				"開始時に選ぶ基本クラスは、初期能力・得意行動・装備・固有パッシブを決めます。"
+				"CLASS Lv30＋関連行動XP 900でJOB、Lv60＋関連行動XP 3600で上位JOBを選択できます。"
+				"昇格するときはキャンプのミナトへ。J画面は現在の進捗と候補確認に使います。"
+			]
+			icon: "minecraft:compass"
+			id: "387BAACC78EDD7B2"
+			title: "クラスからJOBへ"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			description: [
+				"Survivor → Scavenger / Adapter"
+				"回収・探索・生存を軸に、補給担当または荒野適応へ分岐します。"
+			]
+			icon: "minecraft:campfire"
+			id: "1A40F62F3B0F06F4"
+			title: "Survivor系統"
+			x: -4.0d
+			y: -2.0d
+		}
+		{
+			description: [
+				"Weapons Expert → Marksman / Assault Operator"
+				"精密射撃または前線火力へ特化します。"
+			]
+			icon: {
+				Count: 1
+				id: "minecraft:crossbow"
+				tag: {
+					Damage: 0
+				}
+			}
+			id: "4D599C0D7F9D4C42"
+			title: "Weapons Expert系統"
+			x: -2.0d
+			y: -3.0d
+		}
+		{
+			description: [
+				"Medic → Field Medic / Surgeon"
+				"戦地救護または高度治療へ特化します。"
+			]
+			icon: "minecraft:golden_apple"
+			id: "6D81847757D19F90"
+			title: "Medic系統"
+			x: 0.0d
+			y: -3.5d
+		}
+		{
+			description: [
+				"Mechanic → Vehicle Mechanic / Armorer"
+				"車両整備または装備整備へ特化します。"
+			]
+			icon: "minecraft:anvil"
+			id: "1A5D4617E195DB36"
+			title: "Mechanic系統"
+			x: 2.0d
+			y: -3.0d
+		}
+		{
+			description: [
+				"Engineer → Industrialist / Systems Engineer"
+				"大量生産または制御技術へ特化します。"
+			]
+			icon: "create:cogwheel"
+			id: "326D5CDA0E803763"
+			title: "Engineer系統"
+			x: 4.0d
+			y: -2.0d
+		}
+		{
+			description: [
+				"Scout → Recon / Pathfinder"
+				"偵察または長距離踏破へ特化します。"
+			]
+			icon: "minecraft:spyglass"
+			id: "17662A4D8F3CE957"
+			title: "Scout系統"
+			x: 4.0d
+			y: 2.0d
+		}
+		{
+			description: [
+				"Security → Bulwark / Enforcer"
+				"重装防衛または制圧戦闘へ特化します。"
+			]
+			icon: {
+				Count: 1
+				id: "minecraft:shield"
+				tag: {
+					Damage: 0
+				}
+			}
+			id: "28773B5E904DFA68"
+			title: "Security系統"
+			x: 2.0d
+			y: 3.0d
+		}
+		{
+			description: [
+				"Survivalist → Hunter / Homesteader"
+				"狩猟または食料生産へ特化します。"
+			]
+			icon: {
+				Count: 1
+				id: "minecraft:fishing_rod"
+				tag: {
+					Damage: 0
+				}
+			}
+			id: "39884C6FA15E0B79"
+			title: "Survivalist系統"
+			x: 0.0d
+			y: 3.5d
+		}
+		{
+			description: [
+				"Anomaly Researcher → Rift Analyst / Resonance Engineer"
+				"異常現象の解析または機械生命体・共鳴技術へ特化します。"
+			]
+			icon: "minecraft:ender_eye"
+			id: "4A995D70B26F1C8A"
+			title: "Anomaly Researcher系統"
+			x: -2.0d
+			y: 3.0d
+		}
+		{
+			description: [
+				"昇格条件を満たしたらミナトへ話しかけ、「昇格できるJOBを確認する」を選択します。"
+				"表示された候補を選んでも、条件未達・別系統・選択済みの場合はサーバーが拒否します。"
+			]
+			icon: "minecraft:book"
+			id: "5BAA6E81C3702D9B"
+			title: "JOB管理官ミナト"
+			x: -4.0d
+			y: 2.0d
+		}
+	]
+	title: "クラス・JOBキャリア"
+}

@@ -2,19 +2,32 @@
 	default_hide_dependency_lines: false
 	default_quest_shape: ""
 	filename: "deadzone_main_story_t3"
-	group: "51DC04D9192698A6"
-	icon: "apocalypsenow:advanced_hazmat_suit_helmet"
+	group: "A170000000000002"
+	icon: {
+		Count: 1
+		id: "apocalypsenow:advanced_hazmat_suit_helmet"
+		tag: {
+			Damage: 0
+		}
+	}
 	id: "6B75036863EC83AD"
 	order_index: 9
 	quest_links: [ ]
 	quests: [
 		{
 			dependencies: ["17F1D932ED1B4A01"]
+			subtitle: "解放条件: 「Act 2完了：三つの命令」を完了"
 			description: [
 				"原初感染体の記録には、DEADZONE Protocolを実行できる軍用権限が残されていた。"
 				"Military Baseまたは地下司令壕へ到達し、Protocol認証端末を探す。"
 			]
-			icon: "apocalypsenow:army_chestplate"
+			icon: {
+				Count: 1
+				id: "apocalypsenow:army_chestplate"
+				tag: {
+					Damage: 0
+				}
+			}
 			id: "1ABE30FB04136438"
 			shape: "hexagon"
 			size: 1.5d
@@ -29,11 +42,18 @@
 		}
 		{
 			dependencies: ["1ABE30FB04136438"]
+			subtitle: "解放条件: 「Act 3：封鎖された命令」を完了"
 			description: [
 				"軍用区画の認証記録を回収し、AEGIS Laboratoryの座標を復元する。"
 				"AEGISまたは地下研究施設へ到達する。"
 			]
-			icon: "apocalypsenow:army_helmet"
+			icon: {
+				Count: 1
+				id: "apocalypsenow:army_helmet"
+				tag: {
+					Damage: 0
+				}
+			}
 			id: "0E2A157FFF57D90A"
 			tasks: [{
 				id: "448ED9E3DB64BB8F"
@@ -46,6 +66,7 @@
 		}
 		{
 			dependencies: ["0E2A157FFF57D90A"]
+			subtitle: "解放条件: 「クロス博士の計画」を完了"
 			description: [
 				"Laboratoryを汚染するREACTOR SAINTを撃破する。"
 				"放射線区域に長時間留まらず、周囲の除染設備を利用する。"
@@ -71,11 +92,18 @@
 		}
 		{
 			dependencies: ["46488BBA671011F5"]
+			subtitle: "解放条件: 「T3 Story Boss：REACTOR SAINT」を完了"
 			description: [
 				"ARGUS-9へ接続するには、異なるWARDEN施設の中枢を3基停止する必要がある。"
 				"同じ施設を往復しても進捗には数えられない。"
 			]
-			icon: "apocalypsenow:bomb_defusing_kit"
+			icon: {
+				Count: 1
+				id: "apocalypsenow:bomb_defusing_kit"
+				tag: {
+					Damage: 0
+				}
+			}
 			id: "719E23C2245BB557"
 			tasks: [{
 				id: "2E17C47155DC6C8E"
@@ -88,6 +116,7 @@
 		}
 		{
 			dependencies: ["719E23C2245BB557"]
+			subtitle: "解放条件: 「WARDEN隔離網」を完了"
 			description: [
 				"三中枢の停止によりARGUS Fragmentが実体化した。"
 				"機械増援を減らしてから露出したコアを攻撃する。"
@@ -107,11 +136,18 @@
 		}
 		{
 			dependencies: ["22426D3E145D5513"]
+			subtitle: "解放条件: 「T3 Story Boss：ARGUS Fragment」を完了"
 			description: [
 				"WARDENの記録は感染集合体THE CHOIRがARGUS-9へ干渉していたことを示している。"
 				"感染中枢へ向かい、CHOIR VESSELを探す。"
 			]
-			icon: "apocalypsenow:advanced_hazmat_suit_chestplate"
+			icon: {
+				Count: 1
+				id: "apocalypsenow:advanced_hazmat_suit_chestplate"
+				tag: {
+					Damage: 0
+				}
+			}
 			id: "5B4D3EBFA1026614"
 			tasks: [{
 				id: "72E7A28FF2D72EC0"
@@ -124,6 +160,7 @@
 		}
 		{
 			dependencies: ["5B4D3EBFA1026614"]
+			subtitle: "解放条件: 「最初の声」を完了"
 			description: [
 				"CHOIR VESSELは周囲の感染者と同期している。"
 				"増援とScreamerを処理し、露出した本体を撃破する。"
@@ -143,6 +180,7 @@
 		}
 		{
 			dependencies: ["0E8A3FB0BED9A091"]
+			subtitle: "解放条件: 「T3 Story Boss：CHOIR VESSEL」を完了"
 			description: [
 				"ARGUS-9の最終処理を選択する。"
 				"/deadzonestory argus を実行し、破壊・再設定・分離の影響を確認する。"
@@ -162,15 +200,22 @@
 		}
 		{
 			dependencies: ["5EF7DA85993329F7"]
+			subtitle: "解放条件: 「DEADZONE Protocol」を完了"
 			description: [
 				"T3地域の封鎖網は安定した。しかし、THE CHOIRのFirst Voiceはまだ残っている。"
 				"現行長期テスト版のメイン到達点。勢力拠点、Named、Biome Apex、Affix装備を周回できる。"
 			]
-			icon: "apocalypsenow:ballistic_mask_helmet"
+			icon: {
+				Count: 1
+				id: "apocalypsenow:ballistic_mask_helmet"
+				tag: {
+					Damage: 0
+				}
+			}
 			id: "65F53D8012470726"
 			rewards: [
 				{
-					count: 24
+					count: 64
 					id: "252D9CCF2B20AB54"
 					item: "apocalypsenow:money"
 					type: "item"

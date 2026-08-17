@@ -2,7 +2,7 @@
 	default_hide_dependency_lines: false
 	default_quest_shape: ""
 	filename: "deadzone_main_story_t2"
-	group: "51DC04D9192698A6"
+	group: "A170000000000002"
 	icon: "apocalypsenow:badge"
 	id: "306DDFE5681E2BA3"
 	order_index: 7
@@ -33,6 +33,7 @@
 		}
 		{
 			dependencies: ["242968A2B6D41253"]
+			subtitle: "解放条件: 「Act 2：止まった生産線」を完了"
 			description: [
 				"Factoryの設備を復旧し、無線中継器に必要な部品を確保する。"
 				"銅インゴット8個、鉄インゴット8個、電子管2個を納品する。"
@@ -74,6 +75,7 @@
 		}
 		{
 			dependencies: ["2FD5B06423F44541"]
+			subtitle: "解放条件: 「Factoryを再起動する」を完了"
 			description: [
 				"復旧した設備から、Remnant Relayへ向かう暗号通信が見つかった。"
 				"Relayへ到達し、Protocol座標断片を保持するCoreを探す。"
@@ -91,14 +93,21 @@
 		}
 		{
 			dependencies: ["13A8A2B1178471CD"]
+			subtitle: "解放条件: 「命令の亡霊」を完了"
 			description: [
 				"Relayの外部装置、Spawner、守備隊を排除してCoreを解除する。"
 				"Coreを破壊するとRemnantの巡回が停止し、Protocol座標断片を回収できる。"
 			]
-			icon: "apocalypsenow:bomb_defusing_kit"
+			icon: {
+				Count: 1
+				id: "apocalypsenow:bomb_defusing_kit"
+				tag: {
+					Damage: 0
+				}
+			}
 			id: "6327A52D90F0014B"
 			rewards: [{
-				count: 8
+				count: 64
 				id: "5C849E0A7FB11F18"
 				item: "apocalypsenow:money"
 				type: "item"
@@ -114,6 +123,7 @@
 		}
 		{
 			dependencies: ["6327A52D90F0014B"]
+			subtitle: "解放条件: 「Protocol座標断片」を完了"
 			description: [
 				"CDF、Raiders、Remnantが同じ無線鍵を要求している。"
 				"チャットで /deadzonestory support を実行し、支援先の説明を確認して選択する。"
@@ -134,20 +144,27 @@
 		}
 		{
 			dependencies: ["63BC8CE6C398AEE6"]
+			subtitle: "解放条件: 「三つの命令」を完了"
 			description: [
 				"CDFの避難民回廊へ向かい、現地の防衛隊と接触する。"
 				"防具・地図・安定した補給を得られる代わりに、民間人の退避を優先するルート。"
 			]
-			icon: "apocalypsenow:army_helmet"
-			id: "A21D90C4E7F126B1"
+			icon: {
+				Count: 1
+				id: "apocalypsenow:army_helmet"
+				tag: {
+					Damage: 0
+				}
+			}
+			id: "15EEF72539267271"
 			rewards: [{
 				count: 2
-				id: "A21D90C4E7F126B2"
+				id: "2F292328D9BE5484"
 				item: "apocalypsenow:armorplate"
 				type: "item"
 			}]
 			tasks: [{
-				id: "A21D90C4E7F126B3"
+				id: "33B79752EBEA2F15"
 				title: "CDF管理施設で防衛隊と接触する"
 				type: "custom"
 			}]
@@ -157,20 +174,27 @@
 		}
 		{
 			dependencies: ["63BC8CE6C398AEE6"]
+			subtitle: "解放条件: 「三つの命令」を完了"
 			description: [
 				"Ash Jackalsの補給拠点を襲い、密輸台帳とAffix素材を奪う。"
 				"危険は高いが、武器・車両部品を早く確保できる攻撃的なルート。"
 			]
-			icon: "apocalypsenow:ballistic_mask_helmet"
-			id: "B34E61A8D2057FC2"
+			icon: {
+				Count: 1
+				id: "apocalypsenow:ballistic_mask_helmet"
+				tag: {
+					Damage: 0
+				}
+			}
+			id: "6B79E4C886405D52"
 			rewards: [{
-				count: 6
-				id: "B34E61A8D2057FC3"
+				count: 54
+				id: "3DC1C4EA832DD008"
 				item: "apocalypsenow:money"
 				type: "item"
 			}]
 			tasks: [{
-				id: "B34E61A8D2057FC4"
+				id: "76BF4C811619414C"
 				title: "Raider拠点のCoreを制圧する"
 				type: "custom"
 			}]
@@ -180,20 +204,21 @@
 		}
 		{
 			dependencies: ["63BC8CE6C398AEE6"]
+			subtitle: "解放条件: 「三つの命令」を完了"
 			description: [
 				"Remnant Relayの中枢を解析し、旧軍のProtocol断片を復元する。"
 				"重工業部品とT3座標を得やすいが、機械守備隊との戦闘が待っている。"
 			]
 			icon: "apocalypsenow:aabattery"
-			id: "C45F72B9E31680D3"
+			id: "172DC215E314B2C5"
 			rewards: [{
 				count: 4
-				id: "C45F72B9E31680D4"
+				id: "02CAC83DA73ED507"
 				item: "immersiveengineering:component_electronic"
 				type: "item"
 			}]
 			tasks: [{
-				id: "C45F72B9E31680D5"
+				id: "720FBA717C2BF6B5"
 				title: "Remnant拠点のCoreを確保する"
 				type: "custom"
 			}]
@@ -202,21 +227,16 @@
 			y: 2.0d
 		}
 		{
-			dependencies: [
-				"A21D90C4E7F126B1"
-				"B34E61A8D2057FC2"
-				"C45F72B9E31680D3"
-			]
-			min_required_dependencies: 1
 			description: [
 				"選択した勢力との契約が成立し、AEGIS研究坑道へ至る手段を確保した。"
 				"他勢力の依頼はサブクエストとして残るため、マルチでも取り返しはつく。"
 			]
 			icon: "apocalypsenow:badge"
-			id: "D56083CAF42791E4"
+			id: "30842133D9A8E440"
+			min_required_dependencies: 1
 			shape: "hexagon"
 			tasks: [{
-				id: "D56083CAF42791E5"
+				id: "3B797FC8E6C6AD0E"
 				title: "選択ルートの固有任務を完了する"
 				type: "custom"
 			}]
@@ -225,7 +245,6 @@
 			y: 0.0d
 		}
 		{
-			dependencies: ["D56083CAF42791E4"]
 			description: [
 				"Protocol座標は地下研究坑道を示している。"
 				"AEGISの廃棄記録を追い、施設間で感染体が意図的に輸送された証拠を確保する。"
@@ -243,6 +262,7 @@
 		}
 		{
 			dependencies: ["64FC20257BDD84CF"]
+			subtitle: "解放条件: 「廃棄された患者記録」を完了"
 			description: [
 				"記録保管区画を守るStory Boss『原初感染体』を撃破する。"
 				"咆哮と増援に備え、5人編成では役割を分けて戦う。"
@@ -251,7 +271,7 @@
 			id: "0573B0233758DF83"
 			rewards: [
 				{
-					count: 16
+					count: 64
 					id: "6078853B50B0C249"
 					item: "apocalypsenow:money"
 					type: "item"
@@ -276,11 +296,18 @@
 		}
 		{
 			dependencies: ["0573B0233758DF83"]
+			subtitle: "解放条件: 「T2 Story Boss：原初感染体」を完了"
 			description: [
 				"感染体の輸送記録とProtocol座標を確保した。"
 				"Military Base、地下司令壕、AEGIS Laboratoryへ続くT3攻略が解禁される。"
 			]
-			icon: "apocalypsenow:advanced_hazmat_suit_helmet"
+			icon: {
+				Count: 1
+				id: "apocalypsenow:advanced_hazmat_suit_helmet"
+				tag: {
+					Damage: 0
+				}
+			}
 			id: "17F1D932ED1B4A01"
 			shape: "hexagon"
 			size: 2.0d

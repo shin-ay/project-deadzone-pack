@@ -2,7 +2,7 @@
 	default_hide_dependency_lines: false
 	default_quest_shape: ""
 	filename: "deadzone_main_story_02"
-	group: "51DC04D9192698A6"
+	group: "A170000000000002"
 	icon: "apocalypsenow:aabattery"
 	id: "2A2CEA89BA913F97"
 	order_index: 6
@@ -10,6 +10,7 @@
 	quests: [
 		{
 			dependencies: ["74065A02DB68DAE2"]
+			subtitle: "解放条件: 「T2：Scavenger」を完了"
 			description: [
 				"警察署から回収したCivil Defenseの記録には、消防署から発信された救難信号が残っていた。"
 				"救助隊が残した中継器を確保し、都市通信網を再起動する。"
@@ -30,11 +31,18 @@
 		}
 		{
 			dependencies: ["4AF84F15560BA03C"]
+			subtitle: "解放条件: 「Chapter 4：灰の救難信号」を完了"
 			description: [
 				"消防署はRaider Ash Captainの回収部隊に占拠されている。"
 				"正面だけでなく車庫や上階からの射線に注意し、救助指令室へ進もう。"
 			]
-			icon: "apocalypsenow:bomb_defusing_kit"
+			icon: {
+				Count: 1
+				id: "apocalypsenow:bomb_defusing_kit"
+				tag: {
+					Damage: 0
+				}
+			}
 			id: "3001FAD121C4FCD2"
 			subtitle: "救助拠点を武器庫に変えた部隊を排除する。"
 			tasks: [{
@@ -48,15 +56,22 @@
 		}
 		{
 			dependencies: ["3001FAD121C4FCD2"]
+			subtitle: "解放条件: 「封鎖された消防署」を完了"
 			description: [
 				"Ash Captainを撃破し、指令室と車庫を確保する。"
 				"回収した耐熱ケースには通信中継器の一部が保管されている。"
 			]
-			icon: "apocalypsenow:ballistic_mask_helmet"
+			icon: {
+				Count: 1
+				id: "apocalypsenow:ballistic_mask_helmet"
+				tag: {
+					Damage: 0
+				}
+			}
 			id: "04AC90A6EDFF8450"
 			rewards: [
 				{
-					count: 16
+					count: 64
 					id: "0014CD6A7F8AF7AE"
 					item: "apocalypsenow:money"
 					type: "item"
@@ -70,7 +85,7 @@
 				{
 					id: "4887EE64AF452FA0"
 					type: "xp"
-					xp: 20
+					xp: 80
 				}
 			]
 			shape: "hexagon"
@@ -87,6 +102,7 @@
 		}
 		{
 			dependencies: ["04AC90A6EDFF8450"]
+			subtitle: "解放条件: 「救助指令室を奪還せよ」を完了"
 			description: [
 				"中継器には北東のRadio Towerへ向けた座標と、最後の避難輸送記録が残されている。"
 				"電力と交換部品を準備して通信塔へ向かう。"
@@ -105,6 +121,7 @@
 		}
 		{
 			dependencies: ["40020680E6A96AF6"]
+			subtitle: "解放条件: 「残された避難座標」を完了"
 			description: [
 				"Radio Towerを復旧すれば、新しい施設情報と遠距離の救難信号を受信できる。"
 				"ただし送信を始めれば、こちらの位置も武装勢力に知られる。"
@@ -125,11 +142,18 @@
 		}
 		{
 			dependencies: ["3EB8C6CE111AC5E6"]
+			subtitle: "解放条件: 「Chapter 5：信号を取り戻せ」を完了"
 			description: [
 				"予備電源と送信機を応急修理する。"
 				"必要量はマルチでも単純作業になりすぎない範囲に抑えている。"
 			]
-			icon: "apocalypsenow:bomb_defusing_kit"
+			icon: {
+				Count: 1
+				id: "apocalypsenow:bomb_defusing_kit"
+				tag: {
+					Damage: 0
+				}
+			}
 			id: "42670EF087DB07A6"
 			subtitle: "電源と送信回路を復旧する。"
 			tasks: [
@@ -161,6 +185,7 @@
 		}
 		{
 			dependencies: ["42670EF087DB07A6"]
+			subtitle: "解放条件: 「応急送信機」を完了"
 			description: [
 				"送信開始と同時にRemnant Signal Hunterが通信塔を捕捉した。"
 				"設備を壊される前に護衛部隊と重装指揮官を排除する。"
@@ -169,7 +194,7 @@
 			id: "34C3DD0D8725B787"
 			rewards: [
 				{
-					count: 24
+					count: 64
 					id: "40281B7A8798596D"
 					item: "apocalypsenow:money"
 					type: "item"
@@ -183,7 +208,7 @@
 				{
 					id: "626035C1750C910F"
 					type: "xp"
-					xp: 30
+					xp: 120
 				}
 			]
 			shape: "hexagon"
@@ -200,6 +225,7 @@
 		}
 		{
 			dependencies: ["34C3DD0D8725B787"]
+			subtitle: "解放条件: 「送信中：位置を特定された」を完了"
 			description: [
 				"通信網が復旧し、警察・消防・生存者拠点の情報が一本につながった。"
 				"新たに病院からの自動送信と、軍事区域の暗号通信が検出されている。"
@@ -208,7 +234,7 @@
 			id: "3FE9D0F62386FC0C"
 			rewards: [
 				{
-					count: 32
+					count: 64
 					id: "319F688409E605DF"
 					item: "apocalypsenow:money"
 					type: "item"
@@ -222,7 +248,7 @@
 				{
 					id: "63923735E4C2DE6E"
 					type: "xp"
-					xp: 40
+					xp: 160
 				}
 			]
 			shape: "hexagon"

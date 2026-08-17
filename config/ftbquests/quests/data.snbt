@@ -11,7 +11,7 @@
 	emergency_items_cooldown: 300
 	grid_scale: 0.75d
 	hide_excluded_quests: false
-	lock_message: "前のストーリー任務を完了してください"
+	lock_message: "ロック中：クエスト詳細の『解放条件』に表示された前提任務を完了してください。"
 	loot_crate_no_drop: {
 		boss: 0
 		monster: 600
