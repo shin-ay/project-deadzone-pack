@@ -1070,27 +1070,35 @@ hash = "a82a932ef9934c4208bc9d00addbd33c02811af94fdfac78a2f9a48264e1d0eb"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/deadzone_camp_personal_02.snbt"
-hash = "3f4eb4346d7f46945d287df51df4e73af66c19d2d40c708eb558ac54e909b109"
+hash = "4426802702e2a8d7ddd06369bff697ba172c537ac5d3fc0c4a30275120603c6f"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/deadzone_camp_sidequests_01.snbt"
-hash = "1d6c3ebb56b45172d098b1dc538ed6e59fddfa38717c7323e50ae6466cc2a3ac"
+hash = "3b50f1429681767fd63a17df3ed1706eaa58296877d78e7dc01d4c8314730f02"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/deadzone_enchanting_01.snbt"
 hash = "976fb0107c01ccf088dffae85766a1db93d4d45ca5c2221492dd2cc0c8fcaa46"
 
 [[files]]
+file = "config/ftbquests/quests/chapters/deadzone_faction_storylines_01.snbt"
+hash = "5025005642a626485df62986fe0c0d9aa36e4bfe1e5217881ffec9e7ad8749fb"
+
+[[files]]
+file = "config/ftbquests/quests/chapters/deadzone_field_archives_01.snbt"
+hash = "4b582f7f4d0e302a97991c963e508bdf051ee5f11d5186847d70724c399caeef"
+
+[[files]]
 file = "config/ftbquests/quests/chapters/deadzone_hospital_story_01.snbt"
-hash = "1ffbd31e95f79ea545a101b401cb1b949ca39cbf639e3482b9653a4af9956867"
+hash = "170adedd29236fad6d572a97563ddefa8c9acddfa80487243f5554cdfebe42b0"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/deadzone_main_story_01.snbt"
-hash = "d9a49ddb5cccac9c322839d4853105f9ca96829b5e62d98279e1fd33f540a6ac"
+hash = "f212d53a18356f2c412ba7d9fe2e00e03d87e07c112ce0a0eb5aadbfe70612ed"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/deadzone_main_story_02.snbt"
-hash = "d50f173529939c1eea9b79c1726979feb2435e094ae4d080affa194a1bd7fba3"
+hash = "d56fddff1e1c8e64a122830885afefd4208988bd79cc92cd2aa5b5273ce9a099"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/deadzone_main_story_t2.snbt"
@@ -1098,7 +1106,7 @@ hash = "7d46147107399ae1bbd484d65fb2eaf5511c3a5c719157e7aea87f6be5c58eb9"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/deadzone_main_story_t3.snbt"
-hash = "f3bfe883f09469069413f1f8647eed4cae6f60040d707edbe02c000b732cb41e"
+hash = "694d74cb0b7d22a62f0af6e0531c1ca943778f6782681dba98265a3f7bb1168f"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/deadzone_mod_agriculture_01.snbt"
@@ -7886,7 +7894,7 @@ hash = "5b59cdd08b1b3bd375e180c38b4c0addb7f0fcb3e88f8b7c90ae0fb877b0fd2e"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_story_branches_v0_1.js"
-hash = "025877f941768e21ce4a7540d57f8fc96b7fc586b02e869d553814d4c975c843"
+hash = "305eef2ce29142aae940901fceca35fca2a3f7ce3006d7ab023d7233a0b7e014"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_story_progress_v0_1.js"
@@ -17161,6 +17169,10 @@ hash = "ff599288bac42573240d08b1ec1bbbf6ccc22e969284ba4d47d69a99e2cd6277"
 [[files]]
 file = "projectfiles/PROJECT_DEADZONE_Skill_Tier_Gate_Test_v0.1.md"
 hash = "4f12271c2a8d06996957c7ef901eed8d6b6f2134bf824d0106e46bac06b73538"
+
+[[files]]
+file = "projectfiles/PROJECT_DEADZONE_Story_Expansion_v1.1.md"
+hash = "aa9437d4e06c870512a1e2d32b68ebcd7c4951b683796b83311ecd41a48e832c"
 
 [[files]]
 file = "projectfiles/PROJECT_DEADZONE_Story_Facility_Roadmap_v0.1.md"

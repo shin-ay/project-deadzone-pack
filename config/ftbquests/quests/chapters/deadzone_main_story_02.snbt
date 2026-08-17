@@ -34,13 +34,7 @@
 				"消防署はRaider Ash Captainの回収部隊に占拠されている。"
 				"正面だけでなく車庫や上階からの射線に注意し、救助指令室へ進もう。"
 			]
-			icon: {
-				Count: 1
-				id: "minecraft:iron_axe"
-				tag: {
-					Damage: 0
-				}
-			}
+			icon: "apocalypsenow:bomb_defusing_kit"
 			id: "3001FAD121C4FCD2"
 			subtitle: "救助拠点を武器庫に変えた部隊を排除する。"
 			tasks: [{
@@ -171,13 +165,7 @@
 				"送信開始と同時にRemnant Signal Hunterが通信塔を捕捉した。"
 				"設備を壊される前に護衛部隊と重装指揮官を排除する。"
 			]
-			icon: {
-				Count: 1
-				id: "minecraft:shield"
-				tag: {
-					Damage: 0
-				}
-			}
+			icon: "apocalypsenow:aabattery"
 			id: "34C3DD0D8725B787"
 			rewards: [
 				{

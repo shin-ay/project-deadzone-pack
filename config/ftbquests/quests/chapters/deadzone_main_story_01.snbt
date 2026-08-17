@@ -30,13 +30,7 @@
 		{
 			dependencies: ["4262970F1B621A1D"]
 			description: ["JOBを選択してStarter Kitを受け取り、自分の役割を確認しよう。"]
-			icon: {
-				Count: 1
-				id: "minecraft:crossbow"
-				tag: {
-					Damage: 0
-				}
-			}
+			icon: "apocalypsenow:badge"
 			id: "52F2869C3820DF98"
 			subtitle: "自分の役割を選び、最初の装備を受け取る。"
 			tasks: [{
@@ -209,13 +203,7 @@
 		{
 			dependencies: ["500615465858A8D5"]
 			description: ["Raider Enforcerを撃破し、Gun Shopの武器庫まで制圧する。"]
-			icon: {
-				Count: 1
-				id: "minecraft:crossbow"
-				tag: {
-					Damage: 0
-				}
-			}
+			icon: "apocalypsenow:ballistic_mask_helmet"
 			id: "7718CAD4F2ED6F3E"
 			rewards: [
 				{
@@ -299,13 +287,7 @@
 				"Raider Wardenを倒し、Civil Defenseの記録を回収する。"
 				"この勝利によってT2装備への道が開く。"
 			]
-			icon: {
-				Count: 1
-				id: "minecraft:golden_helmet"
-				tag: {
-					Damage: 0
-				}
-			}
+			icon: "apocalypsenow:badge"
 			id: "74065A02DB68DAE2"
 			rewards: [
 				{

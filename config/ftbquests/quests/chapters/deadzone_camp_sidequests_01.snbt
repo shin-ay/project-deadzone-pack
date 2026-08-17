@@ -3,7 +3,7 @@
 	default_quest_shape: ""
 	filename: "deadzone_camp_sidequests_01"
 	group: "51DC04D9192698A6"
-	icon: "minecraft:campfire"
+	icon: "apocalypsenow:badge"
 	id: "09B81A3F6EE5AB92"
 	order_index: 2
 	quest_links: [ ]
@@ -14,7 +14,7 @@
 				"ミナトは遠征計画に使える方位磁針を必要としている。"
 				"役割を決めるだけでなく、全員が帰還できる経路を準備しよう。"
 			]
-			icon: "minecraft:compass"
+			icon: "apocalypsenow:badge"
 			id: "72B0CD68492E6381"
 			rewards: [
 				{
@@ -46,7 +46,7 @@
 				"レイが無線機の修理に使う導体と電子部品を探している。"
 				"通信網が安定すれば、新しい救難信号や危険情報を追跡できる。"
 			]
-			icon: "minecraft:redstone"
+			icon: "immersiveengineering:component_electronic"
 			id: "010C657AF86BA4C7"
 			rewards: [
 				{
@@ -88,13 +88,7 @@
 				"ハンクはキャンプ周辺の感染者が増えている証拠を集めている。"
 				"腐肉を持ち帰り、警戒範囲を見直す判断材料にしよう。"
 			]
-			icon: {
-				Count: 1
-				id: "minecraft:iron_sword"
-				tag: {
-					Damage: 0
-				}
-			}
+			icon: "apocalypsenow:ballistic_mask_helmet"
 			id: "298ABA85898F0923"
 			rewards: [
 				{
@@ -128,7 +122,7 @@
 				"マヤは共同備蓄を増やそうとしている。"
 				"保存できる食料と水を納品し、次の遠征に備えよう。"
 			]
-			icon: "minecraft:bread"
+			icon: "survival_instinct:gallon_of_water"
 			id: "42891C4DF6B27EC5"
 			rewards: [
 				{
@@ -202,7 +196,7 @@
 				"ゴロウは拠点設備の補修用金属を集めている。"
 				"派手な機械より先に、壊れた設備を動かす材料が必要だ。"
 			]
-			icon: "minecraft:iron_ingot"
+			icon: "immersiveengineering:ingot_steel"
 			id: "4359BB2BF9598A02"
 			rewards: [
 				{
@@ -245,13 +239,7 @@
 				"二方向から来る襲撃部隊を排除し、住人とBase Coreを守り抜こう。"
 				"留守中には開始されず、キャンプにいる時だけ警告が発生する。"
 			]
-			icon: {
-				Count: 1
-				id: "minecraft:shield"
-				tag: {
-					Damage: 0
-				}
-			}
+			icon: "apocalypsenow:armorplate"
 			id: "41F0ABB18B9685AC"
 			rewards: [
 				{

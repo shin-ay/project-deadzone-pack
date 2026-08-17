@@ -14,13 +14,7 @@
 				"原初感染体の記録には、DEADZONE Protocolを実行できる軍用権限が残されていた。"
 				"Military Baseまたは地下司令壕へ到達し、Protocol認証端末を探す。"
 			]
-			icon: {
-				Count: 1
-				id: "minecraft:iron_helmet"
-				tag: {
-					Damage: 0
-				}
-			}
+			icon: "apocalypsenow:army_chestplate"
 			id: "1ABE30FB04136438"
 			shape: "hexagon"
 			size: 1.5d

@@ -1,0 +1,273 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "deadzone_faction_storylines_01"
+	group: "51DC04D9192698A6"
+	icon: "apocalypsenow:badge"
+	id: "A17C5E903B42D681"
+	order_index: 10
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: ["74065A02DB68DAE2"]
+			description: [
+				"警察署の記録には、同じ道路と避難民を巡って争う五つの組織が記録されていた。"
+				"ここから先は、敵を倒した数だけではなく、誰へ物資と権限を渡したかが地域の姿を変える。"
+			]
+			icon: "apocalypsenow:badge"
+			id: "A101000000000001"
+			shape: "hexagon"
+			size: 1.5d
+			tasks: [{ id: "A101100000000001" title: "勢力記録を解読した" type: "custom" }]
+			title: "勢力記録：壊れた秩序"
+			x: 0.0d
+			y: 0.0d
+		}
+
+		{
+			dependencies: ["A101000000000001"]
+			description: [
+				"CDFは避難路を守っているが、通行証と武器登録のない者を保護対象と認めない。"
+				"二つのCDF拠点を確認し、現場で何が起きているか確かめる。"
+			]
+			icon: "apocalypsenow:army_helmet"
+			id: "A102000000000001"
+			tasks: [{ id: "A102100000000001" title: "CDF拠点を2か所確認した" type: "custom" }]
+			title: "CDF：最後の命令"
+			x: 2.0d
+			y: -6.0d
+		}
+		{
+			dependencies: ["A102000000000001"]
+			description: [
+				"ヴェイル司令の封鎖命令と、イネス大尉の避難民受け入れ記録は矛盾している。"
+				"Civil Defense Coreを確保し、改竄されていない命令記録を回収する。"
+			]
+			icon: "apocalypsenow:aabattery"
+			id: "A102000000000002"
+			tasks: [{ id: "A102100000000002" title: "CDFの命令記録を回収した" type: "custom" }]
+			title: "届かなかった解除命令"
+			x: 4.0d
+			y: -6.0d
+		}
+		{
+			dependencies: ["A102000000000002"]
+			description: [
+				"封鎖を維持すれば巡回は強化されるが、独立集落の自由は失われる。"
+				"現場連合へ移行すれば交易と救助は広がるが、統一指揮は弱くなる。"
+				"選択：/deadzonestorybranch choose cdf_order または cdf_coalition"
+			]
+			icon: "apocalypsenow:army_chestplate"
+			id: "A102000000000003"
+			rewards: [{ count: 6 id: "A102200000000003" item: "apocalypsenow:armorplate" type: "item" }]
+			shape: "hexagon"
+			size: 2.0d
+			tasks: [{ id: "A102100000000003" title: "CDFの進路を決めた" type: "custom" }]
+			title: "命令か、現場か"
+			x: 6.0d
+			y: -6.0d
+		}
+
+		{
+			dependencies: ["A101000000000001"]
+			description: [
+				"Ash Jackalsは道路を襲うだけの集団ではない。燃料、弾薬、捕虜交換を束ねる暴力的な物流網だ。"
+				"補給拠点を二つ落とし、彼らの取引台帳を追う。"
+			]
+			icon: "apocalypsenow:balaclava"
+			id: "A103000000000001"
+			tasks: [{ id: "A103100000000001" title: "Raider補給拠点を2か所制圧した" type: "custom" }]
+			title: "Raiders：値札のない道"
+			x: 2.0d
+			y: -3.0d
+		}
+		{
+			dependencies: ["A103000000000001"]
+			description: [
+				"台帳には襲撃予定だけでなく、飢えた集落へ薬を流した記録もある。"
+				"三人のNamedを倒し、ルーク派とシンダー派を区別できる部隊章を集める。"
+			]
+			icon: "apocalypsenow:ballistic_mask_helmet"
+			id: "A103000000000002"
+			tasks: [{ id: "A103100000000002" title: "Namedの部隊章を3個確認した" type: "custom" }]
+			title: "燃える台帳"
+			x: 4.0d
+			y: -3.0d
+		}
+		{
+			dependencies: ["A103000000000002"]
+			description: [
+				"物流網を解体すれば街道は安全になるが、孤立集落への闇取引も止まる。"
+				"限定停戦なら希少品を得られる一方、Jackalsは別の誰かを襲い続ける。"
+				"選択：/deadzonestorybranch choose raider_break または raider_truce"
+			]
+			icon: "apocalypsenow:bomb_defusing_kit"
+			id: "A103000000000003"
+			rewards: [{ count: 12 id: "A103200000000003" item: "apocalypsenow:money" type: "item" }]
+			shape: "hexagon"
+			size: 2.0d
+			tasks: [{ id: "A103100000000003" title: "Jackalsへの回答を決めた" type: "custom" }]
+			title: "壊すか、利用するか"
+			x: 6.0d
+			y: -3.0d
+		}
+
+		{
+			dependencies: ["A101000000000001"]
+			description: [
+				"Remnantは救助より命令系統の復元を優先し、命令違反者を感染者以上の脅威と見なす。"
+				"Relay Coreを確保し、消去されかけた作戦記録を復元する。"
+			]
+			icon: "immersiveengineering:component_electronic"
+			id: "A104000000000001"
+			tasks: [{ id: "A104100000000001" title: "Remnant Relayを確保した" type: "custom" }]
+			title: "Remnant：命令の亡霊"
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["A104000000000001"]
+			description: [
+				"ナディア少佐は民間区画への焼却命令を保留していた。ソコロフ大佐はその記録ごと消そうとしている。"
+				"Factoryと軍用施設の両方を調査し、命令の出所を確定する。"
+			]
+			icon: "create:electron_tube"
+			id: "A104000000000002"
+			tasks: [{ id: "A104100000000002" title: "焼却命令の出所を確定した" type: "custom" }]
+			title: "保留された焼却命令"
+			x: 4.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["A104000000000002"]
+			description: [
+				"記録をナディアへ渡せばRemnantは分裂し、一部が停戦へ動く。"
+				"司令権限を破棄すれば軍政復活は防げるが、軍用通信網も失われる。"
+				"選択：/deadzonestorybranch choose remnant_defect または remnant_decommission"
+			]
+			icon: "apocalypsenow:badge"
+			id: "A104000000000003"
+			rewards: [{ count: 8 id: "A104200000000003" item: "immersiveengineering:ingot_steel" type: "item" }]
+			shape: "hexagon"
+			size: 2.0d
+			tasks: [{ id: "A104100000000003" title: "Remnantの未来を決めた" type: "custom" }]
+			title: "服従しない兵士たち"
+			x: 6.0d
+			y: 0.0d
+		}
+
+		{
+			dependencies: ["64FC20257BDD84CF"]
+			description: [
+				"AEGISの患者記録は治療報告ではなく、誰を救う価値があるかを選別した一覧だった。"
+				"Hospitalと研究施設に残された三つの症例記録を照合する。"
+			]
+			icon: "apocalypsenow:antibiotics"
+			id: "A105000000000001"
+			tasks: [{ id: "A105100000000001" title: "AEGIS症例記録を照合した" type: "custom" }]
+			title: "AEGIS：治療対象"
+			x: 2.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["A105000000000001"]
+			description: [
+				"クロス博士のデータは感染治療にも、感染者を誘導する兵器にも転用できる。"
+				"REACTOR SAINTを倒し、研究炉から未改竄のデータを回収する。"
+			]
+			icon: "apocalypsenow:advanced_hazmat_suit_helmet"
+			id: "A105000000000002"
+			tasks: [{ id: "A105100000000002" title: "研究炉データを回収した" type: "custom" }]
+			title: "救済と選別"
+			x: 4.0d
+			y: 3.0d
+		}
+		{
+			dependencies: ["A105000000000002"]
+			description: [
+				"治療データを公開すれば医療は広がるが、変異研究も各勢力へ流出する。"
+				"兵器記録を破棄すれば悪用は防げるが、完全治療への近道も失う。"
+				"選択：/deadzonestorybranch choose aegis_release または aegis_burn"
+			]
+			icon: "apocalypsenow:adrenaline_syringe"
+			id: "A105000000000003"
+			rewards: [{ count: 4 id: "A105200000000003" item: "apocalypsenow:antibiotics" type: "item" }]
+			shape: "hexagon"
+			size: 2.0d
+			tasks: [{ id: "A105100000000003" title: "AEGISデータの扱いを決めた" type: "custom" }]
+			title: "誰を治療対象とするか"
+			x: 6.0d
+			y: 3.0d
+		}
+
+		{
+			dependencies: ["719E23C2245BB557"]
+			description: [
+				"三中枢の停止で、ARGUS-9が人間を排除対象にした理由が見えてきた。"
+				"救助、交易、避難。そのすべてを感染拡大行動として学習している。"
+			]
+			icon: "immersiveengineering:capacitor_lv"
+			id: "A106000000000001"
+			tasks: [{ id: "A106100000000001" title: "WARDENの判断記録を復元した" type: "custom" }]
+			title: "WARDEN：許可されていない生命"
+			x: 2.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["A106000000000001"]
+			description: [
+				"ARGUS FragmentとCHOIR VESSELは、互いを敵ではなく予測不能な通信相手として観測していた。"
+				"機械と感染群体が同じ言語へ近づいている。"
+			]
+			icon: "apocalypsenow:aabattery"
+			id: "A106000000000002"
+			tasks: [{ id: "A106100000000002" title: "二つの通信記録を比較した" type: "custom" }]
+			title: "会話する脅威"
+			x: 4.0d
+			y: 6.0d
+		}
+		{
+			dependencies: ["A106000000000002"]
+			description: [
+				"ARGUS-9を破壊、再設定、分離する判断は、敵の種類だけでなくSurvivor Campの未来を変える。"
+				"メインストーリーで最終判断を確定する。"
+			]
+			icon: "kubejs:affix_workbench"
+			id: "A106000000000003"
+			rewards: [{ count: 4 id: "A106200000000003" item: "apocalypsenow:armorplate" type: "item" }]
+			shape: "hexagon"
+			size: 2.0d
+			tasks: [{ id: "A106100000000003" title: "ARGUS-9の処遇を確定した" type: "custom" }]
+			title: "観測者への回答"
+			x: 6.0d
+			y: 6.0d
+		}
+
+		{
+			dependencies: [
+				"A102000000000003"
+				"A103000000000003"
+				"A104000000000003"
+				"A105000000000003"
+				"A106000000000003"
+			]
+			description: [
+				"五つの答えは、どれも完全な正解ではない。"
+				"守ったもの、利用したもの、捨てたものが、次の地域で味方、価格、巡回、敵の構成として返ってくる。"
+			]
+			icon: "apocalypsenow:badge"
+			id: "A107000000000001"
+			rewards: [
+				{ count: 32 id: "A107200000000001" item: "apocalypsenow:money" type: "item" }
+				{ id: "A107200000000002" type: "xp" xp: 50 }
+			]
+			shape: "hexagon"
+			size: 2.5d
+			tasks: [{ id: "A107100000000001" title: "五勢力の記録を完了した" type: "custom" }]
+			title: "均衡を崩した者たち"
+			x: 9.0d
+			y: 0.0d
+		}
+	]
+	title: "勢力ストーリー：五つの答え"
+}
