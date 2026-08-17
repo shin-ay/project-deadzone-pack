@@ -5,6 +5,62 @@ file = "README_R4_JP.txt"
 hash = "02ba75b4b3c779b214882951c1e163c93c262c8b4c2566af7acc9c2d1fc0c943"
 
 [[files]]
+file = "ambience_music/PDZ_BGM_README.txt"
+hash = "7f3f3a03b273dfdf5ae32248f27fc8365b8016be72a227e847559ae3fe7b10fd"
+
+[[files]]
+file = "ambience_music/music/boss_red_protocol.ogg"
+hash = "b56223be69e4e5390cf5ae4259a2721e34f3918ac64d286f99a98087da608edb"
+
+[[files]]
+file = "ambience_music/music/city_broken_signal.ogg"
+hash = "36b60c01b8a82dda2a84ba3c9e47c87602c5ce20774b35f11137c2a1b4b3f253"
+
+[[files]]
+file = "ambience_music/music/city_empty_windows.ogg"
+hash = "29504325cc8f5a520751a0e3915fb39129ca960dfaa02882570efda4e7f70987"
+
+[[files]]
+file = "ambience_music/music/combat_contact.ogg"
+hash = "f06f06b84e6165427508969e4cde7d38c61a8ce740f104ee9f7702552c53d5dc"
+
+[[files]]
+file = "ambience_music/music/desert_dustline.ogg"
+hash = "4a52f18900aad10826c911f0dd081176806b9175d22727516b6a87df8964b728"
+
+[[files]]
+file = "ambience_music/music/menu_dead_signal.ogg"
+hash = "55473808a1ed64102007bd934e3350cc245683569eca9ea53c1a43efa4b3e164"
+
+[[files]]
+file = "ambience_music/music/night_watch.ogg"
+hash = "48c00de04f397734a7dcd29678e71bc4c5216d71f2ff39e69d3ba652ab153ea5"
+
+[[files]]
+file = "ambience_music/music/ocean_cold_horizon.ogg"
+hash = "e29d550647df927e72ac46e12f4886cc79ac92ddf41d7ce493b2315741da72e1"
+
+[[files]]
+file = "ambience_music/music/settlement_last_light.ogg"
+hash = "6479dab62d7dfd5edc9ea321fe42bdc0a38a00324744bc129dfe180eb43e18ae"
+
+[[files]]
+file = "ambience_music/music/underground_below_grid.ogg"
+hash = "bf5a4bcbae0519652b936da71bc5e501b679b2926ea7702234b9aa3e94f0d9dc"
+
+[[files]]
+file = "ambience_music/music/wild_after_rain.ogg"
+hash = "03be1aa426430e967f55936f3c1beecdda5c7761ef3820ca4fddf0eb1e924baf"
+
+[[files]]
+file = "ambience_music/music/wild_long_road.ogg"
+hash = "fe54758161195eb7e9e2db47be2210f061d31f2aacf6ea0db70781b792ab4619"
+
+[[files]]
+file = "ambience_music/music_config.txt"
+hash = "f2ef071191a88a7976820b4f8e1c2fe36e4a88de7c618aa722517e443381bfd8"
+
+[[files]]
 file = "config/Apocalypse Now Config.toml"
 hash = "2b37a373f8b173834276caf0eadaa0b1f8981dc9ad6f4c2f535fb0486c31b9a7"
 
@@ -463,6 +519,10 @@ hash = "6712a2d6165ed52b7d251a8fc4cbfb6c1f834210a8bda82b55440402fd2d3273"
 [[files]]
 file = "config/alexsmobs/warped_toad_spawns.json"
 hash = "72126b26d7f3ae03b80df97dd103e0cec87d10829e86ac8b08da23abc7b318d8"
+
+[[files]]
+file = "config/ambience_mini-client.toml"
+hash = "92b88137cd06de0a4481b854b76a0652073c745759c0bf35fef683e44f386fb2"
 
 [[files]]
 file = "config/animation_overhaul/animations.json5"
