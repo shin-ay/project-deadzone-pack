@@ -41,7 +41,7 @@
 
 [gui]
 	#Key to open the class selection GUI (use Minecraft key names)
-	openGuiKey = "key.keyboard.k"
+	openGuiKey = "key.keyboard.unknown"
 	#Enable GUI animations
 	enableAnimations = true
 	#Animation speed multiplier (1.0 = normal)

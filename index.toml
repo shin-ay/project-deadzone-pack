@@ -562,7 +562,7 @@ hash = "3fcd8013137a86c00953d4be1e56945b84b87594be722bbf3b3be8d752e2577f"
 
 [[files]]
 file = "config/classmod-common.toml"
-hash = "f8c3a653669f6b246266f66ae666d0588d07c78f984b88a1413093cc966606c8"
+hash = "3c5f4ed87495e1fb5818c8a25e4ebbebacd9e6b75ed89ebe9447907d5f88ac9c"
 
 [[files]]
 file = "config/classmod.zip"
@@ -7638,11 +7638,11 @@ hash = "733e97bc1453cd2771ca741ab2052bd0da84c67fb8d3f6f52249ce4845eed10f"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_affix_workbench_v0_1.js"
-hash = "0704e4c651a070b3a0808d1240ba4d6b6374a78fe7d271ac1f09a4c203091708"
+hash = "43b01e8a30a0323d8f9b29dcba8ec10dc0d8df0c171203cac5d4dbf8b1fd5e79"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_affixes_v0_2.js"
-hash = "bedc439bac7c6ec254ed755fdb222722b3259a288ebbb694568938bc891a633b"
+hash = "9dc8b456d4290dadedbc9957694fdab6794266f877d340e607a4a2a6ee744462"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_ammo_reload_perks_v0_1.js"
@@ -7742,7 +7742,7 @@ hash = "981ebc0f308623a22d8252b944236987f30d6a3a7fdcdcfb0a1fcffcecda82f8"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_firearms_perks_v0_1.js"
-hash = "e1ae9e9cda8c3d27981c69d2a0e8d3aa9bedbfe974f95c2cfe90ea83d7b7cdd0"
+hash = "5a362bfc47ff79b0c09353e6ad4e6181ecdb29ecb07e31b3a98df7a850d5816a"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_fitness_perks_v0_1.js"
@@ -7823,6 +7823,10 @@ hash = "13a4ea887d811166b13adbcf56b5561420257643e8a6ba9a6b4abc3d7f23aa67"
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_military_curios_v0_1.js"
 hash = "6259227d34e56a4bced5492941c631ea5d560d8b5fa80f02a090b8d0707b11e9"
+
+[[files]]
+file = "kubejs/server_scripts/project_deadzone_mns_equipment_bridge_v0_1.js"
+hash = "26655b21c2ed6cde549270fa0c5ece64fc8169cca6a91901b3779fafa7632d68"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_mns_equipment_requirements_v0_1.js"
@@ -9235,6 +9239,10 @@ metafile = true
 file = "mods/melody.pw.toml"
 hash = "0b9cc190139b0eb2d5f0153f05717ed53edd499ad2a3eeee99ea75d22fd0ef1c"
 metafile = true
+
+[[files]]
+file = "mods/mine_and_weapons-1.40.jar"
+hash = "ab2dbf608fd130356d825e6d92d183c9a0717fc6f819772bc933e750db29e524"
 
 [[files]]
 file = "mods/minecraft-comes-alive-reborn.pw.toml"
@@ -17088,7 +17096,7 @@ hash = "0ebb0c12eb7a11c4de1071a98531a7a293bb942f70354d263c84bb527c281da2"
 
 [[files]]
 file = "options.txt"
-hash = "7f1094e96ccd1ee67c4e9c2e2738d7fcfa4daabfc9332f0b7b5cd7545ec63bb2"
+hash = "61d9d64177771a9a7eee870d5b1478094ce6b092a88e5938372840095437784c"
 
 [[files]]
 file = "pdz_tools/keymap/APPLY_KEYMAP.bat"

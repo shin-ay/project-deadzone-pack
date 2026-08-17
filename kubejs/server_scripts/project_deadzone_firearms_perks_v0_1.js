@@ -2,6 +2,23 @@
 // Uses TaCZ's official pre-damage event. It does not modify gun NBT,
 // magazines, animations or reload timing.
 
+const PDZ_FIREARMS_MNS_ENTITY_DATA = Java.loadClass('com.robertx22.mine_and_slash.capability.entity.EntityData')
+
+function dzMnsWeaponDamageBonus(player) {
+  try {
+    let unit = PDZ_FIREARMS_MNS_ENTITY_DATA.get(player).getUnit()
+    let stat = unit.getCalculatedStat('weapon_damage')
+    if (!stat) return 0
+    // StatData#getMultiplier is 1 + value / 100. More-type modifiers are
+    // multiplicative in M&S, so preserve both without applying base damage twice.
+    let total = Number(stat.getMultiplier()) * Number(stat.getMoreStatTypeMulti())
+    if (!isFinite(total)) return 0
+    return Math.max(-0.90, Math.min(4.0, total - 1.0))
+  } catch (ignored) {
+    return 0
+  }
+}
+
 function dzFirearmsTier(player, branch) {
   for (let tier = 3; tier >= 1; tier--) {
     if (player.tags.contains("dz_firearms_" + branch + "_" + tier)) return tier
@@ -16,27 +33,93 @@ function dzFirearmsCore(player) {
   return 0
 }
 
+function dzBallisticFx(player, target, mode) {
+  let server = player.server
+  // Always use explicit Java getters here. Rhino exposes bean properties as
+  // FieldAndMethods on some transformed TaCZ entities and arithmetic on those
+  // wrappers throws a null-receiver NPE.
+  let x = Number(target.getX()).toFixed(2)
+  let y = (Number(target.getY()) + Number(target.getBbHeight()) * 0.5).toFixed(2)
+  let z = Number(target.getZ()).toFixed(2)
+  if (mode === 'explosive') {
+    server.runCommandSilent('execute positioned ' + x + ' ' + y + ' ' + z + ' run particle minecraft:explosion ~ ~ ~ 0 0 0 0 1 force')
+    server.runCommandSilent('execute positioned ' + x + ' ' + y + ' ' + z + ' run playsound minecraft:entity.generic.explode player @a[distance=..24] ~ ~ ~ 0.65 1.35')
+  } else if (mode === 'corrosive') {
+    target.potionEffects.add('minecraft:poison', 100, 0, false, true)
+    target.potionEffects.add('minecraft:weakness', 80, 0, false, true)
+    server.runCommandSilent('execute positioned ' + x + ' ' + y + ' ' + z + ' run particle minecraft:item_slime ~ ~ ~ 0.25 0.25 0.25 0.03 12 force')
+  }
+}
+
 TimelessGunEvents.entityHurtByGunPre(event => {
+  let stage = 'event'
+  let player = null
+  try {
   // Use explicit TaCZ wrapper methods. Rhino can treat the paired
   // get/set bean property as a FieldAndMethods object; Number(event.baseAmount)
   // then dereferences a null receiver on some TaCZ Tweaks instant-hit paths.
-  let player = event.getAttacker()
+  player = event.getAttacker()
   if (!player || !player.isPlayer() || player.level.clientSide) return
+  stage = 'target'
   let hurtEntity = event.getHurtEntity()
-  let baseAmount = event.getBaseAmount()
+  let baseAmount = Number(event.getBaseAmount())
   // TaCZ Tweaks also posts this hook for some block/instant-hit interactions
   // where no living target or numeric damage value exists.
   if (!hurtEntity || !isFinite(baseAmount) || baseAmount <= 0) return
 
+  // Ranged PDZ abilities are ammunition protocols, not free-cast projectiles.
+  // Without a TaCZ hit these marker effects have no offensive output.
+  stage = 'ability-markers'
+  let explosiveRounds = false
+  let corrosiveRounds = false
+  try { explosiveRounds = player.hasEffect('project_deadzone:explosive_rounds') } catch (ignored) {}
+  try { corrosiveRounds = player.hasEffect('project_deadzone:corrosive_rounds') } catch (ignored) {}
+  if (explosiveRounds) {
+    baseAmount *= 1.35
+    dzBallisticFx(player, hurtEntity, 'explosive')
+  }
+  if (corrosiveRounds) {
+    baseAmount *= 1.10
+    dzBallisticFx(player, hurtEntity, 'corrosive')
+  }
+
+  stage = 'bonuses'
   let core = dzFirearmsCore(player)
   let handling = dzFirearmsTier(player, "handling")
-  if (core <= 0 && handling <= 0) return
 
   let multiplier = 1.0 + core * 0.01
+
+  // Keep every firearm damage modifier on TaCZ's single pre-damage path.
+  // Generic hurt handlers must not subtract HP again after this event.
+  try {
+    if (typeof pdztrValue === 'function') multiplier += Math.max(0, Number(pdztrValue(player, 'gunDamage')))
+  } catch (ignored) {}
+  // TaCZ bypasses M&S's normal melee damage path. Fold the player's calculated
+  // M&S weapon_damage into TaCZ's one and only pre-damage hook instead.
+  multiplier += dzMnsWeaponDamageBonus(player)
+  try {
+    if (typeof dz2Data === 'function') {
+      let affix = dz2Data(player.mainHandItem)
+      if (affix) {
+        multiplier += Math.max(0, affix.getDouble('damage'))
+        if (hurtEntity.getArmorValue() > 0) {
+          multiplier += Math.max(0, affix.getDouble('armor_break'))
+          multiplier += Math.max(0, affix.getDouble('armored'))
+        }
+        let targetType = String(hurtEntity.type)
+        if (targetType.indexOf('zombie') >= 0 || targetType.indexOf('infect') >= 0 || targetType.indexOf('walker') >= 0) {
+          multiplier += Math.max(0, affix.getDouble('infected'))
+        }
+        if (affix.getString('talent') === 'focused_fire') multiplier += 0.06
+      }
+    }
+  } catch (ignored) {}
   // Base JOB passive. JOB progression is independent from Talent SP.
   if (String(player.persistentData.getString('dz_job_id')) === 'weapons_expert') multiplier += 0.05
-  let motion = player.deltaMovement
-  let horizontalSpeedSq = motion ? motion.x * motion.x + motion.z * motion.z : 0
+  let motion = player.getDeltaMovement()
+  let motionX = motion ? Number(motion.x()) : 0
+  let motionZ = motion ? Number(motion.z()) : 0
+  let horizontalSpeedSq = motionX * motionX + motionZ * motionZ
   let moving = horizontalSpeedSq >= 0.003
   let career2=String(player.persistentData.getString('dz_career_t2'))
   // Marksman rewards deliberate stationary hits; Assault Operator rewards
@@ -79,7 +162,21 @@ TimelessGunEvents.entityHurtByGunPre(event => {
     multiplier += stacks * 0.02
   }
 
-  event.setBaseAmount(baseAmount * multiplier)
+  stage = 'apply'
+  let finalAmount = Number(baseAmount * multiplier)
+  if (!isFinite(finalAmount) || finalAmount <= 0) return
+  event.setBaseAmount(finalAmount)
+  if (player.persistentData.getBoolean('dz_firearms_damage_debug')) {
+    player.tell(Text.of('[Gun DMG] TaCZ base '+baseAmount.toFixed(2)+' x PDZ '+multiplier.toFixed(3)+' = pre-armor '+finalAmount.toFixed(2)).gray())
+  }
+  } catch (error) {
+    // TaCZ's event bridge otherwise reports only "null" and floods the log on
+    // every pellet. Report one useful diagnostic per player/session instead.
+    if (player && !player.persistentData.getBoolean('dz_firearms_hook_error_reported')) {
+      player.persistentData.putBoolean('dz_firearms_hook_error_reported', true)
+      console.error('[PDZ Gun Hook] stage=' + stage + ' error=' + String(error))
+    }
+  }
 })
 
 ServerEvents.commandRegistry(event => {
@@ -95,6 +192,17 @@ ServerEvents.commandRegistry(event => {
       + " / Handling " + dzFirearmsTier(player, "handling")
       + " / Maintenance " + dzFirearmsTier(player, "maintenance")
     ).aqua())
+    return 1
+  }))
+
+  root.then(Commands.literal('debug_on').executes(ctx => {
+    ctx.source.player.persistentData.putBoolean('dz_firearms_damage_debug',true)
+    ctx.source.player.tell(Text.of('銃ダメージ内訳表示: ON').green())
+    return 1
+  }))
+  root.then(Commands.literal('debug_off').executes(ctx => {
+    ctx.source.player.persistentData.putBoolean('dz_firearms_damage_debug',false)
+    ctx.source.player.tell(Text.of('銃ダメージ内訳表示: OFF').yellow())
     return 1
   }))
 

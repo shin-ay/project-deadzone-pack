@@ -1,13 +1,14 @@
-// Enchanting table replacement: dismantle, imbue and reroll Affixes.
+// Legacy PDZ Affix workbench.
+// New equipment is managed exclusively by Mine & Slash.  Salvage remains
+// available only to dispose of old PDZAffix test items during migration.
+const PDZ_LEGACY_AFFIX_FORGE_ENABLED=false
 const PDZ_AFFIX_SCRAP={common:'kubejs:affix_scrap_common',uncommon:'kubejs:affix_scrap_uncommon',rare:'kubejs:affix_scrap_rare',epic:'kubejs:affix_scrap_epic',legendary:'kubejs:affix_scrap_legendary'}
 const PDZ_AFFIX_COST={common:2,uncommon:3,rare:4,epic:5,legendary:6}
 function pdzAffixCount(p,id){return p.runCommandSilent('clear @s '+id+' 0')}
 function pdzAffixForgeMenu(p){
-  p.tell(Text.of('\u2550\u2550\u2550 AFFIX WORKBENCH \u2550\u2550\u2550').gold())
-  p.tell(Text.of('\u30e1\u30a4\u30f3\u30cf\u30f3\u30c9\u306b\u5bfe\u8c61\u88c5\u5099\u3092\u6301\u3063\u3066\u64cd\u4f5c\u3057\u307e\u3059\u3002').gray())
-  p.tell(Text.of('[ \u89e3\u4f53 / DISMANTLE ]').red().clickRunCommand('/deadzoneaffixforge salvage').hover(Text.of('\u88c5\u5099\u3092\u7834\u68c4\u3057\u3001\u30ec\u30a2\u5ea6\u306b\u5fdc\u3058\u305fAffix\u7d20\u6750\u3092\u56de\u53ce')))
-  p.tell(Text.of('[ \u518d\u62bd\u9078 / REROLL ]').aqua().clickRunCommand('/deadzoneaffixforge reroll').hover(Text.of('\u540c\u3058\u30ec\u30a2\u5ea6\u306e\u307e\u307e\u52b9\u679c\u3092\u518d\u62bd\u9078')))
-  p.tell(Text.of('[ \u4ed8\u4e0e / IMBUE ]').green().clickRunCommand('/deadzoneaffixforge imbue').hover(Text.of('Affix\u306e\u306a\u3044\u88c5\u5099\u306bRare Affix\u3092\u4ed8\u4e0e')))
+  p.tell(Text.of('\u2550\u2550\u2550 旧PDZ AFFIX 移行窓口 \u2550\u2550\u2550').gold())
+  p.tell(Text.of('新規装備のAffix・解体・再抽選はMine & Slashへ統一されました。').gray())
+  p.tell(Text.of('[ 旧装備を解体 / LEGACY DISMANTLE ]').red().clickRunCommand('/deadzoneaffixforge salvage').hover(Text.of('PDZAffixが残る旧テスト装備のみ解体します')))
 }
 
 BlockEvents.rightClicked('kubejs:affix_workbench', event => {
@@ -32,6 +33,7 @@ ServerEvents.commandRegistry(event=>{
   }))
   root.then(Commands.literal('reroll').executes(ctx=>{
     let p=ctx.source.player,s=p.mainHandItem,d=dz2Data(s)
+    if(!PDZ_LEGACY_AFFIX_FORGE_ENABLED){p.tell(Text.of('旧PDZ Affixの再抽選は停止しました。Mine & Slash設備を使用してください。').yellow());return 0}
     if(!d){p.tell(Text.of('Hold equipment with an Affix.').red());return 0}
     let q=d.getString('quality'),id=PDZ_AFFIX_SCRAP[q],cost=PDZ_AFFIX_COST[q]||2
     if(pdzAffixCount(p,id)<cost){p.tell(Text.of('Required: '+id+' x'+cost).red());return 0}
@@ -40,6 +42,7 @@ ServerEvents.commandRegistry(event=>{
   }))
   root.then(Commands.literal('imbue').executes(ctx=>{
     let p=ctx.source.player,s=p.mainHandItem,id=PDZ_AFFIX_SCRAP.rare
+    if(!PDZ_LEGACY_AFFIX_FORGE_ENABLED){p.tell(Text.of('旧PDZ Affixの新規付与は停止しました。Mine & Slash設備を使用してください。').yellow());return 0}
     if(!dz2Category(s)){p.tell(Text.of('Hold supported equipment.').red());return 0}
     if(dz2Data(s)){p.tell(Text.of('This equipment already has an Affix.').yellow());return 0}
     if(pdzAffixCount(p,id)<3){p.tell(Text.of('Rare Affix Core x3 required.').red());return 0}

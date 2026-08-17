@@ -8,13 +8,13 @@ const DZ2_STRING = Java.loadClass("net.minecraft.nbt.StringTag")
 const DZ2_COMPOUND = Java.loadClass("net.minecraft.nbt.CompoundTag")
 const DZ2_UUID = Java.loadClass("java.util.UUID")
 
-// Mine and Slash migration mode: existing PDZ rolls still work, while newly
-// dropped or crafted equipment is left for Mine and Slash to generate.
-// Mine and Slash only converts items that it recognises as a base gear type.
-// The pack contains many MCreator/custom equipment items (Infectious, Survival
-// Instinct, Apocalypse Now, etc.), so those items need the PDZ compatibility
-// roll or they would have neither system.  Native M&S gear is left untouched.
-const DZ2_AUTO_ROLL_ENABLED = true
+// Mine and Slash is the only source of truth for newly generated equipment.
+// Existing PDZAffix NBT is still read temporarily so old test-world equipment
+// does not lose its effects before it is replaced or salvaged, but this script
+// must never create another legacy roll.  Mine and Weapons supplies M&S gear
+// slots for TaCZ and the other supported weapon mods.
+const DZ2_AUTO_ROLL_ENABLED = false
+const DZ2_LEGACY_REROLL_ENABLED = false
 
 function dz2MnsRequiredLevel(player) {
   let tier=0
@@ -210,10 +210,6 @@ function dz2WriteDisplay(stack, data) {
   let category = data.getString("category")
   let lore = new DZ2_LIST()
   lore.add(DZ2_STRING.valueOf(dz2Json("[ " + q.jp + " ]", q.color)))
-  let rootForReq=dz2Root(stack,false)
-  if (rootForReq && rootForReq.contains("PDZMnsRequiredLevel")) {
-    lore.add(DZ2_STRING.valueOf(dz2Json("Mine and Slash Lv " + rootForReq.getInt("PDZMnsRequiredLevel") + " 必要", "yellow")))
-  }
   let displayTraits=(DZ2_TRAITS[category] || []).slice()
   if (category === "armor") {
     displayTraits=displayTraits.concat(DZ2_TRAITS.armor_head || [], DZ2_TRAITS.armor_chest || [], DZ2_TRAITS.armor_legs || [], DZ2_TRAITS.armor_feet || [])
@@ -332,6 +328,10 @@ function dz2GuaranteedQuality(player,stack) {
 ItemEvents.rightClicked("kubejs:affix_calibrator",event=>{
   let player=event.player
   if(!player||player.level.clientSide)return
+  if(!DZ2_LEGACY_REROLL_ENABLED){
+    player.tell(Text.of("この旧Affix校正器は廃止されました。装備強化・解体はMine & Slash設備を使用してください。").yellow())
+    event.cancel();return
+  }
   let target=player.offHandItem
   if(!dz2Category(target)){
     player.tell(Text.of("オフ手に銃・近接武器・工具・防具を持ってください。").red())
@@ -532,8 +532,9 @@ EntityEvents.hurt(event => {
   if (id.indexOf("zombie")>=0 || id.indexOf("infect")>=0 || id.indexOf("walker")>=0) mult+=data.getDouble("infected")
   try { if (target.getArmorValue()>0) mult+=data.getDouble("armor_break") } catch (ignored) {}
   if (dz2IsGun(stack)) {
-    try { if (target.getArmorValue()>0) mult+=data.getDouble("armored") } catch (ignored) {}
-    if (data.getString("talent") === "focused_fire") mult+=0.06
+    // Firearm Affix damage is folded into TaCZ's pre-damage event by the
+    // firearms runtime. Returning here prevents a second direct HP subtraction.
+    return
   } else if (data.getString("category") === "melee") {
     if (data.getString("talent") === "breacher") { try { if (target.getArmorValue()>0) mult+=0.12 } catch (ignored) {} }
     if (data.getString("talent") === "crowd_control" && id.indexOf("zombie")>=0) mult+=0.15
@@ -572,6 +573,7 @@ ServerEvents.commandRegistry(event => {
   ;["common","uncommon","rare","epic","legendary"].forEach(quality => {
     root.then(Commands.literal("roll_"+quality).executes(ctx => {
       let p=ctx.source.player, stack=p.mainHandItem
+      if (!DZ2_LEGACY_REROLL_ENABLED) { p.tell(Text.of("旧PDZ Affixの新規付与は停止済みです。M&S統合コマンドを使用してください。").yellow()); return 0 }
       if (!dz2Category(stack)) { p.tell(Text.of("Affix対応装備をメインハンドに持ってね。").red()); return 0 }
       let oldRoot=dz2Root(stack,true)
       if (oldRoot) oldRoot.remove("PDZAffix")
@@ -582,6 +584,7 @@ ServerEvents.commandRegistry(event => {
   })
   root.then(Commands.literal("test_respiration").executes(ctx => {
     let p=ctx.source.player, stack=p.mainHandItem
+    if (!DZ2_LEGACY_REROLL_ENABLED) { p.tell(Text.of("旧PDZ Affixテストは停止済みです。").yellow()); return 0 }
     if (!stack || stack.isEmpty() || !stack.hasTag("minecraft:head_armor")) {
       p.tell(Text.of("頭装備をメインハンドに持って実行してください。").red())
       return 0
@@ -597,6 +600,7 @@ ServerEvents.commandRegistry(event => {
   }))
   root.then(Commands.literal("test_armor_utility").executes(ctx => {
     let p=ctx.source.player, stack=p.mainHandItem, trait=null, label=null
+    if (!DZ2_LEGACY_REROLL_ENABLED) { p.tell(Text.of("旧PDZ Affixテストは停止済みです。").yellow()); return 0 }
     if (!stack || stack.isEmpty()) return 0
     if (stack.hasTag("minecraft:head_armor")) { trait="respiration"; label="水中活動" }
     else if (stack.hasTag("minecraft:chest_armor")) { trait="last_defense"; label="緊急防護システム" }
@@ -617,6 +621,7 @@ ServerEvents.commandRegistry(event => {
   }))
   root.then(Commands.literal("test_self_repair").executes(ctx => {
     let p=ctx.source.player, stack=p.mainHandItem
+    if (!DZ2_LEGACY_REROLL_ENABLED) { p.tell(Text.of("旧PDZ Affixテストは停止済みです。").yellow()); return 0 }
     if (!stack || stack.isEmpty() || !stack.isDamageableItem() || !dz2Category(stack)) {
       p.tell(Text.of("耐久値を持つAffix対応装備をメインハンドに持ってください。").red())
       return 0
