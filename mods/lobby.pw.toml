@@ -1,0 +1,13 @@
+name = "Lobby, Fishing and Mining Dimension"
+filename = "lobby_1.20.1-8.0.0.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "de67dce715236c83d0e4a2e706172432e9435ac3"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 4658699
+project-id = 567798

@@ -1,4 +1,4 @@
-// PROJECT DEADZONE original soundtrack v0.1
+// PROJECT DEADZONE cinematic soundtrack test v0.2
 // Ambience Mini 2.7.x
 
 playlist menu = [
@@ -8,6 +8,29 @@ playlist menu = [
 playlist settlement = [
   "settlement_last_light.ogg" <-4.0>
 ];
+
+// Location themes deliberately reuse the accepted cinematic set for this
+// first integration pass. They can be replaced one by one without changing
+// the server-side detection logic.
+playlist camp_theme = [ "theme_camp_last_light.ogg" <-4.5> ];
+playlist survivor_theme = [ "theme_survivor_open_road.ogg" <-5.0> ];
+playlist cdf_theme = [ "theme_cdf_watchline.ogg" <-5.0> ];
+playlist raider_theme = [ "theme_raider_rust_and_dust.ogg" <-4.5> ];
+playlist remnant_theme = [ "theme_remnant_iron_memory.ogg" <-5.0> ];
+playlist aegis_theme = [ "theme_aegis_cold_glass.ogg" <-5.0> ];
+playlist warden_theme = [ "theme_warden_machine_vigil.ogg" <-5.0> ];
+playlist infected_theme = [ "theme_infected_hollow_breath.ogg" <-5.0> ];
+
+// Named encounters are short high-priority interruptions. When they end,
+// Ambience Mini resumes the paused location theme instead of starting over.
+playlist named_survivor = [ "combat_better_future.ogg" <-3.5> ];
+playlist named_cdf = [ "named_cdf_brass_vanguard.ogg" <-3.5> ];
+playlist named_raider = [ "named_raider_iron_jackal.ogg" <-3.0> ];
+playlist named_remnant = [ "named_remnant_red_echo.ogg" <-3.0> ];
+playlist named_aegis = [ "named_aegis_glass_dominion.ogg" <-2.5> ];
+playlist named_warden = [ "named_warden_signal_duel.ogg" <-2.5> ];
+playlist named_infected = [ "boss_determined_pursuit.ogg" <-2.5> ];
+playlist named_unknown = [ "boss_last_stand.ogg" <-2.0> ];
 
 playlist city = [
   "city_empty_windows.ogg" <-5.0>,
@@ -39,11 +62,16 @@ playlist night = [
 ];
 
 playlist combat = [
-  "combat_contact.ogg" <-3.0>
+  "combat_contact.ogg" <-3.0>,
+  "combat_heavy_battle.ogg" <-3.0>,
+  "combat_better_future.ogg" <-3.0>,
+  "combat_orchestral_assault.ogg" <-3.5>
 ];
 
 playlist boss = [
-  "boss_red_protocol.ogg" <-2.0>
+  "boss_red_protocol.ogg" <-2.0>,
+  "boss_determined_pursuit.ogg" <-2.5>,
+  "boss_last_stand.ogg" <-2.0>
 ];
 
 playlist daylight = city ++ wild;
@@ -57,9 +85,30 @@ begin
   begin
     when ( @dead ) play instant [ ];
 
-    // Threat music always wins over location music.
+    // Named threats override everything, but do not hard-cut. A lower
+    // priority location track is paused and resumes after the threat leaves.
+    when ( any effect in $effects has effect == "project_deadzone:music_named_survivor" end ) play named_survivor priority 6;
+    when ( any effect in $effects has effect == "project_deadzone:music_named_cdf" end ) play named_cdf priority 6;
+    when ( any effect in $effects has effect == "project_deadzone:music_named_raider" end ) play named_raider priority 6;
+    when ( any effect in $effects has effect == "project_deadzone:music_named_remnant" end ) play named_remnant priority 6;
+    when ( any effect in $effects has effect == "project_deadzone:music_named_aegis" end ) play named_aegis priority 6;
+    when ( any effect in $effects has effect == "project_deadzone:music_named_warden" end ) play named_warden priority 6;
+    when ( any effect in $effects has effect == "project_deadzone:music_named_infected" end ) play named_infected priority 6;
+    when ( any effect in $effects has effect == "project_deadzone:music_named_unknown" end ) play named_unknown priority 6;
+
+    // Generic threat music wins over location music.
     when ( @boss_fight ) play boss priority 5;
     when ( @in_combat ) play combat priority 4;
+
+    // Per-player location states supplied by the PDZ server bridge.
+    when ( any effect in $effects has effect == "project_deadzone:music_camp" end ) play camp_theme priority 1;
+    when ( any effect in $effects has effect == "project_deadzone:music_survivor" end ) play survivor_theme priority 1;
+    when ( any effect in $effects has effect == "project_deadzone:music_cdf" end ) play cdf_theme priority 1;
+    when ( any effect in $effects has effect == "project_deadzone:music_raider" end ) play raider_theme priority 1;
+    when ( any effect in $effects has effect == "project_deadzone:music_remnant" end ) play remnant_theme priority 1;
+    when ( any effect in $effects has effect == "project_deadzone:music_aegis" end ) play aegis_theme priority 1;
+    when ( any effect in $effects has effect == "project_deadzone:music_warden" end ) play warden_theme priority 1;
+    when ( any effect in $effects has effect == "project_deadzone:music_infected" end ) play infected_theme priority 1;
 
     // Player-state takes priority over the surrounding biome.
     interrupt when ( @under_water ) play ocean;

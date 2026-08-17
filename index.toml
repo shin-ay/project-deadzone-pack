@@ -13,72 +13,148 @@ file = "README_R4_JP.txt"
 hash = "02ba75b4b3c779b214882951c1e163c93c262c8b4c2566af7acc9c2d1fc0c943"
 
 [[files]]
+file = "ambience_music/CREDITS_AND_LICENSES.txt"
+hash = "338e4f22304284d891e3500c5c91f1569d7f6e51927b83eb17f1bf8a29b81431"
+
+[[files]]
 file = "ambience_music/PDZ_BGM_ALL.m3u8"
-hash = "9c9b87707b2eef35a9f498a31ea16dba3af9cf0b0e9eb2a5cc3495bbe6aeeaa6"
+hash = "211c17a9031680a9418de36fdb865577314d59d09b0338679fae740b4ae05d11"
 
 [[files]]
 file = "ambience_music/PDZ_BGM_README.txt"
-hash = "cd75e069b10a827dbe25fab0b81c505c2caf7a3a8bdb30e5b5a2cac966e426f9"
+hash = "8ca3d18c1f3b7aee6f05cdc28d45b8ef9419fa1b79233aa61d2ebae6abfc9d2f"
+
+[[files]]
+file = "ambience_music/music/boss_determined_pursuit.ogg"
+hash = "3d400fd1d0b884d3fe01759220dfbf18ded11c3d78b99076032790dbb7e10649"
+
+[[files]]
+file = "ambience_music/music/boss_last_stand.ogg"
+hash = "5b68c9d35dafaa5107f215abf5500683f420017786070a1dc935a4e480c0a301"
 
 [[files]]
 file = "ambience_music/music/boss_red_protocol.ogg"
-hash = "b56223be69e4e5390cf5ae4259a2721e34f3918ac64d286f99a98087da608edb"
+hash = "6262ed7e107ebfe92bfdfe0585d62de32d5e502b7551279c24ae9e23c4ab2af3"
 
 [[files]]
 file = "ambience_music/music/city_broken_signal.ogg"
-hash = "36b60c01b8a82dda2a84ba3c9e47c87602c5ce20774b35f11137c2a1b4b3f253"
+hash = "01f4009ef48d8311e8ec17bae20de472f7a24737ba6e1593bf5cfa44f34d6092"
 
 [[files]]
 file = "ambience_music/music/city_empty_windows.ogg"
-hash = "29504325cc8f5a520751a0e3915fb39129ca960dfaa02882570efda4e7f70987"
+hash = "fd965cf5f214ed3f5e39edc2c2c7eccaba46fa9a16b441355bc3f86cd3ac92ee"
+
+[[files]]
+file = "ambience_music/music/combat_better_future.ogg"
+hash = "8b66721ad86c20dc5f4e688e79bef2d183a80240039d02efd96d85f1a4a2dd3f"
 
 [[files]]
 file = "ambience_music/music/combat_contact.ogg"
-hash = "f06f06b84e6165427508969e4cde7d38c61a8ce740f104ee9f7702552c53d5dc"
+hash = "26ab397a81ea3cfc9cc5468191281f370e15d52522da5860ccb5de839bcbbcaf"
+
+[[files]]
+file = "ambience_music/music/combat_heavy_battle.ogg"
+hash = "d9e148809be8e148bec966801f379c56aa4dc4a5bdda8af8f5dcc2ef1090c19c"
+
+[[files]]
+file = "ambience_music/music/combat_orchestral_assault.ogg"
+hash = "3c97809c153529591522e64c2e382d9b18817906fce4d0f33f8b3f83a05d4e6d"
 
 [[files]]
 file = "ambience_music/music/desert_dustline.ogg"
-hash = "4a52f18900aad10826c911f0dd081176806b9175d22727516b6a87df8964b728"
+hash = "4baf5e76f0d1a4f0910103da331bd38deabcb2bf3193e5c636feac3b00799d53"
 
 [[files]]
 file = "ambience_music/music/menu_dead_signal.ogg"
-hash = "55473808a1ed64102007bd934e3350cc245683569eca9ea53c1a43efa4b3e164"
+hash = "e32f5a4443c82ed50b387f4fe9be9d0722badf1731ae8f440fac2a2d46a90779"
+
+[[files]]
+file = "ambience_music/music/named_aegis_glass_dominion.ogg"
+hash = "0d10ba731d7522fa1960f3ad9115a86140179609e63f6e4dffce2040b19ff292"
+
+[[files]]
+file = "ambience_music/music/named_cdf_brass_vanguard.ogg"
+hash = "6792652405af8bc98ec7e6df226567d2ab8023110139b6be82a9ba82455fe2d9"
+
+[[files]]
+file = "ambience_music/music/named_raider_iron_jackal.ogg"
+hash = "e722a4a8583fed89c86f3ca56c346a0e0465893bb1f30fe8f9f33eb8c57a7810"
+
+[[files]]
+file = "ambience_music/music/named_remnant_red_echo.ogg"
+hash = "e3d3c0339c895a8cf828ff19bfabdaa87ca782af89a60172bfa927353ff05028"
+
+[[files]]
+file = "ambience_music/music/named_warden_signal_duel.ogg"
+hash = "000c767a6643357dde074851038ce9c42d48d588f81be5e2f7436b3556c057e5"
 
 [[files]]
 file = "ambience_music/music/night_watch.ogg"
-hash = "48c00de04f397734a7dcd29678e71bc4c5216d71f2ff39e69d3ba652ab153ea5"
+hash = "b0902473c680009acbf7a562219fe9cfad812c00413531e250c6523154bc66e9"
 
 [[files]]
 file = "ambience_music/music/ocean_cold_horizon.ogg"
-hash = "e29d550647df927e72ac46e12f4886cc79ac92ddf41d7ce493b2315741da72e1"
+hash = "c6c84c58d62686f1245e7f9bf8851490c634bc888005fba438cb0e3fa6eb6a65"
 
 [[files]]
 file = "ambience_music/music/settlement_last_light.ogg"
-hash = "6479dab62d7dfd5edc9ea321fe42bdc0a38a00324744bc129dfe180eb43e18ae"
+hash = "c482b2b81a0ee367d1498424acffd7b9420478d0a719a653ad0fd1e8f3ae9177"
+
+[[files]]
+file = "ambience_music/music/theme_aegis_cold_glass.ogg"
+hash = "e756ad9bdcc18b7ca43e9b66d82985061a72d4d0afc586ac0a2d9506edbe4ea6"
+
+[[files]]
+file = "ambience_music/music/theme_camp_last_light.ogg"
+hash = "7cee4c7ff2ce6c88d732ab394865bf01840d292ccfa77f86aea2c8468aa39d6e"
+
+[[files]]
+file = "ambience_music/music/theme_cdf_watchline.ogg"
+hash = "92665c046df054aab1f0a5d35e191d6823518dc44de72e63a9b96f2eaef35f78"
+
+[[files]]
+file = "ambience_music/music/theme_infected_hollow_breath.ogg"
+hash = "448654f54d5b05ff4340b08782336b8c4a10f4fd16a159733db0fa2719148a4e"
+
+[[files]]
+file = "ambience_music/music/theme_raider_rust_and_dust.ogg"
+hash = "7e542af6b89aaed8d54fde69f01ccbfcf5ccc5ed5a51d0a98541692844ff4ff8"
+
+[[files]]
+file = "ambience_music/music/theme_remnant_iron_memory.ogg"
+hash = "e1b95fed736095106c806280cd7624c9a8172d547e6a4b802ab41fcf8c817dd9"
+
+[[files]]
+file = "ambience_music/music/theme_survivor_open_road.ogg"
+hash = "de0d02f14f62e00eedfbb3adaf7eb0cd26706c17c11f71523d961b22ec3031b5"
+
+[[files]]
+file = "ambience_music/music/theme_warden_machine_vigil.ogg"
+hash = "60deef3ecfdffdf69307a78b8b79b13bcf76c4a1142c1c07c322e92514289a75"
 
 [[files]]
 file = "ambience_music/music/underground_below_grid.ogg"
-hash = "bf5a4bcbae0519652b936da71bc5e501b679b2926ea7702234b9aa3e94f0d9dc"
+hash = "90ed99ce15559c485d9d776868d070d23c7b25ca257bed58160bd479cbe4efde"
 
 [[files]]
 file = "ambience_music/music/wild_after_rain.ogg"
-hash = "03be1aa426430e967f55936f3c1beecdda5c7761ef3820ca4fddf0eb1e924baf"
+hash = "9fb1161d2f22df112ec77627ffa61259fa4d8c59951a473a5ada150e25055408"
 
 [[files]]
 file = "ambience_music/music/wild_long_road.ogg"
-hash = "fe54758161195eb7e9e2db47be2210f061d31f2aacf6ea0db70781b792ab4619"
+hash = "a73d6b4af69de70a3f73092d24aed2bb5545d1cdcd4ee769c408f77c3f6d1fb9"
 
 [[files]]
 file = "ambience_music/music_config.txt"
-hash = "f2ef071191a88a7976820b4f8e1c2fe36e4a88de7c618aa722517e443381bfd8"
+hash = "b707c9277f3a450fd3401ae36b79bfc398b488008d0a3cce52f6981dc1b2f238"
 
 [[files]]
 file = "ambience_music/music_config_production.txt"
-hash = "f2ef071191a88a7976820b4f8e1c2fe36e4a88de7c618aa722517e443381bfd8"
+hash = "b707c9277f3a450fd3401ae36b79bfc398b488008d0a3cce52f6981dc1b2f238"
 
 [[files]]
 file = "ambience_music/music_config_test_all.txt"
-hash = "068f062ad1d2627e584e37dc83fafc846533fbe58667d985a150b87c720376f8"
+hash = "d7fc8c79eaee08ac4eb4f685c9fe7547ea4aa5c3ec5b31fcd8d34a59abb41f60"
 
 [[files]]
 file = "config/Apocalypse Now Config.toml"
@@ -1631,6 +1707,10 @@ hash = "13e99a09053a05f141a4318928db0d284cf99ea8f29ecb1a18cde59a18e83176"
 [[files]]
 file = "config/lithostitched.json"
 hash = "d8a63933ec4757186a594debea59dd35724a0a895fe601b324f96217c28312df"
+
+[[files]]
+file = "config/lobby-common.toml"
+hash = "b8dbe80cd933ca1052ee97787bba306c71604aeedca3620d0e7d1b135a5b988c"
 
 [[files]]
 file = "config/lootbeams-client.toml"
@@ -5377,6 +5457,10 @@ file = "kubejs/data/lostcities/lostcities/scattered/gasstation1.json"
 hash = "3204e5162ac62e64d0beee569ef80d0f5505242e49f5f81bd2493f043dfaf65e"
 
 [[files]]
+file = "kubejs/data/minecraft/tags/functions/load.json"
+hash = "79121fe5ce90604178dfd276feb3078679180996add6efb3729baa1cb3b87330"
+
+[[files]]
 file = "kubejs/data/minecraft/tags/worldgen/biome/has_structure/village_desert.json"
 hash = "bef4d172fc1bfb34d342e79090726c4a0c272dd404783c3ea022b992e0e0415e"
 
@@ -6931,6 +7015,14 @@ hash = "4179d77096d3224c625eab70bceb838634e17ef6dbe6ea85f2823342673511cb"
 [[files]]
 file = "kubejs/data/project_deadzone/functions/factions/test/spawn_roles.mcfunction"
 hash = "615a09690d19e1374cc8d23a4ec63e53e64d41204abd9961e92e3d56d0ccaeee"
+
+[[files]]
+file = "kubejs/data/project_deadzone/functions/lobby/schedule_setup.mcfunction"
+hash = "a891cd6f2ffcdbb3bd3afaeda7646f0f76661dd91049b9967d25caaa2fce5271"
+
+[[files]]
+file = "kubejs/data/project_deadzone/functions/lobby/setup.mcfunction"
+hash = "d9f02d093aff3f60dbaea8052783ff87bff9923682b06dab7cda940b09a2c703"
 
 [[files]]
 file = "kubejs/data/project_deadzone/functions/settlement/locate_guide.mcfunction"
@@ -9253,6 +9345,11 @@ metafile = true
 [[files]]
 file = "mods/lithostitched.pw.toml"
 hash = "1d623ba29fcb52d5db733af383a13273792ac3dc1ac7a8f9e3f58a17ae1bc2c7"
+metafile = true
+
+[[files]]
+file = "mods/lobby.pw.toml"
+hash = "8c963a6e769bbef40b27bcf56b29a26c9957076082c50f44d340634b334d4679"
 metafile = true
 
 [[files]]

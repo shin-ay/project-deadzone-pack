@@ -13,7 +13,25 @@ playlist all_tracks = [
   "underground_below_grid.ogg" <0.5>,
   "night_watch.ogg" <0.5>,
   "combat_contact.ogg" <0.5>,
-  "boss_red_protocol.ogg" <0.5>
+  "combat_heavy_battle.ogg" <0.5>,
+  "combat_better_future.ogg" <0.5>,
+  "combat_orchestral_assault.ogg" <0.5>,
+  "boss_red_protocol.ogg" <0.5>,
+  "boss_determined_pursuit.ogg" <0.5>,
+  "boss_last_stand.ogg" <0.5>,
+  "theme_camp_last_light.ogg" <0.5>,
+  "theme_survivor_open_road.ogg" <0.5>,
+  "theme_cdf_watchline.ogg" <0.5>,
+  "theme_raider_rust_and_dust.ogg" <0.5>,
+  "theme_remnant_iron_memory.ogg" <0.5>,
+  "theme_aegis_cold_glass.ogg" <0.5>,
+  "theme_warden_machine_vigil.ogg" <0.5>,
+  "theme_infected_hollow_breath.ogg" <0.5>,
+  "named_cdf_brass_vanguard.ogg" <0.5>,
+  "named_raider_iron_jackal.ogg" <0.5>,
+  "named_remnant_red_echo.ogg" <0.5>,
+  "named_aegis_glass_dominion.ogg" <0.5>,
+  "named_warden_signal_duel.ogg" <0.5>
 ];
 
 begin

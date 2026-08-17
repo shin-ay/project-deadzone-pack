@@ -1,25 +1,53 @@
 #EXTM3U
-#EXTINF:58,PROJECT DEADZONE - Dead Signal
+#EXTINF:-1,PROJECT DEADZONE v2 - The World Fell Silent (Menu)
 music/menu_dead_signal.ogg
-#EXTINF:68,PROJECT DEADZONE - Last Light
+#EXTINF:-1,PROJECT DEADZONE v2 - Outpost (Settlement)
 music/settlement_last_light.ogg
-#EXTINF:72,PROJECT DEADZONE - Empty Windows
+#EXTINF:-1,PROJECT DEADZONE v2 - Post-Apocalyptic Afternoon (City)
 music/city_empty_windows.ogg
-#EXTINF:70,PROJECT DEADZONE - Broken Signal
+#EXTINF:-1,PROJECT DEADZONE v2 - The World Fell Silent (Ruined City)
 music/city_broken_signal.ogg
-#EXTINF:74,PROJECT DEADZONE - Long Road
+#EXTINF:-1,PROJECT DEADZONE v2 - Post-Apocalyptic Morning (Wild)
 music/wild_long_road.ogg
-#EXTINF:72,PROJECT DEADZONE - After Rain
+#EXTINF:-1,PROJECT DEADZONE v2 - Dirty Rain
 music/wild_after_rain.ogg
-#EXTINF:70,PROJECT DEADZONE - Dustline
+#EXTINF:-1,PROJECT DEADZONE v2 - Dustline
 music/desert_dustline.ogg
-#EXTINF:76,PROJECT DEADZONE - Cold Horizon
+#EXTINF:-1,PROJECT DEADZONE v2 - Cold Horizon
 music/ocean_cold_horizon.ogg
-#EXTINF:72,PROJECT DEADZONE - Below Grid
+#EXTINF:-1,PROJECT DEADZONE v2 - Below Grid
 music/underground_below_grid.ogg
-#EXTINF:72,PROJECT DEADZONE - Night Watch
+#EXTINF:-1,PROJECT DEADZONE v2 - Post-Apocalyptic Night
 music/night_watch.ogg
-#EXTINF:52,PROJECT DEADZONE - Contact
+#EXTINF:-1,PROJECT DEADZONE v2 - Unchained Destiny (Combat)
 music/combat_contact.ogg
-#EXTINF:58,PROJECT DEADZONE - Red Protocol
+#EXTINF:-1,PROJECT DEADZONE v2 - Heavy Battle
+music/combat_heavy_battle.ogg
+#EXTINF:-1,PROJECT DEADZONE v2 - Fight for Better Future
+music/combat_better_future.ogg
+#EXTINF:-1,PROJECT DEADZONE v2 - Hope / Orchestral Assault
+music/combat_orchestral_assault.ogg
+#EXTINF:-1,PROJECT DEADZONE v2 - Red Protocol / Metal Boss
 music/boss_red_protocol.ogg
+#EXTINF:-1,PROJECT DEADZONE v2 - Determined Pursuit / Orchestral Boss
+music/boss_determined_pursuit.ogg
+#EXTINF:-1,PROJECT DEADZONE v2 - Last Stand / Rock Boss
+music/boss_last_stand.ogg
+music/theme_camp_last_light.ogg
+music/theme_survivor_open_road.ogg
+music/theme_cdf_watchline.ogg
+music/theme_raider_rust_and_dust.ogg
+music/theme_remnant_iron_memory.ogg
+music/theme_aegis_cold_glass.ogg
+music/theme_warden_machine_vigil.ogg
+music/theme_infected_hollow_breath.ogg
+#EXTINF:-1,PROJECT DEADZONE v0.5 - CDF / Brass Vanguard
+music/named_cdf_brass_vanguard.ogg
+#EXTINF:-1,PROJECT DEADZONE v0.5 - Ash Jackals / Iron Jackal
+music/named_raider_iron_jackal.ogg
+#EXTINF:-1,PROJECT DEADZONE v0.5 - Remnant / Red Echo
+music/named_remnant_red_echo.ogg
+#EXTINF:-1,PROJECT DEADZONE v0.5 - Aegis / Glass Dominion
+music/named_aegis_glass_dominion.ogg
+#EXTINF:-1,PROJECT DEADZONE v0.5 - Warden / Signal Duel
+music/named_warden_signal_duel.ogg

@@ -1,0 +1,54 @@
+# PROJECT DEADZONE onboarding lobby
+# Lobby, Fishing and Mining Dimension 8.0.0
+
+[Commands]
+	generalCommandCoolDown = 10
+	generalDefaultToLobby = false
+	generalDefaultToLobbyOnce = true
+	generalDefaultToLobbyAlways = false
+
+[Teleport]
+	teleportDelayEnabled = true
+	teleportDelayCounterVisible = true
+	teleportDelayCounter = 5
+
+["Default Dimension"]
+	defaultEnabled = true
+	defaultDimension = "minecraft:overworld"
+	defaultDimensionName = "Survivor Camp"
+	defaultCommandName = "spawn"
+	defaultCommandPermissionLevel = 0
+	defaultRestrictCommand = false
+	defaultUseCustomSpawnPoint = false
+	defaultFireProtection = 100
+	defaultFallProtection = 100
+	defaultHeal = 20
+	defaultSpawnPointX = 0
+	defaultSpawnPointY = 64
+	defaultSpawnPointZ = 0
+
+["Lobby Dimension"]
+	lobbyEnabled = true
+	lobbyDimension = "lobby:lobby_dimension"
+	lobbyDimensionName = "PROJECT DEADZONE Intake"
+	lobbyCommandName = "lobby"
+	lobbyCommandPermissionLevel = 0
+	lobbyRestrictCommand = false
+	lobbyDisableMobSpawning = true
+	lobbyUseCustomSpawnPoint = true
+	lobbySpawnPointX = 9
+	lobbySpawnPointY = 11
+	lobbySpawnPointZ = 9
+	lobbyBuilderList = [""]
+
+["Mining Dimension"]
+	miningEnabled = false
+
+["Fishing Dimension"]
+	fishingEnabled = false
+
+["Gaming Dimension"]
+	gamingEnabled = false
+
+["Void Dimension"]
+	voidEnabled = false

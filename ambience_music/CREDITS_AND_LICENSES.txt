@@ -1,0 +1,65 @@
+PROJECT DEADZONE BGM cinematic test v2
+
+All tracks below are distributed under CC0 / public-domain dedication.
+Attribution is not legally required, but creator names are retained here out of respect.
+
+MintoDog - Post-Apocalyptic Morning, Afternoon and Night
+https://opengameart.org/content/post-apocalyptic-morning-afternoon-and-night
+
+Tsorthan Grove - The World Fell Silent / Outpost / Dirty Rain
+https://opengameart.org/content/the-world-fell-silent
+
+HydroGene - JRPG Epic Rock Battle Theme #1
+https://opengameart.org/content/jrpg-epic-rock-battle-theme-1
+
+MintoDog - Heavy Battle 2
+https://opengameart.org/content/heavy-battle-2
+
+nene - Fight for Better Future [Rock/Metal]
+https://opengameart.org/content/fight-for-better-future-rockmetal
+
+nene - Boss Battle #6 Metal
+https://opengameart.org/content/boss-battle-6-metal
+
+nene - Unchained Destiny [Rock]
+https://opengameart.org/content/unchained-destiny-rock
+
+MintoDog - Hope (Orchestral battle music)
+https://opengameart.org/content/hopeorchestral-battle-music
+
+Emma_MA - Determined Pursuit (epic orchestra loop)
+https://opengameart.org/content/determined-pursuit-epic-orchestra-loop
+
+Audio was volume-normalized and transcoded to Ogg Vorbis for PROJECT DEADZONE.
+PDZ adaptive faction masters (v0.3)
+-----------------------------------
+The files named theme_*.ogg are alternate masters derived from the credited
+v0.2 source tracks below. They add transition-safe fades and faction-specific
+spectral mastering; the original track authors and licences remain unchanged.
+
+PDZ combat revision v0.4
+------------------------
+combat_heavy_battle.ogg repairs two beat-sized catches in the CC0 Heavy Battle 2
+source with short equal-power edits.
+combat_orchestral_assault.ogg is a slower, longer rearrangement of the CC0 Hope
+and Determined Pursuit sources with a quiet Dirty Rain ambience layer. All
+source creators and links are listed above.
+
+PDZ named faction masters v0.5
+------------------------------
+The following five long-form encounter masters are derived from CC0 sources.
+They were normalised, spectrally mastered, given transition-safe fades and, for
+the Raider and Remnant cues, arranged as multi-source suites.
+
+QaziJamJam - Orchestral Battle Theme (Aegis: Glass Dominion)
+https://opengameart.org/content/qazijamjam-orchestral-battle-theme
+
+Alex McCulloch - CyberShaman (Warden: Signal Duel)
+https://opengameart.org/content/cybershaman
+
+War Theme (CDF: Brass Vanguard)
+https://opengameart.org/content/war-theme
+
+Raider: Iron Jackal uses the already credited JRPG Epic Rock, Boss Battle #6
+Metal and Heavy Battle sources. Remnant: Red Echo uses the already credited
+Fight for Better Future, Unchained Destiny and Determined Pursuit sources.
