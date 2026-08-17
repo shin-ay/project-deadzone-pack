@@ -231,7 +231,7 @@
 				"選択した勢力との契約が成立し、AEGIS研究坑道へ至る手段を確保した。"
 				"他勢力の依頼はサブクエストとして残るため、マルチでも取り返しはつく。"
 			]
-			icon: "apocalypsenow:badge"
+			icon: "minecraft:deepslate_bricks"
 			id: "30842133D9A8E440"
 			min_required_dependencies: 1
 			shape: "hexagon"

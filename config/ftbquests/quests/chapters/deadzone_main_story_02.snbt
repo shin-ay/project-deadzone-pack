@@ -107,7 +107,7 @@
 				"中継器には北東のRadio Towerへ向けた座標と、最後の避難輸送記録が残されている。"
 				"電力と交換部品を準備して通信塔へ向かう。"
 			]
-			icon: "apocalypsenow:badge"
+			icon: "minecraft:compass"
 			id: "40020680E6A96AF6"
 			subtitle: "失われた通信網の接続先を特定する。"
 			tasks: [{

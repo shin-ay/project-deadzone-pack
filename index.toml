@@ -1106,11 +1106,11 @@ hash = "3be0e5c3d31b6fb22346a844d3a44d9d9f89412dc0023b44499c0f7e1980309c"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/deadzone_main_story_02.snbt"
-hash = "0cc4574579b8d6c48eac7e16ba1465aeb7774660acce4a3aabacb57d93b634d5"
+hash = "17107e85c105986288dc40dd06d772fadbcf4a1567728055980771a51915eb38"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/deadzone_main_story_t2.snbt"
-hash = "9eec22a70a9fde1dc6e0e8a9648cea1e4cb79e85821e8e633425eed563152aa4"
+hash = "5af89edfd82e73a7c4950a5bb1852aeb881d8647f0248f6408676741ce98e94d"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/deadzone_main_story_t3.snbt"
