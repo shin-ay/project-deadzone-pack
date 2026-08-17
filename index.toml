@@ -7662,7 +7662,7 @@ hash = "8b4a73c358882cdf14b1afe6dd96cf35cf8e9cccb992dadd596903d2addeb5c0"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_camp_contracts_v0_1.js"
-hash = "e75ef9a343954d5806a5194eb2bb5805bc8f064ffefb9e7e30a88e6df30669ce"
+hash = "1262e7f2975fd9f055429e24ad79cf48bb6f31072ad554b31cdd23d7a1dbed24"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_camp_shop_rotation_v0_1.js"
