@@ -1,7 +1,7 @@
 // PROJECT DEADZONE regional difficulty rings v0.1
 // Region Tier is geographical. World Tier remains story/recipe progression.
 
-const DZ_REGION_RADII = [192, 700, 1500, 3000]
+const DZ_REGION_RADII = [192, 700, 1500, 3000, 5000, 8000]
 const DZ_SUBURB_LAYOUT = [
   // ChaosZ native 2x3-chunk suburb: houses, gardens, fences and street clutter.
   // Converted to one deterministic vanilla template so it can be used outside
@@ -121,7 +121,7 @@ function dzRegionCampCenter(server) {
 
 function dzRegionTierAt(server, x, z) {
   let camp = dzRegionCampCenter(server)
-  if (!camp) return Math.max(0, Math.min(4,
+  if (!camp) return Math.max(0, Math.min(5,
     server.persistentData.getInt("deadzone_world_tier")))
   let dx = x - camp.x, dz = z - camp.z
   let distance = Math.sqrt(dx * dx + dz * dz)
@@ -129,7 +129,9 @@ function dzRegionTierAt(server, x, z) {
   if (distance <= DZ_REGION_RADII[1]) return 0 // starter suburb
   if (distance <= DZ_REGION_RADII[2]) return 1 // regional town
   if (distance <= DZ_REGION_RADII[3]) return 2 // dense city
-  return 3 // high-risk expedition area
+  if (distance <= DZ_REGION_RADII[4]) return 3 // high-risk expedition area
+  if (distance <= DZ_REGION_RADII[5]) return 4 // endgame frontier
+  return 5 // extreme exclusion zone
 }
 
 function dzRegionName(tier, distance) {

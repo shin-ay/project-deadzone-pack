@@ -2517,10 +2517,6 @@ file = "config/rightclickharvest.json5"
 hash = "6eb5169563472ae96184c94e9f42ff7d76fdba403ed3190ffb308e817ea0a21e"
 
 [[files]]
-file = "config/scaling_mobs/main.toml"
-hash = "b0a9626ef24873bfd14e24b7a7fde48fdee3ba95f1670c5aee0e9f6094df6639"
-
-[[files]]
 file = "config/securitycraft-client.toml"
 hash = "b389265c37589ce6ff1581890fd2c0766b6477e223447a9670ba153008d331e1"
 
@@ -3019,6 +3015,146 @@ hash = "230f9af2a70ed574e5acb04c4c99a7cd0b61cc03b6f6d0735d4bc8cc3d275c51"
 [[files]]
 file = "kubejs/assets/kubejs/textures/item/example_item.png"
 hash = "45a5f56eba6066ad05c70988a32b72c50cfeb6e35857739bd582007011ea002b"
+
+[[files]]
+file = "kubejs/assets/mmorpg/lang/en_us.json"
+hash = "33a631cf321fcc1d4645bb241f6ff6e664853597c8e47362a8075e2dbef8e2f3"
+
+[[files]]
+file = "kubejs/assets/mmorpg/lang/ja_jp.json"
+hash = "b6260d477987f40d474e461fb26af97810674d927cf77369846a268e7125f119"
+
+[[files]]
+file = "kubejs/assets/mmorpg/lang/skills_en_us.json"
+hash = "47507088ae79b2de4634c116321a5e6396738d8dd9dd88d2d96c096b463190f3"
+
+[[files]]
+file = "kubejs/assets/mmorpg/lang/skills_ja_jp.json"
+hash = "025e195f6aa39bf9125d5f8f43c4be16bf9c3e40ee6bc2ddf98e1cadf50c7898"
+
+[[files]]
+file = "kubejs/assets/mmorpg/textures/gui/asc_classes/class/hunter.png"
+hash = "92396f09ed43eb1dd9d3196f7931e22c5b6b1b89a8ab97ba50f8f8d74ebaa152"
+
+[[files]]
+file = "kubejs/assets/mmorpg/textures/gui/asc_classes/class/minstrel.png"
+hash = "835c23acb41869e222bc059924265edd804c22e22ef3518e184b9b364f7096d8"
+
+[[files]]
+file = "kubejs/assets/mmorpg/textures/gui/asc_classes/class/shaman.png"
+hash = "2431e0583a30da98aa9d8a05c4e393aa40eed4ab5071fc72b6a30e49fe041c32"
+
+[[files]]
+file = "kubejs/assets/mmorpg/textures/gui/asc_classes/class/sorcerer.png"
+hash = "bf9919fb3ea75f1694838ced412f4823aa58381841e026d52f259f6bccdf14c0"
+
+[[files]]
+file = "kubejs/assets/mmorpg/textures/gui/asc_classes/class/warlock.png"
+hash = "7b6d232b7be31edbe2660ecd931f4c0f1294ffb1cd0b0c2f2c463f9f240040a9"
+
+[[files]]
+file = "kubejs/assets/mmorpg/textures/gui/asc_classes/class/warrior.png"
+hash = "abca686f5119e3d3342b19447d97b32d78784cc59797ab657afa3fa6e5c654f3"
+
+[[files]]
+file = "kubejs/assets/mmorpg/textures/gui/pdz/job_anomaly_researcher.png"
+hash = "1fe0b94c2f8352e12b0b1446d157199e1177d30b2c7c065ed5cddb71d75e14e2"
+
+[[files]]
+file = "kubejs/assets/mmorpg/textures/gui/pdz/job_engineer.png"
+hash = "099de1663f205ec79140a7e2ec4de3ee0b05adffd21c602861ca10d605468f4a"
+
+[[files]]
+file = "kubejs/assets/mmorpg/textures/gui/pdz/job_mechanic.png"
+hash = "8b80e813e6345a74256ee2a01bb8e03e0f4425d40f9abc517b41537fba8ffc5a"
+
+[[files]]
+file = "kubejs/assets/mmorpg/textures/gui/pdz/job_medic.png"
+hash = "5b58ab60f55b62c256c3994d210ed09e4508dc30d328bb9b2e33956f42466a6d"
+
+[[files]]
+file = "kubejs/assets/mmorpg/textures/gui/pdz/job_scout.png"
+hash = "9dd404a05e30919384195dfc6680069e43ffe6d18d7ae825c25d4627be4d235f"
+
+[[files]]
+file = "kubejs/assets/mmorpg/textures/gui/pdz/job_security.png"
+hash = "fd26ff3d31efdd7154d8d167f3f0797d08ac14db75b41de8fad562d55d2c535d"
+
+[[files]]
+file = "kubejs/assets/mmorpg/textures/gui/pdz/job_survivalist.png"
+hash = "395c1896e391f944780fc043a0c1ee4e8d8894723baa08785857e68a6366da14"
+
+[[files]]
+file = "kubejs/assets/mmorpg/textures/gui/pdz/job_survivor.png"
+hash = "faeb4662f940b38aa44576e51eacfade9cd7629729055607c8170f0f5e9b1f65"
+
+[[files]]
+file = "kubejs/assets/mmorpg/textures/gui/pdz/job_weapons_expert.png"
+hash = "e7716ba0473933396740ed8e17a85e324d8b263ee98caad72120d5704c02ee9b"
+
+[[files]]
+file = "kubejs/assets/mmorpg/textures/gui/pdz/school_anomaly.png"
+hash = "943b37cf5dbcd09a82c92b1da07b1423a9f63d0a590e036adeb35c647fd7c775"
+
+[[files]]
+file = "kubejs/assets/mmorpg/textures/gui/pdz/school_companion.png"
+hash = "351b7ba6b0626adea1dd415ec43539d7959a539bcf932d5ba626ccf1b6e7552a"
+
+[[files]]
+file = "kubejs/assets/mmorpg/textures/gui/pdz/school_engineering.png"
+hash = "60103072aca378d8ef1000e490f1870d41d293c6ef51291589f4d930d0c42423"
+
+[[files]]
+file = "kubejs/assets/mmorpg/textures/gui/pdz/school_firearms.png"
+hash = "6ea6acfee55d22dcba08942bc284b053d69b1df6d21d513664a29bf5162c191d"
+
+[[files]]
+file = "kubejs/assets/mmorpg/textures/gui/pdz/school_medical.png"
+hash = "b2adddc08dbb82fc04234db332d89ed56e6e0d03c612f856f8dd323b7d580f52"
+
+[[files]]
+file = "kubejs/assets/mmorpg/textures/gui/pdz/school_melee.png"
+hash = "1014d3d265ad414509a154f5c61a06f85a9bc4cea009470d0e415918e7456eb6"
+
+[[files]]
+file = "kubejs/assets/mmorpg/textures/gui/pdz/talent_analysis.png"
+hash = "555341bfae50cc094a066a80e056e2fb924e1ed13d625d8e33f42e7a53fe5da2"
+
+[[files]]
+file = "kubejs/assets/mmorpg/textures/gui/pdz/talent_combat.png"
+hash = "086e9a9b0e6c35f275a8d0ff278eb9f6eb74a5645f8f5d99cf50035b2345bec1"
+
+[[files]]
+file = "kubejs/assets/mmorpg/textures/gui/pdz/talent_industry.png"
+hash = "db6bff721f14d441b004d810b8c712ca385894487e1bc8103ae0361bb400cf6a"
+
+[[files]]
+file = "kubejs/assets/mmorpg/textures/gui/pdz/talent_survival.png"
+hash = "0f1f49a8640c5bcaa68b4e2ec152c956ddf7d112b7e666a9d536c544c995eb03"
+
+[[files]]
+file = "kubejs/assets/mmorpg/textures/gui/spells/icons/astral_totem.png"
+hash = "60103072aca378d8ef1000e490f1870d41d293c6ef51291589f4d930d0c42423"
+
+[[files]]
+file = "kubejs/assets/mmorpg/textures/gui/spells/icons/charge.png"
+hash = "1014d3d265ad414509a154f5c61a06f85a9bc4cea009470d0e415918e7456eb6"
+
+[[files]]
+file = "kubejs/assets/mmorpg/textures/gui/spells/icons/healing_aura.png"
+hash = "b2adddc08dbb82fc04234db332d89ed56e6e0d03c612f856f8dd323b7d580f52"
+
+[[files]]
+file = "kubejs/assets/mmorpg/textures/gui/spells/icons/quickdraw.png"
+hash = "6ea6acfee55d22dcba08942bc284b053d69b1df6d21d513664a29bf5162c191d"
+
+[[files]]
+file = "kubejs/assets/mmorpg/textures/gui/spells/icons/summon_spirit_wolf.png"
+hash = "351b7ba6b0626adea1dd415ec43539d7959a539bcf932d5ba626ccf1b6e7552a"
+
+[[files]]
+file = "kubejs/assets/mmorpg/textures/gui/spells/icons/teleport.png"
+hash = "943b37cf5dbcd09a82c92b1da07b1423a9f63d0a590e036adeb35c647fd7c775"
 
 [[files]]
 file = "kubejs/assets/project_deadzone/lang/en_us.json"
@@ -5157,6 +5293,1034 @@ file = "kubejs/data/minecraft/worldgen/structure_set/villages.json"
 hash = "7c815e9a96365cc9ac027fe014652b09a8d52c598b7724b8410ecf70c6d0ff68"
 
 [[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/arcanist_class.json"
+hash = "44ce48420ccdd0c7913660155d966aa53e739ba345995ab5ca89eeb926cf9718"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/arcanist_class_0.json"
+hash = "2ee8daaaf17af42b3b04d465d70b8626713ed6e9ca274cfa6b7505cde7ae8071"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/arcanist_class_1.json"
+hash = "58cd0ba7db2f4cf48cf265f82fe10f5ba9ad5128b13cc33a3496cf506e3db902"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/arcanist_class_2.json"
+hash = "21d042bbd15f08ca38f99fa8464db8999d3d347e5fa1be227b7b5c9a6a7aa511"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/arcanist_class_3.json"
+hash = "0e682e303406d166998f88e4e6a3499c70b52ebd7b1af48a23e930f9c7b5e3ef"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/arcanist_class_4.json"
+hash = "7421fead0189506bcdff3c0f8e9908f1b767c3aebc56b0c35bd8ea41f27d67f4"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/arcanist_class_5.json"
+hash = "7dc54d0c04377e59b02394bc32734cfde6db16830516c6e1c2895ca3c9180bef"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/arcanist_class_6.json"
+hash = "59155228ccc2220b73d230eb98335a90fbb6de56bfe5001ff4287f9ac7c6c80b"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/ascendant_class.json"
+hash = "9925148f09b2343e7bf8670fd827b29bbc7cf2b15e90d6ffa35a2e405fecf299"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/ascendant_class_0.json"
+hash = "b201b83f92bb1369aa4318858d7888006b18b53bc1ff91abce8a7a6fc1ddcb8c"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/ascendant_class_1.json"
+hash = "1f8a55a060057f7d30f120e4d4cee678645f4c7abbc61208cde186b4e2295ee1"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/ascendant_class_2.json"
+hash = "1d973d8116317139e7339680e41c68ad2553f5a77458f7a92d1b24caac0d8757"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/ascendant_class_3.json"
+hash = "115eaf0541581b0252ba20475657ddc335c70598e0bdda9ffd57fbd8bb909db4"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/ascendant_class_4.json"
+hash = "cba2d42946cb92c30c956af2024f18f068dc6542590c4dd0515fc5beb01990ea"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/ascendant_class_5.json"
+hash = "35a6512d247ce079c2d3fa48241ab84e2ff842d2985d83bcd67326fb5e174594"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/ascendant_class_6.json"
+hash = "6d16ffb04fdbba28dc4d54899db6398b3a67467012d4dfa4dec677f6bd5655da"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/assassin_class.json"
+hash = "c37a560a657f7f4841948159ff293891e985c94630b692d37f80dec4bf2e8874"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/assassin_class_0.json"
+hash = "dfe136552bedb87149f4a0d68b837a8245ca243cd1f377cb4b5c5ff679b3f90a"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/assassin_class_1.json"
+hash = "68941dde9a8c4f36cd88803946a5c161ec461e066a041a6dbc95c2f51a3b4d76"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/assassin_class_2.json"
+hash = "6a131c6fe99a3f6d4c404bc36171b9e54d73e671ab7b7d7372a647bdd4493e1e"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/assassin_class_3.json"
+hash = "361b58b17e308d01f3e0301ed0a81e2148204b4f030ef7bbbaa8a3b0881ad32c"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/assassin_class_4.json"
+hash = "a8864b808625f47bc4974743084f2224173f9ac12d9aa02316494ac7c32e7d44"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/assassin_class_5.json"
+hash = "e52cc0cde57ce0c412efc995512bb5abd07ade1bbb7fe91fb067b985e07a1c79"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/assassin_class_6.json"
+hash = "fe680e61d4ef44625f9029286d39833dd68e9936fd07018d76e61ca4c90d463b"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/battlemage_class.json"
+hash = "aff3e443017571fe7b7f87c9af5b401b79ec25efbb1fd799d165103630b09817"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/battlemage_class_0.json"
+hash = "8278471a738937d14cf22e11fe75ff01ec04b0a8e06cfb508b4d056dba2a3bb9"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/battlemage_class_1.json"
+hash = "caa4fbd43a6d462bfc106c764e86125cbcf7324274abccfd7b3aaf1b7e6d4b5b"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/battlemage_class_2.json"
+hash = "a5933627ab9be63c017f5b409fc3fafdb3c343deae1dfde751f3e93aa8a6240a"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/battlemage_class_3.json"
+hash = "f96ce992502845059caef737d03cc6887a3d3b9e913a88cee5bb41a82ebda616"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/battlemage_class_4.json"
+hash = "6721214e45e3f533fcf9202c40cb9ca0b337e21e12f60d8314c00059ed1cb030"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/battlemage_class_5.json"
+hash = "9589562c590e334aa8bc5609cb9007c29148b0ecef351bc7c5f8811bd85b66e4"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/battlemage_class_6.json"
+hash = "e525e3606f40ca4177777960c97193f51f0784e579c1248ab234b0d8678689bf"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/black_hole.json"
+hash = "48ca4561ecad100ad4d198c9fdb7cf31216cd1f1703a26442b4c8d934ca70e61"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/champion_class.json"
+hash = "7bec4a4c5e88a7dccf2a7cda95a404053170a723b5342f9e532c43d37f35376d"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/champion_class_0.json"
+hash = "93a6b1fd4abb9727612c6e35e545c70a3fe5115bef4e44e813bf00313ec55208"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/champion_class_1.json"
+hash = "293d4b90caf47cb2974f061039079e677eb55f2bbb006ea9aaba458bfcb70fb5"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/champion_class_2.json"
+hash = "411db03a06b0d1af960527b2282454b01a985287251973d53ef41630ccbbfb69"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/champion_class_3.json"
+hash = "e4eefa5ccf1226295b78b09d278d2e388a99965060d074cdd55d437a94bcf820"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/champion_class_4.json"
+hash = "875d74ecdeb53470d59449b4d9f78d546cb3f69702be9909c12e93f1f3d04cd8"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/champion_class_5.json"
+hash = "d9b935d5f9fa051a6c315364b953178aeb20c16ffcd97a6f5fb49e20bf8713bf"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/champion_class_6.json"
+hash = "6b5cf6c76bc525d9b236f10a896d8a08d71b162c650b3a564b323f7d4aaf5276"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/charge.json"
+hash = "ce7c0e39e5151fc034ddb53b589707662137220588577e675917efd74b7921d8"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/chieftain_class.json"
+hash = "0c1d5bb4549467b8f2e50dfff5cbe20254f9e07dbd59be99c05b6b98c06f34d7"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/chieftain_class_0.json"
+hash = "9d30f83a9f524413acb8713f2229ad14f416cde8a287a1c225fa0d649f9c7c58"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/chieftain_class_1.json"
+hash = "08d65d27769be03693d2c582567740698e2a08bec8d3f81dcc1a3385b238a42c"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/chieftain_class_2.json"
+hash = "505906b626a4fe82afaa5e146bf10a7e66d1f75f48e99c8b141c897b00ff4f8b"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/chieftain_class_3.json"
+hash = "5dfba0687ed5d08f4ea0da8f070ce611b20f5ffafbc2eecb61916f453012bbdb"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/chieftain_class_4.json"
+hash = "c5accaad85bcdc713d4c87b82fa14d2347c9015e82402500b17299e93667c51c"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/chieftain_class_5.json"
+hash = "8ada39fd0c24e5ae8e6a0a7e7c02a94ed9e1ad4059b12f8933302164925bd452"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/chieftain_class_6.json"
+hash = "a8cf4be5e45649f860e7a07b3f80d974539eab28b7eee8f09154fdbbd45f62be"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/chilling_field.json"
+hash = "b4d4d8975726c639a1c1c4625ffd9f4aea2b0c9f7ce5fc8504d96a9087f19296"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/chilling_touch.json"
+hash = "d13b112a8f9f679a33fb1903ecc421bad0685dd2b0b6b4ad42857e32e596f4af"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/curse_of_agony.json"
+hash = "4456a68900adba5fb941f26cc841b72dbb85be7f2ff731e5548af4b0b4fb59a1"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/curse_of_despair.json"
+hash = "2e7a7e7dad0692d738715870414ff24e4a37493a3e2f11b32340106bc913119f"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/curse_of_weak.json"
+hash = "1b1156e4db42cebc8dbe948a5665bef68756be0e29fb42708acbe597c6eac61a"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/draconic_blood.json"
+hash = "c32cf6e254d660e6fc67efcde426d81b964b53ba84024a5c868e8a83dd2cc3b7"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/elementalist_class.json"
+hash = "ed9066ea5ac142e36b46188a50d8835453ecdd07b844b877ff43dd21b43274f2"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/elementalist_class_0.json"
+hash = "1be9f0874ef3eb67735ba79c38f417e003c0813ab97308bc054d13bc0d64578d"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/elementalist_class_1.json"
+hash = "68d455adfe253e0201c9b288d0cbe256f791111d236a98162979108987ba73d2"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/elementalist_class_2.json"
+hash = "082e22d17cbac5525fd9bea8fc9defaf6ed41a18c6103ae6b12797975c97a4ad"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/elementalist_class_3.json"
+hash = "f816c74beec2bca6f4d3c210c2da011ab7eebe0e22765ee69c1e6c9c4b8c5c80"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/elementalist_class_4.json"
+hash = "719f730610abea52c2355dac22e4de259f60ef24d86ae02b5f63783017328929"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/elementalist_class_5.json"
+hash = "fe1e5acbeb3f656c3385ba4616745673464b408f3dd57cc41ff371de9fc742ee"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/elementalist_class_6.json"
+hash = "add7588e71a494247068024c2556da5717358238b3252a8feff80dab299ea84d"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/entangling_seed.json"
+hash = "2826bc35e0fc1a30966248916782eb8e55b4f02f55225be2509e24a4c3a32c03"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/explosive_arrow.json"
+hash = "43de939e4e6a65a51ebe351eaf411ede117bee5f744c66845038bef8e11268a2"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/fireball.json"
+hash = "260179312146602dc19b3ebf15daba96045602e5f4338234b8171db8a8a3f062"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/frost_lich_armor.json"
+hash = "cc8f3d4797d4dc9186c709e31a2c02fc19ddd2f93c9b3bba3b7d9bbe6eac76b5"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/frost_nova.json"
+hash = "d6a33e42a4d44ae5ceba98b8be90433cae6487c469b7b1a9e1d1bf13f4844825"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/frostball.json"
+hash = "0d74f9c69c10147fa9a7854ee8d895ab7653f793dddbeb657c76f0799de203fe"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/guardian_class.json"
+hash = "00a7c4d707328dfe00cfcb887dfa554ed2b3efb52534e7e64c6b4a17fadc87ce"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/healing_aura.json"
+hash = "6500473d218fa1d63ea441ddd5090142dcc3beeb20d60e18a68965c6020942d9"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/hunter_class.json"
+hash = "143dcf0c8195ecf23c78b169227bc2055bcb283041a448335272c94ac3014d17"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/hunter_class_0.json"
+hash = "a27203c180e79073489c8296b1419d825d61b323a73b3460cca09fe1896fcbac"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/hunter_class_1.json"
+hash = "cef93cc5002b75351c07a1bd0ac3141d2242f494ffbcd71d24b4c13297037cca"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/hunter_class_2.json"
+hash = "994d0c89e40d2d70b67ad022477603d0a35e3571e901b45b93f59e7ae18a450f"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/hunter_class_3.json"
+hash = "8aefbb8589668f664632a6f94fbfa652c064a2e475991ebe3fed6795e6341e02"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/hunter_class_4.json"
+hash = "3b08b522c8741f28250b7b5f8035e7a64b3e6923f46ab52938dbe5d4c6eab850"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/hunter_class_5.json"
+hash = "bf063c487161a90acf0f5ab81595313d337efe752e7510150bbf3f4ba8bd64a6"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/hunter_class_6.json"
+hash = "02646b4e9e47271467b3be131b11076e4ae3205591c1a3b07dd65e51f458c141"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/jester_class.json"
+hash = "c76ed0e000f1146ca8b2e68585320f31c495567a4411a6910a7483faaebf2b52"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/lich_class.json"
+hash = "ad2eeaffb55ce8f217eaff80c6f46a2483334b873b88949a180b2b201bad085e"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/lightning_totem.json"
+hash = "ff2b215a93dedb9559a870a3a36937023879c5ab1b07d031608341bbf3b1553e"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/mage_circle.json"
+hash = "86cee6db77534128739f34fd8ce0353215c2dd1303254f2bb09fe131946457b5"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/meteor.json"
+hash = "89abb315fa6e16a1c03844f4624547ae2bb44207cc98ecfd25e833b30057d1b8"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/necromancer_class.json"
+hash = "b42593118ca298a8b6c281c6c436f994330a2bca5d98225256ff2d3f7ce8ab37"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/p_armor_pen.json"
+hash = "2b458fe0e5f6cffaaf61f0fab284ef247760f23d611de64a35d8c23f343b3522"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/p_armor_per_mana.json"
+hash = "0c8b255103f3517979ce18eccc8a41ce2cb6c17c58ab52c4940b4f4f6ff728c2"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/p_aura_effect.json"
+hash = "68b06eae27279a8c0ea61394e6f3e72b81c022b356d4b726d419f8020a998e12"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/p_block_chance.json"
+hash = "ea52f72996235ddcf10bd59dcd5cf99ec9362d3fb729aab604039c16d777471c"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/p_burn_chance.json"
+hash = "f64ab9179e00434080ee8198bc1a1680d45b65c1d3d1b1a2e00dfa89637b3bf7"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/p_cast_speed_sorc.json"
+hash = "98d355c6de9ed83156ff3f6354cd4b4d160bb4adbcd49c1dd76acf4a41fc46ba"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/p_cast_speed_wl.json"
+hash = "5ba6ecddaa1702cd61cb305513bf9fe6416754bfe3b073c383d6e7cc287d9e51"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/p_cdr.json"
+hash = "50c3f117ebdfdeb07ebec4c2432545e514498b6e0f82275c9b0f3d522a9d1c72"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/p_crit_dmg.json"
+hash = "faf43edcb81fd9d63d90a0ff80fc5cd716185aa94dd15e0a99757cfb13c5f0df"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/p_crit_hit.json"
+hash = "f9d22f6075d3017876a1341a66fe79969d6e1680d8cbf5ed6cedfcb54424ff0c"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/p_damage_received.json"
+hash = "4ea4420ce16f99c50b64fcf1713c199f526f3b337129e3c242ee2daa33b6ecfa"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/p_dmg_to_cursed.json"
+hash = "66397bffdc9c05663818457f266730bf191a71fc6adea2364b335124019a77b8"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/p_dodge.json"
+hash = "0c9aeffd6a43a69bff6bdde96ad43b99c4b9564059ba7761bc086d8a46f9bf9c"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/p_dot_dmg.json"
+hash = "6f70a0e5b0a183b5729515b47bb72428afda12367af615e36403f8fe0f186111"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/p_dot_lifesteal.json"
+hash = "6ffd9af9337eab90034ce8f63435103ca6b41368d7d75d8304ffbf6e2bb3b17a"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/p_ele_pen.json"
+hash = "fa8e95f2374903cebea8ab11fdfd28d6d033caa2ca4b0daa1161d6da917294ae"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/p_ele_res.json"
+hash = "7dec216770cdd5b1046f3526aa9515ddf9ce8dd805a749ca3070dabf89f483f4"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/p_electrify_chance.json"
+hash = "a9d50b06de9c1d49ec44b97b4e1f1e24df41cb05109e67fd6ba083d82035a1fe"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/p_ene_regen.json"
+hash = "b6e519059be7cc0563a04d1679d22beb5eb3e3d3db35d0a64c10364c9e190163"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/p_freeze_chance.json"
+hash = "2d42a0372e2238473e54b9a1079d68513fd1c5cccf310591c02ea7733cc0056c"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/p_heal_str.json"
+hash = "1932048c9c363df2dd216527549efe8421b0313f0f71091537ff647759fbb4c4"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/p_heal_to_spell.json"
+hash = "1669a0c81a71102fca300cd9659e19bca4102855122d3711f1f6634d6d5edb6f"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/p_health_mins.json"
+hash = "44095f24b81ef7a36727f74e307fee058051bb8d11fd14d341b11698ef2db29f"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/p_health_regen.json"
+hash = "d46a373c233b0a3cb4c226922c3c0e38dbea21fa6a506dcc6499c9924d1975bd"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/p_health_sha.json"
+hash = "dd1157789a18338e173219e0226a096f5794654c3eca3464006f9ca9ebbc1d36"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/p_health_war.json"
+hash = "65611302c341324bf65e54459ee709dfaee032e2b5260aeef96f584af1b0107a"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/p_inc_aoe.json"
+hash = "e1877b9013f5ba3ffae788619d44b78f3651592cf68f934cd8e9b32f58d4a549"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/p_lifesteal.json"
+hash = "20a820a9e8e2b8c015b0eda38fabefc91c257ff40c24cde06f1ff57d7cc59551"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/p_lightning_ele.json"
+hash = "248288dcf6ed9f831cc1ba9ff7cbf42c9876cfc919d76e88d84ffdf1c236ffed"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/p_low_hp_heal.json"
+hash = "44b98301ec05b0e41097a093aa5155c981d2963ee5f9320a6b525dc4b1131045"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/p_magic_shield_regen.json"
+hash = "451d7359e887fc01b4951871d6ce5aa1bce088509b90d1e2b189476cd87a94cd"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/p_mana_cost.json"
+hash = "b0d032b6d659fb3b06059142c6adc07148632d5d708ed61afa08866ef25bd665"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/p_mana_regen.json"
+hash = "832a8d41d5c0c228637847d960403787b6b08137dd640b3ad846b4dfd5213877"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/p_mana_sha.json"
+hash = "8760ccd2181bea3ea1d140f351e401bf1a0e4a6ec52af9b5b7fdd960eef94408"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/p_poison_chance.json"
+hash = "d7d11317637c45821c138e72c53701ff57f4dd196c9d9c4fd12f53a321494850"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/p_poison_duration.json"
+hash = "649ab804048815d9467421457f0579cf657562f3a241972ad6bad86d50f8ab6e"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/p_proj_dmg.json"
+hash = "9a6420b25d9040bf34ccaba04b26a6c6b641a19a91e113fdfddc5ba7e49c5d4f"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/p_proj_spd.json"
+hash = "6620331170f41a6de4e26a2b894b842ce3eb4d55011503adfbe777a36dab9857"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/p_song_duration.json"
+hash = "7d95ec5c358e9c1366b16da981026ad439ffe670d655c5140d3234a32a36efd0"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/p_spell_dmg.json"
+hash = "64d176550186baf2888dbffea91383698b72370c515ddcebc3c0f43d555f4c44"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/p_spell_lifesteal.json"
+hash = "f3a1796ce812a1abb91b036cbc4319c378db80419ddc1398e7256fd3d32e89fa"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/p_totem_cdr.json"
+hash = "65941ff8e53f081138094a77420c15409d0646cc083fdb74385bd06d45c877e8"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/p_totem_dmg.json"
+hash = "46614ff7d336827273318eec8db4a0a618e1dbf5bf4b7533a773aadc049ab8a9"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/p_trap_cdr.json"
+hash = "d5355968c8d5d9c440deb78faf2ff12acaab789bee110986163b07803664da44"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/p_trap_dmg.json"
+hash = "bc1f8f31e1e33ee28f80d2e5ae728f7d2d14d53b48bab169311a59c61a7be84b"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/pdz_analysis_ailment.json"
+hash = "f787488cefa09f785b2d517fad5a8070daac0f2976af34b43d19a16fdf13e899"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/pdz_analysis_ailment_notable.json"
+hash = "a1394d7b22b268302638e02bee06a992d87bb7797c6d3cce5306339b6e0fadf0"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/pdz_analysis_corrosion.json"
+hash = "3e9dd7fcffb25904bb594afb607c7a0ff247d1dcff385529f777a587f816c438"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/pdz_analysis_corrosion_notable.json"
+hash = "5e57aac6c3b8b3ed2d44a11b90ef015328502e31c941f955ace3298f44c60179"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/pdz_analysis_cryo.json"
+hash = "432d24d1a597940dd25206394b45d64f773804d4ddfe625dad0c8c3e258080f0"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/pdz_analysis_cryo_notable.json"
+hash = "57d1fb80315d318247832c3e4f5d3671090d887938f28ce28e63570be80efbb9"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/pdz_analysis_shield.json"
+hash = "e8d70c4193e054fef63acd5d24b2f791e93b382c071587a0bda68e2f01c02513"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/pdz_analysis_shield_notable.json"
+hash = "73320c6cb990fae6e6f323d6e588ba223f51b467738aac69d2fb6959a0289bf1"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/pdz_analysis_shock.json"
+hash = "4b34576dc59023680d32875cd5aae3d7d1be851ccfdffc779b105a9fe94dc281"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/pdz_analysis_shock_notable.json"
+hash = "6aeb587b53c5b21c24043a41e1e57a4fec071986458da0d9f2e58565aa5d4825"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/pdz_analysis_thermal.json"
+hash = "c0190a5379d71095b341864626f8f07d8d60f5e3a4963266154d8e1280ad72ca"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/pdz_analysis_thermal_notable.json"
+hash = "bcc8a7697136350d80f1efacb311c00a66558df4610fdb24c6dc01c3792eef20"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/pdz_combat_ballistics.json"
+hash = "e76b7d09dfdce3fae2ae18b45edfb5560992c6295f81acb46b46de1f854862ca"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/pdz_combat_ballistics_notable.json"
+hash = "c10084c7d7bba2dfa14f128d727d4ccad2cacf4d0e12509555e5e914ddc626fe"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/pdz_combat_critical.json"
+hash = "898cb0582f0555cd2d70b2af7e080c800c5f72d18f5dc3313fc55361a4cfe7d4"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/pdz_combat_critical_notable.json"
+hash = "502ab41cff4936e4b00742168339fadf409ad9c65d0ab16a77d0ffdf9e206721"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/pdz_combat_endurance.json"
+hash = "8661d75aaa3321458fe446baf25586d03c63ab2c0da5b2b698a68b750920a687"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/pdz_combat_endurance_notable.json"
+hash = "5e3bc5d60b87e8d891371e7e56c350c79a72f0edef47be907117e87377222c9c"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/pdz_combat_firepower.json"
+hash = "8090278381c9f34df1ca252e18eb48f114cff2a60939e1c35d0bf18c83397fdf"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/pdz_combat_firepower_notable.json"
+hash = "bc6f140af917130d317bee4890da39bcfe38187cef05c94de830a464bfd70736"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/pdz_combat_penetration.json"
+hash = "2bb7738742d8a667face7e60e92cc118753e29576cbc5debf443a3608ba45440"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/pdz_combat_penetration_notable.json"
+hash = "b3c4ca6f9c2c6f00fcd6d56054c0469f11076e5b1aefbc530a525ed395d82507"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/pdz_combat_recovery.json"
+hash = "d5b42400dcf60700b6ce5676cfb707c2fb6d06ce5456a554e2a3d1de3f86a57e"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/pdz_combat_recovery_notable.json"
+hash = "71fe85c06efedf7db73ca7e0b0dd7d63bf0384de27c9d69cb7108409c8b722d9"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/pdz_industry_automation.json"
+hash = "1153f786582bd51461ceebf748eb893be5acc45a40337af2b7a943d8c7106402"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/pdz_industry_automation_notable.json"
+hash = "f35f029174b60a7ea5457a61e8398dd1b582c5653da9fdd59ca3c42b834b6bba"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/pdz_industry_efficiency.json"
+hash = "b502a068ae5be1bedcc4ff62570a7b48916f7d7ffd69064a96dea7dc306c49ba"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/pdz_industry_efficiency_notable.json"
+hash = "78fa1b8dc1910a5ebbd850f3b4fbb7671414aeabe368ead351fa872c9e45ce16"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/pdz_industry_logistics.json"
+hash = "2ba7947478e9ef9769ce4ffb8f82a070c024525efac647f571b4999d7c926a09"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/pdz_industry_logistics_notable.json"
+hash = "fdc98cf28805c5ad9731c5aba0ff4c0a99514fd7d5d599cc5b6018cc9ec1aaf6"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/pdz_industry_maintenance.json"
+hash = "4a1c5db06db90e2644e19ff22af2563552ef035dbd9024e690cd73a6db67cb48"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/pdz_industry_maintenance_notable.json"
+hash = "fe018268ad43d753670f5277bbb74a761a8705ada6b67d8cc7a11b6e484edba5"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/pdz_industry_processing.json"
+hash = "b419e859a1e8625b3387cc5808ae7362cd623f792c2a4b2066aade3e5eb48f8b"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/pdz_industry_processing_notable.json"
+hash = "888d5724d855e80e352167f7ca71af60f26f863729e3d98f65ed35c9aed4ef75"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/pdz_industry_salvage.json"
+hash = "80771b9dba585841eb95ad186bff69d1455ad6d5d937e6804777f242c2fa0037"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/pdz_industry_salvage_notable.json"
+hash = "bb7447f19cb4f01dbf34be31595cff66a4c8c56339b485737d64f8ca0284cb32"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/pdz_keystone_anomaly_core.json"
+hash = "a781376624f8a74f893738bd424a7831cd8d73f12448905e99e6ef91cf4b5958"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/pdz_keystone_assault_doctrine.json"
+hash = "71f4a0c40d751dbf8de5582e696103368788f439ec3a6510e6f48b1b461014c7"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/pdz_keystone_field_foundry.json"
+hash = "0093edfde2a3edc8b22da1571ec14bb3dfb9675cd892c6337ea5eb2fbc9f648d"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/pdz_keystone_last_survivor.json"
+hash = "07a561ba8de3771f038adef7d85af0249488b3770fb3f3dc72a99b489317711b"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/pdz_keystone_self_sufficient.json"
+hash = "afb391f3d3bbfd357fe50cd37f9a9eabfdf3c9bb6ba899a60a3f9c64ab826213"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/pdz_life_cooking.json"
+hash = "bd910dd1d2f98d4852f94d045e4ccc9e097987c009f258c63951eb4ba27fedf1"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/pdz_life_cooking_notable.json"
+hash = "7384fa2781b154e4c2da47d12314841d7f9b689d66e26a384add62a2209fe89c"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/pdz_life_farming.json"
+hash = "a19c87e877b818db100447c2f28295cc73acd206f45635881a0ff5d0d6cf87d6"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/pdz_life_farming_notable.json"
+hash = "11aad0e91c8437585fe8400c596d17e3e65539c6e9096d47961695a16ce2735d"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/pdz_life_fishing.json"
+hash = "2cfc9cc941bf8a8d0977d2fb559155aab60cfa225a33ac705ddd9912db4fdaaf"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/pdz_life_fishing_notable.json"
+hash = "097034e5f26435161534c41962fe1995c1b45fd4721ff4881ec4f1eae214452b"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/pdz_life_hunting.json"
+hash = "592ebeb151e99d44972c436ece8f529b0328c6f4e6a9fe5db3a1aac10307b589"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/pdz_life_hunting_notable.json"
+hash = "f8f584c23ae1550b0e40f934a4a72e655ab8158e7707027ba7653aa08621fb4f"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/pdz_life_rarecatch.json"
+hash = "eec6bd3dd840771d13cdfb5b04fb532169499acb28c8da75e43c0cba5243253b"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/pdz_life_rarecatch_notable.json"
+hash = "cc8f1dcc9d22ed1783b738cc206479a146a3535ed20547e7a6a74bf1fd0ddac4"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/pdz_life_seedkeeping.json"
+hash = "982ab4b299fd88f8fd35b6d411dc1328604233ce0a88a2dff9a3bb9afc04e4ff"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/pdz_life_seedkeeping_notable.json"
+hash = "c5d59fa7181ac7a7a59490df65c4d682f4dee8b12e4d6dea74a9e37f6c153f2e"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/pdz_start_analysis.json"
+hash = "d8d1ca20d8b57f5dfe13670ba1440463b506f98e51da90f423ac76833674d2e0"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/pdz_start_combat.json"
+hash = "90fe434445c42f292fe55f70293059c1d09949d0c743f59050f9bdb60d4fb1a9"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/pdz_start_industry.json"
+hash = "84fc2c371b3590c41257f24752a27d94f3c456e887b92f823f965259e9a2f41b"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/pdz_start_survival.json"
+hash = "aff509b4ffd59542660784923e0e8b6abf57a77cf4bae32935002cbed474eaae"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/pdz_survival_health.json"
+hash = "71cbc939de9867ad1615d2c26e656eba1dd06d221f3a453a237f21f75dedd0e0"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/pdz_survival_health_notable.json"
+hash = "2c861658f8565b3da738f6b05a3b6cb425a0bb07a57f84234cc4d267eab7e507"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/pdz_survival_mobility.json"
+hash = "b2c563acf93df24181f4bb9cd27ce8a3f3a729eb71705f655b223c0adf0b1884"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/pdz_survival_mobility_notable.json"
+hash = "e4addfa596e59c2376aac1e3acf2d9c103ba552f3afa43e8fd0da8111d4ec9ac"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/pdz_survival_recovery.json"
+hash = "51a14187fbfc30918839267ce98d8a1ec608d0289a8d0cac2c72726672a67e1d"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/pdz_survival_recovery_notable.json"
+hash = "72a75b9747e3233a92d391676f8dffcbf3c81fe99613144dfe307b9b99e91a30"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/pdz_survival_resistance.json"
+hash = "5f6c88eec13eb64877e775ee077ebce5a329a77fbc56533f79884e20fc53cea8"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/pdz_survival_resistance_notable.json"
+hash = "d2e49605496b6f713eb8256d312193e518521492dc3580bc9684c91328d64dc0"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/pdz_survival_scavenge.json"
+hash = "df3d120f29015b2885f90292a0713697b60a350786fc1094c7adbf03b8996ef7"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/pdz_survival_scavenge_notable.json"
+hash = "f704a8c08dd5627572e73ace07cb8871c634ecf156cb196cd7c8cbdb27532073"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/pdz_survival_treasure.json"
+hash = "c445d46ec21cbe370dfc249df51cf8a94f945afa34db62bced00df7a01f0ccf4"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/pdz_survival_treasure_notable.json"
+hash = "7e1e8df266191b8a80cb7e4c884d73ddb01b8a204a7f575acbc2c09b96fe1832"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/poison_ball.json"
+hash = "1c6da6d99d6f81496401f4803c37218bf37ef19784245be2478f0cd431a716a8"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/poison_cloud.json"
+hash = "6e1d2060d73a69b989c590fc5245570816f19bff6e8620e1ebbdb1a8e3dedfbd"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/quickdraw.json"
+hash = "b25f32cd95d99f8e64f33ff726b6ff9aee072c3f48dd25f1484ded0015a70235"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/raider_class.json"
+hash = "263b3c43c2e4a7b151995554fbfc5052d012b375755d47fcd70089fd67f400f5"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/raider_class_0.json"
+hash = "95d80eb612319bf083f3da6da8d294efd680adc4171f654f4f976ec773610353"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/raider_class_1.json"
+hash = "072eb756a32d83a69cd8a085b1ded747c86dd2097a7af456946ed77d424d41d8"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/raider_class_2.json"
+hash = "fc497579e1c8b8b15eb25569c9aca7faed1ff5e3268a17ac3a0ec2ee2082d93a"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/raider_class_3.json"
+hash = "04fb444a1e031441412c847354f8728197a5814d2e6aa461c782a1d4cfb1b109"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/raider_class_4.json"
+hash = "919e014127397d8efdfe3a21782fef75b80b792a331287dbd378c297d0122cba"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/raider_class_5.json"
+hash = "1a7a7bde127853cd668e0a740601c7452df426578517c1728a1dbd6224a99a39"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/raider_class_6.json"
+hash = "43362f7b9cf88725ca666ec14761b5f1253a636270b3d5a600a2264bb83b2497"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/refresh.json"
+hash = "7c6b3f2f84b756b30cc59194b4f7bb72ad87459227980bad37a8c6e930f0cdd3"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/rejuv_totem.json"
+hash = "a9989585f6701822d87d52ff048e42136ef700894181c2237c2719de24cc77d5"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/smoke_bomb.json"
+hash = "0dd2b936d1a7e362770e738ec7b32c066f3853ea9773ca649856def6cba08f9a"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/song_of_perseverance.json"
+hash = "8130809f3805ebf5c0a59ce0213d0128babca6c25239e399b541a673fb19baef"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/taunt.json"
+hash = "96e95f3e1e6cad48c283283714eb3e670489a2f9d3dc579d74374147d50eeb06"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/teleport.json"
+hash = "ed2767476728be8442220aa611252752209a742134a142cb0dae0d2a73e05314"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/trickster_class.json"
+hash = "f011f1b1b162ba8fde864412eb4345d1be019e5dbbaafbbfaf23561d64ec3f4b"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/undying_will.json"
+hash = "18f568e6ac4096ecb9d29249aa8428c581aa4a792906b0954ad0c4feae4457ee"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_perk/wish.json"
+hash = "c5c1a78cd6fc8587c75a7300778bd912b0e06a50c38a5ab82d89ee97e2474f91"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_spell_school/hunter.json"
+hash = "529026fc8a2caa93696ae5770e50052fddc2cca10d6dfd008c2f6d93f43ddcb2"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_spell_school/minstrel.json"
+hash = "2795c4b699f59c86ec87b2fafae0d167b405bf326fdf9027f9ea497bf6b149d1"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_spell_school/shaman.json"
+hash = "620cb5120539aa79e0672929d9ad859322ff0cb85348196235522a755e324ba4"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_spell_school/sorcerer.json"
+hash = "61c9ce7ffaef5412de29aa1b399b7ef92975698c4e27eedddb4dfffe822ca6c4"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_spell_school/warlock.json"
+hash = "7b26ee8e79d25a814f79bc741bfc16183e2991487e968859c55d57093e6bc035"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_spell_school/warrior.json"
+hash = "c78456b21fd8bc045885c2f49bc46a545c75cee7c2840ce47fcf4bdf7ceada62"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_spells/black_hole.json"
+hash = "b96082613e1f6ccb1ee7f2562b24ba177d04b22d24c4ba2e75a3c6c4b4bfdcc0"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_spells/charge.json"
+hash = "b7f8d99fa5aa3ea85d9a89b446a0c329a035b327782aed1d2205ee714bce4ffc"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_spells/chilling_field.json"
+hash = "0018dc52af86f8d59499325e83c8778156da75b611f6c6987a33e654a5bd8e03"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_spells/chilling_touch.json"
+hash = "a6c6e0058abf57545753651cda0dba01111e87eda6b370754d2938b76868cc6c"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_spells/curse_of_agony.json"
+hash = "9af117fda1d4504aad92c3f43f323927510d134984b39bfb909c27e949eaf27d"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_spells/curse_of_despair.json"
+hash = "6d8f0085f7b33d54ac62825a360ebdee39c9392cd29fb88c94edb86665d1ca94"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_spells/curse_of_weak.json"
+hash = "63bbb7610253725137c3c4fa3d4ef98c3c6640e23e5e60e661610ec6ad6f033d"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_spells/draconic_blood.json"
+hash = "8d8fe07a43c0b6a2dc8f2566296476c594c75e0d8b4b4a76fc49e637b3d67b17"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_spells/entangling_seed.json"
+hash = "dfdfc70282d2b9e3b70ff93efa6247ac3f87e9e10ba0bceda8ce882e08de8897"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_spells/explosive_arrow.json"
+hash = "da8918f96f8de46ef4ab2bfead5785e1261a38b4d0a2f49cba5a7bba5a86789e"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_spells/fireball.json"
+hash = "a42b697d69ba4e3b8708ff16aeac58a252475ba28c9e45596aeb04af3390ed47"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_spells/frost_lich_armor.json"
+hash = "1cc946ffea4bbdf465d75d7669c735ac7b0104a313fe4154cea0bda69bf80378"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_spells/frost_nova.json"
+hash = "f7fbb79e9fae505878aa19dee0c9c8e9221164683f07fe269fcb3c8eb52b2e65"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_spells/frostball.json"
+hash = "85eedd806795d4a17f13f3775f6593bcb95ff4413f31c397da294017525b1899"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_spells/healing_aura.json"
+hash = "ee5de61b3e5d3593b57c1545a524aa51f713cc31b554f86cb4224d54ef27f581"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_spells/lightning_totem.json"
+hash = "f0a490f9ad17327c0dac964834bf541e56a170eb7ebbeb201102f45c49d86c22"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_spells/mage_circle.json"
+hash = "4a086a5ce197acf03011f9d240abe0579f9292a19b93ee1fd94173240e37ccdf"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_spells/meteor.json"
+hash = "acac62ebdf66f704ff2e3695dc2187f0365c3af53d4dead2cc8334fc57c710bc"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_spells/poison_ball.json"
+hash = "9b548b89509a36c0dcd8331b0944638dec50cc9f3e7152c4d0a2d0648081ef45"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_spells/poison_cloud.json"
+hash = "dac068a5745d946ec05daae8c9ec8b26a322e1ab6ce83964067b24a0067b884b"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_spells/quickdraw.json"
+hash = "029c57284914bf2fcd914ac2f5ce0745cf0eedc4e0870cfde0781f48c8d26f52"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_spells/refresh.json"
+hash = "a3d79c3fda2d8a23cb320a0191e1d1b0d1621f9395dde712d07f25771fc08efd"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_spells/rejuv_totem.json"
+hash = "94f5a064f8d7de979e1886937cf3ecb8c305cbd79356951219fa7ce3ec882c56"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_spells/smoke_bomb.json"
+hash = "9100a58fc73b1e53182af1b66bccf9db2b4e28f75da2054a377763410c14b81a"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_spells/song_of_perseverance.json"
+hash = "d606c392a165e0395bb12820d418e3daf12cbf47b776ce87bd52dca5084e1a9e"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_spells/taunt.json"
+hash = "bf86267e1285950330b4e1c3454f94f335ebe68d81c9c36a4518c0b5abbcb5db"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_spells/teleport.json"
+hash = "c9b3831c95c18a650e55af95a0c4071d062493e21dfd43772ff6602fad98bece"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_spells/undying_will.json"
+hash = "1e4cb9bd461181dccce6a23d4e89c4235cceb69c9a78eae87594fa6f4c740a9a"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_spells/wish.json"
+hash = "4fb391f24504ba379d8ce9c64b7fa59ee4232587b00a0fca4636887db11cb687"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_talent_tree/ascendancy.json"
+hash = "92765256bc172996d33f510c51cd8da0b83748901006c688f9a1cd92b1ee05ce"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_talent_tree/talents.json"
+hash = "6fff04278bda46242d3323c07e2ffcdd15008f5fa1c61c564a51a772ea840690"
+
+[[files]]
 file = "kubejs/data/project_deadzone/bosses/hulking_infected.json"
 hash = "c88ce388f3d485594d3c2991460f89e4977afa3a7b82279c812f4a911d351820"
 
@@ -6417,6 +7581,14 @@ file = "kubejs/data/project_deadzone/tags/worldgen/biome/no_apn_standalone.json"
 hash = "bef4d172fc1bfb34d342e79090726c4a0c272dd404783c3ea022b992e0e0415e"
 
 [[files]]
+file = "kubejs/data/scalinghealth/sh_mechanics/difficulty.json"
+hash = "be0387572b68c9da4b26ae482dc72c516e62f3bbbbf5e966cfd5e1876dd2e30a"
+
+[[files]]
+file = "kubejs/data/scalinghealth/sh_mechanics/mobs.json"
+hash = "3da3e06581e14a3099fc10f1eb949fcb66fbd28343ff042e862f7b6050248a06"
+
+[[files]]
 file = "kubejs/data/underground_bunkers/worldgen/template_pool/underground_bunker/underground_bunker_start.json"
 hash = "4038ce6c33a3aab94de8a97d0c9b6dbb3da9268906825a537eddb8cd20ff2e35"
 
@@ -6666,7 +7838,7 @@ hash = "7715f008309a8b7b7c198ad3b7d7ea08acb7c21fcf44ef0fa3be29bc34a8aa52"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_region_tiers_v0_1.js"
-hash = "1472f24255449db2befc52220041a17653b0ec6865efec53216e3eb39c9d26f6"
+hash = "e4828d011f9acc08c35ddfe1afdb91e6a398bfc7922a1feeaf4dbc0b32d55697"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_ruunit_population_v0_1.js"
@@ -6778,7 +7950,7 @@ hash = "c1af7038ed72272a4926be48b48151cf795c710b7f3b37e746bffa785383e5d1"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_world_evolution_v0_1.js"
-hash = "b64952e09b580bf2f337f52612ff795782d0783a52b1af42be98ad1fb47b36ff"
+hash = "e9f8820c1192ef7888d5090a70bc53c9ff8c7a558ae27ac75fc3d1be4bfb19c2"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_world_loot_v0_1.js"
@@ -8305,8 +9477,8 @@ hash = "54f341a4422dbcdfda0c981bdd5eb51e418dfc82418e7f376d43cb3503337695"
 metafile = true
 
 [[files]]
-file = "mods/scaling-mobs.pw.toml"
-hash = "b6555f0ae902c7bc6012f76053eaf8cd97750e9a8e5ff4b83c28f7cb13e26687"
+file = "mods/scaling-health.pw.toml"
+hash = "6f90db52e02fbb0129053fbf94a0c3fde4e889272f9e0ddfc99a10985aee4fd3"
 metafile = true
 
 [[files]]
@@ -8346,6 +9518,11 @@ metafile = true
 [[files]]
 file = "mods/shelf-mod.pw.toml"
 hash = "3b3a48fe8038d61a67c4cdc4e0a3cbeca8582d81e4c000c386c3bb0fc1cbd967"
+metafile = true
+
+[[files]]
+file = "mods/silent-lib.pw.toml"
+hash = "7f281333e1c573bc3673446c291d82f3137bfc7de6a5256d61417f67be7b40bc"
 metafile = true
 
 [[files]]
@@ -16110,1171 +17287,3 @@ metafile = true
 file = "sildurs-vibrant-shaders.pw.toml"
 hash = "f9c48453be6131136ef987aa56b95e11c6ec3813ea997a84b6b0f231eacb8d37"
 metafile = true
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/arcanist_class.json"
-hash = "44ce48420ccdd0c7913660155d966aa53e739ba345995ab5ca89eeb926cf9718"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/arcanist_class_0.json"
-hash = "2ee8daaaf17af42b3b04d465d70b8626713ed6e9ca274cfa6b7505cde7ae8071"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/arcanist_class_1.json"
-hash = "58cd0ba7db2f4cf48cf265f82fe10f5ba9ad5128b13cc33a3496cf506e3db902"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/arcanist_class_2.json"
-hash = "21d042bbd15f08ca38f99fa8464db8999d3d347e5fa1be227b7b5c9a6a7aa511"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/arcanist_class_3.json"
-hash = "0e682e303406d166998f88e4e6a3499c70b52ebd7b1af48a23e930f9c7b5e3ef"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/arcanist_class_4.json"
-hash = "7421fead0189506bcdff3c0f8e9908f1b767c3aebc56b0c35bd8ea41f27d67f4"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/arcanist_class_5.json"
-hash = "7dc54d0c04377e59b02394bc32734cfde6db16830516c6e1c2895ca3c9180bef"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/arcanist_class_6.json"
-hash = "59155228ccc2220b73d230eb98335a90fbb6de56bfe5001ff4287f9ac7c6c80b"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/ascendant_class.json"
-hash = "9925148f09b2343e7bf8670fd827b29bbc7cf2b15e90d6ffa35a2e405fecf299"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/ascendant_class_0.json"
-hash = "b201b83f92bb1369aa4318858d7888006b18b53bc1ff91abce8a7a6fc1ddcb8c"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/ascendant_class_1.json"
-hash = "1f8a55a060057f7d30f120e4d4cee678645f4c7abbc61208cde186b4e2295ee1"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/ascendant_class_2.json"
-hash = "1d973d8116317139e7339680e41c68ad2553f5a77458f7a92d1b24caac0d8757"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/ascendant_class_3.json"
-hash = "115eaf0541581b0252ba20475657ddc335c70598e0bdda9ffd57fbd8bb909db4"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/ascendant_class_4.json"
-hash = "cba2d42946cb92c30c956af2024f18f068dc6542590c4dd0515fc5beb01990ea"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/ascendant_class_5.json"
-hash = "35a6512d247ce079c2d3fa48241ab84e2ff842d2985d83bcd67326fb5e174594"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/ascendant_class_6.json"
-hash = "6d16ffb04fdbba28dc4d54899db6398b3a67467012d4dfa4dec677f6bd5655da"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/assassin_class.json"
-hash = "c37a560a657f7f4841948159ff293891e985c94630b692d37f80dec4bf2e8874"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/assassin_class_0.json"
-hash = "dfe136552bedb87149f4a0d68b837a8245ca243cd1f377cb4b5c5ff679b3f90a"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/assassin_class_1.json"
-hash = "68941dde9a8c4f36cd88803946a5c161ec461e066a041a6dbc95c2f51a3b4d76"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/assassin_class_2.json"
-hash = "6a131c6fe99a3f6d4c404bc36171b9e54d73e671ab7b7d7372a647bdd4493e1e"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/assassin_class_3.json"
-hash = "361b58b17e308d01f3e0301ed0a81e2148204b4f030ef7bbbaa8a3b0881ad32c"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/assassin_class_4.json"
-hash = "a8864b808625f47bc4974743084f2224173f9ac12d9aa02316494ac7c32e7d44"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/assassin_class_5.json"
-hash = "e52cc0cde57ce0c412efc995512bb5abd07ade1bbb7fe91fb067b985e07a1c79"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/assassin_class_6.json"
-hash = "fe680e61d4ef44625f9029286d39833dd68e9936fd07018d76e61ca4c90d463b"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/battlemage_class.json"
-hash = "aff3e443017571fe7b7f87c9af5b401b79ec25efbb1fd799d165103630b09817"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/battlemage_class_0.json"
-hash = "8278471a738937d14cf22e11fe75ff01ec04b0a8e06cfb508b4d056dba2a3bb9"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/battlemage_class_1.json"
-hash = "caa4fbd43a6d462bfc106c764e86125cbcf7324274abccfd7b3aaf1b7e6d4b5b"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/battlemage_class_2.json"
-hash = "a5933627ab9be63c017f5b409fc3fafdb3c343deae1dfde751f3e93aa8a6240a"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/battlemage_class_3.json"
-hash = "f96ce992502845059caef737d03cc6887a3d3b9e913a88cee5bb41a82ebda616"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/battlemage_class_4.json"
-hash = "6721214e45e3f533fcf9202c40cb9ca0b337e21e12f60d8314c00059ed1cb030"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/battlemage_class_5.json"
-hash = "9589562c590e334aa8bc5609cb9007c29148b0ecef351bc7c5f8811bd85b66e4"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/battlemage_class_6.json"
-hash = "e525e3606f40ca4177777960c97193f51f0784e579c1248ab234b0d8678689bf"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/black_hole.json"
-hash = "48ca4561ecad100ad4d198c9fdb7cf31216cd1f1703a26442b4c8d934ca70e61"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/champion_class.json"
-hash = "7bec4a4c5e88a7dccf2a7cda95a404053170a723b5342f9e532c43d37f35376d"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/champion_class_0.json"
-hash = "93a6b1fd4abb9727612c6e35e545c70a3fe5115bef4e44e813bf00313ec55208"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/champion_class_1.json"
-hash = "293d4b90caf47cb2974f061039079e677eb55f2bbb006ea9aaba458bfcb70fb5"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/champion_class_2.json"
-hash = "411db03a06b0d1af960527b2282454b01a985287251973d53ef41630ccbbfb69"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/champion_class_3.json"
-hash = "e4eefa5ccf1226295b78b09d278d2e388a99965060d074cdd55d437a94bcf820"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/champion_class_4.json"
-hash = "875d74ecdeb53470d59449b4d9f78d546cb3f69702be9909c12e93f1f3d04cd8"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/champion_class_5.json"
-hash = "d9b935d5f9fa051a6c315364b953178aeb20c16ffcd97a6f5fb49e20bf8713bf"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/champion_class_6.json"
-hash = "6b5cf6c76bc525d9b236f10a896d8a08d71b162c650b3a564b323f7d4aaf5276"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/charge.json"
-hash = "ce7c0e39e5151fc034ddb53b589707662137220588577e675917efd74b7921d8"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/chieftain_class.json"
-hash = "0c1d5bb4549467b8f2e50dfff5cbe20254f9e07dbd59be99c05b6b98c06f34d7"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/chieftain_class_0.json"
-hash = "9d30f83a9f524413acb8713f2229ad14f416cde8a287a1c225fa0d649f9c7c58"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/chieftain_class_1.json"
-hash = "08d65d27769be03693d2c582567740698e2a08bec8d3f81dcc1a3385b238a42c"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/chieftain_class_2.json"
-hash = "505906b626a4fe82afaa5e146bf10a7e66d1f75f48e99c8b141c897b00ff4f8b"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/chieftain_class_3.json"
-hash = "5dfba0687ed5d08f4ea0da8f070ce611b20f5ffafbc2eecb61916f453012bbdb"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/chieftain_class_4.json"
-hash = "c5accaad85bcdc713d4c87b82fa14d2347c9015e82402500b17299e93667c51c"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/chieftain_class_5.json"
-hash = "8ada39fd0c24e5ae8e6a0a7e7c02a94ed9e1ad4059b12f8933302164925bd452"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/chieftain_class_6.json"
-hash = "a8cf4be5e45649f860e7a07b3f80d974539eab28b7eee8f09154fdbbd45f62be"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/chilling_field.json"
-hash = "b4d4d8975726c639a1c1c4625ffd9f4aea2b0c9f7ce5fc8504d96a9087f19296"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/chilling_touch.json"
-hash = "d13b112a8f9f679a33fb1903ecc421bad0685dd2b0b6b4ad42857e32e596f4af"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/curse_of_agony.json"
-hash = "4456a68900adba5fb941f26cc841b72dbb85be7f2ff731e5548af4b0b4fb59a1"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/curse_of_despair.json"
-hash = "2e7a7e7dad0692d738715870414ff24e4a37493a3e2f11b32340106bc913119f"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/curse_of_weak.json"
-hash = "1b1156e4db42cebc8dbe948a5665bef68756be0e29fb42708acbe597c6eac61a"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/draconic_blood.json"
-hash = "c32cf6e254d660e6fc67efcde426d81b964b53ba84024a5c868e8a83dd2cc3b7"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/elementalist_class.json"
-hash = "ed9066ea5ac142e36b46188a50d8835453ecdd07b844b877ff43dd21b43274f2"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/elementalist_class_0.json"
-hash = "1be9f0874ef3eb67735ba79c38f417e003c0813ab97308bc054d13bc0d64578d"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/elementalist_class_1.json"
-hash = "68d455adfe253e0201c9b288d0cbe256f791111d236a98162979108987ba73d2"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/elementalist_class_2.json"
-hash = "082e22d17cbac5525fd9bea8fc9defaf6ed41a18c6103ae6b12797975c97a4ad"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/elementalist_class_3.json"
-hash = "f816c74beec2bca6f4d3c210c2da011ab7eebe0e22765ee69c1e6c9c4b8c5c80"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/elementalist_class_4.json"
-hash = "719f730610abea52c2355dac22e4de259f60ef24d86ae02b5f63783017328929"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/elementalist_class_5.json"
-hash = "fe1e5acbeb3f656c3385ba4616745673464b408f3dd57cc41ff371de9fc742ee"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/elementalist_class_6.json"
-hash = "add7588e71a494247068024c2556da5717358238b3252a8feff80dab299ea84d"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/entangling_seed.json"
-hash = "2826bc35e0fc1a30966248916782eb8e55b4f02f55225be2509e24a4c3a32c03"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/explosive_arrow.json"
-hash = "43de939e4e6a65a51ebe351eaf411ede117bee5f744c66845038bef8e11268a2"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/fireball.json"
-hash = "260179312146602dc19b3ebf15daba96045602e5f4338234b8171db8a8a3f062"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/frost_lich_armor.json"
-hash = "cc8f3d4797d4dc9186c709e31a2c02fc19ddd2f93c9b3bba3b7d9bbe6eac76b5"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/frost_nova.json"
-hash = "d6a33e42a4d44ae5ceba98b8be90433cae6487c469b7b1a9e1d1bf13f4844825"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/frostball.json"
-hash = "0d74f9c69c10147fa9a7854ee8d895ab7653f793dddbeb657c76f0799de203fe"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/guardian_class.json"
-hash = "00a7c4d707328dfe00cfcb887dfa554ed2b3efb52534e7e64c6b4a17fadc87ce"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/healing_aura.json"
-hash = "6500473d218fa1d63ea441ddd5090142dcc3beeb20d60e18a68965c6020942d9"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/hunter_class.json"
-hash = "143dcf0c8195ecf23c78b169227bc2055bcb283041a448335272c94ac3014d17"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/hunter_class_0.json"
-hash = "a27203c180e79073489c8296b1419d825d61b323a73b3460cca09fe1896fcbac"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/hunter_class_1.json"
-hash = "cef93cc5002b75351c07a1bd0ac3141d2242f494ffbcd71d24b4c13297037cca"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/hunter_class_2.json"
-hash = "994d0c89e40d2d70b67ad022477603d0a35e3571e901b45b93f59e7ae18a450f"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/hunter_class_3.json"
-hash = "8aefbb8589668f664632a6f94fbfa652c064a2e475991ebe3fed6795e6341e02"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/hunter_class_4.json"
-hash = "3b08b522c8741f28250b7b5f8035e7a64b3e6923f46ab52938dbe5d4c6eab850"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/hunter_class_5.json"
-hash = "bf063c487161a90acf0f5ab81595313d337efe752e7510150bbf3f4ba8bd64a6"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/hunter_class_6.json"
-hash = "02646b4e9e47271467b3be131b11076e4ae3205591c1a3b07dd65e51f458c141"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/jester_class.json"
-hash = "c76ed0e000f1146ca8b2e68585320f31c495567a4411a6910a7483faaebf2b52"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/lich_class.json"
-hash = "ad2eeaffb55ce8f217eaff80c6f46a2483334b873b88949a180b2b201bad085e"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/lightning_totem.json"
-hash = "ff2b215a93dedb9559a870a3a36937023879c5ab1b07d031608341bbf3b1553e"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/mage_circle.json"
-hash = "86cee6db77534128739f34fd8ce0353215c2dd1303254f2bb09fe131946457b5"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/meteor.json"
-hash = "89abb315fa6e16a1c03844f4624547ae2bb44207cc98ecfd25e833b30057d1b8"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/necromancer_class.json"
-hash = "b42593118ca298a8b6c281c6c436f994330a2bca5d98225256ff2d3f7ce8ab37"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/p_armor_pen.json"
-hash = "2b458fe0e5f6cffaaf61f0fab284ef247760f23d611de64a35d8c23f343b3522"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/p_armor_per_mana.json"
-hash = "0c8b255103f3517979ce18eccc8a41ce2cb6c17c58ab52c4940b4f4f6ff728c2"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/p_aura_effect.json"
-hash = "68b06eae27279a8c0ea61394e6f3e72b81c022b356d4b726d419f8020a998e12"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/p_block_chance.json"
-hash = "ea52f72996235ddcf10bd59dcd5cf99ec9362d3fb729aab604039c16d777471c"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/p_burn_chance.json"
-hash = "f64ab9179e00434080ee8198bc1a1680d45b65c1d3d1b1a2e00dfa89637b3bf7"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/p_cast_speed_sorc.json"
-hash = "98d355c6de9ed83156ff3f6354cd4b4d160bb4adbcd49c1dd76acf4a41fc46ba"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/p_cast_speed_wl.json"
-hash = "5ba6ecddaa1702cd61cb305513bf9fe6416754bfe3b073c383d6e7cc287d9e51"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/p_cdr.json"
-hash = "50c3f117ebdfdeb07ebec4c2432545e514498b6e0f82275c9b0f3d522a9d1c72"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/p_crit_dmg.json"
-hash = "faf43edcb81fd9d63d90a0ff80fc5cd716185aa94dd15e0a99757cfb13c5f0df"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/p_crit_hit.json"
-hash = "f9d22f6075d3017876a1341a66fe79969d6e1680d8cbf5ed6cedfcb54424ff0c"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/p_damage_received.json"
-hash = "4ea4420ce16f99c50b64fcf1713c199f526f3b337129e3c242ee2daa33b6ecfa"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/p_dmg_to_cursed.json"
-hash = "66397bffdc9c05663818457f266730bf191a71fc6adea2364b335124019a77b8"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/p_dodge.json"
-hash = "0c9aeffd6a43a69bff6bdde96ad43b99c4b9564059ba7761bc086d8a46f9bf9c"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/p_dot_dmg.json"
-hash = "6f70a0e5b0a183b5729515b47bb72428afda12367af615e36403f8fe0f186111"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/p_dot_lifesteal.json"
-hash = "6ffd9af9337eab90034ce8f63435103ca6b41368d7d75d8304ffbf6e2bb3b17a"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/p_ele_pen.json"
-hash = "fa8e95f2374903cebea8ab11fdfd28d6d033caa2ca4b0daa1161d6da917294ae"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/p_ele_res.json"
-hash = "7dec216770cdd5b1046f3526aa9515ddf9ce8dd805a749ca3070dabf89f483f4"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/p_electrify_chance.json"
-hash = "a9d50b06de9c1d49ec44b97b4e1f1e24df41cb05109e67fd6ba083d82035a1fe"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/p_ene_regen.json"
-hash = "b6e519059be7cc0563a04d1679d22beb5eb3e3d3db35d0a64c10364c9e190163"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/p_freeze_chance.json"
-hash = "2d42a0372e2238473e54b9a1079d68513fd1c5cccf310591c02ea7733cc0056c"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/p_heal_str.json"
-hash = "1932048c9c363df2dd216527549efe8421b0313f0f71091537ff647759fbb4c4"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/p_heal_to_spell.json"
-hash = "1669a0c81a71102fca300cd9659e19bca4102855122d3711f1f6634d6d5edb6f"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/p_health_mins.json"
-hash = "44095f24b81ef7a36727f74e307fee058051bb8d11fd14d341b11698ef2db29f"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/p_health_regen.json"
-hash = "d46a373c233b0a3cb4c226922c3c0e38dbea21fa6a506dcc6499c9924d1975bd"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/p_health_sha.json"
-hash = "dd1157789a18338e173219e0226a096f5794654c3eca3464006f9ca9ebbc1d36"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/p_health_war.json"
-hash = "65611302c341324bf65e54459ee709dfaee032e2b5260aeef96f584af1b0107a"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/p_inc_aoe.json"
-hash = "e1877b9013f5ba3ffae788619d44b78f3651592cf68f934cd8e9b32f58d4a549"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/p_lifesteal.json"
-hash = "20a820a9e8e2b8c015b0eda38fabefc91c257ff40c24cde06f1ff57d7cc59551"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/p_lightning_ele.json"
-hash = "248288dcf6ed9f831cc1ba9ff7cbf42c9876cfc919d76e88d84ffdf1c236ffed"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/p_low_hp_heal.json"
-hash = "44b98301ec05b0e41097a093aa5155c981d2963ee5f9320a6b525dc4b1131045"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/p_magic_shield_regen.json"
-hash = "451d7359e887fc01b4951871d6ce5aa1bce088509b90d1e2b189476cd87a94cd"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/p_mana_cost.json"
-hash = "b0d032b6d659fb3b06059142c6adc07148632d5d708ed61afa08866ef25bd665"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/p_mana_regen.json"
-hash = "832a8d41d5c0c228637847d960403787b6b08137dd640b3ad846b4dfd5213877"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/p_mana_sha.json"
-hash = "8760ccd2181bea3ea1d140f351e401bf1a0e4a6ec52af9b5b7fdd960eef94408"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/p_poison_chance.json"
-hash = "d7d11317637c45821c138e72c53701ff57f4dd196c9d9c4fd12f53a321494850"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/p_poison_duration.json"
-hash = "649ab804048815d9467421457f0579cf657562f3a241972ad6bad86d50f8ab6e"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/p_proj_dmg.json"
-hash = "9a6420b25d9040bf34ccaba04b26a6c6b641a19a91e113fdfddc5ba7e49c5d4f"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/p_proj_spd.json"
-hash = "6620331170f41a6de4e26a2b894b842ce3eb4d55011503adfbe777a36dab9857"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/p_song_duration.json"
-hash = "7d95ec5c358e9c1366b16da981026ad439ffe670d655c5140d3234a32a36efd0"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/p_spell_dmg.json"
-hash = "64d176550186baf2888dbffea91383698b72370c515ddcebc3c0f43d555f4c44"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/p_spell_lifesteal.json"
-hash = "f3a1796ce812a1abb91b036cbc4319c378db80419ddc1398e7256fd3d32e89fa"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/p_totem_cdr.json"
-hash = "65941ff8e53f081138094a77420c15409d0646cc083fdb74385bd06d45c877e8"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/p_totem_dmg.json"
-hash = "46614ff7d336827273318eec8db4a0a618e1dbf5bf4b7533a773aadc049ab8a9"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/p_trap_cdr.json"
-hash = "d5355968c8d5d9c440deb78faf2ff12acaab789bee110986163b07803664da44"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/p_trap_dmg.json"
-hash = "bc1f8f31e1e33ee28f80d2e5ae728f7d2d14d53b48bab169311a59c61a7be84b"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/pdz_analysis_ailment.json"
-hash = "f787488cefa09f785b2d517fad5a8070daac0f2976af34b43d19a16fdf13e899"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/pdz_analysis_ailment_notable.json"
-hash = "a1394d7b22b268302638e02bee06a992d87bb7797c6d3cce5306339b6e0fadf0"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/pdz_analysis_corrosion.json"
-hash = "3e9dd7fcffb25904bb594afb607c7a0ff247d1dcff385529f777a587f816c438"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/pdz_analysis_corrosion_notable.json"
-hash = "5e57aac6c3b8b3ed2d44a11b90ef015328502e31c941f955ace3298f44c60179"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/pdz_analysis_cryo.json"
-hash = "432d24d1a597940dd25206394b45d64f773804d4ddfe625dad0c8c3e258080f0"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/pdz_analysis_cryo_notable.json"
-hash = "57d1fb80315d318247832c3e4f5d3671090d887938f28ce28e63570be80efbb9"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/pdz_analysis_shield.json"
-hash = "e8d70c4193e054fef63acd5d24b2f791e93b382c071587a0bda68e2f01c02513"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/pdz_analysis_shield_notable.json"
-hash = "73320c6cb990fae6e6f323d6e588ba223f51b467738aac69d2fb6959a0289bf1"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/pdz_analysis_shock.json"
-hash = "4b34576dc59023680d32875cd5aae3d7d1be851ccfdffc779b105a9fe94dc281"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/pdz_analysis_shock_notable.json"
-hash = "6aeb587b53c5b21c24043a41e1e57a4fec071986458da0d9f2e58565aa5d4825"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/pdz_analysis_thermal.json"
-hash = "c0190a5379d71095b341864626f8f07d8d60f5e3a4963266154d8e1280ad72ca"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/pdz_analysis_thermal_notable.json"
-hash = "bcc8a7697136350d80f1efacb311c00a66558df4610fdb24c6dc01c3792eef20"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/pdz_combat_ballistics.json"
-hash = "e76b7d09dfdce3fae2ae18b45edfb5560992c6295f81acb46b46de1f854862ca"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/pdz_combat_ballistics_notable.json"
-hash = "c10084c7d7bba2dfa14f128d727d4ccad2cacf4d0e12509555e5e914ddc626fe"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/pdz_combat_critical.json"
-hash = "898cb0582f0555cd2d70b2af7e080c800c5f72d18f5dc3313fc55361a4cfe7d4"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/pdz_combat_critical_notable.json"
-hash = "502ab41cff4936e4b00742168339fadf409ad9c65d0ab16a77d0ffdf9e206721"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/pdz_combat_endurance.json"
-hash = "8661d75aaa3321458fe446baf25586d03c63ab2c0da5b2b698a68b750920a687"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/pdz_combat_endurance_notable.json"
-hash = "5e3bc5d60b87e8d891371e7e56c350c79a72f0edef47be907117e87377222c9c"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/pdz_combat_firepower.json"
-hash = "8090278381c9f34df1ca252e18eb48f114cff2a60939e1c35d0bf18c83397fdf"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/pdz_combat_firepower_notable.json"
-hash = "bc6f140af917130d317bee4890da39bcfe38187cef05c94de830a464bfd70736"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/pdz_combat_penetration.json"
-hash = "2bb7738742d8a667face7e60e92cc118753e29576cbc5debf443a3608ba45440"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/pdz_combat_penetration_notable.json"
-hash = "b3c4ca6f9c2c6f00fcd6d56054c0469f11076e5b1aefbc530a525ed395d82507"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/pdz_combat_recovery.json"
-hash = "d5b42400dcf60700b6ce5676cfb707c2fb6d06ce5456a554e2a3d1de3f86a57e"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/pdz_combat_recovery_notable.json"
-hash = "71fe85c06efedf7db73ca7e0b0dd7d63bf0384de27c9d69cb7108409c8b722d9"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/pdz_industry_automation.json"
-hash = "1153f786582bd51461ceebf748eb893be5acc45a40337af2b7a943d8c7106402"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/pdz_industry_automation_notable.json"
-hash = "f35f029174b60a7ea5457a61e8398dd1b582c5653da9fdd59ca3c42b834b6bba"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/pdz_industry_efficiency.json"
-hash = "b502a068ae5be1bedcc4ff62570a7b48916f7d7ffd69064a96dea7dc306c49ba"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/pdz_industry_efficiency_notable.json"
-hash = "78fa1b8dc1910a5ebbd850f3b4fbb7671414aeabe368ead351fa872c9e45ce16"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/pdz_industry_logistics.json"
-hash = "2ba7947478e9ef9769ce4ffb8f82a070c024525efac647f571b4999d7c926a09"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/pdz_industry_logistics_notable.json"
-hash = "fdc98cf28805c5ad9731c5aba0ff4c0a99514fd7d5d599cc5b6018cc9ec1aaf6"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/pdz_industry_maintenance.json"
-hash = "4a1c5db06db90e2644e19ff22af2563552ef035dbd9024e690cd73a6db67cb48"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/pdz_industry_maintenance_notable.json"
-hash = "fe018268ad43d753670f5277bbb74a761a8705ada6b67d8cc7a11b6e484edba5"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/pdz_industry_processing.json"
-hash = "b419e859a1e8625b3387cc5808ae7362cd623f792c2a4b2066aade3e5eb48f8b"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/pdz_industry_processing_notable.json"
-hash = "888d5724d855e80e352167f7ca71af60f26f863729e3d98f65ed35c9aed4ef75"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/pdz_industry_salvage.json"
-hash = "80771b9dba585841eb95ad186bff69d1455ad6d5d937e6804777f242c2fa0037"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/pdz_industry_salvage_notable.json"
-hash = "bb7447f19cb4f01dbf34be31595cff66a4c8c56339b485737d64f8ca0284cb32"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/pdz_keystone_anomaly_core.json"
-hash = "a781376624f8a74f893738bd424a7831cd8d73f12448905e99e6ef91cf4b5958"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/pdz_keystone_assault_doctrine.json"
-hash = "71f4a0c40d751dbf8de5582e696103368788f439ec3a6510e6f48b1b461014c7"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/pdz_keystone_field_foundry.json"
-hash = "0093edfde2a3edc8b22da1571ec14bb3dfb9675cd892c6337ea5eb2fbc9f648d"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/pdz_keystone_last_survivor.json"
-hash = "07a561ba8de3771f038adef7d85af0249488b3770fb3f3dc72a99b489317711b"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/pdz_keystone_self_sufficient.json"
-hash = "afb391f3d3bbfd357fe50cd37f9a9eabfdf3c9bb6ba899a60a3f9c64ab826213"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/pdz_life_cooking.json"
-hash = "bd910dd1d2f98d4852f94d045e4ccc9e097987c009f258c63951eb4ba27fedf1"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/pdz_life_cooking_notable.json"
-hash = "7384fa2781b154e4c2da47d12314841d7f9b689d66e26a384add62a2209fe89c"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/pdz_life_farming.json"
-hash = "a19c87e877b818db100447c2f28295cc73acd206f45635881a0ff5d0d6cf87d6"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/pdz_life_farming_notable.json"
-hash = "11aad0e91c8437585fe8400c596d17e3e65539c6e9096d47961695a16ce2735d"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/pdz_life_fishing.json"
-hash = "2cfc9cc941bf8a8d0977d2fb559155aab60cfa225a33ac705ddd9912db4fdaaf"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/pdz_life_fishing_notable.json"
-hash = "097034e5f26435161534c41962fe1995c1b45fd4721ff4881ec4f1eae214452b"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/pdz_life_hunting.json"
-hash = "592ebeb151e99d44972c436ece8f529b0328c6f4e6a9fe5db3a1aac10307b589"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/pdz_life_hunting_notable.json"
-hash = "f8f584c23ae1550b0e40f934a4a72e655ab8158e7707027ba7653aa08621fb4f"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/pdz_life_rarecatch.json"
-hash = "eec6bd3dd840771d13cdfb5b04fb532169499acb28c8da75e43c0cba5243253b"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/pdz_life_rarecatch_notable.json"
-hash = "cc8f1dcc9d22ed1783b738cc206479a146a3535ed20547e7a6a74bf1fd0ddac4"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/pdz_life_seedkeeping.json"
-hash = "982ab4b299fd88f8fd35b6d411dc1328604233ce0a88a2dff9a3bb9afc04e4ff"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/pdz_life_seedkeeping_notable.json"
-hash = "c5d59fa7181ac7a7a59490df65c4d682f4dee8b12e4d6dea74a9e37f6c153f2e"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/pdz_start_analysis.json"
-hash = "d8d1ca20d8b57f5dfe13670ba1440463b506f98e51da90f423ac76833674d2e0"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/pdz_start_combat.json"
-hash = "90fe434445c42f292fe55f70293059c1d09949d0c743f59050f9bdb60d4fb1a9"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/pdz_start_industry.json"
-hash = "84fc2c371b3590c41257f24752a27d94f3c456e887b92f823f965259e9a2f41b"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/pdz_start_survival.json"
-hash = "aff509b4ffd59542660784923e0e8b6abf57a77cf4bae32935002cbed474eaae"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/pdz_survival_health.json"
-hash = "71cbc939de9867ad1615d2c26e656eba1dd06d221f3a453a237f21f75dedd0e0"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/pdz_survival_health_notable.json"
-hash = "2c861658f8565b3da738f6b05a3b6cb425a0bb07a57f84234cc4d267eab7e507"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/pdz_survival_mobility.json"
-hash = "b2c563acf93df24181f4bb9cd27ce8a3f3a729eb71705f655b223c0adf0b1884"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/pdz_survival_mobility_notable.json"
-hash = "e4addfa596e59c2376aac1e3acf2d9c103ba552f3afa43e8fd0da8111d4ec9ac"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/pdz_survival_recovery.json"
-hash = "51a14187fbfc30918839267ce98d8a1ec608d0289a8d0cac2c72726672a67e1d"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/pdz_survival_recovery_notable.json"
-hash = "72a75b9747e3233a92d391676f8dffcbf3c81fe99613144dfe307b9b99e91a30"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/pdz_survival_resistance.json"
-hash = "5f6c88eec13eb64877e775ee077ebce5a329a77fbc56533f79884e20fc53cea8"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/pdz_survival_resistance_notable.json"
-hash = "d2e49605496b6f713eb8256d312193e518521492dc3580bc9684c91328d64dc0"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/pdz_survival_scavenge.json"
-hash = "df3d120f29015b2885f90292a0713697b60a350786fc1094c7adbf03b8996ef7"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/pdz_survival_scavenge_notable.json"
-hash = "f704a8c08dd5627572e73ace07cb8871c634ecf156cb196cd7c8cbdb27532073"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/pdz_survival_treasure.json"
-hash = "c445d46ec21cbe370dfc249df51cf8a94f945afa34db62bced00df7a01f0ccf4"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/pdz_survival_treasure_notable.json"
-hash = "7e1e8df266191b8a80cb7e4c884d73ddb01b8a204a7f575acbc2c09b96fe1832"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/poison_ball.json"
-hash = "1c6da6d99d6f81496401f4803c37218bf37ef19784245be2478f0cd431a716a8"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/poison_cloud.json"
-hash = "6e1d2060d73a69b989c590fc5245570816f19bff6e8620e1ebbdb1a8e3dedfbd"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/quickdraw.json"
-hash = "b25f32cd95d99f8e64f33ff726b6ff9aee072c3f48dd25f1484ded0015a70235"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/raider_class.json"
-hash = "263b3c43c2e4a7b151995554fbfc5052d012b375755d47fcd70089fd67f400f5"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/raider_class_0.json"
-hash = "95d80eb612319bf083f3da6da8d294efd680adc4171f654f4f976ec773610353"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/raider_class_1.json"
-hash = "072eb756a32d83a69cd8a085b1ded747c86dd2097a7af456946ed77d424d41d8"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/raider_class_2.json"
-hash = "fc497579e1c8b8b15eb25569c9aca7faed1ff5e3268a17ac3a0ec2ee2082d93a"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/raider_class_3.json"
-hash = "04fb444a1e031441412c847354f8728197a5814d2e6aa461c782a1d4cfb1b109"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/raider_class_4.json"
-hash = "919e014127397d8efdfe3a21782fef75b80b792a331287dbd378c297d0122cba"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/raider_class_5.json"
-hash = "1a7a7bde127853cd668e0a740601c7452df426578517c1728a1dbd6224a99a39"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/raider_class_6.json"
-hash = "43362f7b9cf88725ca666ec14761b5f1253a636270b3d5a600a2264bb83b2497"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/refresh.json"
-hash = "7c6b3f2f84b756b30cc59194b4f7bb72ad87459227980bad37a8c6e930f0cdd3"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/rejuv_totem.json"
-hash = "a9989585f6701822d87d52ff048e42136ef700894181c2237c2719de24cc77d5"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/smoke_bomb.json"
-hash = "0dd2b936d1a7e362770e738ec7b32c066f3853ea9773ca649856def6cba08f9a"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/song_of_perseverance.json"
-hash = "8130809f3805ebf5c0a59ce0213d0128babca6c25239e399b541a673fb19baef"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/taunt.json"
-hash = "96e95f3e1e6cad48c283283714eb3e670489a2f9d3dc579d74374147d50eeb06"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/teleport.json"
-hash = "ed2767476728be8442220aa611252752209a742134a142cb0dae0d2a73e05314"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/trickster_class.json"
-hash = "f011f1b1b162ba8fde864412eb4345d1be019e5dbbaafbbfaf23561d64ec3f4b"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/undying_will.json"
-hash = "18f568e6ac4096ecb9d29249aa8428c581aa4a792906b0954ad0c4feae4457ee"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_perk/wish.json"
-hash = "c5c1a78cd6fc8587c75a7300778bd912b0e06a50c38a5ab82d89ee97e2474f91"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_spell_school/hunter.json"
-hash = "529026fc8a2caa93696ae5770e50052fddc2cca10d6dfd008c2f6d93f43ddcb2"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_spell_school/minstrel.json"
-hash = "2795c4b699f59c86ec87b2fafae0d167b405bf326fdf9027f9ea497bf6b149d1"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_spell_school/shaman.json"
-hash = "620cb5120539aa79e0672929d9ad859322ff0cb85348196235522a755e324ba4"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_spell_school/sorcerer.json"
-hash = "61c9ce7ffaef5412de29aa1b399b7ef92975698c4e27eedddb4dfffe822ca6c4"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_spell_school/warlock.json"
-hash = "7b26ee8e79d25a814f79bc741bfc16183e2991487e968859c55d57093e6bc035"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_spell_school/warrior.json"
-hash = "c78456b21fd8bc045885c2f49bc46a545c75cee7c2840ce47fcf4bdf7ceada62"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_spells/black_hole.json"
-hash = "b96082613e1f6ccb1ee7f2562b24ba177d04b22d24c4ba2e75a3c6c4b4bfdcc0"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_spells/charge.json"
-hash = "b7f8d99fa5aa3ea85d9a89b446a0c329a035b327782aed1d2205ee714bce4ffc"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_spells/chilling_field.json"
-hash = "0018dc52af86f8d59499325e83c8778156da75b611f6c6987a33e654a5bd8e03"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_spells/chilling_touch.json"
-hash = "a6c6e0058abf57545753651cda0dba01111e87eda6b370754d2938b76868cc6c"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_spells/curse_of_agony.json"
-hash = "9af117fda1d4504aad92c3f43f323927510d134984b39bfb909c27e949eaf27d"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_spells/curse_of_despair.json"
-hash = "6d8f0085f7b33d54ac62825a360ebdee39c9392cd29fb88c94edb86665d1ca94"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_spells/curse_of_weak.json"
-hash = "63bbb7610253725137c3c4fa3d4ef98c3c6640e23e5e60e661610ec6ad6f033d"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_spells/draconic_blood.json"
-hash = "8d8fe07a43c0b6a2dc8f2566296476c594c75e0d8b4b4a76fc49e637b3d67b17"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_spells/entangling_seed.json"
-hash = "dfdfc70282d2b9e3b70ff93efa6247ac3f87e9e10ba0bceda8ce882e08de8897"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_spells/explosive_arrow.json"
-hash = "da8918f96f8de46ef4ab2bfead5785e1261a38b4d0a2f49cba5a7bba5a86789e"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_spells/fireball.json"
-hash = "a42b697d69ba4e3b8708ff16aeac58a252475ba28c9e45596aeb04af3390ed47"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_spells/frost_lich_armor.json"
-hash = "1cc946ffea4bbdf465d75d7669c735ac7b0104a313fe4154cea0bda69bf80378"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_spells/frost_nova.json"
-hash = "f7fbb79e9fae505878aa19dee0c9c8e9221164683f07fe269fcb3c8eb52b2e65"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_spells/frostball.json"
-hash = "85eedd806795d4a17f13f3775f6593bcb95ff4413f31c397da294017525b1899"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_spells/healing_aura.json"
-hash = "ee5de61b3e5d3593b57c1545a524aa51f713cc31b554f86cb4224d54ef27f581"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_spells/lightning_totem.json"
-hash = "f0a490f9ad17327c0dac964834bf541e56a170eb7ebbeb201102f45c49d86c22"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_spells/mage_circle.json"
-hash = "4a086a5ce197acf03011f9d240abe0579f9292a19b93ee1fd94173240e37ccdf"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_spells/meteor.json"
-hash = "acac62ebdf66f704ff2e3695dc2187f0365c3af53d4dead2cc8334fc57c710bc"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_spells/poison_ball.json"
-hash = "9b548b89509a36c0dcd8331b0944638dec50cc9f3e7152c4d0a2d0648081ef45"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_spells/poison_cloud.json"
-hash = "dac068a5745d946ec05daae8c9ec8b26a322e1ab6ce83964067b24a0067b884b"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_spells/quickdraw.json"
-hash = "029c57284914bf2fcd914ac2f5ce0745cf0eedc4e0870cfde0781f48c8d26f52"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_spells/refresh.json"
-hash = "a3d79c3fda2d8a23cb320a0191e1d1b0d1621f9395dde712d07f25771fc08efd"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_spells/rejuv_totem.json"
-hash = "94f5a064f8d7de979e1886937cf3ecb8c305cbd79356951219fa7ce3ec882c56"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_spells/smoke_bomb.json"
-hash = "9100a58fc73b1e53182af1b66bccf9db2b4e28f75da2054a377763410c14b81a"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_spells/song_of_perseverance.json"
-hash = "d606c392a165e0395bb12820d418e3daf12cbf47b776ce87bd52dca5084e1a9e"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_spells/taunt.json"
-hash = "bf86267e1285950330b4e1c3454f94f335ebe68d81c9c36a4518c0b5abbcb5db"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_spells/teleport.json"
-hash = "c9b3831c95c18a650e55af95a0c4071d062493e21dfd43772ff6602fad98bece"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_spells/undying_will.json"
-hash = "1e4cb9bd461181dccce6a23d4e89c4235cceb69c9a78eae87594fa6f4c740a9a"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_spells/wish.json"
-hash = "4fb391f24504ba379d8ce9c64b7fa59ee4232587b00a0fca4636887db11cb687"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_talent_tree/ascendancy.json"
-hash = "92765256bc172996d33f510c51cd8da0b83748901006c688f9a1cd92b1ee05ce"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_talent_tree/talents.json"
-hash = "6fff04278bda46242d3323c07e2ffcdd15008f5fa1c61c564a51a772ea840690"
-
-[[files]]
-file = "kubejs/assets/mmorpg/lang/en_us.json"
-hash = "33a631cf321fcc1d4645bb241f6ff6e664853597c8e47362a8075e2dbef8e2f3"
-
-[[files]]
-file = "kubejs/assets/mmorpg/lang/ja_jp.json"
-hash = "b6260d477987f40d474e461fb26af97810674d927cf77369846a268e7125f119"
-
-[[files]]
-file = "kubejs/assets/mmorpg/lang/skills_en_us.json"
-hash = "47507088ae79b2de4634c116321a5e6396738d8dd9dd88d2d96c096b463190f3"
-
-[[files]]
-file = "kubejs/assets/mmorpg/lang/skills_ja_jp.json"
-hash = "025e195f6aa39bf9125d5f8f43c4be16bf9c3e40ee6bc2ddf98e1cadf50c7898"
-
-[[files]]
-file = "kubejs/assets/mmorpg/textures/gui/asc_classes/class/hunter.png"
-hash = "92396f09ed43eb1dd9d3196f7931e22c5b6b1b89a8ab97ba50f8f8d74ebaa152"
-
-[[files]]
-file = "kubejs/assets/mmorpg/textures/gui/asc_classes/class/minstrel.png"
-hash = "835c23acb41869e222bc059924265edd804c22e22ef3518e184b9b364f7096d8"
-
-[[files]]
-file = "kubejs/assets/mmorpg/textures/gui/asc_classes/class/shaman.png"
-hash = "2431e0583a30da98aa9d8a05c4e393aa40eed4ab5071fc72b6a30e49fe041c32"
-
-[[files]]
-file = "kubejs/assets/mmorpg/textures/gui/asc_classes/class/sorcerer.png"
-hash = "bf9919fb3ea75f1694838ced412f4823aa58381841e026d52f259f6bccdf14c0"
-
-[[files]]
-file = "kubejs/assets/mmorpg/textures/gui/asc_classes/class/warlock.png"
-hash = "7b6d232b7be31edbe2660ecd931f4c0f1294ffb1cd0b0c2f2c463f9f240040a9"
-
-[[files]]
-file = "kubejs/assets/mmorpg/textures/gui/asc_classes/class/warrior.png"
-hash = "abca686f5119e3d3342b19447d97b32d78784cc59797ab657afa3fa6e5c654f3"
-
-[[files]]
-file = "kubejs/assets/mmorpg/textures/gui/pdz/job_anomaly_researcher.png"
-hash = "1fe0b94c2f8352e12b0b1446d157199e1177d30b2c7c065ed5cddb71d75e14e2"
-
-[[files]]
-file = "kubejs/assets/mmorpg/textures/gui/pdz/job_engineer.png"
-hash = "099de1663f205ec79140a7e2ec4de3ee0b05adffd21c602861ca10d605468f4a"
-
-[[files]]
-file = "kubejs/assets/mmorpg/textures/gui/pdz/job_mechanic.png"
-hash = "8b80e813e6345a74256ee2a01bb8e03e0f4425d40f9abc517b41537fba8ffc5a"
-
-[[files]]
-file = "kubejs/assets/mmorpg/textures/gui/pdz/job_medic.png"
-hash = "5b58ab60f55b62c256c3994d210ed09e4508dc30d328bb9b2e33956f42466a6d"
-
-[[files]]
-file = "kubejs/assets/mmorpg/textures/gui/pdz/job_scout.png"
-hash = "9dd404a05e30919384195dfc6680069e43ffe6d18d7ae825c25d4627be4d235f"
-
-[[files]]
-file = "kubejs/assets/mmorpg/textures/gui/pdz/job_security.png"
-hash = "fd26ff3d31efdd7154d8d167f3f0797d08ac14db75b41de8fad562d55d2c535d"
-
-[[files]]
-file = "kubejs/assets/mmorpg/textures/gui/pdz/job_survivalist.png"
-hash = "395c1896e391f944780fc043a0c1ee4e8d8894723baa08785857e68a6366da14"
-
-[[files]]
-file = "kubejs/assets/mmorpg/textures/gui/pdz/job_survivor.png"
-hash = "faeb4662f940b38aa44576e51eacfade9cd7629729055607c8170f0f5e9b1f65"
-
-[[files]]
-file = "kubejs/assets/mmorpg/textures/gui/pdz/job_weapons_expert.png"
-hash = "e7716ba0473933396740ed8e17a85e324d8b263ee98caad72120d5704c02ee9b"
-
-[[files]]
-file = "kubejs/assets/mmorpg/textures/gui/pdz/school_anomaly.png"
-hash = "943b37cf5dbcd09a82c92b1da07b1423a9f63d0a590e036adeb35c647fd7c775"
-
-[[files]]
-file = "kubejs/assets/mmorpg/textures/gui/pdz/school_companion.png"
-hash = "351b7ba6b0626adea1dd415ec43539d7959a539bcf932d5ba626ccf1b6e7552a"
-
-[[files]]
-file = "kubejs/assets/mmorpg/textures/gui/pdz/school_engineering.png"
-hash = "60103072aca378d8ef1000e490f1870d41d293c6ef51291589f4d930d0c42423"
-
-[[files]]
-file = "kubejs/assets/mmorpg/textures/gui/pdz/school_firearms.png"
-hash = "6ea6acfee55d22dcba08942bc284b053d69b1df6d21d513664a29bf5162c191d"
-
-[[files]]
-file = "kubejs/assets/mmorpg/textures/gui/pdz/school_medical.png"
-hash = "b2adddc08dbb82fc04234db332d89ed56e6e0d03c612f856f8dd323b7d580f52"
-
-[[files]]
-file = "kubejs/assets/mmorpg/textures/gui/pdz/school_melee.png"
-hash = "1014d3d265ad414509a154f5c61a06f85a9bc4cea009470d0e415918e7456eb6"
-
-[[files]]
-file = "kubejs/assets/mmorpg/textures/gui/pdz/talent_analysis.png"
-hash = "555341bfae50cc094a066a80e056e2fb924e1ed13d625d8e33f42e7a53fe5da2"
-
-[[files]]
-file = "kubejs/assets/mmorpg/textures/gui/pdz/talent_combat.png"
-hash = "086e9a9b0e6c35f275a8d0ff278eb9f6eb74a5645f8f5d99cf50035b2345bec1"
-
-[[files]]
-file = "kubejs/assets/mmorpg/textures/gui/pdz/talent_industry.png"
-hash = "db6bff721f14d441b004d810b8c712ca385894487e1bc8103ae0361bb400cf6a"
-
-[[files]]
-file = "kubejs/assets/mmorpg/textures/gui/pdz/talent_survival.png"
-hash = "0f1f49a8640c5bcaa68b4e2ec152c956ddf7d112b7e666a9d536c544c995eb03"
-
-[[files]]
-file = "kubejs/assets/mmorpg/textures/gui/spells/icons/astral_totem.png"
-hash = "60103072aca378d8ef1000e490f1870d41d293c6ef51291589f4d930d0c42423"
-
-[[files]]
-file = "kubejs/assets/mmorpg/textures/gui/spells/icons/charge.png"
-hash = "1014d3d265ad414509a154f5c61a06f85a9bc4cea009470d0e415918e7456eb6"
-
-[[files]]
-file = "kubejs/assets/mmorpg/textures/gui/spells/icons/healing_aura.png"
-hash = "b2adddc08dbb82fc04234db332d89ed56e6e0d03c612f856f8dd323b7d580f52"
-
-[[files]]
-file = "kubejs/assets/mmorpg/textures/gui/spells/icons/quickdraw.png"
-hash = "6ea6acfee55d22dcba08942bc284b053d69b1df6d21d513664a29bf5162c191d"
-
-[[files]]
-file = "kubejs/assets/mmorpg/textures/gui/spells/icons/summon_spirit_wolf.png"
-hash = "351b7ba6b0626adea1dd415ec43539d7959a539bcf932d5ba626ccf1b6e7552a"
-
-[[files]]
-file = "kubejs/assets/mmorpg/textures/gui/spells/icons/teleport.png"
-hash = "943b37cf5dbcd09a82c92b1da07b1423a9f63d0a590e036adeb35c647fd7c775"
