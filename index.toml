@@ -1,12 +1,24 @@
 hash-format = "sha256"
 
 [[files]]
+file = "PDZ_BGM_TEST_OFF.bat"
+hash = "a23d9e62fd4c5e31fd112a5f026c947eedb2683d2da130f13679425143297c8b"
+
+[[files]]
+file = "PDZ_BGM_TEST_ON.bat"
+hash = "528d6f3d1d10b47ad0394f88f622c64ad325aaa8b1d0b191270a9cfc598280d0"
+
+[[files]]
 file = "README_R4_JP.txt"
 hash = "02ba75b4b3c779b214882951c1e163c93c262c8b4c2566af7acc9c2d1fc0c943"
 
 [[files]]
+file = "ambience_music/PDZ_BGM_ALL.m3u8"
+hash = "9c9b87707b2eef35a9f498a31ea16dba3af9cf0b0e9eb2a5cc3495bbe6aeeaa6"
+
+[[files]]
 file = "ambience_music/PDZ_BGM_README.txt"
-hash = "7f3f3a03b273dfdf5ae32248f27fc8365b8016be72a227e847559ae3fe7b10fd"
+hash = "cd75e069b10a827dbe25fab0b81c505c2caf7a3a8bdb30e5b5a2cac966e426f9"
 
 [[files]]
 file = "ambience_music/music/boss_red_protocol.ogg"
@@ -59,6 +71,14 @@ hash = "fe54758161195eb7e9e2db47be2210f061d31f2aacf6ea0db70781b792ab4619"
 [[files]]
 file = "ambience_music/music_config.txt"
 hash = "f2ef071191a88a7976820b4f8e1c2fe36e4a88de7c618aa722517e443381bfd8"
+
+[[files]]
+file = "ambience_music/music_config_production.txt"
+hash = "f2ef071191a88a7976820b4f8e1c2fe36e4a88de7c618aa722517e443381bfd8"
+
+[[files]]
+file = "ambience_music/music_config_test_all.txt"
+hash = "068f062ad1d2627e584e37dc83fafc846533fbe58667d985a150b87c720376f8"
 
 [[files]]
 file = "config/Apocalypse Now Config.toml"

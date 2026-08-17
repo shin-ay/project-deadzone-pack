@@ -21,4 +21,10 @@ Ambience Mini controls:
 - Page Up: skip to another track in the active playlist
 - Page Down: print the detected state to latest.log
 
+Audition all tracks:
+- Open PDZ_BGM_ALL.m3u8 in a media player for ordered playback.
+- Or run PDZ_BGM_TEST_ON.bat from the instance root.
+- In game press P to reload and Page Up to select another track.
+- Run PDZ_BGM_TEST_OFF.bat and press P when testing is finished.
+
 Redistribution is permitted as part of PROJECT DEADZONE client packages.

@@ -1,0 +1,25 @@
+#EXTM3U
+#EXTINF:58,PROJECT DEADZONE - Dead Signal
+music/menu_dead_signal.ogg
+#EXTINF:68,PROJECT DEADZONE - Last Light
+music/settlement_last_light.ogg
+#EXTINF:72,PROJECT DEADZONE - Empty Windows
+music/city_empty_windows.ogg
+#EXTINF:70,PROJECT DEADZONE - Broken Signal
+music/city_broken_signal.ogg
+#EXTINF:74,PROJECT DEADZONE - Long Road
+music/wild_long_road.ogg
+#EXTINF:72,PROJECT DEADZONE - After Rain
+music/wild_after_rain.ogg
+#EXTINF:70,PROJECT DEADZONE - Dustline
+music/desert_dustline.ogg
+#EXTINF:76,PROJECT DEADZONE - Cold Horizon
+music/ocean_cold_horizon.ogg
+#EXTINF:72,PROJECT DEADZONE - Below Grid
+music/underground_below_grid.ogg
+#EXTINF:72,PROJECT DEADZONE - Night Watch
+music/night_watch.ogg
+#EXTINF:52,PROJECT DEADZONE - Contact
+music/combat_contact.ogg
+#EXTINF:58,PROJECT DEADZONE - Red Protocol
+music/boss_red_protocol.ogg

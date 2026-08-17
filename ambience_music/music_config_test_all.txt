@@ -1,0 +1,21 @@
+// PROJECT DEADZONE BGM audition mode
+// Press Page Up to select another track. The track name is shown on screen.
+
+playlist all_tracks = [
+  "menu_dead_signal.ogg" <0.5>,
+  "settlement_last_light.ogg" <0.5>,
+  "city_empty_windows.ogg" <0.5>,
+  "city_broken_signal.ogg" <0.5>,
+  "wild_long_road.ogg" <0.5>,
+  "wild_after_rain.ogg" <0.5>,
+  "desert_dustline.ogg" <0.5>,
+  "ocean_cold_horizon.ogg" <0.5>,
+  "underground_below_grid.ogg" <0.5>,
+  "night_watch.ogg" <0.5>,
+  "combat_contact.ogg" <0.5>,
+  "boss_red_protocol.ogg" <0.5>
+];
+
+begin
+  play all_tracks;
+end

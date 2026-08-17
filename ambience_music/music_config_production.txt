@@ -1,0 +1,87 @@
+// PROJECT DEADZONE original soundtrack v0.1
+// Ambience Mini 2.7.x
+
+playlist menu = [
+  "menu_dead_signal.ogg" <-4.0>
+];
+
+playlist settlement = [
+  "settlement_last_light.ogg" <-4.0>
+];
+
+playlist city = [
+  "city_empty_windows.ogg" <-5.0>,
+  "city_broken_signal.ogg" <-5.0>
+];
+
+playlist wild = [
+  "wild_long_road.ogg" <-5.0>
+];
+
+playlist rain = [
+  "wild_after_rain.ogg" <-5.0>
+];
+
+playlist desert = [
+  "desert_dustline.ogg" <-5.0>
+];
+
+playlist ocean = [
+  "ocean_cold_horizon.ogg" <-5.0>
+];
+
+playlist underground = [
+  "underground_below_grid.ogg" <-4.0>
+];
+
+playlist night = [
+  "night_watch.ogg" <-5.0>
+];
+
+playlist combat = [
+  "combat_contact.ogg" <-3.0>
+];
+
+playlist boss = [
+  "boss_red_protocol.ogg" <-2.0>
+];
+
+playlist daylight = city ++ wild;
+
+begin
+  when ( @main_menu ) play menu;
+  when ( @joining ) play menu;
+  when ( @credits ) play [ ];
+
+  when ( @in_game )
+  begin
+    when ( @dead ) play instant [ ];
+
+    // Threat music always wins over location music.
+    when ( @boss_fight ) play boss priority 5;
+    when ( @in_combat ) play combat priority 4;
+
+    // Player-state takes priority over the surrounding biome.
+    interrupt when ( @under_water ) play ocean;
+    interrupt when ( @boat ) play ocean;
+    interrupt when ( @fishing ) play ocean;
+
+    // Underground must be evaluated before biome rules.
+    when ( $cave_score > 0.45 ) play underground;
+
+    // Safe populated spaces get their own calmer identity.
+    when ( @village ) play settlement;
+
+    // Biome-specific exploration layers. Ocean contains no bird samples.
+    when ( any tag in $biome_tags has (tag ~~ "is_ocean" || tag ~~ "is_beach") end )
+      play ocean;
+    when ( any tag in $biome_tags has (tag ~~ "is_desert" || tag ~~ "is_badlands" || tag ~~ "is_savanna") end )
+      play desert;
+
+    when ( @downfall ) play rain;
+    when ( @night ) play night;
+    when ( @day ) play daylight;
+
+    play wild;
+  end
+end
