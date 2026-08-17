@@ -239,6 +239,37 @@ function dzShBindNearby(player, faction) {
   return true
 }
 
+// Transfer the persistent wilderness-site ledger when a physical stronghold
+// is captured. Territory and JourneyMap both read this ledger.
+function dzShTransferLedger(player, core, oldFaction) {
+  const ledgerKey="dz_activity_outpost_ledger_v1"
+  let raw=player.server.persistentData.getString(ledgerKey)
+  if (!raw) return false
+  let sites
+  try { sites=JSON.parse(raw) } catch (err) {
+    console.error("[PDZ STRONGHOLD] invalid outpost ledger during capture: "+err)
+    return false
+  }
+  if (!Array.isArray(sites)) return false
+  let dimension=String(player.level.dimension), nearest=null, best=128*128
+  sites.forEach(site => {
+    if (String(site.dimension)!==dimension) return
+    let dx=Number(site.x)-core.x, dz=Number(site.z)-core.z, distance=dx*dx+dz*dz
+    if (distance<best) { best=distance; nearest=site }
+  })
+  if (!nearest) return false
+  nearest.previousFaction=String(oldFaction||nearest.faction||"unknown")
+  nearest.faction="survivor"
+  nearest.coreAlive=true
+  nearest.supply=Math.max(25,Math.min(60,Number(nearest.supply||0)))
+  nearest.alert=0
+  nearest.defenders=0
+  nearest.lastActivity=Date.now()
+  nearest.capturedBy=String(player.username)
+  player.server.persistentData.putString(ledgerKey,JSON.stringify(sites))
+  return true
+}
+
 BlockEvents.broken(event => {
   let block=event.block, player=event.player
   if (!player || player.level.clientSide) return
@@ -282,6 +313,12 @@ BlockEvents.broken(event => {
   player.server.persistentData.putInt("dz_stronghold_"+faction+"_captured",player.server.persistentData.getInt("dz_stronghold_"+faction+"_captured")+1)
   player.persistentData.putBoolean("dz_story_branch_first_core",true)
   player.addTag("dz_captured_"+faction+"_core")
+  let territoryChanged=dzShTransferLedger(player,core,faction)
+  if (territoryChanged) {
+    player.server.runCommandSilent("deadzoneterritory rebuild")
+    player.server.runCommandSilent("deadzonemap sync")
+    player.tell(Text.of("[TERRITORY] Captured site transferred to the Survivor Network.").green())
+  }
   player.server.runCommandSilent('tellraw @a [{"text":"[FACTION] ","color":"gold","bold":true},{"text":"'+DZ_SH[type].name+'を制圧した。敵の巡回が停止する。","color":"green"}]')
   player.runCommandSilent("playsound minecraft:ui.toast.challenge_complete master @s ~ ~ ~ 0.8 1")
   player.level.players.forEach(member => {
@@ -298,6 +335,19 @@ BlockEvents.broken(event => {
     }
     member.tell(Text.of("[制圧報酬] "+DZ_SH[type].name+" の戦果を受領した。").gold())
     member.runCommandSilent("playsound minecraft:entity.player.levelup player @s ~ ~ ~ 0.45 1.2")
+  })
+  // Easy NPC staff are bound to the captured site. Hostile officers are
+  // removed with the command network; traders survive as neutral contacts.
+  player.level.entities.forEach(entity=>{
+    if(String(entity.type).indexOf("easy_npc:")!==0)return
+    let dx=entity.x-core.x,dy=entity.y-core.y,dz=entity.z-core.z
+    if(dx*dx+dy*dy+dz*dz>80*80)return
+    let bound=entity.persistentData.getString("dz_settlement_site")
+    if(bound!==""&&bound!==id)return
+    if(entity.tags.contains("dz_wilderness_trader")||entity.tags.contains("dz_faction_trader")){
+      entity.tags.remove("dz_raider");entity.tags.remove("dz_remnant");entity.tags.remove("dz_aegis");entity.tags.remove("dz_warden")
+      entity.addTag("dz_friendly");entity.addTag("dz_survivor");entity.addTag("dz_liberated_trader")
+    }else if(entity.tags.contains("dz_faction_officer")||entity.tags.contains("dz_story_boss"))entity.discard()
   })
   console.info("[PDZ STRONGHOLD] captured id="+id+" faction="+faction+" by="+player.username)
   core.discard()

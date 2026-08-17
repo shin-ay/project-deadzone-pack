@@ -1710,7 +1710,7 @@ hash = "bbc36c3d894b632e919513f30373a90a9ea1db9ee4f7651d69393f863726b779"
 
 [[files]]
 file = "config/mca.json"
-hash = "209d78c554a7af3b82506e535ca8addafc802aabbce41adf341ed8349ca8209f"
+hash = "09adf24b032df7fcc84e30d37f18b7208b93cee47e7cb4f7b9796a494449677b"
 
 [[files]]
 file = "config/midnightlib.json"
@@ -2791,6 +2791,10 @@ hash = "a2c7c8e678d4437c3fe94be969720457f15dbe12d7beeba90c55942f0d18cecb"
 [[files]]
 file = "config/vehicle-client.toml"
 hash = "2adf123f5eecc08556cd8001876414188e908ef2b54c2e3e8510bd4fade59b5e"
+
+[[files]]
+file = "config/village_recruits/economy.toml"
+hash = "0f542db6d76158ca007774a183398e75f7b5dbfda83caaa0528c0f03463729ef"
 
 [[files]]
 file = "config/visual_workbench.json"
@@ -7666,7 +7670,7 @@ hash = "1262e7f2975fd9f055429e24ad79cf48bb6f31072ad554b31cdd23d7a1dbed24"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_camp_shop_rotation_v0_1.js"
-hash = "d2b81919d00b2df4caeef0ee30c1a4e9da379aab3b8b29c2c827ed71c9b5b07a"
+hash = "c0db6d748462493ff056226f95dd3f9c8b8c15b44e15f31d383a98a638d25f80"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_career_equipment_use_v0_1.js"
@@ -7702,7 +7706,7 @@ hash = "6ef65bc14f5c0e82f6b458ccd9330d8b67da25cc35207961c4c12a30a3a5fd9f"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_faction_strongholds_v0_1.js"
-hash = "14df6738b649c8bfd3e6ee2bf5773a28e17ddd817fadc9f173399cd438ee0be6"
+hash = "8b11030f3b61030b9ccd55e8f0e62ad4c2cd451ff629d79244dcc2a3ed707a7b"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_faction_territory_v0_1.js"
@@ -7861,6 +7865,10 @@ file = "kubejs/server_scripts/project_deadzone_seafood_bridge_v0_1.js"
 hash = "d87c67f17d674ac06e73d03e62ea4c088523ecdcea4ba0fcf134a527301c9a2a"
 
 [[files]]
+file = "kubejs/server_scripts/project_deadzone_settlement_faction_bridge_v0_1.js"
+hash = "5ce2970fed1fadc50192dcbf3c0167a0b828fd92f29a003a8101b9cbe6646993"
+
+[[files]]
 file = "kubejs/server_scripts/project_deadzone_settlement_npc_compat_v0_1.js"
 hash = "a58e2f65ec1dcd1d388e5062170e59c21b77248b939532ecfef94198355e0ae0"
 
@@ -7894,7 +7902,7 @@ hash = "5b59cdd08b1b3bd375e180c38b4c0addb7f0fcb3e88f8b7c90ae0fb877b0fd2e"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_story_branches_v0_1.js"
-hash = "305eef2ce29142aae940901fceca35fca2a3f7ce3006d7ab023d7233a0b7e014"
+hash = "32fc6ea04015997c200c054f0f065bedc1b48b696cd1431926002804c43752ed"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_story_progress_v0_1.js"
@@ -17079,6 +17087,10 @@ file = "pdz_tools/keymap/apply_keymap.ps1"
 hash = "0588d4891889881918cb065e2e7de863801f00297ad58e584b84643fa4761eb7"
 
 [[files]]
+file = "projectfiles/PROJECT_DEADZONE_20260816_Update_and_Test_Checklist.md"
+hash = "dc4d6eca30c0fdb0303cefcd1daa8543241c1afc773007f5b153fddd7e84673d"
+
+[[files]]
 file = "projectfiles/PROJECT_DEADZONE_Batch_Test_20260802_Contracts.md"
 hash = "fcef09558e3242d3fc549319846967359006e3d7b702c6b81b84e65516833328"
 
@@ -17161,6 +17173,10 @@ hash = "07dfe69cdc7ed1ea8b63567a8e53b22956562436306a58328d3ec60ce80b5282"
 [[files]]
 file = "projectfiles/PROJECT_DEADZONE_Remaining_Tasks_v0.1.md"
 hash = "b910e04ad6e1de2b8adee6e4ada7136274d570f62a2ebdf65319e458fac348fa"
+
+[[files]]
+file = "projectfiles/PROJECT_DEADZONE_Settlement_Faction_Integration_v0.1.md"
+hash = "dda99885171ad6ed2939062569c04e8a348a9d033c238f37e4203d75fd3e7aa8"
 
 [[files]]
 file = "projectfiles/PROJECT_DEADZONE_Settlement_Story_Audio_Update_20260816.md"

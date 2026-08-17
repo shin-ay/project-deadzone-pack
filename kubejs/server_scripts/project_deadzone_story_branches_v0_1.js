@@ -183,6 +183,7 @@ ServerEvents.commandRegistry(event => {
       p.addTag("dz_branch_choice_"+key)
       p.tell(Text.of("[勢力判断] ").gold().append(Text.of(data.label)[data.color]()))
       p.runCommandSilent("playsound minecraft:block.beacon.activate player @s ~ ~ ~ 0.7 1.0")
+      if(global.pdzStoryChoiceEffect)global.pdzStoryChoiceEffect(p,key)
       return 1
     }))
   })

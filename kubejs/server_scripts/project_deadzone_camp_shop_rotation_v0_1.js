@@ -44,8 +44,31 @@ function dzShopShuffle(values) {
   for(let i=result.length-1;i>0;i--){let j=Math.floor(Math.random()*(i+1));let t=result[i];result[i]=result[j];result[j]=t}
   return result
 }
-function dzShopOffer(s){return '{buy:{Count:'+s.price+'b,id:"apocalypsenow:money"},buyB:{},demand:0,maxUses:'+s.uses+',priceMultiplier:0.0f,rewardExp:0b,sell:{Count:'+s.count+'b,id:"'+s.id+'"},specialPrice:0,uses:0,xp:0}'}
-function dzShopBuybackOffer(s){return '{buy:{Count:'+s.count+'b,id:"'+s.id+'"},buyB:{},demand:0,maxUses:'+s.uses+',priceMultiplier:0.0f,rewardExp:0b,sell:{Count:'+s.money+'b,id:"apocalypsenow:money"},specialPrice:0,uses:0,xp:0}'}
+function dzShopStoryFactor(server,shopKey){
+  // Story verdicts are personal, while Easy NPC offers are shared.  Use the
+  // average verdict of the currently-online team when a rotation is built.
+  let players=server.players
+  if(!players.length)return 1.0
+  let total=0
+  players.forEach(p=>{
+    let factor=1.0
+    let cdf=p.persistentData.getString("dz_branch_choice_cdf")
+    let raider=p.persistentData.getString("dz_branch_choice_raider")
+    let remnant=p.persistentData.getString("dz_branch_choice_remnant")
+    let aegis=p.persistentData.getString("dz_branch_choice_aegis")
+    if(shopKey==="food"&&cdf==="cdf_coalition")factor-=0.10
+    if(shopKey==="food"&&raider==="raider_truce")factor-=0.10
+    if(shopKey==="medical"&&aegis==="aegis_release")factor-=0.20
+    if(shopKey==="medical"&&aegis==="aegis_burn")factor+=0.10
+    if(shopKey==="parts"&&remnant==="remnant_defect")factor-=0.15
+    if(shopKey==="parts"&&remnant==="remnant_decommission")factor+=0.10
+    if(cdf==="cdf_order"&&(shopKey==="parts"||shopKey==="medical"))factor-=0.05
+    total+=Math.max(0.55,Math.min(1.45,factor))
+  })
+  return total/players.length
+}
+function dzShopOffer(s,factor){let price=Math.max(1,Math.round(s.price*factor));return '{buy:{Count:'+price+'b,id:"apocalypsenow:money"},buyB:{},demand:0,maxUses:'+s.uses+',priceMultiplier:0.0f,rewardExp:0b,sell:{Count:'+s.count+'b,id:"'+s.id+'"},specialPrice:0,uses:0,xp:0}'}
+function dzShopBuybackOffer(s,factor){let money=Math.max(1,Math.round(s.money/Math.max(0.55,factor)));return '{buy:{Count:'+s.count+'b,id:"'+s.id+'"},buyB:{},demand:0,maxUses:'+s.uses+',priceMultiplier:0.0f,rewardExp:0b,sell:{Count:'+money+'b,id:"apocalypsenow:money"},specialPrice:0,uses:0,xp:0}'}
 function dzRotateOneShop(server,shop){
   let selector="@e[type=easy_npc:humanoid,tag="+shop.tag+",limit=1]"
   if(server.runCommandSilent("execute if entity "+selector)<=0)return false
@@ -55,10 +78,11 @@ function dzRotateOneShop(server,shop){
   // Four rotating entries give multiplayer groups more outlets without making
   // any single renewable resource a permanent money farm.
   let buyback=dzShopShuffle(eligibleBuyback).slice(0,4)
-  let recipes=stock.map(dzShopOffer).concat(buyback.map(dzShopBuybackOffer))
+  let storyFactor=dzShopStoryFactor(server,shop.key)
+  let recipes=stock.map(s=>dzShopOffer(s,storyFactor)).concat(buyback.map(s=>dzShopBuybackOffer(s,storyFactor)))
   let nbt='{Offers:{Inventory:{},Recipes:{Recipes:['+recipes.join(",")+']}},TradingData:{TradingDataSet:{LastReset:0L,MaxUses:24,ResetsEveryMin:120,RewardedXP:0,Type:"BASIC"}}}'
   if(server.runCommandSilent("data merge entity "+selector+" "+nbt)<=0)return false
-  console.info("[PROJECT DEADZONE][Camp Shop] "+shop.key+" T"+tier+" stock="+stock.map(v=>v.id).join(", ")+" buyback="+buyback.map(v=>v.id).join(", "))
+  console.info("[PROJECT DEADZONE][Camp Shop] "+shop.key+" T"+tier+" storyFactor="+storyFactor.toFixed(2)+" stock="+stock.map(v=>v.id).join(", ")+" buyback="+buyback.map(v=>v.id).join(", "))
   return true
 }
 function dzRotateCampShops(server,announce){
