@@ -6,7 +6,11 @@
 	#If true, players can only select their class on first join
 	allowClassChangeOnlyOnFirstJoin = true
 	#If true, the class selection GUI will automatically open on first join
-	showClassGuiOnFirstJoin = true
+	# PDZ transfers new players to the intake lobby first. Opening this on the
+	# initial Overworld login makes the dimension transfer close the screen.
+	# The dedicated Easy NPC registrar opens the official GUI from its dialog,
+	# after the player has safely arrived in the lobby.
+	showClassGuiOnFirstJoin = false
 	#Cooldown in seconds before a player can change their class again (0 = no cooldown)
 	#Range: 0 ~ 86400
 	classChangeCooldownSeconds = 0

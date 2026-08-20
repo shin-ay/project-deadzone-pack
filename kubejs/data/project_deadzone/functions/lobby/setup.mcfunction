@@ -14,7 +14,7 @@ execute in lobby:lobby_dimension run fill 17 11 2 17 12 18 minecraft:iron_bars r
 
 # Refresh only PDZ-owned intake staff, so /reload never creates duplicates.
 execute in lobby:lobby_dimension run kill @e[type=easy_npc:humanoid,tag=pdz_intake_staff]
-execute in lobby:lobby_dimension positioned 5 11 9 run easy_npc preset import_new custom easy_npc:preset/humanoid/deadzone_minato_job.npc.nbt ~ ~ ~
+execute in lobby:lobby_dimension positioned 5 11 9 run easy_npc preset import_new custom easy_npc:preset/humanoid/deadzone_lobby_registrar.npc.nbt ~ ~ ~
 execute in lobby:lobby_dimension positioned 5 11 9 run tag @e[type=easy_npc:humanoid,sort=nearest,limit=1,distance=..3] add pdz_intake_staff
 execute in lobby:lobby_dimension positioned 13 11 9 run easy_npc preset import_new custom easy_npc:preset/humanoid/deadzone_rei_radio.npc.nbt ~ ~ ~
 execute in lobby:lobby_dimension positioned 13 11 9 run tag @e[type=easy_npc:humanoid,sort=nearest,limit=1,distance=..3] add pdz_intake_staff

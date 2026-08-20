@@ -15,21 +15,11 @@ function dzOnboardingIsLobby(player) {
   return dzOnboardingDimension(player).indexOf("lobby:lobby_dimension") >= 0
 }
 
-function dzOpenInitialJobMenu(player) {
+function dzShowLobbyReceptionPrompt(player) {
   if (!player || !player.alive || player.persistentData.getBoolean("dz_job_chosen")) return
   if (!dzOnboardingIsLobby(player)) return
-  player.tell(Text.of("[PROJECT DEADZONE] \u53d7\u4ed8\u3067JOB\u3092\u9078\u629e\u3057\u3066\u304f\u3060\u3055\u3044\u3002").yellow())
-  player.tell(
-    Text.of("[ JOB\u9078\u629e\u30e1\u30cb\u30e5\u30fc\u3092\u958b\u304f ]")
-      .green()
-      .clickRunCommand("/deadzonejob menu")
-      .hover(Text.of("\u30af\u30ea\u30c3\u30af\u3057\u3066JOB\u3092\u9078\u629e")))
-  // Auto-open only once per login.  The clickable prompt is repeated below,
-  // so closing the screen never leaves a new player permanently stuck.
-  if (!player.persistentData.getBoolean("dz_lobby_job_menu_auto_opened")) {
-    player.persistentData.putBoolean("dz_lobby_job_menu_auto_opened", true)
-    player.runCommandSilent("deadzonejob menu")
-  }
+  player.tell(Text.of("[PROJECT DEADZONE] 正面の登録受付官アオイに話しかけ、初期JOBを登録してください。").yellow())
+  player.runCommandSilent('title @s actionbar {"text":"登録受付官アオイに話しかけてJOBを選択","color":"gold"}')
 }
 
 function dzOfferSettlementDeparture(player) {
@@ -66,7 +56,7 @@ function dzReadyReport(player) {
 
   if (!chosen) {
     player.tell(Text.of("[ JOB\u9078\u629e\u30e1\u30cb\u30e5\u30fc\u3092\u8868\u793a ]").green()
-      .clickRunCommand("/deadzonejob menu")
+      .clickRunCommand("/class gui")
       .hover(Text.of("\u30af\u30ea\u30c3\u30af\u3057\u3066JOB\u9078\u629e\u3092\u958b\u304f")))
   } else {
     player.tell(Text.of("\u57fa\u672c\u30d7\u30ec\u30a4\u30e4\u30fc\u30c7\u30fc\u30bf\u306f\u30de\u30eb\u30c1\u30c6\u30b9\u30c8\u53ef\u80fd\u3067\u3059\u3002").green())
@@ -75,7 +65,6 @@ function dzReadyReport(player) {
 
 PlayerEvents.loggedIn(event => {
   let player = event.player
-  player.persistentData.remove("dz_lobby_job_menu_auto_opened")
   player.persistentData.remove("dz_lobby_arrival_seen")
   player.persistentData.putInt("dz_lobby_prompt_ticks", 0)
   player.server.scheduleInTicks(40, callback => {
@@ -94,22 +83,13 @@ PlayerEvents.tick(event => {
   let player = event.player
   if (!player || !player.alive || !dzOnboardingIsLobby(player)) return
 
-  // Do not rely on a fixed delay after login. Crossing into the Lobby can take
-  // several seconds on a new world, and the old 80-tick timer often fired in
-  // the Overworld and silently discarded the JOB screen. Detect the actual
-  // first Lobby tick, rebuild the intake while the server is fully available,
-  // then open JOB selection.
+  // Detect the actual first Lobby tick and rebuild the intake while the server
+  // is fully available. JOB selection is deliberately opened by the registrar
+  // NPC, never by a teleport timer.
   if (!player.persistentData.getBoolean("dz_lobby_arrival_seen")) {
     player.persistentData.putBoolean("dz_lobby_arrival_seen", true)
     player.server.runCommandSilent("function project_deadzone:lobby/setup")
-    player.server.scheduleInTicks(10, callback => {
-      if (!player || !player.alive || !dzOnboardingIsLobby(player)) return
-      if (player.persistentData.getBoolean("dz_job_chosen")) {
-        dzOfferSettlementDeparture(player)
-      } else {
-        dzOpenInitialJobMenu(player)
-      }
-    })
+    player.server.scheduleInTicks(20, callback => dzShowLobbyReceptionPrompt(player))
   }
   let probe = player.persistentData.getInt("dz_lobby_safety_probe") + 1
   if (probe < 5) {
@@ -124,11 +104,12 @@ PlayerEvents.tick(event => {
     player.runCommandSilent("effect give @s minecraft:regeneration 5 4 true")
     player.tell(Text.of("[PROJECT DEADZONE] \u30ed\u30d3\u30fc\u306e\u5b89\u5168\u5730\u70b9\u3078\u5fa9\u5e30\u3057\u307e\u3057\u305f\u3002").yellow())
   }
+
   let promptTicks = player.persistentData.getInt("dz_lobby_prompt_ticks") + 5
-  if (promptTicks >= 200) {
+  if (promptTicks >= 400) {
     promptTicks = 0
     if (player.persistentData.getBoolean("dz_job_chosen")) dzOfferSettlementDeparture(player)
-    else dzOpenInitialJobMenu(player)
+    else dzShowLobbyReceptionPrompt(player)
   }
   player.persistentData.putInt("dz_lobby_prompt_ticks", promptTicks)
 })

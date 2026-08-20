@@ -718,7 +718,7 @@ hash = "3fcd8013137a86c00953d4be1e56945b84b87594be722bbf3b3be8d752e2577f"
 
 [[files]]
 file = "config/classmod-common.toml"
-hash = "3c5f4ed87495e1fb5818c8a25e4ebbebacd9e6b75ed89ebe9447907d5f88ac9c"
+hash = "77f61022174e240d5c052a5c866e4b95035faf67dd0ca74ca1e0a4715cfdaf90"
 
 [[files]]
 file = "config/classmod.zip"
@@ -943,6 +943,10 @@ hash = "94c018fb74d07607bb50701a77b55a1f0911349287b504b894f0ac0b3e84c9ea"
 [[files]]
 file = "config/easy_npc/preset/humanoid/deadzone_maya_food.npc.nbt"
 hash = "7c43bedcc90b7f25a744bfa4cc2c7e783f624b8012a0cd9729f1ee8c6e09a8a2"
+
+[[files]]
+file = "config/easy_npc/preset/humanoid/deadzone_lobby_registrar.npc.nbt"
+hash = "c642f4f2f1c8fc5780ff5dd8fe38cfd605263fd8ad6aa108e1524af4888e7146"
 
 [[files]]
 file = "config/easy_npc/preset/humanoid/deadzone_minato_job.npc.nbt"
@@ -7022,7 +7026,7 @@ hash = "a891cd6f2ffcdbb3bd3afaeda7646f0f76661dd91049b9967d25caaa2fce5271"
 
 [[files]]
 file = "kubejs/data/project_deadzone/functions/lobby/setup.mcfunction"
-hash = "74ca0a4fce032e037b2ccfff8c7ad5e62055cf32ba0d9cfca75e3d7c54f62598"
+hash = "b9c061a7d355b87b89ccb9180c4a8afc8bb6236aa3be4112c0427b889513a01c"
 
 [[files]]
 file = "kubejs/data/project_deadzone/functions/settlement/locate_guide.mcfunction"
@@ -8010,7 +8014,7 @@ hash = "9ad212920727a72720a2c312099c5c8cf7613d832023813f09e78b3712673baf"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_onboarding_v0_1.js"
-hash = "dd1d3163eb2b318e4995deab207ff489e5ac7fdc9bde0d6cd679955b4de5ea67"
+hash = "109a53a8277f2fc3054713401cdbadf7cb45afd553824a75b80ce901218fd9c0"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_outpost_garrisons_v0_1.js"
