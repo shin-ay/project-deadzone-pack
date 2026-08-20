@@ -27,7 +27,7 @@
 	#Default: 0.5
 	#
 	#Range: 0.0 ~ 1.0
-	offlineIncomeScale = 0.5
+offlineIncomeScale = 0.25
 	#Let OFFLINE village centers grow their population on paper. Vanilla
 	#breeding needs loaded entities, so without this a village outside the
 	#simulation distance is demographically frozen forever.
@@ -79,7 +79,7 @@
 	#offline/unloaded villages instant-place the structure but still pay for it.
 	#false = fall back to the old direct-placement builder. Default: true
 	#
-constructionEnabled = false
+	constructionEnabled = false
 	#Fraction of every income payout credited into the faction's separate
 	#CONSTRUCTION war chest, used to buy the blocks the builder worker places.
 	#This is an EXTRA generated ON TOP of the income — it is NOT taken out of the
@@ -202,7 +202,7 @@ constructionEnabled = false
 	#Default: 75
 	#
 	#Range: 1 ~ 100000
-	populationCap = 75
+populationCap = 36
 	#Starting combined population cap (villagers + recruits) of a newly
 	#founded village. The village begins small and its cap climbs toward
 	#populationCapMax as it stays full and solvent (see
@@ -1839,7 +1839,7 @@ constructionEnabled = false
 	#ones a player is actually standing next to. Default: 12
 	#
 	#Range: 1 ~ 64
-	convoyMaxActive = 12
+	convoyMaxActive = 2
 	#How long a convoy waits for its own escort to load before giving it up
 	#and building a replacement, in ticks. 0 = never wait (the old behaviour,
 	#which BRED convoys - do not).
@@ -1869,7 +1869,7 @@ constructionEnabled = false
 	#(20 ticks = 1 second). Default: 12000 (10 minutes)
 	#
 	#Range: 200 ~ 432000
-	convoyCooldownTicks = 12000
+	convoyCooldownTicks = 24000
 	#The shortest trip that counts as a convoy, in blocks. A destination
 	#closer than this is not a different village at all, so nothing is sent
 	#there.
@@ -1979,7 +1979,7 @@ constructionEnabled = false
 	convoyGuardsMin = 1
 	#Guards riding with the richest village's convoy. Default: 8
 	#Range: 0 ~ 32
-	convoyGuardsMax = 8
+	convoyGuardsMax = 4
 	#Treasury per extra guard: a village fields one more guard for every this
 	#many points of economy, between the min and the max above. This is what
 	#makes an escort contract read the sender's means - a poor village sends
@@ -2030,7 +2030,7 @@ constructionEnabled = false
 	#sender, and by factionless BANDITS. Turning this off leaves convoys as
 	#pure logistics with nothing to escort them against. Default: true
 	#
-	convoyRaidsEnabled = true
+convoyRaidsEnabled = false
 	#Game ticks between two ambush rolls on the same convoy. Default: 600
 	#Range: 20 ~ 24000
 	convoyRaidIntervalTicks = 600
@@ -2126,3 +2126,4 @@ constructionEnabled = false
 	#Standing gained with the faction for delivering its convoy. Default: 8
 	#Range: 0 ~ 200
 	convoyEscortRep = 8
+

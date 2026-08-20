@@ -2966,7 +2966,19 @@ hash = "2adf123f5eecc08556cd8001876414188e908ef2b54c2e3e8510bd4fade59b5e"
 
 [[files]]
 file = "config/village_recruits/economy.toml"
-hash = "8df50526414730c53444af1bb6222407d3bc41dcd08683ccf917dcca563c8cdd"
+hash = "e0e51174168cdd5703612422933b4bed060ab8c1534ea54c111e13021bed415a"
+
+[[files]]
+file = "config/village_recruits/military.toml"
+hash = "6ed4a566c533280fbe7d0bcea8dbd09bccce2cab1f31f0675386a34048cafd5f"
+
+[[files]]
+file = "config/village_recruits/politics.toml"
+hash = "b7d0ecb48d93bfa2f685c2c078a3706750035e721a22e7644718e07e5b2eb794"
+
+[[files]]
+file = "config/village_recruits/sky.toml"
+hash = "d2a04819b1aa89547bd7089d9b3fcc6d3c376848c9a3b0b7e1cac44ea508fa62"
 
 [[files]]
 file = "config/visual_workbench.json"
@@ -8062,7 +8074,7 @@ hash = "d87c67f17d674ac06e73d03e62ea4c088523ecdcea4ba0fcf134a527301c9a2a"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_settlement_faction_bridge_v0_1.js"
-hash = "76c7eeb714e09d72e300d1f354d675b43265236d177a91671f0735751509f59c"
+hash = "5a4e5268783e9f4164309590d41a944ab65c80f79d780b3b6745741b5cd0a1ad"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_settlement_npc_compat_v0_1.js"
@@ -17443,6 +17455,10 @@ hash = "b79e4d785b5800d1bbb627725947b0314c763f4e3d8cf663e6e681b0eb7d55cb"
 [[files]]
 file = "projectfiles/PROJECT_DEADZONE_Urban_Settlement_Trade_Job_Framework_v0.1.md"
 hash = "8c77c701a71f35351d06bcc35e11747d47cb58eca3c7978767a496bc812c3a13"
+
+[[files]]
+file = "projectfiles/PROJECT_DEADZONE_Village_Recruits_Profile_v0.1_JP.md"
+hash = "3209f0f6724d9128b2b65f305b04f295342c028b2fa906babd5be06ef3fb89c4"
 
 [[files]]
 file = "projectfiles/design/DEADZONE_DESIGN_HANDOFF_2026-07-30.md"

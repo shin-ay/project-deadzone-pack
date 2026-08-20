@@ -228,6 +228,23 @@ ServerEvents.commandRegistry(event=>{
     return 1
   }))
   c.then(Commands.literal("sites").requires(s=>s.hasPermission(2)).executes(ctx=>{ctx.source.player.tell(Text.of("登録集落数: "+pdzSetRead(ctx.source.server).filter(s=>String(s.id||"").indexOf("settlement_")===0).length).green());return 1}))
+  c.then(Commands.literal("native_help").executes(ctx=>{
+    let p=ctx.source.player
+    p.tell(Text.of("=== Village Recruits settlement layer ===").gold())
+    p.tell(Text.of("/vrvillages : village/faction overview").aqua())
+    p.tell(Text.of("/villcenters : registered village centers").aqua())
+    p.tell(Text.of("/vrconvoy : ground convoy status").aqua())
+    p.tell(Text.of("/vrcontracts : settlement contracts").aqua())
+    p.tell(Text.of("PDZ owns story/economy labels; Village Recruits owns AI, defense, trade and convoys.").gray())
+    return 1
+  }))
+  c.then(Commands.literal("native_status").requires(s=>s.hasPermission(2)).executes(ctx=>{
+    let p=ctx.source.player
+    p.runCommandSilent("vrvillages")
+    p.runCommandSilent("villcenters")
+    p.runCommandSilent("vrconvoy")
+    return 1
+  }))
   event.register(c)
 })
 
