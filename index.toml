@@ -3533,6 +3533,22 @@ file = "kubejs/data/brutalbosses/bosses/rabbitboss.json"
 hash = "45921fcc62bcba2d199aa8fc0582c94a5dcbefed10e68774ba19db3f10004583"
 
 [[files]]
+file = "kubejs/data/createtaczauto/recipes/large_gunpowder_recipe_2.json"
+hash = "ebdc7b29466fda896bc04ba8752724e6955c4e7c4bfa47bf22ad85809c8345a7"
+
+[[files]]
+file = "kubejs/data/curios/curios/slots/earwear.json"
+hash = "147923d944ad3ede22998256cf0266b417990050ede3cf649051e81996053e19"
+
+[[files]]
+file = "kubejs/data/curios/curios/slots/facewear.json"
+hash = "1ca5de1c7edbee76948e6ca2bdfcab3ddbefb1a7e9f3f72eb48d2474fbb84fe2"
+
+[[files]]
+file = "kubejs/data/curios/curios/slots/knees.json"
+hash = "7d59998fcb3f11bcd6cb0f65d62e5b2fff5b6f8518dd11da6d4fc8c7ca7d32ad"
+
+[[files]]
 file = "kubejs/data/lostcities/lostcities/all_block_ids.csv"
 hash = "02a9ee47ac2cbff87b69458657d483c9bae3915d6d91099b8e46da59db5f3d01"
 
@@ -7811,6 +7827,10 @@ hash = "be0387572b68c9da4b26ae482dc72c516e62f3bbbbf5e966cfd5e1876dd2e30a"
 [[files]]
 file = "kubejs/data/scalinghealth/sh_mechanics/mobs.json"
 hash = "3da3e06581e14a3099fc10f1eb949fcb66fbd28343ff042e862f7b6050248a06"
+
+[[files]]
+file = "kubejs/data/starcatcher/data_maps/item/catch_modifiers.json"
+hash = "f30b35ee4f39dbddb34f4788d99e1055b512a93061a1baf963e00b29ef1f8430"
 
 [[files]]
 file = "kubejs/data/underground_bunkers/worldgen/template_pool/underground_bunker/underground_bunker_start.json"
