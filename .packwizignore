@@ -26,5 +26,9 @@ resourcepacks/*
 !resourcepacks/PDZ_Audio_Test_v0.1/**
 shaderpacks/
 
+# Experimental boss encounters are paused until settlement onboarding is stable
+kubejs/data/brutalbosses/bosses/pdz_axel.json
+kubejs/server_scripts/project_deadzone_boss_encounters_v1.js
+
 # Repository documentation is not installed into the game instance
 README.md

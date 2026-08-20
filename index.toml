@@ -742,7 +742,7 @@ hash = "014dc67623c4e871b26ad8b58477897bb61f478445b4a9c1c89d9c3e545ace8c"
 
 [[files]]
 file = "config/classmod/classes.json"
-hash = "7b791acfd63055055d7c86316a1721097e567a6cd650861fb7661351aa1b9b79"
+hash = "81a3e98aea4e68bcd8f4cfd15b813b827e2c800ff9b62a7039c64a0b8cb3a75d"
 
 [[files]]
 file = "config/classmod/mob_spawn_restrictions.json"
@@ -941,12 +941,12 @@ file = "config/easy_npc/preset/humanoid/deadzone_hank_buddy.npc.nbt"
 hash = "94c018fb74d07607bb50701a77b55a1f0911349287b504b894f0ac0b3e84c9ea"
 
 [[files]]
-file = "config/easy_npc/preset/humanoid/deadzone_maya_food.npc.nbt"
-hash = "7c43bedcc90b7f25a744bfa4cc2c7e783f624b8012a0cd9729f1ee8c6e09a8a2"
-
-[[files]]
 file = "config/easy_npc/preset/humanoid/deadzone_lobby_registrar.npc.nbt"
 hash = "c642f4f2f1c8fc5780ff5dd8fe38cfd605263fd8ad6aa108e1524af4888e7146"
+
+[[files]]
+file = "config/easy_npc/preset/humanoid/deadzone_maya_food.npc.nbt"
+hash = "7c43bedcc90b7f25a744bfa4cc2c7e783f624b8012a0cd9729f1ee8c6e09a8a2"
 
 [[files]]
 file = "config/easy_npc/preset/humanoid/deadzone_minato_job.npc.nbt"
@@ -978,7 +978,7 @@ hash = "647581a7e72b527a6de6261224a29dc37712faf7a57de0d49e76441a3146382b"
 
 [[files]]
 file = "config/easy_npc/security.cfg"
-hash = "323027b0d45e3562ddf57572d4e530511d3fd5bf36e5a674902699bf44064d2b"
+hash = "621ed3b6ad5b68bd471db93daa86441b8e37d4505273beca7e0cfc7c91a4f34e"
 
 [[files]]
 file = "config/easy_npc/skin/allay/allay_template.png"
@@ -7026,7 +7026,7 @@ hash = "a891cd6f2ffcdbb3bd3afaeda7646f0f76661dd91049b9967d25caaa2fce5271"
 
 [[files]]
 file = "kubejs/data/project_deadzone/functions/lobby/setup.mcfunction"
-hash = "b9c061a7d355b87b89ccb9180c4a8afc8bb6236aa3be4112c0427b889513a01c"
+hash = "7c4914da9a158a639dd627bd2fa550994446714561b668ed8df90eba176db94f"
 
 [[files]]
 file = "kubejs/data/project_deadzone/functions/settlement/locate_guide.mcfunction"
@@ -8014,7 +8014,7 @@ hash = "9ad212920727a72720a2c312099c5c8cf7613d832023813f09e78b3712673baf"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_onboarding_v0_1.js"
-hash = "109a53a8277f2fc3054713401cdbadf7cb45afd553824a75b80ce901218fd9c0"
+hash = "7c56d107ca0154226ab804d78af2cc15146bdef906e4dd8ab65c046653266896"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_outpost_garrisons_v0_1.js"
@@ -8062,7 +8062,7 @@ hash = "d87c67f17d674ac06e73d03e62ea4c088523ecdcea4ba0fcf134a527301c9a2a"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_settlement_faction_bridge_v0_1.js"
-hash = "5ce2970fed1fadc50192dcbf3c0167a0b828fd92f29a003a8101b9cbe6646993"
+hash = "76c7eeb714e09d72e300d1f354d675b43265236d177a91671f0735751509f59c"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_settlement_npc_compat_v0_1.js"
@@ -8098,7 +8098,7 @@ hash = "5b59cdd08b1b3bd375e180c38b4c0addb7f0fcb3e88f8b7c90ae0fb877b0fd2e"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_starter_village_v0_1.js"
-hash = "6a0d98e4be71df3fde631e62f324fda153bcdcb297c02a267ea721bd988485d2"
+hash = "3270c0203a8ab16a08b2f9b7d2bd15e2b54fb2a9e696a505060132267390cfd6"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_story_branches_v0_1.js"
@@ -8162,7 +8162,7 @@ hash = "0f2effb86e78856c471684c2eff9d31521a84f8e3bf1bee512dcbe294fd1db30"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_wilderness_sites_v0_1.js"
-hash = "988f7ca01c22f80eacffdfcafb113688d26ad50ad143b68f92e2c6049d386c72"
+hash = "f41129c70591d799252a382964e2fd6c3d126f954d11caa04786dd2ed4316b04"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_world_evolution_v0_1.js"
@@ -8864,6 +8864,11 @@ hash = "48608fe6ddb74749697b26bd2750f3083a6dc8664cfb7e38806b25f3a8eadf7e"
 metafile = true
 
 [[files]]
+file = "mods/choicetheorems-overhauled-village.pw.toml"
+hash = "78bcb2e1589baaa14ecccb6fca39293a5b4ac8d7f6f5a6ee1a6a812e3a5a958c"
+metafile = true
+
+[[files]]
 file = "mods/citadel.pw.toml"
 hash = "5a4b03567f23fe0aac7806bd7cc9734138bf5fc098e98c1bb552d5b288bef258"
 metafile = true
@@ -8876,6 +8881,11 @@ metafile = true
 [[files]]
 file = "mods/cloth-config.pw.toml"
 hash = "96204145e12506e0625d8b9bfa05aad54e9a62fd511bae39f0d57fcb5e39f4cc"
+metafile = true
+
+[[files]]
+file = "mods/collective.pw.toml"
+hash = "bba3705506df4b1ed7456b3cc211a3c6b61ab571c95dc11a579e2ff49d1eb40b"
 metafile = true
 
 [[files]]
@@ -8991,6 +9001,11 @@ metafile = true
 [[files]]
 file = "mods/creativecore.pw.toml"
 hash = "47736af1584283072d721e4f2700929a0fabe67b36e2175fc48b0964db70ab8b"
+metafile = true
+
+[[files]]
+file = "mods/cristel-lib.pw.toml"
+hash = "6a62d8663df5fe33f18c8a0d3784a3aab183b252c620c45fc98e677a71b06cde"
 metafile = true
 
 [[files]]
@@ -10013,6 +10028,11 @@ hash = "edfafd11282b46cca84cce70807e85f8b11e918ead6a1ef7aa7d9e216d98ece3"
 metafile = true
 
 [[files]]
+file = "mods/towns-and-towers.pw.toml"
+hash = "00a0cba74675174812eea16aca533adfe9bac7b30a81a7e33dd81bd9343b45c4"
+metafile = true
+
+[[files]]
 file = "mods/transport-simulator-official-vehicle-set.pw.toml"
 hash = "fd5edfd59aadb46cf1316882ee7333503f4fd6ef71e375bb5df005c2a37bece9"
 metafile = true
@@ -10040,6 +10060,11 @@ metafile = true
 [[files]]
 file = "mods/unu-parts-pack.pw.toml"
 hash = "81e8b4f0b328134982bf1d27721048ea0451368227ec17d27c8c93ee8a848645"
+metafile = true
+
+[[files]]
+file = "mods/village-spawn-point.pw.toml"
+hash = "d370bd37f30ffff728dcc1e4ace6e38dc63d7e20e3a3baad764269491627fee2"
 metafile = true
 
 [[files]]

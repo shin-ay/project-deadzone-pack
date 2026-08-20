@@ -15,15 +15,10 @@
       "cardTexture": "classmod:textures/gui/card_default.png",
       "accentColor": "#9AA06A",
       "attributes": [],
-      "starterKit": [
-        {
-          "item": "minecraft:bread",
-          "count": 1
-        }
-      ],
+      "starterKit": [],
       "selectionCommands": [
         {
-          "command": "deadzonejob apply survivor",
+          "command": "deadzonejob choose survivor",
           "executor": "SERVER",
           "elevated": true
         }
@@ -48,15 +43,10 @@
       "cardTexture": "classmod:textures/gui/card_default.png",
       "accentColor": "#9B3A32",
       "attributes": [],
-      "starterKit": [
-        {
-          "item": "minecraft:bread",
-          "count": 1
-        }
-      ],
+      "starterKit": [],
       "selectionCommands": [
         {
-          "command": "deadzonejob apply weapons_expert",
+          "command": "deadzonejob choose weapons_expert",
           "executor": "SERVER",
           "elevated": true
         }
@@ -81,15 +71,10 @@
       "cardTexture": "classmod:textures/gui/card_default.png",
       "accentColor": "#D14B4B",
       "attributes": [],
-      "starterKit": [
-        {
-          "item": "minecraft:bread",
-          "count": 1
-        }
-      ],
+      "starterKit": [],
       "selectionCommands": [
         {
-          "command": "deadzonejob apply medic",
+          "command": "deadzonejob choose medic",
           "executor": "SERVER",
           "elevated": true
         }
@@ -114,15 +99,10 @@
       "cardTexture": "classmod:textures/gui/card_default.png",
       "accentColor": "#C5893D",
       "attributes": [],
-      "starterKit": [
-        {
-          "item": "minecraft:bread",
-          "count": 1
-        }
-      ],
+      "starterKit": [],
       "selectionCommands": [
         {
-          "command": "deadzonejob apply mechanic",
+          "command": "deadzonejob choose mechanic",
           "executor": "SERVER",
           "elevated": true
         }
@@ -147,15 +127,10 @@
       "cardTexture": "classmod:textures/gui/card_default.png",
       "accentColor": "#D0A644",
       "attributes": [],
-      "starterKit": [
-        {
-          "item": "minecraft:bread",
-          "count": 1
-        }
-      ],
+      "starterKit": [],
       "selectionCommands": [
         {
-          "command": "deadzonejob apply engineer",
+          "command": "deadzonejob choose engineer",
           "executor": "SERVER",
           "elevated": true
         }
@@ -180,15 +155,10 @@
       "cardTexture": "classmod:textures/gui/card_default.png",
       "accentColor": "#5C9B62",
       "attributes": [],
-      "starterKit": [
-        {
-          "item": "minecraft:bread",
-          "count": 1
-        }
-      ],
+      "starterKit": [],
       "selectionCommands": [
         {
-          "command": "deadzonejob apply scout",
+          "command": "deadzonejob choose scout",
           "executor": "SERVER",
           "elevated": true
         }
@@ -213,15 +183,10 @@
       "cardTexture": "classmod:textures/gui/card_default.png",
       "accentColor": "#4C668C",
       "attributes": [],
-      "starterKit": [
-        {
-          "item": "minecraft:bread",
-          "count": 1
-        }
-      ],
+      "starterKit": [],
       "selectionCommands": [
         {
-          "command": "deadzonejob apply security",
+          "command": "deadzonejob choose security",
           "executor": "SERVER",
           "elevated": true
         }
@@ -246,15 +211,10 @@
       "cardTexture": "classmod:textures/gui/card_default.png",
       "accentColor": "#7D6A4B",
       "attributes": [],
-      "starterKit": [
-        {
-          "item": "minecraft:bread",
-          "count": 1
-        }
-      ],
+      "starterKit": [],
       "selectionCommands": [
         {
-          "command": "deadzonejob apply survivalist",
+          "command": "deadzonejob choose survivalist",
           "executor": "SERVER",
           "elevated": true
         }

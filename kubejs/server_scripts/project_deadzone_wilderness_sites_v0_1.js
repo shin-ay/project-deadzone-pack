@@ -1,6 +1,9 @@
 // PROJECT DEADZONE wilderness faction sites v0.1
 // Detects existing generated structures when a player enters them and assigns
-// a stable occupation. No forced chunks and no global structure scans.
+// a stable occupation. ChaosZ cities are always lawless ruins. Each city keeps
+// a persistent activity profile; buildings only select an expedition force,
+// facility role, loot and garrison makeup from that profile.
+// No forced chunks and no global structure scans.
 
 const PDZ_WILD_REGISTRIES = Java.loadClass('net.minecraft.core.registries.Registries')
 const PDZ_WILD_RL = Java.loadClass('net.minecraft.resources.ResourceLocation')
@@ -8,6 +11,7 @@ const PDZ_WILD_BLOCKPOS = Java.loadClass('net.minecraft.core.BlockPos')
 const PDZ_WILD_HEIGHTMAP = Java.loadClass('net.minecraft.world.level.levelgen.Heightmap$Types')
 const PDZ_WILD_STRING_ARG = Java.loadClass('com.mojang.brigadier.arguments.StringArgumentType')
 const PDZ_WILD_REGISTRY_KEY = 'dz_wild_site_registry_v2'
+const PDZ_WILD_CITY_REGISTRY_KEY = 'dz_chaosz_city_registry_v1'
 let PDZ_WILD_LOSTCITIES = null
 try { PDZ_WILD_LOSTCITIES = Java.loadClass('mcjty.lostcities.LostCities') }
 catch (ignored) { console.warn('[PROJECT DEADZONE] Lost Cities API unavailable; city occupation disabled') }
@@ -89,12 +93,12 @@ const PDZ_WILD_SITES = {
 const PDZ_WILD_NAMES = {
   survivor:'Survivor Network', civildef:'Civil Defense Force', raider:'Ash Jackals',
   remnant:'Remnant Military', aegis:'AEGIS Directorate', warden:'WARDEN Network',
-  infected:'Infected', independent:'Independent'
+  infected:'Infected', independent:'Independent', lawless:'Lawless Ruins'
 }
 
 const PDZ_WILD_COLORS = {
   survivor:'green', civildef:'aqua', raider:'red', remnant:'dark_red',
-  aegis:'light_purple', warden:'gold', infected:'dark_green', independent:'yellow'
+  aegis:'light_purple', warden:'gold', infected:'dark_green', independent:'yellow', lawless:'gray'
 }
 
 function pdzWildColoredText(value,color) {
@@ -145,6 +149,17 @@ function pdzWildWriteRegistry(server,value) {
   server.persistentData.putString(PDZ_WILD_REGISTRY_KEY,JSON.stringify(value))
 }
 
+function pdzWildReadCityRegistry(server) {
+  let raw=server.persistentData.getString(PDZ_WILD_CITY_REGISTRY_KEY)
+  if(!raw)return {}
+  try {let value=JSON.parse(raw);return value&&typeof value==='object'?value:{}}
+  catch(err){console.error('[PDZ WILD] invalid ChaosZ city registry: '+err);return {}}
+}
+
+function pdzWildWriteCityRegistry(server,value) {
+  server.persistentData.putString(PDZ_WILD_CITY_REGISTRY_KEY,JSON.stringify(value))
+}
+
 function pdzWildInstanceKey(player,siteId,instanceKey,anchor) {
   if(instanceKey)return String(instanceKey)
   let x=anchor?Number(anchor.x):Number(player.x),z=anchor?Number(anchor.z):Number(player.z)
@@ -187,9 +202,11 @@ function pdzWildWeightedFaction(seed,weights) {
   return keys[keys.length-1]
 }
 
-function pdzWildPickFaction(siteId,def,player) {
+function pdzWildPickFaction(siteId,def,player,sampleX,sampleZ) {
   let biomeId=pdzWildBiomeId(player),profile=pdzWildBiomeProfile(biomeId)
-  let key=String(player.level.dimension)+'|'+siteId+'|'+Math.floor(player.x/32)+'|'+Math.floor(player.z/32)
+  let px=Number.isFinite(Number(sampleX))?Number(sampleX):Number(player.x)
+  let pz=Number.isFinite(Number(sampleZ))?Number(sampleZ):Number(player.z)
+  let key=String(player.level.dimension)+'|'+siteId+'|'+Math.floor(px/32)+'|'+Math.floor(pz/32)
   let weights={}
   Object.keys(profile.factions).forEach(faction=>weights[faction]=profile.factions[faction])
   // A building's intended identity remains the strongest single influence,
@@ -260,13 +277,80 @@ function pdzWildLostClassify(buildingId) {
   return {type:'city_building',preferred:'independent',trade:'independent',role:'shelter',garrison:false,friendlyChance:28}
 }
 
+function pdzWildLostCityProfile(player,lost) {
+  let cities=pdzWildReadCityRegistry(player.server),city=cities[lost.cityKey]||null
+  // Migrate the former single-owner record. Its owner becomes the strongest
+  // expedition presence, but no faction owns a Lost Cities ruin.
+  if(city&&city.activityWeights){
+    city.faction='lawless'
+    return city
+  }
+  let profile=pdzWildBiomeProfile(pdzWildBiomeId(player)),weights={},legacy=city?String(city.faction||''):''
+  Object.keys(profile.factions).forEach(f=>weights[f]=Number(profile.factions[f]||0))
+  if(legacy&&legacy!=='lawless')weights[legacy]=Number(weights[legacy]||0)+36
+  let ranked=Object.keys(weights).sort((a,b)=>{
+    let av=weights[a]+(pdzWildHash(lost.cityKey+'|'+a)%19)
+    let bv=weights[b]+(pdzWildHash(lost.cityKey+'|'+b)%19)
+    return bv-av
+  }).slice(0,3)
+  let activityWeights={}
+  ranked.forEach(f=>activityWeights[f]=weights[f])
+  city={id:lost.cityKey,x:lost.cityX,z:lost.cityZ,radius:lost.cityRadius,
+    style:lost.cityStyle,faction:'lawless',activityFactions:ranked,activityWeights:activityWeights,
+    name:(city&&city.name)?String(city.name):pdzWildPlaceName(lost.cityKey,'city','lawless'),
+    discoveredAt:city&&city.discoveredAt?city.discoveredAt:Date.now()}
+  cities[lost.cityKey]=city
+  pdzWildWriteCityRegistry(player.server,cities)
+  console.info('[PDZ CITY] Registered lawless city '+lost.cityKey+' activity='+ranked.join(',')+' radius='+lost.cityRadius)
+  return city
+}
+
 function pdzWildLostFaction(player,lost) {
-  let territory=pdzWildTerritoryFaction(player,lost.x,lost.z)||''
-  let chance=Number(lost.def.friendlyChance||0)
-  // Friendly Lost Cities facilities are deterministic per building, so a
-  // hospital does not change owner every time another player discovers it.
-  if(chance>0 && pdzWildHash(lost.instance+'|friendly')%100<chance)return lost.def.preferred
-  return territory||pdzWildPickFaction(lost.buildingId,lost.def,player)
+  let city=pdzWildLostCityProfile(player,lost),weights={},def=lost.def||{}
+  Object.keys(city.activityWeights||{}).forEach(f=>weights[f]=Number(city.activityWeights[f]||0))
+  if(def.preferred&&weights[def.preferred]!==undefined)weights[def.preferred]+=28
+  if(def.factionBias)Object.keys(def.factionBias).forEach(f=>{
+    if(weights[f]!==undefined)weights[f]+=Number(def.factionBias[f]||0)
+  })
+  return pdzWildWeightedFaction(lost.cityKey+'|'+lost.buildingId+'|'+lost.rootX+'|'+lost.rootZ,weights)
+}
+
+function pdzWildLostCityIdentity(player,info,chunk,cx,cz) {
+  let data=player.persistentData,dim=String(player.level.dimension)
+  let cachedKey=data.getString('dz_chaosz_city_key')
+  let cachedDim=data.getString('dz_chaosz_city_dim')
+  let cachedX=data.getInt('dz_chaosz_city_x'),cachedZ=data.getInt('dz_chaosz_city_z')
+  let cachedRadius=data.getInt('dz_chaosz_city_radius')
+  if(cachedKey&&cachedDim===dim){
+    let dx=cx*16+8-cachedX,dz=cz*16+8-cachedZ,limit=Math.max(192,cachedRadius+96)
+    if(dx*dx+dz*dz<=limit*limit)return {key:cachedKey,x:cachedX,z:cachedZ,radius:cachedRadius,
+      style:data.getString('dz_chaosz_city_style')}
+  }
+  // Lost Cities does not expose a city centre. A bounded cross-section finds
+  // the centre of its contiguous city mass without loading chunks or using a
+  // building as identity. The active ChaosZ profile caps cities at 300m;
+  // 24 chunks (384m) leaves a safe margin without scanning unrelated cities.
+  let minX=cx,maxX=cx,minZ=cz,maxZ=cz
+  for(let i=1;i<=24;i++){
+    let left=info.getChunkInfo(cx-i,cz),right=info.getChunkInfo(cx+i,cz)
+    if(left&&left.isCity())minX=cx-i
+    if(right&&right.isCity())maxX=cx+i
+    let north=info.getChunkInfo(cx,cz-i),south=info.getChunkInfo(cx,cz+i)
+    if(north&&north.isCity())minZ=cz-i
+    if(south&&south.isCity())maxZ=cz+i
+  }
+  let centerChunkX=Math.floor((minX+maxX)/2),centerChunkZ=Math.floor((minZ+maxZ)/2)
+  // Quantising the inferred centre absorbs small irregularities caused by
+  // parks, ruins and water holes while keeping neighbouring cities distinct.
+  centerChunkX=Math.floor((centerChunkX+2)/4)*4
+  centerChunkZ=Math.floor((centerChunkZ+2)/4)*4
+  let cityInfo=chunk.getCityInfo(),radius=384,style='chaosz'
+  try {if(cityInfo){radius=Math.round(Number(cityInfo.getCityRadius())||384);style=String(cityInfo.getCityStyle()||'chaosz')}} catch(ignored) {}
+  let x=centerChunkX*16+8,z=centerChunkZ*16+8,key=dim+'|chaosz_city|'+centerChunkX+'|'+centerChunkZ
+  data.putString('dz_chaosz_city_key',key);data.putString('dz_chaosz_city_dim',dim)
+  data.putInt('dz_chaosz_city_x',x);data.putInt('dz_chaosz_city_z',z);data.putInt('dz_chaosz_city_radius',radius)
+  data.putString('dz_chaosz_city_style',style)
+  return {key:key,x:x,z:z,radius:radius,style:style}
 }
 
 function pdzWildLostCurrent(player) {
@@ -280,9 +364,10 @@ function pdzWildLostCurrent(player) {
     if(!building)return null
     let rootX=cx,rootZ=cz,multi=chunk.getMultiBuildingInfo()
     if(multi){rootX=cx-Number(multi.offsetX());rootZ=cz-Number(multi.offsetZ())}
-    let buildingId=String(building),def=pdzWildLostClassify(buildingId)
+    let buildingId=String(building),def=pdzWildLostClassify(buildingId),city=pdzWildLostCityIdentity(player,info,chunk,cx,cz)
     return {buildingId:buildingId,def:def,rootX:rootX,rootZ:rootZ,x:rootX*16+8,z:rootZ*16+8,
-      instance:String(player.level.dimension)+'|lostcities|'+rootX+'|'+rootZ+'|'+buildingId}
+      instance:String(player.level.dimension)+'|lostcities|'+rootX+'|'+rootZ+'|'+buildingId,
+      cityKey:city.key,cityX:city.x,cityZ:city.z,cityRadius:city.radius,cityStyle:city.style}
   } catch(err) {
     if(!player.persistentData.getBoolean('dz_lostcities_api_warned')){
       player.persistentData.putBoolean('dz_lostcities_api_warned',true)
@@ -365,9 +450,11 @@ function pdzWildFindNearbySite(player,radius) {
         let y=player.level.getHeight(PDZ_WILD_HEIGHTMAP.WORLD_SURFACE,x,z)
         let starts=player.level.structureManager().getAllStructuresAt(new PDZ_WILD_BLOCKPOS(x,y,z))
         if(!starts||starts.isEmpty())continue
-        let it=starts.entrySet().iterator()
-        while(it.hasNext()){
-          let entry=it.next(),structure=entry.getKey(),siteId=String(registry.getKey(structure))
+        // FastUtil's private entry iterator is blocked by Java 17 reflection
+        // under Rhino on some Forge builds. Copy the public key view instead.
+        let structures=starts.keySet().toArray()
+        for(let si=0;si<structures.length;si++){
+          let structure=structures[si],siteId=String(registry.getKey(structure))
           if(!PDZ_WILD_SITES[siteId])continue
           let start=player.level.structureManager().getStructureWithPieceAt(new PDZ_WILD_BLOCKPOS(x,y,z),structure)
           if(!start||!start.isValid())continue
@@ -387,7 +474,36 @@ function pdzWildFindNearbySite(player,radius) {
   return null
 }
 
-function pdzWildCreateMarker(player,siteId,forcedFaction,instanceKey,anchor,overrideDef) {
+function pdzWildIsUrbanType(type) {
+  let value=String(type||'')
+  return value.indexOf('commercial')>=0 || value.indexOf('residential')>=0 ||
+    value.indexOf('city')>=0 || value.indexOf('hospital')>=0 ||
+    value.indexOf('police')>=0 || value.indexOf('firestation')>=0 || value.indexOf('fire_station')>=0 ||
+    value.indexOf('gun_store')>=0 || value.indexOf('gas_station')>=0
+}
+
+// Lost Cities exposes each building as a separate structure. Announcing every
+// building made one city look like a new discovery every five seconds. Urban
+// sites are therefore grouped into 512-block districts and announcements are
+// rate-limited per player. The marker/registry itself remains per building.
+function pdzWildShouldAnnounce(player,def,stableKey,ax,az,cityKey) {
+  let now=Date.now(),data=player.persistentData
+  let urban=pdzWildIsUrbanType(def.type)
+  let noticeId=urban
+    ? (cityKey||String(player.level.dimension)+'|urban|'+Math.floor((ax+256)/512)+'|'+Math.floor((az+256)/512))
+    : stableKey
+  let seenKey='dz_wild_notice_'+pdzWildHash(noticeId)
+  if(data.getBoolean(seenKey))return false
+  let last=data.getLong('dz_wild_last_notice_at')
+  let cooldown=urban?60000:15000
+  if(last>0 && now-last<cooldown)return false
+  data.putBoolean(seenKey,true)
+  data.putLong('dz_wild_last_notice_at',now)
+  data.putString('dz_wild_last_notice_id',noticeId)
+  return true
+}
+
+function pdzWildCreateMarker(player,siteId,forcedFaction,instanceKey,anchor,overrideDef,cityProfile) {
   let stableKey=pdzWildInstanceKey(player,siteId,instanceKey,anchor)
   let nearby=pdzWildMarkerByInstance(player,stableKey,512)
   if(nearby)return nearby
@@ -426,12 +542,18 @@ function pdzWildCreateMarker(player,siteId,forcedFaction,instanceKey,anchor,over
     if(isMarker&&!legacyFaction)legacyFaction=e.persistentData.getString('dz_wild_faction')
     e.discard()
   })
-  let faction=(prior&&prior.faction)||forcedFaction||legacyFaction||pdzWildPickFaction(siteId,def,player)
+  let urban=pdzWildIsUrbanType(def.type)
+  let faction=(urban&&forcedFaction)?forcedFaction:((prior&&prior.faction)||forcedFaction||legacyFaction||pdzWildPickFaction(siteId,def,player))
   // Claim the instance before summoning. This closes the multiplayer race in
   // which several players discovered one building on the same server tick.
   if(!prior){
     registry[stableKey]={instance:stableKey,structure:String(siteId),type:String(def.type),faction:faction,
-      x:ax,y:ay,z:az,name:pdzWildPlaceName(stableKey,def.type,faction),discoveredAt:Date.now(),activated:false,traderSpawned:false}
+      cityId:cityProfile?String(cityProfile.id):'',x:ax,y:ay,z:az,
+      name:cityProfile?String(cityProfile.name):pdzWildPlaceName(stableKey,def.type,faction),
+      discoveredAt:Date.now(),activated:false,traderSpawned:false}
+    pdzWildWriteRegistry(player.server,registry)
+  }else if(urban&&cityProfile){
+    prior.faction=faction;prior.cityId=String(cityProfile.id);prior.name=String(cityProfile.name)
     pdzWildWriteRegistry(player.server,registry)
   }
   let temp='dz_wilderness_pending_'+Math.floor(Math.random()*1000000)
@@ -446,6 +568,7 @@ function pdzWildCreateMarker(player,siteId,forcedFaction,instanceKey,anchor,over
   marker.persistentData.putString('dz_wild_instance',stableKey)
   marker.persistentData.putString('dz_wild_type',def.type)
   marker.persistentData.putString('dz_wild_faction',faction)
+  marker.persistentData.putString('dz_wild_city_id',cityProfile?String(cityProfile.id):'')
   marker.persistentData.putString('dz_wild_biome',pdzWildBiomeId(player))
   marker.persistentData.putString('dz_wild_biome_profile',pdzWildBiomeProfile(pdzWildBiomeId(player)).id)
   marker.persistentData.putString('dz_wild_trade',def.trade || '')
@@ -453,20 +576,19 @@ function pdzWildCreateMarker(player,siteId,forcedFaction,instanceKey,anchor,over
   marker.persistentData.putString('dz_wild_role',role)
   marker.persistentData.putBoolean('dz_wild_garrison',def.garrison!==false)
   marker.persistentData.putString('dz_wild_named',pdzWildNamedCandidate(def.type,role,faction))
-  let placeName=(prior&&prior.name)||pdzWildPlaceName(stableKey,def.type,faction)
+  let placeName=cityProfile?String(cityProfile.name):((prior&&prior.name)||pdzWildPlaceName(stableKey,def.type,faction))
   marker.persistentData.putString('dz_wild_name',placeName)
   marker.persistentData.putLong('dz_wild_created',Date.now())
-  if(!prior)player.tell(Text.of('[AREA DISCOVERED] ').gold()
-    .append(Text.of(def.type+' / ').white())
-    .append(pdzWildColoredText(PDZ_WILD_NAMES[faction]||faction,PDZ_WILD_COLORS[faction])))
+  if(!prior&&pdzWildShouldAnnounce(player,def,stableKey,ax,az,cityProfile?cityProfile.id:'')){
+    let label=cityProfile
+      ? String(cityProfile.name)+' / 無法地帯 / 活動: '+(PDZ_WILD_NAMES[faction]||faction)
+      : def.type+' / '+(PDZ_WILD_NAMES[faction]||faction)
+    player.tell(Text.of('[AREA DISCOVERED] ').gold()
+      .append(Text.of(label).color(cityProfile?'gray':(PDZ_WILD_COLORS[faction]||'white'))))
+  }
   return marker
 }
 
-function pdzWildHash(text){
-  let h=2166136261,s=String(text)
-  for(let i=0;i<s.length;i++){h^=s.charCodeAt(i);h=Math.imul(h,16777619)}
-  return Math.abs(h|0)
-}
 function pdzWildPlaceName(key,type,faction){
   let a=['灰谷','白樺','霧丘','赤錆','静水','鉄路','月影','風見','高原','灯台','深森','青波']
   let b=['集落','避難区','交易所','前哨地','居住区','停車場','共同体','復興区']
@@ -493,10 +615,15 @@ function pdzWildScan(player) {
   if(!current){
     let lost=pdzWildLostCurrent(player)
     if(!lost)return null
+    let city=pdzWildLostCityProfile(player,lost),faction=pdzWildLostFaction(player,lost)
     let existing=pdzWildMarkerByInstance(player,lost.instance,384)
-    if(existing)return existing
-    let faction=pdzWildLostFaction(player,lost)
-    return pdzWildCreateMarker(player,lost.buildingId,faction,lost.instance,{x:lost.x,z:lost.z},lost.def)
+    if(existing){
+      let old=existing.persistentData.getString('dz_wild_faction')
+      if(old!==faction){existing.tags.remove('dz_wilderness_'+old);existing.tags.add('dz_wilderness_'+faction);existing.persistentData.putString('dz_wild_faction',faction)}
+      existing.persistentData.putString('dz_wild_city_id',String(city.id));existing.persistentData.putString('dz_wild_name',String(city.name))
+      return existing
+    }
+    return pdzWildCreateMarker(player,lost.buildingId,faction,lost.instance,{x:lost.x,z:lost.z},lost.def,city)
   }
   let existing=pdzWildMarkerByInstance(player,current.instance,512)
   if(existing)return existing
@@ -746,11 +873,16 @@ ServerEvents.commandRegistry(event=>{
     let p=ctx.source.player,lost=pdzWildLostCurrent(p)
     if(!lost){p.tell(Text.of('Lost Cities building: none at current position').gray());return 0}
     let faction=pdzWildLostFaction(p,lost)
-    p.tell(Text.of('=== LOST CITIES OCCUPATION ===').gold())
+    p.tell(Text.of('=== LOST CITIES ACTIVITY ===').gold())
     p.tell(Text.of('Building: '+lost.buildingId).white())
+    let city=pdzWildLostCityProfile(p,lost)
+    p.tell(Text.of('City: '+city.name+' / '+city.id).aqua())
     p.tell(Text.of('Class: '+lost.def.type+' / '+lost.def.role).aqua())
-    p.tell(pdzWildColoredText('Owner: '+(PDZ_WILD_NAMES[faction]||faction),PDZ_WILD_COLORS[faction]))
+    p.tell(Text.of('Status: 無法地帯').gray())
+    p.tell(pdzWildColoredText('Active expedition: '+(PDZ_WILD_NAMES[faction]||faction),PDZ_WILD_COLORS[faction]))
+    p.tell(Text.of('City activity pool: '+(city.activityFactions||[]).map(f=>PDZ_WILD_NAMES[f]||f).join(' / ')).yellow())
     p.tell(Text.of('Garrison: '+(lost.def.garrison?'enabled':'light occupation only')).yellow())
+    p.tell(Text.of('Facility role: '+lost.def.role+' (does not imply ownership)').yellow())
     p.tell(Text.of('Instance: '+lost.instance).darkGray())
     return 1
   }))

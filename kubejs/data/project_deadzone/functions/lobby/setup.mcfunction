@@ -12,12 +12,14 @@ execute in lobby:lobby_dimension run fill 1 11 19 17 12 19 minecraft:iron_bars r
 execute in lobby:lobby_dimension run fill 1 11 2 1 12 18 minecraft:iron_bars replace
 execute in lobby:lobby_dimension run fill 17 11 2 17 12 18 minecraft:iron_bars replace
 
-# Refresh only PDZ-owned intake staff, so /reload never creates duplicates.
-execute in lobby:lobby_dimension run kill @e[type=easy_npc:humanoid,tag=pdz_intake_staff]
-execute in lobby:lobby_dimension positioned 5 11 9 run easy_npc preset import_new custom easy_npc:preset/humanoid/deadzone_lobby_registrar.npc.nbt ~ ~ ~
+# Keep existing intake staff. setup runs both before and after lobby transfer,
+# so destructive refreshes can kill a newly imported NPC during interaction.
+execute in lobby:lobby_dimension unless entity @e[type=easy_npc:humanoid,tag=dz_lobby_registrar] positioned 5 11 9 run easy_npc preset import_new custom easy_npc:preset/humanoid/deadzone_lobby_registrar.npc.nbt ~ ~ ~
 execute in lobby:lobby_dimension positioned 5 11 9 run tag @e[type=easy_npc:humanoid,sort=nearest,limit=1,distance=..3] add pdz_intake_staff
-execute in lobby:lobby_dimension positioned 13 11 9 run easy_npc preset import_new custom easy_npc:preset/humanoid/deadzone_rei_radio.npc.nbt ~ ~ ~
+execute in lobby:lobby_dimension as @e[type=easy_npc:humanoid,tag=dz_lobby_registrar,limit=1] run tp @s 5.5 11 9.5 -90 0
+execute in lobby:lobby_dimension unless entity @e[type=easy_npc:humanoid,tag=dz_lobby_radio] positioned 13 11 9 run easy_npc preset import_new custom easy_npc:preset/humanoid/deadzone_rei_radio.npc.nbt ~ ~ ~
 execute in lobby:lobby_dimension positioned 13 11 9 run tag @e[type=easy_npc:humanoid,sort=nearest,limit=1,distance=..3] add pdz_intake_staff
+execute in lobby:lobby_dimension as @e[type=easy_npc:humanoid,tag=dz_lobby_radio,limit=1] run tp @s 13.5 11 9.5 90 0
 
 # The extraction pad always goes through the PDZ state machine.  Never call
 # /spawn directly here: doing so bypasses JOB validation and exposes the raw
