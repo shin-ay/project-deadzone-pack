@@ -1734,15 +1734,15 @@ hash = "63141bd6d9248c60b9900bd0e0b05b8fdbac3a14e244a1bf5caeecfc5d48cafa"
 
 [[files]]
 file = "config/lost_cities_autoloader/deadzone_chaosz_v1_1_wilderness_mediumcity_autoloader.json"
-hash = "b5bce20249254d4ed3dceb1f6efc11c41414d01ac1eaaa0acfa35e54952c8ee1"
+hash = "a327f8a61c069fd3832b45813a5277e9e2a61f3228760720d78768d004d9895b"
 
 [[files]]
 file = "config/lost_cities_autoloader/deadzone_chaosz_v1_2_wilderness_mediumcity_FLAT_autoloader.json"
-hash = "c6b09043ec048a35a929cec878663070dbc988ac98a6a1c91ff01dba6c56da55"
+hash = "32f284b3c6d7277167516fe13cdd3722f80a0d141ae94cd7696109c53cf7587a"
 
 [[files]]
 file = "config/lost_cities_autoloader/deadzone_chaosz_v1_autoloader.json"
-hash = "6ef0d278eb71b89f0f47915f955db39eae127768873f72f32aafb123d60e3eff"
+hash = "1f6f53deb0400a2f352d93c04d436856c6dc5eba7ebdc4555cc1c2f92c67b792"
 
 [[files]]
 file = "config/lost_cities_autoloader/deadzone_v2.json"
@@ -1778,7 +1778,7 @@ hash = "8c4cfb760c0f661cbbf663a8db1c5527eacd62865efa14eb79c34e6d53f40d8a"
 
 [[files]]
 file = "config/lostcities/profiles/aaaaaaaaz15Flat.json"
-hash = "a171cf138496bc35890097ed6f5daee24f7ec0d9525e7b65505dc6b2c86231e4"
+hash = "8bb9fd34d03176f63696090ea806e6a1246f5cde004b005422a74460af3c01b9"
 
 [[files]]
 file = "config/lostcities/profiles/ancient.json"
@@ -1810,7 +1810,7 @@ hash = "63141bd6d9248c60b9900bd0e0b05b8fdbac3a14e244a1bf5caeecfc5d48cafa"
 
 [[files]]
 file = "config/lostcities/profiles/deadzone_chaosz_v1.json"
-hash = "910baaccec419e68f16eac70f0457d6a5da2b56622408a66be26ba2504f255e6"
+hash = "748a3389c764906c4ece7bf34d9d553be3dc3816eb4fcf3762fa47fd24aad303"
 
 [[files]]
 file = "config/lostcities/profiles/deadzone_v2.json"
