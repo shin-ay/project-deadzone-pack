@@ -2,6 +2,9 @@
 // Generation starts only after an explicit departure request from the lobby.
 
 const DZ_CAMP_STATE_KEY = "dz_auto_basecamp_state"
+// Retired by fixed starter-village v1.0. Keep this file only for admin
+// recovery commands used by old worlds; it must never bootstrap automatically.
+const DZ_CAMP_LEGACY_AUTO_ENABLED = false
 const DZ_CAMP_LAYOUT_VERSION = 3
 // Lobby briefing and JOB selection must not consume the whole generation
 // window. Ten in-game days is still conservative enough to avoid mutating an
@@ -480,6 +483,7 @@ function dzCampStartBootstrap(player) {
 // Lobby transfers do not fire PlayerEvents.loggedIn again.  Start bootstrap
 // only after /deadzonevillage depart has explicitly armed the request flag.
 PlayerEvents.tick(event => {
+  if (!DZ_CAMP_LEGACY_AUTO_ENABLED) return
   let player=event.player
   if (!player || !player.alive) return
   let probe=player.persistentData.getInt("dz_camp_entry_probe")+1

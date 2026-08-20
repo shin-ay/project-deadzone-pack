@@ -10,6 +10,7 @@ const PDZ_ACT_LIMIT = 3
 const PDZ_ACT_AUTO_ENABLED = 'dz_activity_director_enabled_v1'
 const PDZ_ACT_AUTO_NEXT = 'dz_activity_director_next_v1'
 const PDZ_ACT_NATIVE_SETTLEMENT_MIGRATED = 'dz_native_settlement_activity_migrated_v1'
+const PDZ_ACT_CONVOY_RETIRED = 'dz_supply_convoy_retired_v2'
 
 function pdzActRead(server,key) {
   let raw=server.persistentData.getString(key)
@@ -324,6 +325,9 @@ function pdzActCreateHorde(server,player,forced) {
 }
 
 function pdzActCreateConvoy(server,player) {
+  pdzActTell(player,'[ACTIVITY] Supply convoys are retired in the current lightweight faction rules.','yellow')
+  return null
+  /* Legacy implementation retained below only as save-format documentation.
   let list=pdzActRead(server,PDZ_ACT_LIST)
   let active=list.filter(a=>['ARRIVED','DESTROYED','CANCELLED','RETREATED'].indexOf(a.state)<0).length
   if(active>=PDZ_ACT_LIMIT){pdzActTell(player,'[ACTIVITY] Active activity limit reached.','red');return null}
@@ -341,6 +345,7 @@ function pdzActCreateConvoy(server,player) {
   server.runCommandSilent('tellraw @a [{"text":"[RADIO] ","color":"gold","bold":true},{"text":"Ash Jackals supply traffic detected.","color":"red"}]')
   pdzActTell(player,'[ACTIVITY] Created '+a.id+' / '+Math.floor(route.distance)+'m','green')
   return a
+  */
 }
 
 function pdzActCreateAssault(server,player,attackerFaction) {
@@ -737,6 +742,15 @@ function pdzActDirectorPulse(server,player,forced) {
 let PDZ_ACT_TICKS=0
 ServerEvents.tick(event=>{
   PDZ_ACT_TICKS++
+  // Convoys were expensive and visually unreliable. Retire any activities
+  // left in an older save exactly once; outpost ownership itself is retained.
+  if(!event.server.persistentData.getBoolean(PDZ_ACT_CONVOY_RETIRED)){
+    let old=pdzActRead(event.server,PDZ_ACT_LIST)
+    let kept=old.filter(a=>String(a.type)!=='SUPPLY_CONVOY')
+    if(kept.length!==old.length)pdzActWrite(event.server,PDZ_ACT_LIST,kept)
+    event.server.persistentData.putBoolean(PDZ_ACT_CONVOY_RETIRED,true)
+    console.info('[PROJECT DEADZONE][Activity] retired '+(old.length-kept.length)+' legacy supply convoy activities.')
+  }
   // One-time migration: Village Expansion / Recruits now own ordinary patrol,
   // settlement and war simulation. PDZ manual tests and scripted convoys remain.
   if(!event.server.persistentData.getBoolean(PDZ_ACT_NATIVE_SETTLEMENT_MIGRATED)){

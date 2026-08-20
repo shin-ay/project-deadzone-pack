@@ -49,6 +49,7 @@ const DZ_MATERIAL_EQUIVALENTS = {
 
 // Disabled 2026-08-12: global input/output replacement broke cross-mod
 // progression recipes. Shared materials now remain in their owning mods.
+// Keep the old table below only as migration documentation.
 if (false) ServerEvents.recipes(event => {
   Object.keys(DZ_MATERIAL_EQUIVALENTS).forEach(canonical => {
     DZ_MATERIAL_EQUIVALENTS[canonical].forEach(duplicate => {

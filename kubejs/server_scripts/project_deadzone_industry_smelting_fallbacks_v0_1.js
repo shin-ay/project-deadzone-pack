@@ -2,7 +2,8 @@
 // Prevents early industry progression from deadlocking behind machines that
 // themselves require these basic metals. Machine processing remains faster.
 
-// Disabled 2026-08-12 together with material unification.
+// Disabled 2026-08-12 together with material unification. These fallback
+// outputs forced one mod's ingots and hid defects in the original recipes.
 if (false) ServerEvents.recipes(event => {
   // Use Forge tags instead of one mod's concrete dust ID. Material
   // unification runs in the same recipe pass, so Mekanism/IE/Create dusts

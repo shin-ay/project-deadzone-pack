@@ -13,7 +13,8 @@ function pdzIsSurvivorAlly(entity) {
   if (!entity) return false
   if (String(entity.type) === 'minecraft:player') return true
   return !!entity.tags && (entity.tags.contains('dz_survivor') || entity.tags.contains('dz_friendly') ||
-    entity.tags.contains('dz_buddy') || entity.tags.contains('dz_story_npc'))
+    entity.tags.contains('dz_buddy') || entity.tags.contains('dz_story_npc') ||
+    entity.tags.contains('dz_settlement_civilian'))
 }
 
 EntityEvents.hurt(event => {

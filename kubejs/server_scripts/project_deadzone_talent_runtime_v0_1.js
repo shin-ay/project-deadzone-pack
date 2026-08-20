@@ -86,10 +86,9 @@ EntityEvents.hurt(event=>{
     }
     return
   }
-  let mult=pdztrValue(player,'gunDamage')
-  if (mult<=0) return
-  let base=Math.max(0,Number(event.damage)), bonus=base*mult
-  if (bonus>0 && event.entity.health>1) event.entity.health=Math.max(1,event.entity.health-bonus)
+  // Firearm damage is applied once by project_deadzone_firearms_perks through
+  // TaCZ's pre-damage event. Do not subtract target HP a second time here.
+  return
 })
 
 // TaCZ exposes real head-shot and reload events. Weak-point and ammunition

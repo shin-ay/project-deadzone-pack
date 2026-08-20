@@ -49,8 +49,11 @@ EntityEvents.hurt(event => {
   let player = event.entity
   if (!player || !player.isPlayer || !player.isPlayer() || player.level.clientSide) return
 
-
-  // Stop post-death damage from racing PlayerRevive and grave finalization.
+  // PlayerRevive can leave a dying player targetable for a few ticks (fire is
+  // the most visible case). Re-processing damage at HP 0 can race the final
+  // death handlers used by inventory/grave mods and also floods the log.
+  // The player has already reached the terminal state, so subsequent hits
+  // must not be processed.
   if (Number(player.health) <= 0) {
     event.cancel()
     return
@@ -60,8 +63,26 @@ EntityEvents.hurt(event => {
   if (!isFinite(incoming) || incoming <= 0) return
 
   let source = pdzDamageSourceId(event.source)
-  // Never interfere with explicit administrative/void death sources.
-  if (source.indexOf('out_of_world') >= 0 || source.indexOf('generic_kill') >= 0) return
+  let sourceLower = source.toLowerCase()
+  let dimension = 'unknown'
+  try { dimension = String(player.level.dimension) } catch (ignored) {}
+
+  // The intake is a void dimension. Rescue a player if the lobby island has
+  // not finished loading instead of deleting their freshly issued starter kit.
+  if (dimension.indexOf('lobby:lobby_dimension') >= 0 &&
+      (sourceLower.indexOf('outofworld') >= 0 || sourceLower.indexOf('out_of_world') >= 0)) {
+    event.cancel()
+    player.teleportTo(9.5, 11, 9.5)
+    try { player.fallDistance = 0 } catch (ignored) {}
+    player.runCommandSilent('effect give @s minecraft:resistance 5 255 true')
+    player.runCommandSilent('effect give @s minecraft:regeneration 5 4 true')
+    console.warn('[PDZ LobbySafety] rescued ' + player.username + ' from lobby void damage')
+    return
+  }
+
+  // Never interfere with explicit administrative/void death sources elsewhere.
+  if (sourceLower.indexOf('outofworld') >= 0 || sourceLower.indexOf('out_of_world') >= 0 ||
+      sourceLower.indexOf('generic_kill') >= 0) return
 
   let health = Math.max(0, Number(player.health))
   let maxHealth = Math.max(1, Number(player.maxHealth))

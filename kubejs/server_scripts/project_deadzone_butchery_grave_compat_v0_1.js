@@ -2,8 +2,9 @@
 // Butchery corpses stay enabled for mobs. Player corpses are removed so the
 // grave mod remains the single owner of player inventory and death recovery.
 
-PlayerEvents.death(event => {
-  const p = event.player
+EntityEvents.death(event => {
+  const p = event.entity
+  if (!p || !p.isPlayer || !p.isPlayer()) return
   const server = event.server
   const x = Math.floor(p.x)
   const y = Math.floor(p.y)

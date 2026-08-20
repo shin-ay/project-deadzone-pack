@@ -104,14 +104,18 @@ function pdztApplyAttribute(player,key,amount,operation){
 
 function pdztApply(player){
   let v=pdztValues(player)
-  pdztApplyAttribute(player,'health',v.health,'addition')
-  pdztApplyAttribute(player,'speed',v.speed,'multiply_base')
-  pdztApplyAttribute(player,'armor',v.armor,'addition')
-  pdztApplyAttribute(player,'toughness',v.toughness,'addition')
-  pdztApplyAttribute(player,'knockback',v.knockback,'addition')
-  pdztApplyAttribute(player,'luck',v.luck,'addition')
-  pdztApplyAttribute(player,'melee',v.melee,'multiply_base')
-  pdztApplyAttribute(player,'attackSpeed',v.attackSpeed,'multiply_base')
+  // General combat/defence attributes are now owned by Mine and Slash in
+  // project_deadzone_mns_progression_bridge_v0_1.js. Remove old modifiers so
+  // migrated players do not receive the same Talent twice. The values below
+  // remain available to TaCZ, medical, vehicle and survival bridge scripts.
+  pdztApplyAttribute(player,'health',0,'addition')
+  pdztApplyAttribute(player,'speed',0,'multiply_base')
+  pdztApplyAttribute(player,'armor',0,'addition')
+  pdztApplyAttribute(player,'toughness',0,'addition')
+  pdztApplyAttribute(player,'knockback',0,'addition')
+  pdztApplyAttribute(player,'luck',0,'addition')
+  pdztApplyAttribute(player,'melee',0,'multiply_base')
+  pdztApplyAttribute(player,'attackSpeed',0,'multiply_base')
   PDZT_CUSTOM_KEYS.forEach(key=>player.persistentData.putDouble('dz_talent_effect_'+key,v[key]))
   player.persistentData.putDouble('dz_talent_effect_health',v.health)
   player.persistentData.putDouble('dz_talent_effect_speed',v.speed)

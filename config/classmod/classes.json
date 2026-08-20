@@ -3,14 +3,14 @@
   "classes": [
     {
       "id": "survivor",
-      "displayName": "Survivor",
-      "description": "Balanced survivor. Reliable at scavenging, basic combat and everyday survival.",
+      "displayName": "サバイバー",
+      "description": "生存・探索・基礎戦闘をバランスよく扱う万能型。初めてのプレイヤーにも向く。",
       "tags": [
         "Balanced",
         "Survival",
         "Scavenging"
       ],
-      "passiveDescription": "Survival Lv3 / Scavenging Lv2 / Melee Lv2 / Medical Lv1 / Firearms Lv1 / Fitness Lv3",
+      "passiveDescription": "生存3 / 物資回収2 / 近接2 / 医療1 / 射撃1 / 体力3",
       "iconItem": "minecraft:iron_axe",
       "cardTexture": "classmod:textures/gui/card_default.png",
       "accentColor": "#9AA06A",
@@ -31,14 +31,14 @@
     },
     {
       "id": "weapons_expert",
-      "displayName": "Weapons Expert",
-      "description": "Firearms specialist focused on ammunition efficiency rather than raw damage.",
+      "displayName": "ウェポンエキスパート",
+      "description": "銃火器と弾薬運用の専門家。初期装備としてSMGを受け取る射撃特化型。",
       "tags": [
         "Firearms",
         "Ammo Economy",
         "Combat"
       ],
-      "passiveDescription": "Firearms Lv4 / Reload Lv3 / Scavenging Lv1 / Melee Lv1 / Survival Lv1 / Fitness Lv3",
+      "passiveDescription": "射撃4 / リロード3 / 物資回収1 / 近接1 / 生存1 / 体力3",
       "iconItem": "minecraft:crossbow",
       "cardTexture": "classmod:textures/gui/card_default.png",
       "accentColor": "#9B3A32",
@@ -59,14 +59,14 @@
     },
     {
       "id": "medic",
-      "displayName": "Medic",
-      "description": "Medical specialist who keeps the group alive when supplies are limited.",
+      "displayName": "メディック",
+      "description": "負傷・感染・消耗から仲間を支える医療専門職。マルチの継戦能力を高める。",
       "tags": [
         "Medical",
         "Support",
         "Survival"
       ],
-      "passiveDescription": "Medical Lv4 / Survival Lv2 / Scavenging Lv1 / Melee Lv1 / Fitness Lv3",
+      "passiveDescription": "医療4 / 生存2 / 物資回収1 / 近接1 / 体力3",
       "iconItem": "apocalypsenow:bandage",
       "cardTexture": "classmod:textures/gui/card_default.png",
       "accentColor": "#D14B4B",
@@ -87,14 +87,14 @@
     },
     {
       "id": "mechanic",
-      "displayName": "Mechanic",
-      "description": "Vehicle and repair specialist for Immersive Vehicles and BlockyBikes.",
+      "displayName": "メカニック",
+      "description": "車・バイク・航空機と現地修理を担う整備専門職。移動と物流の要になる。",
       "tags": [
         "Vehicle",
         "Repair",
         "Mechanics"
       ],
-      "passiveDescription": "Mechanics Lv4 / Engineering Lv2 / Scavenging Lv2 / Survival Lv1 / Fitness Lv3",
+      "passiveDescription": "整備4 / 工業2 / 物資回収2 / 生存1 / 体力3",
       "iconItem": "blocky_bikes:toolkit",
       "cardTexture": "classmod:textures/gui/card_default.png",
       "accentColor": "#C5893D",
@@ -115,14 +115,14 @@
     },
     {
       "id": "engineer",
-      "displayName": "Engineer",
-      "description": "Construction and industrial specialist. Later unlocks advanced Superb Warfare manufacturing.",
+      "displayName": "エンジニア",
+      "description": "工業設備・建築・生産ラインを担う技術専門職。拠点の発展を加速する。",
       "tags": [
         "Engineering",
         "Industry",
         "Crafting"
       ],
-      "passiveDescription": "Engineering Lv4 / Mechanics Lv2 / Survival Lv1 / Scavenging Lv1 / Fitness Lv3",
+      "passiveDescription": "工業4 / 整備2 / 生存1 / 物資回収1 / 体力3",
       "iconItem": "minecraft:iron_pickaxe",
       "cardTexture": "classmod:textures/gui/card_default.png",
       "accentColor": "#D0A644",
@@ -143,14 +143,14 @@
     },
     {
       "id": "scout",
-      "displayName": "Scout",
-      "description": "Fast exploration and scavenging specialist for mapping dangerous urban areas.",
+      "displayName": "スカウト",
+      "description": "危険地域の偵察・索敵・回収を得意とする高機動型。探索の先導役。",
       "tags": [
         "Scavenging",
         "Mobility",
         "Exploration"
       ],
-      "passiveDescription": "Scavenging Lv4 / Survival Lv2 / Firearms Lv1 / Melee Lv1 / Fitness Lv4",
+      "passiveDescription": "物資回収4 / 生存2 / 射撃1 / 近接1 / 体力4",
       "iconItem": "minecraft:spyglass",
       "cardTexture": "classmod:textures/gui/card_default.png",
       "accentColor": "#5C9B62",
@@ -171,14 +171,14 @@
     },
     {
       "id": "security",
-      "displayName": "Security",
-      "description": "Front-line defender specializing in melee combat, armor and holding dangerous positions.",
+      "displayName": "セキュリティ",
+      "description": "重装備・近接戦・拠点防衛を担う前衛。危険な場所で仲間を守る。",
       "tags": [
         "Melee",
         "Defense",
         "Frontline"
       ],
-      "passiveDescription": "Melee Lv4 / Armor Lv3 / Firearms Lv1 / Survival Lv1 / Fitness Lv4",
+      "passiveDescription": "近接4 / 防具3 / 射撃1 / 生存1 / 体力4",
       "iconItem": "minecraft:shield",
       "cardTexture": "classmod:textures/gui/card_default.png",
       "accentColor": "#4C668C",
@@ -199,14 +199,14 @@
     },
     {
       "id": "survivalist",
-      "displayName": "Survivalist",
-      "description": "Long-term survival specialist focused on food, water, fieldcraft and wilderness living.",
+      "displayName": "サバイバリスト",
+      "description": "食料・水・野営・農業・釣りを軸に長期生存を支える生活専門職。",
       "tags": [
         "Survival",
         "Fieldcraft",
         "Scavenging"
       ],
-      "passiveDescription": "Survival Lv4 / Scavenging Lv2 / Medical Lv1 / Melee Lv1 / Fitness Lv3",
+      "passiveDescription": "生存4 / 物資回収2 / 医療1 / 近接1 / 体力3",
       "iconItem": "minecraft:campfire",
       "cardTexture": "classmod:textures/gui/card_default.png",
       "accentColor": "#7D6A4B",

@@ -1,12 +1,12 @@
 name = "PROJECT DEADZONE"
 author = "PROJECT DEADZONE Team"
-version = "ALPHA-20260820-LOBBY-REGISTRAR"
+version = "ALPHA-20260821-STARTER-COLONY-STABLE"
 pack-format = "packwiz:1.1.0"
 
 [index]
 file = "index.toml"
 hash-format = "sha256"
-hash = "6b3055ad1735697ab5bd9c6d3bd46b51c8244b6dc9441957024e55a7ac0a4f3d"
+hash = "ba6ce9b8d355034367c5b44478b27d3a82a5784a9fdcb03f4c704ee371af0ba7"
 
 [versions]
 forge = "47.4.10"

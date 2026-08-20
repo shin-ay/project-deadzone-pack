@@ -46,10 +46,14 @@ EntityEvents.spawned(event => {
 })
 
 ServerEvents.tick(event => {
-  if (event.server.tickCount % 100 !== 0) return
+  if (event.server.tickCount % 20 !== 0) return
+  let checked={}
   event.server.players.forEach(player => {
     player.level.entities.forEach(entity => {
       if (!entity.tags || (!entity.tags.contains("dz_npc") && !entity.tags.contains("dz_buddy"))) return
+      let uuid=String(entity.uuid)
+      if (checked[uuid]) return
+      checked[uuid]=true
       if (entity.tags.contains("dz_npc_downed") || entity.tags.contains("dz_buddy_downed")) {
         entity.tags.remove("dz_npc_downed")
         entity.tags.remove("dz_buddy_downed")
@@ -57,9 +61,15 @@ ServerEvents.tick(event => {
         entity.tags.remove("dz_npc_bleedout_armed")
         entity.mergeNbt({Invulnerable:0,NoAI:0})
         entity.runCommandSilent("effect clear @s minecraft:glowing")
-        if (entity.health < 2) entity.health=2
+        // Retired callbacks used to cancel lethal damage and park every NPC at
+        // one health. Never heal that state back to two: finish the pending
+        // death so hostile faction mobs cannot become permanently immortal.
+        if (Number(entity.health) <= 1.01) {
+          entity.runCommandSilent("kill @s")
+          return
+        }
       }
-      pdzNameFactionNpc(entity)
+      if (event.server.tickCount % 100 === 0) pdzNameFactionNpc(entity)
     })
   })
 })

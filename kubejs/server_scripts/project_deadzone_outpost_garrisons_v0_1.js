@@ -25,21 +25,30 @@ function pdzGarTag(id){
   return 'dz_garrison_'+h.toString(36)
 }
 function pdzGarNoticeKey(id){return 'dz_outpost_seen_'+pdzGarTag(id).substring(12)}
+function pdzGarPresentationId(marker,id){
+  let type=String(marker.persistentData.getString('dz_wild_type')||'')
+  let urban=type.indexOf('commercial')>=0||type.indexOf('residential')>=0||
+    type.indexOf('city')>=0||type.indexOf('hospital')>=0||
+    type.indexOf('police')>=0||type.indexOf('firestation')>=0||
+    type.indexOf('gun_store')>=0||type.indexOf('gas_station')>=0
+  if(!urban)return String(id)
+  return String(marker.level.dimension)+'|urban|'+Math.floor((marker.x+256)/512)+'|'+Math.floor((marker.z+256)/512)
+}
 function pdzGarNotice(server,marker,id,faction,role){
   let near=pdzGarNearPlayer(server,marker,PDZ_GAR_NOTICE)
   if(!near)return null
-  let key=pdzGarNoticeKey(id)
+  let presentationId=pdzGarPresentationId(marker,id)
+  let key=pdzGarNoticeKey(presentationId)
   let hostile=!(faction==='survivor'||faction==='civildef'||faction==='cdf'||faction==='independent')
   let first=!near.persistentData.getBoolean(key)
-  let entered=near.persistentData.getString('dz_current_named_site')!==String(id)
   if(first){
     near.persistentData.putBoolean(key,true)
     let relation=hostile?'HOSTILE':'CONTACT'
     let line='[OUTPOST] '+relation+': '+faction+' / '+role+' detected at '+Math.round(Math.sqrt((near.x-marker.x)*(near.x-marker.x)+(near.z-marker.z)*(near.z-marker.z)))+'m.'
     near.tell(hostile?Text.of(line).red():Text.of(line).aqua())
   }
-  if(entered){
-    near.persistentData.putString('dz_current_named_site',String(id))
+  if(first){
+    near.persistentData.putString('dz_current_named_site',presentationId)
     let place=marker.persistentData.getString('dz_wild_name')||'名称未登録地点'
     near.runCommandSilent('title @s times 10 55 15')
     near.runCommandSilent('title @s title {"text":"'+place+'","color":"'+(hostile?'red':'gold')+'","bold":true}')

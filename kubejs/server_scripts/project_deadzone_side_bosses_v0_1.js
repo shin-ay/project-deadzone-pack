@@ -24,6 +24,12 @@ EntityEvents.spawned("infectious:ancient_zombie_boss", event =>
 EntityEvents.death(event => {
   let entity = event.entity
   if (!entity || entity.level.clientSide || !entity.tags.contains("dz_sideboss")) return
+  // Apocalypse Zombies' Tank can remain in its death animation and emit the
+  // death hook more than once. Reward each entity only once so it cannot turn
+  // into an infinite money/item source.
+  if (entity.persistentData.getBoolean("dz_sideboss_rewarded")) return
+  entity.persistentData.putBoolean("dz_sideboss_rewarded", true)
+  entity.tags.add("dz_sideboss_rewarded")
   let killer = event.source ? event.source.actual : null
   let tank = entity.tags.contains("dz_sideboss_tank")
   entity.block.popItem(Item.of("apocalypsenow:money", tank ? 8 : 12))
@@ -32,6 +38,14 @@ EntityEvents.death(event => {
   if (killer && killer.isPlayer && killer.isPlayer()) {
     killer.server.runCommandSilent("ftbquests change_progress " + killer.username +
       " complete " + (tank ? "D202608200004020" : "D202608200004030"))
+  }
+  // The Tank mod occasionally leaves the dead entity ticking indefinitely.
+  // Remove that corpse after vanilla and DEADZONE drops have been processed.
+  if (tank) {
+    let deadTank = entity
+    event.server.scheduleInTicks(5, callback => {
+      if (deadTank && !deadTank.alive) deadTank.discard()
+    })
   }
 })
 

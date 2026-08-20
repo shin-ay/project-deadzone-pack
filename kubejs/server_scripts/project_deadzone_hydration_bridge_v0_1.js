@@ -2,12 +2,19 @@
 // Connects reusable canteens and the pack's non-vanilla drinks to
 // Thirst Was Taken. Vanilla bottles keep the mod's native handling.
 
-const PDZ_HYDRATION_CAPS = Java.loadClass(
-  "dev.ghen.thirst.foundation.common.capability.ModCapabilities"
-)
+let PDZ_HYDRATION_CAPS = null
+try {
+  PDZ_HYDRATION_CAPS = Java.loadClass(
+    "dev.ghen.thirst.foundation.common.capability.ModCapabilities"
+  )
+} catch (ignored) {
+  // Thirst Was Taken was replaced by Legendary Survival Overhaul. Keep this
+  // legacy bridge inert instead of aborting the entire KubeJS script load.
+  console.info("[PROJECT DEADZONE] Thirst Was Taken capability absent; legacy hydration bridge disabled")
+}
 
 function pdzHydrationRestore(player, amount, quenched) {
-  if (!player || player.level.clientSide) return false
+  if (!PDZ_HYDRATION_CAPS || !player || player.level.clientSide) return false
   try {
     let thirst = player.getCapability(PDZ_HYDRATION_CAPS.PLAYER_THIRST)
       .resolve().orElse(null)

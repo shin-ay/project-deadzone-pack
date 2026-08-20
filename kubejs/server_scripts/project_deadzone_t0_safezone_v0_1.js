@@ -23,7 +23,7 @@ const DZ_T0_CAMP_HOSTILES = [
 const DZ_T0_EXEMPT_TAGS = [
   "dz_basecamp_raider", "dz_story_npc", "dz_story_boss", "dz_buddy",
   "dz_survivor", "dz_basecamp_guard", "dz_usunit_friendly",
-  "dz_t0_convoy", "dz_named", "dz_elite"
+  "dz_t0_convoy", "dz_named", "dz_elite", "dz_settlement_civilian"
 ]
 
 function dzT0ProtectedSpawn(entity, radius) {

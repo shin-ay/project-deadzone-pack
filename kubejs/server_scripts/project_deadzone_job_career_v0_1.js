@@ -1,16 +1,20 @@
 // PROJECT DEADZONE JOB Career v0.1 - test profile
 // JOB progression is separate from the unified Talent tree.
 
-const PDZ_CAREER_MAX_LEVEL = 50
-const PDZ_CAREER_TIER2_LEVEL = 10
-const PDZ_CAREER_TIER3_LEVEL = 25
-const PDZ_CAREER_TIER2_RELEVANT_XP = 300
-const PDZ_CAREER_TIER3_RELEVANT_XP = 1200
+// Progression vocabulary:
+//   Base Class (chosen at game start) -> Job (Lv30) -> Advanced Job (Lv60)
+// Mine and Slash's internal class/ascendancy is only a hidden skill discipline.
+const PDZ_CAREER_MAX_LEVEL = 100
+const PDZ_CAREER_TIER2_LEVEL = 30
+const PDZ_CAREER_TIER3_LEVEL = 60
+const PDZ_CAREER_TIER2_RELEVANT_XP = 900
+const PDZ_CAREER_TIER3_RELEVANT_XP = 3600
 
 const PDZ_CAREER_NAMES = {
   survivor:'Survivor', weapons_expert:'Weapons Expert', medic:'Medic',
   mechanic:'Mechanic', engineer:'Engineer', scout:'Scout',
-  security:'Security', survivalist:'Survivalist'
+  security:'Security', survivalist:'Survivalist',
+  anomaly_researcher:'Anomaly Researcher'
 }
 
 const PDZ_CAREER_PATHS = {
@@ -45,6 +49,13 @@ const PDZ_CAREER_PATHS = {
   survivalist:{
     t2:{provider:'Provider',ranger:'Ranger'},
     t3:{provider:{angler:'Angler',chef:'Chef'},ranger:{hunter:'Hunter',homesteader:'Homesteader'}}
+  },
+  anomaly_researcher:{
+    t2:{rift_analyst:'Rift Analyst',resonance_engineer:'Resonance Engineer'},
+    t3:{
+      rift_analyst:{rift_warden:'Rift Warden',hazard_seer:'Hazard Seer'},
+      resonance_engineer:{construct_binder:'Construct Binder',null_physician:'Null Physician'}
+    }
   }
 }
 
@@ -53,7 +64,8 @@ const PDZ_CAREER_RELEVANCE = {
   medic:['medical','support'], mechanic:['mechanics','vehicle'],
   engineer:['engineering','craft'], scout:['exploration','scavenging','combat'],
   survivalist:['fishing','hunting','farming','cooking','survival'],
-  survivor:['survival','scavenging','exploration']
+  survivor:['survival','scavenging','exploration'],
+  anomaly_researcher:['anomaly','research','support','engineering']
 }
 
 const PDZ_CAREER_SOURCE_NAMES = {
@@ -138,9 +150,9 @@ function pdzCareerRecalculate(player,announce) {
     }
     if (announce) player.tell(Text.of('[JOB] Level Up: '+oldLevel+' → '+level).green())
     if (oldLevel<PDZ_CAREER_TIER2_LEVEL && level>=PDZ_CAREER_TIER2_LEVEL)
-      player.tell(Text.of('[JOB] 第2職を選択できます: /deadzonecareer paths').aqua())
+      player.tell(Text.of('[CLASS] JOBを選択できます: /deadzonecareer paths').aqua())
     if (oldLevel<PDZ_CAREER_TIER3_LEVEL && level>=PDZ_CAREER_TIER3_LEVEL)
-      player.tell(Text.of('[JOB] 第3職を選択できます: /deadzonecareer paths').lightPurple())
+      player.tell(Text.of('[CLASS] 上位JOBを選択できます: /deadzonecareer paths').lightPurple())
   }
   pdzCareerSyncTree(player)
   return level
@@ -150,12 +162,11 @@ function pdzCareerAddXp(player,amount,source,announce) {
   if (!player || player.level.clientSide) return 0
   let storedJob=String(player.persistentData.getString('dz_job_id'))
   if (!PDZ_CAREER_PATHS[storedJob]) return 0
-  // Some migrated/test players have a valid JOB id but are missing the old
-  // dz_job_chosen flag.  The J screen can still render those players, while
-  // the former guard silently rejected every XP award.
+  // A JOB id alone is not registration.  Class/UI integrations may seed an id
+  // before the registrar grants the starter kit; auto-confirming here skipped
+  // both selection and kit delivery for new players.
   if (!player.persistentData.getBoolean('dz_job_chosen')) {
-    player.persistentData.putBoolean('dz_job_chosen',true)
-    player.tell(Text.of('[JOB] JOB記録を修復しました。以後の行動からJOB XPを獲得します。').aqua())
+    return 0
   }
   let job=pdzCareerJob(player)
   let gain=Math.max(1,Math.floor(amount*pdzCareerMultiplier(job,source)))
@@ -277,8 +288,9 @@ function pdzCareerStatus(player) {
   player.tell(Text.of((PDZ_CAREER_NAMES[job]||job)+' / Lv'+level+' / Rank '+Math.max(1,d.getInt('dz_career_rank'))).aqua())
   player.tell(Text.of(level>=PDZ_CAREER_MAX_LEVEL ? 'XP: MAX' : 'XP: '+current+' / '+need).gray())
   let t2=String(d.getString('dz_career_t2')),t3=String(d.getString('dz_career_t3'))
-  if (t2) player.tell(Text.of('第2職: '+t2).yellow())
-  if (t3) player.tell(Text.of('第3職: '+t3).lightPurple())
+  player.tell(Text.of('基本クラス: '+(PDZ_CAREER_NAMES[job]||job)).aqua())
+  if (t2) player.tell(Text.of('JOB: '+t2).yellow())
+  if (t3) player.tell(Text.of('上位JOB: '+t3).lightPurple())
   player.tell(Text.of('関連行動XP: '+pdzCareerRelevantXp(player)).gray())
 }
 
@@ -289,31 +301,39 @@ function pdzCareerPaths(player) {
   if (!t2) {
     Object.keys(data.t2).forEach(id=>player.tell(Text.of('/deadzonecareer promote2_'+id+' - '+data.t2[id]).gray()))
     if (level<PDZ_CAREER_TIER2_LEVEL || pdzCareerRelevantXp(player)<PDZ_CAREER_TIER2_RELEVANT_XP)
-      player.tell(Text.of('第2職条件: JOB Lv10 / 関連行動XP 300').red())
+      player.tell(Text.of('JOB解放条件: CLASS Lv30 / 関連行動XP 900').red())
   } else {
     let list=data.t3[t2]||{}
     Object.keys(list).forEach(id=>player.tell(Text.of('/deadzonecareer promote3_'+id+' - '+list[id]).gray()))
     if (level<PDZ_CAREER_TIER3_LEVEL || pdzCareerRelevantXp(player)<PDZ_CAREER_TIER3_RELEVANT_XP)
-      player.tell(Text.of('第3職条件: JOB Lv25 / 関連行動XP 1200').red())
+      player.tell(Text.of('上位JOB解放条件: CLASS Lv60 / 関連行動XP 3600').red())
   }
 }
 
 function pdzCareerPromote2(player,id) {
   let d=player.persistentData,job=pdzCareerJob(player),data=PDZ_CAREER_PATHS[job]
+  if (player.server.runCommandSilent('execute at '+player.username+' if entity @e[type=easy_npc:humanoid,tag=dz_basecamp_job_guide,distance=..6,limit=1]')<=0) {
+    player.tell(Text.of('[CLASS] JOB昇格はキャンプのミナト（JOB管理官）に相談してください。').yellow())
+    return false
+  }
   if (d.getInt('dz_career_level')<PDZ_CAREER_TIER2_LEVEL || pdzCareerRelevantXp(player)<PDZ_CAREER_TIER2_RELEVANT_XP || d.getString('dz_career_t2') || !data.t2[id]) return false
   d.putString('dz_career_t2',id);d.putInt('dz_career_rank',2);player.addTag('dz_career_t2_'+id)
   pdzCareerSyncTree(player)
-  player.tell(Text.of('[JOB] 第2職 '+data.t2[id]+' に昇格しました。').gold())
+  player.tell(Text.of('[CLASS] JOB '+data.t2[id]+' に就任しました。').gold())
   return true
 }
 
 function pdzCareerPromote3(player,id) {
   let d=player.persistentData,job=pdzCareerJob(player),t2=String(d.getString('dz_career_t2'))
+  if (player.server.runCommandSilent('execute at '+player.username+' if entity @e[type=easy_npc:humanoid,tag=dz_basecamp_job_guide,distance=..6,limit=1]')<=0) {
+    player.tell(Text.of('[CLASS] 上位JOB昇格はキャンプのミナト（JOB管理官）に相談してください。').yellow())
+    return false
+  }
   let list=(PDZ_CAREER_PATHS[job].t3[t2]||{})
   if (d.getInt('dz_career_level')<PDZ_CAREER_TIER3_LEVEL || pdzCareerRelevantXp(player)<PDZ_CAREER_TIER3_RELEVANT_XP || d.getString('dz_career_t3') || !list[id]) return false
   d.putString('dz_career_t3',id);d.putInt('dz_career_rank',3);player.addTag('dz_career_t3_'+id)
   pdzCareerSyncTree(player)
-  player.tell(Text.of('[JOB] 第3職 '+list[id]+' に昇格しました。').lightPurple())
+  player.tell(Text.of('[CLASS] 上位JOB '+list[id]+' に昇格しました。').lightPurple())
   return true
 }
 
@@ -412,8 +432,8 @@ ServerEvents.commandRegistry(event => {
     let p=ctx.source.player,d=p.persistentData,job=pdzCareerJob(p),lv=Math.max(1,d.getInt('dz_career_level')),rx=pdzCareerRelevantXp(p)
     p.tell(Text.of('=== JOB Career Diagnosis ===').gold())
     p.tell(Text.of('JOB='+job+' Lv='+lv+' RelevantXP='+rx).aqua())
-    p.tell(Text.of('T2 '+(lv>=10&&rx>=300?'READY':'LOCKED')+' (Lv10 / ActionXP300)').yellow())
-    p.tell(Text.of('T3 '+(lv>=25&&rx>=1200?'READY':'LOCKED')+' (Lv25 / ActionXP1200)').lightPurple())
+    p.tell(Text.of('JOB '+(lv>=PDZ_CAREER_TIER2_LEVEL&&rx>=PDZ_CAREER_TIER2_RELEVANT_XP?'READY':'LOCKED')+' (CLASS Lv30 / ActionXP900)').yellow())
+    p.tell(Text.of('ADVANCED JOB '+(lv>=PDZ_CAREER_TIER3_LEVEL&&rx>=PDZ_CAREER_TIER3_RELEVANT_XP?'READY':'LOCKED')+' (CLASS Lv60 / ActionXP3600)').lightPurple())
       p.tell(Text.of('Selected: '+(d.getString('dz_career_t2')||'-')+' > '+(d.getString('dz_career_t3')||'-')).gray())
       p.tell(Text.of('ChosenFlag='+d.getBoolean('dz_job_chosen')+' TotalXP='+Math.max(0,d.getInt('dz_career_xp'))).gray())
       ;['combat','firearms','elite','melee','damage','medical','support','mechanics','vehicle','engineering','craft','exploration','scavenging','fishing','hunting','farming','survival'].forEach(source=>{
@@ -437,13 +457,13 @@ ServerEvents.commandRegistry(event => {
   root.then(Commands.literal('event_fishing').executes(ctx=>{
     let p=ctx.source.player,d=p.persistentData,until=d.getLong('dz_career_bridge_fishing_until')
     d.remove('dz_career_bridge_fishing_until')
-    if (until<=Date.now()) return 0
+    if (until<=p.level.gameTime) return 0
     pdzCareerAddXp(p,4,'fishing',false);return 1
   }))
   root.then(Commands.literal('event_treatment').executes(ctx=>{
     let p=ctx.source.player,d=p.persistentData,until=d.getLong('dz_career_bridge_treatment_until')
     d.remove('dz_career_bridge_treatment_until')
-    if (until<=Date.now()) return 0
+    if (until<=p.level.gameTime) return 0
     pdzCareerAddXp(p,3,'support',false);return 1
   }))
   root.then(Commands.literal('prepare_t2_test').requires(s=>s.hasPermission(2)).executes(ctx=>{

@@ -126,6 +126,7 @@ const DZ_SKILL_CATEGORIES = {
 const DZ_ALL_SKILLS = Object.keys(DZ_SKILL_CATEGORIES)
 const DZ_RETRAIN_COST = 24
 const DZ_RETRAIN_CURRENCY = "apocalypsenow:money"
+const DZ_STARTER_GRANT_VERSION = 6
 
 function dzPick(a) { return a[Math.floor(Math.random()*a.length)] }
 
@@ -140,32 +141,167 @@ function dzGive(player, spec) {
   return true
 }
 
+function dzStarterItemCount(player, itemId) {
+  try { return Number(player.runCommandSilent("clear @s " + itemId + " 0")) }
+  catch (ignored) { return 0 }
+}
+
+// Verify normal kit components after inventory/mod hooks have settled.
+// Supply only the missing amount so a healthy grant never duplicates gear.
+function dzAuditStarterSpecs(player, specs) {
+  if (!player) return false
+  let expectedById = {}
+  for (let i = 0; i < specs.length; i++) {
+    let id = String(specs[i][0])
+    expectedById[id] = Number(expectedById[id] || 0) + Number(specs[i][1])
+  }
+  let repaired = []
+  Object.keys(expectedById).forEach(id => {
+    let expected = expectedById[id]
+    let have = dzStarterItemCount(player, id)
+    if (have < expected) {
+      let missing = expected - have
+      if (dzGive(player, [id, missing])) repaired.push(id + " x" + missing)
+    }
+  })
+  if (repaired.length > 0) {
+    player.tell(Text.of("[PDZ] Missing starter items were restored: " + repaired.join(", ")).yellow())
+    console.warn("[PROJECT DEADZONE][Starter Kit] repaired for " + player.username + ": " + repaired.join(", "))
+  }
+  let ready = true
+  Object.keys(expectedById).forEach(id => {
+    if (dzStarterItemCount(player, id) < expectedById[id]) ready = false
+  })
+  return ready
+}
+
+function dzAuditStarterLoadout(player, job, specs) {
+  if (!player || !job) return false
+  let specsReady = dzAuditStarterSpecs(player, specs)
+  if (!job.gunStarter && !job.smgStarter) return specsReady
+
+  let guns = dzStarterItemCount(player, "tacz:modern_kinetic_gun")
+  let ammo = dzStarterItemCount(player, "tacz:ammo")
+  if (guns > 0 && ammo > 0) return specsReady
+
+  let restored = job.smgStarter ? dzGiveSmg(player) : dzGiveGun(player)
+  if (restored) {
+    player.tell(Text.of("[PDZ] 不足していたスターター武器・弾薬を再支給しました。").yellow())
+    console.warn("[PROJECT DEADZONE][Starter Kit] restored weapon package for " + player.username)
+  }
+  guns = dzStarterItemCount(player, "tacz:modern_kinetic_gun")
+  ammo = dzStarterItemCount(player, "tacz:ammo")
+  return specsReady && guns > 0 && ammo > 0
+}
+
 function dzGiveGun(player) {
   let g=dzPick(DZ_STARTER_GUNS)
   let ammoCount = g.minAmmo + Math.floor(Math.random() * (g.maxAmmo - g.minAmmo + 1))
 
-  player.give(Item.of("tacz:modern_kinetic_gun",
-    `{GunFireMode:"${g.mode}",GunId:"${g.gun}",HasBulletInBarrel:1b}`))
+  let gun = Item.of("tacz:modern_kinetic_gun",
+    `{GunFireMode:"${g.mode}",GunId:"${g.gun}",HasBulletInBarrel:1b}`)
+  let ammo = Item.of("tacz:ammo", ammoCount, `{AmmoId:"${g.ammo}"}`)
+  if (gun.isEmpty() || ammo.isEmpty()) {
+    console.error("[PROJECT DEADZONE][Starter Kit] TaCZ starter gun or ammo is unavailable")
+    return false
+  }
+
+  player.give(gun)
 
   // KubeJS Item.of: item, count, NBT. v0.1 had count/NBT reversed, which produced one ammo item.
-  player.give(Item.of("tacz:ammo", ammoCount, `{AmmoId:"${g.ammo}"}`))
+  player.give(ammo)
   player.tell(Text.of(`Starter ammo: ${ammoCount} rounds (${g.ammo})`).gray())
+  return true
 }
 
 function dzGiveSmg(player) {
-  player.give(Item.of("tacz:modern_kinetic_gun",
-    '{GunFireMode:"AUTO",GunId:"tacz:hk_mp5a5",HasBulletInBarrel:1b}'))
-  player.give(Item.of("tacz:ammo", 60, '{AmmoId:"tacz:9mm"}'))
+  let gun = Item.of("tacz:modern_kinetic_gun",
+    '{GunFireMode:"AUTO",GunId:"tacz:hk_mp5a5",HasBulletInBarrel:1b}')
+  let ammo = Item.of("tacz:ammo", 60, '{AmmoId:"tacz:9mm"}')
+  if (gun.isEmpty() || ammo.isEmpty()) {
+    console.error("[PROJECT DEADZONE][Starter Kit] TaCZ MP5 starter kit is unavailable")
+    return false
+  }
+  player.give(gun)
+  player.give(ammo)
   player.tell(Text.of("Starter weapon: HK MP5A5 / 9mm x60").gold())
+  return true
+}
+
+function dzPrepareStarterKit(job) {
+  let specs = []
+  DZ_COMMON_STARTER.forEach(x => specs.push(x))
+  job.fixed.forEach(x => specs.push(x))
+  job.random.forEach(pool => specs.push(dzPick(pool)))
+  return specs
+}
+
+// Random starter choices must stay stable. Re-rolling them during an audit made a
+// valid kit look incomplete and could also duplicate unrelated food/tools.
+function dzStarterSpecsFor(player, job, reset) {
+  let data = player.persistentData
+  if (reset) data.remove("dz_starter_specs_json")
+  let raw = data.getString("dz_starter_specs_json")
+  if (raw) {
+    try {
+      let parsed = JSON.parse(String(raw))
+      if (Array.isArray(parsed) && parsed.length > 0) return parsed
+    } catch (e) {
+      console.warn("[PROJECT DEADZONE][Starter Kit] invalid saved spec for " + player.username + ": " + e)
+    }
+  }
+  let specs = dzPrepareStarterKit(job)
+  data.putString("dz_starter_specs_json", JSON.stringify(specs))
+  return specs
+}
+
+function dzStarterKitIsValid(player, job, specs) {
+  for (let i = 0; i < specs.length; i++) {
+    if (Item.of(specs[i][0], specs[i][1]).isEmpty()) {
+      console.error("[PROJECT DEADZONE][Starter Kit] Invalid item before grant: " + specs[i][0])
+      player.tell(Text.of("スターターキットの構成アイテムが不足しています: " + specs[i][0]).red())
+      return false
+    }
+  }
+  if ((job.gunStarter || job.smgStarter) &&
+      (Item.of("tacz:modern_kinetic_gun").isEmpty() || Item.of("tacz:ammo").isEmpty())) {
+    player.tell(Text.of("TaCZのスターター武器を生成できません。管理者へ連絡してください。 ").red())
+    return false
+  }
+  return true
 }
 
 function dzGiveStarterKit(player, job) {
-  DZ_COMMON_STARTER.forEach(x => dzGive(player,x))
-  job.fixed.forEach(x => dzGive(player,x))
-  job.random.forEach(pool => dzGive(player,dzPick(pool)))
-  if (job.gunStarter) dzGiveGun(player)
-  if (job.smgStarter) dzGiveSmg(player)
+  let specs = dzStarterSpecsFor(player, job, false)
+  if (!dzStarterKitIsValid(player, job, specs)) return false
+  for (let i = 0; i < specs.length; i++) {
+    if (!dzGive(player, specs[i])) return false
+  }
+  if (job.gunStarter && !dzGiveGun(player)) return false
+  if (job.smgStarter && !dzGiveSmg(player)) return false
+  // Several inventory/capability mods finish initialization after the JOB event.
+  // Audit twice so a delayed inventory rewrite cannot leave only one common item.
+  player.server.scheduleInTicks(20, callback => dzAuditStarterLoadout(player, job, specs))
+  player.server.scheduleInTicks(100, callback => dzAuditStarterLoadout(player, job, specs))
+  player.tell(Text.of("[PDZ] スターターキットを支給しました。5秒後に不足品を自動点検します。").green())
+  player.tell(Text.of("不足時は /deadzonejob starter_claim で不足分だけ復旧できます。").gray())
+  return dzAuditStarterLoadout(player, job, specs)
 }
+
+function dzEnsureStarterKit(player) {
+  if (!player) return false
+  let data = player.persistentData
+  let id = data.getString("dz_job_id"), job = DZ_JOBS[id]
+  if (!data.getBoolean("dz_job_chosen") || !job) return false
+  let specs = dzStarterSpecsFor(player, job, false)
+  if (!dzStarterKitIsValid(player, job, specs)) return false
+  let ready = dzAuditStarterLoadout(player, job, specs)
+  data.putBoolean("dz_starter_received", ready)
+  if (ready) data.putInt("dz_starter_grant_version", DZ_STARTER_GRANT_VERSION)
+  return ready
+}
+
+global.pdzEnsureStarterKit = dzEnsureStarterKit
 
 function dzPuffishCommand(player, command) {
   try {
@@ -310,11 +446,21 @@ function dzApplyJob(player,id) {
     return false
   }
 
+  // Never mark a player as registered before the complete starter kit exists.
+  // This keeps a broken/missing mod item from permanently consuming the claim.
+  d.remove("dz_starter_specs_json")
+  if (!dzGiveStarterKit(player,j)) {
+    d.putBoolean("dz_starter_received",false)
+    player.tell(Text.of("JOB登録を中止しました。スターターキットの生成に失敗したため、選択は確定していません。 ").red())
+    return false
+  }
+
   d.putBoolean("dz_job_chosen",true)
   d.putBoolean("dz_onboarding_complete",true)
   d.putString("dz_job_id",id)
   d.putString("dz_job_name",j.name)
   d.putBoolean("dz_starter_received",true)
+  d.putInt("dz_starter_grant_version",DZ_STARTER_GRANT_VERSION)
   // Main story: choosing a JOB is an actual objective, not a manual checkbox.
   player.server.runCommandSilent(
     "ftbquests change_progress " + player.username + " complete 52F2869C3820DF98")
@@ -337,8 +483,6 @@ function dzApplyJob(player,id) {
         "puffish_skills points set {player} "+category+" "+j.skills[skillName])
     }
   })
-
-  dzGiveStarterKit(player,j)
 
   player.tell(Text.of("Job selected: "+j.name).gold())
   player.tell(
@@ -373,6 +517,56 @@ ServerEvents.commandRegistry(event => {
     }
     dzGiveStarterKit(player, job)
     player.tell(Text.of("Starter kit re-granted for: "+job.name).green())
+    return 1
+  }))
+
+  // Migration-safe recovery for players created before verified starter grants.
+  // Versioning allows one recovery claim without opening an infinite item source.
+  root.then(Commands.literal("starter_claim_legacy").executes(ctx => {
+    let player=ctx.source.player, data=player.persistentData
+    let id=data.getString("dz_job_id"), job=DZ_JOBS[id]
+    if (!data.getBoolean("dz_job_chosen") || !job) {
+      player.tell(Text.of("先にロビー受付でJOBを登録してください。 ").red())
+      return 0
+    }
+    if (data.getInt("dz_starter_grant_version") >= DZ_STARTER_GRANT_VERSION) {
+      player.tell(Text.of("このバージョンのスターターキットは受領済みです。 ").yellow())
+      return 0
+    }
+    if (!dzGiveStarterKit(player,job)) {
+      data.putBoolean("dz_starter_received",false)
+      player.tell(Text.of("スターターキットの復旧に失敗しました。受領権は消費されていません。 ").red())
+      return 0
+    }
+    data.putBoolean("dz_starter_received",true)
+    data.putInt("dz_starter_grant_version",DZ_STARTER_GRANT_VERSION)
+    player.tell(Text.of("スターターキットを復旧支給しました: "+job.name).green())
+    return 1
+  }))
+
+  // Repeatable and idempotent recovery. It only restores missing components,
+  // so a stale version flag can never block a genuinely incomplete kit.
+  root.then(Commands.literal("starter_claim").executes(ctx => {
+    let player=ctx.source.player, data=player.persistentData
+    let id=data.getString("dz_job_id"), job=DZ_JOBS[id]
+    if (!data.getBoolean("dz_job_chosen") || !job) {
+      player.tell(Text.of("先にロビー受付でJOBを登録してください。").red())
+      return 0
+    }
+    let specs=dzStarterSpecsFor(player,job,false)
+    if (!dzStarterKitIsValid(player,job,specs)) {
+      data.putBoolean("dz_starter_received",false)
+      player.tell(Text.of("スターターキットの構成アイテムが不足しているため、復旧できませんでした。").red())
+      return 0
+    }
+    let ready=dzAuditStarterLoadout(player,job,specs)
+    data.putBoolean("dz_starter_received",ready)
+    if (!ready) {
+      player.tell(Text.of("スターターキットの実物確認に失敗しました。もう一度実行してください。").red())
+      return 0
+    }
+    data.putInt("dz_starter_grant_version",DZ_STARTER_GRANT_VERSION)
+    player.tell(Text.of("スターターキットを再検査し、不足分を復旧しました: "+job.name).green())
     return 1
   }))
 
@@ -534,6 +728,7 @@ ServerEvents.commandRegistry(event => {
     let old=d.getString("dz_job_id")
     try { if (old) p.stages.remove("deadzone_job_"+old) } catch(e) {}
     d.remove("dz_job_chosen"); d.remove("dz_job_id"); d.remove("dz_job_name"); d.remove("dz_starter_received")
+    d.remove("dz_starter_grant_version")
     d.remove("dz_retrain_free_used"); d.remove("dz_retrain_pending")
     let all=["Survival","Scavenging","Melee","Medical","Firearms","Fitness","Reload","Mechanics","Engineering","Armor"]
     all.forEach(k => { d.remove("dz_skill_"+k); d.remove("dz_skill_floor_"+k); d.remove("dz_skill_xp_"+k) })
