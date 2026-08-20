@@ -1,12 +1,12 @@
 name = "PROJECT DEADZONE"
 author = "PROJECT DEADZONE Team"
-version = "ALPHA-20260818-LOBBY-BGM"
+version = "ALPHA-20260820-ONBOARDING-SETTLEMENT-HOTFIX"
 pack-format = "packwiz:1.1.0"
 
 [index]
 file = "index.toml"
 hash-format = "sha256"
-hash = "ccd1e36361180ee877b17fb360cacac40eb7f6b16e42a112c0403ed50844d2c4"
+hash = "761e79cf37dc56da90da826d1af78f5e76e037e843505998e48632c92e94394d"
 
 [versions]
 forge = "47.4.10"

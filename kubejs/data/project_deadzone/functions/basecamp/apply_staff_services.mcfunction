@@ -1,11 +1,8 @@
 # Adds service buttons to Minato and Hank without replacing their random dialog texts.
 
-# Minato: current JOB report and JOB selection/status screen.
+# Minato: class/career guidance. Promotions are validated by the server.
 data modify entity @e[type=easy_npc:humanoid,tag=dz_basecamp_job_guide,limit=1] DialogData.Type set value "CUSTOM"
-data modify entity @e[type=easy_npc:humanoid,tag=dz_basecamp_job_guide,limit=1] DialogData.DialogDataSet[0].Buttons set value [{Actions:[{Cmd:"/deadzonejob info",ExecAsUser:1b,PermLevel:0,Type:"COMMAND"}],Label:"job_info",Name:"現在のJOBを確認する"},{Actions:[{Cmd:"/deadzonejob menu",ExecAsUser:1b,PermLevel:0,Type:"COMMAND"}],Label:"job_menu",Name:"JOB管理画面を開く"}]
-
-# Replace Minato's legacy two-button set with the retraining service.
-data modify entity @e[type=easy_npc:humanoid,tag=dz_basecamp_job_guide,limit=1] DialogData.DialogDataSet[0].Buttons set value [{Actions:[{Cmd:"/deadzonejob info",ExecAsUser:1b,PermLevel:0,Type:"COMMAND"}],Label:"job_info",Name:"現在のJOBを確認する"},{Actions:[{Cmd:"/deadzonejob menu",ExecAsUser:1b,PermLevel:0,Type:"COMMAND"}],Label:"job_menu",Name:"初期JOB選択を開く"},{Actions:[{Cmd:"/deadzonejob retrain",ExecAsUser:1b,PermLevel:0,Type:"COMMAND"}],Label:"job_retrain",Name:"JOBを再訓練する"}]
+data modify entity @e[type=easy_npc:humanoid,tag=dz_basecamp_job_guide,limit=1] DialogData.DialogDataSet[0].Buttons set value [{Actions:[{Cmd:"/deadzonecareer status",ExecAsUser:1b,PermLevel:0,Type:"COMMAND"}],Label:"career_status",Name:"クラスと進捗を確認する"},{Actions:[{Cmd:"/deadzonecareer paths",ExecAsUser:1b,PermLevel:0,Type:"COMMAND"}],Label:"career_paths",Name:"昇格できるJOBを確認する"},{Actions:[{Cmd:"/ftbquests open_book",ExecAsUser:1b,PermLevel:0,Type:"COMMAND"}],Label:"career_quests",Name:"キャリア章を開く"}]
 
 # Hank: Buddy status and expensive emergency weapon/ammo reserve.
 data modify entity @e[type=easy_npc:humanoid,tag=dz_basecamp_buddy_recruiter,limit=1] DialogData.Type set value "CUSTOM"

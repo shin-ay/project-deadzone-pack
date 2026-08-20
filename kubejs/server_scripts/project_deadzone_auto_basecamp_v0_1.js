@@ -1,9 +1,12 @@
-// PROJECT DEADZONE automatic Survivor Camp bootstrap v0.1
-// The first player in a fresh overworld becomes the placement anchor.
+// PROJECT DEADZONE verified initial settlement bootstrap v0.3
+// Generation starts only after an explicit departure request from the lobby.
 
 const DZ_CAMP_STATE_KEY = "dz_auto_basecamp_state"
 const DZ_CAMP_LAYOUT_VERSION = 3
-const DZ_CAMP_FRESH_LIMIT = 24000
+// Lobby briefing and JOB selection must not consume the whole generation
+// window. Ten in-game days is still conservative enough to avoid mutating an
+// established server while making a deliberate first departure reliable.
+const DZ_CAMP_FRESH_LIMIT = 240000
 const DZ_CAMP_ARRIVAL_X = 13
 const DZ_CAMP_ARRIVAL_Y = 2
 const DZ_CAMP_ARRIVAL_Z = 20
@@ -299,6 +302,8 @@ function dzCampGenerateAtSite(player, site, automatic) {
     data.putInt("dz_auto_basecamp_origin_y", originY)
     data.putInt("dz_auto_basecamp_origin_z", originZ)
     data.putString("dz_auto_basecamp_owner", String(player.uuid))
+    player.persistentData.putBoolean("dz_starter_depart_complete", true)
+    player.persistentData.remove("dz_starter_depart_requested")
     player.teleportTo(site.x+0.5,site.y+1,site.z+0.5)
     player.runCommandSilent("effect clear @s minecraft:blindness")
     player.runCommandSilent("effect clear @s minecraft:resistance")
@@ -316,6 +321,7 @@ function dzCampGenerateAtSite(player, site, automatic) {
   }
 
   data.putInt(DZ_CAMP_STATE_KEY, 0)
+  player.persistentData.remove("dz_starter_depart_requested")
   player.runCommandSilent("effect clear @s minecraft:blindness")
   player.runCommandSilent("effect clear @s minecraft:resistance")
   player.tell(Text.of(
@@ -374,8 +380,7 @@ function dzCampGenerateAtPlayer(player, automatic) {
   },automatic)
 }
 
-PlayerEvents.loggedIn(event => {
-  let player = event.player
+function dzCampStartBootstrap(player) {
   let server = player.server
   let data = server.persistentData
 
@@ -417,6 +422,12 @@ PlayerEvents.loggedIn(event => {
     console.info(
       "[PROJECT DEADZONE][Camp Auto] skipped established world: gameTime=" + worldAge
     )
+    player.persistentData.remove("dz_starter_depart_requested")
+    player.runCommandSilent("effect clear @s minecraft:blindness")
+    player.runCommandSilent("effect clear @s minecraft:resistance")
+    player.tell(Text.of(
+      "[PROJECT DEADZONE] このワールドは既に進行しているため、初期拠点の自動配置を中止しました。管理者へ連絡してください。"
+    ).red())
     return
   }
 
@@ -463,6 +474,25 @@ PlayerEvents.loggedIn(event => {
     dzCampGenerateAtSite(player,site,true)
   }
   server.scheduleInTicks(1,bootstrapCamp)
+  return true
+}
+
+// Lobby transfers do not fire PlayerEvents.loggedIn again.  Start bootstrap
+// only after /deadzonevillage depart has explicitly armed the request flag.
+PlayerEvents.tick(event => {
+  let player=event.player
+  if (!player || !player.alive) return
+  let probe=player.persistentData.getInt("dz_camp_entry_probe")+1
+  if (probe<20) {
+    player.persistentData.putInt("dz_camp_entry_probe",probe)
+    return
+  }
+  player.persistentData.putInt("dz_camp_entry_probe",0)
+  if (!dzCampIsOverworld(player)) return
+  if (!player.persistentData.getBoolean("dz_job_chosen")) return
+  if (!player.persistentData.getBoolean("dz_starter_depart_requested")) return
+  if (player.server.persistentData.getInt(DZ_CAMP_STATE_KEY)!==0) return
+  dzCampStartBootstrap(player)
 })
 
 ServerEvents.commandRegistry(event => {

@@ -1710,7 +1710,7 @@ hash = "d8a63933ec4757186a594debea59dd35724a0a895fe601b324f96217c28312df"
 
 [[files]]
 file = "config/lobby-common.toml"
-hash = "b8dbe80cd933ca1052ee97787bba306c71604aeedca3620d0e7d1b135a5b988c"
+hash = "11ec3e683a3337ae6fac3ae58bc335e6e0bfb6ae8d88e23e00820cb931b69723"
 
 [[files]]
 file = "config/lootbeams-client.toml"
@@ -6530,7 +6530,7 @@ hash = "daaa10b7c79d789b2b4c5580d3632b87c8e3da992e31e40afe7f2b8ff51d3ea2"
 
 [[files]]
 file = "kubejs/data/project_deadzone/functions/basecamp/activate.mcfunction"
-hash = "8eea25e1f4631dd092ffde5688e9dc70b72511bb3618e28bc251b8484d188da9"
+hash = "68c0b4a926615fff92473697be00641449ef45f23896b4b9e9c270c7096a3518"
 
 [[files]]
 file = "kubejs/data/project_deadzone/functions/basecamp/activate_from_arrival.mcfunction"
@@ -6546,7 +6546,7 @@ hash = "b7377e2c3d4b5afe5619d64801a6783457a9d5e7460b7e91ba8d7e43d160e1d9"
 
 [[files]]
 file = "kubejs/data/project_deadzone/functions/basecamp/apply_staff_services.mcfunction"
-hash = "4a1e779a215d0044624df0fc908d701041f0a78cc59b5db0d70bba9fbb5ae742"
+hash = "aa4a3d258bd7f82aa9b47695ea719577f19d771f63fc83ece0158ddf6b3f586a"
 
 [[files]]
 file = "kubejs/data/project_deadzone/functions/basecamp/apply_trade_economy.mcfunction"
@@ -6594,7 +6594,7 @@ hash = "565533ec943ba3789116b9ec01f709b61c8891e5a3605107830d287dfc97c567"
 
 [[files]]
 file = "kubejs/data/project_deadzone/functions/basecamp/repair_staff_service_ui.mcfunction"
-hash = "7468098fe09665416619299205190f2b46d7d0f2ef6cb9d458c2c2929d175821"
+hash = "7fdf74aeea1915c24c68f5a59ee0459f2eefe66739a2e3836eb28357546a6c58"
 
 [[files]]
 file = "kubejs/data/project_deadzone/functions/basecamp/set_spawn_here.mcfunction"
@@ -7022,7 +7022,7 @@ hash = "a891cd6f2ffcdbb3bd3afaeda7646f0f76661dd91049b9967d25caaa2fce5271"
 
 [[files]]
 file = "kubejs/data/project_deadzone/functions/lobby/setup.mcfunction"
-hash = "d9f02d093aff3f60dbaea8052783ff87bff9923682b06dab7cda940b09a2c703"
+hash = "74ca0a4fce032e037b2ccfff8c7ad5e62055cf32ba0d9cfca75e3d7c54f62598"
 
 [[files]]
 file = "kubejs/data/project_deadzone/functions/settlement/locate_guide.mcfunction"
@@ -7826,7 +7826,7 @@ hash = "8e1c6b4d1a6aa61931dc0e298d165b91720a877b57b28dc94e735a06239a7ab5"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_auto_basecamp_v0_1.js"
-hash = "850f17945e44502c50c72622c05666f5e1fe34c863da696b52484ef6e546a317"
+hash = "9c8ed2df1e7d8958f2e9571efb2a75efed68ec6121abe9e795f1fceffd3ddfc1"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_base_core_v0_1.js"
@@ -7966,7 +7966,7 @@ hash = "4895bdb18c7dae487a79a657c22ff03613c2788991b6155e2e0620b9530cf54d"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_jobs_v0_2_2.js"
-hash = "e864976477a4746a5c5db80eb95227178fd7b5e7280b0812c2e6dcba3d1eb0b3"
+hash = "345d4f25ef97c983236402aa310b5e2c71f327765d27dd1f40117d94c045ab28"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_journeymap_sync_v0_1.js"
@@ -8010,7 +8010,7 @@ hash = "9ad212920727a72720a2c312099c5c8cf7613d832023813f09e78b3712673baf"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_onboarding_v0_1.js"
-hash = "a506f43baae955ec164b9c4ef24a6c0a828b423ad140d21ecff59c0f14ec97b5"
+hash = "dd1d3163eb2b318e4995deab207ff489e5ac7fdc9bde0d6cd679955b4de5ea67"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_outpost_garrisons_v0_1.js"
@@ -8091,6 +8091,10 @@ hash = "60e0d71f26c5783319532723e7a720e5e88f5c0221fac3c4f386d8579064eafa"
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_starter_bike_recipes_v0_1.js"
 hash = "5b59cdd08b1b3bd375e180c38b4c0addb7f0fcb3e88f8b7c90ae0fb877b0fd2e"
+
+[[files]]
+file = "kubejs/server_scripts/project_deadzone_starter_village_v0_1.js"
+hash = "6a0d98e4be71df3fde631e62f324fda153bcdcb297c02a267ea721bd988485d2"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_story_branches_v0_1.js"
@@ -17344,6 +17348,10 @@ file = "projectfiles/PROJECT_DEADZONE_Main_Campaign_v0.2.md"
 hash = "37e93655a23cb45bbc30e803e43a5ad241b80e5fcdff664146065a4f43315fea"
 
 [[files]]
+file = "projectfiles/PROJECT_DEADZONE_Master_Vision_v1.0.md"
+hash = "22c38601336527ba712b665f2bae9b9bb6719c094b4aaf5ef0d56e4f77b47bf9"
+
+[[files]]
 file = "projectfiles/PROJECT_DEADZONE_Material_Unification_v0.1.md"
 hash = "8844af761fa2b002556446f5bb8f39fb04e78a49bf06b6e85d2944033267672c"
 
@@ -17402,6 +17410,10 @@ hash = "96829333f08b8be3e16b0c3becc61578674224b4b23ae8b5ff8d7e4ef693f6b5"
 [[files]]
 file = "projectfiles/PROJECT_DEADZONE_UI_v0.1_TEST.txt"
 hash = "b79e4d785b5800d1bbb627725947b0314c763f4e3d8cf663e6e681b0eb7d55cb"
+
+[[files]]
+file = "projectfiles/PROJECT_DEADZONE_Urban_Settlement_Trade_Job_Framework_v0.1.md"
+hash = "8c77c701a71f35351d06bcc35e11747d47cb58eca3c7978767a496bc812c3a13"
 
 [[files]]
 file = "projectfiles/design/DEADZONE_DESIGN_HANDOFF_2026-07-30.md"

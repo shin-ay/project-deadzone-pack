@@ -55,7 +55,7 @@ setblock ~26 ~2 ~24 air
 # Clothing trader anchor. Keep the NPC tied to the actual activated camp,
 # rather than reconstructing its position from possibly stale saved origin data.
 kill @e[type=minecraft:marker,tag=dz_basecamp_clothier_anchor]
-summon minecraft:marker ~26.5 ~2 ~24.5 {Tags:["dz_basecamp_clothier_anchor"]}
+summon minecraft:marker ~25.5 ~2 ~6.5 {Tags:["dz_basecamp_clothier_anchor"]}
 
 # Four approach anchors used by the raid controller.
 setblock ~0 ~1 ~19 air

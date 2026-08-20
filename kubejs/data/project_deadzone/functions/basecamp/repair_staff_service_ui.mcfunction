@@ -2,7 +2,7 @@
 
 # Minato / JOB coordinator
 data modify entity @e[type=easy_npc:humanoid,tag=dz_basecamp_job_guide,limit=1] DialogData.Type set value "CUSTOM"
-data modify entity @e[type=easy_npc:humanoid,tag=dz_basecamp_job_guide,limit=1] DialogData.DialogDataSet[0].Buttons set value [{Actions:[{Cmd:"/deadzonejob info",ExecAsUser:1b,PermLevel:0,Type:"COMMAND"}],Label:"job_info",Name:"現在のJOBを確認する"},{Actions:[{Cmd:"/deadzonejob menu",ExecAsUser:1b,PermLevel:0,Type:"COMMAND"}],Label:"job_menu",Name:"初期JOB選択を開く"},{Actions:[{Cmd:"/deadzonejob retrain",ExecAsUser:1b,PermLevel:0,Type:"COMMAND"}],Label:"job_retrain",Name:"JOBを再訓練する"}]
+data modify entity @e[type=easy_npc:humanoid,tag=dz_basecamp_job_guide,limit=1] DialogData.DialogDataSet[0].Buttons set value [{Actions:[{Cmd:"/deadzonecareer status",ExecAsUser:1b,PermLevel:0,Type:"COMMAND"}],Label:"career_status",Name:"クラスと進捗を確認する"},{Actions:[{Cmd:"/deadzonecareer paths",ExecAsUser:1b,PermLevel:0,Type:"COMMAND"}],Label:"career_paths",Name:"昇格できるJOBを確認する"},{Actions:[{Cmd:"/ftbquests open_book",ExecAsUser:1b,PermLevel:0,Type:"COMMAND"}],Label:"career_quests",Name:"キャリア章を開く"}]
 
 # Hank / Buddy recruiter
 data modify entity @e[type=easy_npc:humanoid,tag=dz_basecamp_buddy_recruiter,limit=1] DialogData.Type set value "CUSTOM"

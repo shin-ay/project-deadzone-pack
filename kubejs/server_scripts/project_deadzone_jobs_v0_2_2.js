@@ -302,7 +302,16 @@ function dzApplyJob(player,id) {
     return false
   }
 
+  let dimension="unknown"
+  try { dimension=String(player.level.dimension) } catch (ignored) {}
+  if (dimension.indexOf("lobby:lobby_dimension")<0) {
+    player.tell(Text.of("[PROJECT DEADZONE] JOBは受付ロビー到着後に選択してください。ロビーへ移動します。").red())
+    player.runCommandSilent("lobby")
+    return false
+  }
+
   d.putBoolean("dz_job_chosen",true)
+  d.putBoolean("dz_onboarding_complete",true)
   d.putString("dz_job_id",id)
   d.putString("dz_job_name",j.name)
   d.putBoolean("dz_starter_received",true)
@@ -332,7 +341,12 @@ function dzApplyJob(player,id) {
   dzGiveStarterKit(player,j)
 
   player.tell(Text.of("Job selected: "+j.name).gold())
-  player.tell(Text.of("Starter Kitを受け取りました。 /deadzonejob info で確認できます。").green())
+  player.tell(
+    Text.of("[ 説明を確認したら初期集落へ出発 ]")
+      .aqua()
+      .clickRunCommand("/deadzonevillage depart")
+      .hover(Text.of("初期集落の生成と安全確認が完了してから移動します。")))
+  player.tell(Text.of("スターターキットを受け取りました。/deadzonejob info で確認できます。").green())
   return true
 }
 
