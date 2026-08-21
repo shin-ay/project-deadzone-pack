@@ -1,0 +1,14 @@
+{
+    "structures":  [
+                       {
+                           "structure":  "jeffs_cursed_walking_structures:wifi_tower_forest",
+                           "weight":  1
+                       }
+                   ],
+    "placement":  {
+                      "type":  "minecraft:random_spread",
+                      "spacing":  115,
+                      "separation":  5,
+                      "salt":  2023788108
+                  }
+}

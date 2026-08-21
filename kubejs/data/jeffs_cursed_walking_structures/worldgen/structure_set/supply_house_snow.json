@@ -1,0 +1,14 @@
+{
+    "structures":  [
+                       {
+                           "structure":  "jeffs_cursed_walking_structures:supply_house_snow",
+                           "weight":  1
+                       }
+                   ],
+    "placement":  {
+                      "type":  "minecraft:random_spread",
+                      "spacing":  58,
+                      "separation":  2,
+                      "salt":  828807769
+                  }
+}

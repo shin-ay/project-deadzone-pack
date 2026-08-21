@@ -13,7 +13,7 @@
     "citySpawnDistance2": 1200,
     "citySpawnMultiplier1": 0.0,
     "citySpawnMultiplier2": 1.0,
-    "cityChance": 0.00055,
+    "cityChance": 0.0004,
     "cityThreshold": 0.15,
     "cityLevel0Height": 10000,
     "cityStyleAlternative": "citystyle_border1",

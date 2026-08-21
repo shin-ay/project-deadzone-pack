@@ -1,0 +1,14 @@
+{
+    "structures":  [
+                       {
+                           "structure":  "doomsday_structures:shops",
+                           "weight":  1
+                       }
+                   ],
+    "placement":  {
+                      "type":  "berezka_api:berezkas_structure_placement",
+                      "spacing":  29,
+                      "separation":  15,
+                      "salt":  28032601
+                  }
+}

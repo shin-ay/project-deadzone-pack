@@ -1,0 +1,14 @@
+{
+    "structures":  [
+                       {
+                           "structure":  "jeffs_cursed_walking_structures:collapsed_radio_tower_plains",
+                           "weight":  1
+                       }
+                   ],
+    "placement":  {
+                      "type":  "minecraft:random_spread",
+                      "spacing":  69,
+                      "separation":  1,
+                      "salt":  1002507108
+                  }
+}

@@ -1,0 +1,14 @@
+{
+    "structures":  [
+                       {
+                           "structure":  "jeffs_cursed_walking_structures:wifi_tower_snow",
+                           "weight":  1
+                       }
+                   ],
+    "placement":  {
+                      "type":  "minecraft:random_spread",
+                      "spacing":  110,
+                      "separation":  3,
+                      "salt":  1151933016
+                  }
+}

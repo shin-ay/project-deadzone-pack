@@ -1,0 +1,14 @@
+{
+    "structures":  [
+                       {
+                           "structure":  "jeffs_cursed_walking_structures:oilrigsnow",
+                           "weight":  1
+                       }
+                   ],
+    "placement":  {
+                      "type":  "minecraft:random_spread",
+                      "spacing":  92,
+                      "separation":  15,
+                      "salt":  1988196960
+                  }
+}

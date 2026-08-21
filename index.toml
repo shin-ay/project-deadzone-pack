@@ -1738,7 +1738,7 @@ hash = "a327f8a61c069fd3832b45813a5277e9e2a61f3228760720d78768d004d9895b"
 
 [[files]]
 file = "config/lost_cities_autoloader/deadzone_chaosz_v1_2_wilderness_mediumcity_FLAT_autoloader.json"
-hash = "32f284b3c6d7277167516fe13cdd3722f80a0d141ae94cd7696109c53cf7587a"
+hash = "32c5a9968e89a88a4e082dac14258d0eac89c7b076590b6432eaf0c2f624f40c"
 
 [[files]]
 file = "config/lost_cities_autoloader/deadzone_chaosz_v1_autoloader.json"
@@ -3537,6 +3537,10 @@ file = "kubejs/data/brutalbosses/bosses/rabbitboss.json"
 hash = "45921fcc62bcba2d199aa8fc0582c94a5dcbefed10e68774ba19db3f10004583"
 
 [[files]]
+file = "kubejs/data/chaoszpack_structures/worldgen/structure_set/watch_tower_1.json"
+hash = "e46090eb9a7247c91a7274708fa34ecae7ae7b48384127a24dbd49603e150731"
+
+[[files]]
 file = "kubejs/data/createtaczauto/recipes/large_gunpowder_recipe_2.json"
 hash = "ebdc7b29466fda896bc04ba8752724e6955c4e7c4bfa47bf22ad85809c8345a7"
 
@@ -3551,6 +3555,146 @@ hash = "1ca5de1c7edbee76948e6ca2bdfcab3ddbefb1a7e9f3f72eb48d2474fbb84fe2"
 [[files]]
 file = "kubejs/data/curios/curios/slots/knees.json"
 hash = "7d59998fcb3f11bcd6cb0f65d62e5b2fff5b6f8518dd11da6d4fc8c7ca7d32ad"
+
+[[files]]
+file = "kubejs/data/doomsday_structures/worldgen/structure_set/fire_station.json"
+hash = "a955528b86da4eb3116b847d6ef3bb1edefa3eced9b38d939e706f647eb590ed"
+
+[[files]]
+file = "kubejs/data/doomsday_structures/worldgen/structure_set/gas_station.json"
+hash = "339afb2ac89c0d2b8dcc492eea24f11d8443e6d03b70945718949e04bd0b348f"
+
+[[files]]
+file = "kubejs/data/doomsday_structures/worldgen/structure_set/shops.json"
+hash = "952fa086f9500ef735a2711f35e5288e47b6496bb15c8217a303307120659dd2"
+
+[[files]]
+file = "kubejs/data/jeffs_cursed_walking_structures/worldgen/structure_set/collapsed_comunication_tower_desert.json"
+hash = "e757f3161e08431826dbd238f0cd1bcadd18488b73b65785717477aac31e0d49"
+
+[[files]]
+file = "kubejs/data/jeffs_cursed_walking_structures/worldgen/structure_set/collapsed_comunication_tower_forest.json"
+hash = "102aefe99deda62ac27cd2a3bb704cd577be99baf3fd74796371e936c6f300c1"
+
+[[files]]
+file = "kubejs/data/jeffs_cursed_walking_structures/worldgen/structure_set/collapsed_comunication_tower_tundra.json"
+hash = "1b258f9556c852aec0c9f78663c4ec5a25dc167096f73a9fee8a8a7957b7076d"
+
+[[files]]
+file = "kubejs/data/jeffs_cursed_walking_structures/worldgen/structure_set/collapsed_radio_tower_desert.json"
+hash = "668f8d719a8d953311f5e6c82e9eb78a31f2667275caeb71798c458dbce8b51c"
+
+[[files]]
+file = "kubejs/data/jeffs_cursed_walking_structures/worldgen/structure_set/collapsed_radio_tower_plains.json"
+hash = "b2c3bb5f4429f157ad39f837eaed97f373d8cb5c49f27f9c669978b5238ba835"
+
+[[files]]
+file = "kubejs/data/jeffs_cursed_walking_structures/worldgen/structure_set/collapsed_radio_tower_tundra.json"
+hash = "dae92bc289e3400a302fd59fc4969a4e807943e77b0dcecff618f8104c190b53"
+
+[[files]]
+file = "kubejs/data/jeffs_cursed_walking_structures/worldgen/structure_set/deepslatebunker.json"
+hash = "452c19a9e67f3ef534f427339a4282aeecb0f4dadf99b38e007d25ced6a36316"
+
+[[files]]
+file = "kubejs/data/jeffs_cursed_walking_structures/worldgen/structure_set/destroyed_radio_tower_desert.json"
+hash = "940f4f84cca26fc26583ce94f9e19d167dd42b6688b6d88f62c55b8513674162"
+
+[[files]]
+file = "kubejs/data/jeffs_cursed_walking_structures/worldgen/structure_set/destroyed_radio_tower_plains.json"
+hash = "4832487f3680f94f0f21da114bd96a48231c424950ce6ff73c5750711add0740"
+
+[[files]]
+file = "kubejs/data/jeffs_cursed_walking_structures/worldgen/structure_set/destroyed_radio_tower_tundra.json"
+hash = "890f61236a748afca8fc4cf378e395edb8c170da36feb231f1b28d6e45c95b4a"
+
+[[files]]
+file = "kubejs/data/jeffs_cursed_walking_structures/worldgen/structure_set/finaldestination.json"
+hash = "76382fe2886d7b75d4f4e272c518f3899b0dad7d42fd4ef06796e0b17ba1ad95"
+
+[[files]]
+file = "kubejs/data/jeffs_cursed_walking_structures/worldgen/structure_set/nuclearbunker.json"
+hash = "267fe32dfdb439f672732ddb48cbd0acb9c4882f76c77098abebb2fdeb1ee79c"
+
+[[files]]
+file = "kubejs/data/jeffs_cursed_walking_structures/worldgen/structure_set/nuclearreactor.json"
+hash = "3c48bbb62a4c47040029ccb4f0e547bd8b354c3146d207afa9fa1d1f59ca4b41"
+
+[[files]]
+file = "kubejs/data/jeffs_cursed_walking_structures/worldgen/structure_set/nuclearsilo.json"
+hash = "d9dcf698396c8ebceea11ff00444cbfd17b066f83d830063a09a6fdf42306b7b"
+
+[[files]]
+file = "kubejs/data/jeffs_cursed_walking_structures/worldgen/structure_set/oil_rig.json"
+hash = "93dd016f6424bcd31000c10236f5f9c27187a680dcd65899f5ebd1276600685f"
+
+[[files]]
+file = "kubejs/data/jeffs_cursed_walking_structures/worldgen/structure_set/oil_rig_submarine_station.json"
+hash = "e2aa3a4d69028ee98d978006bc8d40da98534429b380c62219b39dbbc707805b"
+
+[[files]]
+file = "kubejs/data/jeffs_cursed_walking_structures/worldgen/structure_set/oilrigsnow.json"
+hash = "7da4bf979fea56b34b457ae823f80d665d2d4d24740b1e6fe6c681c48878659d"
+
+[[files]]
+file = "kubejs/data/jeffs_cursed_walking_structures/worldgen/structure_set/radio_tower_desert.json"
+hash = "b06de1d5e1d94e9624dc029e6cd021efee83a2d44968b18730010779454c0192"
+
+[[files]]
+file = "kubejs/data/jeffs_cursed_walking_structures/worldgen/structure_set/radio_tower_plains.json"
+hash = "93bdcc2a30dace60a1e8cee1375d82514289cc6ff8709d4bdd11653b8b40a51b"
+
+[[files]]
+file = "kubejs/data/jeffs_cursed_walking_structures/worldgen/structure_set/radio_tower_tundra.json"
+hash = "9c342c07b215667335ebaa10ce3627511bbc9ca6be583e436f6c8be3512aa4ab"
+
+[[files]]
+file = "kubejs/data/jeffs_cursed_walking_structures/worldgen/structure_set/supply_house_desert.json"
+hash = "d023e211a15e38397a7a4b3974cbd57a428469e5faa9262652899012ce764db9"
+
+[[files]]
+file = "kubejs/data/jeffs_cursed_walking_structures/worldgen/structure_set/supply_house_forest.json"
+hash = "0e34fadc45c0f6a64dfc9e7d01a700185a10449821f2d6137547d86c6bf08138"
+
+[[files]]
+file = "kubejs/data/jeffs_cursed_walking_structures/worldgen/structure_set/supply_house_snow.json"
+hash = "a78fdf80a5ba5d72424662ed5ff8ce0092006269c5eb044a25a58c12a237c0b9"
+
+[[files]]
+file = "kubejs/data/jeffs_cursed_walking_structures/worldgen/structure_set/telecomunication_tower_desert.json"
+hash = "243739c639ac547e717e1184cf5a394ce3c1f9f810caaf1c763b8e347e5f6b37"
+
+[[files]]
+file = "kubejs/data/jeffs_cursed_walking_structures/worldgen/structure_set/telecomunication_tower_forest.json"
+hash = "dc2f5219781eaf7d59096a59561e26d08ac31118eac6dcf8cba8b95208b9027e"
+
+[[files]]
+file = "kubejs/data/jeffs_cursed_walking_structures/worldgen/structure_set/telecomunication_tower_tundra.json"
+hash = "eb38e79bbb647994996fa0aecb6668221d0d9308a27d5c7c75772ad56ed3a156"
+
+[[files]]
+file = "kubejs/data/jeffs_cursed_walking_structures/worldgen/structure_set/void_teleporter_lush.json"
+hash = "c288ff135dbe42b8ee869f4c3332348cfb4517b5a52b7e2841f38a7c36c0b307"
+
+[[files]]
+file = "kubejs/data/jeffs_cursed_walking_structures/worldgen/structure_set/void_teleporter_sculk.json"
+hash = "f0dc2388d858d1edb8188dba51637c72b25c22ceaa9457b8f859e48c3308909d"
+
+[[files]]
+file = "kubejs/data/jeffs_cursed_walking_structures/worldgen/structure_set/warehouseofdoom.json"
+hash = "d3872e87ddfd89ac7a0bf8b78ce22cef34a392d277a4a6a99775644f7fe031bd"
+
+[[files]]
+file = "kubejs/data/jeffs_cursed_walking_structures/worldgen/structure_set/wifi_tower_desert.json"
+hash = "ca985088af1bc43e13d7bbaefe3afb79186d20181b2fb311d66b7b50a2977b0d"
+
+[[files]]
+file = "kubejs/data/jeffs_cursed_walking_structures/worldgen/structure_set/wifi_tower_forest.json"
+hash = "07143094b524b0f622b23c01f084757e0bdf25604c6ab8232f692955ff2ea68a"
+
+[[files]]
+file = "kubejs/data/jeffs_cursed_walking_structures/worldgen/structure_set/wifi_tower_snow.json"
+hash = "8e8f364ab4599829db685287b7ba69d898cbbc871431abf8510303fa568d5b3a"
 
 [[files]]
 file = "kubejs/data/lostcities/lostcities/all_block_ids.csv"
@@ -5522,7 +5666,7 @@ hash = "bef4d172fc1bfb34d342e79090726c4a0c272dd404783c3ea022b992e0e0415e"
 
 [[files]]
 file = "kubejs/data/minecraft/worldgen/structure_set/villages.json"
-hash = "7c815e9a96365cc9ac027fe014652b09a8d52c598b7724b8410ecf70c6d0ff68"
+hash = "0e58c1a269704545fdeeeb3d686790525231ff52f07b63844ef91684795789e7"
 
 [[files]]
 file = "kubejs/data/mmorpg/mmorpg_perk/arcanist_class.json"
@@ -7837,6 +7981,22 @@ file = "kubejs/data/starcatcher/data_maps/item/catch_modifiers.json"
 hash = "f30b35ee4f39dbddb34f4788d99e1055b512a93061a1baf963e00b29ef1f8430"
 
 [[files]]
+file = "kubejs/data/towns_and_towers/worldgen/structure_set/other.json"
+hash = "03bef56c0f0ea20848d659867d8d54cc4488cf20a556fcd49b33d34d720a9b9b"
+
+[[files]]
+file = "kubejs/data/towns_and_towers/worldgen/structure_set/towers.json"
+hash = "d48da3bdca31036d51915a61fcb26a1194fa75e9137428b6daa576619b55515b"
+
+[[files]]
+file = "kubejs/data/towns_and_towers/worldgen/structure_set/towns.json"
+hash = "920e89ac1a0a6d65b71169463f23505dd892654382253ca9cd888a08e00e2081"
+
+[[files]]
+file = "kubejs/data/underground_bunkers/worldgen/structure_set/minor_structures.json"
+hash = "39b2acee332f59fa90000a3e416a00e63f9f0779d261411531e46054a86b0f62"
+
+[[files]]
 file = "kubejs/data/underground_bunkers/worldgen/template_pool/underground_bunker/underground_bunker_start.json"
 hash = "4038ce6c33a3aab94de8a97d0c9b6dbb3da9268906825a537eddb8cd20ff2e35"
 
@@ -8230,7 +8390,7 @@ hash = "e9f8820c1192ef7888d5090a70bc53c9ff8c7a558ae27ac75fc3d1be4bfb19c2"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_world_loot_v0_1.js"
-hash = "00974ec028b70e89cace861112f3d47faef964919a74fa3b159af3e4a85277d1"
+hash = "cefcffd96a4f94ee1a910783b46f14777be5e0ed371d95f81b9cf49b9f5de00d"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_xp_talent_enchant_v0_1.js"
@@ -17387,6 +17547,10 @@ hash = "0c495d9a5093dab8c4df214f5c2c5ebdf89e80403442b8202b111e59ff95211a"
 [[files]]
 file = "pdz_tools/keymap/apply_keymap.ps1"
 hash = "0588d4891889881918cb065e2e7de863801f00297ad58e584b84643fa4761eb7"
+
+[[files]]
+file = "projectfiles/PDZ_WORLDGEN_LOOT_TIER_POLICY_20260821_JP.md"
+hash = "aeefe4009e0ca189e680d2876f28d1298bfde44a4365ccda2198f42a79bd5d5a"
 
 [[files]]
 file = "projectfiles/PROJECT_DEADZONE_20260816_Update_and_Test_Checklist.md"

@@ -2,6 +2,76 @@
 // Higher-tier weapons, vehicles, and Superb Warfare items stay out of this pool.
 
 LootJS.modifiers(event => {
+  // Dimension progression is intentionally routed through facilities because
+  // PROJECT DEADZONE does not use the Nether or the End as playable worlds.
+  // Keep these tables separate from ordinary residential/scavenging loot.
+  const netherT1FacilityTables = [
+    "minecraft:chests/military",
+    "underground_bunkers:chests/underground_bunker/underground_bunker_normal",
+    "underground_bunkers:chests/underground_bunker/underground_bunker_supply",
+    "jeffs_cursed_walking_structures:chests/ammo_chest",
+    "jeffs_cursed_walking_structures:chests/ammo_tacz",
+    "jeffs_cursed_walking_structures:chests/ammo_tacz_2",
+    "jeffs_cursed_walking_structures:chests/gear_chest",
+    "jeffs_cursed_walking_structures:chests/supplychest"
+  ]
+
+  netherT1FacilityTables.forEach(table => {
+    event.addLootTableModifier(table)
+      .randomChance(0.58)
+      .addWeightedLoot(1, [
+        Item.of("minecraft:quartz", 6).withChance(34),
+        Item.of("minecraft:glowstone_dust", 5).withChance(27),
+        Item.of("minecraft:nether_wart", 3).withChance(21),
+        Item.of("minecraft:magma_cream", 2).withChance(18)
+      ])
+  })
+
+  // T2 treasure rooms contain the heat- and combustion-related materials
+  // needed by advanced industry. Netherite remains a jackpot, not a staple.
+  const netherT2FacilityTables = [
+    "underground_bunkers:chests/underground_bunker/underground_bunker_treasure",
+    "jeffs_cursed_walking_structures:chests/resource_chest",
+    "jeffs_cursed_walking_structures:chests/gun_2"
+  ]
+
+  netherT2FacilityTables.forEach(table => {
+    event.addLootTableModifier(table)
+      .randomChance(0.74)
+      .addWeightedLoot(1, [
+        Item.of("minecraft:blaze_powder", 3).withChance(38),
+        Item.of("minecraft:blaze_rod", 2).withChance(28),
+        Item.of("minecraft:ghast_tear", 1).withChance(20),
+        Item.of("minecraft:netherite_scrap", 1).withChance(5),
+        Item.of("minecraft:magma_cream", 3).withChance(9)
+      ])
+  })
+
+  // End materials only enter the economy through T3+ deep/strategic sites.
+  // Elytra, dragon eggs, and other dimension trophies are deliberately absent.
+  const endT3FacilityTables = [
+    "minecraft:chests/stronghold_corridor",
+    "minecraft:chests/stronghold_crossing",
+    "minecraft:chests/stronghold_library",
+    "minecraft:chests/ancient_city",
+    "minecraft:chests/ancient_city_ice_box",
+    "jeffs_cursed_walking_structures:chests/strange_chest",
+    "jeffs_cursed_walking_structures:chests/guntreasure"
+  ]
+
+  endT3FacilityTables.forEach(table => {
+    event.addLootTableModifier(table)
+      .randomChance(0.68)
+      .addWeightedLoot(1, [
+        Item.of("minecraft:ender_pearl", 3).withChance(29),
+        Item.of("minecraft:chorus_fruit", 5).withChance(23),
+        Item.of("minecraft:popped_chorus_fruit", 4).withChance(19),
+        Item.of("minecraft:end_rod", 3).withChance(15),
+        Item.of("minecraft:shulker_shell", 1).withChance(10),
+        Item.of("minecraft:dragon_breath", 1).withChance(4)
+      ])
+  })
+
   const tables = [
     "minecraft:chests/simple_dungeon",
     "minecraft:chests/abandoned_mineshaft",
