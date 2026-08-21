@@ -67,30 +67,33 @@ function dzFindYellowMarker(player) {
   return best
 }
 
-function dzInstallClothier(player, silent) {
+function dzInstallClothier(player, silent, allowLegacyMarkerScan) {
   let server = player.server
   let anchor = "@e[type=minecraft:marker,tag=dz_basecamp_clothier_anchor,limit=1]"
-  // The visible yellow concrete placed by the builder is authoritative. Old
-  // camps carried a stale hard-coded anchor beside Goro, which swapped shops.
-  let marker = dzFindYellowMarker(player)
-  if (marker) {
-    server.runCommandSilent("kill " + anchor)
-    player.runCommandSilent("summon minecraft:marker " + (marker.x+0.5) + " " + marker.y + " " + (marker.z+0.5) +
-      ' {Tags:["dz_basecamp_clothier_anchor"]}')
-    server.runCommandSilent("setblock " + marker.x + " " + marker.y + " " + marker.z + " air")
-  }
-  // Reposition stale anchors before an operator-triggered repair as well as
-  // during the periodic migration below.
   let campData = server.persistentData
-  if (!marker && campData.getInt("dz_auto_basecamp_state") === 2 &&
-      server.runCommandSilent("execute if entity " + anchor) > 0) {
+  let marker = null
+  // Once the camp is installed, its saved origin is the only authoritative
+  // location. Never scan around an arbitrary online player during auto-repair.
+  if (campData.getInt("dz_auto_basecamp_state") === 2) {
     let ax = campData.getInt("dz_auto_basecamp_origin_x") + DZ_CLOTHIER_OFFSET.x + 0.5
     let ay = campData.getInt("dz_auto_basecamp_origin_y") + DZ_CLOTHIER_OFFSET.y
     let az = campData.getInt("dz_auto_basecamp_origin_z") + DZ_CLOTHIER_OFFSET.z + 0.5
-    server.runCommandSilent("tp " + anchor + " " + ax + " " + ay + " " + az)
+    if (server.runCommandSilent("execute if entity " + anchor) > 0) {
+      server.runCommandSilent("tp " + anchor + " " + ax + " " + ay + " " + az)
+    } else {
+      server.runCommandSilent('execute in minecraft:overworld run summon minecraft:marker ' + ax + ' ' + ay + ' ' + az +
+        ' {Tags:["dz_basecamp_clothier_anchor"]}')
+    }
+  } else if (allowLegacyMarkerScan) {
+    marker = dzFindYellowMarker(player)
+    if (marker) {
+      server.runCommandSilent("kill " + anchor)
+      player.runCommandSilent("summon minecraft:marker " + (marker.x+0.5) + " " + marker.y + " " + (marker.z+0.5) +
+        ' {Tags:["dz_basecamp_clothier_anchor"]}')
+      server.runCommandSilent("setblock " + marker.x + " " + marker.y + " " + marker.z + " air")
+    }
   }
   let hasAnchor = server.runCommandSilent("execute if entity " + anchor) > 0
-  marker = hasAnchor ? null : dzFindYellowMarker(player)
   if (!hasAnchor && !marker) {
     if (!silent) player.tell(Text.of("黄色コンクリートの配置マーカーが見つかりません。").red())
     return 0
@@ -173,7 +176,7 @@ ServerEvents.tick(event => {
   if (event.server.runCommandSilent("execute if entity " + clothierAnchor) > 0 &&
       event.server.runCommandSilent("execute if entity " + dzClothierSelector()) <= 0) {
     let players = event.server.players
-    if (players && players.length > 0) dzInstallClothier(players[0], true)
+    if (players && players.length > 0) dzInstallClothier(players[0], true, false)
   }
   // Repair already-generated camps too. The clothier anchor is at structure
   // origin +26,+2,+24, so these bounds cover the original 32x20x32 structure.
@@ -195,15 +198,15 @@ ServerEvents.tick(event => {
 ServerEvents.commandRegistry(event => {
   const {commands: Commands} = event
   let root = Commands.literal("deadzoneclothier").requires(source => source.hasPermission(2))
-  root.then(Commands.literal("install").executes(ctx => dzInstallClothier(ctx.source.player, false)))
-  root.then(Commands.literal("install_silent").executes(ctx => dzInstallClothier(ctx.source.player, true)))
+  root.then(Commands.literal("install").executes(ctx => dzInstallClothier(ctx.source.player, false, true)))
+  root.then(Commands.literal("install_silent").executes(ctx => dzInstallClothier(ctx.source.player, true, true)))
   root.then(Commands.literal("anchor_here").executes(ctx => {
     let player=ctx.source.player, server=ctx.source.server
     let x=Math.floor(player.x)+0.5, y=Math.floor(player.y), z=Math.floor(player.z)+0.5
     server.runCommandSilent("kill @e[type=minecraft:marker,tag=dz_basecamp_clothier_anchor]")
     player.runCommandSilent("summon minecraft:marker " + x + " " + y + " " + z +
       ' {Tags:["dz_basecamp_clothier_anchor"]}')
-    return dzInstallClothier(player,false)
+    return dzInstallClothier(player,false,false)
   }))
   root.then(Commands.literal("rotate").executes(ctx => dzClothierRotate(ctx.source.server, true) ? 1 : 0))
   event.register(root)

@@ -259,11 +259,24 @@ function pdzSetApplyCivilian(entity) {
 }
 
 function pdzSetApplyRecruit(entity) {
-  let site = pdzSetNearest(entity, 160), faction = site ? String(site.faction || "independent") : "independent"
+  let starterGuard = entity.tags.contains("dz_starter_colony_guard") || entity.tags.contains("dz_colony_guard") ||
+    entity.tags.contains("dz_basecamp_guard") || entity.tags.contains("dz_survivor_guard")
+  let site = starterGuard ? null : pdzSetNearest(entity, 160)
+  let faction = starterGuard ? "civil_defense" : (site ? String(site.faction || "independent") : "independent")
+  ;["civil_defense","independent","raider","remnant","ash_jackals","helix","infected"].forEach(value =>
+    entity.removeTag("dz_force_" + value))
   entity.addTag("dz_settlement_force"); entity.addTag("dz_force_" + faction)
   entity.addTag("dz_loadout_" + (faction === "raider" ? "scrap" : faction === "remnant" ? "military" : faction === "civil_defense" ? "security" : "survivor"))
   entity.persistentData.putString("dz_settlement_faction", faction)
   if (site) entity.persistentData.putString("dz_settlement_site", String(site.id || ""))
+  if (faction === "civil_defense" || faction === "independent") {
+    entity.addTag("dz_survivor_guard"); entity.addTag("dz_survivor"); entity.addTag("dz_friendly")
+    entity.removeTag("dz_hostile"); entity.removeTag("dz_enemy")
+    entity.runCommandSilent("team join dz_survivors @s")
+  } else {
+    entity.addTag("dz_hostile"); entity.addTag("dz_enemy")
+    entity.removeTag("dz_friendly"); entity.removeTag("dz_survivor")
+  }
 }
 
 function pdzSetWorkerAllowed(entity) {

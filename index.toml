@@ -2878,7 +2878,7 @@ hash = "2328b88f89620191915d0fb53ea990ec09d4dd029fe1c985f4f29a5bc6ccf05b"
 
 [[files]]
 file = "config/tacznpc_factions.json"
-hash = "730366d18988821ea752b226de5fa0c0db7ea02990e0e73d91ef7acdd64705cf"
+hash = "4811ae8d4542f17d0e4bc90d770fe8eae317f7646cecde8e2b084a5f46045c2e"
 
 [[files]]
 file = "config/tacznpc_loadouts.json"
@@ -7890,7 +7890,7 @@ hash = "413dc9e542563f09f13a6f8f7b576b67f4bcef2beba19b714330fc059241b792"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_basecamp_guard_safety_v0_1.js"
-hash = "1fba54fd29f603b9a8b9ff0eb0519bd8cead5558b689af7c45c198669afd011f"
+hash = "5b41c60b4a520f1af3b5a574bdbc8df6981142e62a4eb7ce275005a4a9a7014a"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_basecamp_raid_v0_1.js"
@@ -7922,7 +7922,7 @@ hash = "4e704ebb389ed1d387f87481f537890f0e017fd592110305372d9a6974846935"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_clothier_v0_1.js"
-hash = "8b26b03bec34ef9eeca7b94ab1fd227e9cbab99593b00b432cd620c80fe1d446"
+hash = "c5e7def770adafdc3e7f448ce4c1d83a51c7d1f93c572e1e69d397fb141760b9"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_combat_spacing_v0_1.js"
@@ -8118,7 +8118,7 @@ hash = "d87c67f17d674ac06e73d03e62ea4c088523ecdcea4ba0fcf134a527301c9a2a"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_settlement_faction_bridge_v0_1.js"
-hash = "49a8641d59c35fc74c73e28c082342ae50ff876ee2b0a47188e1f0ff5821edbc"
+hash = "d99c4e53652e9f5b1b27ee49cb75addea692559817e1186479fdbf1485ece5f3"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_settlement_npc_compat_v0_1.js"
@@ -8154,7 +8154,7 @@ hash = "5b59cdd08b1b3bd375e180c38b4c0addb7f0fcb3e88f8b7c90ae0fb877b0fd2e"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_starter_colony_population_v0_1.js"
-hash = "d08122729ef0ec91c88bb3d9d440ba5c4e338eaf66e951ab026e82a7772a4dc2"
+hash = "950edea91b3ca3a84a6f6f58ca2779eebc43b20d99cbbab290795a56055c4951"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_starter_village_staff_v0_1.js"

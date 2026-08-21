@@ -1,8 +1,8 @@
 {
     "players": ["minecraft:player"],
-    "villagers": ["minecraft:villager", "minecraft:wandering_trader", "minecraft:iron_golem"],
+    "villagers": ["minecraft:villager", "minecraft:wandering_trader", "minecraft:iron_golem", "mca:male_villager", "mca:female_villager"],
     "illagers": ["minecraft:pillager", "minecraft:evoker", "minecraft:vindicator", "minecraft:illusioner", "minecraft:ravager", "minecraft:vex"],
     "deadzone_raiders": ["tacz_bandits:bandit"],
-    "deadzone_civildef": ["simpleenemymod:pmcunit"],
+    "deadzone_civildef": ["simpleenemymod:pmcunit", "simpleenemymod:usunit", "recruits:recruit", "recruits:bowman", "recruits:recruit_shieldman", "recruits:scout"],
     "deadzone_remnant": ["simpleenemymod:ruunit"]
 }

@@ -2,7 +2,7 @@
 // Execution layer: MCA Reborn residents + Recruits guards.
 // PDZ only decides where/when the verified initial colony is populated.
 
-const DZ_COLONY_POP_VERSION = 2
+const DZ_COLONY_POP_VERSION = 3
 const DZ_COLONY_HEIGHTMAP = Java.loadClass("net.minecraft.world.level.levelgen.Heightmap$Types")
 
 function dzColonyOverworld(server) {
@@ -49,11 +49,12 @@ function dzColonySafePos(level, centerX, centerZ, seed) {
   return null
 }
 
-function dzColonySummon(server, level, entityId, pos, tags, name) {
+function dzColonySummon(server, level, entityId, pos, tags, name, extraNbt) {
   if (!pos) return false
   let safeName = String(name).replace(/\\/g, "").replace(/\"/g, "")
   let tagNbt = tags.map(t => '\"' + t + '\"').join(",")
-  let nbt = "{PersistenceRequired:1b,Tags:[" + tagNbt + "],CustomName:'{\"text\":\"" + safeName + "\"}',CustomNameVisible:0b}"
+  let nbt = "{PersistenceRequired:1b,Tags:[" + tagNbt + "],CustomName:'{\"text\":\"" + safeName + "\"}',CustomNameVisible:0b" +
+    (extraNbt ? "," + extraNbt : "") + "}"
   let cmd = "execute in minecraft:overworld run summon " + entityId + " " + pos.x + " " + pos.y + " " + pos.z + " " + nbt
   return server.runCommandSilent(cmd) > 0
 }
@@ -108,6 +109,15 @@ function dzEnsureStarterPopulation(server, force) {
     ["mca:female_villager", "医療補助住民"],
     ["mca:male_villager", "交易担当住民"]
   ]
+  let guardArmor = 'ArmorItems:[{id:"survival_instinct:green_recluit_armor_boots",Count:1b},' +
+    '{id:"survival_instinct:green_recluit_armor_leggings",Count:1b},' +
+    '{id:"survival_instinct:green_recluit_armor_chestplate",Count:1b},' +
+    '{id:"survival_instinct:green_recluit_armor_helmet",Count:1b}],' +
+    'ArmorDropChances:[0.0f,0.0f,0.0f,0.0f]'
+  let guardMeleeGear = guardArmor + ',HandItems:[{id:"survival_instinct:tactical_knife",Count:1b},' +
+    '{id:"survival_instinct:swat_shield",Count:1b}],HandDropChances:[0.0f,0.0f]'
+  let guardRangedGear = guardArmor + ',HandItems:[{id:"minecraft:bow",Count:1b},' +
+    '{id:"survival_instinct:tactical_knife",Count:1b}],HandDropChances:[0.0f,0.0f]'
   let guards = [
     ["recruits:recruit", "復興コロニー警備員"],
     ["recruits:recruit", "復興コロニー警備員"],
@@ -124,8 +134,11 @@ function dzEnsureStarterPopulation(server, force) {
   }
   for (let i = 0; i < guards.length; i++) {
     let pos = dzColonySafePos(level, x, z, i + 20)
+    let gear = (guards[i][0] === "recruits:bowman" || guards[i][0] === "recruits:scout") ?
+      guardRangedGear : guardMeleeGear
     if (dzColonySummon(server, level, guards[i][0], pos,
-      ["dz_starter_colony_guard", "dz_colony_guard", "dz_faction_civil_defense"], guards[i][1])) summoned++
+      ["dz_starter_colony_guard", "dz_colony_guard", "dz_survivor_guard", "dz_survivor", "dz_friendly",
+        "dz_faction_civil_defense"], guards[i][1], gear)) summoned++
   }
 
   if (summoned < 13) {
