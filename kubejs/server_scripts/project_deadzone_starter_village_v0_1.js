@@ -1,10 +1,11 @@
-// PROJECT DEADZONE starter colony controller v5.0
-// Locate a real village through PDZ's curated starter-village structure tag.
-// The curated tag excludes tiny trader camps and hostile novelty villages, then
-// the proven Survivor Camp template is attached beside the selected village.
+// PROJECT DEADZONE nearest native village starter-city controller v7.1
+// Village generation belongs to Minecraft/CTOV/Towns and Towers. PDZ only
+// discovers one real village, registers it once, and reuses it for all players.
 
 const DZ_STARTER_VILLAGE_STATE = "dz_starter_village_state"
-const DZ_STARTER_VILLAGE_VERSION = 5
+const DZ_STARTER_VILLAGE_VERSION = 7
+const DZ_STARTER_CITY_NAME = "\u706f\u706b\u5e02"
+const DZ_STARTER_SOURCE = "starter_nearest_verified_village_v7"
 const DZ_STARTER_HEIGHTMAP = Java.loadClass("net.minecraft.world.level.levelgen.Heightmap$Types")
 const DZ_STARTER_BLOCK_POS = Java.loadClass("net.minecraft.core.BlockPos")
 const DZ_STARTER_REGISTRIES = Java.loadClass("net.minecraft.core.registries.Registries")
@@ -34,27 +35,31 @@ function dzStarterWorldSpawn(level) {
   return {x:0, y:80, z:0}
 }
 
-function dzStarterStructureId(holder) {
-  try {
-    let optional = holder.unwrapKey()
-    if (optional && optional.isPresent()) return String(optional.get().location())
-  } catch (ignored) {}
-  return "#project_deadzone:starter_village"
-}
-
-function dzStarterIsVillageStructureId(structureId) {
-  structureId = String(structureId || "").toLowerCase()
-  let split = structureId.split(":"), namespace = split.length > 1 ? split[0] : "", path = split.length > 1 ? split[1] : split[0]
+function dzStarterIsVillageStructureId(id) {
+  id = String(id || "").toLowerCase()
+  let split = id.split(":"), namespace = split.length > 1 ? split[0] : "", path = split.length > 1 ? split[1] : split[0]
   if (path.indexOf("pillager") >= 0 || path.indexOf("outpost") >= 0 || path.indexOf("wandering_trader") >= 0) return false
   if (namespace === "minecraft") return path.indexOf("village_") === 0
   if (namespace === "ctov" || namespace === "towns_and_towers") return path.indexOf("village") >= 0
   return false
 }
 
-// A locate result is only a search hint. Lobby structures and fallback spawn
-// points previously slipped into the colony ledger because their coordinates
-// were trusted without checking a real StructureStart. Resolve the actual
-// bounding box and use its center as the authoritative village position.
+function dzStarterPairFirst(pair) {
+  try { return pair.getFirst() } catch (ignored) {}
+  try { return pair.getA() } catch (ignored) {}
+  try { return pair.first } catch (ignored) {}
+  return null
+}
+
+function dzStarterPairSecond(pair) {
+  try { return pair.getSecond() } catch (ignored) {}
+  try { return pair.getB() } catch (ignored) {}
+  try { return pair.second } catch (ignored) {}
+  return null
+}
+
+// Resolve a real StructureStart and persist its bounding box. A locate hint by
+// itself is never accepted as a settlement.
 function dzStarterVerifyVillage(level, foundPos, holder) {
   try {
     let registry = level.registryAccess().registryOrThrow(DZ_STARTER_REGISTRIES.STRUCTURE)
@@ -62,32 +67,25 @@ function dzStarterVerifyVillage(level, foundPos, holder) {
     let hinted = null
     try { hinted = holder.value() } catch (ignored) {}
     let baseX = Number(foundPos.getX()), baseY = Number(foundPos.getY()), baseZ = Number(foundPos.getZ())
-    // Forge/KubeJS can expose the locate result as a bare BlockPos. In that
-    // form Y is normally 0 and no structure holder is included. Probe at the
-    // real surface so StructureManager#getAllStructuresAt can recover the
-    // village structure from the located chunk.
     if (!isFinite(baseY) || baseY <= level.getMinBuildHeight()) {
       try { baseY = Number(level.getHeight(DZ_STARTER_HEIGHTMAP.MOTION_BLOCKING_NO_LEAVES, Math.floor(baseX), Math.floor(baseZ))) }
       catch (ignored) { baseY = 64 }
     }
-    // Locate already returns a chunk inside/next to the structure.  A compact
-    // verification ring avoids force-loading hundreds of chunks at first join.
     for (let ring = 0; ring <= 64; ring += 16) {
       for (let dx = -ring; dx <= ring; dx += 16) for (let dz = -ring; dz <= ring; dz += 16) {
         if (ring > 0 && Math.abs(dx) !== ring && Math.abs(dz) !== ring) continue
         let px = baseX + dx, pz = baseZ + dz
         level.getChunk(Math.floor(px / 16), Math.floor(pz / 16))
         let probeY = baseY
-        try { probeY = Number(level.getHeight(DZ_STARTER_HEIGHTMAP.MOTION_BLOCKING_NO_LEAVES, Math.floor(px), Math.floor(pz))) }
-        catch (ignored) {}
+        try { probeY = Number(level.getHeight(DZ_STARTER_HEIGHTMAP.MOTION_BLOCKING_NO_LEAVES, Math.floor(px), Math.floor(pz))) } catch (ignored) {}
         let probe = new DZ_STARTER_BLOCK_POS(Math.floor(px), Math.floor(probeY), Math.floor(pz))
         let candidates = []
         if (hinted) candidates.push(hinted)
         try {
           let starts = manager.getAllStructuresAt(probe)
           if (starts && !starts.isEmpty()) {
-            let arr = starts.keySet().toArray()
-            for (let i = 0; i < arr.length; i++) candidates.push(arr[i])
+            let values = starts.keySet().toArray()
+            for (let i = 0; i < values.length; i++) candidates.push(values[i])
           }
         } catch (ignored) {}
         for (let i = 0; i < candidates.length; i++) {
@@ -96,9 +94,7 @@ function dzStarterVerifyVillage(level, foundPos, holder) {
           if (!dzStarterIsVillageStructureId(structureId)) continue
           let start = null
           try { start = manager.getStructureAt(probe, structure) } catch (ignored) {}
-          if (!start || !start.isValid()) {
-            try { start = manager.getStructureWithPieceAt(probe, structure) } catch (ignored) {}
-          }
+          if (!start || !start.isValid()) try { start = manager.getStructureWithPieceAt(probe, structure) } catch (ignored) {}
           if (!start || !start.isValid()) continue
           let box = start.getBoundingBox()
           let minX = Number(box.minX()), minY = Number(box.minY()), minZ = Number(box.minZ())
@@ -113,70 +109,9 @@ function dzStarterVerifyVillage(level, foundPos, holder) {
       }
     }
   } catch (error) {
-    console.error("[PDZ][Starter Colony] village verification failed: " + error)
+    console.error("[PDZ][Starter City] village verification failed: " + error)
   }
   return null
-}
-
-// ServerLevel.findNearestMapStructure uses Minecraft's structure registry. The
-// datapack tag supplies vanilla villages plus the safe CTOV/Towns and Towers
-// variants that are large enough to function as the first survivor colony.
-function dzStarterFindNativeVillage(level, player) {
-  let start = dzStarterWorldSpawn(level)
-  try {
-    let origin = new DZ_STARTER_BLOCK_POS(Math.floor(start.x), Math.floor(start.y), Math.floor(start.z))
-    // Village Spawn Point is the authoritative first-village selector. When it
-    // has moved shared spawn inside a real village, reuse that result instead
-    // of running another expensive and potentially different locate.
-    let spawnVillage = dzStarterVerifyVillage(level, origin, null)
-    if (spawnVillage) {
-      console.info("[PDZ][Starter Colony] using Village Spawn Point village " + spawnVillage.structure + " at " + spawnVillage.x + "," + spawnVillage.z)
-      return spawnVillage
-    }
-    // Radius is measured in chunks. 32 keeps the first pass bounded; a failure
-    // is only a compatibility fallback for worlds made before the mod was enabled.
-    let found = level.findNearestMapStructure(DZ_STARTER_VILLAGE_TAG, origin, 32, false)
-    if (!found) return null
-    // Vanilla normally returns Pair<BlockPos, Holder<Structure>>, while the
-    // current Forge/KubeJS bridge returns BlockPos directly. Accept both so a
-    // successful locate is never mistaken for a failed village search.
-    let pos = null
-    let holder = null
-    try {
-      pos = found.getFirst()
-      holder = found.getSecond()
-    } catch (ignored) {
-      try {
-        found.getX()
-        pos = found
-      } catch (notBlockPos) {}
-    }
-    if (!pos) {
-      console.error("[PDZ][Starter Colony] unsupported locate result: " + found)
-      return null
-    }
-    let verified = dzStarterVerifyVillage(level, pos, holder)
-    if (!verified) {
-      console.error("[PDZ][Starter Colony] locate returned an unverified/non-village result at " + pos)
-      return null
-    }
-    return verified
-  } catch (error) {
-    console.error("[PDZ][Starter Colony] real village locate failed: " + error)
-    return null
-  }
-}
-
-function dzStarterSurfaceY(level, x, z) {
-  try {
-    x = Math.floor(x); z = Math.floor(z)
-    level.getChunk(Math.floor(x / 16), Math.floor(z / 16))
-    let y = Number(level.getHeight(DZ_STARTER_HEIGHTMAP.MOTION_BLOCKING_NO_LEAVES, x, z))
-    return Number.isFinite(y) && y >= 35 && y <= 220 ? y : NaN
-  } catch (error) {
-    console.warn("[PDZ][Starter Colony] height query failed: " + error)
-    return NaN
-  }
 }
 
 function dzStarterBlockId(level, x, y, z) {
@@ -184,182 +119,82 @@ function dzStarterBlockId(level, x, y, z) {
   catch (ignored) { return "minecraft:void_air" }
 }
 
-function dzStarterNaturalGround(id) {
-  let allow = ["grass_block","dirt","coarse_dirt","podzol","mycelium","stone","deepslate","sand","gravel","clay","mud","snow_block"]
-  for (let i = 0; i < allow.length; i++) if (id.indexOf(allow[i]) >= 0) return true
-  return false
+function dzStarterPassable(id) {
+  return id.indexOf("air") >= 0 || id.indexOf("grass") >= 0 || id.indexOf("flower") >= 0 ||
+    id.indexOf("fern") >= 0 || id.indexOf("snow") >= 0
 }
 
-function dzStarterVegetation(id) {
-  id = String(id || "")
-  let allow = ["air","leaves","log","wood","grass","fern","flower","bush","vine","mushroom","snow","roots","sapling"]
-  for (let i = 0; i < allow.length; i++) if (id.indexOf(allow[i]) >= 0) return true
-  return false
+function dzStarterBadGround(id) {
+  return id.indexOf("water") >= 0 || id.indexOf("lava") >= 0 || id.indexOf("leaves") >= 0 ||
+    id.indexOf("log") >= 0 || id.indexOf("cactus") >= 0 || id.indexOf("fire") >= 0 || id.indexOf("void_air") >= 0
 }
 
-// MOTION_BLOCKING_NO_LEAVES still stops on trunks. The old validator rejected
-// an otherwise valid 32x32 site when even one sample hit a tree. Walk through
-// removable vegetation to the actual terrain, but reject water and buildings.
-function dzStarterGroundSurfaceY(level, x, z) {
-  let y = dzStarterSurfaceY(level, x, z)
-  if (!Number.isFinite(y)) return NaN
-  for (let depth = 0; depth <= 16; depth++) {
-    let id = dzStarterBlockId(level, x, y - 1, z)
-    if (dzStarterNaturalGround(id)) return y
-    if (id.indexOf("water") >= 0 || id.indexOf("lava") >= 0) return NaN
-    if (!dzStarterVegetation(id)) return NaN
-    y--
-  }
-  return NaN
-}
-
-// The camp is 32x20x32. Sample the footprint instead of scanning every block;
-// this keeps first-world generation cheap while rejecting water, cliffs,
-// buildings and tree canopies.
-function dzStarterCampSite(level, centerX, centerZ, maxRelief) {
-  let originX = Math.floor(centerX) - 16
-  let originZ = Math.floor(centerZ) - 16
-  let minY = 999, maxY = -999, ys = []
-  for (let dx = 2; dx <= 30; dx += 4) {
-    for (let dz = 2; dz <= 30; dz += 4) {
-      let x = originX + dx, z = originZ + dz
-      let y = dzStarterGroundSurfaceY(level, x, z)
-      if (!Number.isFinite(y)) return null
+function dzStarterSafeArrival(level, village) {
+  let offsets = [[0,0],[8,0],[-8,0],[0,8],[0,-8],[12,12],[-12,12],[12,-12],[-12,-12],[20,0],[-20,0],[0,20],[0,-20],[24,16],[-24,16],[24,-16],[-24,-16]]
+  for (let i = 0; i < offsets.length; i++) {
+    let x = Math.floor(village.x + offsets[i][0]), z = Math.floor(village.z + offsets[i][1])
+    try {
+      level.getChunk(Math.floor(x / 16), Math.floor(z / 16))
+      let y = Number(level.getHeight(DZ_STARTER_HEIGHTMAP.MOTION_BLOCKING_NO_LEAVES, x, z))
+      if (!isFinite(y) || y < 35 || y > 220) continue
       let ground = dzStarterBlockId(level, x, y - 1, z)
-      if (!dzStarterNaturalGround(ground)) return null
-      minY = Math.min(minY, y); maxY = Math.max(maxY, y); ys.push(y)
-    }
+      let body = dzStarterBlockId(level, x, y, z)
+      let head = dzStarterBlockId(level, x, y + 1, z)
+      if (dzStarterBadGround(ground) || !dzStarterPassable(body) || !dzStarterPassable(head)) continue
+      return {x:x,y:Math.floor(y),z:z}
+    } catch (ignored) {}
   }
-  if (maxY - minY > (maxRelief || 5)) return null
-  ys.sort((a,b) => a-b)
-  return {x:originX, y:Math.floor(ys[Math.floor(ys.length / 2)]), z:originZ}
+  return {x:village.x,y:Math.max(65,village.y + 3),z:village.z}
 }
 
-function dzStarterFindCampSite(server, forcedSite, player) {
-  if (forcedSite) return forcedSite
-  let level = dzStarterOverworld(server)
-  if (!level) return null
-  let village = dzStarterFindNativeVillage(level, player)
-  if (!village) return null
-  // Attach the headquarters to the OUTSIDE of the verified village bounding
-  // box first. This keeps the existing village intact and makes the result read
-  // as one colony instead of two unrelated structures hundreds of blocks apart.
-  let b = village.bounds || {minX:village.x-32,maxX:village.x+32,minZ:village.z-32,maxZ:village.z+32}
-  let edgeCandidates = [
-    {x:b.maxX+24,z:village.z},{x:b.minX-24,z:village.z},
-    {x:village.x,z:b.maxZ+24},{x:village.x,z:b.minZ-24},
-    {x:b.maxX+24,z:b.maxZ+24},{x:b.minX-24,z:b.maxZ+24},
-    {x:b.minX-24,z:b.minZ-24},{x:b.maxX+24,z:b.minZ-24}
-  ]
-  for (let e = 0; e < edgeCandidates.length; e++) {
-    let edgeSite = dzStarterCampSite(level, edgeCandidates[e].x, edgeCandidates[e].z, 6)
-    if (edgeSite) return {site:edgeSite, village:village}
-  }
-  let passes = [
-    {radii:[48,64,80,96,112,128], relief:6}
-  ]
-  let dirs = [[1,0],[0,1],[-1,0],[0,-1],[1,1],[-1,1],[-1,-1],[1,-1],[2,1],[1,2],[-1,2],[-2,1],[-2,-1],[-1,-2],[1,-2],[2,-1]]
-  for (let p = 0; p < passes.length; p++) {
-    for (let r = 0; r < passes[p].radii.length; r++) {
-      for (let d = 0; d < dirs.length; d++) {
-        let scale = Math.max(Math.abs(dirs[d][0]), Math.abs(dirs[d][1]))
-        let x = village.x + dirs[d][0] * passes[p].radii[r] / scale
-        let z = village.z + dirs[d][1] * passes[p].radii[r] / scale
-        let site = dzStarterCampSite(level, x, z, passes[p].relief)
-        if (site) return {site:site, village:village}
-      }
-    }
-  }
-  return null
+function dzStarterLocate(level, radiusChunks) {
+  let spawn = dzStarterWorldSpawn(level)
+  let origin = new DZ_STARTER_BLOCK_POS(Math.floor(spawn.x), Math.floor(spawn.y), Math.floor(spawn.z))
+  let pair = null
+  try { pair = level.findNearestMapStructure(DZ_STARTER_VILLAGE_TAG, origin, radiusChunks, false) }
+  catch (error) { console.error("[PDZ][Starter City] locate API failed: " + error); return null }
+  if (!pair) return null
+  let pos = dzStarterPairFirst(pair), holder = dzStarterPairSecond(pair)
+  if (!pos) return null
+  return dzStarterVerifyVillage(level, pos, holder)
 }
 
-function dzStarterStore(server, site, village) {
+function dzStarterStore(server, arrival, village) {
   let data = server.persistentData
-  data.putInt("dz_starter_village_origin_x", site.x)
-  data.putInt("dz_starter_village_origin_y", site.y)
-  data.putInt("dz_starter_village_origin_z", site.z)
-  data.putInt("dz_starter_village_arrival_x", site.x + 13)
-  data.putInt("dz_starter_village_arrival_y", site.y + 2)
-  data.putInt("dz_starter_village_arrival_z", site.z + 20)
+  data.putInt("dz_starter_village_origin_x", arrival.x)
+  data.putInt("dz_starter_village_origin_y", arrival.y)
+  data.putInt("dz_starter_village_origin_z", arrival.z)
+  data.putInt("dz_starter_village_arrival_x", arrival.x)
+  data.putInt("dz_starter_village_arrival_y", arrival.y)
+  data.putInt("dz_starter_village_arrival_z", arrival.z)
   data.putInt("dz_starter_native_village_x", village.x)
   data.putInt("dz_starter_native_village_y", village.y)
   data.putInt("dz_starter_native_village_z", village.z)
-  data.putString("dz_starter_native_village_structure", village.structure || "#minecraft:village")
+  data.putString("dz_starter_native_village_structure", village.structure)
+  data.putString("dz_starter_native_village_bounds", JSON.stringify(village.bounds || {}))
   data.putString("dz_starter_village_dimension", "minecraft:overworld")
-  data.putString("dz_starter_village_id", "restoration_colony_01")
-  data.putString("dz_starter_village_source", "starter_verified_mod_village_plus_survivor_camp")
+  data.putString("dz_starter_village_id", "starter_city_01")
+  data.putString("dz_starter_village_name", DZ_STARTER_CITY_NAME)
+  data.putString("dz_starter_village_source", DZ_STARTER_SOURCE)
   data.putString("dz_starter_village_faction", "civil_defense")
   data.putString("dz_starter_village_relation", "friendly")
-  data.putString("dz_starter_village_economy", "restoration_hub")
+  data.putString("dz_starter_village_economy", "regional_hub")
   data.putInt("dz_starter_village_layout_version", DZ_STARTER_VILLAGE_VERSION)
-  // The camp activation function owns staff placement. Disable the obsolete
-  // old-village door scanner so it cannot create duplicates.
   data.putInt("dz_starter_village_staff_version", 3)
-  data.putInt("dz_starter_colony_population_version", 0)
-  try {
-    if (global.pdzRegisterStarterColony) global.pdzRegisterStarterColony(server, site, village)
-  } catch (error) {
-    console.error("[PDZ][Starter Colony] settlement registration failed: " + error)
-  }
-}
-
-function dzStarterCampReady(server) {
-  let data = server.persistentData
-  if (!data.contains("dz_starter_village_origin_x")) return false
-  let x = data.getInt("dz_starter_village_origin_x")
-  let y = data.getInt("dz_starter_village_origin_y")
-  let z = data.getInt("dz_starter_village_origin_z")
-  let level = dzStarterOverworld(server)
-  if (!level) return false
-  try {
-    let core = String(level.getBlock(x + 24, y + 11, z + 16).id)
-    if (core === "kubejs:deadzone_base_core") return true
-  } catch (ignored) {}
-  let marker = server.runCommandSilent("execute in minecraft:overworld positioned " +
-    (x + 24) + " " + (y + 11) + " " + (z + 16) +
-    " if entity @e[tag=dz_basecamp_core_anchor,distance=..6,limit=1] run time query daytime")
-  return marker > 0
-}
-
-function dzStarterCampCoreAt(server, site) {
-  let level = dzStarterOverworld(server)
-  if (!level || !site) return false
-  try {
-    let core = String(level.getBlock(site.x + 24, site.y + 11, site.z + 16).id)
-    if (core === "kubejs:deadzone_base_core") return true
-  } catch (ignored) {}
-  let marker = server.runCommandSilent("execute in minecraft:overworld positioned " +
-    (site.x + 24) + " " + (site.y + 11) + " " + (site.z + 16) +
-    " if entity @e[tag=dz_basecamp_core_anchor,distance=..6,limit=1] run gamerule doDaylightCycle")
-  return marker > 0
-}
-
-function dzStarterPopulationReady(server, repair) {
-  try {
-    if (!global.pdzEnsureStarterPopulation) return false
-    return global.pdzEnsureStarterPopulation(server, !!repair) > 0
-  } catch (error) {
-    console.error("[PDZ][Starter Colony] population verification error: " + error)
-    return false
-  }
+  // Native village mods own population. Block the old 13-NPC camp installer.
+  data.putInt("dz_starter_colony_population_version", 999)
+  data.putInt(DZ_STARTER_VILLAGE_STATE, 2)
+  try { if (global.pdzRegisterStarterColony) global.pdzRegisterStarterColony(server, arrival, village) }
+  catch (error) { console.error("[PDZ][Starter City] settlement registration failed: " + error) }
+  server.runCommandSilent("execute in minecraft:overworld run setworldspawn " + arrival.x + " " + arrival.y + " " + arrival.z)
+  server.scheduleInTicks(20, callback => {
+    try { server.players.forEach(p => { if (global.pdzJourneyMapSync) global.pdzJourneyMapSync(p) }) } catch (ignored) {}
+  })
 }
 
 function dzStarterKitReady(player) {
-  try {
-    if (global.pdzEnsureStarterKit) return !!global.pdzEnsureStarterKit(player)
-  } catch (error) {
-    console.error("[PDZ][Starter Colony] starter-kit verification error: " + error)
-  }
-  player.runCommandSilent("deadzonejob starter_claim")
-  return player.persistentData.getBoolean("dz_starter_received")
-}
-
-function dzStarterReadiness(player, repairPopulation) {
-  return {
-    camp: dzStarterCampReady(player.server),
-    population: dzStarterPopulationReady(player.server, repairPopulation),
-    kit: dzStarterKitReady(player)
-  }
+  let data = player.persistentData
+  return data.getBoolean("dz_starter_received") && data.getInt("dz_starter_grant_version") >= 6
 }
 
 function dzStarterTeleport(player) {
@@ -375,110 +210,74 @@ function dzStarterTeleport(player) {
   player.runCommandSilent("effect clear @s minecraft:blindness")
   player.persistentData.putBoolean("dz_starter_depart_complete", true)
   player.persistentData.remove("dz_starter_depart_requested")
-  player.tell(Text.of("[PROJECT DEADZONE] 復興コロニーへ到着しました。キャンプ本部で状況を確認してください。").green())
+  player.tell(Text.of("[PROJECT DEADZONE] \u521d\u671f\u8857\u300c" + DZ_STARTER_CITY_NAME + "\u300d\u3078\u5230\u7740\u3057\u307e\u3057\u305f\u3002").green())
   return 1
 }
 
-function dzStarterGenerate(player, forcedSite) {
+function dzStarterRegisterNearest(player, radiusChunks) {
   let server = player.server, data = server.persistentData
-  if (data.getInt(DZ_STARTER_VILLAGE_STATE) === 1) {
-    player.tell(Text.of("[PDZ] 復興コロニーを準備中です。ロビーでお待ちください。").yellow())
-    return 0
-  }
+  if (data.getInt(DZ_STARTER_VILLAGE_STATE) === 2 && data.getInt("dz_starter_village_layout_version") === DZ_STARTER_VILLAGE_VERSION && data.getString("dz_starter_village_source") === DZ_STARTER_SOURCE) return 1
+  if (data.getInt(DZ_STARTER_VILLAGE_STATE) === 1) return 0
   data.putInt(DZ_STARTER_VILLAGE_STATE, 1)
-  let found = dzStarterFindCampSite(server, forcedSite, player)
-  if (!found) {
+  try {
+    let level = dzStarterOverworld(server)
+    if (!level) {
+      data.putInt(DZ_STARTER_VILLAGE_STATE, 0)
+      return 0
+    }
+    player.tell(Text.of("[PDZ] \u6700\u5bc4\u308a\u306e\u751f\u6210\u6e08\u307f\u306e\u6751\u3092\u78ba\u8a8d\u3057\u3066\u3044\u307e\u3059\u3002\u521d\u56de\u3060\u3051\u5c11\u3057\u5f85\u3063\u3066\u306d\u3002").aqua())
+    let village = dzStarterLocate(level, radiusChunks || 128)
+    if (!village) {
+      data.putInt(DZ_STARTER_VILLAGE_STATE, 0)
+      player.tell(Text.of("[PDZ] \u5b9f\u5728\u3059\u308b\u6751\u3092\u78ba\u8a8d\u3067\u304d\u307e\u305b\u3093\u3067\u3057\u305f\u3002\u30ed\u30d3\u30fc\u306b\u7559\u307e\u308a\u307e\u3059\u3002").red())
+      player.tell(Text.of("[ \u521d\u671f\u8857\u306e\u63a2\u7d22\u3092\u518d\u8a66\u884c ]").gold().bold().clickRunCommand("/deadzonevillage retry"))
+      console.error("[PDZ][Starter City] no verified village found within " + (radiusChunks || 128) + " chunks")
+      return 0
+    }
+    let arrival = dzStarterSafeArrival(level, village)
+    dzStarterStore(server, arrival, village)
+    console.info("[PDZ][Starter City] registered " + DZ_STARTER_CITY_NAME + " structure=" + village.structure + " village=" + village.x + "," + village.y + "," + village.z + " arrival=" + arrival.x + "," + arrival.y + "," + arrival.z)
+    player.tell(Text.of("[PDZ] " + DZ_STARTER_CITY_NAME + "\u3092\u521d\u671f\u8857\u3068\u3057\u3066\u767b\u9332\u3057\u307e\u3057\u305f\u3002\u4ee5\u5f8c\u306e\u53c2\u52a0\u8005\u3082\u540c\u3058\u8857\u3092\u4f7f\u7528\u3057\u307e\u3059\u3002").green())
+    return 1
+  } catch (error) {
     data.putInt(DZ_STARTER_VILLAGE_STATE, 0)
-    player.persistentData.remove("dz_starter_depart_requested")
-    player.tell(Text.of("[PDZ] 条件を満たす生存者集落を発見できませんでした。安全のためロビーに留まります。").red())
-    player.tell(Text.of("[ 初期村の探索を再試行 ]").gold().bold().clickRunCommand("/deadzonevillage retry"))
-    player.tell(Text.of("[PDZ] 管理者は村付近で /deadzonevillage generate_here を使用できます。").red())
-    console.error("[PDZ][Starter Colony] no safe camp site beside native village")
+    console.error("[PDZ][Starter City] registration failed and state was reset: " + error)
+    player.tell(Text.of("[PDZ] \u521d\u671f\u8857\u306e\u78ba\u5b9a\u4e2d\u306b\u30a8\u30e9\u30fc\u304c\u767a\u751f\u3057\u307e\u3057\u305f\u3002\u30ed\u30d3\u30fc\u306b\u7559\u307e\u308a\u307e\u3059\u3002").red())
     return 0
   }
-  let site = found.site, village = found.village
-  let minX = site.x - 32, minZ = site.z - 32, maxX = site.x + 64, maxZ = site.z + 64
-  server.runCommandSilent("execute in minecraft:overworld run forceload add " + minX + " " + minZ + " " + maxX + " " + maxZ)
-  let command = "execute in minecraft:overworld positioned " + site.x + " " + site.y + " " + site.z + " run function project_deadzone:building_edit/load_survivor_camp_active"
-  // A mcfunction returns the result of its final command. The camp loader used
-  // to end in `tellraw @s`, which correctly returned 0 for a server source even
-  // after the template and core were placed. Never trust that command result as
-  // the placement verdict; inspect the actual camp core instead.
-  let functionResult = server.runCommandSilent(command)
-  let coreReady = dzStarterCampCoreAt(server, site)
-  if (!coreReady) {
-    data.putInt(DZ_STARTER_VILLAGE_STATE, 0)
-    player.persistentData.remove("dz_starter_depart_requested")
-    server.runCommandSilent("execute in minecraft:overworld run forceload remove " + minX + " " + minZ + " " + maxX + " " + maxZ)
-    player.tell(Text.of("[PDZ] 復興キャンプの配置に失敗しました。ロビーから移動していません。").red())
-    console.error("[PDZ][Starter Colony] camp core missing after loader: result=" + functionResult +
-      " site=" + site.x + " " + site.y + " " + site.z)
-    player.tell(Text.of("[ 初期村の探索を再試行 ]").gold().bold().clickRunCommand("/deadzonevillage retry"))
+}
+
+global.pdzRegisterNearestStarterCity = function(player) {
+  try { return dzStarterRegisterNearest(player, 128) }
+  catch (error) {
+    try { player.server.persistentData.putInt(DZ_STARTER_VILLAGE_STATE, 0) } catch (ignored) {}
+    console.error("[PDZ][Starter City] registration trigger failed: " + error)
     return 0
   }
-  dzStarterStore(server, site, village)
-  data.putInt(DZ_STARTER_VILLAGE_STATE, 2)
-  let ready = dzStarterReadiness(player, false)
-  if (!ready.camp || !ready.population || !ready.kit) {
-    player.persistentData.remove("dz_starter_depart_requested")
-    player.tell(Text.of("[PDZ] 初期コロニーの検証が完了していないため、ロビーに留まります。").red())
-    player.tell(Text.of("キャンプ=" + ready.camp + " / 住民と護衛=" + ready.population + " / スターターキット=" + ready.kit).yellow())
-    player.tell(Text.of("[ 再検証する ]").gold().bold().clickRunCommand("/deadzonevillage depart"))
-    console.error("[PDZ][Starter Colony] readiness failed camp=" + ready.camp + " population=" + ready.population + " kit=" + ready.kit)
-    server.scheduleInTicks(80, callback => server.runCommandSilent("execute in minecraft:overworld run forceload remove " + minX + " " + minZ + " " + maxX + " " + maxZ))
-    return 0
-  }
-  let bounds = village.bounds || {}
-  console.info("[PDZ][Starter Colony] structure=" + village.structure +
-    " bounds=" + bounds.minX + "," + bounds.minZ + ".." + bounds.maxX + "," + bounds.maxZ +
-    " native village=" + village.x + "," + village.y + "," + village.z +
-    " camp=" + site.x + "," + site.y + "," + site.z + " loaderResult=" + functionResult)
-  server.scheduleInTicks(80, callback => server.runCommandSilent("execute in minecraft:overworld run forceload remove " + minX + " " + minZ + " " + maxX + " " + maxZ))
-  return dzStarterTeleport(player)
 }
 
 function dzStarterDepart(player) {
   if (!player.persistentData.getBoolean("dz_job_chosen")) {
-    player.tell(Text.of("[PDZ] 先に登録受付官アオイへ話しかけ、初期JOBを選択してください。").red())
+    player.tell(Text.of("[PDZ] \u5148\u306b\u767b\u9332\u53d7\u4ed8\u5b98\u30a2\u30aa\u30a4\u3078\u8a71\u3057\u304b\u3051\u3001\u521d\u671fJOB\u3092\u9078\u629e\u3057\u3066\u304f\u3060\u3055\u3044\u3002").red())
     return 0
   }
   if (!dzStarterKitReady(player)) {
     player.runCommandSilent("deadzonejob starter_claim")
     if (!player.persistentData.getBoolean("dz_starter_received")) {
-      player.tell(Text.of("[PDZ] スターターキット支給を確認できないため出発を中止しました。").red())
+      player.tell(Text.of("[PDZ] \u30b9\u30bf\u30fc\u30bf\u30fc\u30ad\u30c3\u30c8\u652f\u7d66\u3092\u78ba\u8a8d\u3067\u304d\u306a\u3044\u305f\u3081\u3001\u51fa\u767a\u3092\u4e2d\u6b62\u3057\u307e\u3057\u305f\u3002").red())
       return 0
     }
   }
   if (!dzStarterIsLobby(player)) {
-    player.tell(Text.of("[PDZ] 初回出発はロビーからのみ実行できます。").yellow())
+    player.tell(Text.of("[PDZ] \u521d\u56de\u51fa\u767a\u306f\u30ed\u30d3\u30fc\u304b\u3089\u306e\u307f\u5b9f\u884c\u3067\u304d\u307e\u3059\u3002").yellow())
     return 0
   }
   let data = player.server.persistentData
-  if (data.getInt(DZ_STARTER_VILLAGE_STATE) === 2 && data.getInt("dz_starter_village_layout_version") !== DZ_STARTER_VILLAGE_VERSION) {
-    console.warn("[PDZ][Starter Colony] obsolete v1 village state ignored")
-    data.putInt(DZ_STARTER_VILLAGE_STATE, 0)
-  }
-  let state = data.getInt(DZ_STARTER_VILLAGE_STATE)
+  if (data.getInt(DZ_STARTER_VILLAGE_STATE) === 2 && data.getInt("dz_starter_village_layout_version") !== DZ_STARTER_VILLAGE_VERSION) data.putInt(DZ_STARTER_VILLAGE_STATE, 0)
   player.persistentData.putBoolean("dz_starter_depart_requested", true)
   player.runCommandSilent("effect give @s minecraft:resistance 120 255 true")
-  if (state === 2) {
-    let ready = dzStarterReadiness(player, false)
-    if (!ready.camp || !ready.population || !ready.kit) {
-      player.persistentData.remove("dz_starter_depart_requested")
-      player.tell(Text.of("[PDZ] 初期コロニーが未完成です。安全のためロビーから出発しません。").red())
-      player.tell(Text.of("キャンプ=" + ready.camp + " / 住民と護衛=" + ready.population + " / スターターキット=" + ready.kit).yellow())
-      return 0
-    }
-    return dzStarterTeleport(player)
-  }
-  if (state === 1) { player.tell(Text.of("[PDZ] 復興コロニーを準備中です。少しお待ちください。").aqua()); return 0 }
-  if (state === 3) {
-    data.putInt(DZ_STARTER_VILLAGE_STATE, 0)
-    player.tell(Text.of("[PDZ] 前回の生成失敗状態を解除しました。再試行します。").yellow())
-    return dzStarterGenerate(player, null)
-  }
-  player.tell(Text.of("[PDZ] MOD村を確認し、隣接地へ復興キャンプを展開しています…").aqua())
-  return dzStarterGenerate(player, null)
+  if (data.getInt(DZ_STARTER_VILLAGE_STATE) !== 2 && !dzStarterRegisterNearest(player, 128)) return 0
+  return dzStarterTeleport(player)
 }
 
 ServerEvents.commandRegistry(event => {
@@ -486,35 +285,34 @@ ServerEvents.commandRegistry(event => {
   let root = Commands.literal("deadzonevillage")
   root.then(Commands.literal("status").executes(ctx => {
     let p=ctx.source.player,d=p.server.persistentData
-    p.tell(Text.of("=== PDZ 初期コロニー状態 ===").gold())
-    p.tell(Text.of("状態: " + d.getInt(DZ_STARTER_VILLAGE_STATE) + " / layout v" + d.getInt("dz_starter_village_layout_version")).gray())
-    p.tell(Text.of("生成方式: " + d.getString("dz_starter_village_source")).aqua())
-    p.tell(Text.of("対象村: " + d.getString("dz_starter_native_village_structure")).aqua())
-    p.tell(Text.of("勢力: 友好・民間防衛隊 / 経済: 復興ハブ").green())
+    p.tell(Text.of("=== PDZ \u521d\u671f\u8857\u72b6\u614b ===").gold())
+    p.tell(Text.of("\u72b6\u614b: " + d.getInt(DZ_STARTER_VILLAGE_STATE) + " / layout v" + d.getInt("dz_starter_village_layout_version")).gray())
+    p.tell(Text.of("\u90fd\u5e02\u540d: " + (d.getString("dz_starter_village_name") || "\u672a\u767b\u9332")).aqua())
+    p.tell(Text.of("\u69cb\u9020\u7269: " + d.getString("dz_starter_native_village_structure")).aqua())
+    p.tell(Text.of("\u52e2\u529b: \u53cb\u597d\u30fb\u6c11\u9593\u9632\u885b\u968a / \u7d4c\u6e08: \u5730\u57df\u5fa9\u8208\u30cf\u30d6").green())
     return 1
   }))
   root.then(Commands.literal("depart").executes(ctx => dzStarterDepart(ctx.source.player)))
   root.then(Commands.literal("retry").executes(ctx => {
     let p=ctx.source.player,d=p.server.persistentData
-    d.putInt(DZ_STARTER_VILLAGE_STATE,0)
-    d.putInt("dz_starter_village_layout_version",0)
-    return dzStarterDepart(p)
+    d.putInt(DZ_STARTER_VILLAGE_STATE,0); d.putInt("dz_starter_village_layout_version",0)
+    return dzStarterRegisterNearest(p,256)
   }))
   root.then(Commands.literal("teleport").requires(s=>s.hasPermission(2)).executes(ctx => dzStarterTeleport(ctx.source.player)))
   root.then(Commands.literal("generate_here").requires(s=>s.hasPermission(2)).executes(ctx => {
-    let p=ctx.source.player,level=dzStarterOverworld(p.server),village=dzStarterFindNativeVillage(level,p)
-    if (!village) {
-      p.tell(Text.of("[PDZ] 実在する村を確認できないため、キャンプだけの強制生成を中止しました。").red())
-      return 0
-    }
-    p.server.persistentData.putInt(DZ_STARTER_VILLAGE_STATE,0)
-    return dzStarterGenerate(p,{site:{x:Math.floor(p.x),y:Math.floor(p.y)-1,z:Math.floor(p.z)},village:village})
+    let p=ctx.source.player,d=p.server.persistentData
+    d.putInt(DZ_STARTER_VILLAGE_STATE,0); d.putInt("dz_starter_village_layout_version",0)
+    p.tell(Text.of("[PDZ] \u73fe\u5728\u5730\u3067\u306f\u306a\u304f\u3001\u30ef\u30fc\u30eb\u30c9\u30b9\u30dd\u30fc\u30f3\u304b\u3089\u6700\u5bc4\u308a\u306e\u5b9f\u5728\u6751\u3092\u518d\u691c\u7d22\u3057\u307e\u3059\u3002").aqua())
+    return dzStarterRegisterNearest(p,256)
   }))
   root.then(Commands.literal("reset").requires(s=>s.hasPermission(2)).executes(ctx => {
     let d=ctx.source.server.persistentData
     d.putInt(DZ_STARTER_VILLAGE_STATE,0); d.putInt("dz_starter_village_layout_version",0)
-    ctx.source.player.tell(Text.of("[PDZ] 初期コロニーの管理状態をリセットしました。既存ブロックは削除しません。").yellow())
+    d.putString("dz_starter_village_source","")
+    ctx.source.player.tell(Text.of("[PDZ] \u521d\u671f\u8857\u306e\u767b\u9332\u60c5\u5831\u3092\u30ea\u30bb\u30c3\u30c8\u3057\u307e\u3057\u305f\u3002\u6751\u305d\u306e\u3082\u306e\u306f\u524a\u9664\u3057\u307e\u305b\u3093\u3002").yellow())
     return 1
   }))
   event.register(root)
 })
+
+console.info("[PROJECT DEADZONE] nearest native starter city controller v7.1 loaded")

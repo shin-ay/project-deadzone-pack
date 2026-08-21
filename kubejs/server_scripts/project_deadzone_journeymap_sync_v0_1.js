@@ -39,17 +39,20 @@ function pdzJmSiteHasAnchor(player, site, loadedEntities) {
   // Only the fixed starter colony and records tied to a verified StructureStart
   // may be rendered as settlements. Residents alone never create a map label.
   if (settlement) {
-    let starterValid = settlementType === 'starter_colony' &&
+    let starterCityValid = settlementType === 'starter_city' &&
+      siteId === 'starter_city_01' && String(site.source || '') === 'starter_nearest_verified_village_v7' &&
+      site.structureVerified === true && String(site.structureId || '') !== '' && String(site.structureInstance || '') !== ''
+    let legacyStarterValid = settlementType === 'starter_colony' &&
       siteId === 'settlement_restoration_colony_01' && String(site.source || '').indexOf('starter') >= 0
     let villageValid = settlementType === 'survivor_colony' && site.structureVerified === true &&
       String(site.structureId || '') !== '' && String(site.structureInstance || '') !== ''
-    if (!starterValid && !villageValid) return false
+    if (!starterCityValid && !legacyStarterValid && !villageValid) return false
   }
   // v0.3 village records are tied to an actual StructureStart.  They remain a
   // valid settlement even while residents are outside the loaded entity list.
   // Legacy coordinate-cell records intentionally fail this check.
   if (site.structureVerified === true) return true
-  if (settlementType === 'starter_colony') return true
+  if (settlementType === 'starter_city' || settlementType === 'starter_colony') return true
   if (siteId.indexOf('settlement_native_') === 0) return false
   let sx = Number(site.x || 0), sz = Number(site.z || 0)
   for (let i = 0; i < loadedEntities.length; i++) {
@@ -86,6 +89,7 @@ function pdzJmSync(player) {
   player.sendData('pdz_journeymap_sync', {payload:JSON.stringify({version:1,cells:cells,sites:sites,activities:activities})})
   return {cells:cells.length,sites:sites.length,activities:activities.length}
 }
+global.pdzJourneyMapSync = pdzJmSync
 
 let PDZ_JM_TICKS = 0
 ServerEvents.tick(event => {

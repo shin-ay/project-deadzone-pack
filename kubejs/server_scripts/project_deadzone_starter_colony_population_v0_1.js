@@ -75,6 +75,13 @@ function dzColonyLiveCount(server) {
 function dzEnsureStarterPopulation(server, force) {
   let data = server.persistentData
   if (data.getInt("dz_starter_village_state") !== 2) return 0
+  // v7 uses the verified native village itself as the starter city. Population
+  // belongs to MCA/Recruits/Towns & Towers; never install the legacy camp roster.
+  if (String(data.getString("dz_starter_village_source")) === "starter_nearest_verified_village_v7") {
+    data.putInt("dz_starter_colony_population_version", 999)
+    data.putInt("dz_starter_colony_population_count", 0)
+    return 1
+  }
   let liveBefore = dzColonyLiveCount(server)
   if (!force && data.getInt("dz_starter_colony_population_version") >= DZ_COLONY_POP_VERSION &&
       liveBefore >= 13) {

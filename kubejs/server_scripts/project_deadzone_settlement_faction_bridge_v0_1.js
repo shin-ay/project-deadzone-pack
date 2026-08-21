@@ -29,6 +29,12 @@ function pdzSetIsValidSettlementRecord(site) {
   let id = String(site.id || ""), type = String(site.settlementType || "")
   let isSettlement = id.indexOf("settlement_") === 0 || type !== ""
   if (!isSettlement) return true
+  if (type === "starter_city") {
+    return id === "starter_city_01" &&
+      String(site.source || "") === "starter_nearest_verified_village_v7" &&
+      site.structureVerified === true &&
+      String(site.structureId || "") !== "" && String(site.structureInstance || "") !== ""
+  }
   if (type === "starter_colony") {
     return id === "settlement_restoration_colony_01" && String(site.source || "").indexOf("starter") >= 0
   }
@@ -76,21 +82,25 @@ function pdzSetFaction(seed, starter) {
   return {id:(roll % 2 ? "raider" : "remnant"), relation:"hostile", label:(roll % 2 ? "レイダー占領地" : "残存軍占領地")}
 }
 
-function pdzRegisterStarterColony(server, site, village) {
+function pdzRegisterStarterColony(server, arrival, village) {
+  let structureId = String(village.structure || village.structureId || "")
+  let structureInstance = String(village.instance || (structureId + "@" + village.x + "," + village.y + "," + village.z))
   let record = {
-    id:"settlement_restoration_colony_01", version:2,
+    id:"starter_city_01", version:7,
     dimension:"minecraft:overworld", x:Number(village.x), y:Number(village.y), z:Number(village.z),
-    campX:Number(site.x), campY:Number(site.y), campZ:Number(site.z),
-    name:"灯火市復興コロニー", source:"starter_verified_mod_village_plus_survivor_camp", settlementType:"starter_colony",
-    size:"large", faction:"civil_defense", factionLabel:"民間防衛隊", relation:"friendly",
-    role:"restoration_hub", economy:"restoration_hub",
-    exports:["starter_supplies","food","medical"], imports:["scrap","fuel","rare_materials"],
+    arrivalX:Number(arrival.x), arrivalY:Number(arrival.y), arrivalZ:Number(arrival.z),
+    name:"\u706f\u706b\u5e02", source:"starter_nearest_verified_village_v7", settlementType:"starter_city",
+    structureVerified:true, structureId:structureId, structureInstance:structureInstance,
+    structureBounds:village.bounds || null,
+    size:"large", faction:"civil_defense", factionLabel:"\u6c11\u9593\u9632\u885b\u8ecd", relation:"friendly",
+    role:"starter_city", economy:"regional_hub",
+    exports:["food","medical","repair_parts"], imports:["scrap","fuel","rare_materials"],
     services:{trade:true, inn:true, medical:true, job:true, repair:true},
-    supply:80, alert:0, defenders:12, coreAlive:true, ownerLocked:true, residents:0
+    supply:80, alert:0, defenders:0, coreAlive:true, ownerLocked:true, residents:0
   }
   pdzSetUpsert(server, record)
   server.persistentData.putBoolean("dz_starter_colony_registered", true)
-  console.info("[PDZ][Settlement] registered starter colony and Survivor Camp at " + site.x + "," + site.y + "," + site.z)
+  console.info("[PDZ][Settlement] registered starter city at " + village.x + "," + village.y + "," + village.z)
   return record
 }
 global.pdzRegisterStarterColony = pdzRegisterStarterColony
@@ -104,7 +114,7 @@ function pdzSetRegisterNativeVillage(entity) {
   let village = pdzSetFindVillageStructure(entity, 64)
   if (!village) {
     let starter = pdzSetNearest(entity, 192)
-    if (starter && String(starter.settlementType || "") === "starter_colony") return starter
+    if (starter && ["starter_city", "starter_colony"].indexOf(String(starter.settlementType || "")) >= 0) return starter
     return null
   }
   let id = "settlement_village_" + pdzSetHash(village.instance)

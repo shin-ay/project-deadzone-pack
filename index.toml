@@ -8186,7 +8186,7 @@ hash = "a8c3274299e74f2e1d9ec92c27eb136b275528edf25289e6034d1df75999c12e"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_journeymap_sync_v0_1.js"
-hash = "63f5e1c5acf25d561afa829e142896cfee72dd76b12d80d8012040e56da6f391"
+hash = "9ad20ca9007784038e1bbf6215a900fe0f9a7e8d3fde1219df9a7b886239a53d"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_mastery_v0_1.js"
@@ -8230,7 +8230,7 @@ hash = "2feb979c118f3786bee04de9fc2fb0b1854ba1a7ac61a52580adc4523692fce6"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_onboarding_v0_1.js"
-hash = "f4513b7af7439c47d47153d32a9da0913fda2cd267623f05568ccd7badab9916"
+hash = "3b2e1701f677834e1300319475c36120fddf928bf9a1c3bcf47d6207f8466e55"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_outpost_garrisons_v0_1.js"
@@ -8278,7 +8278,7 @@ hash = "d87c67f17d674ac06e73d03e62ea4c088523ecdcea4ba0fcf134a527301c9a2a"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_settlement_faction_bridge_v0_1.js"
-hash = "d99c4e53652e9f5b1b27ee49cb75addea692559817e1186479fdbf1485ece5f3"
+hash = "22719e4617dfcae7e05dd6b18acd3610e77c7885f79ecca3096bbaeead74aa63"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_settlement_npc_compat_v0_1.js"
@@ -8314,7 +8314,7 @@ hash = "5b59cdd08b1b3bd375e180c38b4c0addb7f0fcb3e88f8b7c90ae0fb877b0fd2e"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_starter_colony_population_v0_1.js"
-hash = "950edea91b3ca3a84a6f6f58ca2779eebc43b20d99cbbab290795a56055c4951"
+hash = "8c213646354457f487bee1746dde8e9b2b3363b7c302d06d18526c7fe3f45c2d"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_starter_village_staff_v0_1.js"
@@ -8322,7 +8322,7 @@ hash = "070b653df6a030d02e07e2970483225c34c97457749ec26cf532c087a5385674"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_starter_village_v0_1.js"
-hash = "55ce4680433445898d786d8482857a16ba0e266b9296ab144b1eb64257c5fdfb"
+hash = "5297bb89174d8de43ec9ea0b99fd4d341256c2867d23e25385a635efb58b9a03"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_story_branches_v0_1.js"
