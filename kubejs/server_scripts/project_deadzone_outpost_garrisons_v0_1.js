@@ -8,7 +8,7 @@ const PDZ_GAR_NOTICE=224
 const PDZ_GAR_NEAR=112
 const PDZ_GAR_RELEASE=240
 const PDZ_GAR_RESPAWN=15*60*1000
-const PDZ_GAR_PLACEMENT_VERSION=2
+const PDZ_GAR_PLACEMENT_VERSION=3
 
 function pdzGarRead(server){
   try {let v=JSON.parse(server.persistentData.getString(PDZ_GAR_LEDGER)||'[]');return Array.isArray(v)?v:[]}
@@ -133,9 +133,15 @@ function pdzGarRelocate(level,tag,spots){
   return moved
 }
 function pdzGarRun(player,command,tag,limit,base){
+  // Protect NPCs that already belonged to a neighbouring building. Squad
+  // functions can create more actors than this site's occupancy budget, so
+  // only newly-created overflow is removed below.
+  player.runCommandSilent(base+'tag @e[tag=dz_npc,distance=..32] add dz_garrison_preexisting')
   player.runCommandSilent(command)
-  player.runCommandSilent(base+'tag @e[tag=dz_npc,tag=!dz_garrison_bound,sort=nearest,limit='+limit+',distance=..32] add '+tag)
+  player.runCommandSilent(base+'tag @e[tag=dz_npc,tag=!dz_garrison_preexisting,tag=!dz_garrison_bound,sort=nearest,limit='+limit+',distance=..32] add '+tag)
   player.runCommandSilent(base+'tag @e[tag='+tag+',distance=..32] add dz_garrison_bound')
+  player.runCommandSilent(base+'kill @e[tag=dz_npc,tag=!dz_garrison_preexisting,tag=!dz_garrison_bound,distance=..32]')
+  player.runCommandSilent(base+'tag @e[tag=dz_garrison_preexisting,distance=..32] remove dz_garrison_preexisting')
 }
 function pdzGarIsSettlementSeed(marker){
   return String(marker.persistentData.getString('dz_wild_structure')||'').indexOf('zombiekit:')===0
@@ -156,7 +162,13 @@ function pdzGarRecruitResidents(marker,player,faction,tag,spots){
   return count
 }
 function pdzGarSpawn(marker,player,faction,size,role,tag){
-  let count=pdzGarCount(size),spots=pdzGarSafeSpots(marker,count)
+  let count=pdzGarCount(size)
+  if(marker.persistentData.contains('dz_wild_garrison_limit')){
+    let limit=marker.persistentData.getInt('dz_wild_garrison_limit')
+    if(limit<=0)return
+    count=Math.min(count,limit)
+  }
+  let spots=pdzGarSafeSpots(marker,count)
   if(!spots.length){
     marker.persistentData.putBoolean('dz_garrison_active',false)
     marker.persistentData.putLong('dz_garrison_respawn',Date.now()+30000)
@@ -165,10 +177,10 @@ function pdzGarSpawn(marker,player,faction,size,role,tag){
   }
   let base=pdzGarBase(spots[0])
   if(faction==='survivor'){
-    pdzGarRun(player,base+'function project_deadzone:factions/squad/survivors_roles',tag,3,base)
+    pdzGarRun(player,base+'function project_deadzone:factions/squad/survivors_roles',tag,Math.min(3,count),base)
     if(count>3)pdzGarRun(player,base+'function project_deadzone:factions/squad/survivors',tag,Math.min(3,count-3),base)
   }else if(faction==='civildef'||faction==='cdf'){
-    pdzGarRun(player,base+'function project_deadzone:factions/squad/civildef_roles',tag,4,base)
+    pdzGarRun(player,base+'function project_deadzone:factions/squad/civildef_roles',tag,Math.min(4,count),base)
     if(count>4)pdzGarRun(player,base+'function project_deadzone:factions/squad/civildef',tag,Math.min(3,count-4),base)
   }else if(faction==='raider'){
     pdzGarRun(player,base+'function project_deadzone:factions/squad/raiders_roles',tag,Math.min(7,count),base)
@@ -208,9 +220,14 @@ function pdzGarPulse(server){
     player.level.entities.forEach(marker=>{
     if(marker.tags&&marker.tags.contains('dz_wilderness_site')&&(marker.x-player.x)*(marker.x-player.x)+(marker.z-player.z)*(marker.z-player.z)<=PDZ_GAR_NOTICE*PDZ_GAR_NOTICE)closeToAny=true
     if(!marker.tags||!marker.tags.contains('dz_wilderness_site')||seen[String(marker.uuid)])return
-    if(marker.persistentData.contains('dz_wild_garrison')&&!marker.persistentData.getBoolean('dz_wild_garrison'))return
     seen[String(marker.uuid)]=true
     let id=pdzGarSiteId(marker),site=owners[id]||{},tag=marker.persistentData.getString('dz_garrison_tag')||pdzGarTag(id)
+    if(marker.persistentData.contains('dz_wild_garrison')&&!marker.persistentData.getBoolean('dz_wild_garrison')){
+      pdzGarEntities(marker.level,tag).forEach(e=>e.discard())
+      marker.persistentData.putBoolean('dz_garrison_active',false)
+      marker.persistentData.putLong('dz_garrison_respawn',0)
+      return
+    }
     let faction=site.faction||marker.persistentData.getString('dz_wild_faction')||'independent'
     let role=site.role||marker.persistentData.getString('dz_wild_role')||'shelter'
     pdzGarNotice(server,marker,id,String(faction),String(role))

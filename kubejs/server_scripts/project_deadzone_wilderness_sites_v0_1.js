@@ -206,7 +206,11 @@ function pdzWildPickFaction(siteId,def,player,sampleX,sampleZ) {
   let biomeId=pdzWildBiomeId(player),profile=pdzWildBiomeProfile(biomeId)
   let px=Number.isFinite(Number(sampleX))?Number(sampleX):Number(player.x)
   let pz=Number.isFinite(Number(sampleZ))?Number(sampleZ):Number(player.z)
-  let key=String(player.level.dimension)+'|'+siteId+'|'+Math.floor(px/32)+'|'+Math.floor(pz/32)
+  // Territory ownership is decided on a broad cell. A building no longer
+  // invents a different faction just because it is next door.
+  let territory=pdzWildTerritoryFaction(player,px,pz)
+  if(territory)return territory
+  let key=String(player.level.dimension)+'|district|'+Math.floor(px/512)+'|'+Math.floor(pz/512)
   let weights={}
   Object.keys(profile.factions).forEach(faction=>weights[faction]=profile.factions[faction])
   // A building's intended identity remains the strongest single influence,
@@ -261,6 +265,84 @@ function pdzWildTerritoryFaction(player,x,z) {
     for(let i=0;i<cells.length;i++)if(String(cells[i].dimension)===dim&&Number(cells[i].gx)===gx&&Number(cells[i].gz)===gz)return String(cells[i].faction||'')
   } catch(ignored) {}
   return ''
+}
+
+function pdzWildIsSettlementSite(siteId,def) {
+  let text=(String(siteId||'')+' '+String(def.type||'')+' '+String(def.role||'')).toLowerCase()
+  return text.indexOf('starter')>=0||text.indexOf('village')>=0||text.indexOf('settlement')>=0||
+    text.indexOf('colony')>=0||text.indexOf('towns_and_towers')>=0||text.indexOf('ctov')>=0
+}
+
+function pdzWildPickOccupancy(instanceKey,siteId,def) {
+  if(pdzWildIsSettlementSite(siteId,def))return 'settlement'
+  let type=String(def.type||'').toLowerCase(),role=String(def.role||'').toLowerCase()
+  if(type.indexOf('warden')>=0||type.indexOf('aegis')>=0||role==='boss')return 'outpost'
+  let urban=pdzWildIsUrbanType(def.type),roll=pdzWildHash(String(instanceKey)+'|occupancy')%100
+  // Lost Cities is a ruin, not a fully populated metropolis. Only 12% of
+  // ordinary urban buildings have people; rural facilities stay somewhat
+  // more active without turning every structure into a settlement.
+  if(urban){
+    if(roll<70)return 'empty'
+    if(roll<88)return 'loot'
+    if(roll<96)return 'patrol'
+    if(roll<98)return 'trade'
+    return 'outpost'
+  }
+  if(roll<52)return 'empty'
+  if(roll<70)return 'loot'
+  if(roll<84)return 'patrol'
+  if(roll<91)return 'trade'
+  return 'outpost'
+}
+
+function pdzWildOccupancyTrade(occupancy,def) {
+  return occupancy==='trade'||occupancy==='settlement' ? String(def.trade||'independent') : ''
+}
+
+function pdzWildOccupancyGarrison(occupancy) {
+  return occupancy==='patrol'||occupancy==='outpost'||occupancy==='settlement'
+}
+
+function pdzWildOccupancyLimit(occupancy) {
+  if(occupancy==='patrol')return 3
+  if(occupancy==='outpost')return 4
+  if(occupancy==='settlement')return 6
+  return 0
+}
+
+function pdzWildApplyOccupancy(player,marker,def) {
+  let instanceKey=marker.persistentData.getString('dz_wild_instance')
+  let occupancy=marker.persistentData.getString('dz_wild_occupancy')
+  if(!occupancy)occupancy=pdzWildPickOccupancy(instanceKey,marker.persistentData.getString('dz_wild_structure'),def)
+  let garrison=pdzWildOccupancyGarrison(occupancy),trade=pdzWildOccupancyTrade(occupancy,def)
+  marker.persistentData.putString('dz_wild_occupancy',occupancy)
+  marker.persistentData.putBoolean('dz_wild_inhabited',garrison||occupancy==='trade')
+  marker.persistentData.putBoolean('dz_wild_garrison',garrison)
+  marker.persistentData.putInt('dz_wild_garrison_limit',pdzWildOccupancyLimit(occupancy))
+  marker.persistentData.putString('dz_wild_trade',trade)
+  ;['empty','loot','patrol','trade','outpost','settlement'].forEach(value=>marker.tags.remove('dz_site_'+value))
+  marker.tags.add('dz_site_'+occupancy)
+
+  // Migration: remove defenders/traders created by the previous "every
+  // building is occupied" rule, but only when they are linked to this exact
+  // building. This is deliberately progressive as sites are revisited.
+  if(!garrison&&occupancy!=='trade'&&occupancy!=='settlement'){
+    player.level.entities.forEach(e=>{
+      if(!e.tags)return
+      let linked=e.persistentData.getString('dz_wild_instance')===instanceKey
+      let trader=e.tags.contains('dz_wilderness_trader')
+      let guard=e.tags.contains('dz_garrison_bound')||e.tags.contains('dz_wilderness_defender')
+      if(linked&&(trader||guard))e.discard()
+    })
+  }
+  let registry=pdzWildReadRegistry(player.server),record=registry[instanceKey]
+  if(record&&(record.occupancy!==occupancy||record.inhabited!==(garrison||occupancy==='trade')||record.garrison!==garrison)){
+    record.occupancy=occupancy;record.inhabited=garrison||occupancy==='trade';record.garrison=garrison
+    record.garrisonLimit=pdzWildOccupancyLimit(occupancy)
+    if(!trade)record.traderSpawned=false
+    pdzWildWriteRegistry(player.server,registry)
+  }
+  return marker
 }
 
 function pdzWildLostClassify(buildingId) {
@@ -543,14 +625,17 @@ function pdzWildCreateMarker(player,siteId,forcedFaction,instanceKey,anchor,over
     e.discard()
   })
   let urban=pdzWildIsUrbanType(def.type)
-  let faction=(urban&&forcedFaction)?forcedFaction:((prior&&prior.faction)||forcedFaction||legacyFaction||pdzWildPickFaction(siteId,def,player))
+  let faction=(urban&&forcedFaction)?forcedFaction:((prior&&prior.faction)||forcedFaction||legacyFaction||pdzWildPickFaction(siteId,def,player,ax,az))
+  let occupancy=(prior&&prior.occupancy)||pdzWildPickOccupancy(stableKey,siteId,def)
+  let occupiedGarrison=pdzWildOccupancyGarrison(occupancy)
   // Claim the instance before summoning. This closes the multiplayer race in
   // which several players discovered one building on the same server tick.
   if(!prior){
     registry[stableKey]={instance:stableKey,structure:String(siteId),type:String(def.type),faction:faction,
       cityId:cityProfile?String(cityProfile.id):'',x:ax,y:ay,z:az,
       name:cityProfile?String(cityProfile.name):pdzWildPlaceName(stableKey,def.type,faction),
-      discoveredAt:Date.now(),activated:false,traderSpawned:false}
+      occupancy:occupancy,inhabited:occupiedGarrison||occupancy==='trade',garrison:occupiedGarrison,
+      garrisonLimit:pdzWildOccupancyLimit(occupancy),discoveredAt:Date.now(),activated:false,traderSpawned:false}
     pdzWildWriteRegistry(player.server,registry)
   }else if(urban&&cityProfile){
     prior.faction=faction;prior.cityId=String(cityProfile.id);prior.name=String(cityProfile.name)
@@ -571,10 +656,14 @@ function pdzWildCreateMarker(player,siteId,forcedFaction,instanceKey,anchor,over
   marker.persistentData.putString('dz_wild_city_id',cityProfile?String(cityProfile.id):'')
   marker.persistentData.putString('dz_wild_biome',pdzWildBiomeId(player))
   marker.persistentData.putString('dz_wild_biome_profile',pdzWildBiomeProfile(pdzWildBiomeId(player)).id)
-  marker.persistentData.putString('dz_wild_trade',def.trade || '')
+  marker.persistentData.putString('dz_wild_trade',pdzWildOccupancyTrade(occupancy,def))
   let role=def.role||pdzWildRole(def.type,siteId,faction,def.trade||'')
   marker.persistentData.putString('dz_wild_role',role)
-  marker.persistentData.putBoolean('dz_wild_garrison',def.garrison!==false)
+  marker.persistentData.putString('dz_wild_occupancy',occupancy)
+  marker.persistentData.putBoolean('dz_wild_inhabited',occupiedGarrison||occupancy==='trade')
+  marker.persistentData.putBoolean('dz_wild_garrison',occupiedGarrison)
+  marker.persistentData.putInt('dz_wild_garrison_limit',pdzWildOccupancyLimit(occupancy))
+  marker.tags.add('dz_site_'+occupancy)
   marker.persistentData.putString('dz_wild_named',pdzWildNamedCandidate(def.type,role,faction))
   let placeName=cityProfile?String(cityProfile.name):((prior&&prior.name)||pdzWildPlaceName(stableKey,def.type,faction))
   marker.persistentData.putString('dz_wild_name',placeName)
@@ -586,7 +675,7 @@ function pdzWildCreateMarker(player,siteId,forcedFaction,instanceKey,anchor,over
     player.tell(Text.of('[AREA DISCOVERED] ').gold()
       .append(Text.of(label).color(cityProfile?'gray':(PDZ_WILD_COLORS[faction]||'white'))))
   }
-  return marker
+  return pdzWildApplyOccupancy(player,marker,def)
 }
 
 function pdzWildPlaceName(key,type,faction){
@@ -604,12 +693,14 @@ function pdzWildScan(player) {
   let nearbyWarden=pdzWildFindNearbyWarden(player,176)
   if(nearbyWarden){
     let known=pdzWildMarkerByInstance(player,nearbyWarden.instance,512)
-    if(!known)return pdzWildCreateMarker(player,nearbyWarden.siteId,'warden',nearbyWarden.instance,nearbyWarden)
+    if(known)return pdzWildApplyOccupancy(player,known,PDZ_WILD_SITES[nearbyWarden.siteId]||{type:'warden',role:'boss'})
+    return pdzWildCreateMarker(player,nearbyWarden.siteId,'warden',nearbyWarden.instance,nearbyWarden)
   }
   let nearbySite=pdzWildFindNearbySite(player,216)
   if(nearbySite){
     let known=pdzWildMarkerByInstance(player,nearbySite.instance,512)
-    if(!known)return pdzWildCreateMarker(player,nearbySite.siteId,null,nearbySite.instance,nearbySite)
+    if(known)return pdzWildApplyOccupancy(player,known,PDZ_WILD_SITES[nearbySite.siteId]||{type:'facility'})
+    return pdzWildCreateMarker(player,nearbySite.siteId,null,nearbySite.instance,nearbySite)
   }
   let current=pdzWildFindCurrent(player)
   if(!current){
@@ -621,12 +712,12 @@ function pdzWildScan(player) {
       let old=existing.persistentData.getString('dz_wild_faction')
       if(old!==faction){existing.tags.remove('dz_wilderness_'+old);existing.tags.add('dz_wilderness_'+faction);existing.persistentData.putString('dz_wild_faction',faction)}
       existing.persistentData.putString('dz_wild_city_id',String(city.id));existing.persistentData.putString('dz_wild_name',String(city.name))
-      return existing
+      return pdzWildApplyOccupancy(player,existing,lost.def)
     }
     return pdzWildCreateMarker(player,lost.buildingId,faction,lost.instance,{x:lost.x,z:lost.z},lost.def,city)
   }
   let existing=pdzWildMarkerByInstance(player,current.instance,512)
-  if(existing)return existing
+  if(existing)return pdzWildApplyOccupancy(player,existing,PDZ_WILD_SITES[current.siteId]||{type:'facility'})
   return pdzWildCreateMarker(player,current.siteId,null,current.instance,{x:current.x,y:current.y,z:current.z})
 }
 
@@ -646,6 +737,8 @@ function pdzWildStatus(player) {
   let role=marker.persistentData.getString('dz_wild_role')
   if(!role) role=pdzWildRole(marker.persistentData.getString('dz_wild_type'),marker.persistentData.getString('dz_wild_structure'),faction,marker.persistentData.getString('dz_wild_trade'))
   player.tell(Text.of('戦略役割: '+role).aqua())
+  let occupancy=marker.persistentData.getString('dz_wild_occupancy')||'empty'
+  player.tell(Text.of('常駐状態: '+occupancy).yellow())
   let named=marker.persistentData.getString('dz_wild_named')
   if(named) player.tell(Text.of('Named候補: '+named).lightPurple())
   let trade=marker.persistentData.getString('dz_wild_trade')
@@ -746,6 +839,11 @@ function pdzWildTraderSpot(marker){
 function pdzWildPlaceTrader(player,explicitMarker) {
   let marker=explicitMarker||pdzWildMarkerNear(player,160)
   if(!marker){player.tell(Text.of('先に野外拠点を登録してください。').red());return false}
+  let occupancy=marker.persistentData.getString('dz_wild_occupancy')||'empty'
+  if(!pdzWildOccupancyTrade(occupancy)){
+    player.tell(Text.of('この建物には常駐トレーダーがいません。').red())
+    return false
+  }
   let kind=marker.persistentData.getString('dz_wild_trade')
   let faction=marker.persistentData.getString('dz_wild_faction')
   if(!kind && faction!=='independent'){player.tell(Text.of('この拠点には取引機能がありません。').red());return false}
@@ -785,6 +883,11 @@ function pdzWildPlaceTrader(player,explicitMarker) {
 function pdzWildActivate(player) {
   let marker=pdzWildMarkerNear(player,112)
   if(!marker){player.tell(Text.of('先に野外拠点を登録してください。').red());return false}
+  let occupancy=marker.persistentData.getString('dz_wild_occupancy')||'empty'
+  if(!pdzWildOccupancyGarrison(occupancy)){
+    player.tell(Text.of('この建物は無人です。Lootや探索対象として利用できます。').gray())
+    return false
+  }
   if(marker.persistentData.getBoolean('dz_wild_activated')){
     player.tell(Text.of('この拠点は既に有効化されています。').yellow());return false
   }

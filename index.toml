@@ -8074,7 +8074,7 @@ hash = "f4513b7af7439c47d47153d32a9da0913fda2cd267623f05568ccd7badab9916"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_outpost_garrisons_v0_1.js"
-hash = "e0f23519f1b81ca5f8a6c88c02e0fe703b8e6091742271dae3305ae85414e821"
+hash = "2117e067f812e9598104d1658b04a9f5bce861a60bb272ff49e7385bd1d919a2"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_player_damage_guard_v0_1.js"
@@ -8222,7 +8222,7 @@ hash = "0f2effb86e78856c471684c2eff9d31521a84f8e3bf1bee512dcbe294fd1db30"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_wilderness_sites_v0_1.js"
-hash = "f41129c70591d799252a382964e2fd6c3d126f954d11caa04786dd2ed4316b04"
+hash = "dfda7e13f528f3d28740c8118a688763958badee4e4d09d4a35141d14e73adc6"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_world_evolution_v0_1.js"
@@ -8695,7 +8695,7 @@ hash = "9912f1844dae6a1a24250ea46d5bb8e7f2ca82976b0d8dd76a62ca28082fdcb4"
 
 [[files]]
 file = "mods/PROJECT_DEADZONE_EpicTaCZ_Compat-0.1.0.jar"
-hash = "35b4e0b8703039ef92a1f4a7096a28fda557c2ff8edff18f797e4018fce3a43a"
+hash = "9f4870e0073f46f83effd31ace8410dac5c52448aab67dba08380c04f5d8af12"
 
 [[files]]
 file = "mods/PROJECT_DEADZONE_JOB_UI-0.1.0.jar"
