@@ -1,0 +1,7 @@
+{
+	// Use the curated PDZ tag so tiny trader camps and hostile novelty villages
+	// are never selected as the first survivor settlement.
+	"locateVillageTag": "#project_deadzone:starter_village",
+	// Keep vanilla villages as a safe fallback if another datapack removes the tag.
+	"keepDefaultVillageTagBackup": true
+}

@@ -1,10 +1,10 @@
-// PROJECT DEADZONE starter colony controller v4.0
+// PROJECT DEADZONE starter colony controller v5.0
 // Locate a real village through PDZ's curated starter-village structure tag.
 // The curated tag excludes tiny trader camps and hostile novelty villages, then
 // the proven Survivor Camp template is attached beside the selected village.
 
 const DZ_STARTER_VILLAGE_STATE = "dz_starter_village_state"
-const DZ_STARTER_VILLAGE_VERSION = 4
+const DZ_STARTER_VILLAGE_VERSION = 5
 const DZ_STARTER_HEIGHTMAP = Java.loadClass("net.minecraft.world.level.levelgen.Heightmap$Types")
 const DZ_STARTER_BLOCK_POS = Java.loadClass("net.minecraft.core.BlockPos")
 const DZ_STARTER_REGISTRIES = Java.loadClass("net.minecraft.core.registries.Registries")
@@ -125,8 +125,16 @@ function dzStarterFindNativeVillage(level, player) {
   let start = dzStarterWorldSpawn(level)
   try {
     let origin = new DZ_STARTER_BLOCK_POS(Math.floor(start.x), Math.floor(start.y), Math.floor(start.z))
+    // Village Spawn Point is the authoritative first-village selector. When it
+    // has moved shared spawn inside a real village, reuse that result instead
+    // of running another expensive and potentially different locate.
+    let spawnVillage = dzStarterVerifyVillage(level, origin, null)
+    if (spawnVillage) {
+      console.info("[PDZ][Starter Colony] using Village Spawn Point village " + spawnVillage.structure + " at " + spawnVillage.x + "," + spawnVillage.z)
+      return spawnVillage
+    }
     // Radius is measured in chunks. 32 keeps the first pass bounded; a failure
-    // leaves the player safely in Lobby and can be retried explicitly.
+    // is only a compatibility fallback for worlds made before the mod was enabled.
     let found = level.findNearestMapStructure(DZ_STARTER_VILLAGE_TAG, origin, 32, false)
     if (!found) return null
     // Vanilla normally returns Pair<BlockPos, Holder<Structure>>, while the
@@ -182,6 +190,29 @@ function dzStarterNaturalGround(id) {
   return false
 }
 
+function dzStarterVegetation(id) {
+  id = String(id || "")
+  let allow = ["air","leaves","log","wood","grass","fern","flower","bush","vine","mushroom","snow","roots","sapling"]
+  for (let i = 0; i < allow.length; i++) if (id.indexOf(allow[i]) >= 0) return true
+  return false
+}
+
+// MOTION_BLOCKING_NO_LEAVES still stops on trunks. The old validator rejected
+// an otherwise valid 32x32 site when even one sample hit a tree. Walk through
+// removable vegetation to the actual terrain, but reject water and buildings.
+function dzStarterGroundSurfaceY(level, x, z) {
+  let y = dzStarterSurfaceY(level, x, z)
+  if (!Number.isFinite(y)) return NaN
+  for (let depth = 0; depth <= 16; depth++) {
+    let id = dzStarterBlockId(level, x, y - 1, z)
+    if (dzStarterNaturalGround(id)) return y
+    if (id.indexOf("water") >= 0 || id.indexOf("lava") >= 0) return NaN
+    if (!dzStarterVegetation(id)) return NaN
+    y--
+  }
+  return NaN
+}
+
 // The camp is 32x20x32. Sample the footprint instead of scanning every block;
 // this keeps first-world generation cheap while rejecting water, cliffs,
 // buildings and tree canopies.
@@ -192,12 +223,10 @@ function dzStarterCampSite(level, centerX, centerZ, maxRelief) {
   for (let dx = 2; dx <= 30; dx += 4) {
     for (let dz = 2; dz <= 30; dz += 4) {
       let x = originX + dx, z = originZ + dz
-      let y = dzStarterSurfaceY(level, x, z)
+      let y = dzStarterGroundSurfaceY(level, x, z)
       if (!Number.isFinite(y)) return null
       let ground = dzStarterBlockId(level, x, y - 1, z)
       if (!dzStarterNaturalGround(ground)) return null
-      let above = dzStarterBlockId(level, x, y, z)
-      if (above.indexOf("water") >= 0 || above.indexOf("lava") >= 0 || above.indexOf("log") >= 0) return null
       minY = Math.min(minY, y); maxY = Math.max(maxY, y); ys.push(y)
     }
   }

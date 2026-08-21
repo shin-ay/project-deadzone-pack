@@ -2981,6 +2981,10 @@ file = "config/village_recruits/sky.toml"
 hash = "d2a04819b1aa89547bd7089d9b3fcc6d3c376848c9a3b0b7e1cac44ea508fa62"
 
 [[files]]
+file = "config/villagespawnpoint.json5"
+hash = "e9e022bf046dd3fa0f1e63f7f816683c0daf80015b55e5bf1838c0bf93b66919"
+
+[[files]]
 file = "config/visual_workbench.json"
 hash = "7885b862b10bf4b14d3103909971114a736d14a52e4a7994ace0d66a2474c14c"
 
@@ -8158,7 +8162,7 @@ hash = "070b653df6a030d02e07e2970483225c34c97457749ec26cf532c087a5385674"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_starter_village_v0_1.js"
-hash = "c305eadb5fa13ed19fcd3cd7fb9e6700e1c1839d9fb3b8a999f2f23b95b72d14"
+hash = "55ce4680433445898d786d8482857a16ba0e266b9296ab144b1eb64257c5fdfb"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_story_branches_v0_1.js"
@@ -10124,6 +10128,11 @@ metafile = true
 [[files]]
 file = "mods/unu-parts-pack.pw.toml"
 hash = "81e8b4f0b328134982bf1d27721048ea0451368227ec17d27c8c93ee8a848645"
+metafile = true
+
+[[files]]
+file = "mods/village-spawn-point.pw.toml"
+hash = "d370bd37f30ffff728dcc1e4ace6e38dc63d7e20e3a3baad764269491627fee2"
 metafile = true
 
 [[files]]
