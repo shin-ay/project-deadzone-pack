@@ -3109,6 +3109,10 @@ file = "defaultconfigs/lostsouls-server.toml"
 hash = "77ad29b36566f13d3c164fbe92bcea575040da41e96c1e340af8f1cccc8d71cd"
 
 [[files]]
+file = "defaultconfigs/minecolonies-server.toml"
+hash = "a400ea0f5c1668bb2cc0710aa630814e44f69bb3970e5b5578e9822ff6f346ca"
+
+[[files]]
 file = "defaultconfigs/partyhealth-server.toml"
 hash = "3ed8257302950822cd63426d2932776525c8338f786cca759e16d2249175a13b"
 
@@ -8182,7 +8186,7 @@ hash = "4895bdb18c7dae487a79a657c22ff03613c2788991b6155e2e0620b9530cf54d"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_jobs_v0_2_2.js"
-hash = "a8c3274299e74f2e1d9ec92c27eb136b275528edf25289e6034d1df75999c12e"
+hash = "d29cd6490214f518d08cf450044326c7f172bbce92fd4fa8f97c9a0b41e76e68"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_journeymap_sync_v0_1.js"
@@ -8230,7 +8234,7 @@ hash = "2feb979c118f3786bee04de9fc2fb0b1854ba1a7ac61a52580adc4523692fce6"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_onboarding_v0_1.js"
-hash = "3b2e1701f677834e1300319475c36120fddf928bf9a1c3bcf47d6207f8466e55"
+hash = "a4d2cba669db9612d268f929f266434c12d638f0e511e4a769c6ae7ba802d00a"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_outpost_garrisons_v0_1.js"
@@ -9024,6 +9028,11 @@ hash = "64f2127ce4e20da3c83a233d1698fa1620c477e4a84bb8e0d97daca8dc8ade2a"
 metafile = true
 
 [[files]]
+file = "mods/blockui.pw.toml"
+hash = "2195b22648787aac875b1ea60c51cca57c1c0a4db4241ec52cd3ea2abfeaebf4"
+metafile = true
+
+[[files]]
 file = "mods/blockybikes.pw.toml"
 hash = "82df7c317bd0caa197d25cb2441bee517f46fa93d9c5288ce84df5d5667597ff"
 metafile = true
@@ -9278,6 +9287,11 @@ metafile = true
 [[files]]
 file = "mods/displaycase.pw.toml"
 hash = "4d8452835e4d92041c6fadffdcd2bc0e2cdb4ac4e5927cc533ea71ffcc7f7537"
+metafile = true
+
+[[files]]
+file = "mods/domum-ornamentum.pw.toml"
+hash = "dec6adcd7a2404dc12b0df096820154c5c81fca5dcea69a3ec61ce2776e176b5"
 metafile = true
 
 [[files]]
@@ -9673,6 +9687,11 @@ file = "mods/mine_and_weapons-1.40.jar"
 hash = "ab2dbf608fd130356d825e6d92d183c9a0717fc6f819772bc933e750db29e524"
 
 [[files]]
+file = "mods/minecolonies.pw.toml"
+hash = "a028f206ca03f63234e4acb2033e9bffcd927db5037a20ecc8008ec50a25d59e"
+metafile = true
+
+[[files]]
 file = "mods/minecraft-comes-alive-reborn.pw.toml"
 hash = "2355739e29d6568e4eac040f178f450230f1d75efa23d25b431124415684ff3c"
 metafile = true
@@ -9725,6 +9744,11 @@ metafile = true
 [[files]]
 file = "mods/mts-iv-official-automobile-pack.pw.toml"
 hash = "982b4d6f0de39c28150c824e2b60705c6801f38311faa819855cee256c2ad6fe"
+metafile = true
+
+[[files]]
+file = "mods/multi-piston.pw.toml"
+hash = "9895bf13e14fbb0b5284f7ad800b1fb3c7d4c373306231d5c6f95a282079fcbe"
 metafile = true
 
 [[files]]
@@ -10079,6 +10103,11 @@ hash = "4341c1e57f6acb570785f7deceb649f8633e01681a3128c190006ca87a8de2ae"
 metafile = true
 
 [[files]]
+file = "mods/structurize.pw.toml"
+hash = "5661b05e4b3c0a9225dbfb0820e6473b0aebbad3a0efd4fb7aa44f7ff827bd59"
+metafile = true
+
+[[files]]
 file = "mods/superb-warfare.pw.toml"
 hash = "42b6ba778eedb22ecf1d9926862c002d920202aeba79542f049a860cbf3ac008"
 metafile = true
@@ -10258,6 +10287,11 @@ metafile = true
 [[files]]
 file = "mods/towns-and-towers.pw.toml"
 hash = "00a0cba74675174812eea16aca533adfe9bac7b30a81a7e33dd81bd9343b45c4"
+metafile = true
+
+[[files]]
+file = "mods/towntalk.pw.toml"
+hash = "32e0f6bce7adc5b09ba3350110ac4be7ee04e556db35ba1db97bacfabd31e4dc"
 metafile = true
 
 [[files]]

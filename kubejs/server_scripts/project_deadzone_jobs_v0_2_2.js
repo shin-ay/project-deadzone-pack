@@ -127,6 +127,8 @@ const DZ_ALL_SKILLS = Object.keys(DZ_SKILL_CATEGORIES)
 const DZ_RETRAIN_COST = 24
 const DZ_RETRAIN_CURRENCY = "apocalypsenow:money"
 const DZ_STARTER_GRANT_VERSION = 6
+const DZ_MINECOLONIES_SUPPLY_CAMP_ITEM = "minecolonies:supplycampdeployer"
+const DZ_MINECOLONIES_SUPPLY_CAMP_FLAG = "dz_minecolonies_supply_camp_received"
 
 function dzPick(a) { return a[Math.floor(Math.random()*a.length)] }
 
@@ -303,6 +305,37 @@ function dzEnsureStarterKit(player) {
 
 global.pdzEnsureStarterKit = dzEnsureStarterKit
 
+// Each registered survivor receives exactly one personal MineColonies supply camp.
+// Keep this grant separate from starter-kit versioning so kit audits cannot duplicate it.
+function dzEnsureMineColoniesSupplyCamp(player) {
+  if (!player) return false
+  let data = player.persistentData
+  if (!data.getBoolean("dz_job_chosen")) return false
+  if (data.getBoolean(DZ_MINECOLONIES_SUPPLY_CAMP_FLAG)) return true
+
+  let camp = Item.of(DZ_MINECOLONIES_SUPPLY_CAMP_ITEM, 1)
+  if (camp.isEmpty()) {
+    console.error("[PROJECT DEADZONE][MineColonies] Supply camp item is unavailable: " + DZ_MINECOLONIES_SUPPLY_CAMP_ITEM)
+    player.tell(Text.of("[PDZ] MineColonies補給キャンプを生成できませんでした。MOD構成を確認してください。").red())
+    return false
+  }
+
+  try {
+    player.give(camp)
+  } catch (error) {
+    console.error("[PROJECT DEADZONE][MineColonies] Failed to grant supply camp to " + player.username + ": " + error)
+    player.tell(Text.of("[PDZ] 補給キャンプの支給に失敗しました。管理者へログ確認を依頼してください。").red())
+    return false
+  }
+  data.putBoolean(DZ_MINECOLONIES_SUPPLY_CAMP_FLAG, true)
+  player.tell(Text.of("[PDZ] 個人用のMineColonies補給キャンプを1個支給しました。").green())
+  player.tell(Text.of("設置場所は自分で選べます。PDZ復興本部のNPCはこのキャンプには生成されません。").gray())
+  console.info("[PROJECT DEADZONE][MineColonies] Granted one supply camp to " + player.username)
+  return true
+}
+
+global.pdzEnsureMineColoniesSupplyCamp = dzEnsureMineColoniesSupplyCamp
+
 function dzPuffishCommand(player, command) {
   try {
     player.server.runCommandSilent(command.replace("{player}", player.username))
@@ -438,14 +471,6 @@ function dzApplyJob(player,id) {
     return false
   }
 
-  let dimension="unknown"
-  try { dimension=String(player.level.dimension) } catch (ignored) {}
-  if (dimension.indexOf("lobby:lobby_dimension")<0) {
-    player.tell(Text.of("[PROJECT DEADZONE] JOBは受付ロビー到着後に選択してください。ロビーへ移動します。").red())
-    player.runCommandSilent("lobby")
-    return false
-  }
-
   // Never mark a player as registered before the complete starter kit exists.
   // This keeps a broken/missing mod item from permanently consuming the claim.
   d.remove("dz_starter_specs_json")
@@ -461,6 +486,7 @@ function dzApplyJob(player,id) {
   d.putString("dz_job_name",j.name)
   d.putBoolean("dz_starter_received",true)
   d.putInt("dz_starter_grant_version",DZ_STARTER_GRANT_VERSION)
+  dzEnsureMineColoniesSupplyCamp(player)
   // Main story: choosing a JOB is an actual objective, not a manual checkbox.
   player.server.runCommandSilent(
     "ftbquests change_progress " + player.username + " complete 52F2869C3820DF98")
@@ -484,13 +510,8 @@ function dzApplyJob(player,id) {
     }
   })
 
-  player.tell(Text.of("Job selected: "+j.name).gold())
-  player.tell(
-    Text.of("[ 説明を確認したら初期集落へ出発 ]")
-      .aqua()
-      .clickRunCommand("/deadzonevillage depart")
-      .hover(Text.of("初期集落の生成と安全確認が完了してから移動します。")))
-  player.tell(Text.of("スターターキットを受け取りました。/deadzonejob info で確認できます。").green())
+  player.tell(Text.of("JOB登録完了: "+j.name).gold())
+  player.tell(Text.of("スターターキットと個人用補給キャンプを確認してください。").green())
   return true
 }
 
@@ -550,7 +571,7 @@ ServerEvents.commandRegistry(event => {
     let player=ctx.source.player, data=player.persistentData
     let id=data.getString("dz_job_id"), job=DZ_JOBS[id]
     if (!data.getBoolean("dz_job_chosen") || !job) {
-      player.tell(Text.of("先にロビー受付でJOBを登録してください。").red())
+      player.tell(Text.of("先に初期JOBを登録してください。").red())
       return 0
     }
     let specs=dzStarterSpecsFor(player,job,false)
@@ -568,6 +589,19 @@ ServerEvents.commandRegistry(event => {
     data.putInt("dz_starter_grant_version",DZ_STARTER_GRANT_VERSION)
     player.tell(Text.of("スターターキットを再検査し、不足分を復旧しました: "+job.name).green())
     return 1
+  }))
+
+  root.then(Commands.literal("supply_camp_claim").executes(ctx => {
+    let player=ctx.source.player, data=player.persistentData
+    if (!data.getBoolean("dz_job_chosen")) {
+      player.tell(Text.of("先に初期JOBを選択してください。").red())
+      return 0
+    }
+    if (data.getBoolean(DZ_MINECOLONIES_SUPPLY_CAMP_FLAG)) {
+      player.tell(Text.of("個人用MineColonies補給キャンプは受領済みです。").yellow())
+      return 0
+    }
+    return dzEnsureMineColoniesSupplyCamp(player) ? 1 : 0
   }))
 
   let choose=Commands.literal("choose")
@@ -729,6 +763,7 @@ ServerEvents.commandRegistry(event => {
     try { if (old) p.stages.remove("deadzone_job_"+old) } catch(e) {}
     d.remove("dz_job_chosen"); d.remove("dz_job_id"); d.remove("dz_job_name"); d.remove("dz_starter_received")
     d.remove("dz_starter_grant_version")
+    d.remove(DZ_MINECOLONIES_SUPPLY_CAMP_FLAG)
     d.remove("dz_retrain_free_used"); d.remove("dz_retrain_pending")
     let all=["Survival","Scavenging","Melee","Medical","Firearms","Fitness","Reload","Mechanics","Engineering","Armor"]
     all.forEach(k => { d.remove("dz_skill_"+k); d.remove("dz_skill_floor_"+k); d.remove("dz_skill_xp_"+k) })

@@ -1,12 +1,12 @@
 name = "PROJECT DEADZONE"
 author = "PROJECT DEADZONE Team"
-version = "ALPHA-20260821-P0-COMPAT3"
+version = "ALPHA-20260822-STABLE-ONBOARDING-MINECOLONIES1"
 pack-format = "packwiz:1.1.0"
 
 [index]
 file = "index.toml"
 hash-format = "sha256"
-hash = "83dd5d9fde8807bc35b94433668eb7d6a4f96da859ba509035f2d104ea4c20cb"
+hash = "6fa33ecff5ce9e23767d6f4efa88e397ded1db42f103556f306384f29ce05031"
 
 [versions]
 forge = "47.4.10"

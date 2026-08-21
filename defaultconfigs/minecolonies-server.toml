@@ -1,0 +1,6 @@
+# PROJECT DEADZONE
+# MineColonies is used for player-built camps and colonies.
+# Hostile raids are managed by PDZ, so MineColonies barbarians stay disabled.
+
+[combat]
+    dobarbariansspawn = false
