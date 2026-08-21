@@ -1,4 +1,4 @@
-// PROJECT DEADZONE Multiplayer Onboarding v0.7
+// PROJECT DEADZONE Multiplayer Onboarding v0.8
 // Deterministic Lobby -> JOB -> starter kit -> verified starter colony.
 
 const DZ_READY_SKILLS = [
@@ -76,24 +76,48 @@ function dzOfferSettlementDeparture(player) {
     .hover(Text.of("キャンプ、住民、スターターキットを検証してから移動します")))
 }
 
-// Aoi is the sole entry point. Opening the GUI from a teleport timer races
-// dimension/chunk loading on slow clients, so it is intentionally avoided.
+function dzIsLobbyRegistrar(target) {
+  if (!target) return false
+  try {
+    if (target.tags && (target.tags.contains("pdz_lobby_registrar") || target.tags.contains("dz_lobby_registrar"))) return true
+  } catch (ignored) {}
+
+  // Existing lobby worlds can retain an older Easy NPC entity without the
+  // current scoreboard tags.  Accept Aoi by type/name and repair the tags so
+  // one stale entity cannot silently break onboarding.
+  if (String(target.type) !== "easy_npc:humanoid") return false
+  let identity = ""
+  try { identity += String(target.name) } catch (ignored) {}
+  try { identity += " " + String(target.nbt) } catch (ignored) {}
+  return identity.indexOf("アオイ") >= 0 || identity.indexOf("登録受付官") >= 0
+}
+
+// Aoi is the sole entry point.  Easy NPC owns the visible conversation and its
+// "JOB登録を開始する" button runs /class gui.  KubeJS only repairs identity,
+// completes the prologue state and handles already-registered players.  Do not
+// cancel a first-time interaction here or Easy NPC's dialog never appears.
 ItemEvents.entityInteracted(event => {
   let player = event.player
   let target = event.target
   if (!player || player.level.clientSide || !target || !dzOnboardingIsLobby(player)) return
-  if (!target.tags || (!target.tags.contains("pdz_lobby_registrar") && !target.tags.contains("dz_lobby_registrar"))) return
+  if (!dzIsLobbyRegistrar(target)) return
 
-  event.cancel()
+  try {
+    target.tags.add("dz_lobby_registrar")
+    target.tags.add("pdz_lobby_registrar")
+    target.tags.add("pdz_lobby_registrar_dialog_v2")
+  } catch (ignored) {}
+
   try { target.runCommandSilent("tp @s ~ ~ ~ facing entity " + player.username + " eyes") } catch (ignored) {}
   let data = player.persistentData
-  if (data.getBoolean("dz_lobby_registrar_lock")) return
-  data.putBoolean("dz_lobby_registrar_lock", true)
-  player.server.scheduleInTicks(10, callback => {
-    if (player) player.persistentData.remove("dz_lobby_registrar_lock")
-  })
 
   if (data.getBoolean("dz_job_chosen")) {
+    event.cancel()
+    if (data.getBoolean("dz_lobby_registrar_lock")) return
+    data.putBoolean("dz_lobby_registrar_lock", true)
+    player.server.scheduleInTicks(10, callback => {
+      if (player) player.persistentData.remove("dz_lobby_registrar_lock")
+    })
     if (!data.getBoolean("dz_starter_received") || data.getInt("dz_starter_grant_version") < 6) {
       player.tell(Text.of("スターターキットの受領記録が不完全です。内容を再検査して不足分を支給します。").yellow())
       player.runCommandSilent("deadzonejob starter_claim")
@@ -108,7 +132,7 @@ ItemEvents.entityInteracted(event => {
     player.runCommandSilent("title @s clear")
     player.tell(Text.of("通信同期完了。生存者登録を開始します。").green())
   }
-  player.server.scheduleInTicks(4, callback => dzOpenInitialJobSelector(player))
+  console.info("[PDZ][Onboarding] Aoi dialog interaction accepted for " + player.username)
 })
 
 function dzReadyReport(player) {

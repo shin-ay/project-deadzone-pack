@@ -7062,7 +7062,7 @@ hash = "a891cd6f2ffcdbb3bd3afaeda7646f0f76661dd91049b9967d25caaa2fce5271"
 
 [[files]]
 file = "kubejs/data/project_deadzone/functions/lobby/setup.mcfunction"
-hash = "d782dc701e244644147b36e8191f3215ff67507e7f0ab096ec677b9e8d80fa3e"
+hash = "7124f1c7755a56d9d9fe1eb959d70713f1fc8162919eb5cd47f7a4f406e76a5a"
 
 [[files]]
 file = "kubejs/data/project_deadzone/functions/settlement/locate_guide.mcfunction"
@@ -8070,7 +8070,7 @@ hash = "2feb979c118f3786bee04de9fc2fb0b1854ba1a7ac61a52580adc4523692fce6"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_onboarding_v0_1.js"
-hash = "cb544d4a3ff67db6001f48ae0a8ff126a415371eaf1582aeffb8d272381ee1ff"
+hash = "f4513b7af7439c47d47153d32a9da0913fda2cd267623f05568ccd7badab9916"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_outpost_garrisons_v0_1.js"
