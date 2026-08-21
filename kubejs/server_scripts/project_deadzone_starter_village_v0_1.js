@@ -62,6 +62,14 @@ function dzStarterVerifyVillage(level, foundPos, holder) {
     let hinted = null
     try { hinted = holder.value() } catch (ignored) {}
     let baseX = Number(foundPos.getX()), baseY = Number(foundPos.getY()), baseZ = Number(foundPos.getZ())
+    // Forge/KubeJS can expose the locate result as a bare BlockPos. In that
+    // form Y is normally 0 and no structure holder is included. Probe at the
+    // real surface so StructureManager#getAllStructuresAt can recover the
+    // village structure from the located chunk.
+    if (!isFinite(baseY) || baseY <= level.getMinBuildHeight()) {
+      try { baseY = Number(level.getHeight(DZ_STARTER_HEIGHTMAP.MOTION_BLOCKING_NO_LEAVES, Math.floor(baseX), Math.floor(baseZ))) }
+      catch (ignored) { baseY = 64 }
+    }
     // Locate already returns a chunk inside/next to the structure.  A compact
     // verification ring avoids force-loading hundreds of chunks at first join.
     for (let ring = 0; ring <= 64; ring += 16) {
@@ -69,7 +77,10 @@ function dzStarterVerifyVillage(level, foundPos, holder) {
         if (ring > 0 && Math.abs(dx) !== ring && Math.abs(dz) !== ring) continue
         let px = baseX + dx, pz = baseZ + dz
         level.getChunk(Math.floor(px / 16), Math.floor(pz / 16))
-        let probe = new DZ_STARTER_BLOCK_POS(Math.floor(px), Math.floor(baseY), Math.floor(pz))
+        let probeY = baseY
+        try { probeY = Number(level.getHeight(DZ_STARTER_HEIGHTMAP.MOTION_BLOCKING_NO_LEAVES, Math.floor(px), Math.floor(pz))) }
+        catch (ignored) {}
+        let probe = new DZ_STARTER_BLOCK_POS(Math.floor(px), Math.floor(probeY), Math.floor(pz))
         let candidates = []
         if (hinted) candidates.push(hinted)
         try {
@@ -118,8 +129,24 @@ function dzStarterFindNativeVillage(level, player) {
     // leaves the player safely in Lobby and can be retried explicitly.
     let found = level.findNearestMapStructure(DZ_STARTER_VILLAGE_TAG, origin, 32, false)
     if (!found) return null
-    let pos = found.getFirst()
-    let holder = found.getSecond()
+    // Vanilla normally returns Pair<BlockPos, Holder<Structure>>, while the
+    // current Forge/KubeJS bridge returns BlockPos directly. Accept both so a
+    // successful locate is never mistaken for a failed village search.
+    let pos = null
+    let holder = null
+    try {
+      pos = found.getFirst()
+      holder = found.getSecond()
+    } catch (ignored) {
+      try {
+        found.getX()
+        pos = found
+      } catch (notBlockPos) {}
+    }
+    if (!pos) {
+      console.error("[PDZ][Starter Colony] unsupported locate result: " + found)
+      return null
+    }
     let verified = dzStarterVerifyVillage(level, pos, holder)
     if (!verified) {
       console.error("[PDZ][Starter Colony] locate returned an unverified/non-village result at " + pos)
