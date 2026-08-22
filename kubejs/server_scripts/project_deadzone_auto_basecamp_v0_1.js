@@ -1,10 +1,9 @@
-// PROJECT DEADZONE verified initial settlement bootstrap v0.3
-// Generation starts only after an explicit departure request from the lobby.
+// PROJECT DEADZONE verified initial settlement bootstrap v0.4
+// Stable onboarding: generate the original EasyNPC camp once after a player
+// has selected a JOB. This is separate from each player's MineColonies camp.
 
 const DZ_CAMP_STATE_KEY = "dz_auto_basecamp_state"
-// Retired by fixed starter-village v1.0. Keep this file only for admin
-// recovery commands used by old worlds; it must never bootstrap automatically.
-const DZ_CAMP_LEGACY_AUTO_ENABLED = false
+const DZ_CAMP_DIRECT_AUTO_ENABLED = true
 const DZ_CAMP_LAYOUT_VERSION = 3
 // Lobby briefing and JOB selection must not consume the whole generation
 // window. Ten in-game days is still conservative enough to avoid mutating an
@@ -480,10 +479,10 @@ function dzCampStartBootstrap(player) {
   return true
 }
 
-// Lobby transfers do not fire PlayerEvents.loggedIn again.  Start bootstrap
-// only after /deadzonevillage depart has explicitly armed the request flag.
+// The lobby flow is retired. Probe once per second and let the first player
+// who has completed JOB selection start the one-time world camp bootstrap.
 PlayerEvents.tick(event => {
-  if (!DZ_CAMP_LEGACY_AUTO_ENABLED) return
+  if (!DZ_CAMP_DIRECT_AUTO_ENABLED) return
   let player=event.player
   if (!player || !player.alive) return
   let probe=player.persistentData.getInt("dz_camp_entry_probe")+1
@@ -494,7 +493,6 @@ PlayerEvents.tick(event => {
   player.persistentData.putInt("dz_camp_entry_probe",0)
   if (!dzCampIsOverworld(player)) return
   if (!player.persistentData.getBoolean("dz_job_chosen")) return
-  if (!player.persistentData.getBoolean("dz_starter_depart_requested")) return
   if (player.server.persistentData.getInt(DZ_CAMP_STATE_KEY)!==0) return
   dzCampStartBootstrap(player)
 })
