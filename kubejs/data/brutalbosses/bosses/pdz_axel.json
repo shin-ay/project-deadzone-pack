@@ -1,0 +1,25 @@
+{
+  "entity": "tacz_hostiles:soldier",
+  "name": "\u30a2\u30af\u30bb\u30eb\u300e\u30ed\u30fc\u30c9\u30ad\u30f3\u30b0\u5148\u9063\u968a\u9577\u300f",
+  "visualscale": 1.16,
+  "experience": 450,
+  "protect_treasure": true,
+  "effects": {
+    "minecraft:fire_resistance": 0,
+    "minecraft:speed": 0
+  },
+  "attributes": {
+    "generic.max_health": 180,
+    "generic.follow_range": 64,
+    "generic.knockback_resistance": 0.65,
+    "generic.movement_speed": 0.3
+  },
+  "customattributes": {
+    "dropgear": 0,
+    "projectile_damage_bonus": 2
+  },
+  "ai-goals": {
+    "brutalbosses:aftercombatregen": { "amount": 1 }
+  },
+  "spawnatchest": {}
+}

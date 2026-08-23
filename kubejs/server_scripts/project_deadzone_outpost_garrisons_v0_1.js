@@ -149,15 +149,20 @@ function pdzGarIsSettlementSeed(marker){
 function pdzGarRecruitResidents(marker,player,faction,tag,spots){
   if(!pdzGarIsSettlementSeed(marker))return 0
   if(!(faction==='survivor'||faction==='civildef'||faction==='cdf'||faction==='independent'))return 0
-  // Recruits keeps ownership and relation logic authoritative. These residents
-  // are neutral settlement life, while PDZ faction squads remain the guards.
+  // Independent Recruits stay neutral. Survivor/CDF Recruits are explicit
+  // guards so only authored defenders receive friendly-fire and gear handling.
   let residentTag=tag+'_resident',types=faction==='civildef'||faction==='cdf'
     ? ['recruits:recruit','recruits:bowman']
     : ['recruits:recruit','recruits:nomad']
+  let extraTags=''
+  if(faction==='survivor'||faction==='civildef'||faction==='cdf'){
+    extraTags=',"dz_settlement_guard","dz_survivor_guard","dz_survivor","dz_friendly"'
+    if(faction==='civildef'||faction==='cdf')extraTags+=',"dz_faction_civil_defense"'
+  }
   let count=Math.min(2,Math.max(1,spots.length))
   for(let i=0;i<count;i++){
     let s=spots[(spots.length-1-i+spots.length)%spots.length]
-    player.runCommandSilent('execute positioned '+s.x+' '+s.y+' '+s.z+' run summon '+types[i%types.length]+' ~ ~ ~ {PersistenceRequired:1b,Tags:["dz_settlement_resident","dz_external_faction_npc","dz_garrison_bound","'+tag+'","'+residentTag+'"]}')
+    player.runCommandSilent('execute positioned '+s.x+' '+s.y+' '+s.z+' run summon '+types[i%types.length]+' ~ ~ ~ {PersistenceRequired:1b,Tags:["dz_settlement_resident","dz_external_faction_npc","dz_garrison_bound","'+tag+'","'+residentTag+'"'+extraTags+']}')
   }
   return count
 }
@@ -219,9 +224,14 @@ function pdzGarPulse(server){
     let closeToAny=false
     player.level.entities.forEach(marker=>{
     if(marker.tags&&marker.tags.contains('dz_wilderness_site')&&(marker.x-player.x)*(marker.x-player.x)+(marker.z-player.z)*(marker.z-player.z)<=PDZ_GAR_NOTICE*PDZ_GAR_NOTICE)closeToAny=true
-    if(!marker.tags||!marker.tags.contains('dz_wilderness_site')||seen[String(marker.uuid)])return
-    seen[String(marker.uuid)]=true
-    let id=pdzGarSiteId(marker),site=owners[id]||{},tag=marker.persistentData.getString('dz_garrison_tag')||pdzGarTag(id)
+    if(!marker.tags||!marker.tags.contains('dz_wilderness_site'))return
+    // Multiple detector markers may refer to the same logical structure.  The
+    // old UUID-based guard allowed every duplicate marker to materialise its
+    // own squad.  The stable site id is the authoritative deduplication key.
+    let id=pdzGarSiteId(marker)
+    if(seen[id])return
+    seen[id]=true
+    let site=owners[id]||{},tag=marker.persistentData.getString('dz_garrison_tag')||pdzGarTag(id)
     if(marker.persistentData.contains('dz_wild_garrison')&&!marker.persistentData.getBoolean('dz_wild_garrison')){
       pdzGarEntities(marker.level,tag).forEach(e=>e.discard())
       marker.persistentData.putBoolean('dz_garrison_active',false)

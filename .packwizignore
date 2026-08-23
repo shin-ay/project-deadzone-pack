@@ -26,10 +26,6 @@ resourcepacks/*
 !resourcepacks/PDZ_Audio_Test_v0.1/**
 shaderpacks/
 
-# Experimental boss encounters are paused until settlement onboarding is stable
-kubejs/data/brutalbosses/bosses/pdz_axel.json
-kubejs/server_scripts/project_deadzone_boss_encounters_v1.js
-
 # Retired custom territory/convoy implementations
 kubejs/server_scripts/project_deadzone_t0_convoy_v0_1.js
 kubejs/server_scripts/project_deadzone_faction_territory_v0_1.js

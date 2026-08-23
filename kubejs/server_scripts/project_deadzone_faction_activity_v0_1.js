@@ -11,6 +11,7 @@ const PDZ_ACT_AUTO_ENABLED = 'dz_activity_director_enabled_v1'
 const PDZ_ACT_AUTO_NEXT = 'dz_activity_director_next_v1'
 const PDZ_ACT_NATIVE_SETTLEMENT_MIGRATED = 'dz_native_settlement_activity_migrated_v1'
 const PDZ_ACT_CONVOY_RETIRED = 'dz_supply_convoy_retired_v2'
+const PDZ_ACT_RUNTIME_RETIRED = 'dz_legacy_activity_runtime_retired_v3'
 
 function pdzActRead(server,key) {
   let raw=server.persistentData.getString(key)
@@ -739,106 +740,74 @@ function pdzActDirectorPulse(server,player,forced) {
   return created
 }
 
-let PDZ_ACT_TICKS=0
+// The virtual convoy/activity runtime is retired.  Village Expansion,
+// Recruits and the PDZ site/garrison ledger now own settlements and local
+// encounters.  Keeping both runtimes active duplicated NPCs, notifications
+// and pathfinding load.  The ledger itself is preserved for site ownership.
+function pdzActRetireRuntime(server){
+  if(server.persistentData.getBoolean(PDZ_ACT_RUNTIME_RETIRED))return
+  let old=pdzActRead(server,PDZ_ACT_LIST)
+  pdzActWrite(server,PDZ_ACT_LIST,[])
+  server.persistentData.putBoolean(PDZ_ACT_AUTO_ENABLED,false)
+  server.persistentData.putBoolean(PDZ_ACT_NATIVE_SETTLEMENT_MIGRATED,true)
+  server.persistentData.putBoolean(PDZ_ACT_CONVOY_RETIRED,true)
+  ;['minecraft:overworld','minecraft:the_nether','minecraft:the_end'].forEach(dim=>{
+    server.runCommandSilent('execute in '+dim+' run kill @e[tag=dz_activity]')
+    server.runCommandSilent('execute in '+dim+' run kill @e[tag=dz_activity_bound]')
+  })
+  server.players.forEach(player=>{
+    player.persistentData.remove('dz_activity_noise')
+    player.persistentData.remove('dz_activity_horde_cooldown')
+  })
+  server.persistentData.putBoolean(PDZ_ACT_RUNTIME_RETIRED,true)
+  console.info('[PROJECT DEADZONE][Activity] retired legacy virtual activity runtime and cleared '+old.length+' saved activities.')
+}
+
+let PDZ_ACT_RETIRE_TICKS=0
 ServerEvents.tick(event=>{
-  PDZ_ACT_TICKS++
-  // Convoys were expensive and visually unreliable. Retire any activities
-  // left in an older save exactly once; outpost ownership itself is retained.
-  if(!event.server.persistentData.getBoolean(PDZ_ACT_CONVOY_RETIRED)){
-    let old=pdzActRead(event.server,PDZ_ACT_LIST)
-    let kept=old.filter(a=>String(a.type)!=='SUPPLY_CONVOY')
-    if(kept.length!==old.length)pdzActWrite(event.server,PDZ_ACT_LIST,kept)
-    event.server.persistentData.putBoolean(PDZ_ACT_CONVOY_RETIRED,true)
-    console.info('[PROJECT DEADZONE][Activity] retired '+(old.length-kept.length)+' legacy supply convoy activities.')
-  }
-  // One-time migration: Village Expansion / Recruits now own ordinary patrol,
-  // settlement and war simulation. PDZ manual tests and scripted convoys remain.
-  if(!event.server.persistentData.getBoolean(PDZ_ACT_NATIVE_SETTLEMENT_MIGRATED)){
-    event.server.persistentData.putBoolean(PDZ_ACT_AUTO_ENABLED,false)
-    event.server.persistentData.putBoolean(PDZ_ACT_NATIVE_SETTLEMENT_MIGRATED,true)
-    console.info('[PROJECT DEADZONE][Activity] automatic legacy director disabled; native settlement AI is authoritative.')
-  }
-  if(PDZ_ACT_TICKS%10===0){
-    let live=pdzActRead(event.server,PDZ_ACT_LIST),changed=false
-    live.forEach(a=>{if(a.materialized&&pdzActPhysicalWalk(event.server,a))changed=true})
-    if(changed)pdzActWrite(event.server,PDZ_ACT_LIST,live)
-  }
-  if(PDZ_ACT_TICKS%200!==0)return
-  pdzActAdvance(event.server,false)
-  if(PDZ_ACT_TICKS%1200===0){
-    pdzActScan(event.server)
-    let now=Date.now()
-    event.server.players.forEach(player=>{
-      let noise=player.persistentData.getInt('dz_activity_noise')
-      if(noise>=40&&now>=player.persistentData.getLong('dz_activity_horde_cooldown')&&Math.random()<0.35)
-        pdzActCreateHorde(event.server,player,false)
-      player.persistentData.putInt('dz_activity_noise',Math.max(0,noise-8))
-    })
-  }
-  if(PDZ_ACT_TICKS%6000===0&&event.server.persistentData.getBoolean(PDZ_ACT_AUTO_ENABLED)){
-    let player=event.server.players.length?event.server.players[0]:null
-    if(player)pdzActDirectorPulse(event.server,player,false)
-  }
+  PDZ_ACT_RETIRE_TICKS++
+  if(PDZ_ACT_RETIRE_TICKS===1||!event.server.persistentData.getBoolean(PDZ_ACT_RUNTIME_RETIRED))pdzActRetireRuntime(event.server)
 })
 
-// Noise is deliberately coarse. We record meaningful survival actions rather
-// than inspecting every nearby mob each tick.
-BlockEvents.broken(event=>{
-  if(!event.player||event.player.level.clientSide)return
-  event.player.persistentData.putInt('dz_activity_noise',Math.min(100,event.player.persistentData.getInt('dz_activity_noise')+3))
-})
-
-EntityEvents.hurt('minecraft:player',event=>{
-  let player=event.entity
-  if(!player||player.level.clientSide)return
-  player.persistentData.putInt('dz_activity_noise',Math.min(100,player.persistentData.getInt('dz_activity_noise')+5))
-})
-
-ServerEvents.commandRegistry(event=>{
+// Retain the legacy command implementation below only as migration reference.
+// It is deliberately not registered: several old subcommands create the
+// convoy/runtime that has been retired, and old localized messages were saved
+// with a broken encoding.
+if (false) ServerEvents.commandRegistry(event=>{
   const {commands:Commands}=event
   let root=Commands.literal('deadzoneactivity').requires(s=>s.hasPermission(2))
   root.then(Commands.literal('scan').executes(ctx=>{let n=pdzActScan(ctx.source.server).length;pdzActTell(ctx.source.player,'[ACTIVITY] Registered outposts: '+n,'green');return n}))
   root.then(Commands.literal('list').executes(ctx=>{pdzActList(ctx.source.player);return 1}))
   root.then(Commands.literal('sites').executes(ctx=>{pdzActSites(ctx.source.player);return 1}))
-  root.then(Commands.literal('spawn').then(Commands.literal('raider_supply').executes(ctx=>pdzActCreateConvoy(ctx.source.server,ctx.source.player)?1:0)))
-  root.then(Commands.literal('spawn').then(Commands.literal('cdf_patrol').executes(ctx=>pdzActCreatePatrol(ctx.source.server,ctx.source.player)?1:0)))
-  root.then(Commands.literal('spawn').then(Commands.literal('cdf_reinforcement').executes(ctx=>pdzActCreateReinforcement(ctx.source.server,ctx.source.player)?1:0)))
-  root.then(Commands.literal('spawn').then(Commands.literal('infected_horde').executes(ctx=>pdzActCreateHorde(ctx.source.server,ctx.source.player,true)?1:0)))
-  root.then(Commands.literal('spawn').then(Commands.literal('trade_caravan').executes(ctx=>pdzActCreateTradeCaravan(ctx.source.server,ctx.source.player)?1:0)))
-  root.then(Commands.literal('spawn').then(Commands.literal('raider_assault').executes(ctx=>pdzActCreateAssault(ctx.source.server,ctx.source.player,'raider')?1:0)))
-  root.then(Commands.literal('spawn').then(Commands.literal('remnant_assault').executes(ctx=>pdzActCreateAssault(ctx.source.server,ctx.source.player,'remnant')?1:0)))
+  function retired(ctx){
+    pdzActTell(ctx.source.player,'[ACTIVITY] 旧コンボイ／仮想移動システムは廃止済みです。拠点周辺イベントは現行の集落・駐屯システムが担当します。','gray')
+    return 0
+  }
+  root.then(Commands.literal('spawn').then(Commands.literal('raider_supply').executes(retired)))
+  root.then(Commands.literal('spawn').then(Commands.literal('cdf_patrol').executes(retired)))
+  root.then(Commands.literal('spawn').then(Commands.literal('cdf_reinforcement').executes(retired)))
+  root.then(Commands.literal('spawn').then(Commands.literal('infected_horde').executes(retired)))
+  root.then(Commands.literal('spawn').then(Commands.literal('trade_caravan').executes(retired)))
+  root.then(Commands.literal('spawn').then(Commands.literal('raider_assault').executes(retired)))
+  root.then(Commands.literal('spawn').then(Commands.literal('remnant_assault').executes(retired)))
   root.then(Commands.literal('auto').then(Commands.literal('on').executes(ctx=>{
-    ctx.source.server.persistentData.putBoolean(PDZ_ACT_AUTO_ENABLED,true)
-    ctx.source.server.persistentData.putLong(PDZ_ACT_AUTO_NEXT,Date.now()+60000)
-    pdzActTell(ctx.source.player,'[DIRECTOR] Automatic faction activity enabled. First check in 60s.','green');return 1
+    ctx.source.server.persistentData.putBoolean(PDZ_ACT_AUTO_ENABLED,false)
+    return retired(ctx)
   })))
   root.then(Commands.literal('auto').then(Commands.literal('off').executes(ctx=>{
     ctx.source.server.persistentData.putBoolean(PDZ_ACT_AUTO_ENABLED,false)
     pdzActTell(ctx.source.player,'[DIRECTOR] Automatic faction activity disabled.','yellow');return 1
   })))
   root.then(Commands.literal('auto').then(Commands.literal('status').executes(ctx=>{
-    let server=ctx.source.server,on=server.persistentData.getBoolean(PDZ_ACT_AUTO_ENABLED)
-    let wait=Math.max(0,Math.ceil((server.persistentData.getLong(PDZ_ACT_AUTO_NEXT)-Date.now())/1000))
-    pdzActTell(ctx.source.player,'[DIRECTOR] '+(on?'ON':'OFF')+' | Tier '+pdzActWorldTier(server)+' | next check '+wait+'s',on?'green':'gray');return on?1:0
+    pdzActTell(ctx.source.player,'[DIRECTOR] RETIRED / OFF | 拠点周辺イベントへ移行済み','gray');return 0
   })))
-  root.then(Commands.literal('auto').then(Commands.literal('pulse').executes(ctx=>pdzActDirectorPulse(ctx.source.server,ctx.source.player,true)?1:0)))
+  root.then(Commands.literal('auto').then(Commands.literal('pulse').executes(retired)))
   root.then(Commands.literal('noise').executes(ctx=>{
-    let p=ctx.source.player
-    pdzActTell(p,'[ACTIVITY] Noise '+p.persistentData.getInt('dz_activity_noise')+'/100 | horde cooldown '+Math.max(0,Math.ceil((p.persistentData.getLong('dz_activity_horde_cooldown')-Date.now())/1000))+'s','yellow')
-    return p.persistentData.getInt('dz_activity_noise')
+    pdzActTell(ctx.source.player,'[ACTIVITY] 旧ノイズ式ホード生成は廃止済みです。','gray')
+    return 0
   }))
-  root.then(Commands.literal('tick').executes(ctx=>{pdzActAdvance(ctx.source.server,true);pdzActTell(ctx.source.player,'[ACTIVITY] Advanced virtual activities.','green');return 1}))
-  root.then(Commands.literal('test_near').then(Commands.argument('id',PDZ_ACT_STRING.word()).executes(ctx=>{
-    let id=PDZ_ACT_STRING.getString(ctx,'id'),player=ctx.source.player,hit=0,list=pdzActRead(ctx.source.server,PDZ_ACT_LIST)
-    list.forEach(a=>{
-      if(a.id!==id||a.materialized||['ARRIVED','DESTROYED','CANCELLED'].indexOf(a.state)>=0)return
-      a.dimension=String(player.level.dimension);a.x=player.x+8;a.y=player.y;a.z=player.z;a.state='EN_ROUTE'
-      pdzActMaterialize(ctx.source.server,a,player);hit=1
-    })
-    pdzActWrite(ctx.source.server,PDZ_ACT_LIST,list)
-    pdzActTell(player,hit?'[ACTIVITY] Forced nearby contact: '+id:'[ACTIVITY] Activity cannot be materialized.',hit?'green':'red')
-    return hit
-  })))
+  root.then(Commands.literal('tick').executes(retired))
+  root.then(Commands.literal('test_near').then(Commands.argument('id',PDZ_ACT_STRING.word()).executes(retired)))
   root.then(Commands.literal('trace').then(Commands.argument('id',PDZ_ACT_STRING.word()).executes(ctx=>{
     let id=PDZ_ACT_STRING.getString(ctx,'id'),found=pdzActRead(ctx.source.server,PDZ_ACT_LIST).filter(a=>a.id===id)[0]
     if(!found){pdzActTell(ctx.source.player,'[ACTIVITY] Unknown id: '+id,'red');return 0}
@@ -849,6 +818,30 @@ ServerEvents.commandRegistry(event=>{
     list.forEach(a=>{if(a.id===id&&a.state!=='DESTROYED'&&a.state!=='ARRIVED'){a.state='CANCELLED';hit=1}})
     pdzActWrite(ctx.source.server,PDZ_ACT_LIST,list);pdzActTell(ctx.source.player,hit?'[ACTIVITY] Cancelled '+id:'[ACTIVITY] Nothing cancelled.',hit?'green':'red');return hit
   })))
+  event.register(root)
+})
+
+ServerEvents.commandRegistry(event=>{
+  const {commands:Commands}=event
+  let root=Commands.literal('deadzoneactivity').requires(s=>s.hasPermission(2))
+  function retired(ctx){
+    pdzActTell(ctx.source.player,'[ACTIVITY] 旧コンボイ・仮想移動システムは廃止済みです。拠点周辺イベントは現行の集落・駐屯システムが担当します。','gray')
+    return 0
+  }
+  root.then(Commands.literal('scan').executes(ctx=>{
+    let n=pdzActScan(ctx.source.server).length
+    pdzActTell(ctx.source.player,'[ACTIVITY] 登録済み拠点: '+n,'green')
+    return n
+  }))
+  root.then(Commands.literal('list').executes(ctx=>{pdzActList(ctx.source.player);return 1}))
+  root.then(Commands.literal('sites').executes(ctx=>{pdzActSites(ctx.source.player);return 1}))
+  root.then(Commands.literal('status').executes(ctx=>{
+    pdzActTell(ctx.source.player,'[DIRECTOR] RETIRED / OFF | 拠点周辺イベントへ移行済み','gray')
+    return 1
+  }))
+  root.then(Commands.literal('spawn').executes(retired))
+  root.then(Commands.literal('auto').executes(retired))
+  root.then(Commands.literal('noise').executes(retired))
   event.register(root)
 })
 
