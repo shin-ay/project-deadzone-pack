@@ -1,7 +1,7 @@
 {
-  "dmg_multi": 1.4,
+  "dmg_multi": 1.8,
   "exp_multi": 2.0,
-  "hp_multi": 2.5,
+  "hp_multi": 2.2,
   "identifier": "infectious:ancient_zombie_boss",
   "loot_multi": 1.5,
   "max_lvl": 1000000,

@@ -1,7 +1,7 @@
 {
-  "dmg_multi": 1.25,
+  "dmg_multi": 1.65,
   "exp_multi": 1.6,
-  "hp_multi": 1.75,
+  "hp_multi": 1.35,
   "identifier": "infectious:radioactive_zombie",
   "loot_multi": 1.3,
   "max_lvl": 1000000,

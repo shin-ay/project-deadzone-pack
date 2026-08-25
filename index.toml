@@ -336,9 +336,6 @@ hash = "4069ce1a439d8c37453c1b1e9f2037e0942674c7e48723a39b37eab245792ad4"
 file = "config/QuantifiedAPI/quantified_config.json"
 hash = "079718019b847ff71014cd6a16ab9dc7f719be88ab6e484ce6062c31cc2cb757"
 
-[[files]]
-file = "config/RPG-HUD"
-hash = "ad86f7afe87e246665db902ea4d285e81c7990d9723b5c1364434a634a1749b5"
 
 [[files]]
 file = "config/RadioTowersAndAirDrops.toml"
@@ -6420,45 +6417,18 @@ hash = "87de6975bc5d09c802825d386c26f54945bbe551f0c248744641477e17268e32"
 file = "kubejs/data/mmorpg/mmorpg_base_gear_types/rune_shield_middle.json"
 hash = "31803ae5b908db3d88de9baffa3a5b95debe7e5549a48a4e3cabb5f0c6749c16"
 
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_entity/specific_mobs/apocalypse_zombies_tank.json"
-hash = "048c55fb05b7e2fedc7478249cf22373b85406b96971fd4a07ef47c0890d9a8f"
 
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_entity/specific_mobs/infectious_ancient_zombie_boss.json"
-hash = "dbb12589b86e85ef1d3e3b8ea3ef2b0cf743bc09719a519ba89e2324defc9a9a"
 
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_entity/specific_mobs/infectious_giant_zombie.json"
-hash = "ca89fa8918cbbd16e2182fb616500241f2e6c4035a7b7e0ab3ed70d7193d62eb"
 
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_entity/specific_mobs/infectious_mecha_zombie.json"
-hash = "66456f86807c057d998fe09596b56b4e999b5a8d1395a73a6640c7e7e813cd8d"
 
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_entity/specific_mobs/infectious_mutant_zombie.json"
-hash = "5530a87472a7fe6426e285b3e57d16a4d0766cec61a0c575af2e56ed7be21a5d"
 
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_entity/specific_mobs/infectious_radioactive_zombie.json"
-hash = "06326df740dae3b5cfc007fede5d6d1148a8348bfbf9ddaa25c4f565eb8ffc24"
 
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_entity/specific_mobs/infectious_spore_zombie.json"
-hash = "c04370b3739b786615efe2614c410b09f07e360c8fcec1f20411ecab5f9acacb"
 
 [[files]]
 file = "kubejs/data/mmorpg/mmorpg_entity/specific_mobs/simpleenemymod_pmcunit.json"
 hash = "b064062b80f535a1e8ae85827d4869d222fc2b400ee4e4502fc6f121fbfde7ba"
 
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_entity/specific_mobs/simpleenemymod_ruunit.json"
-hash = "80c79f3be8e3ecb41f212c56ea7684509328e37c3c10e34a20a624128ca7cccf"
 
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_entity/specific_mobs/tacz_bandits_bandit.json"
-hash = "52e8348345c7b952f602a7975f8373cc639b85207250214cbaf958dda8d48677"
 
 [[files]]
 file = "kubejs/data/mmorpg/mmorpg_perk/arcanist_class.json"
@@ -21407,4 +21377,69 @@ metafile = true
 [[files]]
 file = "tacz/immersive-armorer.pw.toml"
 hash = "5f316c3735b248f22c3fabeece8ea930e146f39193b13b32f2d1f296c9f3790d"
+metafile = true
+
+[[files]]
+file = "config/RPG-HUD"
+hash = "12b050109291b71a8264125689275bde794f2b6514bbca78d29180b63c1a06f4"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_entity/specific_mobs/apocalypse_zombies_tank.json"
+hash = "f693025fa061277972586e338923f33b8e59ce0d29a4b31fe0ebb2a68e9e11dc"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_entity/specific_mobs/infectious_ancient_zombie_boss.json"
+hash = "b6269d34bd797cff4cab3d59ba30c1106a661f5078a84390f12cd4802595e8f4"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_entity/specific_mobs/infectious_giant_zombie.json"
+hash = "41d6f7794d5b7af38fa19b9cc0c951ed9474242144a49c67267b53f81903fd5a"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_entity/specific_mobs/infectious_mecha_zombie.json"
+hash = "39a3edce0742f16f53b89e2c0e7b2cd528ae0e2061551c41ed4fdcb36584414c"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_entity/specific_mobs/infectious_mutant_zombie.json"
+hash = "e9cf27731c20310d0f5e4918735d8440b5e648822dee279a062cefea9b5e2cb6"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_entity/specific_mobs/infectious_radioactive_zombie.json"
+hash = "d910bbdee0bcf554c2afc986962203c5678021009c4e97f2defb5f5e2c304b16"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_entity/specific_mobs/infectious_spore_zombie.json"
+hash = "02dc955cc01c22077011fb92a01185b6f449d8b226d13ad04cd9fe3c0504360a"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_entity/specific_mobs/simpleenemymod_ruunit.json"
+hash = "0d293a54c31730dcf6c698657adc7c8591d7c11999c9d2c30014f02d951ac288"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_entity/specific_mobs/tacz_bandits_bandit.json"
+hash = "85f3d49df419fbc2c942f250aed938b6f1a483c9ee4510d4cf9df10506b13e2f"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_entity/all_mobs_in_mod/infectious.json"
+hash = "1ce0dbf09ac87fa484bd47c1fa0d7ff26be46ba4461c9944ccacc7a63f4b547b"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_entity/all_mobs_in_mod/tacz_bandits.json"
+hash = "1c88343f34033efe885444f24f5bd6e3cdfccf9d6fdc463c3f4fc00d4913aa6b"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_entity/specific_mobs/minecraft_drowned.json"
+hash = "7a8c6c147d73c70b49b153192a1af3a61d98add0cd5b1ca9b9b6e180b67a2c38"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_entity/specific_mobs/minecraft_husk.json"
+hash = "7e3da10cdd9f8408e2c9d0be429f83c45acb595ec23cee6ee9ae7d76c98ea463"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_entity/specific_mobs/minecraft_zombie.json"
+hash = "cb9f713bef47bfdb1927870d0ec14b93965e8faea76ad3d68fcc3d8c0ff7844c"
+
+[[files]]
+file = "mods/rpg-hud.pw.toml"
+hash = "ff52e6211129229a050a638b13b8b7e52dfaee66cd3d1f967d89a5a9cc2ff3c3"
 metafile = true
