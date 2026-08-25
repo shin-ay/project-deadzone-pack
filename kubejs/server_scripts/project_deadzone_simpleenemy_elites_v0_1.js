@@ -8,6 +8,8 @@ const DZ_ELITE_TYPES = {
   "simpleenemymod:pmcunit": "PMC Specialist"
 }
 const DZ_ELITE_CHANCE_BY_REGION = [0.00, 0.02, 0.04, 0.06, 0.08]
+const DZ_ELITE_MNS_ENTITY_DATA = Java.loadClass('com.robertx22.mine_and_slash.capability.entity.EntityData')
+const DZ_ELITE_MNS_HEALTH = Java.loadClass('com.robertx22.mine_and_slash.uncommon.utilityclasses.HealthUtils')
 
 function dzEliteTier(server) {
   return Math.max(0, Math.min(4, server.persistentData.getInt("deadzone_world_tier")))
@@ -34,8 +36,18 @@ function dzPromoteElite(entity, title) {
   entity.runCommandSilent("attribute @s minecraft:generic.knockback_resistance base set 0.55")
   entity.runCommandSilent("effect give @s minecraft:speed infinite 0 true")
   entity.runCommandSilent("effect give @s minecraft:glowing infinite 0 true")
+  let mnsHealth = health
+  try {
+    let mns = DZ_ELITE_MNS_ENTITY_DATA.get(entity)
+    mns.setRarity(tier >= 4 ? 'legendary' : (tier >= 2 ? 'epic' : 'rare'))
+    mns.recalcStats_DONT_CALL()
+    mnsHealth = Math.round(DZ_ELITE_MNS_HEALTH.getMaxHealth(entity))
+    entity.health = entity.maxHealth
+  } catch (err) {
+    console.warn('[PROJECT DEADZONE][Elite] M&S profile failed: ' + err)
+  }
   entity.runCommandSilent("data merge entity @s {CustomName:'{\"text\":\"" + title + " [T" + tier + "]\",\"color\":\"gold\",\"bold\":true}',CustomNameVisible:1b,Health:" + health + ".0f}")
-  console.info("[PROJECT DEADZONE][Elite] promoted " + String(entity.type) + " T" + tier + " HP=" + health)
+  console.info("[PROJECT DEADZONE][Elite] promoted " + String(entity.type) + " T" + tier + " M&S HP=" + mnsHealth)
 }
 
 Object.keys(DZ_ELITE_TYPES).forEach(type => {

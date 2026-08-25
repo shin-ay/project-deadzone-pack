@@ -10,6 +10,7 @@ const PDZ_CHOIR_HITBOX = 'dz_choir_hitbox'
 const PDZ_MECH_HOME_RADIUS = 64
 const PDZ_MECH_HOME_VERTICAL = 24
 const PDZ_MECH_TARGET_RADIUS = 48
+const PDZ_MECH_MNS_ENTITY_DATA = Java.loadClass('com.robertx22.mine_and_slash.capability.entity.EntityData')
 
 const PDZ_MECH_DEFS = [
   {id:'02',tag:'dz_story_boss_argus_fragment',name:'適応障壁'},
@@ -74,6 +75,21 @@ function pdzMechId(entity){
 function pdzMechIsBoss(entity){
   if(!entity||!entity.tags)return false
   return entity.tags.contains('dz_boss_axel')||entity.tags.contains(PDZ_MECH_ACTIVE)||pdzMechId(entity)!==null
+}
+
+function pdzMechApplyMnsBossProfile(boss){
+  if(!boss||!boss.tags||boss.tags.contains('dz_mns_boss_profile'))return
+  try{
+    let data=PDZ_MECH_MNS_ENTITY_DATA.get(boss)
+    data.setRarity('boss')
+    data.recalcStats_DONT_CALL()
+    boss.addTag('dz_mns_boss_profile')
+    // Imaginary M&S health follows the vanilla health ratio. New encounters
+    // should begin at 100%, while the displayed number comes from M&S.
+    boss.health=boss.maxHealth
+  }catch(err){
+    console.warn('[PROJECT DEADZONE][Boss] M&S profile failed: '+err)
+  }
 }
 
 function pdzMechGunTag(id){
@@ -182,6 +198,7 @@ function pdzMechSpawnChoirHitboxes(boss){
 function pdzMechInit(boss,id){
   pdzMechEnsureHome(boss)
   pdzMechEquipBossGun(boss,id)
+  pdzMechApplyMnsBossProfile(boss)
   if(boss.tags.contains(PDZ_MECH_ACTIVE))return
   boss.addTag(PDZ_MECH_ACTIVE)
   boss.addTag('dz_boss_mech_'+id)
@@ -346,6 +363,7 @@ ServerEvents.tick(event=>{
     if(entity.tags&&entity.tags.contains('dz_boss_axel')&&!entity.tags.contains('dz_boss_showroom')){
       pdzMechEnsureHome(entity)
       pdzMechEquipBossGun(entity,'01')
+      pdzMechApplyMnsBossProfile(entity)
       tracked.push(entity)
     }
     if(!id||!entity.alive)return

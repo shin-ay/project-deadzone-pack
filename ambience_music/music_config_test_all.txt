@@ -31,7 +31,30 @@ playlist all_tracks = [
   "named_raider_iron_jackal.ogg" <0.5>,
   "named_remnant_red_echo.ogg" <0.5>,
   "named_aegis_glass_dominion.ogg" <0.5>,
-  "named_warden_signal_duel.ogg" <0.5>
+  "named_warden_signal_duel.ogg" <0.5>,
+  "theme_camp_dawn_patrol.ogg" <0.5>,
+  "theme_survivor_road_embers.ogg" <0.5>,
+  "theme_cdf_last_watch.ogg" <0.5>,
+  "theme_raider_scrap_horizon.ogg" <0.5>,
+  "theme_remnant_faded_orders.ogg" <0.5>,
+  "theme_aegis_white_room.ogg" <0.5>,
+  "theme_warden_ghost_signal.ogg" <0.5>,
+  "theme_infected_quiet_hunger.ogg" <0.5>,
+  "combat_infected_swarm_alarm.ogg" <0.5>,
+  "combat_infected_close_breath.ogg" <0.5>,
+  "boss_01_axel_fuel_king.ogg" <0.5>,
+  "boss_02_argus_fragment_broken_directive.ogg" <0.5>,
+  "boss_03_choir_vessel_black_resonance.ogg" <0.5>,
+  "boss_04_ash_captain_cinderline.ogg" <0.5>,
+  "boss_05_fuel_route_scout_dust_chase.ogg" <0.5>,
+  "boss_06_brass_hound_overheat.ogg" <0.5>,
+  "boss_07_white_stitch_false_triage.ogg" <0.5>,
+  "boss_08_marshal_graves_lockdown.ogg" <0.5>,
+  "boss_09_primordial_first_hunger.ogg" <0.5>,
+  "boss_10_echo7_dead_channel.ogg" <0.5>,
+  "boss_11_reactor_saint_critical_mass.ogg" <0.5>,
+  "boss_12_siege01_break_the_gate.ogg" <0.5>,
+  "boss_13_ancient_abomination_spore_crown.ogg" <0.5>
 ];
 
 begin

@@ -1,6 +1,6 @@
 # PROJECT DEADZONE Distribution
 
-Current pack version: `BETA-20260825-MULTIPLAYER-1`
+Current pack version: `BETA-20260825-MULTIPLAYER-2`
 
 This public repository contains only the packwiz manifest and multiplayer
 client configuration required to update PROJECT DEADZONE.
@@ -25,6 +25,11 @@ This build consolidates the previously unpublished multiplayer baseline with
 the current T0-T4 quests, MineColonies operations, settlement/life systems,
 boss encounters, Mine and Slash equipment unification, village loot,
 beginner industry guides, and village performance adjustments.
+
+MULTIPLAYER-2 adds the expanded camp/faction/Boss soundtrack with stable
+non-combat transitions, Mine and Slash-authoritative player/party/enemy HP,
+M&S Boss/Elite profiles, duplicate Scaling Health progression removal, and
+16-stack Potion support for the thirst-focused survival loop.
 
 Restart the client completely after the update. Existing worlds keep their
 already-generated structures; structure density and new chest loot are tested

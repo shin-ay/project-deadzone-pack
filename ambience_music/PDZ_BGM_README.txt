@@ -67,3 +67,15 @@ Named faction expansion v0.5
 - Use /pdzbgmtest music_named_<faction> to audition each state for 30 seconds.
 - These tracks use long intros/tails and Ambience Mini priority fading. They do
   not hard-cut the currently playing location theme.
+
+Location and boss expansion v0.6
+- Camp and all seven faction locations now rotate between two cues.
+- Named infected use two infected-combat cues and no longer borrow a Boss cue.
+- PDZ Boss 01-13 each has a dedicated state and concept-matched long-form cue.
+- Generic @boss_fight detection falls back to ordinary combat. Only an entity
+  carrying a PDZ Boss identity tag can activate the dedicated Boss layer.
+- Dedicated Boss state has priority 8, named encounters 6, combat 4 and
+  locations 1. A nearby Boss therefore wins without making ordinary zombies
+  sound like a Boss.
+- Full restart is required after adding the new mob-effect states. After that,
+  /pdzbgmtest music_boss_01 through music_boss_13 can audition each cue.

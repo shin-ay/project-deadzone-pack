@@ -12,14 +12,14 @@ playlist settlement = [
 // Location themes deliberately reuse the accepted cinematic set for this
 // first integration pass. They can be replaced one by one without changing
 // the server-side detection logic.
-playlist camp_theme = [ "theme_camp_last_light.ogg" <-4.5> ];
-playlist survivor_theme = [ "theme_survivor_open_road.ogg" <-5.0> ];
-playlist cdf_theme = [ "theme_cdf_watchline.ogg" <-5.0> ];
-playlist raider_theme = [ "theme_raider_rust_and_dust.ogg" <-4.5> ];
-playlist remnant_theme = [ "theme_remnant_iron_memory.ogg" <-5.0> ];
-playlist aegis_theme = [ "theme_aegis_cold_glass.ogg" <-5.0> ];
-playlist warden_theme = [ "theme_warden_machine_vigil.ogg" <-5.0> ];
-playlist infected_theme = [ "theme_infected_hollow_breath.ogg" <-5.0> ];
+playlist camp_theme = [ "theme_camp_last_light.ogg" <-4.5>, "theme_camp_dawn_patrol.ogg" <-4.5> ];
+playlist survivor_theme = [ "theme_survivor_open_road.ogg" <-5.0>, "theme_survivor_road_embers.ogg" <-5.0> ];
+playlist cdf_theme = [ "theme_cdf_watchline.ogg" <-5.0>, "theme_cdf_last_watch.ogg" <-5.0> ];
+playlist raider_theme = [ "theme_raider_rust_and_dust.ogg" <-4.5>, "theme_raider_scrap_horizon.ogg" <-4.5> ];
+playlist remnant_theme = [ "theme_remnant_iron_memory.ogg" <-5.0>, "theme_remnant_faded_orders.ogg" <-5.0> ];
+playlist aegis_theme = [ "theme_aegis_cold_glass.ogg" <-5.0>, "theme_aegis_white_room.ogg" <-5.0> ];
+playlist warden_theme = [ "theme_warden_machine_vigil.ogg" <-5.0>, "theme_warden_ghost_signal.ogg" <-5.0> ];
+playlist infected_theme = [ "theme_infected_hollow_breath.ogg" <-5.0>, "theme_infected_quiet_hunger.ogg" <-5.0> ];
 
 // Named encounters are short high-priority interruptions. When they end,
 // Ambience Mini resumes the paused location theme instead of starting over.
@@ -29,8 +29,22 @@ playlist named_raider = [ "named_raider_iron_jackal.ogg" <-3.0> ];
 playlist named_remnant = [ "named_remnant_red_echo.ogg" <-3.0> ];
 playlist named_aegis = [ "named_aegis_glass_dominion.ogg" <-2.5> ];
 playlist named_warden = [ "named_warden_signal_duel.ogg" <-2.5> ];
-playlist named_infected = [ "boss_determined_pursuit.ogg" <-2.5> ];
-playlist named_unknown = [ "boss_last_stand.ogg" <-2.0> ];
+playlist named_infected = [ "combat_infected_swarm_alarm.ogg" <-3.0>, "combat_infected_close_breath.ogg" <-3.0> ];
+playlist named_unknown = [ "combat_contact.ogg" <-3.0>, "combat_orchestral_assault.ogg" <-3.5> ];
+
+playlist boss_01 = [ "boss_01_axel_fuel_king.ogg" <-2.0> ];
+playlist boss_02 = [ "boss_02_argus_fragment_broken_directive.ogg" <-2.5> ];
+playlist boss_03 = [ "boss_03_choir_vessel_black_resonance.ogg" <-2.0> ];
+playlist boss_04 = [ "boss_04_ash_captain_cinderline.ogg" <-2.0> ];
+playlist boss_05 = [ "boss_05_fuel_route_scout_dust_chase.ogg" <-2.0> ];
+playlist boss_06 = [ "boss_06_brass_hound_overheat.ogg" <-2.0> ];
+playlist boss_07 = [ "boss_07_white_stitch_false_triage.ogg" <-2.5> ];
+playlist boss_08 = [ "boss_08_marshal_graves_lockdown.ogg" <-2.0> ];
+playlist boss_09 = [ "boss_09_primordial_first_hunger.ogg" <-2.0> ];
+playlist boss_10 = [ "boss_10_echo7_dead_channel.ogg" <-2.5> ];
+playlist boss_11 = [ "boss_11_reactor_saint_critical_mass.ogg" <-2.0> ];
+playlist boss_12 = [ "boss_12_siege01_break_the_gate.ogg" <-2.0> ];
+playlist boss_13 = [ "boss_13_ancient_abomination_spore_crown.ogg" <-2.0> ];
 
 playlist city = [
   "city_empty_windows.ogg" <-5.0>,
@@ -61,11 +75,18 @@ playlist night = [
   "night_watch.ogg" <-5.0>
 ];
 
+// Natural exploration states share one playlist. Rain/night/biome/cave
+// boundaries therefore no longer restart the music every few seconds; the
+// next track still rotates through the full environmental catalogue.
+playlist exploration = city ++ wild ++ rain ++ desert ++ ocean ++ underground ++ night;
+
 playlist combat = [
   "combat_contact.ogg" <-3.0>,
   "combat_heavy_battle.ogg" <-3.0>,
   "combat_better_future.ogg" <-3.0>,
-  "combat_orchestral_assault.ogg" <-3.5>
+  "combat_orchestral_assault.ogg" <-3.5>,
+  "combat_infected_swarm_alarm.ogg" <-3.0>,
+  "combat_infected_close_breath.ogg" <-3.0>
 ];
 
 playlist boss = [
@@ -85,6 +106,22 @@ begin
   begin
     when ( @dead ) play instant [ ];
 
+    // PDZ bosses have individual cues. Generic mobs with a boss-like health
+    // bar never enter this layer unless the server identifies the encounter.
+    when ( any effect in $effects has effect == "project_deadzone:music_boss_01" end ) play boss_01 priority 8;
+    when ( any effect in $effects has effect == "project_deadzone:music_boss_02" end ) play boss_02 priority 8;
+    when ( any effect in $effects has effect == "project_deadzone:music_boss_03" end ) play boss_03 priority 8;
+    when ( any effect in $effects has effect == "project_deadzone:music_boss_04" end ) play boss_04 priority 8;
+    when ( any effect in $effects has effect == "project_deadzone:music_boss_05" end ) play boss_05 priority 8;
+    when ( any effect in $effects has effect == "project_deadzone:music_boss_06" end ) play boss_06 priority 8;
+    when ( any effect in $effects has effect == "project_deadzone:music_boss_07" end ) play boss_07 priority 8;
+    when ( any effect in $effects has effect == "project_deadzone:music_boss_08" end ) play boss_08 priority 8;
+    when ( any effect in $effects has effect == "project_deadzone:music_boss_09" end ) play boss_09 priority 8;
+    when ( any effect in $effects has effect == "project_deadzone:music_boss_10" end ) play boss_10 priority 8;
+    when ( any effect in $effects has effect == "project_deadzone:music_boss_11" end ) play boss_11 priority 8;
+    when ( any effect in $effects has effect == "project_deadzone:music_boss_12" end ) play boss_12 priority 8;
+    when ( any effect in $effects has effect == "project_deadzone:music_boss_13" end ) play boss_13 priority 8;
+
     // Named threats override everything, but do not hard-cut. A lower
     // priority location track is paused and resumes after the threat leaves.
     when ( any effect in $effects has effect == "project_deadzone:music_named_survivor" end ) play named_survivor priority 6;
@@ -97,7 +134,7 @@ begin
     when ( any effect in $effects has effect == "project_deadzone:music_named_unknown" end ) play named_unknown priority 6;
 
     // Generic threat music wins over location music.
-    when ( @boss_fight ) play boss priority 5;
+    when ( @boss_fight ) play combat priority 4;
     when ( @in_combat ) play combat priority 4;
 
     // Per-player location states supplied by the PDZ server bridge.
@@ -110,27 +147,8 @@ begin
     when ( any effect in $effects has effect == "project_deadzone:music_warden" end ) play warden_theme priority 1;
     when ( any effect in $effects has effect == "project_deadzone:music_infected" end ) play infected_theme priority 1;
 
-    // Player-state takes priority over the surrounding biome.
-    interrupt when ( @under_water ) play ocean;
-    interrupt when ( @boat ) play ocean;
-    interrupt when ( @fishing ) play ocean;
-
-    // Underground must be evaluated before biome rules.
-    when ( $cave_score > 0.45 ) play underground;
-
-    // Safe populated spaces get their own calmer identity.
-    when ( @village ) play settlement;
-
-    // Biome-specific exploration layers. Ocean contains no bird samples.
-    when ( any tag in $biome_tags has (tag ~~ "is_ocean" || tag ~~ "is_beach") end )
-      play ocean;
-    when ( any tag in $biome_tags has (tag ~~ "is_desert" || tag ~~ "is_badlands" || tag ~~ "is_savanna") end )
-      play desert;
-
-    when ( @downfall ) play rain;
-    when ( @night ) play night;
-    when ( @day ) play daylight;
-
-    play wild;
+    // All natural exploration contexts use one stable rotation. Dedicated
+    // camp/site effects above and combat priorities remain contextual.
+    play exploration;
   end
 end

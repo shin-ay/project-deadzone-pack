@@ -14,15 +14,67 @@ hash = "02ba75b4b3c779b214882951c1e163c93c262c8b4c2566af7acc9c2d1fc0c943"
 
 [[files]]
 file = "ambience_music/CREDITS_AND_LICENSES.txt"
-hash = "338e4f22304284d891e3500c5c91f1569d7f6e51927b83eb17f1bf8a29b81431"
+hash = "395bc0bdd4553140028fa3d5f82c51244de70dec445a32a10cd3c079cf8a3156"
 
 [[files]]
 file = "ambience_music/PDZ_BGM_ALL.m3u8"
-hash = "211c17a9031680a9418de36fdb865577314d59d09b0338679fae740b4ae05d11"
+hash = "de03f8a8b9883897fb0fcedfac68866a446d1b32a446aff699508747c04a504a"
 
 [[files]]
 file = "ambience_music/PDZ_BGM_README.txt"
-hash = "8ca3d18c1f3b7aee6f05cdc28d45b8ef9419fa1b79233aa61d2ebae6abfc9d2f"
+hash = "d7834a9cb21eb20c4c68b47e1cfcd0ee2708c550edbdded274d1db6918821f67"
+
+[[files]]
+file = "ambience_music/music/boss_01_axel_fuel_king.ogg"
+hash = "2795e29c9238e6449fc6f9275642c9a49e1a510c643ebe41ca6a0a0843881418"
+
+[[files]]
+file = "ambience_music/music/boss_02_argus_fragment_broken_directive.ogg"
+hash = "886bcc5403c39ba51e0cae4182c900481c931efc8ae081b422cb75053e951670"
+
+[[files]]
+file = "ambience_music/music/boss_03_choir_vessel_black_resonance.ogg"
+hash = "8828a54e545e15edaf6897758f82f612a024f3bf66893cc59d6dff05fe3716b7"
+
+[[files]]
+file = "ambience_music/music/boss_04_ash_captain_cinderline.ogg"
+hash = "62d64ffeb661211bd6f1214fb1387f55cf83b4ced82413c9b4e1c2785b16fa90"
+
+[[files]]
+file = "ambience_music/music/boss_05_fuel_route_scout_dust_chase.ogg"
+hash = "4458801167ffae46976ea8c23fe10afa78116667c11c8548c52c70cdb5657b71"
+
+[[files]]
+file = "ambience_music/music/boss_06_brass_hound_overheat.ogg"
+hash = "44efac022ea02d4605d152db6474b4c2bd5e49b16bb23a641a775235505069fa"
+
+[[files]]
+file = "ambience_music/music/boss_07_white_stitch_false_triage.ogg"
+hash = "a528d0c33b82942d41e10f35c3cc0a540520411e8b4ef837f05af9146255e710"
+
+[[files]]
+file = "ambience_music/music/boss_08_marshal_graves_lockdown.ogg"
+hash = "50381a2513212edc54c9ee2e75ad6342866ec4617112a9e671b90aaf16407b39"
+
+[[files]]
+file = "ambience_music/music/boss_09_primordial_first_hunger.ogg"
+hash = "cfc7882df4c9585ac61b0e6634b076ad152cd00d148598d4dcc750ffd5a6ca0a"
+
+[[files]]
+file = "ambience_music/music/boss_10_echo7_dead_channel.ogg"
+hash = "699640c46a2bf818f0ba7e39d28a3665447dc9d6c5677f0f733213960b730146"
+
+[[files]]
+file = "ambience_music/music/boss_11_reactor_saint_critical_mass.ogg"
+hash = "8849846c80a476e35e8e8f18f6747e5031dd4f749d9a8d5c108faad94711a041"
+
+[[files]]
+file = "ambience_music/music/boss_12_siege01_break_the_gate.ogg"
+hash = "80e4db7c7884931e511d21fa36ade913065a8b1b62aa56fe865e9022893b4c7c"
+
+[[files]]
+file = "ambience_music/music/boss_13_ancient_abomination_spore_crown.ogg"
+hash = "250d5a43e428df2a8a6fdc47e8c42b3d7c81be183309b25dcdf498536f5dc39c"
 
 [[files]]
 file = "ambience_music/music/boss_determined_pursuit.ogg"
@@ -55,6 +107,14 @@ hash = "26ab397a81ea3cfc9cc5468191281f370e15d52522da5860ccb5de839bcbbcaf"
 [[files]]
 file = "ambience_music/music/combat_heavy_battle.ogg"
 hash = "d9e148809be8e148bec966801f379c56aa4dc4a5bdda8af8f5dcc2ef1090c19c"
+
+[[files]]
+file = "ambience_music/music/combat_infected_close_breath.ogg"
+hash = "64dbbaba26f3058c524855341b2a5ca1742f6d9c776aea7115cda6beb9b2e596"
+
+[[files]]
+file = "ambience_music/music/combat_infected_swarm_alarm.ogg"
+hash = "40228d0202da37958de0247761bcf885edb0c75d91e1d5a1be07c7850bd04a24"
 
 [[files]]
 file = "ambience_music/music/combat_orchestral_assault.ogg"
@@ -105,8 +165,20 @@ file = "ambience_music/music/theme_aegis_cold_glass.ogg"
 hash = "e756ad9bdcc18b7ca43e9b66d82985061a72d4d0afc586ac0a2d9506edbe4ea6"
 
 [[files]]
+file = "ambience_music/music/theme_aegis_white_room.ogg"
+hash = "cc33525adabb747112cdbab0b84ffe11d4908f580a9915735f8148f298fc4079"
+
+[[files]]
+file = "ambience_music/music/theme_camp_dawn_patrol.ogg"
+hash = "75a61927c250bf4ccdd1ccb6dc37ce596325d13b1d601122bbaf8c9f884ce0fb"
+
+[[files]]
 file = "ambience_music/music/theme_camp_last_light.ogg"
 hash = "7cee4c7ff2ce6c88d732ab394865bf01840d292ccfa77f86aea2c8468aa39d6e"
+
+[[files]]
+file = "ambience_music/music/theme_cdf_last_watch.ogg"
+hash = "b2b84eae8c80b8d0160868cc9343bfbe884110ca31162193593b0b53e2706d60"
 
 [[files]]
 file = "ambience_music/music/theme_cdf_watchline.ogg"
@@ -117,8 +189,20 @@ file = "ambience_music/music/theme_infected_hollow_breath.ogg"
 hash = "448654f54d5b05ff4340b08782336b8c4a10f4fd16a159733db0fa2719148a4e"
 
 [[files]]
+file = "ambience_music/music/theme_infected_quiet_hunger.ogg"
+hash = "7c4d48cace062955c5258b40c2c8504a691e52d2afd102b09d7d72f4e9573d3a"
+
+[[files]]
 file = "ambience_music/music/theme_raider_rust_and_dust.ogg"
 hash = "7e542af6b89aaed8d54fde69f01ccbfcf5ccc5ed5a51d0a98541692844ff4ff8"
+
+[[files]]
+file = "ambience_music/music/theme_raider_scrap_horizon.ogg"
+hash = "ab40961dd2f72e4d2d7b50a770333661414bb117beb08f13755c5d45f5c1fcd2"
+
+[[files]]
+file = "ambience_music/music/theme_remnant_faded_orders.ogg"
+hash = "74a8a16f1fc29f0ed43ca77ac62dc7c8c5295b3c86f72bb21d01d8d130c5c575"
 
 [[files]]
 file = "ambience_music/music/theme_remnant_iron_memory.ogg"
@@ -127,6 +211,14 @@ hash = "e1b95fed736095106c806280cd7624c9a8172d547e6a4b802ab41fcf8c817dd9"
 [[files]]
 file = "ambience_music/music/theme_survivor_open_road.ogg"
 hash = "de0d02f14f62e00eedfbb3adaf7eb0cd26706c17c11f71523d961b22ec3031b5"
+
+[[files]]
+file = "ambience_music/music/theme_survivor_road_embers.ogg"
+hash = "3836911a1a6aa0911b2f9945fba901fc18cad636dc5b7393af73ea628532ef43"
+
+[[files]]
+file = "ambience_music/music/theme_warden_ghost_signal.ogg"
+hash = "a2a0d2689e6a2f6b7e042f9e95a40e1ff8bf510c831cf8c30b92b64bfce7876b"
 
 [[files]]
 file = "ambience_music/music/theme_warden_machine_vigil.ogg"
@@ -146,15 +238,15 @@ hash = "a73d6b4af69de70a3f73092d24aed2bb5545d1cdcd4ee769c408f77c3f6d1fb9"
 
 [[files]]
 file = "ambience_music/music_config.txt"
-hash = "b707c9277f3a450fd3401ae36b79bfc398b488008d0a3cce52f6981dc1b2f238"
+hash = "c307a4f08b108c88699ba2a034b06f9366e60a960ab3c5ba9d369d4360815008"
 
 [[files]]
 file = "ambience_music/music_config_production.txt"
-hash = "b707c9277f3a450fd3401ae36b79bfc398b488008d0a3cce52f6981dc1b2f238"
+hash = "c307a4f08b108c88699ba2a034b06f9366e60a960ab3c5ba9d369d4360815008"
 
 [[files]]
 file = "ambience_music/music_config_test_all.txt"
-hash = "d7fc8c79eaee08ac4eb4f685c9fe7547ea4aa5c3ec5b31fcd8d34a59abb41f60"
+hash = "38f1c2ae33ef1974914361c39017636eee8406d4ba122457aa31eded3d0e0385"
 
 [[files]]
 file = "config/Apocalypse Now Config.toml"
@@ -246,7 +338,7 @@ hash = "079718019b847ff71014cd6a16ab9dc7f719be88ab6e484ce6062c31cc2cb757"
 
 [[files]]
 file = "config/RPG-HUD"
-hash = "5fd401aa6163ac97b01f50be06ce5af38e3f43d17a835a5e4bf88982cc923489"
+hash = "ad86f7afe87e246665db902ea4d285e81c7990d9723b5c1364434a634a1749b5"
 
 [[files]]
 file = "config/RadioTowersAndAirDrops.toml"
@@ -2858,7 +2950,7 @@ hash = "8b7211c25ebbc7fbcc2b6acba870baf14074e902656ccc44a67dad8ae91a3458"
 
 [[files]]
 file = "config/sedparties/active-preset.json"
-hash = "011035a4dea93bef5f04c65ff01b709e7a1bab7fc9022f2e3e801976c7d9d9b5"
+hash = "1a27410cb39bd64aea5dece5c8e358b240d66f4a42f8b32b9557e6c9c993cf25"
 
 [[files]]
 file = "config/sedparties/dims/default.json"
@@ -3279,6 +3371,10 @@ hash = "915f998e192c57a17cf14ff9842346d88276b4260622995656883554694a5266"
 [[files]]
 file = "defaultconfigs/partyhealth-server.toml"
 hash = "3ed8257302950822cd63426d2932776525c8338f786cca759e16d2249175a13b"
+
+[[files]]
+file = "defaultconfigs/scalinghealth-server.toml"
+hash = "c83d9732859d796315cfdbcff72a41b974109b3ca52f7dd1de4a55cb568f8271"
 
 [[files]]
 file = "defaultconfigs/skilltree-server.toml"
@@ -6323,6 +6419,46 @@ hash = "87de6975bc5d09c802825d386c26f54945bbe551f0c248744641477e17268e32"
 [[files]]
 file = "kubejs/data/mmorpg/mmorpg_base_gear_types/rune_shield_middle.json"
 hash = "31803ae5b908db3d88de9baffa3a5b95debe7e5549a48a4e3cabb5f0c6749c16"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_entity/specific_mobs/apocalypse_zombies_tank.json"
+hash = "048c55fb05b7e2fedc7478249cf22373b85406b96971fd4a07ef47c0890d9a8f"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_entity/specific_mobs/infectious_ancient_zombie_boss.json"
+hash = "dbb12589b86e85ef1d3e3b8ea3ef2b0cf743bc09719a519ba89e2324defc9a9a"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_entity/specific_mobs/infectious_giant_zombie.json"
+hash = "ca89fa8918cbbd16e2182fb616500241f2e6c4035a7b7e0ab3ed70d7193d62eb"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_entity/specific_mobs/infectious_mecha_zombie.json"
+hash = "66456f86807c057d998fe09596b56b4e999b5a8d1395a73a6640c7e7e813cd8d"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_entity/specific_mobs/infectious_mutant_zombie.json"
+hash = "5530a87472a7fe6426e285b3e57d16a4d0766cec61a0c575af2e56ed7be21a5d"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_entity/specific_mobs/infectious_radioactive_zombie.json"
+hash = "06326df740dae3b5cfc007fede5d6d1148a8348bfbf9ddaa25c4f565eb8ffc24"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_entity/specific_mobs/infectious_spore_zombie.json"
+hash = "c04370b3739b786615efe2614c410b09f07e360c8fcec1f20411ecab5f9acacb"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_entity/specific_mobs/simpleenemymod_pmcunit.json"
+hash = "b064062b80f535a1e8ae85827d4869d222fc2b400ee4e4502fc6f121fbfde7ba"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_entity/specific_mobs/simpleenemymod_ruunit.json"
+hash = "80c79f3be8e3ecb41f212c56ea7684509328e37c3c10e34a20a624128ca7cccf"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_entity/specific_mobs/tacz_bandits_bandit.json"
+hash = "52e8348345c7b952f602a7975f8373cc639b85207250214cbaf958dda8d48677"
 
 [[files]]
 file = "kubejs/data/mmorpg/mmorpg_perk/arcanist_class.json"
@@ -10282,7 +10418,7 @@ hash = "733e97bc1453cd2771ca741ab2052bd0da84c67fb8d3f6f52249ce4845eed10f"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_adaptive_music_v0_1.js"
-hash = "8b1d57f984ac4ddaccfec3922d48c71971dc4cbaa04160137482f14f11fa9158"
+hash = "9b2e5b94e7440c3012be4d6b05b8b0f9bf43b47a005ead568dc64d5363f98aec"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_ammo_reload_perks_v0_1.js"
@@ -10318,7 +10454,7 @@ hash = "f65f3f9968b2f676460d97b6ea9fd73a69d56e07c3f6453ea3259bc082f644e2"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_boss_mechanics_v0_1.js"
-hash = "795dd15fb54beddda262c2a37e9c695de6dbcc99c9d3c1d0a2c3344408fec2fc"
+hash = "4425c7e85fb6d3e1496710abdf0477f84f0e78ae5cc8525981e4ef6ba72155cc"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_buddy_control_v0_1.js"
@@ -10594,7 +10730,7 @@ hash = "49c04a4195f1dae281d4581ddcce17fdffb3acee683c1c36a8bcc0d43002cddf"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_simpleenemy_elites_v0_1.js"
-hash = "67610eec8003501d53b09e186a078eda98ec0968ceac300483fcbb8431b5f870"
+hash = "a4078fd16b239ee3fd5f597f865cdf30eebdfc62726125086b8522eea0dc4d00"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_skill_effects_v0_1.js"
@@ -10634,7 +10770,7 @@ hash = "41674e022663b6fdae9d6dedb786f4854a4ae08762ab7dcf789b0d8e54b4c61c"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_story_progress_v0_1.js"
-hash = "5634890ebc727821c5dc679461575da6565dd2cdd83bd4669e925c2984385023"
+hash = "c73e046e0c1038abc44ef982f375cd55412271d66619b9c00d629130a8d854cc"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_story_progression_v0_1.js"
@@ -10770,7 +10906,7 @@ hash = "b254cfbe38114053d235c38f0006608c5749921be4982f300be21e748baed8dc"
 
 [[files]]
 file = "kubejs/startup_scripts/project_deadzone_music_states_v0_1.js"
-hash = "9e95774e6c8b45c5d3d74c4beeb5a8c0c398711f6a77dbcec7fce1ca4041c31d"
+hash = "f27074e22e1eaf32c2bf529ae92f4c5064118a9e2af7f93f3858a7bd49be059f"
 
 [[files]]
 file = "kubejs/startup_scripts/project_deadzone_skill_forge_effects_v0_1.js"
@@ -12297,8 +12433,8 @@ hash = "07018277086bf1bdc3f795777f0c15e50a88a0f5739863fb116679f29ce6db8c"
 metafile = true
 
 [[files]]
-file = "mods/sedparties-1.20.1-2.0-beta-p.7.1-pdzfix2.jar"
-hash = "1a14307ed55d6a72ba582fc7a3723049083dc33d2fc8020c62f9f24361dd834d"
+file = "mods/sedparties-1.20.1-2.0-beta-p.7.1-pdzfix3-mnshealth.jar"
+hash = "9924c1877623cc9ad2e32305716efbf8f165b56f67a6a8d050ebd821a0c25ecf"
 
 [[files]]
 file = "mods/selene.pw.toml"
@@ -12403,6 +12539,11 @@ metafile = true
 [[files]]
 file = "mods/spice-of-life-carrot-edition.pw.toml"
 hash = "08faa8239705d280e41d353888bf717906fe71b1d5b9278bac9f5cd87b07efb3"
+metafile = true
+
+[[files]]
+file = "mods/stackablepotions-forge.pw.toml"
+hash = "4e665f1f9fa7bb5f8d11d1e643cf486967ad6b1b850ac0bd9949e9cbd41641f1"
 metafile = true
 
 [[files]]

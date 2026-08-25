@@ -45,6 +45,16 @@ combat_orchestral_assault.ogg is a slower, longer rearrangement of the CC0 Hope
 and Determined Pursuit sources with a quiet Dirty Rain ambience layer. All
 source creators and links are listed above.
 
+PDZ location and boss suites v0.6
+---------------------------------
+The files theme_*_dawn_patrol / road_embers / last_watch / scrap_horizon /
+faded_orders / white_room / ghost_signal / quiet_hunger, the two
+combat_infected_* cues, and boss_01_* through boss_13_* are alternate masters
+and long-form suites derived exclusively from the CC0 sources already listed
+above. Passages were reordered and crossfaded, then given encounter-specific
+tempo, spectral, ambience and loudness treatment. No additional third-party
+music or new licence was introduced.
+
 PDZ named faction masters v0.5
 ------------------------------
 The following five long-form encounter masters are derived from CC0 sources.

@@ -3,6 +3,8 @@
 // campaign objectives.
 
 const DZ_STORY_DECREE_ITEM = Java.loadClass('io.ejekta.bountiful.content.DecreeItem')
+const DZ_STORY_MNS_ENTITY_DATA = Java.loadClass('com.robertx22.mine_and_slash.capability.entity.EntityData')
+const DZ_STORY_MNS_HEALTH = Java.loadClass('com.robertx22.mine_and_slash.uncommon.utilityclasses.HealthUtils')
 
 const DZ_STORY_QUESTS = {
   prologue: "4262970F1B621A1D",
@@ -282,14 +284,24 @@ function dzScaleFacilityBoss(server, boss) {
     || !boss.alive || boss.health <= 0
     || boss.persistentData.getBoolean("dz_party_scaled")) return
   let party = dzFacilityPartySize(server, boss)
-  let healthScale = Math.min(2.5, 1.0 + (party - 1) * 0.22)
-  let scaledHealth = Math.max(20, Math.round(boss.maxHealth * healthScale))
+  let levelBonus = Math.min(12, (party - 1) * 2)
+  let scaledHealth = 0
+  try {
+    let mns = DZ_STORY_MNS_ENTITY_DATA.get(boss)
+    mns.setRarity('boss')
+    if (levelBonus > 0) mns.setLevel(mns.getLevel() + levelBonus)
+    mns.recalcStats_DONT_CALL()
+    scaledHealth = Math.round(DZ_STORY_MNS_HEALTH.getMaxHealth(boss))
+    boss.addTag('dz_mns_boss_profile')
+  } catch (err) {
+    console.warn('[DEADZONE STORY] M&S party scaling failed: ' + err)
+    scaledHealth = Math.round(boss.maxHealth)
+  }
   let armor = Math.min(16, 4 + (party - 1) * 1.5)
-  boss.runCommandSilent("attribute @s minecraft:generic.max_health base set " + scaledHealth)
   boss.runCommandSilent("attribute @s minecraft:generic.armor base set " + armor)
   boss.runCommandSilent("attribute @s minecraft:generic.knockback_resistance base set 0.75")
   boss.runCommandSilent("effect give @s minecraft:glowing infinite 0 true")
-  boss.health = scaledHealth
+  boss.health = boss.maxHealth
   boss.persistentData.putBoolean("dz_party_scaled", true)
   boss.persistentData.putInt("dz_party_size", party)
 
@@ -306,7 +318,7 @@ function dzScaleFacilityBoss(server, boss) {
       " run function " + spawnFunction)
   }
   server.runCommandSilent('tellraw @a [{"text":"[MISSION] ","color":"gold","bold":true},' +
-    '{"text":"Party ' + party + '人に合わせBossを強化（HP ' + scaledHealth +
+    '{"text":"Party ' + party + '人に合わせBossを強化（M&S HP ' + scaledHealth +
     ' / 護衛 ' + escorts + '）","color":"yellow"}]')
   console.info("[DEADZONE STORY] Party scaled boss=" + String(boss.uuid) +
     " players=" + party + " hp=" + scaledHealth + " escorts=" + escorts)
