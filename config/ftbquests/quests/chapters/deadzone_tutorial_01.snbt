@@ -55,10 +55,11 @@
 		{
 			dependencies: ["766FE33E74D2F108"]
 			description: [
-				"Base Coreを右クリックして「生存者台帳」を選ぶと、World Tier、JOB、M\\&S連携、身体状態、Camp Rank、物流、勢力判断、近隣集落を一度に確認できる。"
-				"表示された項目をクリックすると、各MOD・各システム本来の詳細画面へ移動する。台帳自体は数値や進行を変更しない。"
+				"Base Coreを通常右クリックすると、このCamp Control案内画面が直接開く。コマンド入力や大量のチャットを読む必要はない。"
+				"反復依頼はキャンプ内のBounty Board、進行と解説はFTB Quests、取引・治療・個人サービスは担当NPCの会話画面を使う。"
+				"動的な監査や復旧など未移行の詳細機能だけ、Base Coreをスニーク右クリックして暫定の詳細管理を開く。"
 			]
-			icon: "minecraft:writable_book"
+			icon: "kubejs:deadzone_base_core"
 			id: "6D56010000000101"
 			subtitle: "解放条件: 「生存者登録」を完了"
 			rewards: [{
@@ -68,10 +69,10 @@
 			}]
 			tasks: [{
 				id: "6D56010000002101"
-				title: "生存者台帳を開いた"
+				title: "Camp Controlを開いた"
 				type: "custom"
 			}]
-			title: "迷ったら生存者台帳"
+			title: "迷ったらCamp Control"
 			x: 2.0d
 			y: -2.0d
 		}

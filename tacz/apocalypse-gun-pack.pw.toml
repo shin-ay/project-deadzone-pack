@@ -1,0 +1,13 @@
+name = "[TaCZ] Apocalypse Gun Pack"
+filename = "Apocalypse_v1.1.7_G.zip"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "f8514b6e4b204db4a849b9c2e143d948af8dd5a9"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 7287709
+project-id = 1097111

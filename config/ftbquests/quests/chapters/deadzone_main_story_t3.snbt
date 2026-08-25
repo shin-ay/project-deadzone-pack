@@ -182,7 +182,7 @@
 			dependencies: ["0E8A3FB0BED9A091"]
 			description: [
 				"ARGUS-9の最終処理を選択する。"
-				"必要条件が揃うと破壊・再設定・分離の選択ボタンが自動表示される。閉じた場合はBase Coreの「ARGUS-9最終判断」から再表示できる。"
+			"必要条件が揃うと破壊・再設定・分離の選択ボタンが自動表示される。閉じた場合はBase Coreをスニーク右クリックし、暫定の詳細管理にある「ARGUS-9最終判断」から再表示できる。"
 			]
 			icon: "apocalypsenow:badge"
 			id: "5EF7DA85993329F7"

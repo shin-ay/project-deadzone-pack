@@ -29,6 +29,8 @@ ftbquests change_progress @a[distance=..64] complete 1920AEAAF4D75E94
 
 # Functional Base Core.
 setblock ~24 ~11 ~16 kubejs:deadzone_base_core
+# One physical board for repeatable camp work. Preserve existing board data on refresh.
+execute if block ~12 ~1 ~27 minecraft:air run setblock ~12 ~1 ~27 bountiful:bountyboard
 summon minecraft:marker ~24.5 ~11 ~16.5 {Tags:["dz_basecamp_core_anchor"]}
 
 # Delivery inventory. The two orange markers form one double barrel station.

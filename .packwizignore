@@ -22,8 +22,9 @@ config/QuantifiedAPI/cache/
 *.log
 *.tmp
 
-# External bundles are added through explicit packwiz metadata later
-tacz/
+# TaCZ ZIP binaries stay outside Git; explicit CurseForge metafiles are indexed.
+tacz/*
+!tacz/*.pw.toml
 resourcepacks/*
 !resourcepacks/PDZ_Audio_Test_v0.1/
 !resourcepacks/PDZ_Audio_Test_v0.1/**

@@ -1,12 +1,12 @@
 name = "PROJECT DEADZONE"
 author = "PROJECT DEADZONE Team"
-version = "BETA-20260825-MULTIPLAYER-2"
+version = "BETA-20260825-MULTIPLAYER-3"
 pack-format = "packwiz:1.1.0"
 
 [index]
 file = "index.toml"
 hash-format = "sha256"
-hash = "b388ff18e566f50cd49342748afcfc6c073f7c7aae8ab423ef9aaa1a6f804270"
+hash = "1ff39698a8f31f22931d6f50ce276e92426e9cf725470339c2b3a628e651d8b7"
 
 [versions]
 forge = "47.4.10"

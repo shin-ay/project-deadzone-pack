@@ -12,7 +12,7 @@
 			dependencies: ["1B82208C73A56C92"]
 			description: [
 				"PDZは独自の負傷ゲージを追加しない。Legendary Survival Overhaulの8部位HPと、The Hordesを含む既存感染Effectが正本。"
-				"Base Coreの「医療・治療」で実データを診断する。70%以上は安定、40～69%は軽傷、40%未満は重傷として治療方針を分ける。"
+			"Base Coreをスニーク右クリックし、暫定の詳細管理にある「医療・治療」で実データを診断する。70%以上は安定、40～69%は軽傷、40%未満は重傷として治療方針を分ける。"
 			]
 			icon: "minecraft:compass"
 			id: "6D4F010000000101"
@@ -211,7 +211,7 @@
 				"6D43110000000101"
 			]
 			description: [
-				"所有するMineColoniesコロニーでHospitalを完成させ、Base Coreの「医療・治療」からHospital監査を選ぶ。"
+			"所有するMineColoniesコロニーでHospitalを完成させ、Base Coreをスニーク右クリックして暫定の詳細管理にある「医療・治療」からHospital監査を選ぶ。"
 				"病院Lv1～5はCamp重傷処置の価格、時間、回復量へ直接反映される。建材を受け取っただけでは達成にならない。"
 			]
 			icon: "minecolonies:blockhuthospital"

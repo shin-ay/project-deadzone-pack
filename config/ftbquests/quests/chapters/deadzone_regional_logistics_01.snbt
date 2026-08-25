@@ -11,7 +11,7 @@
 		{
 			dependencies: ["6D5001000000010B"]
 			description: [
-				"Survivor CampのBase Coreを右クリックし、「地域物流」で物流ボードを開く。"
+			"Survivor CampのBase Coreをスニーク右クリックし、暫定の詳細管理から「地域物流」で物流ボードを開く。"
 				"車両を所有するだけでは航路にならない。物資を積み、用途に合う交通手段で往復して初めて地域サービスへ接続される。"
 			]
 			icon: "minecraft:compass"
@@ -198,7 +198,7 @@
 				"7100000000000004"
 			]
 			description: [
-				"Gas Station燃料ルートと地域航路を両方稼働させる。Base Coreの「燃料ルート管理」にある日次補給が航路ごとに成長する。"
+			"Gas Station燃料ルートと地域航路を両方稼働させる。Base Coreをスニーク右クリックし、暫定の詳細管理にある「燃料ルート管理」の日次補給が航路ごとに成長する。"
 				"基本はSolid Fuel 1。道路でRepair Kit、鉄道で追加燃料、海路で食料、空路でBandageが追加される。"
 			]
 			icon: "minecraft:bucket"

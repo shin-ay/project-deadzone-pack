@@ -1334,7 +1334,7 @@ hash = "24d2166c847c2942d9b286643ca90e34a961a8772df2faae40125cfaefcf19a0"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/deadzone_camp_development_01.snbt"
-hash = "fa3499bb96ac26d44da8b72a34a8c8e574206fcd748d59476ec074a020739562"
+hash = "b81dc5d1fac044799085cbc0f32f487aeba3e179ccce55a6dbb59b450e3978fe"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/deadzone_camp_personal_02.snbt"
@@ -1342,7 +1342,7 @@ hash = "399b96a4690b48e615d69587e462de836958b446c47dd367e22f4ea5d50cca81"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/deadzone_camp_restoration_fuel_01.snbt"
-hash = "6b0c4d0755889f3bf011838bc09d35d1b3af4aa0029661909705e2820da6007e"
+hash = "845a55f9aa265a8ec3b5100d6156fa5d2f1cdeb8a9c7af4f6c813aeea99f1673"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/deadzone_camp_sidequests_01.snbt"
@@ -1354,11 +1354,11 @@ hash = "8622bedda18507447ca7717d0ac284790b070950d7709c4c5c4b76414e0768ec"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/deadzone_community_economy_01.snbt"
-hash = "59b052f4232f99b254598964a13cfe9888c27e37e1ec5a8ebfcf52fc50fdeb9f"
+hash = "9055e1653a7be4d874491ca40dfbb5e01ede26e25c182d6ead45f629adaab76e"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/deadzone_cooking_menus_01.snbt"
-hash = "de007eb29e0edf7ebb4b2dc5e1b308f2e402b612fe10c51c8216807a4d4da32d"
+hash = "798b8a0d7c2910dc5bc2054e313229cd101a0383072371049ee4450a5c2dbeaf"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/deadzone_create_beginner_tutorial_01.snbt"
@@ -1366,7 +1366,7 @@ hash = "bae426484485215a9209ba817f53186b944af37f2a9f03d65d5482051a7e4534"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/deadzone_defense_recovery_01.snbt"
-hash = "100474795e4ef9ffa8c7d1365082e7d574e5dbd20b8a9faa0cd76cc256bcb566"
+hash = "1992aadeebf89cdeebdfe2b4c487d1d9c0b8332e1dd41df64e880730a81d6f9c"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/deadzone_enchanting_01.snbt"
@@ -1374,7 +1374,7 @@ hash = "a0e85348066aa70553029bf394bca005fe45f0b6429a64d12309f1f3794e4151"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/deadzone_faction_storylines_01.snbt"
-hash = "24be26676df60c698b40385bacbdb9e64fe8e5c928a3f13e32ad83141af9cae2"
+hash = "a5616fa6a184a873632b9dd9bb01f449b259540e508dc02bd8d8dce17551063f"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/deadzone_field_archives_01.snbt"
@@ -1386,7 +1386,7 @@ hash = "d92d6c5d78e9a3a7374667a3c596f99a04e1b2c689b78d1b9a975f627fe162e6"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/deadzone_health_recovery_01.snbt"
-hash = "515dbe71aee71e242216b5c86183ebd71ae3a09bcc3c3182de12ac1cbb74dc5f"
+hash = "77f6404f5dd3fa32006bef1f0ed8e37cdbd741e4b51e4d32d205f9f1d5a19c22"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/deadzone_hospital_story_01.snbt"
@@ -1398,11 +1398,11 @@ hash = "3580101cadc6086e7b8780c4e7ec0fa8d57f12c54e32ee3bef1cca268e09c933"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/deadzone_life_quality_market_01.snbt"
-hash = "760e8f7b4ecdd9c8c44a7d32b5b77291e8706ed9e8265480b15e8b06e4be5f0c"
+hash = "1fce914b5950dcf230b86a92eba53ddf6ed04edd2e5059305bfff55e48100d9c"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/deadzone_life_supply_reputation_01.snbt"
-hash = "649eebbea6bfc4b9fabffbab0dc9e13f15db0753a96154b94dc598ec505d45aa"
+hash = "1a2f86d58bca1f33002d42373ee37569497316708539aab8b83266bf663a4e1d"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/deadzone_main_story_01.snbt"
@@ -1414,11 +1414,11 @@ hash = "9dd8fc1c31785a51736b33ad033448d2e36bde42e4f1434d2b685cd87b04bd0c"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/deadzone_main_story_t2.snbt"
-hash = "e28d72c1176573e93ab5bd945f46330813596a05f0f574908f67b3b2e8737b03"
+hash = "94f420493dd9fd23d45837246a6a0814f1a0fd6661d3294d7074ad63f5c14147"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/deadzone_main_story_t3.snbt"
-hash = "00fea1920701f91fc369cd4a595e148f5f86ff27738d5174cff1d1306f1a458e"
+hash = "fdcaba6ba01c1edc688c9400ff24a7be74b9ce77c9551f6da88c40b8d1becdad"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/deadzone_main_story_t4.snbt"
@@ -1470,7 +1470,7 @@ hash = "c0a06e74db8865e417637b2b6ba89e4d0260c0c11a622af6fb6cf9f0396c13cf"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/deadzone_regional_logistics_01.snbt"
-hash = "6076bfff4d3b39ce1996bd0da83a5e968b7b6a79b278bef3437e797f3699cbc5"
+hash = "8c411a6b449fe47fc69fa3f8f1aa186fdf9ae26059d4498e26df299f7b92ccbe"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/deadzone_regional_mentors_01.snbt"
@@ -1494,7 +1494,7 @@ hash = "2deeba6ea7083fa5188608d118068f12c7093240a2da3170bcbfc73b599a6102"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/deadzone_tutorial_01.snbt"
-hash = "2e487867be0821ff7254c6980ac1b1ecbc432f85698a54ffc2e9e6604b97d2fc"
+hash = "cf6218811bd78faaeb4afeaa90f4c5bf3be42b803a99282619870f2dbf0ed762"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/deadzone_waterside_survival_01.snbt"
@@ -1530,7 +1530,7 @@ hash = "ed21380d32cec3db03dddcb478ce9565ad0f75e96bf6c78d4beee641d8273b47"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/minecolonies_operations_01.snbt"
-hash = "65bbb003a2af99270ccdacc405c5ec6462d0752f211bc4323f30d6a2cc21c406"
+hash = "3d08e84262b3d714e2d946f181e208b471fb322419b5c4637399258fd0c95cdb"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/minecolonies_population_food_01.snbt"
@@ -7522,7 +7522,7 @@ hash = "daaa10b7c79d789b2b4c5580d3632b87c8e3da992e31e40afe7f2b8ff51d3ea2"
 
 [[files]]
 file = "kubejs/data/project_deadzone/functions/basecamp/activate.mcfunction"
-hash = "1dd658fbae6da7bcfbb5c3c9ce2c5ca74b8599facc9d0ccb29cc47d4685c7152"
+hash = "14e19e8f79319d621b8f834c969a91b288e8bb7de935ea4e4e47384c6f8fe427"
 
 [[files]]
 file = "kubejs/data/project_deadzone/functions/basecamp/activate_from_arrival.mcfunction"
@@ -7530,7 +7530,7 @@ hash = "91c719f59fc16481bd2390248e7c516f209032c2d1233e0d6772db647babd7bb"
 
 [[files]]
 file = "kubejs/data/project_deadzone/functions/basecamp/apply_staff_profiles.mcfunction"
-hash = "a01c608f10691f9446eb863ebb9248345a97de34c7f96468e269182404f0d56a"
+hash = "66a51702c9fe052ee6d45e3241b75cf41a3018d9755dd04e8da7d3c71823f23b"
 
 [[files]]
 file = "kubejs/data/project_deadzone/functions/basecamp/apply_staff_random_dialogues.mcfunction"
@@ -7590,7 +7590,7 @@ hash = "565533ec943ba3789116b9ec01f709b61c8891e5a3605107830d287dfc97c567"
 
 [[files]]
 file = "kubejs/data/project_deadzone/functions/basecamp/repair_staff_service_ui.mcfunction"
-hash = "a669461bb4d01569bf5b043d2f75feef71b419cacaa0bfa2fe57d6b02ec95516"
+hash = "0a3c69bd7f21c653c0ba8304f9565db65ae13d3854a8ee0e61251a4f1d41833c"
 
 [[files]]
 file = "kubejs/data/project_deadzone/functions/basecamp/restore_guards_at_core.mcfunction"
@@ -10438,7 +10438,7 @@ hash = "ec246c53f9c3fa29ecf5cff8817cd5a7e8c53474f24202af0a60d480b8fff1c8"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_base_core_v0_1.js"
-hash = "8ab441dd0a8c5e4735f9a50d606a4b09e20fbfec4c4ad0f250a89c7179651638"
+hash = "3aecd8af283a882eb72f423704a97b8be0c60bd78adfa3e51b065b3c9fabcbea"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_basecamp_guard_safety_v0_1.js"
@@ -21392,4 +21392,19 @@ metafile = true
 [[files]]
 file = "sildurs-vibrant-shaders.pw.toml"
 hash = "f9c48453be6131136ef987aa56b95e11c6ec3813ea997a84b6b0f231eacb8d37"
+metafile = true
+
+[[files]]
+file = "tacz/apocalypse-gun-pack.pw.toml"
+hash = "aea46c91ac8f06366211843e999ea412aa4087e812949e2a135302b39fa17fbe"
+metafile = true
+
+[[files]]
+file = "tacz/classics-reborn.pw.toml"
+hash = "81bb87112f4f8b982316537e7ebea74c3acff5f3f98fd820710dbbdec193b4f3"
+metafile = true
+
+[[files]]
+file = "tacz/immersive-armorer.pw.toml"
+hash = "5f316c3735b248f22c3fabeece8ea930e146f39193b13b32f2d1f296c9f3790d"
 metafile = true

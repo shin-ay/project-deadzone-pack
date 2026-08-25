@@ -17,7 +17,7 @@
 		{
 			dependencies: ["1B82208C73A56C92"]
 			description: [
-				"Base Coreを右クリックし、「地域防衛」で防衛管制を開く。PDZは敵生成の担当を重ねない。"
+			"Base Coreをスニーク右クリックし、暫定の詳細管理から「地域防衛」で防衛管制を開く。PDZは敵生成の担当を重ねない。"
 				"Survivor Campは勢力Raid、野外はThe Hordes、MineColoniesは監視塔・兵舎による支援を担当する。"
 			]
 			icon: "minecraft:compass"
@@ -143,7 +143,7 @@
 				"6D50010000000105"
 			]
 			description: [
-				"Camp Raidの2 Waveを排除してBase Coreを守る。初回後は3 Minecraft日ごとにBase Coreの「地域防衛」から再受諾できる。"
+			"Camp Raidの2 Waveを排除してBase Coreを守る。初回後は3 Minecraft日ごとにBase Coreをスニーク右クリックし、暫定の詳細管理にある「地域防衛」から再受諾できる。"
 				"人数に応じて増援・Elite・Medicが追加される。進行中の敵が残っている限り次Waveへ進まない。"
 			]
 			icon: {
@@ -224,7 +224,7 @@
 		{
 			dependencies: ["6D50010000000106"]
 			description: [
-				"復旧負債が残った場合、Base Coreの「地域防衛」から1段階ずつ共同復旧する。基本はStone Bricks 16、Iron 4、Bread 4、LSO Bandage 1。"
+			"復旧負債が残った場合、Base Coreをスニーク右クリックし、暫定の詳細管理にある「地域防衛」から1段階ずつ共同復旧する。基本はStone Bricks 16、Iron 4、Bread 4、LSO Bandage 1。"
 				"道路航路確立後はStone Bricks 12、Iron 3へ軽減。完了するとBase Coreと不足Guard、非緊急サービスを戻す。"
 			]
 			icon: "minecraft:anvil"
@@ -247,7 +247,7 @@
 		{
 			dependencies: ["6D50010000000106"]
 			description: [
-				"Base Coreの「地域防衛」で野外Horde契約を表示し、Campから160m以上離れたMineColonies領域外で開始ボタンを押す。The Hordesの150秒契約を生存する。"
+			"Base Coreをスニーク右クリックし、暫定の詳細管理にある「地域防衛」で野外Horde契約を表示する。Campから160m以上離れたMineColonies領域外で開始ボタンを押し、The Hordesの150秒契約を生存する。"
 				"Camp・コロニーへ戻るか死亡すると失敗。感染者大群を居住圏へ重ねないための野外担当ルール。"
 			]
 			icon: "minecraft:rotten_flesh"
