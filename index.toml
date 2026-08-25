@@ -946,7 +946,7 @@ hash = "be67182834942895e92576a41fee4cce743a0ea6d5620d6e73c384b3d961a1f6"
 
 [[files]]
 file = "config/dynamictrees-common.toml"
-hash = "ef89bffdb9b2c9e40af63f5723ec3d9d69f4ee695ad2ff924f42397a86a6281f"
+hash = "f721f8c9907bb22da4bee069052718850b224ea0cf9b313a615d5fe6fa13418a"
 
 [[files]]
 file = "config/easy_npc/dialog_client.cfg"
@@ -10598,7 +10598,7 @@ hash = "da4a6728c023a53c5f96a5a9a16d5ecfccbbf7b24ef160a81a74878e05cde75f"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_jobs_v0_2_2.js"
-hash = "d29cd6490214f518d08cf450044326c7f172bbce92fd4fa8f97c9a0b41e76e68"
+hash = "804d029fbe3b33683e040e3e17fa987e9a99fc71de608c7295ade6f7b4745c4d"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_journeymap_sync_v0_1.js"

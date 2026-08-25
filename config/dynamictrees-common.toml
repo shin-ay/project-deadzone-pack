@@ -2,7 +2,7 @@
 #Vanilla Trees Settings
 [vanilla]
 	#Right clicking with a vanilla sapling places a dynamic sapling instead.
-	replaceVanillaSapling = false
+	replaceVanillaSapling = true
 	#Crimson Fungus and Warped Fungus that sprout from nylium will be dynamic instead.
 	replaceNyliumFungi = true
 	#If enabled, cancels the non-dynamic trees that spawn with vanilla villages.

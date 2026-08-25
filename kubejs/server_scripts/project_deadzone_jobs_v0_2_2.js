@@ -144,7 +144,9 @@ function dzGive(player, spec) {
 }
 
 function dzStarterItemCount(player, itemId) {
-  try { return Number(player.runCommandSilent("clear @s " + itemId + " 0")) }
+  // runCommandSilent does not reliably return /clear's matched-item count on a
+  // dedicated server. It returned 0 and duplicated the full kit on every audit.
+  try { return Number(player.inventory.count(Item.of(itemId))) }
   catch (ignored) { return 0 }
 }
 
@@ -282,10 +284,9 @@ function dzGiveStarterKit(player, job) {
   if (job.gunStarter && !dzGiveGun(player)) return false
   if (job.smgStarter && !dzGiveSmg(player)) return false
   // Several inventory/capability mods finish initialization after the JOB event.
-  // Audit twice so a delayed inventory rewrite cannot leave only one common item.
+  // Audit once after one second, but only as part of the initial grant flow.
   player.server.scheduleInTicks(20, callback => dzAuditStarterLoadout(player, job, specs))
-  player.server.scheduleInTicks(100, callback => dzAuditStarterLoadout(player, job, specs))
-  player.tell(Text.of("[PDZ] スターターキットを支給しました。5秒後に不足品を自動点検します。").green())
+  player.tell(Text.of("[PDZ] スターターキットを支給しました。1秒後に不足品を自動点検します。").green())
   player.tell(Text.of("不足時は /deadzonejob starter_claim で不足分だけ復旧できます。").gray())
   return dzAuditStarterLoadout(player, job, specs)
 }
@@ -295,6 +296,11 @@ function dzEnsureStarterKit(player) {
   let data = player.persistentData
   let id = data.getString("dz_job_id"), job = DZ_JOBS[id]
   if (!data.getBoolean("dz_job_chosen") || !job) return false
+  // Login/onboarding verification must never treat consumed starter supplies as
+  // missing. A current, completed grant is immutable; manual starter_claim is
+  // the only path that may audit and restore individual items afterwards.
+  if (data.getBoolean("dz_starter_received") &&
+      data.getInt("dz_starter_grant_version") >= DZ_STARTER_GRANT_VERSION) return true
   let specs = dzStarterSpecsFor(player, job, false)
   if (!dzStarterKitIsValid(player, job, specs)) return false
   let ready = dzAuditStarterLoadout(player, job, specs)
