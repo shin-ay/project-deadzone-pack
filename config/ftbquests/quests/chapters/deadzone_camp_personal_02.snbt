@@ -2,15 +2,14 @@
 	default_hide_dependency_lines: false
 	default_quest_shape: ""
 	filename: "deadzone_camp_personal_02"
-	group: "A170000000000003"
+	group: "4944EA3062E9681A"
 	icon: "apocalypsenow:badge"
 	id: "2B1C07F03374BA8B"
-	order_index: 4
+	order_index: 2
 	quest_links: [ ]
 	quests: [
 		{
 			dependencies: ["72B0CD68492E6381"]
-			subtitle: "解放条件: 「帰還経路の確保」を完了"
 			description: [
 				"ミナトは遠征隊の役割表を作り直している。"
 				"遠征用の地図を揃えれば、JOBごとの担当区域を事前に割り振れる。"
@@ -18,12 +17,12 @@
 			icon: "apocalypsenow:badge"
 			id: "1633F3FE90829809"
 			rewards: [{
-				count: 64
+				count: 12
 				id: "03BC95D1FDA1FC6A"
 				item: "apocalypsenow:money"
 				type: "item"
 			}]
-			subtitle: "ミナト人物ライン II"
+			subtitle: "ミナト人物ライン II｜解放条件: 「帰還経路の確保」を完了"
 			tasks: [{
 				count: 4L
 				id: "49EAA3008ADB8B1B"
@@ -36,7 +35,6 @@
 		}
 		{
 			dependencies: ["010C657AF86BA4C7"]
-			subtitle: "解放条件: 「途切れた周波数」を完了"
 			description: [
 				"レイが暗号化された救難信号を拾った。"
 				"中継器を組み、AEGISとARGUS-9に傍受される前に信号源を割り出そう。"
@@ -44,12 +42,12 @@
 			icon: "apocalypsenow:aabattery"
 			id: "3067324BF168F8C2"
 			rewards: [{
-				count: 64
+				count: 12
 				id: "02DBB062B88B9A23"
 				item: "apocalypsenow:money"
 				type: "item"
 			}]
-			subtitle: "レイ人物ライン II"
+			subtitle: "レイ人物ライン II｜解放条件: 「途切れた周波数」を完了"
 			tasks: [
 				{
 					count: 4L
@@ -70,7 +68,6 @@
 		}
 		{
 			dependencies: ["35062B12DBB8E52F"]
-			subtitle: "解放条件: 「治療所の不足品」を完了"
 			description: [
 				"シオリは長期遠征用の外傷処置セットを準備している。"
 				"負傷してから探すのでは遅い。全員分を先に揃えよう。"
@@ -85,13 +82,13 @@
 					type: "item"
 				}
 				{
-					count: 64
+					count: 12
 					id: "6FC0819A8672A14B"
 					item: "apocalypsenow:money"
 					type: "item"
 				}
 			]
-			subtitle: "シオリ人物ライン II"
+			subtitle: "シオリ人物ライン II｜解放条件: 「治療所の不足品」を完了"
 			tasks: [{
 				count: 12L
 				id: "034DDB337FE0C395"
@@ -104,7 +101,6 @@
 		}
 		{
 			dependencies: ["298ABA85898F0923"]
-			subtitle: "解放条件: 「外周警戒」を完了"
 			description: [
 				"ハンクはBuddy候補の装備が粗悪すぎるとぼやいている。"
 				"護衛役が先に倒れないよう、補修用の金属と革を渡そう。"
@@ -118,12 +114,12 @@
 			}
 			id: "24AEC6760D3DB4FB"
 			rewards: [{
-				count: 64
+				count: 12
 				id: "4E005A624AA1846F"
 				item: "apocalypsenow:money"
 				type: "item"
 			}]
-			subtitle: "ハンク人物ライン II"
+			subtitle: "ハンク人物ライン II｜解放条件: 「外周警戒」を完了"
 			tasks: [
 				{
 					count: 12L
@@ -144,7 +140,6 @@
 		}
 		{
 			dependencies: ["42891C4DF6B27EC5"]
-			subtitle: "解放条件: 「共同備蓄」を完了"
 			description: [
 				"マヤは拾った缶詰だけに頼る備蓄を嫌っている。"
 				"自分たちで作った温かい食事を増やし、遠征前の食事効果を安定させよう。"
@@ -152,12 +147,12 @@
 			icon: "survival_instinct:gallon_of_water"
 			id: "31D078CAC998225D"
 			rewards: [{
-				count: 64
+				count: 12
 				id: "0BBFA6E9446FB7CC"
 				item: "apocalypsenow:money"
 				type: "item"
 			}]
-			subtitle: "マヤ人物ライン II"
+			subtitle: "マヤ人物ライン II｜解放条件: 「共同備蓄」を完了"
 			tasks: [
 				{
 					count: 16L
@@ -178,7 +173,6 @@
 		}
 		{
 			dependencies: ["4359BB2BF9598A02"]
-			subtitle: "解放条件: 「使える部品」を完了"
 			description: [
 				"ゴロウは野戦修理設備の土台を作ろうとしている。"
 				"鋼鉄を供給できれば、完全修理と上位機械の整備へ進める。"
@@ -186,12 +180,12 @@
 			icon: "immersiveengineering:ingot_steel"
 			id: "4B4215231E0F2703"
 			rewards: [{
-				count: 64
+				count: 12
 				id: "04B336E0158718ED"
 				item: "apocalypsenow:money"
 				type: "item"
 			}]
-			subtitle: "ゴロウ人物ライン II"
+			subtitle: "ゴロウ人物ライン II｜解放条件: 「使える部品」を完了"
 			tasks: [{
 				count: 16L
 				id: "1B5BDF9D72766BC3"
@@ -204,7 +198,6 @@
 		}
 		{
 			dependencies: ["1920AEAAF4D75E94"]
-			subtitle: "解放条件: 「Survivor Camp」を完了"
 			description: [
 				"ユイは避難民用の衣服と防寒材を必要としている。"
 				"見た目だけではなく、遠征先の環境に耐えられる衣料備蓄を作ろう。"
@@ -218,12 +211,12 @@
 			}
 			id: "264DEDD658770380"
 			rewards: [{
-				count: 64
+				count: 12
 				id: "5023FE888E5EA64D"
 				item: "apocalypsenow:money"
 				type: "item"
 			}]
-			subtitle: "ユイ人物ライン I"
+			subtitle: "ユイ人物ライン I｜解放条件: 「Survivor Camp」を完了"
 			tasks: [
 				{
 					count: 16L

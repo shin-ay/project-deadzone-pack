@@ -3,20 +3,20 @@
 // by world/player state; none of these quests use manual checkmarks.
 
 const DZ_BRANCH_QUESTS_V1 = {
-  root:"A101000000000001",
-  cdfIntro:"A102000000000001", cdfEvidence:"A102000000000002", cdfVerdict:"A102000000000003",
-  raiderIntro:"A103000000000001", raiderEvidence:"A103000000000002", raiderVerdict:"A103000000000003",
-  remnantIntro:"A104000000000001", remnantEvidence:"A104000000000002", remnantVerdict:"A104000000000003",
-  aegisIntro:"A105000000000001", aegisEvidence:"A105000000000002", aegisVerdict:"A105000000000003",
-  wardenIntro:"A106000000000001", wardenEvidence:"A106000000000002", wardenVerdict:"A106000000000003",
-  finale:"A107000000000001"
+  root:"314139C241ED9B9A",
+  cdfIntro:"04B31ACB73EBB1E0", cdfEvidence:"55580C9689F99E71", cdfVerdict:"00C598D1293477BD",
+  raiderIntro:"6A5DFB55EE777C94", raiderEvidence:"525CA3DD639DD322", raiderVerdict:"2E384287AB7F7405",
+  remnantIntro:"25C5A00C63290F1A", remnantEvidence:"5C9041BB9F5E9A37", remnantVerdict:"62DD8B9D2A0737AF",
+  aegisIntro:"32344A274C75F55A", aegisEvidence:"303FD0B5ECF224A4", aegisVerdict:"124545F161893D5B",
+  wardenIntro:"3D4D2D59D15C7E9C", wardenEvidence:"7505254186296EBC", wardenVerdict:"66A3889869794C1D",
+  finale:"1387257022A0E62C"
 }
 
 const DZ_FIELD_QUESTS_V1 = {
-  gas:"B101000000000001", gun:"B101000000000002", police:"B101000000000003",
-  fire:"B101000000000004", hospital:"B101000000000005", factory:"B101000000000006",
-  relay:"B101000000000007", radio:"B101000000000008", military:"B101000000000009",
-  reactor:"B10100000000000A", argus:"B10100000000000B", choir:"B10100000000000C"
+  gas:"178EC15EC6B0445A", gun:"0E0AB0CB658E9281", police:"7E0F5CCAD61CDBFD",
+  fire:"0996C1964E2C3851", hospital:"5A92EF15FA9EBD5E", factory:"4815DFB89EE75934",
+  relay:"06B5F5B7229F7687", radio:"1F88FCE58EB8B18B", military:"33682171A1BB0AF4",
+  reactor:"35BE4945FDF5FD50", argus:"1BE007B79FDAEB4B", choir:"31CA39E7151ACCF5"
 }
 
 const DZ_BRANCH_LINES = {
@@ -47,7 +47,9 @@ function dzBranchSay(player,key) {
 }
 
 function dzBranchComplete(player,key,questId) {
-  let flag="dz_branch_quest_v1_"+key
+  // v2 replays milestones that previously targeted the retired A/B-series
+  // placeholder quest IDs.
+  let flag="dz_branch_quest_v2_"+key
   if (player.persistentData.getBoolean(flag)) return true
   let result=player.server.runCommandSilent("ftbquests change_progress "+player.username+" complete "+questId)
   if (result>0) {
@@ -74,6 +76,25 @@ function dzBranchAllVerdicts(player) {
   return dzBranchOutcome(player,"cdf")!=="" && dzBranchOutcome(player,"raider")!==""
     && dzBranchOutcome(player,"remnant")!=="" && dzBranchOutcome(player,"aegis")!==""
     && player.server.persistentData.getString("dz_story_argus_outcome")!==""
+}
+
+function dzBranchPrompt(player,group,force) {
+  if (dzBranchOutcome(player,group)!=="") return false
+  if (!player.persistentData.getBoolean("dz_branch_quest_v2_"+group+"_evidence")) return false
+  let shown="dz_branch_commandless_prompt_v1_"+group
+  if (!force && player.persistentData.getBoolean(shown)) return false
+  player.persistentData.putBoolean(shown,true)
+  let headings={cdf:"CDFの進路",raider:"Jackalsへの回答",remnant:"Remnantの未来",aegis:"AEGISデータの扱い"}
+  player.tell(Text.of("=== "+headings[group]+" ===").gold())
+  Object.keys(DZ_BRANCH_CHOICES_V1).forEach(key=>{
+    let data=DZ_BRANCH_CHOICES_V1[key]
+    if(data.group!==group)return
+    player.tell(Text.of("[ "+data.label+" ]")[data.color]()
+      .clickRunCommand("/deadzonestorybranch choose "+key)
+      .hover(Text.of("この判断は確定後に変更できません")))
+  })
+  player.tell(Text.of("選択肢をクリックしてください。文字入力は不要です。").gray())
+  return true
 }
 
 PlayerEvents.tick(event => {
@@ -128,6 +149,8 @@ PlayerEvents.tick(event => {
     if (dzBranchComplete(p,"finale",DZ_BRANCH_QUESTS_V1.finale)) dzBranchSay(p,"all_verdicts")
   }
 
+  ;["cdf","raider","remnant","aegis"].forEach(group=>dzBranchPrompt(p,group,false))
+
   // Environmental records: the lore card completes when its real facility/boss milestone is met.
   if (dzBranchBossDone(s,"gasstation")) dzBranchComplete(p,"field_gas",DZ_FIELD_QUESTS_V1.gas)
   if (dzBranchBossDone(s,"gunshop")) dzBranchComplete(p,"field_gun",DZ_FIELD_QUESTS_V1.gun)
@@ -162,16 +185,17 @@ ServerEvents.commandRegistry(event => {
     })
     let argus=p.server.persistentData.getString("dz_story_argus_outcome")
     p.tell(argus?Text.of("✓ WARDEN: "+argus).green():Text.of("・WARDEN: 未決定").gray())
+    ;["cdf","raider","remnant","aegis"].forEach(group=>dzBranchPrompt(p,group,true))
     return 1
   }))
   let choose=Commands.literal("choose").executes(ctx=>{
-    ctx.source.player.tell(Text.of("選択肢を指定してください。例: /deadzonestorybranch choose cdf_coalition").yellow())
+    ctx.source.player.tell(Text.of("Base Coreの『勢力判断』を開き、表示された選択肢をクリックしてください。").yellow())
     return 0
   })
   Object.keys(DZ_BRANCH_CHOICES_V1).forEach(key=>{
     choose.then(Commands.literal(key).executes(ctx=>{
       let p=ctx.source.player, data=DZ_BRANCH_CHOICES_V1[key], old=dzBranchOutcome(p,data.group)
-      if (!p.persistentData.getBoolean("dz_branch_quest_v1_"+data.group+"_evidence")) {
+      if (!p.persistentData.getBoolean("dz_branch_quest_v2_"+data.group+"_evidence")) {
         p.tell(Text.of("判断に必要な証拠がまだ揃っていません。勢力クエストを進めてください。").red())
         return 0
       }

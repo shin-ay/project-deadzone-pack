@@ -1,0 +1,15 @@
+{
+    "type":  "STAT",
+    "icon":  "mmorpg:textures/gui/stat_icons/misc/harvest_extra_drops.png",
+    "id":  "pdz_life_farming",
+    "is_entry":  false,
+    "max_lvls":  1,
+    "stats":  [
+                  {
+                      "type":  "FLAT",
+                      "scale_to_lvl":  false,
+                      "stat":  "harvest_extra_drops",
+                      "v1":  4
+                  }
+              ]
+}

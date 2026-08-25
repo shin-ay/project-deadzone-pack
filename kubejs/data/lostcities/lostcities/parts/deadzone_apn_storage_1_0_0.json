@@ -21,7 +21,7 @@
         "tag": {
           "id": "apocalypsenow:large_shelves"
         },
-        "loot": "project_deadzone:chests/generic_mid_filled"
+        "loot": "project_deadzone:generic_mid_filled"
       },
       {
         "char": "",
@@ -29,7 +29,7 @@
         "tag": {
           "id": "apocalypsenow:large_shelves_fill"
         },
-        "loot": "project_deadzone:chests/generic_mid_filled"
+        "loot": "project_deadzone:generic_mid_filled"
       },
       {
         "char": "",
@@ -41,7 +41,7 @@
         "tag": {
           "id": "apocalypsenow:large_shelves_fill"
         },
-        "loot": "project_deadzone:chests/generic_mid_filled"
+        "loot": "project_deadzone:generic_mid_filled"
       },
       {
         "char": "",
@@ -49,7 +49,7 @@
         "tag": {
           "id": "apocalypsenow:large_shelves"
         },
-        "loot": "project_deadzone:chests/generic_mid_filled"
+        "loot": "project_deadzone:generic_mid_filled"
       },
       {
         "char": "",

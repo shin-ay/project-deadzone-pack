@@ -10,6 +10,9 @@ usercache.json
 usernamecache.json
 user-prefs.json
 
+# Local ClassMod authentication state (never distribute)
+config/classmod/auth_*
+
 # Generated caches and backups
 config/QuantifiedAPI/cache/
 **/cache/

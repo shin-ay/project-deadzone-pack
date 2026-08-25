@@ -27,7 +27,7 @@
 	#Default: 0.5
 	#
 	#Range: 0.0 ~ 1.0
-offlineIncomeScale = 0.25
+	offlineIncomeScale = 0.25
 	#Let OFFLINE village centers grow their population on paper. Vanilla
 	#breeding needs loaded entities, so without this a village outside the
 	#simulation distance is demographically frozen forever.
@@ -58,7 +58,7 @@ offlineIncomeScale = 0.25
 	#population growth in one tick. Default: 8
 	#
 	#Range: 1 ~ 64
-	offlineVillagerSpawnPerPass = 8
+	offlineVillagerSpawnPerPass = 3
 	#Fraction of every income payout that is diverted into the faction's
 	#separate EXPANSION war chest instead of its normal treasury. This
 	#pool can ONLY be spent founding new villages, so expansion always
@@ -202,7 +202,7 @@ offlineIncomeScale = 0.25
 	#Default: 75
 	#
 	#Range: 1 ~ 100000
-populationCap = 36
+	populationCap = 36
 	#Starting combined population cap (villagers + recruits) of a newly
 	#founded village. The village begins small and its cap climbs toward
 	#populationCapMax as it stays full and solvent (see
@@ -217,7 +217,7 @@ populationCap = 36
 	#used directly as a flat cap. Default: 120
 	#
 	#Range: 1 ~ 100000
-	populationCapMax = 120
+	populationCapMax = 36
 	#Most villagers or recruits a single village may lose to the population
 	#cap in one pass. 0 = no limit (the old behaviour).
 	#
@@ -297,7 +297,7 @@ populationCap = 36
 	#is a ceiling and not a guarantee. Default: 5
 	#
 	#Range: 1 ~ 64
-	babySpawnPerCycle = 5
+	babySpawnPerCycle = 2
 	#Repair ORPHANED job-site reservations. A workstation (or a Recruits
 	#recruit/bowman/... table) is not "free when nobody stands on it": the game
 	#tracks a ticket in the POI manager, and vanilla only gives it back when the
@@ -358,13 +358,13 @@ populationCap = 36
 	#BELOW this value. Above it, villagers are left alone. Default: 10
 	#
 	#Range: 0 ~ 100000
-	conscriptionMinRecruits = 10
+	conscriptionMinRecruits = 6
 	#Minimum villagers a center always keeps: conscription only draws from
 	#the villagers ABOVE this number (so a village needs more than this many
 	#villagers before any are drafted). Default: 10
 	#
 	#Range: 0 ~ 100000
-	conscriptionKeepVillagers = 10
+	conscriptionKeepVillagers = 4
 	#Maximum villagers converted into recruits per village center on each
 	#conscription pass (~60s), so a village ramps up gradually rather than
 	#flipping its whole population at once. Default: 2
@@ -2030,7 +2030,7 @@ populationCap = 36
 	#sender, and by factionless BANDITS. Turning this off leaves convoys as
 	#pure logistics with nothing to escort them against. Default: true
 	#
-convoyRaidsEnabled = false
+	convoyRaidsEnabled = false
 	#Game ticks between two ambush rolls on the same convoy. Default: 600
 	#Range: 20 ~ 24000
 	convoyRaidIntervalTicks = 600

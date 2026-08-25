@@ -1,0 +1,8 @@
+{
+  "content": {
+    "pdz_highland_ammo": {"type":"item","content":"minecraft:arrow","amount":{"min":24,"max":56},"unitWorth":45,"weightMult":1.4},
+    "pdz_highland_fuel": {"type":"item","content":"mts:mtsofficialpack.solidfuel","amount":{"min":1,"max":3},"unitWorth":900,"rarity":"UNCOMMON"},
+    "pdz_highland_medicine": {"type":"item","content":"apocalypsenow:bandage","amount":{"min":3,"max":6},"unitWorth":500,"weightMult":1.2},
+    "pdz_highland_copper": {"type":"item","content":"minecraft:copper_ingot","amount":{"min":6,"max":14},"unitWorth":170,"weightMult":1.1}
+  }
+}

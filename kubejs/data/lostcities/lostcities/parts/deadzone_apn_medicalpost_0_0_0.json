@@ -32,7 +32,7 @@
         "tag": {
           "id": "apocalypsenow:medical_box"
         },
-        "loot": "project_deadzone:chests/hospital_pharmacy"
+        "loot": "project_deadzone:hospital_pharmacy"
       },
       {
         "char": "",
@@ -91,7 +91,7 @@
         "tag": {
           "id": "apocalypsenow:medicine_boxes"
         },
-        "loot": "project_deadzone:chests/hospital_pharmacy"
+        "loot": "project_deadzone:hospital_pharmacy"
       },
       {
         "char": "",
@@ -99,7 +99,7 @@
         "tag": {
           "id": "apocalypsenow:medicine_boxes"
         },
-        "loot": "project_deadzone:chests/hospital_pharmacy"
+        "loot": "project_deadzone:hospital_pharmacy"
       },
       {
         "char": "",
@@ -108,7 +108,7 @@
           "Items": [],
           "id": "apocalypsenow:medical_storage"
         },
-        "loot": "project_deadzone:chests/hospital_pharmacy"
+        "loot": "project_deadzone:hospital_pharmacy"
       },
       {
         "char": "",
@@ -116,7 +116,7 @@
         "tag": {
           "id": "apocalypsenow:medicine_boxes"
         },
-        "loot": "project_deadzone:chests/hospital_pharmacy"
+        "loot": "project_deadzone:hospital_pharmacy"
       },
       {
         "char": "",

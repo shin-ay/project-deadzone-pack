@@ -1,0 +1,8 @@
+{
+  "content": {
+    "pdz_highland_beef": {"type":"item","content":"minecraft:cooked_beef","amount":{"min":5,"max":12},"unitWorth":190,"weightMult":1.3},
+    "pdz_highland_mutton": {"type":"item","content":"minecraft:cooked_mutton","amount":{"min":5,"max":12},"unitWorth":180,"weightMult":1.3},
+    "pdz_highland_leather": {"type":"item","content":"minecraft:leather","amount":{"min":6,"max":16},"unitWorth":145,"weightMult":1.2},
+    "pdz_highland_berries": {"type":"item","content":"minecraft:sweet_berries","amount":{"min":12,"max":28},"unitWorth":75,"weightMult":1.1}
+  }
+}

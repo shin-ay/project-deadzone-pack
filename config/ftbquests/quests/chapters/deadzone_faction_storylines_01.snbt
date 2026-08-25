@@ -2,15 +2,14 @@
 	default_hide_dependency_lines: false
 	default_quest_shape: ""
 	filename: "deadzone_faction_storylines_01"
-	group: "A170000000000002"
+	group: "4944EA3062E9681A"
 	icon: "apocalypsenow:badge"
 	id: "213B3AF57F4A51EE"
-	order_index: 10
+	order_index: 4
 	quest_links: [ ]
 	quests: [
 		{
 			dependencies: ["74065A02DB68DAE2"]
-			subtitle: "解放条件: 「T2：Scavenger」を完了"
 			description: [
 				"警察署の記録には、同じ道路と避難民を巡って争う五つの組織が記録されていた。"
 				"ここから先は、敵を倒した数だけではなく、誰へ物資と権限を渡したかが地域の姿を変える。"
@@ -19,6 +18,7 @@
 			id: "314139C241ED9B9A"
 			shape: "hexagon"
 			size: 1.5d
+			subtitle: "解放条件: 「T2：Scavenger」を完了"
 			tasks: [{
 				id: "048D160BC9982522"
 				title: "勢力記録を解読した"
@@ -70,7 +70,7 @@
 			description: [
 				"封鎖を維持すれば巡回は強化されるが、独立集落の自由は失われる。"
 				"現場連合へ移行すれば交易と救助は広がるが、統一指揮は弱くなる。"
-				"選択：/deadzonestorybranch choose cdf_order または cdf_coalition"
+				"証拠が揃うと選択ボタンが自動表示される。閉じた場合はBase Coreの「勢力判断」から再表示できる。"
 			]
 			icon: {
 				Count: 1
@@ -139,7 +139,7 @@
 			description: [
 				"物流網を解体すれば街道は安全になるが、孤立集落への闇取引も止まる。"
 				"限定停戦なら希少品を得られる一方、Jackalsは別の誰かを襲い続ける。"
-				"選択：/deadzonestorybranch choose raider_break または raider_truce"
+				"証拠が揃うと選択ボタンが自動表示される。閉じた場合はBase Coreの「勢力判断」から再表示できる。"
 			]
 			icon: {
 				Count: 1
@@ -150,7 +150,7 @@
 			}
 			id: "2E384287AB7F7405"
 			rewards: [{
-				count: 64
+				count: 24
 				id: "621105B124C207D9"
 				item: "apocalypsenow:money"
 				type: "item"
@@ -202,7 +202,7 @@
 			description: [
 				"記録をナディアへ渡せばRemnantは分裂し、一部が停戦へ動く。"
 				"司令権限を破棄すれば軍政復活は防げるが、軍用通信網も失われる。"
-				"選択：/deadzonestorybranch choose remnant_defect または remnant_decommission"
+				"証拠が揃うと選択ボタンが自動表示される。閉じた場合はBase Coreの「勢力判断」から再表示できる。"
 			]
 			icon: "apocalypsenow:badge"
 			id: "62DD8B9D2A0737AF"
@@ -225,13 +225,13 @@
 		}
 		{
 			dependencies: ["64FC20257BDD84CF"]
-			subtitle: "解放条件: 「廃棄された患者記録」を完了"
 			description: [
 				"AEGISの患者記録は治療報告ではなく、誰を救う価値があるかを選別した一覧だった。"
 				"Hospitalと研究施設に残された三つの症例記録を照合する。"
 			]
 			icon: "apocalypsenow:antibiotics"
 			id: "32344A274C75F55A"
+			subtitle: "解放条件: 「廃棄された患者記録」を完了"
 			tasks: [{
 				id: "41D97488B5834AB6"
 				title: "AEGIS症例記録を照合した"
@@ -267,7 +267,7 @@
 			description: [
 				"治療データを公開すれば医療は広がるが、変異研究も各勢力へ流出する。"
 				"兵器記録を破棄すれば悪用は防げるが、完全治療への近道も失う。"
-				"選択：/deadzonestorybranch choose aegis_release または aegis_burn"
+				"証拠が揃うと選択ボタンが自動表示される。閉じた場合はBase Coreの「勢力判断」から再表示できる。"
 			]
 			icon: "apocalypsenow:adrenaline_syringe"
 			id: "124545F161893D5B"
@@ -290,13 +290,13 @@
 		}
 		{
 			dependencies: ["719E23C2245BB557"]
-			subtitle: "解放条件: 「WARDEN隔離網」を完了"
 			description: [
 				"三中枢の停止で、ARGUS-9が人間を排除対象にした理由が見えてきた。"
 				"救助、交易、避難。そのすべてを感染拡大行動として学習している。"
 			]
 			icon: "immersiveengineering:capacitor_lv"
 			id: "3D4D2D59D15C7E9C"
+			subtitle: "解放条件: 「WARDEN隔離網」を完了"
 			tasks: [{
 				id: "1621A65C12277695"
 				title: "WARDENの判断記録を復元した"
@@ -327,7 +327,7 @@
 				"ARGUS-9を破壊、再設定、分離する判断は、敵の種類だけでなくSurvivor Campの未来を変える。"
 				"メインストーリーで最終判断を確定する。"
 			]
-			icon: "kubejs:affix_workbench"
+			icon: "mmorpg:gear_crafting_station"
 			id: "66A3889869794C1D"
 			rewards: [{
 				count: 4
@@ -355,7 +355,7 @@
 			id: "1387257022A0E62C"
 			rewards: [
 				{
-					count: 64
+					count: 32
 					id: "45188D1D40399765"
 					item: "apocalypsenow:money"
 					type: "item"

@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "horror_element_mod:devastatedfarm",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 42,
+    "separation": 29,
+    "salt": 189864551
+  }
+}

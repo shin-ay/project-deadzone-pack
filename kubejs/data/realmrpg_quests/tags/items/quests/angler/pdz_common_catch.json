@@ -1,0 +1,10 @@
+{
+  "replace": true,
+  "values": [
+    "aquaculture:bluegill",
+    "aquaculture:brown_trout",
+    "aquaculture:carp",
+    "aquaculture:catfish",
+    "aquaculture:atlantic_herring"
+  ]
+}

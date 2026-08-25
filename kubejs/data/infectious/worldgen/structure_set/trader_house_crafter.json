@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "infectious:trader_house_crafter",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 64,
+    "separation": 20,
+    "salt": 1963731685
+  }
+}

@@ -68,7 +68,9 @@ PlayerEvents.tick(event => {
 
 ServerEvents.commandRegistry(event => {
   const {commands: Commands} = event
-  let root = Commands.literal("deadzonestory")
+  // Keep narrative mission commands on /deadzonestory. World Tier has its own
+  // root so command registration never depends on script load order.
+  let root = Commands.literal("deadzonetier")
 
   root.then(Commands.literal("status").executes(ctx => {
     let player = ctx.source.player

@@ -1,0 +1,273 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: "circle"
+	filename: "deadzone_health_recovery_01"
+	group: "72AA1A32F85FF9D3"
+	icon: "legendarysurvivaloverhaul:medkit"
+	id: "6D4F010000000001"
+	order_index: 6
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: ["1B82208C73A56C92"]
+			description: [
+				"PDZは独自の負傷ゲージを追加しない。Legendary Survival Overhaulの8部位HPと、The Hordesを含む既存感染Effectが正本。"
+				"Base Coreの「医療・治療」で実データを診断する。70%以上は安定、40～69%は軽傷、40%未満は重傷として治療方針を分ける。"
+			]
+			icon: "minecraft:compass"
+			id: "6D4F010000000101"
+			subtitle: "解放条件: 「応急処置」を完了"
+			rewards: [{
+				id: "6D4F010000001101"
+				item: "legendarysurvivaloverhaul:bandage"
+				type: "item"
+			}]
+			tasks: [{
+				id: "6D4F010000002101"
+				title: "実部位HPを診断した"
+				type: "custom"
+			}]
+			title: "HPバーだけを見るな"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["6D4F010000000101"]
+			description: [
+				"いずれかの部位が70%未満になった状態で診断する。頭・腕・脚では同じ残りHPでも症状が異なる。"
+				"軽傷はLSO包帯と休養で対応できる。放置して40%未満へ落とす前に帰還しよう。"
+			]
+			icon: "legendarysurvivaloverhaul:bandage"
+			id: "6D4F010000000102"
+			subtitle: "解放条件: 「HPバーだけを見るな」を完了"
+			rewards: [{
+				id: "6D4F010000001201"
+				item: "legendarysurvivaloverhaul:bandage"
+				type: "item"
+			}]
+			tasks: [{
+				id: "6D4F010000002201"
+				title: "軽傷を診断した"
+				type: "custom"
+			}]
+			title: "軽傷：動けるうちに"
+			x: 2.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["6D4F010000000102"]
+			description: [
+				"いずれかの部位が40%未満になった状態で診断する。重傷部位はBroken Heartや移動・採掘・被ダメージ悪化へつながる。"
+				"PlayerReviveのDown状態とは別。Downから復帰しても部位状態を確認すること。"
+			]
+			icon: "legendarysurvivaloverhaul:medkit"
+			id: "6D4F010000000103"
+			subtitle: "解放条件: 「軽傷：動けるうちに」を完了"
+			rewards: [{
+				id: "6D4F010000001301"
+				item: "apocalypsenow:bandage"
+				type: "item"
+			}]
+			tasks: [{
+				id: "6D4F010000002301"
+				title: "重傷を診断した"
+				type: "custom"
+			}]
+			title: "重傷：戦闘継続は治療ではない"
+			x: 4.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["6D4F010000000102"]
+			description: [
+				"Survivor Campでシオリに話しかけ、「軽傷処置」を選ぶ。LSO包帯1個とMoneyを消費し、最も損傷した部位を30秒かけて治療する。"
+				"シオリとの個人信頼が高いほど診療価格が下がる。"
+			]
+			icon: "legendarysurvivaloverhaul:bandage"
+			id: "6D4F010000000104"
+			subtitle: "解放条件: 「軽傷：動けるうちに」を完了"
+			rewards: [{
+				count: 2
+				id: "6D4F010000001401"
+				item: "apocalypsenow:money"
+				type: "item"
+			}]
+			tasks: [{
+				id: "6D4F010000002401"
+				title: "Campで軽傷処置を受けた"
+				type: "custom"
+			}]
+			title: "外来処置"
+			x: 4.0d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"6D4F010000000103"
+				"6D4F010000000104"
+			]
+			description: [
+				"重傷時にLSO Medkit、Apocalypse Now Medical Kit、Moneyを用意し、シオリの診療から「重傷処置」を選ぶ。"
+				"損傷した全部位を時間回復させる。MineColonies病院Lvが高いほど安価・高速・高回復になる。"
+			]
+			icon: "legendarysurvivaloverhaul:medkit"
+			id: "6D4F010000000105"
+			subtitle: "解放条件: 「重傷：戦闘継続は治療ではない」・「外来処置」をすべて完了"
+			rewards: [{
+				id: "6D4F010000001501"
+				item: "legendarysurvivaloverhaul:tonic"
+				type: "item"
+			}]
+			tasks: [{
+				id: "6D4F010000002501"
+				title: "Campで重傷処置を受けた"
+				type: "custom"
+			}]
+			title: "重傷処置"
+			x: 6.0d
+			y: -1.0d
+		}
+		{
+			dependencies: ["6D4F010000000101"]
+			description: [
+				"The Hordes、Apocalypse Now、Infectiousの感染を共通診断する。Camp治療はAntibioticsとMoneyを消費する。"
+				"治療後はThe Hordesの再感染免疫が5分付く。Field Medical Kitと対応抗生物質も全感染系統を治療できる。"
+			]
+			icon: "apocalypsenow:antibiotics"
+			id: "6D4F010000000106"
+			subtitle: "解放条件: 「HPバーだけを見るな」を完了"
+			rewards: [{
+				id: "6D4F010000001601"
+				item: "apocalypsenow:homemadeantibiotics"
+				type: "item"
+			}]
+			tasks: [{
+				id: "6D4F010000002601"
+				title: "感染症を治療した"
+				type: "custom"
+			}]
+			title: "感染：時間との勝負"
+			x: 2.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["6D4F010000000104"]
+			description: [
+				"MedicがField Medical Kitで別プレイヤーを右クリックし、最悪部位を安定化する。Treatment Tierで回復量と所要時間が改善する。"
+				"Conservation TierはField Medical Kitの耐久消費も10%／20%／30%で防ぐ。"
+			]
+			icon: {
+				Count: 1
+				id: "kubejs:field_medical_kit"
+				tag: {
+					Damage: 0
+				}
+			}
+			id: "6D4F010000000107"
+			subtitle: "解放条件: 「外来処置」を完了"
+			rewards: [{
+				id: "6D4F010000001701"
+				item: "legendarysurvivaloverhaul:bandage"
+				type: "item"
+			}]
+			tasks: [{
+				id: "6D4F010000002701"
+				title: "Medicとして仲間を安定化した"
+				type: "custom"
+			}]
+			title: "Medic：物資ではなく時間を稼ぐ"
+			x: 6.0d
+			y: 2.0d
+		}
+		{
+			dependencies: [
+				"6D4D010000000104"
+				"6D4F010000000104"
+			]
+			description: [
+				"回復献立を完成させる。Regenerationに加えてComfortが8分付き、LSOの部位回復とFirst Aid Suppliesを加速する。"
+				"食事はMedkitの代わりではないが、治療後の回復期間と物資消費を減らす。"
+			]
+			icon: "farmersdelight:vegetable_soup"
+			id: "6D4F010000000108"
+			subtitle: "解放条件: 「負傷者の回復献立」・「外来処置」をすべて完了"
+			rewards: [{
+				id: "6D4F010000001801"
+				item: "farmersdelight:vegetable_soup"
+				type: "item"
+			}]
+			tasks: [{
+				id: "6D4F010000002801"
+				title: "回復献立で療養した"
+				type: "custom"
+			}]
+			title: "治療食と休養"
+			x: 8.0d
+			y: 1.0d
+		}
+		{
+			dependencies: [
+				"6D4F010000000105"
+				"6D43110000000101"
+			]
+			description: [
+				"所有するMineColoniesコロニーでHospitalを完成させ、Base Coreの「医療・治療」からHospital監査を選ぶ。"
+				"病院Lv1～5はCamp重傷処置の価格、時間、回復量へ直接反映される。建材を受け取っただけでは達成にならない。"
+			]
+			icon: "minecolonies:blockhuthospital"
+			id: "6D4F010000000109"
+			subtitle: "解放条件: 「重傷処置」・「コロニー開始：Supply Camp」をすべて完了"
+			rewards: [{
+				id: "6D4F010000001901"
+				item: "legendarysurvivaloverhaul:medkit"
+				type: "item"
+			}]
+			tasks: [{
+				id: "6D4F010000002901"
+				title: "稼働中のMineColonies病院を監査した"
+				type: "custom"
+			}]
+			title: "コロニー病院を地域医療へ"
+			x: 8.0d
+			y: -1.0d
+		}
+		{
+			dependencies: [
+				"6D4F010000000105"
+				"6D4F010000000106"
+				"6D4F010000000107"
+				"6D4F010000000108"
+				"6D4F010000000109"
+			]
+			description: [
+				"軽傷・重傷・感染、Medic安定化、回復献立、MineColonies病院を一つの医療網へ接続した。"
+				"次の防衛縦切りでは負傷者と医療物資不足がCampサービス停止・復旧依頼へつながる。"
+			]
+			icon: "apocalypsenow:medicalkit"
+			id: "6D4F01000000010A"
+			subtitle: "解放条件: 「重傷処置」・「感染：時間との勝負」・「Medic：物資ではなく時間を稼ぐ」・「治療食と休養」・「コロニー病院を地域医療へ」をすべて完了"
+			rewards: [
+				{
+					count: 12
+					id: "6D4F010000001A01"
+					item: "apocalypsenow:money"
+					type: "item"
+				}
+				{
+					id: "6D4F010000001A02"
+					type: "xp"
+					xp: 40
+				}
+			]
+			tasks: [{
+				id: "6D4F010000002A01"
+				title: "地域医療ループを完成した"
+				type: "custom"
+			}]
+			title: "帰還後までが遠征"
+			x: 10.0d
+			y: 0.0d
+		}
+	]
+	title: "負傷・感染・地域医療"
+}

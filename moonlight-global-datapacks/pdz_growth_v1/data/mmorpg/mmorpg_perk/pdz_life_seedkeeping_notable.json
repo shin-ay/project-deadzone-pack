@@ -1,0 +1,15 @@
+{
+    "type":  "SPECIAL",
+    "icon":  "mmorpg:textures/gui/stat_icons/misc/harvest_event_chance.png",
+    "id":  "pdz_life_seedkeeping_notable",
+    "is_entry":  false,
+    "max_lvls":  1,
+    "stats":  [
+                  {
+                      "type":  "FLAT",
+                      "scale_to_lvl":  false,
+                      "stat":  "harvest_event_chance",
+                      "v1":  3
+                  }
+              ]
+}

@@ -1,0 +1,1 @@
+{"name":"project_deadzone:starter_village/facilities/hq","fallback":"minecraft:empty","elements":[{"weight":1,"element":{"element_type":"minecraft:single_pool_element","location":"minecraft:village/plains/houses/plains_meeting_point_4","processors":"minecraft:empty","projection":"rigid"}}]}

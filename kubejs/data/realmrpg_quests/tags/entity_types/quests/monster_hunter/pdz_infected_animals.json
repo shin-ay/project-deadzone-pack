@@ -1,0 +1,8 @@
+{
+  "replace": true,
+  "values": [
+    "infectious:zombified_spider",
+    "infectious:zombified_boar",
+    "infectious:zombified_chicken"
+  ]
+}

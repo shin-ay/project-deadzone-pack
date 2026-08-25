@@ -23,7 +23,8 @@ const DZ_T0_CAMP_HOSTILES = [
 const DZ_T0_EXEMPT_TAGS = [
   "dz_basecamp_raider", "dz_story_npc", "dz_story_boss", "dz_buddy",
   "dz_survivor", "dz_basecamp_guard", "dz_usunit_friendly",
-  "dz_t0_convoy", "dz_named", "dz_elite", "dz_settlement_civilian"
+  "dz_t0_convoy", "dz_named", "dz_elite", "dz_settlement_civilian",
+  "dz_boss_showroom", "dz_boss_loadtest", "dz_boss_mechanic_runtime", "dz_boss_loadtest_runtime"
 ]
 
 function dzT0ProtectedSpawn(entity, radius) {
@@ -66,6 +67,19 @@ function dzIsHostileMob(entity) {
 
 function dzT0Exempt(entity) {
   for (let i=0;i<DZ_T0_EXEMPT_TAGS.length;i++) if (entity.tags.contains(DZ_T0_EXEMPT_TAGS[i])) return true
+  // Brutal Bosses adds Axel's showroom tag a few ticks after creating him.
+  // The marker already exists at that point, so protect only entities spawned
+  // directly beside that admin-only gallery anchor.
+  if (String(entity.type)!=="tacz_hostiles:soldier") return false
+  try {
+    let protectedByAnchor=false
+    entity.level.entities.forEach(candidate => {
+      if (protectedByAnchor || !candidate.tags || !candidate.tags.contains("dz_boss_showroom_axel_anchor")) return
+      let dx=Number(candidate.x)-Number(entity.x), dy=Number(candidate.y)-Number(entity.y), dz=Number(candidate.z)-Number(entity.z)
+      if (dx*dx+dy*dy+dz*dz<=12*12) protectedByAnchor=true
+    })
+    if (protectedByAnchor) return true
+  } catch (ignored) {}
   return false
 }
 

@@ -1,0 +1,182 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: "circle"
+	filename: "minecolonies_operations_01"
+	group: "6A11000000000002"
+	icon: "minecolonies:blockhuttownhall"
+	id: "6D4B010000000001"
+	order_index: 16
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: ["6D43110000000101"]
+			description: [
+				"建物を建てるだけで終わらず、人口・幸福・研究・物流・防衛をPDZの地域経済へ接続する。"
+				"コロニー所有者がBase Coreの「MineColonies監査」を押すと、MineColonies APIから実績を監査する。FTBパーティーには進捗が共有される。"
+			]
+			icon: "minecolonies:blockhuttownhall"
+			id: "6D4B010000000101"
+			subtitle: "解放条件: 「コロニー開始：Supply Camp」を完了"
+			tasks: [{
+				id: "6D4B010000002101"
+				title: "コロニー運営監査を開始した"
+				type: "custom"
+			}]
+			title: "地域運営：建設の次へ"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["6D4B010000000101"]
+			description: [
+				"人口5人を達成する。住居と最初の仕事を揃え、仮設キャンプから小さな集落へ移行する。"
+				"達成時、Restoration評判+2。"
+			]
+			icon: "minecolonies:blockhutcitizen"
+			id: "6D4B010000000102"
+			subtitle: "解放条件: 「地域運営：建設の次へ」を完了"
+			tasks: [{
+				id: "6D4B010000002201"
+				title: "API監査：人口5人"
+				type: "custom"
+			}]
+			title: "人口5：小さな集落"
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["6D4B010000000102"]
+			description: [
+				"人口10人を達成する。食料・住居・雇用を一部門だけでなく循環させる規模。"
+				"達成時、Supply評判+1 / Restoration評判+3。"
+			]
+			icon: "minecolonies:blockhuttavern"
+			id: "6D4B010000000103"
+			subtitle: "解放条件: 「人口5：小さな集落」を完了"
+			tasks: [{
+				id: "6D4B010000002301"
+				title: "API監査：人口10人"
+				type: "custom"
+			}]
+			title: "人口10：生活圏"
+			x: 4.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["6D4B010000000103"]
+			description: [
+				"人口20人を達成する。複数の生産・加工・物流施設が必要になる地域拠点規模。"
+				"達成時、Supply評判+2 / Restoration評判+5。"
+			]
+			icon: "minecolonies:blockhutwarehouse"
+			id: "6D4B010000000104"
+			subtitle: "解放条件: 「人口10：生活圏」を完了"
+			tasks: [{
+				id: "6D4B010000002401"
+				title: "API監査：人口20人"
+				type: "custom"
+			}]
+			title: "人口20：地域拠点"
+			x: 6.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["6D4B010000000102"]
+			description: [
+				"総合幸福度7.0以上を達成する。最大値はMineColonies公式定数どおり10。住居、雇用、安全、食事、社交をまとめて改善する。"
+				"達成時、Supply評判+3。"
+			]
+			icon: "minecolonies:bread_dough"
+			id: "6D4B010000000105"
+			subtitle: "解放条件: 「人口5：小さな集落」を完了"
+			tasks: [{
+				id: "6D4B010000002501"
+				title: "API監査：総合幸福度7.0"
+				type: "custom"
+			}]
+			title: "暮らせる街"
+			x: 2.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["6D4B010000000103"]
+			description: [
+				"Universityで研究を1件完了する。研究中ではなく、MineColoniesの完了リストへ登録された時点で達成。"
+				"達成時、Restoration評判+3。"
+			]
+			icon: "minecolonies:blockhutuniversity"
+			id: "6D4B010000000106"
+			subtitle: "解放条件: 「人口10：生活圏」を完了"
+			tasks: [{
+				id: "6D4B010000002601"
+				title: "API監査：完了研究1件"
+				type: "custom"
+			}]
+			title: "知識を残す"
+			x: 4.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["6D4B010000000103"]
+			description: [
+				"市民からプレイヤーへ回った要求を一度監査し、その後0件まで解消する。WarehouseとCourierを使う物流の実地試験。"
+				"要求発生時と解消後は自動監査される。手動確認はBase Coreの「MineColonies監査」から行える。達成時、Supply評判+4。"
+			]
+			icon: "minecolonies:clipboard"
+			id: "6D4B010000000107"
+			subtitle: "解放条件: 「人口10：生活圏」を完了"
+			tasks: [{
+				id: "6D4B010000002701"
+				title: "API監査：要求発生から全件解消"
+				type: "custom"
+			}]
+			title: "物流を止めない"
+			x: 6.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["6D4B010000000103"]
+			description: [
+				"完成済みGuard Tower・Barracksを用意し、PDZ Survivor Camp防衛へ地域支援を送る。MineColonies蛮族は重複襲撃防止のため無効。"
+				"MineColonies Raidを外部設定で有効化した環境では従来どおりAPI監視も行う。無犠牲ならSecurity評判+5、損害ありでも+2。"
+			]
+			icon: "minecolonies:blockhutguardtower"
+			id: "6D4B010000000108"
+			subtitle: "解放条件: 「人口10：生活圏」を完了"
+			tasks: [{
+				id: "6D4B010000002801"
+				title: "防衛施設による地域支援完了"
+				type: "custom"
+			}]
+			title: "街を守る"
+			x: 8.0d
+			y: 2.0d
+		}
+		{
+			dependencies: [
+				"6D4B010000000104"
+				"6D4B010000000105"
+				"6D4B010000000106"
+				"6D4B010000000107"
+				"6D4B010000000108"
+				"6D4A010000000102"
+			]
+			description: [
+				"人口20、幸福度7.0、研究、物流、Raid防衛をすべて達成し、Survivor Camp総合Rank 1へ到達する。"
+				"コロニーが自活するだけでなく、周辺地域へ食料・安全・技術を返せる状態。達成時、3部門評判を各+3。"
+			]
+			icon: "minecolonies:colony_banner"
+			id: "6D4B010000000109"
+			subtitle: "解放条件: 「人口20：地域拠点」・「暮らせる街」・「知識を残す」・「物流を止めない」・「街を守る」・「Rank 1：常連の拠点」をすべて完了"
+			tasks: [{
+				id: "6D4B010000002901"
+				title: "地域協力コロニーへ認定された"
+				type: "custom"
+			}]
+			title: "地域協力コロニー"
+			x: 10.0d
+			y: 0.0d
+		}
+	]
+	title: "MineColonies 地域運営"
+}

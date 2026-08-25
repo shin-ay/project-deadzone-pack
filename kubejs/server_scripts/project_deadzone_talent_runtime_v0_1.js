@@ -73,8 +73,8 @@ function pdztrGiveAmmo(player,stack,count,label) {
   return true
 }
 
-// Firearm Talent is additive with the normal hit and the independent Affix
-// bonus. Direct health subtraction avoids recursively firing another hurt event.
+// Firearm Talent is additive with the normal hit and the M&S-calculated weapon
+// damage. Direct health subtraction avoids recursively firing another hurt event.
 EntityEvents.hurt(event=>{
   let player=event.source?event.source.actual:null
   if (!player || !player.isPlayer || !player.isPlayer() || player.level.clientSide) return
@@ -133,6 +133,7 @@ ItemEvents.rightClicked(event=>{
 ItemEvents.foodEaten(event=>{
   let p=event.entity
   if (!p || !p.isPlayer || !p.isPlayer() || p.level.clientSide) return
+  if (!global.pdzIsPreparedMeal || !global.pdzIsPreparedMeal(event.item)) return
   let cooking=pdztrValue(p,'cooking'), recovery=pdztrValue(p,'recovery')
   if (cooking>0) {
     p.potionEffects.add('minecraft:absorption',Math.round(200+cooking*800),Math.min(1,Math.floor(cooking/0.25)),false,false)

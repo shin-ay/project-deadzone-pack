@@ -1,0 +1,8 @@
+{
+  "content": {
+    "pdz_coastal_fillet": {"type":"item","content":"aquaculture:fish_fillet_raw","amount":{"min":8,"max":20},"unitWorth":100,"weightMult":1.5},
+    "pdz_coastal_cod": {"type":"item","content":"minecraft:cod","amount":{"min":8,"max":18},"unitWorth":80,"weightMult":1.3},
+    "pdz_coastal_salmon": {"type":"item","content":"minecraft:salmon","amount":{"min":6,"max":14},"unitWorth":95,"weightMult":1.2},
+    "pdz_coastal_meal": {"type":"item","content":"aquaculturedelight:fish_and_chips","amount":{"min":2,"max":5},"unitWorth":480,"rarity":"UNCOMMON"}
+  }
+}

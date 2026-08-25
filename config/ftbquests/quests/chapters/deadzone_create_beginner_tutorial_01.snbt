@@ -1,0 +1,263 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: "circle"
+	filename: "deadzone_create_beginner_tutorial_01"
+	group: "2492E280835EEAE3"
+	icon: "create:wrench"
+	id: "6D44010000000001"
+	order_index: 0
+	quest_links: [ ]
+	quests: [
+		{
+			description: [
+				"Createの装置は文章だけで覚える必要はない。アイテムにカーソルを合わせ、Ponderキーを押すと動く見本を確認できる。"
+				"まず歯車をJEIで探し、Ponderを開いて回転の伝わり方を最後まで見よう。キーが競合している場合は、操作設定で「Ponder」を検索して変更する。"
+			]
+			icon: "create:goggles"
+			id: "6D44010000000101"
+			rewards: [{
+				count: 4
+				id: "6D44010000001101"
+				item: "minecraft:bread"
+				type: "item"
+			}]
+			tasks: [{
+				id: "6D44010000002101"
+				title: "歯車のPonderを確認した"
+				type: "checkmark"
+			}]
+			title: "01：動く説明書・Ponder"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["6D44010000000101"]
+			description: [
+				"JEIでアイテムを左クリックすると作り方、右クリックすると使用先を確認できる。"
+				"Createでは普通の作業台レシピだけでなく、粉砕・圧縮・混合など機械別のタブも表示される。安山岩合金のレシピと使用先を両方確認しよう。"
+			]
+			icon: "create:andesite_alloy"
+			id: "6D44010000000102"
+			subtitle: "解放条件: 「01：動く説明書・Ponder」を完了"
+			rewards: [{
+				count: 4
+				id: "6D44010000001201"
+				item: "create:zinc_nugget"
+				type: "item"
+			}]
+			tasks: [{
+				id: "6D44010000002201"
+				title: "安山岩合金のレシピと使用先を確認した"
+				type: "checkmark"
+			}]
+			title: "02：JEIでレシピを読む"
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["6D44010000000102"]
+			description: [
+				"安山岩合金はCreateの基礎素材。鉄または亜鉛と安山岩を組み合わせて作る。"
+				"最初は2個だけ作ればよい。大量生産は回転機械を理解してからでOK。"
+			]
+			icon: "create:andesite_alloy"
+			id: "6D44010000000103"
+			subtitle: "解放条件: 「02：JEIでレシピを読む」を完了"
+			rewards: [{
+				count: 2
+				id: "6D44010000001301"
+				item: "create:andesite_alloy"
+				type: "item"
+			}]
+			tasks: [{
+				count: 2L
+				id: "6D44010000002301"
+				item: "create:andesite_alloy"
+				type: "item"
+			}]
+			title: "03：最初の安山岩合金"
+			x: 4.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["6D44010000000103"]
+			description: [
+				"軸は回転を直線上へ運ぶ部品。軸同士は向きを合わせて設置する。"
+				"設置後に手回しクランクを端へ付けると、軸が回ることを目で確認できる。今は装置へ接続しなくてよい。"
+			]
+			icon: "create:shaft"
+			id: "6D44010000000104"
+			subtitle: "解放条件: 「03：最初の安山岩合金」を完了"
+			rewards: [{
+				count: 4
+				id: "6D44010000001401"
+				item: "create:shaft"
+				type: "item"
+			}]
+			tasks: [{
+				count: 4L
+				id: "6D44010000002401"
+				item: "create:shaft"
+				type: "item"
+			}]
+			title: "04：軸で回転を運ぶ"
+			x: 6.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["6D44010000000104"]
+			description: [
+				"小歯車を軸の側面へ噛み合わせると、回転方向を90度変えられる。隣り合う歯車は逆方向へ回る。"
+				"大歯車と小歯車を噛み合わせると速度が変わるが、速くするほど装置が使える負荷の余裕は減る。"
+			]
+			icon: "create:cogwheel"
+			id: "6D44010000000105"
+			subtitle: "解放条件: 「04：軸で回転を運ぶ」を完了"
+			rewards: [
+				{
+					count: 2
+					id: "6D44010000001501"
+					item: "create:cogwheel"
+					type: "item"
+				}
+				{
+					id: "6D44010000001502"
+					item: "create:large_cogwheel"
+					type: "item"
+				}
+			]
+			tasks: [
+				{
+					count: 2L
+					id: "6D44010000002501"
+					item: "create:cogwheel"
+					type: "item"
+				}
+				{
+					id: "6D44010000002502"
+					item: "create:large_cogwheel"
+					type: "item"
+				}
+			]
+			title: "05：歯車で向きと速度を変える"
+			x: 8.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["6D44010000000105"]
+			description: [
+				"手回しクランクは、配線の向きや装置の動作を安全に試すための仮動力。常設工場の動力には向かない。"
+				"軸へ取り付けて右クリックし、軸と歯車が一緒に回るところを確認しよう。逆側から回すと回転方向も変わる。"
+			]
+			icon: "create:hand_crank"
+			id: "6D44010000000106"
+			subtitle: "解放条件: 「05：歯車で向きと速度を変える」を完了"
+			rewards: [{
+				id: "6D44010000001601"
+				item: "create:hand_crank"
+				type: "item"
+			}]
+			tasks: [{
+				id: "6D44010000002601"
+				item: "create:hand_crank"
+				type: "item"
+			}]
+			title: "06：手回しで試運転"
+			x: 10.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["6D44010000000106"]
+			description: [
+				"Createには回転速度とStress（負荷容量）がある。装置を増やしすぎて容量を超えると、接続された機械がすべて停止する。"
+				"ゴーグルを装備して軸や動力源を見ると数値を確認できる。停止したら、動力源を増やす・速度を下げる・装置を分割する、のどれかで直せる。"
+			]
+			icon: "create:goggles"
+			id: "6D44010000000107"
+			subtitle: "解放条件: 「06：手回しで試運転」を完了"
+			rewards: [{
+				id: "6D44010000001701"
+				item: "create:goggles"
+				type: "item"
+			}]
+			tasks: [{
+				id: "6D44010000002701"
+				item: "create:goggles"
+				type: "item"
+			}]
+			title: "07：速度とStressを読む"
+			x: 12.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["6D44010000000107"]
+			description: [
+				"水車は序盤の常設動力。水流が羽根へ触れるように設置し、水車の軸から回転を取り出す。"
+				"設置前にPonderで水流例を確認する。回らない場合は、水が静止していないか、軸の向きが合っているかを順番に確認しよう。"
+			]
+			icon: "create:water_wheel"
+			id: "6D44010000000108"
+			subtitle: "解放条件: 「07：速度とStressを読む」を完了"
+			rewards: [
+				{
+					count: 4
+					id: "6D44010000001801"
+					item: "create:shaft"
+					type: "item"
+				}
+				{
+					count: 2
+					id: "6D44010000001802"
+					item: "create:cogwheel"
+					type: "item"
+				}
+			]
+			tasks: [{
+				id: "6D44010000002801"
+				item: "create:water_wheel"
+				type: "item"
+			}]
+			title: "08：水車で常設動力を作る"
+			x: 14.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["6D44010000000108"]
+			description: [
+				"水車の軸へMechanical Pressを接続し、その真下へDepotを置く。PressとDepotの間は1ブロック空ける。"
+				"Depotへ鉄インゴットを置き、PressでIron Sheetへ加工する。動かない場合は①水車、②軸の接続、③Stress、④Pressの高さを順に確認する。"
+				"Mechanical PressはAndesite Casing、Shaft、Iron Block、DepotはAndesite CasingとAndesite Alloyで製作できる。Casingは剥いだ原木へAndesite Alloyを右クリックして作る。"
+			]
+			icon: "create:mechanical_press"
+			id: "6D44010000000109"
+			subtitle: "解放条件: 「08：水車で常設動力を作る」を完了"
+			rewards: [{
+				count: 8
+				id: "6D44010000001901"
+				item: "apocalypsenow:money"
+				type: "item"
+			}]
+			tasks: [
+				{
+					id: "6D44010000002901"
+					item: "create:mechanical_press"
+					type: "item"
+				}
+				{
+					id: "6D44010000002902"
+					item: "create:depot"
+					type: "item"
+				}
+				{
+					id: "6D44010000002903"
+					item: "create:iron_sheet"
+					type: "item"
+				}
+			]
+			title: "09：最初の加工機械"
+			x: 16.0d
+			y: 0.0d
+		}
+	]
+	title: "Create入門：回転力の使い方"
+}

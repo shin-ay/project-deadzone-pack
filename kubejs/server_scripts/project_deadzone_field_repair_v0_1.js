@@ -1,5 +1,5 @@
 // PROJECT DEADZONE repair system v0.2
-// Only Damage is mutated. Affix, mastery, TaCZ attachment/magazine and custom
+// Only Damage is mutated. M&S gear, mastery, TaCZ attachment/magazine and custom
 // equipment NBT remain on the original ItemStack.
 
 const DZ_REPAIR_MONEY="apocalypsenow:money"
@@ -80,7 +80,7 @@ ItemEvents.rightClicked("kubejs:field_repair_kit", event => {
   event.item.shrink(1)
   player.getInventory().setChanged()
   player.tell(Text.of("野戦修理完了: 耐久 +"+repaired+" ("+Math.round(ratio*100)+"%)").green())
-  player.tell(Text.of("Affix・熟練度・内部データを維持しました。").gray())
+  player.tell(Text.of("M&S装備・熟練度・内部データを維持しました。").gray())
   player.runCommandSilent("playsound minecraft:block.anvil.use player @s ~ ~ ~ 0.45 1.25")
 })
 
@@ -130,7 +130,7 @@ ServerEvents.commandRegistry(event => {
     stack.damageValue=0
     p.getInventory().setChanged()
     p.tell(Text.of("工業整備完了: 耐久 +"+repaired).green())
-    p.tell(Text.of("Affix・熟練度・内部データを維持しました。").aqua())
+    p.tell(Text.of("M&S装備・熟練度・内部データを維持しました。").aqua())
     p.runCommandSilent("playsound minecraft:block.anvil.use player @s ~ ~ ~ 0.7 0.9")
     return 1
   }))

@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "infectious:abandoned_church",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 93,
+    "separation": 40,
+    "salt": 535631554
+  }
+}

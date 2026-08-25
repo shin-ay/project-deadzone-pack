@@ -14,7 +14,8 @@ ItemEvents.foodEaten(event => {
   // Cook profession: meals become a small multiplayer support action.
   // Tier 1-3 improves the eater; Team Meal (tier 4) shares the effect nearby.
   let cooking = dzHighestTier(player, "dz_survival_cooking_", 5)
-  if (cooking > 0) {
+  let prepared = global.pdzIsPreparedMeal && global.pdzIsPreparedMeal(event.item)
+  if (cooking > 0 && prepared) {
     player.potionEffects.add("minecraft:regeneration", 80 + cooking * 20, 0, false, false)
     if (cooking >= 3) {
       player.potionEffects.add("minecraft:resistance", 120, 0, false, false)

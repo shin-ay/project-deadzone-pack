@@ -4,9 +4,20 @@
 
 const PDZ_SETTLEMENT_REGISTRIES = Java.loadClass('net.minecraft.core.registries.Registries')
 const PDZ_SETTLEMENT_BLOCKPOS = Java.loadClass('net.minecraft.core.BlockPos')
+const PDZ_SETTLEMENT_DECREE_ITEM = Java.loadClass('io.ejekta.bountiful.content.DecreeItem')
 const PDZ_SETTLEMENT_LEDGER = "dz_activity_outpost_ledger_v1"
-const PDZ_SETTLEMENT_POP_CAP = 32
+const PDZ_SETTLEMENT_POP_CAP = 36
 const PDZ_SETTLEMENT_PRODUCTION_ROLES = ["food","medical","logistics","industry","research","salvage","fishery","forestry"]
+const PDZ_SETTLEMENT_INDUSTRIES = {
+  agrarian_colony: {quest:"6D52010000000102", decree:"agrarian_relief", label:"農業"},
+  coastal_fishery: {quest:"6D52010000000103", decree:"coastal_relief", label:"沿岸漁業"},
+  highland_hunting: {quest:"6D52010000000104", decree:"highland_relief", label:"山間狩猟"},
+  forest_outpost: {quest:"6D52010000000105", decree:"forest_relief", label:"森林資源"},
+  salvage_caravan: {quest:"6D52010000000106", decree:"salvage_relief", label:"回収・解体"}
+}
+const PDZ_SETTLEMENT_ECONOMY_QUESTS = {intro:"6D52010000000101", decree:"6D52010000000107", native:"6D52010000000108", network:"6D5201000000010A"}
+const PDZ_SETTLEMENT_TUTORIAL_QUESTS = {find:"6D52010000000011", economy:"6D52010000000012", native:"6D52010000000013"}
+let pdzSetDecreeErrorLogged = false
 
 function pdzSetIsOverworld(entity) {
   try { return String(entity.level.dimension) === "minecraft:overworld" }
@@ -241,6 +252,11 @@ function pdzSetNearestReal(entity, radius) {
   return best
 }
 
+// Public read-only/binding hooks for bridges that integrate an existing
+// settlement mod. The settlement ledger stays authoritative in this file.
+global.pdzSetNearestReal = pdzSetNearestReal
+global.pdzSetUpsert = pdzSetUpsert
+
 function pdzSetDistance(entity, site) {
   let dx = Number(site.x || 0) - Number(entity.x), dz = Number(site.z || 0) - Number(entity.z)
   return Math.floor(Math.sqrt(dx * dx + dz * dz))
@@ -251,6 +267,52 @@ function pdzSetTellLocation(player, site) {
   let distance = pdzSetDistance(player, site)
   player.tell(Text.of("中心座標: X " + x + " / Y " + y + " / Z " + z + "　現在地から約 " + distance + "m").aqua())
   player.tell(Text.of("JourneyMapには、読み込まれた住民・護衛・施設が存在する集落だけ表示されます。").gray())
+}
+
+function pdzSetComplete(player, quest) {
+  player.server.runCommandSilent("ftbquests change_progress " + player.username + " complete " + quest)
+}
+
+function pdzSetIndustryCount(player) {
+  let count = 0
+  Object.keys(PDZ_SETTLEMENT_INDUSTRIES).forEach(role => {
+    if (player.persistentData.getBoolean("dz_settlement_industry_" + role)) count++
+  })
+  return count
+}
+
+function pdzSetSyncIndustry(player, site, notify) {
+  if (!site || String(site.relation || "") === "hostile") return false
+  if (typeof global.pdzVrMayUseSettlement === "function" && !global.pdzVrMayUseSettlement(player, site)) return false
+  let role = String(site.economy || ""), industry = PDZ_SETTLEMENT_INDUSTRIES[role]
+  if (!industry) return false
+  let discoveredKey = "dz_settlement_industry_" + role
+  if (!player.persistentData.getBoolean(discoveredKey)) {
+    player.persistentData.putBoolean(discoveredKey, true)
+    pdzSetComplete(player, industry.quest)
+    if (notify) player.tell(Text.of("[産業発見] " + industry.label + "の地域取引が利用可能になりました。").green())
+  }
+  let decreeKey = "dz_settlement_decree_v2_" + role
+  if (!player.persistentData.getBoolean(decreeKey)) {
+    try {
+      let stack = PDZ_SETTLEMENT_DECREE_ITEM.Companion.create(industry.decree)
+      player.give(stack)
+      player.persistentData.putBoolean(decreeKey, true)
+      pdzSetComplete(player, PDZ_SETTLEMENT_ECONOMY_QUESTS.decree)
+      player.tell(Text.of(industry.label + "のBountiful産業令状を受領。Bounty Boardへ挿入すると、その土地の輸入品と輸出品だけで依頼が生成されます。").aqua())
+    } catch (error) {
+      if (!pdzSetDecreeErrorLogged) {
+        pdzSetDecreeErrorLogged = true
+        console.error("[PDZ][Settlement] Bountiful decree creation failed: " + error)
+      }
+    }
+  }
+  if (pdzSetIndustryCount(player) >= 3 && !player.persistentData.getBoolean("dz_settlement_industry_network_complete")) {
+    player.persistentData.putBoolean("dz_settlement_industry_network_complete", true)
+    pdzSetComplete(player, PDZ_SETTLEMENT_ECONOMY_QUESTS.network)
+    player.tell(Text.of("[地域産業網] 3種類の集落産業を確認。地域物流と産業令状を組み合わせられるようになりました。").gold())
+  }
+  return true
 }
 
 function pdzSetRoleIndex(entity) { return pdzSetHash(entity.uuid) % 6 }
@@ -341,11 +403,23 @@ PlayerEvents.tick(event => {
   pdzSetRegisterNativeVillage(player)
   let site=pdzSetNearestReal(player,96)
   if(!site)return
+  player.persistentData.putBoolean("dz_settlement_tutorial_find",true)
+  player.persistentData.putBoolean("dz_settlement_tutorial_economy",true)
+  pdzSetComplete(player,PDZ_SETTLEMENT_TUTORIAL_QUESTS.find)
+  pdzSetComplete(player,PDZ_SETTLEMENT_TUTORIAL_QUESTS.economy)
+  pdzSetSyncIndustry(player,site,true)
   let key="dz_settlement_notice_"+String(site.id)
   if(player.persistentData.getBoolean(key))return
   player.persistentData.putBoolean(key,true)
   player.tell(Text.of("[集落発見] "+String(site.name||site.id)+" / "+String(site.factionLabel||site.faction)+" / "+String(site.relation)).gold())
-  player.tell(Text.of("地域経済: "+String(site.economy||"unknown")+"　輸出: "+(site.exports||[]).join("・")).gray())
+  player.tell(Text.of("[地域産業] 輸出: "+(site.exports||[]).join("・")+"｜不足: "+(site.imports||[]).join("・")).aqua())
+  if(String(site.relation||"")==="hostile" ||
+    (typeof global.pdzVrMayUseSettlement === "function" && !global.pdzVrMayUseSettlement(player,site))){
+    player.tell(Text.of("占領中の敵対集落では、商人・Noble契約・産業令状を利用できません。解放後に再訪してください。").red())
+  }else{
+    pdzSetComplete(player,PDZ_SETTLEMENT_ECONOMY_QUESTS.native)
+    player.tell(Text.of("商人はVillage Recruitsの実在庫、Nobleは不足契約、掲示板はBountiful依頼を扱います。詳しい操作はFTB Questsの『地域集落・産業』章で確認できます。").gray())
+  }
   pdzSetTellLocation(player, site)
 })
 
@@ -366,8 +440,8 @@ ServerEvents.loaded(event => {
 
 function pdzQuestLayers(player){
   player.tell(Text.of("=== PDZ QUEST LAYERS ===").gold())
-  player.tell(Text.of("[住民依頼] ").green().append(Text.of("生活・納品・探索の短期契約 /deadzonecontracts").white()))
-  player.tell(Text.of("[勢力依頼] ").aqua().append(Text.of("拠点・交易・関係改善 /deadzonestorybranch status").white()))
+  player.tell(Text.of("[住民依頼] ").green().append(Text.of("Base Coreの依頼掲示板：生活・納品・探索の短期契約").white()))
+  player.tell(Text.of("[勢力依頼] ").aqua().append(Text.of("Base Coreの勢力判断：拠点・交易・関係改善").white()))
   player.tell(Text.of("[メイン] ").lightPurple().append(Text.of("世界Tier・ボス・終末の真相はFTB Questsで進行").white()))
   return 1
 }
@@ -401,13 +475,44 @@ ServerEvents.commandRegistry(event=>{
     if(!site){p.tell(Text.of("256m以内に登録済み集落はありません。").yellow());return 0}
     p.tell(Text.of("=== "+String(site.name||site.id)+" ===").gold())
     p.tell(Text.of("勢力: "+String(site.factionLabel||site.faction)+" / 関係: "+String(site.relation)).aqua())
-    p.tell(Text.of("経済: "+String(site.economy)+" / 輸出: "+(site.exports||[]).join("・")).gray())
+    p.tell(Text.of("経済: "+String(site.economy)+" / 輸出: "+(site.exports||[]).join("・")+" / 需要: "+(site.imports||[]).join("・")).gray())
+    p.persistentData.putBoolean("dz_settlement_tutorial_find",true)
+    pdzSetComplete(p,PDZ_SETTLEMENT_TUTORIAL_QUESTS.find)
     pdzSetTellLocation(p,site)
     return 1
+  }))
+  c.then(Commands.literal("economy").executes(ctx=>{
+    let p=ctx.source.player,site=pdzSetNearestReal(p,128)
+    if(!site){p.tell(Text.of("128m以内に稼働中の集落はありません。").yellow());return 0}
+    p.persistentData.putBoolean("dz_settlement_tutorial_find",true)
+    p.persistentData.putBoolean("dz_settlement_tutorial_economy",true)
+    pdzSetComplete(p,PDZ_SETTLEMENT_TUTORIAL_QUESTS.find)
+    pdzSetComplete(p,PDZ_SETTLEMENT_TUTORIAL_QUESTS.economy)
+    if(p.persistentData.getBoolean("dz_settlement_tutorial_native"))pdzSetComplete(p,PDZ_SETTLEMENT_ECONOMY_QUESTS.intro)
+    p.tell(Text.of("=== "+String(site.name||site.id)+" 地域産業 ===").gold())
+    p.tell(Text.of("輸出: "+(site.exports||[]).join("・")+"｜不足: "+(site.imports||[]).join("・")).aqua())
+    if(String(site.relation||"")==="hostile" ||
+      (typeof global.pdzVrMayUseSettlement === "function" && !global.pdzVrMayUseSettlement(p,site))){
+      p.tell(Text.of("占領中の敵対集落では商人、Noble契約、産業令状を利用できません。").red())
+      return 1
+    }
+    pdzSetSyncIndustry(p,site,true)
+    pdzSetComplete(p,PDZ_SETTLEMENT_ECONOMY_QUESTS.native)
+    p.tell(Text.of("Village Recruits: 商人は実在庫、Nobleは実際の不足から契約を生成。Bountiful Boardには受領した産業令状を挿入します。").gray())
+    p.tell(Text.of("[Village Recruits案内]").aqua().clickRunCommand("/deadzonecolony native_help"))
+    return 1
+  }))
+  c.then(Commands.literal("relation").executes(ctx=>{
+    let p=ctx.source.player
+    if(typeof global.pdzVrRelationStatus==="function")return global.pdzVrRelationStatus(p)
+    p.tell(Text.of("Village Recruits Standing連携は現在利用できません。").yellow())
+    return 0
   }))
   c.then(Commands.literal("nearest").executes(ctx=>{
     let p=ctx.source.player,site=pdzSetNearestReal(p,2048)
     if(!site){p.tell(Text.of("半径2048m以内に登録済みの集落はありません。").yellow());return 0}
+    p.persistentData.putBoolean("dz_settlement_tutorial_find",true)
+    pdzSetComplete(p,PDZ_SETTLEMENT_TUTORIAL_QUESTS.find)
     p.tell(Text.of("[最寄りの集落] "+String(site.name||site.id)+" / "+String(site.factionLabel||site.faction)).gold())
     pdzSetTellLocation(p,site)
     return 1
@@ -432,6 +537,12 @@ ServerEvents.commandRegistry(event=>{
   }))
   c.then(Commands.literal("native_help").executes(ctx=>{
     let p=ctx.source.player
+    if(p.persistentData.getBoolean("dz_settlement_tutorial_economy")){
+      p.persistentData.putBoolean("dz_settlement_tutorial_native",true)
+      pdzSetComplete(p,PDZ_SETTLEMENT_TUTORIAL_QUESTS.native)
+    }else{
+      p.tell(Text.of("チュートリアル進行には先に実在集落で /deadzonecolony economy を実行してください。").yellow())
+    }
     p.tell(Text.of("=== Village Recruits settlement layer ===").gold())
     p.tell(Text.of("/vrvillages : village/faction overview").aqua())
     p.tell(Text.of("/villcenters : registered village centers").aqua())

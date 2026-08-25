@@ -1,0 +1,9 @@
+{
+  "replace": true,
+  "values": [
+    "aquaculture:fish_fillet_cooked",
+    "aquaculturedelight:crispy_fried_perch",
+    "aquaculturedelight:trout_steak",
+    "aquaculturedelight:catfish_barbecue"
+  ]
+}

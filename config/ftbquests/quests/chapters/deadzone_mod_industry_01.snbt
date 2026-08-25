@@ -2,19 +2,21 @@
 	default_hide_dependency_lines: false
 	default_quest_shape: "circle"
 	filename: "deadzone_mod_industry_01"
-	group: "A170000000000005"
+	group: "59FD4E11CFE90C47"
 	icon: "create:cogwheel"
 	id: "4D6C5283B005AA23"
-	order_index: 13
+	order_index: 0
 	quest_links: [ ]
 	quests: [
 		{
+			dependencies: ["6D44010000000108"]
 			description: [
 				"地下へ潜り続けるだけが復旧ではない。廃材と安山岩から、キャンプで共有できる機械工房を作ろう。"
 				"この章は素材採取、動力、加工、搬送、自動化の順で進む。MechanicとEngineerが中心だが、必要素材の探索には全JOBが参加できる。"
 			]
 			icon: "create:andesite_alloy"
 			id: "6D0294D5C566AA55"
+			subtitle: "解放条件: 「08：水車で常設動力を作る」を完了"
 			rewards: [
 				{
 					count: 24
@@ -41,7 +43,6 @@
 		}
 		{
 			dependencies: ["6D0294D5C566AA55"]
-			subtitle: "解放条件: 「工房計画：安山岩合金」を完了"
 			description: ["回転を伝えるための最小部品。軸と歯車は今後ほぼすべての設備で使う。"]
 			icon: "create:cogwheel"
 			id: "4E3DE57BE4D2C4BD"
@@ -59,6 +60,7 @@
 					type: "item"
 				}
 			]
+			subtitle: "解放条件: 「工房計画：安山岩合金」を完了"
 			tasks: [
 				{
 					count: 8L
@@ -85,7 +87,6 @@
 		}
 		{
 			dependencies: ["4E3DE57BE4D2C4BD"]
-			subtitle: "解放条件: 「動力伝達の基本」を完了"
 			description: ["水流が使える場所に最初の常設動力を作る。手回しは調整や非常用として残しておこう。"]
 			icon: "create:water_wheel"
 			id: "0E32A6429A887FB0"
@@ -103,6 +104,7 @@
 					type: "item"
 				}
 			]
+			subtitle: "解放条件: 「動力伝達の基本」を完了"
 			tasks: [
 				{
 					id: "097F192672F910AD"
@@ -121,7 +123,6 @@
 		}
 		{
 			dependencies: ["0E32A6429A887FB0"]
-			subtitle: "解放条件: 「最初の回転力」を完了"
 			description: ["回転速度と負荷を確認できれば、停止事故の原因を見つけやすくなる。工房の工具箱に必ず入れておこう。"]
 			icon: "create:goggles"
 			id: "2269DD763CB8E752"
@@ -131,6 +132,7 @@
 				item: "apocalypsenow:money"
 				type: "item"
 			}]
+			subtitle: "解放条件: 「最初の回転力」を完了"
 			tasks: [{
 				id: "29FEF1BB4AE71F86"
 				item: "create:goggles"
@@ -142,7 +144,6 @@
 		}
 		{
 			dependencies: ["0E32A6429A887FB0"]
-			subtitle: "解放条件: 「最初の回転力」を完了"
 			description: ["Millstoneで鉱石や作物を砕く。食料担当と工業担当が最初に共有できる設備だ。"]
 			icon: "create:millstone"
 			id: "0E89809FA91D6D33"
@@ -160,6 +161,7 @@
 					type: "item"
 				}
 			]
+			subtitle: "解放条件: 「最初の回転力」を完了"
 			tasks: [{
 				id: "3D09963EEF9DD456"
 				item: "create:millstone"
@@ -171,7 +173,6 @@
 		}
 		{
 			dependencies: ["0E32A6429A887FB0"]
-			subtitle: "解放条件: 「最初の回転力」を完了"
 			description: ["PressとDepotで金属板を安定供給する。同名の板材はPDZの統一素材へ変換される。"]
 			icon: "create:mechanical_press"
 			id: "6DA910B6605F1C45"
@@ -189,6 +190,7 @@
 					type: "item"
 				}
 			]
+			subtitle: "解放条件: 「最初の回転力」を完了"
 			tasks: [
 				{
 					id: "0EA498F24FDF84A9"
@@ -213,9 +215,10 @@
 			description: ["MixerとBasinは合金・食料・薬品へ繋がる共同設備。工房の中心に設置すると使いやすい。"]
 			icon: "create:mechanical_mixer"
 			id: "285F9E9B1E751F17"
+			subtitle: "解放条件: 「粉砕工程」・「金属板の量産」をすべて完了"
 			rewards: [
 				{
-					count: 36
+					count: 16
 					id: "7A4200000000000A"
 					item: "apocalypsenow:money"
 					type: "item"
@@ -244,13 +247,12 @@
 		}
 		{
 			dependencies: ["6DA910B6605F1C45"]
-			subtitle: "解放条件: 「金属板の量産」を完了"
 			description: ["BeltとChuteで人力運搬を減らす。マルチでは投入箱と完成品箱を分け、誰でも使えるラインにしよう。"]
 			icon: "create:belt_connector"
 			id: "62A487045A417185"
 			rewards: [
 				{
-					count: 36
+					count: 16
 					id: "7A4200000000000C"
 					item: "apocalypsenow:money"
 					type: "item"
@@ -261,6 +263,7 @@
 					type: "item"
 				}
 			]
+			subtitle: "解放条件: 「金属板の量産」を完了"
 			tasks: [
 				{
 					count: 2L
@@ -281,13 +284,12 @@
 		}
 		{
 			dependencies: ["62A487045A417185"]
-			subtitle: "解放条件: 「搬送ライン」を完了"
 			description: ["Sawは木材加工、Drillは採掘、Fanは洗浄や加熱に使える。目的別モジュールとして保管しよう。"]
 			icon: "create:mechanical_saw"
 			id: "4671F32B10634F93"
 			rewards: [
 				{
-					count: 45
+					count: 12
 					id: "7A4200000000000E"
 					item: "apocalypsenow:money"
 					type: "item"
@@ -299,6 +301,7 @@
 					type: "item"
 				}
 			]
+			subtitle: "解放条件: 「搬送ライン」を完了"
 			tasks: [
 				{
 					id: "5CF820079DEF17DF"
@@ -328,9 +331,10 @@
 			description: ["T1到達時にGas Stationから回収した封入済みBlaze Burnerを工房へ設置する。PDZではネザーへ行かず、施設攻略で工業熱源を解放する。"]
 			icon: "create:blaze_burner"
 			id: "276FC6A949C932CC"
+			subtitle: "解放条件: 「共同加工槽」・「T1：Survivor」をすべて完了"
 			rewards: [
 				{
-					count: 45
+					count: 12
 					id: "7A42000000000010"
 					item: "apocalypsenow:money"
 					type: "item"
@@ -359,9 +363,10 @@
 			description: ["Brassは精密制御への入口。T1以降の工業Lootと施設攻略から必要素材を集める。"]
 			icon: "create:brass_ingot"
 			id: "10FBBDB4204025B6"
+			subtitle: "解放条件: 「共同加工槽」・「搬送ライン」をすべて完了"
 			rewards: [
 				{
-					count: 54
+					count: 20
 					id: "7A42000000000012"
 					item: "apocalypsenow:money"
 					type: "item"
@@ -385,13 +390,12 @@
 		}
 		{
 			dependencies: ["10FBBDB4204025B6"]
-			subtitle: "解放条件: 「黄銅時代」を完了"
 			description: ["Deploy工程を組み、Precision Mechanismを自作する。ここから弾薬設備、車両部品、電力設備へ分岐する。"]
 			icon: "create:precision_mechanism"
 			id: "0586500E16BCEB38"
 			rewards: [
 				{
-					count: 64
+					count: 16
 					id: "23758F7677B2D01F"
 					item: "apocalypsenow:money"
 					type: "item"
@@ -403,6 +407,7 @@
 					type: "item"
 				}
 			]
+			subtitle: "解放条件: 「黄銅時代」を完了"
 			tasks: [{
 				count: 2L
 				id: "217FE0D12D5D3087"
@@ -415,13 +420,12 @@
 		}
 		{
 			dependencies: ["0586500E16BCEB38"]
-			subtitle: "解放条件: 「精密機構」を完了"
 			description: ["Mechanical Crafterで大型レシピへ進む。個人設備ではなく、全員が素材を持ち寄れる共同生産区画を完成させよう。"]
 			icon: "create:mechanical_crafter"
 			id: "4BC5D9E30186B5A3"
 			rewards: [
 				{
-					count: 64
+					count: 20
 					id: "7A42000000000015"
 					item: "apocalypsenow:money"
 					type: "item"
@@ -432,6 +436,7 @@
 					type: "item"
 				}
 			]
+			subtitle: "解放条件: 「精密機構」を完了"
 			tasks: [{
 				count: 9L
 				id: "52263294CA67B694"
@@ -444,7 +449,6 @@
 		}
 		{
 			dependencies: ["4BC5D9E30186B5A3"]
-			subtitle: "解放条件: 「共同生産区画」を完了"
 			description: [
 				"Create基礎ライン完成。次は担当ごとの専門化へ進む。"
 				"Mechanic：車両・燃料　Engineer：電力・重工業　Survivalist：農業自動化　Medic：薬品生産　Weapons Expert：弾薬・防衛設備"
@@ -453,7 +457,7 @@
 			id: "08A015955038522A"
 			rewards: [
 				{
-					count: 64
+					count: 24
 					id: "7696A5CC14AD3E3F"
 					item: "apocalypsenow:money"
 					type: "item"
@@ -464,6 +468,7 @@
 					xp: 48
 				}
 			]
+			subtitle: "解放条件: 「共同生産区画」を完了"
 			tasks: [
 				{
 					count: 8L

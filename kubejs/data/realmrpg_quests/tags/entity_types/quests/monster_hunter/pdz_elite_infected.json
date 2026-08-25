@@ -1,0 +1,8 @@
+{
+  "replace": true,
+  "values": [
+    "infectious:big_zombie",
+    "infectious:mutant_zombie",
+    "apocalypse_zombies:tank"
+  ]
+}

@@ -45,12 +45,12 @@
         "tag": {
           "id": "apocalypsenow:large_shelves_fill"
         },
-        "loot": "project_deadzone:chests/hospital_emergency"
+        "loot": "project_deadzone:hospital_emergency"
       },
       {
         "char": "",
         "block": "minecraft:bookshelf",
-        "loot": "project_deadzone:chests/hospital_emergency"
+        "loot": "project_deadzone:hospital_emergency"
       },
       {
         "char": "",
@@ -122,7 +122,7 @@
         "tag": {
           "id": "apocalypsenow:large_shelves"
         },
-        "loot": "project_deadzone:chests/hospital_emergency"
+        "loot": "project_deadzone:hospital_emergency"
       },
       {
         "char": "",

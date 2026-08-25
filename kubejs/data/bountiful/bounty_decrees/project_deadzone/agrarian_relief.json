@@ -1,0 +1,5 @@
+{
+  "name": "農業集落復興令",
+  "objectives": ["agrarian_imports"],
+  "rewards": ["agrarian_exports"]
+}

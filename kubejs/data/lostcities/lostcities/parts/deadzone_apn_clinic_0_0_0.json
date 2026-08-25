@@ -37,7 +37,7 @@
         "tag": {
           "id": "apocalypsenow:large_shelves_fill"
         },
-        "loot": "project_deadzone:chests/hospital_emergency"
+        "loot": "project_deadzone:hospital_emergency"
       },
       {
         "char": "",
@@ -121,7 +121,7 @@
           "Items": [],
           "id": "apocalypsenow:medical_storage"
         },
-        "loot": "project_deadzone:chests/hospital_pharmacy"
+        "loot": "project_deadzone:hospital_pharmacy"
       },
       {
         "char": "",

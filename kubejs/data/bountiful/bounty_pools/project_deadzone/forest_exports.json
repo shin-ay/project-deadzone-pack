@@ -1,0 +1,8 @@
+{
+  "content": {
+    "pdz_forest_oak": {"type":"item","content":"minecraft:oak_log","amount":{"min":12,"max":32},"unitWorth":70,"weightMult":1.4},
+    "pdz_forest_spruce": {"type":"item","content":"minecraft:spruce_log","amount":{"min":12,"max":32},"unitWorth":70,"weightMult":1.4},
+    "pdz_forest_charcoal": {"type":"item","content":"minecraft:charcoal","amount":{"min":8,"max":20},"unitWorth":105,"weightMult":1.2},
+    "pdz_forest_honey": {"type":"item","content":"minecraft:honey_bottle","amount":{"min":2,"max":5},"unitWorth":430,"rarity":"UNCOMMON"}
+  }
+}

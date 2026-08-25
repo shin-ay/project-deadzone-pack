@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "radiotowers:radiotoweroverrun",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 266,
+    "separation": 100,
+    "salt": 1898939115
+  }
+}

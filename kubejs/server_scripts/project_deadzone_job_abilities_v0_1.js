@@ -134,12 +134,13 @@ ItemEvents.crafted(event=>{
 ItemEvents.foodEaten(event=>{
   let p=event.entity
   if (!p||!p.isPlayer||!p.isPlayer()||p.level.clientSide) return
+  let prepared=global.pdzIsPreparedMeal&&global.pdzIsPreparedMeal(event.item)
   if (dzcaT2(p,'provider')) p.potionEffects.add('minecraft:saturation',40,0,false,false)
-  if (dzcaT3(p,'chef')) {
+  if (dzcaT3(p,'chef')&&prepared) {
     p.potionEffects.add('minecraft:regeneration',100,0,false,false)
     p.potionEffects.add('minecraft:absorption',600,0,false,false)
   }
-  if (dzcaT3(p,'angler')) p.potionEffects.add('minecraft:luck',1200,0,false,false)
+  if (dzcaT3(p,'angler')&&global.pdzIsFishMeal&&global.pdzIsFishMeal(event.item)) p.potionEffects.add('minecraft:luck',1200,0,false,false)
 })
 
 ItemEvents.rightClicked(event=>{

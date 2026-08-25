@@ -1,0 +1,247 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: "circle"
+	filename: "deadzone_settlement_liberation_01"
+	group: "6A11000000000003"
+	icon: "minecraft:black_banner"
+	id: "6D55010000000001"
+	order_index: 23
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: ["6D54010000000101"]
+			description: [
+				"Hatedの占領集落でNobleへ接触すると、Village Recruitsの実勢力IDとClaim所有者を台帳へ記録する。"
+				"これは専用ダンジョンではない。兵士、外交、反乱、包囲、占領はすべてVillage Recruits純正機能で進む。"
+			]
+			icon: "minecraft:black_banner"
+			id: "6D55010000000101"
+			subtitle: "解放条件: 「第一印象をStandingへ」を完了"
+			tasks: [{
+				id: "6D55010000002101"
+				title: "敵対占領地の実勢力を確認した"
+				type: "custom"
+			}]
+			title: "占領地にも所有者がいる"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["6D55010000000101"]
+			description: [
+				"集落の解放クエストには、純正システムを使う二つの攻略経路が説明されている。"
+				"外部から勢力戦でClaimを奪うか、内部からVillage Leaderへ反乱を申請する。PDZ独自の攻城イベントや無料兵士は存在しない。"
+			]
+			icon: "minecraft:filled_map"
+			id: "6D55010000000102"
+			subtitle: "解放条件: 「占領地にも所有者がいる」を完了"
+			rewards: [{
+				id: "6D55010000001102"
+				type: "xp"
+				xp: 5
+			}]
+			tasks: [{
+				id: "6D55010000002201"
+				title: "解放経路を確認した"
+				type: "custom"
+			}]
+			title: "攻めるか、内側から割るか"
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["6D55010000000102"]
+			description: [
+				"内部反乱は、村勢力への所属、自分が所有するRecruit 3人、村の不満度50%以上が必要。"
+				"Village Leaderが受理したら60秒以内に自勢力を作成する。最大60%の守備兵が離反し得るが、条件判定と結果はVillage Recruitsが管理する。"
+			]
+			icon: "minecraft:bell"
+			id: "6D55010000000103"
+			subtitle: "解放条件: 「攻めるか、内側から割るか」を完了"
+			tasks: [{
+				id: "6D55010000002301"
+				title: "純正反乱の条件を確認した"
+				type: "custom"
+			}]
+			title: "内側から旗を上げる"
+			x: 4.0d
+			y: -1.0d
+		}
+		{
+			dependencies: ["6D55010000000102"]
+			description: [
+				"外部攻略ではVillage Recruitsの外交で敵対し、Recruitと共にClaimへ侵攻する。"
+				"現設定では守備隊を全員排除しない限り占領ゲージは完了しない。隠れた守備兵の救済・強調・呼戻しもMOD側機能を使う。"
+			]
+			icon: {
+				Count: 1
+				id: "minecraft:shield"
+				tag: {
+					Damage: 0
+				}
+			}
+			id: "6D55010000000104"
+			subtitle: "解放条件: 「攻めるか、内側から割るか」を完了"
+			tasks: [{
+				id: "6D55010000002401"
+				title: "純正包囲の条件を確認した"
+				type: "custom"
+			}]
+			title: "旗だけ替えても終わらない"
+			x: 4.0d
+			y: 1.0d
+		}
+		{
+			dependencies: [
+				"6D55010000000103"
+				"6D55010000000104"
+			]
+			description: [
+				"実際のClaim所有者が占領勢力から自分の所属勢力へ変わると自動達成する。"
+				"同盟NPC勢力や別プレイヤー勢力が取得しただけでは、自分の解放実績として扱わない。占領Lootとは別の物資報酬も配らない。"
+			]
+			icon: "minecraft:white_banner"
+			id: "6D55010000000105"
+			subtitle: "解放条件: 「内側から旗を上げる」・「旗だけ替えても終わらない」をすべて完了"
+			rewards: [{
+				id: "6D55010000001105"
+				type: "xp"
+				xp: 30
+			}]
+			tasks: [{
+				id: "6D55010000002501"
+				title: "自勢力でClaimを解放した"
+				type: "custom"
+			}]
+			title: "Claimが解放を証明する"
+			x: 6.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["6D55010000000105"]
+			description: [
+				"解放後、PDZの地域関係は中立へ戻り、復旧台帳を開く。"
+				"ここからは独自復興ゲージではなく、Village Recruitsの守備隊、物資、人口、Worker、研究、商人拠点を実際に育てる。旧占領勢力への悪評履歴は消去しない。"
+			]
+			icon: "minecraft:emerald"
+			id: "6D55010000000106"
+			subtitle: "解放条件: 「Claimが解放を証明する」を完了"
+			tasks: [{
+				id: "6D55010000002601"
+				title: "解放集落の市場を再開した"
+				type: "custom"
+			}]
+			title: "旗の次は暮らしを戻す"
+			x: 8.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["6D55010000000106"]
+			description: [
+				"解放Claimの96m以内へVillage Recruitsの実在守備兵を3人以上配置する。"
+				"NPCを無料Spawnするクエストではない。Recruitの雇用、所属、配置、装備はVillage Recruits純正機能で行う。"
+			]
+			icon: {
+				Count: 1
+				id: "minecraft:iron_sword"
+				tag: {
+					Damage: 0
+				}
+			}
+			id: "6D55010000000107"
+			subtitle: "解放条件: 「旗の次は暮らしを戻す」を完了"
+			tasks: [{
+				id: "6D55010000002701"
+				title: "実在守備兵を3人以上配置した"
+				type: "custom"
+			}]
+			title: "夜を越せる守備隊"
+			x: 10.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["6D55010000000107"]
+			description: [
+				"Village Recruitsの村備蓄へ木材64、石材64、砂と羊毛の合計32以上を確保する。"
+				"プレイヤーのインベントリ所持数ではなく、Materials画面に記録される村の実在Stockだけを数える。"
+			]
+			icon: "minecraft:chest"
+			id: "6D55010000000108"
+			subtitle: "解放条件: 「夜を越せる守備隊」を完了"
+			tasks: [{
+				id: "6D55010000002801"
+				title: "村の基礎資材備蓄を回復した"
+				type: "custom"
+			}]
+			title: "壁より先に備蓄を"
+			x: 12.0d
+			y: -1.0d
+		}
+		{
+			dependencies: ["6D55010000000108"]
+			description: [
+				"解放中心の人口を4人以上、Village Recruits Workerを1人以上へ戻す。"
+				"人口台帳とWorkerはMOD標準の経済・Workshop処理が使う値で、PDZは読み取るだけ。"
+			]
+			icon: {
+				Count: 1
+				id: "minecraft:iron_pickaxe"
+				tag: {
+					Damage: 0
+				}
+			}
+			id: "6D55010000000109"
+			subtitle: "解放条件: 「壁より先に備蓄を」を完了"
+			tasks: [{
+				id: "6D55010000002901"
+				title: "人口4・Worker1へ復旧した"
+				type: "custom"
+			}]
+			title: "働く手を取り戻す"
+			x: 14.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["6D55010000000109"]
+			description: [
+				"Village RecruitsのTechnologyでMilitia Lv1に加え、GarrisonsまたはBasic Firearms Lv1を研究する。"
+				"必要資材、研究時間、前提技術、効果は純正Technology Treeが管理する。管理者Grantは進行経路に使わない。"
+			]
+			icon: "minecraft:knowledge_book"
+			id: "6D55010000000110"
+			subtitle: "解放条件: 「働く手を取り戻す」を完了"
+			tasks: [{
+				id: "6D55010000003001"
+				title: "民兵と防衛技術を研究した"
+				type: "custom"
+			}]
+			title: "守るための知識"
+			x: 16.0d
+			y: -1.0d
+		}
+		{
+			dependencies: ["6D55010000000110"]
+			description: [
+				"研究条件を満たしたうえで、解放中心にVillage Recruitsの実在Merchant Postを1つ以上稼働させる。"
+				"これで交易は単なる解放報酬ではなく、守備・備蓄・人口・研究を戻した集落サービスになる。"
+			]
+			icon: "minecraft:emerald_block"
+			id: "6D55010000000111"
+			subtitle: "解放条件: 「守るための知識」を完了"
+			rewards: [{
+				id: "6D55010000001111"
+				type: "xp"
+				xp: 50
+			}]
+			tasks: [{
+				id: "6D55010000003101"
+				title: "商人拠点を再稼働した"
+				type: "custom"
+			}]
+			title: "市場は人が戻ってから"
+			x: 18.0d
+			y: 0.0d
+		}
+	]
+	title: "敵対占領地・解放"
+}

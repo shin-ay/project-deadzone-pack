@@ -6,5 +6,5 @@ StartupEvents.registry("item", event => {
     .maxStackSize(16)
     .tooltip("§7オフハンドの装備耐久を回復")
     .tooltip("§bMechanic 40% / Engineer 32% / その他 25%")
-    .tooltip("§aAffix・熟練度・銃の内部データを維持")
+    .tooltip("§aM&S装備・熟練度・銃の内部データを維持")
 })

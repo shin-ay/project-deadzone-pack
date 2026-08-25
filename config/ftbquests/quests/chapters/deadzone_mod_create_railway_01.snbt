@@ -2,32 +2,32 @@
 	default_hide_dependency_lines: false
 	default_quest_shape: "circle"
 	filename: "deadzone_mod_create_railway_01"
-	group: "A170000000000005"
+	group: "6A11000000000001"
 	icon: "create:track_station"
 	id: "6F3058C252B90172"
-	order_index: 21
+	order_index: 6
 	quest_links: [ ]
 	quests: [
 		{
 			dependencies: ["6500000000000004"]
-			subtitle: "解放条件: 「T1・道路輸送班」を完了"
 			description: ["道路輸送だけでは敵と地形に止められる。拠点間を結ぶ線路を敷き、重量物資を安定して運ぶ準備を始める。"]
 			icon: "create:track"
 			id: "6500000000000005"
 			rewards: [
 				{
-					count: 64
+					count: 12
 					id: "6520000000000009"
 					item: "apocalypsenow:money"
 					type: "item"
 				}
 				{
-					count: 32
+					count: 16
 					id: "652000000000000A"
 					item: "create:track"
 					type: "item"
 				}
 			]
+			subtitle: "解放条件: 「T1・道路輸送班」を完了"
 			tasks: [{
 				count: 32L
 				id: "651000000000000A"
@@ -40,30 +40,30 @@
 		}
 		{
 			dependencies: ["6500000000000005"]
-			subtitle: "解放条件: 「補給線を敷く」を完了"
 			description: ["駅と信号は列車を安全に回す基礎設備。発着地点と閉塞区間を作り、正面衝突を防ぐ。"]
 			icon: "create:track_station"
 			id: "6500000000000006"
 			rewards: [
 				{
-					count: 64
+					count: 16
 					id: "652000000000000B"
 					item: "apocalypsenow:money"
 					type: "item"
 				}
 				{
-					count: 2
+					count: 1
 					id: "652000000000000C"
 					item: "create:track_station"
 					type: "item"
 				}
 				{
-					count: 4
+					count: 2
 					id: "6520000000000020"
 					item: "create:track_signal"
 					type: "item"
 				}
 			]
+			subtitle: "解放条件: 「補給線を敷く」を完了"
 			tasks: [
 				{
 					count: 2L
@@ -84,24 +84,24 @@
 		}
 		{
 			dependencies: ["6500000000000006"]
-			subtitle: "解放条件: 「駅と信号」を完了"
 			description: ["時刻表を組めば列車は人が付き添わなくても巡回できる。定期補給便を作り、単純運搬から仲間を解放しよう。"]
 			icon: "create:schedule"
 			id: "6500000000000007"
 			rewards: [
 				{
-					count: 64
+					count: 16
 					id: "652000000000000D"
 					item: "apocalypsenow:money"
 					type: "item"
 				}
 				{
-					count: 3
+					count: 1
 					id: "652000000000000E"
 					item: "create:schedule"
 					type: "item"
 				}
 			]
+			subtitle: "解放条件: 「駅と信号」を完了"
 			tasks: [{
 				count: 2L
 				id: "651000000000000D"
@@ -114,19 +114,18 @@
 		}
 		{
 			dependencies: ["6500000000000006"]
-			subtitle: "解放条件: 「駅と信号」を完了"
 			description: ["Portable Storage Interfaceで列車と倉庫を自動接続する。停車時間を短くし、襲撃される隙を減らす。"]
 			icon: "create:portable_storage_interface"
 			id: "6500000000000008"
 			rewards: [
 				{
-					count: 64
+					count: 20
 					id: "652000000000000F"
 					item: "apocalypsenow:money"
 					type: "item"
 				}
 				{
-					count: 4
+					count: 2
 					id: "6520000000000010"
 					item: "create:portable_storage_interface"
 					type: "item"
@@ -138,6 +137,7 @@
 					type: "item"
 				}
 			]
+			subtitle: "解放条件: 「駅と信号」を完了"
 			tasks: [
 				{
 					count: 4L
@@ -165,9 +165,10 @@
 			description: ["T1鉄道網が完成した。複線化や支線増設に使える重い資材を、参加者全員が個別報酬として受け取れる。"]
 			icon: "create:track_station"
 			id: "6500000000000009"
+			subtitle: "解放条件: 「定期補給便」・「自動積み替え」・「T1：Survivor」をすべて完了"
 			rewards: [
 				{
-					count: 64
+					count: 24
 					id: "6520000000000011"
 					item: "apocalypsenow:money"
 					type: "item"

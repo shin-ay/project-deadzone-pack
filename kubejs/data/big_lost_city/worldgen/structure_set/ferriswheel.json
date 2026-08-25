@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "big_lost_city:ferriswheel",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 64,
+    "separation": 35,
+    "salt": 173942498
+  }
+}

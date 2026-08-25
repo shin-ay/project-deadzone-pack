@@ -42,7 +42,7 @@
       {
         "char": "",
         "block": "minecraft:bookshelf",
-        "loot": "project_deadzone:chests/generic_low_filled"
+        "loot": "project_deadzone:generic_low_filled"
       },
       {
         "char": "",

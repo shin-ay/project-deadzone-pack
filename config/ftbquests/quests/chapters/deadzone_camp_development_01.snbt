@@ -1,0 +1,151 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: "hexagon"
+	filename: "deadzone_camp_development_01"
+	group: "59FD4E11CFE90C47"
+	icon: "minecraft:campfire"
+	id: "6D46010000000001"
+	order_index: 1
+	quest_links: [ ]
+	quests: [
+		{
+			description: [
+				"Base Coreを右クリックし、「キャンプ発展」を選ぶと、共有キャンプの発展状態と次の必要物資を確認できる。"
+				"この仕組みはNPCの位置や建物を自動変更せず、既存NPCの販売・買取・価格・在庫枠だけを成長させる。外観はプレイヤーが自由に改修できる。"
+			]
+			icon: "minecraft:campfire"
+			id: "6D46010000000101"
+			rewards: [{
+				count: 8
+				id: "6D46010000001101"
+				item: "minecraft:lantern"
+				team_reward: true
+				type: "item"
+			}]
+			tasks: [{
+				id: "6D46010000002101"
+				title: "Base Coreでキャンプ発展管理を開いた"
+				type: "custom"
+			}]
+			title: "Survivor Camp発展計画"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"6D46010000000101"
+				"7100000000000004"
+				"6D45010000000102"
+			]
+			description: [
+				"条件: 燃料ルート復旧、生活評判10。Base Coreで原木32、鉄16、パン16を共同資材として納品する。"
+				"食料・医療・整備NPCが最低限の安定在庫を扱い始め、全ショップ価格が基準から5%改善される。"
+			]
+			icon: "minecraft:iron_ingot"
+			id: "6D46010000000102"
+			subtitle: "解放条件: 「Survivor Camp発展計画」・「復旧：燃料ルート」・「Rank 1：安定供給」をすべて完了"
+			rewards: [
+				{
+					count: 4
+					id: "6D46010000001201"
+					item: "apocalypsenow:bandage"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 8
+					id: "6D46010000001202"
+					item: "minecraft:bread"
+					team_reward: true
+					type: "item"
+				}
+			]
+			tasks: [{
+				id: "6D46010000002201"
+				title: "Camp Lv1「安定拠点」へ発展した"
+				type: "custom"
+			}]
+			title: "Camp Lv1：安定拠点"
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"6D46010000000102"
+				"6D45010000000103"
+			]
+			description: [
+				"条件: World Tier 1、生活評判25。チェスト12、銅24、電子部品4を納品する。"
+				"医療品と専門工具が増え、各ショップの候補枠と買取枠が1つ増加。全ショップ価格がさらに5%改善される。"
+			]
+			icon: "immersiveengineering:component_electronic"
+			id: "6D46010000000103"
+			subtitle: "解放条件: 「Camp Lv1：安定拠点」・「Rank 2：共同炊事」をすべて完了"
+			rewards: [
+				{
+					count: 2
+					id: "6D46010000001301"
+					item: "apocalypsenow:pain_killers"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "6D46010000001302"
+					item: {
+						Count: 1
+						id: "immersiveengineering:hammer"
+						tag: {
+							Damage: 0
+						}
+					}
+					team_reward: true
+					type: "item"
+				}
+			]
+			tasks: [{
+				id: "6D46010000002301"
+				title: "Camp Lv2「サービス拠点」へ発展した"
+				type: "custom"
+			}]
+			title: "Camp Lv2：サービス拠点"
+			x: 4.0d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"6D46010000000103"
+				"6D45010000000104"
+			]
+			description: [
+				"条件: World Tier 2、生活評判50。鋼鉄24、ダイヤ4、ガソリンバケツ2を納品する。"
+				"高性能医療品と高度工具を解放。全ショップ価格はキャンプ発展分だけで15%改善され、生活評判と合わせて成長する。"
+			]
+			icon: "immersiveengineering:ingot_steel"
+			id: "6D46010000000104"
+			subtitle: "解放条件: 「Camp Lv2：サービス拠点」・「Rank 3：地域食料網」をすべて完了"
+			rewards: [
+				{
+					id: "6D46010000001401"
+					item: "apocalypsenow:medicalkit"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "6D46010000001402"
+					item: "create:wrench"
+					team_reward: true
+					type: "item"
+				}
+			]
+			tasks: [{
+				id: "6D46010000002401"
+				title: "Camp Lv3「地域ハブ」へ発展した"
+				type: "custom"
+			}]
+			title: "Camp Lv3：地域ハブ"
+			x: 6.0d
+			y: 0.0d
+		}
+	]
+	title: "Survivor Camp 機能拡張"
+}

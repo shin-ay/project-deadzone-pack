@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "horror_element_mod:labyrinth",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 29,
+    "separation": 20,
+    "salt": 1077119346
+  }
+}

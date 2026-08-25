@@ -1,0 +1,162 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: "circle"
+	filename: "deadzone_settlement_relations_01"
+	group: "6A11000000000003"
+	icon: "recruits:villager_noble_spawn_egg"
+	id: "6D54010000000001"
+	order_index: 22
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: ["6D52010000000101"]
+			description: [
+				"Village RecruitsのNobleへ話しかけ、集落を実際の勢力Standingへ接続する。"
+				"友好はTrusted 20、中立はNeutral 0、敵対占領地はHated -50から開始する。以後の増減、永続化、敵対判定はVillage Recruitsが管理する。"
+			]
+			icon: "recruits:villager_noble_spawn_egg"
+			id: "6D54010000000101"
+			subtitle: "解放条件: 「村をもう一つのCampにするな」を完了"
+			rewards: [{
+				id: "6D54010000001101"
+				type: "xp"
+				xp: 10
+			}]
+			tasks: [{
+				id: "6D54010000002101"
+				title: "集落のNobleへ話しかけた"
+				type: "custom"
+			}]
+			title: "第一印象をStandingへ"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["6D54010000000101"]
+			description: [
+				"集落代表へ話しかけると、現在のStandingと利用可能なサービス帯を確認できる。"
+				"村Merchantの買取価格は友好度ではなく実在庫の不足率で変わる。物資不足ほど良い価格になり、在庫目標へ達すると買取を停止する。"
+			]
+			icon: "village_recruits:merchant_post"
+			id: "6D54010000000102"
+			subtitle: "解放条件: 「第一印象をStandingへ」を完了"
+			tasks: [{
+				id: "6D54010000002201"
+				title: "需要価格とStandingの違いを確認した"
+				type: "custom"
+			}]
+			title: "安値ではなく、本当に不足しているか"
+			x: 2.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["6D54010000000101"]
+			description: [
+				"勢力未所属の状態でNobleをスニーク右クリックし、その村が実際に必要としている契約を完了する。"
+				"納品、夜警、Monster Pressure、敵勢力討伐、包囲解除から状況に合う依頼だけが出る。完了とStanding獲得はVillage Recruitsの台帳から自動検知する。"
+			]
+			icon: "minecraft:writable_book"
+			id: "6D54010000000103"
+			subtitle: "解放条件: 「第一印象をStandingへ」を完了"
+			tasks: [{
+				id: "6D54010000002301"
+				title: "Village Recruits契約を1件完了した"
+				type: "custom"
+			}]
+			title: "信頼は固定納品表では買えない"
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["6D54010000000101"]
+			description: [
+				"Standing 20～49。通常依頼に加えてTrusted向け契約とReputation Shopの商品が開く。"
+				"友好集落はこの帯から開始し、中立集落は契約で到達する。Shop購入はStandingを消費する。"
+			]
+			icon: {
+				Count: 1
+				id: "minecraft:shield"
+				tag: {
+					Damage: 0
+				}
+			}
+			id: "6D54010000000104"
+			subtitle: "解放条件: 「第一印象をStandingへ」を完了"
+			tasks: [{
+				id: "6D54010000002401"
+				title: "いずれかの勢力でTrusted 20へ到達した"
+				type: "custom"
+			}]
+			title: "Trusted：仕事を任される"
+			x: 4.0d
+			y: -1.0d
+		}
+		{
+			dependencies: ["6D54010000000104"]
+			description: [
+				"Standing 50～79。危険な契約と上位品質の装備が利用可能になる。"
+				"Standingは鍵ではなく通貨でもある。装備を買えば帯が下がり、再び地域へ貢献する必要がある。"
+			]
+			icon: {
+				Count: 1
+				id: "minecraft:diamond_sword"
+				tag: {
+					Damage: 0
+				}
+			}
+			id: "6D54010000000105"
+			subtitle: "解放条件: 「Trusted：仕事を任される」を完了"
+			tasks: [{
+				id: "6D54010000002501"
+				title: "いずれかの勢力でHonoured 50へ到達した"
+				type: "custom"
+			}]
+			title: "Honoured：上棚の商品"
+			x: 6.0d
+			y: -1.0d
+		}
+		{
+			dependencies: ["6D54010000000105"]
+			description: [
+				"Standing 80以上。Championは最高の関係帯だが、Reputation Shopで高級装備や対応銃器を買えばStandingを消費する。"
+				"FTBから同じ装備を重複配布しない。品質上昇と対価はVillage Recruits純正Shopが担当する。"
+			]
+			icon: "minecraft:nether_star"
+			id: "6D54010000000106"
+			subtitle: "解放条件: 「Honoured：上棚の商品」を完了"
+			tasks: [{
+				id: "6D54010000002601"
+				title: "いずれかの勢力でChampion 80へ到達した"
+				type: "custom"
+			}]
+			title: "Champion：歓迎は消費できる"
+			x: 8.0d
+			y: -1.0d
+		}
+		{
+			dependencies: ["6D54010000000101"]
+			description: [
+				"Standing -10以下では契約と入隊を拒否され、-50以下では攻撃対象・賞金首になる。住民、兵士、指揮官の殺害や契約放棄、コンボイ襲撃はVillage Recruitsの台帳へ残る。"
+				"このクエストは悪評を要求しない。Noble接触時に説明だけ完了し、犯罪報酬も配らない。"
+			]
+			icon: {
+				Count: 1
+				id: "minecraft:crossbow"
+				tag: {
+					Damage: 0
+				}
+			}
+			id: "6D54010000000107"
+			subtitle: "解放条件: 「第一印象をStandingへ」を完了"
+			tasks: [{
+				id: "6D54010000002701"
+				title: "Standing低下の結果を確認した"
+				type: "custom"
+			}]
+			title: "村は襲撃を忘れない"
+			x: 2.0d
+			y: 2.0d
+		}
+	]
+	title: "集落Standing・サービス品質"
+}

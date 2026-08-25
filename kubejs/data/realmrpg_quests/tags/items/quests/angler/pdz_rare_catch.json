@@ -1,0 +1,9 @@
+{
+  "replace": true,
+  "values": [
+    "aquaculture:arapaima",
+    "aquaculture:atlantic_halibut",
+    "aquaculture:muskellunge",
+    "aquaculture:gar"
+  ]
+}

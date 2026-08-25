@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "infectious:villager_outpost",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 104,
+    "separation": 50,
+    "salt": 199811984
+  }
+}

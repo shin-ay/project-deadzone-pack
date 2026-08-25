@@ -1,0 +1,307 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: "circle"
+	filename: "deadzone_defense_recovery_01"
+	group: "72AA1A32F85FF9D3"
+	icon: {
+		Count: 1
+		id: "minecraft:shield"
+		tag: {
+			Damage: 0
+		}
+	}
+	id: "6D50010000000001"
+	order_index: 7
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: ["1B82208C73A56C92"]
+			description: [
+				"Base Coreを右クリックし、「地域防衛」で防衛管制を開く。PDZは敵生成の担当を重ねない。"
+				"Survivor Campは勢力Raid、野外はThe Hordes、MineColoniesは監視塔・兵舎による支援を担当する。"
+			]
+			icon: "minecraft:compass"
+			id: "6D50010000000101"
+			subtitle: "解放条件: 「応急処置」を完了"
+			rewards: [{
+				count: 16
+				id: "6D50010000001101"
+				item: "minecraft:stone_bricks"
+				type: "item"
+			}]
+			tasks: [{
+				id: "6D50010000002101"
+				title: "地域防衛管制を確認した"
+				type: "custom"
+			}]
+			title: "敵を三重に湧かせるな"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["6D50010000000101"]
+			description: [
+				"The Hordesは設定上Command Only。勝手にCampへ重ねず、受諾したプレイヤーの野外Hordeだけを担当する。"
+				"MineColonies蛮族もPDZでは無効。代わりに完成済み防衛施設を地域支援へ換算する。"
+			]
+			icon: "minecraft:rotten_flesh"
+			id: "6D50010000000102"
+			subtitle: "解放条件: 「敵を三重に湧かせるな」を完了"
+			rewards: [{
+				id: "6D50010000001201"
+				type: "xp"
+				xp: 10
+			}]
+			tasks: [{
+				id: "6D50010000002201"
+				title: "襲撃責任の分離を確認した"
+				type: "custom"
+			}]
+			title: "地域ごとに一人の責任者"
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["6D50010000000102"]
+			description: [
+				"Camp Raidの60秒警告中に表示される「防壁を補強」を押す。基本はStone Bricks 64とIron Ingot 16を共有納品する。"
+				"鉄道航路確立後は48/12へ軽減。同じ準備枠へ二重納品はできず、外周補強は戦後の構造復旧負債を1軽減する。"
+			]
+			icon: "minecraft:stone_bricks"
+			id: "6D50010000000103"
+			subtitle: "解放条件: 「地域ごとに一人の責任者」を完了"
+			rewards: [{
+				count: 4
+				id: "6D50010000001301"
+				item: "minecraft:iron_ingot"
+				type: "item"
+			}]
+			tasks: [{
+				id: "6D50010000002301"
+				title: "外周補強を共有納品した"
+				type: "custom"
+			}]
+			title: "外周補強"
+			x: 4.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["6D50010000000102"]
+			description: [
+				"警告中に表示される「食料を備蓄」を押す。基本はBread 16とCooked Beef 8を共有納品する。"
+				"海上航路確立後は12/6へ軽減。戦闘員と住民の備蓄があれば、戦後の配給停止を短くできる。"
+			]
+			icon: "minecraft:bread"
+			id: "6D50010000000104"
+			subtitle: "解放条件: 「地域ごとに一人の責任者」を完了"
+			rewards: [{
+				count: 2
+				id: "6D50010000001401"
+				item: "farmersdelight:beef_stew"
+				type: "item"
+			}]
+			tasks: [{
+				id: "6D50010000002401"
+				title: "防衛食料を共有納品した"
+				type: "custom"
+			}]
+			title: "撃つ前に食わせる"
+			x: 4.0d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"6D50010000000102"
+				"6D4F010000000104"
+			]
+			description: [
+				"警告中に表示される「救護所を準備」を押す。基本はLSO Bandage 4とAntibiotics 1を共有納品する。"
+				"航空航路確立後はBandage 3へ軽減。救護所準備は死傷後の復旧負債を軽減する。"
+			]
+			icon: "legendarysurvivaloverhaul:bandage"
+			id: "6D50010000000105"
+			subtitle: "解放条件: 「地域ごとに一人の責任者」・「外来処置」をすべて完了"
+			rewards: [{
+				count: 2
+				id: "6D50010000001501"
+				item: "apocalypsenow:bandage"
+				type: "item"
+			}]
+			tasks: [{
+				id: "6D50010000002501"
+				title: "救護所を共有準備した"
+				type: "custom"
+			}]
+			title: "救護所を先に作る"
+			x: 4.0d
+			y: 2.0d
+		}
+		{
+			dependencies: [
+				"6D50010000000103"
+				"6D50010000000104"
+				"6D50010000000105"
+			]
+			description: [
+				"Camp Raidの2 Waveを排除してBase Coreを守る。初回後は3 Minecraft日ごとにBase Coreの「地域防衛」から再受諾できる。"
+				"人数に応じて増援・Elite・Medicが追加される。進行中の敵が残っている限り次Waveへ進まない。"
+			]
+			icon: {
+				Count: 1
+				id: "minecraft:shield"
+				tag: {
+					Damage: 0
+				}
+			}
+			id: "6D50010000000106"
+			subtitle: "解放条件: 「外周補強」・「撃つ前に食わせる」・「救護所を先に作る」をすべて完了"
+			rewards: [{
+				count: 8
+				id: "6D50010000001601"
+				item: "apocalypsenow:money"
+				type: "item"
+			}]
+			tasks: [{
+				id: "6D50010000002601"
+				title: "Survivor Campを防衛した"
+				type: "custom"
+			}]
+			title: "壁のこちら側"
+			x: 6.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["6D50010000000106"]
+			description: [
+				"プレイヤー死亡とCamp Guard死亡を0で防衛する。準備は復旧負債を減らすが、無犠牲判定そのものをごまかさない。"
+				"これは任意の熟練目標。地域防衛ループの最終完了には必須ではない。"
+			]
+			icon: "minecraft:totem_of_undying"
+			id: "6D50010000000107"
+			subtitle: "解放条件: 「壁のこちら側」を完了"
+			rewards: [{
+				count: 6
+				id: "6D50010000001701"
+				item: "apocalypsenow:money"
+				type: "item"
+			}]
+			tasks: [{
+				id: "6D50010000002701"
+				title: "死傷者0で防衛した"
+				type: "custom"
+			}]
+			title: "誰も置いていかない"
+			x: 8.0d
+			y: -2.0d
+		}
+		{
+			dependencies: [
+				"6D50010000000106"
+				"6D43110000000101"
+			]
+			description: [
+				"所有コロニーで完成済みのGuard TowerまたはBarracksを用意してCampを防衛する。建物Lv合計を支援戦力として最大5まで読む。"
+				"蛮族を別に湧かせず、MineColonies運営章のRaid防衛監査もこの地域支援で達成できる。"
+			]
+			icon: "minecolonies:blockhutguardtower"
+			id: "6D50010000000108"
+			subtitle: "解放条件: 「壁のこちら側」・「コロニー開始：Supply Camp」をすべて完了"
+			rewards: [{
+				count: 8
+				id: "6D50010000001801"
+				item: "minecolonies:ancienttome"
+				type: "item"
+			}]
+			tasks: [{
+				id: "6D50010000002801"
+				title: "コロニー防衛施設が地域支援した"
+				type: "custom"
+			}]
+			title: "監視塔は孤立していない"
+			x: 8.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["6D50010000000106"]
+			description: [
+				"復旧負債が残った場合、Base Coreの「地域防衛」から1段階ずつ共同復旧する。基本はStone Bricks 16、Iron 4、Bread 4、LSO Bandage 1。"
+				"道路航路確立後はStone Bricks 12、Iron 3へ軽減。完了するとBase Coreと不足Guard、非緊急サービスを戻す。"
+			]
+			icon: "minecraft:anvil"
+			id: "6D50010000000109"
+			subtitle: "解放条件: 「壁のこちら側」を完了"
+			rewards: [{
+				id: "6D50010000001901"
+				item: "kubejs:field_repair_kit"
+				type: "item"
+			}]
+			tasks: [{
+				id: "6D50010000002901"
+				title: "Campサービスを完全復旧した"
+				type: "custom"
+			}]
+			title: "勝っただけでは戻らない"
+			x: 8.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["6D50010000000106"]
+			description: [
+				"Base Coreの「地域防衛」で野外Horde契約を表示し、Campから160m以上離れたMineColonies領域外で開始ボタンを押す。The Hordesの150秒契約を生存する。"
+				"Camp・コロニーへ戻るか死亡すると失敗。感染者大群を居住圏へ重ねないための野外担当ルール。"
+			]
+			icon: "minecraft:rotten_flesh"
+			id: "6D5001000000010A"
+			subtitle: "解放条件: 「壁のこちら側」を完了"
+			rewards: [{
+				id: "6D50010000001A01"
+				item: "apocalypsenow:antibiotics"
+				type: "item"
+			}]
+			tasks: [{
+				id: "6D50010000002A01"
+				title: "野外Horde契約を生還した"
+				type: "custom"
+			}]
+			title: "大群を家へ持ち帰るな"
+			x: 8.0d
+			y: 4.0d
+		}
+		{
+			dependencies: [
+				"6D50010000000108"
+				"6D50010000000109"
+				"6D5001000000010A"
+			]
+			description: [
+				"勢力Raid、The Hordes、MineColonies支援の責任を分離し、準備・防衛・損害・復旧を一つの地域ループにした。"
+				"次は物流手段を距離・重量・地域需要へ接続し、防衛物資がどこから来るかまでゲーム化する。"
+			]
+			icon: "minecraft:lodestone"
+			id: "6D5001000000010B"
+			subtitle: "解放条件: 「監視塔は孤立していない」・「勝っただけでは戻らない」・「大群を家へ持ち帰るな」をすべて完了"
+			rewards: [
+				{
+					count: 12
+					id: "6D50010000001B01"
+					item: "apocalypsenow:money"
+					type: "item"
+				}
+				{
+					id: "6D50010000001B02"
+					type: "xp"
+					xp: 50
+				}
+			]
+			tasks: [{
+				id: "6D50010000002B01"
+				title: "地域防衛・復旧ループを完成した"
+				type: "custom"
+			}]
+			title: "守った地域で暮らす"
+			x: 10.0d
+			y: 2.0d
+		}
+	]
+	title: "拠点防衛・Horde・復旧"
+}

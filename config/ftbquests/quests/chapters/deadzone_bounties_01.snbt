@@ -2,15 +2,14 @@
 	default_hide_dependency_lines: false
 	default_quest_shape: "circle"
 	filename: "deadzone_bounties_01"
-	group: "A170000000000003"
+	group: "4944EA3062E9681A"
 	icon: "minecraft:target"
 	id: "7C32BF319D45FE2F"
-	order_index: 2
+	order_index: 0
 	quest_links: [ ]
 	quests: [
 		{
 			dependencies: ["1920AEAAF4D75E94"]
-			subtitle: "解放条件: 「Survivor Camp」を完了"
 			description: [
 				"通常感染者に混じる変異個体の痕跡を回収する、最初の賞金首任務。"
 				"賞金首はメインストーリーとは独立して進行でき、複数の依頼を同時に追跡できる。"
@@ -18,81 +17,307 @@
 			icon: "infectious:mutated_rotten_flesh"
 			id: "7B7E509DA0EF9E16"
 			rewards: [
-				{ count: 12 id: "B170000000000001" item: "apocalypsenow:money" type: "item" }
-				{ count: 3 id: "B170000000000002" item: "apocalypsenow:bandage" type: "item" }
-				{ id: "B170000000000003" type: "xp" xp: 30 }
+				{
+					count: 12
+					id: "13182649CF47E97E"
+					item: "apocalypsenow:money"
+					type: "item"
+				}
+				{
+					count: 3
+					id: "4297CD81F7C06A4A"
+					item: "apocalypsenow:bandage"
+					type: "item"
+				}
+				{
+					id: "0EF7402A302BDEFA"
+					type: "xp"
+					xp: 30
+				}
 			]
-			tasks: [{ consume_items: true count: 8L id: "2239FEBBBDC2D8CB" item: "infectious:mutated_rotten_flesh" type: "item" }]
+			subtitle: "解放条件: 「Survivor Camp」を完了"
+			tasks: [{
+				consume_items: true
+				count: 8L
+				id: "2239FEBBBDC2D8CB"
+				item: "infectious:mutated_rotten_flesh"
+				type: "item"
+			}]
 			title: "賞金首入門：変異の痕跡"
 			x: 0.0d
 			y: 0.0d
 		}
 		{
 			dependencies: ["7B7E509DA0EF9E16"]
-			subtitle: "解放条件: 「賞金首入門：変異の痕跡」を完了"
 			description: [
 				"金色の名前と発光で識別できるRare級の危険個体を10体排除する。"
 				"通常個体では進行しない。途中経過は撃破時のチャットに表示される。"
 			]
 			icon: "minecraft:zombie_head"
-			id: "D202608200003030"
+			id: "7FF938D798C2F6A7"
 			rewards: [
-				{ count: 24 id: "B170000000000011" item: "apocalypsenow:money" type: "item" }
-				{ count: 2 id: "B170000000000012" item: "kubejs:affix_scrap_rare" type: "item" }
-				{ id: "B170000000000013" type: "xp" xp: 80 }
+				{
+					count: 24
+					id: "3728AA93CCE63823"
+					item: "apocalypsenow:money"
+					type: "item"
+				}
+				{
+					count: 2
+					id: "09D7ED924410B4C5"
+					item: "immersiveengineering:component_steel"
+					type: "item"
+				}
+				{
+					id: "497443C8CCBD5873"
+					type: "xp"
+					xp: 80
+				}
 			]
-			tasks: [{ id: "D202608200003040" title: "Rare級の感染者・敵兵を10体撃破した" type: "custom" }]
+			subtitle: "解放条件: 「賞金首入門：変異の痕跡」を完了"
+			tasks: [{
+				id: "3F6244686708F30B"
+				title: "Rare級の感染者・敵兵を10体撃破した"
+				type: "custom"
+			}]
 			title: "危険個体狩り：Rare級10体"
 			x: 2.0d
 			y: 0.0d
 		}
 		{
 			dependencies: ["7B7E509DA0EF9E16"]
-			subtitle: "解放条件: 「賞金首入門：変異の痕跡」を完了／Region Tier 1以上推奨"
 			description: ["RU VeteranまたはPMC Specialistを5体排除する。銃撃戦になるため遮蔽物と医療品を準備すること。"]
 			icon: "tacz:modern_kinetic_gun"
-			id: "D202608200003041"
+			id: "346A353468F42A27"
 			rewards: [
-				{ count: 30 id: "B170000000000021" item: "apocalypsenow:money" type: "item" }
-				{ count: 2 id: "B170000000000022" item: "immersiveengineering:component_iron" type: "item" }
-				{ id: "B170000000000023" type: "xp" xp: 100 }
+				{
+					count: 30
+					id: "04837B2BC5FA91F0"
+					item: "apocalypsenow:money"
+					type: "item"
+				}
+				{
+					count: 2
+					id: "6EA378E4E8097E91"
+					item: "immersiveengineering:component_iron"
+					type: "item"
+				}
+				{
+					id: "25EDAA8A46CA14B9"
+					type: "xp"
+					xp: 100
+				}
 			]
-			tasks: [{ id: "D202608200003042" title: "敵兵のRare級個体を5体撃破した" type: "custom" }]
+			subtitle: "解放条件: 「賞金首入門：変異の痕跡」を完了／Region Tier 1以上推奨"
+			tasks: [{
+				id: "5FEFE0C019AEFD57"
+				title: "敵兵のRare級個体を5体撃破した"
+				type: "custom"
+			}]
 			title: "賞金首：武装勢力の精鋭"
 			x: 3.5d
 			y: -1.5d
 		}
 		{
-			dependencies: ["D202608200003030"]
-			subtitle: "解放条件: 「危険個体狩り：Rare級10体」を完了／Region Tier 1以上推奨"
+			dependencies: ["1920AEAAF4D75E94"]
+			description: [
+				"ロードキング先遣隊長アクセルは、Raider系大型拠点の戦利品庫を封鎖している。"
+				"Bandit Village、Bandit Tower、Illager Fortの高価値チェスト周辺を捜索する。背面燃料タンクと増援用ボンベを先に破壊しよう。"
+				"これは一度きりのNamedサブクエスト。再遭遇時は本体の通常Boss Lootだけを獲得できる。"
+			]
+			icon: "tacz:modern_kinetic_gun"
+			id: "A1E1000000000001"
+			rewards: [
+				{
+					count: 8
+					id: "A1E1000000000003"
+					item: "apocalypsenow:money"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "A1E1000000000004"
+					item: "immersiveengineering:component_steel"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "A1E1000000000005"
+					team_reward: true
+					type: "xp"
+					xp: 60
+				}
+			]
+			subtitle: "解放条件: 「Survivor Camp」を完了／大型Bandit施設の戦利品庫で出現"
+			tasks: [{
+				id: "A1E1000000000002"
+				title: "アクセル『ロードキング先遣隊長』を撃破した"
+				type: "custom"
+			}]
+			title: "Named：ロードキング先遣隊長"
+			x: 3.5d
+			y: 1.5d
+		}
+		{
+			dependencies: ["7FF938D798C2F6A7"]
 			description: ["異常な筋力を持つSiege Tankを排除する。正面で受けず、部位損傷と退路を管理して戦おう。"]
-			icon: "apocalypsenow:army_helmet"
+			icon: {
+				Count: 1
+				id: "apocalypsenow:army_helmet"
+				tag: {
+					Damage: 0
+				}
+			}
 			id: "10F903EB357EFC28"
 			rewards: [
-				{ count: 40 id: "4254F6D98427465E" item: "apocalypsenow:money" type: "item" }
-				{ count: 3 id: "B170000000000031" item: "kubejs:affix_scrap_rare" type: "item" }
-				{ id: "171B6D3256F496AD" type: "xp" xp: 140 }
+				{
+					count: 32
+					id: "4254F6D98427465E"
+					item: "apocalypsenow:money"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 3
+					id: "3D511C608A2FA234"
+					item: "immersiveengineering:component_steel"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "171B6D3256F496AD"
+					team_reward: true
+					type: "xp"
+					xp: 140
+				}
 			]
-			tasks: [{ id: "D202608200004020" title: "Siege Tankを撃破した" type: "custom" }]
+			subtitle: "解放条件: 「危険個体狩り：Rare級10体」を完了／Region Tier 1以上推奨"
+			tasks: [{
+				id: "7AEBB56189496D4D"
+				title: "Siege Tankを撃破した"
+				type: "custom"
+			}]
 			title: "賞金首：Siege Tank"
 			x: 5.0d
 			y: -0.8d
 		}
 		{
-			dependencies: ["D202608200003030"]
-			subtitle: "解放条件: 「危険個体狩り：Rare級10体」を完了／Region Tier 2以上推奨"
+			can_repeat: true
+			dependencies: ["10F903EB357EFC28"]
+			description: ["Siege Tankの追加討伐契約。初回手配書より報酬は小さいが、再出現個体を倒すたびPartyで再受注できる。"]
+			icon: "apocalypsenow:army_helmet"
+			id: "A1E1000000000010"
+			rewards: [
+				{
+					count: 12
+					id: "A1E1000000000012"
+					item: "apocalypsenow:money"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "A1E1000000000013"
+					item: "immersiveengineering:component_steel"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "A1E1000000000014"
+					team_reward: true
+					type: "xp"
+					xp: 40
+				}
+			]
+			subtitle: "解放条件: 「賞金首：Siege Tank」を完了／Party単位で反復可能"
+			tasks: [{
+				id: "A1E1000000000011"
+				title: "追加手配のSiege Tankを撃破した"
+				type: "custom"
+			}]
+			title: "反復手配：Siege Tank"
+			x: 6.5d
+			y: -0.8d
+		}
+		{
+			dependencies: ["7FF938D798C2F6A7"]
 			description: ["感染が長期化した地域で確認されたAncient Abominationを排除する。退路と継続火力が必要になる。"]
 			icon: "infectious:mutated_rotten_flesh"
 			id: "717B2B8A66A44728"
 			rewards: [
-				{ count: 52 id: "73029846DF1D413B" item: "apocalypsenow:money" type: "item" }
-				{ count: 4 id: "1DB58BCD767BDB2E" item: "apocalypsenow:morphine" type: "item" }
-				{ count: 2 id: "B170000000000041" item: "kubejs:affix_scrap_epic" type: "item" }
-				{ id: "19E8179FB0184AC0" type: "xp" xp: 180 }
+				{
+					count: 40
+					id: "73029846DF1D413B"
+					item: "apocalypsenow:money"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 4
+					id: "1DB58BCD767BDB2E"
+					item: "apocalypsenow:morphine"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "4112B3098B8D5E72"
+					item: "minecraft:echo_shard"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "19E8179FB0184AC0"
+					team_reward: true
+					type: "xp"
+					xp: 180
+				}
 			]
-			tasks: [{ id: "D202608200004030" title: "Ancient Abominationを撃破した" type: "custom" }]
+			subtitle: "解放条件: 「危険個体狩り：Rare級10体」を完了／Region Tier 2以上推奨"
+			tasks: [{
+				id: "37CFA740A2420D95"
+				title: "Ancient Abominationを撃破した"
+				type: "custom"
+			}]
 			title: "賞金首：Ancient Abomination"
 			x: 5.0d
+			y: 0.8d
+		}
+		{
+			can_repeat: true
+			dependencies: ["717B2B8A66A44728"]
+			description: ["Ancient Abominationの追加討伐契約。初回の記録回収後も、長期汚染地域に現れる個体をPartyで再手配できる。"]
+			icon: "infectious:mutated_rotten_flesh"
+			id: "A1E1000000000020"
+			rewards: [
+				{
+					count: 16
+					id: "A1E1000000000022"
+					item: "apocalypsenow:money"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "A1E1000000000023"
+					item: "apocalypsenow:morphine"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "A1E1000000000024"
+					team_reward: true
+					type: "xp"
+					xp: 50
+				}
+			]
+			subtitle: "解放条件: 「賞金首：Ancient Abomination」を完了／Party単位で反復可能"
+			tasks: [{
+				id: "A1E1000000000021"
+				title: "追加手配のAncient Abominationを撃破した"
+				type: "custom"
+			}]
+			title: "反復手配：Ancient Abomination"
+			x: 6.5d
 			y: 0.8d
 		}
 	]

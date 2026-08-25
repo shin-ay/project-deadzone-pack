@@ -1,0 +1,589 @@
+{
+  "outsidestyle": "outside",  
+  "multisettings": {
+    "areasize": 16,
+    "minimum": 40,
+    "maximum": 50,
+    "correctstylefactor": 0.9,
+    "attempts": 100
+  },
+  "scattered": {
+    "areasize": 18,
+    "chance": 0.6,
+    "weightnone": 20,
+    "list": [
+      {
+        "name": "keerdm_zombie_essentials:wind_turbine",
+        "weight": 3,
+        "maxheightdiff": 100,
+        "biomes": {
+          "excluding": [
+            "#minecraft:is_ocean",
+            "#minecraft:is_river",
+            "#minecraft:is_beach"
+          ]
+        }
+      },
+      {
+        "name": "radiotower",
+        "weight": 2,
+        "maxheightdiff": 10,
+        "biomes": {
+          "excluding": [
+            "#minecraft:is_ocean",
+            "#minecraft:is_river",
+            "#minecraft:is_beach",
+			"#forge:is_dry"
+          ]
+        }
+      },
+      {
+		"name": "keerdm_zombie_essentials:powerline_north",
+        "weight": 20,
+        "maxheightdiff": 10,
+        "biomes": {
+          "excluding": [
+            "#minecraft:is_ocean",
+            "#minecraft:is_river",
+            "#minecraft:is_beach"
+          ]
+        }
+      },
+      {
+		"name": "keerdm_zombie_essentials:powerline_west",
+        "weight": 20,
+        "maxheightdiff": 10,
+        "biomes": {
+          "excluding": [
+            "#minecraft:is_ocean",
+            "#minecraft:is_river",
+            "#minecraft:is_beach"
+          ]
+        }
+      },
+      {
+        "name": "oilrig",
+        "weight": 1,
+        "maxheightdiff": 100,
+        "biomes": {
+          "if_any": [
+            "#minecraft:is_deep_ocean"
+          ]
+        }
+      },
+      {
+        "name": "keerdm_zombie_essentials:zombie_cabin",
+        "weight": 10,
+        "maxheightdiff": 5,
+        "biomes": {
+          "excluding": [
+            "#minecraft:is_ocean",
+            "#minecraft:is_river",
+            "#minecraft:is_beach",
+			"minecraft:plains",
+			"#forge:is_dry"
+          ]
+        }
+      },
+      {
+        "name": "lostcities:tallbuilding2",
+        "weight": 0,
+        "maxheightdiff": 20,
+        "biomes": {
+          "excluding": [
+            "#minecraft:is_ocean",
+            "#minecraft:is_river",
+            "#minecraft:is_beach"
+          ]
+        }
+      },
+      {
+        "name": "lostcities:firestation12",
+        "weight": 0,
+        "maxheightdiff": 20,
+        "biomes": {
+          "excluding": [
+            "#minecraft:is_ocean",
+            "#minecraft:is_river",
+            "#minecraft:is_beach"
+          ]
+        }
+      },
+      {
+        "name": "lostcities:smallshop",
+        "weight": 0,
+        "maxheightdiff": 20,
+        "biomes": {
+          "excluding": [
+            "#minecraft:is_ocean",
+            "#minecraft:is_river",
+            "#minecraft:is_beach"
+          ]
+        }
+      },
+      {
+        "name": "lostcities:massivebuildingwithhelicopter",
+        "weight": 0,
+        "maxheightdiff": 20,
+        "biomes": {
+          "excluding": [
+            "#minecraft:is_ocean",
+            "#minecraft:is_river",
+            "#minecraft:is_beach"
+          ]
+        }
+      },
+      {
+        "name": "lostcities:crashedhelicopter2",
+        "weight": 200,
+        "maxheightdiff": 2,
+        "biomes": {
+          "excluding": [
+            "#minecraft:is_ocean",
+            "#minecraft:is_river",
+            "#minecraft:is_beach"
+          ]
+        }
+      },
+      {
+        "name": "lostcities:4buildingsrow",
+        "weight": 0,
+        "maxheightdiff": 20,
+        "biomes": {
+          "excluding": [
+            "#minecraft:is_ocean",
+            "#minecraft:is_river",
+            "#minecraft:is_beach"
+          ]
+        }
+      },
+      {
+        "name": "lostcities:observatory",
+        "weight": 1,
+        "maxheightdiff": 3,
+        "biomes": {
+          "excluding": [
+            "#minecraft:is_ocean",
+            "#minecraft:is_river",
+            "#minecraft:is_beach"
+          ]
+        }
+      },
+      {
+        "name": "lostcities:mediumbuildingczp1",
+        "weight": 0,
+        "maxheightdiff": 20,
+        "biomes": {
+          "excluding": [
+            "#minecraft:is_ocean",
+            "#minecraft:is_river",
+            "#minecraft:is_beach"
+          ]
+        }
+      },
+      {
+        "name": "lostcities:skyscraper",
+        "weight": 0,
+        "maxheightdiff": 20,
+        "biomes": {
+          "excluding": [
+            "#minecraft:is_ocean",
+            "#minecraft:is_river",
+            "#minecraft:is_beach"
+          ]
+        }
+      },
+      {
+        "name": "lostcities:skyscraper1",
+        "weight": 0,
+        "maxheightdiff": 20,
+        "biomes": {
+          "excluding": [
+            "#minecraft:is_ocean",
+            "#minecraft:is_river",
+            "#minecraft:is_beach"
+          ]
+        }
+      },
+      {
+        "name": "lostcities:hugebuilding1",
+        "weight": 0,
+        "maxheightdiff": 20,
+        "biomes": {
+          "excluding": [
+            "#minecraft:is_ocean",
+            "#minecraft:is_river",
+            "#minecraft:is_beach"
+          ]
+        }
+      },
+      {
+        "name": "lostcities:gasstation1",
+        "weight": 0,
+        "maxheightdiff": 20,
+        "biomes": {
+          "excluding": [
+            "#minecraft:is_ocean",
+            "#minecraft:is_river",
+            "#minecraft:is_beach"
+          ]
+        }
+      },
+      {
+        "name": "lostcities:hugebuilding2",
+        "weight": 0,
+        "maxheightdiff": 20,
+        "biomes": {
+          "excluding": [
+            "#minecraft:is_ocean",
+            "#minecraft:is_river",
+            "#minecraft:is_beach"
+          ]
+        }
+      },
+      {
+        "name": "lostcities:scatteredhouse1",
+        "weight": 0,
+        "maxheightdiff": 3,
+        "biomes": {
+          "excluding": [
+            "#minecraft:is_ocean",
+            "#minecraft:is_river",
+            "#minecraft:is_beach"
+          ]
+        }
+      },
+      {
+        "name": "lostcities:shop2",
+        "weight": 0,
+        "maxheightdiff": 20,
+        "biomes": {
+          "excluding": [
+            "#minecraft:is_ocean",
+            "#minecraft:is_river",
+            "#minecraft:is_beach"
+          ]
+        }
+      },
+      {
+        "name": "lostcities:shop3",
+        "weight": 0,
+        "maxheightdiff": 20,
+        "biomes": {
+          "excluding": [
+            "#minecraft:is_ocean",
+            "#minecraft:is_river",
+            "#minecraft:is_beach"
+          ]
+        }
+      },
+      {
+        "name": "lostcities:walmart2",
+        "weight": 0,
+        "maxheightdiff": 20,
+        "biomes": {
+          "excluding": [
+            "#minecraft:is_ocean",
+            "#minecraft:is_river",
+            "#minecraft:is_beach"
+          ]
+        }
+      },
+      {
+        "name": "lostcities:gianthospital",
+        "weight": 0,
+        "maxheightdiff": 20,
+        "biomes": {
+          "excluding": [
+            "#minecraft:is_ocean",
+            "#minecraft:is_river",
+            "#minecraft:is_beach"
+          ]
+        }
+      },
+      {
+        "name": "lostcities:bigmall",
+        "weight": 0,
+        "maxheightdiff": 20,
+        "biomes": {
+          "excluding": [
+            "#minecraft:is_ocean",
+            "#minecraft:is_river",
+            "#minecraft:is_beach"
+          ]
+        }
+      },
+      {
+        "name": "lostcities:policestation",
+        "weight": 0,
+        "maxheightdiff": 20,
+        "biomes": {
+          "excluding": [
+            "#minecraft:is_ocean",
+            "#minecraft:is_river",
+            "#minecraft:is_beach"
+          ]
+        }
+      },
+      {
+        "name": "lostcities:aircraftcarrier",
+        "weight": 0,
+        "maxheightdiff": 10,
+        "biomes": {
+          "if_any": [
+            "#minecraft:is_ocean"
+          ]
+        }
+      },
+      {
+        "name": "lostcities:scatteredhouse2",
+        "weight": 100,
+        "maxheightdiff": 3,
+        "biomes": {
+          "excluding": [
+            "#minecraft:is_ocean",
+            "#minecraft:is_river",
+            "#minecraft:is_beach"
+          ]
+        }
+      },
+      {
+        "name": "lostcities:radio_tower1",
+        "weight": 100,
+        "maxheightdiff": 6,
+        "biomes": {
+          "excluding": [
+            "#minecraft:is_ocean",
+            "#minecraft:is_river",
+            "#minecraft:is_beach"
+          ]
+        }
+      },
+      {
+        "name": "lostcities:radio_tower2",
+        "weight": 70,
+        "maxheightdiff": 5,
+        "biomes": {
+          "excluding": [
+            "#minecraft:is_ocean",
+            "#minecraft:is_river",
+            "#minecraft:is_beach"
+          ]
+        }
+      },
+      {
+        "name": "lostcities:watch_tower1",
+        "weight": 100,
+        "maxheightdiff": 6,
+        "biomes": {
+          "excluding": [
+            "#minecraft:is_ocean",
+            "#minecraft:is_river",
+            "#minecraft:is_beach"
+          ]
+        }
+      },
+      {
+        "name": "lostcities:aircraftcarrier2",
+        "weight": 0,
+        "maxheightdiff": 50,
+        "biomes": {
+          "if_any": [
+            "#forge:is_ocean"
+          ]
+        }
+      },
+      {
+        "name": "lostcities:l3ya_spruceforest_cabin_1",
+        "weight": 20,
+        "maxheightdiff": 2,
+        "biomes": {
+          "excluding": [
+            "#minecraft:is_ocean",
+            "#minecraft:is_river",
+            "#minecraft:is_beach"
+          ]
+        }
+      }
+    ]
+  },
+  "citybiomemultipliers": [
+    {
+      "multiplier": 0.1,
+      "biomes": {
+        "if_any": [
+          "#minecraft:is_ocean"
+        ]
+      }
+    },
+    {
+      "multiplier": 0.1,
+      "biomes": {
+        "if_any": [
+          "#minecraft:is_deep_ocean"
+        ]
+      }
+    },
+    {
+      "multiplier": 0.3,
+      "biomes": {
+        "if_any": [
+          "#minecraft:is_river"
+        ]
+      }
+    },
+    {
+      "multiplier": 1.2,
+      "biomes": {
+        "if_any": [
+          "#minecraft:is_plains",
+          "#minecraft:is_savanna"
+        ]
+      }
+    },
+    {
+      "multiplier": 0.72,
+      "biomes": {
+        "if_any": [
+          "#minecraft:is_forest",
+          "#minecraft:is_taiga"
+        ]
+      }
+    },
+    {
+      "multiplier": 0.42,
+      "biomes": {
+        "if_any": [
+          "#minecraft:is_jungle",
+          "#minecraft:is_swamp"
+        ]
+      }
+    },
+    {
+      "multiplier": 0.28,
+      "biomes": {
+        "if_any": [
+          "#minecraft:is_mountain",
+          "#minecraft:is_hill"
+        ]
+      }
+    },
+    {
+      "multiplier": 0.58,
+      "biomes": {
+        "if_any": [
+          "#minecraft:is_badlands"
+        ]
+      }
+    },
+    {
+      "multiplier": 0.52,
+      "biomes": {
+        "if_any": [
+          "#minecraft:is_snowy"
+        ]
+      }
+    }
+  ],
+  "citystyles": [
+    {
+      "factor": 1,
+      "citystyle": "lostcities:standard"
+    }
+  ],
+  "parts": {
+      "highways": {
+        "bridge": [
+          "keerdm_zombie_essentials:highway_bridge_variant_1",
+          "keerdm_zombie_essentials:highway_bridge_variant_2",
+          "keerdm_zombie_essentials:highway_bridge_variant_3",
+          "keerdm_zombie_essentials:highway_bridge_variant_4",
+          "keerdm_zombie_essentials:highway_bridge_variant_5",
+          "keerdm_zombie_essentials:highway_bridge_variant_6",
+          "keerdm_zombie_essentials:highway_bridge_variant_7",
+          "highway_bridge",
+          "highway_bridge",
+          "highway_bridge",
+          "highway_bridge",
+          "highway_bridge",
+          "highway_bridge",
+          "highway_bridge",
+          "highway_bridge",
+          "highway_bridge",
+          "highway_bridge",
+          "highway_bridge"
+        ],
+        "bridge_bi": [
+          "keerdm_zombie_essentials:highway_bridge_bi_variant_1",
+          "keerdm_zombie_essentials:highway_bridge_bi_variant_2",
+          "keerdm_zombie_essentials:highway_bridge_bi_variant_3",
+          "keerdm_zombie_essentials:highway_bridge_bi_variant_4",
+          "highway_bridge_bi",
+          "highway_bridge_bi",
+          "highway_bridge_bi",
+          "highway_bridge_bi",
+          "highway_bridge_bi"
+        ],
+        "tunnel": [
+          "keerdm_zombie_essentials:highway_tunnel_variant_1",
+          "keerdm_zombie_essentials:highway_tunnel_variant_2",
+          "keerdm_zombie_essentials:highway_tunnel_variant_3",
+          "keerdm_zombie_essentials:highway_tunnel_variant_4",
+          "keerdm_zombie_essentials:highway_tunnel_variant_5",
+          "keerdm_zombie_essentials:highway_tunnel_variant_6",
+          "keerdm_zombie_essentials:highway_tunnel_variant_7",
+          "highway_tunnel",
+          "highway_tunnel",
+          "highway_tunnel",
+          "highway_tunnel",
+          "highway_tunnel",
+          "highway_tunnel",
+          "highway_tunnel",
+          "highway_tunnel",
+          "highway_tunnel",
+          "highway_tunnel"
+        ],
+        "tunnel_bi": [
+          "keerdm_zombie_essentials:highway_tunnel_bi_variant_1",
+          "keerdm_zombie_essentials:highway_tunnel_bi_variant_2",
+          "keerdm_zombie_essentials:highway_tunnel_bi_variant_3",
+          "keerdm_zombie_essentials:highway_tunnel_bi_variant_4",
+          "highway_tunnel_bi",
+          "highway_tunnel_bi",
+          "highway_tunnel_bi",
+          "highway_tunnel_bi",
+          "highway_tunnel_bi"
+        ],
+        "open": [
+          "keerdm_zombie_essentials:highway_open_variant_1",
+          "keerdm_zombie_essentials:highway_open_variant_2",
+          "keerdm_zombie_essentials:highway_open_variant_3",
+          "keerdm_zombie_essentials:highway_open_variant_4",
+          "keerdm_zombie_essentials:highway_open_variant_5",
+          "keerdm_zombie_essentials:highway_open_variant_6",
+          "keerdm_zombie_essentials:highway_open_variant_7",
+          "highway_open",
+          "highway_open",
+          "highway_open",
+          "highway_open",
+          "highway_open",
+          "highway_open",
+          "highway_open",
+          "highway_open",
+          "highway_open",
+          "highway_open"
+        ],
+        "open_bi": [
+          "keerdm_zombie_essentials:highway_open_bi_variant_1",
+          "keerdm_zombie_essentials:highway_open_bi_variant_2",
+          "keerdm_zombie_essentials:highway_open_bi_variant_3",
+          "keerdm_zombie_essentials:highway_open_bi_variant_4",
+          "highway_open_bi",
+          "highway_open_bi",
+          "highway_open_bi",
+          "highway_open_bi",
+          "highway_open_bi"
+        ]
+      }
+    }
+  }

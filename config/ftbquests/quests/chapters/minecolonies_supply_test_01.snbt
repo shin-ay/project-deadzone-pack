@@ -1,0 +1,655 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: "gear"
+	filename: "minecolonies_supply_test_01"
+	group: "6A11000000000002"
+	icon: "minecolonies:blockhutbuilder"
+	id: "6D43010000000001"
+	order_index: 5
+	quest_links: [ ]
+	quests: [
+		{
+			can_repeat: true
+			description: [
+				"基礎物資を納品し、Modular Hub様式のBuilder Lv1資材を受領する。"
+				"このテスト版ではパーティーにつき、各報酬を1回だけ受け取れる。"
+			]
+			icon: "minecraft:dark_oak_log"
+			id: "6D43010000000101"
+			rewards: [
+				{
+					count: 2
+					id: "6D43010000001101"
+					item: "minecolonies:blockminecoloniesrack"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "6D43010000001102"
+					item: "minecraft:chest"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "6D43010000001103"
+					item: "minecraft:crafting_table"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 48
+					id: "6D43010000001104"
+					item: "minecraft:dark_oak_log"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 24
+					id: "6D43010000001105"
+					item: "minecraft:dark_oak_planks"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 24
+					id: "6D43010000001106"
+					item: "minecraft:dark_oak_slab"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 26
+					id: "6D43010000001107"
+					item: "minecraft:spruce_planks"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 16
+					id: "6D43010000001108"
+					item: "minecraft:spruce_slab"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 8
+					id: "6D43010000001109"
+					item: "minecraft:torch"
+					team_reward: true
+					type: "item"
+				}
+			]
+			subtitle: "様式申告: Modular Hub / Builder Lv1"
+			tasks: [
+				{
+					consume_items: true
+					count: 32L
+					id: "6D43010000002101"
+					item: "minecraft:oak_log"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 32L
+					id: "6D43010000002102"
+					item: "minecraft:cobblestone"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 8L
+					id: "6D43010000002103"
+					item: "minecraft:bread"
+					type: "item"
+				}
+			]
+			title: "建築物資: Modular Hub Builder I"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			can_repeat: true
+			description: ["基礎物資を納品し、lostcity様式のBuilder Lv1資材を受領する。"]
+			icon: "minecraft:red_sandstone"
+			id: "6D43010000000102"
+			rewards: [
+				{
+					id: "6D43010000001201"
+					item: "minecraft:crafting_table"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 9
+					id: "6D43010000001202"
+					item: "minecraft:dead_bush"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 5
+					id: "6D43010000001203"
+					item: "minecraft:oak_slab"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 31
+					id: "6D43010000001204"
+					item: "minecraft:red_sand"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 5
+					id: "6D43010000001205"
+					item: "minecraft:red_sandstone"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 13
+					id: "6D43010000001206"
+					item: "minecraft:red_sandstone_stairs"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 14
+					id: "6D43010000001207"
+					item: "minecraft:terracotta"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 3
+					id: "6D43010000001208"
+					item: "minecraft:torch"
+					team_reward: true
+					type: "item"
+				}
+			]
+			subtitle: "様式申告: lostcity / Builder Lv1"
+			tasks: [
+				{
+					consume_items: true
+					count: 32L
+					id: "6D43010000002201"
+					item: "minecraft:oak_log"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 32L
+					id: "6D43010000002202"
+					item: "minecraft:cobblestone"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 8L
+					id: "6D43010000002203"
+					item: "minecraft:bread"
+					type: "item"
+				}
+			]
+			title: "建築物資: lostcity Builder I"
+			x: 2.0d
+			y: -2.0d
+		}
+		{
+			can_repeat: true
+			description: ["基礎物資を納品し、fortress様式のBuilder Lv1資材を受領する。"]
+			icon: "minecraft:dark_oak_planks"
+			id: "6D43010000000103"
+			rewards: [
+				{
+					count: 8
+					id: "6D43010000001301"
+					item: "minecraft:cobblestone_wall"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "6D43010000001302"
+					item: "minecraft:crafting_table"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "6D43010000001303"
+					item: "minecraft:dark_oak_door"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 6
+					id: "6D43010000001304"
+					item: "minecraft:dark_oak_fence"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 16
+					id: "6D43010000001305"
+					item: "minecraft:dark_oak_log"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 160
+					id: "6D43010000001306"
+					item: "minecraft:dark_oak_planks"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 16
+					id: "6D43010000001307"
+					item: "minecraft:dirt"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 33
+					id: "6D43010000001308"
+					item: "minecraft:oak_sign"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 11
+					id: "6D43010000001309"
+					item: "minecraft:torch"
+					team_reward: true
+					type: "item"
+				}
+			]
+			subtitle: "様式申告: fortress / Builder Lv1"
+			tasks: [
+				{
+					consume_items: true
+					count: 32L
+					id: "6D43010000002301"
+					item: "minecraft:oak_log"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 32L
+					id: "6D43010000002302"
+					item: "minecraft:cobblestone"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 8L
+					id: "6D43010000002303"
+					item: "minecraft:bread"
+					type: "item"
+				}
+			]
+			title: "建築物資: fortress Builder I"
+			x: 4.0d
+			y: -1.0d
+		}
+		{
+			can_repeat: true
+			description: ["基礎物資を納品し、colonial様式のBuilder Lv1資材を受領する。"]
+			icon: "minecraft:oak_log"
+			id: "6D43010000000104"
+			rewards: [
+				{
+					id: "6D43010000001401"
+					item: "domum_ornamentum:double_crossed"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "6D43010000001402"
+					item: "minecolonies:blockminecoloniesrack"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "6D43010000001403"
+					item: "minecraft:birch_planks"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 30
+					id: "6D43010000001404"
+					item: "minecraft:cobblestone"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 30
+					id: "6D43010000001405"
+					item: "minecraft:cobblestone_stairs"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "6D43010000001406"
+					item: "minecraft:crafting_table"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 23
+					id: "6D43010000001407"
+					item: "minecraft:gravel"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 8
+					id: "6D43010000001408"
+					item: "minecraft:oak_door"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "6D43010000001409"
+					item: "minecraft:oak_fence"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 7
+					id: "6D4301000000140A"
+					item: "minecraft:oak_fence_gate"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 80
+					id: "6D4301000000140B"
+					item: "minecraft:oak_log"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 7
+					id: "6D4301000000140C"
+					item: "minecraft:oak_planks"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 35
+					id: "6D4301000000140D"
+					item: "minecraft:oak_slab"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 65
+					id: "6D4301000000140E"
+					item: "minecraft:oak_stairs"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "6D4301000000140F"
+					item: "minecraft:spruce_planks"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 12
+					id: "6D43010000001410"
+					item: "minecraft:torch"
+					team_reward: true
+					type: "item"
+				}
+			]
+			subtitle: "様式申告: colonial / Builder Lv1"
+			tasks: [
+				{
+					consume_items: true
+					count: 32L
+					id: "6D43010000002401"
+					item: "minecraft:oak_log"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 32L
+					id: "6D43010000002402"
+					item: "minecraft:cobblestone"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 8L
+					id: "6D43010000002403"
+					item: "minecraft:bread"
+					type: "item"
+				}
+			]
+			title: "建築物資: colonial Builder I"
+			x: 6.0d
+			y: 0.0d
+		}
+		{
+			can_repeat: true
+			description: ["基礎物資を納品し、spacewars様式のBuilder Lv1資材を受領する。"]
+			icon: "minecraft:sandstone"
+			id: "6D43010000000105"
+			rewards: [
+				{
+					count: 4
+					id: "6D43010000001501"
+					item: "domum_ornamentum:cactus_extra"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "6D43010000001502"
+					item: "minecolonies:blockminecoloniesrack"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "6D43010000001503"
+					item: "minecolonies:blockwaypoint"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 3
+					id: "6D43010000001504"
+					item: "minecraft:birch_log"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 4
+					id: "6D43010000001505"
+					item: "minecraft:cobblestone"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 45
+					id: "6D43010000001506"
+					item: "minecraft:sandstone"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 100
+					id: "6D43010000001507"
+					item: "minecraft:sandstone_stairs"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 16
+					id: "6D43010000001508"
+					item: "minecraft:torch"
+					team_reward: true
+					type: "item"
+				}
+			]
+			subtitle: "様式申告: spacewars / Builder Lv1"
+			tasks: [
+				{
+					consume_items: true
+					count: 32L
+					id: "6D43010000002501"
+					item: "minecraft:oak_log"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 32L
+					id: "6D43010000002502"
+					item: "minecraft:cobblestone"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 8L
+					id: "6D43010000002503"
+					item: "minecraft:bread"
+					type: "item"
+				}
+			]
+			title: "建築物資: spacewars Builder I"
+			x: 4.0d
+			y: 1.0d
+		}
+		{
+			can_repeat: true
+			description: ["基礎物資を納品し、medievaloak様式のBuilder Lv1資材を受領する。"]
+			icon: "minecraft:oak_stairs"
+			id: "6D43010000000106"
+			rewards: [
+				{
+					count: 11
+					id: "6D43010000001601"
+					item: "domum_ornamentum:plain"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 3
+					id: "6D43010000001602"
+					item: "minecraft:coarse_dirt"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 35
+					id: "6D43010000001603"
+					item: "minecraft:cobblestone"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "6D43010000001604"
+					item: "minecraft:cobblestone_slab"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 6
+					id: "6D43010000001605"
+					item: "minecraft:cobblestone_stairs"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "6D43010000001606"
+					item: "minecraft:crafting_table"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "6D43010000001607"
+					item: "minecraft:oak_door"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 14
+					id: "6D43010000001608"
+					item: "minecraft:oak_fence"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 50
+					id: "6D43010000001609"
+					item: "minecraft:oak_log"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 24
+					id: "6D4301000000160A"
+					item: "minecraft:oak_planks"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 10
+					id: "6D4301000000160B"
+					item: "minecraft:oak_slab"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 76
+					id: "6D4301000000160C"
+					item: "minecraft:oak_stairs"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "6D4301000000160D"
+					item: "minecraft:torch"
+					team_reward: true
+					type: "item"
+				}
+			]
+			subtitle: "様式申告: medievaloak / Builder Lv1"
+			tasks: [
+				{
+					consume_items: true
+					count: 32L
+					id: "6D43010000002601"
+					item: "minecraft:oak_log"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 32L
+					id: "6D43010000002602"
+					item: "minecraft:cobblestone"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 8L
+					id: "6D43010000002603"
+					item: "minecraft:bread"
+					type: "item"
+				}
+			]
+			title: "建築物資: medievaloak Builder I"
+			x: 2.0d
+			y: 2.0d
+		}
+	]
+	title: "MineColonies 建築物資テスト"
+}

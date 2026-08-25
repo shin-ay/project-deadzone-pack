@@ -1,0 +1,334 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: "circle"
+	filename: "deadzone_fuel_industry_tutorial_01"
+	group: "2492E280835EEAE3"
+	icon: "createdieselgenerators:diesel_engine"
+	id: "6D49010000000001"
+	order_index: 7
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: [
+				"6D4701000000010E"
+				"7100000000000004"
+				"74065A02DB68DAE2"
+			]
+			description: [
+				"燃料ルートで拾った燃料を使うだけでなく、作物・原油・精製設備をつないで自給へ進む。"
+				"液体燃料設備は入力不足だけでなく、出力タンク満杯でも止まる。各段階に点検口と予備タンクを置こう。"
+			]
+			icon: "createdieselgenerators:biodiesel_bucket"
+			id: "6D49010000000101"
+			subtitle: "解放条件: 「14：小型電力網の完成」・「復旧：燃料ルート」・「T2：Scavenger」をすべて完了"
+			rewards: [{
+				count: 4
+				id: "6D49010000001101"
+				item: "minecraft:wheat_seeds"
+				type: "item"
+			}]
+			tasks: [{
+				id: "6D49010000002101"
+				title: "液体の入力・出力・満杯停止を確認した"
+				type: "checkmark"
+			}]
+			title: "01：T2・燃料を自給する"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["6D49010000000101"]
+			description: [
+				"Bulk Fermenterは作物系素材からBiodiesel工程へ繋ぐ。投入前にJEIで有効な作物と必要量を確認する。"
+				"農業担当が供給しやすい作物を選び、食料備蓄を全部燃料へ回さない。"
+			]
+			icon: "createdieselgenerators:bulk_fermenter"
+			id: "6D49010000000102"
+			subtitle: "解放条件: 「01：T2・燃料を自給する」を完了"
+			rewards: [{
+				count: 8
+				id: "6D49010000001201"
+				item: "minecraft:wheat"
+				type: "item"
+			}]
+			tasks: [{
+				id: "6D49010000002201"
+				item: "createdieselgenerators:bulk_fermenter"
+				type: "item"
+			}]
+			title: "02：発酵設備"
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["6D49010000000102"]
+			description: [
+				"Biodieselを1バケツ作り、処理に必要な回転力と時間を確認する。完成液は専用タンクへ送る。"
+				"バケツを直接差し込めない場合は、PipeやPumpの流体搬送を使う。搬送方向を目で追える短い配管から始めよう。"
+			]
+			icon: "createdieselgenerators:biodiesel_bucket"
+			id: "6D49010000000103"
+			subtitle: "解放条件: 「02：発酵設備」を完了"
+			rewards: [{
+				count: 16
+				id: "6D49010000001301"
+				item: "apocalypsenow:money"
+				type: "item"
+			}]
+			tasks: [{
+				id: "6D49010000002301"
+				item: "createdieselgenerators:biodiesel_bucket"
+				type: "item"
+			}]
+			title: "03：最初のBiodiesel"
+			x: 4.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["6D49010000000103"]
+			description: [
+				"Diesel Engineは液体燃料から大きなCreate回転力を得る。燃料入力、始動状態、回転出力の向きをPonderで確認する。"
+				"常時稼働させる前に、空の入力タンクで安全に止まることも試す。"
+			]
+			icon: "createdieselgenerators:diesel_engine"
+			id: "6D49010000000104"
+			subtitle: "解放条件: 「03：最初のBiodiesel」を完了"
+			rewards: [{
+				count: 2
+				id: "6D49010000001401"
+				item: "create:shaft"
+				type: "item"
+			}]
+			tasks: [{
+				id: "6D49010000002401"
+				item: "createdieselgenerators:diesel_engine"
+				type: "item"
+			}]
+			title: "04：Diesel Engine"
+			x: 6.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["6D49010000000104"]
+			description: [
+				"Engine単独で始動し、軸を1本だけ回す。次にゴーグルで回転速度とStress Capacityを確認する。"
+				"発電できたからと一気に全工場へ接続すると、過負荷と燃料枯渇の原因が分からなくなる。"
+			]
+			icon: "create:goggles"
+			id: "6D49010000000105"
+			subtitle: "解放条件: 「04：Diesel Engine」を完了"
+			rewards: [{
+				count: 16
+				id: "6D49010000001501"
+				item: "apocalypsenow:money"
+				type: "item"
+			}]
+			tasks: [{
+				id: "6D49010000002501"
+				title: "燃料消費とStress Capacityを確認した"
+				type: "checkmark"
+			}]
+			title: "05：単独負荷試験"
+			x: 8.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["6D49010000000105"]
+			description: [
+				"Oil Scannerで地下の原油資源を探す。表示段階と反応範囲を確認し、無反応地点で掘り始めない。"
+				"探索地点はJourneyMap等へ記録し、採掘担当と工業担当で共有する。"
+			]
+			icon: "createdieselgenerators:oil_scanner"
+			id: "6D49010000000106"
+			subtitle: "解放条件: 「05：単独負荷試験」を完了"
+			rewards: [{
+				count: 24
+				id: "6D49010000001601"
+				item: "apocalypsenow:money"
+				type: "item"
+			}]
+			tasks: [{
+				id: "6D49010000002601"
+				item: "createdieselgenerators:oil_scanner"
+				type: "item"
+			}]
+			title: "06：原油地点を探す"
+			x: 10.0d
+			y: -1.0d
+		}
+		{
+			dependencies: ["6D49010000000106"]
+			description: [
+				"Distillation Controllerを中心に精製設備を組む。Ponderの完成図を先に確認し、流体入力と各出力の位置を空けておく。"
+				"完成しない場合はブロック数ではなく、Controllerの向きと構造位置を1層ずつ比較する。"
+			]
+			icon: "createdieselgenerators:distillation_controller"
+			id: "6D49010000000107"
+			subtitle: "解放条件: 「06：原油地点を探す」を完了"
+			rewards: [{
+				id: "6D49010000001701"
+				item: "createdieselgenerators:oil_barrel"
+				type: "item"
+			}]
+			tasks: [{
+				id: "6D49010000002701"
+				item: "createdieselgenerators:distillation_controller"
+				type: "item"
+			}]
+			title: "07：原油精製設備"
+			x: 12.0d
+			y: -1.0d
+		}
+		{
+			dependencies: ["6D49010000000107"]
+			description: [
+				"原油を投入してDieselを取り出す。副産物や別燃料の出口もタンクへ接続し、満杯で全体停止しないようにする。"
+				"配管へ内容表示がある場合は、流体がControllerまで届いているか順番に追う。"
+			]
+			icon: "createdieselgenerators:diesel_bucket"
+			id: "6D49010000000108"
+			subtitle: "解放条件: 「07：原油精製設備」を完了"
+			rewards: [{
+				count: 24
+				id: "6D49010000001801"
+				item: "apocalypsenow:money"
+				type: "item"
+			}]
+			tasks: [{
+				id: "6D49010000002801"
+				item: "createdieselgenerators:diesel_bucket"
+				type: "item"
+			}]
+			title: "08：Diesel精製"
+			x: 14.0d
+			y: -1.0d
+		}
+		{
+			dependencies: [
+				"6D49010000000105"
+				"6D49010000000108"
+			]
+			description: [
+				"Biodieselは農業由来の予備系統、原油Dieselは高出力の主系統として分けて備蓄する。"
+				"入力タンクに最低在庫線を決め、残量が少ないときは車両と工場のどちらを優先するかキャンプ内で共有しよう。"
+			]
+			icon: "createdieselgenerators:oil_barrel"
+			id: "6D49010000000109"
+			subtitle: "解放条件: 「05：単独負荷試験」・「08：Diesel精製」をすべて完了"
+			rewards: [{
+				count: 32
+				id: "6D49010000001901"
+				item: "apocalypsenow:money"
+				type: "item"
+			}]
+			tasks: [{
+				id: "6D49010000002901"
+				title: "主燃料と予備燃料の保管先を分けた"
+				type: "checkmark"
+			}]
+			title: "09：燃料備蓄を分ける"
+			x: 16.0d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"6D49010000000109"
+				"3FE9D0F62386FC0C"
+			]
+			description: [
+				"World Tier 3ではTFMGのSteel MechanismとCircuit Boardを使い、電力・燃料設備を大型化する。"
+				"途中工程のSequenced Assemblyは、JEIで工程順とループ回数を確認してからラインを組む。"
+			]
+			icon: "tfmg:steel_mechanism"
+			id: "6D4901000000010A"
+			subtitle: "解放条件: 「09：燃料備蓄を分ける」・「T3：Operator」をすべて完了"
+			rewards: [{
+				count: 2
+				id: "6D49010000001A01"
+				item: "tfmg:circuit_board"
+				type: "item"
+			}]
+			tasks: [
+				{
+					count: 4L
+					id: "6D49010000002A01"
+					item: "tfmg:steel_mechanism"
+					type: "item"
+				}
+				{
+					count: 4L
+					id: "6D49010000002A02"
+					item: "tfmg:circuit_board"
+					type: "item"
+				}
+			]
+			title: "10：T3・重工業部品"
+			x: 18.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["6D4901000000010A"]
+			description: [
+				"TFMG Generatorで回転力を電力へ変換し、Steel Fluid Tankで燃料をまとめて管理する。"
+				"大型設備ほど故障点が増える。Generatorの前後に蓄電、Tankの前後に遮断できる配管を置く。"
+			]
+			icon: "tfmg:generator"
+			id: "6D4901000000010B"
+			subtitle: "解放条件: 「10：T3・重工業部品」を完了"
+			rewards: [{
+				count: 2
+				id: "6D49010000001B01"
+				item: "tfmg:steel_fluid_tank"
+				type: "item"
+			}]
+			tasks: [
+				{
+					id: "6D49010000002B01"
+					item: "tfmg:generator"
+					type: "item"
+				}
+				{
+					count: 2L
+					id: "6D49010000002B02"
+					item: "tfmg:steel_fluid_tank"
+					type: "item"
+				}
+			]
+			title: "11：大型発電と燃料槽"
+			x: 20.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["6D4901000000010B"]
+			description: [
+				"燃料工業区画完成。農業由来燃料、原油精製、発電、備蓄が別々に停止・復旧できれば合格。"
+				"マルチでは燃料を使い切った人を探すより、用途別タンクと最低在庫を見える化した方が事故を防げる。"
+			]
+			icon: "tfmg:steel_fluid_tank"
+			id: "6D4901000000010C"
+			subtitle: "解放条件: 「11：大型発電と燃料槽」を完了"
+			rewards: [
+				{
+					count: 32
+					id: "6D49010000001C01"
+					item: "apocalypsenow:money"
+					type: "item"
+				}
+				{
+					id: "6D49010000001C02"
+					type: "xp"
+					xp: 64
+				}
+			]
+			tasks: [{
+				id: "6D49010000002C01"
+				title: "燃料工程を段階ごとに停止・復旧できた"
+				type: "checkmark"
+			}]
+			title: "12：燃料工業区画の完成"
+			x: 22.0d
+			y: 0.0d
+		}
+	]
+	title: "工業チュートリアル：液体燃料"
+}

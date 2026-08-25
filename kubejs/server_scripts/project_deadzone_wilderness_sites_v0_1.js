@@ -776,10 +776,10 @@ function pdzWildTraderOffers(kind) {
     pdzWildOffer('minecraft:bone',16,'minecraft:leather',3,8)
   ]
   if(kind==='raider') return [
-    pdzWildOffer('apocalypsenow:money',5,'kubejs:affix_scrap_uncommon',1,5),
-    pdzWildOffer('apocalypsenow:money',12,'kubejs:affix_scrap_rare',1,2),
+    pdzWildOffer('apocalypsenow:money',5,'immersiveengineering:component_iron',2,5),
+    pdzWildOffer('apocalypsenow:money',12,'immersiveengineering:component_steel',2,2),
     pdzWildOffer('minecraft:gold_ingot',6,'apocalypsenow:money',2,4),
-    pdzWildBarter('minecraft:gunpowder',16,'minecraft:iron_ingot',6,'kubejs:affix_scrap_uncommon',1,5),
+    pdzWildBarter('minecraft:gunpowder',16,'minecraft:iron_ingot',6,'immersiveengineering:component_iron',1,5),
     pdzWildOffer('minecraft:copper_ingot',24,'kubejs:field_repair_kit',1,5),
     pdzWildOffer('minecraft:coal',24,'minecraft:gunpowder',8,7),
     pdzWildOffer('minecraft:leather',16,'minecraft:iron_ingot',5,6),

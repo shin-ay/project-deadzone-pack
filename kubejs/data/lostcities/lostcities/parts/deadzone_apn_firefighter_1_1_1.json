@@ -53,7 +53,7 @@
           "Items": [],
           "id": "apocalypsenow:military_storage"
         },
-        "loot": "project_deadzone:chests/generic_high_filled"
+        "loot": "project_deadzone:generic_high_filled"
       },
       {
         "char": "",
@@ -80,7 +80,7 @@
           "Items": [],
           "id": "apocalypsenow:military_storage"
         },
-        "loot": "project_deadzone:chests/generic_high_filled"
+        "loot": "project_deadzone:generic_high_filled"
       },
       {
         "char": "",

@@ -2,22 +2,22 @@
 	default_hide_dependency_lines: false
 	default_quest_shape: ""
 	filename: "deadzone_mod_survival_01"
-	group: "A170000000000004"
-	icon: "apocalypsenow:bandage"
+	group: "2492E280835EEAE3"
+	icon: "legendarysurvivaloverhaul:bandage"
 	id: "28F7180EA8318342"
-	order_index: 11
+	order_index: 3
 	quest_links: [ ]
 	quests: [
 		{
-			description: ["First Aidでは頭部と胴体の損傷が特に危険。包帯と絆創膏を常備しよう。"]
-			icon: "apocalypsenow:bandage"
+			description: ["Legendary Survival Overhaulでは頭部と胴体の損傷が特に危険。部位画面で負傷箇所を選び、専用包帯を使用しよう。Apocalypse Nowの包帯は別の通常医療品。"]
+			icon: "legendarysurvivaloverhaul:bandage"
 			id: "1B82208C73A56C92"
 			tasks: [
 				{
 					consume_items: false
 					count: 2L
 					id: "487F994A4B6406BC"
-					item: "apocalypsenow:bandage"
+					item: "legendarysurvivaloverhaul:bandage"
 					type: "item"
 				}
 				{

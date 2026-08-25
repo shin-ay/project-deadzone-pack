@@ -1,0 +1,212 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: "circle"
+	filename: "deadzone_survivor_relationships_01"
+	group: "4944EA3062E9681A"
+	icon: "minecraft:written_book"
+	id: "6D4E010000000001"
+	order_index: 14
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: ["6D4A010000000101"]
+			description: [
+				"Camp評判は全員で育てる地域の信用。マヤ、シオリ、ゴロウとの信頼は、依頼を実際に完了したプレイヤー個人の関係。"
+				"Survivor Campのマヤ・シオリ・ゴロウ本人へ話しかけると、信頼度と専用サービスのボタンが表示される。"
+			]
+			icon: "minecraft:written_book"
+			id: "6D4E010000000101"
+			subtitle: "解放条件: 「地域経済：三つの不足」を完了"
+			rewards: [{
+				count: 4
+				id: "6D4E010000001101"
+				item: "apocalypsenow:money"
+				type: "item"
+			}]
+			tasks: [{
+				id: "6D4E010000002101"
+				title: "固定NPC3人の関係を確認した"
+				type: "custom"
+			}]
+			title: "生存者は設備ではない"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["6D4E010000000101"]
+			description: [
+				"食料、農産、魚、料理、MineColonies加工食の依頼を完了し、マヤとの信頼を5へ上げる。"
+				"Rank 1から遠征配給の内容が温かい料理へ改善し、価格も下がる。"
+			]
+			icon: "farmersdelight:vegetable_soup"
+			id: "6D4E010000000102"
+			subtitle: "解放条件: 「生存者は設備ではない」を完了"
+			rewards: [{
+				id: "6D4E010000001201"
+				item: "farmersdelight:vegetable_soup"
+				type: "item"
+			}]
+			tasks: [{
+				id: "6D4E010000002201"
+				title: "マヤとの信頼 Rank 1"
+				type: "custom"
+			}]
+			title: "マヤ：棚を埋める人"
+			x: 2.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["6D4E010000000101"]
+			description: [
+				"医療補給、感染者掃討、Raider排除などの治安依頼を完了し、シオリとの信頼を5へ上げる。"
+				"Rank 1から診療時の包帯支給が改善し、価格も下がる。"
+			]
+			icon: "apocalypsenow:bandage"
+			id: "6D4E010000000103"
+			subtitle: "解放条件: 「生存者は設備ではない」を完了"
+			rewards: [{
+				count: 2
+				id: "6D4E010000001301"
+				item: "apocalypsenow:bandage"
+				type: "item"
+			}]
+			tasks: [{
+				id: "6D4E010000002301"
+				title: "シオリとの信頼 Rank 1"
+				type: "custom"
+			}]
+			title: "シオリ：帰還後の報告"
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["6D4E010000000101"]
+			description: [
+				"回収部品、工房補修材、配電予備品の依頼を完了し、ゴロウとの信頼を5へ上げる。"
+				"Rank 1から専用整備箱にField Repair Kitが入り、価格も下がる。"
+			]
+			icon: "kubejs:field_repair_kit"
+			id: "6D4E010000000104"
+			subtitle: "解放条件: 「生存者は設備ではない」を完了"
+			rewards: [{
+				count: 4
+				id: "6D4E010000001401"
+				item: "immersiveengineering:hemp_fiber"
+				type: "item"
+			}]
+			tasks: [{
+				id: "6D4E010000002401"
+				title: "ゴロウとの信頼 Rank 1"
+				type: "custom"
+			}]
+			title: "ゴロウ：使える部品"
+			x: 2.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["6D4E010000000102"]
+			description: [
+				"マヤとの信頼を30へ上げる。特選ロットや共同調理、コロニー炊き出しは一度の依頼でも信頼が大きく上がる。"
+				"Rank 3では最安価格でMineColoniesの上位料理を遠征配給に組み込める。"
+			]
+			icon: "minecolonies:stew_trencher"
+			id: "6D4E010000000105"
+			subtitle: "解放条件: 「マヤ：棚を埋める人」を完了"
+			rewards: [{
+				id: "6D4E010000001501"
+				item: "minecolonies:stew_trencher"
+				type: "item"
+			}]
+			tasks: [{
+				id: "6D4E010000002501"
+				title: "マヤとの信頼 Rank 3"
+				type: "custom"
+			}]
+			title: "マヤ：明日を任せる"
+			x: 4.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["6D4E010000000103"]
+			description: [
+				"シオリとの信頼を30へ上げる。危険な掃討ほど信頼上昇は大きいが、医療補給を続けても到達できる。"
+				"Rank 3では診療にMedical Kitが付き、回復処置も最大になる。"
+			]
+			icon: "apocalypsenow:medicalkit"
+			id: "6D4E010000000106"
+			subtitle: "解放条件: 「シオリ：帰還後の報告」を完了"
+			rewards: [{
+				id: "6D4E010000001601"
+				item: "apocalypsenow:medicalkit"
+				type: "item"
+			}]
+			tasks: [{
+				id: "6D4E010000002601"
+				title: "シオリとの信頼 Rank 3"
+				type: "custom"
+			}]
+			title: "シオリ：隠さない傷"
+			x: 4.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["6D4E010000000104"]
+			description: [
+				"ゴロウとの信頼を30へ上げる。工業設備と輸送網を安定させる高Tier依頼ほど信頼が大きく上がる。"
+				"Rank 3では車両用Repair Kitと電子部品を整備箱から受け取れる。"
+			]
+			icon: "mts:mtsofficialpack.repairkit"
+			id: "6D4E010000000107"
+			subtitle: "解放条件: 「ゴロウ：使える部品」を完了"
+			rewards: [{
+				id: "6D4E010000001701"
+				item: "kubejs:field_repair_kit"
+				type: "item"
+			}]
+			tasks: [{
+				id: "6D4E010000002701"
+				title: "ゴロウとの信頼 Rank 3"
+				type: "custom"
+			}]
+			title: "ゴロウ：止めない整備"
+			x: 4.0d
+			y: 2.0d
+		}
+		{
+			dependencies: [
+				"6D4E010000000105"
+				"6D4E010000000106"
+				"6D4E010000000107"
+			]
+			description: [
+				"固定NPC3人すべてとの信頼をRank 3へ上げる。これは全村人を数値管理する仕組みではなく、最初のコミュニティ縦切り。"
+				"共有のCamp発展と個人の関係が揃い、生活・戦闘・工業の成果が人の反応とサービスへ戻る。"
+			]
+			icon: "minecraft:campfire"
+			id: "6D4E010000000108"
+			subtitle: "解放条件: 「マヤ：明日を任せる」・「シオリ：隠さない傷」・「ゴロウ：止めない整備」をすべて完了"
+			rewards: [
+				{
+					count: 24
+					id: "6D4E010000001801"
+					item: "apocalypsenow:money"
+					type: "item"
+				}
+				{
+					id: "6D4E010000001802"
+					type: "xp"
+					xp: 48
+				}
+			]
+			tasks: [{
+				id: "6D4E010000002801"
+				title: "3人との信頼 Rank 3"
+				type: "custom"
+			}]
+			title: "この人たちの拠点"
+			x: 6.0d
+			y: 0.0d
+		}
+	]
+	title: "Survivor Camp 人間関係"
+}

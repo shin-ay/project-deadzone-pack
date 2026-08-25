@@ -2,5 +2,10 @@
 # MineColonies is used for player-built camps and colonies.
 # Hostile raids are managed by PDZ, so MineColonies barbarians stay disabled.
 
+[gameplay]
+    # Colonies resume when a player returns; keeping every colony loaded is
+    # too expensive for the multiplayer beta and obscures village-lag tests.
+    forceloadcolony = false
+
 [combat]
     dobarbariansspawn = false

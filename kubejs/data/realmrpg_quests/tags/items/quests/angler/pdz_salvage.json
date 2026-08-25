@@ -1,0 +1,9 @@
+{
+  "replace": true,
+  "values": [
+    "aquaculture:driftwood",
+    "aquaculture:fish_bones",
+    "aquaculture:lockbox",
+    "aquaculture:message_in_a_bottle"
+  ]
+}

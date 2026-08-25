@@ -2,15 +2,14 @@
 	default_hide_dependency_lines: false
 	default_quest_shape: ""
 	filename: "deadzone_hospital_story_01"
-	group: "A170000000000002"
+	group: "23C996B606E0CFE9"
 	icon: "apocalypsenow:bandage"
 	id: "728C1EE8201FFA92"
-	order_index: 5
+	order_index: 1
 	quest_links: [ ]
 	quests: [
 		{
 			dependencies: ["74065A02DB68DAE2"]
-			subtitle: "解放条件: 「T2：Scavenger」を完了"
 			description: [
 				"警察署の記録には、Hospitalから発信されたCivil Defenseの救難信号が残されていた。"
 				"薬品庫と生存者の状況を確認し、次の作戦に必要な医療物資を確保する。"
@@ -19,7 +18,7 @@
 			id: "0CC1C27F7969A440"
 			shape: "hexagon"
 			size: 1.5d
-			subtitle: "途切れた医療網を追跡する。"
+			subtitle: "途切れた医療網を追跡する。｜解放条件: 「T2：Scavenger」を完了"
 			tasks: [{
 				id: "2207C5D1DC7499B3"
 				title: "Hospitalの救難信号を特定した"
@@ -31,14 +30,13 @@
 		}
 		{
 			dependencies: ["0CC1C27F7969A440"]
-			subtitle: "解放条件: 「Chapter 4：途切れた医療網」を完了"
 			description: [
 				"Hospital内部では、負傷者を見捨てたRaider Medicが薬品保管区画を支配している。"
 				"正面ロビーだけでなく、階段・病室・裏口からの増援にも警戒する。"
 			]
 			icon: "apocalypsenow:bandage"
 			id: "0C7AEC6E25192AAA"
-			subtitle: "Hospitalへ到達し、薬品保管区画を探す。"
+			subtitle: "Hospitalへ到達し、薬品保管区画を探す。｜解放条件: 「Chapter 4：途切れた医療網」を完了"
 			tasks: [{
 				id: "059C080F51D43F2D"
 				title: "Hospitalへ到達した"
@@ -50,7 +48,6 @@
 		}
 		{
 			dependencies: ["0C7AEC6E25192AAA"]
-			subtitle: "解放条件: 「閉鎖病棟」を完了"
 			description: [
 				"Corrupt Field Medicを排除し、薬品庫と患者記録を回収する。"
 				"確保した医療物資は、今後の施設攻略と拠点防衛に使用できる。"
@@ -59,7 +56,7 @@
 			id: "6984DA400E0E21C3"
 			rewards: [
 				{
-					count: 64
+					count: 24
 					id: "18BCA26857F3BAE7"
 					item: "apocalypsenow:money"
 					type: "item"
@@ -89,7 +86,7 @@
 			]
 			shape: "hexagon"
 			size: 2.0d
-			subtitle: "薬品庫を確保し、医療供給を再開する。"
+			subtitle: "薬品庫を確保し、医療供給を再開する。｜解放条件: 「閉鎖病棟」を完了"
 			tasks: [{
 				id: "16AB46EE2BBC9CF5"
 				title: "Corrupt Field Medicを撃破した"

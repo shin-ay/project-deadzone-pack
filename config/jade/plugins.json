@@ -85,6 +85,9 @@
     "rooty": true,
     "branch": true
   },
+  "apotheosis": {
+    "ench": true
+  },
   "gravestone": {
     "grave": true
   },

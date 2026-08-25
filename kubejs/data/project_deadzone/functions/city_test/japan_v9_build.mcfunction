@@ -1,0 +1,23 @@
+function project_deadzone:city_test/japan_v9_prepare_01
+function project_deadzone:city_test/japan_v9_surface_01
+function project_deadzone:city_test/japan_v9_surface_02
+function project_deadzone:city_test/japan_v9_surface_03
+function project_deadzone:city_test/japan_v9_surface_04
+function project_deadzone:city_test/japan_v9_surface_05
+function project_deadzone:city_test/japan_v9_surface_06
+function project_deadzone:city_test/japan_v9_buildings_01
+function project_deadzone:city_test/japan_v9_buildings_02
+function project_deadzone:city_test/japan_v9_buildings_03
+function project_deadzone:city_test/japan_v9_buildings_04
+function project_deadzone:city_test/japan_v9_buildings_05
+function project_deadzone:city_test/japan_v9_buildings_06
+function project_deadzone:city_test/japan_v9_buildings_07
+function project_deadzone:city_test/japan_v9_buildings_08
+function project_deadzone:city_test/japan_v9_buildings_09
+function project_deadzone:city_test/japan_v9_buildings_10
+function project_deadzone:city_test/japan_v9_buildings_11
+function project_deadzone:city_test/japan_v9_buildings_12
+function project_deadzone:city_test/japan_v9_buildings_13
+function project_deadzone:city_test/japan_v9_buildings_14
+function project_deadzone:city_test/japan_v9_details_01
+tellraw @a [{"text":"[PDZ CITY V9] 生成完了: 日本型・沿道密度重視プロトタイプ","color":"gold"}]

@@ -1,0 +1,410 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: "circle"
+	filename: "deadzone_industry_power_tutorial_01"
+	group: "2492E280835EEAE3"
+	icon: "immersiveengineering:capacitor_lv"
+	id: "6D47010000000001"
+	order_index: 5
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: ["6D44010000000109"]
+			description: [
+				"Createの回転力を理解したら、次はFE（Forge Energy）を扱う。FEは機械が使う共通の電力単位で、回転速度やStressとは別物。"
+				"この章は発電、配線、蓄電、消費の順に1つずつ確認する。最初から大工場を組む必要はない。"
+			]
+			icon: "immersiveengineering:manual"
+			id: "6D47010000000101"
+			subtitle: "解放条件: 「09：最初の加工機械」を完了"
+			rewards: [{
+				count: 4
+				id: "6D47010000001101"
+				item: "minecraft:bread"
+				type: "item"
+			}]
+			tasks: [{
+				id: "6D47010000002101"
+				title: "FEとCreateの回転力が別物だと確認した"
+				type: "checkmark"
+			}]
+			title: "01：電力は回転力とは別"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["6D47010000000101"]
+			description: [
+				"Engineer's ManualにはIEのマルチブロック構造、配線、機械の入出力が図付きで載っている。手に持って右クリックで開く。"
+				"Coke Ovenの項目を開き、3×3×3の中空ではない立方体であることを確認しよう。"
+			]
+			icon: "immersiveengineering:manual"
+			id: "6D47010000000102"
+			subtitle: "解放条件: 「01：電力は回転力とは別」を完了"
+			rewards: [{
+				id: "6D47010000001201"
+				item: "immersiveengineering:manual"
+				type: "item"
+			}]
+			tasks: [{
+				id: "6D47010000002201"
+				title: "ManualでCoke Ovenの構造を確認した"
+				type: "checkmark"
+			}]
+			title: "02：技師の説明書を読む"
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["6D47010000000102"]
+			description: [
+				"Engineer’s Hammerはマルチブロックの完成や機械面の設定、Wirecutterは配線の回収に使う。"
+				"この2本はIE設備の保守工具。耐久値があるため、共同工房には予備を置こう。"
+			]
+			icon: {
+				Count: 1
+				id: "immersiveengineering:hammer"
+				tag: {
+					Damage: 0
+				}
+			}
+			id: "6D47010000000103"
+			subtitle: "解放条件: 「02：技師の説明書を読む」を完了"
+			rewards: [{
+				count: 4
+				id: "6D47010000001301"
+				item: "immersiveengineering:hemp_fiber"
+				type: "item"
+			}]
+			tasks: [
+				{
+					id: "6D47010000002301"
+					item: {
+						Count: 1
+						id: "immersiveengineering:hammer"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+				{
+					id: "6D47010000002302"
+					item: {
+						Count: 1
+						id: "immersiveengineering:wirecutter"
+						tag: {
+							Damage: 0
+						}
+					}
+					type: "item"
+				}
+			]
+			title: "03：組立と配線の工具"
+			x: 4.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["6D47010000000103"]
+			description: [
+				"Coke Brickを27個用意し、Manualの投影図どおり3×3×3に積む。最後に中央面をHammerで右クリックする。"
+				"見た目が一体化すれば完成。変化しないときは角や中心の欠け、別ブロックの混入を確認する。"
+			]
+			icon: "immersiveengineering:cokebrick"
+			id: "6D47010000000104"
+			subtitle: "解放条件: 「03：組立と配線の工具」を完了"
+			rewards: [{
+				count: 4
+				id: "6D47010000001401"
+				item: "immersiveengineering:cokebrick"
+				type: "item"
+			}]
+			tasks: [{
+				count: 27L
+				id: "6D47010000002401"
+				item: "immersiveengineering:cokebrick"
+				type: "item"
+			}]
+			title: "04：Coke Ovenを組む"
+			x: 6.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["6D47010000000104"]
+			description: [
+				"完成したCoke Ovenの正面を開き、石炭を投入する。これは電力不要で時間をかけて処理する。"
+				"Coal Cokeは高温燃料、CreosoteはTreated Wood用の液体。液体槽が満杯になると処理が止まるので、バケツかタンクへ抜く。"
+			]
+			icon: "immersiveengineering:coal_coke"
+			id: "6D47010000000105"
+			subtitle: "解放条件: 「04：Coke Ovenを組む」を完了"
+			rewards: [{
+				count: 8
+				id: "6D47010000001501"
+				item: "minecraft:coal"
+				type: "item"
+			}]
+			tasks: [
+				{
+					count: 4L
+					id: "6D47010000002501"
+					item: "immersiveengineering:coal_coke"
+					type: "item"
+				}
+				{
+					id: "6D47010000002502"
+					item: "immersiveengineering:creosote_bucket"
+					type: "item"
+				}
+			]
+			title: "05：固体燃料と副産物"
+			x: 8.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["6D47010000000105"]
+			description: [
+				"Creosoteと木材からTreated Woodを作る。電柱、足場、機械部品に何度も使う基礎建材。"
+				"余ったCreosoteを捨てず、専用タンクへ保管する癖をここで付けよう。"
+			]
+			icon: "immersiveengineering:treated_wood_horizontal"
+			id: "6D47010000000106"
+			subtitle: "解放条件: 「05：固体燃料と副産物」を完了"
+			rewards: [{
+				count: 4
+				id: "6D47010000001601"
+				item: "immersiveengineering:treated_wood_horizontal"
+				type: "item"
+			}]
+			tasks: [{
+				count: 8L
+				id: "6D47010000002601"
+				item: "immersiveengineering:treated_wood_horizontal"
+				type: "item"
+			}]
+			title: "06：防腐木材を作る"
+			x: 10.0d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"6D47010000000106"
+				"162BAA0F1AF6097C"
+			]
+			description: [
+				"World Tier 1でBlast Furnaceへ進む。Blast Brick 27個を3×3×3に積み、中央面をHammerで完成させる。"
+				"鉄とCoal Cokeから鋼鉄を作る。Coke Ovenと同じく電力不要だが、処理には時間がかかる。"
+			]
+			icon: "immersiveengineering:blastbrick"
+			id: "6D47010000000107"
+			subtitle: "解放条件: 「06：防腐木材を作る」・「T1：Survivor」をすべて完了"
+			rewards: [{
+				count: 4
+				id: "6D47010000001701"
+				item: "immersiveengineering:coal_coke"
+				type: "item"
+			}]
+			tasks: [{
+				count: 27L
+				id: "6D47010000002701"
+				item: "immersiveengineering:blastbrick"
+				type: "item"
+			}]
+			title: "07：T1・Blast Furnace"
+			x: 12.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["6D47010000000107"]
+			description: [
+				"鋼鉄は機械筐体と工具の共通素材。最初の8個を作り、すぐ全量を武器へ使わず設備用を残す。"
+				"処理が始まらない場合は入力が鉄インゴットか、燃料がCoal Cokeかを確認する。"
+			]
+			icon: "immersiveengineering:ingot_steel"
+			id: "6D47010000000108"
+			subtitle: "解放条件: 「07：T1・Blast Furnace」を完了"
+			rewards: [{
+				count: 2
+				id: "6D47010000001801"
+				item: "immersiveengineering:component_steel"
+				type: "item"
+			}]
+			tasks: [{
+				count: 8L
+				id: "6D47010000002801"
+				item: "immersiveengineering:ingot_steel"
+				type: "item"
+			}]
+			title: "08：最初の鋼鉄"
+			x: 14.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["6D47010000000108"]
+			description: [
+				"発電源、Wire Connector、Wire Coil、機械の順に繋ぐ。IEのWireはブロックとして置かず、Connector同士をWire Coilで右クリックして張る。"
+				"Relayは中継専用、Connectorは機械への入出力用。同じ見た目でも役割が違う。"
+			]
+			icon: "immersiveengineering:connector_lv"
+			id: "6D47010000000109"
+			subtitle: "解放条件: 「08：最初の鋼鉄」を完了"
+			rewards: [{
+				count: 4
+				id: "6D47010000001901"
+				item: "immersiveengineering:connector_lv_relay"
+				type: "item"
+			}]
+			tasks: [
+				{
+					count: 4L
+					id: "6D47010000002901"
+					item: "immersiveengineering:connector_lv"
+					type: "item"
+				}
+				{
+					count: 4L
+					id: "6D47010000002902"
+					item: "immersiveengineering:wirecoil_copper"
+					type: "item"
+				}
+			]
+			title: "09：ConnectorとWire"
+			x: 16.0d
+			y: -1.0d
+		}
+		{
+			dependencies: ["6D47010000000109"]
+			description: [
+				"LV Capacitorは発電と消費の間に置くバッファ。面ごとに入力・出力設定があり、Hammerで面設定を切り替える。"
+				"Lead PlateはLead IngotとHammer、Redstone Acid BucketはRedstone Dust 4個とWater Bucketで製作する。直接繋いでも動かない場合、まず接続面の設定を疑う。"
+			]
+			icon: "immersiveengineering:capacitor_lv"
+			id: "6D4701000000010A"
+			subtitle: "解放条件: 「09：ConnectorとWire」を完了"
+			rewards: [{
+				id: "6D47010000001A01"
+				item: "immersiveengineering:voltmeter"
+				type: "item"
+			}]
+			tasks: [{
+				id: "6D47010000002A01"
+				item: "immersiveengineering:capacitor_lv"
+				type: "item"
+			}]
+			title: "10：蓄電器の入出力面"
+			x: 18.0d
+			y: -1.0d
+		}
+		{
+			dependencies: ["6D4701000000010A"]
+			description: [
+				"序盤発電はImmersive Engineering純正のWindmillとDynamoを使う。Windmill Blade 8枚を組み、Dynamoの回転入力面へ取り付ける。"
+				"Create Crafts \\& AdditionsのAlternatorはMechanical CrafterとBrass工程が必要な中盤設備。ここではまだ要求しない。"
+			]
+			icon: "immersiveengineering:dynamo"
+			id: "6D4701000000010B"
+			subtitle: "解放条件: 「10：蓄電器の入出力面」を完了"
+			rewards: [{
+				count: 4
+				id: "6D47010000001B01"
+				item: "immersiveengineering:wire_copper"
+				type: "item"
+			}]
+			tasks: [
+				{
+					id: "6D47010000002B01"
+					item: "immersiveengineering:windmill"
+					type: "item"
+				}
+				{
+					id: "6D47010000002B02"
+					item: "immersiveengineering:dynamo"
+					type: "item"
+				}
+			]
+			title: "11：風力をFEへ変換"
+			x: 20.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["6D4701000000010B"]
+			description: [
+				"Windmill→Dynamo→Connector→LV Capacitorの入力面へ配線し、風車の回転中に蓄電量が増えるか確認する。"
+				"増えない場合は、Windmillの空間、Dynamoの向き、Connector、Capacitor入力面、Wireの接続先をこの順で確認する。"
+			]
+			icon: "immersiveengineering:voltmeter"
+			id: "6D4701000000010C"
+			subtitle: "解放条件: 「11：風力をFEへ変換」を完了"
+			rewards: [{
+				count: 16
+				id: "6D47010000001C01"
+				item: "apocalypsenow:money"
+				type: "item"
+			}]
+			tasks: [{
+				id: "6D47010000002C01"
+				title: "LV Capacitorの蓄電量が増えることを確認した"
+				type: "checkmark"
+			}]
+			title: "12：発電試験"
+			x: 22.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["6D4701000000010C"]
+			description: [
+				"Furnace HeaterをVanilla Furnaceへ隣接させ、蓄電器の出力面からFEを送る。燃料を入れずに精錬できれば、発電・蓄電・消費が一周した。"
+				"Furnace HeaterはCopper Plate、Iron Sheetmetal、Copper Wire Coil、Redstoneで製作できる。Heaterの接続面とFurnaceの隣接を確認する。"
+			]
+			icon: "immersiveengineering:furnace_heater"
+			id: "6D4701000000010D"
+			subtitle: "解放条件: 「12：発電試験」を完了"
+			rewards: [{
+				count: 8
+				id: "6D47010000001D01"
+				item: "minecraft:coal"
+				type: "item"
+			}]
+			tasks: [{
+				id: "6D47010000002D01"
+				item: "immersiveengineering:furnace_heater"
+				type: "item"
+			}]
+			title: "13：FEで機械を動かす"
+			x: 24.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["6D4701000000010D"]
+			description: [
+				"発電源→蓄電→消費機械の小さな回路が完成した。配線は通路を横切らせず、装置ごとに停止できる構成にする。"
+				"トラブル時は①発電しているか、②蓄電しているか、③出力面が正しいか、④機械がFE対応か、の順で切り分ける。"
+			]
+			icon: "immersiveengineering:capacitor_lv"
+			id: "6D4701000000010E"
+			subtitle: "解放条件: 「13：FEを回転力へ戻す」を完了"
+			rewards: [
+				{
+					count: 32
+					id: "6D47010000001E01"
+					item: "apocalypsenow:money"
+					type: "item"
+				}
+				{
+					id: "6D47010000001E02"
+					type: "xp"
+					xp: 32
+				}
+			]
+			tasks: [{
+				id: "6D47010000002E01"
+				title: "発電・蓄電・消費を順番に確認できた"
+				type: "checkmark"
+			}]
+			title: "14：小型電力網の完成"
+			x: 26.0d
+			y: 0.0d
+		}
+	]
+	title: "工業チュートリアル：発電と配線"
+}

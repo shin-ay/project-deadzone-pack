@@ -1,5 +1,7 @@
 # PROJECT DEADZONE Distribution
 
+Current pack version: `BETA-20260825-MULTIPLAYER-1`
+
 This public repository contains only the packwiz manifest and multiplayer
 client configuration required to update PROJECT DEADZONE.
 
@@ -16,6 +18,17 @@ the private development history.
 After the first import, normal updates are installed automatically at launch.
 Do not manually overwrite `mods`, `config`, or `kubejs` unless the pack owner
 explicitly asks you to do so.
+
+## 2026-08-25 multiplayer beta
+
+This build consolidates the previously unpublished multiplayer baseline with
+the current T0-T4 quests, MineColonies operations, settlement/life systems,
+boss encounters, Mine and Slash equipment unification, village loot,
+beginner industry guides, and village performance adjustments.
+
+Restart the client completely after the update. Existing worlds keep their
+already-generated structures; structure density and new chest loot are tested
+in newly generated chunks.
 
 ## Pack manifest
 

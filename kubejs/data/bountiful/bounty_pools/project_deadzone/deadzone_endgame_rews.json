@@ -1,0 +1,35 @@
+{
+  "content": {
+    "pdz_end_money": {
+      "type": "item",
+      "content": "apocalypsenow:money",
+      "amount": { "min": 10, "max": 24 },
+      "unitWorth": 350,
+      "weightMult": 2.0
+    },
+    "pdz_end_steel": {
+      "type": "item",
+      "content": "immersiveengineering:ingot_steel",
+      "amount": { "min": 4, "max": 10 },
+      "unitWorth": 1300,
+      "rarity": "UNCOMMON",
+      "weightMult": 1.0
+    },
+    "pdz_end_component": {
+      "type": "item",
+      "content": "immersiveengineering:component_steel",
+      "amount": { "min": 1, "max": 3 },
+      "unitWorth": 5200,
+      "rarity": "RARE",
+      "weightMult": 0.55
+    },
+    "pdz_end_morphine": {
+      "type": "item",
+      "content": "apocalypsenow:morphine",
+      "amount": { "min": 1, "max": 3 },
+      "unitWorth": 3600,
+      "rarity": "RARE",
+      "weightMult": 0.45
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "objectives": [
+    "deadzone_endgame_objs"
+  ],
+  "rewards": [
+    "deadzone_endgame_rews"
+  ]
+}

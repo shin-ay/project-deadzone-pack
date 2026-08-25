@@ -30,7 +30,7 @@
           "Items": [],
           "id": "apocalypsenow:empty_market_shelves"
         },
-        "loot": "project_deadzone:chests/gasstation_food_t1"
+        "loot": "project_deadzone:gasstation_food_t1"
       },
       {
         "char": "",
@@ -59,7 +59,7 @@
           "Items": [],
           "id": "apocalypsenow:empty_market_shelves"
         },
-        "loot": "project_deadzone:chests/gasstation_food_t1"
+        "loot": "project_deadzone:gasstation_food_t1"
       },
       {
         "char": "",
@@ -68,7 +68,7 @@
           "Items": [],
           "id": "apocalypsenow:market_shelves"
         },
-        "loot": "project_deadzone:chests/gasstation_food_t1"
+        "loot": "project_deadzone:gasstation_food_t1"
       },
       {
         "char": "",
@@ -77,7 +77,7 @@
           "Items": [],
           "id": "apocalypsenow:market_shelves"
         },
-        "loot": "project_deadzone:chests/gasstation_food_t1"
+        "loot": "project_deadzone:gasstation_food_t1"
       },
       {
         "char": "",

@@ -1,0 +1,197 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: "circle"
+	filename: "deadzone_regional_mentors_01"
+	group: "6A11000000000003"
+	icon: {
+		Count: 1
+		ForgeCaps: {
+			Parent: {
+				Items: [ ]
+				Size: 0
+			}
+		}
+		id: "realmrpg_quests:quest_book"
+		tag: {
+			Inventory: {
+				Items: [ ]
+				Size: 0
+			}
+		}
+	}
+	id: "6D53010000000001"
+	order_index: 7
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: ["6D52010000000101"]
+			description: [
+				"各地に自然生成されるRealm RPG Questsの釣り人、料理人、モンスターハンターへ直接話しかける。"
+				"会話、依頼抽選、進捗、報酬、依頼手帳はRealm RPG Questsが正本。PDZは既存JOB活動との接続だけを行う。木こり・鉱夫の家は通常住民の拠点で、依頼NPCではない。"
+			]
+			icon: {
+				Count: 1
+				ForgeCaps: {
+					Parent: {
+						Items: [ ]
+						Size: 0
+					}
+				}
+				id: "realmrpg_quests:quest_book"
+				tag: {
+					Inventory: {
+						Items: [ ]
+						Size: 0
+					}
+				}
+			}
+			id: "6D53010000000101"
+			subtitle: "解放条件: 「村をもう一つのCampにするな」を完了"
+			rewards: [{
+				id: "6D53010000001101"
+				type: "xp"
+				xp: 10
+			}]
+			tasks: [{
+				id: "6D53010000002101"
+				title: "地域Mentorの一人へ話しかけた"
+				type: "custom"
+			}]
+			title: "依頼は本人から受ける"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["6D53010000000101"]
+			description: [
+				"釣り人へ右クリックし、Aquacultureを含む釣果、釣具、船、沿岸素材の依頼を受ける。"
+				"釣り人との依頼実績はFishing系JOB活動へ接続される。"
+			]
+			icon: "realmrpg_quests:angler_spawn_egg"
+			id: "6D53010000000102"
+			subtitle: "解放条件: 「依頼は本人から受ける」を完了"
+			tasks: [{
+				id: "6D53010000002201"
+				title: "釣り人Mentorへ話しかけた"
+				type: "custom"
+			}]
+			title: "沿岸の釣り人"
+			x: 2.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["6D53010000000101"]
+			description: [
+				"料理人へ右クリックし、Farmer's Delight等の食材、調理、農作業依頼を受ける。"
+				"料理人との依頼実績はCooking系JOB活動へ接続される。"
+			]
+			icon: "realmrpg_quests:cook_spawn_egg"
+			id: "6D53010000000103"
+			subtitle: "解放条件: 「依頼は本人から受ける」を完了"
+			tasks: [{
+				id: "6D53010000002301"
+				title: "料理人Mentorへ話しかけた"
+				type: "custom"
+			}]
+			title: "集落の料理人"
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["6D53010000000101"]
+			description: [
+				"モンスターハンターへ右クリックし、PDZ感染体、レイダー、Eliteを含む討伐依頼を受ける。"
+				"ハンターとの依頼実績はHunting系JOB活動へ接続される。"
+			]
+			icon: "realmrpg_quests:monster_hunter_spawn_egg"
+			id: "6D53010000000104"
+			subtitle: "解放条件: 「依頼は本人から受ける」を完了"
+			tasks: [{
+				id: "6D53010000002401"
+				title: "ハンターMentorへ話しかけた"
+				type: "custom"
+			}]
+			title: "荒野のハンター"
+			x: 2.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["6D53010000000101"]
+			description: [
+				"Realm RPG Questsの依頼を1件完了する。公式Advancementを検知するため、FTB側の自己申告は不要。"
+				"報酬は依頼NPCから受け取り、PDZは最後に相談したMentorの分野へJOB Action XPを一度だけ加算する。"
+			]
+			icon: "minecraft:emerald"
+			id: "6D53010000000105"
+			subtitle: "解放条件: 「依頼は本人から受ける」を完了"
+			tasks: [{
+				id: "6D53010000002501"
+				title: "Realm RPG依頼を1件完了した"
+				type: "custom"
+			}]
+			title: "最初の現地依頼"
+			x: 4.0d
+			y: -1.0d
+		}
+		{
+			dependencies: ["6D53010000000105"]
+			description: [
+				"Realm RPG Questsの依頼を累計10件完了する。公式のcomplete_10_quests Advancementと同期する。"
+				"短期依頼を繰り返すことで、食料・釣り・討伐が地域住民との関係とJOB成長へ繋がる。"
+			]
+			icon: "minecraft:filled_map"
+			id: "6D53010000000106"
+			subtitle: "解放条件: 「最初の現地依頼」を完了"
+			tasks: [{
+				id: "6D53010000002601"
+				title: "Realm RPG依頼を10件完了した"
+				type: "custom"
+			}]
+			title: "地域で名を覚えられる"
+			x: 6.0d
+			y: -1.0d
+		}
+		{
+			dependencies: ["6D53010000000106"]
+			description: [
+				"3種類すべてのMentorへ接触し、Realm RPG依頼を10件完了する。"
+				"Village Recruits Nobleは村の不足契約、Realm RPG Mentorは個人の反復依頼、FTB Questsは節目だけを担当する。"
+			]
+			icon: "minecraft:compass"
+			id: "6D53010000000108"
+			subtitle: "解放条件: 「地域で名を覚えられる」を完了"
+			rewards: [{
+				id: "6D53010000001801"
+				type: "xp"
+				xp: 25
+			}]
+			tasks: [{
+				id: "6D53010000002801"
+				title: "3職種と10件の地域依頼を確認した"
+				type: "custom"
+			}]
+			title: "地域Mentor網"
+			x: 8.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["6D53010000000106"]
+			description: [
+				"Realm RPG Questsの依頼を累計100件完了する長期実績。必須進行ではない。"
+				"既存MODの公式実績とNPC報酬が主役なので、FTBから追加の物資報酬は重ねない。"
+			]
+			icon: "minecraft:nether_star"
+			id: "6D53010000000107"
+			subtitle: "解放条件: 「地域で名を覚えられる」を完了"
+			tasks: [{
+				id: "6D53010000002701"
+				title: "Realm RPG依頼を100件完了した"
+				type: "custom"
+			}]
+			title: "百戦錬磨の請負人"
+			x: 8.0d
+			y: -2.0d
+		}
+	]
+	title: "地域住民の依頼・JOB Mentor"
+}

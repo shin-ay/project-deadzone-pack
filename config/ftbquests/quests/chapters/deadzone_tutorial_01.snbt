@@ -2,17 +2,17 @@
 	default_hide_dependency_lines: false
 	default_quest_shape: ""
 	filename: "deadzone_tutorial_01"
-	group: "A170000000000001"
+	group: "2492E280835EEAE3"
 	icon: "ftbquests:book"
 	id: "7E21D5F11DE90362"
-	order_index: 0
+	order_index: 1
 	quest_links: [ ]
 	quests: [
 		{
 			description: [
 				"PROJECT DEADZONEへようこそ。最初から全てを覚える必要はない。"
 				"まずJOBを選び、Survivor Campへ移動して装備と身体状態を確認しよう。"
-				"TAB：インベントリ / K：スキル / M：マップ / R：銃のリロード"
+				"E：インベントリ / M：マップ / J：JOB / G：M\\&S / R：銃のリロード"
 			]
 			icon: "minecraft:recovery_compass"
 			id: "766FE33E74D2F108"
@@ -51,6 +51,29 @@
 			title: "JOBを選ぶ"
 			x: 2.0d
 			y: 0.0d
+		}
+		{
+			dependencies: ["766FE33E74D2F108"]
+			description: [
+				"Base Coreを右クリックして「生存者台帳」を選ぶと、World Tier、JOB、M\\&S連携、身体状態、Camp Rank、物流、勢力判断、近隣集落を一度に確認できる。"
+				"表示された項目をクリックすると、各MOD・各システム本来の詳細画面へ移動する。台帳自体は数値や進行を変更しない。"
+			]
+			icon: "minecraft:writable_book"
+			id: "6D56010000000101"
+			subtitle: "解放条件: 「生存者登録」を完了"
+			rewards: [{
+				id: "6D56010000001101"
+				type: "xp"
+				xp: 5
+			}]
+			tasks: [{
+				id: "6D56010000002101"
+				title: "生存者台帳を開いた"
+				type: "custom"
+			}]
+			title: "迷ったら生存者台帳"
+			x: 2.0d
+			y: -2.0d
 		}
 		{
 			description: [

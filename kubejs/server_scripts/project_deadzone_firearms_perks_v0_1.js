@@ -9,11 +9,19 @@ function dzMnsWeaponDamageBonus(player) {
     let unit = PDZ_FIREARMS_MNS_ENTITY_DATA.get(player).getUnit()
     let stat = unit.getCalculatedStat('weapon_damage')
     if (!stat) return 0
-    // StatData#getMultiplier is 1 + value / 100. More-type modifiers are
-    // multiplicative in M&S, so preserve both without applying base damage twice.
-    let total = Number(stat.getMultiplier()) * Number(stat.getMoreStatTypeMulti())
-    if (!isFinite(total)) return 0
-    return Math.max(-0.90, Math.min(4.0, total - 1.0))
+    // StatData#getMultiplier is 1 + value / 100. A valid More multiplier is
+    // normally 1. Some non-native weapons can briefly expose 0 while M&S is
+    // rebuilding the Unit after inventory conversion. Treat that transient 0
+    // as neutral: using it as a real multiplier reduced a 4/8 damage TaCZ hit
+    // to exactly 0.4/0.8. M&S weapon_damage may increase firearm output, but an
+    // incomplete compatibility state must never erase 90% of the gun's base.
+    let additive = Number(stat.getMultiplier())
+    let more = Number(stat.getMoreStatTypeMulti())
+    if (!isFinite(additive) || additive <= 0) additive = 1.0
+    if (!isFinite(more) || more <= 0) more = 1.0
+    let total = additive * more
+    if (!isFinite(total) || total <= 1.0) return 0
+    return Math.min(4.0, total - 1.0)
   } catch (ignored) {
     return 0
   }
@@ -97,23 +105,6 @@ TimelessGunEvents.entityHurtByGunPre(event => {
   // TaCZ bypasses M&S's normal melee damage path. Fold the player's calculated
   // M&S weapon_damage into TaCZ's one and only pre-damage hook instead.
   multiplier += dzMnsWeaponDamageBonus(player)
-  try {
-    if (typeof dz2Data === 'function') {
-      let affix = dz2Data(player.mainHandItem)
-      if (affix) {
-        multiplier += Math.max(0, affix.getDouble('damage'))
-        if (hurtEntity.getArmorValue() > 0) {
-          multiplier += Math.max(0, affix.getDouble('armor_break'))
-          multiplier += Math.max(0, affix.getDouble('armored'))
-        }
-        let targetType = String(hurtEntity.type)
-        if (targetType.indexOf('zombie') >= 0 || targetType.indexOf('infect') >= 0 || targetType.indexOf('walker') >= 0) {
-          multiplier += Math.max(0, affix.getDouble('infected'))
-        }
-        if (affix.getString('talent') === 'focused_fire') multiplier += 0.06
-      }
-    }
-  } catch (ignored) {}
   // Base JOB passive. JOB progression is independent from Talent SP.
   if (String(player.persistentData.getString('dz_job_id')) === 'weapons_expert') multiplier += 0.05
   let motion = player.getDeltaMovement()
@@ -165,6 +156,11 @@ TimelessGunEvents.entityHurtByGunPre(event => {
   stage = 'apply'
   let finalAmount = Number(baseAmount * multiplier)
   if (!isFinite(finalAmount) || finalAmount <= 0) return
+  // Keep a cheap last-hit snapshot for balancing. It has no chat/network cost
+  // unless an administrator explicitly opens the diagnostic screen.
+  player.persistentData.putDouble('dz_firearms_last_base',baseAmount)
+  player.persistentData.putDouble('dz_firearms_last_multiplier',multiplier)
+  player.persistentData.putDouble('dz_firearms_last_final',finalAmount)
   event.setBaseAmount(finalAmount)
   if (player.persistentData.getBoolean('dz_firearms_damage_debug')) {
     player.tell(Text.of('[Gun DMG] TaCZ base '+baseAmount.toFixed(2)+' x PDZ '+multiplier.toFixed(3)+' = pre-armor '+finalAmount.toFixed(2)).gray())
@@ -192,6 +188,11 @@ ServerEvents.commandRegistry(event => {
       + " / Handling " + dzFirearmsTier(player, "handling")
       + " / Maintenance " + dzFirearmsTier(player, "maintenance")
     ).aqua())
+    player.tell(Text.of(
+      'Last hit: base '+Number(player.persistentData.getDouble('dz_firearms_last_base')).toFixed(2)
+      +' x '+Number(player.persistentData.getDouble('dz_firearms_last_multiplier')).toFixed(3)
+      +' = '+Number(player.persistentData.getDouble('dz_firearms_last_final')).toFixed(2)+' pre-armor'
+    ).gray())
     return 1
   }))
 

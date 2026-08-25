@@ -58,7 +58,7 @@
       {
         "char": "",
         "block": "minecraft:bookshelf",
-        "loot": "project_deadzone:chests/hospital_emergency"
+        "loot": "project_deadzone:hospital_emergency"
       },
       {
         "char": "",

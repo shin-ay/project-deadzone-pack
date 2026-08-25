@@ -17,7 +17,7 @@
 	#unticking the pack cannot unmake the sites it already placed.
 	#It does NOT govern air convoys, the Aircraft technology, or aircraft built
 	#by a GROUND village that researched it. None of those needs an island.
-enabled = false
+	enabled = false
 	#Minimum distance (in blocks, measured HORIZONTALLY) an island must keep
 	#from a ground village. 0 = disabled.
 	#Default: 384
@@ -122,7 +122,7 @@ enabled = false
 	#recruits, instead of a courier walking. Needs a freighter parked in the hangar:
 	#a village that has spent its airframes is grounded until it builds another.
 	#false = sky villages fall back to ordinary ground convoys.
-airConvoys = false
+	airConvoys = false
 	#Cargo slots on the freighter, used as the load CEILING (slots x 64 units).
 	#The shipped cargo airship has 80 - five 4x4 blocks - which is what this
 	#defaults to. Upgrade, banner, dye and boiler slots are not cargo and are not

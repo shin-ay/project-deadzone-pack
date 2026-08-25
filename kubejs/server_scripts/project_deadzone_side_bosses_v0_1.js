@@ -1,5 +1,10 @@
 // PROJECT DEADZONE optional bounty bosses v0.1
 
+const DZ_SIDE_BOSS_QUESTS = {
+  tank: {first:"10F903EB357EFC28", repeat:"A1E1000000000010"},
+  abomination: {first:"717B2B8A66A44728", repeat:"A1E1000000000020"}
+}
+
 function dzStyleSideBoss(entity, key) {
   if (!entity || entity.level.clientSide || entity.tags.contains("dz_sideboss_ready")) return
   let tank = key === "tank"
@@ -36,8 +41,13 @@ EntityEvents.death(event => {
   entity.block.popItem(Item.of("apocalypsenow:bandage", tank ? 4 : 6))
   entity.block.popItem(Item.of("immersiveengineering:ingot_steel", tank ? 3 : 5))
   if (killer && killer.isPlayer && killer.isPlayer()) {
-    killer.server.runCommandSilent("ftbquests change_progress " + killer.username +
-      " complete " + (tank ? "D202608200004020" : "D202608200004030"))
+    let quests = tank ? DZ_SIDE_BOSS_QUESTS.tank : DZ_SIDE_BOSS_QUESTS.abomination
+    // First completion receives the larger milestone reward. Later kills feed
+    // only the repeatable, smaller Party contract.
+    let first = killer.server.runCommandSilent("ftbquests change_progress " + killer.username +
+      " complete " + quests.first)
+    if (first <= 0) killer.server.runCommandSilent("ftbquests change_progress " + killer.username +
+      " complete " + quests.repeat)
   }
   // The Tank mod occasionally leaves the dead entity ticking indefinitely.
   // Remove that corpse after vanilla and DEADZONE drops have been processed.

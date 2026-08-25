@@ -193,7 +193,7 @@
         "value": "lostcities:tallbuilding2"
       },
       {
-        "factor": 0.02,
+        "factor": 0,
         "value": "lostcities:firestation12"
       },
       {
@@ -205,7 +205,7 @@
         "value": "lostcities:deadzone_gunstore"
       },
       {
-        "factor": 0.2,
+        "factor": 0,
         "value": "lostcities:massivebuildingwithhelicopter"
       },
       {
@@ -293,7 +293,7 @@
         "value": "lostcities:deadzone_apn_firefighter"
       },
       {
-        "factor": 0.025,
+        "factor": 0,
         "value": "lostcities:deadzone_apn_house"
       },
       {

@@ -21,5 +21,9 @@
   "ai-goals": {
     "brutalbosses:aftercombatregen": { "amount": 1 }
   },
-  "spawnatchest": {}
+  "spawnatchest": {
+    "dungeons_arise:chests/bandit_village/bandit_village_tents": 1,
+    "dungeons_arise:chests/bandit_towers/bandit_towers_treasure": 1,
+    "dungeons_arise:chests/illager_fort/illager_fort_treasure": 1
+  }
 }

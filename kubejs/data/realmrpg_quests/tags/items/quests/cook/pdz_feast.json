@@ -1,0 +1,9 @@
+{
+  "replace": true,
+  "values": [
+    "farmersdelight:honey_glazed_ham",
+    "farmersdelight:roast_chicken",
+    "farmersdelight:stuffed_pumpkin",
+    "aquaculturedelight:large_fish_with_vegetables"
+  ]
+}

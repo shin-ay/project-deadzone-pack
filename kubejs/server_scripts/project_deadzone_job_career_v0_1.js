@@ -180,6 +180,11 @@ function pdzCareerAddXp(player,amount,source,announce) {
   return gain
 }
 
+// Existing-mod bridges may feed verified field activity into the JOB career.
+// Keep the career script authoritative for registration checks, relevance
+// multipliers and persistence instead of duplicating that logic per bridge.
+global.pdzCareerAddXp = pdzCareerAddXp
+
 function pdzCareerMigrate(player,force) {
   let d=player.persistentData
   if (!force && d.getBoolean('dz_career_migrated_v1')) return false

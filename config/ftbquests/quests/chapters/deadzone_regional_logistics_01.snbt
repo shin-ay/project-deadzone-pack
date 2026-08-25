@@ -1,0 +1,286 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: "circle"
+	filename: "deadzone_regional_logistics_01"
+	group: "6A11000000000001"
+	icon: "minecraft:filled_map"
+	id: "6D51010000000001"
+	order_index: 8
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: ["6D5001000000010B"]
+			description: [
+				"Survivor CampのBase Coreを右クリックし、「地域物流」で物流ボードを開く。"
+				"車両を所有するだけでは航路にならない。物資を積み、用途に合う交通手段で往復して初めて地域サービスへ接続される。"
+			]
+			icon: "minecraft:compass"
+			id: "6D51010000000101"
+			subtitle: "解放条件: 「守った地域で暮らす」を完了"
+			rewards: [{
+				id: "6D51010000001101"
+				type: "xp"
+				xp: 15
+			}]
+			tasks: [{
+				id: "6D51010000002101"
+				title: "地域物流ボードを確認した"
+				type: "custom"
+			}]
+			title: "道路は景色ではない"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["6D51010000000101"]
+			description: [
+				"優先需要はMinecraft日ごとに道路・鉄道・海上・航空を循環する。どの契約も受けられるが、当日の需要と一致すれば追加報酬と評判を得る。"
+				"一人につき同種は3日ごと。進行できる契約は一件だけで、死亡・期限切れ・マニフェスト投棄は失敗になる。"
+			]
+			icon: "minecraft:clock"
+			id: "6D51010000000102"
+			subtitle: "解放条件: 「道路は景色ではない」を完了"
+			rewards: [{
+				count: 4
+				id: "6D51010000001201"
+				item: "minecraft:bread"
+				type: "item"
+			}]
+			tasks: [{
+				id: "6D51010000002201"
+				title: "本日の優先需要を確認した"
+				type: "custom"
+			}]
+			title: "需要は毎日同じじゃない"
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"6D51010000000102"
+				"6500000000000004"
+			]
+			description: [
+				"Base Coreの地域物流から道路便を受注する。Stone Bricks 32とIron 8を積み、Campから512m以上離れる。"
+				"MTS・Blocky Bikes・Vehicle Modの陸上車両で合計320m以上走行し、帰還後にBase Coreの地域物流から納品する。道路航路は共同復旧費を軽減する。"
+			]
+			icon: "minecraft:minecart"
+			id: "6D51010000000103"
+			subtitle: "解放条件: 「需要は毎日同じじゃない」・「T1・道路輸送班」をすべて完了"
+			rewards: [{
+				count: 4
+				id: "6D51010000001301"
+				item: "apocalypsenow:money"
+				type: "item"
+			}]
+			tasks: [{
+				id: "6D51010000002301"
+				title: "道路重量輸送を完遂した"
+				type: "custom"
+			}]
+			title: "重いが、どこへでも行ける"
+			x: 4.0d
+			y: -3.0d
+		}
+		{
+			dependencies: [
+				"6D51010000000102"
+				"6500000000000009"
+			]
+			description: [
+				"Base Coreの地域物流から鉄道便を受注する。Stone Bricks 64とIron 16を積み、Campから768m以上離れる。"
+				"Createの組立済み列車に乗って512m以上走行し帰投する。鉄道航路はCamp防衛の外周補強コストを軽減する。"
+			]
+			icon: "create:track"
+			id: "6D51010000000104"
+			subtitle: "解放条件: 「需要は毎日同じじゃない」・「T1・地域鉄道網」をすべて完了"
+			rewards: [{
+				count: 6
+				id: "6D51010000001401"
+				item: "apocalypsenow:money"
+				type: "item"
+			}]
+			tasks: [{
+				id: "6D51010000002401"
+				title: "鉄道大宗貨物を完遂した"
+				type: "custom"
+			}]
+			title: "量なら線路が勝つ"
+			x: 4.0d
+			y: -1.0d
+		}
+		{
+			dependencies: [
+				"6D51010000000102"
+				"6600000000000009"
+			]
+			description: [
+				"Base Coreの地域物流から海上便を受注する。Bread 16とCooked Cod 16を積み、Campから640m以上離れる。"
+				"Small ShipsかVehicle Mod船舶で420m以上航行し帰投する。海上航路は防衛食料の必要量を軽減する。"
+			]
+			icon: "minecraft:oak_boat"
+			id: "6D51010000000105"
+			subtitle: "解放条件: 「需要は毎日同じじゃない」・「危険海域への航路」をすべて完了"
+			rewards: [{
+				count: 4
+				id: "6D51010000001501"
+				item: "apocalypsenow:money"
+				type: "item"
+			}]
+			tasks: [{
+				id: "6D51010000002501"
+				title: "沿岸食料輸送を完遂した"
+				type: "custom"
+			}]
+			title: "海岸線は天然の道路"
+			x: 4.0d
+			y: 1.0d
+		}
+		{
+			dependencies: [
+				"6D51010000000102"
+				"650000000000000E"
+			]
+			description: [
+				"Base Coreの地域物流から航空便を受注する。LSO Bandage 4とAntibiotics 1を積み、Campから1024m以上離れる。"
+				"Immersive AircraftかVehicle Mod航空機で640m以上飛行し、制限時間内に帰投する。航空航路は防衛医療費を軽減する。"
+			]
+			icon: "immersive_aircraft:propeller"
+			id: "6D51010000000106"
+			subtitle: "解放条件: 「需要は毎日同じじゃない」・「T3・航空輸送網」をすべて完了"
+			rewards: [{
+				count: 4
+				id: "6D51010000001601"
+				item: "apocalypsenow:money"
+				type: "item"
+			}]
+			tasks: [{
+				id: "6D51010000002601"
+				title: "緊急航空便を完遂した"
+				type: "custom"
+			}]
+			title: "少量を、今すぐ"
+			x: 4.0d
+			y: 3.0d
+		}
+		{
+			dependencies: [
+				"6D51010000000103"
+				"6D51010000000104"
+				"6D51010000000105"
+				"6D51010000000106"
+			]
+			description: [
+				"物流ボードの当日優先需要と一致する輸送契約を完遂する。"
+				"需要一致時だけMoney 4と対応評判が追加される。最短手段を毎回選ぶのではなく、地域が必要としている輸送を読む。"
+			]
+			icon: "minecraft:emerald"
+			id: "6D51010000000107"
+			subtitle: "解放条件: 「重いが、どこへでも行ける」・「量なら線路が勝つ」・「海岸線は天然の道路」・「少量を、今すぐ」をすべて完了"
+			rewards: [{
+				count: 6
+				id: "6D51010000001701"
+				item: "apocalypsenow:money"
+				type: "item"
+			}]
+			tasks: [{
+				id: "6D51010000002701"
+				title: "優先需要へ輸送を一致させた"
+				type: "custom"
+			}]
+			title: "運べる、ではなく必要か"
+			x: 6.0d
+			y: -1.0d
+		}
+		{
+			dependencies: [
+				"6D51010000000103"
+				"7100000000000004"
+			]
+			description: [
+				"Gas Station燃料ルートと地域航路を両方稼働させる。Base Coreの「燃料ルート管理」にある日次補給が航路ごとに成長する。"
+				"基本はSolid Fuel 1。道路でRepair Kit、鉄道で追加燃料、海路で食料、空路でBandageが追加される。"
+			]
+			icon: "minecraft:bucket"
+			id: "6D51010000000108"
+			subtitle: "解放条件: 「重いが、どこへでも行ける」・「復旧：燃料ルート」をすべて完了"
+			rewards: [{
+				count: 2
+				id: "6D51010000001801"
+				item: "mts:mtsofficialpack.solidfuel"
+				type: "item"
+			}]
+			tasks: [{
+				id: "6D51010000002801"
+				title: "燃料拠点を地域航路へ接続した"
+				type: "custom"
+			}]
+			title: "補給路が補給を育てる"
+			x: 6.0d
+			y: 1.0d
+		}
+		{
+			dependencies: [
+				"6D51010000000105"
+				"6D43110000000101"
+			]
+			description: [
+				"輸送契約の完遂はMineColonies運営の地域供給評判にも加算される。優先需要一致なら加算量が増える。"
+				"建物材料を無料化するのではなく、PDZ側の活動が植民地支援とCamp商店更新へつながる。"
+			]
+			icon: "minecolonies:supplychestdeployer"
+			id: "6D51010000000109"
+			subtitle: "解放条件: 「海岸線は天然の道路」・「コロニー開始：Supply Camp」をすべて完了"
+			rewards: [{
+				count: 8
+				id: "6D51010000001901"
+				item: "minecolonies:ancienttome"
+				type: "item"
+			}]
+			tasks: [{
+				id: "6D51010000002901"
+				title: "地域輸送をコロニー供給へ接続した"
+				type: "custom"
+			}]
+			title: "植民地は孤島じゃない"
+			x: 8.0d
+			y: 1.0d
+		}
+		{
+			dependencies: [
+				"6D51010000000107"
+				"6D51010000000108"
+				"6D51010000000109"
+			]
+			description: [
+				"道路・鉄道・海上・航空を各1回、自分のパーティーで完遂する。地域航路の初回確立はサーバー共有だが、章完了は各パーティーの実働を要求する。"
+				"輸送の距離・重量・緊急度が、防衛費・配給・評判・MineColonies支援へ接続された。"
+			]
+			icon: "minecraft:lodestone"
+			id: "6D5101000000010A"
+			subtitle: "解放条件: 「運べる、ではなく必要か」・「補給路が補給を育てる」・「植民地は孤島じゃない」をすべて完了"
+			rewards: [
+				{
+					count: 10
+					id: "6D51010000001A01"
+					item: "apocalypsenow:money"
+					type: "item"
+				}
+				{
+					id: "6D51010000001A02"
+					type: "xp"
+					xp: 60
+				}
+			]
+			tasks: [{
+				id: "6D51010000002A01"
+				title: "四種の地域航路を実働させた"
+				type: "custom"
+			}]
+			title: "止まった世界を結び直す"
+			x: 10.0d
+			y: 0.0d
+		}
+	]
+	title: "地域物流・車両用途"
+}

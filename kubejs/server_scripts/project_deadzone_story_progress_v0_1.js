@@ -2,6 +2,8 @@
 // Story bosses use dedicated tags so ordinary faction NPC kills cannot skip
 // campaign objectives.
 
+const DZ_STORY_DECREE_ITEM = Java.loadClass('io.ejekta.bountiful.content.DecreeItem')
+
 const DZ_STORY_QUESTS = {
   prologue: "4262970F1B621A1D",
   job: "52F2869C3820DF98",
@@ -34,10 +36,10 @@ const DZ_STORY_QUESTS = {
   t2RelayArrival: "13A8A2B1178471CD",
   t2RelayCapture: "6327A52D90F0014B",
   t2FactionChoice: "63BC8CE6C398AEE6",
-  t2CivildefRoute: "A21D90C4E7F126B1",
-  t2RaiderRoute: "B34E61A8D2057FC2",
-  t2RemnantRoute: "C45F72B9E31680D3",
-  t2RouteConverge: "D56083CAF42791E4",
+  t2CivildefRoute: "15EEF72539267271",
+  t2RaiderRoute: "6B79E4C886405D52",
+  t2RemnantRoute: "172DC215E314B2C5",
+  t2RouteConverge: "30842133D9A8E440",
   t2AegisRecord: "64FC20257BDD84CF",
   t2Primordial: "0573B0233758DF83",
   t2Complete: "17F1D932ED1B4A01",
@@ -49,7 +51,67 @@ const DZ_STORY_QUESTS = {
   t3ChoirDiscovery: "5B4D3EBFA1026614",
   t3ChoirVessel: "0E8A3FB0BED9A091",
   t3ArgusChoice: "5EF7DA85993329F7",
-  t3Complete: "65F53D8012470726"
+  t3Complete: "65F53D8012470726",
+  t3EndgameContracts: "A3E1000000000001",
+  t4Aftermath: "A4E1000000000001",
+  t4Authorization: "A4E1000000000005"
+}
+
+function dzGrantEndgameDecree(player) {
+  if (player.server.persistentData.getString("dz_story_argus_outcome") === "") return false
+  let key = "dz_story_endgame_decree_v1"
+  if (!player.persistentData.getBoolean(key)) {
+    try {
+      player.give(DZ_STORY_DECREE_ITEM.Companion.create("deadzone_endgame"))
+      player.persistentData.putBoolean(key, true)
+      player.tell(Text.of("[終幕後] 危険地区作戦令状を受領。Bounty Boardへ挿入するとT3向け契約が生成されます。").gold())
+    } catch (error) {
+      if (!player.persistentData.getBoolean("dz_story_endgame_decree_error_logged_v1")) {
+        player.persistentData.putBoolean("dz_story_endgame_decree_error_logged_v1", true)
+        console.error("[DEADZONE STORY] Endgame decree creation failed for " + player.username + ": " + error)
+      }
+      return false
+    }
+  }
+  dzCompletePlayerStoryQuest(player, "t3_endgame_contracts", DZ_STORY_QUESTS.t3EndgameContracts)
+  return true
+}
+
+function dzStoryInventoryCount(player, id) {
+  try { return player.inventory.count(Item.of(id)) }
+  catch (ignored) { return 0 }
+}
+
+function dzSyncT4Foundation(player) {
+  if (player.server.persistentData.getString("dz_story_argus_outcome") === "") return
+  dzCompletePlayerStoryQuest(player, "t4_aftermath", DZ_STORY_QUESTS.t4Aftermath)
+
+  if (!player.persistentData.getBoolean("dz_story_t4_samples_latched") &&
+      dzStoryInventoryCount(player, "infectious:mutated_rotten_flesh") >= 16 &&
+      dzStoryInventoryCount(player, "immersiveengineering:component_steel") >= 4) {
+    player.persistentData.putBoolean("dz_story_t4_samples_latched", true)
+    player.tell(Text.of("[T4準備] 感染サンプルと解析用工業部品を確保した。").green())
+  }
+  if (!player.persistentData.getBoolean("dz_story_t4_arsenal_latched") &&
+      dzStoryInventoryCount(player, "superbwarfare:blueprint_research_table") >= 1 &&
+      dzStoryInventoryCount(player, "superbwarfare:battery") >= 1) {
+    player.persistentData.putBoolean("dz_story_t4_arsenal_latched", true)
+    player.tell(Text.of("[T4準備] 軍用Blueprint解析設備が稼働可能になった。").green())
+  }
+  if (!player.persistentData.getBoolean("dz_story_t4_cipher_latched") &&
+      dzStoryInventoryCount(player, "superbwarfare:epic_blueprint_data_chip") >= 1) {
+    player.persistentData.putBoolean("dz_story_t4_cipher_latched", true)
+    player.tell(Text.of("[T4準備] 高度暗号化Data Chipを確保した。").green())
+  }
+
+  let ready = player.persistentData.getBoolean("dz_story_t4_samples_latched") &&
+    player.persistentData.getBoolean("dz_story_t4_arsenal_latched") &&
+    player.persistentData.getBoolean("dz_story_t4_cipher_latched")
+  if (ready && dzCompletePlayerStoryQuest(player, "t4_authorization", DZ_STORY_QUESTS.t4Authorization) &&
+      dzStoryTier(player.server) < 4) {
+    dzStorySetTier(player.server, 4, true)
+    player.server.tell(Text.of("ARGUS-9外縁からFirst Voiceの中継信号を検出。T4作戦を開始します。").darkPurple())
+  }
 }
 
 function dzCompleteStoryQuest(server, questId, message) {
@@ -253,6 +315,8 @@ function dzScaleFacilityBoss(server, boss) {
 PlayerEvents.tick(event => {
   let player = event.player
   if (player.level.clientSide || player.age % 20 !== 0) return
+  dzGrantEndgameDecree(player)
+  dzSyncT4Foundation(player)
   // Story quests are completed by actual game events, not manual checkmarks.
   if (player.persistentData.getBoolean("dz_job_chosen")) {
     dzCompletePlayerStoryQuest(player, "prologue", DZ_STORY_QUESTS.prologue)
@@ -327,6 +391,13 @@ PlayerEvents.tick(event => {
   if (player.persistentData.getString("dz_story_t2_support") !== "")
     dzCompletePlayerStoryQuest(player, "t2_faction_choice", DZ_STORY_QUESTS.t2FactionChoice)
 
+  if (player.persistentData.getBoolean("dz_story_auto_v3_t2_relay_capture")
+      && player.persistentData.getString("dz_story_t2_support") === ""
+      && !player.persistentData.getBoolean("dz_story_commandless_support_prompt_v1")) {
+    player.persistentData.putBoolean("dz_story_commandless_support_prompt_v1", true)
+    player.runCommandSilent("deadzonestory support")
+  }
+
   // The selected support route changes the objective instead of merely changing
   // its label. One completed route is enough to reopen the shared AEGIS trail.
   let support = player.persistentData.getString("dz_story_t2_support")
@@ -370,6 +441,16 @@ PlayerEvents.tick(event => {
 
   if (player.persistentData.getInt("dz_story_warden_core_count") >= 3)
     dzCompletePlayerStoryQuest(player, "t3_warden_cores", DZ_STORY_QUESTS.t3WardenCores)
+
+  let argusReady = player.server.persistentData.getBoolean("dz_story_boss_complete_reactor_saint")
+    && player.server.persistentData.getBoolean("dz_story_boss_complete_argus_fragment")
+    && player.server.persistentData.getBoolean("dz_story_boss_complete_choir_vessel")
+    && player.persistentData.getInt("dz_story_warden_core_count") >= 3
+  if (argusReady && player.server.persistentData.getString("dz_story_argus_outcome") === ""
+      && !player.persistentData.getBoolean("dz_story_commandless_argus_prompt_v1")) {
+    player.persistentData.putBoolean("dz_story_commandless_argus_prompt_v1", true)
+    player.runCommandSilent("deadzonestory argus")
+  }
 
   if (dzNearbyStoryMarker(player, marker => {
     let faction = marker.persistentData.getString("dz_wild_faction")
@@ -520,10 +601,14 @@ ServerEvents.commandRegistry(event => {
   }))
   story.then(Commands.literal("support").executes(ctx => {
     let player = ctx.source.player
+    if (!player.persistentData.getBoolean("dz_story_auto_v3_t2_relay_capture")) {
+      player.tell(Text.of("T2支援先はProtocol座標断片の確保後に選べます。").red())
+      return 0
+    }
     player.tell(Text.of("=== T2 支援勢力を選択 ===").gold())
     ;[
       ["CDF：防具・地図・友軍巡回", "civildef", "aqua"],
-      ["Raiders：密輸武器・Affix素材・車両部品", "raider", "red"],
+      ["Raiders：密輸武器・M&S強化資源・車両部品", "raider", "red"],
       ["Remnant：軍用品・T3座標・重工業部品", "remnant", "dark_red"]
     ].forEach(entry => player.tell(Text.of("[ " + entry[0] + " ]")[entry[2]]()
       .clickRunCommand("/deadzonestory choose_" + entry[1])
@@ -535,6 +620,10 @@ ServerEvents.commandRegistry(event => {
     ["civildef", "CDF"], ["raider", "Raiders"], ["remnant", "Remnant"]
   ].forEach(entry => story.then(Commands.literal("choose_" + entry[0]).executes(ctx => {
     let player = ctx.source.player
+    if (!player.persistentData.getBoolean("dz_story_auto_v3_t2_relay_capture")) {
+      player.tell(Text.of("判断材料がまだ揃っていません。").red())
+      return 0
+    }
     if (player.persistentData.getString("dz_story_t2_support") !== "") {
       player.tell(Text.of("支援先は既に選択済みです: " + player.persistentData.getString("dz_story_t2_support")).red())
       return 0
@@ -621,6 +710,7 @@ ServerEvents.commandRegistry(event => {
     player.server.runCommandSilent("ftbquests change_progress @a complete " + DZ_STORY_QUESTS.t3Complete)
     player.server.runCommandSilent('tellraw @a [{"text":"[DEADZONE PROTOCOL] ","color":"gold","bold":true},' +
       '{"text":"' + entry[1] + '","color":"yellow"}]')
+    player.server.players.forEach(member => dzGrantEndgameDecree(member))
     return 1
   })))
   event.register(story)

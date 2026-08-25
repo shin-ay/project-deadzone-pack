@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "horror_element_mod:laboratory",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 41,
+    "separation": 29,
+    "salt": 1943062961
+  }
+}

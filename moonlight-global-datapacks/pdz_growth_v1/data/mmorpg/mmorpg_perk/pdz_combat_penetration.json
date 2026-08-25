@@ -1,0 +1,15 @@
+{
+    "type":  "STAT",
+    "icon":  "mmorpg:textures/gui/stat_icons/misc/armor_penetration.png",
+    "id":  "pdz_combat_penetration",
+    "is_entry":  false,
+    "max_lvls":  1,
+    "stats":  [
+                  {
+                      "type":  "FLAT",
+                      "scale_to_lvl":  false,
+                      "stat":  "armor_penetration",
+                      "v1":  5
+                  }
+              ]
+}

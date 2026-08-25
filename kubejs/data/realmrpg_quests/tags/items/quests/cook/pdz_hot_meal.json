@@ -1,0 +1,9 @@
+{
+  "replace": true,
+  "values": [
+    "farmersdelight:beef_stew",
+    "farmersdelight:chicken_soup",
+    "farmersdelight:fish_stew",
+    "farmersdelight:baked_cod_stew"
+  ]
+}

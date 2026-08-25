@@ -2,10 +2,10 @@
 	default_hide_dependency_lines: false
 	default_quest_shape: "circle"
 	filename: "deadzone_mod_agriculture_01"
-	group: "A170000000000004"
+	group: "72AA1A32F85FF9D3"
 	icon: "farmersdelight:cooking_pot"
 	id: "5D6C5283B005AA24"
-	order_index: 14
+	order_index: 1
 	quest_links: [ ]
 	quests: [
 		{
@@ -61,7 +61,6 @@
 		}
 		{
 			dependencies: ["5C02676DC1714BC8"]
-			subtitle: "解放条件: 「生存農業：種を絶やさない」を完了"
 			description: ["Cutting BoardとKnifeで、少ない食材から使える部位を無駄なく取り出す。共同調理場の最初の道具だ。"]
 			icon: "farmersdelight:cutting_board"
 			id: "52F3D7D3D52D1F05"
@@ -79,6 +78,7 @@
 					type: "item"
 				}
 			]
+			subtitle: "解放条件: 「生存農業：種を絶やさない」を完了"
 			tasks: [
 				{
 					id: "7579903A8B2A9FBC"
@@ -103,7 +103,6 @@
 		}
 		{
 			dependencies: ["5C02676DC1714BC8"]
-			subtitle: "解放条件: 「生存農業：種を絶やさない」を完了"
 			description: ["腐敗した有機物を堆肥へ戻し、Rich Soilで収穫効率を上げる。安全圏の狭い畑ほど土壌の質が重要になる。"]
 			icon: "farmersdelight:rich_soil"
 			id: "6776C556A3834FAA"
@@ -121,6 +120,7 @@
 					type: "item"
 				}
 			]
+			subtitle: "解放条件: 「生存農業：種を絶やさない」を完了"
 			tasks: [
 				{
 					count: 2L
@@ -147,9 +147,10 @@
 			description: ["主食・野菜・水田作物をそろえる。収穫の一部は必ず次の種として共同倉庫へ戻そう。"]
 			icon: "farmersdelight:tomato"
 			id: "46A3E0BB5786F64B"
+			subtitle: "解放条件: 「無駄のない解体」・「土壌を再生する」をすべて完了"
 			rewards: [
 				{
-					count: 36
+					count: 12
 					id: "7EDB944230B803DC"
 					item: "apocalypsenow:money"
 					type: "item"
@@ -193,7 +194,6 @@
 		}
 		{
 			dependencies: ["46A3E0BB5786F64B"]
-			subtitle: "解放条件: 「四種類の収穫」を完了"
 			description: ["StoveとSkilletで短時間の食事を作る。遠征前にすぐ補充できる携帯食を担当する工程。"]
 			icon: {
 				Count: 1
@@ -205,7 +205,7 @@
 			id: "48D5CCCB8EA05989"
 			rewards: [
 				{
-					count: 36
+					count: 12
 					id: "710FD9F8B156A760"
 					item: "apocalypsenow:money"
 					type: "item"
@@ -217,6 +217,7 @@
 					type: "item"
 				}
 			]
+			subtitle: "解放条件: 「四種類の収穫」を完了"
 			tasks: [
 				{
 					id: "218BB5F8171D0F1B"
@@ -241,13 +242,12 @@
 		}
 		{
 			dependencies: ["46A3E0BB5786F64B"]
-			subtitle: "解放条件: 「四種類の収穫」を完了"
 			description: ["Cooking Potは複数人分の食事をまとめて作れる。Medic向けの温かい回復食もここから始まる。"]
 			icon: "farmersdelight:cooking_pot"
 			id: "2A3AF2E328F1D016"
 			rewards: [
 				{
-					count: 45
+					count: 12
 					id: "5E48DF4BA5EDC0E8"
 					item: "apocalypsenow:money"
 					type: "item"
@@ -259,6 +259,7 @@
 					type: "item"
 				}
 			]
+			subtitle: "解放条件: 「四種類の収穫」を完了"
 			tasks: [{
 				id: "3F4228D6D77CBA3C"
 				item: "farmersdelight:cooking_pot"
@@ -276,9 +277,10 @@
 			description: ["同じ一品を大量に食べるだけでは長期遠征に向かない。肉・野菜・汁物を組み合わせた三種類の食事を用意する。"]
 			icon: "farmersdelight:beef_stew"
 			id: "3C5FE8893CEA9B0A"
+			subtitle: "解放条件: 「野戦調理」・「共同炊事鍋」をすべて完了"
 			rewards: [
 				{
-					count: 54
+					count: 16
 					id: "1EA78107B39BE725"
 					item: "apocalypsenow:money"
 					type: "item"
@@ -316,13 +318,12 @@
 		}
 		{
 			dependencies: ["3C5FE8893CEA9B0A"]
-			subtitle: "解放条件: 「栄養を組み立てる」を完了"
 			description: ["襲撃や遠征に備え、調理済みの食事を共同備蓄へ回す。自分用の一食ではなく、部隊全体の在庫を作る目標だ。"]
 			icon: "farmersdelight:bamboo_basket"
 			id: "10A047E020CD143B"
 			rewards: [
 				{
-					count: 64
+					count: 12
 					id: "72C23C01FBFE7703"
 					item: "apocalypsenow:money"
 					type: "item"
@@ -333,6 +334,7 @@
 					type: "item"
 				}
 			]
+			subtitle: "解放条件: 「栄養を組み立てる」を完了"
 			tasks: [
 				{
 					count: 4L
@@ -359,13 +361,12 @@
 		}
 		{
 			dependencies: ["46A3E0BB5786F64B"]
-			subtitle: "解放条件: 「四種類の収穫」を完了"
 			description: ["Pam's HarvestCraftの作物で季節と地域に合う畑を増やす。希少種は交易品としても価値を持つ。"]
 			icon: "pamhc2crops:cornitem"
 			id: "73437B93FFD28BDF"
 			rewards: [
 				{
-					count: 54
+					count: 16
 					id: "38272519E434AF3F"
 					item: "apocalypsenow:money"
 					type: "item"
@@ -383,6 +384,7 @@
 					type: "item"
 				}
 			]
+			subtitle: "解放条件: 「四種類の収穫」を完了"
 			tasks: [
 				{
 					count: 4L
@@ -421,9 +423,10 @@
 			description: ["Create Central Kitchenのガイドを読み、農業と工房を接続する。ここから食料担当は工業設備を使って大量供給できる。"]
 			icon: "create_central_kitchen:cooking_guide"
 			id: "6FB89A9A696BB981"
+			subtitle: "解放条件: 「キャンプ共同備蓄」・「季節作物と交易種」をすべて完了"
 			rewards: [
 				{
-					count: 64
+					count: 16
 					id: "36D2D1FCDE83DD98"
 					item: "apocalypsenow:money"
 					type: "item"
@@ -451,9 +454,10 @@
 			description: ["Mixer、Basin、搬送設備を使って食品加工を自動化する。完成品だけでなく、ソースなどの中間素材を切らさないラインを目指す。"]
 			icon: "create_central_kitchen:tomato_sauce_bucket"
 			id: "271FE84F79CE5C22"
+			subtitle: "解放条件: 「厨房の機械化計画」・「共同加工槽」をすべて完了"
 			rewards: [
 				{
-					count: 64
+					count: 20
 					id: "72BC476016267758"
 					item: "apocalypsenow:money"
 					type: "item"
@@ -488,13 +492,12 @@
 		}
 		{
 			dependencies: ["271FE84F79CE5C22"]
-			subtitle: "解放条件: 「自動調理ライン」を完了"
 			description: ["キャンプの食料供給網が完成した。今後は襲撃後の炊き出し、NPC依頼、Medic用回復食、交易品へ発展する。"]
 			icon: "farmersdelight:roast_chicken_block"
 			id: "7348ECB7EB61DAC5"
 			rewards: [
 				{
-					count: 64
+					count: 24
 					id: "1C38C208D4D2E6EC"
 					item: "apocalypsenow:money"
 					type: "item"
@@ -510,6 +513,7 @@
 					xp: 60
 				}
 			]
+			subtitle: "解放条件: 「自動調理ライン」を完了"
 			tasks: [
 				{
 					count: 2L

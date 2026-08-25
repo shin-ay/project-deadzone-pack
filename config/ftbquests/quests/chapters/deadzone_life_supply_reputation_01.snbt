@@ -1,0 +1,144 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: "circle"
+	filename: "deadzone_life_supply_reputation_01"
+	group: "72AA1A32F85FF9D3"
+	icon: "farmersdelight:bamboo_basket"
+	id: "6D45010000000001"
+	order_index: 3
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: [
+				"7348ECB7EB61DAC5"
+				"7382A39061FD7DFB"
+			]
+			description: [
+				"農業と漁業を覚えたら、Base Coreを右クリックして依頼掲示板から生活供給契約を受注できる。"
+				"混合作物・漁獲加工・共同調理は30分ごと、季節備蓄は秋・冬のみ再受注可能。達成するとサーバー共通の生活評判が上がる。"
+			]
+			icon: "farmersdelight:bamboo_basket"
+			id: "6D45010000000101"
+			subtitle: "解放条件: 「食料供給網の完成」・「水産供給網の完成」をすべて完了"
+			rewards: [{
+				count: 8
+				id: "6D45010000001101"
+				item: "minecraft:bread"
+				team_reward: true
+				type: "item"
+			}]
+			tasks: [{
+				id: "6D45010000002101"
+				title: "生活供給契約を1件完了した"
+				type: "custom"
+			}]
+			title: "生活供給契約"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["6D45010000000101"]
+			description: [
+				"生活評判10でRank 1「安定供給」へ到達する。食料商人が作物の種を扱い、野菜と加工魚の買取を始める。"
+				"価格改善は食料商人へ自動反映される。現在値はBase Coreの依頼掲示板にある生活供給欄で確認できる。"
+			]
+			icon: "farmersdelight:cabbage_seeds"
+			id: "6D45010000000102"
+			subtitle: "解放条件: 「生活供給契約」を完了"
+			rewards: [{
+				count: 4
+				id: "6D45010000001201"
+				item: "farmersdelight:cabbage_seeds"
+				team_reward: true
+				type: "item"
+			}]
+			tasks: [{
+				id: "6D45010000002201"
+				title: "生活評判 Rank 1へ到達した"
+				type: "custom"
+			}]
+			title: "Rank 1：安定供給"
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["6D45010000000102"]
+			description: ["生活評判25でRank 2「共同炊事」へ到達する。調理済みの野菜料理と加工魚が販売され、食料商人の候補枠も増える。"]
+			icon: "farmersdelight:vegetable_soup"
+			id: "6D45010000000103"
+			subtitle: "解放条件: 「Rank 1：安定供給」を完了"
+			rewards: [{
+				count: 4
+				id: "6D45010000001301"
+				item: "farmersdelight:vegetable_soup"
+				team_reward: true
+				type: "item"
+			}]
+			tasks: [{
+				id: "6D45010000002301"
+				title: "生活評判 Rank 2へ到達した"
+				type: "custom"
+			}]
+			title: "Rank 2：共同炊事"
+			x: 4.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["6D45010000000103"]
+			description: ["生活評判50でRank 3「地域食料網」へ到達する。高栄養料理と水産料理が解放され、食料価格は基準から最大24%低下する。"]
+			icon: "farmersdelight:beef_stew"
+			id: "6D45010000000104"
+			subtitle: "解放条件: 「Rank 2：共同炊事」を完了"
+			rewards: [
+				{
+					count: 4
+					id: "6D45010000001401"
+					item: "farmersdelight:beef_stew"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 4
+					id: "6D45010000001402"
+					item: "aquaculturedelight:fish_and_chips"
+					team_reward: true
+					type: "item"
+				}
+			]
+			tasks: [{
+				id: "6D45010000002401"
+				title: "生活評判 Rank 3へ到達した"
+				type: "custom"
+			}]
+			title: "Rank 3：地域食料網"
+			x: 6.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["6D45010000000102"]
+			description: [
+				"生活供給契約のボーナス料理はMineColoniesのWarehouseへ搬入し、CookまたはDining Hallへ配送する。"
+				"これでプレイヤーの農業・釣り・料理が、NPC取引だけでなく住民の食料需要にも接続される。"
+			]
+			icon: "minecolonies:blockhutcook"
+			id: "6D45010000000105"
+			subtitle: "解放条件: 「Rank 1：安定供給」を完了"
+			rewards: [{
+				count: 8
+				id: "6D45010000001501"
+				item: "farmersdelight:beef_stew"
+				team_reward: true
+				type: "item"
+			}]
+			tasks: [{
+				id: "6D45010000002501"
+				title: "生活評判 Rank 1へ到達し、街への食料供給を解放した"
+				type: "custom"
+			}]
+			title: "キャンプから街へ"
+			x: 2.0d
+			y: 2.0d
+		}
+	]
+	title: "生活供給・街の評判"
+}

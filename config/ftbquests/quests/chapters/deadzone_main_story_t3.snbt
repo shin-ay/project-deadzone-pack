@@ -2,7 +2,7 @@
 	default_hide_dependency_lines: false
 	default_quest_shape: ""
 	filename: "deadzone_main_story_t3"
-	group: "A170000000000002"
+	group: "23C996B606E0CFE9"
 	icon: {
 		Count: 1
 		id: "apocalypsenow:advanced_hazmat_suit_helmet"
@@ -11,12 +11,11 @@
 		}
 	}
 	id: "6B75036863EC83AD"
-	order_index: 9
+	order_index: 4
 	quest_links: [ ]
 	quests: [
 		{
 			dependencies: ["17F1D932ED1B4A01"]
-			subtitle: "解放条件: 「Act 2完了：三つの命令」を完了"
 			description: [
 				"原初感染体の記録には、DEADZONE Protocolを実行できる軍用権限が残されていた。"
 				"Military Baseまたは地下司令壕へ到達し、Protocol認証端末を探す。"
@@ -31,6 +30,7 @@
 			id: "1ABE30FB04136438"
 			shape: "hexagon"
 			size: 1.5d
+			subtitle: "解放条件: 「Act 2完了：三つの命令」を完了"
 			tasks: [{
 				id: "6F885D74A13EE68D"
 				title: "Military Baseまたは地下司令壕へ到達する"
@@ -42,7 +42,6 @@
 		}
 		{
 			dependencies: ["1ABE30FB04136438"]
-			subtitle: "解放条件: 「Act 3：封鎖された命令」を完了"
 			description: [
 				"軍用区画の認証記録を回収し、AEGIS Laboratoryの座標を復元する。"
 				"AEGISまたは地下研究施設へ到達する。"
@@ -55,6 +54,7 @@
 				}
 			}
 			id: "0E2A157FFF57D90A"
+			subtitle: "解放条件: 「Act 3：封鎖された命令」を完了"
 			tasks: [{
 				id: "448ED9E3DB64BB8F"
 				title: "AEGIS Laboratoryへ到達する"
@@ -66,7 +66,6 @@
 		}
 		{
 			dependencies: ["0E2A157FFF57D90A"]
-			subtitle: "解放条件: 「クロス博士の計画」を完了"
 			description: [
 				"Laboratoryを汚染するREACTOR SAINTを撃破する。"
 				"放射線区域に長時間留まらず、周囲の除染設備を利用する。"
@@ -81,6 +80,7 @@
 			}]
 			shape: "hexagon"
 			size: 2.0d
+			subtitle: "解放条件: 「クロス博士の計画」を完了"
 			tasks: [{
 				id: "7269F3A7B7998F45"
 				title: "REACTOR SAINTを撃破する"
@@ -92,7 +92,6 @@
 		}
 		{
 			dependencies: ["46488BBA671011F5"]
-			subtitle: "解放条件: 「T3 Story Boss：REACTOR SAINT」を完了"
 			description: [
 				"ARGUS-9へ接続するには、異なるWARDEN施設の中枢を3基停止する必要がある。"
 				"同じ施設を往復しても進捗には数えられない。"
@@ -105,6 +104,7 @@
 				}
 			}
 			id: "719E23C2245BB557"
+			subtitle: "解放条件: 「T3 Story Boss：REACTOR SAINT」を完了"
 			tasks: [{
 				id: "2E17C47155DC6C8E"
 				title: "異なるWARDEN中枢を3基停止する"
@@ -116,7 +116,6 @@
 		}
 		{
 			dependencies: ["719E23C2245BB557"]
-			subtitle: "解放条件: 「WARDEN隔離網」を完了"
 			description: [
 				"三中枢の停止によりARGUS Fragmentが実体化した。"
 				"機械増援を減らしてから露出したコアを攻撃する。"
@@ -125,6 +124,7 @@
 			id: "22426D3E145D5513"
 			shape: "hexagon"
 			size: 2.0d
+			subtitle: "解放条件: 「WARDEN隔離網」を完了"
 			tasks: [{
 				id: "306DFA349B59504F"
 				title: "ARGUS Fragmentを撃破する"
@@ -136,7 +136,6 @@
 		}
 		{
 			dependencies: ["22426D3E145D5513"]
-			subtitle: "解放条件: 「T3 Story Boss：ARGUS Fragment」を完了"
 			description: [
 				"WARDENの記録は感染集合体THE CHOIRがARGUS-9へ干渉していたことを示している。"
 				"感染中枢へ向かい、CHOIR VESSELを探す。"
@@ -149,6 +148,7 @@
 				}
 			}
 			id: "5B4D3EBFA1026614"
+			subtitle: "解放条件: 「T3 Story Boss：ARGUS Fragment」を完了"
 			tasks: [{
 				id: "72E7A28FF2D72EC0"
 				title: "感染中枢を発見する"
@@ -160,7 +160,6 @@
 		}
 		{
 			dependencies: ["5B4D3EBFA1026614"]
-			subtitle: "解放条件: 「最初の声」を完了"
 			description: [
 				"CHOIR VESSELは周囲の感染者と同期している。"
 				"増援とScreamerを処理し、露出した本体を撃破する。"
@@ -169,6 +168,7 @@
 			id: "0E8A3FB0BED9A091"
 			shape: "hexagon"
 			size: 2.0d
+			subtitle: "解放条件: 「最初の声」を完了"
 			tasks: [{
 				id: "2A172406330EF1BB"
 				title: "CHOIR VESSELを撃破する"
@@ -180,15 +180,15 @@
 		}
 		{
 			dependencies: ["0E8A3FB0BED9A091"]
-			subtitle: "解放条件: 「T3 Story Boss：CHOIR VESSEL」を完了"
 			description: [
 				"ARGUS-9の最終処理を選択する。"
-				"/deadzonestory argus を実行し、破壊・再設定・分離の影響を確認する。"
+				"必要条件が揃うと破壊・再設定・分離の選択ボタンが自動表示される。閉じた場合はBase Coreの「ARGUS-9最終判断」から再表示できる。"
 			]
 			icon: "apocalypsenow:badge"
 			id: "5EF7DA85993329F7"
 			shape: "hexagon"
 			size: 1.5d
+			subtitle: "解放条件: 「T3 Story Boss：CHOIR VESSEL」を完了"
 			tasks: [{
 				id: "049E0A1A80F4B58D"
 				title: "ARGUS-9の処理方法を選ぶ"
@@ -200,7 +200,6 @@
 		}
 		{
 			dependencies: ["5EF7DA85993329F7"]
-			subtitle: "解放条件: 「DEADZONE Protocol」を完了"
 			description: [
 				"T3地域の封鎖網は安定した。しかし、THE CHOIRのFirst Voiceはまだ残っている。"
 				"現行長期テスト版のメイン到達点。勢力拠点、Named、Biome Apex、Affix装備を周回できる。"
@@ -215,7 +214,7 @@
 			id: "65F53D8012470726"
 			rewards: [
 				{
-					count: 64
+					count: 40
 					id: "252D9CCF2B20AB54"
 					item: "apocalypsenow:money"
 					type: "item"
@@ -229,6 +228,7 @@
 			]
 			shape: "hexagon"
 			size: 2.5d
+			subtitle: "解放条件: 「DEADZONE Protocol」を完了"
 			tasks: [{
 				id: "0730EAE1DBAF8F17"
 				title: "T3地域を安定化する"
@@ -236,6 +236,27 @@
 			}]
 			title: "現行終点：残された声"
 			x: 16.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["65F53D8012470726"]
+			description: [
+				"DEADZONE Protocol後も、危険地区では感染群と武装勢力の活動が続いている。"
+				"自動配布された「危険地区作戦令状」をBountifulのBounty Boardへ挿入すると、T3向けの討伐・回収契約が繰り返し生成される。"
+				"内容は掲示板ごとに変化する。契約票を受け取り、条件を達成して同じ掲示板へ提出しよう。"
+			]
+			icon: "bountiful:decree"
+			id: "A3E1000000000001"
+			shape: "hexagon"
+			size: 1.5d
+			subtitle: "解放条件: 「現行終点：残された声」を完了／反復契約はBountiful Boardで受注"
+			tasks: [{
+				id: "A3E1000000000002"
+				title: "危険地区作戦令状を受領した"
+				type: "custom"
+			}]
+			title: "終幕後：危険地区作戦"
+			x: 18.0d
 			y: 0.0d
 		}
 	]

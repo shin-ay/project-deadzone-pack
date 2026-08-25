@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "horror_element_mod:militaryritual",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 31,
+    "separation": 23,
+    "salt": 1544959742
+  }
+}

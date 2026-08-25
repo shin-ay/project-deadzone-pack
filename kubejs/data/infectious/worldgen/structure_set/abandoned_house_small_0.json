@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "infectious:abandoned_house_small_0",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 52,
+    "separation": 25,
+    "salt": 892147540
+  }
+}

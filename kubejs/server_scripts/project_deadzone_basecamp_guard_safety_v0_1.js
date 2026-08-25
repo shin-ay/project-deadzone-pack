@@ -31,6 +31,8 @@ function pdzIsSurvivorAlly(entity) {
 
 function pdzIsFactionHostile(entity) {
   if (!entity) return false
+  if (entity.tags && (entity.tags.contains('dz_boss_showroom') || entity.tags.contains('dz_boss_loadtest') ||
+      entity.tags.contains('dz_boss_mechanic_runtime') || entity.tags.contains('dz_boss_loadtest_runtime'))) return false
   let id = String(entity.type)
   if (id.indexOf('tacz_bandits:') === 0 || id === 'simpleenemymod:ruunit') return true
   if (!entity.tags) return false

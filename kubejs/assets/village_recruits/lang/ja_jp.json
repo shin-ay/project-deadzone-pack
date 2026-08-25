@@ -1,0 +1,16 @@
+{
+  "block.village_recruits.landing_pad": "着陸区画",
+  "block.village_recruits.merchant_post": "交易所",
+  "item.village_recruits.merchant_post": "交易所",
+  "item.village_recruits.landing_pad": "着陸区画",
+  "block.village_recruits.basic_villager_spawner": "居住者配置装置",
+  "block.village_recruits.tower_spawner": "監視塔配置装置",
+  "block.village_recruits.sky_spawner": "高所居住区配置装置",
+  "block.village_recruits.launch_marker": "出発地点マーカー",
+  "item.village_recruits.launch_marker": "出発地点マーカー",
+  "block.village_recruits.large_landing_pad": "大型着陸区画",
+  "item.village_recruits.large_landing_pad": "大型着陸区画",
+  "item.village_recruits.service_marker": "サービス地点マーカー",
+  "key.categories.village_recruits": "PROJECT DEADZONE 居住区",
+  "key.village_recruits.wiki": "居住区ガイドを開く"
+}

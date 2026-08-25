@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "blocky_bikes:garage_2",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 139,
+    "separation": 70,
+    "salt": 1623305046
+  }
+}

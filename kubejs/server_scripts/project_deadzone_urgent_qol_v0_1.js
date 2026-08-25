@@ -2,6 +2,7 @@
 // Infection care, durability safety, fish economy and sapling relief.
 
 const DZQ_INFECTIONS = [
+  'hordes:infected',
   'apocalypsenow:infection',
   'apocalypsenow:posinfectioneffect',
   'infectious:infection'
@@ -26,6 +27,8 @@ function dzqCureInfection(player) {
       cured=true
     }
   })
+  if (cured) player.potionEffects.add('hordes:immunity',6000,0,false,true)
+  if (cured && typeof dzHealthRecordInfectionTreatment === 'function') dzHealthRecordInfectionTreatment(player)
   return cured
 }
 
@@ -38,44 +41,6 @@ DZQ_ANTIBIOTICS.forEach(itemId=>ItemEvents.rightClicked(itemId,event=>{
     p.runCommandSilent('playsound minecraft:block.brewing_stand.brew player @s ~ ~ ~ 0.7 1.15')
   }
 }))
-
-// Mastered gear is never allowed to disappear. This tick guard is a fallback;
-// the dedicated Forge hook may clamp it earlier on damage-heavy interactions.
-PlayerEvents.tick(event=>{
-  let p=event.player
-  if (!p || p.level.clientSide) return
-  if (p.age%2!==0) return
-  let stacks=[]
-  for(let i=0;i<p.inventory.containerSize;i++) stacks.push(p.inventory.getItem(i))
-  stacks.push(p.offHandItem)
-  ;['head','chest','legs','feet'].forEach(slot=>{
-    try { stacks.push(p.getItemBySlot(slot)) } catch(ignored) {}
-  })
-  stacks.forEach(stack=>{
-    if (!stack || stack.empty || !stack.isDamageableItem()) return
-    let root=null
-    try {root=stack.getTag()} catch(ignored) {}
-    if (!root || !root.contains('PDZMastery')) return
-    // Cache the best copy per item id. Vanilla same-item repair strips custom
-    // NBT from its output, so ItemEvents.crafted can restore this compound.
-    let cache=p.persistentData.getCompound('dz_mastery_repair_cache')
-    let key=String(stack.id).replace(/[^a-zA-Z0-9_]/g,'_')
-    let old=cache.contains(key)?cache.getCompound(key):null
-    let mastery=root.getCompound('PDZMastery')
-    if(!old || mastery.getInt('total_xp')>=old.getInt('total_xp')) cache.put(key,mastery.copy())
-    p.persistentData.put('dz_mastery_repair_cache',cache)
-    // Keep the immutable roll too. Vanilla same-item repair creates a new
-    // stack and would otherwise silently replace the player's long-used roll.
-    if(root.contains('PDZAffix')) {
-      let affixCache=p.persistentData.getCompound('dz_affix_repair_cache')
-      affixCache.put(key,root.getCompound('PDZAffix').copy())
-      p.persistentData.put('dz_affix_repair_cache',affixCache)
-    }
-    let cap=Math.max(0,Number(stack.maxDamage)-1)
-    if (Number(stack.damageValue)>=Number(stack.maxDamage)) stack.damageValue=cap
-  })
-
-})
 
 // Converted hostiles occasionally inherit NPC down tags. The old version
 // scanned every entity once per player, which scaled terribly in multiplayer.
@@ -91,21 +56,6 @@ ServerEvents.tick(event=>{
     event.server.runCommandSilent('tag '+selector+' remove dz_npc_bleedout_armed')
     event.server.runCommandSilent('execute as '+selector+' run data merge entity @s {Invulnerable:0b,NoAI:0b}')
   })
-})
-
-ItemEvents.crafted(event=>{
-  let p=event.player,stack=event.item
-  if(!p||!stack||stack.empty||!stack.isDamageableItem())return
-  let root=null
-  try{root=stack.getOrCreateTag()}catch(ignored){return}
-  if(root.contains('PDZMastery'))return
-  // A damaged crafted output is the vanilla two-identical-items repair path.
-  if(Number(stack.damageValue)<=0)return
-  let cache=p.persistentData.getCompound('dz_mastery_repair_cache')
-  let key=String(stack.id).replace(/[^a-zA-Z0-9_]/g,'_')
-  if(cache.contains(key))root.put('PDZMastery',cache.getCompound(key).copy())
-  let affixCache=p.persistentData.getCompound('dz_affix_repair_cache')
-  if(affixCache.contains(key))root.put('PDZAffix',affixCache.getCompound(key).copy())
 })
 
 // Dynamic Trees can become extremely stingy under seasonal multipliers.

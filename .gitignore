@@ -2,3 +2,4 @@
 .vscode/
 *.log
 *.tmp
+config/classmod/auth_*

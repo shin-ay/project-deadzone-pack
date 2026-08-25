@@ -1,0 +1,16 @@
+{
+  "entity.workers.miner": "採掘作業員",
+  "entity.workers.lumberjack": "伐採作業員",
+  "entity.workers.fisherman": "漁業担当",
+  "entity.workers.merchant": "居住区商人",
+  "entity.workers.farmer": "農業担当",
+  "entity.workers.builder": "建設作業員",
+  "entity.workers.animal_worker": "畜産担当",
+  "entity.workers.cook": "調理担当",
+  "entity.workers.storage": "共同備蓄庫",
+  "entity.workers.mine": "採掘区画",
+  "entity.workers.tree_field": "伐採区画",
+  "entity.workers.building": "建設区画",
+  "entity.workers.crop_field": "農業区画",
+  "entity.workers.kitchen": "共同調理場"
+}

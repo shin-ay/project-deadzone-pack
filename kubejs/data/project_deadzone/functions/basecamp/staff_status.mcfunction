@@ -1,0 +1,2 @@
+execute unless entity @e[type=minecraft:marker,tag=dz_basecamp_core_anchor,sort=nearest,limit=1] run tellraw @s {"text":"[PROJECT DEADZONE] キャンプコアが見つかりません。","color":"red"}
+execute if entity @e[type=minecraft:marker,tag=dz_basecamp_core_anchor,sort=nearest,limit=1] at @e[type=minecraft:marker,tag=dz_basecamp_core_anchor,sort=nearest,limit=1] run function project_deadzone:basecamp/staff_status_at_core

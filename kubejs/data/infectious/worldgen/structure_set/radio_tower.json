@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "infectious:radio_tower",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 41,
+    "separation": 20,
+    "salt": 690374098
+  }
+}

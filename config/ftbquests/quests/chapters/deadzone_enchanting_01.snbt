@@ -2,18 +2,17 @@
 	default_hide_dependency_lines: false
 	default_quest_shape: "circle"
 	filename: "deadzone_enchanting_01"
-	group: "A170000000000005"
-	icon: "kubejs:affix_workbench"
+	group: "4944EA3062E9681A"
+	icon: "mmorpg:gear_crafting_station"
 	id: "7D2A10E1C4A80101"
-	order_index: 17
+	order_index: 6
 	quest_links: [ ]
 	quests: [
 		{
 			dependencies: ["1920AEAAF4D75E94"]
-			subtitle: "解放条件: 「Survivor Camp」を完了"
 			description: [
-				"拾った装備を育てる方法は一つではない。通常エンチャント、銃専用エンチャント、Mine and Slash装備、PDZ Affixはそれぞれ別の役割を持つ。"
-				"まずエンチャントテーブルを確保し、バニラ系の利便効果と基礎強化を使える状態にしよう。"
+				"装備のレア度、基礎能力、Affix、解体、再構成はMine and Slashが一括管理する。PDZ独自Affixは存在しない。"
+				"通常エンチャントとTaCZ銃専用エンチャントは、M\\&S装備へ追加する任意強化として共存する。"
 			]
 			icon: "minecraft:enchanting_table"
 			id: "7D2A10E1C4A80110"
@@ -31,33 +30,27 @@
 					type: "item"
 				}
 				{
-					count: 2
-					id: "7D2A10E1C4A80115"
-					item: "kubejs:affix_scrap_uncommon"
-					type: "item"
-				}
-				{
 					id: "7D2A10E1C4A80112"
 					type: "xp"
 					xp: 60
 				}
 			]
+			subtitle: "解放条件: 「Survivor Camp」を完了"
 			tasks: [{
 				consume_items: false
 				id: "7D2A10E1C4A80113"
 				item: "minecraft:enchanting_table"
 				type: "item"
 			}]
-			title: "失われた強化設備"
+			title: "強化系統を一本にする"
 			x: 0.0d
 			y: 0.0d
 		}
 		{
 			dependencies: ["7D2A10E1C4A80110"]
-			subtitle: "解放条件: 「失われた強化設備」を完了"
 			description: [
-				"Apotheosisの棚は、付与できるエンチャントの上限・安定性・希少効果の出現率を変化させる。"
-				"これは任意強化の設備ルート。ランダムAffixとは別に、自分で装備を仕上げたい時に使う。"
+				"Apotheosisの棚は、付与できるエンチャントの上限、安定性、希少効果の出現率を変化させる。"
+				"M\\&SのAffixを置き換える設備ではない。確定したM\\&S装備へ、必要な利便・基礎強化を追加する設備だ。"
 			]
 			icon: "apotheosis:hellshelf"
 			id: "7D2A10E1C4A80120"
@@ -67,6 +60,7 @@
 				item: "minecraft:lapis_lazuli"
 				type: "item"
 			}]
+			subtitle: "解放条件: 「強化系統を一本にする」を完了"
 			tasks: [{
 				consume_items: false
 				id: "7D2A10E1C4A80122"
@@ -79,7 +73,6 @@
 		}
 		{
 			dependencies: ["7D2A10E1C4A80120"]
-			subtitle: "解放条件: 「出力限界の突破」を完了"
 			description: [
 				"Enchantment Libraryは本の効果を蓄積し、必要なレベルで取り出せる共有強化設備になる。"
 				"不要な本も捨てず、チーム全体の強化資源として循環させよう。"
@@ -92,6 +85,7 @@
 				item: "minecraft:book"
 				type: "item"
 			}]
+			subtitle: "解放条件: 「出力限界の突破」を完了"
 			tasks: [{
 				consume_items: false
 				id: "7D2A10E1C4A80132"
@@ -104,10 +98,10 @@
 		}
 		{
 			dependencies: ["7D2A10E1C4A80120"]
-			subtitle: "解放条件: 「出力限界の突破」を完了"
-			description: [
+			 description: [
 				"TaCZ銃にはFirepower、Precision、Deep Impact、Capacityなどの銃専用エンチャントを付与できる。"
-				"銃の個体差を作るAffixと、愛用品を狙って育てるエンチャントは共存する。"
+				"個体差とレア度はM\\&S、銃専用の追加調整はTaCZエンチャントが担当する。同じ効果をPDZ側で二重加算しない。"
+				"エンチャント済みのTaCZ銃をインベントリへ入れると自動確認される。M\\&S Affixだけでは達成にならない。"
 			]
 			icon: "minecraft:enchanted_book"
 			id: "7D2A10E1C4A80140"
@@ -116,6 +110,7 @@
 				type: "xp"
 				xp: 100
 			}]
+			subtitle: "解放条件: 「出力限界の突破」を完了"
 			tasks: [{
 				id: "7D2A10E1C4A80142"
 				title: "TaCZ銃へ銃専用エンチャントを付与する"
@@ -127,52 +122,52 @@
 		}
 		{
 			dependencies: ["7D2A10E1C4A80110"]
-			subtitle: "解放条件: 「失われた強化設備」を完了"
 			description: [
-				"PDZ Affix作業台では、Affix装備の解体、同レア度での再抽選、Affixのない装備への付与を行える。"
-				"拾った装備を解体してAffix素材を回収し、次の装備へ循環させるハクスラ用の設備だ。"
+				"Mine and SlashのSalvage Stationで不要なM\\&S装備を解体し、同MODの強化資源へ戻す。"
+				"Lootから強化まで同じMOD内で循環させ、別系統の素材や作業台を増やさない。"
 			]
-			icon: "kubejs:affix_workbench"
+			icon: "mmorpg:salvaging_station"
 			id: "7D2A10E1C4A80150"
 			rewards: [{
-				count: 2
 				id: "7D2A10E1C4A80151"
-				item: "kubejs:affix_scrap_common"
-				type: "item"
+				type: "xp"
+				xp: 40
 			}]
+			subtitle: "解放条件: 「強化系統を一本にする」を完了"
 			tasks: [{
 				consume_items: false
 				id: "7D2A10E1C4A80152"
-				item: "kubejs:affix_workbench"
+				item: "mmorpg:salvaging_station"
 				type: "item"
 			}]
-			title: "Affix循環設備"
+			title: "戦利品をM\\&S資源へ戻す"
 			x: 2.0d
 			y: 2.0d
 		}
 		{
 			dependencies: ["7D2A10E1C4A80150"]
-			subtitle: "解放条件: 「Affix循環設備」を完了"
 			description: [
-				"Mine and Slash装備は、ドロップ時点でレア度・基礎能力・Affixが決まる探索報酬。"
-				"PDZ Affixは既存の銃・近接・工具・防具にも個性を足す補助層。二つを同じ装備システムとして混同しないこと。"
+				"Gear Crafting StationはM\\&S装備と強化資源を同じ成長ループへ接続する正式設備。"
+				"TaCZ銃や対応MOD装備もM\\&S Gearへ変換された後は、レア度、Affix、要求値、解体をM\\&S基準で扱う。"
 			]
-			icon: "minecraft:echo_shard"
+			icon: "mmorpg:gear_crafting_station"
 			id: "7D2A10E1C4A80160"
 			rewards: [{
 				id: "7D2A10E1C4A80161"
-				item: "kubejs:affix_scrap_rare"
+				type: "xp"
+				xp: 80
+			}]
+			subtitle: "解放条件: 「戦利品をM\\&S資源へ戻す」を完了"
+			tasks: [{
+				consume_items: false
+				id: "7D2A10E1C4A80162"
+				item: "mmorpg:gear_crafting_station"
 				type: "item"
 			}]
-			tasks: [{
-				id: "7D2A10E1C4A80162"
-				title: "Rare以上の装備またはAffix素材を入手する"
-				type: "custom"
-			}]
-			title: "戦利品をビルドへ変える"
+			title: "装備成長の正本"
 			x: 4.0d
 			y: 2.0d
 		}
 	]
-	title: "装備強化：エンチャントとAffix"
+	title: "装備強化：エンチャントとM\\&S"
 }

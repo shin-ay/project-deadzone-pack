@@ -1,0 +1,105 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "deadzone_camp_restoration_fuel_01"
+	group: "4944EA3062E9681A"
+	icon: "tfmg:gasoline_bucket"
+	id: "7100000000000000"
+	order_index: 3
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: ["1920AEAAF4D75E94"]
+			description: [
+				"キャンプの発電機は、拾った燃料を消費するだけでは維持できない。"
+				"Gas Stationを確保し、燃料を定期回収できるルートに作り変えよう。"
+				"Base Coreの「燃料ルート管理」から開始できる。"
+			]
+			icon: "apocalypsenow:aabattery"
+			id: "7100000000000001"
+			subtitle: "解放条件: 「Survivor Camp」を完了"
+			tasks: [{
+				id: "7110000000000001"
+				title: "燃料ルート計画を確認した"
+				type: "custom"
+			}]
+			title: "キャンプ復興：消えかけた灯り"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["7100000000000001"]
+			description: ["Raiderを排除し、Gas Stationの燃料庫と輸送路を確保する。"]
+			icon: "tfmg:gasoline_bucket"
+			id: "7100000000000002"
+			subtitle: "解放条件: 「キャンプ復興：消えかけた灯り」を完了"
+			tasks: [{
+				id: "7110000000000002"
+				title: "Gas Stationを確保した"
+				type: "custom"
+			}]
+			title: "燃料庫の確保"
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["7100000000000002"]
+			description: [
+				"ガソリンバケツ×2と電子部品×2をBase Coreへ持ち帰る。"
+				"所持した状態で「燃料ルート管理」から納入する。"
+			]
+			icon: "immersiveengineering:component_electronic"
+			id: "7100000000000003"
+			subtitle: "解放条件: 「燃料庫の確保」を完了"
+			tasks: [{
+				id: "7110000000000003"
+				title: "燃料と修理部品を帰還納入した"
+				type: "custom"
+			}]
+			title: "燃料を持ち帰れ"
+			x: 4.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["7100000000000003"]
+			description: [
+				"キャンプの最低限の発電燃料が安定した。"
+				"Minecraftの1日ごとに、Base CoreからSolid Fuel 1と少額資金を受け取れる。地域物流章で道路・鉄道・海上・航空を確立すると修理品、追加燃料、食料、医療品が順に増える。"
+			]
+			icon: "mts:mtsofficialpack.repairkit"
+			id: "7100000000000004"
+			subtitle: "解放条件: 「燃料を持ち帰れ」を完了"
+			rewards: [
+				{
+					count: 2
+					id: "7120000000000001"
+					item: "mts:mtsofficialpack.solidfuel"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "7120000000000002"
+					item: "mts:mtsofficialpack.repairkit"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 8
+					id: "7120000000000003"
+					item: "apocalypsenow:money"
+					team_reward: true
+					type: "item"
+				}
+			]
+			tasks: [{
+				id: "7110000000000004"
+				title: "定期燃料ルートが稼働した"
+				type: "custom"
+			}]
+			title: "復旧：燃料ルート"
+			x: 6.0d
+			y: 0.0d
+		}
+	]
+	title: "キャンプ復興：燃料ルート"
+}

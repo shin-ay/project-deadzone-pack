@@ -155,7 +155,7 @@ ServerEvents.commandRegistry(event => {
     player.tell(Text.of("=== 進行テスト ===").gold())
     ;[
       ["AUDIT", "/deadzoneprogression audit"], ["SYNC ALL", "/deadzoneprogression sync_all"],
-      ["WORLD TIER", "/deadzonestory status"], ["SKILL GATE", "/deadzoneskillgate status"],
+      ["WORLD TIER", "/deadzonetier status"], ["SKILL GATE", "/deadzoneskillgate status"],
       ["RECIPE STAGES", "/deadzoneprogression status"]
     ].forEach(entry => player.tell(Text.of("[ " + entry[0] + " ]").aqua()
       .clickRunCommand(entry[1]).hover(Text.of(entry[1]))))

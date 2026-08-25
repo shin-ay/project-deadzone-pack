@@ -1,0 +1,1 @@
+{"name":"project_deadzone:starter_village/facilities/market","fallback":"minecraft:empty","elements":[{"weight":1,"element":{"element_type":"minecraft:single_pool_element","location":"minecraft:village/plains/houses/plains_butcher_shop_1","processors":"minecraft:empty","projection":"rigid"}}]}

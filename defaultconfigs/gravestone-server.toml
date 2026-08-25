@@ -1,4 +1,7 @@
 # PROJECT DEADZONE grave safety defaults
+# A grave may replace a nearby block when no free placement cell exists.
+# This prevents inventories from becoming inaccessible in dense ruins,
+# vehicles, foliage, roofs, water edges, and revive/death edge cases.
 enable_obituary = true
 replaceable_blocks = ["#gravestone:grave_replaceable"]
 remove_obituary = false

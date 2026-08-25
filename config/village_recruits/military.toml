@@ -12,7 +12,7 @@
 	#Villages only attack when the odds are favorable and they can
 	#spare troops without leaving home undefended.
 	#
-enabled = false
+	enabled = false
 	#Base cooldown (in ticks) between attacks launched by the same
 	#faction. Scaled down when the faction is stronger. Default: 12000 (10 min)
 	#
@@ -1457,7 +1457,7 @@ enabled = false
 	#casualties mean anything. A garrison is never emptied below
 	#attack.minGarrison to fight one. Default: true
 	#
-battlesEnabled = false
+	battlesEnabled = false
 	#Chance that an attack the AI has decided on becomes a SKIRMISH in the
 	#field instead of going straight to a siege. Default: 0.35
 	#
@@ -1886,7 +1886,7 @@ battlesEnabled = false
 	#Battle Tanks. Needs Laendli Transportation; without it the technology is
 	#hidden and none of this applies. Default: true
 	#
-enabled = false
+	enabled = false
 	#How many tanks ONE village may keep. They are an abstract count in the
 	#village rather than parked entities - Laendli has no storage structure
 	#for a vehicle, and a parked entity would have to be kept loaded, which is

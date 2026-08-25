@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "infectious:green_tank",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 58,
+    "separation": 40,
+    "salt": 1731441052
+  }
+}

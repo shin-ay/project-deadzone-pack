@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "survival_instinct:hardware_store",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 37,
+    "separation": 26,
+    "salt": 1231212732
+  }
+}

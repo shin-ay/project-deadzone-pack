@@ -23,6 +23,7 @@ const PDZ_BOSS_AXEL_TANK_RIGHT_VISUAL_TAG = "dz_axel_fuel_tank_visual_right"
 
 const PDZ_BOSS_AXEL_CYLINDER_TAG = "dz_axel_phase_cylinder"
 const PDZ_BOSS_AXEL_CYLINDER_VISUAL_TAG = "dz_axel_phase_cylinder_visual"
+const PDZ_BOSS_AXEL_QUEST = "A1E1000000000001"
 
 function pdzAxelRuntimeTags(extraTags) {
   return [PDZ_BOSS_RUNTIME_TAG, PDZ_BOSS_AXEL_RUNTIME_TAG].concat(extraTags)
@@ -116,6 +117,28 @@ function pdzAxelCleanupAround(entity, radius) {
   entity.runCommandSilent("tag @e[tag=" + PDZ_BOSS_AXEL_RUNTIME_TAG + ",distance=.." + radius + "] add " + PDZ_BOSS_AXEL_RESET_TAG)
   entity.runCommandSilent("kill @e[tag=" + PDZ_BOSS_AXEL_RUNTIME_TAG + ",distance=.." + radius + "]")
 }
+
+// Brutal Bosses owns natural treasure-guardian spawning. This bridge recognizes
+// only the named Axel profile and attaches PDZ phases/rewards without turning
+// ordinary TaCZ soldiers into bosses.
+EntityEvents.spawned(PDZ_BOSS_AXEL_ENTITY, event => {
+  let candidate = event.entity
+  event.server.scheduleInTicks(10, () => {
+    if (!candidate || !candidate.alive || !candidate.tags) return
+    if (candidate.tags.contains(PDZ_BOSS_AXEL_TAG) || candidate.tags.contains(PDZ_BOSS_SHOWROOM_TAG)) return
+    let name = ""
+    try { name = String(candidate.name.string) } catch (ignored) { try { name = String(candidate.name) } catch (ignored2) {} }
+    if (name.indexOf("アクセル") < 0 && name.indexOf("Axel") < 0) return
+    candidate.addTag(PDZ_BOSS_AXEL_TAG)
+    candidate.addTag("dz_pdz_boss")
+    candidate.server.runCommandSilent("team add pdz_axel")
+    candidate.runCommandSilent("team join pdz_axel @s")
+    let positioned = "execute in " + String(candidate.level.dimension) + " positioned " +
+      Number(candidate.x) + " " + Number(candidate.y) + " " + Number(candidate.z)
+    pdzAxelSpawnFuelTanks(candidate.server, positioned)
+    pdzAxelBroadcast(candidate, "ロードキング先遣隊長アクセルが戦利品庫を封鎖した。背面燃料タンクを破壊せよ！", "red")
+  })
+})
 
 function pdzAxelFuelTankDestroyed(tank) {
   let left = tank.tags.contains(PDZ_BOSS_AXEL_TANK_LEFT_TAG)
@@ -212,6 +235,7 @@ EntityEvents.death(event => {
   if (!entity.tags.contains(PDZ_BOSS_AXEL_TAG) || entity.tags.contains("dz_boss_rewarded")) return
   entity.addTag("dz_boss_rewarded")
   entity.runCommandSilent("tag @a[tag=" + PDZ_BOSS_AXEL_PARTICIPANT_TAG + ",distance=..64,gamemode=!spectator] add " + PDZ_BOSS_AXEL_CLEAR_TAG)
+  entity.runCommandSilent("ftbquests change_progress @a[tag=" + PDZ_BOSS_AXEL_PARTICIPANT_TAG + ",distance=..64,gamemode=!spectator] complete " + PDZ_BOSS_AXEL_QUEST)
   entity.runCommandSilent("give @a[tag=" + PDZ_BOSS_AXEL_PARTICIPANT_TAG + ",distance=..64,gamemode=!spectator] apocalypsenow:money 10")
   entity.runCommandSilent("give @a[tag=" + PDZ_BOSS_AXEL_PARTICIPANT_TAG + ",distance=..64,gamemode=!spectator] immersiveengineering:ingot_steel 4")
   entity.runCommandSilent("give @a[tag=" + PDZ_BOSS_AXEL_PARTICIPANT_TAG + ",distance=..64,gamemode=!spectator] apocalypsenow:bandage 3")
@@ -219,6 +243,103 @@ EntityEvents.death(event => {
   entity.runCommandSilent("tag @a[tag=" + PDZ_BOSS_AXEL_PARTICIPANT_TAG + "] remove " + PDZ_BOSS_AXEL_PARTICIPANT_TAG)
   pdzAxelBroadcast(entity, "アクセル撃破。周辺参加者へ個人報酬を支給した。", "green")
 })
+
+// Appearance-only boss showroom. Every exhibit has a stable numbered tag so
+// screenshots can be reviewed and visual changes can be requested by number.
+// Exhibits are frozen, silent and invulnerable; they never award boss loot.
+const PDZ_BOSS_SHOWROOM_TAG = "dz_boss_showroom"
+const PDZ_BOSS_SHOWROOM_ANCHOR_TAG = "dz_boss_showroom_axel_anchor"
+
+const PDZ_BOSS_SHOWROOM_ENTRIES = [
+  { id: "02", x: -12, z: 10, entity: "infectious:mecha_zombie", name: "ARGUS Fragment", color: "gold", hp: 240 },
+  { id: "03", x: -6, z: 10, entity: "infectious:giant_zombie", name: "CHOIR VESSEL", color: "dark_purple", hp: 280 },
+  { id: "04", x: 0, z: 10, entity: "tacz_bandits:bandit", name: "Raider Ash Captain", color: "dark_red", hp: 55, gun: "tacz:fn_evolys", ammo: 100 },
+  { id: "05", x: 6, z: 10, entity: "tacz_bandits:bandit", name: "Fuel Route Scout", color: "red", hp: 16, gun: "elitex:mcs_spear", ammo: 30 },
+  { id: "06", x: 12, z: 10, entity: "tacz_bandits:bandit", name: "Gun Shop Enforcer", color: "dark_red", hp: 28, gun: "elitex:m249x", ammo: 100 },
+  { id: "07", x: 18, z: 10, entity: "tacz_bandits:bandit", name: "Corrupt Field Medic", color: "dark_red", hp: 70, gun: "elitex:fh_scar18", ammo: 30 },
+  { id: "08", x: -15, z: 18, entity: "tacz_bandits:bandit", name: "Raider Warden", color: "dark_red", hp: 40, gun: "tacz:scar_h", ammo: 20 },
+  { id: "09", x: -9, z: 18, entity: "infectious:mutant_zombie", name: "原初感染体", color: "dark_purple", hp: 180 },
+  { id: "10", x: -3, z: 18, entity: "simpleenemymod:ruunit", name: "Remnant Signal Hunter", color: "dark_purple", hp: 75 },
+  { id: "11", x: 3, z: 18, entity: "infectious:radioactive_zombie", name: "REACTOR SAINT", color: "green", hp: 220 },
+  { id: "12", x: 9, z: 18, entity: "apocalypse_zombies:tank", name: "Siege Tank", color: "dark_red", hp: 90 },
+  { id: "13", x: 15, z: 18, entity: "infectious:ancient_zombie_boss", name: "Ancient Abomination", color: "dark_purple", hp: 120 }
+]
+
+function pdzBossShowroomNbt(entry) {
+  let label = "[" + entry.id + "] " + entry.name
+  let sideBossReady = (entry.entity === "apocalypse_zombies:tank" || entry.entity === "infectious:ancient_zombie_boss")
+    ? ",\"dz_sideboss_ready\"" : ""
+  let hands = entry.gun ? ",HandItems:[{id:\"tacz:modern_kinetic_gun\",Count:1b,tag:{GunId:\"" + entry.gun + "\",GunFireMode:\"AUTO\",GunCurrentAmmoCount:" + entry.ammo + ",HasBulletInBarrel:1b,MaxDummyAmmo:" + entry.ammo + ",DummyAmmo:" + entry.ammo + "}},{}],HandDropChances:[0.0f,0.0f]" : ""
+  return "{NoAI:1b,Invulnerable:1b,Silent:1b,PersistenceRequired:1b," +
+    "CustomName:'{\"text\":\"" + label + "\",\"color\":\"" + entry.color + "\",\"bold\":true}'," +
+    "CustomNameVisible:1b,Health:" + entry.hp + ".0f," +
+    "Attributes:[{Name:\"minecraft:generic.max_health\",Base:" + entry.hp + ".0d}]" + hands + "," +
+    "Tags:[\"" + PDZ_BOSS_SHOWROOM_TAG + "\",\"dz_boss_showroom_" + entry.id + "\"" + sideBossReady + "]}"
+}
+
+function pdzBossShowroomClear(player) {
+  player.runCommandSilent("tag @e[tag=" + PDZ_BOSS_AXEL_RUNTIME_TAG + ",tag=" + PDZ_BOSS_SHOWROOM_TAG + ",distance=..96] add " + PDZ_BOSS_AXEL_RESET_TAG)
+  let count = player.runCommandSilent("kill @e[tag=" + PDZ_BOSS_SHOWROOM_TAG + ",distance=..96]")
+  player.runCommandSilent("kill @e[tag=" + PDZ_BOSS_SHOWROOM_ANCHOR_TAG + ",distance=..96]")
+  return count
+}
+
+function pdzBossShowroomSpawn(player, server) {
+  pdzBossShowroomClear(player)
+
+  // Axel is spawned through Brutal Bosses so its configured visual scale is
+  // represented accurately. A marker preserves the requested gallery slot
+  // across the short delayed identification step.
+  player.runCommandSilent("execute positioned ^-18 ^ ^10 run summon minecraft:marker ~ ~ ~ {Tags:[\"" + PDZ_BOSS_SHOWROOM_ANCHOR_TAG + "\"]}")
+  player.runCommandSilent("execute at @e[tag=" + PDZ_BOSS_SHOWROOM_ANCHOR_TAG + ",distance=..40,sort=nearest,limit=1] run tag @e[type=" + PDZ_BOSS_AXEL_ENTITY + ",distance=..8] add " + PDZ_BOSS_AXEL_PREEXISTING_TAG)
+  player.runCommandSilent("execute at @e[tag=" + PDZ_BOSS_SHOWROOM_ANCHOR_TAG + ",distance=..40,sort=nearest,limit=1] run brutalbosses spawnboss pdz_axel")
+
+  PDZ_BOSS_SHOWROOM_ENTRIES.forEach(entry => {
+    player.runCommandSilent("execute positioned ^" + entry.x + " ^ ^" + entry.z + " run summon " + entry.entity + " ~ ~ ~ " + pdzBossShowroomNbt(entry))
+  })
+
+  server.scheduleInTicks(5, () => {
+    let anchor = "@e[tag=" + PDZ_BOSS_SHOWROOM_ANCHOR_TAG + ",sort=nearest,limit=1]"
+    let axel = "@e[type=" + PDZ_BOSS_AXEL_ENTITY + ",tag=!" + PDZ_BOSS_AXEL_PREEXISTING_TAG + ",distance=..8,sort=nearest,limit=1]"
+    server.runCommandSilent("execute at " + anchor + " run tag " + axel + " add " + PDZ_BOSS_SHOWROOM_TAG)
+    server.runCommandSilent("execute at " + anchor + " run tag " + axel + " add dz_boss_showroom_01")
+    server.runCommandSilent("execute at " + anchor + " run tag " + axel + " add " + PDZ_BOSS_AXEL_TAG)
+    server.runCommandSilent("execute at " + anchor + " run tag " + axel + " add " + PDZ_BOSS_AXEL_RESET_TAG)
+    server.runCommandSilent("execute at " + anchor + " run data merge entity " + axel + " {NoAI:1b,Invulnerable:1b,Silent:1b,CustomName:'{\"text\":\"[01] アクセル『ロードキング先遣隊長』\",\"color\":\"gold\",\"bold\":true}',CustomNameVisible:1b}")
+    server.runCommandSilent("execute at " + anchor + " as " + axel + " run item replace entity @s weapon.mainhand with tacz:modern_kinetic_gun{GunId:\"tacz:minigun\",GunFireMode:\"AUTO\",GunCurrentAmmoCount:100,HasBulletInBarrel:1b,MaxDummyAmmo:100,DummyAmmo:100}")
+    server.runCommandSilent("execute at " + anchor + " as " + axel + " run data merge entity @s {HandDropChances:[0.0f,0.0f]}")
+    server.runCommandSilent("execute at " + anchor + " run tag @e[type=" + PDZ_BOSS_AXEL_ENTITY + ",tag=" + PDZ_BOSS_AXEL_PREEXISTING_TAG + ",distance=..8] remove " + PDZ_BOSS_AXEL_PREEXISTING_TAG)
+    pdzAxelSpawnFuelTanks(server, "execute at " + anchor)
+    server.runCommandSilent("execute at " + anchor + " run tag @e[tag=" + PDZ_BOSS_AXEL_RUNTIME_TAG + ",distance=..8] add " + PDZ_BOSS_SHOWROOM_TAG)
+    server.runCommandSilent("execute at " + anchor + " run tag @e[tag=" + PDZ_BOSS_AXEL_RUNTIME_TAG + ",distance=..8] add " + PDZ_BOSS_AXEL_RESET_TAG)
+
+    // Some mod entities apply their defaults a tick or two after spawning.
+    // Reassert showroom safety after those hooks have completed.
+    server.runCommandSilent("execute as @e[tag=" + PDZ_BOSS_SHOWROOM_TAG + ",tag=!" + PDZ_BOSS_AXEL_RUNTIME_TAG + "] run data merge entity @s {NoAI:1b,Invulnerable:1b,Silent:1b,PersistenceRequired:1b}")
+    server.runCommandSilent("execute as @e[tag=" + PDZ_BOSS_SHOWROOM_TAG + ",tag=" + PDZ_BOSS_AXEL_RUNTIME_TAG + "] run data merge entity @s {Invulnerable:1b,Silent:1b}")
+    // Validate the actual entities instead of claiming success merely because
+    // summon commands were issued. Retry direct entries once after all spawn
+    // gates and mod initialization hooks have run.
+    PDZ_BOSS_SHOWROOM_ENTRIES.forEach(entry => {
+      let exists=server.runCommandSilent("execute if entity @e[tag=dz_boss_showroom_" + entry.id + ",limit=1]")
+      if (exists<=0) player.runCommandSilent("execute positioned ^" + entry.x + " ^ ^" + entry.z + " run summon " + entry.entity + " ~ ~ ~ " + pdzBossShowroomNbt(entry))
+    })
+    server.scheduleInTicks(8, () => {
+      let present=[]
+      for(let i=1;i<=13;i++){
+        let id=(i<10?"0":"")+i
+        let found=server.runCommandSilent("execute if entity @e[tag=dz_boss_showroom_" + id + ",limit=1]")
+        if(found>0)present.push(id)
+      }
+      if(present.length===13)player.tell(Text.of("ボス展示13/13体を確認しました。頭上の[01]～[13]で修正対象を指定できます。").aqua())
+      else{
+        let missing=[]
+        for(let i=1;i<=13;i++){let id=(i<10?"0":"")+i;if(present.indexOf(id)<0)missing.push(id)}
+        player.tell(Text.of("ボス展示は"+present.length+"/13体です。未生成: ["+missing.join("][")+"]").red())
+      }
+    })
+  })
+}
 
 ServerEvents.commandRegistry(event => {
   const { commands: Commands } = event
@@ -317,6 +438,17 @@ ServerEvents.commandRegistry(event => {
     let count = p.runCommandSilent("tag @e[tag=" + PDZ_BOSS_AXEL_RUNTIME_TAG + ",distance=..128] add " + PDZ_BOSS_AXEL_RESET_TAG)
     p.runCommandSilent("kill @e[tag=" + PDZ_BOSS_AXEL_RUNTIME_TAG + ",distance=..128]")
     p.tell(Text.of("128m以内のAxel一時オブジェクトを掃除しました: " + count).yellow())
+    return 1
+  }))
+
+  root.then(Commands.literal("showroom").requires(source => source.hasPermission(2)).executes(ctx => {
+    pdzBossShowroomSpawn(ctx.source.player, ctx.source.server)
+    return 1
+  }))
+
+  root.then(Commands.literal("showroom_clear").requires(source => source.hasPermission(2)).executes(ctx => {
+    let count = pdzBossShowroomClear(ctx.source.player)
+    ctx.source.player.tell(Text.of("96m以内のボス展示を撤去しました: " + count).yellow())
     return 1
   }))
 

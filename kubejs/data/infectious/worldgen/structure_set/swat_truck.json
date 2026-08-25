@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "infectious:swat_truck",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 99,
+    "separation": 45,
+    "salt": 908374047
+  }
+}

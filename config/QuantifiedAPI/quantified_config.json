@@ -58,15 +58,15 @@
 
   // === Developer Features ===
   // Unlock developer-only UI elements and tooling.
-  "developerMode": true,
+  "developerMode": false,
   // Record execution timeline samples so you can scrub through performance history.
-  "developerTimeline": true,
+  "developerTimeline": false,
   // Keep telemetry frames so you can replay them later for diagnostics.
-  "developerReplay": true,
+  "developerReplay": false,
   // Expose the stress test harness that hammers the scheduler.
   "developerStressTest": false,
   // Highlight verbose or busy mods directly in diagnostics.
-  "developerModSpotlight": true,
+  "developerModSpotlight": false,
 
   // === Developer Dashboard ===
   // Serve the browser-based dashboard for realtime control.
@@ -98,7 +98,7 @@
 
   // === Monitoring & Metrics ===
   // Track runtime metrics so you can review history later.
-  "enableMetrics": true,
+  "enableMetrics": false,
   // Seconds between automatic metric samples.
   "metricsIntervalSeconds": 30,
   // Write collected metrics to JSON files on disk.
@@ -118,7 +118,7 @@
 
   // === Fixes ===
   // Log JVM garbage-collection hints to help with tuning.
-  "enableGcHints": true,
+  "enableGcHints": false,
 
   // === Debug Settings ===
   // Enable verbose debug logging globally.

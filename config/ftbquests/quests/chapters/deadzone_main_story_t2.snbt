@@ -2,10 +2,10 @@
 	default_hide_dependency_lines: false
 	default_quest_shape: ""
 	filename: "deadzone_main_story_t2"
-	group: "A170000000000002"
+	group: "23C996B606E0CFE9"
 	icon: "apocalypsenow:badge"
 	id: "306DDFE5681E2BA3"
-	order_index: 7
+	order_index: 3
 	quest_links: [ ]
 	quests: [
 		{
@@ -21,7 +21,7 @@
 			id: "242968A2B6D41253"
 			shape: "hexagon"
 			size: 1.5d
-			subtitle: "工場の生産線を見つける"
+			subtitle: "工場の生産線を見つける｜解放条件: 「薬品保管区画を奪還せよ」・「T3：Operator」をすべて完了"
 			tasks: [{
 				id: "33D4D791BFD296A9"
 				title: "Factoryの工業区画へ到達する"
@@ -33,7 +33,6 @@
 		}
 		{
 			dependencies: ["242968A2B6D41253"]
-			subtitle: "解放条件: 「Act 2：止まった生産線」を完了"
 			description: [
 				"Factoryの設備を復旧し、無線中継器に必要な部品を確保する。"
 				"銅インゴット8個、鉄インゴット8個、電子管2個を納品する。"
@@ -46,6 +45,7 @@
 				item: "immersiveengineering:ingot_steel"
 				type: "item"
 			}]
+			subtitle: "解放条件: 「Act 2：止まった生産線」を完了"
 			tasks: [
 				{
 					consume_items: true
@@ -75,13 +75,13 @@
 		}
 		{
 			dependencies: ["2FD5B06423F44541"]
-			subtitle: "解放条件: 「Factoryを再起動する」を完了"
 			description: [
 				"復旧した設備から、Remnant Relayへ向かう暗号通信が見つかった。"
 				"Relayへ到達し、Protocol座標断片を保持するCoreを探す。"
 			]
 			icon: "apocalypsenow:aabattery"
 			id: "13A8A2B1178471CD"
+			subtitle: "解放条件: 「Factoryを再起動する」を完了"
 			tasks: [{
 				id: "6179E59182B3F8F2"
 				title: "Remnant Relayへ到達する"
@@ -93,7 +93,6 @@
 		}
 		{
 			dependencies: ["13A8A2B1178471CD"]
-			subtitle: "解放条件: 「命令の亡霊」を完了"
 			description: [
 				"Relayの外部装置、Spawner、守備隊を排除してCoreを解除する。"
 				"Coreを破壊するとRemnantの巡回が停止し、Protocol座標断片を回収できる。"
@@ -107,11 +106,12 @@
 			}
 			id: "6327A52D90F0014B"
 			rewards: [{
-				count: 64
+				count: 20
 				id: "5C849E0A7FB11F18"
 				item: "apocalypsenow:money"
 				type: "item"
 			}]
+			subtitle: "解放条件: 「命令の亡霊」を完了"
 			tasks: [{
 				id: "4AC6FFCB7AC82869"
 				title: "Remnant RelayのCoreを制圧する"
@@ -123,16 +123,16 @@
 		}
 		{
 			dependencies: ["6327A52D90F0014B"]
-			subtitle: "解放条件: 「Protocol座標断片」を完了"
 			description: [
 				"CDF、Raiders、Remnantが同じ無線鍵を要求している。"
-				"チャットで /deadzonestory support を実行し、支援先の説明を確認して選択する。"
+				"Protocol座標断片を確保すると支援先の選択ボタンが自動表示される。閉じた場合はBase Coreの「T2支援先の判断」から再表示できる。"
 				"選ばなかった勢力の施設は消えないが、価格、巡回、報酬経路が変化する。"
 			]
 			icon: "apocalypsenow:badge"
 			id: "63BC8CE6C398AEE6"
 			shape: "hexagon"
 			size: 1.5d
+			subtitle: "解放条件: 「Protocol座標断片」を完了"
 			tasks: [{
 				id: "086A6BE83E0DC5C2"
 				title: "三勢力から支援先を選ぶ"
@@ -144,7 +144,6 @@
 		}
 		{
 			dependencies: ["63BC8CE6C398AEE6"]
-			subtitle: "解放条件: 「三つの命令」を完了"
 			description: [
 				"CDFの避難民回廊へ向かい、現地の防衛隊と接触する。"
 				"防具・地図・安定した補給を得られる代わりに、民間人の退避を優先するルート。"
@@ -163,6 +162,7 @@
 				item: "apocalypsenow:armorplate"
 				type: "item"
 			}]
+			subtitle: "解放条件: 「三つの命令」を完了"
 			tasks: [{
 				id: "33B79752EBEA2F15"
 				title: "CDF管理施設で防衛隊と接触する"
@@ -174,7 +174,6 @@
 		}
 		{
 			dependencies: ["63BC8CE6C398AEE6"]
-			subtitle: "解放条件: 「三つの命令」を完了"
 			description: [
 				"Ash Jackalsの補給拠点を襲い、密輸台帳とAffix素材を奪う。"
 				"危険は高いが、武器・車両部品を早く確保できる攻撃的なルート。"
@@ -188,11 +187,12 @@
 			}
 			id: "6B79E4C886405D52"
 			rewards: [{
-				count: 54
+				count: 24
 				id: "3DC1C4EA832DD008"
 				item: "apocalypsenow:money"
 				type: "item"
 			}]
+			subtitle: "解放条件: 「三つの命令」を完了"
 			tasks: [{
 				id: "76BF4C811619414C"
 				title: "Raider拠点のCoreを制圧する"
@@ -204,7 +204,6 @@
 		}
 		{
 			dependencies: ["63BC8CE6C398AEE6"]
-			subtitle: "解放条件: 「三つの命令」を完了"
 			description: [
 				"Remnant Relayの中枢を解析し、旧軍のProtocol断片を復元する。"
 				"重工業部品とT3座標を得やすいが、機械守備隊との戦闘が待っている。"
@@ -217,6 +216,7 @@
 				item: "immersiveengineering:component_electronic"
 				type: "item"
 			}]
+			subtitle: "解放条件: 「三つの命令」を完了"
 			tasks: [{
 				id: "720FBA717C2BF6B5"
 				title: "Remnant拠点のCoreを確保する"
@@ -262,7 +262,6 @@
 		}
 		{
 			dependencies: ["64FC20257BDD84CF"]
-			subtitle: "解放条件: 「廃棄された患者記録」を完了"
 			description: [
 				"記録保管区画を守るStory Boss『原初感染体』を撃破する。"
 				"咆哮と増援に備え、5人編成では役割を分けて戦う。"
@@ -271,7 +270,7 @@
 			id: "0573B0233758DF83"
 			rewards: [
 				{
-					count: 64
+					count: 32
 					id: "6078853B50B0C249"
 					item: "apocalypsenow:money"
 					type: "item"
@@ -285,6 +284,7 @@
 			]
 			shape: "hexagon"
 			size: 2.0d
+			subtitle: "解放条件: 「廃棄された患者記録」を完了"
 			tasks: [{
 				id: "741C810E2A399D7D"
 				title: "原初感染体を撃破する"
@@ -296,7 +296,6 @@
 		}
 		{
 			dependencies: ["0573B0233758DF83"]
-			subtitle: "解放条件: 「T2 Story Boss：原初感染体」を完了"
 			description: [
 				"感染体の輸送記録とProtocol座標を確保した。"
 				"Military Base、地下司令壕、AEGIS Laboratoryへ続くT3攻略が解禁される。"
@@ -311,6 +310,7 @@
 			id: "17F1D932ED1B4A01"
 			shape: "hexagon"
 			size: 2.0d
+			subtitle: "解放条件: 「T2 Story Boss：原初感染体」を完了"
 			tasks: [{
 				id: "15B4E15FEF0F430A"
 				title: "World Tier 3を解禁する"

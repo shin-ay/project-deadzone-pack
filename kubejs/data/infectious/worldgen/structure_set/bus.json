@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "infectious:bus",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 81,
+    "separation": 30,
+    "salt": 1770549637
+  }
+}

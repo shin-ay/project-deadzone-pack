@@ -34,47 +34,48 @@ const PDZ_JOB_PROMOTION_KITS = {
 
 // T3 enhances the T2 device itself; it intentionally does not add another
 // inventory item. This keeps one career tool relevant through both ranks.
-// T3 rewards are signature equipment. NBT variants are not craftable.
+// T3 rewards are one-time promotion equipment. Combat items are normalized by
+// the M&S bridge and may be replaced by stronger loot without losing JOB power.
 const PDZ_JOB_T3_KIT = {
-  quartermaster:[['survival_instinct:military_chestplate',1,'{Unbreakable:1b,HideFlags:4}',null,'Quartermaster Load-Bearing Vest']],
-  prospector:[['immersiveengineering:drill',1,'{Unbreakable:1b,HideFlags:4}',null,'Deep-Core Prospector Drill']],
-  expeditionist:[['survival_instinct:artic_guillie_boots',1,'{Unbreakable:1b,HideFlags:4}',null,'Whiteout Expedition Boots']],
-  wasteland_veteran:[['survival_instinct:exo_chestplate',1,'{Unbreakable:1b,HideFlags:4}',null,'Veteran Exo Rig']],
-  sniper:[['tacz:modern_kinetic_gun',1,'{GunFireMode:"SEMI",GunId:"tacz:m700",HasBulletInBarrel:1b}','legendary','Long Silence']],
-  overwatch:[['tacz:modern_kinetic_gun',1,'{GunFireMode:"AUTO",GunId:"tacz:hk_mp5a5",HasBulletInBarrel:1b}','legendary','Watchtower']],
-  gunner:[['tacz:modern_kinetic_gun',1,'{GunFireMode:"AUTO",GunId:"tacz:ak47",HasBulletInBarrel:1b}','legendary','Endless Argument']],
-  breacher:[['tacz:modern_kinetic_gun',1,'{GunFireMode:"SEMI",GunId:"tacz:m870",HasBulletInBarrel:1b}','legendary','Door Knocker']],
-  trauma_specialist:[['survival_instinct:hazmat_helmet',1,'{Unbreakable:1b,HideFlags:4}',null,'Trauma Isolation Hood']],
-  lifesaver:[['survival_instinct:medkit_bag',1,'{Unbreakable:1b,HideFlags:4}',null,'Lifesaver Field Kit']],
-  bio_support:[['survival_instinct:hazmat_chestplate',1,'{Unbreakable:1b,HideFlags:4}',null,'Bio-Support Carrier']],
-  rescue_operator:[['survival_instinct:fire_fighter_chestplate',1,'{Unbreakable:1b,HideFlags:4}',null,'Rescue Operator Coat']],
-  convoy_master:[['survival_instinct:motorcycle_helmet',1,'{Unbreakable:1b,HideFlags:4}',null,'Convoy Command Helmet']],
-  armor_mechanic:[['survival_instinct:exo_heavy_black_chestplate',1,'{Unbreakable:1b,HideFlags:4}',null,'Armor Mechanic Exo Plate']],
-  ace_pilot:[['immersive_aircraft:gyroscope_hud',1,'{Unbreakable:1b,HideFlags:4}',null,'Ace Gyroscopic HUD']],
-  crew_chief:[['immersiveengineering:maintenance_kit',1,'{Unbreakable:1b,HideFlags:4}',null,'Crew Chief Service Kit']],
+  quartermaster:[['survival_instinct:military_chestplate',1,'{}','Quartermaster Load-Bearing Vest']],
+  prospector:[['immersiveengineering:drill',1,'{}','Deep-Core Prospector Drill']],
+  expeditionist:[['survival_instinct:artic_guillie_boots',1,'{}','Whiteout Expedition Boots']],
+  wasteland_veteran:[['survival_instinct:exo_chestplate',1,'{}','Veteran Exo Rig']],
+  sniper:[['tacz:modern_kinetic_gun',1,'{GunFireMode:"SEMI",GunId:"tacz:m700",HasBulletInBarrel:1b}','Long Silence']],
+  overwatch:[['tacz:modern_kinetic_gun',1,'{GunFireMode:"AUTO",GunId:"tacz:hk_mp5a5",HasBulletInBarrel:1b}','Watchtower']],
+  gunner:[['tacz:modern_kinetic_gun',1,'{GunFireMode:"AUTO",GunId:"tacz:ak47",HasBulletInBarrel:1b}','Endless Argument']],
+  breacher:[['tacz:modern_kinetic_gun',1,'{GunFireMode:"SEMI",GunId:"tacz:m870",HasBulletInBarrel:1b}','Door Knocker']],
+  trauma_specialist:[['survival_instinct:hazmat_helmet',1,'{}','Trauma Isolation Hood']],
+  lifesaver:[['survival_instinct:medkit_bag',1,'{}','Lifesaver Field Kit']],
+  bio_support:[['survival_instinct:hazmat_chestplate',1,'{}','Bio-Support Carrier']],
+  rescue_operator:[['survival_instinct:fire_fighter_chestplate',1,'{}','Rescue Operator Coat']],
+  convoy_master:[['survival_instinct:motorcycle_helmet',1,'{}','Convoy Command Helmet']],
+  armor_mechanic:[['survival_instinct:exo_heavy_black_chestplate',1,'{}','Armor Mechanic Exo Plate']],
+  ace_pilot:[['immersive_aircraft:gyroscope_hud',1,'{}','Ace Gyroscopic HUD']],
+  crew_chief:[['immersiveengineering:maintenance_kit',1,'{}','Crew Chief Service Kit']],
   systems_engineer:[
-    ['immersiveengineering:powerpack',1,'{Unbreakable:1b,HideFlags:4}',null,'Systems Engineer Powerpack'],
+    ['immersiveengineering:powerpack',1,'{}','Systems Engineer Powerpack'],
     ['createmechanicalcompanion:regenerative_casing',1]
   ],
   industrial_architect:[
-    ['immersiveengineering:buzzsaw',1,'{Unbreakable:1b,HideFlags:4}',null,'Industrial Architect Saw'],
+    ['immersiveengineering:buzzsaw',1,'{}','Industrial Architect Saw'],
     ['createmechanicalcompanion:reinforced_plates',1],
     ['createmechanicalcompanion:mounted_crossbow',1]
   ],
-  weapon_engineer:[['tacz:modern_kinetic_gun',1,'{GunFireMode:"AUTO",GunId:"tacz:m4a1",HasBulletInBarrel:1b}','legendary','Perfect Standard']],
-  ordnance_specialist:[['tacz:modern_kinetic_gun',1,'{GunFireMode:"AUTO",GunId:"tacz:ump45",HasBulletInBarrel:1b}','legendary','Controlled Detonation']],
-  pathfinder:[['survival_instinct:guillie_boots',1,'{Unbreakable:1b,HideFlags:4}',null,'Pathfinder Trail Boots']],
-  spotter:[['tacz:modern_kinetic_gun',1,'{GunFireMode:"AUTO",GunId:"tacz:p90",HasBulletInBarrel:1b}','legendary','Forward Observer']],
-  ghost:[['survival_instinct:spruce_guillie_chestplate',1,'{Unbreakable:1b,HideFlags:4}',null,'Ghost Shroud']],
-  saboteur:[['tacz:modern_kinetic_gun',1,'{GunFireMode:"AUTO",GunId:"tacz:uzi",HasBulletInBarrel:1b}','legendary','Short Circuit']],
-  bulwark:[['survival_instinct:green_juggernaut_chestplate',1,'{Unbreakable:1b,HideFlags:4}',null,'Bulwark Juggernaut Plate']],
-  sentinel:[['survival_instinct:military_helmet',1,'{Unbreakable:1b,HideFlags:4}',null,'Sentinel Command Helmet']],
-  juggernaut:[['survival_instinct:black_juggernaut_chestplate',1,'{Unbreakable:1b,HideFlags:4}',null,'Blackwall Assault Plate']],
-  riot_leader:[['survival_instinct:swat_shield',1,'{Unbreakable:1b,HideFlags:4}',null,'Riot Leader Shield']],
-  angler:[['aquaculture:neptunium_fishing_rod',1,'{Unbreakable:1b,HideFlags:4}',null,'Abyssal Angler Rod']],
-  chef:[['aquaculture:neptunium_fillet_knife',1,'{Unbreakable:1b,HideFlags:4}',null,'Chef Precision Fillet Knife']],
-  hunter:[['survival_instinct:tactical_knife',1,'{Unbreakable:1b,HideFlags:4}',null,'Hunter Trophy Knife']],
-  homesteader:[['survival_instinct:sickle',1,'{Unbreakable:1b,HideFlags:4}',null,'Homesteader Harvest Sickle']]
+  weapon_engineer:[['tacz:modern_kinetic_gun',1,'{GunFireMode:"AUTO",GunId:"tacz:m4a1",HasBulletInBarrel:1b}','Perfect Standard']],
+  ordnance_specialist:[['tacz:modern_kinetic_gun',1,'{GunFireMode:"AUTO",GunId:"tacz:ump45",HasBulletInBarrel:1b}','Controlled Detonation']],
+  pathfinder:[['survival_instinct:guillie_boots',1,'{}','Pathfinder Trail Boots']],
+  spotter:[['tacz:modern_kinetic_gun',1,'{GunFireMode:"AUTO",GunId:"tacz:p90",HasBulletInBarrel:1b}','Forward Observer']],
+  ghost:[['survival_instinct:spruce_guillie_chestplate',1,'{}','Ghost Shroud']],
+  saboteur:[['tacz:modern_kinetic_gun',1,'{GunFireMode:"AUTO",GunId:"tacz:uzi",HasBulletInBarrel:1b}','Short Circuit']],
+  bulwark:[['survival_instinct:green_juggernaut_chestplate',1,'{}','Bulwark Juggernaut Plate']],
+  sentinel:[['survival_instinct:military_helmet',1,'{}','Sentinel Command Helmet']],
+  juggernaut:[['survival_instinct:black_juggernaut_chestplate',1,'{}','Blackwall Assault Plate']],
+  riot_leader:[['survival_instinct:swat_shield',1,'{}','Riot Leader Shield']],
+  angler:[['aquaculture:neptunium_fishing_rod',1,'{}','Abyssal Angler Rod']],
+  chef:[['aquaculture:neptunium_fillet_knife',1,'{}','Chef Precision Fillet Knife']],
+  hunter:[['survival_instinct:tactical_knife',1,'{}','Hunter Trophy Knife']],
+  homesteader:[['survival_instinct:sickle',1,'{}','Homesteader Harvest Sickle']]
 }
 
 const PDZ_JOB_T3_EQUIPMENT_EFFECT = {
@@ -103,15 +104,34 @@ function pdzJobWorldTier(player) {
 
 function pdzJobApplyIdentity(stack,id,tier,name) {
   let root=stack.nbt||{}
-  root.PDZCareerRequired=id
   root.PDZCareerTier=tier
-  root.PDZCareerLoreVersion=1
+  root.PDZCareerLoreVersion=2
+  if (tier===3) {
+    // Old T3 grants were unbreakable and career-locked. The role ability is
+    // already owned by the selected JOB, so the physical reward is a sidegrade.
+    try {
+      root.remove('Unbreakable')
+      root.remove('HideFlags')
+      root.remove('PDZCareerRequired')
+    } catch(ignored) {
+      delete root.Unbreakable
+      delete root.HideFlags
+      delete root.PDZCareerRequired
+    }
+    root.PDZCareerOrigin=id
+  } else {
+    root.PDZCareerRequired=id
+  }
   root.display=root.display||{}
-  root.display.Lore=[
+  root.display.Lore=tier===3?[
+    JSON.stringify({text:'T3昇格時の保証装備 / 交換・更新可能',color:'gold',italic:false}),
+    JSON.stringify({text:'支給元専門職: '+id,color:'gray',italic:false}),
+    JSON.stringify({text:'JOB能力はこの装備を交換した後も維持される',color:'aqua',italic:false})
+  ]:[
     JSON.stringify({text:'JOB専用装備 / 譲渡不可',color:'gold',italic:false}),
     JSON.stringify({text:'必要専門職: '+id,color:'gray',italic:false}),
-    JSON.stringify({text:tier===3?(PDZ_JOB_T3_EQUIPMENT_EFFECT[id]||'専門職固有効果'): '右クリックで専用能力を発動',color:'aqua',italic:false}),
-    JSON.stringify({text:tier===3?'耐久値を消費しない':'T3昇格後に効果強化',color:'light_purple',italic:false})
+    JSON.stringify({text:'右クリックで専用能力を発動',color:'aqua',italic:false}),
+    JSON.stringify({text:'T3昇格後に効果強化',color:'light_purple',italic:false})
   ]
   if (name) {
     root.PDZCareerWeaponName=name
@@ -123,8 +143,7 @@ function pdzJobApplyIdentity(stack,id,tier,name) {
 function pdzJobBuildStack(spec,id,tier,player) {
   let stack=spec[2]?Item.of(spec[0],spec[1],spec[2]):Item.of(spec[0],spec[1])
   if (stack.isEmpty()) return stack
-  if (spec[3] && typeof dz2Roll==='function') dz2Roll(stack,player,spec[3],false)
-  pdzJobApplyIdentity(stack,id,tier,spec[4])
+  pdzJobApplyIdentity(stack,id,tier,spec[3])
   return stack
 }
 
@@ -133,8 +152,9 @@ function pdzJobMigrateInventory(player) {
   for (let slot=0;slot<inv.getContainerSize();slot++) {
     let stack=inv.getItem(slot)
     if (!stack||stack.empty||!stack.nbt) continue
-    let root=stack.nbt,id=String(root.PDZCareerRequired||''),tier=Number(root.PDZCareerTier||0)
-    if (!id||Number(root.PDZCareerLoreVersion||0)>=1) continue
+    let root=stack.nbt,tier=Number(root.PDZCareerTier||0)
+    let id=String(root.PDZCareerRequired||root.PDZCareerOrigin||'')
+    if (!id||Number(root.PDZCareerLoreVersion||0)>=2) continue
     pdzJobApplyIdentity(stack,id,tier,String(root.PDZCareerWeaponName||''))
     changed++
   }
@@ -195,8 +215,8 @@ function pdzJobEnforceSignature(player) {
   }
 }
 
-// Prevent active use by another career. Armor is also checked every second by
-// pdzJobEnforceSignature, while tools and guns are stopped at interaction time.
+// T2 devices remain career actions. T3 promotion equipment no longer carries
+// PDZCareerRequired and is governed by normal M&S level/stat requirements.
 ItemEvents.rightClicked(event=>{
   let p=event.player,stack=event.item
   if (!p||p.level.clientSide||!stack||!stack.nbt) return
@@ -261,8 +281,7 @@ ServerEvents.commandRegistry(event=>{
     .then(Commands.literal('recover_missing').executes(ctx=>{
       let p=ctx.source.player,recovered=false
       recovered=pdzJobRecoverMissing(p,2,String(p.persistentData.getString('dz_career_t2')))||recovered
-      recovered=pdzJobRecoverMissing(p,3,String(p.persistentData.getString('dz_career_t3')))||recovered
-      if (!recovered) p.tell(Text.of('[JOB] 現在の専用支給品に不足はありません。').green())
+      if (!recovered) p.tell(Text.of('[JOB] 現在のT2専用デバイスに不足はありません。T3保証装備は一度だけ支給されます。').green())
       return 1
     }))
     .then(Commands.literal('validate').executes(ctx=>{

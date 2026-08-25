@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "infectious:abandoned_trader_house",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 70,
+    "separation": 20,
+    "salt": 1898584369
+  }
+}

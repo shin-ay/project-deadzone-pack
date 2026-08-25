@@ -1,0 +1,68 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: "circle"
+	filename: "minecolonies_colony_onboarding_01"
+	group: "6A11000000000002"
+	icon: "minecolonies:supplycampdeployer"
+	id: "6D43110000000001"
+	order_index: 3
+	quest_links: [ ]
+	quests: [
+		{
+			description: [
+				"Supply Campを設置して最初の活動拠点を確保する。平坦で周囲に十分な空間がある場所を選ぼう。"
+				"建築ツールで完成予想を確認してから確定する。Supply Campはコロニー本体ではなく、開始物資と建築操作を覚えるための前哨基地。"
+			]
+			icon: "minecolonies:supplycampdeployer"
+			id: "6D43110000000101"
+			rewards: [
+				{
+					id: "6D43110000001101"
+					item: "minecolonies:supplycampdeployer"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "6D43110000001102"
+					item: "structurize:sceptergold"
+					team_reward: true
+					type: "item"
+				}
+			]
+			tasks: [{
+				id: "6D43110000002101"
+				title: "Supply Campの設置場所と建築様式を確認した"
+				type: "checkmark"
+			}]
+			title: "コロニー開始：Supply Camp"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["6D43110000000101"]
+			description: [
+				"PDZには通常のネザー探索がない。Nether Workerは異界資源供給の代替候補だが、実際のサーバー環境で勤務処理を検証する必要がある。"
+				"この解放はマルチ検証用。正常に資源を持ち帰れることが確認できるまでは、必須進行には使用しない。"
+			]
+			icon: "minecolonies:blockhutnetherworker"
+			id: "6D43110000000102"
+			subtitle: "解放条件: 「コロニー開始：Supply Camp」を完了"
+			rewards: [{
+				count: 4
+				id: "6D43110000001201"
+				item: "minecraft:blaze_powder"
+				team_reward: true
+				type: "item"
+			}]
+			tasks: [{
+				id: "6D43110000002201"
+				title: "Nether Workerを実験施設として解放する"
+				type: "checkmark"
+			}]
+			title: "特殊施設：異界資源計画"
+			x: 2.0d
+			y: 2.0d
+		}
+	]
+	title: "MineColonies コロニー開始"
+}

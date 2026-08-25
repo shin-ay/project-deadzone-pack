@@ -1,0 +1,8 @@
+{
+  "content": {
+    "pdz_forest_food": {"type":"item","content":"minecraft:bread","amount":{"min":8,"max":20},"unitWorth":120,"weightMult":1.4},
+    "pdz_forest_iron": {"type":"item","content":"minecraft:iron_ingot","amount":{"min":4,"max":10},"unitWorth":220,"weightMult":1.2},
+    "pdz_forest_connector": {"type":"item","content":"createaddition:connector","amount":{"min":1,"max":3},"unitWorth":850,"rarity":"UNCOMMON"},
+    "pdz_forest_medicine": {"type":"item","content":"apocalypsenow:bandage","amount":{"min":2,"max":5},"unitWorth":500,"rarity":"UNCOMMON"}
+  }
+}

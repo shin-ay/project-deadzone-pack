@@ -21,7 +21,7 @@
   // Recommended: prevent crashes from broken/invalid Lost Cities building parts (safe bounds checks)
   "enableLostCitiesPartSliceCompat": true,
   // Enable cache stats logging
-  "enableCacheStatsLogging": true,
+  "enableCacheStatsLogging": false,
   // Enable removal of floating vegetation after terrain generation
   "enableFloatingVegetationRemoval": false,
   // Enable Lost Cities explosion debris spill into adjacent chunks (can add rubble around streets)

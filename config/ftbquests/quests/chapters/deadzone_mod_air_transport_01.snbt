@@ -2,10 +2,10 @@
 	default_hide_dependency_lines: false
 	default_quest_shape: "circle"
 	filename: "deadzone_mod_air_transport_01"
-	group: "A170000000000005"
+	group: "6A11000000000001"
 	icon: "immersive_aircraft:biplane"
 	id: "6F3058C252B90173"
-	order_index: 22
+	order_index: 8
 	quest_links: [ ]
 	quests: [
 		{
@@ -16,16 +16,17 @@
 			description: ["T2では道路も線路も封鎖される。航空機のエンジンとプロペラを組み、危険地域を飛び越える経路を準備する。"]
 			icon: "immersive_aircraft:engine"
 			id: "650000000000000A"
+			subtitle: "解放条件: 「T1・地域鉄道網」・「T2：Scavenger」をすべて完了"
 			rewards: [
 				{
-					count: 64
+					count: 12
 					id: "6520000000000013"
 					item: "apocalypsenow:money"
 					type: "item"
 				}
 				{
 					id: "6520000000000014"
-					item: "immersive_aircraft:engine"
+					item: "minecraft:iron_ingot"
 					type: "item"
 				}
 				{
@@ -52,13 +53,12 @@
 		}
 		{
 			dependencies: ["650000000000000A"]
-			subtitle: "解放条件: 「空路の開拓」を完了"
 			description: ["Biplaneは偵察と緊急配送向け。医薬品や重要部品を短時間で届ける役割を持つ。"]
 			icon: "immersive_aircraft:biplane"
 			id: "650000000000000B"
 			rewards: [
 				{
-					count: 64
+					count: 16
 					id: "6520000000000015"
 					item: "apocalypsenow:money"
 					type: "item"
@@ -69,6 +69,7 @@
 					type: "item"
 				}
 			]
+			subtitle: "解放条件: 「空路の開拓」を完了"
 			tasks: [{
 				id: "6510000000000013"
 				item: "immersive_aircraft:biplane"
@@ -80,13 +81,12 @@
 		}
 		{
 			dependencies: ["650000000000000A"]
-			subtitle: "解放条件: 「空路の開拓」を完了"
 			description: ["Cargo Airshipは遅いが積載に優れる。護衛を付け、前線拠点を再建できる量の資材を運ぶ。"]
 			icon: "immersive_aircraft:cargo_airship"
 			id: "650000000000000C"
 			rewards: [
 				{
-					count: 64
+					count: 20
 					id: "6520000000000017"
 					item: "apocalypsenow:money"
 					type: "item"
@@ -104,6 +104,7 @@
 					type: "item"
 				}
 			]
+			subtitle: "解放条件: 「空路の開拓」を完了"
 			tasks: [{
 				id: "6510000000000014"
 				item: "immersive_aircraft:cargo_airship"
@@ -121,9 +122,10 @@
 			description: ["予備エンジン、修理材、燃料を地上側に備蓄し、墜落や故障で全航路が止まらないようにする。"]
 			icon: "immersive_aircraft:eco_engine"
 			id: "650000000000000D"
+			subtitle: "解放条件: 「緊急航空便」・「空飛ぶ補給倉庫」をすべて完了"
 			rewards: [
 				{
-					count: 64
+					count: 24
 					id: "6520000000000019"
 					item: "apocalypsenow:money"
 					type: "item"
@@ -167,16 +169,17 @@
 			description: ["T3危険地域へ継続的に物資を送る統合空路を完成させる。完成報酬は次の機体建造を大きく短縮する個人支給品。"]
 			icon: "immersive_aircraft:gyrodyne"
 			id: "650000000000000E"
+			subtitle: "解放条件: 「航空整備基地」・「T3：Operator」をすべて完了"
 			rewards: [
 				{
-					count: 64
+					count: 32
 					id: "652000000000001B"
 					item: "apocalypsenow:money"
 					type: "item"
 				}
 				{
 					id: "652000000000001C"
-					item: "immersive_aircraft:gyrodyne"
+					item: "minecraft:diamond"
 					type: "item"
 				}
 				{

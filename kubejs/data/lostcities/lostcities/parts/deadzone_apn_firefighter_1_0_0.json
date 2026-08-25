@@ -33,7 +33,7 @@
         "tag": {
           "id": "apocalypsenow:large_shelves_fill"
         },
-        "loot": "project_deadzone:chests/generic_low_filled"
+        "loot": "project_deadzone:generic_low_filled"
       },
       {
         "char": "",
@@ -48,7 +48,7 @@
         "tag": {
           "id": "apocalypsenow:large_shelves"
         },
-        "loot": "project_deadzone:chests/generic_low_filled"
+        "loot": "project_deadzone:generic_low_filled"
       },
       {
         "char": "",
@@ -61,7 +61,7 @@
           "Items": [],
           "id": "apocalypsenow:ironcrate"
         },
-        "loot": "project_deadzone:chests/generic_high_filled"
+        "loot": "project_deadzone:generic_high_filled"
       },
       {
         "char": "",
@@ -73,7 +73,7 @@
         "tag": {
           "id": "apocalypsenow:large_shelves_fill"
         },
-        "loot": "project_deadzone:chests/generic_low_filled"
+        "loot": "project_deadzone:generic_low_filled"
       },
       {
         "char": "",
@@ -81,7 +81,7 @@
         "tag": {
           "id": "apocalypsenow:large_shelves"
         },
-        "loot": "project_deadzone:chests/generic_low_filled"
+        "loot": "project_deadzone:generic_low_filled"
       },
       {
         "char": "",
@@ -97,7 +97,7 @@
         "tag": {
           "id": "apocalypsenow:large_shelves"
         },
-        "loot": "project_deadzone:chests/generic_low_filled"
+        "loot": "project_deadzone:generic_low_filled"
       },
       {
         "char": "",
@@ -105,7 +105,7 @@
         "tag": {
           "id": "apocalypsenow:large_shelves_fill"
         },
-        "loot": "project_deadzone:chests/generic_low_filled"
+        "loot": "project_deadzone:generic_low_filled"
       },
       {
         "char": "",

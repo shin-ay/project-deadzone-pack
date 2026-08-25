@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "survival_instinct:military_camp",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 37,
+    "separation": 31,
+    "salt": 1716788436
+  }
+}

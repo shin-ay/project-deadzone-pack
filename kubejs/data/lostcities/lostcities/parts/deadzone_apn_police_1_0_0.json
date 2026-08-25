@@ -62,7 +62,7 @@
           "Items": [],
           "id": "apocalypsenow:medical_storage"
         },
-        "loot": "project_deadzone:chests/hospital_pharmacy"
+        "loot": "project_deadzone:hospital_pharmacy"
       },
       {
         "char": "",

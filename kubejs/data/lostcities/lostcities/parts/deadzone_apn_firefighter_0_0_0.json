@@ -34,7 +34,7 @@
       {
         "char": "",
         "block": "minecraft:bookshelf",
-        "loot": "project_deadzone:chests/generic_low_filled"
+        "loot": "project_deadzone:generic_low_filled"
       },
       {
         "char": "",
@@ -63,7 +63,7 @@
           "Items": [],
           "id": "apocalypsenow:ironcrate"
         },
-        "loot": "project_deadzone:chests/generic_high_filled"
+        "loot": "project_deadzone:generic_high_filled"
       },
       {
         "char": "",

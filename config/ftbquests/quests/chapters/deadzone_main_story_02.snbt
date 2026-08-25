@@ -2,15 +2,14 @@
 	default_hide_dependency_lines: false
 	default_quest_shape: ""
 	filename: "deadzone_main_story_02"
-	group: "A170000000000002"
+	group: "23C996B606E0CFE9"
 	icon: "apocalypsenow:aabattery"
 	id: "2A2CEA89BA913F97"
-	order_index: 6
+	order_index: 2
 	quest_links: [ ]
 	quests: [
 		{
 			dependencies: ["74065A02DB68DAE2"]
-			subtitle: "解放条件: 「T2：Scavenger」を完了"
 			description: [
 				"警察署から回収したCivil Defenseの記録には、消防署から発信された救難信号が残っていた。"
 				"救助隊が残した中継器を確保し、都市通信網を再起動する。"
@@ -19,7 +18,7 @@
 			id: "4AF84F15560BA03C"
 			shape: "hexagon"
 			size: 1.5d
-			subtitle: "灰の中から、短い救難信号が繰り返されている。"
+			subtitle: "灰の中から、短い救難信号が繰り返されている。｜解放条件: 「T2：Scavenger」を完了"
 			tasks: [{
 				id: "57E70B48086EBED9"
 				title: "消防署の記録を確認した"
@@ -31,7 +30,6 @@
 		}
 		{
 			dependencies: ["4AF84F15560BA03C"]
-			subtitle: "解放条件: 「Chapter 4：灰の救難信号」を完了"
 			description: [
 				"消防署はRaider Ash Captainの回収部隊に占拠されている。"
 				"正面だけでなく車庫や上階からの射線に注意し、救助指令室へ進もう。"
@@ -44,7 +42,7 @@
 				}
 			}
 			id: "3001FAD121C4FCD2"
-			subtitle: "救助拠点を武器庫に変えた部隊を排除する。"
+			subtitle: "救助拠点を武器庫に変えた部隊を排除する。｜解放条件: 「Chapter 4：灰の救難信号」を完了"
 			tasks: [{
 				id: "6019F6B01BDAA157"
 				title: "消防署へ到達した"
@@ -56,7 +54,6 @@
 		}
 		{
 			dependencies: ["3001FAD121C4FCD2"]
-			subtitle: "解放条件: 「封鎖された消防署」を完了"
 			description: [
 				"Ash Captainを撃破し、指令室と車庫を確保する。"
 				"回収した耐熱ケースには通信中継器の一部が保管されている。"
@@ -71,7 +68,7 @@
 			id: "04AC90A6EDFF8450"
 			rewards: [
 				{
-					count: 64
+					count: 24
 					id: "0014CD6A7F8AF7AE"
 					item: "apocalypsenow:money"
 					type: "item"
@@ -90,7 +87,7 @@
 			]
 			shape: "hexagon"
 			size: 1.5d
-			subtitle: "Raiderの現場指揮官を排除する。"
+			subtitle: "Raiderの現場指揮官を排除する。｜解放条件: 「封鎖された消防署」を完了"
 			tasks: [{
 				id: "3DD3CF7EDD48323E"
 				title: "Raider Ash Captainを撃破した"
@@ -102,14 +99,13 @@
 		}
 		{
 			dependencies: ["04AC90A6EDFF8450"]
-			subtitle: "解放条件: 「救助指令室を奪還せよ」を完了"
 			description: [
 				"中継器には北東のRadio Towerへ向けた座標と、最後の避難輸送記録が残されている。"
 				"電力と交換部品を準備して通信塔へ向かう。"
 			]
 			icon: "minecraft:compass"
 			id: "40020680E6A96AF6"
-			subtitle: "失われた通信網の接続先を特定する。"
+			subtitle: "失われた通信網の接続先を特定する。｜解放条件: 「救助指令室を奪還せよ」を完了"
 			tasks: [{
 				id: "20D7B5D9D3B8F71B"
 				title: "緊急中継器を回収した"
@@ -121,7 +117,6 @@
 		}
 		{
 			dependencies: ["40020680E6A96AF6"]
-			subtitle: "解放条件: 「残された避難座標」を完了"
 			description: [
 				"Radio Towerを復旧すれば、新しい施設情報と遠距離の救難信号を受信できる。"
 				"ただし送信を始めれば、こちらの位置も武装勢力に知られる。"
@@ -130,7 +125,7 @@
 			id: "3EB8C6CE111AC5E6"
 			shape: "hexagon"
 			size: 1.5d
-			subtitle: "通信を取り戻し、次の目的地を見つける。"
+			subtitle: "通信を取り戻し、次の目的地を見つける。｜解放条件: 「残された避難座標」を完了"
 			tasks: [{
 				id: "0CAF413E1598C259"
 				title: "Radio Towerへ到達した"
@@ -142,7 +137,6 @@
 		}
 		{
 			dependencies: ["3EB8C6CE111AC5E6"]
-			subtitle: "解放条件: 「Chapter 5：信号を取り戻せ」を完了"
 			description: [
 				"予備電源と送信機を応急修理する。"
 				"必要量はマルチでも単純作業になりすぎない範囲に抑えている。"
@@ -155,7 +149,7 @@
 				}
 			}
 			id: "42670EF087DB07A6"
-			subtitle: "電源と送信回路を復旧する。"
+			subtitle: "電源と送信回路を復旧する。｜解放条件: 「Chapter 5：信号を取り戻せ」を完了"
 			tasks: [
 				{
 					consume_items: true
@@ -185,7 +179,6 @@
 		}
 		{
 			dependencies: ["42670EF087DB07A6"]
-			subtitle: "解放条件: 「応急送信機」を完了"
 			description: [
 				"送信開始と同時にRemnant Signal Hunterが通信塔を捕捉した。"
 				"設備を壊される前に護衛部隊と重装指揮官を排除する。"
@@ -194,7 +187,7 @@
 			id: "34C3DD0D8725B787"
 			rewards: [
 				{
-					count: 64
+					count: 28
 					id: "40281B7A8798596D"
 					item: "apocalypsenow:money"
 					type: "item"
@@ -213,7 +206,7 @@
 			]
 			shape: "hexagon"
 			size: 1.5d
-			subtitle: "通信塔を守り抜き、都市外への回線を開く。"
+			subtitle: "通信塔を守り抜き、都市外への回線を開く。｜解放条件: 「応急送信機」を完了"
 			tasks: [{
 				id: "79CAA5F5F9EE8EAF"
 				title: "Remnant Signal Hunterを撃破した"
@@ -225,7 +218,6 @@
 		}
 		{
 			dependencies: ["34C3DD0D8725B787"]
-			subtitle: "解放条件: 「送信中：位置を特定された」を完了"
 			description: [
 				"通信網が復旧し、警察・消防・生存者拠点の情報が一本につながった。"
 				"新たに病院からの自動送信と、軍事区域の暗号通信が検出されている。"
@@ -234,7 +226,7 @@
 			id: "3FE9D0F62386FC0C"
 			rewards: [
 				{
-					count: 64
+					count: 32
 					id: "319F688409E605DF"
 					item: "apocalypsenow:money"
 					type: "item"
@@ -253,7 +245,7 @@
 			]
 			shape: "hexagon"
 			size: 2.0d
-			subtitle: "都市作戦とTactical Lootへの道が開く。"
+			subtitle: "都市作戦とTactical Lootへの道が開く。｜解放条件: 「送信中：位置を特定された」を完了"
 			tasks: [{
 				id: "3F5E9A0078D51E7B"
 				title: "都市通信網を復旧した"

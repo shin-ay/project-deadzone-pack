@@ -1,0 +1,5100 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: "circle"
+	filename: "minecolonies_residence_materials_01"
+	group: "6A11000000000002"
+	icon: "minecolonies:blockhutcitizen"
+	id: "6D43030000000001"
+	order_index: 9
+	quest_links: [ ]
+	quests: [
+		{
+			can_repeat: true
+			dependencies: ["6D43010000000101"]
+			description: [
+				"基礎物資を納品し、Modular Hub様式のResidence Lv1建築・アップグレード資材を受領する。"
+				"Residenceは住民枠を増やす人口基盤。同じレベルの住宅を増設できるよう、全段階を再受諾可能にしている。"
+			]
+			icon: "minecraft:dark_oak_log"
+			id: "206D77FD8D9050FB"
+			rewards: [
+				{
+					id: "269174EA0495664D"
+					item: "minecolonies:blockhutcitizen"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "598D8A396DC18166"
+					item: "minecraft:chest"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 96
+					id: "426DE0ABA3CFF5C1"
+					item: "minecraft:dark_oak_log"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 45
+					id: "02FC069E825B2B11"
+					item: "minecraft:dark_oak_planks"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 48
+					id: "3878552616B235FE"
+					item: "minecraft:dark_oak_slab"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "567167E0BD5FD084"
+					item: "minecraft:red_bed"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 31
+					id: "3CA9BE5F8DF0C145"
+					item: "minecraft:red_carpet"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 4
+					id: "3C211E0E974E7B30"
+					item: "minecraft:red_wool"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 51
+					id: "32F6C87635BC7B61"
+					item: "minecraft:spruce_planks"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 32
+					id: "40E1243309CB5B26"
+					item: "minecraft:spruce_slab"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "4CA9F6DF3E56E003"
+					item: "minecraft:spruce_stairs"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "158FA3818822D364"
+					item: "minecraft:spruce_trapdoor"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 16
+					id: "329D56AC0864D406"
+					item: "minecraft:torch"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 10
+					id: "03489714C3612D60"
+					item: "minecraft:white_carpet"
+					team_reward: true
+					type: "item"
+				}
+			]
+			subtitle: "様式申告: Modular Hub / Residence Lv1｜解放条件: 「建築物資: Modular Hub Builder I」を完了"
+			tasks: [
+				{
+					consume_items: true
+					count: 32L
+					id: "74CF56438DD2A329"
+					item: "minecraft:oak_log"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 32L
+					id: "0823D85189243DEC"
+					item: "minecraft:cobblestone"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 8L
+					id: "348044549A7AD13C"
+					item: "minecraft:bread"
+					type: "item"
+				}
+			]
+			title: "住宅資材: Modular Hub Residence 1"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			can_repeat: true
+			description: [
+				"基礎物資を納品し、Modular Hub様式のResidence Lv2建築・アップグレード資材を受領する。"
+				"Residenceは住民枠を増やす人口基盤。同じレベルの住宅を増設できるよう、全段階を再受諾可能にしている。"
+			]
+			icon: "minecraft:dark_oak_log"
+			id: "053E8EEB5A0CC749"
+			rewards: [
+				{
+					count: 4
+					id: "3439E488BF039369"
+					item: "handcrafted:dark_oak_shelf"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 26
+					id: "06BAB6845FB816A2"
+					item: "minecraft:brown_carpet"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "4F06BF0FC73AAE26"
+					item: "minecraft:chest"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 30
+					id: "7CE33C62CA5C4160"
+					item: "minecraft:iron_bars"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "1C9F4D8627E263BE"
+					item: "minecraft:lantern"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 12
+					id: "469FCA2EB759C9D5"
+					item: "minecraft:light_gray_carpet"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "700BC9C3122B6AEA"
+					item: "minecraft:red_bed"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "07749AF84037FAA3"
+					item: "minecraft:red_wool"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "2CB2DB23F85CCDB1"
+					item: "minecraft:spruce_trapdoor"
+					team_reward: true
+					type: "item"
+				}
+			]
+			subtitle: "様式申告: Modular Hub / Residence Lv2"
+			tasks: [
+				{
+					consume_items: true
+					count: 48L
+					id: "43353E57327CBF0A"
+					item: "minecraft:oak_log"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 48L
+					id: "08F67A8CFA038468"
+					item: "minecraft:cobblestone"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 12L
+					id: "14D8576CFA8627FA"
+					item: "minecraft:bread"
+					type: "item"
+				}
+			]
+			title: "住宅資材: Modular Hub Residence 2"
+			x: 0.0d
+			y: 2.0d
+		}
+		{
+			can_repeat: true
+			dependencies: ["053E8EEB5A0CC749"]
+			description: [
+				"基礎物資を納品し、Modular Hub様式のResidence Lv3建築・アップグレード資材を受領する。"
+				"Residenceは住民枠を増やす人口基盤。同じレベルの住宅を増設できるよう、全段階を再受諾可能にしている。"
+			]
+			icon: "minecraft:dark_oak_log"
+			id: "2D727B0302AF7DBE"
+			rewards: [
+				{
+					count: 4
+					id: "0C7D3BD4E4A00313"
+					item: "handcrafted:dark_oak_shelf"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "79D82F0D33318530"
+					item: "minecraft:brown_carpet"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 6
+					id: "60B51D891812652E"
+					item: "minecraft:brown_wool"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "6DF429CDD838676A"
+					item: "minecraft:chest"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 54
+					id: "4103612C5943FED6"
+					item: "minecraft:deepslate_tiles"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 3
+					id: "2869C8CF24F65C61"
+					item: "minecraft:light_gray_carpet"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "63391381922304B1"
+					item: "minecraft:red_bed"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "39C701D3A1A4398E"
+					item: "minecraft:spruce_trapdoor"
+					team_reward: true
+					type: "item"
+				}
+			]
+			subtitle: "様式申告: Modular Hub / Residence Lv3｜解放条件: 「住宅資材: Modular Hub Residence 2」を完了"
+			tasks: [
+				{
+					consume_items: true
+					count: 64L
+					id: "7E897B3BA84FF7F3"
+					item: "minecraft:oak_log"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 64L
+					id: "27C8B593208EF31A"
+					item: "minecraft:cobblestone"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 16L
+					id: "7A060A50B13A5680"
+					item: "minecraft:bread"
+					type: "item"
+				}
+			]
+			title: "住宅資材: Modular Hub Residence 3"
+			x: 0.0d
+			y: 4.0d
+		}
+		{
+			can_repeat: true
+			description: [
+				"基礎物資を納品し、Modular Hub様式のResidence Lv4建築・アップグレード資材を受領する。"
+				"Residenceは住民枠を増やす人口基盤。同じレベルの住宅を増設できるよう、全段階を再受諾可能にしている。"
+			]
+			icon: "minecraft:dark_oak_log"
+			id: "7B06E1CB3980E26C"
+			rewards: [
+				{
+					count: 4
+					id: "003E25A1F8EEB7A3"
+					item: "handcrafted:dark_oak_shelf"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "1FC2C618AD4DA890"
+					item: "minecraft:chest"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 96
+					id: "717C02C67EF3BF28"
+					item: "minecraft:deepslate_bricks"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 23
+					id: "2B4C1946993E0206"
+					item: "minecraft:gray_carpet"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 8
+					id: "671EDA83FB2DA627"
+					item: "minecraft:gray_wool"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "2A2100F7C1E606C5"
+					item: "minecraft:light_gray_carpet"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 4
+					id: "37D2DEADD5CAA7DA"
+					item: "minecraft:red_bed"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 4
+					id: "4C6674F9978DFEA9"
+					item: "minecraft:spruce_trapdoor"
+					team_reward: true
+					type: "item"
+				}
+			]
+			subtitle: "様式申告: Modular Hub / Residence Lv4"
+			tasks: [
+				{
+					consume_items: true
+					count: 96L
+					id: "402DD19C317B888D"
+					item: "minecraft:oak_log"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 96L
+					id: "1F059C41A42AD221"
+					item: "minecraft:cobblestone"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 24L
+					id: "7FFD8FA0DCF93AA1"
+					item: "minecraft:bread"
+					type: "item"
+				}
+			]
+			title: "住宅資材: Modular Hub Residence 4"
+			x: 0.0d
+			y: 6.0d
+		}
+		{
+			can_repeat: true
+			description: [
+				"基礎物資を納品し、Modular Hub様式のResidence Lv5建築・アップグレード資材を受領する。"
+				"Residenceは住民枠を増やす人口基盤。同じレベルの住宅を増設できるよう、全段階を再受諾可能にしている。"
+			]
+			icon: "minecraft:dark_oak_log"
+			id: "134AD5039E4BCDEA"
+			rewards: [
+				{
+					count: 4
+					id: "241F05DE747FF3E6"
+					item: "handcrafted:dark_oak_shelf"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "446AB75257688F69"
+					item: "minecraft:chest"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "30ABA3C43590D15E"
+					item: "minecraft:gray_carpet"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "730D07B80384ECC4"
+					item: "minecraft:gray_wool"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 3
+					id: "653C17939484D6C2"
+					item: "minecraft:light_gray_carpet"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 32
+					id: "24C0137D09948C46"
+					item: "minecraft:mud_bricks"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 16
+					id: "10596258C0A3C08B"
+					item: "minecraft:polished_deepslate"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 72
+					id: "6CB88D09CC2FD6AC"
+					item: "minecraft:polished_deepslate_slab"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "52FFD90FAE928341"
+					item: "minecraft:red_bed"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "49EDC06A4385AF47"
+					item: "minecraft:spruce_trapdoor"
+					team_reward: true
+					type: "item"
+				}
+			]
+			subtitle: "様式申告: Modular Hub / Residence Lv5"
+			tasks: [
+				{
+					consume_items: true
+					count: 128L
+					id: "45BCFD7AA002EB50"
+					item: "minecraft:oak_log"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 128L
+					id: "3FFBE23DE3BA7F26"
+					item: "minecraft:cobblestone"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 32L
+					id: "60BEC6DDF079765A"
+					item: "minecraft:bread"
+					type: "item"
+				}
+			]
+			title: "住宅資材: Modular Hub Residence 5"
+			x: 0.0d
+			y: 8.0d
+		}
+		{
+			can_repeat: true
+			dependencies: ["6D43010000000102"]
+			description: [
+				"基礎物資を納品し、lostcity様式のResidence Lv1建築・アップグレード資材を受領する。"
+				"Residenceは住民枠を増やす人口基盤。同じレベルの住宅を増設できるよう、全段階を再受諾可能にしている。"
+			]
+			icon: "minecraft:red_sandstone"
+			id: "715900496BAA7294"
+			rewards: [
+				{
+					id: "7A2FF822807BF0EB"
+					item: "minecolonies:blockhutcitizen"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 3
+					id: "7C1AB8A1B28D90BB"
+					item: "minecraft:oak_fence"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "0F3EB821FD07627A"
+					item: "minecraft:oak_fence_gate"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 6
+					id: "764EE4014DF36730"
+					item: "minecraft:oak_slab"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 39
+					id: "2A028C7E7E890F5B"
+					item: "minecraft:red_sand"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 4
+					id: "26FBD0001F33EB9C"
+					item: "minecraft:red_sandstone"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 9
+					id: "3E4B03C1BE9AE4BE"
+					item: "minecraft:red_sandstone_slab"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 8
+					id: "3FFC5ABDB261E59C"
+					item: "minecraft:red_sandstone_stairs"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 17
+					id: "1CC5F9A6D8847F82"
+					item: "minecraft:terracotta"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "3A3867360B529FF0"
+					item: "minecraft:white_bed"
+					team_reward: true
+					type: "item"
+				}
+			]
+			subtitle: "様式申告: lostcity / Residence Lv1｜解放条件: 「建築物資: lostcity Builder I」を完了"
+			tasks: [
+				{
+					consume_items: true
+					count: 32L
+					id: "1B3DD17C54FEB1A1"
+					item: "minecraft:oak_log"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 32L
+					id: "04E32C1811E65676"
+					item: "minecraft:cobblestone"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 8L
+					id: "0DFB98128D934720"
+					item: "minecraft:bread"
+					type: "item"
+				}
+			]
+			title: "住宅資材: lostcity Residence 1"
+			x: 4.0d
+			y: 0.0d
+		}
+		{
+			can_repeat: true
+			description: [
+				"基礎物資を納品し、lostcity様式のResidence Lv2建築・アップグレード資材を受領する。"
+				"Residenceは住民枠を増やす人口基盤。同じレベルの住宅を増設できるよう、全段階を再受諾可能にしている。"
+			]
+			icon: "minecraft:red_sandstone"
+			id: "7D80497ACFF5CBE8"
+			rewards: [
+				{
+					id: "6268096DA1A83A26"
+					item: "minecraft:acacia_fence"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "727D849BFDDC90C6"
+					item: "minecraft:campfire"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 4
+					id: "3716D016A2255DEE"
+					item: "minecraft:ladder"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "1191BD44B2F7A864"
+					item: "minecraft:oak_door"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 5
+					id: "3CFF6BCE86BCDC33"
+					item: "minecraft:oak_slab"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "4ED9C71BB89369AF"
+					item: "minecraft:oak_stairs"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 4
+					id: "43DFF8A95820F3A1"
+					item: "minecraft:red_sandstone_slab"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 10
+					id: "28FC77CC1AB2A6F9"
+					item: "minecraft:red_sandstone_stairs"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 28
+					id: "3CB8D4FBAB5CB39C"
+					item: "minecraft:terracotta"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 4
+					id: "63FB7618EE895A40"
+					item: "minecraft:white_bed"
+					team_reward: true
+					type: "item"
+				}
+			]
+			subtitle: "様式申告: lostcity / Residence Lv2"
+			tasks: [
+				{
+					consume_items: true
+					count: 48L
+					id: "55B4F264EE3F5ADA"
+					item: "minecraft:oak_log"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 48L
+					id: "1022D7730CAD9E5F"
+					item: "minecraft:cobblestone"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 12L
+					id: "1F75A83FDDDF1841"
+					item: "minecraft:bread"
+					type: "item"
+				}
+			]
+			title: "住宅資材: lostcity Residence 2"
+			x: 4.0d
+			y: 2.0d
+		}
+		{
+			can_repeat: true
+			dependencies: ["7D80497ACFF5CBE8"]
+			description: [
+				"基礎物資を納品し、lostcity様式のResidence Lv3建築・アップグレード資材を受領する。"
+				"Residenceは住民枠を増やす人口基盤。同じレベルの住宅を増設できるよう、全段階を再受諾可能にしている。"
+			]
+			icon: "minecraft:red_sandstone"
+			id: "61EE5A42D81F798A"
+			rewards: [
+				{
+					count: 14
+					id: "2BC944888D6CBFBC"
+					item: "domum_ornamentum:shingle"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "31767F2A1E00501D"
+					item: "minecolonies:blockminecoloniesrack"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 11
+					id: "5E03616724393997"
+					item: "minecraft:acacia_fence"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 5
+					id: "6337509564AEEA21"
+					item: "minecraft:acacia_stairs"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 8
+					id: "42BACE88DF7BE126"
+					item: "minecraft:gray_terracotta"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 17
+					id: "7196B8D5313E1028"
+					item: "minecraft:oak_fence"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 24
+					id: "4702A291D8FF8A45"
+					item: "minecraft:oak_slab"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "2CF36F94D0D7C04D"
+					item: "minecraft:oak_trapdoor"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 70
+					id: "44583529C27D2B37"
+					item: "minecraft:terracotta"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "5C75CC973C8E180F"
+					item: "minecraft:torch"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 6
+					id: "4364DEB896AC2966"
+					item: "minecraft:white_bed"
+					team_reward: true
+					type: "item"
+				}
+			]
+			subtitle: "様式申告: lostcity / Residence Lv3｜解放条件: 「住宅資材: lostcity Residence 2」を完了"
+			tasks: [
+				{
+					consume_items: true
+					count: 64L
+					id: "42BD5B9F82A4413F"
+					item: "minecraft:oak_log"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 64L
+					id: "407C9CB4160753A6"
+					item: "minecraft:cobblestone"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 16L
+					id: "032AD45B4CC7E57F"
+					item: "minecraft:bread"
+					type: "item"
+				}
+			]
+			title: "住宅資材: lostcity Residence 3"
+			x: 4.0d
+			y: 4.0d
+		}
+		{
+			can_repeat: true
+			dependencies: ["61EE5A42D81F798A"]
+			description: [
+				"基礎物資を納品し、lostcity様式のResidence Lv4建築・アップグレード資材を受領する。"
+				"Residenceは住民枠を増やす人口基盤。同じレベルの住宅を増設できるよう、全段階を再受諾可能にしている。"
+			]
+			icon: "minecraft:red_sandstone"
+			id: "32C8C335B251A348"
+			rewards: [
+				{
+					count: 11
+					id: "7B54657509B0A867"
+					item: "domum_ornamentum:brown_bricks"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 11
+					id: "518A240C195BE537"
+					item: "domum_ornamentum:brown_stone_bricks"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 64
+					id: "20DCD02874DAD4AC"
+					item: "domum_ornamentum:plain"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 36
+					id: "1E8620606B4E9B68"
+					item: "domum_ornamentum:shingle"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 4
+					id: "05E2E778A33D1838"
+					item: "domum_ornamentum:shingle_slab"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 4
+					id: "3B9413DCCF883D00"
+					item: "domum_ornamentum:vanilla_stairs_compat"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 4
+					id: "16AC9F7845C91DA1"
+					item: "minecolonies:colony_banner"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "4788A5CE72BEF88C"
+					item: "minecraft:acacia_door"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 14
+					id: "767E2A4E40B59D8D"
+					item: "minecraft:acacia_fence"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 12
+					id: "19DF58C5CC2A9B3F"
+					item: "minecraft:acacia_fence_gate"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "41A40359DD957200"
+					item: "minecraft:acacia_leaves"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 15
+					id: "62E3BD3D65CAF65F"
+					item: "minecraft:acacia_slab"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "0E84138BB3C10E99"
+					item: "minecraft:acacia_stairs"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 22
+					id: "2C71F5A2F7343821"
+					item: "minecraft:acacia_trapdoor"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "7B25B46298AEB95F"
+					item: "minecraft:campfire"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "4B797B5FF94249CF"
+					item: "minecraft:cauldron"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "3990EE60AA765235"
+					item: "minecraft:crafting_table"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 5
+					id: "346FD2E8A60A03CD"
+					item: "minecraft:grass_block"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 4
+					id: "6072F87B730FC474"
+					item: "minecraft:gray_terracotta"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "188F31B682C328C1"
+					item: "minecraft:iron_trapdoor"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 3
+					id: "38776C11145491F4"
+					item: "minecraft:ladder"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 6
+					id: "689C3F5759FDD8EE"
+					item: "minecraft:lantern"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "7CA95F5FA8DFD123"
+					item: "minecraft:oak_trapdoor"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "78289A8045948024"
+					item: "minecraft:oxeye_daisy"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "6027E730A1AB5B34"
+					item: "minecraft:poppy"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 4
+					id: "2A19995D26B00CE5"
+					item: "minecraft:red_sand"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "33C1EA372D24FBE1"
+					item: "minecraft:red_tulip"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 46
+					id: "790E486AE4AF6D43"
+					item: "minecraft:terracotta"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 4
+					id: "15E7165B4686671B"
+					item: "minecraft:white_bed"
+					team_reward: true
+					type: "item"
+				}
+			]
+			subtitle: "様式申告: lostcity / Residence Lv4｜解放条件: 「住宅資材: lostcity Residence 3」を完了"
+			tasks: [
+				{
+					consume_items: true
+					count: 96L
+					id: "03A3E8644A50D273"
+					item: "minecraft:oak_log"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 96L
+					id: "2492FB402ABAD90F"
+					item: "minecraft:cobblestone"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 24L
+					id: "66F11E781A8A62B4"
+					item: "minecraft:bread"
+					type: "item"
+				}
+			]
+			title: "住宅資材: lostcity Residence 4"
+			x: 4.0d
+			y: 6.0d
+		}
+		{
+			can_repeat: true
+			dependencies: ["32C8C335B251A348"]
+			description: [
+				"基礎物資を納品し、lostcity様式のResidence Lv5建築・アップグレード資材を受領する。"
+				"Residenceは住民枠を増やす人口基盤。同じレベルの住宅を増設できるよう、全段階を再受諾可能にしている。"
+			]
+			icon: "minecraft:red_sandstone"
+			id: "6B7C0A581562B0EB"
+			rewards: [
+				{
+					count: 18
+					id: "7F9348EB15D4E637"
+					item: "domum_ornamentum:framed"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 16
+					id: "3E04FE770DA43032"
+					item: "domum_ornamentum:plain"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 26
+					id: "2402165D3FA6282C"
+					item: "domum_ornamentum:shingle"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 11
+					id: "5A4212613A95F4E3"
+					item: "minecraft:acacia_stairs"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 9
+					id: "046C313DDA944F05"
+					item: "minecraft:acacia_trapdoor"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "2F7B0739225809A2"
+					item: "minecraft:campfire"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "0EBF47C36452ED79"
+					item: "minecraft:chain"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 3
+					id: "590410BF6B6EE2E6"
+					item: "minecraft:gray_carpet"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 6
+					id: "0BE2440658A00138"
+					item: "minecraft:iron_bars"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 8
+					id: "6DFAC4B9A233D873"
+					item: "minecraft:lantern"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "0FF1BAEC89A52259"
+					item: "minecraft:sea_lantern"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 8
+					id: "4B15EA58AF8F128E"
+					item: "minecraft:stripped_acacia_log"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 24
+					id: "46D30AE699CE1744"
+					item: "minecraft:white_glazed_terracotta"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 10
+					id: "78FCB78880C9E122"
+					item: "minecraft:yellow_bed"
+					team_reward: true
+					type: "item"
+				}
+			]
+			subtitle: "様式申告: lostcity / Residence Lv5｜解放条件: 「住宅資材: lostcity Residence 4」を完了"
+			tasks: [
+				{
+					consume_items: true
+					count: 128L
+					id: "7CC77B24D5A00DF9"
+					item: "minecraft:oak_log"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 128L
+					id: "0BBC863E4697750E"
+					item: "minecraft:cobblestone"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 32L
+					id: "070794F392F6F115"
+					item: "minecraft:bread"
+					type: "item"
+				}
+			]
+			title: "住宅資材: lostcity Residence 5"
+			x: 4.0d
+			y: 8.0d
+		}
+		{
+			can_repeat: true
+			dependencies: ["6D43010000000103"]
+			description: [
+				"基礎物資を納品し、fortress様式のResidence Lv1建築・アップグレード資材を受領する。"
+				"Residenceは住民枠を増やす人口基盤。同じレベルの住宅を増設できるよう、全段階を再受諾可能にしている。"
+			]
+			icon: "minecraft:dark_oak_planks"
+			id: "6431DA43B6CD789D"
+			rewards: [
+				{
+					id: "0738CC31DFA52E64"
+					item: "minecolonies:blockhutcitizen"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "180257AB0E5B506D"
+					item: "minecolonies:blockminecoloniesrack"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 12
+					id: "45096CAEE7E8EAFF"
+					item: "minecraft:cobblestone_wall"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 6
+					id: "14C3FE9A48D0A481"
+					item: "minecraft:dark_oak_door"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 13
+					id: "20186CC3AFE31322"
+					item: "minecraft:dark_oak_fence"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 67
+					id: "7C3B33777635A809"
+					item: "minecraft:dark_oak_log"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 163
+					id: "34E328ECBED2ABC0"
+					item: "minecraft:dark_oak_planks"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "1A0A7C5899444234"
+					item: "minecraft:oak_sign"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "297572D8C1FAD75E"
+					item: "minecraft:red_bed"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 18
+					id: "1316281A35491061"
+					item: "minecraft:torch"
+					team_reward: true
+					type: "item"
+				}
+			]
+			subtitle: "様式申告: fortress / Residence Lv1｜解放条件: 「建築物資: fortress Builder I」を完了"
+			tasks: [
+				{
+					consume_items: true
+					count: 32L
+					id: "19DEE84440A3FAC5"
+					item: "minecraft:oak_log"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 32L
+					id: "14D9ED034572F7C7"
+					item: "minecraft:cobblestone"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 8L
+					id: "276C70A51C05A4EC"
+					item: "minecraft:bread"
+					type: "item"
+				}
+			]
+			title: "住宅資材: fortress Residence 1"
+			x: 8.0d
+			y: 0.0d
+		}
+		{
+			can_repeat: true
+			dependencies: ["6431DA43B6CD789D"]
+			description: [
+				"基礎物資を納品し、fortress様式のResidence Lv2建築・アップグレード資材を受領する。"
+				"Residenceは住民枠を増やす人口基盤。同じレベルの住宅を増設できるよう、全段階を再受諾可能にしている。"
+			]
+			icon: "minecraft:dark_oak_planks"
+			id: "77A632AF67AE59D8"
+			rewards: [
+				{
+					count: 236
+					id: "114F333F4F3ABA61"
+					item: "minecraft:cobblestone"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "4B1867C2BCED9D2D"
+					item: "minecraft:crafting_table"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 4
+					id: "4717EEB312715D23"
+					item: "minecraft:dark_oak_door"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 31
+					id: "20EA1B2F2A6D25F9"
+					item: "minecraft:dark_oak_fence"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 61
+					id: "15022FFB8BE609BC"
+					item: "minecraft:dark_oak_log"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 231
+					id: "0554EB20A54956D1"
+					item: "minecraft:dark_oak_planks"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 8
+					id: "12523A95C560BD78"
+					item: "minecraft:dark_oak_stairs"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 20
+					id: "68DCA91FF8DAEEF8"
+					item: "minecraft:dirt"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "4D2483A184419594"
+					item: "minecraft:red_bed"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 20
+					id: "3F90FB7D56A01E99"
+					item: "minecraft:torch"
+					team_reward: true
+					type: "item"
+				}
+			]
+			subtitle: "様式申告: fortress / Residence Lv2｜解放条件: 「住宅資材: fortress Residence 1」を完了"
+			tasks: [
+				{
+					consume_items: true
+					count: 48L
+					id: "74A671B23993116B"
+					item: "minecraft:oak_log"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 48L
+					id: "7F4E5D8A0FA853FC"
+					item: "minecraft:cobblestone"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 12L
+					id: "0D09B4F1FB92BDF9"
+					item: "minecraft:bread"
+					type: "item"
+				}
+			]
+			title: "住宅資材: fortress Residence 2"
+			x: 8.0d
+			y: 2.0d
+		}
+		{
+			can_repeat: true
+			dependencies: ["77A632AF67AE59D8"]
+			description: [
+				"基礎物資を納品し、fortress様式のResidence Lv3建築・アップグレード資材を受領する。"
+				"Residenceは住民枠を増やす人口基盤。同じレベルの住宅を増設できるよう、全段階を再受諾可能にしている。"
+			]
+			icon: "minecraft:dark_oak_planks"
+			id: "06369D0E771D7400"
+			rewards: [
+				{
+					count: 44
+					id: "0CA54CB9BED357DB"
+					item: "domum_ornamentum:blockpaperwall"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 26
+					id: "4E98DC685CBB3A63"
+					item: "domum_ornamentum:framed"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 21
+					id: "325C33179095B9BC"
+					item: "domum_ornamentum:one_crossed_lr"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 21
+					id: "34A68498E7CDB965"
+					item: "domum_ornamentum:one_crossed_rl"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 88
+					id: "5ED432A3D15CC1F7"
+					item: "domum_ornamentum:plain"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 147
+					id: "505C88078A807F70"
+					item: "domum_ornamentum:shingle"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 29
+					id: "68BE7154ACC720BE"
+					item: "domum_ornamentum:shingle_slab"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 60
+					id: "7952F675AD418694"
+					item: "domum_ornamentum:side_framed"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "5007A56669054445"
+					item: "minecolonies:colony_banner"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "6495E4CD41F2E295"
+					item: "minecraft:blue_bed"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 6
+					id: "194018E29A3381B5"
+					item: "minecraft:blue_carpet"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "4821D49C177497EC"
+					item: "minecraft:crafting_table"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 6
+					id: "3A76E8BCEF5232B4"
+					item: "minecraft:dark_oak_door"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 18
+					id: "0AB656BE5F995D10"
+					item: "minecraft:dark_oak_fence"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 98
+					id: "727FAE155894C26E"
+					item: "minecraft:dark_oak_log"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 281
+					id: "5355F1662EF41798"
+					item: "minecraft:dark_oak_planks"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 11
+					id: "09A8D1A2F6346A5C"
+					item: "minecraft:dark_oak_stairs"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "7CFEF0C4DE010A65"
+					item: "minecraft:dirt"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "33EA5967A8471298"
+					item: "minecraft:fern"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 5
+					id: "51CB7675BF0ED7EA"
+					item: "minecraft:glass_pane"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 5
+					id: "5465CC3F77817A83"
+					item: "minecraft:iron_bars"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 3
+					id: "02750357E4590B89"
+					item: "minecraft:ladder"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "2182ACE354AC6DC8"
+					item: "minecraft:lantern"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "4ABC8E3447480A71"
+					item: "minecraft:netherrack"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "55A6EB95D6DD381C"
+					item: "minecraft:oak_sign"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 5
+					id: "7CB7194BC915F508"
+					item: "minecraft:oak_trapdoor"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "136F5084BD124F7C"
+					item: "minecraft:polished_andesite"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "421D7085BC4A5389"
+					item: "minecraft:purple_bed"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 6
+					id: "0C31761810FE57B2"
+					item: "minecraft:purple_carpet"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 3
+					id: "743AA7856616CF9C"
+					item: "minecraft:rail"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 22
+					id: "252E806398E77C45"
+					item: "minecraft:red_carpet"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 148
+					id: "4D6085D576BD3F2B"
+					item: "minecraft:spruce_planks"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 22
+					id: "4B56FC6773FE9E14"
+					item: "minecraft:spruce_stairs"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 5
+					id: "532555E1F971551B"
+					item: "minecraft:stone_brick_slab"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 8
+					id: "0E6F6F6E4053F3B4"
+					item: "minecraft:stone_brick_stairs"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 63
+					id: "3443A9EF4533DD06"
+					item: "minecraft:stone_bricks"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 11
+					id: "1C4A6F18F8D3DDAB"
+					item: "minecraft:torch"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 38
+					id: "5D0EB8669295F7D9"
+					item: "minecraft:white_carpet"
+					team_reward: true
+					type: "item"
+				}
+			]
+			subtitle: "様式申告: fortress / Residence Lv3｜解放条件: 「住宅資材: fortress Residence 2」を完了"
+			tasks: [
+				{
+					consume_items: true
+					count: 64L
+					id: "611064B79D15C4DF"
+					item: "minecraft:oak_log"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 64L
+					id: "4F96C390C7C39D17"
+					item: "minecraft:cobblestone"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 16L
+					id: "644D39738566677B"
+					item: "minecraft:bread"
+					type: "item"
+				}
+			]
+			title: "住宅資材: fortress Residence 3"
+			x: 8.0d
+			y: 4.0d
+		}
+		{
+			can_repeat: true
+			description: [
+				"基礎物資を納品し、fortress様式のResidence Lv4建築・アップグレード資材を受領する。"
+				"Residenceは住民枠を増やす人口基盤。同じレベルの住宅を増設できるよう、全段階を再受諾可能にしている。"
+			]
+			icon: "minecraft:dark_oak_planks"
+			id: "071B20EFCF8396CF"
+			rewards: [
+				{
+					count: 16
+					id: "2B708A3740624B53"
+					item: "domum_ornamentum:blockpaperwall"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 6
+					id: "11A41AF26073E1B1"
+					item: "domum_ornamentum:framed"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 8
+					id: "0D795B0621C91F28"
+					item: "domum_ornamentum:one_crossed_lr"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 8
+					id: "6924199674845E99"
+					item: "domum_ornamentum:one_crossed_rl"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 4
+					id: "40FD3ED21DE108CF"
+					item: "domum_ornamentum:panel"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 20
+					id: "25F0A5D23E69C09A"
+					item: "domum_ornamentum:plain"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 68
+					id: "75B07E75C747CA03"
+					item: "domum_ornamentum:shingle"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 20
+					id: "380540FEFD860F0C"
+					item: "domum_ornamentum:shingle_slab"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 18
+					id: "4A71032CC1EE6BEA"
+					item: "domum_ornamentum:side_framed"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 3
+					id: "35B36507BF15D67C"
+					item: "minecolonies:blockminecoloniesrack"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 4
+					id: "2E49E2F1A69B931B"
+					item: "minecraft:bookshelf"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "6159349E148B6EDD"
+					item: "minecraft:cauldron"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 6
+					id: "367F51D57E7B457A"
+					item: "minecraft:dark_oak_door"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 32
+					id: "378AF5B53A966643"
+					item: "minecraft:dark_oak_log"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 143
+					id: "584807B83E407001"
+					item: "minecraft:dark_oak_planks"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 10
+					id: "221D9C1C599ED6AB"
+					item: "minecraft:dark_oak_stairs"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 10
+					id: "5E779A082A24D535"
+					item: "minecraft:flower_pot"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "682D3B740BB6FCDC"
+					item: "minecraft:glass_pane"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 5
+					id: "0AAAA8392D6F302E"
+					item: "minecraft:lantern"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "0AC84C8009461858"
+					item: "minecraft:oak_trapdoor"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 15
+					id: "2EFB768FC4C7208A"
+					item: "minecraft:polished_andesite"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 9
+					id: "3B397EBB28BDA8FE"
+					item: "minecraft:quartz_stairs"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "71EB3B792DADA814"
+					item: "minecraft:red_bed"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 189
+					id: "13EA64488212A335"
+					item: "minecraft:sandstone"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 47
+					id: "156A315E31214418"
+					item: "minecraft:stone_bricks"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 4
+					id: "33F7AAD9E21E2004"
+					item: "minecraft:torch"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "1EA0F87CD7F4198E"
+					item: "minecraft:tripwire_hook"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "7EE541EED5715745"
+					item: "minecraft:white_banner"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 22
+					id: "15A7D1B36ECF1788"
+					item: "minecraft:white_carpet"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 10
+					id: "023A147331AFFDE8"
+					item: "minecraft:white_stained_glass_pane"
+					team_reward: true
+					type: "item"
+				}
+			]
+			subtitle: "様式申告: fortress / Residence Lv4"
+			tasks: [
+				{
+					consume_items: true
+					count: 96L
+					id: "3EB9326BB777937E"
+					item: "minecraft:oak_log"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 96L
+					id: "327E7F06D419E424"
+					item: "minecraft:cobblestone"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 24L
+					id: "1A08B5321DFEAC15"
+					item: "minecraft:bread"
+					type: "item"
+				}
+			]
+			title: "住宅資材: fortress Residence 4"
+			x: 8.0d
+			y: 6.0d
+		}
+		{
+			can_repeat: true
+			dependencies: ["071B20EFCF8396CF"]
+			description: [
+				"基礎物資を納品し、fortress様式のResidence Lv5建築・アップグレード資材を受領する。"
+				"Residenceは住民枠を増やす人口基盤。同じレベルの住宅を増設できるよう、全段階を再受諾可能にしている。"
+			]
+			icon: "minecraft:dark_oak_planks"
+			id: "7450CBEAB78DDC0B"
+			rewards: [
+				{
+					count: 4
+					id: "3E2FDF3D7C2F5416"
+					item: "domum_ornamentum:framed"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 6
+					id: "31C4B4CC0C54F825"
+					item: "domum_ornamentum:panel"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "11695051281DE89B"
+					item: "domum_ornamentum:plain"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 9
+					id: "2A5FF860C7EA3390"
+					item: "domum_ornamentum:up_gated"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "30DCBCB782D7C9E1"
+					item: "minecraft:blue_orchid"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 6
+					id: "06D2CFE8B534FFD7"
+					item: "minecraft:bookshelf"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "623C8BF7D7E19CF0"
+					item: "minecraft:cornflower"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 16
+					id: "6EEAB37F581F3C0F"
+					item: "minecraft:dark_prismarine"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 4
+					id: "0833B950A1F42E21"
+					item: "minecraft:end_rod"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 5
+					id: "328BDDFDB63A0474"
+					item: "minecraft:fern"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 10
+					id: "3E900CA83BACE5C0"
+					item: "minecraft:flower_pot"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "65B3D549F2DB0A05"
+					item: "minecraft:loom"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "77846AF8E34F5E93"
+					item: "minecraft:oxeye_daisy"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "742E79510C554F8A"
+					item: "minecraft:poppy"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "4B3224F64879AFDE"
+					item: "minecraft:red_bed"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 4
+					id: "7B30E5CFA0897921"
+					item: "minecraft:red_tulip"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 6
+					id: "458048FC89EE6535"
+					item: "minecraft:spruce_stairs"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "620EA69174CB3D8E"
+					item: "minecraft:torch"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 9
+					id: "7D4B85207B811B3F"
+					item: "minecraft:white_carpet"
+					team_reward: true
+					type: "item"
+				}
+			]
+			subtitle: "様式申告: fortress / Residence Lv5｜解放条件: 「住宅資材: fortress Residence 4」を完了"
+			tasks: [
+				{
+					consume_items: true
+					count: 128L
+					id: "79C22E837794D995"
+					item: "minecraft:oak_log"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 128L
+					id: "48DBBD0CFB8157DB"
+					item: "minecraft:cobblestone"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 32L
+					id: "0526264C00B630A7"
+					item: "minecraft:bread"
+					type: "item"
+				}
+			]
+			title: "住宅資材: fortress Residence 5"
+			x: 8.0d
+			y: 8.0d
+		}
+		{
+			can_repeat: true
+			dependencies: ["6D43010000000104"]
+			description: [
+				"基礎物資を納品し、colonial様式のResidence Lv1建築・アップグレード資材を受領する。"
+				"Residenceは住民枠を増やす人口基盤。同じレベルの住宅を増設できるよう、全段階を再受諾可能にしている。"
+			]
+			icon: "minecraft:oak_log"
+			id: "46ADAFA45B88A41B"
+			rewards: [
+				{
+					id: "51C8E5E9A1191BA0"
+					item: "domum_ornamentum:panel"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "5879E95727EA1CD0"
+					item: "minecolonies:blockhutcitizen"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 16
+					id: "599145E8E40813B4"
+					item: "minecraft:barrel"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 26
+					id: "73F19E45EB8BFE2F"
+					item: "minecraft:cobblestone"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 12
+					id: "0D8BF692DC5340EE"
+					item: "minecraft:cobblestone_stairs"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "1AAFCA4C8953E434"
+					item: "minecraft:crafting_table"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "7C88F3629B1F0786"
+					item: "minecraft:furnace"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 17
+					id: "2876B7B436057428"
+					item: "minecraft:glass_pane"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 8
+					id: "40630DA6FF7F1B4B"
+					item: "minecraft:grass_block"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 96
+					id: "3457AEB9132DA15D"
+					item: "minecraft:oak_log"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 227
+					id: "20E6585B353CB584"
+					item: "minecraft:oak_planks"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "5595B12F7B2EBE2A"
+					item: "minecraft:oak_sign"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 124
+					id: "10A3ECF795730622"
+					item: "minecraft:oak_stairs"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 5
+					id: "305812D6A392C70B"
+					item: "minecraft:oak_trapdoor"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "7C0414F73A7F913E"
+					item: "minecraft:red_bed"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 10
+					id: "5E6A4D50BE0FE85B"
+					item: "minecraft:spruce_door"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 181
+					id: "14D914A6CD016B67"
+					item: "minecraft:spruce_planks"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 146
+					id: "294C2AAC34041038"
+					item: "minecraft:stone_bricks"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 8
+					id: "53EA09AE17953493"
+					item: "minecraft:torch"
+					team_reward: true
+					type: "item"
+				}
+			]
+			subtitle: "様式申告: colonial / Residence Lv1｜解放条件: 「建築物資: colonial Builder I」を完了"
+			tasks: [
+				{
+					consume_items: true
+					count: 32L
+					id: "32C1F2908951E8C4"
+					item: "minecraft:oak_log"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 32L
+					id: "0D3A90DD916B43D9"
+					item: "minecraft:cobblestone"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 8L
+					id: "20423AF9289E0DD8"
+					item: "minecraft:bread"
+					type: "item"
+				}
+			]
+			title: "住宅資材: colonial Residence 1"
+			x: 12.0d
+			y: 0.0d
+		}
+		{
+			can_repeat: true
+			description: [
+				"基礎物資を納品し、colonial様式のResidence Lv2建築・アップグレード資材を受領する。"
+				"Residenceは住民枠を増やす人口基盤。同じレベルの住宅を増設できるよう、全段階を再受諾可能にしている。"
+			]
+			icon: "minecraft:oak_log"
+			id: "29E4E7CC0B4AF01A"
+			rewards: [
+				{
+					count: 2
+					id: "3520F3F173B69137"
+					item: "minecraft:chiseled_bookshelf"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "2F6B28853C451E2B"
+					item: "minecraft:flower_pot"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 5
+					id: "7297D1717F16D6B3"
+					item: "minecraft:lantern"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 6
+					id: "39DE48570C7803EE"
+					item: "minecraft:oak_trapdoor"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "69FC0749183956FE"
+					item: "minecraft:orange_bed"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 21
+					id: "5E093D58D09A9294"
+					item: "minecraft:polished_andesite"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 12
+					id: "5CCB086380B66220"
+					item: "minecraft:polished_diorite_stairs"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 11
+					id: "12EEC53CCBDB7B61"
+					item: "minecraft:stone_brick_stairs"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 180
+					id: "00107B2497F9D59E"
+					item: "minecraft:stone_bricks"
+					team_reward: true
+					type: "item"
+				}
+			]
+			subtitle: "様式申告: colonial / Residence Lv2"
+			tasks: [
+				{
+					consume_items: true
+					count: 48L
+					id: "089D2F9E5F611842"
+					item: "minecraft:oak_log"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 48L
+					id: "7A161EA4107A844C"
+					item: "minecraft:cobblestone"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 12L
+					id: "2FA9CF1B847375A9"
+					item: "minecraft:bread"
+					type: "item"
+				}
+			]
+			title: "住宅資材: colonial Residence 2"
+			x: 12.0d
+			y: 2.0d
+		}
+		{
+			can_repeat: true
+			description: [
+				"基礎物資を納品し、colonial様式のResidence Lv3建築・アップグレード資材を受領する。"
+				"Residenceは住民枠を増やす人口基盤。同じレベルの住宅を増設できるよう、全段階を再受諾可能にしている。"
+			]
+			icon: "minecraft:oak_log"
+			id: "1A90D65FF7AC4A6E"
+			rewards: [
+				{
+					count: 5
+					id: "765FC80B4B33030A"
+					item: "domum_ornamentum:center_light"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 339
+					id: "6875468A7E91BDD5"
+					item: "domum_ornamentum:cream_bricks"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 4
+					id: "5829436BCC2FE7B0"
+					item: "domum_ornamentum:fancy_door"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 10
+					id: "35098648264C22AA"
+					item: "domum_ornamentum:panel"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 114
+					id: "6EE4B915EE136ED9"
+					item: "domum_ornamentum:shingle"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 16
+					id: "6E869FA553AD38C7"
+					item: "domum_ornamentum:squarepillar"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 4
+					id: "277FAF28D4AC88B4"
+					item: "domum_ornamentum:vanilla_stairs_compat"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "0B5F4EBCB81B35FB"
+					item: "minecolonies:blockstash"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "1767D30DF3295F69"
+					item: "minecraft:azalea_leaves"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 8
+					id: "6DB03B4B29D79897"
+					item: "minecraft:barrel"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 3
+					id: "417767B04EBA9869"
+					item: "minecraft:bookshelf"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "02AA1C824FB9A724"
+					item: "minecraft:cauldron"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "1E860C3AF558A3BF"
+					item: "minecraft:chain"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 3
+					id: "24FBDF8E07A87C7B"
+					item: "minecraft:chiseled_bookshelf"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 6
+					id: "348E9229229A792F"
+					item: "minecraft:chiseled_quartz_block"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "45BD32114FF62FA4"
+					item: "minecraft:crafting_table"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 99
+					id: "43BE4AE3EDA67A65"
+					item: "minecraft:deepslate_tiles"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "771058954013169B"
+					item: "minecraft:fern"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 4
+					id: "6D58B4ABE80ED83F"
+					item: "minecraft:flower_pot"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 4
+					id: "40E7A33A58FC8968"
+					item: "minecraft:flowering_azalea_leaves"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "60D2D9CBF85A0934"
+					item: "minecraft:furnace"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 21
+					id: "44EF6D3F36FF22CF"
+					item: "minecraft:glass_pane"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 7
+					id: "1F58B9F81B0F6FAC"
+					item: "minecraft:lantern"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "46C54A5DBF9F443A"
+					item: "minecraft:light_blue_bed"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "0FD65537A675EF3E"
+					item: "minecraft:light_gray_carpet"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "66F53B72E488CA05"
+					item: "minecraft:magenta_bed"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "777B0895A5D3D992"
+					item: "minecraft:oak_stairs"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 3
+					id: "21910F00AA2B1ABB"
+					item: "minecraft:oak_trapdoor"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 7
+					id: "44BABBA23844C5B3"
+					item: "minecraft:quartz_block"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 22
+					id: "251636AD4D4350E8"
+					item: "minecraft:quartz_bricks"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 9
+					id: "5D5CE3CF57767328"
+					item: "minecraft:quartz_slab"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 14
+					id: "7F42FE24E957C852"
+					item: "minecraft:quartz_stairs"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 4
+					id: "09E620655BAC3C60"
+					item: "minecraft:soul_lantern"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 6
+					id: "724FB2A19D5B4AEF"
+					item: "minecraft:spruce_door"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "5B2969C3D753C66A"
+					item: "minecraft:spruce_hanging_sign"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 151
+					id: "76A5E53C9E459C3D"
+					item: "minecraft:spruce_planks"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "3D18E8949AE3AFB5"
+					item: "minecraft:spruce_slab"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 16
+					id: "18C94928AD9B6564"
+					item: "minecraft:spruce_stairs"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 156
+					id: "5BB824A86A7FD73E"
+					item: "minecraft:stripped_oak_log"
+					team_reward: true
+					type: "item"
+				}
+			]
+			subtitle: "様式申告: colonial / Residence Lv3"
+			tasks: [
+				{
+					consume_items: true
+					count: 64L
+					id: "3199B2B67FC3AABE"
+					item: "minecraft:oak_log"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 64L
+					id: "65CA5C7379D31F70"
+					item: "minecraft:cobblestone"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 16L
+					id: "5170CEF0CA7625EA"
+					item: "minecraft:bread"
+					type: "item"
+				}
+			]
+			title: "住宅資材: colonial Residence 3"
+			x: 12.0d
+			y: 4.0d
+		}
+		{
+			can_repeat: true
+			description: [
+				"基礎物資を納品し、colonial様式のResidence Lv4建築・アップグレード資材を受領する。"
+				"Residenceは住民枠を増やす人口基盤。同じレベルの住宅を増設できるよう、全段階を再受諾可能にしている。"
+			]
+			icon: "minecraft:oak_log"
+			id: "40818A298A515401"
+			rewards: [
+				{
+					count: 38
+					id: "09659B73CACFDEAE"
+					item: "domum_ornamentum:blockpaperwall"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 12
+					id: "763321186A7C8142"
+					item: "domum_ornamentum:fancy_door"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "265991104628F118"
+					item: "domum_ornamentum:fancy_trapdoors"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 8
+					id: "7820AADC1E428AD6"
+					item: "domum_ornamentum:panel"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 4
+					id: "384A87297007930C"
+					item: "domum_ornamentum:vanilla_stairs_compat"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 4
+					id: "04F70D28AAEF71AC"
+					item: "minecraft:barrel"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "642D0B7EBB1FB929"
+					item: "minecraft:black_candle"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "052D4999A717A658"
+					item: "minecraft:cauldron"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "754078CD9AEE9CEF"
+					item: "minecraft:chain"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 6
+					id: "1E8995BFA800CBCE"
+					item: "minecraft:chiseled_bookshelf"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "0B0930E044FEED59"
+					item: "minecraft:dark_oak_hanging_sign"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 297
+					id: "748DD721EA93186E"
+					item: "minecraft:dark_oak_planks"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "7DA25E3465634937"
+					item: "minecraft:dark_oak_slab"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 16
+					id: "1B3A69B6E2DCDB7F"
+					item: "minecraft:dark_oak_stairs"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "618EDA6F23D586D4"
+					item: "minecraft:flower_pot"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "6CB9FF176438CF5E"
+					item: "minecraft:furnace"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "6344360A71A4D8FA"
+					item: "minecraft:gray_bed"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "1E8AE4465E4F1212"
+					item: "minecraft:lantern"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "70ACD9EA91B0DA6D"
+					item: "minecraft:orange_candle"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 12
+					id: "5B1552EF7948243C"
+					item: "minecraft:quartz_stairs"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "265B76C41A3FFDB1"
+					item: "minecraft:red_candle"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "49DE5CB73C0D3708"
+					item: "minecraft:soul_lantern"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "5DABC4A452095C1E"
+					item: "minecraft:white_candle"
+					team_reward: true
+					type: "item"
+				}
+			]
+			subtitle: "様式申告: colonial / Residence Lv4"
+			tasks: [
+				{
+					consume_items: true
+					count: 96L
+					id: "59D81ED1A05D2F21"
+					item: "minecraft:oak_log"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 96L
+					id: "7282BC3B91484BF4"
+					item: "minecraft:cobblestone"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 24L
+					id: "0CB644BEFF7E4090"
+					item: "minecraft:bread"
+					type: "item"
+				}
+			]
+			title: "住宅資材: colonial Residence 4"
+			x: 12.0d
+			y: 6.0d
+		}
+		{
+			can_repeat: true
+			description: [
+				"基礎物資を納品し、colonial様式のResidence Lv5建築・アップグレード資材を受領する。"
+				"Residenceは住民枠を増やす人口基盤。同じレベルの住宅を増設できるよう、全段階を再受諾可能にしている。"
+			]
+			icon: "minecraft:oak_log"
+			id: "50AC5C3027B9F2DA"
+			rewards: [
+				{
+					count: 50
+					id: "17040A3BE6654D9F"
+					item: "domum_ornamentum:panel"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 3
+					id: "774C632876638CF7"
+					item: "minecraft:chiseled_quartz_block"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 5
+					id: "45927C3A060D4860"
+					item: "minecraft:end_rod"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "2A6A75C40F10C890"
+					item: "minecraft:gray_bed"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 153
+					id: "274B99EB291ED5B5"
+					item: "minecraft:quartz_bricks"
+					team_reward: true
+					type: "item"
+				}
+			]
+			subtitle: "様式申告: colonial / Residence Lv5"
+			tasks: [
+				{
+					consume_items: true
+					count: 128L
+					id: "7E5AA47FFF4CF41E"
+					item: "minecraft:oak_log"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 128L
+					id: "3A8DBEC236CBD85A"
+					item: "minecraft:cobblestone"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 32L
+					id: "4BF10EFFD6DE8813"
+					item: "minecraft:bread"
+					type: "item"
+				}
+			]
+			title: "住宅資材: colonial Residence 5"
+			x: 12.0d
+			y: 8.0d
+		}
+		{
+			can_repeat: true
+			dependencies: ["6D43010000000105"]
+			description: [
+				"基礎物資を納品し、spacewars様式のResidence Lv1建築・アップグレード資材を受領する。"
+				"Residenceは住民枠を増やす人口基盤。同じレベルの住宅を増設できるよう、全段階を再受諾可能にしている。"
+			]
+			icon: "minecraft:sandstone"
+			id: "1C4F48F519676298"
+			rewards: [
+				{
+					count: 4
+					id: "78881EED5394A93E"
+					item: "domum_ornamentum:fancy_door"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 24
+					id: "68D8A55D1C528F6C"
+					item: "domum_ornamentum:vanilla_fence_compat"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 6
+					id: "3EF4B5EAA07BB032"
+					item: "domum_ornamentum:vanilla_stairs_compat"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "71C760F91889A5C0"
+					item: "minecolonies:blockhutcitizen"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "4A6F7E10A4CF6466"
+					item: "minecolonies:blockminecoloniesrack"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "4A18B7472F0CF1F0"
+					item: "minecolonies:blockwaypoint"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "12B3ABAB8E246FB6"
+					item: "minecraft:furnace"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "550DEABE102407E0"
+					item: "minecraft:red_bed"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 176
+					id: "6099B391C2380732"
+					item: "minecraft:sandstone"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 19
+					id: "4966F772D5F24CB6"
+					item: "minecraft:sandstone_slab"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 70
+					id: "152EE3D0A499F18A"
+					item: "minecraft:sandstone_stairs"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 3
+					id: "08ED301569BBDF63"
+					item: "minecraft:sandstone_wall"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 34
+					id: "69E2BB50BBE4DE8A"
+					item: "minecraft:torch"
+					team_reward: true
+					type: "item"
+				}
+			]
+			subtitle: "様式申告: spacewars / Residence Lv1｜解放条件: 「建築物資: spacewars Builder I」を完了"
+			tasks: [
+				{
+					consume_items: true
+					count: 32L
+					id: "3D5ED4E557FBB473"
+					item: "minecraft:oak_log"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 32L
+					id: "1485891DF5E62648"
+					item: "minecraft:cobblestone"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 8L
+					id: "3FBF45D0B10899E5"
+					item: "minecraft:bread"
+					type: "item"
+				}
+			]
+			title: "住宅資材: spacewars Residence 1"
+			x: 16.0d
+			y: 0.0d
+		}
+		{
+			can_repeat: true
+			description: [
+				"基礎物資を納品し、spacewars様式のResidence Lv2建築・アップグレード資材を受領する。"
+				"Residenceは住民枠を増やす人口基盤。同じレベルの住宅を増設できるよう、全段階を再受諾可能にしている。"
+			]
+			icon: "minecraft:sandstone"
+			id: "62B214C7678122A3"
+			rewards: [
+				{
+					id: "6D39CD8FB228A165"
+					item: "domum_ornamentum:vanilla_fence_compat"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 5
+					id: "661B3EDA07DBC52B"
+					item: "domum_ornamentum:vanilla_stairs_compat"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 5
+					id: "74D56609D4817388"
+					item: "minecolonies:blockminecoloniesrack"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "460E3F2D69CD0900"
+					item: "minecraft:crafting_table"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "612F0354A1193589"
+					item: "minecraft:cut_sandstone"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "2F04C1E7DDFA9956"
+					item: "minecraft:red_bed"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 165
+					id: "20E0E7338469FC1E"
+					item: "minecraft:sandstone"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 4
+					id: "1A02C0838E71B9CF"
+					item: "minecraft:sandstone_stairs"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 10
+					id: "4C7BC2328720C812"
+					item: "minecraft:torch"
+					team_reward: true
+					type: "item"
+				}
+			]
+			subtitle: "様式申告: spacewars / Residence Lv2"
+			tasks: [
+				{
+					consume_items: true
+					count: 48L
+					id: "1ED7097D704224D5"
+					item: "minecraft:oak_log"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 48L
+					id: "70AA9DD78398AD5F"
+					item: "minecraft:cobblestone"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 12L
+					id: "3A41B6DFA6520479"
+					item: "minecraft:bread"
+					type: "item"
+				}
+			]
+			title: "住宅資材: spacewars Residence 2"
+			x: 16.0d
+			y: 2.0d
+		}
+		{
+			can_repeat: true
+			dependencies: ["62B214C7678122A3"]
+			description: [
+				"基礎物資を納品し、spacewars様式のResidence Lv3建築・アップグレード資材を受領する。"
+				"Residenceは住民枠を増やす人口基盤。同じレベルの住宅を増設できるよう、全段階を再受諾可能にしている。"
+			]
+			icon: "minecraft:sandstone"
+			id: "13CFE78F84554FE7"
+			rewards: [
+				{
+					id: "69BF9D72034EA789"
+					item: "domum_ornamentum:vanilla_fence_compat"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "7117D54C0B576FCC"
+					item: "minecolonies:blockminecoloniesrack"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 4
+					id: "65016D9CC7DB8601"
+					item: "minecraft:chiseled_sandstone"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "160EDFC439838D21"
+					item: "minecraft:red_bed"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 124
+					id: "60F80129F87F12A9"
+					item: "minecraft:sandstone"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 4
+					id: "4B32C6E2BE5FC310"
+					item: "minecraft:sandstone_stairs"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 7
+					id: "2F4F9B04CE97F9C6"
+					item: "minecraft:torch"
+					team_reward: true
+					type: "item"
+				}
+			]
+			subtitle: "様式申告: spacewars / Residence Lv3｜解放条件: 「住宅資材: spacewars Residence 2」を完了"
+			tasks: [
+				{
+					consume_items: true
+					count: 64L
+					id: "7C4CC45D330579F6"
+					item: "minecraft:oak_log"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 64L
+					id: "728634688C72A1A6"
+					item: "minecraft:cobblestone"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 16L
+					id: "41BE1082FECC4E6E"
+					item: "minecraft:bread"
+					type: "item"
+				}
+			]
+			title: "住宅資材: spacewars Residence 3"
+			x: 16.0d
+			y: 4.0d
+		}
+		{
+			can_repeat: true
+			dependencies: ["13CFE78F84554FE7"]
+			description: [
+				"基礎物資を納品し、spacewars様式のResidence Lv4建築・アップグレード資材を受領する。"
+				"Residenceは住民枠を増やす人口基盤。同じレベルの住宅を増設できるよう、全段階を再受諾可能にしている。"
+			]
+			icon: "minecraft:sandstone"
+			id: "734CEB39E0D4AACD"
+			rewards: [
+				{
+					count: 4
+					id: "1E267533A2CEEBD3"
+					item: "domum_ornamentum:fancy_door"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "4C7721EBA1D30545"
+					item: "domum_ornamentum:vanilla_fence_compat"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 4
+					id: "390A2ED93839B9F4"
+					item: "domum_ornamentum:vanilla_stairs_compat"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "33485CB57C02DEA2"
+					item: "minecolonies:blockminecoloniesrack"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 37
+					id: "29D66C5C76D4C61A"
+					item: "minecraft:chiseled_sandstone"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "5847CE5DDE826DCF"
+					item: "minecraft:crafting_table"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 12
+					id: "783AD5D15187ECC9"
+					item: "minecraft:cut_sandstone"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "66BA2550BB925060"
+					item: "minecraft:furnace"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 32
+					id: "58DE883022E7FF82"
+					item: "minecraft:lime_carpet"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "6066B01BB02208D6"
+					item: "minecraft:red_bed"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 86
+					id: "0007CBAEBECE2FFC"
+					item: "minecraft:sandstone"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 8
+					id: "2F3DE40E21A6DEFC"
+					item: "minecraft:sandstone_slab"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 39
+					id: "2ADDBBF4B457B6B1"
+					item: "minecraft:sandstone_stairs"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 8
+					id: "5287F0D6B66EFE37"
+					item: "minecraft:sandstone_wall"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 21
+					id: "044679598B552A2A"
+					item: "minecraft:torch"
+					team_reward: true
+					type: "item"
+				}
+			]
+			subtitle: "様式申告: spacewars / Residence Lv4｜解放条件: 「住宅資材: spacewars Residence 3」を完了"
+			tasks: [
+				{
+					consume_items: true
+					count: 96L
+					id: "0DC4771E6631D6EB"
+					item: "minecraft:oak_log"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 96L
+					id: "2DB3BA60680E5114"
+					item: "minecraft:cobblestone"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 24L
+					id: "5DB601177FBA9B5A"
+					item: "minecraft:bread"
+					type: "item"
+				}
+			]
+			title: "住宅資材: spacewars Residence 4"
+			x: 16.0d
+			y: 6.0d
+		}
+		{
+			can_repeat: true
+			dependencies: ["734CEB39E0D4AACD"]
+			description: [
+				"基礎物資を納品し、spacewars様式のResidence Lv5建築・アップグレード資材を受領する。"
+				"Residenceは住民枠を増やす人口基盤。同じレベルの住宅を増設できるよう、全段階を再受諾可能にしている。"
+			]
+			icon: "minecraft:sandstone"
+			id: "3B6BF86329E84188"
+			rewards: [
+				{
+					count: 2
+					id: "15CF6CA6464678CE"
+					item: "domum_ornamentum:fancy_door"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "646DF9E94ECFAA7D"
+					item: "minecolonies:blockminecoloniesrack"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "6C2998BC6BD1D15F"
+					item: "minecraft:acacia_sapling"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 23
+					id: "5FEEA79BE0709F89"
+					item: "minecraft:birch_stairs"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 4
+					id: "3BEB352A710A06E1"
+					item: "minecraft:chiseled_sandstone"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 4
+					id: "0A33BAEEF623FF71"
+					item: "minecraft:cut_sandstone"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "2EA4D2765B1B0903"
+					item: "minecraft:dandelion"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 9
+					id: "1C6D9681D6B495D9"
+					item: "minecraft:flower_pot"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 24
+					id: "3609C8393248ABA4"
+					item: "minecraft:lantern"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 18
+					id: "314B7FDC82D2E543"
+					item: "minecraft:lime_carpet"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "25CB6FD4CC7DBA53"
+					item: "minecraft:oak_sapling"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 3
+					id: "7B326B9E2B9CD781"
+					item: "minecraft:poppy"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 4
+					id: "4242CD5C4F7C83E8"
+					item: "minecraft:red_bed"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "23D0057381198D21"
+					item: "minecraft:red_tulip"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "24273450C6F2F0F5"
+					item: "minecraft:redstone_torch"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 183
+					id: "550C602A8BD8C3CB"
+					item: "minecraft:sandstone"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "744A01A8F50E7DE2"
+					item: "minecraft:sandstone_stairs"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 29
+					id: "781F95681216ECD6"
+					item: "minecraft:sandstone_wall"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 10
+					id: "1ED0DDC0E04EA46D"
+					item: "minecraft:torch"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 4
+					id: "733E4251CF82CC87"
+					item: "minecraft:yellow_carpet"
+					team_reward: true
+					type: "item"
+				}
+			]
+			subtitle: "様式申告: spacewars / Residence Lv5｜解放条件: 「住宅資材: spacewars Residence 4」を完了"
+			tasks: [
+				{
+					consume_items: true
+					count: 128L
+					id: "58FCBBB6907DD279"
+					item: "minecraft:oak_log"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 128L
+					id: "2C27C010D92B1426"
+					item: "minecraft:cobblestone"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 32L
+					id: "66D1262082FE4C96"
+					item: "minecraft:bread"
+					type: "item"
+				}
+			]
+			title: "住宅資材: spacewars Residence 5"
+			x: 16.0d
+			y: 8.0d
+		}
+		{
+			can_repeat: true
+			dependencies: ["6D43010000000106"]
+			description: [
+				"基礎物資を納品し、medievaloak様式のResidence Lv1建築・アップグレード資材を受領する。"
+				"Residenceは住民枠を増やす人口基盤。同じレベルの住宅を増設できるよう、全段階を再受諾可能にしている。"
+			]
+			icon: "minecraft:oak_stairs"
+			id: "690505E5D50C7DEC"
+			rewards: [
+				{
+					count: 6
+					id: "4C0AD74CF9DE9CB9"
+					item: "domum_ornamentum:one_crossed_lr"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 5
+					id: "01563BA5871B76CE"
+					item: "domum_ornamentum:one_crossed_rl"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "4A922EB33AFE8817"
+					item: "domum_ornamentum:panel"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 5
+					id: "5413658B73FDF42E"
+					item: "domum_ornamentum:plain"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "0F0876C12E97A618"
+					item: "minecolonies:blockhutcitizen"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "0C508D0CC6D6B769"
+					item: "minecraft:campfire"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 8
+					id: "761292E43452193D"
+					item: "minecraft:coarse_dirt"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 57
+					id: "50752F979C173459"
+					item: "minecraft:cobblestone"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "3CF2D9732081B458"
+					item: "minecraft:cobblestone_slab"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 13
+					id: "598B4530750586E2"
+					item: "minecraft:cobblestone_stairs"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "5E09DB635BE70DC6"
+					item: "minecraft:crafting_table"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 12
+					id: "4207A6F175717683"
+					item: "minecraft:dirt"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "68438DDF286FD83D"
+					item: "minecraft:furnace"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 12
+					id: "1DB72D39AA59D341"
+					item: "minecraft:gravel"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "7623CC7A713A3F9F"
+					item: "minecraft:hay_block"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 3
+					id: "2532DE6712F90DD5"
+					item: "minecraft:ladder"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 6
+					id: "1D01A5726F6940ED"
+					item: "minecraft:oak_door"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 11
+					id: "27AFB0E5C199C48A"
+					item: "minecraft:oak_fence"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 116
+					id: "7E7ED81166C1066E"
+					item: "minecraft:oak_log"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 65
+					id: "42A2D322BCD978EA"
+					item: "minecraft:oak_planks"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 46
+					id: "10AE0555153F11ED"
+					item: "minecraft:oak_slab"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 131
+					id: "0C191855D43C603E"
+					item: "minecraft:oak_stairs"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 7
+					id: "06756B7F0F8B5EDF"
+					item: "minecraft:torch"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "46534D5BBD4D512D"
+					item: "minecraft:white_bed"
+					team_reward: true
+					type: "item"
+				}
+			]
+			subtitle: "様式申告: medievaloak / Residence Lv1｜解放条件: 「建築物資: medievaloak Builder I」を完了"
+			tasks: [
+				{
+					consume_items: true
+					count: 32L
+					id: "47F7DC1925F59360"
+					item: "minecraft:oak_log"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 32L
+					id: "3F11E70CC313B3C8"
+					item: "minecraft:cobblestone"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 8L
+					id: "0B8D5EBB5D0A148E"
+					item: "minecraft:bread"
+					type: "item"
+				}
+			]
+			title: "住宅資材: medievaloak Residence 1"
+			x: 20.0d
+			y: 0.0d
+		}
+		{
+			can_repeat: true
+			dependencies: ["690505E5D50C7DEC"]
+			description: [
+				"基礎物資を納品し、medievaloak様式のResidence Lv2建築・アップグレード資材を受領する。"
+				"Residenceは住民枠を増やす人口基盤。同じレベルの住宅を増設できるよう、全段階を再受諾可能にしている。"
+			]
+			icon: "minecraft:oak_stairs"
+			id: "0096CE52985F63D8"
+			rewards: [
+				{
+					count: 24
+					id: "1A87236A2B6C0F8E"
+					item: "domum_ornamentum:one_crossed_lr"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 27
+					id: "0EA4E7EF5F999BFF"
+					item: "domum_ornamentum:one_crossed_rl"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 6
+					id: "3FD7FA43C9AD3AAB"
+					item: "domum_ornamentum:plain"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "4F7C9E18337DDD01"
+					item: "minecraft:barrel"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 126
+					id: "1486123668220CAD"
+					item: "minecraft:cobblestone"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 14
+					id: "04D9B189689589B0"
+					item: "minecraft:cobblestone_slab"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 29
+					id: "1999CE6768764872"
+					item: "minecraft:cobblestone_stairs"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "4B8AA01184EE7B32"
+					item: "minecraft:crafting_table"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 13
+					id: "7715B0CC72BA893E"
+					item: "minecraft:dirt"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "75EC0EA4CF4C07F2"
+					item: "minecraft:furnace"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "4AB30C25675E077B"
+					item: "minecraft:glass_pane"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 13
+					id: "5C6A49CA04251B99"
+					item: "minecraft:gravel"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "49B10161025BCFF8"
+					item: "minecraft:hay_block"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 4
+					id: "58F52C49E68338D0"
+					item: "minecraft:oak_fence"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 92
+					id: "7EE3969158D934AE"
+					item: "minecraft:oak_log"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 19
+					id: "27BDA372618DA6CC"
+					item: "minecraft:oak_planks"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "0D791D63C6564295"
+					item: "minecraft:oak_pressure_plate"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 54
+					id: "0C5992ED6728EAF1"
+					item: "minecraft:oak_slab"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 153
+					id: "178DD5BDB3FD892C"
+					item: "minecraft:oak_stairs"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "5EA29E410D9A10C8"
+					item: "minecraft:oak_trapdoor"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 5
+					id: "66F1B97A6DAE1842"
+					item: "minecraft:polished_andesite"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "7D231C947C3C9B15"
+					item: "minecraft:polished_andesite_slab"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 7
+					id: "66AB77CD7DDBC600"
+					item: "minecraft:torch"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 4
+					id: "6BF01F7B399A6BCF"
+					item: "minecraft:white_bed"
+					team_reward: true
+					type: "item"
+				}
+			]
+			subtitle: "様式申告: medievaloak / Residence Lv2｜解放条件: 「住宅資材: medievaloak Residence 1」を完了"
+			tasks: [
+				{
+					consume_items: true
+					count: 48L
+					id: "4A0A18321F887268"
+					item: "minecraft:oak_log"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 48L
+					id: "5E006E72F3854659"
+					item: "minecraft:cobblestone"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 12L
+					id: "244FF9CFBB5766FC"
+					item: "minecraft:bread"
+					type: "item"
+				}
+			]
+			title: "住宅資材: medievaloak Residence 2"
+			x: 20.0d
+			y: 2.0d
+		}
+		{
+			can_repeat: true
+			dependencies: ["0096CE52985F63D8"]
+			description: [
+				"基礎物資を納品し、medievaloak様式のResidence Lv3建築・アップグレード資材を受領する。"
+				"Residenceは住民枠を増やす人口基盤。同じレベルの住宅を増設できるよう、全段階を再受諾可能にしている。"
+			]
+			icon: "minecraft:oak_stairs"
+			id: "768C9E9202E186AE"
+			rewards: [
+				{
+					count: 11
+					id: "42FB85225D281138"
+					item: "domum_ornamentum:one_crossed_lr"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 10
+					id: "14DBF267F403E146"
+					item: "domum_ornamentum:one_crossed_rl"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 32
+					id: "1297E499EE1E588C"
+					item: "domum_ornamentum:plain"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 99
+					id: "3769FC8D7A97106A"
+					item: "domum_ornamentum:shingle"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 36
+					id: "4878BDBC100189DC"
+					item: "domum_ornamentum:shingle_slab"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "1990967AF01A80FB"
+					item: "minecraft:barrel"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "35FA5398BF587EB0"
+					item: "minecraft:cauldron"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 68
+					id: "21AD61989D627D7F"
+					item: "minecraft:cobblestone"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 9
+					id: "22AA267DA93B09DA"
+					item: "minecraft:cobblestone_slab"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 15
+					id: "1E447E09E0923159"
+					item: "minecraft:cobblestone_stairs"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "451C07FE41AA0462"
+					item: "minecraft:cobblestone_wall"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 5
+					id: "3C82D57F03575066"
+					item: "minecraft:dirt"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "3D27552A952D9830"
+					item: "minecraft:flower_pot"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 5
+					id: "3295415323B7B9C3"
+					item: "minecraft:glass_pane"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 5
+					id: "2FCD8844B675D9AD"
+					item: "minecraft:gravel"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 3
+					id: "4F25930A9DF7F8E6"
+					item: "minecraft:iron_bars"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 3
+					id: "1AF82ED2D6E7688F"
+					item: "minecraft:ladder"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "2FFFA50C342E8867"
+					item: "minecraft:lantern"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 6
+					id: "085DD49130AB7B6A"
+					item: "minecraft:oak_button"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 4
+					id: "4E1A6E567CC9F887"
+					item: "minecraft:oak_door"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "0C7DB5D68E0AF3FE"
+					item: "minecraft:oak_fence"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 118
+					id: "34AD2D8EF66697EA"
+					item: "minecraft:oak_log"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 23
+					id: "5B36FAAA2CEAB176"
+					item: "minecraft:oak_planks"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "20F082EAE074482D"
+					item: "minecraft:oak_pressure_plate"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 35
+					id: "5F8557A6E890EC8A"
+					item: "minecraft:oak_slab"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 20
+					id: "0E9894E44D64BD7B"
+					item: "minecraft:oak_stairs"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "0D46B789ED72AC85"
+					item: "minecraft:oak_trapdoor"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "068FC7AE478BC529"
+					item: "minecraft:orange_carpet"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 16
+					id: "719B1D1518D1E741"
+					item: "minecraft:polished_andesite"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "45DFA0417A9DF1A9"
+					item: "minecraft:poppy"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 4
+					id: "0D2B708131BF1FB4"
+					item: "minecraft:red_bed"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 14
+					id: "7E64C53C6EC76C2B"
+					item: "minecraft:stone_brick_stairs"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 50
+					id: "5A70DDCD29C23EB9"
+					item: "minecraft:stone_bricks"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 7
+					id: "55C4B534E4E61B8B"
+					item: "minecraft:torch"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "5FAF3AAF73DDBF9D"
+					item: "minecraft:white_bed"
+					team_reward: true
+					type: "item"
+				}
+			]
+			subtitle: "様式申告: medievaloak / Residence Lv3｜解放条件: 「住宅資材: medievaloak Residence 2」を完了"
+			tasks: [
+				{
+					consume_items: true
+					count: 64L
+					id: "3C86003257A2226A"
+					item: "minecraft:oak_log"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 64L
+					id: "5D4D4AC2B6753144"
+					item: "minecraft:cobblestone"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 16L
+					id: "5C3047CF8E73F327"
+					item: "minecraft:bread"
+					type: "item"
+				}
+			]
+			title: "住宅資材: medievaloak Residence 3"
+			x: 20.0d
+			y: 4.0d
+		}
+		{
+			can_repeat: true
+			dependencies: ["768C9E9202E186AE"]
+			description: [
+				"基礎物資を納品し、medievaloak様式のResidence Lv4建築・アップグレード資材を受領する。"
+				"Residenceは住民枠を増やす人口基盤。同じレベルの住宅を増設できるよう、全段階を再受諾可能にしている。"
+			]
+			icon: "minecraft:oak_stairs"
+			id: "64CA3121F04F8C7D"
+			rewards: [
+				{
+					count: 4
+					id: "6622A34329114B7D"
+					item: "domum_ornamentum:framed"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 10
+					id: "7AE0AB807D7BE7C3"
+					item: "domum_ornamentum:horizontal_plain"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 17
+					id: "4CC2F934F8EB8428"
+					item: "domum_ornamentum:one_crossed_lr"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 23
+					id: "23977DEA0126DB54"
+					item: "domum_ornamentum:one_crossed_rl"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 22
+					id: "41F1F97953EE5A21"
+					item: "domum_ornamentum:plain"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 127
+					id: "30137181988D28F7"
+					item: "domum_ornamentum:shingle"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 13
+					id: "317801E5942CBC25"
+					item: "domum_ornamentum:shingle_slab"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "509F4AFAD2215EF2"
+					item: "minecraft:barrel"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "25A459D0092BF183"
+					item: "minecraft:chain"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "6404DC3939512250"
+					item: "minecraft:chest"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 38
+					id: "0491D5632F9F613F"
+					item: "minecraft:cobblestone"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 6
+					id: "08C6E462F37BB61B"
+					item: "minecraft:cobblestone_slab"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 6
+					id: "5D50ED0E46BEF757"
+					item: "minecraft:cobblestone_stairs"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "64C722C45F62F157"
+					item: "minecraft:cobblestone_wall"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "56D2618FEA960BE8"
+					item: "minecraft:cornflower"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 3
+					id: "4B69C5E42967D22D"
+					item: "minecraft:dirt"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 3
+					id: "25B290DD69211416"
+					item: "minecraft:flower_pot"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 4
+					id: "2CAC8F2878D10A73"
+					item: "minecraft:glass_pane"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 3
+					id: "3C7D53E7D08F615E"
+					item: "minecraft:gravel"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "1B86A7956E1C3024"
+					item: "minecraft:gray_bed"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "44D955C749F4DBE2"
+					item: "minecraft:iron_bars"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "559F292FCEB7D691"
+					item: "minecraft:ladder"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 3
+					id: "0078801C202CE4BA"
+					item: "minecraft:lantern"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 4
+					id: "60D84E72720C5365"
+					item: "minecraft:oak_button"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 4
+					id: "73584B2D4C06701C"
+					item: "minecraft:oak_door"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 5
+					id: "66F0EDF182EB989B"
+					item: "minecraft:oak_fence"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 101
+					id: "338DC511EE98FC69"
+					item: "minecraft:oak_log"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 25
+					id: "69FFF07F16A194D8"
+					item: "minecraft:oak_planks"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "5D6815E77DF39085"
+					item: "minecraft:oak_sign"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 63
+					id: "1EE9E5793F4D3936"
+					item: "minecraft:oak_slab"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 56
+					id: "34C06D9531BAFDA7"
+					item: "minecraft:oak_stairs"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 4
+					id: "5F3C4DB3EB950640"
+					item: "minecraft:oak_trapdoor"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "2F7AC7DEBA9B6BBF"
+					item: "minecraft:orange_carpet"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "500C03CD59C80F75"
+					item: "minecraft:orange_tulip"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "38E86B0EF711A2AD"
+					item: "minecraft:orange_wool"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 7
+					id: "2E6178FD534CF0BE"
+					item: "minecraft:polished_andesite"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "0CB7EE6127F84D74"
+					item: "minecraft:polished_diorite_slab"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "69BC29F480793994"
+					item: "minecraft:polished_diorite_stairs"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 8
+					id: "4F734E1846191783"
+					item: "minecraft:red_carpet"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 4
+					id: "67FB4BEEF3058662"
+					item: "minecraft:red_concrete"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "282C9F6BC17C1173"
+					item: "minecraft:red_wool"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "6540BF91C1077F90"
+					item: "minecraft:smoker"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 5
+					id: "454F0ACB6DE3AEB8"
+					item: "minecraft:stone_brick_slab"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 30
+					id: "099254C7CFF7B4AA"
+					item: "minecraft:stone_brick_stairs"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 114
+					id: "2EA87135E8F19821"
+					item: "minecraft:stone_bricks"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 5
+					id: "46A0F250849BE467"
+					item: "minecraft:torch"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "2E776B3022E394D1"
+					item: "minecraft:tripwire_hook"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "3671BB9E871B3351"
+					item: "minecraft:white_bed"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "6483EC8F05989F4F"
+					item: "minecraft:white_tulip"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 10
+					id: "7E802A5BB5700255"
+					item: "minecraft:yellow_concrete"
+					team_reward: true
+					type: "item"
+				}
+			]
+			subtitle: "様式申告: medievaloak / Residence Lv4｜解放条件: 「住宅資材: medievaloak Residence 3」を完了"
+			tasks: [
+				{
+					consume_items: true
+					count: 96L
+					id: "0B186502B00B5D25"
+					item: "minecraft:oak_log"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 96L
+					id: "1F75DBDDD9A28B25"
+					item: "minecraft:cobblestone"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 24L
+					id: "6CEE53873B6D25F9"
+					item: "minecraft:bread"
+					type: "item"
+				}
+			]
+			title: "住宅資材: medievaloak Residence 4"
+			x: 20.0d
+			y: 6.0d
+		}
+		{
+			can_repeat: true
+			description: [
+				"基礎物資を納品し、medievaloak様式のResidence Lv5建築・アップグレード資材を受領する。"
+				"Residenceは住民枠を増やす人口基盤。同じレベルの住宅を増設できるよう、全段階を再受諾可能にしている。"
+			]
+			icon: "minecraft:oak_stairs"
+			id: "72FA8ED743CCF5C1"
+			rewards: [
+				{
+					count: 40
+					id: "03E8186A3FFF223C"
+					item: "domum_ornamentum:plain"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 144
+					id: "62B867DF74FDA214"
+					item: "domum_ornamentum:shingle"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 16
+					id: "158F7A7BB7B1588B"
+					item: "domum_ornamentum:shingle_slab"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 4
+					id: "5016D30CCA9968FD"
+					item: "minecolonies:blockminecoloniesrack"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "5EAC8FBEC78A9160"
+					item: "minecraft:azure_bluet"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "5D4A54C3FDB9E8C4"
+					item: "minecraft:barrel"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 3
+					id: "50FCDD64230BCD9A"
+					item: "minecraft:black_carpet"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "0F4D93B18468D13C"
+					item: "minecraft:blue_orchid"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 10
+					id: "2FA795EA9E8C55C7"
+					item: "minecraft:bookshelf"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 8
+					id: "56CC429E5DE90F47"
+					item: "minecraft:brick_stairs"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "7018E279EAB22401"
+					item: "minecraft:brick_wall"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 55
+					id: "344E913E99720A25"
+					item: "minecraft:bricks"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "160B2B316545EDB4"
+					item: "minecraft:chain"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 4
+					id: "697F3C2EAFE9CC90"
+					item: "minecraft:chest"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 11
+					id: "6A940958AB16D087"
+					item: "minecraft:cobblestone"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 6
+					id: "4CE116A9C63345BF"
+					item: "minecraft:cobblestone_slab"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "0D55761690E0271B"
+					item: "minecraft:cornflower"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 3
+					id: "6CC99E0962B045F6"
+					item: "minecraft:cracked_stone_bricks"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 3
+					id: "25BC255DFDD12462"
+					item: "minecraft:dirt"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 5
+					id: "3929A7DB124AB7AB"
+					item: "minecraft:flower_pot"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 3
+					id: "3B15695BAC2051E0"
+					item: "minecraft:gravel"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 4
+					id: "1CBE4473BCC12553"
+					item: "minecraft:gray_bed"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 24
+					id: "14753718206F1942"
+					item: "minecraft:gray_concrete"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "58205A83C2F8BC9B"
+					item: "minecraft:iron_bars"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 3
+					id: "268C76DFF819594D"
+					item: "minecraft:ladder"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 5
+					id: "1F752E728A6456AE"
+					item: "minecraft:lantern"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 24
+					id: "5FD04BB8D446E2A0"
+					item: "minecraft:light_gray_concrete"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 14
+					id: "71DBA2CDEDED71BC"
+					item: "minecraft:light_gray_stained_glass_pane"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 6
+					id: "038E4B4244C85D05"
+					item: "minecraft:oak_button"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 12
+					id: "31F7D679DE2A5E96"
+					item: "minecraft:oak_door"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 26
+					id: "0BA25E1142A5F3CF"
+					item: "minecraft:oak_fence"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 193
+					id: "546098C429F38EB4"
+					item: "minecraft:oak_log"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 56
+					id: "16E3F1CE6AFC2E7C"
+					item: "minecraft:oak_planks"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "268832F85EF2318D"
+					item: "minecraft:oak_sapling"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 10
+					id: "42AD6570FF6DD922"
+					item: "minecraft:oak_sign"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 54
+					id: "0B9FCF692F570398"
+					item: "minecraft:oak_slab"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 65
+					id: "38DFAF2057232B72"
+					item: "minecraft:oak_stairs"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 7
+					id: "6DAFFA28BC538A35"
+					item: "minecraft:oak_trapdoor"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "502B41453A321725"
+					item: "minecraft:oak_wood"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "3F3C4817A9BE8675"
+					item: "minecraft:orange_bed"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 3
+					id: "1FA3C1DECC429869"
+					item: "minecraft:orange_carpet"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 20
+					id: "556F3F03DF522C06"
+					item: "minecraft:polished_andesite"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "4F80271CBFAB6C9F"
+					item: "minecraft:polished_diorite_stairs"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 11
+					id: "30F08993B3EE04AF"
+					item: "minecraft:red_carpet"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 6
+					id: "22899FCECAAC06B0"
+					item: "minecraft:red_concrete"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 118
+					id: "5CAAE4D98419EBEA"
+					item: "minecraft:red_terracotta"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "2C400757F8A4A0CF"
+					item: "minecraft:red_tulip"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 6
+					id: "4333831CFB2A9ECE"
+					item: "minecraft:stone_brick_slab"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 48
+					id: "66C1D60BD687B54D"
+					item: "minecraft:stone_brick_stairs"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "10B46DF59595AC58"
+					item: "minecraft:stone_brick_wall"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 75
+					id: "601AE7C958066402"
+					item: "minecraft:stone_bricks"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 10
+					id: "0E9A3187B9073339"
+					item: "minecraft:torch"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 10
+					id: "11BFAF274A232DF8"
+					item: "minecraft:yellow_carpet"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 8
+					id: "5ED8AA64E47E4D63"
+					item: "minecraft:yellow_concrete"
+					team_reward: true
+					type: "item"
+				}
+			]
+			subtitle: "様式申告: medievaloak / Residence Lv5"
+			tasks: [
+				{
+					consume_items: true
+					count: 128L
+					id: "78EA5F9946DED0C2"
+					item: "minecraft:oak_log"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 128L
+					id: "770224D04219ADE5"
+					item: "minecraft:cobblestone"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 32L
+					id: "6A7FF5FCD8AD7C30"
+					item: "minecraft:bread"
+					type: "item"
+				}
+			]
+			title: "住宅資材: medievaloak Residence 5"
+			x: 20.0d
+			y: 8.0d
+		}
+	]
+	title: "MineColonies 住宅・人口拡張"
+}

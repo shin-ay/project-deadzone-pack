@@ -1,0 +1,6 @@
+
+#Combat Settings
+[combat]
+	#Show combat summary message in chat when a boss fight ends
+	show_combat_end_message = true
+

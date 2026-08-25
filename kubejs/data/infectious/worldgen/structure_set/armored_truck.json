@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "infectious:armored_truck",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 41,
+    "separation": 15,
+    "salt": 2006021642
+  }
+}

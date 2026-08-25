@@ -2,10 +2,10 @@
 	default_hide_dependency_lines: false
 	default_quest_shape: "circle"
 	filename: "deadzone_mod_maritime_01"
-	group: "A170000000000005"
+	group: "6A11000000000001"
 	icon: "smallships:oak_cog"
 	id: "6F3058C252B90174"
-	order_index: 23
+	order_index: 10
 	quest_links: [ ]
 	quests: [
 		{
@@ -19,9 +19,10 @@
 			]
 			icon: "smallships:sail"
 			id: "6600000000000001"
+			subtitle: "解放条件: 「T1：Survivor」・「水域担当の装備」をすべて完了"
 			rewards: [
 				{
-					count: 54
+					count: 12
 					id: "6620000000000001"
 					item: "apocalypsenow:money"
 					type: "item"
@@ -51,13 +52,12 @@
 		}
 		{
 			dependencies: ["6600000000000001"]
-			subtitle: "解放条件: 「沿岸航行の準備」を完了"
 			description: ["Cogの収納を使い、魚・水・医療品を海岸の拠点まで運ぶ。単なる移動手段ではなく、海上の補給線として運用しよう。"]
 			icon: "smallships:oak_cog"
 			id: "6600000000000002"
 			rewards: [
 				{
-					count: 64
+					count: 12
 					id: "6620000000000003"
 					item: "apocalypsenow:money"
 					type: "item"
@@ -69,6 +69,7 @@
 					type: "item"
 				}
 			]
+			subtitle: "解放条件: 「沿岸航行の準備」を完了"
 			tasks: [
 				{
 					id: "6610000000000003"
@@ -94,9 +95,10 @@
 			description: ["T2海域への遠征には、より大きな船体と積載力が必要になる。Briggを建造し、複数人で長距離輸送を行える体制を整える。"]
 			icon: "smallships:oak_brigg"
 			id: "6600000000000003"
+			subtitle: "解放条件: 「沿岸補給船」・「T2：Scavenger」をすべて完了"
 			rewards: [
 				{
-					count: 64
+					count: 16
 					id: "6620000000000005"
 					item: "apocalypsenow:money"
 					type: "item"
@@ -119,23 +121,23 @@
 		}
 		{
 			dependencies: ["6600000000000003"]
-			subtitle: "解放条件: 「外洋貨物船」を完了"
 			description: ["貨物室を拡張して補給効率を高める。マルチでは探索班が拾った物資をまとめ、拠点へ一度に持ち帰るための中核装備になる。"]
 			icon: "smallships_upgrades:cargo_upgrade"
 			id: "6600000000000004"
 			rewards: [
 				{
-					count: 64
+					count: 16
 					id: "6620000000000007"
 					item: "apocalypsenow:money"
 					type: "item"
 				}
 				{
 					id: "6620000000000008"
-					item: "smallships_upgrades:cargo_upgrade"
+					item: "minecraft:iron_ingot"
 					type: "item"
 				}
 			]
+			subtitle: "解放条件: 「外洋貨物船」を完了"
 			tasks: [{
 				id: "6610000000000006"
 				item: "smallships_upgrades:cargo_upgrade"
@@ -147,23 +149,23 @@
 		}
 		{
 			dependencies: ["6600000000000003"]
-			subtitle: "解放条件: 「外洋貨物船」を完了"
 			description: ["遠征時間を短縮し、追跡する敵や危険な水棲生物から離脱するため、帆走性能を強化する。速度は便利だが、狭い水路では事故にも注意。"]
 			icon: "smallships_upgrades:speed_upgrade"
 			id: "6600000000000005"
 			rewards: [
 				{
-					count: 64
+					count: 16
 					id: "6620000000000009"
 					item: "apocalypsenow:money"
 					type: "item"
 				}
 				{
 					id: "662000000000000A"
-					item: "smallships_upgrades:speed_upgrade"
+					item: "minecraft:iron_ingot"
 					type: "item"
 				}
 			]
+			subtitle: "解放条件: 「外洋貨物船」を完了"
 			tasks: [{
 				id: "6610000000000007"
 				item: "smallships_upgrades:speed_upgrade"
@@ -175,23 +177,23 @@
 		}
 		{
 			dependencies: ["6600000000000003"]
-			subtitle: "解放条件: 「外洋貨物船」を完了"
 			description: ["危険海域では衝突や敵の攻撃で船体が損傷する。最大耐久を強化し、鉄塊と木材による現地修理の準備も忘れないこと。"]
 			icon: "smallships_upgrades:health_upgrade"
 			id: "6600000000000006"
 			rewards: [
 				{
-					count: 64
+					count: 16
 					id: "662000000000000B"
 					item: "apocalypsenow:money"
 					type: "item"
 				}
 				{
 					id: "662000000000000C"
-					item: "smallships_upgrades:health_upgrade"
+					item: "minecraft:iron_ingot"
 					type: "item"
 				}
 			]
+			subtitle: "解放条件: 「外洋貨物船」を完了"
 			tasks: [
 				{
 					id: "6610000000000008"
@@ -218,9 +220,10 @@
 			description: ["船上砲を搭載し、敵対勢力や大型水棲生物に対抗する。ただし砲の搭載数が増えるほど船速は低下するため、輸送船と戦闘船の役割を分けよう。"]
 			icon: "smallships:cannon"
 			id: "6600000000000007"
+			subtitle: "解放条件: 「貨物室拡張」・「高速帆走」・「船体補強」をすべて完了"
 			rewards: [
 				{
-					count: 64
+					count: 20
 					id: "662000000000000D"
 					item: "apocalypsenow:money"
 					type: "item"
@@ -252,13 +255,12 @@
 		}
 		{
 			dependencies: ["6600000000000007"]
-			subtitle: "解放条件: 「船上武装」を完了"
 			description: ["Galleyを戦闘船として仕上げる。船員、弾薬、修理材、医療品を分担して積み、単独行動ではなく遠征部隊として運用する。"]
 			icon: "smallships:oak_galley"
 			id: "6600000000000008"
 			rewards: [
 				{
-					count: 64
+					count: 24
 					id: "662000000000000F"
 					item: "apocalypsenow:money"
 					type: "item"
@@ -269,6 +271,7 @@
 					type: "item"
 				}
 			]
+			subtitle: "解放条件: 「船上武装」を完了"
 			tasks: [
 				{
 					id: "661000000000000C"
@@ -294,9 +297,10 @@
 			description: ["外洋で得た魚・希少素材・戦利品を持ち帰り、海上輸送路を完成させる。ここから先は危険海域、海上勢力拠点、ネームド水棲敵の攻略へ繋がる。"]
 			icon: "minecraft:heart_of_the_sea"
 			id: "6600000000000009"
+			subtitle: "解放条件: 「武装遠征船」・「海岸漁業」をすべて完了"
 			rewards: [
 				{
-					count: 64
+					count: 24
 					id: "6620000000000011"
 					item: "apocalypsenow:money"
 					type: "item"

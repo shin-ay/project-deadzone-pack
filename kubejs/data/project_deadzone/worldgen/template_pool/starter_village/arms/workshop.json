@@ -1,0 +1,1 @@
+{"name":"project_deadzone:starter_village/arms/workshop","fallback":"minecraft:empty","elements":[{"weight":1,"element":{"element_type":"minecraft:single_pool_element","location":"project_deadzone:starter_village/arm_workshop","processors":"minecraft:empty","projection":"terrain_matching"}}]}

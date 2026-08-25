@@ -1,0 +1,351 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: "circle"
+	filename: "deadzone_settlement_industries_01"
+	group: "6A11000000000003"
+	icon: "bountiful:bountyboard"
+	id: "6D52010000000001"
+	order_index: 21
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: [
+				"6D4A010000000101"
+				"6D51010000000101"
+			]
+			description: [
+				"ここで扱う『集落』はMineColoniesでもSurvivor Campでもない。CTOV、Towns and Towers、バニラが生成した村を、地域ごとに役割の違う生活拠点として利用する。"
+				"最初はこの4段階だけ覚えればよい：①実在村へ入る ②自動表示された輸出と不足を見る ③Village Recruitsの商人・契約を使う ④Bountiful Boardへ産業令状を入れる。"
+				"村人AI・護衛・商人・輸送は既存MODが担当し、PDZは地域名、産業、需要、友好関係を接続する。"
+			]
+			icon: "minecraft:written_book"
+			id: "6D52010000000010"
+			subtitle: "解放条件: 「地域経済：三つの不足」・「道路は景色ではない」をすべて完了"
+			tasks: [{
+				id: "6D52010000002010"
+				title: "地域集落の4段階を確認した"
+				type: "checkmark"
+			}]
+			title: "地域集落チュートリアル：まず何をする？"
+			x: -8.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["6D52010000000010"]
+			description: [
+				"CTOV、Towns and Towers、またはバニラの村へ実際に入る。画面に［集落発見］が出れば登録成功。住民のいない廃墟や見た目だけの建物は集落として登録されない。"
+				"登録時には集落名と位置がチャットへ表示される。見失った場合は地図へ残した地点と、このクエストの説明を確認する。"
+				"実在集落へ入るだけで自動発見され、このSTEPは完了する。チャットへ文字を入力する必要はない。"
+			]
+			icon: "minecraft:spyglass"
+			id: "6D52010000000011"
+			subtitle: "解放条件: 「地域集落チュートリアル：まず何をする？」を完了"
+			tasks: [{
+				id: "6D52010000002011"
+				title: "実在する地域集落を発見した"
+				type: "custom"
+			}]
+			title: "STEP 1：実在する村を見つける"
+			x: -6.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["6D52010000000011"]
+			description: [
+				"集落中心へ近づくと『輸出』と『不足』が自動表示される。輸出はその土地で得やすい物、不足は持ち込むと価値がある物。"
+				"農業・漁業・狩猟・森林・回収のどれになるかはBiomeと村から決まる。敵対占領中の集落では交易・契約・産業令状を利用できない。"
+				"表示されない場合は、見た目だけの建物ではなく住民のいる村か確認し、鐘や住民のいる中心部へ近づく。"
+			]
+			icon: "minecraft:bell"
+			id: "6D52010000000012"
+			subtitle: "解放条件: 「STEP 1：実在する村を見つける」を完了"
+			tasks: [{
+				id: "6D52010000002012"
+				title: "地域集落でeconomy表示を開いた"
+				type: "custom"
+			}]
+			title: "STEP 2：輸出と不足を読む"
+			x: -4.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["6D52010000000012"]
+			description: [
+				"Village Recruits：村の商人を右クリックして実在庫取引を行う。Nobleから不足契約を受け、護衛・地上コンボイ・村の防衛もこのMODが担当する。"
+				"Bountiful：Bounty Boardを右クリックし、プレイヤー向けの品目依頼を選んで受注する。Village Recruitsの契約とは別物。"
+				"産業を初めて確認した時にもらう令状は、手に持ってBountiful Bounty Boardへ使用する。読み終えたら下の確認ボタンを押せばよく、コマンド入力は不要。"
+			]
+			icon: "village_recruits:merchant_post"
+			id: "6D52010000000013"
+			subtitle: "解放条件: 「STEP 2：輸出と不足を読む」を完了"
+			rewards: [{
+				id: "6D52010000001013"
+				type: "xp"
+				xp: 8
+			}]
+			tasks: [{
+				id: "6D52010000002013"
+				title: "Village RecruitsとBountifulの役割を確認した"
+				type: "checkmark"
+			}]
+			title: "STEP 3：商人・契約・掲示板を分ける"
+			x: -2.0d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"6D52010000000013"
+			]
+			description: [
+				"CTOV、Towns and Towers、バニラの実在村へ入り、自動表示される輸出と不足から地域産業を確認する。"
+				"村の生成と住民は既存MOD、実在庫・商人・Noble契約・コンボイはVillage Recruits、掲示依頼はBountifulが担当する。PDZは新しい村AIや交易GUIを作らない。"
+			]
+			icon: "minecraft:bell"
+			id: "6D52010000000101"
+			subtitle: "解放条件: 「STEP 3：商人・契約・掲示板を分ける」を完了"
+			rewards: [{
+				id: "6D52010000001101"
+				type: "xp"
+				xp: 15
+			}]
+			tasks: [{
+				id: "6D52010000002101"
+				title: "稼働中の集落で地域産業を確認した"
+				type: "checkmark"
+			}]
+			title: "村をもう一つのCampにするな"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["6D52010000000101"]
+			description: [
+				"平原などの農業生存者集落を発見する。工具・弾薬・医療・鉄を求め、作物・料理・MineColonies加工食を輸出する。"
+				"農業をCampへの単純納品で終わらせず、工具を食料へ変える地域交換にする。"
+			]
+			icon: "farmersdelight:cabbage"
+			id: "6D52010000000102"
+			subtitle: "解放条件: 「村をもう一つのCampにするな」を完了"
+			rewards: [{
+				count: 4
+				id: "6D52010000001201"
+				item: "farmersdelight:cabbage"
+				type: "item"
+			}]
+			tasks: [{
+				id: "6D52010000002201"
+				title: "農業集落の産業を確認した"
+				type: "custom"
+			}]
+			title: "畑は食料箱ではない"
+			x: 2.0d
+			y: -4.0d
+		}
+		{
+			dependencies: ["6D52010000000101"]
+			description: [
+				"海岸・河川の沿岸漁業集落を発見する。医療、工具、電子部品、ロープを求め、魚と水産料理を輸出する。"
+				"Village Recruitsの漁業小屋はMOD側で挙動改修中のため停止を維持し、漁業そのものはAquaculture系とBountifulへ任せる。"
+			]
+			icon: "aquaculture:fish_fillet_raw"
+			id: "6D52010000000103"
+			subtitle: "解放条件: 「村をもう一つのCampにするな」を完了"
+			rewards: [{
+				count: 4
+				id: "6D52010000001301"
+				item: "aquaculture:fish_fillet_raw"
+				type: "item"
+			}]
+			tasks: [{
+				id: "6D52010000002301"
+				title: "沿岸漁業集落の産業を確認した"
+				type: "custom"
+			}]
+			title: "釣果を港の産業へ"
+			x: 2.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["6D52010000000101"]
+			description: [
+				"山岳・丘陵の山間狩猟集落を発見する。弾薬、燃料、医療、銅を求め、肉・革・山菜を輸出する。"
+				"食料が多い地域でも燃料と防衛品は不足する。Biomeが違えば同じ品を同じ価格で求めない。"
+			]
+			icon: "minecraft:leather"
+			id: "6D52010000000104"
+			subtitle: "解放条件: 「村をもう一つのCampにするな」を完了"
+			rewards: [{
+				count: 4
+				id: "6D52010000001401"
+				item: "minecraft:cooked_mutton"
+				type: "item"
+			}]
+			tasks: [{
+				id: "6D52010000002401"
+				title: "山間狩猟集落の産業を確認した"
+				type: "custom"
+			}]
+			title: "山は弾薬を作らない"
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["6D52010000000101"]
+			description: [
+				"森林・タイガの森林資源集落を発見する。食料、鉄、配線部品、医療を求め、木材・木炭・蜂蜜を輸出する。"
+				"伐採は建材集めだけでなく、工業集落が必要とする燃料と資材の供給源になる。"
+			]
+			icon: "minecraft:spruce_log"
+			id: "6D52010000000105"
+			subtitle: "解放条件: 「村をもう一つのCampにするな」を完了"
+			rewards: [{
+				count: 8
+				id: "6D52010000001501"
+				item: "minecraft:charcoal"
+				type: "item"
+			}]
+			tasks: [{
+				id: "6D52010000002501"
+				title: "森林資源集落の産業を確認した"
+				type: "custom"
+			}]
+			title: "森から工房へ"
+			x: 2.0d
+			y: 2.0d
+		}
+		{
+			dependencies: ["6D52010000000101"]
+			description: [
+				"砂漠・荒野・サバンナの回収拠点を発見する。水・保存食・パン・医療を求め、金属・旧世界部品・工業部品を輸出する。"
+				"危険地帯で拾った部品を直接Campで換金せず、生活物資との交換へ回せる。"
+			]
+			icon: "immersiveengineering:component_iron"
+			id: "6D52010000000106"
+			subtitle: "解放条件: 「村をもう一つのCampにするな」を完了"
+			rewards: [{
+				count: 2
+				id: "6D52010000001601"
+				item: "minecraft:copper_ingot"
+				type: "item"
+			}]
+			tasks: [{
+				id: "6D52010000002601"
+				title: "回収拠点の産業を確認した"
+				type: "custom"
+			}]
+			title: "水を金属へ、金属を生活へ"
+			x: 2.0d
+			y: 4.0d
+		}
+		{
+			dependencies: ["6D52010000000101"]
+			description: [
+				"友好・中立集落で最初に産業を確認すると、対応するBountiful産業令状を一度だけ受け取る。"
+				"令状をBounty Boardへ挿入すると、その産業が必要とする輸入品と、現地で得られる輸出品だけから依頼が生成される。令状は消耗品ではない。"
+			]
+			icon: "bountiful:decree"
+			id: "6D52010000000107"
+			subtitle: "解放条件: 「村をもう一つのCampにするな」を完了"
+			rewards: [{
+				id: "6D52010000001701"
+				type: "xp"
+				xp: 20
+			}]
+			tasks: [{
+				id: "6D52010000002701"
+				title: "集落固有の産業令状を受領した"
+				type: "custom"
+			}]
+			title: "Bountifulを地域化する"
+			x: 4.0d
+			y: -1.0d
+		}
+		{
+			dependencies: ["6D52010000000101"]
+			description: [
+				"集落へ入った時の地域産業案内を確認し、Village Recruitsの商人とNobleを利用する。"
+				"商人の価格と取扱量は村の実在庫、Noble契約はMonster Pressureや資材不足から生成される。PDZ独自の固定納品表で上書きしない。"
+			]
+			icon: "village_recruits:merchant_post"
+			id: "6D52010000000108"
+			subtitle: "解放条件: 「村をもう一つのCampにするな」を完了"
+			rewards: [{
+				count: 2
+				id: "6D52010000001801"
+				item: "minecraft:emerald"
+				type: "item"
+			}]
+			tasks: [{
+				id: "6D52010000002801"
+				title: "Village Recruitsの実在庫経済を確認した"
+				type: "custom"
+			}]
+			title: "商人は無限倉庫じゃない"
+			x: 4.0d
+			y: 1.0d
+		}
+		{
+			dependencies: ["6D52010000000107"]
+			description: [
+				"Bountiful Bounty Boardをクラフトまたは入手して集落市場へ置き、受領した産業令状を挿入する。"
+				"Village RecruitsのNobleは村の内部状態、Bountifulはプレイヤー向けの品目依頼を担当する。二つは競合ではなく役割分担。"
+			]
+			icon: "bountiful:bountyboard"
+			id: "6D52010000000109"
+			subtitle: "解放条件: 「Bountifulを地域化する」を完了"
+			rewards: [{
+				count: 4
+				id: "6D52010000001901"
+				item: "minecraft:paper"
+				type: "item"
+			}]
+			tasks: [{
+				id: "6D52010000002901"
+				item: "bountiful:bountyboard"
+				type: "item"
+			}]
+			title: "市場の掲示板を置く"
+			x: 6.0d
+			y: -1.0d
+		}
+		{
+			dependencies: [
+				"6D52010000000108"
+				"6D52010000000109"
+				"6D5101000000010A"
+			]
+			description: [
+				"友好・中立の異なる産業を3種類発見する。全5種類はBiome生成へ依存するため必須にしない。"
+				"地域物流の道路・鉄道・海上・航空と、Village Recruitsの商人・契約・コンボイ、Bountiful産業令状を組み合わせ、集落間で物資を循環させる。"
+			]
+			icon: "minecraft:filled_map"
+			id: "6D5201000000010A"
+			subtitle: "解放条件: 「商人は無限倉庫じゃない」・「市場の掲示板を置く」・「止まった世界を結び直す」をすべて完了"
+			rewards: [
+				{
+					count: 6
+					id: "6D52010000001A01"
+					item: "apocalypsenow:money"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 4
+					id: "6D52010000001A02"
+					item: "minecraft:emerald"
+					team_reward: true
+					type: "item"
+				}
+			]
+			tasks: [{
+				id: "6D52010000002A01"
+				title: "異なる3種類の地域産業を発見した"
+				type: "custom"
+			}]
+			title: "一つのCampでは世界は回らない"
+			x: 8.0d
+			y: 0.0d
+		}
+	]
+	title: "集落産業・地域取引"
+}

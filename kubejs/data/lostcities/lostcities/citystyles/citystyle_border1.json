@@ -80,7 +80,7 @@
   "selectors": {
     "buildings": [
       {
-        "factor": 1.0,
+        "factor": 0,
         "value": "building1"
       }
     ],
@@ -194,7 +194,7 @@
         "value": "lostcities:tallbuilding2"
       },
       {
-        "factor": 0.02,
+        "factor": 0,
         "value": "lostcities:firestation12"
       },
       {
@@ -206,7 +206,7 @@
         "value": "lostcities:deadzone_gunstore"
       },
       {
-        "factor": 0.005,
+        "factor": 0,
         "value": "lostcities:massivebuildingwithhelicopter"
       },
       {
@@ -282,11 +282,11 @@
         "value": "lostcities:subhousel3ya_3_bend_street"
       },
       {
-        "factor": 0.3,
+        "factor": 0,
         "value": "lostcities:subhousel3ya_4_and_5_combo"
       },
       {
-        "factor": 0.3,
+        "factor": 0,
         "value": "lostcities:subhousel3ya_3_6_7_8_9_structurebundel"
       },
       {
@@ -314,7 +314,7 @@
         "value": "lostcities:deadzone_apn_firefighter"
       },
       {
-        "factor": 0.025,
+        "factor": 0,
         "value": "lostcities:deadzone_apn_house"
       },
       {

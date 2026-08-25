@@ -2,18 +2,20 @@
 // Informational quests follow real onboarding state instead of check buttons.
 
 const DZ_TUTORIAL_QUESTS = {
-  joined: "D202608200000010",
-  job: "D202608200000020",
-  camp: "D202608200000030",
-  preparation: "D202608200000040"
+  joined: "766FE33E74D2F108",
+  job: "7F38ED70B0F58477",
+  camp: "22F49EBF5BDC1FC1",
+  preparation: "583CB8089686659D"
 }
 
 function dzTutorialComplete(player, key) {
-  let flag = "dz_tutorial_complete_" + key
+  // v2 retries saves that recorded completion while the old quest IDs no
+  // longer existed after the FTB chapter reorganization.
+  let flag = "dz_tutorial_complete_v2_" + key
   if (player.persistentData.getBoolean(flag)) return
-  player.server.runCommandSilent("ftbquests change_progress " + player.username +
+  let result = player.server.runCommandSilent("ftbquests change_progress " + player.username +
     " complete " + DZ_TUTORIAL_QUESTS[key])
-  player.persistentData.putBoolean(flag, true)
+  if (result > 0) player.persistentData.putBoolean(flag, true)
 }
 
 PlayerEvents.loggedIn(event => {
@@ -31,4 +33,3 @@ PlayerEvents.tick(event => {
       player.persistentData.getBoolean("dz_story_auto_preparation"))
     dzTutorialComplete(player, "preparation")
 })
-

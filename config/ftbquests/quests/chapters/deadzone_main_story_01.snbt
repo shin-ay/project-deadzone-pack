@@ -2,10 +2,10 @@
 	default_hide_dependency_lines: false
 	default_quest_shape: ""
 	filename: "deadzone_main_story_01"
-	group: "A170000000000002"
+	group: "23C996B606E0CFE9"
 	icon: "apocalypsenow:badge"
 	id: "43A93722C5600224"
-	order_index: 1
+	order_index: 0
 	quest_links: [ ]
 	quests: [
 		{
@@ -29,11 +29,10 @@
 		}
 		{
 			dependencies: ["4262970F1B621A1D"]
-			subtitle: "解放条件: 「Chapter 0：最後の放送」を完了"
 			description: ["JOBを選択してStarter Kitを受け取り、自分の役割を確認しよう。"]
 			icon: "apocalypsenow:badge"
 			id: "52F2869C3820DF98"
-			subtitle: "自分の役割を選び、最初の装備を受け取る。"
+			subtitle: "自分の役割を選び、最初の装備を受け取る。｜解放条件: 「Chapter 0：最後の放送」を完了"
 			tasks: [{
 				id: "7DC3721C14E28CA9"
 				title: "JOBとStarter Kitを確認した"
@@ -45,7 +44,6 @@
 		}
 		{
 			dependencies: ["52F2869C3820DF98"]
-			subtitle: "解放条件: 「生き残るための役割」を完了"
 			description: ["避難所は物資補給、Buddy募集、次の任務を受ける活動拠点になる。"]
 			icon: {
 				Count: 1
@@ -55,7 +53,7 @@
 				}
 			}
 			id: "1920AEAAF4D75E94"
-			subtitle: "生存者と最初の協力者を確認する。"
+			subtitle: "生存者と最初の協力者を確認する。｜解放条件: 「生き残るための役割」を完了"
 			tasks: [{
 				id: "14269D36893694F9"
 				title: "Survivor Campへ到達した"
@@ -67,13 +65,12 @@
 		}
 		{
 			dependencies: ["1920AEAAF4D75E94"]
-			subtitle: "解放条件: 「Survivor Camp」を完了"
 			description: ["避難所の発電機を維持する燃料が足りない。Gas Stationを調査する。"]
 			icon: "apocalypsenow:aabattery"
 			id: "23E782D769F4E809"
 			shape: "hexagon"
 			size: 1.5d
-			subtitle: "避難所の発電機を動かす燃料が必要だ。"
+			subtitle: "避難所の発電機を動かす燃料が必要だ。｜解放条件: 「Survivor Camp」を完了"
 			tasks: [{
 				id: "6C3CB7B29C88A47A"
 				title: "燃料確保の依頼を受けた"
@@ -85,7 +82,6 @@
 		}
 		{
 			dependencies: ["23E782D769F4E809"]
-			subtitle: "解放条件: 「Chapter 1：最初の72時間」を完了"
 			description: [
 				"次の4条件を同時に満たすと自動で完了する。"
 				"・食料：2個以上（缶詰、パン、調理済みの肉、栄養バー）"
@@ -93,11 +89,11 @@
 				"・治療用品：2個以上（包帯、絆創膏、鎮痛剤など）"
 				"・武器：1個以上（銃、剣、弓、斧、ナイフなど）"
 				"一度4条件を満たせば達成状態は保存され、その後アイテムを収納・消費しても取り消されない。"
-				"現在の状態は /deadzonestory prep_status で確認できる。"
+				"条件は所持品から自動判定され、達成するとクエストへ即時反映される。"
 			]
 			icon: "apocalypsenow:armorplate"
 			id: "633F4D540C6511A9"
-			subtitle: "街へ出る前に最低限の準備を整えよう。"
+			subtitle: "街へ出る前に最低限の準備を整えよう。｜解放条件: 「Chapter 1：最初の72時間」を完了"
 			tasks: [{
 				id: "28D1E41F430CD898"
 				title: "探索準備を完了した"
@@ -109,13 +105,12 @@
 		}
 		{
 			dependencies: ["633F4D540C6511A9"]
-			subtitle: "解放条件: 「探索準備」を完了"
 			description: ["Raider Scoutを排除し、建物と燃料庫の安全を確保する。"]
 			icon: "apocalypsenow:bottle"
 			id: "19FC30DCB267A732"
 			rewards: [
 				{
-					count: 64
+					count: 16
 					id: "330FCB55BB47ACC9"
 					item: "apocalypsenow:money"
 					type: "item"
@@ -132,7 +127,7 @@
 					xp: 40
 				}
 			]
-			subtitle: "Raidersの偵察隊が燃料輸送路を監視している。"
+			subtitle: "Raidersの偵察隊が燃料輸送路を監視している。｜解放条件: 「探索準備」を完了"
 			tasks: [{
 				id: "42AEC3D45A019DD6"
 				title: "Gas Stationを確保した"
@@ -144,13 +139,12 @@
 		}
 		{
 			dependencies: ["19FC30DCB267A732"]
-			subtitle: "解放条件: 「Gas Stationを確保せよ」を完了"
 			description: ["燃料と周辺地図をSurvivor Campへ持ち帰り、避難所の電力を復旧する。"]
 			icon: "apocalypsenow:badge"
 			id: "162BAA0F1AF6097C"
 			rewards: [
 				{
-					count: 64
+					count: 24
 					id: "1846190ABB64EFD2"
 					item: "apocalypsenow:money"
 					type: "item"
@@ -187,7 +181,7 @@
 			]
 			shape: "hexagon"
 			size: 1.5d
-			subtitle: "最初の活動範囲が開かれる。"
+			subtitle: "最初の活動範囲が開かれる。｜解放条件: 「Gas Stationを確保せよ」を完了"
 			tasks: [{
 				id: "5A557E5D3026DA70"
 				title: "燃料と地図を持ち帰った"
@@ -199,11 +193,10 @@
 		}
 		{
 			dependencies: ["162BAA0F1AF6097C"]
-			subtitle: "解放条件: 「T1：Survivor」を完了"
 			description: ["地図にはGun ShopとPolice Stationを結ぶ補給経路が記録されていた。"]
 			icon: "apocalypsenow:balaclava"
 			id: "500615465858A8D5"
-			subtitle: "Raidersの武器供給源を追う。"
+			subtitle: "Raidersの武器供給源を追う。｜解放条件: 「T1：Survivor」を完了"
 			tasks: [{
 				id: "1EA94AF57F99524E"
 				title: "Gun Shopの情報を確認した"
@@ -215,7 +208,6 @@
 		}
 		{
 			dependencies: ["500615465858A8D5"]
-			subtitle: "解放条件: 「Chapter 2：沈黙した街」を完了"
 			description: ["Raider Enforcerを撃破し、Gun Shopの武器庫まで制圧する。"]
 			icon: {
 				Count: 1
@@ -227,7 +219,7 @@
 			id: "7718CAD4F2ED6F3E"
 			rewards: [
 				{
-					count: 64
+					count: 20
 					id: "1A7EA83F8B2480AD"
 					item: "apocalypsenow:money"
 					type: "item"
@@ -244,7 +236,7 @@
 					xp: 60
 				}
 			]
-			subtitle: "Raider Enforcerが武器供給拠点を守っている。"
+			subtitle: "Raider Enforcerが武器供給拠点を守っている。｜解放条件: 「Chapter 2：沈黙した街」を完了"
 			tasks: [{
 				id: "26A6B734055D955C"
 				title: "Raider Enforcerを撃破した"
@@ -256,11 +248,10 @@
 		}
 		{
 			dependencies: ["7718CAD4F2ED6F3E"]
-			subtitle: "解放条件: 「Gun Shop制圧」を完了"
 			description: ["壊れた警察無線機には、Police Stationからの最後の救難信号が残っている。"]
 			icon: "apocalypsenow:badge"
 			id: "6AD31D0364FE7B57"
-			subtitle: "警察署へ向かう手掛かりを回収する。"
+			subtitle: "警察署へ向かう手掛かりを回収する。｜解放条件: 「Gun Shop制圧」を完了"
 			tasks: [{
 				id: "7BF4C169EDA09199"
 				title: "警察無線の記録を回収した"
@@ -272,7 +263,6 @@
 		}
 		{
 			dependencies: ["6AD31D0364FE7B57"]
-			subtitle: "解放条件: 「残された通信記録」を完了"
 			description: ["Police StationはRaider Wardenの要塞になっている。"]
 			icon: {
 				Count: 1
@@ -284,7 +274,7 @@
 			id: "3786D5F3AF1D3EF4"
 			shape: "hexagon"
 			size: 1.5d
-			subtitle: "通信室、証拠保管庫、武器庫が内部に残されている。"
+			subtitle: "通信室、証拠保管庫、武器庫が内部に残されている。｜解放条件: 「残された通信記録」を完了"
 			tasks: [{
 				id: "2DC1C7DA4B036871"
 				title: "Police Stationへ到達した"
@@ -296,7 +286,6 @@
 		}
 		{
 			dependencies: ["3786D5F3AF1D3EF4"]
-			subtitle: "解放条件: 「Chapter 3：失われた法」を完了"
 			description: ["留置区画、通信室、証拠保管庫を順に確保する。"]
 			icon: {
 				Count: 1
@@ -306,7 +295,7 @@
 				}
 			}
 			id: "5C450F9A7EB25D5B"
-			subtitle: "狭い屋内と複数方向からの攻撃に備えよう。"
+			subtitle: "狭い屋内と複数方向からの攻撃に備えよう。｜解放条件: 「Chapter 3：失われた法」を完了"
 			tasks: [{
 				id: "5E9A385A2E90B13C"
 				title: "警察署内を制圧した"
@@ -318,7 +307,6 @@
 		}
 		{
 			dependencies: ["5C450F9A7EB25D5B"]
-			subtitle: "解放条件: 「Police Station突入」を完了"
 			description: [
 				"Raider Wardenを倒し、Civil Defenseの記録を回収する。"
 				"この勝利によってT2装備への道が開く。"
@@ -327,7 +315,7 @@
 			id: "74065A02DB68DAE2"
 			rewards: [
 				{
-					count: 64
+					count: 28
 					id: "636D20BC832009C0"
 					item: "apocalypsenow:money"
 					type: "item"
@@ -370,7 +358,7 @@
 			]
 			shape: "hexagon"
 			size: 2.0d
-			subtitle: "都市の本格探索を開始する。"
+			subtitle: "都市の本格探索を開始する。｜解放条件: 「Police Station突入」を完了"
 			tasks: [{
 				id: "21490231921E204F"
 				title: "Raider Wardenを撃破した"

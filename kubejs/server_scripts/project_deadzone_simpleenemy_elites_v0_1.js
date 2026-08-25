@@ -58,16 +58,18 @@ EntityEvents.death(event => {
     killer.persistentData.putInt("dz_bounty_rare_kills", all)
     killer.tell(Text.of("危険個体狩り: " + all + "/10").yellow())
     if (all >= 10) killer.server.runCommandSilent("ftbquests change_progress " + killer.username +
-      " complete D202608200003040")
+      " complete 7FF938D798C2F6A7")
 
     let armed = entity.tags.contains("dz_elite") &&
       (String(entity.type) === "simpleenemymod:ruunit" || String(entity.type) === "simpleenemymod:pmcunit")
     if (armed) {
+      killer.server.runCommandSilent("ftbquests change_progress " + killer.username +
+        " complete 22B25F7F82A652C8")
       let armedCount = Math.min(5, killer.persistentData.getInt("dz_bounty_armed_elite_kills") + 1)
       killer.persistentData.putInt("dz_bounty_armed_elite_kills", armedCount)
       killer.tell(Text.of("武装勢力の精鋭: " + armedCount + "/5").gold())
       if (armedCount >= 5) killer.server.runCommandSilent("ftbquests change_progress " + killer.username +
-        " complete D202608200003042")
+        " complete 346A353468F42A27")
     }
   }
 })

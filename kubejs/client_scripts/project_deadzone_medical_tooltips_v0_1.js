@@ -7,28 +7,32 @@ ItemEvents.tooltip(event => {
   ])
   event.add('kubejs:field_medical_kit', [
     Text.green('右クリック: LSO包帯を1個取り出す'),
-    Text.aqua('Medicは他プレイヤーへ右クリックして包帯を渡せます'),
-    Text.gray('感染症がある場合は同時に治療します')
+    Text.aqua('Medicは他プレイヤーの最悪部位を安定化できます'),
+    Text.gray('感染症がある場合は同時治療し、5分間の免疫を付与'),
+    Text.darkGray('/deadzonehealth で実部位HPを診断')
   ])
   event.add('apocalypsenow:bandage', [
-    Text.gray('用途: 軽傷の部位治療'),
-    Text.aqua('Body Statusで負傷部位を選択してから使用'),
-    Text.darkGray('クイック使用時は自動選択のため、狙った部位を治せません')
+    Text.gray('Apocalypse Nowの通常医療品・Camp医療供給品'),
+    Text.yellow('LSO部位画面で使う包帯とは別アイテムです')
   ])
   event.add('apocalypsenow:pain_killers', [
-    Text.gray('用途: 痛みを抑えながら部位HPを徐々に回復'),
-    Text.aqua('Body Statusで治療する部位を選択できます')
+    Text.gray('痛みを抑える通常医療品'),
+    Text.yellow('部位損傷そのものはLSO包帯・Medkit・休養で治療')
   ])
   event.add('apocalypsenow:morphine', [
-    Text.gray('用途: 重傷部位の応急処置'),
-    Text.aqua('Body Statusで治療する部位を選択できます')
+    Text.gray('緊急時の通常医療品・Field Medical Kit素材'),
+    Text.yellow('LSOのMorphineとは別アイテムです')
   ])
   event.add('apocalypsenow:adrenaline_syringe', [
     Text.gray('用途: 緊急時の即時回復'),
     Text.yellow('重傷部位の本格治療には包帯または医療キットを使用')
   ])
   event.add('apocalypsenow:medicalkit', [
-    Text.gray('用途: 大きく損傷した部位の治療'),
-    Text.aqua('Body Statusで負傷部位を選択してから使用')
+    Text.gray('Camp重傷処置に必要な総合医療物資'),
+    Text.aqua('LSO Medkitと組み合わせて /deadzonehealth treat_trauma')
+  ])
+  event.add('apocalypsenow:antibiotics', [
+    Text.green('The Hordes / Apocalypse Now / Infectiousの感染を治療'),
+    Text.aqua('治療後はThe Hordes再感染免疫 5分')
   ])
 })

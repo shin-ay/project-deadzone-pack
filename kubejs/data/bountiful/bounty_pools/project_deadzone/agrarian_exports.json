@@ -1,0 +1,8 @@
+{
+  "content": {
+    "pdz_agrarian_cabbage": {"type":"item","content":"farmersdelight:cabbage","amount":{"min":8,"max":20},"unitWorth":85,"weightMult":1.4},
+    "pdz_agrarian_tomato": {"type":"item","content":"farmersdelight:tomato","amount":{"min":8,"max":20},"unitWorth":85,"weightMult":1.4},
+    "pdz_agrarian_meal": {"type":"item","content":"farmersdelight:vegetable_soup","amount":{"min":2,"max":5},"unitWorth":450,"rarity":"UNCOMMON"},
+    "pdz_agrarian_colony_meal": {"type":"item","content":"minecolonies:potato_soup","amount":{"min":2,"max":4},"unitWorth":520,"rarity":"RARE"}
+  }
+}

@@ -20,10 +20,12 @@ LootJS.modifiers(event => {
     event.addLootTableModifier(table)
       .randomChance(0.58)
       .addWeightedLoot(1, [
-        Item.of("minecraft:quartz", 6).withChance(34),
-        Item.of("minecraft:glowstone_dust", 5).withChance(27),
-        Item.of("minecraft:nether_wart", 3).withChance(21),
-        Item.of("minecraft:magma_cream", 2).withChance(18)
+        Item.of("minecraft:quartz", 6).withChance(24),
+        Item.of("minecraft:glowstone_dust", 5).withChance(20),
+        Item.of("minecraft:nether_wart", 3).withChance(14),
+        Item.of("minecraft:nether_brick", 6).withChance(20),
+        Item.of("minecraft:magma_block", 2).withChance(12),
+        Item.of("minecraft:magma_cream", 2).withChance(10)
       ])
   })
 
@@ -172,6 +174,196 @@ LootJS.modifiers(event => {
           '{GunFireMode:"SEMI",GunId:"tacz:glock_17",HasBulletInBarrel:1b}').withChance(55),
         Item.of("tacz:modern_kinetic_gun", 1,
           '{GunFireMode:"SEMI",GunId:"tacz:m1911",HasBulletInBarrel:1b}').withChance(45)
+      ])
+  })
+
+  // Vanilla villages also use profession-specific chest tables. These were
+  // previously untouched, which made a weaponsmith, temple and fisher feel
+  // almost identical to their vanilla versions. Give each district a useful
+  // scavenging identity without turning every village into a full arsenal.
+  const villageWorkshopTables = [
+    "minecraft:chests/village/village_armorer",
+    "minecraft:chests/village/village_toolsmith",
+    "minecraft:chests/village/village_weaponsmith"
+  ]
+
+  villageWorkshopTables.forEach(table => {
+    event.addLootTableModifier(table)
+      .randomChance(0.88)
+      .addWeightedLoot(1, [
+        Item.of("minecraft:iron_ingot", 4).withChance(28),
+        Item.of("immersiveengineering:plate_iron", 3).withChance(24),
+        Item.of("immersiveengineering:ingot_steel", 2).withChance(18),
+        Item.of("create:andesite_alloy", 3).withChance(18),
+        Item.of("survival_instinct:rope", 3).withChance(12)
+      ])
+
+    event.addLootTableModifier(table)
+      .randomChance(0.62)
+      .addWeightedLoot(1, [
+        Item.of("tacz:ammo", 16, '{AmmoId:"tacz:9mm"}').withChance(52),
+        Item.of("tacz:ammo", 12, '{AmmoId:"tacz:45acp"}').withChance(30),
+        Item.of("tacz:ammo", 8, '{AmmoId:"tacz:12g"}').withChance(18)
+      ])
+
+    // A village workshop can occasionally preserve a sidearm, but dedicated
+    // military facilities remain the reliable source of stronger firearms.
+    event.addLootTableModifier(table)
+      .randomChance(0.08)
+      .addWeightedLoot(1, [
+        Item.of("tacz:modern_kinetic_gun", 1,
+          '{GunFireMode:"SEMI",GunId:"tacz:glock_17",HasBulletInBarrel:1b}').withChance(55),
+        Item.of("tacz:modern_kinetic_gun", 1,
+          '{GunFireMode:"SEMI",GunId:"tacz:m1911",HasBulletInBarrel:1b}').withChance(45)
+      ])
+  })
+
+  const villageFoodTables = [
+    "minecraft:chests/village/village_butcher",
+    "minecraft:chests/village/village_fisher"
+  ]
+
+  villageFoodTables.forEach(table => {
+    event.addLootTableModifier(table)
+      .randomChance(0.9)
+      .addWeightedLoot(1, [
+        Item.of("survival_instinct:bean_can", 3).withChance(34),
+        Item.of("survival_instinct:gallon_of_water", 2).withChance(24),
+        Item.of("minecraft:cooked_beef", 4).withChance(22),
+        Item.of("minecraft:cooked_cod", 5).withChance(20)
+      ])
+
+    event.addLootTableModifier(table)
+      .randomChance(0.42)
+      .addWeightedLoot(1, [
+        Item.of("apocalypsenow:bandage", 2).withChance(44),
+        Item.of("survival_instinct:rope", 3).withChance(34),
+        Item.of("minecraft:leather", 4).withChance(22)
+      ])
+  })
+
+  const villageTextileTables = [
+    "minecraft:chests/village/village_shepherd",
+    "minecraft:chests/village/village_tannery"
+  ]
+
+  villageTextileTables.forEach(table => {
+    event.addLootTableModifier(table)
+      .randomChance(0.84)
+      .addWeightedLoot(1, [
+        Item.of("minecraft:leather", 5).withChance(34),
+        Item.of("survival_instinct:rope", 4).withChance(28),
+        Item.of("immersiveengineering:hemp_fiber", 5).withChance(24),
+        Item.of("apocalypsenow:bandage", 3).withChance(14)
+      ])
+  })
+
+  const villageCivicTables = [
+    "minecraft:chests/village/village_cartographer",
+    "minecraft:chests/village/village_fletcher",
+    "minecraft:chests/village/village_mason"
+  ]
+
+  villageCivicTables.forEach(table => {
+    event.addLootTableModifier(table)
+      .randomChance(0.78)
+      .addWeightedLoot(1, [
+        Item.of("minecraft:paper", 6).withChance(28),
+        Item.of("minecraft:compass", 1).withChance(17),
+        Item.of("minecraft:arrow", 10).withChance(20),
+        Item.of("create:copper_nugget", 6).withChance(20),
+        Item.of("apocalypsenow:coins", 5).withChance(15)
+      ])
+  })
+
+  event.addLootTableModifier("minecraft:chests/village/village_temple")
+    .randomChance(0.92)
+    .addWeightedLoot(1, [
+      Item.of("apocalypsenow:bandage", 4).withChance(38),
+      Item.of("apocalypsenow:pain_killers", 2).withChance(24),
+      Item.of("survival_instinct:gallon_of_water", 2).withChance(22),
+      Item.of("minecraft:golden_apple", 1).withChance(6),
+      Item.of("apocalypsenow:money", 2).withChance(10)
+    ])
+
+  // ChoiceTheorem's Overhauled Village ships its own chest tables, so the
+  // vanilla village modifiers above never reached these houses. Keep ordinary
+  // CTOV homes modest, then give the four work districts distinct identities.
+  const ctovResidentialTables = [
+    "ctov:chests/village/village_badlands_house",
+    "ctov:chests/village/village_beach_house",
+    "ctov:chests/village/village_dark_forest_house",
+    "ctov:chests/village/village_jungle_house",
+    "ctov:chests/village/village_mountain_house",
+    "ctov:chests/village/village_mushroom_house",
+    "ctov:chests/village/village_swamp_house"
+  ]
+
+  ctovResidentialTables.forEach(table => {
+    event.addLootTableModifier(table)
+      .removeLoot("minecraft:poisonous_potato")
+      .removeLoot("minecraft:beetroot_seeds")
+      .removeLoot("minecraft:wheat_seeds")
+
+    event.addLootTableModifier(table)
+      .randomChance(0.8)
+      .addWeightedLoot(1, [
+        Item.of("survival_instinct:bean_can", 2).withChance(30),
+        Item.of("survival_instinct:gallon_of_water", 1).withChance(25),
+        Item.of("apocalypsenow:bandage", 2).withChance(25),
+        Item.of("minecraft:iron_ingot", 2).withChance(20)
+      ])
+
+    event.addLootTableModifier(table)
+      .randomChance(0.38)
+      .addWeightedLoot(1, [
+        Item.of("survival_instinct:rope", 3).withChance(38),
+        Item.of("immersiveengineering:hemp_fiber", 3).withChance(30),
+        Item.of("apocalypsenow:coins", 4).withChance(22),
+        Item.of("apocalypsenow:money", 1).withChance(10)
+      ])
+  })
+
+  const ctovFoodTables = [
+    "ctov:chests/village/village_bakery",
+    "ctov:chests/village/village_farm"
+  ]
+
+  ctovFoodTables.forEach(table => {
+    event.addLootTableModifier(table)
+      .randomChance(0.88)
+      .addWeightedLoot(1, [
+        Item.of("survival_instinct:bean_can", 3).withChance(32),
+        Item.of("survival_instinct:gallon_of_water", 2).withChance(25),
+        Item.of("minecraft:bread", 5).withChance(23),
+        Item.of("farmersdelight:cooked_rice", 3).withChance(20)
+      ])
+  })
+
+  event.addLootTableModifier("ctov:chests/village/village_smith")
+    .randomChance(0.9)
+    .addWeightedLoot(1, [
+      Item.of("minecraft:iron_ingot", 5).withChance(30),
+      Item.of("immersiveengineering:plate_iron", 3).withChance(24),
+      Item.of("immersiveengineering:ingot_steel", 2).withChance(18),
+      Item.of("create:andesite_alloy", 3).withChance(18),
+      Item.of("tacz:ammo", 12, '{AmmoId:"tacz:9mm"}').withChance(10)
+    ])
+
+  const ctovKnowledgeTables = [
+    "ctov:chests/village/village_forager",
+    "ctov:chests/village/village_library"
+  ]
+
+  ctovKnowledgeTables.forEach(table => {
+    event.addLootTableModifier(table)
+      .randomChance(0.82)
+      .addWeightedLoot(1, [
+        Item.of("minecraft:paper", 7).withChance(30),
+        Item.of("minecraft:compass", 1).withChance(18),
+        Item.of("apocalypsenow:bandage", 2).withChance(20),
+        Item.of("survival_instinct:rope", 3).withChance(18),
+        Item.of("apocalypsenow:coins", 5).withChance(14)
       ])
   })
 })

@@ -1,0 +1,162 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: "circle"
+	filename: "deadzone_cooking_menus_01"
+	group: "72AA1A32F85FF9D3"
+	icon: "farmersdelight:cooking_pot"
+	id: "6D4D010000000001"
+	order_index: 5
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: ["2A3AF2E328F1D016"]
+			description: [
+				"Dietの果物・穀物・タンパク質・野菜は長期的な栄養状態。PDZ献立は、30分以内に異なる調理済み料理を3皿組み合わせる短期準備。"
+				"Base Coreの「料理・献立」で栄養値と献立を確認する。生の作物や焼いただけの肉はDietには寄与しても、Chefの献立料理には数えない。"
+			]
+			icon: "minecraft:apple"
+			id: "6D4D010000000101"
+			subtitle: "解放条件: 「共同炊事鍋」を完了"
+			tasks: [{
+				id: "6D4D010000002101"
+				title: "DietとPDZ献立の違いを確認した"
+				type: "custom"
+			}]
+			title: "腹を満たす、その先"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["6D4D010000000101"]
+			description: ["Soup、Stew、Sandwich、Pasta、Rice、Saladなどの調理済み料理を1皿食べる。ニンジン1本ではChef・Cooking Talentの料理効果は発動しない。"]
+			icon: "farmersdelight:vegetable_soup"
+			id: "6D4D010000000102"
+			subtitle: "解放条件: 「腹を満たす、その先」を完了"
+			tasks: [{
+				id: "6D4D010000002201"
+				title: "調理済み料理を食べた"
+				type: "custom"
+			}]
+			title: "料理としての一皿"
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["6D4D010000000102"]
+			description: ["Base Coreの「料理・献立」から遠征献立を選ぶ。異なる3料理で果物・穀物・タンパク質・野菜を揃える。完成するとSpeed I 8分とResistance I 3分。"]
+			icon: "farmersdelight:roast_chicken"
+			id: "6D4D010000000103"
+			subtitle: "解放条件: 「料理としての一皿」を完了"
+			tasks: [{
+				id: "6D4D010000002301"
+				title: "遠征献立を完成した"
+				type: "custom"
+			}]
+			title: "遠征前の献立"
+			x: 4.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["6D4D010000000102"]
+			description: ["Base Coreの「料理・献立」から回復献立を選ぶ。異なる3料理で果物・タンパク質・野菜を揃え、Soup・Stew・Chowderなど温かい料理を含める。"]
+			icon: "farmersdelight:beef_stew"
+			id: "6D4D010000000104"
+			subtitle: "解放条件: 「料理としての一皿」を完了"
+			tasks: [{
+				id: "6D4D010000002401"
+				title: "回復献立を完成した"
+				type: "custom"
+			}]
+			title: "負傷者の回復献立"
+			x: 4.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["6D4D010000000102"]
+			description: ["Base Coreの「料理・献立」から作業献立を選ぶ。異なる3料理で穀物・タンパク質・野菜を揃え、Sandwich・Pasta・Riceなど主食料理を含める。"]
+			icon: "farmersdelight:bacon_sandwich"
+			id: "6D4D010000000105"
+			subtitle: "解放条件: 「料理としての一皿」を完了"
+			tasks: [{
+				id: "6D4D010000002501"
+				title: "作業献立を完成した"
+				type: "custom"
+			}]
+			title: "建設班の作業献立"
+			x: 4.0d
+			y: 2.0d
+		}
+		{
+			dependencies: [
+				"6D4D010000000103"
+				"6D4D010000000104"
+				"6D4D010000000105"
+			]
+			description: ["遠征・回復・作業の三献立を一度ずつ完成する。同じ料理だけでは三種類の役割を満たせないため、厨房の在庫とレシピを増やそう。"]
+			icon: "farmersdelight:canvas_sign"
+			id: "6D4D010000000106"
+			subtitle: "解放条件: 「遠征前の献立」・「負傷者の回復献立」・「建設班の作業献立」をすべて完了"
+			tasks: [{
+				id: "6D4D010000002601"
+				title: "三つの献立を習得した"
+				type: "custom"
+			}]
+			title: "献立担当"
+			x: 6.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["6D4D010000000101"]
+			description: ["Dietの果物・穀物・タンパク質・野菜をすべて60%以上へ維持する。献立の短期バフだけでなく、普段の食事構成を安定させる長期目標。"]
+			icon: "minecraft:golden_carrot"
+			id: "6D4D010000000107"
+			subtitle: "解放条件: 「腹を満たす、その先」を完了"
+			tasks: [{
+				id: "6D4D010000002701"
+				title: "主要4栄養群をすべて60%以上にした"
+				type: "custom"
+			}]
+			title: "長期的な栄養管理"
+			x: 2.0d
+			y: 2.5d
+		}
+		{
+			dependencies: [
+				"6D4D010000000106"
+				"6D45010000000101"
+			]
+			description: ["Base Coreの依頼掲示板から「生活供給：共同調理」を受注して完了する。個人のバフだけで終わらせず、肉・野菜・魚料理をSurvivor Campへ供給する。"]
+			icon: "farmersdelight:beef_stew"
+			id: "6D4D010000000108"
+			subtitle: "解放条件: 「献立担当」・「生活供給契約」をすべて完了"
+			tasks: [{
+				id: "6D4D010000002801"
+				title: "共同調理契約を完了した"
+				type: "custom"
+			}]
+			title: "共同厨房の献立"
+			x: 8.0d
+			y: -1.0d
+		}
+		{
+			dependencies: [
+				"6D4D010000000108"
+				"6D45010000000105"
+				"6D4B010000000102"
+			]
+			description: ["Base Coreの依頼掲示板から「生活供給：コロニー炊き出し」を受注して完了する。MineColonies厨房の料理をキャンプへ返し、二つの生活圏を食事で接続する。"]
+			icon: "minecolonies:veggie_soup"
+			id: "6D4D010000000109"
+			subtitle: "解放条件: 「共同厨房の献立」・「キャンプから街へ」・「人口5：小さな集落」をすべて完了"
+			tasks: [{
+				id: "6D4D010000002901"
+				title: "コロニー炊き出し契約を完了した"
+				type: "custom"
+			}]
+			title: "二つの街の食卓"
+			x: 10.0d
+			y: 0.0d
+		}
+	]
+	title: "料理・栄養・献立"
+}

@@ -12,6 +12,7 @@ function dzRadiationTier(server) {
 EntityEvents.spawned("infectious:radioactive_zombie", event => {
   let entity = event.entity
   if (!entity || !entity.server) return
+  if (entity.tags.contains("dz_boss_showroom") || entity.tags.contains("dz_boss_loadtest")) return
   if (dzRadiationTier(entity.server) < DZ_RADIATION_UNLOCK_TIER) {
     entity.discard()
   }

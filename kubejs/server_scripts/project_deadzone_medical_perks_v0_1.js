@@ -3,10 +3,12 @@
 
 const DZ_MEDICAL_CONSUMABLES = [
   "apocalypsenow:bandage",
-  "apocalypsenow:bandage",
   "apocalypsenow:pain_killers",
   "apocalypsenow:morphine",
-  "apocalypsenow:adrenaline_syringe"
+  "apocalypsenow:adrenaline_syringe",
+  "legendarysurvivaloverhaul:bandage",
+  "legendarysurvivaloverhaul:medkit",
+  "legendarysurvivaloverhaul:morphine"
 ]
 
 function dzMedicalTier(player, branch) {

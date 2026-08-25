@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:crossbow",
+    "#forge:tools/crossbows",
+    "#c:crossbow"
+  ]
+}

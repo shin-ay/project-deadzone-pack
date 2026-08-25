@@ -1,0 +1,361 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: "circle"
+	filename: "deadzone_mekanism_tutorial_01"
+	group: "2492E280835EEAE3"
+	icon: "mekanism:metallurgic_infuser"
+	id: "6D48010000000001"
+	order_index: 6
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: [
+				"6D4701000000010E"
+				"74065A02DB68DAE2"
+			]
+			description: [
+				"MekanismはFEで動く高速加工系。最初に全自動化を狙わず、電力、入力、補助素材、出力の4欄を読めるようにする。"
+				"この章はWorld Tier 2以降。先に発電とLV蓄電のチュートリアルを終えておこう。"
+			]
+			icon: "mekanism:steel_casing"
+			id: "6D48010000000101"
+			subtitle: "解放条件: 「14：小型電力網の完成」・「T2：Scavenger」をすべて完了"
+			rewards: [{
+				count: 4
+				id: "6D48010000001101"
+				item: "mekanism:ingot_osmium"
+				type: "item"
+			}]
+			tasks: [{
+				id: "6D48010000002101"
+				title: "Mekanism機械もFEで動くと確認した"
+				type: "checkmark"
+			}]
+			title: "01：T2・電動加工へ"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["6D48010000000101"]
+			description: [
+				"Metallurgic Infuserは金属へRedstone、Carbon、Diamondなどの補助素材を注入する。補助素材は左側の専用ゲージへ入る。"
+				"別種類を継ぎ足せない場合は、GUIのDumpボタンで残量を排出する。ただし排出した素材は戻らない。"
+			]
+			icon: "mekanism:metallurgic_infuser"
+			id: "6D48010000000102"
+			subtitle: "解放条件: 「01：T2・電動加工へ」を完了"
+			rewards: [{
+				count: 8
+				id: "6D48010000001201"
+				item: "minecraft:redstone"
+				type: "item"
+			}]
+			tasks: [{
+				id: "6D48010000002201"
+				item: "mekanism:metallurgic_infuser"
+				type: "item"
+			}]
+			title: "02：Metallurgic Infuser"
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["6D48010000000102"]
+			description: [
+				"鉄とRedstoneからInfused Alloyを作る。まず1個を処理し、電力ゲージと補助素材ゲージが減る様子を見る。"
+				"進行矢印が止まる場合は、FE不足、入力スロット、補助素材の種類を確認する。"
+			]
+			icon: "mekanism:alloy_infused"
+			id: "6D48010000000103"
+			subtitle: "解放条件: 「02：Metallurgic Infuser」を完了"
+			rewards: [{
+				count: 2
+				id: "6D48010000001301"
+				item: "mekanism:alloy_infused"
+				type: "item"
+			}]
+			tasks: [{
+				count: 4L
+				id: "6D48010000002301"
+				item: "mekanism:alloy_infused"
+				type: "item"
+			}]
+			title: "03：最初のInfused Alloy"
+			x: 4.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["6D48010000000103"]
+			description: [
+				"Basic Universal Cableは隣接したFE機械へ電力を運ぶ。設置すると自動接続するが、面設定で切断されている機械には入らない。"
+				"最初は蓄電器とInfuserを短いケーブルで直結し、複雑な配線は後にする。"
+			]
+			icon: "mekanism:basic_universal_cable"
+			id: "6D48010000000104"
+			subtitle: "解放条件: 「03：最初のInfused Alloy」を完了"
+			rewards: [{
+				count: 4
+				id: "6D48010000001401"
+				item: "mekanism:basic_universal_cable"
+				type: "item"
+			}]
+			tasks: [{
+				count: 8L
+				id: "6D48010000002401"
+				item: "mekanism:basic_universal_cable"
+				type: "item"
+			}]
+			title: "04：Universal Cable"
+			x: 6.0d
+			y: -1.0d
+		}
+		{
+			dependencies: ["6D48010000000104"]
+			description: [
+				"Mekanism機械の共通土台はSteel CasingとBasic Control Circuit。Steel CasingはSteel 4個、Glass 4個、Osmium 1個で作る。"
+				"Basic Control CircuitはMetallurgic InfuserでOsmiumへRedstoneを注入する。以後の機械レシピで何度も使うため、先にこの2種類を作ろう。"
+			]
+			icon: "mekanism:steel_casing"
+			id: "6D4801000000014A"
+			subtitle: "解放条件: 「04：Universal Cable」を完了"
+			rewards: [{
+				count: 4
+				id: "6D480100000014A1"
+				item: "minecraft:redstone"
+				type: "item"
+			}]
+			tasks: [
+				{
+					id: "6D480100000024A1"
+					item: "mekanism:steel_casing"
+					type: "item"
+				}
+				{
+					id: "6D480100000024A2"
+					item: "mekanism:basic_control_circuit"
+					type: "item"
+				}
+			]
+			title: "05A：筐体と制御回路"
+			x: 8.0d
+			y: 1.0d
+		}
+		{
+			dependencies: ["6D4801000000014A"]
+			description: [
+				"Energy Tabletは携帯電池兼クラフト部品、Basic Energy Cubeは据置蓄電器。Cubeには入力面と出力面がある。"
+				"Energy Tablet、Infused Alloy、Basic Control Circuit、Steel Casingを使ってCubeを組む。GUIのSide Configで発電側と機械側を分ける。"
+			]
+			icon: "mekanism:basic_energy_cube"
+			id: "6D48010000000105"
+			subtitle: "解放条件: 「04：Universal Cable」を完了"
+			rewards: [{
+				count: 8
+				id: "6D48010000001501"
+				item: "apocalypsenow:money"
+				type: "item"
+			}]
+			tasks: [
+				{
+					id: "6D48010000002501"
+					item: "mekanism:energy_tablet"
+					type: "item"
+				}
+				{
+					id: "6D48010000002502"
+					item: "mekanism:basic_energy_cube"
+					type: "item"
+				}
+			]
+			title: "05：Mekanismの蓄電"
+			x: 8.0d
+			y: -1.0d
+		}
+		{
+			dependencies: ["6D48010000000105"]
+			description: [
+				"Enrichment Chamberは鉱石や素材を濃縮する基本機械。JEIで対象素材の使用先を確認してから投入する。"
+				"自動搬入前に手動で1レシピ通し、入力と出力の面を覚えよう。"
+			]
+			icon: "mekanism:enrichment_chamber"
+			id: "6D48010000000106"
+			subtitle: "解放条件: 「05：Mekanismの蓄電」を完了"
+			rewards: [{
+				count: 4
+				id: "6D48010000001601"
+				item: "minecraft:raw_iron"
+				type: "item"
+			}]
+			tasks: [{
+				id: "6D48010000002601"
+				item: "mekanism:enrichment_chamber"
+				type: "item"
+			}]
+			title: "06：濃縮工程"
+			x: 10.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["6D48010000000106"]
+			description: [
+				"Energized Smelterは電力式かまど。燃料を使わず、濃縮後の粉末や通常の精錬品を処理する。"
+				"Enrichment Chamberの出力を直接繋ぐ前に、詰まり時に取り出せる配置か確認する。"
+			]
+			icon: "mekanism:energized_smelter"
+			id: "6D48010000000107"
+			subtitle: "解放条件: 「06：濃縮工程」を完了"
+			rewards: [{
+				count: 4
+				id: "6D48010000001701"
+				item: "minecraft:iron_ingot"
+				type: "item"
+			}]
+			tasks: [{
+				id: "6D48010000002701"
+				item: "mekanism:energized_smelter"
+				type: "item"
+			}]
+			title: "07：電力式精錬"
+			x: 12.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["6D48010000000106"]
+			description: [
+				"Crusherは鉱物だけでなく、有機物や中間素材にも使う。CreateのMillstoneと処理結果が異なる場合がある。"
+				"どちらが上位とは限らない。JEIで欲しい出力に合う機械を選ぶ。"
+			]
+			icon: "mekanism:crusher"
+			id: "6D48010000000108"
+			subtitle: "解放条件: 「06：濃縮工程」を完了"
+			rewards: [{
+				count: 8
+				id: "6D48010000001801"
+				item: "apocalypsenow:money"
+				type: "item"
+			}]
+			tasks: [{
+				id: "6D48010000002801"
+				item: "mekanism:crusher"
+				type: "item"
+			}]
+			title: "08：機械を使い分ける"
+			x: 12.0d
+			y: 2.0d
+		}
+		{
+			dependencies: [
+				"6D48010000000107"
+				"6D48010000000108"
+			]
+			description: [
+				"Mekanism機械はSide Configで面ごとに入力・出力・補助入力を設定できる。Auto Ejectを有効にすると完成品を隣接設備へ押し出す。"
+				"色の対応が合わないと搬送できない。上面入力・側面出力など、簡単な規則を決めよう。"
+			]
+			icon: "mekanism:configurator"
+			id: "6D48010000000109"
+			subtitle: "解放条件: 「07：電力式精錬」・「08：機械を使い分ける」をすべて完了"
+			rewards: [{
+				id: "6D48010000001901"
+				item: "mekanism:configurator"
+				type: "item"
+			}]
+			tasks: [{
+				id: "6D48010000002901"
+				title: "Side ConfigとAuto Ejectを設定した"
+				type: "checkmark"
+			}]
+			title: "09：面設定と自動排出"
+			x: 14.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["6D48010000000109"]
+			description: [
+				"Enrichment Chamber→Energized Smelterを接続し、原料が加工されて完成品まで移動する小型ラインを作る。"
+				"完成後、途中の機械を止めて詰まり方も確認する。保守できない自動化は復旧設備として失格。"
+			]
+			icon: "mekanism:energized_smelter"
+			id: "6D4801000000010A"
+			subtitle: "解放条件: 「09：面設定と自動排出」を完了"
+			rewards: [{
+				count: 24
+				id: "6D48010000001A01"
+				item: "apocalypsenow:money"
+				type: "item"
+			}]
+			tasks: [{
+				id: "6D48010000002A01"
+				title: "濃縮から精錬まで自動で1回通した"
+				type: "checkmark"
+			}]
+			title: "10：二段加工ライン"
+			x: 16.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["6D4801000000010A"]
+			description: [
+				"機械GUIのEnergy Usageを確認し、発電量より総消費が大きくならないよう設備を増やす。速度アップグレードは消費電力も増やす。"
+				"電力不足なら機械を止める、蓄電を増やす、発電を増設する、の順で対処を選ぶ。"
+			]
+			icon: "mekanism:upgrade_energy"
+			id: "6D4801000000010B"
+			subtitle: "解放条件: 「10：二段加工ライン」を完了"
+			rewards: [
+				{
+					count: 2
+					id: "6D48010000001B01"
+					item: "mekanism:upgrade_energy"
+					type: "item"
+				}
+				{
+					count: 2
+					id: "6D48010000001B02"
+					item: "mekanism:upgrade_speed"
+					type: "item"
+				}
+			]
+			tasks: [{
+				id: "6D48010000002B01"
+				title: "発電量と機械の消費量を比較した"
+				type: "checkmark"
+			}]
+			title: "11：速度より先に電力収支"
+			x: 18.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["6D4801000000010B"]
+			description: [
+				"Mekanism基礎ライン完成。次のPurification ChamberやElectrolytic Separatorは気体・液体管理が増える。"
+				"タンク満杯、余剰ガス、面設定が停止原因になるため、JEIの入力と副産物を確認してから増設しよう。"
+			]
+			icon: "mekanism:steel_casing"
+			id: "6D4801000000010C"
+			subtitle: "解放条件: 「11：速度より先に電力収支」を完了"
+			rewards: [
+				{
+					count: 32
+					id: "6D48010000001C01"
+					item: "apocalypsenow:money"
+					type: "item"
+				}
+				{
+					id: "6D48010000001C02"
+					type: "xp"
+					xp: 48
+				}
+			]
+			tasks: [{
+				id: "6D48010000002C01"
+				title: "停止原因を切り分けられる状態になった"
+				type: "checkmark"
+			}]
+			title: "12：電動加工区画の完成"
+			x: 20.0d
+			y: 0.0d
+		}
+	]
+	title: "工業チュートリアル：Mekanism加工"
+}

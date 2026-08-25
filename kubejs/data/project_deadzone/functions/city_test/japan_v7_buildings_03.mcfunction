@@ -1,0 +1,362 @@
+# Buildings 17..24
+# 017 office style=bay_office context=arterial_front facing=north
+fill ~29 ~-3 ~1 ~40 ~-1 ~13 minecraft:stone
+fill ~29 ~0 ~1 ~40 ~24 ~13 minecraft:bricks
+fill ~30 ~1 ~2 ~39 ~23 ~12 minecraft:air
+fill ~30 ~4 ~2 ~39 ~4 ~12 minecraft:smooth_stone
+fill ~30 ~8 ~2 ~39 ~8 ~12 minecraft:smooth_stone
+fill ~30 ~12 ~2 ~39 ~12 ~12 minecraft:smooth_stone
+fill ~30 ~16 ~2 ~39 ~16 ~12 minecraft:smooth_stone
+fill ~30 ~20 ~2 ~39 ~20 ~12 minecraft:smooth_stone
+fill ~31 ~2 ~1 ~31 ~3 ~1 minecraft:gray_stained_glass
+fill ~31 ~2 ~13 ~31 ~3 ~13 minecraft:light_gray_stained_glass
+fill ~34 ~2 ~1 ~34 ~3 ~1 minecraft:gray_stained_glass
+fill ~34 ~2 ~13 ~34 ~3 ~13 minecraft:light_gray_stained_glass
+fill ~37 ~2 ~1 ~37 ~3 ~1 minecraft:gray_stained_glass
+fill ~37 ~2 ~13 ~37 ~3 ~13 minecraft:light_gray_stained_glass
+fill ~29 ~2 ~3 ~29 ~3 ~3 minecraft:gray_stained_glass
+fill ~40 ~2 ~3 ~40 ~3 ~3 minecraft:light_gray_stained_glass
+fill ~29 ~2 ~6 ~29 ~3 ~6 minecraft:gray_stained_glass
+fill ~40 ~2 ~6 ~40 ~3 ~6 minecraft:light_gray_stained_glass
+fill ~29 ~2 ~9 ~29 ~3 ~9 minecraft:gray_stained_glass
+fill ~40 ~2 ~9 ~40 ~3 ~9 minecraft:light_gray_stained_glass
+fill ~31 ~6 ~1 ~31 ~7 ~1 minecraft:gray_stained_glass
+fill ~31 ~6 ~13 ~31 ~7 ~13 minecraft:light_gray_stained_glass
+fill ~34 ~6 ~1 ~34 ~7 ~1 minecraft:gray_stained_glass
+fill ~34 ~6 ~13 ~34 ~7 ~13 minecraft:light_gray_stained_glass
+fill ~37 ~6 ~1 ~37 ~7 ~1 minecraft:gray_stained_glass
+fill ~37 ~6 ~13 ~37 ~7 ~13 minecraft:light_gray_stained_glass
+fill ~29 ~6 ~3 ~29 ~7 ~3 minecraft:gray_stained_glass
+fill ~40 ~6 ~3 ~40 ~7 ~3 minecraft:light_gray_stained_glass
+fill ~29 ~6 ~6 ~29 ~7 ~6 minecraft:gray_stained_glass
+fill ~40 ~6 ~6 ~40 ~7 ~6 minecraft:light_gray_stained_glass
+fill ~29 ~6 ~9 ~29 ~7 ~9 minecraft:gray_stained_glass
+fill ~40 ~6 ~9 ~40 ~7 ~9 minecraft:light_gray_stained_glass
+fill ~31 ~10 ~1 ~31 ~11 ~1 minecraft:gray_stained_glass
+fill ~31 ~10 ~13 ~31 ~11 ~13 minecraft:light_gray_stained_glass
+fill ~34 ~10 ~1 ~34 ~11 ~1 minecraft:gray_stained_glass
+fill ~34 ~10 ~13 ~34 ~11 ~13 minecraft:light_gray_stained_glass
+fill ~37 ~10 ~1 ~37 ~11 ~1 minecraft:gray_stained_glass
+fill ~37 ~10 ~13 ~37 ~11 ~13 minecraft:light_gray_stained_glass
+fill ~29 ~10 ~3 ~29 ~11 ~3 minecraft:gray_stained_glass
+fill ~40 ~10 ~3 ~40 ~11 ~3 minecraft:light_gray_stained_glass
+fill ~29 ~10 ~6 ~29 ~11 ~6 minecraft:gray_stained_glass
+fill ~40 ~10 ~6 ~40 ~11 ~6 minecraft:light_gray_stained_glass
+fill ~29 ~10 ~9 ~29 ~11 ~9 minecraft:gray_stained_glass
+fill ~40 ~10 ~9 ~40 ~11 ~9 minecraft:light_gray_stained_glass
+fill ~31 ~14 ~1 ~31 ~15 ~1 minecraft:gray_stained_glass
+fill ~31 ~14 ~13 ~31 ~15 ~13 minecraft:light_gray_stained_glass
+fill ~34 ~14 ~1 ~34 ~15 ~1 minecraft:gray_stained_glass
+fill ~34 ~14 ~13 ~34 ~15 ~13 minecraft:light_gray_stained_glass
+fill ~37 ~14 ~1 ~37 ~15 ~1 minecraft:gray_stained_glass
+fill ~37 ~14 ~13 ~37 ~15 ~13 minecraft:light_gray_stained_glass
+fill ~29 ~14 ~3 ~29 ~15 ~3 minecraft:gray_stained_glass
+fill ~40 ~14 ~3 ~40 ~15 ~3 minecraft:light_gray_stained_glass
+fill ~29 ~14 ~6 ~29 ~15 ~6 minecraft:gray_stained_glass
+fill ~40 ~14 ~6 ~40 ~15 ~6 minecraft:light_gray_stained_glass
+fill ~29 ~14 ~9 ~29 ~15 ~9 minecraft:gray_stained_glass
+fill ~40 ~14 ~9 ~40 ~15 ~9 minecraft:light_gray_stained_glass
+fill ~31 ~18 ~1 ~31 ~19 ~1 minecraft:gray_stained_glass
+fill ~31 ~18 ~13 ~31 ~19 ~13 minecraft:light_gray_stained_glass
+fill ~34 ~18 ~1 ~34 ~19 ~1 minecraft:gray_stained_glass
+fill ~34 ~18 ~13 ~34 ~19 ~13 minecraft:light_gray_stained_glass
+fill ~37 ~18 ~1 ~37 ~19 ~1 minecraft:gray_stained_glass
+fill ~37 ~18 ~13 ~37 ~19 ~13 minecraft:light_gray_stained_glass
+fill ~29 ~18 ~3 ~29 ~19 ~3 minecraft:gray_stained_glass
+fill ~40 ~18 ~3 ~40 ~19 ~3 minecraft:light_gray_stained_glass
+fill ~29 ~18 ~6 ~29 ~19 ~6 minecraft:gray_stained_glass
+fill ~40 ~18 ~6 ~40 ~19 ~6 minecraft:light_gray_stained_glass
+fill ~29 ~18 ~9 ~29 ~19 ~9 minecraft:gray_stained_glass
+fill ~40 ~18 ~9 ~40 ~19 ~9 minecraft:light_gray_stained_glass
+fill ~31 ~22 ~1 ~31 ~23 ~1 minecraft:gray_stained_glass
+fill ~31 ~22 ~13 ~31 ~23 ~13 minecraft:light_gray_stained_glass
+fill ~34 ~22 ~1 ~34 ~23 ~1 minecraft:gray_stained_glass
+fill ~34 ~22 ~13 ~34 ~23 ~13 minecraft:light_gray_stained_glass
+fill ~37 ~22 ~1 ~37 ~23 ~1 minecraft:gray_stained_glass
+fill ~37 ~22 ~13 ~37 ~23 ~13 minecraft:light_gray_stained_glass
+fill ~29 ~22 ~3 ~29 ~23 ~3 minecraft:gray_stained_glass
+fill ~40 ~22 ~3 ~40 ~23 ~3 minecraft:light_gray_stained_glass
+fill ~29 ~22 ~6 ~29 ~23 ~6 minecraft:gray_stained_glass
+fill ~40 ~22 ~6 ~40 ~23 ~6 minecraft:light_gray_stained_glass
+fill ~29 ~22 ~9 ~29 ~23 ~9 minecraft:gray_stained_glass
+fill ~40 ~22 ~9 ~40 ~23 ~9 minecraft:light_gray_stained_glass
+setblock ~34 ~1 ~1 minecraft:iron_door[half=lower,facing=north]
+setblock ~34 ~2 ~1 minecraft:iron_door[half=upper,facing=north]
+fill ~29 ~19 ~1 ~40 ~24 ~13 minecraft:air
+fill ~30 ~19 ~2 ~39 ~24 ~12 minecraft:bricks
+fill ~31 ~20 ~3 ~38 ~23 ~11 minecraft:air
+fill ~30 ~25 ~2 ~39 ~25 ~12 minecraft:deepslate_tile_slab
+fill ~31 ~2 ~1 ~38 ~7 ~1 minecraft:blue_stained_glass
+# 018 detached_house style=japanese_house context=local_front facing=south
+fill ~-115 ~-3 ~87 ~-109 ~-1 ~98 minecraft:stone
+fill ~-115 ~0 ~87 ~-109 ~9 ~98 minecraft:white_terracotta
+fill ~-114 ~1 ~88 ~-110 ~8 ~97 minecraft:air
+fill ~-114 ~4 ~88 ~-110 ~4 ~97 minecraft:smooth_stone
+fill ~-114 ~8 ~88 ~-110 ~8 ~97 minecraft:smooth_stone
+fill ~-113 ~2 ~87 ~-113 ~3 ~87 minecraft:gray_stained_glass
+fill ~-113 ~2 ~98 ~-113 ~3 ~98 minecraft:light_gray_stained_glass
+fill ~-115 ~2 ~89 ~-115 ~3 ~89 minecraft:gray_stained_glass
+fill ~-109 ~2 ~89 ~-109 ~3 ~89 minecraft:light_gray_stained_glass
+fill ~-115 ~2 ~92 ~-115 ~3 ~92 minecraft:gray_stained_glass
+fill ~-109 ~2 ~92 ~-109 ~3 ~92 minecraft:light_gray_stained_glass
+fill ~-115 ~2 ~95 ~-115 ~3 ~95 minecraft:gray_stained_glass
+fill ~-109 ~2 ~95 ~-109 ~3 ~95 minecraft:light_gray_stained_glass
+fill ~-113 ~6 ~87 ~-113 ~7 ~87 minecraft:gray_stained_glass
+fill ~-113 ~6 ~98 ~-113 ~7 ~98 minecraft:light_gray_stained_glass
+fill ~-115 ~6 ~89 ~-115 ~7 ~89 minecraft:gray_stained_glass
+fill ~-109 ~6 ~89 ~-109 ~7 ~89 minecraft:light_gray_stained_glass
+fill ~-115 ~6 ~92 ~-115 ~7 ~92 minecraft:gray_stained_glass
+fill ~-109 ~6 ~92 ~-109 ~7 ~92 minecraft:light_gray_stained_glass
+fill ~-115 ~6 ~95 ~-115 ~7 ~95 minecraft:gray_stained_glass
+fill ~-109 ~6 ~95 ~-109 ~7 ~95 minecraft:light_gray_stained_glass
+setblock ~-112 ~1 ~98 minecraft:iron_door[half=lower,facing=south]
+setblock ~-112 ~2 ~98 minecraft:iron_door[half=upper,facing=south]
+fill ~-115 ~10 ~87 ~-109 ~10 ~98 minecraft:dark_oak_slab
+fill ~-114 ~11 ~88 ~-110 ~11 ~97 minecraft:dark_oak_slab
+setblock ~-112 ~3 ~99 minecraft:dark_oak_slab[type=top]
+fill ~-113 ~11 ~89 ~-111 ~12 ~91 minecraft:light_gray_concrete
+setblock ~-110 ~11 ~90 minecraft:lightning_rod
+# 019 clinic style=setback_block context=collector_front facing=west
+fill ~-83 ~-3 ~30 ~-74 ~-1 ~40 minecraft:stone
+fill ~-83 ~0 ~30 ~-74 ~12 ~40 minecraft:smooth_sandstone
+fill ~-82 ~1 ~31 ~-75 ~11 ~39 minecraft:air
+fill ~-82 ~4 ~31 ~-75 ~4 ~39 minecraft:smooth_stone
+fill ~-82 ~8 ~31 ~-75 ~8 ~39 minecraft:smooth_stone
+fill ~-81 ~2 ~30 ~-81 ~3 ~30 minecraft:gray_stained_glass
+fill ~-81 ~2 ~40 ~-81 ~3 ~40 minecraft:light_gray_stained_glass
+fill ~-78 ~2 ~30 ~-78 ~3 ~30 minecraft:gray_stained_glass
+fill ~-78 ~2 ~40 ~-78 ~3 ~40 minecraft:light_gray_stained_glass
+fill ~-83 ~2 ~32 ~-83 ~3 ~32 minecraft:gray_stained_glass
+fill ~-74 ~2 ~32 ~-74 ~3 ~32 minecraft:light_gray_stained_glass
+fill ~-83 ~2 ~35 ~-83 ~3 ~35 minecraft:gray_stained_glass
+fill ~-74 ~2 ~35 ~-74 ~3 ~35 minecraft:light_gray_stained_glass
+fill ~-83 ~2 ~38 ~-83 ~3 ~38 minecraft:gray_stained_glass
+fill ~-74 ~2 ~38 ~-74 ~3 ~38 minecraft:light_gray_stained_glass
+fill ~-81 ~6 ~30 ~-81 ~7 ~30 minecraft:gray_stained_glass
+fill ~-81 ~6 ~40 ~-81 ~7 ~40 minecraft:light_gray_stained_glass
+fill ~-78 ~6 ~30 ~-78 ~7 ~30 minecraft:gray_stained_glass
+fill ~-78 ~6 ~40 ~-78 ~7 ~40 minecraft:light_gray_stained_glass
+fill ~-83 ~6 ~32 ~-83 ~7 ~32 minecraft:gray_stained_glass
+fill ~-74 ~6 ~32 ~-74 ~7 ~32 minecraft:light_gray_stained_glass
+fill ~-83 ~6 ~35 ~-83 ~7 ~35 minecraft:gray_stained_glass
+fill ~-74 ~6 ~35 ~-74 ~7 ~35 minecraft:light_gray_stained_glass
+fill ~-83 ~6 ~38 ~-83 ~7 ~38 minecraft:gray_stained_glass
+fill ~-74 ~6 ~38 ~-74 ~7 ~38 minecraft:light_gray_stained_glass
+fill ~-81 ~10 ~30 ~-81 ~11 ~30 minecraft:gray_stained_glass
+fill ~-81 ~10 ~40 ~-81 ~11 ~40 minecraft:light_gray_stained_glass
+fill ~-78 ~10 ~30 ~-78 ~11 ~30 minecraft:gray_stained_glass
+fill ~-78 ~10 ~40 ~-78 ~11 ~40 minecraft:light_gray_stained_glass
+fill ~-83 ~10 ~32 ~-83 ~11 ~32 minecraft:gray_stained_glass
+fill ~-74 ~10 ~32 ~-74 ~11 ~32 minecraft:light_gray_stained_glass
+fill ~-83 ~10 ~35 ~-83 ~11 ~35 minecraft:gray_stained_glass
+fill ~-74 ~10 ~35 ~-74 ~11 ~35 minecraft:light_gray_stained_glass
+fill ~-83 ~10 ~38 ~-83 ~11 ~38 minecraft:gray_stained_glass
+fill ~-74 ~10 ~38 ~-74 ~11 ~38 minecraft:light_gray_stained_glass
+setblock ~-83 ~1 ~35 minecraft:iron_door[half=lower,facing=west]
+setblock ~-83 ~2 ~35 minecraft:iron_door[half=upper,facing=west]
+fill ~-83 ~7 ~30 ~-74 ~12 ~40 minecraft:air
+fill ~-82 ~7 ~31 ~-75 ~12 ~39 minecraft:smooth_sandstone
+fill ~-81 ~8 ~32 ~-76 ~11 ~38 minecraft:air
+fill ~-82 ~13 ~31 ~-75 ~13 ~39 minecraft:stone_brick_slab
+# 020 row_house style=stepped_house context=back_block facing=east
+fill ~-10 ~-3 ~61 ~2 ~-1 ~70 minecraft:stone
+fill ~-10 ~0 ~61 ~2 ~16 ~70 minecraft:light_gray_concrete
+fill ~-9 ~1 ~62 ~1 ~15 ~69 minecraft:air
+fill ~-9 ~4 ~62 ~1 ~4 ~69 minecraft:smooth_stone
+fill ~-9 ~8 ~62 ~1 ~8 ~69 minecraft:smooth_stone
+fill ~-9 ~12 ~62 ~1 ~12 ~69 minecraft:smooth_stone
+fill ~-8 ~2 ~61 ~-8 ~3 ~61 minecraft:gray_stained_glass
+fill ~-8 ~2 ~70 ~-8 ~3 ~70 minecraft:light_gray_stained_glass
+fill ~-5 ~2 ~61 ~-5 ~3 ~61 minecraft:gray_stained_glass
+fill ~-5 ~2 ~70 ~-5 ~3 ~70 minecraft:light_gray_stained_glass
+fill ~-2 ~2 ~61 ~-2 ~3 ~61 minecraft:gray_stained_glass
+fill ~-2 ~2 ~70 ~-2 ~3 ~70 minecraft:light_gray_stained_glass
+fill ~-10 ~2 ~63 ~-10 ~3 ~63 minecraft:gray_stained_glass
+fill ~2 ~2 ~63 ~2 ~3 ~63 minecraft:light_gray_stained_glass
+fill ~-10 ~2 ~66 ~-10 ~3 ~66 minecraft:gray_stained_glass
+fill ~2 ~2 ~66 ~2 ~3 ~66 minecraft:light_gray_stained_glass
+fill ~-8 ~6 ~61 ~-8 ~7 ~61 minecraft:gray_stained_glass
+fill ~-8 ~6 ~70 ~-8 ~7 ~70 minecraft:light_gray_stained_glass
+fill ~-5 ~6 ~61 ~-5 ~7 ~61 minecraft:gray_stained_glass
+fill ~-5 ~6 ~70 ~-5 ~7 ~70 minecraft:light_gray_stained_glass
+fill ~-2 ~6 ~61 ~-2 ~7 ~61 minecraft:gray_stained_glass
+fill ~-2 ~6 ~70 ~-2 ~7 ~70 minecraft:light_gray_stained_glass
+fill ~-10 ~6 ~63 ~-10 ~7 ~63 minecraft:gray_stained_glass
+fill ~2 ~6 ~63 ~2 ~7 ~63 minecraft:light_gray_stained_glass
+fill ~-10 ~6 ~66 ~-10 ~7 ~66 minecraft:gray_stained_glass
+fill ~2 ~6 ~66 ~2 ~7 ~66 minecraft:light_gray_stained_glass
+fill ~-8 ~10 ~61 ~-8 ~11 ~61 minecraft:gray_stained_glass
+fill ~-8 ~10 ~70 ~-8 ~11 ~70 minecraft:light_gray_stained_glass
+fill ~-5 ~10 ~61 ~-5 ~11 ~61 minecraft:gray_stained_glass
+fill ~-5 ~10 ~70 ~-5 ~11 ~70 minecraft:light_gray_stained_glass
+fill ~-2 ~10 ~61 ~-2 ~11 ~61 minecraft:gray_stained_glass
+fill ~-2 ~10 ~70 ~-2 ~11 ~70 minecraft:light_gray_stained_glass
+fill ~-10 ~10 ~63 ~-10 ~11 ~63 minecraft:gray_stained_glass
+fill ~2 ~10 ~63 ~2 ~11 ~63 minecraft:light_gray_stained_glass
+fill ~-10 ~10 ~66 ~-10 ~11 ~66 minecraft:gray_stained_glass
+fill ~2 ~10 ~66 ~2 ~11 ~66 minecraft:light_gray_stained_glass
+fill ~-8 ~14 ~61 ~-8 ~15 ~61 minecraft:gray_stained_glass
+fill ~-8 ~14 ~70 ~-8 ~15 ~70 minecraft:light_gray_stained_glass
+fill ~-5 ~14 ~61 ~-5 ~15 ~61 minecraft:gray_stained_glass
+fill ~-5 ~14 ~70 ~-5 ~15 ~70 minecraft:light_gray_stained_glass
+fill ~-2 ~14 ~61 ~-2 ~15 ~61 minecraft:gray_stained_glass
+fill ~-2 ~14 ~70 ~-2 ~15 ~70 minecraft:light_gray_stained_glass
+fill ~-10 ~14 ~63 ~-10 ~15 ~63 minecraft:gray_stained_glass
+fill ~2 ~14 ~63 ~2 ~15 ~63 minecraft:light_gray_stained_glass
+fill ~-10 ~14 ~66 ~-10 ~15 ~66 minecraft:gray_stained_glass
+fill ~2 ~14 ~66 ~2 ~15 ~66 minecraft:light_gray_stained_glass
+setblock ~2 ~1 ~65 minecraft:iron_door[half=lower,facing=east]
+setblock ~2 ~2 ~65 minecraft:iron_door[half=upper,facing=east]
+fill ~-10 ~17 ~61 ~2 ~17 ~70 minecraft:smooth_stone_slab
+fill ~-9 ~18 ~62 ~1 ~18 ~69 minecraft:smooth_stone_slab
+setblock ~3 ~3 ~65 minecraft:dark_oak_slab[type=top]
+# 021 shop_house style=storefront context=collector_front facing=south
+fill ~-76 ~-3 ~-7 ~-65 ~-1 ~5 minecraft:stone
+fill ~-76 ~0 ~-7 ~-65 ~8 ~5 minecraft:bricks
+fill ~-75 ~1 ~-6 ~-66 ~7 ~4 minecraft:air
+fill ~-75 ~4 ~-6 ~-66 ~4 ~4 minecraft:smooth_stone
+fill ~-74 ~2 ~-7 ~-74 ~3 ~-7 minecraft:gray_stained_glass
+fill ~-74 ~2 ~5 ~-74 ~3 ~5 minecraft:light_gray_stained_glass
+fill ~-71 ~2 ~-7 ~-71 ~3 ~-7 minecraft:gray_stained_glass
+fill ~-71 ~2 ~5 ~-71 ~3 ~5 minecraft:light_gray_stained_glass
+fill ~-68 ~2 ~-7 ~-68 ~3 ~-7 minecraft:gray_stained_glass
+fill ~-68 ~2 ~5 ~-68 ~3 ~5 minecraft:light_gray_stained_glass
+fill ~-76 ~2 ~-5 ~-76 ~3 ~-5 minecraft:gray_stained_glass
+fill ~-65 ~2 ~-5 ~-65 ~3 ~-5 minecraft:light_gray_stained_glass
+fill ~-76 ~2 ~-2 ~-76 ~3 ~-2 minecraft:gray_stained_glass
+fill ~-65 ~2 ~-2 ~-65 ~3 ~-2 minecraft:light_gray_stained_glass
+fill ~-76 ~2 ~1 ~-76 ~3 ~1 minecraft:gray_stained_glass
+fill ~-65 ~2 ~1 ~-65 ~3 ~1 minecraft:light_gray_stained_glass
+fill ~-74 ~6 ~-7 ~-74 ~7 ~-7 minecraft:gray_stained_glass
+fill ~-74 ~6 ~5 ~-74 ~7 ~5 minecraft:light_gray_stained_glass
+fill ~-71 ~6 ~-7 ~-71 ~7 ~-7 minecraft:gray_stained_glass
+fill ~-71 ~6 ~5 ~-71 ~7 ~5 minecraft:light_gray_stained_glass
+fill ~-68 ~6 ~-7 ~-68 ~7 ~-7 minecraft:gray_stained_glass
+fill ~-68 ~6 ~5 ~-68 ~7 ~5 minecraft:light_gray_stained_glass
+fill ~-76 ~6 ~-5 ~-76 ~7 ~-5 minecraft:gray_stained_glass
+fill ~-65 ~6 ~-5 ~-65 ~7 ~-5 minecraft:light_gray_stained_glass
+fill ~-76 ~6 ~-2 ~-76 ~7 ~-2 minecraft:gray_stained_glass
+fill ~-65 ~6 ~-2 ~-65 ~7 ~-2 minecraft:light_gray_stained_glass
+fill ~-76 ~6 ~1 ~-76 ~7 ~1 minecraft:gray_stained_glass
+fill ~-65 ~6 ~1 ~-65 ~7 ~1 minecraft:light_gray_stained_glass
+setblock ~-71 ~1 ~5 minecraft:iron_door[half=lower,facing=south]
+setblock ~-71 ~2 ~5 minecraft:iron_door[half=upper,facing=south]
+fill ~-75 ~1 ~5 ~-66 ~3 ~5 minecraft:cyan_stained_glass
+setblock ~-71 ~1 ~5 minecraft:iron_door[half=lower,facing=south]
+setblock ~-71 ~2 ~5 minecraft:iron_door[half=upper,facing=south]
+setblock ~-71 ~3 ~6 minecraft:red_wool
+fill ~-76 ~9 ~-7 ~-65 ~9 ~5 minecraft:deepslate_tile_slab
+fill ~-74 ~10 ~-5 ~-72 ~11 ~-3 minecraft:light_gray_concrete
+setblock ~-71 ~10 ~-4 minecraft:lightning_rod
+# 022 workshop style=sawtooth context=back_block facing=north
+fill ~57 ~-3 ~32 ~66 ~-1 ~47 minecraft:stone
+fill ~57 ~0 ~32 ~66 ~16 ~47 minecraft:bricks
+fill ~58 ~1 ~33 ~65 ~15 ~46 minecraft:air
+fill ~58 ~4 ~33 ~65 ~4 ~46 minecraft:smooth_stone
+fill ~58 ~8 ~33 ~65 ~8 ~46 minecraft:smooth_stone
+fill ~58 ~12 ~33 ~65 ~12 ~46 minecraft:smooth_stone
+fill ~59 ~2 ~32 ~59 ~3 ~32 minecraft:gray_stained_glass
+fill ~59 ~2 ~47 ~59 ~3 ~47 minecraft:light_gray_stained_glass
+fill ~62 ~2 ~32 ~62 ~3 ~32 minecraft:gray_stained_glass
+fill ~62 ~2 ~47 ~62 ~3 ~47 minecraft:light_gray_stained_glass
+fill ~57 ~2 ~34 ~57 ~3 ~34 minecraft:gray_stained_glass
+fill ~66 ~2 ~34 ~66 ~3 ~34 minecraft:light_gray_stained_glass
+fill ~57 ~2 ~37 ~57 ~3 ~37 minecraft:gray_stained_glass
+fill ~66 ~2 ~37 ~66 ~3 ~37 minecraft:light_gray_stained_glass
+fill ~57 ~2 ~40 ~57 ~3 ~40 minecraft:gray_stained_glass
+fill ~66 ~2 ~40 ~66 ~3 ~40 minecraft:light_gray_stained_glass
+fill ~57 ~2 ~43 ~57 ~3 ~43 minecraft:gray_stained_glass
+fill ~66 ~2 ~43 ~66 ~3 ~43 minecraft:light_gray_stained_glass
+fill ~59 ~6 ~32 ~59 ~7 ~32 minecraft:gray_stained_glass
+fill ~59 ~6 ~47 ~59 ~7 ~47 minecraft:light_gray_stained_glass
+fill ~62 ~6 ~32 ~62 ~7 ~32 minecraft:gray_stained_glass
+fill ~62 ~6 ~47 ~62 ~7 ~47 minecraft:light_gray_stained_glass
+fill ~57 ~6 ~34 ~57 ~7 ~34 minecraft:gray_stained_glass
+fill ~66 ~6 ~34 ~66 ~7 ~34 minecraft:light_gray_stained_glass
+fill ~57 ~6 ~37 ~57 ~7 ~37 minecraft:gray_stained_glass
+fill ~66 ~6 ~37 ~66 ~7 ~37 minecraft:light_gray_stained_glass
+fill ~57 ~6 ~40 ~57 ~7 ~40 minecraft:gray_stained_glass
+fill ~66 ~6 ~40 ~66 ~7 ~40 minecraft:light_gray_stained_glass
+fill ~57 ~6 ~43 ~57 ~7 ~43 minecraft:gray_stained_glass
+fill ~66 ~6 ~43 ~66 ~7 ~43 minecraft:light_gray_stained_glass
+fill ~59 ~10 ~32 ~59 ~11 ~32 minecraft:gray_stained_glass
+fill ~59 ~10 ~47 ~59 ~11 ~47 minecraft:light_gray_stained_glass
+fill ~62 ~10 ~32 ~62 ~11 ~32 minecraft:gray_stained_glass
+fill ~62 ~10 ~47 ~62 ~11 ~47 minecraft:light_gray_stained_glass
+fill ~57 ~10 ~34 ~57 ~11 ~34 minecraft:gray_stained_glass
+fill ~66 ~10 ~34 ~66 ~11 ~34 minecraft:light_gray_stained_glass
+fill ~57 ~10 ~37 ~57 ~11 ~37 minecraft:gray_stained_glass
+fill ~66 ~10 ~37 ~66 ~11 ~37 minecraft:light_gray_stained_glass
+fill ~57 ~10 ~40 ~57 ~11 ~40 minecraft:gray_stained_glass
+fill ~66 ~10 ~40 ~66 ~11 ~40 minecraft:light_gray_stained_glass
+fill ~57 ~10 ~43 ~57 ~11 ~43 minecraft:gray_stained_glass
+fill ~66 ~10 ~43 ~66 ~11 ~43 minecraft:light_gray_stained_glass
+fill ~59 ~14 ~32 ~59 ~15 ~32 minecraft:gray_stained_glass
+fill ~59 ~14 ~47 ~59 ~15 ~47 minecraft:light_gray_stained_glass
+fill ~62 ~14 ~32 ~62 ~15 ~32 minecraft:gray_stained_glass
+fill ~62 ~14 ~47 ~62 ~15 ~47 minecraft:light_gray_stained_glass
+fill ~57 ~14 ~34 ~57 ~15 ~34 minecraft:gray_stained_glass
+fill ~66 ~14 ~34 ~66 ~15 ~34 minecraft:light_gray_stained_glass
+fill ~57 ~14 ~37 ~57 ~15 ~37 minecraft:gray_stained_glass
+fill ~66 ~14 ~37 ~66 ~15 ~37 minecraft:light_gray_stained_glass
+fill ~57 ~14 ~40 ~57 ~15 ~40 minecraft:gray_stained_glass
+fill ~66 ~14 ~40 ~66 ~15 ~40 minecraft:light_gray_stained_glass
+fill ~57 ~14 ~43 ~57 ~15 ~43 minecraft:gray_stained_glass
+fill ~66 ~14 ~43 ~66 ~15 ~43 minecraft:light_gray_stained_glass
+setblock ~61 ~1 ~32 minecraft:iron_door[half=lower,facing=north]
+setblock ~61 ~2 ~32 minecraft:iron_door[half=upper,facing=north]
+fill ~59 ~1 ~32 ~64 ~4 ~32 minecraft:polished_blackstone
+fill ~59 ~5 ~32 ~64 ~5 ~32 minecraft:light_blue_stained_glass
+fill ~59 ~18 ~34 ~61 ~19 ~36 minecraft:iron_block
+fill ~57 ~17 ~32 ~66 ~17 ~47 minecraft:deepslate_tile_slab
+fill ~64 ~14 ~45 ~66 ~18 ~47 minecraft:air
+setblock ~64 ~14 ~45 minecraft:cobweb
+# 023 detached_house style=stepped_house context=local_front facing=south
+fill ~-66 ~-3 ~97 ~-56 ~-1 ~105 minecraft:stone
+fill ~-66 ~0 ~97 ~-56 ~9 ~105 minecraft:mud_bricks
+fill ~-65 ~1 ~98 ~-57 ~8 ~104 minecraft:air
+fill ~-65 ~4 ~98 ~-57 ~4 ~104 minecraft:smooth_stone
+fill ~-65 ~8 ~98 ~-57 ~8 ~104 minecraft:smooth_stone
+fill ~-64 ~2 ~97 ~-64 ~3 ~97 minecraft:gray_stained_glass
+fill ~-64 ~2 ~105 ~-64 ~3 ~105 minecraft:light_gray_stained_glass
+fill ~-61 ~2 ~97 ~-61 ~3 ~97 minecraft:gray_stained_glass
+fill ~-61 ~2 ~105 ~-61 ~3 ~105 minecraft:light_gray_stained_glass
+fill ~-58 ~2 ~97 ~-58 ~3 ~97 minecraft:gray_stained_glass
+fill ~-58 ~2 ~105 ~-58 ~3 ~105 minecraft:light_gray_stained_glass
+fill ~-66 ~2 ~99 ~-66 ~3 ~99 minecraft:gray_stained_glass
+fill ~-56 ~2 ~99 ~-56 ~3 ~99 minecraft:light_gray_stained_glass
+fill ~-66 ~2 ~102 ~-66 ~3 ~102 minecraft:gray_stained_glass
+fill ~-56 ~2 ~102 ~-56 ~3 ~102 minecraft:light_gray_stained_glass
+fill ~-64 ~6 ~97 ~-64 ~7 ~97 minecraft:gray_stained_glass
+fill ~-64 ~6 ~105 ~-64 ~7 ~105 minecraft:light_gray_stained_glass
+fill ~-61 ~6 ~97 ~-61 ~7 ~97 minecraft:gray_stained_glass
+fill ~-61 ~6 ~105 ~-61 ~7 ~105 minecraft:light_gray_stained_glass
+fill ~-58 ~6 ~97 ~-58 ~7 ~97 minecraft:gray_stained_glass
+fill ~-58 ~6 ~105 ~-58 ~7 ~105 minecraft:light_gray_stained_glass
+fill ~-66 ~6 ~99 ~-66 ~7 ~99 minecraft:gray_stained_glass
+fill ~-56 ~6 ~99 ~-56 ~7 ~99 minecraft:light_gray_stained_glass
+fill ~-66 ~6 ~102 ~-66 ~7 ~102 minecraft:gray_stained_glass
+fill ~-56 ~6 ~102 ~-56 ~7 ~102 minecraft:light_gray_stained_glass
+setblock ~-61 ~1 ~105 minecraft:iron_door[half=lower,facing=south]
+setblock ~-61 ~2 ~105 minecraft:iron_door[half=upper,facing=south]
+fill ~-66 ~10 ~97 ~-56 ~10 ~105 minecraft:deepslate_tile_slab
+fill ~-65 ~11 ~98 ~-57 ~11 ~104 minecraft:deepslate_tile_slab
+setblock ~-61 ~3 ~106 minecraft:dark_oak_slab[type=top]
+# 024 detached_house style=japanese_house context=back_block facing=north
+fill ~-85 ~-3 ~98 ~-77 ~-1 ~105 minecraft:stone
+fill ~-85 ~0 ~98 ~-77 ~7 ~105 minecraft:mud_bricks
+fill ~-84 ~1 ~99 ~-78 ~6 ~104 minecraft:air
+fill ~-84 ~4 ~99 ~-78 ~4 ~104 minecraft:smooth_stone
+fill ~-83 ~2 ~98 ~-83 ~3 ~98 minecraft:gray_stained_glass
+fill ~-83 ~2 ~105 ~-83 ~3 ~105 minecraft:light_gray_stained_glass
+fill ~-80 ~2 ~98 ~-80 ~3 ~98 minecraft:gray_stained_glass
+fill ~-80 ~2 ~105 ~-80 ~3 ~105 minecraft:light_gray_stained_glass
+fill ~-85 ~2 ~100 ~-85 ~3 ~100 minecraft:gray_stained_glass
+fill ~-77 ~2 ~100 ~-77 ~3 ~100 minecraft:light_gray_stained_glass
+fill ~-85 ~2 ~103 ~-85 ~3 ~103 minecraft:gray_stained_glass
+fill ~-77 ~2 ~103 ~-77 ~3 ~103 minecraft:light_gray_stained_glass
+setblock ~-81 ~1 ~98 minecraft:iron_door[half=lower,facing=north]
+setblock ~-81 ~2 ~98 minecraft:iron_door[half=upper,facing=north]
+fill ~-85 ~8 ~98 ~-77 ~8 ~105 minecraft:deepslate_tile_slab
+fill ~-84 ~9 ~99 ~-78 ~9 ~104 minecraft:deepslate_tile_slab
+setblock ~-81 ~3 ~97 minecraft:dark_oak_slab[type=top]

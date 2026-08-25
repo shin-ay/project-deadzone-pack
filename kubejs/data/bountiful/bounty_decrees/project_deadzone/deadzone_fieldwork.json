@@ -1,18 +1,9 @@
 {
   "objectives": [
-    "project_deadzone/deadzone_bounty_objs",
-    "bountiful/farmer_objs",
-    "bountiful/fisherman_objs",
-    "bountiful/butcher_objs",
-    "bountiful/armorer_objs",
-    "bountiful/toolsmith_objs",
-    "bountiful/cleric_objs"
+    "deadzone_bounty_objs"
   ],
   "rewards": [
-    "project_deadzone/deadzone_bounty_rews",
-    "project_deadzone/deadzone_field_rews",
-    "bountiful/farmer_rews",
-    "bountiful/fisherman_rews",
-    "bountiful/toolsmith_rews"
+    "deadzone_bounty_rews",
+    "deadzone_field_rews"
   ]
 }

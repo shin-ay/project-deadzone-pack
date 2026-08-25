@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "big_lost_city:warehouse",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 81,
+    "separation": 50,
+    "salt": 861845032
+  }
+}

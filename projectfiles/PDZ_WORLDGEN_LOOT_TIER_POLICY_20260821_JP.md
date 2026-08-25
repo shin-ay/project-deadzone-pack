@@ -34,8 +34,10 @@
 - Lost Cities: `cityChance 0.00055 -> 0.00040`（都市中心候補を約27%削減）。
 - Jeff / Doomsday / ChaosZ / Underground Bunkers: Structure Setの間隔を約15%広げ、面積当たり候補をおおむね25%削減。
 - Jeffのstarterbunkerは開始導線用なので変更しない。
-- Towns and Towersの町: `spacing 48 -> 42`。塔・その他施設は増やさず、むしろ他の生成物と同様に間引く。
-- バニラ村: 現行の `spacing 28 -> 24`。村の候補密度を約36%増加。
+- その他のMOD追加構造物: Structure Setの`spacing`（または同等の`distance`）を標準値の約1.155倍にし、面積当たり候補をおおむね25%削減。対象にはBig Lost City、Radio Towers、Zombie Kit、Survival Instinct、Horror Element、Infectious、YUNG系などを含む。
+- MineColoniesのプレイヤーが手動配置する建築物・Supply Campは自動生成密度調整の対象外とする。
+- Towns and Towersの町: 標準の `spacing 48 -> 45`。面積当たり候補を約14%増やす。塔・その他施設は25%間引きを維持する。
+- バニラ村: 標準の `spacing 28 -> 26`。面積当たり候補を約16%増やす。
 
 ## 適用範囲
 

@@ -1,0 +1,160 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: "circle"
+	filename: "deadzone_life_quality_market_01"
+	group: "72AA1A32F85FF9D3"
+	icon: "kubejs:seasonal_supply_lot_select"
+	id: "6D4C010000000001"
+	order_index: 4
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: [
+				"46A3E0BB5786F64B"
+				"5102FC109053F92C"
+			]
+			description: [
+				"一種類を大量に集めるだけでなく、旬の多品種作物と異なる魚種を検品し、取引可能な供給ロットへまとめる。"
+				"Base Coreの「食材検品」で現在季節、検品条件、作成可能な等級を確認できる。食材そのものへNBTを付けないため、料理とMineColonies配送は従来どおり使える。"
+			]
+			icon: "sereneseasons:calendar"
+			id: "6D4C010000000101"
+			subtitle: "解放条件: 「四種類の収穫」・「淡水魚図鑑」をすべて完了"
+			tasks: [{
+				id: "6D4C010000002101"
+				title: "生活供給の検品を開始した"
+				type: "custom"
+			}]
+			title: "量から品質へ"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["6D4C010000000101"]
+			description: ["現在の季節に対応する供給品を3種類、各6個そろえて標準ロットへ認定する。冬は新鮮な作物が少ないため、保存食と越冬作物が検品対象になる。"]
+			icon: "kubejs:seasonal_supply_lot_standard"
+			id: "6D4C010000000102"
+			subtitle: "解放条件: 「量から品質へ」を完了"
+			tasks: [{
+				id: "6D4C010000002201"
+				title: "標準・旬の供給ロットを認定した"
+				type: "custom"
+			}]
+			title: "標準：三種類の旬"
+			x: 2.0d
+			y: -1.5d
+		}
+		{
+			dependencies: ["6D4C010000000102"]
+			description: ["旬の供給品を5種類、各8個そろえる。単一畑の収量より、複数作物を維持する農場設計が評価される。"]
+			icon: "kubejs:seasonal_supply_lot_select"
+			id: "6D4C010000000103"
+			subtitle: "解放条件: 「標準：三種類の旬」を完了"
+			tasks: [{
+				id: "6D4C010000002301"
+				title: "選別・旬の供給ロットを認定した"
+				type: "custom"
+			}]
+			title: "選別：農場の多様性"
+			x: 4.0d
+			y: -1.5d
+		}
+		{
+			dependencies: ["6D4C010000000103"]
+			description: ["旬の供給品を7種類、各10個そろえて特選ロットへ認定する。高額納品とMineColonies料理の供給対象。"]
+			icon: "kubejs:seasonal_supply_lot_prime"
+			id: "6D4C010000000104"
+			subtitle: "解放条件: 「選別：農場の多様性」を完了"
+			tasks: [{
+				id: "6D4C010000002401"
+				title: "特選・旬の供給ロットを認定した"
+				type: "custom"
+			}]
+			title: "特選：地域の食料網"
+			x: 6.0d
+			y: -1.5d
+		}
+		{
+			dependencies: ["6D4C010000000101"]
+			description: ["異なる魚を3魚種そろえて標準漁獲ロットへ認定する。Filletへ加工する前に検品分を取り分けよう。"]
+			icon: "kubejs:catch_lot_standard"
+			id: "6D4C010000000105"
+			subtitle: "解放条件: 「量から品質へ」を完了"
+			tasks: [{
+				id: "6D4C010000002501"
+				title: "標準・漁獲ロットを認定した"
+				type: "custom"
+			}]
+			title: "標準：三魚種の漁獲"
+			x: 2.0d
+			y: 1.5d
+		}
+		{
+			dependencies: ["6D4C010000000105"]
+			description: ["異なる5魚種をそろえる。川・湖・海岸を使い分け、同じ釣り場だけに依存しない漁業へ発展させる。"]
+			icon: "kubejs:catch_lot_select"
+			id: "6D4C010000000106"
+			subtitle: "解放条件: 「標準：三魚種の漁獲」を完了"
+			tasks: [{
+				id: "6D4C010000002601"
+				title: "選別・漁獲ロットを認定した"
+				type: "custom"
+			}]
+			title: "選別：水域を使い分ける"
+			x: 4.0d
+			y: 1.5d
+		}
+		{
+			dependencies: ["6D4C010000000106"]
+			description: ["異なる7魚種に加え、Tuna、Halibut、Arapaimaなどの希少魚を2種類含めて特選漁獲ロットへ認定する。"]
+			icon: "kubejs:catch_lot_prime"
+			id: "6D4C010000000107"
+			subtitle: "解放条件: 「選別：水域を使い分ける」を完了"
+			tasks: [{
+				id: "6D4C010000002701"
+				title: "特選・漁獲ロットを認定した"
+				type: "custom"
+			}]
+			title: "特選：危険水域の漁獲"
+			x: 6.0d
+			y: 1.5d
+		}
+		{
+			dependencies: [
+				"6D4C010000000102"
+				"6D45010000000101"
+			]
+			description: ["Base Coreの依頼掲示板で「生活品質：旬の検品ロット」を受注し、認定ロットをマヤへ納品する。標準は生活評判+2、選別+3、特選+5。"]
+			icon: "farmersdelight:bamboo_basket"
+			id: "6D4C010000000108"
+			subtitle: "解放条件: 「標準：三種類の旬」・「生活供給契約」をすべて完了"
+			tasks: [{
+				id: "6D4C010000002801"
+				title: "旬の検品ロットをNPC依頼へ納品した"
+				type: "custom"
+			}]
+			title: "マヤの季節市場"
+			x: 8.0d
+			y: -1.5d
+		}
+		{
+			dependencies: [
+				"6D4C010000000105"
+				"6D45010000000101"
+			]
+			description: ["Base Coreの依頼掲示板で「生活品質：多魚種の漁獲ロット」を受注して納品する。特選報酬にはMineColonies Fish n Chipsが含まれる。"]
+			icon: "aquaculture:tackle_box"
+			id: "6D4C010000000109"
+			subtitle: "解放条件: 「標準：三魚種の漁獲」・「生活供給契約」をすべて完了"
+			tasks: [{
+				id: "6D4C010000002901"
+				title: "漁獲ロットをNPC依頼へ納品した"
+				type: "custom"
+			}]
+			title: "キャンプの魚市場"
+			x: 8.0d
+			y: 1.5d
+		}
+	]
+	title: "旬・品質・魚市場"
+}

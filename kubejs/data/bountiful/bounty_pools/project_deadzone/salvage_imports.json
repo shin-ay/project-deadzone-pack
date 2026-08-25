@@ -1,0 +1,8 @@
+{
+  "content": {
+    "pdz_salvage_water": {"type":"item","content":"survival_instinct:gallon_of_water","amount":{"min":3,"max":8},"unitWorth":300,"weightMult":1.4},
+    "pdz_salvage_food": {"type":"item","content":"survival_instinct:bean_can","amount":{"min":4,"max":10},"unitWorth":260,"weightMult":1.3},
+    "pdz_salvage_bread": {"type":"item","content":"minecraft:bread","amount":{"min":10,"max":24},"unitWorth":120,"weightMult":1.2},
+    "pdz_salvage_medicine": {"type":"item","content":"apocalypsenow:bandage","amount":{"min":3,"max":7},"unitWorth":500,"rarity":"UNCOMMON"}
+  }
+}

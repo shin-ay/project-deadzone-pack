@@ -108,7 +108,7 @@
 	#at war with the parent and immediately besieges its own village.
 	#Default: true
 	#
-rebellionEnabled = false
+	rebellionEnabled = false
 	#How often (in ticks) each faction's secondary villages are evaluated for
 	#rebellion. Default: 2400 (~2 minutes)
 	#
@@ -714,7 +714,7 @@ rebellionEnabled = false
 	#villages, send some settlers to a far empty spot and, after
 	#a delay, found a brand new village belonging to that faction.
 	#
-enabled = false
+	enabled = false
 	#Money a faction must spend to found a new village. Paid from the
 	#SEPARATE expansion war chest (see economy.expansionIncomeFraction),
 	#not the normal treasury. This is the price of the faction's FIRST
@@ -893,7 +893,7 @@ enabled = false
 	#Set to false for the old behaviour (only the capital and conquered
 	#ex-capitals build).
 	#
-secondaryVillagesBuild = false
+	secondaryVillagesBuild = false
 	#Minimum distance (in blocks) a NATURALLY generated tower spawner
 	#must keep from an already existing village center before it is
 	#allowed to build its village. 0 = disabled (old behaviour).

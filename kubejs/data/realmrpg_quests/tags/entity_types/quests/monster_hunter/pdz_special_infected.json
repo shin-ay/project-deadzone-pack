@@ -1,0 +1,9 @@
+{
+  "replace": true,
+  "values": [
+    "infectious:acid_zombie",
+    "infectious:zombie_climber",
+    "infectious:bucket_zombie",
+    "infectious:hazmat_zombie"
+  ]
+}

@@ -45,7 +45,7 @@
           "Items": [],
           "id": "apocalypsenow:iron_locker"
         },
-        "loot": "project_deadzone:chests/police_armory"
+        "loot": "project_deadzone:police_armory"
       },
       {
         "char": "",
@@ -73,7 +73,7 @@
           "Items": [],
           "id": "apocalypsenow:iron_locker"
         },
-        "loot": "project_deadzone:chests/police_armory"
+        "loot": "project_deadzone:police_armory"
       },
       {
         "char": "",

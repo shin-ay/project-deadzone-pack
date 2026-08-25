@@ -88,6 +88,7 @@ execute positioned ~25.5 ~11 ~17.5 run data merge entity @e[tag=dz_basecamp_guar
 
 # Import the finalized Easy NPC staff presets and apply role profiles.
 function project_deadzone:basecamp/migrate_easy_npc_staff
+function project_deadzone:basecamp/repair_staff_service_ui
 deadzoneclothier install_silent
 
 tellraw @a[distance=..64] {"text":"[PROJECT DEADZONE] Survivor Campが稼働しました","color":"green","bold":true}

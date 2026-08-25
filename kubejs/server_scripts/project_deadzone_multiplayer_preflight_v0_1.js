@@ -10,7 +10,8 @@ function pdzPreflightTell(player, message, color) {
   else if (color === "red") line = line.red()
   else if (color === "aqua") line = line.aqua()
   else line = line.gray()
-  player.tell(line)
+  if (player) player.tell(line)
+  else console.info("[PROJECT DEADZONE][Preflight] " + message)
 }
 
 function pdzPreflightPlayerState(player) {

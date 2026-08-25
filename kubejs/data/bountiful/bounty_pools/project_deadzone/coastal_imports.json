@@ -1,0 +1,8 @@
+{
+  "content": {
+    "pdz_coastal_medicine": {"type":"item","content":"apocalypsenow:bandage","amount":{"min":3,"max":6},"unitWorth":500,"weightMult":1.3},
+    "pdz_coastal_tools": {"type":"item","content":"minecraft:iron_ingot","amount":{"min":5,"max":12},"unitWorth":220,"weightMult":1.2},
+    "pdz_coastal_electronics": {"type":"item","content":"immersiveengineering:component_electronic","amount":{"min":1,"max":3},"unitWorth":900,"rarity":"UNCOMMON"},
+    "pdz_coastal_rope": {"type":"item","content":"survival_instinct:rope","amount":{"min":3,"max":8},"unitWorth":280,"weightMult":1.1}
+  }
+}

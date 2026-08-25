@@ -1,0 +1,5 @@
+{
+  "name": "森林集落交換令",
+  "objectives": ["forest_imports"],
+  "rewards": ["forest_exports"]
+}

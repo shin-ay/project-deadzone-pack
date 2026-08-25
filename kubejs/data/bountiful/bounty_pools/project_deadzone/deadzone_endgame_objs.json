@@ -1,0 +1,49 @@
+{
+  "content": {
+    "pdz_end_ruunit": {
+      "type": "entity",
+      "content": "simpleenemymod:ruunit",
+      "amount": { "min": 6, "max": 14 },
+      "unitWorth": 1500,
+      "timeMult": 11.0,
+      "rarity": "UNCOMMON",
+      "weightMult": 1.0
+    },
+    "pdz_end_pmcunit": {
+      "type": "entity",
+      "content": "simpleenemymod:pmcunit",
+      "amount": { "min": 5, "max": 12 },
+      "unitWorth": 1900,
+      "timeMult": 12.0,
+      "rarity": "RARE",
+      "weightMult": 0.8
+    },
+    "pdz_end_mutated_sample": {
+      "type": "item",
+      "content": "infectious:mutated_rotten_flesh",
+      "amount": { "min": 16, "max": 32 },
+      "unitWorth": 700,
+      "timeMult": 9.0,
+      "rarity": "UNCOMMON",
+      "weightMult": 1.1
+    },
+    "pdz_end_siege_tank": {
+      "type": "entity",
+      "content": "apocalypse_zombies:tank",
+      "amount": { "min": 1, "max": 2 },
+      "unitWorth": 9000,
+      "timeMult": 14.0,
+      "rarity": "RARE",
+      "weightMult": 0.35
+    },
+    "pdz_end_abomination": {
+      "type": "entity",
+      "content": "infectious:ancient_zombie_boss",
+      "amount": { "min": 1, "max": 1 },
+      "unitWorth": 12000,
+      "timeMult": 16.0,
+      "rarity": "EPIC",
+      "weightMult": 0.2
+    }
+  }
+}

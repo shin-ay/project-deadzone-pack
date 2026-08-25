@@ -33,7 +33,7 @@
         "tag": {
           "id": "apocalypsenow:large_shelves"
         },
-        "loot": "project_deadzone:chests/generic_low_filled"
+        "loot": "project_deadzone:generic_low_filled"
       },
       {
         "char": "",

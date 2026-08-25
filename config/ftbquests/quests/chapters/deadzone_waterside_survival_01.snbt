@@ -2,7 +2,7 @@
 	default_hide_dependency_lines: false
 	default_quest_shape: ""
 	filename: "deadzone_waterside_survival_01"
-	group: "A170000000000004"
+	group: "72AA1A32F85FF9D3"
 	icon: {
 		Count: 1
 		id: "minecraft:fishing_rod"
@@ -11,7 +11,7 @@
 		}
 	}
 	id: "0E4EADC762552314"
-	order_index: 8
+	order_index: 0
 	quest_links: [ ]
 	quests: [
 		{
@@ -117,7 +117,7 @@
 			id: "7C41CDCD88E7A5A7"
 			rewards: [
 				{
-					count: 54
+					count: 16
 					id: "672B1E9D5F513684"
 					item: "apocalypsenow:money"
 					type: "item"

@@ -1,0 +1,9 @@
+{
+  "replace": true,
+  "values": [
+    "aquaculturedelight:fish_and_chips",
+    "aquaculturedelight:bass_stew",
+    "aquaculturedelight:halibut_with_tartar_sauce",
+    "aquaculturedelight:tuna_spaghetti"
+  ]
+}

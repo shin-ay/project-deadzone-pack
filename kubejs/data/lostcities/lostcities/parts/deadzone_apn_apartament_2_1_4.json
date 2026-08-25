@@ -94,7 +94,7 @@
       {
         "char": "",
         "block": "refurbished_furniture:oak_crate",
-        "loot": "project_deadzone:chests/generic_low_filled"
+        "loot": "project_deadzone:generic_low_filled"
       },
       {
         "char": "",
@@ -110,7 +110,7 @@
         "tag": {
           "id": "apocalypsenow:large_shelves_fill"
         },
-        "loot": "project_deadzone:chests/generic_low_filled"
+        "loot": "project_deadzone:generic_low_filled"
       },
       {
         "char": "",
@@ -165,7 +165,7 @@
         "tag": {
           "id": "apocalypsenow:large_shelves_fill"
         },
-        "loot": "project_deadzone:chests/generic_low_filled"
+        "loot": "project_deadzone:generic_low_filled"
       },
       {
         "char": "",

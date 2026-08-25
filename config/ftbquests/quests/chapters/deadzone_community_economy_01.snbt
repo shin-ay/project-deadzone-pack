@@ -1,0 +1,158 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: "circle"
+	filename: "deadzone_community_economy_01"
+	group: "59FD4E11CFE90C47"
+	icon: "apocalypsenow:money"
+	id: "6D4A010000000001"
+	order_index: 12
+	quest_links: [ ]
+	quests: [
+		{
+			dependencies: ["6D46010000000101"]
+			description: [
+				"キャンプは建物だけでは成長しない。食料供給、安全確保、設備復旧を揃えて初めて住民と商人が継続して働ける。"
+				"Base Coreを右クリックすると、地域経済で3部門と総合Rank、依頼掲示板で受注可能な仕事を確認できる。"
+			]
+			icon: "apocalypsenow:money"
+			id: "6D4A010000000101"
+			subtitle: "解放条件: 「Survivor Camp発展計画」を完了"
+			rewards: [{
+				count: 8
+				id: "6D4A010000001101"
+				item: "apocalypsenow:money"
+				type: "item"
+			}]
+			tasks: [{
+				id: "6D4A010000002101"
+				title: "地域経済の3部門を確認した"
+				type: "custom"
+			}]
+			title: "地域経済：三つの不足"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"6D4A010000000101"
+				"6D45010000000102"
+				"6D46010000000102"
+			]
+			description: [
+				"Supply、Security、RestorationをすべてRank 1へ上げ、Camp Lv1を完成させる。総合Rankは4項目のうち一番低い値になる。"
+				"マヤ、シオリ、ゴロウが常連として扱い、全店3%追加割引とMineColonies加工食の取扱いが始まる。"
+			]
+			icon: "minecolonies:potato_soup"
+			id: "6D4A010000000102"
+			subtitle: "解放条件: 「地域経済：三つの不足」・「Rank 1：安定供給」・「Camp Lv1：安定拠点」をすべて完了"
+			rewards: [{
+				count: 2
+				id: "6D4A010000001201"
+				item: "minecolonies:potato_soup"
+				team_reward: true
+				type: "item"
+			}]
+			tasks: [{
+				id: "6D4A010000002201"
+				title: "Camp総合Rank 1へ到達した"
+				type: "custom"
+			}]
+			title: "Rank 1：常連の拠点"
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"6D4A010000000102"
+				"6D45010000000103"
+				"6D46010000000103"
+			]
+			description: [
+				"3部門をすべて25以上へ上げ、Camp Lv2を完成させる。どれか一部門だけでは昇格しない。"
+				"全店6%追加割引、販売・買取枠増加、専門医療品と工業工具が解放される。"
+			]
+			icon: "immersiveengineering:component_electronic"
+			id: "6D4A010000000103"
+			subtitle: "解放条件: 「Rank 1：常連の拠点」・「Rank 2：共同炊事」・「Camp Lv2：サービス拠点」をすべて完了"
+			rewards: [{
+				id: "6D4A010000001301"
+				item: "kubejs:field_repair_kit"
+				team_reward: true
+				type: "item"
+			}]
+			tasks: [{
+				id: "6D4A010000002301"
+				title: "Camp総合Rank 2へ到達した"
+				type: "custom"
+			}]
+			title: "Rank 2：地域協力拠点"
+			x: 4.0d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"6D4A010000000103"
+				"6D45010000000104"
+				"6D46010000000104"
+			]
+			description: [
+				"3部門をすべて50以上へ上げ、Camp Lv3を完成させる。食料、治安、工業のどれも外部へ支援できる段階。"
+				"全店9%追加割引、最大在庫、最高級医療・整備品を解放する。"
+			]
+			icon: "apocalypsenow:medicalkit"
+			id: "6D4A010000000104"
+			subtitle: "解放条件: 「Rank 2：地域協力拠点」・「Rank 3：地域食料網」・「Camp Lv3：地域ハブ」をすべて完了"
+			rewards: [
+				{
+					count: 32
+					id: "6D4A010000001401"
+					item: "apocalypsenow:money"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "6D4A010000001402"
+					type: "xp"
+					xp: 64
+				}
+			]
+			tasks: [{
+				id: "6D4A010000002401"
+				title: "Camp総合Rank 3へ到達した"
+				type: "custom"
+			}]
+			title: "Rank 3：共同運営ハブ"
+			x: 6.0d
+			y: 0.0d
+		}
+		{
+			dependencies: [
+				"6D4A010000000102"
+				"6D43110000000101"
+			]
+			description: [
+				"MineColoniesの厨房・農場・漁業施設で作った加工食は、コロニー内部だけでなくSurvivor Campの供給依頼にも使える。"
+				"コロニーの余剰生産を地域へ戻すことで生活評判が上がり、Mayaの店にもMineColonies料理が並ぶ。"
+			]
+			icon: "minecolonies:fish_n_chips"
+			id: "6D4A010000000105"
+			subtitle: "解放条件: 「Rank 1：常連の拠点」・「コロニー開始：Supply Camp」をすべて完了"
+			rewards: [{
+				count: 2
+				id: "6D4A010000001501"
+				item: "minecolonies:stew_trencher"
+				team_reward: true
+				type: "item"
+			}]
+			tasks: [{
+				id: "6D4A010000002501"
+				title: "MineColoniesの余剰食料を地域供給へ接続した"
+				type: "custom"
+			}]
+			title: "コロニーからキャンプへ"
+			x: 2.0d
+			y: 2.0d
+		}
+	]
+	title: "Survivor Camp 地域経済"
+}

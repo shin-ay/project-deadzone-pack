@@ -1,0 +1,10 @@
+{
+  "replace": true,
+  "values": [
+    "minecraft:zombie",
+    "minecraft:husk",
+    "infectious:bodyless_zombie",
+    "infectious:zombie_farmer",
+    "infectious:construction_worker_zombie"
+  ]
+}

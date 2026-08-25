@@ -1,0 +1,5 @@
+{
+  "name": "沿岸集落補給令",
+  "objectives": ["coastal_imports"],
+  "rewards": ["coastal_exports"]
+}

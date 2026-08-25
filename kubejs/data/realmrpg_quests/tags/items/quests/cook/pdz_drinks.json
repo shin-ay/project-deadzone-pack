@@ -1,0 +1,8 @@
+{
+  "replace": true,
+  "values": [
+    "farmersdelight:apple_cider",
+    "farmersdelight:melon_juice",
+    "farmersdelight:hot_cocoa"
+  ]
+}

@@ -5,15 +5,21 @@ const DZ_FIRSTAID_DRESSING = "legendarysurvivaloverhaul:bandage"
 const DZ_FIELD_KIT_COOLDOWN_MS = 8000
 
 function dzFieldKitCureInfection(target) {
-  let effects = ["apocalypsenow:infection", "apocalypsenow:posinfectioneffect", "infectious:infection"]
+  let effects = ["hordes:infected", "apocalypsenow:infection", "apocalypsenow:posinfectioneffect", "infectious:infection"]
   let cured = false
   effects.forEach(id => {
     if (target.hasEffect(id)) { target.removeEffect(id); cured = true }
   })
+  if (cured) target.potionEffects.add("hordes:immunity", 6000, 0, false, true)
   return cured
 }
 
 function dzConsumeFieldKitCharge(player, stack) {
+  let conservation = typeof dzMedicalTier === "function" ? dzMedicalTier(player, "conservation") : 0
+  if (conservation > 0 && Math.random() < [0, 0.10, 0.20, 0.30][conservation]) {
+    player.tell(Text.of("Medicの物資温存によりキット消耗を防ぎました。").green())
+    return
+  }
   let nextDamage = stack.damageValue + 1
   if (nextDamage >= stack.maxDamage) {
     stack.count--
@@ -48,8 +54,10 @@ ItemEvents.rightClicked(DZ_FIELD_KIT, event => {
   let player = event.player
   if (player.level.clientSide) return
   event.cancel()
+  if (!dzIssueDressing(player, player, event.item)) return
   let infected = dzFieldKitCureInfection(player)
-  if (dzIssueDressing(player, player, event.item) && infected) {
+  if (infected) {
+    if (typeof dzHealthRecordInfectionTreatment === "function") dzHealthRecordInfectionTreatment(player)
     player.tell(Text.of("感染症の治療も完了しました。").green())
   }
 })
@@ -65,8 +73,10 @@ ItemEvents.entityInteracted(event => {
     return
   }
   if (String(target.uuid) === String(healer.uuid)) return
-  let infected = dzFieldKitCureInfection(target)
   if (!dzIssueDressing(healer, target, event.item)) return
+  let infected = dzFieldKitCureInfection(target)
+  if (infected && typeof dzHealthRecordInfectionTreatment === "function") dzHealthRecordInfectionTreatment(target)
+  if (typeof dzHealthMedicStabilize === "function") dzHealthMedicStabilize(healer, target)
   if (infected) healer.tell(Text.of(target.username + " の感染症も治療しました。").green())
   healer.tell(Text.of(target.username + " に応急処置用品を渡しました。").aqua())
 })

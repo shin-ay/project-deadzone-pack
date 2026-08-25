@@ -1,0 +1,5 @@
+{
+  "name": "山間集落補給令",
+  "objectives": ["highland_imports"],
+  "rewards": ["highland_exports"]
+}

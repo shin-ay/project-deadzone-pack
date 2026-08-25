@@ -2,10 +2,10 @@
 	default_hide_dependency_lines: false
 	default_quest_shape: "circle"
 	filename: "deadzone_mod_road_vehicles_01"
-	group: "A170000000000005"
+	group: "6A11000000000001"
 	icon: "mts:mtsofficialpack.wheellarge"
 	id: "6F3058C252B90171"
-	order_index: 20
+	order_index: 4
 	quest_links: [ ]
 	quests: [
 		{
@@ -14,7 +14,7 @@
 			id: "6500000000000001"
 			rewards: [
 				{
-					count: 64
+					count: 8
 					id: "6520000000000001"
 					item: "apocalypsenow:money"
 					type: "item"
@@ -44,13 +44,12 @@
 		}
 		{
 			dependencies: ["6500000000000001"]
-			subtitle: "解放条件: 「廃車再生の準備」を完了"
 			description: ["まずは四輪を接地させる。同じ規格のタイヤを4本揃え、予備も確保する。見た目だけ直っても1本欠ければ動かない。"]
 			icon: "mts:mtsofficialpack.wheellarge"
 			id: "6501000000000011"
 			rewards: [
 				{
-					count: 64
+					count: 8
 					id: "6521000000000011"
 					item: "apocalypsenow:money"
 					type: "item"
@@ -62,6 +61,7 @@
 					type: "item"
 				}
 			]
+			subtitle: "解放条件: 「廃車再生の準備」を完了"
 			tasks: [{
 				count: 4L
 				id: "6511000000000011"
@@ -74,29 +74,29 @@
 		}
 		{
 			dependencies: ["6501000000000011"]
-			subtitle: "解放条件: 「四輪・タイヤの確保」を完了"
 			description: ["車体に合うエンジンを載せる。Spark Plugと配線も忘れず、始動できる状態まで組み上げよう。"]
 			icon: "mts:mtsofficialpack.engineamci4"
 			id: "6501000000000012"
 			rewards: [
 				{
-					count: 64
+					count: 12
 					id: "6521000000000013"
 					item: "apocalypsenow:money"
 					type: "item"
 				}
 				{
 					id: "6521000000000014"
-					item: "mts:mtsofficialpack.engineamci4"
+					item: "mts:mtsofficialpack.repairkit"
 					type: "item"
 				}
 				{
-					count: 2
+					count: 1
 					id: "6521000000000015"
 					item: "mts:mtsofficialpack.sparkplug"
 					type: "item"
 				}
 			]
+			subtitle: "解放条件: 「四輪・タイヤの確保」を完了"
 			tasks: [
 				{
 					id: "6511000000000012"
@@ -122,28 +122,28 @@
 		}
 		{
 			dependencies: ["6501000000000012"]
-			subtitle: "解放条件: 「四輪・エンジン始動」を完了"
 			description: ["走るための部品はエンジンだけではない。運転席と燃料系を取り付け、実際に人が操作できる車へ戻す。"]
 			icon: "mts:mtsofficialpack.carseat_grey"
 			id: "6501000000000013"
 			rewards: [
 				{
-					count: 64
+					count: 12
 					id: "6521000000000016"
 					item: "apocalypsenow:money"
 					type: "item"
 				}
 				{
 					id: "6521000000000017"
-					item: "mts:mtsofficialpack.carseat_grey"
+					item: "mts:mtsofficialpack.repairkit"
 					type: "item"
 				}
 				{
 					id: "6521000000000018"
-					item: "mts:mtsofficialpack.fuelpump"
+					item: "minecraft:iron_ingot"
 					type: "item"
 				}
 			]
+			subtitle: "解放条件: 「四輪・エンジン始動」を完了"
 			tasks: [
 				{
 					id: "6511000000000015"
@@ -167,13 +167,12 @@
 		}
 		{
 			dependencies: ["6501000000000013"]
-			subtitle: "解放条件: 「四輪・座席と燃料系」を完了"
 			description: ["タイヤ、エンジン、座席、燃料系を揃えた。最後に燃料を補給して試走し、分隊輸送へ投入する。"]
 			icon: "mts:mtsofficialpack.repairkit"
 			id: "6501000000000014"
 			rewards: [
 				{
-					count: 64
+					count: 20
 					id: "6521000000000019"
 					item: "apocalypsenow:money"
 					type: "item"
@@ -196,6 +195,7 @@
 					type: "item"
 				}
 			]
+			subtitle: "解放条件: 「四輪・座席と燃料系」を完了"
 			tasks: [
 				{
 					count: 2L
@@ -215,29 +215,29 @@
 		}
 		{
 			dependencies: ["6500000000000001"]
-			subtitle: "解放条件: 「廃車再生の準備」を完了"
 			description: ["バイクは積載が少ない代わりに、瓦礫と狭い道を抜けやすい。まず工具、フレーム、前輪部品を確保する。"]
 			icon: "blocky_bikes:frame"
 			id: "6501000000000021"
 			rewards: [
 				{
-					count: 64
+					count: 8
 					id: "6521000000000021"
 					item: "apocalypsenow:money"
 					type: "item"
 				}
 				{
 					id: "6521000000000022"
-					item: "blocky_bikes:frame"
+					item: "minecraft:iron_ingot"
 					type: "item"
 				}
 				{
 					count: 2
 					id: "6521000000000023"
-					item: "blocky_bikes:wheels"
+					item: "minecraft:iron_ingot"
 					type: "item"
 				}
 			]
+			subtitle: "解放条件: 「廃車再生の準備」を完了"
 			tasks: [
 				{
 					id: "6511000000000021"
@@ -267,23 +267,23 @@
 		}
 		{
 			dependencies: ["6501000000000021"]
-			subtitle: "解放条件: 「バイク・足回り再生」を完了"
 			description: ["入門用エンジンを作業台で組み立てる。Piston、Connecting Rod、CrankcaseをToolkitで一つの機関へまとめる。"]
 			icon: "blocky_bikes:jawa_250engine"
 			id: "6501000000000022"
 			rewards: [
 				{
-					count: 64
+					count: 12
 					id: "6521000000000024"
 					item: "apocalypsenow:money"
 					type: "item"
 				}
 				{
 					id: "6521000000000025"
-					item: "blocky_bikes:jawa_250engine"
+					item: "minecraft:iron_ingot"
 					type: "item"
 				}
 			]
+			subtitle: "解放条件: 「バイク・足回り再生」を完了"
 			tasks: [
 				{
 					id: "6511000000000025"
@@ -312,13 +312,12 @@
 		}
 		{
 			dependencies: ["6501000000000022"]
-			subtitle: "解放条件: 「バイク・エンジン再生」を完了"
 			description: ["低TierのJawa 250はMechanical Crafterを使わず、作業台で完成できる。上位車種は後半設備用として残る。"]
 			icon: "blocky_bikes:jawa_250"
 			id: "6501000000000023"
 			rewards: [
 				{
-					count: 64
+					count: 16
 					id: "6521000000000026"
 					item: "apocalypsenow:money"
 					type: "item"
@@ -334,6 +333,7 @@
 					type: "item"
 				}
 			]
+			subtitle: "解放条件: 「バイク・エンジン再生」を完了"
 			tasks: [{
 				id: "6511000000000029"
 				item: "blocky_bikes:jawa_250"
@@ -345,13 +345,12 @@
 		}
 		{
 			dependencies: ["6501000000000023"]
-			subtitle: "解放条件: 「バイク・入門車完成」を完了"
 			description: ["入門車で運用を学んだら、用途に合わせて軽量車を選ぶ。Simsonは市街地、ForterXは荒れた郊外向け。"]
 			icon: "blocky_bikes:forterx_125"
 			id: "6501000000000024"
 			rewards: [
 				{
-					count: 64
+					count: 20
 					id: "6521000000000029"
 					item: "apocalypsenow:money"
 					type: "item"
@@ -369,6 +368,7 @@
 					type: "item"
 				}
 			]
+			subtitle: "解放条件: 「バイク・入門車完成」を完了"
 			tasks: [
 				{
 					id: "651100000000002A"
@@ -393,9 +393,10 @@
 			description: ["四輪輸送とバイク偵察の両方が稼働した。大量輸送と先行偵察を分担し、次は鉄道物流へ進む。"]
 			icon: "mts:mtsofficialpack.wheellarge"
 			id: "6500000000000004"
+			subtitle: "解放条件: 「四輪・廃車復旧完了」・「バイク・用途別車種」をすべて完了"
 			rewards: [
 				{
-					count: 64
+					count: 24
 					id: "6520000000000007"
 					item: "apocalypsenow:money"
 					type: "item"

@@ -1,0 +1,5219 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: "gear"
+	filename: "minecolonies_builder_upgrades_test_02"
+	group: "6A11000000000002"
+	icon: "minecolonies:blockhutbuilder"
+	id: "6D43020000000001"
+	order_index: 7
+	quest_links: [ ]
+	quests: [
+		{
+			can_repeat: true
+			dependencies: ["6D43010000000101"]
+			description: [
+				"基礎物資を納品し、Modular Hub様式のBuilder Lv2アップグレード資材を受領する。"
+				"同じ施設を増設できるよう、このクエストは何度でも再受諾できる。報酬は各周回につきパーティーで1回。"
+			]
+			icon: "minecraft:dark_oak_log"
+			id: "6AB22B18E3DF0182"
+			rewards: [
+				{
+					count: 2
+					id: "487FB0B057D5D2DD"
+					item: "minecolonies:blockminecoloniesrack"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 20
+					id: "206D028DB99E435A"
+					item: "minecraft:iron_bars"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "43EDFAF1533C5E45"
+					item: "minecraft:lantern"
+					team_reward: true
+					type: "item"
+				}
+			]
+			subtitle: "様式申告: Modular Hub / Builder Lv2｜解放条件: 「建築物資: Modular Hub Builder I」を完了"
+			tasks: [
+				{
+					consume_items: true
+					count: 48L
+					id: "491C58197C6B5C2E"
+					item: "minecraft:oak_log"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 48L
+					id: "379446D609EC2405"
+					item: "minecraft:cobblestone"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 12L
+					id: "22F0A53E247252BC"
+					item: "minecraft:bread"
+					type: "item"
+				}
+			]
+			title: "建築物資: Modular Hub Builder 2"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			can_repeat: true
+			description: [
+				"基礎物資を納品し、Modular Hub様式のBuilder Lv3アップグレード資材を受領する。"
+				"同じ施設を増設できるよう、このクエストは何度でも再受諾できる。報酬は各周回につきパーティーで1回。"
+			]
+			icon: "minecraft:dark_oak_log"
+			id: "5A905A8594D535DF"
+			rewards: [
+				{
+					count: 4
+					id: "458FD2A52D58EE81"
+					item: "minecolonies:blockminecoloniesrack"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 25
+					id: "12C639C5D823DA7A"
+					item: "minecraft:deepslate_tiles"
+					team_reward: true
+					type: "item"
+				}
+			]
+			subtitle: "様式申告: Modular Hub / Builder Lv3"
+			tasks: [
+				{
+					consume_items: true
+					count: 64L
+					id: "73BD70AAF0170FA5"
+					item: "minecraft:oak_log"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 64L
+					id: "370239702DA9D734"
+					item: "minecraft:cobblestone"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 16L
+					id: "38EEFB07817921C3"
+					item: "minecraft:bread"
+					type: "item"
+				}
+			]
+			title: "建築物資: Modular Hub Builder 3"
+			x: 0.0d
+			y: 2.0d
+		}
+		{
+			can_repeat: true
+			dependencies: ["5A905A8594D535DF"]
+			description: [
+				"基礎物資を納品し、Modular Hub様式のBuilder Lv4アップグレード資材を受領する。"
+				"同じ施設を増設できるよう、このクエストは何度でも再受諾できる。報酬は各周回につきパーティーで1回。"
+			]
+			icon: "minecraft:dark_oak_log"
+			id: "0636FBE0B4115F19"
+			rewards: [
+				{
+					count: 4
+					id: "27073530F7E5439E"
+					item: "minecolonies:blockminecoloniesrack"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 48
+					id: "499BC250B64D16A4"
+					item: "minecraft:deepslate_bricks"
+					team_reward: true
+					type: "item"
+				}
+			]
+			subtitle: "様式申告: Modular Hub / Builder Lv4｜解放条件: 「建築物資: Modular Hub Builder 3」を完了"
+			tasks: [
+				{
+					consume_items: true
+					count: 96L
+					id: "3F6D1F971E3D6569"
+					item: "minecraft:oak_log"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 96L
+					id: "5992E6C22853F00F"
+					item: "minecraft:cobblestone"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 24L
+					id: "4E83129F54EBAC41"
+					item: "minecraft:bread"
+					type: "item"
+				}
+			]
+			title: "建築物資: Modular Hub Builder 4"
+			x: 0.0d
+			y: 4.0d
+		}
+		{
+			can_repeat: true
+			description: [
+				"基礎物資を納品し、Modular Hub様式のBuilder Lv5アップグレード資材を受領する。"
+				"同じ施設を増設できるよう、このクエストは何度でも再受諾できる。報酬は各周回につきパーティーで1回。"
+			]
+			icon: "minecraft:dark_oak_log"
+			id: "651918C2F6CE00C7"
+			rewards: [
+				{
+					count: 4
+					id: "684274A35F51B00E"
+					item: "minecolonies:blockminecoloniesrack"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "02A0B6A4A942ED9D"
+					item: "minecraft:ender_chest"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 21
+					id: "7979CB802EEE8ECE"
+					item: "minecraft:mud_bricks"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 8
+					id: "1D792E441279C70F"
+					item: "minecraft:polished_deepslate"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 36
+					id: "38DF4EABEF26B30F"
+					item: "minecraft:polished_deepslate_slab"
+					team_reward: true
+					type: "item"
+				}
+			]
+			subtitle: "様式申告: Modular Hub / Builder Lv5"
+			tasks: [
+				{
+					consume_items: true
+					count: 128L
+					id: "63028C49A3CCF3E8"
+					item: "minecraft:oak_log"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 128L
+					id: "4DE8A86C59B2BAF3"
+					item: "minecraft:cobblestone"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 32L
+					id: "20C6037085E13B8A"
+					item: "minecraft:bread"
+					type: "item"
+				}
+			]
+			title: "建築物資: Modular Hub Builder 5"
+			x: 0.0d
+			y: 6.0d
+		}
+		{
+			can_repeat: true
+			dependencies: ["6D43010000000102"]
+			description: [
+				"基礎物資を納品し、lostcity様式のBuilder Lv2アップグレード資材を受領する。"
+				"同じ施設を増設できるよう、このクエストは何度でも再受諾できる。報酬は各周回につきパーティーで1回。"
+			]
+			icon: "minecraft:red_sandstone"
+			id: "0D3B40AD2AD5D9FB"
+			rewards: [
+				{
+					id: "513A552FE74D68DA"
+					item: "minecolonies:blockminecoloniesrack"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "78140CBF236243C9"
+					item: "minecraft:chiseled_red_sandstone"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 18
+					id: "232D71E77A6DD907"
+					item: "minecraft:cobblestone"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "2850D194B2557C99"
+					item: "minecraft:dead_bush"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 23
+					id: "2DFB21DE45E2F242"
+					item: "minecraft:oak_fence"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "04F6AB8EE595B23A"
+					item: "minecraft:oak_fence_gate"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "6F0F4B520D6D9EE6"
+					item: "minecraft:oak_sign"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 25
+					id: "1DD308A229FC720A"
+					item: "minecraft:oak_slab"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 13
+					id: "2545896106F8D8A0"
+					item: "minecraft:oak_stairs"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 6
+					id: "1012C4901AD85DE0"
+					item: "minecraft:oak_trapdoor"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 16
+					id: "6553F8C079044A85"
+					item: "minecraft:red_sand"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 10
+					id: "634C6716B3C08CAC"
+					item: "minecraft:red_sandstone"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 3
+					id: "005EA9C1774D028B"
+					item: "minecraft:red_sandstone_wall"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 15
+					id: "0EE815788011EEA5"
+					item: "minecraft:terracotta"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 5
+					id: "77698DC911CB0631"
+					item: "minecraft:torch"
+					team_reward: true
+					type: "item"
+				}
+			]
+			subtitle: "様式申告: lostcity / Builder Lv2｜解放条件: 「建築物資: lostcity Builder I」を完了"
+			tasks: [
+				{
+					consume_items: true
+					count: 48L
+					id: "3DDF1CE81945F2C7"
+					item: "minecraft:oak_log"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 48L
+					id: "1C9F60C088CC49A6"
+					item: "minecraft:cobblestone"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 12L
+					id: "10DA95F4166A7667"
+					item: "minecraft:bread"
+					type: "item"
+				}
+			]
+			title: "建築物資: lostcity Builder 2"
+			x: 4.0d
+			y: 0.0d
+		}
+		{
+			can_repeat: true
+			description: [
+				"基礎物資を納品し、lostcity様式のBuilder Lv3アップグレード資材を受領する。"
+				"同じ施設を増設できるよう、このクエストは何度でも再受諾できる。報酬は各周回につきパーティーで1回。"
+			]
+			icon: "minecraft:red_sandstone"
+			id: "710AE798A14B341E"
+			rewards: [
+				{
+					count: 37
+					id: "7CC78996A026A56E"
+					item: "domum_ornamentum:shingle"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "1A9F70C2B64A978D"
+					item: "minecolonies:blockminecoloniesrack"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "3454C168E7BFB78E"
+					item: "minecraft:allium"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "397D46BEF984D5FD"
+					item: "minecraft:brown_terracotta"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "212B721C81FEAA51"
+					item: "minecraft:cactus"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "4AAC0BCD3C8DE8A6"
+					item: "minecraft:chiseled_quartz_block"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 28
+					id: "73EC339983DA9F3F"
+					item: "minecraft:cut_red_sandstone_slab"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "0AB26FAA87E7E8EC"
+					item: "minecraft:flower_pot"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "561AEE0C98B0E044"
+					item: "minecraft:furnace"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 27
+					id: "32BF042664537B7B"
+					item: "minecraft:gray_terracotta"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "024970B8910B1849"
+					item: "minecraft:lapis_block"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 18
+					id: "166665E91DD71840"
+					item: "minecraft:light_gray_terracotta"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "5E1E7265B311C78D"
+					item: "minecraft:mossy_cobblestone"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 8
+					id: "77C88452A5D99105"
+					item: "minecraft:oak_door"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 13
+					id: "3D7D59B668141A84"
+					item: "minecraft:oak_slab"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "3023CD6B17305370"
+					item: "minecraft:oak_stairs"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 20
+					id: "067BBF61B80F6B4E"
+					item: "minecraft:oak_trapdoor"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 6
+					id: "73EC2229DB0F2BFD"
+					item: "minecraft:orange_terracotta"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 5
+					id: "7A78E74DCF9F1476"
+					item: "minecraft:red_sand"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 66
+					id: "6AAAAD02EA843F64"
+					item: "minecraft:red_sandstone"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 14
+					id: "3AA47A4C0A90D479"
+					item: "minecraft:red_sandstone_stairs"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 31
+					id: "1ECCDBCBDF376D4D"
+					item: "minecraft:smooth_red_sandstone"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 21
+					id: "561A6F6E50ABA357"
+					item: "minecraft:terracotta"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 12
+					id: "12BBCFBB862F6DE3"
+					item: "minecraft:torch"
+					team_reward: true
+					type: "item"
+				}
+			]
+			subtitle: "様式申告: lostcity / Builder Lv3"
+			tasks: [
+				{
+					consume_items: true
+					count: 64L
+					id: "4686B7DEE5D7F621"
+					item: "minecraft:oak_log"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 64L
+					id: "155BD3A9A92620D7"
+					item: "minecraft:cobblestone"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 16L
+					id: "16AF38382E9ECBA4"
+					item: "minecraft:bread"
+					type: "item"
+				}
+			]
+			title: "建築物資: lostcity Builder 3"
+			x: 4.0d
+			y: 2.0d
+		}
+		{
+			can_repeat: true
+			description: [
+				"基礎物資を納品し、lostcity様式のBuilder Lv4アップグレード資材を受領する。"
+				"同じ施設を増設できるよう、このクエストは何度でも再受諾できる。報酬は各周回につきパーティーで1回。"
+			]
+			icon: "minecraft:red_sandstone"
+			id: "61918A2D1450FDBE"
+			rewards: [
+				{
+					count: 41
+					id: "29519BC47C5058FA"
+					item: "domum_ornamentum:brown_bricks"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 7
+					id: "6FE996C8F578107E"
+					item: "domum_ornamentum:brown_stone_bricks"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 20
+					id: "0A6B83E2544AA163"
+					item: "domum_ornamentum:framed"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 31
+					id: "3BF35A28657564CD"
+					item: "domum_ornamentum:plain"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 43
+					id: "14F9443AD6FEB2C6"
+					item: "domum_ornamentum:shingle"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "365668592A3E7C88"
+					item: "domum_ornamentum:vanilla_slab_compat"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 26
+					id: "322E71939CFADEDA"
+					item: "domum_ornamentum:vanilla_stairs_compat"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "7DBE04AC868AE5E2"
+					item: "minecolonies:blockminecoloniesrack"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "320B96D0B5ED874E"
+					item: "minecolonies:colony_banner"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 8
+					id: "69DCAB4775302B90"
+					item: "minecraft:acacia_door"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 25
+					id: "3F3396904E3D9AC5"
+					item: "minecraft:acacia_slab"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 13
+					id: "67CD29342BDB4B6B"
+					item: "minecraft:acacia_stairs"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 28
+					id: "65AB9614B6411DD7"
+					item: "minecraft:acacia_trapdoor"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "440F5AE3336954CF"
+					item: "minecraft:campfire"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 4
+					id: "591D212FB639DF3F"
+					item: "minecraft:chain"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 18
+					id: "048664A4DAFA299D"
+					item: "minecraft:gray_glazed_terracotta"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 18
+					id: "74AE8B9B90BA956B"
+					item: "minecraft:iron_bars"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 9
+					id: "64E43AD225CDDDBE"
+					item: "minecraft:ladder"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 6
+					id: "105EC6BC8C2AAB76"
+					item: "minecraft:lantern"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "09B064EABBE3FCBF"
+					item: "minecraft:nether_gold_ore"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "0DC219DEEF6A1D20"
+					item: "minecraft:obsidian"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 24
+					id: "173E68D1B189E727"
+					item: "minecraft:stripped_acacia_log"
+					team_reward: true
+					type: "item"
+				}
+			]
+			subtitle: "様式申告: lostcity / Builder Lv4"
+			tasks: [
+				{
+					consume_items: true
+					count: 96L
+					id: "684DC82C865D21AB"
+					item: "minecraft:oak_log"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 96L
+					id: "3874F88C6575BFB2"
+					item: "minecraft:cobblestone"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 24L
+					id: "7C11484526BD789A"
+					item: "minecraft:bread"
+					type: "item"
+				}
+			]
+			title: "建築物資: lostcity Builder 4"
+			x: 4.0d
+			y: 4.0d
+		}
+		{
+			can_repeat: true
+			description: [
+				"基礎物資を納品し、lostcity様式のBuilder Lv5アップグレード資材を受領する。"
+				"同じ施設を増設できるよう、このクエストは何度でも再受諾できる。報酬は各周回につきパーティーで1回。"
+			]
+			icon: "minecraft:red_sandstone"
+			id: "50D6425C33809066"
+			rewards: [
+				{
+					count: 4
+					id: "69246B353F798447"
+					item: "domum_ornamentum:framed"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 8
+					id: "5403384131A5AF1C"
+					item: "domum_ornamentum:plain"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 24
+					id: "35E8E5A6D9FE6ED0"
+					item: "domum_ornamentum:shingle"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "4EAF96B7F3B2337A"
+					item: "minecolonies:blockminecoloniesrack"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 4
+					id: "2CCEADB39DE9F3B2"
+					item: "minecraft:acacia_slab"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 8
+					id: "3920172470AB2379"
+					item: "minecraft:acacia_trapdoor"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "5B3273E84E229110"
+					item: "minecraft:azure_bluet"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "15A7E99DEDBAD779"
+					item: "minecraft:bell"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "1B8FF4A106C2AF1E"
+					item: "minecraft:blue_orchid"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "6AFC1EBB076E6057"
+					item: "minecraft:chiseled_red_sandstone"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "3C4507BAC6E560EA"
+					item: "minecraft:cornflower"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "51905C1D60C30ABE"
+					item: "minecraft:crying_obsidian"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "1D656BCFCC70940F"
+					item: "minecraft:cut_red_sandstone"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "69D68C8C8262AB2D"
+					item: "minecraft:dark_prismarine"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "1BBC91C6DB6EF556"
+					item: "minecraft:end_rod"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 3
+					id: "14775AE04F62B194"
+					item: "minecraft:flower_pot"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 4
+					id: "7894AC599E5B8ABF"
+					item: "minecraft:gold_block"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "03BD702FF7E031A5"
+					item: "minecraft:gray_terracotta"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 8
+					id: "67B8CDC8D76DC61A"
+					item: "minecraft:lantern"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "5DE7F8656B0C2844"
+					item: "minecraft:lectern"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "476BFB7CC3C0AAAE"
+					item: "minecraft:orange_terracotta"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "1DE3E906B9803F1A"
+					item: "minecraft:purpur_block"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "4467576EFDB9AA8A"
+					item: "minecraft:red_terracotta"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "627B2C62ADA791B3"
+					item: "minecraft:terracotta"
+					team_reward: true
+					type: "item"
+				}
+			]
+			subtitle: "様式申告: lostcity / Builder Lv5"
+			tasks: [
+				{
+					consume_items: true
+					count: 128L
+					id: "344F89C9C74D3B90"
+					item: "minecraft:oak_log"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 128L
+					id: "7BB6A0821A288EDD"
+					item: "minecraft:cobblestone"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 32L
+					id: "6CA0F18E6BC2315A"
+					item: "minecraft:bread"
+					type: "item"
+				}
+			]
+			title: "建築物資: lostcity Builder 5"
+			x: 4.0d
+			y: 6.0d
+		}
+		{
+			can_repeat: true
+			dependencies: ["6D43010000000103"]
+			description: [
+				"基礎物資を納品し、fortress様式のBuilder Lv2アップグレード資材を受領する。"
+				"同じ施設を増設できるよう、このクエストは何度でも再受諾できる。報酬は各周回につきパーティーで1回。"
+			]
+			icon: "minecraft:dark_oak_planks"
+			id: "2F12F04C4EB7ADDB"
+			rewards: [
+				{
+					count: 2
+					id: "5D5CC97EBE9094C9"
+					item: "minecolonies:blockminecoloniesrack"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "597906334492E951"
+					item: "minecraft:birch_door"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "739E09F440C23008"
+					item: "minecraft:birch_log"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 4
+					id: "157F15F9B87A6CB9"
+					item: "minecraft:birch_planks"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 4
+					id: "14AB5F298310E02A"
+					item: "minecraft:coarse_dirt"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "079737392D78B3BB"
+					item: "minecraft:crafting_table"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 16
+					id: "0D6C92C8C9F17E1B"
+					item: "minecraft:dark_oak_fence"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 18
+					id: "7B5CAC020BC42378"
+					item: "minecraft:dark_oak_log"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 77
+					id: "4FC64C40E93BA7E3"
+					item: "minecraft:dark_oak_planks"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 5
+					id: "5B0814758E12A7B7"
+					item: "minecraft:dark_oak_stairs"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "4AA584A9A002C48E"
+					item: "minecraft:furnace"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "50E6F5DA0C70BCED"
+					item: "minecraft:oak_door"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "3F4BAFDB9F7691C8"
+					item: "minecraft:oak_log"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 4
+					id: "2A37D9277278D057"
+					item: "minecraft:oak_planks"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 6
+					id: "7A85440A71C12077"
+					item: "minecraft:torch"
+					team_reward: true
+					type: "item"
+				}
+			]
+			subtitle: "様式申告: fortress / Builder Lv2｜解放条件: 「建築物資: fortress Builder I」を完了"
+			tasks: [
+				{
+					consume_items: true
+					count: 48L
+					id: "1222D4EAF7B478EB"
+					item: "minecraft:oak_log"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 48L
+					id: "05A0F658D4286F0F"
+					item: "minecraft:cobblestone"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 12L
+					id: "6D7DA1F5377F8BC4"
+					item: "minecraft:bread"
+					type: "item"
+				}
+			]
+			title: "建築物資: fortress Builder 2"
+			x: 8.0d
+			y: 0.0d
+		}
+		{
+			can_repeat: true
+			description: [
+				"基礎物資を納品し、fortress様式のBuilder Lv3アップグレード資材を受領する。"
+				"同じ施設を増設できるよう、このクエストは何度でも再受諾できる。報酬は各周回につきパーティーで1回。"
+			]
+			icon: "minecraft:dark_oak_planks"
+			id: "6AB5D0CBE34A1C4B"
+			rewards: [
+				{
+					count: 3
+					id: "495CBBC5FD774FAB"
+					item: "domum_ornamentum:double_crossed"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 13
+					id: "3AA290C2F26F36D0"
+					item: "domum_ornamentum:framed"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 20
+					id: "1D54AE2DE762CC90"
+					item: "domum_ornamentum:plain"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 82
+					id: "7B1B9E566AC67AAF"
+					item: "domum_ornamentum:shingle"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "2827FC589820FCD2"
+					item: "domum_ornamentum:shingle_slab"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "43CE4471CF0503C9"
+					item: "minecolonies:blockminecoloniesrack"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "4CA3F5F77236CA4B"
+					item: "minecolonies:colony_banner"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "4F2580E6EE2F7AA4"
+					item: "minecraft:crafting_table"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "6A732B2F15AC5752"
+					item: "minecraft:dark_oak_door"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 8
+					id: "3293AD5FE4F6491F"
+					item: "minecraft:dark_oak_fence"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 10
+					id: "70C1514BCBA1EE9F"
+					item: "minecraft:dark_oak_log"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 199
+					id: "2CC976325A976D11"
+					item: "minecraft:dark_oak_planks"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 46
+					id: "59EF176E3A3B02EB"
+					item: "minecraft:dark_oak_stairs"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "4153EE4FEE4B4A56"
+					item: "minecraft:dark_oak_trapdoor"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "49B37C28CB42510E"
+					item: "minecraft:fern"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 4
+					id: "5EA6C3F90501A032"
+					item: "minecraft:flower_pot"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "46479B8BBE1E5EBA"
+					item: "minecraft:furnace"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "7ADCC6B27956944E"
+					item: "minecraft:glass_pane"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 3
+					id: "41BFF0133909A974"
+					item: "minecraft:ladder"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "4F663A4DED24BA74"
+					item: "minecraft:loom"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "5404B1028DE6748D"
+					item: "minecraft:nether_bricks"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "302A4884D0F784B1"
+					item: "minecraft:oak_sign"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "3C8C8FD0E78E433A"
+					item: "minecraft:oak_trapdoor"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 8
+					id: "3FBA1D0AF41BAFE7"
+					item: "minecraft:rail"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "44B97774DB3A24C1"
+					item: "minecraft:spruce_door"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "5A5F58C2711336EE"
+					item: "minecraft:spruce_log"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 32
+					id: "54DFF7CAE91404CD"
+					item: "minecraft:spruce_planks"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "40BD2D5FACCF1174"
+					item: "minecraft:spruce_stairs"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 11
+					id: "03B7CDEF423CA6F6"
+					item: "minecraft:stone_brick_stairs"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 101
+					id: "4FAD8A4B35762C2E"
+					item: "minecraft:stone_bricks"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 8
+					id: "3E5778CAC815A265"
+					item: "minecraft:torch"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 6
+					id: "4D15736A7688B488"
+					item: "minecraft:white_stained_glass_pane"
+					team_reward: true
+					type: "item"
+				}
+			]
+			subtitle: "様式申告: fortress / Builder Lv3"
+			tasks: [
+				{
+					consume_items: true
+					count: 64L
+					id: "76CC8CA8025B5DE6"
+					item: "minecraft:oak_log"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 64L
+					id: "6BB3E60A3275F8FD"
+					item: "minecraft:cobblestone"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 16L
+					id: "47CB02D93EA6ED86"
+					item: "minecraft:bread"
+					type: "item"
+				}
+			]
+			title: "建築物資: fortress Builder 3"
+			x: 8.0d
+			y: 2.0d
+		}
+		{
+			can_repeat: true
+			description: [
+				"基礎物資を納品し、fortress様式のBuilder Lv4アップグレード資材を受領する。"
+				"同じ施設を増設できるよう、このクエストは何度でも再受諾できる。報酬は各周回につきパーティーで1回。"
+			]
+			icon: "minecraft:dark_oak_planks"
+			id: "6E0B7FA3D58CD161"
+			rewards: [
+				{
+					count: 6
+					id: "6C94B36E71E1318F"
+					item: "domum_ornamentum:shingle"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "05D79DF7CBC9D45D"
+					item: "minecolonies:blockminecoloniesrack"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "763EF0C9134011E0"
+					item: "minecraft:bricks"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "1070BD93DC243BFA"
+					item: "minecraft:cauldron"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "059D408B597B1075"
+					item: "minecraft:chiseled_quartz_block"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 7
+					id: "43F8D00EE9D71DE2"
+					item: "minecraft:dark_oak_fence"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 9
+					id: "44AC1D890502397B"
+					item: "minecraft:dark_oak_planks"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "060EFDFC6F4401C3"
+					item: "minecraft:furnace"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 13
+					id: "2FB3C8A327522AFF"
+					item: "minecraft:glass_pane"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "366952C1287A8C4B"
+					item: "minecraft:jungle_door"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "4CA07B8D48BC1855"
+					item: "minecraft:jungle_log"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 4
+					id: "13F6A4936126C304"
+					item: "minecraft:jungle_planks"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 6
+					id: "1D5B7AB3E34F1FA5"
+					item: "minecraft:light_gray_carpet"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "6862110388E0EDEA"
+					item: "minecraft:nether_bricks"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "4A3D015FB4DAA0D9"
+					item: "minecraft:oak_trapdoor"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "5ABD27DCDC18E2BB"
+					item: "minecraft:prismarine_bricks"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "66C5E91B375695F3"
+					item: "minecraft:red_nether_bricks"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 16
+					id: "4C71B1B0F753FD13"
+					item: "minecraft:spruce_planks"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 8
+					id: "441D352B10176F8E"
+					item: "minecraft:stone_brick_stairs"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 92
+					id: "2E52BD1E26805DB5"
+					item: "minecraft:stone_bricks"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 4
+					id: "42138DFD30F3349A"
+					item: "minecraft:torch"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "1C776945FFAA13C8"
+					item: "minecraft:tripwire_hook"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 4
+					id: "7F8F93083CA94EAD"
+					item: "minecraft:white_stained_glass_pane"
+					team_reward: true
+					type: "item"
+				}
+			]
+			subtitle: "様式申告: fortress / Builder Lv4"
+			tasks: [
+				{
+					consume_items: true
+					count: 96L
+					id: "76ED4ED76C10919F"
+					item: "minecraft:oak_log"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 96L
+					id: "30C7D0D75B3207AC"
+					item: "minecraft:cobblestone"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 24L
+					id: "3061238D3B4AE06C"
+					item: "minecraft:bread"
+					type: "item"
+				}
+			]
+			title: "建築物資: fortress Builder 4"
+			x: 8.0d
+			y: 4.0d
+		}
+		{
+			can_repeat: true
+			description: [
+				"基礎物資を納品し、fortress様式のBuilder Lv5アップグレード資材を受領する。"
+				"同じ施設を増設できるよう、このクエストは何度でも再受諾できる。報酬は各周回につきパーティーで1回。"
+			]
+			icon: "minecraft:dark_oak_planks"
+			id: "6CFC0F6B02A4454B"
+			rewards: [
+				{
+					count: 3
+					id: "6D0F9E66DB42458C"
+					item: "domum_ornamentum:vanilla_stairs_compat"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "4E963E90E298FFFE"
+					item: "minecolonies:blockminecoloniesrack"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "7FED1414399017CD"
+					item: "minecraft:acacia_button"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "345D873315E338AB"
+					item: "minecraft:acacia_door"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 3
+					id: "62A7D271295961B4"
+					item: "minecraft:acacia_log"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "3EA3C620A6C115F8"
+					item: "minecraft:acacia_planks"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "65C1080261E36A6B"
+					item: "minecraft:acacia_sign"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "692C98B6B0184724"
+					item: "minecraft:allium"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "54A3026743BF53E7"
+					item: "minecraft:andesite"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "2FAAD40D0D7E7F66"
+					item: "minecraft:birch_button"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "75F367114C403AED"
+					item: "minecraft:birch_log"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "14DB88BEADF6E164"
+					item: "minecraft:birch_sign"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "3D3D42B1671CD87D"
+					item: "minecraft:chiseled_stone_bricks"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "491DFD256D894E81"
+					item: "minecraft:crimson_stem"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "35205353346D8E71"
+					item: "minecraft:crimson_trapdoor"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "0B5725E25046F50A"
+					item: "minecraft:dark_oak_button"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "35694B94DD830181"
+					item: "minecraft:dark_oak_log"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "54E438C7EC15364D"
+					item: "minecraft:dark_oak_sign"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "155EA462FDAA56AA"
+					item: "minecraft:dark_oak_trapdoor"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "2DF9C1B767A8F512"
+					item: "minecraft:diorite"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "0A9D365308F47299"
+					item: "minecraft:end_rod"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "3F4A4D23EE7B101E"
+					item: "minecraft:end_stone"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "7E2F102F63B9B6C6"
+					item: "minecraft:end_stone_bricks"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 4
+					id: "72345DE7D0E6FE5E"
+					item: "minecraft:flower_pot"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "4FC56B5155851B60"
+					item: "minecraft:furnace"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "08790AA88E66EB8B"
+					item: "minecraft:granite"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 8
+					id: "36CE54787A7D399C"
+					item: "minecraft:iron_bars"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "779F7CB0BBAB5363"
+					item: "minecraft:jungle_button"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "7E244DDA084D43C7"
+					item: "minecraft:jungle_log"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "6E1A0426FEE80F76"
+					item: "minecraft:jungle_sign"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "3E87C4E95BB482DA"
+					item: "minecraft:lantern"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 4
+					id: "6C84C7A0AC144538"
+					item: "minecraft:lilac"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "4C89E0BD52B5D5AC"
+					item: "minecraft:nether_bricks"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "49E253196B0BB6CC"
+					item: "minecraft:oak_button"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "7D0AA5A62E82BA82"
+					item: "minecraft:oak_log"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "466986E7615C4CC2"
+					item: "minecraft:oak_sign"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 5
+					id: "105C072565636EBD"
+					item: "minecraft:oak_trapdoor"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "2BC37E3D318D4B8E"
+					item: "minecraft:pink_tulip"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "0406CCEA88096AD5"
+					item: "minecraft:polished_andesite"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "7F7AED0FA9131C74"
+					item: "minecraft:polished_diorite"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "22EF20872606FD61"
+					item: "minecraft:polished_granite"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "1969D4427F2D88E5"
+					item: "minecraft:purpur_block"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "750E57C46A1EF8E4"
+					item: "minecraft:purpur_pillar"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "71BC74ADB3F77879"
+					item: "minecraft:quartz_pillar"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "1973379C06D3D64C"
+					item: "minecraft:sand"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "3878A7846D47CBCF"
+					item: "minecraft:sandstone"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "4EDDF56CE66E9514"
+					item: "minecraft:spruce_button"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "018DE3115F63A165"
+					item: "minecraft:spruce_log"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "5C10019B2FB72102"
+					item: "minecraft:spruce_sign"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "7B62213C6318C46D"
+					item: "minecraft:stone"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 8
+					id: "0BCC20C43C7A7363"
+					item: "minecraft:stone_brick_wall"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "263A7088FA9886FD"
+					item: "minecraft:stone_bricks"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "0649776B6650B8F7"
+					item: "minecraft:stripped_acacia_log"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "1E401121047F3384"
+					item: "minecraft:stripped_birch_log"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "35A78A3B7CACB0D4"
+					item: "minecraft:stripped_crimson_stem"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "267F73D27050812F"
+					item: "minecraft:stripped_dark_oak_log"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "682FC7B41C7E905D"
+					item: "minecraft:stripped_jungle_log"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "1669644A9B1C4C95"
+					item: "minecraft:stripped_oak_log"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "39E7666171F1EC11"
+					item: "minecraft:stripped_spruce_log"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "526AE3C4F4B15D24"
+					item: "minecraft:stripped_warped_stem"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 3
+					id: "19554ECB131DF739"
+					item: "minecraft:torch"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "74E82D968F0CAF83"
+					item: "minecraft:warped_stem"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "6DCC75024187D9B3"
+					item: "minecraft:warped_trapdoor"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "36EB6CA67B682B25"
+					item: "minecraft:white_banner"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "72DF30FC4649F32B"
+					item: "minecraft:white_carpet"
+					team_reward: true
+					type: "item"
+				}
+			]
+			subtitle: "様式申告: fortress / Builder Lv5"
+			tasks: [
+				{
+					consume_items: true
+					count: 128L
+					id: "5411F8D71B05D53F"
+					item: "minecraft:oak_log"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 128L
+					id: "55EBAC1E75B3327F"
+					item: "minecraft:cobblestone"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 32L
+					id: "01A65B9C41EE057F"
+					item: "minecraft:bread"
+					type: "item"
+				}
+			]
+			title: "建築物資: fortress Builder 5"
+			x: 8.0d
+			y: 6.0d
+		}
+		{
+			can_repeat: true
+			dependencies: ["6D43010000000104"]
+			description: [
+				"基礎物資を納品し、colonial様式のBuilder Lv2アップグレード資材を受領する。"
+				"同じ施設を増設できるよう、このクエストは何度でも再受諾できる。報酬は各周回につきパーティーで1回。"
+			]
+			icon: "minecraft:oak_log"
+			id: "48205F595805D4D9"
+			rewards: [
+				{
+					count: 19
+					id: "7CDB6BB1B1079248"
+					item: "domum_ornamentum:double_crossed"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 44
+					id: "72A3D2E3767E7DEB"
+					item: "domum_ornamentum:panel"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 32
+					id: "45D666A74C181296"
+					item: "domum_ornamentum:shingle"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 34
+					id: "146D63D5DAF45E9E"
+					item: "domum_ornamentum:shingle_slab"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 5
+					id: "4CE4268AB930D134"
+					item: "minecolonies:blockminecoloniesrack"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "72F7A15B4305EF0D"
+					item: "minecraft:acacia_planks"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "2540179394E3CF99"
+					item: "minecraft:chiseled_stone_bricks"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 3
+					id: "27C4582A16653E65"
+					item: "minecraft:cobblestone"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "0A624102F5EF8500"
+					item: "minecraft:cobblestone_stairs"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 3
+					id: "5582D39BC372F518"
+					item: "minecraft:dandelion"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 3
+					id: "0F96839B8AD1F44F"
+					item: "minecraft:diorite"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 32
+					id: "171405ED0D5C43E1"
+					item: "minecraft:glass_pane"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 46
+					id: "708BD45FB91FC091"
+					item: "minecraft:grass_block"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 69
+					id: "6EB2BF193607FD01"
+					item: "minecraft:gravel"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "384F8323A4901A92"
+					item: "minecraft:jack_o_lantern"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 4
+					id: "7FAD487A963806F0"
+					item: "minecraft:ladder"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 4
+					id: "4188392CEC13150B"
+					item: "minecraft:oak_fence"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 4
+					id: "748C24C0A01CBE37"
+					item: "minecraft:oak_pressure_plate"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "76219299D53A8599"
+					item: "minecraft:oak_slab"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "73299F27A9622EC9"
+					item: "minecraft:oak_wood"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "19C39C5CDE4EA785"
+					item: "minecraft:polished_diorite"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "14F15DF71B5F60DA"
+					item: "minecraft:polished_granite"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "286CCE4841D68387"
+					item: "minecraft:poppy"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 83
+					id: "4DEF18BAE82EC941"
+					item: "minecraft:spruce_log"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 6
+					id: "695298C5C4DAB929"
+					item: "minecraft:spruce_planks"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "161AB5A428528F0B"
+					item: "minecraft:spruce_slab"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 26
+					id: "743B8F1B135B10C4"
+					item: "minecraft:spruce_stairs"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 9
+					id: "20B87EB4E62E3B64"
+					item: "minecraft:stone"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "381774E819F3B1CE"
+					item: "minecraft:stonecutter"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "027ED8DB966DF88D"
+					item: "minecraft:stripped_acacia_wood"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "592A5858A63D0C52"
+					item: "minecraft:stripped_jungle_wood"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "30C7720902FF9FA3"
+					item: "minecraft:stripped_spruce_log"
+					team_reward: true
+					type: "item"
+				}
+			]
+			subtitle: "様式申告: colonial / Builder Lv2｜解放条件: 「建築物資: colonial Builder I」を完了"
+			tasks: [
+				{
+					consume_items: true
+					count: 48L
+					id: "4078B7DA482E25DB"
+					item: "minecraft:oak_log"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 48L
+					id: "52852849FDF566C9"
+					item: "minecraft:cobblestone"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 12L
+					id: "74AB1C248D48A94C"
+					item: "minecraft:bread"
+					type: "item"
+				}
+			]
+			title: "建築物資: colonial Builder 2"
+			x: 12.0d
+			y: 0.0d
+		}
+		{
+			can_repeat: true
+			dependencies: ["48205F595805D4D9"]
+			description: [
+				"基礎物資を納品し、colonial様式のBuilder Lv3アップグレード資材を受領する。"
+				"同じ施設を増設できるよう、このクエストは何度でも再受諾できる。報酬は各周回につきパーティーで1回。"
+			]
+			icon: "minecraft:oak_log"
+			id: "310EEAA167FD56D9"
+			rewards: [
+				{
+					id: "17FFD2FBDF850A2F"
+					item: "domum_ornamentum:architectscutter"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 18
+					id: "010ABE4CA288785A"
+					item: "domum_ornamentum:beige_bricks"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 39
+					id: "3387CC66322A394F"
+					item: "domum_ornamentum:blockpaperwall"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 26
+					id: "24847B42D84E369F"
+					item: "domum_ornamentum:double_crossed"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 5
+					id: "324EABD11A71A19A"
+					item: "domum_ornamentum:fancy_trapdoors"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 4
+					id: "32D9DB12F27106E3"
+					item: "domum_ornamentum:framed"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 39
+					id: "4B3D563E9C210105"
+					item: "domum_ornamentum:panel"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 23
+					id: "2535DD4A032BEA47"
+					item: "domum_ornamentum:shingle"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 15
+					id: "3BD85E264396059D"
+					item: "domum_ornamentum:shingle_slab"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 8
+					id: "7D51A7F239B89838"
+					item: "domum_ornamentum:vanilla_doors_compat"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 9
+					id: "5E7E91BEC6F74234"
+					item: "domum_ornamentum:vanilla_fence_compat"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 16
+					id: "255E795D41293DF1"
+					item: "domum_ornamentum:vanilla_stairs_compat"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "181F270BAFA4CC18"
+					item: "minecolonies:blockminecoloniesrack"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 40
+					id: "65FF9A1008347BA6"
+					item: "minecraft:brick_stairs"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 32
+					id: "7E31565FAFF2E6E8"
+					item: "minecraft:bricks"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "5592500B48C8B56C"
+					item: "minecraft:cauldron"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 12
+					id: "1FF6341BAE03FE09"
+					item: "minecraft:chain"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "48B195E9B4B45F8F"
+					item: "minecraft:chiseled_nether_bricks"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "4B816D9282A9F2E9"
+					item: "minecraft:chiseled_polished_blackstone"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "5082B93A1F991939"
+					item: "minecraft:chiseled_quartz_block"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "134B3422A0FB2ACD"
+					item: "minecraft:copper_block"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "50CA4E5AEFD44B5F"
+					item: "minecraft:crimson_planks"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "6DE6CBAD2D0575BE"
+					item: "minecraft:cut_copper"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 17
+					id: "5ED555B8359362F6"
+					item: "minecraft:gravel"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 8
+					id: "3BE9BE45B69F9743"
+					item: "minecraft:lantern"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "2A39A3791D21F632"
+					item: "minecraft:polished_andesite"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "460F72037539639B"
+					item: "minecraft:polished_andesite_stairs"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 17
+					id: "4FDE6B2D8FA8D251"
+					item: "minecraft:polished_deepslate"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 6
+					id: "612730E179056D8E"
+					item: "minecraft:polished_deepslate_stairs"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "70F8948C53ADEB7F"
+					item: "minecraft:smooth_stone"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "4BF063383CC639AC"
+					item: "minecraft:spruce_stairs"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 4
+					id: "0359CF7F4B5F1C1B"
+					item: "minecraft:stone_pressure_plate"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "634B4B6A359A219D"
+					item: "minecraft:stripped_dark_oak_wood"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 10
+					id: "4434EADA3AB1513F"
+					item: "minecraft:stripped_oak_log"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "5BC21B4868139C60"
+					item: "minecraft:stripped_oak_wood"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 70
+					id: "4550ADEF6F49B05F"
+					item: "minecraft:stripped_spruce_log"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "03BCC6CBABDA6369"
+					item: "minecraft:stripped_spruce_wood"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "08E77A4134D6F510"
+					item: "minecraft:warped_hyphae"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "023519A490AAC7EE"
+					item: "minecraft:warped_planks"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "38165BBC63FE0643"
+					item: "minecraft:waxed_copper_block"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "4459E992D76373FD"
+					item: "minecraft:waxed_cut_copper"
+					team_reward: true
+					type: "item"
+				}
+			]
+			subtitle: "様式申告: colonial / Builder Lv3｜解放条件: 「建築物資: colonial Builder 2」を完了"
+			tasks: [
+				{
+					consume_items: true
+					count: 64L
+					id: "732F4AD0DD541081"
+					item: "minecraft:oak_log"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 64L
+					id: "2F32269E50EF570D"
+					item: "minecraft:cobblestone"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 16L
+					id: "58B5447A12263C1E"
+					item: "minecraft:bread"
+					type: "item"
+				}
+			]
+			title: "建築物資: colonial Builder 3"
+			x: 12.0d
+			y: 2.0d
+		}
+		{
+			can_repeat: true
+			dependencies: ["310EEAA167FD56D9"]
+			description: [
+				"基礎物資を納品し、colonial様式のBuilder Lv4アップグレード資材を受領する。"
+				"同じ施設を増設できるよう、このクエストは何度でも再受諾できる。報酬は各周回につきパーティーで1回。"
+			]
+			icon: "minecraft:oak_log"
+			id: "1E9BF55923DCC66B"
+			rewards: [
+				{
+					id: "14876CD6B3D04A12"
+					item: "domum_ornamentum:blockpaperwall"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "6CD4FD54E6D74769"
+					item: "domum_ornamentum:brown_stone_bricks"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "6200080E73FA459C"
+					item: "domum_ornamentum:double_crossed"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 4
+					id: "34C26AC4CE964A0D"
+					item: "domum_ornamentum:fancy_door"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 7
+					id: "7848664032179C55"
+					item: "domum_ornamentum:vanilla_slab_compat"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 8
+					id: "56E73800558521CA"
+					item: "domum_ornamentum:vanilla_stairs_compat"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "24C5A3EA963D7CAB"
+					item: "minecolonies:blockminecoloniesrack"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "4357EE1C77A04357"
+					item: "minecraft:amethyst_block"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 90
+					id: "1EC6217AFBD9D677"
+					item: "minecraft:black_terracotta"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "51A33275B02D6724"
+					item: "minecraft:bricks"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "324EA64A5412D5EC"
+					item: "minecraft:calcite"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "626EDB4227181DD8"
+					item: "minecraft:chain"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "4555B140C167D029"
+					item: "minecraft:copper_block"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "484A70B5FBA3FC79"
+					item: "minecraft:cut_copper"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 4
+					id: "173053904C2C79FB"
+					item: "minecraft:dark_oak_stairs"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "1BEFC2BA0A720988"
+					item: "minecraft:dark_prismarine"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "437ABC9CF0D9E24B"
+					item: "minecraft:daylight_detector"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 3
+					id: "76AF62CC07B2A9AF"
+					item: "minecraft:lantern"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 4
+					id: "3D2D5CF15A1D9DC3"
+					item: "minecraft:mangrove_door"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 9
+					id: "0C9CCC6556429C9F"
+					item: "minecraft:polished_deepslate"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "48235B057F23BB58"
+					item: "minecraft:polished_deepslate_stairs"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "542A96D5272E8BD8"
+					item: "minecraft:prismarine_bricks"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "098E9128B38F7B0F"
+					item: "minecraft:red_nether_bricks"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "67155DDF0995270D"
+					item: "minecraft:redstone_block"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "413C89B5328B12E0"
+					item: "minecraft:redstone_lamp"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 5
+					id: "44B8F0924E26E865"
+					item: "minecraft:soul_lantern"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 20
+					id: "0D88172D5C864E9E"
+					item: "minecraft:stripped_dark_oak_log"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "18FF82615B60EF8A"
+					item: "minecraft:waxed_copper_block"
+					team_reward: true
+					type: "item"
+				}
+			]
+			subtitle: "様式申告: colonial / Builder Lv4｜解放条件: 「建築物資: colonial Builder 3」を完了"
+			tasks: [
+				{
+					consume_items: true
+					count: 96L
+					id: "3B44E51CEAED15F0"
+					item: "minecraft:oak_log"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 96L
+					id: "2B0C4E11801099EE"
+					item: "minecraft:cobblestone"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 24L
+					id: "5354EB14BA087E95"
+					item: "minecraft:bread"
+					type: "item"
+				}
+			]
+			title: "建築物資: colonial Builder 4"
+			x: 12.0d
+			y: 4.0d
+		}
+		{
+			can_repeat: true
+			dependencies: ["1E9BF55923DCC66B"]
+			description: [
+				"基礎物資を納品し、colonial様式のBuilder Lv5アップグレード資材を受領する。"
+				"同じ施設を増設できるよう、このクエストは何度でも再受諾できる。報酬は各周回につきパーティーで1回。"
+			]
+			icon: "minecraft:oak_log"
+			id: "411AB8BE639BE9F9"
+			rewards: [
+				{
+					id: "173ADE604844285C"
+					item: "domum_ornamentum:double_crossed"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 3
+					id: "34595BBD8D9F255F"
+					item: "domum_ornamentum:fancy_trapdoors"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "48F987C9F023DBF5"
+					item: "domum_ornamentum:panel"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 48
+					id: "71356FACDC13F918"
+					item: "domum_ornamentum:plain"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "4E6D42D0B4CCE818"
+					item: "domum_ornamentum:shingle"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 5
+					id: "030D494DBBFEEA45"
+					item: "domum_ornamentum:shingle_slab"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 8
+					id: "19361451532161F3"
+					item: "domum_ornamentum:vanilla_doors_compat"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "2C9D9A785BA1E4C8"
+					item: "minecolonies:blockminecoloniesrack"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "18A5EC4C437301F7"
+					item: "minecraft:brick_slab"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "3B2531EA35D5C03B"
+					item: "minecraft:brick_stairs"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "46062E12F89A5043"
+					item: "minecraft:end_rod"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "551E1F822450A206"
+					item: "minecraft:end_stone_bricks"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "326F131F9094AB19"
+					item: "minecraft:purpur_block"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "173D35F9291F8B7C"
+					item: "minecraft:purpur_pillar"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "67FE3F2F9F181CC8"
+					item: "minecraft:red_nether_bricks"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 4
+					id: "7735994D99451DE8"
+					item: "minecraft:stripped_dark_oak_log"
+					team_reward: true
+					type: "item"
+				}
+			]
+			subtitle: "様式申告: colonial / Builder Lv5｜解放条件: 「建築物資: colonial Builder 4」を完了"
+			tasks: [
+				{
+					consume_items: true
+					count: 128L
+					id: "0D8F4ECEFCB9B394"
+					item: "minecraft:oak_log"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 128L
+					id: "22972C33A0064A79"
+					item: "minecraft:cobblestone"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 32L
+					id: "56163798E2490CCF"
+					item: "minecraft:bread"
+					type: "item"
+				}
+			]
+			title: "建築物資: colonial Builder 5"
+			x: 12.0d
+			y: 6.0d
+		}
+		{
+			can_repeat: true
+			dependencies: ["6D43010000000105"]
+			description: [
+				"基礎物資を納品し、spacewars様式のBuilder Lv2アップグレード資材を受領する。"
+				"同じ施設を増設できるよう、このクエストは何度でも再受諾できる。報酬は各周回につきパーティーで1回。"
+			]
+			icon: "minecraft:sandstone"
+			id: "38B24F879C355F57"
+			rewards: [
+				{
+					count: 5
+					id: "2B9CA2D09CA9FCC3"
+					item: "domum_ornamentum:vanilla_fence_compat"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "43E3C022C007BAAF"
+					item: "minecolonies:blockminecoloniesrack"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "29895FB499EC75F7"
+					item: "minecraft:cut_sandstone"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 8
+					id: "326E27086F463C45"
+					item: "minecraft:gravel"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 3
+					id: "27E77AB2CB465EAB"
+					item: "minecraft:jungle_log"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 3
+					id: "7465A8BB6C12BD2B"
+					item: "minecraft:oak_log"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 38
+					id: "3A93017336D96D81"
+					item: "minecraft:sandstone"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "196AE16F7DB4AD02"
+					item: "minecraft:sandstone_stairs"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 3
+					id: "5341CC3E8549A96C"
+					item: "minecraft:spruce_log"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 4
+					id: "23DCD322AA96CB2E"
+					item: "minecraft:stone"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 9
+					id: "233EE271A8D56B58"
+					item: "minecraft:torch"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 4
+					id: "24A2E50D849FCDE1"
+					item: "minecraft:white_wool"
+					team_reward: true
+					type: "item"
+				}
+			]
+			subtitle: "様式申告: spacewars / Builder Lv2｜解放条件: 「建築物資: spacewars Builder I」を完了"
+			tasks: [
+				{
+					consume_items: true
+					count: 48L
+					id: "03479F19702E879D"
+					item: "minecraft:oak_log"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 48L
+					id: "7289B8A19FB14B74"
+					item: "minecraft:cobblestone"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 12L
+					id: "0F3D75DD6D35AA13"
+					item: "minecraft:bread"
+					type: "item"
+				}
+			]
+			title: "建築物資: spacewars Builder 2"
+			x: 16.0d
+			y: 0.0d
+		}
+		{
+			can_repeat: true
+			description: [
+				"基礎物資を納品し、spacewars様式のBuilder Lv3アップグレード資材を受領する。"
+				"同じ施設を増設できるよう、このクエストは何度でも再受諾できる。報酬は各周回につきパーティーで1回。"
+			]
+			icon: "minecraft:sandstone"
+			id: "46C2335AFE510D07"
+			rewards: [
+				{
+					count: 15
+					id: "053646D14CF26252"
+					item: "domum_ornamentum:vanilla_fence_compat"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "1191CA5C056DC28E"
+					item: "minecolonies:blockminecoloniesrack"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "1CEC6B08ADD94ABB"
+					item: "minecraft:acacia_log"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 4
+					id: "43296B18AF5AE6B4"
+					item: "minecraft:black_wool"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 3
+					id: "7BC1691F99F117E5"
+					item: "minecraft:bricks"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 3
+					id: "2B42419D8E1E1997"
+					item: "minecraft:brown_wool"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 5
+					id: "0A1AC8736167E602"
+					item: "minecraft:cut_sandstone"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "613BDE7EBFC8523C"
+					item: "minecraft:dark_oak_log"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "15E8AC846B5C3553"
+					item: "minecraft:green_wool"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 4
+					id: "5F6341E04087D172"
+					item: "minecraft:polished_andesite"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 82
+					id: "2F17BAAE208427EC"
+					item: "minecraft:polished_diorite"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 4
+					id: "0D8430CAFADE03B8"
+					item: "minecraft:polished_granite"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "131340868C29B902"
+					item: "minecraft:sandstone"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 32
+					id: "01220DFF5450A6DD"
+					item: "minecraft:sandstone_slab"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 23
+					id: "2AD4569BD1E783AA"
+					item: "minecraft:torch"
+					team_reward: true
+					type: "item"
+				}
+			]
+			subtitle: "様式申告: spacewars / Builder Lv3"
+			tasks: [
+				{
+					consume_items: true
+					count: 64L
+					id: "1AB114C3D8E69D6A"
+					item: "minecraft:oak_log"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 64L
+					id: "56643C0F59E5ABFA"
+					item: "minecraft:cobblestone"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 16L
+					id: "07E41C4E1EA6C045"
+					item: "minecraft:bread"
+					type: "item"
+				}
+			]
+			title: "建築物資: spacewars Builder 3"
+			x: 16.0d
+			y: 2.0d
+		}
+		{
+			can_repeat: true
+			description: [
+				"基礎物資を納品し、spacewars様式のBuilder Lv4アップグレード資材を受領する。"
+				"同じ施設を増設できるよう、このクエストは何度でも再受諾できる。報酬は各周回につきパーティーで1回。"
+			]
+			icon: "minecraft:sandstone"
+			id: "6FBE218AEB519C7B"
+			rewards: [
+				{
+					count: 21
+					id: "2122831AD863151B"
+					item: "domum_ornamentum:vanilla_fence_compat"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "43E0677801F87989"
+					item: "minecolonies:blockminecoloniesrack"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 7
+					id: "6DB2C8BE10D517C4"
+					item: "minecraft:black_wool"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "3B200023AC8008D7"
+					item: "minecraft:brown_wool"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 39
+					id: "4F4930622B2039D0"
+					item: "minecraft:cut_sandstone"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 3
+					id: "49E4447FE0E1A1DD"
+					item: "minecraft:glowstone"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 6
+					id: "01E83F169CC1F21B"
+					item: "minecraft:green_wool"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 4
+					id: "6612ED43B0DF164C"
+					item: "minecraft:mossy_cobblestone"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 4
+					id: "7B18E76D77C24C64"
+					item: "minecraft:nether_bricks"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 4
+					id: "11E9DBCDB4ECF0BE"
+					item: "minecraft:polished_andesite"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 32
+					id: "33FED53CEECE52A9"
+					item: "minecraft:polished_diorite"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 10
+					id: "2FD0E8CAF2102DA9"
+					item: "minecraft:polished_granite"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 211
+					id: "4B165D41756982BA"
+					item: "minecraft:sandstone"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 24
+					id: "121D463F0F232642"
+					item: "minecraft:sandstone_stairs"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 4
+					id: "7F65660AA0A6E65F"
+					item: "minecraft:soul_sand"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 7
+					id: "0D18C0F47BA97577"
+					item: "minecraft:stone_bricks"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 23
+					id: "24C38BB8202FDF70"
+					item: "minecraft:torch"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 4
+					id: "6174F5089BEF73F9"
+					item: "minecraft:white_wool"
+					team_reward: true
+					type: "item"
+				}
+			]
+			subtitle: "様式申告: spacewars / Builder Lv4"
+			tasks: [
+				{
+					consume_items: true
+					count: 96L
+					id: "2825ABF30213D93E"
+					item: "minecraft:oak_log"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 96L
+					id: "3341BAF35779F1DF"
+					item: "minecraft:cobblestone"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 24L
+					id: "1F0A840CEC9B76CE"
+					item: "minecraft:bread"
+					type: "item"
+				}
+			]
+			title: "建築物資: spacewars Builder 4"
+			x: 16.0d
+			y: 4.0d
+		}
+		{
+			can_repeat: true
+			dependencies: ["6FBE218AEB519C7B"]
+			description: [
+				"基礎物資を納品し、spacewars様式のBuilder Lv5アップグレード資材を受領する。"
+				"同じ施設を増設できるよう、このクエストは何度でも再受諾できる。報酬は各周回につきパーティーで1回。"
+			]
+			icon: "minecraft:sandstone"
+			id: "324637CF1950B16B"
+			rewards: [
+				{
+					count: 2
+					id: "6E080A0FBC2F0B95"
+					item: "domum_ornamentum:cactus_extra"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 8
+					id: "02D944625477685E"
+					item: "minecolonies:blockminecoloniesrack"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 4
+					id: "3AEEBF05788107AD"
+					item: "minecraft:acacia_log"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "1EB1F07CBC7E96FF"
+					item: "minecraft:acacia_planks"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 45
+					id: "26E1DDAD515BC3C6"
+					item: "minecraft:birch_fence"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "18235383079C2B7D"
+					item: "minecraft:birch_log"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "1CB2516EDF6B3663"
+					item: "minecraft:birch_planks"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 9
+					id: "4E41A23CC584A825"
+					item: "minecraft:bricks"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 7
+					id: "0C6DD883D52B2F3E"
+					item: "minecraft:chiseled_sandstone"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 4
+					id: "0B6A093BECCC5E66"
+					item: "minecraft:cobblestone"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 73
+					id: "530265C989DB4C2B"
+					item: "minecraft:cut_sandstone"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 3
+					id: "71CA6BF6861A00C6"
+					item: "minecraft:cyan_wool"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 3
+					id: "55212E677DF72B07"
+					item: "minecraft:dark_oak_log"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 3
+					id: "69EC44F797301346"
+					item: "minecraft:dark_oak_planks"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 10
+					id: "1D05B2C56A2861C6"
+					item: "minecraft:glowstone"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "0542CA9084335AA1"
+					item: "minecraft:jungle_log"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "12019FEC663923A6"
+					item: "minecraft:jungle_planks"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 44
+					id: "03361F315A731646"
+					item: "minecraft:lantern"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "554B395080C1433E"
+					item: "minecraft:oak_log"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "44E211D946D832DC"
+					item: "minecraft:oak_planks"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 13
+					id: "2AE6D3932AD5B0F1"
+					item: "minecraft:polished_diorite"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "1CF2791F4E271CAD"
+					item: "minecraft:purpur_block"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "726ABA42B7B269D2"
+					item: "minecraft:purpur_pillar"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 3
+					id: "10EE73718EFDBAE2"
+					item: "minecraft:quartz_block"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 3
+					id: "77AA3EBB64DD1D8C"
+					item: "minecraft:redstone_torch"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 167
+					id: "6A3572BE82D1281E"
+					item: "minecraft:sandstone"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 23
+					id: "619D7A83341E03B3"
+					item: "minecraft:sandstone_stairs"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "29384C42C1A04563"
+					item: "minecraft:smooth_sandstone_slab"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 4
+					id: "5145E32018E9FE33"
+					item: "minecraft:smooth_stone"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "48DAEF710C9A01AD"
+					item: "minecraft:spruce_log"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "6B46E9F2DACCB389"
+					item: "minecraft:spruce_planks"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 6
+					id: "220F8714EB689AD8"
+					item: "minecraft:stone"
+					team_reward: true
+					type: "item"
+				}
+			]
+			subtitle: "様式申告: spacewars / Builder Lv5｜解放条件: 「建築物資: spacewars Builder 4」を完了"
+			tasks: [
+				{
+					consume_items: true
+					count: 128L
+					id: "653CB559D6F1BFEC"
+					item: "minecraft:oak_log"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 128L
+					id: "0DF9913A7DE186B3"
+					item: "minecraft:cobblestone"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 32L
+					id: "6DAFD2FF92E3CED7"
+					item: "minecraft:bread"
+					type: "item"
+				}
+			]
+			title: "建築物資: spacewars Builder 5"
+			x: 16.0d
+			y: 6.0d
+		}
+		{
+			can_repeat: true
+			dependencies: ["6D43010000000106"]
+			description: [
+				"基礎物資を納品し、medievaloak様式のBuilder Lv2アップグレード資材を受領する。"
+				"同じ施設を増設できるよう、このクエストは何度でも再受諾できる。報酬は各周回につきパーティーで1回。"
+			]
+			icon: "minecraft:oak_stairs"
+			id: "35C7CBC7637216AF"
+			rewards: [
+				{
+					count: 3
+					id: "6611E5925590F7C4"
+					item: "domum_ornamentum:double_crossed"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 8
+					id: "262AB53F74981799"
+					item: "domum_ornamentum:one_crossed_lr"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 8
+					id: "0646FEB7C1679F9F"
+					item: "domum_ornamentum:one_crossed_rl"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 7
+					id: "13D5C548616CBECE"
+					item: "domum_ornamentum:plain"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "187EC4EE355F3512"
+					item: "minecolonies:blockminecoloniesrack"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 8
+					id: "1C1D103790F574DC"
+					item: "minecraft:coarse_dirt"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 218
+					id: "060FA35272932836"
+					item: "minecraft:cobblestone"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 12
+					id: "539E985AE02A9111"
+					item: "minecraft:cobblestone_slab"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 46
+					id: "18A6300841E88712"
+					item: "minecraft:cobblestone_stairs"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "52D4510BCD04E5A4"
+					item: "minecraft:crafting_table"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "152EF29D0D13F0D6"
+					item: "minecraft:cut_sandstone"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 17
+					id: "144BFC425AB11F56"
+					item: "minecraft:dirt"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "0D893D25D6575D5D"
+					item: "minecraft:furnace"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "07DC557D951AED65"
+					item: "minecraft:glass"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "15E16EF287999E10"
+					item: "minecraft:glass_pane"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 12
+					id: "329467AF9EB14F33"
+					item: "minecraft:gravel"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 7
+					id: "7E6B8C01282893D5"
+					item: "minecraft:oak_fence"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 46
+					id: "3CE46629EBB4614B"
+					item: "minecraft:oak_log"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 30
+					id: "64C474CEACEC2800"
+					item: "minecraft:oak_slab"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 81
+					id: "6CE68C726DBD635D"
+					item: "minecraft:oak_stairs"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "1D8C0D7AB4941229"
+					item: "minecraft:oak_trapdoor"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 11
+					id: "6E86A6AE0D5A6D13"
+					item: "minecraft:polished_andesite"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "0B8F12C842FA5175"
+					item: "minecraft:polished_diorite"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "76C7A2678E5F2828"
+					item: "minecraft:polished_granite"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "3BD0574EE000A927"
+					item: "minecraft:sand"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "5B07892B5371A053"
+					item: "minecraft:sandstone"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 5
+					id: "5CBEC34877FEEB25"
+					item: "minecraft:stone"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 3
+					id: "7C0214383574AED3"
+					item: "minecraft:torch"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "0CA1B15FD09E2397"
+					item: "minecraft:white_wool"
+					team_reward: true
+					type: "item"
+				}
+			]
+			subtitle: "様式申告: medievaloak / Builder Lv2｜解放条件: 「建築物資: medievaloak Builder I」を完了"
+			tasks: [
+				{
+					consume_items: true
+					count: 48L
+					id: "577276602390CD6B"
+					item: "minecraft:oak_log"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 48L
+					id: "23B054CEAAB91C60"
+					item: "minecraft:cobblestone"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 12L
+					id: "1FE269FE1F6DDE4B"
+					item: "minecraft:bread"
+					type: "item"
+				}
+			]
+			title: "建築物資: medievaloak Builder 2"
+			x: 20.0d
+			y: 0.0d
+		}
+		{
+			can_repeat: true
+			dependencies: ["35C7CBC7637216AF"]
+			description: [
+				"基礎物資を納品し、medievaloak様式のBuilder Lv3アップグレード資材を受領する。"
+				"同じ施設を増設できるよう、このクエストは何度でも再受諾できる。報酬は各周回につきパーティーで1回。"
+			]
+			icon: "minecraft:oak_stairs"
+			id: "20D232F5D73116DC"
+			rewards: [
+				{
+					count: 15
+					id: "1A475969568D9A39"
+					item: "domum_ornamentum:one_crossed_lr"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 15
+					id: "04CF3013D29B45B9"
+					item: "domum_ornamentum:one_crossed_rl"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 14
+					id: "3D4D378969A08144"
+					item: "domum_ornamentum:plain"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 54
+					id: "5F3979176A864F0E"
+					item: "domum_ornamentum:shingle"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 18
+					id: "155B56D749C92EC7"
+					item: "domum_ornamentum:shingle_slab"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "5A3A58FBF5759F7B"
+					item: "minecolonies:blockminecoloniesrack"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "5A564D03F431E211"
+					item: "minecraft:birch_log"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "2A2B1213F3C0E8C8"
+					item: "minecraft:birch_planks"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "631C1D2DEAAEF22A"
+					item: "minecraft:black_wool"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "1C23811D391E314F"
+					item: "minecraft:blue_wool"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "711B00B6262179CB"
+					item: "minecraft:brown_wool"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "08386DACC6A4FA2A"
+					item: "minecraft:cauldron"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 3
+					id: "6CC410B7E2DBD237"
+					item: "minecraft:chain"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "745EC19464A0B488"
+					item: "minecraft:chiseled_sandstone"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 115
+					id: "426EF7894D894398"
+					item: "minecraft:cobblestone"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 19
+					id: "115973F849F791E6"
+					item: "minecraft:cobblestone_slab"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 14
+					id: "6A0311A557701CE5"
+					item: "minecraft:cobblestone_stairs"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 6
+					id: "42EC9610E718FD6C"
+					item: "minecraft:dirt"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "7EF4BB13F50A5046"
+					item: "minecraft:glass"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "1B3290C4D90988C1"
+					item: "minecraft:glass_pane"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 6
+					id: "63549DC829E5227D"
+					item: "minecraft:gravel"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "191C2180FFB13A24"
+					item: "minecraft:green_wool"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "4C2BD21AADCDA14C"
+					item: "minecraft:ladder"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 15
+					id: "2336E6646B6ABABC"
+					item: "minecraft:oak_fence"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "7EED60E34C136F27"
+					item: "minecraft:oak_fence_gate"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 88
+					id: "0C75C876BFD2D5CE"
+					item: "minecraft:oak_log"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 4
+					id: "17D492B78A543F45"
+					item: "minecraft:oak_planks"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 19
+					id: "4FA7FB841E3C8E96"
+					item: "minecraft:oak_slab"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 53
+					id: "414A7BD6F30EC0A1"
+					item: "minecraft:oak_stairs"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 6
+					id: "3ECC17507401E09A"
+					item: "minecraft:oak_trapdoor"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "073D063BD172C742"
+					item: "minecraft:orange_wool"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 9
+					id: "7D52CB63EB401819"
+					item: "minecraft:polished_andesite"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "700DE1D1EA8CB29C"
+					item: "minecraft:polished_granite"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "787A5309DC347D98"
+					item: "minecraft:purple_wool"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "2DD0D34337F8C9AA"
+					item: "minecraft:rail"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "189B7434ED04C560"
+					item: "minecraft:red_wool"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 3
+					id: "15AE3D72459908B2"
+					item: "minecraft:spruce_log"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "78F0659A36C68087"
+					item: "minecraft:stone"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 34
+					id: "1E7BE013E002CBD6"
+					item: "minecraft:stone_bricks"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 6
+					id: "6FFF605F87D89A0D"
+					item: "minecraft:torch"
+					team_reward: true
+					type: "item"
+				}
+			]
+			subtitle: "様式申告: medievaloak / Builder Lv3｜解放条件: 「建築物資: medievaloak Builder 2」を完了"
+			tasks: [
+				{
+					consume_items: true
+					count: 64L
+					id: "267888461A4A43DE"
+					item: "minecraft:oak_log"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 64L
+					id: "4D18BF834E664E4F"
+					item: "minecraft:cobblestone"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 16L
+					id: "6FEB841BA7D1118C"
+					item: "minecraft:bread"
+					type: "item"
+				}
+			]
+			title: "建築物資: medievaloak Builder 3"
+			x: 20.0d
+			y: 2.0d
+		}
+		{
+			can_repeat: true
+			dependencies: ["20D232F5D73116DC"]
+			description: [
+				"基礎物資を納品し、medievaloak様式のBuilder Lv4アップグレード資材を受領する。"
+				"同じ施設を増設できるよう、このクエストは何度でも再受諾できる。報酬は各周回につきパーティーで1回。"
+			]
+			icon: "minecraft:oak_stairs"
+			id: "126E8DD83CDA5ADD"
+			rewards: [
+				{
+					count: 20
+					id: "47C9461E7A3CD841"
+					item: "domum_ornamentum:one_crossed_lr"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 16
+					id: "4256F06A0C232E7F"
+					item: "domum_ornamentum:one_crossed_rl"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 32
+					id: "14B2967DE276B270"
+					item: "domum_ornamentum:plain"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 84
+					id: "5D536816B9CD96B0"
+					item: "domum_ornamentum:shingle"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 13
+					id: "7C3BB704550434A5"
+					item: "domum_ornamentum:shingle_slab"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "12EAF3C119C99844"
+					item: "minecolonies:blockminecoloniesrack"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "5E9ABA0365BAC59A"
+					item: "minecraft:andesite_wall"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "2C9E56CBF4EEF1A2"
+					item: "minecraft:birch_log"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "286D2B2BB7384F51"
+					item: "minecraft:black_carpet"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "644B1A4CBAB1E366"
+					item: "minecraft:black_concrete_powder"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "4957220606334A03"
+					item: "minecraft:blackstone"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "4088D9F9CA60A4EC"
+					item: "minecraft:bricks"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "551B88EE6FF72B56"
+					item: "minecraft:campfire"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 3
+					id: "24CD9058399C8B94"
+					item: "minecraft:chain"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "6A6C1439F5A3E093"
+					item: "minecraft:chiseled_stone_bricks"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 89
+					id: "5F9C1D40B6853A1F"
+					item: "minecraft:cobblestone"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 3
+					id: "0C8667844E9A9BE2"
+					item: "minecraft:cobblestone_slab"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 5
+					id: "33397691D05039A5"
+					item: "minecraft:cobblestone_stairs"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 9
+					id: "6E4B71C7F02C8FDD"
+					item: "minecraft:cobblestone_wall"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "2547E0A7A4B605D2"
+					item: "minecraft:crafting_table"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 3
+					id: "60C7B022A64A3E6B"
+					item: "minecraft:dark_oak_log"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "4B70BDFFEBE2067F"
+					item: "minecraft:dark_oak_planks"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 7
+					id: "49D71752F9DEB63B"
+					item: "minecraft:dirt"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "6D02CB8CF04EB244"
+					item: "minecraft:flower_pot"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "245B66064C5B705E"
+					item: "minecraft:glass_pane"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 6
+					id: "2CCC9D174B76D6D4"
+					item: "minecraft:gravel"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 3
+					id: "316E242C6276A9B8"
+					item: "minecraft:gray_carpet"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "6A1FF11F4FE22A67"
+					item: "minecraft:gray_wool"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "0776A60B5E34ADC2"
+					item: "minecraft:hay_block"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "0116A63709496B79"
+					item: "minecraft:lapis_block"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "1E33031759C71AA3"
+					item: "minecraft:light_blue_wool"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "0A37A08CEE4452FA"
+					item: "minecraft:light_gray_terracotta"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "2DA1610C119D5F1F"
+					item: "minecraft:magenta_terracotta"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "56EC566AF806076E"
+					item: "minecraft:nether_bricks"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "609C93909584981A"
+					item: "minecraft:netherrack"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 8
+					id: "38C509C35E999605"
+					item: "minecraft:oak_button"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "69798900F91A9FDA"
+					item: "minecraft:oak_door"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 6
+					id: "2BA89C2D0A3EE3C3"
+					item: "minecraft:oak_fence"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "73FB642173C8ADF5"
+					item: "minecraft:oak_fence_gate"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 87
+					id: "2086BBCC34F936E9"
+					item: "minecraft:oak_log"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 28
+					id: "7B0D2E9C002A1D6B"
+					item: "minecraft:oak_planks"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "1F84AF49AAAA0193"
+					item: "minecraft:oak_sapling"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 7
+					id: "0D898D02F898A16A"
+					item: "minecraft:oak_slab"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 36
+					id: "7E2070639D1976A4"
+					item: "minecraft:oak_stairs"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 11
+					id: "5DAC77B135572DC1"
+					item: "minecraft:oak_trapdoor"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "378E2F533F67C878"
+					item: "minecraft:orange_carpet"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "73BCD24A57853902"
+					item: "minecraft:orange_terracotta"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "78FB2EC0425DBF7C"
+					item: "minecraft:orange_wool"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "29C489545A882FDA"
+					item: "minecraft:pink_wool"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "20F4A4798F9ECB69"
+					item: "minecraft:polished_andesite"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "64DAE8440D15E107"
+					item: "minecraft:red_carpet"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 4
+					id: "7120E48207367A87"
+					item: "minecraft:scaffolding"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "7712C1BACD9BA61F"
+					item: "minecraft:soul_sand"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "7D880000623B66F5"
+					item: "minecraft:spruce_planks"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 8
+					id: "5AD4FE2E75C50413"
+					item: "minecraft:stone_brick_slab"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 21
+					id: "6835E1AD67C7A277"
+					item: "minecraft:stone_brick_stairs"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "504BCD468C9C328E"
+					item: "minecraft:stone_brick_wall"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 183
+					id: "0617E034F826BF3F"
+					item: "minecraft:stone_bricks"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 3
+					id: "504FC46F1707B1BC"
+					item: "minecraft:terracotta"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 9
+					id: "416FCF5205C8F4EC"
+					item: "minecraft:torch"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "1F8EEEF389FE5C39"
+					item: "minecraft:white_terracotta"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "66743487C91D19ED"
+					item: "minecraft:yellow_carpet"
+					team_reward: true
+					type: "item"
+				}
+			]
+			subtitle: "様式申告: medievaloak / Builder Lv4｜解放条件: 「建築物資: medievaloak Builder 3」を完了"
+			tasks: [
+				{
+					consume_items: true
+					count: 96L
+					id: "0E319024E4383041"
+					item: "minecraft:oak_log"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 96L
+					id: "3CCD1EE8E1ABEF8F"
+					item: "minecraft:cobblestone"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 24L
+					id: "78C9BCF78F5C5DED"
+					item: "minecraft:bread"
+					type: "item"
+				}
+			]
+			title: "建築物資: medievaloak Builder 4"
+			x: 20.0d
+			y: 4.0d
+		}
+		{
+			can_repeat: true
+			dependencies: ["126E8DD83CDA5ADD"]
+			description: [
+				"基礎物資を納品し、medievaloak様式のBuilder Lv5アップグレード資材を受領する。"
+				"同じ施設を増設できるよう、このクエストは何度でも再受諾できる。報酬は各周回につきパーティーで1回。"
+			]
+			icon: "minecraft:oak_stairs"
+			id: "6EC91C4799DDA1B6"
+			rewards: [
+				{
+					count: 44
+					id: "3B1A8D8625BC33A3"
+					item: "domum_ornamentum:beige_bricks"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 14
+					id: "758CDE7C172B1E10"
+					item: "domum_ornamentum:plain"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 84
+					id: "1B691254530AD411"
+					item: "domum_ornamentum:shingle"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 13
+					id: "4E9AF5C3982E36E0"
+					item: "domum_ornamentum:shingle_slab"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "56EC5E90D91101D9"
+					item: "minecolonies:blockminecoloniesrack"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "6E376463B80F81CB"
+					item: "minecraft:bamboo"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "41758AF40C87D196"
+					item: "minecraft:barrel"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "556C50F5B748BD29"
+					item: "minecraft:birch_planks"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "61CC61C7BBF0E90F"
+					item: "minecraft:black_carpet"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 7
+					id: "4BBAAE923AC22AD0"
+					item: "minecraft:black_concrete"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "1312E1D697E16891"
+					item: "minecraft:black_concrete_powder"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "7205E5D9E751A11C"
+					item: "minecraft:black_stained_glass"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "4F476EF1C3BAC8CB"
+					item: "minecraft:black_wool"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "7BA1430F285718AF"
+					item: "minecraft:blue_concrete"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "25713688C85D60A6"
+					item: "minecraft:blue_wool"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "7805AD88A9218D49"
+					item: "minecraft:brick_slab"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 5
+					id: "6E96D19185113C9A"
+					item: "minecraft:brick_stairs"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 33
+					id: "4D10277EF6460431"
+					item: "minecraft:bricks"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "6AFC64509DEEFE4B"
+					item: "minecraft:brown_carpet"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "4A3BE815BEE9F251"
+					item: "minecraft:brown_concrete"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 3
+					id: "38474E12986CA11A"
+					item: "minecraft:brown_stained_glass_pane"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 5
+					id: "122EFA9615F1C5CF"
+					item: "minecraft:chain"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "3A7EDACA6A3214F0"
+					item: "minecraft:chest"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "73CBB08E87EBE3C1"
+					item: "minecraft:chiseled_polished_blackstone"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "70191D72BE915117"
+					item: "minecraft:chiseled_quartz_block"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "019BF4811B9A39DA"
+					item: "minecraft:chiseled_stone_bricks"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "379E520D3AA79D9D"
+					item: "minecraft:cobblestone"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 15
+					id: "36C7AAC7FDA02A9D"
+					item: "minecraft:cobblestone_slab"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 12
+					id: "7446289BED73518B"
+					item: "minecraft:cobblestone_stairs"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "66D9C34E746DF92F"
+					item: "minecraft:crafting_table"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "2F8B47B59B61E590"
+					item: "minecraft:crying_obsidian"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "6056AA80978101B9"
+					item: "minecraft:dark_oak_planks"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "4AC38D8A3D22A011"
+					item: "minecraft:dark_prismarine"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "20D102F46DF3385F"
+					item: "minecraft:dirt"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "7CE56EDE236068BA"
+					item: "minecraft:end_stone_bricks"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "77B2B52EA8D219D6"
+					item: "minecraft:flower_pot"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "1E246F42C68EFF54"
+					item: "minecraft:glowstone"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "2BF4B54BAB34D334"
+					item: "minecraft:gray_terracotta"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "2CC29EA10D144D7F"
+					item: "minecraft:green_concrete"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "6B3D57546E02C95F"
+					item: "minecraft:iron_bars"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 3
+					id: "1F699B90A7005A82"
+					item: "minecraft:lantern"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "76885292D0E3EE81"
+					item: "minecraft:lapis_block"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "57160752564FBEE4"
+					item: "minecraft:lectern"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "205084BCEC9A9D40"
+					item: "minecraft:light_blue_concrete"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "5C14103CBF32310F"
+					item: "minecraft:light_blue_stained_glass"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "3908AC1403163FB1"
+					item: "minecraft:light_blue_terracotta"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "542661E5AA67BD2B"
+					item: "minecraft:lime_terracotta"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "45C2083549529378"
+					item: "minecraft:magma_block"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "49A5BC02377C88CB"
+					item: "minecraft:nether_bricks"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 7
+					id: "40EEF5672F10AE47"
+					item: "minecraft:oak_button"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "60A651323055F4FF"
+					item: "minecraft:oak_fence_gate"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 93
+					id: "3834DEF98C4F36E8"
+					item: "minecraft:oak_log"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 19
+					id: "24126E7072287690"
+					item: "minecraft:oak_planks"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "60A128365A9C842C"
+					item: "minecraft:oak_sapling"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 15
+					id: "536FF392FCB6991D"
+					item: "minecraft:oak_slab"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 42
+					id: "10DAEA489FB8F13E"
+					item: "minecraft:oak_stairs"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 15
+					id: "72201CB5B1BD10AB"
+					item: "minecraft:oak_trapdoor"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "6C4F2AC643F78947"
+					item: "minecraft:obsidian"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "60B90958A34CB465"
+					item: "minecraft:orange_carpet"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "3058660193CC7F3D"
+					item: "minecraft:orange_glazed_terracotta"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "43F5EA58152A1423"
+					item: "minecraft:orange_stained_glass"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 3
+					id: "3DF215A3BEC075EF"
+					item: "minecraft:orange_stained_glass_pane"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "6AC75221C0346C36"
+					item: "minecraft:pink_terracotta"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 14
+					id: "7DF6980EB55CB3F3"
+					item: "minecraft:polished_andesite"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "319144F90C113A25"
+					item: "minecraft:prismarine"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "5345198F8E6CCD55"
+					item: "minecraft:prismarine_bricks"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "0C42F5EDBAB149BF"
+					item: "minecraft:purple_concrete"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "1363B1D0B50A5939"
+					item: "minecraft:purpur_block"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "21B62B52258BC2A7"
+					item: "minecraft:purpur_pillar"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "7C146ACF72FFB367"
+					item: "minecraft:quartz_block"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "36AC8AD53FA97404"
+					item: "minecraft:quartz_pillar"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "011B8483845747E2"
+					item: "minecraft:red_carpet"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "173B38F119D3EE0D"
+					item: "minecraft:red_concrete"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "3755102ECC33045E"
+					item: "minecraft:red_nether_bricks"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "22D0683A2989255B"
+					item: "minecraft:red_stained_glass"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "3BFCBD9387811ADA"
+					item: "minecraft:red_wool"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "12F3F337306C16A2"
+					item: "minecraft:scaffolding"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "14AD83E1D18453D0"
+					item: "minecraft:smooth_stone_slab"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 2
+					id: "4DA110601B517C05"
+					item: "minecraft:soul_sand"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "35B640119A008906"
+					item: "minecraft:spruce_planks"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 13
+					id: "619F5BC378B1F022"
+					item: "minecraft:stone_brick_slab"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 42
+					id: "61EBC5392C741402"
+					item: "minecraft:stone_brick_stairs"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 14
+					id: "2018E95AFB9DE57D"
+					item: "minecraft:stone_brick_wall"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 83
+					id: "4832AA2365E069A8"
+					item: "minecraft:stone_bricks"
+					team_reward: true
+					type: "item"
+				}
+				{
+					count: 3
+					id: "075410399B648BE2"
+					item: "minecraft:torch"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "555A808A8CE9F604"
+					item: "minecraft:white_stained_glass"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "50E47274FEEC78CF"
+					item: "minecraft:white_terracotta"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "4B6F31B187D015AB"
+					item: "minecraft:yellow_carpet"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "18155E2D0B656C72"
+					item: "minecraft:yellow_stained_glass"
+					team_reward: true
+					type: "item"
+				}
+				{
+					id: "788A0D34D4FD2EA2"
+					item: "minecraft:yellow_terracotta"
+					team_reward: true
+					type: "item"
+				}
+			]
+			subtitle: "様式申告: medievaloak / Builder Lv5｜解放条件: 「建築物資: medievaloak Builder 4」を完了"
+			tasks: [
+				{
+					consume_items: true
+					count: 128L
+					id: "5BBC0A9A99583775"
+					item: "minecraft:oak_log"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 128L
+					id: "56021E0B009407ED"
+					item: "minecraft:cobblestone"
+					type: "item"
+				}
+				{
+					consume_items: true
+					count: 32L
+					id: "29A54B72E3888CE8"
+					item: "minecraft:bread"
+					type: "item"
+				}
+			]
+			title: "建築物資: medievaloak Builder 5"
+			x: 20.0d
+			y: 6.0d
+		}
+	]
+	title: "MineColonies Builderアップグレード"
+}

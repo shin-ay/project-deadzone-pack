@@ -8,7 +8,7 @@ const DZ_RAID_FLOW_VERSION = "dz_basecamp_raid_flow_version"
 const DZ_RAID_WARNING_TICKS = 1200
 const DZ_RAID_WAVE_GAP = 600
 const DZ_RAID_INTERMISSION = 300
-const DZ_RAID_QUEST = "D34D220000000070"
+const DZ_RAID_QUEST = "41F0ABB18B9685AC"
 
 function dzRaidGameTime(server) {
   return Number(server.runCommandSilent("time query gametime"))
@@ -81,6 +81,7 @@ function dzRaidStartWarning(server, now) {
   server.runCommandSilent(
     'title @a subtitle {"text":"装備を整え、キャンプへ戻れ","color":"yellow"}'
   )
+  if (typeof dzDefenseOnWarning === "function") dzDefenseOnWarning(server)
 }
 
 function dzRaidSpawnWave(server, wave, now) {
@@ -105,6 +106,7 @@ function dzRaidSpawnWave(server, wave, now) {
   }
   console.info("[DEADZONE RAID] Players=" + playerCount + ", reinforcements=" + reinforcements)
   dzRaidAnnounce(server, "Wave " + wave + " 接近。キャンプ外周を防衛せよ。", "red")
+  if (typeof dzDefenseOnWave === "function") dzDefenseOnWave(server, wave)
 }
 
 function dzRaidComplete(server) {
@@ -113,7 +115,8 @@ function dzRaidComplete(server) {
   server.persistentData.putInt(DZ_RAID_REMAINING, 0)
   dzRaidAnnounce(server, "襲撃部隊を排除。Survivor Campを防衛した。", "green")
   server.runCommandSilent(
-    "ftbquests change_progress @a complete " + DZ_RAID_QUEST
+    "execute at @e[type=minecraft:marker,tag=dz_basecamp_core_anchor,limit=1] " +
+    "run ftbquests change_progress @a[distance=..112] complete " + DZ_RAID_QUEST
   )
   // Individual rewards live in the FTB Quest. This is the one shared camp cache.
   server.runCommandSilent(
@@ -122,6 +125,7 @@ function dzRaidComplete(server) {
   )
   server.persistentData.putBoolean("dz_story_t2_intro_unlocked", true)
   dzRaidAnnounce(server, "敵の通信記録から警察署の位置情報を回収。T2導入ルートを解放した。", "aqua")
+  if (typeof dzDefenseOnComplete === "function") dzDefenseOnComplete(server)
 }
 
 function dzRaidFail(server) {
@@ -130,6 +134,7 @@ function dzRaidFail(server) {
   server.persistentData.putInt(DZ_RAID_REMAINING, 0)
   server.runCommandSilent("kill @e[tag=dz_basecamp_raider]")
   dzRaidAnnounce(server, "Base Coreが破壊された。防衛失敗。修復後に襲撃状態をリセットせよ。", "red")
+  if (typeof dzDefenseOnFail === "function") dzDefenseOnFail(server)
 }
 
 let DZ_RAID_SERVER_TICKS = 0
@@ -236,6 +241,7 @@ ServerEvents.commandRegistry(event => {
       server.persistentData.putInt(DZ_RAID_STATE, 0)
       server.persistentData.putLong(DZ_RAID_TIME, 0)
       server.persistentData.putInt(DZ_RAID_REMAINING, 0)
+      if (typeof dzDefenseAdminReset === "function") dzDefenseAdminReset(server)
       ctx.source.player.tell(Text.of("初回襲撃の状態をリセットしました。").yellow())
       return 1
     }))
