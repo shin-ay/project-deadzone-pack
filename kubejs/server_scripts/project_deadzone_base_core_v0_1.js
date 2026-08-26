@@ -92,6 +92,20 @@ BlockEvents.rightClicked("kubejs:deadzone_base_core", event => {
 ServerEvents.commandRegistry(event => {
   const {commands: Commands} = event
 
+  // EasyNPC calls this player-safe wrapper instead of invoking an FTB Quests
+  // client screen command directly. Existing and newly spawned Maya NPCs use it.
+  let campUi = Commands.literal("deadzonecampui")
+    .requires(source => source.hasPermission(0))
+    .executes(ctx => {
+      let player = ctx.source.player
+      ctx.source.server.runCommandSilent(
+        "ftbquests change_progress " + player.username + " complete " + DZ_BASE_CORE_HUB_QUEST)
+      let opened = player.runCommandSilent("ftbquests open_book " + DZ_BASE_CORE_HUB_QUEST)
+      if (opened < 1) player.runCommandSilent("ftbquests open_book")
+      return 1
+    })
+  event.register(campUi)
+
   let root = Commands.literal("deadzonebasecamp")
     .requires(source => source.hasPermission(2))
 

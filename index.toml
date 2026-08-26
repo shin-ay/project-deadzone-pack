@@ -1060,9 +1060,6 @@ hash = "1ec868880488e05dbb54fde65950beb67eb753f66b12565bb7c12e7fbc1e8594"
 file = "config/easy_npc/render_entity_type_support.cfg"
 hash = "647581a7e72b527a6de6261224a29dc37712faf7a57de0d49e76441a3146382b"
 
-[[files]]
-file = "config/easy_npc/security.cfg"
-hash = "621ed3b6ad5b68bd471db93daa86441b8e37d4505273beca7e0cfc7c91a4f34e"
 
 [[files]]
 file = "config/easy_npc/skin/allay/allay_template.png"
@@ -7612,9 +7609,6 @@ hash = "14e19e8f79319d621b8f834c969a91b288e8bb7de935ea4e4e47384c6f8fe427"
 file = "kubejs/data/project_deadzone/functions/basecamp/activate_from_arrival.mcfunction"
 hash = "91c719f59fc16481bd2390248e7c516f209032c2d1233e0d6772db647babd7bb"
 
-[[files]]
-file = "kubejs/data/project_deadzone/functions/basecamp/apply_staff_profiles.mcfunction"
-hash = "66a51702c9fe052ee6d45e3241b75cf41a3018d9755dd04e8da7d3c71823f23b"
 
 [[files]]
 file = "kubejs/data/project_deadzone/functions/basecamp/apply_staff_random_dialogues.mcfunction"
@@ -7672,9 +7666,6 @@ hash = "c8fca537e6e180856da9879283d341edbe42b68fe027c5ea24c36bc1f9c71712"
 file = "kubejs/data/project_deadzone/functions/basecamp/repair_parts_trader.mcfunction"
 hash = "565533ec943ba3789116b9ec01f709b61c8891e5a3605107830d287dfc97c567"
 
-[[files]]
-file = "kubejs/data/project_deadzone/functions/basecamp/repair_staff_service_ui.mcfunction"
-hash = "0a3c69bd7f21c653c0ba8304f9565db65ae13d3854a8ee0e61251a4f1d41833c"
 
 [[files]]
 file = "kubejs/data/project_deadzone/functions/basecamp/restore_guards_at_core.mcfunction"
@@ -10520,13 +10511,10 @@ hash = "8e1c6b4d1a6aa61931dc0e298d165b91720a877b57b28dc94e735a06239a7ab5"
 file = "kubejs/server_scripts/project_deadzone_auto_basecamp_v0_1.js"
 hash = "ec246c53f9c3fa29ecf5cff8817cd5a7e8c53474f24202af0a60d480b8fff1c8"
 
-[[files]]
-file = "kubejs/server_scripts/project_deadzone_base_core_v0_1.js"
-hash = "3aecd8af283a882eb72f423704a97b8be0c60bd78adfa3e51b065b3c9fabcbea"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_basecamp_guard_safety_v0_1.js"
-hash = "43e2805a7682dd00def982d2822ec7dd533c38edcca131aa6492e78e1515a60b"
+hash = "e3666b80bd9e18345cc237d1639794207e271f75c40567031e72d79e5b27a0e9"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_basecamp_raid_v0_1.js"
@@ -21497,3 +21485,24 @@ metafile = true
 file = "tacz/immersive-armorer.pw.toml"
 hash = "5f316c3735b248f22c3fabeece8ea930e146f39193b13b32f2d1f296c9f3790d"
 metafile = true
+
+[[files]]
+file = "mods/dynamic-trees-for-terralith.pw.toml"
+hash = "ae583d40ca9be0fd774e2fde0869968947d59805ac10029b27011e84f7644eab"
+metafile = true
+
+[[files]]
+file = "config/easy_npc/security.cfg"
+hash = "4e13f94668b3d8f8575d4232cc70e3454e28c9a48b76f00191988907c2fbe57c"
+
+[[files]]
+file = "kubejs/data/project_deadzone/functions/basecamp/apply_staff_profiles.mcfunction"
+hash = "0e3d3e94b08ba6087e0620df3b6ea715d1fd6cef39022b48f3e2a4d7e0601c63"
+
+[[files]]
+file = "kubejs/data/project_deadzone/functions/basecamp/repair_staff_service_ui.mcfunction"
+hash = "559c1820cc38023219534e3010a7093e8f439944d5718318d6af5194b940514a"
+
+[[files]]
+file = "kubejs/server_scripts/project_deadzone_base_core_v0_1.js"
+hash = "17d15da3fd8939816f8a8a8426042458c4cebb4099621ba90eb7b3ab69831315"

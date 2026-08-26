@@ -20,6 +20,7 @@ function pdzIsCampGuard(entity) {
 
 function pdzIsSurvivorAlly(entity) {
   if (!entity) return false
+  if (pdzIsMineColoniesRaider(entity)) return false
   let id = String(entity.type)
   if (id === 'minecraft:player' || id === 'simpleenemymod:usunit' || id.indexOf('mca:') === 0) return true
   if (pdzIsRecruitEntity(entity) && !pdzIsFactionHostile(entity)) return true
@@ -29,8 +30,32 @@ function pdzIsSurvivorAlly(entity) {
     entity.tags.contains('dz_faction_civil_defense'))
 }
 
+function pdzIsMineColoniesRaider(entity) {
+  if (!entity) return false
+  let id = String(entity.type)
+  if (id.indexOf('minecolonies:') !== 0) return false
+  return id.indexOf('barbarian') >= 0 || id.indexOf('pirate') >= 0 ||
+    id.indexOf('mummy') >= 0 || id.indexOf('pharao') >= 0 ||
+    id.indexOf('amazon') >= 0 || id.indexOf('shieldmaiden') >= 0 ||
+    id.indexOf('norsemen') >= 0 || id.indexOf('drownedpirate') >= 0
+}
+
+function pdzSanitizeMineColoniesRaider(entity) {
+  if (!pdzIsMineColoniesRaider(entity)) return
+  ;['dz_survivor', 'dz_friendly', 'dz_buddy', 'dz_story_npc',
+    'dz_settlement_civilian', 'dz_starter_colony_resident',
+    'dz_faction_civil_defense', 'dz_survivor_guard'].forEach(tag => {
+      entity.runCommandSilent('tag @s remove ' + tag)
+    })
+  entity.runCommandSilent('tag @s add dz_hostile')
+  entity.runCommandSilent('tag @s add dz_enemy')
+  entity.runCommandSilent('tag @s add dz_raider')
+  entity.runCommandSilent('team leave @s')
+}
+
 function pdzIsFactionHostile(entity) {
   if (!entity) return false
+  if (pdzIsMineColoniesRaider(entity)) return true
   if (entity.tags && (entity.tags.contains('dz_boss_showroom') || entity.tags.contains('dz_boss_loadtest') ||
       entity.tags.contains('dz_boss_mechanic_runtime') || entity.tags.contains('dz_boss_loadtest_runtime'))) return false
   let id = String(entity.type)
@@ -64,6 +89,11 @@ EntityEvents.hurt(event => {
   let direct = event.source.direct
   if (!attacker && direct) attacker = direct
 
+  // MineColonies camp/raid units must never inherit the survivor team. Fix the
+  // relation on first contact as well as during the periodic proximity scan.
+  pdzSanitizeMineColoniesRaider(attacker)
+  pdzSanitizeMineColoniesRaider(victim)
+
   // Friendly units never damage one another, irrespective of which AI mod
   // initiated the attack.
   if (pdzIsSurvivorAlly(attacker) && pdzIsSurvivorAlly(victim)) {
@@ -84,9 +114,14 @@ EntityEvents.hurt(event => {
 ServerEvents.tick(event => {
   if (event.server.tickCount % 40 !== 0) return
   let seen = {}
+  let raiderSeen = {}
   let gearPulse = event.server.tickCount % 200 === 0
   event.server.players.forEach(player => {
     player.level.entities.forEach(entity => {
+      if (pdzIsMineColoniesRaider(entity) && !raiderSeen[String(entity.uuid)]) {
+        raiderSeen[String(entity.uuid)] = true
+        pdzSanitizeMineColoniesRaider(entity)
+      }
       if (!pdzIsCampGuard(entity) || seen[String(entity.uuid)]) return
       seen[String(entity.uuid)] = true
       entity.tags.add('dz_survivor_guard')

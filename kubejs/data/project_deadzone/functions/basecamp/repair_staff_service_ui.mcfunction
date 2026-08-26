@@ -2,7 +2,7 @@
 
 # Maya / personal supply service (the normal trading button is preserved).
 data modify entity @e[type=easy_npc:humanoid,tag=dz_basecamp_trader_food,limit=1] DialogData.Type set value "CUSTOM"
-data modify entity @e[type=easy_npc:humanoid,tag=dz_basecamp_trader_food,limit=1] DialogData.DialogDataSet[0].Buttons set value [{Actions:[{Cmd:"/ftbquests open_book 6D56010000000101",ExecAsUser:1b,PermLevel:0,Type:"COMMAND"}],Label:"camp_control",Name:"Camp Controlを開く"},{Actions:[{ExecAsUser:1b,PermLevel:0,Type:"OPEN_TRADING_SCREEN"}],Label:"open_trade",Name:"物資を確認する"},{Actions:[{Cmd:"/deadzonepeople maya",ExecAsUser:1b,PermLevel:0,Type:"COMMAND"}],Label:"personal_service",Name:"信頼と遠征配給を確認する"}]
+data modify entity @e[type=easy_npc:humanoid,tag=dz_basecamp_trader_food,limit=1] DialogData.DialogDataSet[0].Buttons set value [{Actions:[{Cmd:"/deadzonecampui",ExecAsUser:1b,PermLevel:0,Type:"COMMAND"}],Label:"camp_control",Name:"Camp Controlを開く"},{Actions:[{ExecAsUser:1b,PermLevel:0,Type:"OPEN_TRADING_SCREEN"}],Label:"open_trade",Name:"物資を確認する"},{Actions:[{Cmd:"/deadzonepeople maya",ExecAsUser:1b,PermLevel:0,Type:"COMMAND"}],Label:"personal_service",Name:"信頼と遠征配給を確認する"}]
 
 # Shiori / personal medical service.
 data modify entity @e[type=easy_npc:humanoid,tag=dz_basecamp_trader_medical,limit=1] DialogData.Type set value "CUSTOM"
