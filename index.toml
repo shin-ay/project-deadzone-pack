@@ -336,6 +336,9 @@ hash = "4069ce1a439d8c37453c1b1e9f2037e0942674c7e48723a39b37eab245792ad4"
 file = "config/QuantifiedAPI/quantified_config.json"
 hash = "079718019b847ff71014cd6a16ab9dc7f719be88ab6e484ce6062c31cc2cb757"
 
+[[files]]
+file = "config/RPG-HUD"
+hash = "12b050109291b71a8264125689275bde794f2b6514bbca78d29180b63c1a06f4"
 
 [[files]]
 file = "config/RadioTowersAndAirDrops.toml"
@@ -942,6 +945,10 @@ file = "config/diet-server.toml"
 hash = "be67182834942895e92576a41fee4cce743a0ea6d5620d6e73c384b3d961a1f6"
 
 [[files]]
+file = "config/dummmmmmy-client.toml"
+hash = "1b4e21aeac26a34726a823421b519dce9cabf2397a5a680356720e12229d9450"
+
+[[files]]
 file = "config/dynamictrees-common.toml"
 hash = "f721f8c9907bb22da4bee069052718850b224ea0cf9b313a615d5fe6fa13418a"
 
@@ -1367,7 +1374,7 @@ hash = "1992aadeebf89cdeebdfe2b4c487d1d9c0b8332e1dd41df64e880730a81d6f9c"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/deadzone_enchanting_01.snbt"
-hash = "a0e85348066aa70553029bf394bca005fe45f0b6429a64d12309f1f3794e4151"
+hash = "e24dd8f829dd000854940d094cab56a60be43c8f86b458e1df30e8030b712851"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/deadzone_faction_storylines_01.snbt"
@@ -2108,6 +2115,10 @@ hash = "5f67bac934db1fabefbceec805d874184e0456bdd4280e304157634457c61e10"
 [[files]]
 file = "config/midnightlib.json"
 hash = "9bcdd9f5ae6c9fecc3a0dfee7507bf17c56702f14e40db9cdde90148f1d3b387"
+
+[[files]]
+file = "config/mine_and_slash-client.toml"
+hash = "9888d6af7110b01ee8084cda0263a5522c59f7e07943cf98e70362a6cf43cab0"
 
 [[files]]
 file = "config/minetraps-client.toml"
@@ -3491,7 +3502,7 @@ hash = "33a631cf321fcc1d4645bb241f6ff6e664853597c8e47362a8075e2dbef8e2f3"
 
 [[files]]
 file = "kubejs/assets/mmorpg/lang/ja_jp.json"
-hash = "a482f6fe12186d97445fa29da3f47e6570a64161e34ed6f9104850cf81d66ed1"
+hash = "a14d5827b81893e3b6c283637a02864d88acccfffd78d61d6a7a1c5e4e4f292d"
 
 [[files]]
 file = "kubejs/assets/mmorpg/lang/skills_en_us.json"
@@ -6417,18 +6428,65 @@ hash = "87de6975bc5d09c802825d386c26f54945bbe551f0c248744641477e17268e32"
 file = "kubejs/data/mmorpg/mmorpg_base_gear_types/rune_shield_middle.json"
 hash = "31803ae5b908db3d88de9baffa3a5b95debe7e5549a48a4e3cabb5f0c6749c16"
 
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_entity/all_mobs_in_mod/infectious.json"
+hash = "1ce0dbf09ac87fa484bd47c1fa0d7ff26be46ba4461c9944ccacc7a63f4b547b"
 
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_entity/all_mobs_in_mod/tacz_bandits.json"
+hash = "1c88343f34033efe885444f24f5bd6e3cdfccf9d6fdc463c3f4fc00d4913aa6b"
 
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_entity/specific_mobs/apocalypse_zombies_tank.json"
+hash = "f693025fa061277972586e338923f33b8e59ce0d29a4b31fe0ebb2a68e9e11dc"
 
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_entity/specific_mobs/infectious_ancient_zombie_boss.json"
+hash = "b6269d34bd797cff4cab3d59ba30c1106a661f5078a84390f12cd4802595e8f4"
 
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_entity/specific_mobs/infectious_giant_zombie.json"
+hash = "41d6f7794d5b7af38fa19b9cc0c951ed9474242144a49c67267b53f81903fd5a"
 
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_entity/specific_mobs/infectious_mecha_zombie.json"
+hash = "39a3edce0742f16f53b89e2c0e7b2cd528ae0e2061551c41ed4fdcb36584414c"
 
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_entity/specific_mobs/infectious_mutant_zombie.json"
+hash = "e9cf27731c20310d0f5e4918735d8440b5e648822dee279a062cefea9b5e2cb6"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_entity/specific_mobs/infectious_radioactive_zombie.json"
+hash = "d910bbdee0bcf554c2afc986962203c5678021009c4e97f2defb5f5e2c304b16"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_entity/specific_mobs/infectious_spore_zombie.json"
+hash = "02dc955cc01c22077011fb92a01185b6f449d8b226d13ad04cd9fe3c0504360a"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_entity/specific_mobs/minecraft_drowned.json"
+hash = "7a8c6c147d73c70b49b153192a1af3a61d98add0cd5b1ca9b9b6e180b67a2c38"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_entity/specific_mobs/minecraft_husk.json"
+hash = "7e3da10cdd9f8408e2c9d0be429f83c45acb595ec23cee6ee9ae7d76c98ea463"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_entity/specific_mobs/minecraft_zombie.json"
+hash = "cb9f713bef47bfdb1927870d0ec14b93965e8faea76ad3d68fcc3d8c0ff7844c"
 
 [[files]]
 file = "kubejs/data/mmorpg/mmorpg_entity/specific_mobs/simpleenemymod_pmcunit.json"
 hash = "b064062b80f535a1e8ae85827d4869d222fc2b400ee4e4502fc6f121fbfde7ba"
 
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_entity/specific_mobs/simpleenemymod_ruunit.json"
+hash = "0d293a54c31730dcf6c698657adc7c8591d7c11999c9d2c30014f02d951ac288"
 
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_entity/specific_mobs/tacz_bandits_bandit.json"
+hash = "85f3d49df419fbc2c942f250aed938b6f1a483c9ee4510d4cf9df10506b13e2f"
 
 [[files]]
 file = "kubejs/data/mmorpg/mmorpg_perk/arcanist_class.json"
@@ -7457,6 +7515,62 @@ hash = "92765256bc172996d33f510c51cd8da0b83748901006c688f9a1cd92b1ee05ce"
 [[files]]
 file = "kubejs/data/mmorpg/mmorpg_talent_tree/talents.json"
 hash = "6fff04278bda46242d3323c07e2ffcdd15008f5fa1c61c564a51a772ea840690"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_weapon_type/assault_rifle.json"
+hash = "9f71616bd9525f92b07fde54422de775a96c8e98569220b9039d7ccd3ad1dd06"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_weapon_type/handgun.json"
+hash = "d66d94062c28b4e35a673512565a6bbe908e5074ac2f03befc6ae4a8e0141cb1"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_weapon_type/heavy_machine_gun.json"
+hash = "393eefeacdf6aea99fdac50b92cb7c3b96ea3157e4215f5ff66ffe18e69c7a3e"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_weapon_type/kinetic_gun.json"
+hash = "c6cb0b8b07b2bd80fb1c3a2e73aab92f87bcbd9c868547fe690bdb2407a22bb2"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_weapon_type/launcher.json"
+hash = "d6c535c0a32fc10c71dcbf9ab960be809a267764ed54f9ad318439eea4bfccf5"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_weapon_type/magnum.json"
+hash = "90c2ae575bc6391e061eda15715b2feac6efdefddeb81846cf3a6055ddd0cef1"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_weapon_type/repeater_rifle.json"
+hash = "03b90edf8a41f78e3a0424231b5ea2bf0aea57ba468375a3673ebb832a675767"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_weapon_type/revolver.json"
+hash = "3904b7c7703cb70b785ee0354ae35a4bd090ed318892ed5fa0b833a3baa154be"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_weapon_type/s_handgun.json"
+hash = "3a4d72b31b214ab6fc63e9a9b9942e111eac8fe9f0004828734ab2e89c31acaa"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_weapon_type/s_revolver.json"
+hash = "a7a90886bbbbaf9fb02ad83b2824051e1bc9f6199f526eb03ab12a1462193f3a"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_weapon_type/s_shotgun.json"
+hash = "2f96f7eeb86bd3243ee44e68868f122bbfed82514772980cec16cb29e8737e1b"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_weapon_type/shotgun.json"
+hash = "07537332ebb65ff242d400edc96ae608843bbfc48866ed61193d2d565740630d"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_weapon_type/sniper_rifle.json"
+hash = "7f3a863cce2d496326e15c09e7cb231870440e42bdbdac7881cfeb585697a3ed"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_weapon_type/sub_machine_gun.json"
+hash = "8a773763980b370e48f1b4effb33a4de1adbc22b8cfd7123dc12cba281ca083f"
 
 [[files]]
 file = "kubejs/data/mmorpg/tags/items/bow.json"
@@ -10512,7 +10626,7 @@ hash = "8e52beb45203c23ed158e56d88e501b09c35d7ea137148c1cb4dde710bef1b7a"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_firearms_perks_v0_1.js"
-hash = "c2f430b4cf2c8744029b2c4ca17ec427f1335359d8dc3800272a85aba76e061c"
+hash = "afdfe91326d76728d7d70e20c0f2ec97651bf8a01b18ec09523b68dcbcab90d7"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_fitness_perks_v0_1.js"
@@ -10612,7 +10726,7 @@ hash = "7cc6d2352d1db1e07a98c26855ff2153864698b099f1f7752428c3cb8c09052b"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_mns_equipment_bridge_v0_1.js"
-hash = "2c4b75c8789c27b292a508cb7a73510ec9cd252035be091ae02a5d26db7a45a7"
+hash = "92e2800b5cd91a4efef8840a3d9a5ab5846cf378def785647494488c92e37088"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_mns_progression_bridge_v0_1.js"
@@ -12375,6 +12489,11 @@ metafile = true
 [[files]]
 file = "mods/ritchies-projectile-library.pw.toml"
 hash = "ad017c00411e9b3cd8564d913e568636270ffd50bc822c919ce1db5ba0dbe126"
+metafile = true
+
+[[files]]
+file = "mods/rpg-hud.pw.toml"
+hash = "ff52e6211129229a050a638b13b8b7e52dfaee66cd3d1f967d89a5a9cc2ff3c3"
 metafile = true
 
 [[files]]
@@ -21377,69 +21496,4 @@ metafile = true
 [[files]]
 file = "tacz/immersive-armorer.pw.toml"
 hash = "5f316c3735b248f22c3fabeece8ea930e146f39193b13b32f2d1f296c9f3790d"
-metafile = true
-
-[[files]]
-file = "config/RPG-HUD"
-hash = "12b050109291b71a8264125689275bde794f2b6514bbca78d29180b63c1a06f4"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_entity/specific_mobs/apocalypse_zombies_tank.json"
-hash = "f693025fa061277972586e338923f33b8e59ce0d29a4b31fe0ebb2a68e9e11dc"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_entity/specific_mobs/infectious_ancient_zombie_boss.json"
-hash = "b6269d34bd797cff4cab3d59ba30c1106a661f5078a84390f12cd4802595e8f4"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_entity/specific_mobs/infectious_giant_zombie.json"
-hash = "41d6f7794d5b7af38fa19b9cc0c951ed9474242144a49c67267b53f81903fd5a"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_entity/specific_mobs/infectious_mecha_zombie.json"
-hash = "39a3edce0742f16f53b89e2c0e7b2cd528ae0e2061551c41ed4fdcb36584414c"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_entity/specific_mobs/infectious_mutant_zombie.json"
-hash = "e9cf27731c20310d0f5e4918735d8440b5e648822dee279a062cefea9b5e2cb6"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_entity/specific_mobs/infectious_radioactive_zombie.json"
-hash = "d910bbdee0bcf554c2afc986962203c5678021009c4e97f2defb5f5e2c304b16"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_entity/specific_mobs/infectious_spore_zombie.json"
-hash = "02dc955cc01c22077011fb92a01185b6f449d8b226d13ad04cd9fe3c0504360a"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_entity/specific_mobs/simpleenemymod_ruunit.json"
-hash = "0d293a54c31730dcf6c698657adc7c8591d7c11999c9d2c30014f02d951ac288"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_entity/specific_mobs/tacz_bandits_bandit.json"
-hash = "85f3d49df419fbc2c942f250aed938b6f1a483c9ee4510d4cf9df10506b13e2f"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_entity/all_mobs_in_mod/infectious.json"
-hash = "1ce0dbf09ac87fa484bd47c1fa0d7ff26be46ba4461c9944ccacc7a63f4b547b"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_entity/all_mobs_in_mod/tacz_bandits.json"
-hash = "1c88343f34033efe885444f24f5bd6e3cdfccf9d6fdc463c3f4fc00d4913aa6b"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_entity/specific_mobs/minecraft_drowned.json"
-hash = "7a8c6c147d73c70b49b153192a1af3a61d98add0cd5b1ca9b9b6e180b67a2c38"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_entity/specific_mobs/minecraft_husk.json"
-hash = "7e3da10cdd9f8408e2c9d0be429f83c45acb595ec23cee6ee9ae7d76c98ea463"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_entity/specific_mobs/minecraft_zombie.json"
-hash = "cb9f713bef47bfdb1927870d0ec14b93965e8faea76ad3d68fcc3d8c0ff7844c"
-
-[[files]]
-file = "mods/rpg-hud.pw.toml"
-hash = "ff52e6211129229a050a638b13b8b7e52dfaee66cd3d1f967d89a5a9cc2ff3c3"
 metafile = true

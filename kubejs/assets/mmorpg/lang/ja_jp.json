@@ -1961,7 +1961,7 @@
     "mmorpg.chat.right_click_to_gen_item":  "右クリックしてアイテムを生成することもできます。",
     "mmorpg.chat.rune_is_already_maxed":  "挿入されたルーンはすでに 100% です。これ以上アップグレードすることはできません。",
     "mmorpg.chat.scout_map_first":  "このマップはまだ踏破されていません!\n\nマップ全体を探索すると進捗状況を確認できるようになります。\n\nマップ全体を探索してください!",
-  "mmorpg.chat.soulless_gear_info":  "未取得のため、まだM&S装備へ確定されていません\nインベントリへ取得するとレアリティ・能力値・装備要求が付与されます",
+  "mmorpg.chat.soulless_gear_info":  "装備データの変換エラーです\n再ログインで自動修復します。続く場合は運営へ報告してください",
     "mmorpg.chat.soulless_gear_more_info":  "ソウルはMNSの職業またはモブからのドロップで作成されます",
     "mmorpg.chat.spell_is_on_cd":  "スキルはクールダウン中です",
     "mmorpg.chat.stacks_dont_multiply_stats":  "[バフスタックはステータスを増加させません]",

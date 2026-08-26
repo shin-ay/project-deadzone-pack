@@ -3,6 +3,68 @@
 // magazines, animations or reload timing.
 
 const PDZ_FIREARMS_MNS_ENTITY_DATA = Java.loadClass('com.robertx22.mine_and_slash.capability.entity.EntityData')
+const PDZ_FIREARMS_MNS_RESOURCE_TYPE = Java.loadClass('com.robertx22.mine_and_slash.saveclasses.unit.ResourceType')
+
+function dzMnsStatValue(player, id) {
+  try {
+    let stat = PDZ_FIREARMS_MNS_ENTITY_DATA.get(player).getUnit().getCalculatedStat(id)
+    if (!stat) return 0
+    let value = Number(stat.getValue())
+    return isFinite(value) ? Math.max(0, value) : 0
+  } catch (ignored) {
+    return 0
+  }
+}
+
+function dzMnsMaxResource(player, type) {
+  try {
+    let data = PDZ_FIREARMS_MNS_ENTITY_DATA.get(player)
+    let value = Number(data.getResources().getMax(player, type))
+    return isFinite(value) ? Math.max(0, value) : 0
+  } catch (ignored) {
+    return 0
+  }
+}
+
+function dzQueueGunLifesteal(player, damage) {
+  // TaCZ posts its own damage events and therefore does not reliably reach
+  // Mine and Slash's DamageEvent. Feed the real M&S leech queue instead of
+  // healing vanilla HP directly, so native leech speed/caps remain relevant.
+  let percent = Math.min(20, dzMnsStatValue(player, 'lifesteal'))
+  if (percent <= 0 || !isFinite(damage) || damage <= 0) return 0
+  try {
+    let data = PDZ_FIREARMS_MNS_ENTITY_DATA.get(player)
+    let maxHealth = dzMnsMaxResource(player, PDZ_FIREARMS_MNS_RESOURCE_TYPE.health)
+    let amount = damage * percent / 100
+    // A shotgun/pellet or extreme late-game roll must not instantly refill a
+    // whole life bar per hit. M&S's own queue adds its further per-second cap.
+    if (maxHealth > 0) amount = Math.min(amount, maxHealth * 0.05)
+    if (!isFinite(amount) || amount <= 0) return 0
+    data.leech.addLeech(PDZ_FIREARMS_MNS_RESOURCE_TYPE.health, amount)
+    player.persistentData.putDouble('dz_firearms_last_lifesteal_pct', percent)
+    player.persistentData.putDouble('dz_firearms_last_lifesteal', amount)
+    return amount
+  } catch (ignored) {
+    return 0
+  }
+}
+
+function dzRestoreGunKillResource(player, statId, type) {
+  let amount = dzMnsStatValue(player, statId)
+  if (amount <= 0) return 0
+  try {
+    let data = PDZ_FIREARMS_MNS_ENTITY_DATA.get(player)
+    let maximum = dzMnsMaxResource(player, type)
+    // On-kill is deliberately punchier than per-hit leech, but still bounded
+    // against malformed external affixes and rapid multi-kills.
+    if (maximum > 0) amount = Math.min(amount, maximum * 0.15)
+    amount = Math.min(amount, 100)
+    data.getResources().restore(player, type, amount)
+    return amount
+  } catch (ignored) {
+    return 0
+  }
+}
 
 function dzMnsWeaponDamageBonus(player) {
   try {
@@ -25,6 +87,20 @@ function dzMnsWeaponDamageBonus(player) {
   } catch (ignored) {
     return 0
   }
+}
+
+function dzMnsGunCritical(player) {
+  // M&S native bases are 1% critical_hit and 100% critical_damage. TaCZ does
+  // not enter M&S's on_damage critical pipeline, so reproduce that one roll
+  // here with M&S's own documented stat maxima instead of inventing a tier.
+  let chance = Math.min(100, dzMnsStatValue(player, 'critical_hit'))
+  let damage = Math.min(500, dzMnsStatValue(player, 'critical_damage'))
+  let critical = chance > 0 && Math.random() * 100 < chance
+  let multiplier = critical ? 1 + damage / 100 : 1
+  player.persistentData.putDouble('dz_firearms_last_crit_chance', chance)
+  player.persistentData.putDouble('dz_firearms_last_crit_damage', damage)
+  player.persistentData.putBoolean('dz_firearms_last_critical', critical)
+  return multiplier
 }
 
 function dzFirearmsTier(player, branch) {
@@ -102,9 +178,9 @@ TimelessGunEvents.entityHurtByGunPre(event => {
   try {
     if (typeof pdztrValue === 'function') multiplier += Math.max(0, Number(pdztrValue(player, 'gunDamage')))
   } catch (ignored) {}
-  // TaCZ bypasses M&S's normal melee damage path. Fold the player's calculated
-  // M&S weapon_damage into TaCZ's one and only pre-damage hook instead.
-  multiplier += dzMnsWeaponDamageBonus(player)
+  // Do not apply M&S weapon damage here. PDZ's gun WeaponType override routes
+  // the TaCZ result through M&S compatibility conversion after this hook, so
+  // Weapon Damage, Crit, Affix and mitigation are calculated exactly once.
   // Base JOB passive. JOB progression is independent from Talent SP.
   if (String(player.persistentData.getString('dz_job_id')) === 'weapons_expert') multiplier += 0.05
   let motion = player.getDeltaMovement()
@@ -154,13 +230,18 @@ TimelessGunEvents.entityHurtByGunPre(event => {
   }
 
   stage = 'apply'
-  let finalAmount = Number(baseAmount * multiplier)
+  let criticalMultiplier = 1.0
+  let finalAmount = Number(baseAmount * multiplier * criticalMultiplier)
   if (!isFinite(finalAmount) || finalAmount <= 0) return
   // Keep a cheap last-hit snapshot for balancing. It has no chat/network cost
   // unless an administrator explicitly opens the diagnostic screen.
   player.persistentData.putDouble('dz_firearms_last_base',baseAmount)
   player.persistentData.putDouble('dz_firearms_last_multiplier',multiplier)
+  player.persistentData.putDouble('dz_firearms_last_crit_multiplier',criticalMultiplier)
   player.persistentData.putDouble('dz_firearms_last_final',finalAmount)
+  try{
+    if(typeof pdzCteRecordOutgoing==='function')pdzCteRecordOutgoing(player,hurtEntity,finalAmount,event.isHeadShot()?'gun_head':'gun_body')
+  }catch(ignored){}
   event.setBaseAmount(finalAmount)
   if (player.persistentData.getBoolean('dz_firearms_damage_debug')) {
     player.tell(Text.of('[Gun DMG] TaCZ base '+baseAmount.toFixed(2)+' x PDZ '+multiplier.toFixed(3)+' = pre-armor '+finalAmount.toFixed(2)).gray())
@@ -174,6 +255,9 @@ TimelessGunEvents.entityHurtByGunPre(event => {
     }
   }
 })
+
+// M&S compatibility conversion owns Crit, Lifesteal, Health on Kill and Magic
+// Shield on Kill. Replaying them from TaCZ Post/Kill events would double proc.
 
 ServerEvents.commandRegistry(event => {
   const {commands: Commands} = event
@@ -191,8 +275,10 @@ ServerEvents.commandRegistry(event => {
     player.tell(Text.of(
       'Last hit: base '+Number(player.persistentData.getDouble('dz_firearms_last_base')).toFixed(2)
       +' x '+Number(player.persistentData.getDouble('dz_firearms_last_multiplier')).toFixed(3)
+      +' x crit '+Number(player.persistentData.getDouble('dz_firearms_last_crit_multiplier')).toFixed(2)
       +' = '+Number(player.persistentData.getDouble('dz_firearms_last_final')).toFixed(2)+' pre-armor'
     ).gray())
+    player.tell(Text.of('M&S Weapon Damage・Crit・Affix・Leech: native compatibility conversion').gray())
     return 1
   }))
 

@@ -1,0 +1,1 @@
+{"can_dual_wield":false,"damage_validity_check":{"contains_in_dmg_id":[],"source_check":"ANY","tag_and_id_check":"MATCH_ANY","valid_proj_dmg_id":[]},"id":"handgun","isProjectile":true,"range":"RANGED","style":"DEX"}

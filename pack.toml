@@ -1,12 +1,12 @@
 name = "PROJECT DEADZONE"
 author = "PROJECT DEADZONE Team"
-version = "BETA-20260826-COMBAT-1"
+version = "BETA-20260826-MNS-GEAR-DAMAGE-2"
 pack-format = "packwiz:1.1.0"
 
 [index]
 file = "index.toml"
 hash-format = "sha256"
-hash = "071b062997cc1601d2884d53f8f4762b59d9a9c6a20b7eafebac412b07c47387"
+hash = "f2d33ff1df9d7ddd90b74a95698930856dce222579d173a92d0db7e0369277f7"
 
 [versions]
 forge = "47.4.10"

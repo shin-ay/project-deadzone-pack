@@ -98,7 +98,7 @@
 		}
 		{
 			dependencies: ["7D2A10E1C4A80120"]
-			 description: [
+			description: [
 				"TaCZ銃にはFirepower、Precision、Deep Impact、Capacityなどの銃専用エンチャントを付与できる。"
 				"個体差とレア度はM\\&S、銃専用の追加調整はTaCZエンチャントが担当する。同じ効果をPDZ側で二重加算しない。"
 				"エンチャント済みのTaCZ銃をインベントリへ入れると自動確認される。M\\&S Affixだけでは達成にならない。"
@@ -149,6 +149,7 @@
 			description: [
 				"Gear Crafting StationはM\\&S装備と強化資源を同じ成長ループへ接続する正式設備。"
 				"TaCZ銃や対応MOD装備もM\\&S Gearへ変換された後は、レア度、Affix、要求値、解体をM\\&S基準で扱う。"
+				"高レア装備は単なる必要Lvの増加ではない。Affix数と数値倍率が増え、低Lv Uniqueも含めてビルドに合う個体を選ぶ。"
 			]
 			icon: "mmorpg:gear_crafting_station"
 			id: "7D2A10E1C4A80160"
@@ -166,6 +167,30 @@
 			}]
 			title: "装備成長の正本"
 			x: 4.0d
+			y: 2.0d
+		},
+		{
+			dependencies: ["7D2A10E1C4A80160"]
+			description: [
+				"完成形は一種類ではない。Rare以上の多Affix装備、固有効果を持つUnique、ルーンの並びで能力を得るRunewordから目的に合う経路を選ぶ。"
+				"レア度ごとのAffix数はCommon 1／Uncommon 2／Rare 3／Epic 4／Legendary 5／Mythic 6。Epic以降はLv10／25／50が最低ラインだが、Uniqueには低Lvで成立する個体もある。"
+				"火力だけでなくHealth、Regen、Lifesteal、Health on Kill、Magic Shield、Magic Shield on Kill、各種耐性も同じ装備候補になる。"
+				"TaCZ銃撃もWeapon Damage、Critical Hit／Damage、Lifesteal、撃破時Health／Magic Shield回復へ接続済み。銃だけ主要Affixが死ぬ状態にはしない。"
+				"Rune・Unique・強化CurrencyはM\\&S本来のMob Lootと装備育成から入手する。クエスト報酬で完成品を配り、厳選を飛ばすことはしない。"
+				"セット装備はこの導線の動作とT4以降の数値をベータで確認してから追加する。"
+			]
+			icon: "mmorpg:gear_crafting_station"
+			id: "7D2A10E1C4A80170"
+			shape: "hexagon"
+			size: 1.5d
+			subtitle: "解放条件: 「装備成長の正本」を完了"
+			tasks: [{
+				id: "7D2A10E1C4A80171"
+				title: "Affix・Unique・Runewordの三経路を確認した"
+				type: "checkmark"
+			}]
+			title: "完成形は一着ではない"
+			x: 6.0d
 			y: 2.0d
 		}
 	]
