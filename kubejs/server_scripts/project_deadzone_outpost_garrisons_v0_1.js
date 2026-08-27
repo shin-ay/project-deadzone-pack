@@ -49,7 +49,9 @@ function pdzGarNotice(server,marker,id,faction,role){
   }
   if(first){
     near.persistentData.putString('dz_current_named_site',presentationId)
-    let place=marker.persistentData.getString('dz_wild_name')||'名称未登録地点'
+    let place=typeof pdzWildEnsureName==='function'
+      ? pdzWildEnsureName(server,marker)
+      : (marker.persistentData.getString('dz_wild_name')||('地点 '+Math.floor(marker.x)+','+Math.floor(marker.z)))
     near.runCommandSilent('title @s times 10 55 15')
     near.runCommandSilent('title @s title {"text":"'+place+'","color":"'+(hostile?'red':'gold')+'","bold":true}')
     near.runCommandSilent('title @s subtitle {"text":"'+(hostile?'敵対勢力圏':'安全な接触地点')+' / '+faction+'","color":"gray"}')
@@ -231,6 +233,10 @@ function pdzGarPulse(server){
     let id=pdzGarSiteId(marker)
     if(seen[id])return
     seen[id]=true
+    // Loaded legacy markers are migrated before map/title presentation. This
+    // is intentionally piggy-backed on the existing 5-second pulse, so the
+    // repair adds no new per-tick entity scan.
+    if(typeof pdzWildEnsureName==='function')pdzWildEnsureName(server,marker)
     let site=owners[id]||{},tag=marker.persistentData.getString('dz_garrison_tag')||pdzGarTag(id)
     if(marker.persistentData.contains('dz_wild_garrison')&&!marker.persistentData.getBoolean('dz_wild_garrison')){
       pdzGarEntities(marker.level,tag).forEach(e=>e.discard())

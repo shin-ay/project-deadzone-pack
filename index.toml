@@ -22,7 +22,7 @@ hash = "de03f8a8b9883897fb0fcedfac68866a446d1b32a446aff699508747c04a504a"
 
 [[files]]
 file = "ambience_music/PDZ_BGM_README.txt"
-hash = "d7834a9cb21eb20c4c68b47e1cfcd0ee2708c550edbdded274d1db6918821f67"
+hash = "8bb0af9eaa2746ceae8bb13c540bf27d615da7919c226929d40179509a5d55da"
 
 [[files]]
 file = "ambience_music/music/boss_01_axel_fuel_king.ogg"
@@ -238,11 +238,11 @@ hash = "a73d6b4af69de70a3f73092d24aed2bb5545d1cdcd4ee769c408f77c3f6d1fb9"
 
 [[files]]
 file = "ambience_music/music_config.txt"
-hash = "c307a4f08b108c88699ba2a034b06f9366e60a960ab3c5ba9d369d4360815008"
+hash = "7f561abe202954e1fb4cb1df217ce52e79dc759eecb172efb99fe886cf95e9f6"
 
 [[files]]
 file = "ambience_music/music_config_production.txt"
-hash = "c307a4f08b108c88699ba2a034b06f9366e60a960ab3c5ba9d369d4360815008"
+hash = "7f561abe202954e1fb4cb1df217ce52e79dc759eecb172efb99fe886cf95e9f6"
 
 [[files]]
 file = "ambience_music/music_config_test_all.txt"
@@ -1430,7 +1430,7 @@ hash = "5a0ed174cd4dacab1de947f7f7c1ad4981f22baa60d52504b9e127e88c417aee"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/deadzone_main_story_t4.snbt"
-hash = "b99b714f81b93881f1ac0307513eafcd233b32bf7fc37d1b63ad8b93200977cf"
+hash = "65ed78536509cb96a19fa1566b9688ec56f4fb96a708ba92390077e668b60b2a"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/deadzone_mekanism_tutorial_01.snbt"
@@ -1938,7 +1938,11 @@ hash = "466b2a68c257644993a0b9e7197a9861cc1cefd8c1aaf58e86ec4b1361147926"
 
 [[files]]
 file = "config/legendarysurvivaloverhaul-common.toml"
-hash = "fd22cb1d6e9e64f936cd2342af2a9415571e8b3512fdd0f18d3a17144387bba5"
+hash = "a27a9011243c7b378aee4512f6ce6c6fe9f7a818194b3fd223f20ba8781de9a6"
+
+[[files]]
+file = "config/legendarysurvivaloverhaul/legendarysurvivaloverhaul-common.toml"
+hash = "b444f08e69ff87e51cc61889135e9c22d160ec23e567ed4e3043b1c3a4775def"
 
 [[files]]
 file = "config/libtooltips-client.toml"
@@ -9769,6 +9773,10 @@ file = "kubejs/data/project_deadzone/functions/story/spawn_reactor_saint.mcfunct
 hash = "8c7cae7da583185b59483cbf94a8cc520683aa15e1c8c430046637419b747c3a"
 
 [[files]]
+file = "kubejs/data/project_deadzone/functions/story/spawn_t4_relay_shepherd.mcfunction"
+hash = "f2006dbc235574ec8fdf192a4a92fe3ea3ed6830f51a5a61ad3e26225393beca"
+
+[[files]]
 file = "kubejs/data/project_deadzone/loot_tables/chests/firestation.json"
 hash = "b18ee8c452560d286a413e692c3b5c5c87d55d782cc7b621d6dfd2bb5462631d"
 
@@ -10962,7 +10970,7 @@ hash = "733e97bc1453cd2771ca741ab2052bd0da84c67fb8d3f6f52249ce4845eed10f"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_adaptive_music_v0_1.js"
-hash = "9b2e5b94e7440c3012be4d6b05b8b0f9bf43b47a005ead568dc64d5363f98aec"
+hash = "75451b512b5fad79d9ffe64abdd4f3c910789f47a54fc2176ebe44253adf4e41"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_ammo_reload_perks_v0_1.js"
@@ -10998,7 +11006,7 @@ hash = "f65f3f9968b2f676460d97b6ea9fd73a69d56e07c3f6453ea3259bc082f644e2"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_boss_mechanics_v0_1.js"
-hash = "4425c7e85fb6d3e1496710abdf0477f84f0e78ae5cc8525981e4ef6ba72155cc"
+hash = "dc4e3c9e648c24338163cca8f59dfe456046af8ad008d234785cea8415ffe813"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_buddy_control_v0_1.js"
@@ -11050,7 +11058,7 @@ hash = "25db38b84830290663b37674a620fdd44cdceb31642aa249c5405835258bc8e9"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_cte2_combat_scaling_v0_1.js"
-hash = "091f96ac996a6f9526236057efd00fd32ccab8bcf35bc820d629e5e98ab8862d"
+hash = "810f0999ce3c94cd213b03e2322bfdd2da6f5ee602039977132d29481f0dc5e2"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_currency_v0_1.js"
@@ -11193,6 +11201,10 @@ file = "kubejs/server_scripts/project_deadzone_mns_equipment_bridge_v0_1.js"
 hash = "92e2800b5cd91a4efef8840a3d9a5ab5846cf378def785647494488c92e37088"
 
 [[files]]
+file = "kubejs/server_scripts/project_deadzone_mns_limb_damage_bridge_v0_1.js"
+hash = "730cf2bdc2eb5ca03906cab76bed26d24dcd2814362ad1cfc69c8453f500d74d"
+
+[[files]]
 file = "kubejs/server_scripts/project_deadzone_mns_progression_bridge_v0_1.js"
 hash = "9face9c66a9a80ac6c4b5642f7c82b28f0b26d39b8eb35ffcd0c468cc02aa126"
 
@@ -11210,7 +11222,7 @@ hash = "cbf2690cdb7fe4df1a954ac5576d2267db44716b6259a74104f5b5d1dce24293"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_outpost_garrisons_v0_1.js"
-hash = "888d8935551895513c00d2c8eefddda51ca693baaa5da49acc3aaba61dcf9964"
+hash = "5f0d6b2e2827501c0beb40b427cb55b8ae38fe448b24e6f54f11410a036b98ac"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_player_damage_guard_v0_1.js"
@@ -11322,7 +11334,7 @@ hash = "41674e022663b6fdae9d6dedb786f4854a4ae08762ab7dcf789b0d8e54b4c61c"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_story_progress_v0_1.js"
-hash = "c73e046e0c1038abc44ef982f375cd55412271d66619b9c00d629130a8d854cc"
+hash = "2617866214cc30b71f5542ba0eae8fa273e859d9b4db57663be2d09c012b0857"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_story_progression_v0_1.js"
@@ -11347,6 +11359,14 @@ hash = "b6b3616e3aca98daa6bd76fc0cc8e0a1343a364c4ead1e874c72a61765aefbc7"
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_t0_safezone_v0_1.js"
 hash = "347448364750209246145cd6a83cf62cc457059ba7d0e50dfb4048b09c98269a"
+
+[[files]]
+file = "kubejs/server_scripts/project_deadzone_t4_first_voice_boss_v0_1.js"
+hash = "49f145563fded1de8c0bce9e56b9630db5c3a6435d768472f7a88492e2cd205f"
+
+[[files]]
+file = "kubejs/server_scripts/project_deadzone_t4_outer_relays_v0_1.js"
+hash = "354928eeb83f467579ee9725bba13a25efa4a35f8e2adff46750844c920e85de"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_tactical_resource_v0_1.js"
@@ -11390,7 +11410,7 @@ hash = "0f2effb86e78856c471684c2eff9d31521a84f8e3bf1bee512dcbe294fd1db30"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_wilderness_sites_v0_1.js"
-hash = "33a1bac5c2bc9188d7f31da3db757cdf405ddf5d3051107b1c1e26553096bd3c"
+hash = "0af7bb635c62a8b9fac967bf279c340160523f92624ac6e782cd3428f7807d37"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_world_evolution_v0_1.js"
@@ -11462,7 +11482,7 @@ hash = "b254cfbe38114053d235c38f0006608c5749921be4982f300be21e748baed8dc"
 
 [[files]]
 file = "kubejs/startup_scripts/project_deadzone_music_states_v0_1.js"
-hash = "f27074e22e1eaf32c2bf529ae92f4c5064118a9e2af7f93f3858a7bd49be059f"
+hash = "d8c7c423eaa6459508b72df51e52182d1233f6f7ef19e89a28977bfc2365f4ea"
 
 [[files]]
 file = "kubejs/startup_scripts/project_deadzone_skill_forge_effects_v0_1.js"

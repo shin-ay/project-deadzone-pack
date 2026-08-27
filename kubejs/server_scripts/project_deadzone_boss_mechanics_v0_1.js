@@ -24,7 +24,8 @@ const PDZ_MECH_DEFS = [
   {id:'10',tag:'dz_story_boss_radio_tower',name:'通信妨害'},
   {id:'11',tag:'dz_story_boss_reactor_saint',name:'臨界放射環'},
   {id:'12',tag:'dz_sideboss_tank',name:'予告式グラウンドスラム'},
-  {id:'13',tag:'dz_sideboss_abomination',name:'再生胞子'}
+  {id:'13',tag:'dz_sideboss_abomination',name:'再生胞子'},
+  {id:'14',tag:'dz_story_boss_t4_relay_shepherd',name:'信号ノード＋座標砲撃'}
 ]
 
 // Boss-only silhouettes. Ordinary bandits already use AK/M4/SMG/Deagle/
@@ -35,7 +36,8 @@ const PDZ_MECH_BOSS_GUNS = {
   '05':{gun:'elitex:mcs_spear',mode:'AUTO',ammo:30},
   '06':{gun:'elitex:m249x',mode:'AUTO',ammo:100},
   '07':{gun:'elitex:fh_scar18',mode:'AUTO',ammo:30},
-  '08':{gun:'tacz:scar_h',mode:'AUTO',ammo:20}
+  '08':{gun:'tacz:scar_h',mode:'AUTO',ammo:20},
+  '14':{gun:'maxstuff:scar_hamr',mode:'AUTO',ammo:50}
 }
 
 const PDZ_MECH_TEST_ENTRIES = [
@@ -50,7 +52,8 @@ const PDZ_MECH_TEST_ENTRIES = [
   {id:'10',x:-12,z:34,entity:'simpleenemymod:ruunit',name:'Remnant Signal Hunter',hp:75},
   {id:'11',x:-4,z:34,entity:'infectious:radioactive_zombie',name:'REACTOR SAINT',hp:220},
   {id:'12',x:4,z:34,entity:'apocalypse_zombies:tank',name:'Siege Tank',hp:90,ready:true},
-  {id:'13',x:12,z:34,entity:'infectious:ancient_zombie_boss',name:'Ancient Abomination',hp:120,ready:true}
+  {id:'13',x:12,z:34,entity:'infectious:ancient_zombie_boss',name:'Ancient Abomination',hp:120,ready:true},
+  {id:'14',x:20,z:34,entity:'simpleenemymod:ruunit',name:'FIRST VOICE // RELAY SHEPHERD',hp:180}
 ]
 
 let pdzMechClock=0
@@ -293,6 +296,9 @@ function pdzMechPulse(boss,id){
     let testTag=boss.tags.contains(PDZ_MECH_LOADTEST)?',"dz_boss_loadtest_runtime"':''
     boss.runCommandSilent('summon minecraft:area_effect_cloud ~ ~ ~ {Duration:120,Radius:3.5f,RadiusPerTick:-0.02f,Particle:"spore_blossom_air",Effects:[{Id:19,Amplifier:0b,Duration:60}],Tags:["'+PDZ_MECH_RUNTIME+'","dz_boss_runtime_13"'+testTag+']}')
     pdzMechTell(boss,'再生胞子を放出。汚染域から離れろ！','dark_green');pdzMechPulseCount++
+  }else if(id==='14'&&global.pdzT4BossPulse){
+    try { if(global.pdzT4BossPulse(boss,time))pdzMechPulseCount++ }
+    catch(err){console.warn('[PROJECT DEADZONE][Boss 14] pulse failed: '+err)}
   }
 }
 
@@ -417,13 +423,13 @@ ServerEvents.commandRegistry(event=>{
   root.then(Commands.literal('spawn').executes(ctx=>{
     let p=ctx.source.player
     pdzMechSpawnTestSet(p,true)
-    p.tell(Text.of('見た目確認用ボス[02]～[13]を停止状態で配置しました。移動・攻撃・ギミックは無効です。').aqua())
+    p.tell(Text.of('見た目確認用ボス[02]～[14]を停止状態で配置しました。移動・攻撃・ギミックは無効です。').aqua())
     return 1
   }))
   root.then(Commands.literal('combat').executes(ctx=>{
     let p=ctx.source.player
     pdzMechSpawnTestSet(p,false)
-    p.tell(Text.of('マルチ負荷テスト用ボス[02]～[13]を戦闘状態で配置しました。プレイヤー／村人系だけを狙います。').red())
+    p.tell(Text.of('マルチ負荷テスト用ボス[02]～[14]を戦闘状態で配置しました。プレイヤー／村人系だけを狙います。').red())
     return 1
   }))
   root.then(Commands.literal('status').executes(ctx=>{

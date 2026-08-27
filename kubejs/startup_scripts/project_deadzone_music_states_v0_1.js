@@ -30,7 +30,8 @@ StartupEvents.registry('mob_effect', event => {
     ['music_boss_10', 0x4f75a8],
     ['music_boss_11', 0x8acb4a],
     ['music_boss_12', 0xaa2727],
-    ['music_boss_13', 0x64703c]
+    ['music_boss_13', 0x64703c],
+    ['music_boss_14', 0x8d45c7]
   ]
   states.forEach(state => event.create('project_deadzone:' + state[0]).color(state[1]).beneficial())
 })

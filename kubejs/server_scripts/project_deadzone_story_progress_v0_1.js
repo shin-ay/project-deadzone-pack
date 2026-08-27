@@ -55,8 +55,11 @@ const DZ_STORY_QUESTS = {
   t3ArgusChoice: "5EF7DA85993329F7",
   t3Complete: "65F53D8012470726",
   t3EndgameContracts: "A3E1000000000001",
-  t4Aftermath: "A4E1000000000001",
-  t4Authorization: "A4E1000000000005"
+  // These are the real quest IDs in deadzone_main_story_t4.snbt.  The old
+  // A4E1 placeholders never existed in the chapter and silently prevented
+  // automatic T4 completion.
+  t4Aftermath: "562B6555400E8922",
+  t4Authorization: "259E544FE7CEAC94"
 }
 
 function dzGrantEndgameDecree(player) {

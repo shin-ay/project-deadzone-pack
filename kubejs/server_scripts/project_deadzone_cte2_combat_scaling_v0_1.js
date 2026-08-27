@@ -39,11 +39,11 @@ function pdzCteExcluded(entity){
     'dz_boss_mechanics_active','dz_story_boss_argus_fragment','dz_story_boss_choir_vessel',
     'dz_story_boss_firestation','dz_story_boss_gasstation','dz_story_boss_gunshop',
     'dz_story_boss_hospital','dz_story_boss_policestation','dz_story_boss_primordial',
-    'dz_story_boss_radio_tower','dz_story_boss_reactor_saint','dz_sideboss_tank',
+    'dz_story_boss_radio_tower','dz_story_boss_reactor_saint','dz_story_boss_t4_relay_shepherd','dz_sideboss_tank',
     'dz_sideboss_abomination','dz_boss_mech_02','dz_boss_mech_03','dz_boss_mech_04',
     'dz_boss_mech_05','dz_boss_mech_06','dz_boss_mech_07','dz_boss_mech_08',
     'dz_boss_mech_09','dz_boss_mech_10','dz_boss_mech_11','dz_boss_mech_12',
-    'dz_boss_mech_13']
+    'dz_boss_mech_13','dz_boss_mech_14','dz_t4_signal_node','dz_pdz_boss_weakpoint']
   for(let i=0;i<excluded.length;i++)if(entity.tags.contains(excluded[i]))return true
   try{if(entity.getOwnerUUID()!=null)return true}catch(ignored){}
   return false

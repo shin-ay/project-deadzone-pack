@@ -1,7 +1,7 @@
 [core]
 "Temperature Enabled" = true
 "Thirst Enabled" = true
-"Health Overhaul Enabled" = true
+"Health Overhaul Enabled" = false
 "Localized Body Damage Enabled" = true
 "Temperature Difficulty Mode" = "EASY"
 

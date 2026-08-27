@@ -20,7 +20,7 @@ const PDZ_MUSIC_EFFECTS = [
   'music_named_aegis','music_named_warden','music_named_infected','music_named_unknown',
   'music_boss_01','music_boss_02','music_boss_03','music_boss_04','music_boss_05',
   'music_boss_06','music_boss_07','music_boss_08','music_boss_09','music_boss_10',
-  'music_boss_11','music_boss_12','music_boss_13'
+  'music_boss_11','music_boss_12','music_boss_13','music_boss_14'
 ]
 
 const PDZ_MUSIC_BOSSES = [
@@ -36,7 +36,8 @@ const PDZ_MUSIC_BOSSES = [
   {key:'music_boss_10',tags:['dz_boss_mech_10','dz_story_boss_radio_tower']},
   {key:'music_boss_11',tags:['dz_boss_mech_11','dz_story_boss_reactor_saint']},
   {key:'music_boss_12',tags:['dz_boss_mech_12','dz_sideboss_tank']},
-  {key:'music_boss_13',tags:['dz_boss_mech_13','dz_sideboss_abomination']}
+  {key:'music_boss_13',tags:['dz_boss_mech_13','dz_sideboss_abomination']},
+  {key:'music_boss_14',tags:['dz_boss_mech_14','dz_story_boss_t4_relay_shepherd']}
 ]
 
 function pdzMusicDim(entity) { return String(entity.level.dimension) }

@@ -45,6 +45,7 @@ playlist boss_10 = [ "boss_10_echo7_dead_channel.ogg" <-2.5> ];
 playlist boss_11 = [ "boss_11_reactor_saint_critical_mass.ogg" <-2.0> ];
 playlist boss_12 = [ "boss_12_siege01_break_the_gate.ogg" <-2.0> ];
 playlist boss_13 = [ "boss_13_ancient_abomination_spore_crown.ogg" <-2.0> ];
+playlist boss_14 = [ "boss_last_stand.ogg" <-2.0> ];
 
 playlist city = [
   "city_empty_windows.ogg" <-5.0>,
@@ -121,6 +122,7 @@ begin
     when ( any effect in $effects has effect == "project_deadzone:music_boss_11" end ) play boss_11 priority 8;
     when ( any effect in $effects has effect == "project_deadzone:music_boss_12" end ) play boss_12 priority 8;
     when ( any effect in $effects has effect == "project_deadzone:music_boss_13" end ) play boss_13 priority 8;
+    when ( any effect in $effects has effect == "project_deadzone:music_boss_14" end ) play boss_14 priority 8;
 
     // Named threats override everything, but do not hard-cut. A lower
     // priority location track is paused and resumes after the threat leaves.

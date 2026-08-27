@@ -120,6 +120,137 @@
 			x: 6.0d
 			y: 0.0d
 		}
+		{
+			dependencies: ["259E544FE7CEAC94"]
+			description: [
+				"外縁部の通信・軍事・研究施設を巡り、First Voiceと同期する中継点を探す。専用巨大施設は生成されず、既存施設の一部だけが作戦地点へ変化する。"
+				"対象地点へ接近するとレイの無線と精鋭分隊が反応する。プレイヤーがコマンドを入力する必要はない。"
+			]
+			icon: "doomsday_decoration:broadcaster"
+			id: "512BA8BAB5024734"
+			subtitle: "解放条件: 「World Tier 4：外縁作戦」を完了"
+			tasks: [{
+				id: "20C1987430424A41"
+				title: "最初の外縁中継点を発見した"
+				type: "custom"
+			}]
+			title: "外縁周波数を三角測量"
+			x: 8.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["512BA8BAB5024734"]
+			description: [
+				"中継点の精鋭分隊は役割を持つ。第1地点ではOfficerが周囲の兵を強化するため、指揮個体を先に落とすと突破しやすい。"
+				"全員を排除したらEpic Blueprint Data Chipを所持して中枢から10m以内に留まり、5秒間の解析を完了する。Chipは消費しない。"
+			]
+			icon: "minecraft:crossbow"
+			id: "55E5369F5F0A4A0B"
+			subtitle: "解放条件: 「外縁周波数を三角測量」を完了"
+			tasks: [{
+				id: "7657BC84B0414A11"
+				title: "第1外縁中継点を確保した"
+				type: "custom"
+			}]
+			title: "中継点01：指揮網"
+			x: 10.0d
+			y: -1.5d
+		}
+		{
+			dependencies: ["55E5369F5F0A4A0B"]
+			description: [
+				"第2地点はJammer Heavyが照準と移動を妨害する。ARGUS-9を破壊している場合だけ監視網が停止し、この妨害は発生しない。"
+				"分隊排除後は同じData Chipを使って中枢を解析する。再設定を選んだ世界ではARGUS支援により必要時間が3秒へ短縮される。"
+			]
+			icon: "superbwarfare:monitor"
+			id: "7D2A0FB0C8784DB9"
+			subtitle: "解放条件: 「中継点01：指揮網」を完了"
+			tasks: [{
+				id: "6CA8002D16D74124"
+				title: "第2外縁中継点を確保した"
+				type: "custom"
+			}]
+			title: "中継点02：妨害波"
+			x: 12.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["7D2A0FB0C8784DB9"]
+			description: [
+				"第3地点は損耗を検知すると一度だけHunter増援を呼ぶ。目の前の残敵数だけで戦闘終了と判断しないこと。"
+				"3地点目の解析完了でFirst Voice中継網の追跡座標が確定し、T4前半Bossへ接続できる状態になる。"
+			]
+			icon: "superbwarfare:epic_blueprint_data_chip"
+			id: "0F8B4E1A0C9E457F"
+			subtitle: "解放条件: 「中継点02：妨害波」を完了"
+			tasks: [{
+				id: "2F916C1DD6D44674"
+				title: "第3外縁中継点を確保した"
+				type: "custom"
+			}]
+			title: "中継点03：狩猟信号"
+			x: 14.0d
+			y: 1.5d
+		}
+		{
+			dependencies: ["0F8B4E1A0C9E457F"]
+			description: [
+				"3本の外縁信号から、First Voice中継個体の移動経路を特定した。"
+				"次の作戦ではARGUS-9の判断結果に応じて支援、敵編成、報酬経路が変化する。World Tierや一般MobのHPを一律に増やすことはしない。"
+			]
+			icon: "minecraft:spyglass"
+			id: "8E64D6D02C8C4481"
+			shape: "hexagon"
+			size: 1.5d
+			subtitle: "解放条件: 外縁中継点を3地点確保"
+			tasks: [{
+				id: "7B7B279C376A4C07"
+				title: "First Voice追跡座標を確定した"
+				type: "custom"
+			}]
+			title: "First Voice追跡座標"
+			x: 16.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["8E64D6D02C8C4481"]
+			description: [
+				"第3外縁中継点から128m以上離れ、部隊を再編してから戻る。96m以内へ再接近するとRELAY SHEPHERDが自動出現する。コマンド操作は不要。"
+				"敵は確保済み中継点を帰還経路として逆探知している。すぐ連戦にはならないため、弾薬・回復・防護装備を整えてから帰還すること。"
+			]
+			icon: "minecraft:compass"
+			id: "067B7C4A04274550"
+			subtitle: "解放条件: 「First Voice追跡座標」を完了／第3中継点から一度離れて再接近"
+			tasks: [{
+				id: "DA60B5E30B7C49EF"
+				title: "RELAY SHEPHERDとの交戦が始まった"
+				type: "custom"
+			}]
+			title: "帰還信号：狩る側へ"
+			x: 18.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["067B7C4A04274550"]
+			description: [
+				"最初に周囲のSIGNAL NODEを破壊し、本体の強力な防護を解除する。紫色のSIGNAL LOCKが表示されたら、予告地点から直ちに離脱する。"
+				"耐久が低下するとVOICE ECHO分隊を再構成する。ARGUS-9を破壊・再設定・分離した判断によってNode数、砲撃予告、支援効果、報酬が変化する。"
+				"Bossは作戦地点から離れ過ぎると帰還し、プレイヤーと村人以外を追跡しない。死亡後のリスポーン地点まで追い回されることもない。"
+			]
+			icon: "minecraft:target"
+			id: "F8FA04084F1B4335"
+			shape: "hexagon"
+			size: 1.5d
+			subtitle: "解放条件: 「帰還信号：狩る側へ」を完了／Signal Nodeを停止して本体を撃破"
+			tasks: [{
+				id: "FC45A3D623A04C09"
+				title: "FIRST VOICE // RELAY SHEPHERDを撃破した"
+				type: "custom"
+			}]
+			title: "T4前半Boss：RELAY SHEPHERD"
+			x: 20.0d
+			y: 0.0d
+		}
 	]
 	title: "メインストーリー V：封鎖網の外から"
 }

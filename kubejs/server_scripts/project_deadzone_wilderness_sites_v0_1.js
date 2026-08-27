@@ -149,6 +149,44 @@ function pdzWildWriteRegistry(server,value) {
   server.persistentData.putString(PDZ_WILD_REGISTRY_KEY,JSON.stringify(value))
 }
 
+// v0.1 initially returned pre-existing markers before assigning dz_wild_name.
+// Generate a stable name from the persistent site ID and migrate both the
+// loaded marker and the server registry. The same site therefore keeps its
+// name across restarts, while old worlds repair themselves as chunks load.
+function pdzWildEnsureName(server,marker) {
+  if(!marker||!marker.persistentData)return '地点情報取得中'
+  let data=marker.persistentData
+  let current=String(data.getString('dz_wild_name')||'').trim()
+  let invalid=!current||current==='名称未登録地点'||current==='Unnamed Location'
+  let instance=String(data.getString('dz_wild_instance')||'')
+  if(!instance)instance=String(marker.level.dimension)+'|legacy|'+Math.floor(marker.x)+'|'+Math.floor(marker.y)+'|'+Math.floor(marker.z)+'|'+String(data.getString('dz_wild_structure')||'manual:site')
+  let registry=pdzWildReadRegistry(server),record=registry[instance]||null
+  if(invalid&&record&&record.name)current=String(record.name).trim()
+  if(!current||current==='名称未登録地点'||current==='Unnamed Location'){
+    let type=String(data.getString('dz_wild_type')||(record&&record.type)||'manual')
+    let faction=String(data.getString('dz_wild_faction')||(record&&record.faction)||'independent')
+    current=pdzWildPlaceName(instance,type,faction)
+  }
+  data.putString('dz_wild_instance',instance)
+  data.putString('dz_wild_name',current)
+  data.putInt('dz_wild_name_version',1)
+  if(!record){
+    record={instance:instance,structure:String(data.getString('dz_wild_structure')||'manual:site'),
+      type:String(data.getString('dz_wild_type')||'manual'),faction:String(data.getString('dz_wild_faction')||'independent'),
+      cityId:String(data.getString('dz_wild_city_id')||''),x:Math.floor(marker.x),y:Math.floor(marker.y),z:Math.floor(marker.z),
+      name:current,occupancy:String(data.getString('dz_wild_occupancy')||'empty'),
+      inhabited:data.getBoolean('dz_wild_inhabited'),garrison:data.getBoolean('dz_wild_garrison'),
+      garrisonLimit:data.getInt('dz_wild_garrison_limit'),discoveredAt:data.getLong('dz_wild_created')||Date.now(),
+      activated:data.getBoolean('dz_wild_activated'),traderSpawned:false}
+    registry[instance]=record
+    pdzWildWriteRegistry(server,registry)
+  }else if(String(record.name||'')!==current){
+    record.name=current
+    pdzWildWriteRegistry(server,registry)
+  }
+  return current
+}
+
 function pdzWildReadCityRegistry(server) {
   let raw=server.persistentData.getString(PDZ_WILD_CITY_REGISTRY_KEY)
   if(!raw)return {}
@@ -588,7 +626,7 @@ function pdzWildShouldAnnounce(player,def,stableKey,ax,az,cityKey) {
 function pdzWildCreateMarker(player,siteId,forcedFaction,instanceKey,anchor,overrideDef,cityProfile) {
   let stableKey=pdzWildInstanceKey(player,siteId,instanceKey,anchor)
   let nearby=pdzWildMarkerByInstance(player,stableKey,512)
-  if(nearby)return nearby
+  if(nearby){pdzWildEnsureName(player.server,nearby);return nearby}
   let def=overrideDef||PDZ_WILD_SITES[siteId] || {type:'manual',preferred:'independent',trade:'independent'}
   let registry=pdzWildReadRegistry(player.server),prior=registry[stableKey]||null
   let ax=anchor?Math.floor(anchor.x):Math.floor(player.x),az=anchor?Math.floor(anchor.z):Math.floor(player.z)
@@ -730,7 +768,7 @@ function pdzWildStatus(player) {
   }
   let faction=marker.persistentData.getString('dz_wild_faction')
   player.tell(Text.of('=== WILDERNESS SITE ===').gold())
-  player.tell(Text.of('地点名: '+(marker.persistentData.getString('dz_wild_name')||'名称未登録地点')).aqua())
+  player.tell(Text.of('地点名: '+pdzWildEnsureName(player.server,marker)).aqua())
   player.tell(Text.of('施設: '+marker.persistentData.getString('dz_wild_type')).white())
   player.tell(pdzWildColoredText('勢力: '+(PDZ_WILD_NAMES[faction]||faction),PDZ_WILD_COLORS[faction]))
   player.tell(Text.of('構造物: '+marker.persistentData.getString('dz_wild_structure')).darkGray())
