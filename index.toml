@@ -1823,7 +1823,7 @@ hash = "ca413dea02cce69c69dccdc525fb0ec013236876eff2d142772c68db3d772d3a"
 
 [[files]]
 file = "config/inventoryprofilesnext/inventoryprofiles.json"
-hash = "d9b6f68ff0d6d7e67881c5de35b0f7537f04ad60b28d0697178f775c48231c91"
+hash = "c214b273013715904d6af7b10a8b089841ad34915b6d925406077fb5407e7348"
 
 [[files]]
 file = "config/inventoryprofilesnext/localhost&8833/villager-trading-config.json"

@@ -1,12 +1,12 @@
 name = "PROJECT DEADZONE"
 author = "PROJECT DEADZONE Team"
-version = "BETA-20260827-ONBOARDING-SAFETY-3"
+version = "BETA-20260827-IPN-NOTICE-4"
 pack-format = "packwiz:1.1.0"
 
 [index]
 file = "index.toml"
 hash-format = "sha256"
-hash = "48b185aa76a113fedc3f041b8693e60570e2a5dce1088afc7df1d3683212dd9e"
+hash = "220c2a72adf9ea80109e51892fa1d4c273639e1d617217e2dc3726dc53751d36"
 
 [versions]
 forge = "47.4.10"
