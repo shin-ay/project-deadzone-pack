@@ -61,12 +61,12 @@
 			]
 			icon: "kubejs:deadzone_base_core"
 			id: "6D56010000000101"
-			subtitle: "解放条件: 「生存者登録」を完了"
 			rewards: [{
 				id: "6D56010000001101"
 				type: "xp"
 				xp: 5
 			}]
+			subtitle: "解放条件: 「生存者登録」を完了"
 			tasks: [{
 				id: "6D56010000002101"
 				title: "Camp Controlを開いた"

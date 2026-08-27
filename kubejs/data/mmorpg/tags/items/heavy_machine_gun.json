@@ -1,0 +1,29 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "superbwarfare:devotion",
+      "required": false
+    },
+    {
+      "id": "superbwarfare:m_2_hb",
+      "required": false
+    },
+    {
+      "id": "superbwarfare:m_60",
+      "required": false
+    },
+    {
+      "id": "superbwarfare:minigun",
+      "required": false
+    },
+    {
+      "id": "superbwarfare:rpk",
+      "required": false
+    },
+    {
+      "id": "zombiekit:heavy_machine_gun_summon",
+      "required": false
+    }
+  ]
+}

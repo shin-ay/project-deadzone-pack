@@ -259,7 +259,6 @@
 			description: ["Aquaculture Delightで保存性と栄養価を上げる。遠征食、キャンプ食、交易用の三種類を作り分けよう。"]
 			icon: "aquaculturedelight:fish_and_chips"
 			id: "3DC944C0C055C3D5"
-			subtitle: "解放条件: 「海岸漁業」・「漁獲物の規格化」をすべて完了"
 			rewards: [
 				{
 					count: 24
@@ -274,6 +273,7 @@
 					type: "item"
 				}
 			]
+			subtitle: "解放条件: 「海岸漁業」・「漁獲物の規格化」をすべて完了"
 			tasks: [
 				{
 					count: 2L
@@ -395,7 +395,6 @@
 				}
 			}
 			id: "73F13EE1091C727F"
-			subtitle: "解放条件: 「罠漁と甲殻類」・「海から流れ着く情報」をすべて完了"
 			rewards: [
 				{
 					count: 16
@@ -409,6 +408,7 @@
 					type: "item"
 				}
 			]
+			subtitle: "解放条件: 「罠漁と甲殻類」・「海から流れ着く情報」をすべて完了"
 			tasks: [
 				{
 					id: "58B0A54E6A5B4AE4"

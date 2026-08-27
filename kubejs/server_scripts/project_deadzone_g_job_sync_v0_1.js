@@ -30,6 +30,21 @@ const PDZG_TALENT_ENTRY = {
   anomaly_researcher:{id:'pdz_start_analysis',x:90,y:61}
 }
 
+// The spell-school screen is a tactical loadout screen in PDZ, not another
+// character-class picker.  Give every JOB one coherent starter field/skill so
+// the inventory button never remains the unexplained question mark.
+const PDZG_SKILL_ENTRY = {
+  survivor:{school:'hunter',perk:'quickdraw'},
+  weapons_expert:{school:'hunter',perk:'quickdraw'},
+  medic:{school:'minstrel',perk:'healing_aura'},
+  mechanic:{school:'shaman',perk:'entangling_seed'},
+  engineer:{school:'shaman',perk:'lightning_totem'},
+  scout:{school:'hunter',perk:'smoke_bomb'},
+  security:{school:'warrior',perk:'taunt'},
+  survivalist:{school:'minstrel',perk:'song_of_perseverance'},
+  anomaly_researcher:{school:'sorcerer',perk:'frost_nova'}
+}
+
 function pdzGJobId(player){
   let id=String(player.persistentData.getString('dz_job_id'))
   return PDZG_JOB_ENTRY[id]?id:'survivor'
@@ -59,6 +74,20 @@ function pdzGSyncJob(player,force){
       d.putInt('dz_g_talent_start_schema',2)
       d.putString('dz_g_talent_entry',talentEntry.id)
     }
+
+    // One-time migration only. Preserve later player choices and upgrades.
+    // allocated_lvls stores both learned active skills and passive ranks.
+    if(d.getInt('dz_g_skill_field_schema')<1||String(d.getString('dz_g_skill_job'))!==job){
+      let skillEntry=PDZG_SKILL_ENTRY[job]
+      pdata.ascClass.allocated_lvls.clear()
+      pdata.ascClass.school_order.clear()
+      pdata.ascClass.allocated_lvls.put(skillEntry.perk,1)
+      pdata.ascClass.school_order.add(skillEntry.school)
+      d.putInt('dz_g_skill_field_schema',1)
+      d.putString('dz_g_skill_field',skillEntry.school)
+      d.putString('dz_g_starter_skill',skillEntry.perk)
+      d.putString('dz_g_skill_job',job)
+    }
     pdata.forceNextSync()
     pdata.syncToClient(player)
     let unit=PDZG_LOAD.Unit(player)
@@ -84,6 +113,7 @@ function pdzGJobStatus(player){
   player.tell(Text.of('PDZ JOB: '+job).aqua())
   player.tell(Text.of('G Entry: '+entry.id+' @ '+entry.x+','+entry.y).gray())
   player.tell(Text.of('Talent Start: '+PDZG_TALENT_ENTRY[job].id).gray())
+  player.tell(Text.of('Tactical Field: '+PDZG_SKILL_ENTRY[job].school+' / '+PDZG_SKILL_ENTRY[job].perk).gray())
   player.tell(Text.of('Sync: '+(d.getBoolean('dz_g_job_sync_ok')?'OK':'ERROR')).color(d.getBoolean('dz_g_job_sync_ok')?'green':'red'))
   if(!d.getBoolean('dz_g_job_sync_ok'))player.tell(Text.of(String(d.getString('dz_g_job_sync_error'))).red())
 }

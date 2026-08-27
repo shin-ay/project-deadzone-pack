@@ -1,0 +1,71 @@
+{
+  "base_stats": [
+    {
+      "type": "FLAT",
+      "max": 6.0,
+      "min": 3.0,
+      "stat": "magic_shield"
+    }
+  ],
+  "gear_slot": "tome",
+  "guid": "tome",
+  "possible_items": [
+    {
+      "item_id": "roe_weapons:tome_0",
+      "min_rar": "common",
+      "weight": 1000
+    },
+    {
+      "item_id": "roe_weapons:tome_1",
+      "min_rar": "uncommon",
+      "weight": 1000
+    },
+    {
+      "item_id": "roe_weapons:tome_2",
+      "min_rar": "rare",
+      "weight": 1000
+    },
+    {
+      "item_id": "roe_weapons:tome_3",
+      "min_rar": "epic",
+      "weight": 1000
+    },
+    {
+      "item_id": "roe_weapons:tome_4",
+      "min_rar": "legendary",
+      "weight": 1000
+    },
+    {
+      "item_id": "roe_weapons:tome_5",
+      "min_rar": "mythic",
+      "weight": 1000
+    },
+    {
+      "item_id": "roe_weapons:tome_6",
+      "min_rar": "runeword",
+      "weight": 1000
+    },
+    {
+      "item_id": "roe_weapons:tome_7",
+      "min_rar": "unique",
+      "weight": 1000
+    }
+  ],
+  "req": {
+    "base_req": {},
+    "scaling_req": {
+      "intelligence": 0.4
+    }
+  },
+  "style": "STR",
+  "tags": {
+    "tags": [
+      "tome",
+      "magic_shield_stat",
+      "offhand_family",
+      "intelligence"
+    ]
+  },
+  "weapon_type": "none",
+  "weight": 1000
+}

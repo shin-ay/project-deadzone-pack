@@ -12,7 +12,10 @@ const DZ_ELITE_MNS_ENTITY_DATA = Java.loadClass('com.robertx22.mine_and_slash.ca
 const DZ_ELITE_MNS_HEALTH = Java.loadClass('com.robertx22.mine_and_slash.uncommon.utilityclasses.HealthUtils')
 
 function dzEliteTier(server) {
-  return Math.max(0, Math.min(4, server.persistentData.getInt("deadzone_world_tier")))
+  let tier = server.persistentData.getInt("deadzone_world_tier")
+  try { if (global.pdzThreatTier) tier = global.pdzThreatTier(server) }
+  catch (ignored) {}
+  return Math.max(0, Math.min(4, tier))
 }
 
 function dzPromoteElite(entity, title) {
@@ -23,10 +26,11 @@ function dzPromoteElite(entity, title) {
   let regionTier = 0
   try { regionTier = dzRegionTierAt(entity.server, entity.x, entity.z) }
   catch (ignored) { regionTier = dzEliteTier(entity.server) }
+  let pressureTier = Math.max(regionTier, dzEliteTier(entity.server))
   let chance = DZ_ELITE_CHANCE_BY_REGION[Math.max(0,
-    Math.min(DZ_ELITE_CHANCE_BY_REGION.length - 1, regionTier))]
+    Math.min(DZ_ELITE_CHANCE_BY_REGION.length - 1, pressureTier))]
   if (Math.random() >= chance) return
-  let tier = Math.max(dzEliteTier(entity.server), regionTier)
+  let tier = pressureTier
   let health = Math.min(60, Math.max(30, Math.round(entity.maxHealth * 1.55 + tier * 5)))
   let armor = Math.min(14, 5 + tier * 2)
   entity.addTag("dz_elite")

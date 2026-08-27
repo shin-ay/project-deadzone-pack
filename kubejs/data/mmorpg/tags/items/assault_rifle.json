@@ -1,0 +1,65 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "superbwarfare:ak_12",
+      "required": false
+    },
+    {
+      "id": "superbwarfare:ak_47",
+      "required": false
+    },
+    {
+      "id": "superbwarfare:hk_416",
+      "required": false
+    },
+    {
+      "id": "superbwarfare:hunting_rifle",
+      "required": false
+    },
+    {
+      "id": "superbwarfare:insidious",
+      "required": false
+    },
+    {
+      "id": "superbwarfare:k_98",
+      "required": false
+    },
+    {
+      "id": "superbwarfare:m_4",
+      "required": false
+    },
+    {
+      "id": "superbwarfare:m_98b",
+      "required": false
+    },
+    {
+      "id": "superbwarfare:marlin",
+      "required": false
+    },
+    {
+      "id": "superbwarfare:mk_14",
+      "required": false
+    },
+    {
+      "id": "superbwarfare:qbz_191",
+      "required": false
+    },
+    {
+      "id": "superbwarfare:qbz_95",
+      "required": false
+    },
+    {
+      "id": "superbwarfare:ql_1031",
+      "required": false
+    },
+    {
+      "id": "superbwarfare:sentinel",
+      "required": false
+    },
+    {
+      "id": "superbwarfare:sks",
+      "required": false
+    }
+  ]
+}

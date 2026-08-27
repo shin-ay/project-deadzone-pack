@@ -19,13 +19,13 @@
 			]
 			icon: "mekanism:steel_casing"
 			id: "6D48010000000101"
-			subtitle: "解放条件: 「14：小型電力網の完成」・「T2：Scavenger」をすべて完了"
 			rewards: [{
 				count: 4
 				id: "6D48010000001101"
 				item: "mekanism:ingot_osmium"
 				type: "item"
 			}]
+			subtitle: "解放条件: 「14：小型電力網の完成」・「T2：Scavenger」をすべて完了"
 			tasks: [{
 				id: "6D48010000002101"
 				title: "Mekanism機械もFEで動くと確認した"
@@ -43,13 +43,13 @@
 			]
 			icon: "mekanism:metallurgic_infuser"
 			id: "6D48010000000102"
-			subtitle: "解放条件: 「01：T2・電動加工へ」を完了"
 			rewards: [{
 				count: 8
 				id: "6D48010000001201"
 				item: "minecraft:redstone"
 				type: "item"
 			}]
+			subtitle: "解放条件: 「01：T2・電動加工へ」を完了"
 			tasks: [{
 				id: "6D48010000002201"
 				item: "mekanism:metallurgic_infuser"
@@ -67,13 +67,13 @@
 			]
 			icon: "mekanism:alloy_infused"
 			id: "6D48010000000103"
-			subtitle: "解放条件: 「02：Metallurgic Infuser」を完了"
 			rewards: [{
 				count: 2
 				id: "6D48010000001301"
 				item: "mekanism:alloy_infused"
 				type: "item"
 			}]
+			subtitle: "解放条件: 「02：Metallurgic Infuser」を完了"
 			tasks: [{
 				count: 4L
 				id: "6D48010000002301"
@@ -92,13 +92,13 @@
 			]
 			icon: "mekanism:basic_universal_cable"
 			id: "6D48010000000104"
-			subtitle: "解放条件: 「03：最初のInfused Alloy」を完了"
 			rewards: [{
 				count: 4
 				id: "6D48010000001401"
 				item: "mekanism:basic_universal_cable"
 				type: "item"
 			}]
+			subtitle: "解放条件: 「03：最初のInfused Alloy」を完了"
 			tasks: [{
 				count: 8L
 				id: "6D48010000002401"
@@ -117,13 +117,13 @@
 			]
 			icon: "mekanism:steel_casing"
 			id: "6D4801000000014A"
-			subtitle: "解放条件: 「04：Universal Cable」を完了"
 			rewards: [{
 				count: 4
 				id: "6D480100000014A1"
 				item: "minecraft:redstone"
 				type: "item"
 			}]
+			subtitle: "解放条件: 「04：Universal Cable」を完了"
 			tasks: [
 				{
 					id: "6D480100000024A1"
@@ -148,13 +148,13 @@
 			]
 			icon: "mekanism:basic_energy_cube"
 			id: "6D48010000000105"
-			subtitle: "解放条件: 「04：Universal Cable」を完了"
 			rewards: [{
 				count: 8
 				id: "6D48010000001501"
 				item: "apocalypsenow:money"
 				type: "item"
 			}]
+			subtitle: "解放条件: 「04：Universal Cable」を完了"
 			tasks: [
 				{
 					id: "6D48010000002501"
@@ -179,13 +179,13 @@
 			]
 			icon: "mekanism:enrichment_chamber"
 			id: "6D48010000000106"
-			subtitle: "解放条件: 「05：Mekanismの蓄電」を完了"
 			rewards: [{
 				count: 4
 				id: "6D48010000001601"
 				item: "minecraft:raw_iron"
 				type: "item"
 			}]
+			subtitle: "解放条件: 「05：Mekanismの蓄電」を完了"
 			tasks: [{
 				id: "6D48010000002601"
 				item: "mekanism:enrichment_chamber"
@@ -203,13 +203,13 @@
 			]
 			icon: "mekanism:energized_smelter"
 			id: "6D48010000000107"
-			subtitle: "解放条件: 「06：濃縮工程」を完了"
 			rewards: [{
 				count: 4
 				id: "6D48010000001701"
 				item: "minecraft:iron_ingot"
 				type: "item"
 			}]
+			subtitle: "解放条件: 「06：濃縮工程」を完了"
 			tasks: [{
 				id: "6D48010000002701"
 				item: "mekanism:energized_smelter"
@@ -227,13 +227,13 @@
 			]
 			icon: "mekanism:crusher"
 			id: "6D48010000000108"
-			subtitle: "解放条件: 「06：濃縮工程」を完了"
 			rewards: [{
 				count: 8
 				id: "6D48010000001801"
 				item: "apocalypsenow:money"
 				type: "item"
 			}]
+			subtitle: "解放条件: 「06：濃縮工程」を完了"
 			tasks: [{
 				id: "6D48010000002801"
 				item: "mekanism:crusher"
@@ -254,12 +254,12 @@
 			]
 			icon: "mekanism:configurator"
 			id: "6D48010000000109"
-			subtitle: "解放条件: 「07：電力式精錬」・「08：機械を使い分ける」をすべて完了"
 			rewards: [{
 				id: "6D48010000001901"
 				item: "mekanism:configurator"
 				type: "item"
 			}]
+			subtitle: "解放条件: 「07：電力式精錬」・「08：機械を使い分ける」をすべて完了"
 			tasks: [{
 				id: "6D48010000002901"
 				title: "Side ConfigとAuto Ejectを設定した"
@@ -277,13 +277,13 @@
 			]
 			icon: "mekanism:energized_smelter"
 			id: "6D4801000000010A"
-			subtitle: "解放条件: 「09：面設定と自動排出」を完了"
 			rewards: [{
 				count: 24
 				id: "6D48010000001A01"
 				item: "apocalypsenow:money"
 				type: "item"
 			}]
+			subtitle: "解放条件: 「09：面設定と自動排出」を完了"
 			tasks: [{
 				id: "6D48010000002A01"
 				title: "濃縮から精錬まで自動で1回通した"
@@ -301,7 +301,6 @@
 			]
 			icon: "mekanism:upgrade_energy"
 			id: "6D4801000000010B"
-			subtitle: "解放条件: 「10：二段加工ライン」を完了"
 			rewards: [
 				{
 					count: 2
@@ -316,6 +315,7 @@
 					type: "item"
 				}
 			]
+			subtitle: "解放条件: 「10：二段加工ライン」を完了"
 			tasks: [{
 				id: "6D48010000002B01"
 				title: "発電量と機械の消費量を比較した"
@@ -333,7 +333,6 @@
 			]
 			icon: "mekanism:steel_casing"
 			id: "6D4801000000010C"
-			subtitle: "解放条件: 「11：速度より先に電力収支」を完了"
 			rewards: [
 				{
 					count: 32
@@ -347,6 +346,7 @@
 					xp: 48
 				}
 			]
+			subtitle: "解放条件: 「11：速度より先に電力収支」を完了"
 			tasks: [{
 				id: "6D48010000002C01"
 				title: "停止原因を切り分けられる状態になった"

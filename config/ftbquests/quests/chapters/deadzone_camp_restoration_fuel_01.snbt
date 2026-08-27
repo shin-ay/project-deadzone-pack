@@ -13,7 +13,7 @@
 			description: [
 				"キャンプの発電機は、拾った燃料を消費するだけでは維持できない。"
 				"Gas Stationを確保し、燃料を定期回収できるルートに作り変えよう。"
-			"Base Coreをスニーク右クリックし、暫定の詳細管理にある「燃料ルート管理」から開始できる。"
+				"Base Coreをスニーク右クリックし、暫定の詳細管理にある「燃料ルート管理」から開始できる。"
 			]
 			icon: "apocalypsenow:aabattery"
 			id: "7100000000000001"
@@ -68,7 +68,6 @@
 			]
 			icon: "mts:mtsofficialpack.repairkit"
 			id: "7100000000000004"
-			subtitle: "解放条件: 「燃料を持ち帰れ」を完了"
 			rewards: [
 				{
 					count: 2
@@ -91,6 +90,7 @@
 					type: "item"
 				}
 			]
+			subtitle: "解放条件: 「燃料を持ち帰れ」を完了"
 			tasks: [{
 				id: "7110000000000004"
 				title: "定期燃料ルートが稼働した"

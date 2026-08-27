@@ -5,7 +5,7 @@
 	group: "6A11000000000002"
 	icon: "minecolonies:blockhutblacksmith"
 	id: "6D43070000000001"
-	order_index: 17
+	order_index: 8
 	quest_links: [ ]
 	quests: [
 		{

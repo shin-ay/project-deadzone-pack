@@ -1,0 +1,74 @@
+{
+  "base_stats": [
+    {
+      "type": "FLAT",
+      "max": 6.0,
+      "min": 2.0,
+      "stat": "weapon_damage"
+    }
+  ],
+  "gear_slot": "rune_knuckle",
+  "guid": "rune_knuckle",
+  "possible_items": [
+    {
+      "item_id": "roe_weapons:gauntlet_0",
+      "min_rar": "common",
+      "weight": 1000
+    },
+    {
+      "item_id": "roe_weapons:gauntlet_1",
+      "min_rar": "uncommon",
+      "weight": 1000
+    },
+    {
+      "item_id": "roe_weapons:gauntlet_2",
+      "min_rar": "rare",
+      "weight": 1000
+    },
+    {
+      "item_id": "roe_weapons:gauntlet_3",
+      "min_rar": "epic",
+      "weight": 1000
+    },
+    {
+      "item_id": "roe_weapons:gauntlet_4",
+      "min_rar": "legendary",
+      "weight": 1000
+    },
+    {
+      "item_id": "roe_weapons:gauntlet_5",
+      "min_rar": "mythic",
+      "weight": 1000
+    },
+    {
+      "item_id": "roe_weapons:gauntlet_6",
+      "min_rar": "runeword",
+      "weight": 1000
+    },
+    {
+      "item_id": "roe_weapons:gauntlet_7",
+      "min_rar": "unique",
+      "weight": 1000
+    }
+  ],
+  "req": {
+    "base_req": {},
+    "scaling_req": {
+      "dexterity": 0.25,
+      "intelligence": 0.25
+    }
+  },
+  "style": "DEX",
+  "tags": {
+    "tags": [
+      "dexterity",
+      "knuckle",
+      "rune",
+      "melee_weapon",
+      "mage_weapon",
+      "weapon_family"
+    ]
+  },
+  "weapon_type": "rune_knuckle",
+  "weight": 200
+}

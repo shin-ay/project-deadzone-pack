@@ -5,24 +5,27 @@
 	group: "4944EA3062E9681A"
 	icon: "minecraft:written_book"
 	id: "6D4E010000000001"
-	order_index: 14
+	order_index: 7
 	quest_links: [ ]
 	quests: [
 		{
 			dependencies: ["6D4A010000000101"]
 			description: [
 				"Camp評判は全員で育てる地域の信用。マヤ、シオリ、ゴロウとの信頼は、依頼を実際に完了したプレイヤー個人の関係。"
-				"Survivor Campのマヤ・シオリ・ゴロウ本人へ話しかけると、信頼度と専用サービスのボタンが表示される。"
+				"信頼Rankは 0/5/15/30。各NPCの『信頼と個人サービスをGUIで見る』で内容を確認し、隣の受取ボタンで実際に利用する。再利用は60分。"
+				"マヤ価格 8/7/6/5：パンと水 → 野菜スープ追加 → Beef Stew中心 → MineColonies上位料理。"
+				"シオリ価格 9/8/7/6：包帯2 → 包帯4 → 鎮痛剤追加 → Medical Kit。診療時にRegenerationとAbsorptionも付く。"
+				"ゴロウ価格 10/9/8/7：鉄・繊維 → Field Repair Kit → 電子部品追加 → 車両Repair Kit。"
 			]
 			icon: "minecraft:written_book"
 			id: "6D4E010000000101"
-			subtitle: "解放条件: 「地域経済：三つの不足」を完了"
 			rewards: [{
 				count: 4
 				id: "6D4E010000001101"
 				item: "apocalypsenow:money"
 				type: "item"
 			}]
+			subtitle: "解放条件: 「地域経済：三つの不足」を完了"
 			tasks: [{
 				id: "6D4E010000002101"
 				title: "固定NPC3人の関係を確認した"
@@ -40,12 +43,12 @@
 			]
 			icon: "farmersdelight:vegetable_soup"
 			id: "6D4E010000000102"
-			subtitle: "解放条件: 「生存者は設備ではない」を完了"
 			rewards: [{
 				id: "6D4E010000001201"
 				item: "farmersdelight:vegetable_soup"
 				type: "item"
 			}]
+			subtitle: "解放条件: 「生存者は設備ではない」を完了"
 			tasks: [{
 				id: "6D4E010000002201"
 				title: "マヤとの信頼 Rank 1"
@@ -63,13 +66,13 @@
 			]
 			icon: "apocalypsenow:bandage"
 			id: "6D4E010000000103"
-			subtitle: "解放条件: 「生存者は設備ではない」を完了"
 			rewards: [{
 				count: 2
 				id: "6D4E010000001301"
 				item: "apocalypsenow:bandage"
 				type: "item"
 			}]
+			subtitle: "解放条件: 「生存者は設備ではない」を完了"
 			tasks: [{
 				id: "6D4E010000002301"
 				title: "シオリとの信頼 Rank 1"
@@ -87,13 +90,13 @@
 			]
 			icon: "kubejs:field_repair_kit"
 			id: "6D4E010000000104"
-			subtitle: "解放条件: 「生存者は設備ではない」を完了"
 			rewards: [{
 				count: 4
 				id: "6D4E010000001401"
 				item: "immersiveengineering:hemp_fiber"
 				type: "item"
 			}]
+			subtitle: "解放条件: 「生存者は設備ではない」を完了"
 			tasks: [{
 				id: "6D4E010000002401"
 				title: "ゴロウとの信頼 Rank 1"
@@ -111,12 +114,12 @@
 			]
 			icon: "minecolonies:stew_trencher"
 			id: "6D4E010000000105"
-			subtitle: "解放条件: 「マヤ：棚を埋める人」を完了"
 			rewards: [{
 				id: "6D4E010000001501"
 				item: "minecolonies:stew_trencher"
 				type: "item"
 			}]
+			subtitle: "解放条件: 「マヤ：棚を埋める人」を完了"
 			tasks: [{
 				id: "6D4E010000002501"
 				title: "マヤとの信頼 Rank 3"
@@ -134,12 +137,12 @@
 			]
 			icon: "apocalypsenow:medicalkit"
 			id: "6D4E010000000106"
-			subtitle: "解放条件: 「シオリ：帰還後の報告」を完了"
 			rewards: [{
 				id: "6D4E010000001601"
 				item: "apocalypsenow:medicalkit"
 				type: "item"
 			}]
+			subtitle: "解放条件: 「シオリ：帰還後の報告」を完了"
 			tasks: [{
 				id: "6D4E010000002601"
 				title: "シオリとの信頼 Rank 3"
@@ -157,12 +160,12 @@
 			]
 			icon: "mts:mtsofficialpack.repairkit"
 			id: "6D4E010000000107"
-			subtitle: "解放条件: 「ゴロウ：使える部品」を完了"
 			rewards: [{
 				id: "6D4E010000001701"
 				item: "kubejs:field_repair_kit"
 				type: "item"
 			}]
+			subtitle: "解放条件: 「ゴロウ：使える部品」を完了"
 			tasks: [{
 				id: "6D4E010000002701"
 				title: "ゴロウとの信頼 Rank 3"
@@ -184,7 +187,6 @@
 			]
 			icon: "minecraft:campfire"
 			id: "6D4E010000000108"
-			subtitle: "解放条件: 「マヤ：明日を任せる」・「シオリ：隠さない傷」・「ゴロウ：止めない整備」をすべて完了"
 			rewards: [
 				{
 					count: 24
@@ -198,6 +200,7 @@
 					xp: 48
 				}
 			]
+			subtitle: "解放条件: 「マヤ：明日を任せる」・「シオリ：隠さない傷」・「ゴロウ：止めない整備」をすべて完了"
 			tasks: [{
 				id: "6D4E010000002801"
 				title: "3人との信頼 Rank 3"

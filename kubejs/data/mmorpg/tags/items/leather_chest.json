@@ -1,0 +1,349 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "apocalypsenow:advanced_hazmat_suit_chestplate",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:anarchy_chestplate",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:atlast_7_chestplate",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:biohazard_chestplate",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:blue_fighting_chestplate",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:bvd_assault_vest_chestplate",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:civilian_body_vest_chestplate",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:construction_chestplate",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:contamination_suit_blue_chestplate",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:contamination_suit_green_chestplate",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:contamination_suit_white_chestplate",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:desertcamo_6b_chestplate",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:desertghillie_chestplate",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:divingsuit_chestplate",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:fire_figther_chestplate",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:forestguard_chestplate",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:gas_tank_vest_chestplate",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:ghilliesuit_chestplate",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:hazmat_suit_chestplate",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:helicopter_chestplate",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:high_visibility_jacket_chestplate",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:hockey_chestplate",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:hunting_chestplate",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:jet_pilot_chestplate",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:level_a_hazmatsuit_chestplate",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:police_chestplate",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:red_fighting_chestplate",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:royal_canada_police_officer_chestplate",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:rusty_chestplate",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:sixsh_116_chestplate",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:snowghillie_chestplate",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:spec_ops_chestplate",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:specialoperationsvest_chestplate",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:un_armor_chestplate",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:usa_armor_chestplate",
+      "required": false
+    },
+    {
+      "id": "aquaculture:neptunium_chestplate",
+      "required": false
+    },
+    {
+      "id": "create:copper_backtank",
+      "required": false
+    },
+    {
+      "id": "immersiveengineering:armor_faraday_chestplate",
+      "required": false
+    },
+    {
+      "id": "infectious:hazmat_suit_chestplate",
+      "required": false
+    },
+    {
+      "id": "infectious:jetpack_chestplate",
+      "required": false
+    },
+    {
+      "id": "mekanism:hazmat_gown",
+      "required": false
+    },
+    {
+      "id": "mekanism:hdpe_broken_elytra",
+      "required": false
+    },
+    {
+      "id": "mekanism:hdpe_elytra",
+      "required": false
+    },
+    {
+      "id": "mekanism:jetpack",
+      "required": false
+    },
+    {
+      "id": "mekanism:jetpack_armored",
+      "required": false
+    },
+    {
+      "id": "mekanismtools:bronze_chestplate",
+      "required": false
+    },
+    {
+      "id": "mekanismtools:lapis_lazuli_chestplate",
+      "required": false
+    },
+    {
+      "id": "mekanismtools:osmium_chestplate",
+      "required": false
+    },
+    {
+      "id": "mekanismtools:refined_glowstone_chestplate",
+      "required": false
+    },
+    {
+      "id": "mekanismtools:refined_obsidian_chestplate",
+      "required": false
+    },
+    {
+      "id": "minecraft:acacia_chest_boat",
+      "required": false
+    },
+    {
+      "id": "minecraft:bamboo_chest_raft",
+      "required": false
+    },
+    {
+      "id": "minecraft:birch_chest_boat",
+      "required": false
+    },
+    {
+      "id": "minecraft:chainmail_chestplate",
+      "required": false
+    },
+    {
+      "id": "minecraft:cherry_chest_boat",
+      "required": false
+    },
+    {
+      "id": "minecraft:chest",
+      "required": false
+    },
+    {
+      "id": "minecraft:dark_oak_chest_boat",
+      "required": false
+    },
+    {
+      "id": "minecraft:elytra",
+      "required": false
+    },
+    {
+      "id": "minecraft:golden_chestplate",
+      "required": false
+    },
+    {
+      "id": "minecraft:jungle_chest_boat",
+      "required": false
+    },
+    {
+      "id": "minecraft:leather_chestplate",
+      "required": false
+    },
+    {
+      "id": "minecraft:mangrove_chest_boat",
+      "required": false
+    },
+    {
+      "id": "minecraft:oak_chest_boat",
+      "required": false
+    },
+    {
+      "id": "minecraft:spruce_chest_boat",
+      "required": false
+    },
+    {
+      "id": "superbwarfare:parachute",
+      "required": false
+    },
+    {
+      "id": "superbwarfare:ru_chest_6b43",
+      "required": false
+    },
+    {
+      "id": "superbwarfare:us_chest_iotv",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:artic_guillie_chestplate",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:black_recluit_armor_chestplate",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:black_rockie_armor_chestplate",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:desert_recluit_armor_chestplate",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:desert_rockie_armor_chestplate",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:fire_fighter_chestplate",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:green_recluit_armor_chestplate",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:green_rockie_armor_chestplate",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:guillie_chestplate",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:hazmat_chestplate",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:police_chestplate",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:spruce_guillie_chestplate",
+      "required": false
+    },
+    {
+      "id": "zombiekit:bomb_chestplate",
+      "required": false
+    },
+    {
+      "id": "zombiekit:desert_tactical_chestplate",
+      "required": false
+    },
+    {
+      "id": "zombiekit:forest_tactical_chestplate",
+      "required": false
+    },
+    {
+      "id": "zombiekit:skiing_chestplate",
+      "required": false
+    },
+    {
+      "id": "zombiekit:snow_tactical_chestplate",
+      "required": false
+    },
+    {
+      "id": "zombiekit:standard_tactical_chestplate",
+      "required": false
+    },
+    {
+      "id": "zombiekit:white_food_chestplate",
+      "required": false
+    }
+  ]
+}

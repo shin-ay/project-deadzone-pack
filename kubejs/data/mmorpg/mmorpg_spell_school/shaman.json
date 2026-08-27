@@ -1,58 +1,58 @@
 {
-    "id":  "shaman",
-    "lvl_reqs":  [
-                     1,
-                     5,
-                     10,
-                     15,
-                     20,
-                     25,
-                     30
-                 ],
-    "perks":  {
-                  "lightning_totem":  {
-                                          "x":  1,
-                                          "y":  0
-                                      },
-                  "rejuv_totem":  {
-                                      "x":  3,
-                                      "y":  0
-                                  },
-                  "entangling_seed":  {
-                                          "x":  5,
-                                          "y":  0
-                                      },
-                  "p_armor_per_mana":  {
-                                           "x":  8,
-                                           "y":  0
-                                       },
-                  "p_ele_pen":  {
-                                    "x":  9,
-                                    "y":  0
-                                },
-                  "p_electrify_chance":  {
-                                             "x":  8,
-                                             "y":  1
-                                         },
-                  "p_health_sha":  {
-                                       "x":  9,
-                                       "y":  1
-                                   },
-                  "p_lightning_ele":  {
-                                          "x":  8,
-                                          "y":  2
-                                      },
-                  "p_mana_sha":  {
-                                     "x":  9,
-                                     "y":  2
-                                 },
-                  "p_totem_cdr":  {
-                                      "x":  8,
-                                      "y":  3
-                                  },
-                  "p_totem_dmg":  {
-                                      "x":  9,
-                                      "y":  3
-                                  }
-              }
+  "id": "shaman",
+  "lvl_reqs": [
+    1,
+    5,
+    10,
+    15,
+    20,
+    25,
+    30
+  ],
+  "perks": {
+    "lightning_totem": {
+      "x": 1,
+      "y": 0.0
+    },
+    "rejuv_totem": {
+      "x": 3,
+      "y": 0.0
+    },
+    "entangling_seed": {
+      "x": 5,
+      "y": 0.0
+    },
+    "p_armor_per_mana": {
+      "x": 8,
+      "y": 0.0
+    },
+    "p_ele_pen": {
+      "x": 9,
+      "y": 0.0
+    },
+    "p_electrify_chance": {
+      "x": 8,
+      "y": 1.0
+    },
+    "p_health_sha": {
+      "x": 9,
+      "y": 1.0
+    },
+    "p_lightning_ele": {
+      "x": 8,
+      "y": 2.0
+    },
+    "p_mana_sha": {
+      "x": 9,
+      "y": 2.0
+    },
+    "p_totem_cdr": {
+      "x": 8,
+      "y": 3.0
+    },
+    "p_totem_dmg": {
+      "x": 9,
+      "y": 3.0
+    }
+  }
 }

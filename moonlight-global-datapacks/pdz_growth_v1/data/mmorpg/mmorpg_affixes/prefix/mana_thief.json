@@ -1,0 +1,29 @@
+{
+  "type": "prefix",
+  "stats": [
+    {
+      "max": 8.0,
+      "min": 2.0,
+      "stat": "mana_on_kill",
+      "type": "FLAT"
+    }
+  ],
+  "one_of_a_kind": "",
+  "eye_aura_req": "",
+  "only_one_per_item": true,
+  "weight": 1000,
+  "guid": "mana_thief",
+  "requirements": {
+    "tag_requirements": [
+      {
+        "req_type": "INCLUDES_ANY",
+        "excluded": [],
+        "type": "GearSlot",
+        "included": [
+          "jewelry_family",
+          "weapon_family"
+        ]
+      }
+    ]
+  }
+}

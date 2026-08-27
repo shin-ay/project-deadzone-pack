@@ -1,0 +1,357 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "apocalypsenow:chainsaw",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:construction_shovel",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:drill",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:executioners_sword",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:hammer_pickaxe",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:icepick",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:military_shovel",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:pick",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:snow_shovel",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:survival_shovel",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:tactical_saber",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:tactical_sword",
+      "required": false
+    },
+    {
+      "id": "aquaculture:neptunium_hoe",
+      "required": false
+    },
+    {
+      "id": "aquaculture:neptunium_pickaxe",
+      "required": false
+    },
+    {
+      "id": "aquaculture:neptunium_shovel",
+      "required": false
+    },
+    {
+      "id": "create:cardboard_sword",
+      "required": false
+    },
+    {
+      "id": "immersiveengineering:buzzsaw",
+      "required": false
+    },
+    {
+      "id": "immersiveengineering:drill",
+      "required": false
+    },
+    {
+      "id": "immersiveengineering:hoe_steel",
+      "required": false
+    },
+    {
+      "id": "immersiveengineering:pickaxe_steel",
+      "required": false
+    },
+    {
+      "id": "immersiveengineering:shovel_steel",
+      "required": false
+    },
+    {
+      "id": "immersiveengineering:sword_steel",
+      "required": false
+    },
+    {
+      "id": "infectious:robotic_saw",
+      "required": false
+    },
+    {
+      "id": "lrtactical:melee",
+      "required": false
+    },
+    {
+      "id": "mekanism:atomic_disassembler",
+      "required": false
+    },
+    {
+      "id": "mekanism:meka_tool",
+      "required": false
+    },
+    {
+      "id": "mekanism:meka_tool_left",
+      "required": false
+    },
+    {
+      "id": "mekanismtools:bronze_hoe",
+      "required": false
+    },
+    {
+      "id": "mekanismtools:bronze_pickaxe",
+      "required": false
+    },
+    {
+      "id": "mekanismtools:bronze_shovel",
+      "required": false
+    },
+    {
+      "id": "mekanismtools:bronze_sword",
+      "required": false
+    },
+    {
+      "id": "mekanismtools:lapis_lazuli_hoe",
+      "required": false
+    },
+    {
+      "id": "mekanismtools:lapis_lazuli_pickaxe",
+      "required": false
+    },
+    {
+      "id": "mekanismtools:lapis_lazuli_shovel",
+      "required": false
+    },
+    {
+      "id": "mekanismtools:lapis_lazuli_sword",
+      "required": false
+    },
+    {
+      "id": "mekanismtools:osmium_hoe",
+      "required": false
+    },
+    {
+      "id": "mekanismtools:osmium_pickaxe",
+      "required": false
+    },
+    {
+      "id": "mekanismtools:osmium_shovel",
+      "required": false
+    },
+    {
+      "id": "mekanismtools:osmium_sword",
+      "required": false
+    },
+    {
+      "id": "mekanismtools:refined_glowstone_hoe",
+      "required": false
+    },
+    {
+      "id": "mekanismtools:refined_glowstone_pickaxe",
+      "required": false
+    },
+    {
+      "id": "mekanismtools:refined_glowstone_shovel",
+      "required": false
+    },
+    {
+      "id": "mekanismtools:refined_glowstone_sword",
+      "required": false
+    },
+    {
+      "id": "mekanismtools:refined_obsidian_hoe",
+      "required": false
+    },
+    {
+      "id": "mekanismtools:refined_obsidian_pickaxe",
+      "required": false
+    },
+    {
+      "id": "mekanismtools:refined_obsidian_shovel",
+      "required": false
+    },
+    {
+      "id": "mekanismtools:refined_obsidian_sword",
+      "required": false
+    },
+    {
+      "id": "mekanismtools:steel_hoe",
+      "required": false
+    },
+    {
+      "id": "mekanismtools:steel_pickaxe",
+      "required": false
+    },
+    {
+      "id": "mekanismtools:steel_shovel",
+      "required": false
+    },
+    {
+      "id": "mekanismtools:steel_sword",
+      "required": false
+    },
+    {
+      "id": "minecraft:diamond_hoe",
+      "required": false
+    },
+    {
+      "id": "minecraft:diamond_pickaxe",
+      "required": false
+    },
+    {
+      "id": "minecraft:diamond_shovel",
+      "required": false
+    },
+    {
+      "id": "minecraft:golden_hoe",
+      "required": false
+    },
+    {
+      "id": "minecraft:golden_pickaxe",
+      "required": false
+    },
+    {
+      "id": "minecraft:golden_shovel",
+      "required": false
+    },
+    {
+      "id": "minecraft:iron_hoe",
+      "required": false
+    },
+    {
+      "id": "minecraft:iron_pickaxe",
+      "required": false
+    },
+    {
+      "id": "minecraft:iron_shovel",
+      "required": false
+    },
+    {
+      "id": "minecraft:netherite_hoe",
+      "required": false
+    },
+    {
+      "id": "minecraft:netherite_pickaxe",
+      "required": false
+    },
+    {
+      "id": "minecraft:netherite_shovel",
+      "required": false
+    },
+    {
+      "id": "minecraft:stone_hoe",
+      "required": false
+    },
+    {
+      "id": "minecraft:stone_pickaxe",
+      "required": false
+    },
+    {
+      "id": "minecraft:stone_shovel",
+      "required": false
+    },
+    {
+      "id": "minecraft:wooden_hoe",
+      "required": false
+    },
+    {
+      "id": "minecraft:wooden_pickaxe",
+      "required": false
+    },
+    {
+      "id": "minecraft:wooden_shovel",
+      "required": false
+    },
+    {
+      "id": "sakura:sakura_hoe",
+      "required": false
+    },
+    {
+      "id": "sakura:sakura_pickaxe",
+      "required": false
+    },
+    {
+      "id": "sakura:sakura_shovel",
+      "required": false
+    },
+    {
+      "id": "superbwarfare:military_shovel",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:aluminium_hoe",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:aluminium_pickaxe",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:aluminium_shovel",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:aluminium_sword",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:broken_bottle_sword",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:circular_saw",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:plank_sword",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:plank_with_nails_sword",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:steellium_sword",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:stellium_hoe",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:stellium_pickaxe",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:stellium_shovel",
+      "required": false
+    },
+    {
+      "id": "zombiekit:chainsaw",
+      "required": false
+    },
+    {
+      "id": "zombiekit:netherite_rake",
+      "required": false
+    },
+    {
+      "id": "zombiekit:rake",
+      "required": false
+    }
+  ]
+}

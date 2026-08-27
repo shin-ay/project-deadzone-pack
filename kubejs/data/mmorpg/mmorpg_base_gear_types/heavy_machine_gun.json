@@ -1,0 +1,31 @@
+{
+  "base_stats": [
+    {
+      "type": "FLAT",
+      "max": 8.0,
+      "min": 4.0,
+      "stat": "weapon_damage"
+    }
+  ],
+  "gear_slot": "heavy_machine_gun",
+  "guid": "heavy_machine_gun",
+  "possible_items": [],
+  "req": {
+    "base_req": {},
+    "scaling_req": {
+      "strength": 0.25,
+      "dexterity": 0.25
+    }
+  },
+  "style": "DEX",
+  "tags": {
+    "tags": [
+      "dexterity",
+      "weapon_family",
+      "heavy_machine_gun",
+      "ranged_weapon"
+    ]
+  },
+  "weapon_type": "heavy_machine_gun",
+  "weight": 1000
+}

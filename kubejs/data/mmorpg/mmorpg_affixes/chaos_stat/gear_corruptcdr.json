@@ -1,0 +1,29 @@
+{
+  "type": "chaos_stat",
+  "stats": [
+    {
+      "max": 4.0,
+      "min": 1.0,
+      "stat": "cdr",
+      "type": "FLAT"
+    }
+  ],
+  "one_of_a_kind": "",
+  "eye_aura_req": "",
+  "only_one_per_item": true,
+  "weight": 1000,
+  "guid": "gear_corruptcdr",
+  "requirements": {
+    "tag_requirements": [
+      {
+        "req_type": "INCLUDES_ANY",
+        "excluded": [],
+        "type": "GearSlot",
+        "included": [
+          "jewelry_family",
+          "armor_family"
+        ]
+      }
+    ]
+  }
+}

@@ -24,13 +24,13 @@ const PDZMNS_JOB_STATS = {
 const PDZMNS_BRANCH_STATS = {
   weapons:{
     precision:[['accuracy',0.55,'PERCENT'],['critical_hit',0.22,'PERCENT'],['critical_damage',0.35,'PERCENT']],
-    assault:[['weapon_damage',0.48,'PERCENT'],['energy_on_hit',0.10,'FLAT'],['physical_damage',0.30,'PERCENT']],
-    handling:[['energy_regen',0.22,'PERCENT'],['dodge',0.18,'PERCENT']],
+    assault:[['weapon_damage',0.48,'PERCENT'],['mana_on_hit',0.10,'FLAT'],['physical_damage',0.30,'PERCENT']],
+    handling:[['mana_regen',0.22,'PERCENT'],['cdr',0.10,'FLAT'],['dodge',0.18,'PERCENT']],
     ammo:[['increased_quantity',0.35,'PERCENT'],['currency_find',0.18,'PERCENT']]
   },
   security:{
     melee:[['physical_weapon_damage',0.52,'PERCENT'],['lifesteal',0.12,'PERCENT'],['bleed_chance',0.20,'PERCENT']],
-    speed:[['energy',0.18,'FLAT'],['energy_regen',0.28,'PERCENT'],['dodge',0.22,'PERCENT']],
+    speed:[['mana',0.18,'FLAT'],['mana_regen',0.28,'PERCENT'],['dodge',0.22,'PERCENT']],
     guard:[['health',0.20,'FLAT'],['armor',0.55,'PERCENT'],['block_chance',0.18,'PERCENT'],['physical_resist',0.20,'PERCENT']],
     control:[['chance_of_slow',0.20,'PERCENT'],['knockback_resistance',0.35,'PERCENT']]
   },
@@ -38,7 +38,7 @@ const PDZMNS_BRANCH_STATS = {
     healing:[['increase_healing',0.62,'PERCENT'],['health_regen',0.24,'PERCENT']],
     revive:[['damage_reduction',0.22,'PERCENT'],['health',0.16,'FLAT']],
     aura:[['aura_effect',0.34,'PERCENT'],['mana_regen',0.18,'PERCENT']],
-    stim:[['energy_regen',0.32,'PERCENT'],['move_speed',0.10,'PERCENT']]
+    stim:[['mana_regen',0.32,'PERCENT'],['move_speed',0.10,'PERCENT']]
   },
   engineer:{
     processing:[['stat_roll_quality',0.42,'PERCENT'],['currency_find',0.22,'PERCENT']],
@@ -48,7 +48,7 @@ const PDZMNS_BRANCH_STATS = {
   },
   mechanic:{
     repair:[['gear_defense',0.35,'PERCENT'],['stat_roll_quality',0.28,'PERCENT']],
-    road:[['energy',0.15,'FLAT'],['dodge',0.16,'PERCENT']],
+    road:[['mana',0.15,'FLAT'],['mana_regen',0.18,'PERCENT'],['dodge',0.16,'PERCENT']],
     aviation:[['dodge',0.22,'PERCENT'],['move_speed',0.08,'PERCENT']],
     marine:[['water_resist',0.28,'PERCENT'],['health',0.12,'FLAT']]
   },
@@ -67,7 +67,7 @@ const PDZMNS_BRANCH_STATS = {
   scout:{
     stealth:[['dodge',0.30,'PERCENT'],['move_speed',0.10,'PERCENT']],
     scavenge:[['increased_quantity',0.42,'PERCENT'],['stat_roll_quality',0.28,'PERCENT']],
-    mobility:[['energy',0.16,'FLAT'],['energy_regen',0.30,'PERCENT'],['move_speed',0.12,'PERCENT']],
+    mobility:[['mana',0.16,'FLAT'],['mana_regen',0.30,'PERCENT'],['move_speed',0.12,'PERCENT']],
     tracking:[['accuracy',0.32,'PERCENT'],['critical_hit',0.18,'PERCENT'],['rare_monster_chance',0.12,'PERCENT']]
   }
 }
@@ -116,6 +116,9 @@ function pdzMnsAllTalentKeys(){
 }
 
 const PDZMNS_TALENT_KEYS = pdzMnsAllTalentKeys()
+// v0.2 moved tactical builds from M&S Energy to the player-visible Tactical
+// Resource (Mana). Remove the exact-stat keys created by the old bridge once.
+const PDZMNS_RETIRED_TALENT_KEYS = ['energy_on_hit|FLAT','energy_regen|PERCENT','energy|FLAT']
 
 function pdzMnsSignature(player){
   let parts=[String(player.persistentData.getString('dz_job_id'))]
@@ -142,7 +145,7 @@ function pdzMnsApply(player,force){
     let jobStats=PDZMNS_JOB_STATS[job]||PDZMNS_JOB_STATS.survivor
     PDZMNS_JOB_KEYS.forEach(stat=>exact.addExactStat('pdz_job_'+stat,stat,jobStats[stat],PDZMNS_MOD_TYPE.FLAT))
 
-    PDZMNS_TALENT_KEYS.forEach(composite=>{
+    PDZMNS_TALENT_KEYS.concat(PDZMNS_RETIRED_TALENT_KEYS).forEach(composite=>{
       let bits=composite.split('|')
       exact.removeExactStat('pdz_talent_'+bits[0]+'_'+bits[1].toLowerCase())
     })

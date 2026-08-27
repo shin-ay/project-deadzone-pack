@@ -1,8 +1,37 @@
 {
   "replace": false,
   "values": [
-    "minecraft:bow",
-    "#forge:tools/bows",
-    "#c:bow"
+    {
+      "id": "apocalypsenow:nail_gun",
+      "required": false
+    },
+    {
+      "id": "aquaculture:neptunium_bow",
+      "required": false
+    },
+    {
+      "id": "mekanism:electric_bow",
+      "required": false
+    },
+    {
+      "id": "mekanism:electric_bow_pulling_0",
+      "required": false
+    },
+    {
+      "id": "mekanism:electric_bow_pulling_1",
+      "required": false
+    },
+    {
+      "id": "mekanism:electric_bow_pulling_2",
+      "required": false
+    },
+    {
+      "id": "minecraft:bow",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:nailgun",
+      "required": false
+    }
   ]
 }

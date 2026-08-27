@@ -1,0 +1,341 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "apocalypsenow:black_cleaver",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:bowie_machete",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:bread_knife",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:bushcraft_knife",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:bushcraft_machete",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:butterfly_knife",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:camping_knife",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:camping_machete",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:cheap_survival_knife",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:cheap_survival_machete",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:chefs_knife",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:cleaver",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:comb_knife",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:combat_knife",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:combat_survival_knife",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:cutter_knife",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:dagger",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:deer_horn_knife",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:eletrical_machete",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:english_punch_knife",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:expedition_knife",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:fishermans_knife",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:golden_machete",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:goldenstilletoknife",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:hawkbill_machete",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:heavy_machete",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:hunting_knife",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:jagdkommando_knife",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:kitchen_knife",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:knife",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:kukri_machete",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:light_weitgh_machete",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:long_knife",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:machete",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:makeshift_knife",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:makeshift_machete",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:meat_cleaver",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:military_knife",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:mk_knife",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:mosquito_knife",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:pointed_cleaver",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:rusty_knife",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:rusty_machete",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:scythe_knife",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:serrated_machete",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:simple_machete",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:stilettoknife",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:stylus_knife",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:survival_knife",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:switch_knife",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:sytche_machete",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:table_knife",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:tactical_knife",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:tactical_machete",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:taiga_1_survival_machete",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:throwableknife",
+      "required": false
+    },
+    {
+      "id": "aquaculture:diamond_fillet_knife",
+      "required": false
+    },
+    {
+      "id": "aquaculture:gold_fillet_knife",
+      "required": false
+    },
+    {
+      "id": "aquaculture:iron_fillet_knife",
+      "required": false
+    },
+    {
+      "id": "aquaculture:neptunium_fillet_knife",
+      "required": false
+    },
+    {
+      "id": "aquaculture:stone_fillet_knife",
+      "required": false
+    },
+    {
+      "id": "aquaculture:wooden_fillet_knife",
+      "required": false
+    },
+    {
+      "id": "aquaculturedelight:neptunium_knife",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:diamond_knife",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:flint_knife",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:golden_knife",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:iron_knife",
+      "required": false
+    },
+    {
+      "id": "farmersdelight:netherite_knife",
+      "required": false
+    },
+    {
+      "id": "moredelight:stone_knife",
+      "required": false
+    },
+    {
+      "id": "moredelight:wooden_knife",
+      "required": false
+    },
+    {
+      "id": "sakura:sakura_knife_fish",
+      "required": false
+    },
+    {
+      "id": "sakura:sakura_knife_noodle",
+      "required": false
+    },
+    {
+      "id": "superbwarfare:knife",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:glaive_with_machete",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:hunt_knife",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:kitchen_knife",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:lance_with_knife",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:machete",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:tactical_knife",
+      "required": false
+    },
+    {
+      "id": "zombiekit:knife",
+      "required": false
+    },
+    {
+      "id": "zombiekit:machete",
+      "required": false
+    },
+    {
+      "id": "zombiekit:machete_broken",
+      "required": false
+    },
+    {
+      "id": "zombiekit:netherite_knife",
+      "required": false
+    },
+    {
+      "id": "zombiekit:netherite_machete",
+      "required": false
+    }
+  ]
+}

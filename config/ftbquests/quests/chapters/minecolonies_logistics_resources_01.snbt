@@ -5,7 +5,7 @@
 	group: "6A11000000000002"
 	icon: "minecolonies:blockhutwarehouse"
 	id: "6D43060000000001"
-	order_index: 15
+	order_index: 6
 	quest_links: [ ]
 	quests: [
 		{

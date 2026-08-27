@@ -1,54 +1,54 @@
 {
-    "id":  "hunter",
-    "lvl_reqs":  [
-                     1,
-                     5,
-                     10,
-                     15,
-                     20,
-                     25,
-                     30
-                 ],
-    "perks":  {
-                  "quickdraw":  {
-                                    "x":  1,
-                                    "y":  0
-                                },
-                  "smoke_bomb":  {
-                                     "x":  3,
-                                     "y":  0
-                                 },
-                  "explosive_arrow":  {
-                                          "x":  5,
-                                          "y":  0
-                                      },
-                  "p_crit_dmg":  {
-                                     "x":  8,
-                                     "y":  0
-                                 },
-                  "p_dodge":  {
-                                  "x":  9,
-                                  "y":  0
-                              },
-                  "p_ene_regen":  {
-                                      "x":  8,
-                                      "y":  1
-                                  },
-                  "p_proj_dmg":  {
-                                     "x":  9,
-                                     "y":  1
-                                 },
-                  "p_proj_spd":  {
-                                     "x":  8,
-                                     "y":  2
-                                 },
-                  "p_trap_cdr":  {
-                                     "x":  9,
-                                     "y":  2
-                                 },
-                  "p_trap_dmg":  {
-                                     "x":  8,
-                                     "y":  3
-                                 }
-              }
+  "id": "hunter",
+  "lvl_reqs": [
+    1,
+    5,
+    10,
+    15,
+    20,
+    25,
+    30
+  ],
+  "perks": {
+    "quickdraw": {
+      "x": 1,
+      "y": 0.0
+    },
+    "smoke_bomb": {
+      "x": 3,
+      "y": 0.0
+    },
+    "explosive_arrow": {
+      "x": 5,
+      "y": 0.0
+    },
+    "p_crit_dmg": {
+      "x": 8,
+      "y": 0.0
+    },
+    "p_dodge": {
+      "x": 9,
+      "y": 0.0
+    },
+    "p_ene_regen": {
+      "x": 8,
+      "y": 1.0
+    },
+    "p_proj_dmg": {
+      "x": 9,
+      "y": 1.0
+    },
+    "p_proj_spd": {
+      "x": 8,
+      "y": 2.0
+    },
+    "p_trap_cdr": {
+      "x": 9,
+      "y": 2.0
+    },
+    "p_trap_dmg": {
+      "x": 8,
+      "y": 3.0
+    }
+  }
 }

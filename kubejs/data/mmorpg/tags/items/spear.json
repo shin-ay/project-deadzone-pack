@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "apocalypsenow:knife_spear",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:spear",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:woddenspear",
+      "required": false
+    }
+  ]
+}

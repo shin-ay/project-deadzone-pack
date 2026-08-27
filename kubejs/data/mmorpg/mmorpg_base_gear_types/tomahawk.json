@@ -1,0 +1,30 @@
+{
+  "base_stats": [
+    {
+      "type": "FLAT",
+      "max": 8.0,
+      "min": 4.0,
+      "stat": "weapon_damage"
+    }
+  ],
+  "gear_slot": "tomahawk",
+  "guid": "tomahawk",
+  "possible_items": [],
+  "req": {
+    "base_req": {},
+    "scaling_req": {
+      "strength": 0.4
+    }
+  },
+  "style": "STR",
+  "tags": {
+    "tags": [
+      "strength",
+      "weapon_family",
+      "tomahawk",
+      "melee_weapon"
+    ]
+  },
+  "weapon_type": "tomahawk",
+  "weight": 1000
+}

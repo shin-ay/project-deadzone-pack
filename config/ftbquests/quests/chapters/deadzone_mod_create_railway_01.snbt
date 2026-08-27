@@ -5,7 +5,7 @@
 	group: "6A11000000000001"
 	icon: "create:track_station"
 	id: "6F3058C252B90172"
-	order_index: 6
+	order_index: 1
 	quest_links: [ ]
 	quests: [
 		{
@@ -51,7 +51,6 @@
 					type: "item"
 				}
 				{
-					count: 1
 					id: "652000000000000C"
 					item: "create:track_station"
 					type: "item"
@@ -95,7 +94,6 @@
 					type: "item"
 				}
 				{
-					count: 1
 					id: "652000000000000E"
 					item: "create:schedule"
 					type: "item"
@@ -165,7 +163,6 @@
 			description: ["T1鉄道網が完成した。複線化や支線増設に使える重い資材を、参加者全員が個別報酬として受け取れる。"]
 			icon: "create:track_station"
 			id: "6500000000000009"
-			subtitle: "解放条件: 「定期補給便」・「自動積み替え」・「T1：Survivor」をすべて完了"
 			rewards: [
 				{
 					count: 24
@@ -186,6 +183,7 @@
 					type: "item"
 				}
 			]
+			subtitle: "解放条件: 「定期補給便」・「自動積み替え」・「T1：Survivor」をすべて完了"
 			tasks: [{
 				count: 8L
 				id: "6510000000000010"

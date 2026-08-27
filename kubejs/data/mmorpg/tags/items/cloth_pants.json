@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "apocalypsenow:nurse_leggings",
+      "required": false
+    },
+    {
+      "id": "create:cardboard_leggings",
+      "required": false
+    }
+  ]
+}

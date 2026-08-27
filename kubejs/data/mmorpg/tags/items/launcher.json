@@ -1,0 +1,33 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "immersiveengineering:chemthrower",
+      "required": false
+    },
+    {
+      "id": "infectious:flamethrower",
+      "required": false
+    },
+    {
+      "id": "mekanism:flamethrower",
+      "required": false
+    },
+    {
+      "id": "superbwarfare:igla_9k38",
+      "required": false
+    },
+    {
+      "id": "superbwarfare:javelin",
+      "required": false
+    },
+    {
+      "id": "superbwarfare:rpg",
+      "required": false
+    },
+    {
+      "id": "zombiekit:flamethrower",
+      "required": false
+    }
+  ]
+}

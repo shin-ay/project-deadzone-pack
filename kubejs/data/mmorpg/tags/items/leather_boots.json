@@ -1,0 +1,225 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "apocalypsenow:advanced_hazmat_suit_boots",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:anarchy_boots",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:biohazard_boots",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:construction_boots",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:contamination_suit_white_boots",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:desertghillie_boots",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:divingsuit_boots",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:fire_figther_boots",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:forestguard_boots",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:ghilliesuit_boots",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:hazmat_suit_boots",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:hockey_boots",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:jet_pilot_boots",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:level_a_hazmatsuit_boots",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:police_boots",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:royal_canada_police_officer_boots",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:rusty_boots",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:snowghillie_boots",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:spec_ops_boots",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:un_armor_boots",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:usa_armor_boots",
+      "required": false
+    },
+    {
+      "id": "aquaculture:neptunium_boots",
+      "required": false
+    },
+    {
+      "id": "create:copper_diving_boots",
+      "required": false
+    },
+    {
+      "id": "immersiveengineering:armor_faraday_boots",
+      "required": false
+    },
+    {
+      "id": "infectious:hazmat_suit_boots",
+      "required": false
+    },
+    {
+      "id": "mekanism:free_runners",
+      "required": false
+    },
+    {
+      "id": "mekanism:free_runners_armored",
+      "required": false
+    },
+    {
+      "id": "mekanism:hazmat_boots",
+      "required": false
+    },
+    {
+      "id": "mekanismtools:bronze_boots",
+      "required": false
+    },
+    {
+      "id": "mekanismtools:lapis_lazuli_boots",
+      "required": false
+    },
+    {
+      "id": "mekanismtools:osmium_boots",
+      "required": false
+    },
+    {
+      "id": "mekanismtools:refined_glowstone_boots",
+      "required": false
+    },
+    {
+      "id": "mekanismtools:refined_obsidian_boots",
+      "required": false
+    },
+    {
+      "id": "minecraft:chainmail_boots",
+      "required": false
+    },
+    {
+      "id": "minecraft:golden_boots",
+      "required": false
+    },
+    {
+      "id": "minecraft:leather_boots",
+      "required": false
+    },
+    {
+      "id": "sakura:samurai_shoes",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:artic_guillie_boots",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:black_recluit_armor_boots",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:black_rockie_armor_boots",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:desert_recluit_armor_boots",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:desert_rockie_armor_boots",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:fire_fighter_boots",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:green_recluit_armor_boots",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:green_rockie_armor_boots",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:guillie_boots",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:hazmat_boots",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:police_boots",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:spruce_guillie_boots",
+      "required": false
+    },
+    {
+      "id": "zombiekit:bomb_boots",
+      "required": false
+    },
+    {
+      "id": "zombiekit:desert_tactical_boots",
+      "required": false
+    },
+    {
+      "id": "zombiekit:forest_tactical_boots",
+      "required": false
+    },
+    {
+      "id": "zombiekit:skiing_boots",
+      "required": false
+    },
+    {
+      "id": "zombiekit:snow_tactical_boots",
+      "required": false
+    },
+    {
+      "id": "zombiekit:standard_tactical_boots",
+      "required": false
+    }
+  ]
+}

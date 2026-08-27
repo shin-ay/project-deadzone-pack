@@ -1,0 +1,25 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "immersiveengineering:railgun",
+      "required": false
+    },
+    {
+      "id": "superbwarfare:awm",
+      "required": false
+    },
+    {
+      "id": "superbwarfare:mosin_nagant",
+      "required": false
+    },
+    {
+      "id": "superbwarfare:ntw_20",
+      "required": false
+    },
+    {
+      "id": "superbwarfare:svd",
+      "required": false
+    }
+  ]
+}

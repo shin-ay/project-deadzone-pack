@@ -5,7 +5,7 @@
 	group: "6A11000000000002"
 	icon: "minecolonies:blockhutbuilder"
 	id: "6D43010000000001"
-	order_index: 5
+	order_index: 1
 	quest_links: [ ]
 	quests: [
 		{

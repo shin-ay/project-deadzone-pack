@@ -1,0 +1,197 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "apocalypsenow:army_helmet",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:black_football_armor_helmet",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:blue_football_armor_helmet",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:bombsquad_helmet",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:brazilian_army_helmet",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:british_army_helmet",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:canadian_army_helmet",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:chinese_army_helmet",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:italian_bersaglieri_army_helmet",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:japanese_army_helmet",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:juggernaut_helmet",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:mexican_army_helmet",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:military_pilot_headset_chestplate",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:military_pilotheadset",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:military_riot_armor_helmet",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:military_urban_helmet",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:patriotmotorcyclehelmet_helmet",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:red_football_armor_helmet",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:russian_army_helmet",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:soldier_helmet",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:swat_helmet",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:swatriotcontrol_helmet",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:us_army_helmet",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:yellow_football_armor_helmet",
+      "required": false
+    },
+    {
+      "id": "create:netherite_diving_helmet",
+      "required": false
+    },
+    {
+      "id": "immersiveengineering:armor_steel_helmet",
+      "required": false
+    },
+    {
+      "id": "infectious:security_armor_helmet",
+      "required": false
+    },
+    {
+      "id": "infectious:soldier_armor_helmet",
+      "required": false
+    },
+    {
+      "id": "infectious:swatarmor_helmet",
+      "required": false
+    },
+    {
+      "id": "mekanism:mekasuit_helmet",
+      "required": false
+    },
+    {
+      "id": "mekanismtools:steel_helmet",
+      "required": false
+    },
+    {
+      "id": "minecraft:diamond_helmet",
+      "required": false
+    },
+    {
+      "id": "minecraft:iron_helmet",
+      "required": false
+    },
+    {
+      "id": "minecraft:netherite_helmet",
+      "required": false
+    },
+    {
+      "id": "sakura:soldier_helmet",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:black_juggernaut_helmet",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:desert_juggernaut_helmet",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:exo_heavy_black_helmet",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:exo_heavy_desert_helmet",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:exo_heavy_green_helmet",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:exo_helmet",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:green_juggernaut_helmet",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:military_helmet",
+      "required": false
+    },
+    {
+      "id": "zombiekit:desert_riot_helmet",
+      "required": false
+    },
+    {
+      "id": "zombiekit:exo_helmet",
+      "required": false
+    },
+    {
+      "id": "zombiekit:forest_riot_helmet",
+      "required": false
+    },
+    {
+      "id": "zombiekit:snow_riot_helmet",
+      "required": false
+    },
+    {
+      "id": "zombiekit:standard_riot_helmet",
+      "required": false
+    }
+  ]
+}

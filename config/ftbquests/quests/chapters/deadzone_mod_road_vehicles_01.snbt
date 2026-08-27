@@ -5,7 +5,7 @@
 	group: "6A11000000000001"
 	icon: "mts:mtsofficialpack.wheellarge"
 	id: "6F3058C252B90171"
-	order_index: 4
+	order_index: 0
 	quest_links: [ ]
 	quests: [
 		{
@@ -90,7 +90,6 @@
 					type: "item"
 				}
 				{
-					count: 1
 					id: "6521000000000015"
 					item: "mts:mtsofficialpack.sparkplug"
 					type: "item"
@@ -393,7 +392,6 @@
 			description: ["四輪輸送とバイク偵察の両方が稼働した。大量輸送と先行偵察を分担し、次は鉄道物流へ進む。"]
 			icon: "mts:mtsofficialpack.wheellarge"
 			id: "6500000000000004"
-			subtitle: "解放条件: 「四輪・廃車復旧完了」・「バイク・用途別車種」をすべて完了"
 			rewards: [
 				{
 					count: 24
@@ -413,6 +411,7 @@
 					type: "item"
 				}
 			]
+			subtitle: "解放条件: 「四輪・廃車復旧完了」・「バイク・用途別車種」をすべて完了"
 			tasks: [
 				{
 					count: 4L

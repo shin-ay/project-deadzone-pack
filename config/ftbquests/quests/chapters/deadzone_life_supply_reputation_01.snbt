@@ -14,12 +14,11 @@
 				"7382A39061FD7DFB"
 			]
 			description: [
-			"農業と漁業を覚えたら、Base Coreをスニーク右クリックし、暫定の「旧依頼一覧」から生活供給契約を受注できる。"
+				"農業と漁業を覚えたら、Base Coreをスニーク右クリックし、暫定の「旧依頼一覧」から生活供給契約を受注できる。"
 				"混合作物・漁獲加工・共同調理は30分ごと、季節備蓄は秋・冬のみ再受注可能。達成するとサーバー共通の生活評判が上がる。"
 			]
 			icon: "farmersdelight:bamboo_basket"
 			id: "6D45010000000101"
-			subtitle: "解放条件: 「食料供給網の完成」・「水産供給網の完成」をすべて完了"
 			rewards: [{
 				count: 8
 				id: "6D45010000001101"
@@ -27,6 +26,7 @@
 				team_reward: true
 				type: "item"
 			}]
+			subtitle: "解放条件: 「食料供給網の完成」・「水産供給網の完成」をすべて完了"
 			tasks: [{
 				id: "6D45010000002101"
 				title: "生活供給契約を1件完了した"
@@ -40,11 +40,10 @@
 			dependencies: ["6D45010000000101"]
 			description: [
 				"生活評判10でRank 1「安定供給」へ到達する。食料商人が作物の種を扱い、野菜と加工魚の買取を始める。"
-			"価格改善は食料商人へ自動反映される。現在値はBase Coreをスニーク右クリックし、暫定の「旧依頼一覧」にある生活供給欄で確認できる。"
+				"価格改善は食料商人へ自動反映される。現在値はBase Coreをスニーク右クリックし、暫定の「旧依頼一覧」にある生活供給欄で確認できる。"
 			]
 			icon: "farmersdelight:cabbage_seeds"
 			id: "6D45010000000102"
-			subtitle: "解放条件: 「生活供給契約」を完了"
 			rewards: [{
 				count: 4
 				id: "6D45010000001201"
@@ -52,6 +51,7 @@
 				team_reward: true
 				type: "item"
 			}]
+			subtitle: "解放条件: 「生活供給契約」を完了"
 			tasks: [{
 				id: "6D45010000002201"
 				title: "生活評判 Rank 1へ到達した"
@@ -66,7 +66,6 @@
 			description: ["生活評判25でRank 2「共同炊事」へ到達する。調理済みの野菜料理と加工魚が販売され、食料商人の候補枠も増える。"]
 			icon: "farmersdelight:vegetable_soup"
 			id: "6D45010000000103"
-			subtitle: "解放条件: 「Rank 1：安定供給」を完了"
 			rewards: [{
 				count: 4
 				id: "6D45010000001301"
@@ -74,6 +73,7 @@
 				team_reward: true
 				type: "item"
 			}]
+			subtitle: "解放条件: 「Rank 1：安定供給」を完了"
 			tasks: [{
 				id: "6D45010000002301"
 				title: "生活評判 Rank 2へ到達した"
@@ -88,7 +88,6 @@
 			description: ["生活評判50でRank 3「地域食料網」へ到達する。高栄養料理と水産料理が解放され、食料価格は基準から最大24%低下する。"]
 			icon: "farmersdelight:beef_stew"
 			id: "6D45010000000104"
-			subtitle: "解放条件: 「Rank 2：共同炊事」を完了"
 			rewards: [
 				{
 					count: 4
@@ -105,6 +104,7 @@
 					type: "item"
 				}
 			]
+			subtitle: "解放条件: 「Rank 2：共同炊事」を完了"
 			tasks: [{
 				id: "6D45010000002401"
 				title: "生活評判 Rank 3へ到達した"
@@ -122,7 +122,6 @@
 			]
 			icon: "minecolonies:blockhutcook"
 			id: "6D45010000000105"
-			subtitle: "解放条件: 「Rank 1：安定供給」を完了"
 			rewards: [{
 				count: 8
 				id: "6D45010000001501"
@@ -130,6 +129,7 @@
 				team_reward: true
 				type: "item"
 			}]
+			subtitle: "解放条件: 「Rank 1：安定供給」を完了"
 			tasks: [{
 				id: "6D45010000002501"
 				title: "生活評判 Rank 1へ到達し、街への食料供給を解放した"

@@ -5,7 +5,7 @@
 	group: "6A11000000000001"
 	icon: "immersive_aircraft:biplane"
 	id: "6F3058C252B90173"
-	order_index: 8
+	order_index: 2
 	quest_links: [ ]
 	quests: [
 		{
@@ -16,7 +16,6 @@
 			description: ["T2では道路も線路も封鎖される。航空機のエンジンとプロペラを組み、危険地域を飛び越える経路を準備する。"]
 			icon: "immersive_aircraft:engine"
 			id: "650000000000000A"
-			subtitle: "解放条件: 「T1・地域鉄道網」・「T2：Scavenger」をすべて完了"
 			rewards: [
 				{
 					count: 12
@@ -35,6 +34,7 @@
 					type: "item"
 				}
 			]
+			subtitle: "解放条件: 「T1・地域鉄道網」・「T2：Scavenger」をすべて完了"
 			tasks: [
 				{
 					id: "6510000000000011"
@@ -122,7 +122,6 @@
 			description: ["予備エンジン、修理材、燃料を地上側に備蓄し、墜落や故障で全航路が止まらないようにする。"]
 			icon: "immersive_aircraft:eco_engine"
 			id: "650000000000000D"
-			subtitle: "解放条件: 「緊急航空便」・「空飛ぶ補給倉庫」をすべて完了"
 			rewards: [
 				{
 					count: 24
@@ -143,6 +142,7 @@
 					type: "item"
 				}
 			]
+			subtitle: "解放条件: 「緊急航空便」・「空飛ぶ補給倉庫」をすべて完了"
 			tasks: [
 				{
 					count: 2L
@@ -169,7 +169,6 @@
 			description: ["T3危険地域へ継続的に物資を送る統合空路を完成させる。完成報酬は次の機体建造を大きく短縮する個人支給品。"]
 			icon: "immersive_aircraft:gyrodyne"
 			id: "650000000000000E"
-			subtitle: "解放条件: 「航空整備基地」・「T3：Operator」をすべて完了"
 			rewards: [
 				{
 					count: 32
@@ -189,6 +188,7 @@
 					type: "item"
 				}
 			]
+			subtitle: "解放条件: 「航空整備基地」・「T3：Operator」をすべて完了"
 			tasks: [
 				{
 					id: "6510000000000017"

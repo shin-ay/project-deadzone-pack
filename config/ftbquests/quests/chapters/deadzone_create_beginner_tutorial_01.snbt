@@ -38,13 +38,13 @@
 			]
 			icon: "create:andesite_alloy"
 			id: "6D44010000000102"
-			subtitle: "解放条件: 「01：動く説明書・Ponder」を完了"
 			rewards: [{
 				count: 4
 				id: "6D44010000001201"
 				item: "create:zinc_nugget"
 				type: "item"
 			}]
+			subtitle: "解放条件: 「01：動く説明書・Ponder」を完了"
 			tasks: [{
 				id: "6D44010000002201"
 				title: "安山岩合金のレシピと使用先を確認した"
@@ -62,13 +62,13 @@
 			]
 			icon: "create:andesite_alloy"
 			id: "6D44010000000103"
-			subtitle: "解放条件: 「02：JEIでレシピを読む」を完了"
 			rewards: [{
 				count: 2
 				id: "6D44010000001301"
 				item: "create:andesite_alloy"
 				type: "item"
 			}]
+			subtitle: "解放条件: 「02：JEIでレシピを読む」を完了"
 			tasks: [{
 				count: 2L
 				id: "6D44010000002301"
@@ -87,13 +87,13 @@
 			]
 			icon: "create:shaft"
 			id: "6D44010000000104"
-			subtitle: "解放条件: 「03：最初の安山岩合金」を完了"
 			rewards: [{
 				count: 4
 				id: "6D44010000001401"
 				item: "create:shaft"
 				type: "item"
 			}]
+			subtitle: "解放条件: 「03：最初の安山岩合金」を完了"
 			tasks: [{
 				count: 4L
 				id: "6D44010000002401"
@@ -112,7 +112,6 @@
 			]
 			icon: "create:cogwheel"
 			id: "6D44010000000105"
-			subtitle: "解放条件: 「04：軸で回転を運ぶ」を完了"
 			rewards: [
 				{
 					count: 2
@@ -126,6 +125,7 @@
 					type: "item"
 				}
 			]
+			subtitle: "解放条件: 「04：軸で回転を運ぶ」を完了"
 			tasks: [
 				{
 					count: 2L
@@ -151,12 +151,12 @@
 			]
 			icon: "create:hand_crank"
 			id: "6D44010000000106"
-			subtitle: "解放条件: 「05：歯車で向きと速度を変える」を完了"
 			rewards: [{
 				id: "6D44010000001601"
 				item: "create:hand_crank"
 				type: "item"
 			}]
+			subtitle: "解放条件: 「05：歯車で向きと速度を変える」を完了"
 			tasks: [{
 				id: "6D44010000002601"
 				item: "create:hand_crank"
@@ -174,12 +174,12 @@
 			]
 			icon: "create:goggles"
 			id: "6D44010000000107"
-			subtitle: "解放条件: 「06：手回しで試運転」を完了"
 			rewards: [{
 				id: "6D44010000001701"
 				item: "create:goggles"
 				type: "item"
 			}]
+			subtitle: "解放条件: 「06：手回しで試運転」を完了"
 			tasks: [{
 				id: "6D44010000002701"
 				item: "create:goggles"
@@ -197,7 +197,6 @@
 			]
 			icon: "create:water_wheel"
 			id: "6D44010000000108"
-			subtitle: "解放条件: 「07：速度とStressを読む」を完了"
 			rewards: [
 				{
 					count: 4
@@ -212,6 +211,7 @@
 					type: "item"
 				}
 			]
+			subtitle: "解放条件: 「07：速度とStressを読む」を完了"
 			tasks: [{
 				id: "6D44010000002801"
 				item: "create:water_wheel"
@@ -230,13 +230,13 @@
 			]
 			icon: "create:mechanical_press"
 			id: "6D44010000000109"
-			subtitle: "解放条件: 「08：水車で常設動力を作る」を完了"
 			rewards: [{
 				count: 8
 				id: "6D44010000001901"
 				item: "apocalypsenow:money"
 				type: "item"
 			}]
+			subtitle: "解放条件: 「08：水車で常設動力を作る」を完了"
 			tasks: [
 				{
 					id: "6D44010000002901"

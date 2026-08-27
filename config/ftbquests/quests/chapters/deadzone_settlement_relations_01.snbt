@@ -5,7 +5,7 @@
 	group: "6A11000000000003"
 	icon: "recruits:villager_noble_spawn_egg"
 	id: "6D54010000000001"
-	order_index: 22
+	order_index: 2
 	quest_links: [ ]
 	quests: [
 		{
@@ -16,12 +16,12 @@
 			]
 			icon: "recruits:villager_noble_spawn_egg"
 			id: "6D54010000000101"
-			subtitle: "解放条件: 「村をもう一つのCampにするな」を完了"
 			rewards: [{
 				id: "6D54010000001101"
 				type: "xp"
 				xp: 10
 			}]
+			subtitle: "解放条件: 「村をもう一つのCampにするな」を完了"
 			tasks: [{
 				id: "6D54010000002101"
 				title: "集落のNobleへ話しかけた"

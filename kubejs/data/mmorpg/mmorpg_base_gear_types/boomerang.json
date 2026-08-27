@@ -1,0 +1,29 @@
+{
+  "base_stats": [
+    {
+      "type": "FLAT",
+      "max": 8.0,
+      "min": 4.0,
+      "stat": "weapon_damage"
+    }
+  ],
+  "gear_slot": "boomerang",
+  "guid": "boomerang",
+  "possible_items": [],
+  "req": {
+    "base_req": {},
+    "scaling_req": {
+      "dexterity": 0.4
+    }
+  },
+  "style": "DEX",
+  "tags": {
+    "tags": [
+      "dexterity",
+      "weapon_family",
+      "boomerang"
+    ]
+  },
+  "weapon_type": "boomerang",
+  "weight": 0
+}

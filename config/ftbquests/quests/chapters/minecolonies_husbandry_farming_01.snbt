@@ -5,7 +5,7 @@
 	group: "6A11000000000002"
 	icon: "minecolonies:blockhutshepherd"
 	id: "6D43050000000001"
-	order_index: 13
+	order_index: 5
 	quest_links: [ ]
 	quests: [
 		{

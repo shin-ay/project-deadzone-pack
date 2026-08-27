@@ -1,0 +1,209 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "apocalypsenow:baseball_bat",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:broken_baseball_bat",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:chainsaw_bat",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:club",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:club_with_saw",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:cricket_bat",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:crowbar",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:electric_baton",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:electric_club",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:electrical_baseball_bat",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:electrical_tactical_mace",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:fixed_baseball_bat",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:iron_baseball_bat",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:iron_club",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:kanabo",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:laminated_iron_baseball_bat",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:mace",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:nailed_club",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:nailed_cricket_bat",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:night_stick",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:podao",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:red_crowbar",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:saw_baseball_bat",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:spiked_baseball_bat",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:spiked_iron_baseball_bat",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:stun_baton",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:tatical_mace",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:wired_baseball_bat",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:wrapped_baseball_bat",
+      "required": false
+    },
+    {
+      "id": "infectious:baseball_bat",
+      "required": false
+    },
+    {
+      "id": "infectious:baseball_bat_with_nails",
+      "required": false
+    },
+    {
+      "id": "infectious:baton",
+      "required": false
+    },
+    {
+      "id": "superbwarfare:crowbar",
+      "required": false
+    },
+    {
+      "id": "superbwarfare:electric_baton",
+      "required": false
+    },
+    {
+      "id": "superbwarfare:t_baton",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:b_aseball_bat_with_nails_sword",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:baseball_bat_sword",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:electric_baton_sword",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:lever_mace",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:pipe_wrench_mace",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:police_baton_mace",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:steellium_pipe_mace",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:wrench_mace",
+      "required": false
+    },
+    {
+      "id": "zombiekit:baseball_bat",
+      "required": false
+    },
+    {
+      "id": "zombiekit:baseball_bat_broken",
+      "required": false
+    },
+    {
+      "id": "zombiekit:crowbar",
+      "required": false
+    },
+    {
+      "id": "zombiekit:crowbar_broken",
+      "required": false
+    },
+    {
+      "id": "zombiekit:death_bat",
+      "required": false
+    },
+    {
+      "id": "zombiekit:netherite_baseball_bat",
+      "required": false
+    },
+    {
+      "id": "zombiekit:netherite_crowbar",
+      "required": false
+    },
+    {
+      "id": "zombiekit:studded_baseball_bat",
+      "required": false
+    }
+  ]
+}

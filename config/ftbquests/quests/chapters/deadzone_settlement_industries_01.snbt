@@ -5,7 +5,7 @@
 	group: "6A11000000000003"
 	icon: "bountiful:bountyboard"
 	id: "6D52010000000001"
-	order_index: 21
+	order_index: 1
 	quest_links: [ ]
 	quests: [
 		{
@@ -77,12 +77,12 @@
 			]
 			icon: "village_recruits:merchant_post"
 			id: "6D52010000000013"
-			subtitle: "解放条件: 「STEP 2：輸出と不足を読む」を完了"
 			rewards: [{
 				id: "6D52010000001013"
 				type: "xp"
 				xp: 8
 			}]
+			subtitle: "解放条件: 「STEP 2：輸出と不足を読む」を完了"
 			tasks: [{
 				id: "6D52010000002013"
 				title: "Village RecruitsとBountifulの役割を確認した"
@@ -93,21 +93,19 @@
 			y: 0.0d
 		}
 		{
-			dependencies: [
-				"6D52010000000013"
-			]
+			dependencies: ["6D52010000000013"]
 			description: [
 				"CTOV、Towns and Towers、バニラの実在村へ入り、自動表示される輸出と不足から地域産業を確認する。"
 				"村の生成と住民は既存MOD、実在庫・商人・Noble契約・コンボイはVillage Recruits、掲示依頼はBountifulが担当する。PDZは新しい村AIや交易GUIを作らない。"
 			]
 			icon: "minecraft:bell"
 			id: "6D52010000000101"
-			subtitle: "解放条件: 「STEP 3：商人・契約・掲示板を分ける」を完了"
 			rewards: [{
 				id: "6D52010000001101"
 				type: "xp"
 				xp: 15
 			}]
+			subtitle: "解放条件: 「STEP 3：商人・契約・掲示板を分ける」を完了"
 			tasks: [{
 				id: "6D52010000002101"
 				title: "稼働中の集落で地域産業を確認した"
@@ -125,13 +123,13 @@
 			]
 			icon: "farmersdelight:cabbage"
 			id: "6D52010000000102"
-			subtitle: "解放条件: 「村をもう一つのCampにするな」を完了"
 			rewards: [{
 				count: 4
 				id: "6D52010000001201"
 				item: "farmersdelight:cabbage"
 				type: "item"
 			}]
+			subtitle: "解放条件: 「村をもう一つのCampにするな」を完了"
 			tasks: [{
 				id: "6D52010000002201"
 				title: "農業集落の産業を確認した"
@@ -149,13 +147,13 @@
 			]
 			icon: "aquaculture:fish_fillet_raw"
 			id: "6D52010000000103"
-			subtitle: "解放条件: 「村をもう一つのCampにするな」を完了"
 			rewards: [{
 				count: 4
 				id: "6D52010000001301"
 				item: "aquaculture:fish_fillet_raw"
 				type: "item"
 			}]
+			subtitle: "解放条件: 「村をもう一つのCampにするな」を完了"
 			tasks: [{
 				id: "6D52010000002301"
 				title: "沿岸漁業集落の産業を確認した"
@@ -173,13 +171,13 @@
 			]
 			icon: "minecraft:leather"
 			id: "6D52010000000104"
-			subtitle: "解放条件: 「村をもう一つのCampにするな」を完了"
 			rewards: [{
 				count: 4
 				id: "6D52010000001401"
 				item: "minecraft:cooked_mutton"
 				type: "item"
 			}]
+			subtitle: "解放条件: 「村をもう一つのCampにするな」を完了"
 			tasks: [{
 				id: "6D52010000002401"
 				title: "山間狩猟集落の産業を確認した"
@@ -197,13 +195,13 @@
 			]
 			icon: "minecraft:spruce_log"
 			id: "6D52010000000105"
-			subtitle: "解放条件: 「村をもう一つのCampにするな」を完了"
 			rewards: [{
 				count: 8
 				id: "6D52010000001501"
 				item: "minecraft:charcoal"
 				type: "item"
 			}]
+			subtitle: "解放条件: 「村をもう一つのCampにするな」を完了"
 			tasks: [{
 				id: "6D52010000002501"
 				title: "森林資源集落の産業を確認した"
@@ -221,13 +219,13 @@
 			]
 			icon: "immersiveengineering:component_iron"
 			id: "6D52010000000106"
-			subtitle: "解放条件: 「村をもう一つのCampにするな」を完了"
 			rewards: [{
 				count: 2
 				id: "6D52010000001601"
 				item: "minecraft:copper_ingot"
 				type: "item"
 			}]
+			subtitle: "解放条件: 「村をもう一つのCampにするな」を完了"
 			tasks: [{
 				id: "6D52010000002601"
 				title: "回収拠点の産業を確認した"
@@ -245,12 +243,12 @@
 			]
 			icon: "bountiful:decree"
 			id: "6D52010000000107"
-			subtitle: "解放条件: 「村をもう一つのCampにするな」を完了"
 			rewards: [{
 				id: "6D52010000001701"
 				type: "xp"
 				xp: 20
 			}]
+			subtitle: "解放条件: 「村をもう一つのCampにするな」を完了"
 			tasks: [{
 				id: "6D52010000002701"
 				title: "集落固有の産業令状を受領した"
@@ -268,13 +266,13 @@
 			]
 			icon: "village_recruits:merchant_post"
 			id: "6D52010000000108"
-			subtitle: "解放条件: 「村をもう一つのCampにするな」を完了"
 			rewards: [{
 				count: 2
 				id: "6D52010000001801"
 				item: "minecraft:emerald"
 				type: "item"
 			}]
+			subtitle: "解放条件: 「村をもう一つのCampにするな」を完了"
 			tasks: [{
 				id: "6D52010000002801"
 				title: "Village Recruitsの実在庫経済を確認した"
@@ -292,13 +290,13 @@
 			]
 			icon: "bountiful:bountyboard"
 			id: "6D52010000000109"
-			subtitle: "解放条件: 「Bountifulを地域化する」を完了"
 			rewards: [{
 				count: 4
 				id: "6D52010000001901"
 				item: "minecraft:paper"
 				type: "item"
 			}]
+			subtitle: "解放条件: 「Bountifulを地域化する」を完了"
 			tasks: [{
 				id: "6D52010000002901"
 				item: "bountiful:bountyboard"
@@ -320,7 +318,6 @@
 			]
 			icon: "minecraft:filled_map"
 			id: "6D5201000000010A"
-			subtitle: "解放条件: 「商人は無限倉庫じゃない」・「市場の掲示板を置く」・「止まった世界を結び直す」をすべて完了"
 			rewards: [
 				{
 					count: 6
@@ -337,6 +334,7 @@
 					type: "item"
 				}
 			]
+			subtitle: "解放条件: 「商人は無限倉庫じゃない」・「市場の掲示板を置く」・「止まった世界を結び直す」をすべて完了"
 			tasks: [{
 				id: "6D52010000002A01"
 				title: "異なる3種類の地域産業を発見した"

@@ -1,0 +1,25 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "apocalypsenow:catana",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:katana",
+      "required": false
+    },
+    {
+      "id": "sakura:katana",
+      "required": false
+    },
+    {
+      "id": "sakura:sakura_katana",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:katana",
+      "required": false
+    }
+  ]
+}

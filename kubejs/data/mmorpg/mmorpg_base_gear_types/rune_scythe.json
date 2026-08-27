@@ -1,0 +1,74 @@
+{
+  "base_stats": [
+    {
+      "type": "FLAT",
+      "max": 8.0,
+      "min": 4.0,
+      "stat": "weapon_damage"
+    }
+  ],
+  "gear_slot": "rune_scythe",
+  "guid": "rune_scythe",
+  "possible_items": [
+    {
+      "item_id": "roe_weapons:scythe_0",
+      "min_rar": "common",
+      "weight": 1000
+    },
+    {
+      "item_id": "roe_weapons:scythe_1",
+      "min_rar": "uncommon",
+      "weight": 1000
+    },
+    {
+      "item_id": "roe_weapons:scythe_2",
+      "min_rar": "rare",
+      "weight": 1000
+    },
+    {
+      "item_id": "roe_weapons:scythe_3",
+      "min_rar": "epic",
+      "weight": 1000
+    },
+    {
+      "item_id": "roe_weapons:scythe_4",
+      "min_rar": "legendary",
+      "weight": 1000
+    },
+    {
+      "item_id": "roe_weapons:scythe_5",
+      "min_rar": "mythic",
+      "weight": 1000
+    },
+    {
+      "item_id": "roe_weapons:scythe_6",
+      "min_rar": "runeword",
+      "weight": 1000
+    },
+    {
+      "item_id": "roe_weapons:scythe_7",
+      "min_rar": "unique",
+      "weight": 1000
+    }
+  ],
+  "req": {
+    "base_req": {},
+    "scaling_req": {
+      "strength": 0.25,
+      "intelligence": 0.25
+    }
+  },
+  "style": "DEX",
+  "tags": {
+    "tags": [
+      "dexterity",
+      "scythe",
+      "rune",
+      "melee_weapon",
+      "mage_weapon",
+      "weapon_family"
+    ]
+  },
+  "weapon_type": "rune_scythe",
+  "weight": 200
+}

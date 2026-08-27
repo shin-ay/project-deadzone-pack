@@ -1,0 +1,72 @@
+{
+  "base_stats": [
+    {
+      "type": "FLAT",
+      "max": 15.0,
+      "min": 10.0,
+      "stat": "armor"
+    }
+  ],
+  "gear_slot": "shield_middle",
+  "guid": "shield_middle",
+  "possible_items": [
+    {
+      "item_id": "roe_weapons:shield_0",
+      "min_rar": "common",
+      "weight": 1000
+    },
+    {
+      "item_id": "roe_weapons:shield_1",
+      "min_rar": "uncommon",
+      "weight": 1000
+    },
+    {
+      "item_id": "roe_weapons:shield_2",
+      "min_rar": "rare",
+      "weight": 1000
+    },
+    {
+      "item_id": "roe_weapons:shield_3",
+      "min_rar": "epic",
+      "weight": 1000
+    },
+    {
+      "item_id": "roe_weapons:shield_4",
+      "min_rar": "legendary",
+      "weight": 1000
+    },
+    {
+      "item_id": "roe_weapons:shield_5",
+      "min_rar": "mythic",
+      "weight": 1000
+    },
+    {
+      "item_id": "roe_weapons:shield_6",
+      "min_rar": "mythic",
+      "weight": 1000
+    },
+    {
+      "item_id": "roe_weapons:shield_7",
+      "min_rar": "unique",
+      "weight": 1000
+    }
+  ],
+  "req": {
+    "base_req": {},
+    "scaling_req": {
+      "strength": 0.4
+    }
+  },
+  "style": "STR",
+  "tags": {
+    "tags": [
+      "shield",
+      "shield_middle",
+      "strength",
+      "offhand_family",
+      "armor_stat"
+    ]
+  },
+  "weapon_type": "none",
+  "weight": 500
+}

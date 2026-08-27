@@ -16,13 +16,13 @@
 			]
 			icon: "immersiveengineering:manual"
 			id: "6D47010000000101"
-			subtitle: "解放条件: 「09：最初の加工機械」を完了"
 			rewards: [{
 				count: 4
 				id: "6D47010000001101"
 				item: "minecraft:bread"
 				type: "item"
 			}]
+			subtitle: "解放条件: 「09：最初の加工機械」を完了"
 			tasks: [{
 				id: "6D47010000002101"
 				title: "FEとCreateの回転力が別物だと確認した"
@@ -40,12 +40,12 @@
 			]
 			icon: "immersiveengineering:manual"
 			id: "6D47010000000102"
-			subtitle: "解放条件: 「01：電力は回転力とは別」を完了"
 			rewards: [{
 				id: "6D47010000001201"
 				item: "immersiveengineering:manual"
 				type: "item"
 			}]
+			subtitle: "解放条件: 「01：電力は回転力とは別」を完了"
 			tasks: [{
 				id: "6D47010000002201"
 				title: "ManualでCoke Ovenの構造を確認した"
@@ -69,13 +69,13 @@
 				}
 			}
 			id: "6D47010000000103"
-			subtitle: "解放条件: 「02：技師の説明書を読む」を完了"
 			rewards: [{
 				count: 4
 				id: "6D47010000001301"
 				item: "immersiveengineering:hemp_fiber"
 				type: "item"
 			}]
+			subtitle: "解放条件: 「02：技師の説明書を読む」を完了"
 			tasks: [
 				{
 					id: "6D47010000002301"
@@ -112,13 +112,13 @@
 			]
 			icon: "immersiveengineering:cokebrick"
 			id: "6D47010000000104"
-			subtitle: "解放条件: 「03：組立と配線の工具」を完了"
 			rewards: [{
 				count: 4
 				id: "6D47010000001401"
 				item: "immersiveengineering:cokebrick"
 				type: "item"
 			}]
+			subtitle: "解放条件: 「03：組立と配線の工具」を完了"
 			tasks: [{
 				count: 27L
 				id: "6D47010000002401"
@@ -137,13 +137,13 @@
 			]
 			icon: "immersiveengineering:coal_coke"
 			id: "6D47010000000105"
-			subtitle: "解放条件: 「04：Coke Ovenを組む」を完了"
 			rewards: [{
 				count: 8
 				id: "6D47010000001501"
 				item: "minecraft:coal"
 				type: "item"
 			}]
+			subtitle: "解放条件: 「04：Coke Ovenを組む」を完了"
 			tasks: [
 				{
 					count: 4L
@@ -169,13 +169,13 @@
 			]
 			icon: "immersiveengineering:treated_wood_horizontal"
 			id: "6D47010000000106"
-			subtitle: "解放条件: 「05：固体燃料と副産物」を完了"
 			rewards: [{
 				count: 4
 				id: "6D47010000001601"
 				item: "immersiveengineering:treated_wood_horizontal"
 				type: "item"
 			}]
+			subtitle: "解放条件: 「05：固体燃料と副産物」を完了"
 			tasks: [{
 				count: 8L
 				id: "6D47010000002601"
@@ -197,13 +197,13 @@
 			]
 			icon: "immersiveengineering:blastbrick"
 			id: "6D47010000000107"
-			subtitle: "解放条件: 「06：防腐木材を作る」・「T1：Survivor」をすべて完了"
 			rewards: [{
 				count: 4
 				id: "6D47010000001701"
 				item: "immersiveengineering:coal_coke"
 				type: "item"
 			}]
+			subtitle: "解放条件: 「06：防腐木材を作る」・「T1：Survivor」をすべて完了"
 			tasks: [{
 				count: 27L
 				id: "6D47010000002701"
@@ -222,13 +222,13 @@
 			]
 			icon: "immersiveengineering:ingot_steel"
 			id: "6D47010000000108"
-			subtitle: "解放条件: 「07：T1・Blast Furnace」を完了"
 			rewards: [{
 				count: 2
 				id: "6D47010000001801"
 				item: "immersiveengineering:component_steel"
 				type: "item"
 			}]
+			subtitle: "解放条件: 「07：T1・Blast Furnace」を完了"
 			tasks: [{
 				count: 8L
 				id: "6D47010000002801"
@@ -247,13 +247,13 @@
 			]
 			icon: "immersiveengineering:connector_lv"
 			id: "6D47010000000109"
-			subtitle: "解放条件: 「08：最初の鋼鉄」を完了"
 			rewards: [{
 				count: 4
 				id: "6D47010000001901"
 				item: "immersiveengineering:connector_lv_relay"
 				type: "item"
 			}]
+			subtitle: "解放条件: 「08：最初の鋼鉄」を完了"
 			tasks: [
 				{
 					count: 4L
@@ -280,12 +280,12 @@
 			]
 			icon: "immersiveengineering:capacitor_lv"
 			id: "6D4701000000010A"
-			subtitle: "解放条件: 「09：ConnectorとWire」を完了"
 			rewards: [{
 				id: "6D47010000001A01"
 				item: "immersiveengineering:voltmeter"
 				type: "item"
 			}]
+			subtitle: "解放条件: 「09：ConnectorとWire」を完了"
 			tasks: [{
 				id: "6D47010000002A01"
 				item: "immersiveengineering:capacitor_lv"
@@ -303,13 +303,13 @@
 			]
 			icon: "immersiveengineering:dynamo"
 			id: "6D4701000000010B"
-			subtitle: "解放条件: 「10：蓄電器の入出力面」を完了"
 			rewards: [{
 				count: 4
 				id: "6D47010000001B01"
 				item: "immersiveengineering:wire_copper"
 				type: "item"
 			}]
+			subtitle: "解放条件: 「10：蓄電器の入出力面」を完了"
 			tasks: [
 				{
 					id: "6D47010000002B01"
@@ -334,13 +334,13 @@
 			]
 			icon: "immersiveengineering:voltmeter"
 			id: "6D4701000000010C"
-			subtitle: "解放条件: 「11：風力をFEへ変換」を完了"
 			rewards: [{
 				count: 16
 				id: "6D47010000001C01"
 				item: "apocalypsenow:money"
 				type: "item"
 			}]
+			subtitle: "解放条件: 「11：風力をFEへ変換」を完了"
 			tasks: [{
 				id: "6D47010000002C01"
 				title: "LV Capacitorの蓄電量が増えることを確認した"
@@ -358,13 +358,13 @@
 			]
 			icon: "immersiveengineering:furnace_heater"
 			id: "6D4701000000010D"
-			subtitle: "解放条件: 「12：発電試験」を完了"
 			rewards: [{
 				count: 8
 				id: "6D47010000001D01"
 				item: "minecraft:coal"
 				type: "item"
 			}]
+			subtitle: "解放条件: 「12：発電試験」を完了"
 			tasks: [{
 				id: "6D47010000002D01"
 				item: "immersiveengineering:furnace_heater"
@@ -382,7 +382,6 @@
 			]
 			icon: "immersiveengineering:capacitor_lv"
 			id: "6D4701000000010E"
-			subtitle: "解放条件: 「13：FEを回転力へ戻す」を完了"
 			rewards: [
 				{
 					count: 32
@@ -396,6 +395,7 @@
 					xp: 32
 				}
 			]
+			subtitle: "解放条件: 「13：FEを回転力へ戻す」を完了"
 			tasks: [{
 				id: "6D47010000002E01"
 				title: "発電・蓄電・消費を順番に確認できた"

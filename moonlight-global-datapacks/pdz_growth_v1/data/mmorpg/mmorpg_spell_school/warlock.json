@@ -1,74 +1,54 @@
 {
-    "id":  "warlock",
-    "lvl_reqs":  [
-                     1,
-                     5,
-                     10,
-                     15,
-                     20,
-                     25,
-                     30
-                 ],
-    "perks":  {
-                  "poison_ball":  {
-                                      "x":  1,
-                                      "y":  0
-                                  },
-                  "poison_cloud":  {
-                                       "x":  3,
-                                       "y":  0
-                                   },
-                  "black_hole":  {
-                                     "x":  5,
-                                     "y":  0
-                                 },
-                  "chilling_touch":  {
-                                         "x":  1,
-                                         "y":  2
-                                     },
-                  "curse_of_agony":  {
-                                         "x":  3,
-                                         "y":  2
-                                     },
-                  "curse_of_weak":  {
-                                        "x":  5,
-                                        "y":  2
-                                    },
-                  "curse_of_despair":  {
-                                           "x":  1,
-                                           "y":  4
-                                       },
-                  "draconic_blood":  {
-                                         "x":  3,
-                                         "y":  4
-                                     },
-                  "p_cast_speed_wl":  {
-                                          "x":  8,
-                                          "y":  0
-                                      },
-                  "p_dmg_to_cursed":  {
-                                          "x":  9,
-                                          "y":  0
-                                      },
-                  "p_dot_dmg":  {
-                                    "x":  8,
-                                    "y":  1
-                                },
-                  "p_dot_lifesteal":  {
-                                          "x":  9,
-                                          "y":  1
-                                      },
-                  "p_poison_chance":  {
-                                          "x":  8,
-                                          "y":  2
-                                      },
-                  "p_poison_duration":  {
-                                            "x":  9,
-                                            "y":  2
-                                        },
-                  "p_spell_lifesteal":  {
-                                            "x":  8,
-                                            "y":  3
-                                        }
-              }
+  "id": "warlock",
+  "lvl_reqs": [
+    1,
+    5,
+    10,
+    15,
+    20,
+    25,
+    30
+  ],
+  "perks": {
+    "poison_ball": {
+      "x": 1,
+      "y": 0.0
+    },
+    "curse_of_weak": {
+      "x": 3,
+      "y": 0.0
+    },
+    "black_hole": {
+      "x": 5,
+      "y": 0.0
+    },
+    "p_cast_speed_wl": {
+      "x": 8,
+      "y": 0.0
+    },
+    "p_dmg_to_cursed": {
+      "x": 9,
+      "y": 0.0
+    },
+    "p_dot_dmg": {
+      "x": 8,
+      "y": 1.0
+    },
+    "p_dot_lifesteal": {
+      "x": 9,
+      "y": 1.0
+    },
+    "p_poison_chance": {
+      "x": 8,
+      "y": 2.0
+    },
+    "p_poison_duration": {
+      "x": 9,
+      "y": 2.0
+    },
+    "p_spell_lifesteal": {
+      "x": 8,
+      "y": 3.0
+    }
+  }
 }

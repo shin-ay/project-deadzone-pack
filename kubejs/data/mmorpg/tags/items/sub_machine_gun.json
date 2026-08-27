@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "superbwarfare:mp_5",
+      "required": false
+    },
+    {
+      "id": "superbwarfare:vector",
+      "required": false
+    }
+  ]
+}

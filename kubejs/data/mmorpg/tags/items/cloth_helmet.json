@@ -1,0 +1,105 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "apocalypsenow:balaclava",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:baseball_cap_blue_helmet",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:baseball_cap_green_helmet",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:baseball_cap_red_helmet",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:beret_helmet",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:blue_balaclava",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:cowboy_hat_helmet",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:desert_camo_balaclava",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:forest_camo_balaclava",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:green_balaclava",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:military_beret_helmet",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:military_cap_helmet",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:officer_beret_helmet",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:old_west_hat_helmet",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:pink_balaclava",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:red_balaclava",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:snow_camo_balaclava",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:soviet_ushanka_helmet",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:strawhat_helmet",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:urbanbalaclava",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:white_balaclava",
+      "required": false
+    },
+    {
+      "id": "create:cardboard_helmet",
+      "required": false
+    },
+    {
+      "id": "sakura:strawhat",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:cloth_balaclava_helmet",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:wool_balaclava_helmet",
+      "required": false
+    }
+  ]
+}

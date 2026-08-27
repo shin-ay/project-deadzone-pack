@@ -1,0 +1,201 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "apocalypsenow:brush_axe",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:bushcraft_axe",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:cheap_survival_axe",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:combat_axe",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:construction_axe",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:electrical_combat_axe",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:emergency_axe",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:fire_axe",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:gardening_axe",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:hammer_axe",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:hand_axe",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:hatchet",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:ice_axe",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:lumber_jack_axe",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:makeshift_axe",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:modern_tomahawk",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:red_lumberjack_axe",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:road_sign_axe",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:survival_axe",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:tomahawk",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:tourist_axe",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:vintage_brush_axe",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:wooden_fire_axe",
+      "required": false
+    },
+    {
+      "id": "aquaculture:neptunium_axe",
+      "required": false
+    },
+    {
+      "id": "immersiveengineering:axe_steel",
+      "required": false
+    },
+    {
+      "id": "mekanismtools:bronze_axe",
+      "required": false
+    },
+    {
+      "id": "mekanismtools:lapis_lazuli_axe",
+      "required": false
+    },
+    {
+      "id": "mekanismtools:osmium_axe",
+      "required": false
+    },
+    {
+      "id": "mekanismtools:refined_glowstone_axe",
+      "required": false
+    },
+    {
+      "id": "mekanismtools:refined_obsidian_axe",
+      "required": false
+    },
+    {
+      "id": "mekanismtools:steel_axe",
+      "required": false
+    },
+    {
+      "id": "minecraft:diamond_axe",
+      "required": false
+    },
+    {
+      "id": "minecraft:golden_axe",
+      "required": false
+    },
+    {
+      "id": "minecraft:iron_axe",
+      "required": false
+    },
+    {
+      "id": "minecraft:netherite_axe",
+      "required": false
+    },
+    {
+      "id": "minecraft:stone_axe",
+      "required": false
+    },
+    {
+      "id": "minecraft:wooden_axe",
+      "required": false
+    },
+    {
+      "id": "sakura:sakura_axe",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:aluminium_axe",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:electric_guitar_greataxe",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:fire_axe",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:greataxe_stop_sign",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:greataxe_stop_sing_broken",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:hand_axe",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:saw_axe",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:stellium_axe",
+      "required": false
+    },
+    {
+      "id": "zombiekit:fire_axe",
+      "required": false
+    },
+    {
+      "id": "zombiekit:fire_axe_broken",
+      "required": false
+    },
+    {
+      "id": "zombiekit:netherite_fire_axe",
+      "required": false
+    }
+  ]
+}

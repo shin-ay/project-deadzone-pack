@@ -16,7 +16,6 @@
 			]
 			icon: "create:andesite_alloy"
 			id: "6D0294D5C566AA55"
-			subtitle: "解放条件: 「08：水車で常設動力を作る」を完了"
 			rewards: [
 				{
 					count: 24
@@ -31,6 +30,7 @@
 					type: "item"
 				}
 			]
+			subtitle: "解放条件: 「08：水車で常設動力を作る」を完了"
 			tasks: [{
 				count: 8L
 				id: "1BE3AF969F73CF3D"
@@ -215,7 +215,6 @@
 			description: ["MixerとBasinは合金・食料・薬品へ繋がる共同設備。工房の中心に設置すると使いやすい。"]
 			icon: "create:mechanical_mixer"
 			id: "285F9E9B1E751F17"
-			subtitle: "解放条件: 「粉砕工程」・「金属板の量産」をすべて完了"
 			rewards: [
 				{
 					count: 16
@@ -229,6 +228,7 @@
 					type: "item"
 				}
 			]
+			subtitle: "解放条件: 「粉砕工程」・「金属板の量産」をすべて完了"
 			tasks: [
 				{
 					id: "1708C966499D1DAD"
@@ -331,7 +331,6 @@
 			description: ["T1到達時にGas Stationから回収した封入済みBlaze Burnerを工房へ設置する。PDZではネザーへ行かず、施設攻略で工業熱源を解放する。"]
 			icon: "create:blaze_burner"
 			id: "276FC6A949C932CC"
-			subtitle: "解放条件: 「共同加工槽」・「T1：Survivor」をすべて完了"
 			rewards: [
 				{
 					count: 12
@@ -346,6 +345,7 @@
 					type: "item"
 				}
 			]
+			subtitle: "解放条件: 「共同加工槽」・「T1：Survivor」をすべて完了"
 			tasks: [{
 				id: "44C965301600E1E2"
 				item: "create:blaze_burner"
@@ -363,7 +363,6 @@
 			description: ["Brassは精密制御への入口。T1以降の工業Lootと施設攻略から必要素材を集める。"]
 			icon: "create:brass_ingot"
 			id: "10FBBDB4204025B6"
-			subtitle: "解放条件: 「共同加工槽」・「搬送ライン」をすべて完了"
 			rewards: [
 				{
 					count: 20
@@ -378,6 +377,7 @@
 					type: "item"
 				}
 			]
+			subtitle: "解放条件: 「共同加工槽」・「搬送ライン」をすべて完了"
 			tasks: [{
 				count: 8L
 				id: "52C68E80BDB1B67B"

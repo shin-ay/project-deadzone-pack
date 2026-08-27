@@ -1,0 +1,181 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "apocalypsenow:army_chestplate",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:black_football_armor_chestplate",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:blue_football_armor_chestplate",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:bombsquad_chestplate",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:brazilian_army_chestplate",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:british_army_chestplate",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:canadian_army_chestplate",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:chinese_army_chestplate",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:italian_bersaglieri_army_chestplate",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:japanese_army_chestplate",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:juggernaut_chestplate",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:mexican_army_chestplate",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:military_riot_armor_chestplate",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:military_urban_chestplate",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:red_football_armor_chestplate",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:russian_army_chestplate",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:soldier_chestplate",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:swat_chestplate",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:swatriotcontrol_chestplate",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:us_army_chestplate",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:yellow_football_armor_chestplate",
+      "required": false
+    },
+    {
+      "id": "create:netherite_backtank",
+      "required": false
+    },
+    {
+      "id": "immersiveengineering:armor_steel_chestplate",
+      "required": false
+    },
+    {
+      "id": "infectious:security_armor_chestplate",
+      "required": false
+    },
+    {
+      "id": "infectious:soldier_armor_chestplate",
+      "required": false
+    },
+    {
+      "id": "infectious:swatarmor_chestplate",
+      "required": false
+    },
+    {
+      "id": "mekanism:mekasuit_bodyarmor",
+      "required": false
+    },
+    {
+      "id": "mekanismtools:steel_chestplate",
+      "required": false
+    },
+    {
+      "id": "minecraft:diamond_chestplate",
+      "required": false
+    },
+    {
+      "id": "minecraft:iron_chestplate",
+      "required": false
+    },
+    {
+      "id": "minecraft:netherite_chestplate",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:black_juggernaut_chestplate",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:desert_juggernaut_chestplate",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:exo_chestplate",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:exo_heavy_black_chestplate",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:exo_heavy_desert_chestplate",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:exo_heavy_green_chestplate",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:green_juggernaut_chestplate",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:military_chestplate",
+      "required": false
+    },
+    {
+      "id": "zombiekit:desert_riot_chestplate",
+      "required": false
+    },
+    {
+      "id": "zombiekit:exo_chestplate",
+      "required": false
+    },
+    {
+      "id": "zombiekit:forest_riot_chestplate",
+      "required": false
+    },
+    {
+      "id": "zombiekit:snow_riot_chestplate",
+      "required": false
+    },
+    {
+      "id": "zombiekit:standard_riot_chestplate",
+      "required": false
+    }
+  ]
+}

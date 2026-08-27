@@ -1,0 +1,529 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "apocalypsenow:advanced_hazmat_suit_helmet",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:anarchy_helmet",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:aviator_hat_helmet",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:ballistic_mask_helmet",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:baseball_helmet_helmet",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:bikers_helmet",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:biohazard_helmet",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:black_bikers_helmet",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:black_face_mask",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:black_motorcycle_helmet_helmet",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:blackhockeymask_helmet",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:blue_fighting_helmet",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:bluemotorcyclehelmet_helmet",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:construction_helmet",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:contamination_suit_blue_helmet",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:contamination_suit_green_helmet",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:contamination_suit_white_helmet",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:desertghillie_helmet",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:divingsuit_helmet",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:fire_figther_helmet",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:forestguard_helmet",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:gas_mask_helmet_helmet",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:gasmask_helmet",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:gentex_hgu_56_p_helmet",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:ghilliesuit_helmet",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:gpnvg_18_helmet_helmet",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:green_bikers_helmet",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:hardhat_helmet",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:hazmat_suit_helmet",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:helicopter_helmet",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:hockey_helmet",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:hunting_helmet",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:jasonmask_helmet",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:jet_pilot_helmet",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:level_a_hazmatsuit_helmet",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:mcu2p_gasmask_helmet",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:mo4_forest_camo_helmet",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:mo4_gas_mask_helmet",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:mo4_mud_camo_helmet",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:officer_hard_hat_helmet",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:officer_helmet",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:orange_visor_gas_mask_helmet",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:pbf_hamstergasmask_helmet",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:pilot_headsetb",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:pink_bikers_helmet",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:pkm_4gasmask_helmet",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:plague_mask_helmet",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:police_helmet",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:red_bikers_helmet",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:red_fighting_helmet",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:red_motorcycle_helmet_helmet",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:rou_respirator_helmet",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:royal_canada_police_officer_helmet",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:rusty_helmet",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:sack_helmet",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:sheriff_helmet",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:ski_goggles",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:snowghillie_helmet",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:spec_ops_helmet",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:tank_helmet",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:un_armor_helmet",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:un_gas_mask_helmet_helmet",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:usa_armor_helmet",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:visor_helmet",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:welding_mask_helmet",
+      "required": false
+    },
+    {
+      "id": "aquaculture:neptunium_helmet",
+      "required": false
+    },
+    {
+      "id": "basic_nvg:blue_nvg",
+      "required": false
+    },
+    {
+      "id": "basic_nvg:nvg",
+      "required": false
+    },
+    {
+      "id": "basic_nvg:orange_nvg",
+      "required": false
+    },
+    {
+      "id": "basic_nvg:pink_nvg",
+      "required": false
+    },
+    {
+      "id": "basic_nvg:purple_nvg",
+      "required": false
+    },
+    {
+      "id": "basic_nvg:red_nvg",
+      "required": false
+    },
+    {
+      "id": "basic_nvg:white_nvg",
+      "required": false
+    },
+    {
+      "id": "basic_nvg:yellow_nvg",
+      "required": false
+    },
+    {
+      "id": "calypsos_nightvision_goggles:byte_buddies_goggles",
+      "required": false
+    },
+    {
+      "id": "calypsos_nightvision_goggles:clockwork_goggles",
+      "required": false
+    },
+    {
+      "id": "calypsos_nightvision_goggles:cute_chicken_goggles",
+      "required": false
+    },
+    {
+      "id": "calypsos_nightvision_goggles:night_owl_goggles",
+      "required": false
+    },
+    {
+      "id": "calypsos_nightvision_goggles:nightvision_goggles",
+      "required": false
+    },
+    {
+      "id": "calypsos_nightvision_goggles:purifier_goggles",
+      "required": false
+    },
+    {
+      "id": "calypsos_nightvision_goggles:robot_chicken_goggles",
+      "required": false
+    },
+    {
+      "id": "calypsos_nightvision_goggles:the_watcher_goggles",
+      "required": false
+    },
+    {
+      "id": "calypsos_nightvision_goggles:vista_goggles",
+      "required": false
+    },
+    {
+      "id": "create:copper_diving_helmet",
+      "required": false
+    },
+    {
+      "id": "create:goggles",
+      "required": false
+    },
+    {
+      "id": "immersiveengineering:armor_faraday_helmet",
+      "required": false
+    },
+    {
+      "id": "infectious:hazmat_suit_helmet",
+      "required": false
+    },
+    {
+      "id": "infectious:scientist_glasses_helmet",
+      "required": false
+    },
+    {
+      "id": "mekanism:hazmat_mask",
+      "required": false
+    },
+    {
+      "id": "mekanism:scuba_mask",
+      "required": false
+    },
+    {
+      "id": "mekanismtools:bronze_helmet",
+      "required": false
+    },
+    {
+      "id": "mekanismtools:lapis_lazuli_helmet",
+      "required": false
+    },
+    {
+      "id": "mekanismtools:osmium_helmet",
+      "required": false
+    },
+    {
+      "id": "mekanismtools:refined_glowstone_helmet",
+      "required": false
+    },
+    {
+      "id": "mekanismtools:refined_obsidian_helmet",
+      "required": false
+    },
+    {
+      "id": "minecraft:chainmail_helmet",
+      "required": false
+    },
+    {
+      "id": "minecraft:golden_helmet",
+      "required": false
+    },
+    {
+      "id": "minecraft:leather_helmet",
+      "required": false
+    },
+    {
+      "id": "minecraft:turtle_helmet",
+      "required": false
+    },
+    {
+      "id": "sakura:samurai_helmet",
+      "required": false
+    },
+    {
+      "id": "securitycraft:incognito_mask",
+      "required": false
+    },
+    {
+      "id": "superbwarfare:ge_helmet_m_35",
+      "required": false
+    },
+    {
+      "id": "superbwarfare:ru_helmet_6b47",
+      "required": false
+    },
+    {
+      "id": "superbwarfare:thermal_imaging_goggles",
+      "required": false
+    },
+    {
+      "id": "superbwarfare:us_helmet_pasgt",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:artic_guillie_helmet",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:black_hunter_helmet",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:black_recluit_armor_helmet",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:black_rockie_armor_helmet",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:chicken_head_helmet",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:desert_hunter_helmet",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:desert_recluit_armor_helmet",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:desert_rockie_armor_helmet",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:fire_fighter_helmet",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:gas_mask_helmet",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:green_hunter_helmet",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:green_recluit_armor_helmet",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:green_rockie_armor_helmet",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:guillie_helmet",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:hazmat_helmet",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:motorcycle_helmet",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:night_vision_goggles_helmet",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:police_helmet",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:spruce_guillie_helmet",
+      "required": false
+    },
+    {
+      "id": "tacz_tactical_breaching:gas_mask",
+      "required": false
+    },
+    {
+      "id": "zombiekit:bomb_helmet",
+      "required": false
+    },
+    {
+      "id": "zombiekit:desert_tactical_helmet",
+      "required": false
+    },
+    {
+      "id": "zombiekit:forest_tactical_helmet",
+      "required": false
+    },
+    {
+      "id": "zombiekit:skiing_helmet",
+      "required": false
+    },
+    {
+      "id": "zombiekit:snow_tactical_helmet",
+      "required": false
+    },
+    {
+      "id": "zombiekit:standard_tactical_helmet",
+      "required": false
+    }
+  ]
+}

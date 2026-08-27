@@ -20,7 +20,7 @@
 		}
 	}
 	id: "6D53010000000001"
-	order_index: 7
+	order_index: 0
 	quest_links: [ ]
 	quests: [
 		{
@@ -46,12 +46,12 @@
 				}
 			}
 			id: "6D53010000000101"
-			subtitle: "解放条件: 「村をもう一つのCampにするな」を完了"
 			rewards: [{
 				id: "6D53010000001101"
 				type: "xp"
 				xp: 10
 			}]
+			subtitle: "解放条件: 「村をもう一つのCampにするな」を完了"
 			tasks: [{
 				id: "6D53010000002101"
 				title: "地域Mentorの一人へ話しかけた"
@@ -159,12 +159,12 @@
 			]
 			icon: "minecraft:compass"
 			id: "6D53010000000108"
-			subtitle: "解放条件: 「地域で名を覚えられる」を完了"
 			rewards: [{
 				id: "6D53010000001801"
 				type: "xp"
 				xp: 25
 			}]
+			subtitle: "解放条件: 「地域で名を覚えられる」を完了"
 			tasks: [{
 				id: "6D53010000002801"
 				title: "3職種と10件の地域依頼を確認した"

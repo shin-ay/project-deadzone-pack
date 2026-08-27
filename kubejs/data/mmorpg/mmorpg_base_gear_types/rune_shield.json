@@ -1,0 +1,73 @@
+{
+  "base_stats": [
+    {
+      "type": "FLAT",
+      "max": 10.0,
+      "min": 5.0,
+      "stat": "magic_shield"
+    }
+  ],
+  "gear_slot": "rune_shield",
+  "guid": "rune_shield",
+  "possible_items": [
+    {
+      "item_id": "roe_weapons:shield_0",
+      "min_rar": "common",
+      "weight": 1000
+    },
+    {
+      "item_id": "roe_weapons:shield_1",
+      "min_rar": "uncommon",
+      "weight": 1000
+    },
+    {
+      "item_id": "roe_weapons:shield_2",
+      "min_rar": "rare",
+      "weight": 1000
+    },
+    {
+      "item_id": "roe_weapons:shield_3",
+      "min_rar": "epic",
+      "weight": 1000
+    },
+    {
+      "item_id": "roe_weapons:shield_4",
+      "min_rar": "legendary",
+      "weight": 1000
+    },
+    {
+      "item_id": "roe_weapons:shield_5",
+      "min_rar": "mythic",
+      "weight": 1000
+    },
+    {
+      "item_id": "roe_weapons:shield_6",
+      "min_rar": "mythic",
+      "weight": 1000
+    },
+    {
+      "item_id": "roe_weapons:shield_7",
+      "min_rar": "unique",
+      "weight": 1000
+    }
+  ],
+  "req": {
+    "base_req": {},
+    "scaling_req": {
+      "strength": 0.25,
+      "intelligence": 0.25
+    }
+  },
+  "style": "STR",
+  "tags": {
+    "tags": [
+      "shield",
+      "strength",
+      "rune",
+      "offhand_family",
+      "armor_stat"
+    ]
+  },
+  "weapon_type": "none",
+  "weight": 100
+}

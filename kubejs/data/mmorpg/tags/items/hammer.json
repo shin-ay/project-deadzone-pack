@@ -1,0 +1,101 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "apocalypsenow:ballpeen_hammer",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:hammer",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:improvised_hammer",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:meat_hammer",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:premium_hammer",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:rubber_hammer",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:sledge_hammer",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:sledgehammerr",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:wooden_hammer",
+      "required": false
+    },
+    {
+      "id": "immersiveengineering:hammer",
+      "required": false
+    },
+    {
+      "id": "sakura:iron_hammer",
+      "required": false
+    },
+    {
+      "id": "sakura:sakura_hammer",
+      "required": false
+    },
+    {
+      "id": "sakura:stone_hammer",
+      "required": false
+    },
+    {
+      "id": "superbwarfare:cemented_carbide_hammer",
+      "required": false
+    },
+    {
+      "id": "superbwarfare:diamond_hammer",
+      "required": false
+    },
+    {
+      "id": "superbwarfare:golden_hammer",
+      "required": false
+    },
+    {
+      "id": "superbwarfare:hammer",
+      "required": false
+    },
+    {
+      "id": "superbwarfare:netherite_hammer",
+      "required": false
+    },
+    {
+      "id": "superbwarfare:steel_hammer",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:brick_hammer",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:hand_hammer",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:metal_baseballbat_hammer",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:nails_hammer",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:sledge_great_hammer",
+      "required": false
+    }
+  ]
+}

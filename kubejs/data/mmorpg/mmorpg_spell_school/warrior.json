@@ -1,58 +1,58 @@
 {
-    "id":  "warrior",
-    "lvl_reqs":  [
-                     1,
-                     5,
-                     10,
-                     15,
-                     20,
-                     25,
-                     30
-                 ],
-    "perks":  {
-                  "charge":  {
-                                 "x":  1,
-                                 "y":  0
-                             },
-                  "taunt":  {
-                                "x":  3,
-                                "y":  0
-                            },
-                  "undying_will":  {
-                                       "x":  5,
-                                       "y":  0
-                                   },
-                  "p_armor_pen":  {
-                                      "x":  8,
-                                      "y":  0
-                                  },
-                  "p_aura_effect":  {
-                                        "x":  9,
-                                        "y":  0
-                                    },
-                  "p_block_chance":  {
-                                         "x":  8,
-                                         "y":  1
-                                     },
-                  "p_crit_hit":  {
-                                     "x":  9,
-                                     "y":  1
-                                 },
-                  "p_damage_received":  {
-                                            "x":  8,
-                                            "y":  2
-                                        },
-                  "p_health_regen":  {
-                                         "x":  9,
-                                         "y":  2
-                                     },
-                  "p_health_war":  {
-                                       "x":  8,
-                                       "y":  3
-                                   },
-                  "p_lifesteal":  {
-                                      "x":  9,
-                                      "y":  3
-                                  }
-              }
+  "id": "warrior",
+  "lvl_reqs": [
+    1,
+    5,
+    10,
+    15,
+    20,
+    25,
+    30
+  ],
+  "perks": {
+    "charge": {
+      "x": 1,
+      "y": 0.0
+    },
+    "taunt": {
+      "x": 3,
+      "y": 0.0
+    },
+    "undying_will": {
+      "x": 5,
+      "y": 0.0
+    },
+    "p_armor_pen": {
+      "x": 8,
+      "y": 0.0
+    },
+    "p_aura_effect": {
+      "x": 9,
+      "y": 0.0
+    },
+    "p_block_chance": {
+      "x": 8,
+      "y": 1.0
+    },
+    "p_crit_hit": {
+      "x": 9,
+      "y": 1.0
+    },
+    "p_damage_received": {
+      "x": 8,
+      "y": 2.0
+    },
+    "p_health_regen": {
+      "x": 9,
+      "y": 2.0
+    },
+    "p_health_war": {
+      "x": 8,
+      "y": 3.0
+    },
+    "p_lifesteal": {
+      "x": 9,
+      "y": 3.0
+    }
+  }
 }

@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "apocalypsenow:modern_glaive",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:scythe",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:glaive_chainsaw",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:glaive_circular_saw",
+      "required": false
+    }
+  ]
+}

@@ -1,13 +1,104 @@
 {
   "replace": false,
   "values": [
-    "minecraft:shield",
     {
-      "id": "#forge:tools/shields",
+      "id": "apocalypsenow:ballistic_shield",
       "required": false
     },
     {
-      "id": "#c:shield",
+      "id": "apocalypsenow:ballistic_shield_0",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:police_shield",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:police_shield_0",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:riot_shield",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:riot_shield_0",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:stopsign_shield",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:stopsign_shield_0",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:trash_shield",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:trash_shield_0",
+      "required": false
+    },
+    {
+      "id": "immersiveengineering:shield",
+      "required": false
+    },
+    {
+      "id": "infectious:swat_shield",
+      "required": false
+    },
+    {
+      "id": "infectious:swat_shield_0",
+      "required": false
+    },
+    {
+      "id": "lrtactical:flash_shield",
+      "required": false
+    },
+    {
+      "id": "mekanismtools:bronze_shield",
+      "required": false
+    },
+    {
+      "id": "mekanismtools:lapis_lazuli_shield",
+      "required": false
+    },
+    {
+      "id": "mekanismtools:osmium_shield",
+      "required": false
+    },
+    {
+      "id": "mekanismtools:refined_glowstone_shield",
+      "required": false
+    },
+    {
+      "id": "mekanismtools:refined_obsidian_shield",
+      "required": false
+    },
+    {
+      "id": "mekanismtools:steel_shield",
+      "required": false
+    },
+    {
+      "id": "minecraft:shield",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:stop_sing_shield",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:stop_sing_shield_0",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:swat_shield",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:swat_shield_0",
       "required": false
     }
   ]

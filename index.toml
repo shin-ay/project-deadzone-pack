@@ -1060,6 +1060,9 @@ hash = "1ec868880488e05dbb54fde65950beb67eb753f66b12565bb7c12e7fbc1e8594"
 file = "config/easy_npc/render_entity_type_support.cfg"
 hash = "647581a7e72b527a6de6261224a29dc37712faf7a57de0d49e76441a3146382b"
 
+[[files]]
+file = "config/easy_npc/security.cfg"
+hash = "4e13f94668b3d8f8575d4232cc70e3454e28c9a48b76f00191988907c2fbe57c"
 
 [[files]]
 file = "config/easy_npc/skin/allay/allay_template.png"
@@ -1088,6 +1091,10 @@ hash = "db071fe581827f3a195df8344909bafb243cbf54c8931dc60a7785285946d1bb"
 [[files]]
 file = "config/easy_npc/skin/fox/fox_template.png"
 hash = "8cce109a5322cff97d82ea51c2c50d54d4486e57d48d72f20354d0e2e7aaf9a6"
+
+[[files]]
+file = "config/easy_npc/skin/humanoid/584a8b6533349c44.png"
+hash = "a45fb79302494b84b44a6dc701d277893a93e3f47bde2b27c9cfea06d3f2d54e"
 
 [[files]]
 file = "config/easy_npc/skin/humanoid/7686eddb54b9fa42.png"
@@ -1327,27 +1334,27 @@ hash = "3df7937868159c8c2570d09c9ef9e0a1127dfbab70c3404c8fd069c7390d39ff"
 
 [[files]]
 file = "config/ftbquests/quests/chapter_groups.snbt"
-hash = "ab65b6b287c7b87f1e3c666f1092822bfbfd3e91df060b7915639cf5da2e0b28"
+hash = "6cfcd3afa739562430a7484c9bf60761f1ffa097a29aa10e256775178bf7d6ce"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/deadzone_bounties_01.snbt"
-hash = "24d2166c847c2942d9b286643ca90e34a961a8772df2faae40125cfaefcf19a0"
+hash = "aebf30887626a828adaa4ce198c40a97c6db6083947e4258784b0b13ddd6322d"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/deadzone_camp_development_01.snbt"
-hash = "b81dc5d1fac044799085cbc0f32f487aeba3e179ccce55a6dbb59b450e3978fe"
+hash = "a3fabe1d07e6c47567cf7bbe626c111067989330aabedeb3ccdadc984a02f509"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/deadzone_camp_personal_02.snbt"
-hash = "399b96a4690b48e615d69587e462de836958b446c47dd367e22f4ea5d50cca81"
+hash = "735a924b80fb86889101f5e175a4511d3cb8d5cc948dfa87cb5f6e8b4e05be9e"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/deadzone_camp_restoration_fuel_01.snbt"
-hash = "845a55f9aa265a8ec3b5100d6156fa5d2f1cdeb8a9c7af4f6c813aeea99f1673"
+hash = "ea728ed7bee23026cc926f1d8aa08c781f6488deaca40c738612358ca10043aa"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/deadzone_camp_sidequests_01.snbt"
-hash = "c5250333c5fd859a2c3afe001cbefbbf23fd3d47660014dd8d32167b1e1ea6a7"
+hash = "225e48a8322702305cbb2f04d63879b1b80b4a222c3e7f5527d8291a811455d3"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/deadzone_career_progression.snbt"
@@ -1355,87 +1362,87 @@ hash = "8622bedda18507447ca7717d0ac284790b070950d7709c4c5c4b76414e0768ec"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/deadzone_community_economy_01.snbt"
-hash = "9055e1653a7be4d874491ca40dfbb5e01ede26e25c182d6ead45f629adaab76e"
+hash = "dbd5af46fa5adbb77015cfc53669024794ebf29512b70de12233edcca008e379"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/deadzone_cooking_menus_01.snbt"
-hash = "798b8a0d7c2910dc5bc2054e313229cd101a0383072371049ee4450a5c2dbeaf"
+hash = "9ef1dc9c4acf50b0f9a6a265ac01ed9a2b9c6980d08f0a5b1fb47e16e3e65963"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/deadzone_create_beginner_tutorial_01.snbt"
-hash = "bae426484485215a9209ba817f53186b944af37f2a9f03d65d5482051a7e4534"
+hash = "44f8a568d8b77d5a11b8d8255cfff49a8e29a371ef36604d2edfe19704ce1fbf"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/deadzone_defense_recovery_01.snbt"
-hash = "1992aadeebf89cdeebdfe2b4c487d1d9c0b8332e1dd41df64e880730a81d6f9c"
+hash = "366f05d1ae6f2e89eae86137eab781071e9fb5e9a8be7f30b91581d6cb9aa4d6"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/deadzone_enchanting_01.snbt"
-hash = "e24dd8f829dd000854940d094cab56a60be43c8f86b458e1df30e8030b712851"
+hash = "388536fd40120f066b8ca0b102e1cd195655cd7fa44016f67d7cbd6c5b216e66"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/deadzone_faction_storylines_01.snbt"
-hash = "a5616fa6a184a873632b9dd9bb01f449b259540e508dc02bd8d8dce17551063f"
+hash = "bd2a39367298c81642e673a0db2a659d13e1e0a68beec8a63a35c2dc072b0ae3"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/deadzone_field_archives_01.snbt"
-hash = "58d12fa959bcc50725681daabd2e98eea56a324f7c57b352a12768f50badc222"
+hash = "d8435fed50f7d3d89fe26e3b62ae55251874419427c3ed781cf586de06490dfd"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/deadzone_fuel_industry_tutorial_01.snbt"
-hash = "d92d6c5d78e9a3a7374667a3c596f99a04e1b2c689b78d1b9a975f627fe162e6"
+hash = "e2fc655b1c7d4eb66544cb198ef58aecc64697368362d27c5d01f1dc4ad7e851"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/deadzone_health_recovery_01.snbt"
-hash = "77f6404f5dd3fa32006bef1f0ed8e37cdbd741e4b51e4d32d205f9f1d5a19c22"
+hash = "cdff7ba4c49bd3bf5100bec93df5f1d2dd519ad99195b999ea96f1bd5a287293"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/deadzone_hospital_story_01.snbt"
-hash = "13cacbf527d873393459e182e67aecaf8274ec32f0fda4d3decb503c48dd0bad"
+hash = "90c7c8670e6a2512edf1ec0d4a088cf382801d9492b71b58176c3b17f605562f"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/deadzone_industry_power_tutorial_01.snbt"
-hash = "3580101cadc6086e7b8780c4e7ec0fa8d57f12c54e32ee3bef1cca268e09c933"
+hash = "63e878043aeb26781cbacba6331bed6b4b1ae61d2ca48b9fc720d9b8c0b53086"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/deadzone_life_quality_market_01.snbt"
-hash = "1fce914b5950dcf230b86a92eba53ddf6ed04edd2e5059305bfff55e48100d9c"
+hash = "31e5ec0f61407aa9dc447f9fbf0bb9e401cca3f7f614efd6fa5c5233beb21089"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/deadzone_life_supply_reputation_01.snbt"
-hash = "1a2f86d58bca1f33002d42373ee37569497316708539aab8b83266bf663a4e1d"
+hash = "cb5eb9ac98f526766785cd03c63431f617bfcf7531f38a65ede066f711a47239"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/deadzone_main_story_01.snbt"
-hash = "8ce8c86c41148c144021f973b4b89906305c998de6567b594cf6ae8ce9b00f27"
+hash = "7c886f2f08cdaa9ddea42dfbd1ff743a687d51b192a2f41b7e3e26e8e3d94744"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/deadzone_main_story_02.snbt"
-hash = "9dd8fc1c31785a51736b33ad033448d2e36bde42e4f1434d2b685cd87b04bd0c"
+hash = "22002c8d8060b7d9def5a1893a057110f4bcecaf5c5ae716204f92037a4a7ba8"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/deadzone_main_story_t2.snbt"
-hash = "94f420493dd9fd23d45837246a6a0814f1a0fd6661d3294d7074ad63f5c14147"
+hash = "f27d377ab31113ac708388ec1ae9544d5558ef1bee66bb6547c5a8d532070dd9"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/deadzone_main_story_t3.snbt"
-hash = "fdcaba6ba01c1edc688c9400ff24a7be74b9ce77c9551f6da88c40b8d1becdad"
+hash = "5a0ed174cd4dacab1de947f7f7c1ad4981f22baa60d52504b9e127e88c417aee"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/deadzone_main_story_t4.snbt"
-hash = "e63631503a8eba9ae4be9c5c1fa08a5d625adfa0864e45324c88811a3bc27701"
+hash = "b99b714f81b93881f1ac0307513eafcd233b32bf7fc37d1b63ad8b93200977cf"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/deadzone_mekanism_tutorial_01.snbt"
-hash = "4f5b8bdffbdb89cca91de0a3e0b9f8229c71fe9f2aaeb536e2e167421ff25f21"
+hash = "f2fcdc59e43b8b15f680da44ab05f8230497fa2fa73f9365e04726991d943b7c"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/deadzone_mod_agriculture_01.snbt"
-hash = "19f28101bc387f7b543ffd701b1ccb957fe04adf71cf6cea4abfd116188f209e"
+hash = "032d0f7ca4bfa14df5276433155192b39f3368bddd930afad4be82c070bf0423"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/deadzone_mod_air_transport_01.snbt"
-hash = "92c9ad54239017a8bc3d8717f2589f1eb56da7ec4ab0f795938f17a500b3f21a"
+hash = "3757bd0bc6fb37413032ed2ef592ab0b441d2abe9687ab958b2d1e70750876a4"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/deadzone_mod_combat_01.snbt"
@@ -1443,111 +1450,115 @@ hash = "6770f279d35f727ef46f20614367b0e204097844251b9b7892d28781b9f8279e"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/deadzone_mod_create_railway_01.snbt"
-hash = "77a0d6272f1fa971a4502e66c8dc39973fc00dc73969eb3ec3c175cf3cbc79f3"
+hash = "36d198cfcb87bc74c48b625d8ef245e293a2ccd4b23f9fc2ff01cbd5ff09e742"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/deadzone_mod_fishing_01.snbt"
-hash = "b13fc65920e8bfc9228873fb0809c31064afc898945ca0b5858ca6892e9732fa"
+hash = "18b96bcc861cb1cc8cce00f35a3e6a5b08d1b78a91353747e452c460f745d962"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/deadzone_mod_industry_01.snbt"
-hash = "8157a18237033b387e5cd1bcf46634fcdd21b2843291fbbdcd7d0a4b5cb00dfe"
+hash = "7889240ee3984d1af2c54abfc8c1354cfa34b699e32e641c5ed6b5e459909608"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/deadzone_mod_maritime_01.snbt"
-hash = "8574c1345995c3c591499f80ca2003d5910f20d493c0b8f2fc3af8cc8a38ac59"
+hash = "873cbabb76164a2b3df79ea7c73bc0c63963b8b2dcf03b539ad5de9e620651f4"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/deadzone_mod_power_industry_01.snbt"
-hash = "44c66f75cac07d61a1f85683cb9e2ec7da305c6b21bbcb73521a576557a89b45"
+hash = "e5fb3ab7580e2ba038f9d050d935526d214aef0414991ed35c7791245d84e47c"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/deadzone_mod_road_vehicles_01.snbt"
-hash = "381a9112bdc27c18cd8bf200d66bf3bd4f50ffd7b69feefa2f50765b088e4a69"
+hash = "2daf740f498ff8314ea62aa3fbb75496575ac37c259ccbf4cada68696d153836"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/deadzone_mod_survival_01.snbt"
 hash = "c0a06e74db8865e417637b2b6ba89e4d0260c0c11a622af6fb6cf9f0396c13cf"
 
 [[files]]
+file = "config/ftbquests/quests/chapters/deadzone_radio_world_status_01.snbt"
+hash = "96996274386bc1ab8345cd25dff491b3f8a346e4d27f00c0fbb0bba0d649baed"
+
+[[files]]
 file = "config/ftbquests/quests/chapters/deadzone_regional_logistics_01.snbt"
-hash = "8c411a6b449fe47fc69fa3f8f1aa186fdf9ae26059d4498e26df299f7b92ccbe"
+hash = "6e5ce7a28e2ad37d1e3ab262d7e838f06038c2688c6390d69bb93611c99ab9b7"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/deadzone_regional_mentors_01.snbt"
-hash = "89ed5b543f53aaeb0e1f68c86852322c68529d255e46a87743da8a194a6c0442"
+hash = "c52315bc5e82a05507e0d1357160caf4f5a8edd0954c633f1c963e9a21b069de"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/deadzone_settlement_industries_01.snbt"
-hash = "3b605416df13f294610433deb1e3a730253cdf02c18cf190085e416d75187a90"
+hash = "d2bde8596866bf2ec366d796773a571670a1871d63052b5beda2b5b2797c882b"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/deadzone_settlement_liberation_01.snbt"
-hash = "804acac8de4324c1c540eafef6f544ca93797fe718c85e6ce808f0bc26ddcef5"
+hash = "ecbd34b7f5d35fc445d5527d2f303bf9518fc0d0f378fc0a32ec259a77cb60eb"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/deadzone_settlement_relations_01.snbt"
-hash = "b44e4522b25db3f061c8d1b4df9e6d3afd35b9d58a9dd7ab09a464809b562dd1"
+hash = "96610f97a4acdf104fc142f143795fa8a702846c054c783466703ec34d8c1ff7"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/deadzone_survivor_relationships_01.snbt"
-hash = "2deeba6ea7083fa5188608d118068f12c7093240a2da3170bcbfc73b599a6102"
+hash = "1cd50f7aca9000a38038a798870781e060e9ab351b27318e0db35f1ca345bf56"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/deadzone_tutorial_01.snbt"
-hash = "cf6218811bd78faaeb4afeaa90f4c5bf3be42b803a99282619870f2dbf0ed762"
+hash = "9298b18fe3d6332198640d9f7298f88c4509b3533dd7f144a776e6437bde0703"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/deadzone_waterside_survival_01.snbt"
-hash = "2bbb38758222b3986a65dcb169c9b01cd06100643c6c22ac18ab2fd6de40cf28"
+hash = "911520cccf78f7010f7c366bd6167782617994c5d8e50ce193aaefcf5cb7fbe9"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/minecolonies_builder_upgrades_test_02.snbt"
-hash = "873a54de2a4e77f7deef15b80c4fd13010cb4113f542a930e7e1e37a7225f653"
+hash = "c517e730223311d665b09cc6b2595b43a664d2a329ed3061136f9c434ec7b965"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/minecolonies_civic_education_01.snbt"
-hash = "add62495f1a07c8b4607c72c9652a3c0a54ac987fbf56812fe50c81783eec348"
+hash = "049d738ec222163c21680f5b985528171533356ec40820066ad8db36fdc0b666"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/minecolonies_colony_onboarding_01.snbt"
-hash = "58d8f572244b14641ae01c351abbf701027c1f20c7548230ec7c162d8942eee7"
+hash = "e6fde90b458fa532b62f516d8285273fb7c25e74f6a63556cd721820e05fb836"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/minecolonies_colony_special_01.snbt"
-hash = "c08d81f6d9a32d4a9886d17b9239d952066d5f25c87f1a90bd6b721715ffc897"
+hash = "daf133a5ae96f843815889fc88a2fa820e300622c30f20ed178bc8d2145f4d46"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/minecolonies_defense_training_01.snbt"
-hash = "a91a17a414ed48b36ecbb9116e159cca8686dc3a964cd67b766fcb2f4f55b92e"
+hash = "2c4913eaf4717b96901673a80845e79e852b5696fc672eaedfe59fe8473285d3"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/minecolonies_husbandry_farming_01.snbt"
-hash = "a08671f7c5ea2a8b3f4ded74715d736b6e06ce810a4a2a33297e2d3058b5065d"
+hash = "8c42d4bc97fa4f01bfc3fb899e162dd192d30362c96987a11b1521adc2d13142"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/minecolonies_logistics_resources_01.snbt"
-hash = "ed21380d32cec3db03dddcb478ce9565ad0f75e96bf6c78d4beee641d8273b47"
+hash = "c0285598445ae1da4c92bf221280703573ae33230a2f37e544561a9b60c2994c"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/minecolonies_operations_01.snbt"
-hash = "3d08e84262b3d714e2d946f181e208b471fb322419b5c4637399258fd0c95cdb"
+hash = "388842c49e45da0790fad57f8d116a52774c16539d96c185ff84590ab87f1952"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/minecolonies_population_food_01.snbt"
-hash = "a3f5f08dcbc1ba50a0ca389de3d194ec91a2fa851f4e6fbe2902c7dbe226a425"
+hash = "a6989c88adee2f89c58fdb912e1ba33dba6d175a56effb3e30317a42de9e13eb"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/minecolonies_production_industry_01.snbt"
-hash = "9327d8484245d89651a11905ef7448d96beea275f05776a75d3152d8b3bc8e5a"
+hash = "fb2447f3186c784f731406dda7d856b3fcd0b5945af8175c8db1cc6e002d50e8"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/minecolonies_residence_materials_01.snbt"
-hash = "b710d28e43f6f249dbbf6653766f46a4e93189dfd1a2b71eec850a8fcf56081d"
+hash = "da756c3035f3f45d9aeab8687ac399864191005a20bde2a4eeb4df41358967f0"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/minecolonies_supply_test_01.snbt"
-hash = "0fb4649c9f82477bf967176b16b5fb27428d6e28e1fe28a80b7cc367f178d645"
+hash = "5d5408332f451c19b2be4a09b5dd9c432bf7918b29d578cee35c6a94323502f8"
 
 [[files]]
 file = "config/ftbquests/quests/data.snbt"
@@ -3363,7 +3374,7 @@ hash = "77ad29b36566f13d3c164fbe92bcea575040da41e96c1e340af8f1cccc8d71cd"
 
 [[files]]
 file = "defaultconfigs/mine_and_slash-server.toml"
-hash = "2d0e00667dc4a55f75c7692ea82fcf1ca6aaf2935fe7130207188662085420c7"
+hash = "cb24bc4805ad827505df8f157f4e9d4ff335202c4df03c3d520f9fceb9fe191a"
 
 [[files]]
 file = "defaultconfigs/mine_and_slash_compatibility-server.toml"
@@ -3495,11 +3506,11 @@ hash = "45a5f56eba6066ad05c70988a32b72c50cfeb6e35857739bd582007011ea002b"
 
 [[files]]
 file = "kubejs/assets/mmorpg/lang/en_us.json"
-hash = "33a631cf321fcc1d4645bb241f6ff6e664853597c8e47362a8075e2dbef8e2f3"
+hash = "dbfee1a957b1e806ea0e203d8ffa54add85dd80963a246d791fd8205135c947d"
 
 [[files]]
 file = "kubejs/assets/mmorpg/lang/ja_jp.json"
-hash = "a14d5827b81893e3b6c283637a02864d88acccfffd78d61d6a7a1c5e4e4f292d"
+hash = "569b6cff6c372c1d2b4f0d7c18ee3ccd4ce97088de6187d39b081cdb9b0af9f4"
 
 [[files]]
 file = "kubejs/assets/mmorpg/lang/skills_en_us.json"
@@ -3640,6 +3651,30 @@ hash = "96056125c7adb08b74319348f5d148db023137a6dbccdb6b092beeaa190bb80b"
 [[files]]
 file = "kubejs/assets/project_deadzone/lang/ja_jp.json"
 hash = "ea3388cd387de49d2dca2f12319fd03b5138c8486dc0798219b4a2396604edae"
+
+[[files]]
+file = "kubejs/assets/project_deadzone/textures/gui/player_guides/01_noncombat_overview.png"
+hash = "c4f8dd920ea7c5cf33790365b45a4e92e3e8975712d2e74965736b810854e0ae"
+
+[[files]]
+file = "kubejs/assets/project_deadzone/textures/gui/player_guides/02_survival_cooking.png"
+hash = "e8f89edfd51e8ef6b6da01fbb579583f45c3ad048e2a99209b295fc9428549c7"
+
+[[files]]
+file = "kubejs/assets/project_deadzone/textures/gui/player_guides/03_farming_fishing_quality.png"
+hash = "80ee279b1aaccf0078aa86e4b871ebf2e206b9bf8ea3b65f95e23d2953f8a6a5"
+
+[[files]]
+file = "kubejs/assets/project_deadzone/textures/gui/player_guides/04_settlement_trade.png"
+hash = "14ea8497060a6d14c74540a2470687e7d805919bf907c81cd8de9ca1e8e8110c"
+
+[[files]]
+file = "kubejs/assets/project_deadzone/textures/gui/player_guides/05_minecolonies_growth.png"
+hash = "cec6494c052607346ea7c52e93805414c3b78cdd9e0e1fd2d6b53ca1a58fda56"
+
+[[files]]
+file = "kubejs/assets/project_deadzone/textures/gui/player_guides/06_industry_logistics.png"
+hash = "bb0eb97563cf1ea3c0b8c8640e34bf0621ca8cd07053846f46ec37c0f5f33e89"
 
 [[files]]
 file = "kubejs/assets/project_deadzone/textures/icons/skill_tree/career.png"
@@ -6422,8 +6457,272 @@ file = "kubejs/data/minecraft/worldgen/structure_set/villages.json"
 hash = "87de6975bc5d09c802825d386c26f54945bbe551f0c248744641477e17268e32"
 
 [[files]]
+file = "kubejs/data/mmorpg/mmorpg_affixes/chaos_stat/gear_corruptcdr.json"
+hash = "71f8cf5ad2e4281392a5a6fc676836138c93157c01c6176a2ea9525ca628ddd2"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_affixes/prefix/mana_reg.json"
+hash = "b0d64bbb3fafece697dd98010dcd86100143e966b87ae64779ac0dc88d2f80c2"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_affixes/prefix/mana_thief.json"
+hash = "9c77a2f80d69b50abacc33eed1150f67ee07de19c3ab82726841580e3fdb6891"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_affixes/suffix/of_mana.json"
+hash = "7f69e0db6d2203972bac34f83f41f782dbe40093d784dc633522455d4714facc"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_affixes/suffix/of_spell_dmg.json"
+hash = "efb8fdfbe40d07eaba1caf7ce3b22968de23cb5f23708fca3323d62b90e576c1"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_base_gear_types/assault_rifle.json"
+hash = "338b42076c2184f154bf2364009b30593657ad9be2b60cec654b27ae5784ce3d"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_base_gear_types/axe.json"
+hash = "b1934e3187f1d74852b1b05706bd42f9e240e3eb5a727777cf82cac27cd61ffc"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_base_gear_types/boomerang.json"
+hash = "4bdb7797693d544a3b628175e27e0852a5e1a187cba08958eba0e690c2774dc1"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_base_gear_types/bow.json"
+hash = "2b18524b6b2808705296e760c23292e8fc1ed9dcd97059b4b5750a4c027d60ca"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_base_gear_types/crossbow.json"
+hash = "e915ea00a0169515e8a27d8ae57bc0724be6e0cc8ad6be1dd83cdeb30837f61f"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_base_gear_types/dagger.json"
+hash = "27ddaa8f63fd9d5e5898d027830bc9d4b3261b383c998d4e6da5aebee7b59764"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_base_gear_types/great_axe.json"
+hash = "250d6eb553cd856911f063d241dd3054687b35ae191a9cab38df22129bb7f491"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_base_gear_types/great_bow.json"
+hash = "73655770f48e5962375a56e03d8d1b91ea85325cb2a70ca5542acfb48c700cb2"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_base_gear_types/great_sword.json"
+hash = "042e87e1fc94ca85783e60f6d9dba4fb3d26fb8e7395f8b37edb8f25ab99703f"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_base_gear_types/halberd.json"
+hash = "e44d927a0d4c322af23c7fc46d57b280121e8e334b8da375735f47b6107a0fa7"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_base_gear_types/hammer.json"
+hash = "28ce19cf0af85f04cd35fd6f860fa7e8a832ad20b139a67a96eb7a29d4b0943e"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_base_gear_types/handgun.json"
+hash = "74621998415ee6f48d7045a0a59fe40a50c405c77db9658cfc0f45411f472eb3"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_base_gear_types/heavy_crossbow.json"
+hash = "12f1c21580b14d4bfb5a616383655d23ee500352ce65627a2db91acc274976bb"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_base_gear_types/heavy_machine_gun.json"
+hash = "178b1674686fcf80da2ec270dd145433b7227dbefe292a3ec5c22620ee17c893"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_base_gear_types/javelin.json"
+hash = "400807490dc7f7651e89ff51c221a3802271f45a35e5ca19ddcef7c376c1530c"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_base_gear_types/katana.json"
+hash = "dff6b8917e1b6032a3db077adcd2304d81fe9407cad247fedfdd746044cf723a"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_base_gear_types/kinetic_gun.json"
+hash = "aeba6688747ca26d08f03f567f4643e2a6a6f5b9d30b2bfc08420e72fdd21137"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_base_gear_types/knuckle.json"
+hash = "9b6f512d090675b061f91b86d26691ea1fa89a128ab3bce2dea526246a1326e3"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_base_gear_types/launcher.json"
+hash = "1459b2bbe95b5339d571e3fc4eaa403b77098a0c01df80ef472fa544fbe47724"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_base_gear_types/longsword.json"
+hash = "9410969ee885444e83d1d7d6a6e1d597b6028e39d9fe7eb775d0788e9bff16f3"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_base_gear_types/mace.json"
+hash = "e8600af4622dab2ad1b25a876059f98ed09705492ad2f2b38af3ad0c2ce44b2e"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_base_gear_types/magnum.json"
+hash = "5049adcf0a17d2ecdb7e222dab801335339e14c96dfcc5b286b433ce7288329d"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_base_gear_types/pike.json"
+hash = "3f0bc14618c03ed385c4ffc89249f382b506206e42fab1b6eeeea1d73fd574cb"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_base_gear_types/quarter_staff.json"
+hash = "4cde918180a98c176a55ce646a0b77e5292846bdfab851f9b5ac5417adf6df0b"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_base_gear_types/rapier.json"
+hash = "2c6b6d36786e312db1cc364f9cfd754675ed2ff18fa027fb856897439c9a1709"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_base_gear_types/repeater_rifle.json"
+hash = "5f9d4598c9e25c9df3835d5811d45e8c758d9ad378e49a64831c6e380dee10ff"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_base_gear_types/revolver.json"
+hash = "b91753b2dd700d261fa50711ad3a54f401f1391d2facd9cc07f331a0eac3936d"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_base_gear_types/rune_axe.json"
+hash = "5d0d4deba92bf72d0ab3dc34c93c2780b107e14a1dc23d2d7bb9326a1e3260db"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_base_gear_types/rune_bow.json"
+hash = "17d615664f812c4d4986ce15ad04058c8e5b93b2fda7f515977dd1449b70bb24"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_base_gear_types/rune_dagger.json"
+hash = "0e66166f55971b8fb144a997e32671e407c560c34e6bb6432d1f8d4f9d689093"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_base_gear_types/rune_great_sword.json"
+hash = "0789c23041c379560c90c7aba089572b3c96d566efb38073ec4aadc8274c194f"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_base_gear_types/rune_hammer.json"
+hash = "1192769caef0d4a27587b3b83db9db1895d944b2b15bab6d7a9a4a6bf113f144"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_base_gear_types/rune_knuckle.json"
+hash = "52ae7b1d52c9d10c3218d9e827577f23c88e8507280e708b710dc8e339835d66"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_base_gear_types/rune_longsword.json"
+hash = "a8301f32a6cdeeff38186aded8e7d2428915a21b9c0ae5197f602b6a3a061363"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_base_gear_types/rune_mace.json"
+hash = "5c6e0f0661c460a589ffa91282bef2bfa88eadd6ce2f7b5c0ece4da0ee730542"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_base_gear_types/rune_rapier.json"
+hash = "43ae673ac78506512b7d6a7de50f441d32055341965c3af3be07fd3f9d527fd3"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_base_gear_types/rune_revolver.json"
+hash = "ff90e60b72305d44077371b3124b3a96410e0594eb8ba3ac82e4a67e68b2aaee"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_base_gear_types/rune_scythe.json"
+hash = "f261a89d731f57229243d2cbcb5ed5f58d95634b98aecb36578b438ec01fab24"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_base_gear_types/rune_shield.json"
+hash = "a875a1607abf7ba988d962c7c7ea846f75410260372ce820665d98849f892ff5"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_base_gear_types/rune_shield_large.json"
+hash = "8e6461076e1f5d9e37b4628cfa2a1aa7b3e70fcba7f6f5da3ca134d48f1815e2"
+
+[[files]]
 file = "kubejs/data/mmorpg/mmorpg_base_gear_types/rune_shield_middle.json"
 hash = "31803ae5b908db3d88de9baffa3a5b95debe7e5549a48a4e3cabb5f0c6749c16"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_base_gear_types/rune_shield_small.json"
+hash = "b28df1f4022b55c9f08de436f48a01db9f59b1a18ec6395eab0aef91d7052a52"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_base_gear_types/rune_spear.json"
+hash = "392a303ee4f75df1105204d22a7e9b07fcbb66921c74d706588a59b0920c52c3"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_base_gear_types/rune_throwing_dagger.json"
+hash = "e77ffadea10bafe31aeb6717bfb6cba376f2ee73f21f27d8558b7e801f979001"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_base_gear_types/s_handgun.json"
+hash = "74bb9fa1303684f374553c75e4b25e665ee429d12651b92e2cf7e53fd9c1e193"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_base_gear_types/s_revolver.json"
+hash = "b20a3e0a318809b9f1c5b95a1ee2e115d08664080e5230c6579ad941772e226f"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_base_gear_types/s_shotgun.json"
+hash = "fc64949aecf3cbc6339d0cd33aa76b6b69799b10d9b35d631af21abb840f80a9"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_base_gear_types/scythe.json"
+hash = "8d46c6f5594b780bf2777489738fbf7d04a09cca38d3728de41131da9a12c490"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_base_gear_types/shield_large.json"
+hash = "92ab26c82063b9fc0c2c85f00d3b77a5d2b32e4234f87e87a42e89ff1ec7cd48"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_base_gear_types/shield_middle.json"
+hash = "8619ab7d741039ddf164284a9c0b1ccd70a852a5714758ac9b5a24683c177700"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_base_gear_types/shield_small.json"
+hash = "30a1a1b1002d417bd3803a0be3b5750e0284b61b3b9343f09cc09edd8941b107"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_base_gear_types/short_sword.json"
+hash = "5f7ceec82413d553fce737001244dd5b3f0f8c06d937a83422a3843c55cef91d"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_base_gear_types/shotgun.json"
+hash = "a036068b587648434d9315677cbdb0ba67a14c21698470d6ae32411f19ed704c"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_base_gear_types/sniper_rifle.json"
+hash = "56ae3fd70913f9a71bc19e2e83ef90313b39ef34a4073fefdf11406c71310826"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_base_gear_types/spear.json"
+hash = "ccef0918de48fcbbf67f6bf2ed4d5b93a03e53dfb99fa7239e244dfe6fb67923"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_base_gear_types/staff.json"
+hash = "6cfa7b3cdb1b3882b23c4d614b90ccef2d9561154f78382ad95560266bf520f3"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_base_gear_types/sub_machine_gun.json"
+hash = "f03f72680192877886148176f740174301bdcdfbe794839a27cd7dbfc8f9e116"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_base_gear_types/throwing_dagger.json"
+hash = "143d534a8422a21f787e789439ab9aeeeb907c2a495f61a71c0acc198866c753"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_base_gear_types/tomahawk.json"
+hash = "8e4084bd5b63ccbdb55589f5aff5547f8b08ab2d5dd394cc05d807b6959683fb"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_base_gear_types/tome.json"
+hash = "206f0ceb8ec9b91f61369eea65a4432a40d1e79e2dac278b469b73fda90cadf0"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_base_gear_types/totem.json"
+hash = "3934b679d159860f65784442c11277230b08d89b8e361e1ca3193560c3677a83"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_base_gear_types/warhammer.json"
+hash = "4883047108feea303394b21895dee9f8da6e6186ffeac003f0dab01b0181692b"
 
 [[files]]
 file = "kubejs/data/mmorpg/mmorpg_entity/all_mobs_in_mod/infectious.json"
@@ -6484,6 +6783,42 @@ hash = "0d293a54c31730dcf6c698657adc7c8591d7c11999c9d2c30014f02d951ac288"
 [[files]]
 file = "kubejs/data/mmorpg/mmorpg_entity/specific_mobs/tacz_bandits_bandit.json"
 hash = "85f3d49df419fbc2c942f250aed938b6f1a483c9ee4510d4cf9df10506b13e2f"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_game_balance/original_balance.json"
+hash = "c45e9abf24a214605cdd4dc19b80c627692933ff6936c649d4cf59243bb1e796"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_gear_rarity/common.json"
+hash = "65def58c28e924ad4d63a3efa9a0cb3f264c6e17fbcc84b1e3f892c04f23b092"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_gear_rarity/epic.json"
+hash = "1736cffd98f4fbf7b54020f62c5970032599a9001286a7cbe0381f0c69f25491"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_gear_rarity/legendary.json"
+hash = "ab8ff0d9494ab75a39ab1ea49f471c1d8e687c62ef8bb332af084991bac0d2fd"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_gear_rarity/mythic.json"
+hash = "a9f3b812cd1f4da28738122a7e5cda0e546988666ea8c264a039e7f8207fb200"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_gear_rarity/rare.json"
+hash = "209c5aab0167b1a308e174375ab9b47933f386be6cc2a592fbf7f01fd3848c29"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_gear_rarity/runeword.json"
+hash = "ef9abfcde72e2ee01aeaeab2987f58420202f5dd0c4cca5dc2dbccb4ee7b3b12"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_gear_rarity/uncommon.json"
+hash = "4775915dc447fc92e3fc60c1fe68a59eab832e517b557f9d822a5380da7d3af8"
+
+[[files]]
+file = "kubejs/data/mmorpg/mmorpg_gear_rarity/unique.json"
+hash = "36684b8215abe71ffdd3a151fa84f6bc900e8bc6d0354fe68aea90e4791e663d"
 
 [[files]]
 file = "kubejs/data/mmorpg/mmorpg_perk/arcanist_class.json"
@@ -7367,35 +7702,35 @@ hash = "c5c1a78cd6fc8587c75a7300778bd912b0e06a50c38a5ab82d89ee97e2474f91"
 
 [[files]]
 file = "kubejs/data/mmorpg/mmorpg_spell_school/hunter.json"
-hash = "529026fc8a2caa93696ae5770e50052fddc2cca10d6dfd008c2f6d93f43ddcb2"
+hash = "046aca81a4e5e69e196dde3fef1b1f639fd24ad38897eef0b93bfececb5e983b"
 
 [[files]]
 file = "kubejs/data/mmorpg/mmorpg_spell_school/minstrel.json"
-hash = "2795c4b699f59c86ec87b2fafae0d167b405bf326fdf9027f9ea497bf6b149d1"
+hash = "902cfc49c8b32f287f24e6a996a19fbfbd9c236a795f74b71ddcb4d1e5fff3c3"
 
 [[files]]
 file = "kubejs/data/mmorpg/mmorpg_spell_school/shaman.json"
-hash = "620cb5120539aa79e0672929d9ad859322ff0cb85348196235522a755e324ba4"
+hash = "5e21d4338f6a5197839c7966de4d073583cb9bbc4162e2e4cf9edafc89f5a229"
 
 [[files]]
 file = "kubejs/data/mmorpg/mmorpg_spell_school/sorcerer.json"
-hash = "61c9ce7ffaef5412de29aa1b399b7ef92975698c4e27eedddb4dfffe822ca6c4"
+hash = "d8489d580569a0168e67ca6e3517a0134452754a6c573078dbb446ac9f34e97a"
 
 [[files]]
 file = "kubejs/data/mmorpg/mmorpg_spell_school/warlock.json"
-hash = "7b26ee8e79d25a814f79bc741bfc16183e2991487e968859c55d57093e6bc035"
+hash = "286bc13c371be49f611f0c65c933e5b18d9a1baf46be91bbb9955da96cd79309"
 
 [[files]]
 file = "kubejs/data/mmorpg/mmorpg_spell_school/warrior.json"
-hash = "c78456b21fd8bc045885c2f49bc46a545c75cee7c2840ce47fcf4bdf7ceada62"
+hash = "5e37cfa11fc14c6825abca986de08acfe17b7cf1609654427037b12f8019f98f"
 
 [[files]]
 file = "kubejs/data/mmorpg/mmorpg_spells/black_hole.json"
-hash = "b96082613e1f6ccb1ee7f2562b24ba177d04b22d24c4ba2e75a3c6c4b4bfdcc0"
+hash = "7dc3f335761ebce35629541130ca92c660c35d6046ce2adf3d159f771f0912e7"
 
 [[files]]
 file = "kubejs/data/mmorpg/mmorpg_spells/charge.json"
-hash = "b7f8d99fa5aa3ea85d9a89b446a0c329a035b327782aed1d2205ee714bce4ffc"
+hash = "29a79014c746cb7210565b6caa9deeb7964073af92b359b6e684481c2aa77aec"
 
 [[files]]
 file = "kubejs/data/mmorpg/mmorpg_spells/chilling_field.json"
@@ -7415,7 +7750,7 @@ hash = "6d8f0085f7b33d54ac62825a360ebdee39c9392cd29fb88c94edb86665d1ca94"
 
 [[files]]
 file = "kubejs/data/mmorpg/mmorpg_spells/curse_of_weak.json"
-hash = "63bbb7610253725137c3c4fa3d4ef98c3c6640e23e5e60e661610ec6ad6f033d"
+hash = "a768fb85b2917be8819c214e7b7281c003318bee3d7cfb9a2759c8ab13539c0e"
 
 [[files]]
 file = "kubejs/data/mmorpg/mmorpg_spells/draconic_blood.json"
@@ -7423,11 +7758,11 @@ hash = "8d8fe07a43c0b6a2dc8f2566296476c594c75e0d8b4b4a76fc49e637b3d67b17"
 
 [[files]]
 file = "kubejs/data/mmorpg/mmorpg_spells/entangling_seed.json"
-hash = "dfdfc70282d2b9e3b70ff93efa6247ac3f87e9e10ba0bceda8ce882e08de8897"
+hash = "c035d64fef03bb6e9f78faec70f5e1c47f0253841bc2222d2029300246a4cc3e"
 
 [[files]]
 file = "kubejs/data/mmorpg/mmorpg_spells/explosive_arrow.json"
-hash = "da8918f96f8de46ef4ab2bfead5785e1261a38b4d0a2f49cba5a7bba5a86789e"
+hash = "2ae927bf96b92b062d525a483f6a830de8556993d8eeffb0dedc5b7e38393fa5"
 
 [[files]]
 file = "kubejs/data/mmorpg/mmorpg_spells/fireball.json"
@@ -7435,11 +7770,11 @@ hash = "a42b697d69ba4e3b8708ff16aeac58a252475ba28c9e45596aeb04af3390ed47"
 
 [[files]]
 file = "kubejs/data/mmorpg/mmorpg_spells/frost_lich_armor.json"
-hash = "1cc946ffea4bbdf465d75d7669c735ac7b0104a313fe4154cea0bda69bf80378"
+hash = "7bdde44c5f4fce6910fb131293752cc705bbf7fafe8353498d31bc398808a7f8"
 
 [[files]]
 file = "kubejs/data/mmorpg/mmorpg_spells/frost_nova.json"
-hash = "f7fbb79e9fae505878aa19dee0c9c8e9221164683f07fe269fcb3c8eb52b2e65"
+hash = "0b6a928dcc7571babaf3fd25febf250542f06781946ab94980a7a64bb9fc056c"
 
 [[files]]
 file = "kubejs/data/mmorpg/mmorpg_spells/frostball.json"
@@ -7447,11 +7782,11 @@ hash = "85eedd806795d4a17f13f3775f6593bcb95ff4413f31c397da294017525b1899"
 
 [[files]]
 file = "kubejs/data/mmorpg/mmorpg_spells/healing_aura.json"
-hash = "ee5de61b3e5d3593b57c1545a524aa51f713cc31b554f86cb4224d54ef27f581"
+hash = "44f4f967d97428ae931ddda36541608c5a258b5df8926fb8c45b387d8f067ada"
 
 [[files]]
 file = "kubejs/data/mmorpg/mmorpg_spells/lightning_totem.json"
-hash = "f0a490f9ad17327c0dac964834bf541e56a170eb7ebbeb201102f45c49d86c22"
+hash = "43966b85f82a7bd99b593cf09a01200d673677aaa356061bb55ed59fe3fa353b"
 
 [[files]]
 file = "kubejs/data/mmorpg/mmorpg_spells/mage_circle.json"
@@ -7463,7 +7798,7 @@ hash = "acac62ebdf66f704ff2e3695dc2187f0365c3af53d4dead2cc8334fc57c710bc"
 
 [[files]]
 file = "kubejs/data/mmorpg/mmorpg_spells/poison_ball.json"
-hash = "9b548b89509a36c0dcd8331b0944638dec50cc9f3e7152c4d0a2d0648081ef45"
+hash = "1d8f4a46fe7ffadac894f3caf2aa36eb3c33b95cc1804dfae9cce9f739f95dc7"
 
 [[files]]
 file = "kubejs/data/mmorpg/mmorpg_spells/poison_cloud.json"
@@ -7471,27 +7806,27 @@ hash = "dac068a5745d946ec05daae8c9ec8b26a322e1ab6ce83964067b24a0067b884b"
 
 [[files]]
 file = "kubejs/data/mmorpg/mmorpg_spells/quickdraw.json"
-hash = "029c57284914bf2fcd914ac2f5ce0745cf0eedc4e0870cfde0781f48c8d26f52"
+hash = "c9f198a2861cdf91860d20dd7cba02d0362861f088c969315a5731eded6cf860"
 
 [[files]]
 file = "kubejs/data/mmorpg/mmorpg_spells/refresh.json"
-hash = "a3d79c3fda2d8a23cb320a0191e1d1b0d1621f9395dde712d07f25771fc08efd"
+hash = "5037870e907365236fed832bb6dcc8cc6b3e9d95c228cab0089e28e78ba90554"
 
 [[files]]
 file = "kubejs/data/mmorpg/mmorpg_spells/rejuv_totem.json"
-hash = "94f5a064f8d7de979e1886937cf3ecb8c305cbd79356951219fa7ce3ec882c56"
+hash = "011e7cdc4cce9e8435da5d3e5f6c92a54e79aa393a70f598f9b84d0e05295f4f"
 
 [[files]]
 file = "kubejs/data/mmorpg/mmorpg_spells/smoke_bomb.json"
-hash = "9100a58fc73b1e53182af1b66bccf9db2b4e28f75da2054a377763410c14b81a"
+hash = "569d172bc7086eb672cb393b793444565925bd72600805e1882cb69025de8c65"
 
 [[files]]
 file = "kubejs/data/mmorpg/mmorpg_spells/song_of_perseverance.json"
-hash = "d606c392a165e0395bb12820d418e3daf12cbf47b776ce87bd52dca5084e1a9e"
+hash = "46f7791eb947553f8a3ddbf19a54cf35b73a77d701acf4a79a154cc606675321"
 
 [[files]]
 file = "kubejs/data/mmorpg/mmorpg_spells/taunt.json"
-hash = "bf86267e1285950330b4e1c3454f94f335ebe68d81c9c36a4518c0b5abbcb5db"
+hash = "2fd51914fdd445b584b098e755b1b1d847814db579663b6e7b5266bebe69bc2f"
 
 [[files]]
 file = "kubejs/data/mmorpg/mmorpg_spells/teleport.json"
@@ -7499,11 +7834,11 @@ hash = "c9b3831c95c18a650e55af95a0c4071d062493e21dfd43772ff6602fad98bece"
 
 [[files]]
 file = "kubejs/data/mmorpg/mmorpg_spells/undying_will.json"
-hash = "1e4cb9bd461181dccce6a23d4e89c4235cceb69c9a78eae87594fa6f4c740a9a"
+hash = "9a5fee0af9fb8c625d71b0c50c446daaac107a4477b8e38b708b302fe2285bbd"
 
 [[files]]
 file = "kubejs/data/mmorpg/mmorpg_spells/wish.json"
-hash = "4fb391f24504ba379d8ce9c64b7fa59ee4232587b00a0fca4636887db11cb687"
+hash = "29b92499923f201e8a0d530b1f330835add1a401a0d6d8ce41640e9ee5bd6a83"
 
 [[files]]
 file = "kubejs/data/mmorpg/mmorpg_talent_tree/ascendancy.json"
@@ -7570,20 +7905,148 @@ file = "kubejs/data/mmorpg/mmorpg_weapon_type/sub_machine_gun.json"
 hash = "8a773763980b370e48f1b4effb33a4de1adbc22b8cfd7123dc12cba281ca083f"
 
 [[files]]
+file = "kubejs/data/mmorpg/tags/items/assault_rifle.json"
+hash = "e3c3f4f4c1df61b63d0f943800440351e0f42eb0d784997664eba363b1d17f4b"
+
+[[files]]
+file = "kubejs/data/mmorpg/tags/items/axe.json"
+hash = "c1fec65cb2bcf54768ff08fed5ab319357947306d8769655979ad666555cc6cb"
+
+[[files]]
 file = "kubejs/data/mmorpg/tags/items/bow.json"
-hash = "f2bc92f2d0405c965b0c2fbb50ef088d4e794f6be05aed35322e9695d60222be"
+hash = "a923fa5f7b63f59fcdfc0e51137f57655b70bb39d8a1df17de1b86214eaae71e"
+
+[[files]]
+file = "kubejs/data/mmorpg/tags/items/cloth_boots.json"
+hash = "92b768f1aad60618c9ac9e9abdda15c4963c2fffda101122b6614aa8294266af"
+
+[[files]]
+file = "kubejs/data/mmorpg/tags/items/cloth_chest.json"
+hash = "47b56b513809f93d49c34619c9081a5a419175cdf023f1524ea47e08a23bfb9f"
+
+[[files]]
+file = "kubejs/data/mmorpg/tags/items/cloth_helmet.json"
+hash = "94bc9769436f045560f8f3baeb3edb3e7e2961294d9886619a4e811d1645c66f"
+
+[[files]]
+file = "kubejs/data/mmorpg/tags/items/cloth_pants.json"
+hash = "a0901359fc8a29dcd62efe0287d752f4dc223b7af778d3cf572431f81cd35084"
 
 [[files]]
 file = "kubejs/data/mmorpg/tags/items/crossbow.json"
-hash = "810d765434722499e209e1743a7cade0e84dfba634680a85197fc0316d8ce507"
+hash = "76b85251b67919fd4765c42e081a5d75555bd2ba51261dcd8c1690fc190dfce9"
+
+[[files]]
+file = "kubejs/data/mmorpg/tags/items/dagger.json"
+hash = "0f7507a577ac21c08670ee2ea273592a10b29984d273eb6565dc9f26bac407f2"
+
+[[files]]
+file = "kubejs/data/mmorpg/tags/items/hammer.json"
+hash = "225e6f749bd2311b96a34f8890bbab235146c8e2eb04edae653f1f125324919c"
+
+[[files]]
+file = "kubejs/data/mmorpg/tags/items/handgun.json"
+hash = "04057ab05229632e60e23b355f53e1a9ef5acefdba78ac98a3242567b615da64"
+
+[[files]]
+file = "kubejs/data/mmorpg/tags/items/heavy_machine_gun.json"
+hash = "fcc99ef757dc8662a8e7711e878a914c308cfaf8e7649b7d906105a12902351c"
+
+[[files]]
+file = "kubejs/data/mmorpg/tags/items/katana.json"
+hash = "b3a9341af24734ce959fe49b81bc6e466665537d096658def10cc606913e036a"
+
+[[files]]
+file = "kubejs/data/mmorpg/tags/items/kinetic_gun.json"
+hash = "a5d0530c9bf128d077c989d266e4dcd02180b3a844f6db2c1182240f1bac5b48"
+
+[[files]]
+file = "kubejs/data/mmorpg/tags/items/launcher.json"
+hash = "50528413c2aa0d3baff17c8cb07470af8b340250064ced16ffe2b5b3b0fcd268"
+
+[[files]]
+file = "kubejs/data/mmorpg/tags/items/leather_boots.json"
+hash = "6d4bc6b44caa8e170706354bc3c51aaa22d8e95ff30c81e747ab8d3b2f29b18e"
+
+[[files]]
+file = "kubejs/data/mmorpg/tags/items/leather_chest.json"
+hash = "13d5e3c227e5d12c2e3f6d3ca85e50b48a24097faca5a777ab4c4d04287247d5"
+
+[[files]]
+file = "kubejs/data/mmorpg/tags/items/leather_helmet.json"
+hash = "12c3843fbccf08c9e11258431dbf2ac776f4fe254b581872a9d89182a1a1f075"
+
+[[files]]
+file = "kubejs/data/mmorpg/tags/items/leather_pants.json"
+hash = "fde6ea2860be4baa1153e43527cf7dadba99d65270c65a8581551f05a15ad429"
+
+[[files]]
+file = "kubejs/data/mmorpg/tags/items/longsword.json"
+hash = "f1d3651d4e49bdcdbd566d8221096fba56d123fe691410398ede5ee2d4f0d2fd"
+
+[[files]]
+file = "kubejs/data/mmorpg/tags/items/mace.json"
+hash = "3253c65b990327dd7af26e31d3a764429ea029cfcf3416447be95f588776d818"
+
+[[files]]
+file = "kubejs/data/mmorpg/tags/items/necklace.json"
+hash = "d8f9815cefc03c3d1b489d974b07677ef9bf9931c9e4c6f531ff9878da8d82a9"
+
+[[files]]
+file = "kubejs/data/mmorpg/tags/items/plate_boots.json"
+hash = "fc2ecc9227c3a3c7911cf2a8618c724672e70e0d9eb55121c3e76883d8ca3bc8"
+
+[[files]]
+file = "kubejs/data/mmorpg/tags/items/plate_chest.json"
+hash = "41ef2344d5573c24a5d8ba205a306709fa353468a4cb20e1a0126941cecea6e2"
+
+[[files]]
+file = "kubejs/data/mmorpg/tags/items/plate_helmet.json"
+hash = "12042220a85ba4982cc6042526a26093de7cc4b710433f7a59e135b9136f0158"
+
+[[files]]
+file = "kubejs/data/mmorpg/tags/items/plate_pants.json"
+hash = "1a202a240cdd0d159172d2fa846667170a2fc5534d49f82be70bcd24a0afc508"
+
+[[files]]
+file = "kubejs/data/mmorpg/tags/items/revolver.json"
+hash = "c028147aa43a8aea2ff007b337c2483e7ee749db93fc7f934a737a3bb6c81bee"
+
+[[files]]
+file = "kubejs/data/mmorpg/tags/items/scythe.json"
+hash = "c49da3b97821ba7537ae782e59917f004d6e033c1e0a63896a712dbea146d38b"
 
 [[files]]
 file = "kubejs/data/mmorpg/tags/items/shield_middle.json"
-hash = "f1498c3e1a2358181311e71752066aa1daa947cd721db9a81c07428e6ddc7140"
+hash = "00ee8c66dbc70de935cb3be6752c124dc916c98e54b2be97aaba55a204fa62a4"
+
+[[files]]
+file = "kubejs/data/mmorpg/tags/items/short_sword.json"
+hash = "607860194ca81e81c69a5b7117ccfa615552fb8ba336167cf9fe8c8e0cfa0f4f"
+
+[[files]]
+file = "kubejs/data/mmorpg/tags/items/shotgun.json"
+hash = "3cbae9c0fb0dacb0809b5758f0a142687ae7bddf20fb86d1ff14d514ccfe6d52"
+
+[[files]]
+file = "kubejs/data/mmorpg/tags/items/sniper_rifle.json"
+hash = "c19f70a2170c7ac5cef8d709b5950a1740f0531968d8b18979a68303572b9a6e"
+
+[[files]]
+file = "kubejs/data/mmorpg/tags/items/spear.json"
+hash = "2c67db757bf3516e268f1326810dadd4c1e9203c89b42d6ee40c7aee3195249f"
+
+[[files]]
+file = "kubejs/data/mmorpg/tags/items/sub_machine_gun.json"
+hash = "62f0eb111959faf22509fc501071e9a68c125151eeeb9a8189c2a26ac70d1682"
+
+[[files]]
+file = "kubejs/data/mmorpg/tags/items/sword.json"
+hash = "13fa4a67187b6b37d89086b286f6bdc2c65188c07ecbc53dcb28e67564ebb506"
 
 [[files]]
 file = "kubejs/data/mmorpg/tags/items/trident.json"
-hash = "c295fada2c2aefc64b460300d73059fe508503ab074526931395270f69546ed2"
+hash = "2d3527d0ee8bcaa0a52ad377504339bb3501af87b50548761b69287e51dee709"
 
 [[files]]
 file = "kubejs/data/project_deadzone/bosses/hulking_infected.json"
@@ -7609,6 +8072,9 @@ hash = "14e19e8f79319d621b8f834c969a91b288e8bb7de935ea4e4e47384c6f8fe427"
 file = "kubejs/data/project_deadzone/functions/basecamp/activate_from_arrival.mcfunction"
 hash = "91c719f59fc16481bd2390248e7c516f209032c2d1233e0d6772db647babd7bb"
 
+[[files]]
+file = "kubejs/data/project_deadzone/functions/basecamp/apply_staff_profiles.mcfunction"
+hash = "0e3d3e94b08ba6087e0620df3b6ea715d1fd6cef39022b48f3e2a4d7e0601c63"
 
 [[files]]
 file = "kubejs/data/project_deadzone/functions/basecamp/apply_staff_random_dialogues.mcfunction"
@@ -7666,6 +8132,9 @@ hash = "c8fca537e6e180856da9879283d341edbe42b68fe027c5ea24c36bc1f9c71712"
 file = "kubejs/data/project_deadzone/functions/basecamp/repair_parts_trader.mcfunction"
 hash = "565533ec943ba3789116b9ec01f709b61c8891e5a3605107830d287dfc97c567"
 
+[[files]]
+file = "kubejs/data/project_deadzone/functions/basecamp/repair_staff_service_ui.mcfunction"
+hash = "4a0a87e616cb38cbba362b7f83628335f246b2b415660fb43a2187d8458bd3c1"
 
 [[files]]
 file = "kubejs/data/project_deadzone/functions/basecamp/restore_guards_at_core.mcfunction"
@@ -10511,6 +10980,9 @@ hash = "8e1c6b4d1a6aa61931dc0e298d165b91720a877b57b28dc94e735a06239a7ab5"
 file = "kubejs/server_scripts/project_deadzone_auto_basecamp_v0_1.js"
 hash = "ec246c53f9c3fa29ecf5cff8817cd5a7e8c53474f24202af0a60d480b8fff1c8"
 
+[[files]]
+file = "kubejs/server_scripts/project_deadzone_base_core_v0_1.js"
+hash = "17d15da3fd8939816f8a8a8426042458c4cebb4099621ba90eb7b3ab69831315"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_basecamp_guard_safety_v0_1.js"
@@ -10577,6 +11049,10 @@ file = "kubejs/server_scripts/project_deadzone_cooking_menus_v0_1.js"
 hash = "25db38b84830290663b37674a620fdd44cdceb31642aa249c5405835258bc8e9"
 
 [[files]]
+file = "kubejs/server_scripts/project_deadzone_cte2_combat_scaling_v0_1.js"
+hash = "091f96ac996a6f9526236057efd00fd32ccab8bcf35bc820d629e5e98ab8862d"
+
+[[files]]
 file = "kubejs/server_scripts/project_deadzone_currency_v0_1.js"
 hash = "50ff3c7ce1513cad37a2c37b8c76569ca933325d336feb9616ac5ed999cd483b"
 
@@ -10626,7 +11102,7 @@ hash = "7c96383673594361fed72b2acfa9f58b781a16f797855bb81794309245b57ad9"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_g_job_sync_v0_1.js"
-hash = "96a2dd4024e6c965fcd3f58ae88a175a225eb7eafc95c443b4952448e0c9b763"
+hash = "2aa1cbb79be1bb1251a8093460d9cf26923befd758f895fe604729f2a2e1bdb0"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_growth_effects_v0_1.js"
@@ -10718,7 +11194,7 @@ hash = "92e2800b5cd91a4efef8840a3d9a5ab5846cf378def785647494488c92e37088"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_mns_progression_bridge_v0_1.js"
-hash = "f1905b5fa549862706b739b9f769f8afa97fa3a6eb5fc58004070ed91787bb71"
+hash = "9face9c66a9a80ac6c4b5642f7c82b28f0b26d39b8eb35ffcd0c468cc02aa126"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_multiplayer_preflight_v0_1.js"
@@ -10755,6 +11231,10 @@ hash = "ae1515f5e658b984684ef1abde4787f9f1b3f0f97ef48d8adb244a284ccdf0b0"
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_radiation_tier_gate_v0_1.js"
 hash = "996d537d0d15d9ea0fc55d1dc8803947e8a1220adc26f25af90f48815dd52164"
+
+[[files]]
+file = "kubejs/server_scripts/project_deadzone_radio_world_status_v0_1.js"
+hash = "7eb5a9c6fcbc93b6348e06fbe3ba00f7c918e52e1bf5a8f445102d92f29a1e4e"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_recipe_stage_sync_v0_1.js"
@@ -10802,7 +11282,7 @@ hash = "49c04a4195f1dae281d4581ddcce17fdffb3acee683c1c36a8bcc0d43002cddf"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_simpleenemy_elites_v0_1.js"
-hash = "a4078fd16b239ee3fd5f597f865cdf30eebdfc62726125086b8522eea0dc4d00"
+hash = "d60bac6cd7ab692b731f47e4129b892f54a14e92082afed1fde0d66a1a45189d"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_skill_effects_v0_1.js"
@@ -10869,6 +11349,10 @@ file = "kubejs/server_scripts/project_deadzone_t0_safezone_v0_1.js"
 hash = "347448364750209246145cd6a83cf62cc457059ba7d0e50dfb4048b09c98269a"
 
 [[files]]
+file = "kubejs/server_scripts/project_deadzone_tactical_resource_v0_1.js"
+hash = "9c40ab36135a31160ea5a90b210e0ae479fa6f1263558b03399a155cc6eb34bf"
+
+[[files]]
 file = "kubejs/server_scripts/project_deadzone_tacz_enchant_quest_v0_1.js"
 hash = "acfd8676122fa5fb94c1ce84984b3edcbebeb5070a90b8ec32dbc45129c234dd"
 
@@ -10910,7 +11394,7 @@ hash = "33a1bac5c2bc9188d7f31da3db757cdf405ddf5d3051107b1c1e26553096bd3c"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_world_evolution_v0_1.js"
-hash = "e9f8820c1192ef7888d5090a70bc53c9ff8c7a558ae27ac75fc3d1be4bfb19c2"
+hash = "a4a812dbe063e7f38ebb018cf14c31373ec92ef0fee72d6ce01938d41ed94118"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_world_loot_v0_1.js"
@@ -11837,6 +12321,11 @@ hash = "bd7f168ec56f14a25d36d9d0dc4d281e88f77b1ba678907b5c570e5c051a5ca4"
 [[files]]
 file = "mods/dynamic-trees-for-natures-spirit.pw.toml"
 hash = "9c74ac86374e5f8769d846cdd4a2937652edc98b12f3508641ede0b4fbad18c4"
+metafile = true
+
+[[files]]
+file = "mods/dynamic-trees-for-terralith.pw.toml"
+hash = "ae583d40ca9be0fd774e2fde0869968947d59805ac10029b27011e84f7644eab"
 metafile = true
 
 [[files]]
@@ -12914,6 +13403,18 @@ hash = "502a43c7efa112daa8ec2e68378a35a568eb946f00314d81d60b9310fe9004d9"
 metafile = true
 
 [[files]]
+file = "moonlight-global-datapacks/pdz_dynamic_trees_compat/pack.mcmeta"
+hash = "558de9285a51841e9a7e48e22e8b9d60f9da7d0617e9f8cf57ad2054f80e2013"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_dynamic_trees_compat/trees/dtnatures_spirit/species/frosty_redwood.json"
+hash = "15e6425b5728ebda527d35fbb1e9a0c17bb5617badff0950197a44b7a90a51b5"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_dynamic_trees_compat/trees/dtnatures_spirit/species/redwood.json"
+hash = "38d239d4c43a67d96bc0b49a07b59f4492115adff20015e4bbf1288155a906e7"
+
+[[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/assets/mmorpg/lang/en_us.json"
 hash = "7e4b7bfb40fee6a7005c8de59b9b45a3f2b3f9364a1af3b45638e653e253d396"
 
@@ -13012,6 +13513,82 @@ hash = "f91d69d9f4b8b30c1fe6418c12923f61b48c5d2935b6437c7db4084e23ba26b1"
 [[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/assets/project_deadzone/textures/icons/skill_tree/talent.png"
 hash = "f91d69d9f4b8b30c1fe6418c12923f61b48c5d2935b6437c7db4084e23ba26b1"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/mmorpg/mmorpg_affixes/chaos_stat/gear_corruptcdr.json"
+hash = "71f8cf5ad2e4281392a5a6fc676836138c93157c01c6176a2ea9525ca628ddd2"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/mmorpg/mmorpg_affixes/prefix/mana_reg.json"
+hash = "b0d64bbb3fafece697dd98010dcd86100143e966b87ae64779ac0dc88d2f80c2"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/mmorpg/mmorpg_affixes/prefix/mana_thief.json"
+hash = "9c77a2f80d69b50abacc33eed1150f67ee07de19c3ab82726841580e3fdb6891"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/mmorpg/mmorpg_affixes/suffix/of_mana.json"
+hash = "7f69e0db6d2203972bac34f83f41f782dbe40093d784dc633522455d4714facc"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/mmorpg/mmorpg_affixes/suffix/of_spell_dmg.json"
+hash = "efb8fdfbe40d07eaba1caf7ce3b22968de23cb5f23708fca3323d62b90e576c1"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/mmorpg/mmorpg_base_gear_types/assault_rifle.json"
+hash = "338b42076c2184f154bf2364009b30593657ad9be2b60cec654b27ae5784ce3d"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/mmorpg/mmorpg_base_gear_types/handgun.json"
+hash = "74621998415ee6f48d7045a0a59fe40a50c405c77db9658cfc0f45411f472eb3"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/mmorpg/mmorpg_base_gear_types/heavy_machine_gun.json"
+hash = "178b1674686fcf80da2ec270dd145433b7227dbefe292a3ec5c22620ee17c893"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/mmorpg/mmorpg_base_gear_types/kinetic_gun.json"
+hash = "aeba6688747ca26d08f03f567f4643e2a6a6f5b9d30b2bfc08420e72fdd21137"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/mmorpg/mmorpg_base_gear_types/launcher.json"
+hash = "1459b2bbe95b5339d571e3fc4eaa403b77098a0c01df80ef472fa544fbe47724"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/mmorpg/mmorpg_base_gear_types/repeater_rifle.json"
+hash = "5f9d4598c9e25c9df3835d5811d45e8c758d9ad378e49a64831c6e380dee10ff"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/mmorpg/mmorpg_base_gear_types/revolver.json"
+hash = "b91753b2dd700d261fa50711ad3a54f401f1391d2facd9cc07f331a0eac3936d"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/mmorpg/mmorpg_base_gear_types/rune_revolver.json"
+hash = "ff90e60b72305d44077371b3124b3a96410e0594eb8ba3ac82e4a67e68b2aaee"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/mmorpg/mmorpg_base_gear_types/s_handgun.json"
+hash = "74bb9fa1303684f374553c75e4b25e665ee429d12651b92e2cf7e53fd9c1e193"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/mmorpg/mmorpg_base_gear_types/s_revolver.json"
+hash = "b20a3e0a318809b9f1c5b95a1ee2e115d08664080e5230c6579ad941772e226f"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/mmorpg/mmorpg_base_gear_types/s_shotgun.json"
+hash = "fc64949aecf3cbc6339d0cd33aa76b6b69799b10d9b35d631af21abb840f80a9"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/mmorpg/mmorpg_base_gear_types/shotgun.json"
+hash = "a036068b587648434d9315677cbdb0ba67a14c21698470d6ae32411f19ed704c"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/mmorpg/mmorpg_base_gear_types/sniper_rifle.json"
+hash = "56ae3fd70913f9a71bc19e2e83ef90313b39ef34a4073fefdf11406c71310826"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_growth_v1/data/mmorpg/mmorpg_base_gear_types/sub_machine_gun.json"
+hash = "f03f72680192877886148176f740174301bdcdfbe794839a27cd7dbfc8f9e116"
 
 [[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/mmorpg/mmorpg_perk/arcanist_class.json"
@@ -13875,35 +14452,35 @@ hash = "c5c1a78cd6fc8587c75a7300778bd912b0e06a50c38a5ab82d89ee97e2474f91"
 
 [[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/mmorpg/mmorpg_spell_school/hunter.json"
-hash = "529026fc8a2caa93696ae5770e50052fddc2cca10d6dfd008c2f6d93f43ddcb2"
+hash = "046aca81a4e5e69e196dde3fef1b1f639fd24ad38897eef0b93bfececb5e983b"
 
 [[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/mmorpg/mmorpg_spell_school/minstrel.json"
-hash = "2795c4b699f59c86ec87b2fafae0d167b405bf326fdf9027f9ea497bf6b149d1"
+hash = "902cfc49c8b32f287f24e6a996a19fbfbd9c236a795f74b71ddcb4d1e5fff3c3"
 
 [[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/mmorpg/mmorpg_spell_school/shaman.json"
-hash = "620cb5120539aa79e0672929d9ad859322ff0cb85348196235522a755e324ba4"
+hash = "5e21d4338f6a5197839c7966de4d073583cb9bbc4162e2e4cf9edafc89f5a229"
 
 [[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/mmorpg/mmorpg_spell_school/sorcerer.json"
-hash = "61c9ce7ffaef5412de29aa1b399b7ef92975698c4e27eedddb4dfffe822ca6c4"
+hash = "d8489d580569a0168e67ca6e3517a0134452754a6c573078dbb446ac9f34e97a"
 
 [[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/mmorpg/mmorpg_spell_school/warlock.json"
-hash = "7b26ee8e79d25a814f79bc741bfc16183e2991487e968859c55d57093e6bc035"
+hash = "286bc13c371be49f611f0c65c933e5b18d9a1baf46be91bbb9955da96cd79309"
 
 [[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/mmorpg/mmorpg_spell_school/warrior.json"
-hash = "c78456b21fd8bc045885c2f49bc46a545c75cee7c2840ce47fcf4bdf7ceada62"
+hash = "5e37cfa11fc14c6825abca986de08acfe17b7cf1609654427037b12f8019f98f"
 
 [[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/mmorpg/mmorpg_spells/black_hole.json"
-hash = "b96082613e1f6ccb1ee7f2562b24ba177d04b22d24c4ba2e75a3c6c4b4bfdcc0"
+hash = "7dc3f335761ebce35629541130ca92c660c35d6046ce2adf3d159f771f0912e7"
 
 [[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/mmorpg/mmorpg_spells/charge.json"
-hash = "b7f8d99fa5aa3ea85d9a89b446a0c329a035b327782aed1d2205ee714bce4ffc"
+hash = "29a79014c746cb7210565b6caa9deeb7964073af92b359b6e684481c2aa77aec"
 
 [[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/mmorpg/mmorpg_spells/chilling_field.json"
@@ -13923,7 +14500,7 @@ hash = "6d8f0085f7b33d54ac62825a360ebdee39c9392cd29fb88c94edb86665d1ca94"
 
 [[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/mmorpg/mmorpg_spells/curse_of_weak.json"
-hash = "63bbb7610253725137c3c4fa3d4ef98c3c6640e23e5e60e661610ec6ad6f033d"
+hash = "a768fb85b2917be8819c214e7b7281c003318bee3d7cfb9a2759c8ab13539c0e"
 
 [[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/mmorpg/mmorpg_spells/draconic_blood.json"
@@ -13931,11 +14508,11 @@ hash = "8d8fe07a43c0b6a2dc8f2566296476c594c75e0d8b4b4a76fc49e637b3d67b17"
 
 [[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/mmorpg/mmorpg_spells/entangling_seed.json"
-hash = "dfdfc70282d2b9e3b70ff93efa6247ac3f87e9e10ba0bceda8ce882e08de8897"
+hash = "c035d64fef03bb6e9f78faec70f5e1c47f0253841bc2222d2029300246a4cc3e"
 
 [[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/mmorpg/mmorpg_spells/explosive_arrow.json"
-hash = "e472425f8a8cf97053f23c077c9a6acbec8782087305ff29871317c57b6b3522"
+hash = "2ae927bf96b92b062d525a483f6a830de8556993d8eeffb0dedc5b7e38393fa5"
 
 [[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/mmorpg/mmorpg_spells/fireball.json"
@@ -13943,11 +14520,11 @@ hash = "a42b697d69ba4e3b8708ff16aeac58a252475ba28c9e45596aeb04af3390ed47"
 
 [[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/mmorpg/mmorpg_spells/frost_lich_armor.json"
-hash = "1cc946ffea4bbdf465d75d7669c735ac7b0104a313fe4154cea0bda69bf80378"
+hash = "7bdde44c5f4fce6910fb131293752cc705bbf7fafe8353498d31bc398808a7f8"
 
 [[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/mmorpg/mmorpg_spells/frost_nova.json"
-hash = "f7fbb79e9fae505878aa19dee0c9c8e9221164683f07fe269fcb3c8eb52b2e65"
+hash = "0b6a928dcc7571babaf3fd25febf250542f06781946ab94980a7a64bb9fc056c"
 
 [[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/mmorpg/mmorpg_spells/frostball.json"
@@ -13955,11 +14532,11 @@ hash = "85eedd806795d4a17f13f3775f6593bcb95ff4413f31c397da294017525b1899"
 
 [[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/mmorpg/mmorpg_spells/healing_aura.json"
-hash = "ee5de61b3e5d3593b57c1545a524aa51f713cc31b554f86cb4224d54ef27f581"
+hash = "44f4f967d97428ae931ddda36541608c5a258b5df8926fb8c45b387d8f067ada"
 
 [[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/mmorpg/mmorpg_spells/lightning_totem.json"
-hash = "f0a490f9ad17327c0dac964834bf541e56a170eb7ebbeb201102f45c49d86c22"
+hash = "43966b85f82a7bd99b593cf09a01200d673677aaa356061bb55ed59fe3fa353b"
 
 [[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/mmorpg/mmorpg_spells/mage_circle.json"
@@ -13971,7 +14548,7 @@ hash = "acac62ebdf66f704ff2e3695dc2187f0365c3af53d4dead2cc8334fc57c710bc"
 
 [[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/mmorpg/mmorpg_spells/poison_ball.json"
-hash = "1955d7ca80055904b65910e655ef8e516ae3f582c8d3c5b62497675794eee405"
+hash = "1d8f4a46fe7ffadac894f3caf2aa36eb3c33b95cc1804dfae9cce9f739f95dc7"
 
 [[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/mmorpg/mmorpg_spells/poison_cloud.json"
@@ -13979,27 +14556,27 @@ hash = "dac068a5745d946ec05daae8c9ec8b26a322e1ab6ce83964067b24a0067b884b"
 
 [[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/mmorpg/mmorpg_spells/quickdraw.json"
-hash = "029c57284914bf2fcd914ac2f5ce0745cf0eedc4e0870cfde0781f48c8d26f52"
+hash = "c9f198a2861cdf91860d20dd7cba02d0362861f088c969315a5731eded6cf860"
 
 [[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/mmorpg/mmorpg_spells/refresh.json"
-hash = "a3d79c3fda2d8a23cb320a0191e1d1b0d1621f9395dde712d07f25771fc08efd"
+hash = "5037870e907365236fed832bb6dcc8cc6b3e9d95c228cab0089e28e78ba90554"
 
 [[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/mmorpg/mmorpg_spells/rejuv_totem.json"
-hash = "94f5a064f8d7de979e1886937cf3ecb8c305cbd79356951219fa7ce3ec882c56"
+hash = "011e7cdc4cce9e8435da5d3e5f6c92a54e79aa393a70f598f9b84d0e05295f4f"
 
 [[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/mmorpg/mmorpg_spells/smoke_bomb.json"
-hash = "9100a58fc73b1e53182af1b66bccf9db2b4e28f75da2054a377763410c14b81a"
+hash = "569d172bc7086eb672cb393b793444565925bd72600805e1882cb69025de8c65"
 
 [[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/mmorpg/mmorpg_spells/song_of_perseverance.json"
-hash = "d606c392a165e0395bb12820d418e3daf12cbf47b776ce87bd52dca5084e1a9e"
+hash = "46f7791eb947553f8a3ddbf19a54cf35b73a77d701acf4a79a154cc606675321"
 
 [[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/mmorpg/mmorpg_spells/taunt.json"
-hash = "bf86267e1285950330b4e1c3454f94f335ebe68d81c9c36a4518c0b5abbcb5db"
+hash = "2fd51914fdd445b584b098e755b1b1d847814db579663b6e7b5266bebe69bc2f"
 
 [[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/mmorpg/mmorpg_spells/teleport.json"
@@ -14007,11 +14584,11 @@ hash = "c9b3831c95c18a650e55af95a0c4071d062493e21dfd43772ff6602fad98bece"
 
 [[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/mmorpg/mmorpg_spells/undying_will.json"
-hash = "1e4cb9bd461181dccce6a23d4e89c4235cceb69c9a78eae87594fa6f4c740a9a"
+hash = "9a5fee0af9fb8c625d71b0c50c446daaac107a4477b8e38b708b302fe2285bbd"
 
 [[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/mmorpg/mmorpg_spells/wish.json"
-hash = "4fb391f24504ba379d8ce9c64b7fa59ee4232587b00a0fca4636887db11cb687"
+hash = "29b92499923f201e8a0d530b1f330835add1a401a0d6d8ce41640e9ee5bd6a83"
 
 [[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/mmorpg/mmorpg_talent_tree/ascendancy.json"
@@ -21485,36 +22062,3 @@ metafile = true
 file = "tacz/immersive-armorer.pw.toml"
 hash = "5f316c3735b248f22c3fabeece8ea930e146f39193b13b32f2d1f296c9f3790d"
 metafile = true
-
-[[files]]
-file = "mods/dynamic-trees-for-terralith.pw.toml"
-hash = "ae583d40ca9be0fd774e2fde0869968947d59805ac10029b27011e84f7644eab"
-metafile = true
-
-[[files]]
-file = "config/easy_npc/security.cfg"
-hash = "4e13f94668b3d8f8575d4232cc70e3454e28c9a48b76f00191988907c2fbe57c"
-
-[[files]]
-file = "kubejs/data/project_deadzone/functions/basecamp/apply_staff_profiles.mcfunction"
-hash = "0e3d3e94b08ba6087e0620df3b6ea715d1fd6cef39022b48f3e2a4d7e0601c63"
-
-[[files]]
-file = "kubejs/data/project_deadzone/functions/basecamp/repair_staff_service_ui.mcfunction"
-hash = "559c1820cc38023219534e3010a7093e8f439944d5718318d6af5194b940514a"
-
-[[files]]
-file = "kubejs/server_scripts/project_deadzone_base_core_v0_1.js"
-hash = "17d15da3fd8939816f8a8a8426042458c4cebb4099621ba90eb7b3ab69831315"
-
-[[files]]
-file = "moonlight-global-datapacks/pdz_dynamic_trees_compat/pack.mcmeta"
-hash = "558de9285a51841e9a7e48e22e8b9d60f9da7d0617e9f8cf57ad2054f80e2013"
-
-[[files]]
-file = "moonlight-global-datapacks/pdz_dynamic_trees_compat/trees/dtnatures_spirit/species/redwood.json"
-hash = "38d239d4c43a67d96bc0b49a07b59f4492115adff20015e4bbf1288155a906e7"
-
-[[files]]
-file = "moonlight-global-datapacks/pdz_dynamic_trees_compat/trees/dtnatures_spirit/species/frosty_redwood.json"
-hash = "15e6425b5728ebda527d35fbb1e9a0c17bb5617badff0950197a44b7a90a51b5"

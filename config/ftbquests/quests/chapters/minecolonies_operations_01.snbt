@@ -5,14 +5,14 @@
 	group: "6A11000000000002"
 	icon: "minecolonies:blockhuttownhall"
 	id: "6D4B010000000001"
-	order_index: 16
+	order_index: 7
 	quest_links: [ ]
 	quests: [
 		{
 			dependencies: ["6D43110000000101"]
 			description: [
 				"建物を建てるだけで終わらず、人口・幸福・研究・物流・防衛をPDZの地域経済へ接続する。"
-			"コロニー所有者がBase Coreをスニーク右クリックし、暫定の詳細管理にある「MineColonies監査」を押すと、MineColonies APIから実績を監査する。FTBパーティーには進捗が共有される。"
+				"コロニー所有者がBase Coreをスニーク右クリックし、暫定の詳細管理にある「MineColonies監査」を押すと、MineColonies APIから実績を監査する。FTBパーティーには進捗が共有される。"
 			]
 			icon: "minecolonies:blockhuttownhall"
 			id: "6D4B010000000101"
@@ -120,7 +120,7 @@
 			dependencies: ["6D4B010000000103"]
 			description: [
 				"市民からプレイヤーへ回った要求を一度監査し、その後0件まで解消する。WarehouseとCourierを使う物流の実地試験。"
-			"要求発生時と解消後は自動監査される。手動確認はBase Coreをスニーク右クリックし、暫定の詳細管理にある「MineColonies監査」から行える。達成時、Supply評判+4。"
+				"要求発生時と解消後は自動監査される。手動確認はBase Coreをスニーク右クリックし、暫定の詳細管理にある「MineColonies監査」から行える。達成時、Supply評判+4。"
 			]
 			icon: "minecolonies:clipboard"
 			id: "6D4B010000000107"

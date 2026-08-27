@@ -1,0 +1,181 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "apocalypsenow:army_leggings",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:black_football_armor_leggings",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:blue_football_armor_leggings",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:bombsquad_leggings",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:brazilian_army_leggings",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:british_army_leggings",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:canadian_army_leggings",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:chinese_army_leggings",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:italian_bersaglieri_army_leggings",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:japanese_army_leggings",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:juggernaut_leggings",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:mexican_army_leggings",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:military_riot_armor_leggings",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:military_urban_leggings",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:red_football_armor_leggings",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:russian_army_leggings",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:soldier_leggings",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:swat_leggings",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:swatriotcontrol_leggings",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:us_army_leggings",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:yellow_football_armor_leggings",
+      "required": false
+    },
+    {
+      "id": "immersiveengineering:armor_steel_leggings",
+      "required": false
+    },
+    {
+      "id": "infectious:security_armor_leggings",
+      "required": false
+    },
+    {
+      "id": "infectious:soldier_armor_leggings",
+      "required": false
+    },
+    {
+      "id": "infectious:swatarmor_leggings",
+      "required": false
+    },
+    {
+      "id": "mekanism:mekasuit_pants",
+      "required": false
+    },
+    {
+      "id": "mekanismtools:steel_leggings",
+      "required": false
+    },
+    {
+      "id": "minecraft:diamond_leggings",
+      "required": false
+    },
+    {
+      "id": "minecraft:iron_leggings",
+      "required": false
+    },
+    {
+      "id": "minecraft:netherite_leggings",
+      "required": false
+    },
+    {
+      "id": "sakura:soldier_pants",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:black_juggernaut_leggings",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:desert_juggernaut_leggings",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:exo_heavy_black_leggings",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:exo_heavy_desert_leggings",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:exo_heavy_green_leggings",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:exo_leggings",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:green_juggernaut_leggings",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:military_leggings",
+      "required": false
+    },
+    {
+      "id": "zombiekit:desert_riot_leggings",
+      "required": false
+    },
+    {
+      "id": "zombiekit:exo_leggings",
+      "required": false
+    },
+    {
+      "id": "zombiekit:forest_riot_leggings",
+      "required": false
+    },
+    {
+      "id": "zombiekit:snow_riot_leggings",
+      "required": false
+    },
+    {
+      "id": "zombiekit:standard_riot_leggings",
+      "required": false
+    }
+  ]
+}

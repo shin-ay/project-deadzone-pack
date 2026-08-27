@@ -10,7 +10,7 @@
 	quests: [
 		{
 			description: [
-			"Base Coreをスニーク右クリックし、暫定の詳細管理から「キャンプ発展」を選ぶと、共有キャンプの発展状態と次の必要物資を確認できる。"
+				"Base Coreをスニーク右クリックし、暫定の詳細管理から「キャンプ発展」を選ぶと、共有キャンプの発展状態と次の必要物資を確認できる。"
 				"この仕組みはNPCの位置や建物を自動変更せず、既存NPCの販売・買取・価格・在庫枠だけを成長させる。外観はプレイヤーが自由に改修できる。"
 			]
 			icon: "minecraft:campfire"
@@ -43,7 +43,6 @@
 			]
 			icon: "minecraft:iron_ingot"
 			id: "6D46010000000102"
-			subtitle: "解放条件: 「Survivor Camp発展計画」・「復旧：燃料ルート」・「Rank 1：安定供給」をすべて完了"
 			rewards: [
 				{
 					count: 4
@@ -60,6 +59,7 @@
 					type: "item"
 				}
 			]
+			subtitle: "解放条件: 「Survivor Camp発展計画」・「復旧：燃料ルート」・「Rank 1：安定供給」をすべて完了"
 			tasks: [{
 				id: "6D46010000002201"
 				title: "Camp Lv1「安定拠点」へ発展した"
@@ -80,7 +80,6 @@
 			]
 			icon: "immersiveengineering:component_electronic"
 			id: "6D46010000000103"
-			subtitle: "解放条件: 「Camp Lv1：安定拠点」・「Rank 2：共同炊事」をすべて完了"
 			rewards: [
 				{
 					count: 2
@@ -102,6 +101,7 @@
 					type: "item"
 				}
 			]
+			subtitle: "解放条件: 「Camp Lv1：安定拠点」・「Rank 2：共同炊事」をすべて完了"
 			tasks: [{
 				id: "6D46010000002301"
 				title: "Camp Lv2「サービス拠点」へ発展した"
@@ -122,7 +122,6 @@
 			]
 			icon: "immersiveengineering:ingot_steel"
 			id: "6D46010000000104"
-			subtitle: "解放条件: 「Camp Lv2：サービス拠点」・「Rank 3：地域食料網」をすべて完了"
 			rewards: [
 				{
 					id: "6D46010000001401"
@@ -137,6 +136,7 @@
 					type: "item"
 				}
 			]
+			subtitle: "解放条件: 「Camp Lv2：サービス拠点」・「Rank 3：地域食料網」をすべて完了"
 			tasks: [{
 				id: "6D46010000002401"
 				title: "Camp Lv3「地域ハブ」へ発展した"

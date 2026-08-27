@@ -5,23 +5,23 @@
 	group: "6A11000000000001"
 	icon: "minecraft:filled_map"
 	id: "6D51010000000001"
-	order_index: 8
+	order_index: 3
 	quest_links: [ ]
 	quests: [
 		{
 			dependencies: ["6D5001000000010B"]
 			description: [
-			"Survivor CampのBase Coreをスニーク右クリックし、暫定の詳細管理から「地域物流」で物流ボードを開く。"
+				"Survivor CampのBase Coreをスニーク右クリックし、暫定の詳細管理から「地域物流」で物流ボードを開く。"
 				"車両を所有するだけでは航路にならない。物資を積み、用途に合う交通手段で往復して初めて地域サービスへ接続される。"
 			]
 			icon: "minecraft:compass"
 			id: "6D51010000000101"
-			subtitle: "解放条件: 「守った地域で暮らす」を完了"
 			rewards: [{
 				id: "6D51010000001101"
 				type: "xp"
 				xp: 15
 			}]
+			subtitle: "解放条件: 「守った地域で暮らす」を完了"
 			tasks: [{
 				id: "6D51010000002101"
 				title: "地域物流ボードを確認した"
@@ -39,13 +39,13 @@
 			]
 			icon: "minecraft:clock"
 			id: "6D51010000000102"
-			subtitle: "解放条件: 「道路は景色ではない」を完了"
 			rewards: [{
 				count: 4
 				id: "6D51010000001201"
 				item: "minecraft:bread"
 				type: "item"
 			}]
+			subtitle: "解放条件: 「道路は景色ではない」を完了"
 			tasks: [{
 				id: "6D51010000002201"
 				title: "本日の優先需要を確認した"
@@ -66,13 +66,13 @@
 			]
 			icon: "minecraft:minecart"
 			id: "6D51010000000103"
-			subtitle: "解放条件: 「需要は毎日同じじゃない」・「T1・道路輸送班」をすべて完了"
 			rewards: [{
 				count: 4
 				id: "6D51010000001301"
 				item: "apocalypsenow:money"
 				type: "item"
 			}]
+			subtitle: "解放条件: 「需要は毎日同じじゃない」・「T1・道路輸送班」をすべて完了"
 			tasks: [{
 				id: "6D51010000002301"
 				title: "道路重量輸送を完遂した"
@@ -93,13 +93,13 @@
 			]
 			icon: "create:track"
 			id: "6D51010000000104"
-			subtitle: "解放条件: 「需要は毎日同じじゃない」・「T1・地域鉄道網」をすべて完了"
 			rewards: [{
 				count: 6
 				id: "6D51010000001401"
 				item: "apocalypsenow:money"
 				type: "item"
 			}]
+			subtitle: "解放条件: 「需要は毎日同じじゃない」・「T1・地域鉄道網」をすべて完了"
 			tasks: [{
 				id: "6D51010000002401"
 				title: "鉄道大宗貨物を完遂した"
@@ -120,13 +120,13 @@
 			]
 			icon: "minecraft:oak_boat"
 			id: "6D51010000000105"
-			subtitle: "解放条件: 「需要は毎日同じじゃない」・「危険海域への航路」をすべて完了"
 			rewards: [{
 				count: 4
 				id: "6D51010000001501"
 				item: "apocalypsenow:money"
 				type: "item"
 			}]
+			subtitle: "解放条件: 「需要は毎日同じじゃない」・「危険海域への航路」をすべて完了"
 			tasks: [{
 				id: "6D51010000002501"
 				title: "沿岸食料輸送を完遂した"
@@ -147,13 +147,13 @@
 			]
 			icon: "immersive_aircraft:propeller"
 			id: "6D51010000000106"
-			subtitle: "解放条件: 「需要は毎日同じじゃない」・「T3・航空輸送網」をすべて完了"
 			rewards: [{
 				count: 4
 				id: "6D51010000001601"
 				item: "apocalypsenow:money"
 				type: "item"
 			}]
+			subtitle: "解放条件: 「需要は毎日同じじゃない」・「T3・航空輸送網」をすべて完了"
 			tasks: [{
 				id: "6D51010000002601"
 				title: "緊急航空便を完遂した"
@@ -176,13 +176,13 @@
 			]
 			icon: "minecraft:emerald"
 			id: "6D51010000000107"
-			subtitle: "解放条件: 「重いが、どこへでも行ける」・「量なら線路が勝つ」・「海岸線は天然の道路」・「少量を、今すぐ」をすべて完了"
 			rewards: [{
 				count: 6
 				id: "6D51010000001701"
 				item: "apocalypsenow:money"
 				type: "item"
 			}]
+			subtitle: "解放条件: 「重いが、どこへでも行ける」・「量なら線路が勝つ」・「海岸線は天然の道路」・「少量を、今すぐ」をすべて完了"
 			tasks: [{
 				id: "6D51010000002701"
 				title: "優先需要へ輸送を一致させた"
@@ -198,18 +198,18 @@
 				"7100000000000004"
 			]
 			description: [
-			"Gas Station燃料ルートと地域航路を両方稼働させる。Base Coreをスニーク右クリックし、暫定の詳細管理にある「燃料ルート管理」の日次補給が航路ごとに成長する。"
+				"Gas Station燃料ルートと地域航路を両方稼働させる。Base Coreをスニーク右クリックし、暫定の詳細管理にある「燃料ルート管理」の日次補給が航路ごとに成長する。"
 				"基本はSolid Fuel 1。道路でRepair Kit、鉄道で追加燃料、海路で食料、空路でBandageが追加される。"
 			]
 			icon: "minecraft:bucket"
 			id: "6D51010000000108"
-			subtitle: "解放条件: 「重いが、どこへでも行ける」・「復旧：燃料ルート」をすべて完了"
 			rewards: [{
 				count: 2
 				id: "6D51010000001801"
 				item: "mts:mtsofficialpack.solidfuel"
 				type: "item"
 			}]
+			subtitle: "解放条件: 「重いが、どこへでも行ける」・「復旧：燃料ルート」をすべて完了"
 			tasks: [{
 				id: "6D51010000002801"
 				title: "燃料拠点を地域航路へ接続した"
@@ -230,13 +230,13 @@
 			]
 			icon: "minecolonies:supplychestdeployer"
 			id: "6D51010000000109"
-			subtitle: "解放条件: 「海岸線は天然の道路」・「コロニー開始：Supply Camp」をすべて完了"
 			rewards: [{
 				count: 8
 				id: "6D51010000001901"
 				item: "minecolonies:ancienttome"
 				type: "item"
 			}]
+			subtitle: "解放条件: 「海岸線は天然の道路」・「コロニー開始：Supply Camp」をすべて完了"
 			tasks: [{
 				id: "6D51010000002901"
 				title: "地域輸送をコロニー供給へ接続した"
@@ -258,7 +258,6 @@
 			]
 			icon: "minecraft:lodestone"
 			id: "6D5101000000010A"
-			subtitle: "解放条件: 「運べる、ではなく必要か」・「補給路が補給を育てる」・「植民地は孤島じゃない」をすべて完了"
 			rewards: [
 				{
 					count: 10
@@ -272,6 +271,7 @@
 					xp: 60
 				}
 			]
+			subtitle: "解放条件: 「運べる、ではなく必要か」・「補給路が補給を育てる」・「植民地は孤島じゃない」をすべて完了"
 			tasks: [{
 				id: "6D51010000002A01"
 				title: "四種の地域航路を実働させた"

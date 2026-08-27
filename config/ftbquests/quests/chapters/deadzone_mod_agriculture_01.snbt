@@ -147,7 +147,6 @@
 			description: ["主食・野菜・水田作物をそろえる。収穫の一部は必ず次の種として共同倉庫へ戻そう。"]
 			icon: "farmersdelight:tomato"
 			id: "46A3E0BB5786F64B"
-			subtitle: "解放条件: 「無駄のない解体」・「土壌を再生する」をすべて完了"
 			rewards: [
 				{
 					count: 12
@@ -162,6 +161,7 @@
 					type: "item"
 				}
 			]
+			subtitle: "解放条件: 「無駄のない解体」・「土壌を再生する」をすべて完了"
 			tasks: [
 				{
 					count: 8L
@@ -277,7 +277,6 @@
 			description: ["同じ一品を大量に食べるだけでは長期遠征に向かない。肉・野菜・汁物を組み合わせた三種類の食事を用意する。"]
 			icon: "farmersdelight:beef_stew"
 			id: "3C5FE8893CEA9B0A"
-			subtitle: "解放条件: 「野戦調理」・「共同炊事鍋」をすべて完了"
 			rewards: [
 				{
 					count: 16
@@ -292,6 +291,7 @@
 					type: "item"
 				}
 			]
+			subtitle: "解放条件: 「野戦調理」・「共同炊事鍋」をすべて完了"
 			tasks: [
 				{
 					count: 2L
@@ -423,7 +423,6 @@
 			description: ["Create Central Kitchenのガイドを読み、農業と工房を接続する。ここから食料担当は工業設備を使って大量供給できる。"]
 			icon: "create_central_kitchen:cooking_guide"
 			id: "6FB89A9A696BB981"
-			subtitle: "解放条件: 「キャンプ共同備蓄」・「季節作物と交易種」をすべて完了"
 			rewards: [
 				{
 					count: 16
@@ -437,6 +436,7 @@
 					type: "item"
 				}
 			]
+			subtitle: "解放条件: 「キャンプ共同備蓄」・「季節作物と交易種」をすべて完了"
 			tasks: [{
 				id: "1694A900289BEBB9"
 				item: "create_central_kitchen:cooking_guide"
@@ -454,7 +454,6 @@
 			description: ["Mixer、Basin、搬送設備を使って食品加工を自動化する。完成品だけでなく、ソースなどの中間素材を切らさないラインを目指す。"]
 			icon: "create_central_kitchen:tomato_sauce_bucket"
 			id: "271FE84F79CE5C22"
-			subtitle: "解放条件: 「厨房の機械化計画」・「共同加工槽」をすべて完了"
 			rewards: [
 				{
 					count: 20
@@ -468,6 +467,7 @@
 					type: "item"
 				}
 			]
+			subtitle: "解放条件: 「厨房の機械化計画」・「共同加工槽」をすべて完了"
 			tasks: [
 				{
 					id: "45674D8EB84492D8"

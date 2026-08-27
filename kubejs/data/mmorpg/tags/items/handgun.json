@@ -1,0 +1,33 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "superbwarfare:glock_17",
+      "required": false
+    },
+    {
+      "id": "superbwarfare:glock_18",
+      "required": false
+    },
+    {
+      "id": "superbwarfare:m_1911",
+      "required": false
+    },
+    {
+      "id": "superbwarfare:mp_443",
+      "required": false
+    },
+    {
+      "id": "superbwarfare:taser",
+      "required": false
+    },
+    {
+      "id": "superbwarfare:trachelium",
+      "required": false
+    },
+    {
+      "id": "zombiekit:flare_gun",
+      "required": false
+    }
+  ]
+}

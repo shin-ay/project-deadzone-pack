@@ -1,0 +1,129 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: "circle"
+	filename: "deadzone_radio_world_status_01"
+	group: "23C996B606E0CFE9"
+	icon: "apocalypsenow:radio"
+	id: "6D8F010000000001"
+	order_index: 0
+	quest_links: [ ]
+	quests: [
+		{
+			description: [
+				"レイの無線卓は、サーバー共有のWorld Tier、確保施設、キャンプ襲撃、勢力判断をFTB QuestsのGUIへ同期する。"
+				"完了したカードが、実際に世界へ反映済みの出来事。ロック中のカードは次の変化と解放条件を示す。"
+				"Story Tierは目標達成で施設・報酬を解放する。Threat Tierは max(Story Tier, 経過日数の下限) で屋外の敵圧を決める。"
+				"日数下限は Day 4=T1、10=T2、20=T3、35=T4、55=T5。待機ファームで解放は進まないが、敵だけをT0へ固定することもできない。"
+				"JOB選択後、キャンプ外の戦闘・感染死が30分以内に3回でThreat -1、6回で-2。最後の有効死亡から45分間だけ立て直し猶予が入る。Story Tierと解放済みコンテンツは巻き戻らない。"
+				"同じ隊員の死亡は5分に1回まで集計。遠方の地域Tierは下がらないため、自殺による低Tier化や高Tier地域の安全なファームには利用できない。"
+				"キャンプ中心100mは新規参加者とNPC利用のため永久安全。旧T0郊外保護はDay 5で終了する。"
+			]
+			icon: "apocalypsenow:radio"
+			id: "6D8F010000000101"
+			subtitle: "キャンプの無線担当レイからいつでも確認可能"
+			tasks: [{ id: "6D8F010000002101", title: "無線卓へアクセスした", type: "custom" }]
+			title: "レイ定時報告：現在の世界"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			dependencies: ["6D8F010000000101"]
+			description: [
+				"Gas Stationの確保で燃料ルートとWorld Tier 1が解放される。"
+				"Tier上昇は地域Tier、Camp契約・発展条件、店の買取候補へ同期される。一般レシピは現状ベースライン解放で、Tierロックされていない。敵のM&Sレベル帯は距離とThreat Tierの高い側が担当する。"
+			]
+			icon: "apocalypsenow:gas_canister"
+			id: "6D8F010000000102"
+			subtitle: "解放条件: Gas Stationを確保し、キャンプへ帰還"
+			tasks: [{ id: "6D8F010000002102", title: "World Tier 1へ到達", type: "custom" }]
+			title: "T1報告：燃料ルート復旧"
+			x: 2.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["6D8F010000000102"]
+			description: [
+				"警察署・工場・中継施設の攻略で、勢力活動と地域物流が本格化する。"
+				"CDF、Raiders、Remnantへの判断は飾りではない。友軍、商隊、襲撃活動とキャンプ価格へ反映される。"
+			]
+			icon: "minecraft:compass"
+			id: "6D8F010000000103"
+			subtitle: "解放条件: T2ストーリー目標を達成"
+			tasks: [{ id: "6D8F010000002103", title: "World Tier 2へ到達", type: "custom" }]
+			title: "T2報告：地域勢力が動き出す"
+			x: 4.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["6D8F010000000103"]
+			description: [
+				"Radio Tower復旧後、軍事施設・研究施設・WARDEN中枢・主要ボスの情報が作戦網へ載る。"
+				"ARGUS-9の最終判断まで進めると、終幕後BountyとT4準備へ接続する。"
+			]
+			icon: "apocalypsenow:military_communication_radio"
+			id: "6D8F010000000104"
+			subtitle: "解放条件: Radio Towerを復旧"
+			tasks: [{ id: "6D8F010000002104", title: "World Tier 3へ到達", type: "custom" }]
+			title: "T3報告：都市通信網復旧"
+			x: 6.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["6D8F010000000104"]
+			description: [
+				"ARGUS-9処理後に感染サンプル、工業部品、軍用Blueprint解析設備、暗号Data Chipを揃えるとT4が始まる。"
+				"現状T4は外縁作戦の入口まで。T5はまだ実プレイ内容へ接続されていない。"
+			]
+			icon: "superbwarfare:blueprint_research_table"
+			id: "6D8F010000000105"
+			subtitle: "解放条件: ARGUS-9処理後、T4準備3系統を完了"
+			tasks: [{ id: "6D8F010000002105", title: "World Tier 4へ到達", type: "custom" }]
+			title: "T4報告：封鎖網の外から"
+			x: 8.0d
+			y: -2.0d
+		}
+		{
+			dependencies: ["6D8F010000000101"]
+			description: [
+				"Gas Station確保後の初回襲撃を退けると、T2導入とキャンプ防衛の進行が解放される。"
+				"襲撃はストーリー連動で一度だけ開始され、日数だけでは発生しない。"
+			]
+			icon: "minecraft:shield"
+			id: "6D8F010000000106"
+			subtitle: "解放条件: Survivor Camp初回襲撃を撃退"
+			tasks: [{ id: "6D8F010000002106", title: "初回襲撃を撃退", type: "custom" }]
+			title: "キャンプ報告：防衛線維持"
+			x: 3.0d
+			y: 1.5d
+		}
+		{
+			dependencies: ["6D8F010000000103"]
+			description: [
+				"勢力判断は次回の商品更新で食料・医療・部品価格を変え、選択に応じて友軍増援、交易商隊、敵対襲撃のいずれかを発生させる。"
+				"個人判断を共有店舗へ反映するときは、現在オンラインのメンバーの判断を平均する。"
+			]
+			icon: "minecraft:emerald"
+			id: "6D8F010000000107"
+			subtitle: "解放条件: いずれかの勢力判断を確定"
+			tasks: [{ id: "6D8F010000002107", title: "世界へ影響する判断を確定", type: "custom" }]
+			title: "勢力報告：選択の結果"
+			x: 5.0d
+			y: 1.5d
+		}
+		{
+			dependencies: ["6D8F010000000104"]
+			description: [
+				"ARGUS-9の選択は現在、終幕・T4・Endgame Bountyの解禁までは接続済み。"
+				"ただし『破壊・再設定・分離』ごとの機械勢力差はまだ未接続。ここは今後の実装対象で、違いがあるように見せかけない。"
+			]
+			icon: "minecraft:comparator"
+			id: "6D8F010000000108"
+			subtitle: "解放条件: ARGUS-9の最終処理を確定"
+			tasks: [{ id: "6D8F010000002108", title: "ARGUS-9の結末を確定", type: "custom" }]
+			title: "終幕報告：接続済み／未接続"
+			x: 7.0d
+			y: 1.5d
+		}
+	]
+	title: "レイ無線局：世界情勢"
+}

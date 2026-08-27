@@ -1,0 +1,25 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "superbwarfare:aa_12",
+      "required": false
+    },
+    {
+      "id": "superbwarfare:homemade_shotgun",
+      "required": false
+    },
+    {
+      "id": "superbwarfare:m_79",
+      "required": false
+    },
+    {
+      "id": "superbwarfare:m_870",
+      "required": false
+    },
+    {
+      "id": "superbwarfare:secondary_cataclysm",
+      "required": false
+    }
+  ]
+}

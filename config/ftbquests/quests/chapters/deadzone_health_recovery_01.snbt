@@ -11,23 +11,24 @@
 		{
 			dependencies: ["1B82208C73A56C92"]
 			description: [
-				"PDZは独自の負傷ゲージを追加しない。Legendary Survival Overhaulの8部位HPと、The Hordesを含む既存感染Effectが正本。"
-			"Base Coreをスニーク右クリックし、暫定の詳細管理にある「医療・治療」で実データを診断する。70%以上は安定、40～69%は軽傷、40%未満は重傷として治療方針を分ける。"
+				"死亡と戦闘継続の正本はM&Sが表示する現在HP／最大HP。LSOの8部位HPは、戦闘HPが戻っても残る負傷と機能障害の正本。感染はThe Hordesを含む既存Effectが担当する。"
+				"M&Sの自動回復は戦闘HPだけを戻す。部位は満タンHPだけでは自然治癒せず、LSO包帯・Medkit、シオリの処置、睡眠、Regeneration/Comfort効果が必要。"
+				"インベントリのLSO人体図で負傷箇所を確認する。70%以上は安定、40～69%は軽傷、40%未満は重傷として治療方針を分ける。"
 			]
 			icon: "minecraft:compass"
 			id: "6D4F010000000101"
-			subtitle: "解放条件: 「応急処置」を完了"
 			rewards: [{
 				id: "6D4F010000001101"
 				item: "legendarysurvivaloverhaul:bandage"
 				type: "item"
 			}]
+			subtitle: "解放条件: 「応急処置」を完了"
 			tasks: [{
 				id: "6D4F010000002101"
 				title: "実部位HPを診断した"
 				type: "custom"
 			}]
-			title: "HPバーだけを見るな"
+			title: "M&S HPと部位負傷は役割が違う"
 			x: 0.0d
 			y: 0.0d
 		}
@@ -39,12 +40,12 @@
 			]
 			icon: "legendarysurvivaloverhaul:bandage"
 			id: "6D4F010000000102"
-			subtitle: "解放条件: 「HPバーだけを見るな」を完了"
 			rewards: [{
 				id: "6D4F010000001201"
 				item: "legendarysurvivaloverhaul:bandage"
 				type: "item"
 			}]
+			subtitle: "解放条件: 「M&S HPと部位負傷は役割が違う」を完了"
 			tasks: [{
 				id: "6D4F010000002201"
 				title: "軽傷を診断した"
@@ -62,12 +63,12 @@
 			]
 			icon: "legendarysurvivaloverhaul:medkit"
 			id: "6D4F010000000103"
-			subtitle: "解放条件: 「軽傷：動けるうちに」を完了"
 			rewards: [{
 				id: "6D4F010000001301"
 				item: "apocalypsenow:bandage"
 				type: "item"
 			}]
+			subtitle: "解放条件: 「軽傷：動けるうちに」を完了"
 			tasks: [{
 				id: "6D4F010000002301"
 				title: "重傷を診断した"
@@ -85,13 +86,13 @@
 			]
 			icon: "legendarysurvivaloverhaul:bandage"
 			id: "6D4F010000000104"
-			subtitle: "解放条件: 「軽傷：動けるうちに」を完了"
 			rewards: [{
 				count: 2
 				id: "6D4F010000001401"
 				item: "apocalypsenow:money"
 				type: "item"
 			}]
+			subtitle: "解放条件: 「軽傷：動けるうちに」を完了"
 			tasks: [{
 				id: "6D4F010000002401"
 				title: "Campで軽傷処置を受けた"
@@ -112,12 +113,12 @@
 			]
 			icon: "legendarysurvivaloverhaul:medkit"
 			id: "6D4F010000000105"
-			subtitle: "解放条件: 「重傷：戦闘継続は治療ではない」・「外来処置」をすべて完了"
 			rewards: [{
 				id: "6D4F010000001501"
 				item: "legendarysurvivaloverhaul:tonic"
 				type: "item"
 			}]
+			subtitle: "解放条件: 「重傷：戦闘継続は治療ではない」・「外来処置」をすべて完了"
 			tasks: [{
 				id: "6D4F010000002501"
 				title: "Campで重傷処置を受けた"
@@ -135,12 +136,12 @@
 			]
 			icon: "apocalypsenow:antibiotics"
 			id: "6D4F010000000106"
-			subtitle: "解放条件: 「HPバーだけを見るな」を完了"
 			rewards: [{
 				id: "6D4F010000001601"
 				item: "apocalypsenow:homemadeantibiotics"
 				type: "item"
 			}]
+			subtitle: "解放条件: 「M&S HPと部位負傷は役割が違う」を完了"
 			tasks: [{
 				id: "6D4F010000002601"
 				title: "感染症を治療した"
@@ -164,12 +165,12 @@
 				}
 			}
 			id: "6D4F010000000107"
-			subtitle: "解放条件: 「外来処置」を完了"
 			rewards: [{
 				id: "6D4F010000001701"
 				item: "legendarysurvivaloverhaul:bandage"
 				type: "item"
 			}]
+			subtitle: "解放条件: 「外来処置」を完了"
 			tasks: [{
 				id: "6D4F010000002701"
 				title: "Medicとして仲間を安定化した"
@@ -190,12 +191,12 @@
 			]
 			icon: "farmersdelight:vegetable_soup"
 			id: "6D4F010000000108"
-			subtitle: "解放条件: 「負傷者の回復献立」・「外来処置」をすべて完了"
 			rewards: [{
 				id: "6D4F010000001801"
 				item: "farmersdelight:vegetable_soup"
 				type: "item"
 			}]
+			subtitle: "解放条件: 「負傷者の回復献立」・「外来処置」をすべて完了"
 			tasks: [{
 				id: "6D4F010000002801"
 				title: "回復献立で療養した"
@@ -211,17 +212,17 @@
 				"6D43110000000101"
 			]
 			description: [
-			"所有するMineColoniesコロニーでHospitalを完成させ、Base Coreをスニーク右クリックして暫定の詳細管理にある「医療・治療」からHospital監査を選ぶ。"
+				"所有するMineColoniesコロニーでHospitalを完成させ、Base Coreをスニーク右クリックして暫定の詳細管理にある「医療・治療」からHospital監査を選ぶ。"
 				"病院Lv1～5はCamp重傷処置の価格、時間、回復量へ直接反映される。建材を受け取っただけでは達成にならない。"
 			]
 			icon: "minecolonies:blockhuthospital"
 			id: "6D4F010000000109"
-			subtitle: "解放条件: 「重傷処置」・「コロニー開始：Supply Camp」をすべて完了"
 			rewards: [{
 				id: "6D4F010000001901"
 				item: "legendarysurvivaloverhaul:medkit"
 				type: "item"
 			}]
+			subtitle: "解放条件: 「重傷処置」・「コロニー開始：Supply Camp」をすべて完了"
 			tasks: [{
 				id: "6D4F010000002901"
 				title: "稼働中のMineColonies病院を監査した"
@@ -245,7 +246,6 @@
 			]
 			icon: "apocalypsenow:medicalkit"
 			id: "6D4F01000000010A"
-			subtitle: "解放条件: 「重傷処置」・「感染：時間との勝負」・「Medic：物資ではなく時間を稼ぐ」・「治療食と休養」・「コロニー病院を地域医療へ」をすべて完了"
 			rewards: [
 				{
 					count: 12
@@ -259,6 +259,7 @@
 					xp: 40
 				}
 			]
+			subtitle: "解放条件: 「重傷処置」・「感染：時間との勝負」・「Medic：物資ではなく時間を稼ぐ」・「治療食と休養」・「コロニー病院を地域医療へ」をすべて完了"
 			tasks: [{
 				id: "6D4F010000002A01"
 				title: "地域医療ループを完成した"

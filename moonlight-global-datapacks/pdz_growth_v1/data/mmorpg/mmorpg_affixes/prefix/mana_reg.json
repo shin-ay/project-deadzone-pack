@@ -1,0 +1,31 @@
+{
+  "type": "prefix",
+  "stats": [
+    {
+      "max": 15.0,
+      "min": 6.0,
+      "stat": "mana_regen",
+      "type": "PERCENT"
+    }
+  ],
+  "one_of_a_kind": "",
+  "eye_aura_req": "",
+  "only_one_per_item": true,
+  "weight": 1000,
+  "guid": "mana_reg",
+  "requirements": {
+    "tag_requirements": [
+      {
+        "req_type": "INCLUDES_ANY",
+        "excluded": [],
+        "type": "GearSlot",
+        "included": [
+          "ring",
+          "jewel_int",
+          "jewelry_family",
+          "armor_family"
+        ]
+      }
+    ]
+  }
+}

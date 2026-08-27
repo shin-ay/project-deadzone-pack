@@ -1,0 +1,25 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "apocalypsenow:beret_chestplate",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:military_beret_chestplate",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:nurse_chestplate",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:officer_beret_chestplate",
+      "required": false
+    },
+    {
+      "id": "create:cardboard_chestplate",
+      "required": false
+    }
+  ]
+}

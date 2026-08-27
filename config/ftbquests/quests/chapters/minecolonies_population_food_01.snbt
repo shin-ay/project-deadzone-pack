@@ -5,7 +5,7 @@
 	group: "6A11000000000002"
 	icon: "minecolonies:blockhutcook"
 	id: "6D43040000000001"
-	order_index: 11
+	order_index: 4
 	quest_links: [ ]
 	quests: [
 		{

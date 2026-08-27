@@ -1,0 +1,229 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "apocalypsenow:advanced_hazmat_suit_leggings",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:anarchy_leggings",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:biohazard_leggings",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:blue_fighting_leggings",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:construction_leggings",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:contamination_suit_blue_leggings",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:contamination_suit_green_leggings",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:contamination_suit_white_leggings",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:desertghillie_leggings",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:divingsuit_leggings",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:fire_figther_leggings",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:forestguard_leggings",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:ghilliesuit_leggings",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:hazmat_suit_leggings",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:hockey_leggings",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:jet_pilot_leggings",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:level_a_hazmatsuit_leggings",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:police_leggings",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:red_fighting_leggings",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:royal_canada_police_officer_leggings",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:rusty_leggings",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:snowghillie_leggings",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:spec_ops_leggings",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:un_armor_leggings",
+      "required": false
+    },
+    {
+      "id": "apocalypsenow:usa_armor_leggings",
+      "required": false
+    },
+    {
+      "id": "aquaculture:neptunium_leggings",
+      "required": false
+    },
+    {
+      "id": "immersiveengineering:armor_faraday_leggings",
+      "required": false
+    },
+    {
+      "id": "infectious:hazmat_suit_leggings",
+      "required": false
+    },
+    {
+      "id": "mekanism:hazmat_pants",
+      "required": false
+    },
+    {
+      "id": "mekanismtools:bronze_leggings",
+      "required": false
+    },
+    {
+      "id": "mekanismtools:lapis_lazuli_leggings",
+      "required": false
+    },
+    {
+      "id": "mekanismtools:osmium_leggings",
+      "required": false
+    },
+    {
+      "id": "mekanismtools:refined_glowstone_leggings",
+      "required": false
+    },
+    {
+      "id": "mekanismtools:refined_obsidian_leggings",
+      "required": false
+    },
+    {
+      "id": "minecraft:chainmail_leggings",
+      "required": false
+    },
+    {
+      "id": "minecraft:golden_leggings",
+      "required": false
+    },
+    {
+      "id": "minecraft:leather_leggings",
+      "required": false
+    },
+    {
+      "id": "sakura:samurai_pants",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:artic_guillie_leggings",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:black_recluit_armor_leggings",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:black_rockie_armor_leggings",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:desert_recluit_armor_leggings",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:desert_rockie_armor_leggings",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:fire_fighter_leggings",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:green_recluit_armor_leggings",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:green_rockie_armor_leggings",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:guillie_leggings",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:hazmat_leggings",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:police_leggings",
+      "required": false
+    },
+    {
+      "id": "survival_instinct:spruce_guillie_leggings",
+      "required": false
+    },
+    {
+      "id": "zombiekit:bomb_leggings",
+      "required": false
+    },
+    {
+      "id": "zombiekit:desert_tactical_leggings",
+      "required": false
+    },
+    {
+      "id": "zombiekit:forest_tactical_leggings",
+      "required": false
+    },
+    {
+      "id": "zombiekit:skiing_leggings",
+      "required": false
+    },
+    {
+      "id": "zombiekit:snow_tactical_leggings",
+      "required": false
+    },
+    {
+      "id": "zombiekit:standard_tactical_leggings",
+      "required": false
+    }
+  ]
+}

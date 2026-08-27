@@ -4,7 +4,7 @@
 	filename: "deadzone_main_story_t4"
 	group: "23C996B606E0CFE9"
 	icon: "superbwarfare:epic_blueprint_data_chip"
-	id: "A4E1000000000000"
+	id: "35C6FB81E83748E3"
 	order_index: 5
 	quest_links: [ ]
 	quests: [
@@ -15,12 +15,12 @@
 				"THE CHOIRのFirst Voiceは都市内部だけの存在ではない。危険地区作戦と軍用研究を組み合わせ、外縁中継点を追跡する。"
 			]
 			icon: "superbwarfare:monitor"
-			id: "A4E1000000000001"
+			id: "562B6555400E8922"
 			shape: "hexagon"
 			size: 1.5d
 			subtitle: "解放条件: 「現行終点：残された声」を完了し、ARGUS-9の処理を確定"
 			tasks: [{
-				id: "A4E1000000000011"
+				id: "53BD5A59216B6C7B"
 				title: "ARGUS-9外縁からの反射信号を確認した"
 				type: "custom"
 			}]
@@ -29,24 +29,23 @@
 			y: 0.0d
 		}
 		{
-			dependencies: ["A4E1000000000001"]
 			description: [
 				"危険地区で得た変異サンプルを、耐圧部品を使った解析容器へ収める。"
 				"危険地区作戦令状、感染施設、Ancient Abominationなど既存のT3活動から集められる。確認後は保管・加工してよい。"
 			]
 			icon: "infectious:mutated_rotten_flesh"
-			id: "A4E1000000000002"
+			id: "6CB060E779D800E8"
 			subtitle: "解放条件: 「Act 4：封鎖網の外から」を完了"
 			tasks: [
 				{
 					count: 16L
-					id: "A4E1000000000021"
+					id: "067E4C10FCEF41A7"
 					item: "infectious:mutated_rotten_flesh"
 					type: "item"
 				}
 				{
 					count: 4L
-					id: "A4E1000000000022"
+					id: "4EEA8F355BC8C45A"
 					item: "immersiveengineering:component_steel"
 					type: "item"
 				}
@@ -56,22 +55,21 @@
 			y: -1.0d
 		}
 		{
-			dependencies: ["A4E1000000000001"]
 			description: [
 				"回収した軍用Blueprintを解析するため、Superb Warfare純正の研究設備を組み立てる。"
 				"JEIでBlueprint Research Tableを確認し、Battery、Cartography Table、Steel、Redstone Blockを用意する。"
 			]
 			icon: "superbwarfare:blueprint_research_table"
-			id: "A4E1000000000003"
+			id: "3EFF60D0217A368B"
 			subtitle: "解放条件: 「Act 4：封鎖網の外から」を完了"
 			tasks: [
 				{
-					id: "A4E1000000000031"
+					id: "5184C7C52AFC9761"
 					item: "superbwarfare:blueprint_research_table"
 					type: "item"
 				}
 				{
-					id: "A4E1000000000032"
+					id: "2E59B70D78B14FDF"
 					item: "superbwarfare:battery"
 					type: "item"
 				}
@@ -81,16 +79,15 @@
 			y: 1.0d
 		}
 		{
-			dependencies: ["A4E1000000000002", "A4E1000000000003"]
 			description: [
 				"通常のData ChipではFirst Voiceの暗号層へ届かない。Cemented Carbideを使ったEpic Blueprint Data Chipを製作する。"
 				"この工程がT4以降のSuperb Warfare研究、重火器、車両設備の共通入口になる。"
 			]
 			icon: "superbwarfare:epic_blueprint_data_chip"
-			id: "A4E1000000000004"
+			id: "1B7C4EB85094A35A"
 			subtitle: "解放条件: 「First Voiceの残響」と「軍用Blueprint解析設備」を完了"
 			tasks: [{
-				id: "A4E1000000000041"
+				id: "2EF3F76CF99402F3"
 				item: "superbwarfare:epic_blueprint_data_chip"
 				type: "item"
 			}]
@@ -99,18 +96,23 @@
 			y: 0.0d
 		}
 		{
-			dependencies: ["A4E1000000000004"]
 			description: [
 				"解析結果は、封鎖区域外に複数のCHOIR中継点が存在することを示した。"
 				"World Tier 4では精鋭分隊、強化Horde、軍用研究、外縁中継点攻略が解放される。単純な全MobのHP増加ではなく、編成と装備を変化させる。"
 			]
-			icon: "apocalypsenow:advanced_hazmat_suit_helmet"
-			id: "A4E1000000000005"
+			icon: {
+				Count: 1
+				id: "apocalypsenow:advanced_hazmat_suit_helmet"
+				tag: {
+					Damage: 0
+				}
+			}
+			id: "259E544FE7CEAC94"
 			shape: "hexagon"
 			size: 2.0d
 			subtitle: "解放条件: T4準備3系統を完了／条件達成時にWorld Tier 4を自動解放"
 			tasks: [{
-				id: "A4E1000000000051"
+				id: "6A3DAB47E0ED44A4"
 				title: "T4外縁作戦の準備を完了した"
 				type: "custom"
 			}]

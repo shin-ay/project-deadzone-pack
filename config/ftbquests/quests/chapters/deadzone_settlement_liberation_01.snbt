@@ -5,7 +5,7 @@
 	group: "6A11000000000003"
 	icon: "minecraft:black_banner"
 	id: "6D55010000000001"
-	order_index: 23
+	order_index: 3
 	quest_links: [ ]
 	quests: [
 		{
@@ -34,12 +34,12 @@
 			]
 			icon: "minecraft:filled_map"
 			id: "6D55010000000102"
-			subtitle: "解放条件: 「占領地にも所有者がいる」を完了"
 			rewards: [{
 				id: "6D55010000001102"
 				type: "xp"
 				xp: 5
 			}]
+			subtitle: "解放条件: 「占領地にも所有者がいる」を完了"
 			tasks: [{
 				id: "6D55010000002201"
 				title: "解放経路を確認した"
@@ -102,12 +102,12 @@
 			]
 			icon: "minecraft:white_banner"
 			id: "6D55010000000105"
-			subtitle: "解放条件: 「内側から旗を上げる」・「旗だけ替えても終わらない」をすべて完了"
 			rewards: [{
 				id: "6D55010000001105"
 				type: "xp"
 				xp: 30
 			}]
+			subtitle: "解放条件: 「内側から旗を上げる」・「旗だけ替えても終わらない」をすべて完了"
 			tasks: [{
 				id: "6D55010000002501"
 				title: "自勢力でClaimを解放した"
@@ -227,12 +227,12 @@
 			]
 			icon: "minecraft:emerald_block"
 			id: "6D55010000000111"
-			subtitle: "解放条件: 「守るための知識」を完了"
 			rewards: [{
 				id: "6D55010000001111"
 				type: "xp"
 				xp: 50
 			}]
+			subtitle: "解放条件: 「守るための知識」を完了"
 			tasks: [{
 				id: "6D55010000003101"
 				title: "商人拠点を再稼働した"

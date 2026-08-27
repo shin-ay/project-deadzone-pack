@@ -17,18 +17,18 @@
 		{
 			dependencies: ["1B82208C73A56C92"]
 			description: [
-			"Base Coreをスニーク右クリックし、暫定の詳細管理から「地域防衛」で防衛管制を開く。PDZは敵生成の担当を重ねない。"
+				"Base Coreをスニーク右クリックし、暫定の詳細管理から「地域防衛」で防衛管制を開く。PDZは敵生成の担当を重ねない。"
 				"Survivor Campは勢力Raid、野外はThe Hordes、MineColoniesは監視塔・兵舎による支援を担当する。"
 			]
 			icon: "minecraft:compass"
 			id: "6D50010000000101"
-			subtitle: "解放条件: 「応急処置」を完了"
 			rewards: [{
 				count: 16
 				id: "6D50010000001101"
 				item: "minecraft:stone_bricks"
 				type: "item"
 			}]
+			subtitle: "解放条件: 「応急処置」を完了"
 			tasks: [{
 				id: "6D50010000002101"
 				title: "地域防衛管制を確認した"
@@ -46,12 +46,12 @@
 			]
 			icon: "minecraft:rotten_flesh"
 			id: "6D50010000000102"
-			subtitle: "解放条件: 「敵を三重に湧かせるな」を完了"
 			rewards: [{
 				id: "6D50010000001201"
 				type: "xp"
 				xp: 10
 			}]
+			subtitle: "解放条件: 「敵を三重に湧かせるな」を完了"
 			tasks: [{
 				id: "6D50010000002201"
 				title: "襲撃責任の分離を確認した"
@@ -69,13 +69,13 @@
 			]
 			icon: "minecraft:stone_bricks"
 			id: "6D50010000000103"
-			subtitle: "解放条件: 「地域ごとに一人の責任者」を完了"
 			rewards: [{
 				count: 4
 				id: "6D50010000001301"
 				item: "minecraft:iron_ingot"
 				type: "item"
 			}]
+			subtitle: "解放条件: 「地域ごとに一人の責任者」を完了"
 			tasks: [{
 				id: "6D50010000002301"
 				title: "外周補強を共有納品した"
@@ -93,13 +93,13 @@
 			]
 			icon: "minecraft:bread"
 			id: "6D50010000000104"
-			subtitle: "解放条件: 「地域ごとに一人の責任者」を完了"
 			rewards: [{
 				count: 2
 				id: "6D50010000001401"
 				item: "farmersdelight:beef_stew"
 				type: "item"
 			}]
+			subtitle: "解放条件: 「地域ごとに一人の責任者」を完了"
 			tasks: [{
 				id: "6D50010000002401"
 				title: "防衛食料を共有納品した"
@@ -120,13 +120,13 @@
 			]
 			icon: "legendarysurvivaloverhaul:bandage"
 			id: "6D50010000000105"
-			subtitle: "解放条件: 「地域ごとに一人の責任者」・「外来処置」をすべて完了"
 			rewards: [{
 				count: 2
 				id: "6D50010000001501"
 				item: "apocalypsenow:bandage"
 				type: "item"
 			}]
+			subtitle: "解放条件: 「地域ごとに一人の責任者」・「外来処置」をすべて完了"
 			tasks: [{
 				id: "6D50010000002501"
 				title: "救護所を共有準備した"
@@ -143,7 +143,7 @@
 				"6D50010000000105"
 			]
 			description: [
-			"Camp Raidの2 Waveを排除してBase Coreを守る。初回後は3 Minecraft日ごとにBase Coreをスニーク右クリックし、暫定の詳細管理にある「地域防衛」から再受諾できる。"
+				"Camp Raidの2 Waveを排除してBase Coreを守る。初回後は3 Minecraft日ごとにBase Coreをスニーク右クリックし、暫定の詳細管理にある「地域防衛」から再受諾できる。"
 				"人数に応じて増援・Elite・Medicが追加される。進行中の敵が残っている限り次Waveへ進まない。"
 			]
 			icon: {
@@ -154,13 +154,13 @@
 				}
 			}
 			id: "6D50010000000106"
-			subtitle: "解放条件: 「外周補強」・「撃つ前に食わせる」・「救護所を先に作る」をすべて完了"
 			rewards: [{
 				count: 8
 				id: "6D50010000001601"
 				item: "apocalypsenow:money"
 				type: "item"
 			}]
+			subtitle: "解放条件: 「外周補強」・「撃つ前に食わせる」・「救護所を先に作る」をすべて完了"
 			tasks: [{
 				id: "6D50010000002601"
 				title: "Survivor Campを防衛した"
@@ -178,13 +178,13 @@
 			]
 			icon: "minecraft:totem_of_undying"
 			id: "6D50010000000107"
-			subtitle: "解放条件: 「壁のこちら側」を完了"
 			rewards: [{
 				count: 6
 				id: "6D50010000001701"
 				item: "apocalypsenow:money"
 				type: "item"
 			}]
+			subtitle: "解放条件: 「壁のこちら側」を完了"
 			tasks: [{
 				id: "6D50010000002701"
 				title: "死傷者0で防衛した"
@@ -205,13 +205,13 @@
 			]
 			icon: "minecolonies:blockhutguardtower"
 			id: "6D50010000000108"
-			subtitle: "解放条件: 「壁のこちら側」・「コロニー開始：Supply Camp」をすべて完了"
 			rewards: [{
 				count: 8
 				id: "6D50010000001801"
 				item: "minecolonies:ancienttome"
 				type: "item"
 			}]
+			subtitle: "解放条件: 「壁のこちら側」・「コロニー開始：Supply Camp」をすべて完了"
 			tasks: [{
 				id: "6D50010000002801"
 				title: "コロニー防衛施設が地域支援した"
@@ -224,17 +224,17 @@
 		{
 			dependencies: ["6D50010000000106"]
 			description: [
-			"復旧負債が残った場合、Base Coreをスニーク右クリックし、暫定の詳細管理にある「地域防衛」から1段階ずつ共同復旧する。基本はStone Bricks 16、Iron 4、Bread 4、LSO Bandage 1。"
+				"復旧負債が残った場合、Base Coreをスニーク右クリックし、暫定の詳細管理にある「地域防衛」から1段階ずつ共同復旧する。基本はStone Bricks 16、Iron 4、Bread 4、LSO Bandage 1。"
 				"道路航路確立後はStone Bricks 12、Iron 3へ軽減。完了するとBase Coreと不足Guard、非緊急サービスを戻す。"
 			]
 			icon: "minecraft:anvil"
 			id: "6D50010000000109"
-			subtitle: "解放条件: 「壁のこちら側」を完了"
 			rewards: [{
 				id: "6D50010000001901"
 				item: "kubejs:field_repair_kit"
 				type: "item"
 			}]
+			subtitle: "解放条件: 「壁のこちら側」を完了"
 			tasks: [{
 				id: "6D50010000002901"
 				title: "Campサービスを完全復旧した"
@@ -247,17 +247,17 @@
 		{
 			dependencies: ["6D50010000000106"]
 			description: [
-			"Base Coreをスニーク右クリックし、暫定の詳細管理にある「地域防衛」で野外Horde契約を表示する。Campから160m以上離れたMineColonies領域外で開始ボタンを押し、The Hordesの150秒契約を生存する。"
+				"Base Coreをスニーク右クリックし、暫定の詳細管理にある「地域防衛」で野外Horde契約を表示する。Campから160m以上離れたMineColonies領域外で開始ボタンを押し、The Hordesの150秒契約を生存する。"
 				"Camp・コロニーへ戻るか死亡すると失敗。感染者大群を居住圏へ重ねないための野外担当ルール。"
 			]
 			icon: "minecraft:rotten_flesh"
 			id: "6D5001000000010A"
-			subtitle: "解放条件: 「壁のこちら側」を完了"
 			rewards: [{
 				id: "6D50010000001A01"
 				item: "apocalypsenow:antibiotics"
 				type: "item"
 			}]
+			subtitle: "解放条件: 「壁のこちら側」を完了"
 			tasks: [{
 				id: "6D50010000002A01"
 				title: "野外Horde契約を生還した"
@@ -279,7 +279,6 @@
 			]
 			icon: "minecraft:lodestone"
 			id: "6D5001000000010B"
-			subtitle: "解放条件: 「監視塔は孤立していない」・「勝っただけでは戻らない」・「大群を家へ持ち帰るな」をすべて完了"
 			rewards: [
 				{
 					count: 12
@@ -293,6 +292,7 @@
 					xp: 50
 				}
 			]
+			subtitle: "解放条件: 「監視塔は孤立していない」・「勝っただけでは戻らない」・「大群を家へ持ち帰るな」をすべて完了"
 			tasks: [{
 				id: "6D50010000002B01"
 				title: "地域防衛・復旧ループを完成した"

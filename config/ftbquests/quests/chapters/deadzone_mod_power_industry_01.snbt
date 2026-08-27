@@ -140,7 +140,6 @@
 			description: ["World Tier 1でBlast Furnace工程を開始する。27個のBlast Brickから鋼鉄精錬設備を組み上げる。"]
 			icon: "immersiveengineering:blastbrick"
 			id: "6400000000000004"
-			subtitle: "解放条件: 「燃料と防腐木材」・「T1：Survivor」をすべて完了"
 			rewards: [
 				{
 					count: 24
@@ -155,6 +154,7 @@
 					type: "item"
 				}
 			]
+			subtitle: "解放条件: 「燃料と防腐木材」・「T1：Survivor」をすべて完了"
 			tasks: [{
 				count: 27L
 				id: "6410000000000006"
@@ -278,7 +278,6 @@
 			description: ["発電量が変動しても設備を止めないようLV Capacitorへ蓄電する。共同設備には必ず予備電力を持たせる。"]
 			icon: "immersiveengineering:capacitor_lv"
 			id: "6400000000000008"
-			subtitle: "解放条件: 「低圧配電網」・「回転力から電力へ」をすべて完了"
 			rewards: [
 				{
 					count: 12
@@ -292,6 +291,7 @@
 					type: "item"
 				}
 			]
+			subtitle: "解放条件: 「低圧配電網」・「回転力から電力へ」をすべて完了"
 			tasks: [{
 				count: 2L
 				id: "641000000000000C"
@@ -417,7 +417,6 @@
 			description: ["World Tier 2で作物と廃材からBiodieselを生産する。農業担当と工業担当が共同で維持できる燃料だ。"]
 			icon: "createdieselgenerators:biodiesel_bucket"
 			id: "640000000000000C"
-			subtitle: "解放条件: 「工房の電動化」・「T2：Scavenger」をすべて完了"
 			rewards: [
 				{
 					count: 20
@@ -431,6 +430,7 @@
 					type: "item"
 				}
 			]
+			subtitle: "解放条件: 「工房の電動化」・「T2：Scavenger」をすべて完了"
 			tasks: [
 				{
 					id: "6410000000000013"
@@ -518,7 +518,6 @@
 			description: ["TFMGのSteel MechanismとCircuit Boardを量産する。重工業設備の共通中間素材として共同倉庫へ備蓄する。"]
 			icon: "tfmg:steel_mechanism"
 			id: "640000000000000F"
-			subtitle: "解放条件: 「工房の電動化」・「燃料精製設備」をすべて完了"
 			rewards: [
 				{
 					count: 24
@@ -533,6 +532,7 @@
 					type: "item"
 				}
 			]
+			subtitle: "解放条件: 「工房の電動化」・「燃料精製設備」をすべて完了"
 			tasks: [
 				{
 					count: 4L
@@ -559,7 +559,6 @@
 			description: ["World Tier 3の重工業区画を完成させる。大型発電、車両整備、防衛設備を同時運用できる基盤になる。"]
 			icon: "tfmg:generator"
 			id: "6400000000000010"
-			subtitle: "解放条件: 「重工業の中間部品」・「T3：Operator」をすべて完了"
 			rewards: [
 				{
 					count: 32
@@ -578,6 +577,7 @@
 					xp: 120
 				}
 			]
+			subtitle: "解放条件: 「重工業の中間部品」・「T3：Operator」をすべて完了"
 			tasks: [
 				{
 					id: "641000000000001A"

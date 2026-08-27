@@ -126,24 +126,24 @@
 				"これは一度きりのNamedサブクエスト。再遭遇時は本体の通常Boss Lootだけを獲得できる。"
 			]
 			icon: "tacz:modern_kinetic_gun"
-			id: "A1E1000000000001"
+			id: "3AE47B2BEA8C8EB9"
 			rewards: [
 				{
 					count: 8
-					id: "A1E1000000000003"
+					id: "42FF1E615F3A4D16"
 					item: "apocalypsenow:money"
 					team_reward: true
 					type: "item"
 				}
 				{
 					count: 2
-					id: "A1E1000000000004"
+					id: "0A8D6D4006C7F2A1"
 					item: "immersiveengineering:component_steel"
 					team_reward: true
 					type: "item"
 				}
 				{
-					id: "A1E1000000000005"
+					id: "3838D65C944EA573"
 					team_reward: true
 					type: "xp"
 					xp: 60
@@ -151,7 +151,7 @@
 			]
 			subtitle: "解放条件: 「Survivor Camp」を完了／大型Bandit施設の戦利品庫で出現"
 			tasks: [{
-				id: "A1E1000000000002"
+				id: "0C74DC9EAB628FD9"
 				title: "アクセル『ロードキング先遣隊長』を撃破した"
 				type: "custom"
 			}]
@@ -206,24 +206,30 @@
 			can_repeat: true
 			dependencies: ["10F903EB357EFC28"]
 			description: ["Siege Tankの追加討伐契約。初回手配書より報酬は小さいが、再出現個体を倒すたびPartyで再受注できる。"]
-			icon: "apocalypsenow:army_helmet"
-			id: "A1E1000000000010"
+			icon: {
+				Count: 1
+				id: "apocalypsenow:army_helmet"
+				tag: {
+					Damage: 0
+				}
+			}
+			id: "798F6F319FFBF315"
 			rewards: [
 				{
 					count: 12
-					id: "A1E1000000000012"
+					id: "648D8144945836FE"
 					item: "apocalypsenow:money"
 					team_reward: true
 					type: "item"
 				}
 				{
-					id: "A1E1000000000013"
+					id: "46A87A62C3814D52"
 					item: "immersiveengineering:component_steel"
 					team_reward: true
 					type: "item"
 				}
 				{
-					id: "A1E1000000000014"
+					id: "2AC4C7E9214AC273"
 					team_reward: true
 					type: "xp"
 					xp: 40
@@ -231,7 +237,7 @@
 			]
 			subtitle: "解放条件: 「賞金首：Siege Tank」を完了／Party単位で反復可能"
 			tasks: [{
-				id: "A1E1000000000011"
+				id: "36389270AECFA86E"
 				title: "追加手配のSiege Tankを撃破した"
 				type: "custom"
 			}]
@@ -288,23 +294,23 @@
 			dependencies: ["717B2B8A66A44728"]
 			description: ["Ancient Abominationの追加討伐契約。初回の記録回収後も、長期汚染地域に現れる個体をPartyで再手配できる。"]
 			icon: "infectious:mutated_rotten_flesh"
-			id: "A1E1000000000020"
+			id: "494AEDDEC8ED3F3E"
 			rewards: [
 				{
 					count: 16
-					id: "A1E1000000000022"
+					id: "4B8515FCCEAD8E1C"
 					item: "apocalypsenow:money"
 					team_reward: true
 					type: "item"
 				}
 				{
-					id: "A1E1000000000023"
+					id: "64D41289CAC295C4"
 					item: "apocalypsenow:morphine"
 					team_reward: true
 					type: "item"
 				}
 				{
-					id: "A1E1000000000024"
+					id: "3E83F4258B57343B"
 					team_reward: true
 					type: "xp"
 					xp: 50
@@ -312,7 +318,7 @@
 			]
 			subtitle: "解放条件: 「賞金首：Ancient Abomination」を完了／Party単位で反復可能"
 			tasks: [{
-				id: "A1E1000000000021"
+				id: "64E327F360B29CBD"
 				title: "追加手配のAncient Abominationを撃破した"
 				type: "custom"
 			}]

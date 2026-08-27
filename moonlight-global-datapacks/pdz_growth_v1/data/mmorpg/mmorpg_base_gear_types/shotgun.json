@@ -1,0 +1,31 @@
+{
+  "base_stats": [
+    {
+      "type": "FLAT",
+      "max": 8.0,
+      "min": 4.0,
+      "stat": "weapon_damage"
+    }
+  ],
+  "gear_slot": "shotgun",
+  "guid": "shotgun",
+  "possible_items": [],
+  "req": {
+    "base_req": {},
+    "scaling_req": {
+      "strength": 0.25,
+      "dexterity": 0.25
+    }
+  },
+  "style": "DEX",
+  "tags": {
+    "tags": [
+      "dexterity",
+      "ranged_weapon",
+      "weapon_family",
+      "shotgun"
+    ]
+  },
+  "weapon_type": "shotgun",
+  "weight": 1000
+}

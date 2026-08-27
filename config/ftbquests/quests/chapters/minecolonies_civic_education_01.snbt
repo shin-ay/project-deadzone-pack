@@ -5,7 +5,7 @@
 	group: "6A11000000000002"
 	icon: "minecolonies:blockhuthospital"
 	id: "6D43080000000001"
-	order_index: 18
+	order_index: 9
 	quest_links: [ ]
 	quests: [
 		{

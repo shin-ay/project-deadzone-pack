@@ -1,8 +1,17 @@
 {
   "replace": false,
   "values": [
-    "minecraft:crossbow",
-    "#forge:tools/crossbows",
-    "#c:crossbow"
+    {
+      "id": "immersive_aircraft:heavy_crossbow",
+      "required": false
+    },
+    {
+      "id": "minecraft:crossbow",
+      "required": false
+    },
+    {
+      "id": "minecraft:crossbow_rope_arrow",
+      "required": false
+    }
   ]
 }

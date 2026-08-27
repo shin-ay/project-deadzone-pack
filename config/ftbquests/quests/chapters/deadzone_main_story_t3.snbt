@@ -182,7 +182,7 @@
 			dependencies: ["0E8A3FB0BED9A091"]
 			description: [
 				"ARGUS-9の最終処理を選択する。"
-			"必要条件が揃うと破壊・再設定・分離の選択ボタンが自動表示される。閉じた場合はBase Coreをスニーク右クリックし、暫定の詳細管理にある「ARGUS-9最終判断」から再表示できる。"
+				"必要条件が揃うと破壊・再設定・分離の選択ボタンが自動表示される。閉じた場合はBase Coreをスニーク右クリックし、暫定の詳細管理にある「ARGUS-9最終判断」から再表示できる。"
 			]
 			icon: "apocalypsenow:badge"
 			id: "5EF7DA85993329F7"
@@ -246,12 +246,12 @@
 				"内容は掲示板ごとに変化する。契約票を受け取り、条件を達成して同じ掲示板へ提出しよう。"
 			]
 			icon: "bountiful:decree"
-			id: "A3E1000000000001"
+			id: "25E9D43FE79C5C2B"
 			shape: "hexagon"
 			size: 1.5d
 			subtitle: "解放条件: 「現行終点：残された声」を完了／反復契約はBountiful Boardで受注"
 			tasks: [{
-				id: "A3E1000000000002"
+				id: "269648DDFC074062"
 				title: "危険地区作戦令状を受領した"
 				type: "custom"
 			}]

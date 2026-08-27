@@ -20,13 +20,13 @@
 			]
 			icon: "createdieselgenerators:biodiesel_bucket"
 			id: "6D49010000000101"
-			subtitle: "解放条件: 「14：小型電力網の完成」・「復旧：燃料ルート」・「T2：Scavenger」をすべて完了"
 			rewards: [{
 				count: 4
 				id: "6D49010000001101"
 				item: "minecraft:wheat_seeds"
 				type: "item"
 			}]
+			subtitle: "解放条件: 「14：小型電力網の完成」・「復旧：燃料ルート」・「T2：Scavenger」をすべて完了"
 			tasks: [{
 				id: "6D49010000002101"
 				title: "液体の入力・出力・満杯停止を確認した"
@@ -44,13 +44,13 @@
 			]
 			icon: "createdieselgenerators:bulk_fermenter"
 			id: "6D49010000000102"
-			subtitle: "解放条件: 「01：T2・燃料を自給する」を完了"
 			rewards: [{
 				count: 8
 				id: "6D49010000001201"
 				item: "minecraft:wheat"
 				type: "item"
 			}]
+			subtitle: "解放条件: 「01：T2・燃料を自給する」を完了"
 			tasks: [{
 				id: "6D49010000002201"
 				item: "createdieselgenerators:bulk_fermenter"
@@ -68,13 +68,13 @@
 			]
 			icon: "createdieselgenerators:biodiesel_bucket"
 			id: "6D49010000000103"
-			subtitle: "解放条件: 「02：発酵設備」を完了"
 			rewards: [{
 				count: 16
 				id: "6D49010000001301"
 				item: "apocalypsenow:money"
 				type: "item"
 			}]
+			subtitle: "解放条件: 「02：発酵設備」を完了"
 			tasks: [{
 				id: "6D49010000002301"
 				item: "createdieselgenerators:biodiesel_bucket"
@@ -92,13 +92,13 @@
 			]
 			icon: "createdieselgenerators:diesel_engine"
 			id: "6D49010000000104"
-			subtitle: "解放条件: 「03：最初のBiodiesel」を完了"
 			rewards: [{
 				count: 2
 				id: "6D49010000001401"
 				item: "create:shaft"
 				type: "item"
 			}]
+			subtitle: "解放条件: 「03：最初のBiodiesel」を完了"
 			tasks: [{
 				id: "6D49010000002401"
 				item: "createdieselgenerators:diesel_engine"
@@ -116,13 +116,13 @@
 			]
 			icon: "create:goggles"
 			id: "6D49010000000105"
-			subtitle: "解放条件: 「04：Diesel Engine」を完了"
 			rewards: [{
 				count: 16
 				id: "6D49010000001501"
 				item: "apocalypsenow:money"
 				type: "item"
 			}]
+			subtitle: "解放条件: 「04：Diesel Engine」を完了"
 			tasks: [{
 				id: "6D49010000002501"
 				title: "燃料消費とStress Capacityを確認した"
@@ -140,13 +140,13 @@
 			]
 			icon: "createdieselgenerators:oil_scanner"
 			id: "6D49010000000106"
-			subtitle: "解放条件: 「05：単独負荷試験」を完了"
 			rewards: [{
 				count: 24
 				id: "6D49010000001601"
 				item: "apocalypsenow:money"
 				type: "item"
 			}]
+			subtitle: "解放条件: 「05：単独負荷試験」を完了"
 			tasks: [{
 				id: "6D49010000002601"
 				item: "createdieselgenerators:oil_scanner"
@@ -164,12 +164,12 @@
 			]
 			icon: "createdieselgenerators:distillation_controller"
 			id: "6D49010000000107"
-			subtitle: "解放条件: 「06：原油地点を探す」を完了"
 			rewards: [{
 				id: "6D49010000001701"
 				item: "createdieselgenerators:oil_barrel"
 				type: "item"
 			}]
+			subtitle: "解放条件: 「06：原油地点を探す」を完了"
 			tasks: [{
 				id: "6D49010000002701"
 				item: "createdieselgenerators:distillation_controller"
@@ -187,13 +187,13 @@
 			]
 			icon: "createdieselgenerators:diesel_bucket"
 			id: "6D49010000000108"
-			subtitle: "解放条件: 「07：原油精製設備」を完了"
 			rewards: [{
 				count: 24
 				id: "6D49010000001801"
 				item: "apocalypsenow:money"
 				type: "item"
 			}]
+			subtitle: "解放条件: 「07：原油精製設備」を完了"
 			tasks: [{
 				id: "6D49010000002801"
 				item: "createdieselgenerators:diesel_bucket"
@@ -214,13 +214,13 @@
 			]
 			icon: "createdieselgenerators:oil_barrel"
 			id: "6D49010000000109"
-			subtitle: "解放条件: 「05：単独負荷試験」・「08：Diesel精製」をすべて完了"
 			rewards: [{
 				count: 32
 				id: "6D49010000001901"
 				item: "apocalypsenow:money"
 				type: "item"
 			}]
+			subtitle: "解放条件: 「05：単独負荷試験」・「08：Diesel精製」をすべて完了"
 			tasks: [{
 				id: "6D49010000002901"
 				title: "主燃料と予備燃料の保管先を分けた"
@@ -241,13 +241,13 @@
 			]
 			icon: "tfmg:steel_mechanism"
 			id: "6D4901000000010A"
-			subtitle: "解放条件: 「09：燃料備蓄を分ける」・「T3：Operator」をすべて完了"
 			rewards: [{
 				count: 2
 				id: "6D49010000001A01"
 				item: "tfmg:circuit_board"
 				type: "item"
 			}]
+			subtitle: "解放条件: 「09：燃料備蓄を分ける」・「T3：Operator」をすべて完了"
 			tasks: [
 				{
 					count: 4L
@@ -274,13 +274,13 @@
 			]
 			icon: "tfmg:generator"
 			id: "6D4901000000010B"
-			subtitle: "解放条件: 「10：T3・重工業部品」を完了"
 			rewards: [{
 				count: 2
 				id: "6D49010000001B01"
 				item: "tfmg:steel_fluid_tank"
 				type: "item"
 			}]
+			subtitle: "解放条件: 「10：T3・重工業部品」を完了"
 			tasks: [
 				{
 					id: "6D49010000002B01"
@@ -306,7 +306,6 @@
 			]
 			icon: "tfmg:steel_fluid_tank"
 			id: "6D4901000000010C"
-			subtitle: "解放条件: 「11：大型発電と燃料槽」を完了"
 			rewards: [
 				{
 					count: 32
@@ -320,6 +319,7 @@
 					xp: 64
 				}
 			]
+			subtitle: "解放条件: 「11：大型発電と燃料槽」を完了"
 			tasks: [{
 				id: "6D49010000002C01"
 				title: "燃料工程を段階ごとに停止・復旧できた"

@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "apocalypsenow:nurse_boots",
+      "required": false
+    },
+    {
+      "id": "create:cardboard_boots",
+      "required": false
+    }
+  ]
+}
