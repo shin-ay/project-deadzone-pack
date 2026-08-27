@@ -10514,7 +10514,7 @@ hash = "ec246c53f9c3fa29ecf5cff8817cd5a7e8c53474f24202af0a60d480b8fff1c8"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_basecamp_guard_safety_v0_1.js"
-hash = "e3666b80bd9e18345cc237d1639794207e271f75c40567031e72d79e5b27a0e9"
+hash = "c5962b906710a41478186ea838b51aaa1252ff8050c33c3a3236e9578cb384ef"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_basecamp_raid_v0_1.js"
@@ -21506,3 +21506,15 @@ hash = "559c1820cc38023219534e3010a7093e8f439944d5718318d6af5194b940514a"
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_base_core_v0_1.js"
 hash = "17d15da3fd8939816f8a8a8426042458c4cebb4099621ba90eb7b3ab69831315"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_dynamic_trees_compat/pack.mcmeta"
+hash = "558de9285a51841e9a7e48e22e8b9d60f9da7d0617e9f8cf57ad2054f80e2013"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_dynamic_trees_compat/trees/dtnatures_spirit/species/redwood.json"
+hash = "38d239d4c43a67d96bc0b49a07b59f4492115adff20015e4bbf1288155a906e7"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_dynamic_trees_compat/trees/dtnatures_spirit/species/frosty_redwood.json"
+hash = "15e6425b5728ebda527d35fbb1e9a0c17bb5617badff0950197a44b7a90a51b5"
