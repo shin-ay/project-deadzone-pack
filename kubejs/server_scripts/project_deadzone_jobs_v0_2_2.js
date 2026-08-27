@@ -492,6 +492,10 @@ function dzApplyJob(player,id) {
   d.putString("dz_job_name",j.name)
   d.putBoolean("dz_starter_received",true)
   d.putInt("dz_starter_grant_version",DZ_STARTER_GRANT_VERSION)
+  try {
+    if (global.pdzSetJobSelectionProtection) global.pdzSetJobSelectionProtection(player,false)
+    else player.removeTag("dz_job_selection_protected")
+  } catch (ignored) {}
   dzEnsureMineColoniesSupplyCamp(player)
   // Main story: choosing a JOB is an actual objective, not a manual checkbox.
   player.server.runCommandSilent(

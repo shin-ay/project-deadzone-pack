@@ -10670,7 +10670,7 @@ hash = "da4a6728c023a53c5f96a5a9a16d5ecfccbbf7b24ef160a81a74878e05cde75f"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_jobs_v0_2_2.js"
-hash = "804d029fbe3b33683e040e3e17fa987e9a99fc71de608c7295ade6f7b4745c4d"
+hash = "c6dc4a75f3ae0956481bb6c1bb692b62b179fbfed5ec130167542ac8f7c9d88b"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_journeymap_sync_v0_1.js"
@@ -10730,7 +10730,7 @@ hash = "2feb979c118f3786bee04de9fc2fb0b1854ba1a7ac61a52580adc4523692fce6"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_onboarding_v0_1.js"
-hash = "a4d2cba669db9612d268f929f266434c12d638f0e511e4a769c6ae7ba802d00a"
+hash = "cbf2690cdb7fe4df1a954ac5576d2267db44716b6259a74104f5b5d1dce24293"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_outpost_garrisons_v0_1.js"

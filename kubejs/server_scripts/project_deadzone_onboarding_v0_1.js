@@ -1,8 +1,26 @@
-// PROJECT DEADZONE - stable onboarding (normal world)
+// PROJECT DEADZONE - stable onboarding (normal world) v1.1
 // The old lobby / village-search / automatic-warp flow is intentionally retired.
 // JOB confirmation is the single source of truth for starter loadout grants.
 
 const DZ_ONBOARDING_JOB_DELAY_TICKS = 80
+const DZ_JOB_SELECTION_PROTECTION_TAG = "dz_job_selection_protected"
+
+function dzJobSelectionNeedsProtection(player) {
+  return !!player && !player.persistentData.getBoolean("dz_job_chosen")
+}
+
+function dzSetJobSelectionProtection(player, enabled) {
+  if (!player) return
+  if (enabled) {
+    if (!player.tags.contains(DZ_JOB_SELECTION_PROTECTION_TAG)) player.addTag(DZ_JOB_SELECTION_PROTECTION_TAG)
+    // The hurt event below is the source of truth. Short effects also protect
+    // against modded damage paths that bypass the normal LivingHurt event.
+    player.runCommandSilent("effect give @s minecraft:resistance 5 255 true")
+    player.runCommandSilent("effect give @s minecraft:fire_resistance 5 0 true")
+    return
+  }
+  if (player.tags.contains(DZ_JOB_SELECTION_PROTECTION_TAG)) player.removeTag(DZ_JOB_SELECTION_PROTECTION_TAG)
+}
 
 function dzOnboardingTellJobPrompt(player) {
   player.tell(Text.of("[PROJECT DEADZONE] 初期JOBを選択してください。").gold())
@@ -53,6 +71,7 @@ function dzEnsureRegisteredLoadout(player) {
 
 PlayerEvents.loggedIn(event => {
   let player = event.player
+  dzSetJobSelectionProtection(player, dzJobSelectionNeedsProtection(player))
   player.server.scheduleInTicks(DZ_ONBOARDING_JOB_DELAY_TICKS, () => {
     if (!player || !player.alive) return
     if (!player.persistentData.getBoolean("dz_job_chosen")) {
@@ -61,6 +80,22 @@ PlayerEvents.loggedIn(event => {
     }
     dzEnsureRegisteredLoadout(player)
   })
+})
+
+// JOB selection may stay open for several minutes. Refresh the compatibility
+// effects once per second and derive protection only from the confirmed flag,
+// so closing the GUI or reconnecting cannot accidentally remove it.
+PlayerEvents.tick(event => {
+  let player = event.player
+  if (!player || player.age % 20 !== 0) return
+  dzSetJobSelectionProtection(player, dzJobSelectionNeedsProtection(player))
+})
+
+EntityEvents.hurt(event => {
+  let player = event.entity
+  if (!player || String(player.type) !== "minecraft:player") return
+  if (!dzJobSelectionNeedsProtection(player)) return
+  event.cancel()
 })
 
 ServerEvents.commandRegistry(event => {
@@ -87,3 +122,4 @@ ServerEvents.commandRegistry(event => {
 
 global.pdzOpenInitialJobSelector = dzOpenInitialJobSelector
 global.pdzEnsureRegisteredLoadout = dzEnsureRegisteredLoadout
+global.pdzSetJobSelectionProtection = dzSetJobSelectionProtection

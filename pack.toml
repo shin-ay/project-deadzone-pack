@@ -1,12 +1,12 @@
 name = "PROJECT DEADZONE"
 author = "PROJECT DEADZONE Team"
-version = "BETA-20260827-ZOMBIE-TREES-2"
+version = "BETA-20260827-ONBOARDING-SAFETY-3"
 pack-format = "packwiz:1.1.0"
 
 [index]
 file = "index.toml"
 hash-format = "sha256"
-hash = "78c28ca4c0f63f4fe0ad0f947a8512bd7fc92312c2adca0e42ca03eb5a51432a"
+hash = "48b185aa76a113fedc3f041b8693e60570e2a5dce1088afc7df1d3683212dd9e"
 
 [versions]
 forge = "47.4.10"
