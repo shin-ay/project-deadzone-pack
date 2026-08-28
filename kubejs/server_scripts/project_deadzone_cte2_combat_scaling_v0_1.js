@@ -21,7 +21,7 @@ function pdzCteIsHostile(entity){
   if(!entity||!entity.type)return false
   let id=String(entity.type)
   let namespace=id.split(':')[0]
-  if(['infectious','apocalypse_zombies','mutantszombies','tacz_bandits','tacz_hostiles'].indexOf(namespace)>=0)return true
+  if(['spore','infnexus','infectious','apocalypse_zombies','mutantszombies','tacz_bandits','tacz_hostiles'].indexOf(namespace)>=0)return true
   if(id==='simpleenemymod:ruunit')return true
   return [
     'minecraft:zombie','minecraft:husk','minecraft:drowned','minecraft:zombie_villager',
@@ -35,7 +35,7 @@ function pdzCteIsHostile(entity){
 function pdzCteExcluded(entity){
   if(!entity||!entity.tags)return true
   let excluded=['dz_buddy','dz_survivor','dz_usunit_friendly','dz_boss_showroom',
-    'dz_boss_test_frozen','dz_boss_loadtest','dz_boss_axel','dz_mns_boss_profile',
+    'dz_boss_test_frozen','dz_boss_loadtest','dz_boss_axel','dz_mns_boss_profile','dz_spore_nexus',
     'dz_boss_mechanics_active','dz_story_boss_argus_fragment','dz_story_boss_choir_vessel',
     'dz_story_boss_firestation','dz_story_boss_gasstation','dz_story_boss_gunshop',
     'dz_story_boss_hospital','dz_story_boss_policestation','dz_story_boss_primordial',
@@ -62,11 +62,9 @@ function pdzCteApply(entity){
   let tier=pdzCteRegion(entity),band=PDZCTE_LEVEL_BANDS[tier]
   let level=band.min
   try{
-    let player=entity.level.getNearestPlayer(entity,128)
-    if(player){
-      let playerLevel=Number(PDZCTE_ENTITY_DATA.get(player).getLevel())
-      if(isFinite(playerLevel))level=Math.max(band.min,Math.min(band.max,Math.round(playerLevel)))
-    }
+    let playerLevel=global.pdzThreatHighestPlayerLevel
+      ? Number(global.pdzThreatHighestPlayerLevel(entity.server)) : band.min
+    if(isFinite(playerLevel))level=Math.max(band.min,Math.min(band.max,Math.round(playerLevel)))
   }catch(ignored){}
   // A tiny same-area spread avoids every enemy having an identical stat line.
   level=Math.max(band.min,Math.min(band.max,level+Math.floor(Math.random()*3)-1))

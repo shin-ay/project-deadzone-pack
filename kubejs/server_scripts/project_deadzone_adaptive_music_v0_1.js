@@ -12,10 +12,27 @@ const PDZ_MUSIC_CAMP_RADIUS = 96
 const PDZ_MUSIC_LOCATION_HOLD_UPDATES = 45
 const PDZ_MUSIC_LOCATION_KEY = 'dz_music_location_key_v1'
 const PDZ_MUSIC_LOCATION_HOLD_KEY = 'dz_music_location_hold_v1'
+const PDZ_MUSIC_SPORE_EVENT_KEY = 'dz_music_spore_event_v1'
+const PDZ_MUSIC_SPORE_END_KEY = 'dz_music_spore_end_ms_v1'
+const PDZ_MUSIC_SPORE_NEXT_KEY = 'dz_music_spore_next_ms_v1'
+const PDZ_MUSIC_SPORE_CHANCE = 0.40
+const PDZ_MUSIC_SPORE_RADIUS = 96
+
+// Use Spore's registered sound events directly; no copyrighted audio is copied
+// into the pack. T3 is uneasy ambience, while T4+ may select harsher tracks.
+const PDZ_MUSIC_SPORE_T3 = [
+  ['broken_reflection',267],['decay',268],['myconaut',210],
+  ['natural_occurance',249],['they_listen',186],['whispers',176]
+]
+const PDZ_MUSIC_SPORE_T4 = [
+  ['endless_feast',257],['mental_mutilation',270],['neurogenesis',213],
+  ['prototype',327],['repurposed',272],['rot',354],
+  ['something_once_great',308],['synaptic_relapse',258],['what_we_become',169]
+]
 
 const PDZ_MUSIC_EFFECTS = [
   'music_camp','music_survivor','music_cdf','music_raider','music_remnant',
-  'music_aegis','music_warden','music_infected','music_named_survivor',
+  'music_aegis','music_warden','music_infected','music_spore_native','music_named_survivor',
   'music_named_cdf','music_named_raider','music_named_remnant',
   'music_named_aegis','music_named_warden','music_named_infected','music_named_unknown',
   'music_boss_01','music_boss_02','music_boss_03','music_boss_04','music_boss_05',
@@ -169,21 +186,81 @@ function pdzMusicHeldLocation(player, desired) {
   data.putInt(PDZ_MUSIC_LOCATION_HOLD_KEY,desired?PDZ_MUSIC_LOCATION_HOLD_UPDATES:0)
   return desired
 }
+function pdzMusicRegion(player) {
+  try { return Math.max(0,Math.min(5,dzRegionTierAt(player.server,player.x,player.z))) }
+  catch(ignored) { return 0 }
+}
+function pdzMusicSporeSite(player,sites) {
+  if(pdzMusicRegion(player)<3)return null
+  let dim=pdzMusicDim(player),best=null,bestD=PDZ_MUSIC_SPORE_RADIUS*PDZ_MUSIC_SPORE_RADIUS
+  sites.forEach(site=>{
+    if(site.coreAlive===false||String(site.dimension)!==dim||
+       String(site.structure||'').indexOf('spore:')!==0)return
+    let d=pdzMusicHorizontalDist2(player,site.x,site.z)
+    if(d<=bestD){bestD=d;best=site}
+  })
+  return best
+}
+function pdzMusicStopSpore(player,delayNext) {
+  let data=player.persistentData,event=String(data.getString(PDZ_MUSIC_SPORE_EVENT_KEY)||'')
+  if(!event)return
+  if(event)player.runCommandSilent('stopsound @s music spore:'+event)
+  player.runCommandSilent('effect clear @s project_deadzone:music_spore_native')
+  data.putString(PDZ_MUSIC_SPORE_EVENT_KEY,'')
+  data.putLong(PDZ_MUSIC_SPORE_END_KEY,0)
+  if(delayNext)data.putLong(PDZ_MUSIC_SPORE_NEXT_KEY,Date.now()+3*60*1000)
+}
+function pdzMusicUpdateSpore(player,site) {
+  let data=player.persistentData,now=Date.now()
+  let current=String(data.getString(PDZ_MUSIC_SPORE_EVENT_KEY)||'')
+  let end=Number(data.getLong(PDZ_MUSIC_SPORE_END_KEY))
+  if(!site){if(current)pdzMusicStopSpore(player,false);return false}
+  if(current&&now<end){pdzMusicEffect(player,'music_spore_native');return true}
+  if(current)pdzMusicStopSpore(player,false)
+  if(now<Number(data.getLong(PDZ_MUSIC_SPORE_NEXT_KEY)))return false
+  if(Math.random()>=PDZ_MUSIC_SPORE_CHANCE){
+    data.putLong(PDZ_MUSIC_SPORE_NEXT_KEY,now+(2+Math.floor(Math.random()*4))*60*1000)
+    return false
+  }
+  let pool=pdzMusicRegion(player)>=4?PDZ_MUSIC_SPORE_T4:PDZ_MUSIC_SPORE_T3
+  let pick=pool[Math.floor(Math.random()*pool.length)]
+  data.putString(PDZ_MUSIC_SPORE_EVENT_KEY,pick[0])
+  data.putLong(PDZ_MUSIC_SPORE_END_KEY,now+pick[1]*1000)
+  data.putLong(PDZ_MUSIC_SPORE_NEXT_KEY,now+(pick[1]+120+Math.floor(Math.random()*181))*1000)
+  pdzMusicEffect(player,'music_spore_native')
+  player.runCommandSilent('stopsound @s music')
+  player.server.scheduleInTicks(10,()=>{
+    if(String(player.persistentData.getString(PDZ_MUSIC_SPORE_EVENT_KEY))===pick[0])
+      player.runCommandSilent('playsound spore:'+pick[0]+' music @s ~ ~ ~ 0.50 1 0')
+  })
+  return true
+}
 function pdzMusicUpdatePlayer(player, server, sites) {
   let boss=pdzMusicBossNear(player)
   if(boss){
+    pdzMusicStopSpore(player,true)
     pdzMusicEffect(player,boss)
     return
   }
   let named=pdzMusicNamedNear(player)
   if(named){
+    pdzMusicStopSpore(player,true)
     let faction=pdzMusicFactionFromEntity(named)||'unknown'
     pdzMusicEffect(player,'music_named_'+faction)
     return
   }
+  if(pdzMusicUpdateSpore(player,pdzMusicSporeSite(player,sites)))return
   let location=pdzMusicHeldLocation(player,pdzMusicDesiredLocation(player,server,sites))
   if(location)pdzMusicEffect(player,location)
 }
+
+// Combat is allowed to interrupt a facility track immediately instead of
+// waiting for the two-second location poll.
+EntityEvents.hurt(event=>{
+  let victim=event.entity,attacker=event.source?event.source.actual:null
+  if(victim&&victim.isPlayer&&victim.isPlayer())pdzMusicStopSpore(victim,true)
+  if(attacker&&attacker.isPlayer&&attacker.isPlayer())pdzMusicStopSpore(attacker,true)
+})
 
 let PDZ_MUSIC_TICKS=0
 ServerEvents.tick(event=>{

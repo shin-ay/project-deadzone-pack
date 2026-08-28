@@ -1,0 +1,16 @@
+# PROJECT DEADZONE overrides for Spore: Infnexus.
+# The Nexus is a late-game authored encounter. It must never appear at the
+# camp/world spawn merely because a server has been online for five minutes.
+
+[autospawn]
+enabled = false
+respawnEnabled = false
+
+[general]
+# Avoid permanent background ticking around an unattended Nexus. Its front
+# progresses while players are actually operating in the infected region.
+keepNexusLoaded = false
+forceLoadFullRadius = false
+frontChunkLoading = false
+moveWorldSpawn = false
+bossBarByDefault = false

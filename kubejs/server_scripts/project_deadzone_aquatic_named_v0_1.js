@@ -9,7 +9,7 @@ const DZ_AQUATIC_NAMED = {
 
 function dzAquaticRegion(entity) {
   try { return Math.max(0, Math.min(4, dzRegionTierAt(entity.server,entity.x,entity.z))) }
-  catch (ignored) { return Math.max(0,Math.min(4,entity.server.persistentData.getInt("deadzone_world_tier"))) }
+  catch (ignored) { return 0 }
 }
 
 function dzPromoteAquatic(entity,def,force) {

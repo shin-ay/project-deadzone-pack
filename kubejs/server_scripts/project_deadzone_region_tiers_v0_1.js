@@ -1,7 +1,9 @@
 // PROJECT DEADZONE regional difficulty rings v0.1
 // Region Tier is geographical. World Tier remains story/recipe progression.
 
-const DZ_REGION_RADII = [192, 700, 1500, 3000, 5000, 8000]
+// Camp protection itself is enforced by project_deadzone_t0_safezone_v0_1.js.
+// Keep the map/area label on the same permanent 100 m boundary.
+const DZ_REGION_RADII = [100, 700, 1500, 3000, 5000, 8000]
 const DZ_SUBURB_LAYOUT = [
   // ChaosZ native 2x3-chunk suburb: houses, gardens, fences and street clutter.
   // Converted to one deterministic vanilla template so it can be used outside
@@ -105,7 +107,7 @@ function dzSuburbPlace(player, cx, cz) {
 function dzSuburbAutoCenter(server) {
   let camp = dzRegionCampCenter(server)
   if (!camp) return null
-  // Keep the district outside the 192 m camp safety ring but well inside T0.
+  // Keep the district outside the 100 m camp safety ring but well inside T0.
   // East is deterministic so every player receives the same route and quests.
   return {x: camp.x + 352, z: camp.z}
 }
@@ -121,8 +123,9 @@ function dzRegionCampCenter(server) {
 
 function dzRegionTierAt(server, x, z) {
   let camp = dzRegionCampCenter(server)
-  if (!camp) return Math.max(0, Math.min(5,
-    server.persistentData.getInt("deadzone_world_tier")))
+  // Geography must never fall back to story progression. Before camp
+  // coordinates exist, treat the current area as the arrival region.
+  if (!camp) return 0
   let dx = x - camp.x, dz = z - camp.z
   let distance = Math.sqrt(dx * dx + dz * dz)
   if (distance <= DZ_REGION_RADII[0]) return 0 // camp safe zone
@@ -136,7 +139,10 @@ function dzRegionTierAt(server, x, z) {
 
 function dzRegionName(tier, distance) {
   if (distance <= DZ_REGION_RADII[0]) return "キャンプ安全圏"
-  return ["T0 郊外住宅地", "T1 地方都市", "T2 都市部", "T3 危険地域"][tier] || "危険地域"
+  return [
+    "T0 郊外住宅地", "T1 地方都市", "T2 都市部",
+    "T3 感染危険地域", "T4 感染崩壊地域", "T5 絶滅隔離地域"
+  ][tier] || "危険地域"
 }
 
 PlayerEvents.tick(event => {
@@ -208,7 +214,7 @@ ServerEvents.commandRegistry(event => {
     let distance = Math.floor(Math.sqrt(dx * dx + dz * dz))
     let tier = dzRegionTierAt(player.server, player.x, player.z)
     player.tell(Text.of(dzRegionName(tier, distance) + " / " + distance + "m").gold())
-    player.tell(Text.of("World Tier T" + player.server.persistentData.getInt("deadzone_world_tier") +
+    player.tell(Text.of("Story Unlock T" + player.server.persistentData.getInt("deadzone_world_tier") +
       " / Region Tier T" + tier).gray())
     return 1
   }))

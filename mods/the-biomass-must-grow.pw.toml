@@ -1,0 +1,13 @@
+name = "The biomass must grow"
+filename = "TBMG.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "fdd21b53c9ec7ccc9b5bd1495de09624bfeceaf9"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 7111602
+project-id = 1366046

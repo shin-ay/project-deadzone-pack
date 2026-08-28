@@ -68,6 +68,22 @@ const PDZ_WILD_SITES = {
   'jeffs_cursed_walking_structures:nuclearsilo': {type:'nuclear_silo', preferred:'remnant', minRegionTier:3},
   'jeffs_cursed_walking_structures:nuclearreactor': {type:'underground_reactor', preferred:'warden', minRegionTier:3},
   'jeffs_cursed_walking_structures:starterbunker': {type:'civilian_bunker', preferred:'survivor', trade:'survivor', minRegionTier:1},
+  // Fungal Infection: Spore structures may be present in worldgen before the
+  // camp-relative tier is known.  Below T3 they remain inert scenery: no PDZ
+  // occupation, garrison, enhanced loot or quest credit is activated.
+  'spore:biomass_tower': {type:'spore_biomass_tower', preferred:'infected', minRegionTier:3},
+  'spore:cathedral': {type:'spore_cathedral', preferred:'infected', minRegionTier:3},
+  'spore:cell': {type:'spore_cell', preferred:'infected', minRegionTier:3},
+  'spore:celltower': {type:'spore_celltower', preferred:'infected', minRegionTier:3},
+  'spore:church': {type:'spore_church', preferred:'infected', minRegionTier:3},
+  'spore:hospital': {type:'spore_hospital', preferred:'infected', minRegionTier:3},
+  'spore:iceberg_mines': {type:'spore_ice_mines', preferred:'infected', minRegionTier:3},
+  'spore:lab': {type:'spore_laboratory', preferred:'infected', minRegionTier:3},
+  'spore:lodge': {type:'spore_lodge', preferred:'infected', minRegionTier:3},
+  'spore:mass_grave': {type:'spore_mass_grave', preferred:'infected', minRegionTier:3},
+  'spore:military_camp': {type:'spore_military_camp', preferred:'infected', minRegionTier:3},
+  'spore:mines': {type:'spore_mines', preferred:'infected', minRegionTier:3},
+  'spore:prison': {type:'spore_prison', preferred:'infected', minRegionTier:3},
   'yungbetterdungeons:catacombs': {type:'infected_catacombs', preferred:'infected'},
   'yungbetterdungeons:fortress_of_the_undead': {type:'infected_fortress', preferred:'infected'},
   'yungbetterdungeons:spider_cave': {type:'infected_cavern', preferred:'infected'},
@@ -638,7 +654,7 @@ function pdzWildCreateMarker(player,siteId,forcedFaction,instanceKey,anchor,over
   // for quests before their intended Region Tier. Static structure sets cannot
   // read the camp position, so activation is the reliable dynamic gate.
   let currentRegionTier=0
-  try { currentRegionTier=Number(dzRegionTierAt(player,ax,az)||0) } catch(ignored) {}
+  try { currentRegionTier=Number(dzRegionTierAt(player.server,ax,az)||0) } catch(ignored) {}
   let requiredRegionTier=Number(def.minRegionTier||0)
   if(requiredRegionTier>currentRegionTier){
     let noticeKey='dz_site_tier_blocked_'+pdzWildHash(stableKey)

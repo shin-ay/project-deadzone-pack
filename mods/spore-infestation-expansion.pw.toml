@@ -1,0 +1,13 @@
+name = "Spore: Infestation Expansion"
+filename = "sporeinfest-1.0.6.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "c923c45e92fa3c21ef6d58fb8c49c9edc11563be"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 7875788
+project-id = 1418940

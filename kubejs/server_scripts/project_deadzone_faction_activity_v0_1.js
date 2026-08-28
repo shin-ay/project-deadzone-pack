@@ -688,7 +688,8 @@ function pdzActSites(player) {
 }
 
 function pdzActWorldTier(server) {
-  return Math.max(0,Math.min(5,server.persistentData.getInt('deadzone_world_tier')))
+  try { if(global.pdzThreatTier)return Math.max(0,Math.min(5,global.pdzThreatTier(server))) } catch(ignored) {}
+  return 0
 }
 
 function pdzActDirectorCooldown(tier) {
@@ -736,7 +737,7 @@ function pdzActDirectorPulse(server,player,forced) {
   else if(type==='remnant_assault')created=pdzActCreateAssault(server,player,'remnant')
   else created=pdzActCreateConvoy(server,player)
   server.persistentData.putLong(PDZ_ACT_AUTO_NEXT,now+pdzActDirectorCooldown(tier))
-  if(created)console.info('[PDZ ACTIVITY] director created '+created.type+' '+created.id+' at world tier '+tier)
+  if(created)console.info('[PDZ ACTIVITY] director created '+created.type+' '+created.id+' at threat tier '+tier)
   return created
 }
 

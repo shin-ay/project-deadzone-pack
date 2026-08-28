@@ -1,4 +1,6 @@
-// Story Tier owns unlocks. Threat Tier owns minimum outdoor pressure.
+// Story Tier owns unlocks. Region Tier owns geography. Threat Tier owns the
+// global difficulty floor and is derived only from elapsed days and the
+// strongest online player's M&S level.
 // Elapsed days never unlock quests, recipes or facilities, but waiting forever
 // can no longer freeze hostile pressure at T0.
 
@@ -17,6 +19,8 @@ const DZ_THREAT_DAY_FLOORS = [
 const DZ_THREAT_DEATH_WINDOW_MS = 30 * 60 * 1000
 const DZ_THREAT_RELIEF_DURATION_MS = 45 * 60 * 1000
 const DZ_THREAT_PLAYER_DEATH_COOLDOWN_MS = 5 * 60 * 1000
+const DZ_THREAT_ENTITY_DATA = Java.loadClass('com.robertx22.mine_and_slash.capability.entity.EntityData')
+const DZ_THREAT_LEVEL_FLOORS = [56,43,31,19,9]
 
 function dzThreatDay(server) {
   try {
@@ -33,6 +37,24 @@ function dzThreatDayFloor(server) {
   return 0
 }
 
+function dzThreatHighestPlayerLevel(server) {
+  let highest = 1
+  try {
+    server.players.forEach(player => {
+      let level = Number(DZ_THREAT_ENTITY_DATA.get(player).getLevel())
+      if (isFinite(level)) highest = Math.max(highest, Math.round(level))
+    })
+  } catch (ignored) {}
+  return highest
+}
+
+function dzThreatPlayerFloor(server) {
+  let level = dzThreatHighestPlayerLevel(server)
+  for (let i = 0; i < DZ_THREAT_LEVEL_FLOORS.length; i++)
+    if (level >= DZ_THREAT_LEVEL_FLOORS[i]) return 5 - i
+  return 0
+}
+
 function dzThreatRelief(server) {
   let last = Number(server.persistentData.getLong('dz_threat_last_valid_death_ms_v1'))
   if (last <= 0 || Date.now() - last > DZ_THREAT_RELIEF_DURATION_MS) return 0
@@ -43,8 +65,7 @@ function dzThreatRelief(server) {
 }
 
 function dzThreatBaseTier(server) {
-  let story = Math.max(0, Math.min(5, server.persistentData.getInt('deadzone_world_tier')))
-  return Math.max(story, dzThreatDayFloor(server))
+  return Math.max(dzThreatDayFloor(server), dzThreatPlayerFloor(server))
 }
 
 function dzThreatTier(server) {
@@ -97,6 +118,8 @@ function dzThreatCombatDeath(event, player) {
 
 global.pdzThreatTier = dzThreatTier
 global.pdzThreatRelief = dzThreatRelief
+global.pdzThreatHighestPlayerLevel = dzThreatHighestPlayerLevel
+global.pdzThreatPlayerFloor = dzThreatPlayerFloor
 
 let DZ_THREAT_TICKS = 0
 ServerEvents.tick(event => {
@@ -165,8 +188,9 @@ ServerEvents.commandRegistry(event=>{
   const {commands:Commands}=event
   event.register(Commands.literal('deadzoneworld').then(Commands.literal('status').executes(ctx=>{
     let p=ctx.source.player,day=Math.floor(Number(p.level.getDayTime())/24000)+1
-    p.tell(Text.of('Day '+day+' / Story Tier T'+p.server.persistentData.getInt('deadzone_world_tier')+
-      ' / Threat Tier T'+dzThreatTier(p.server)+' / Recovery -'+dzThreatRelief(p.server)).gold())
-    p.tell(Text.of('Unlocks: story objectives / Threat: max(story, days) - recovery / Region pressure: distance floor').gray());return 1
+    p.tell(Text.of('Day '+day+' / Story Unlock T'+p.server.persistentData.getInt('deadzone_world_tier')+
+      ' / Highest M&S Lv'+dzThreatHighestPlayerLevel(p.server)+' / Threat T'+dzThreatTier(p.server)+
+      ' / Recovery -'+dzThreatRelief(p.server)).gold())
+    p.tell(Text.of('Region: distance / Threat: max(days, highest online level) - recovery / Unlocks: story only').gray());return 1
   })))
 })

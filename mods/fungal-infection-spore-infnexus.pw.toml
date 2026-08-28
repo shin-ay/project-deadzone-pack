@@ -1,0 +1,13 @@
+name = "Fungal Infection: Spore Infnexus"
+filename = "Infnexus-2.0.4-1.20.1.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "4ecc6348cad32c97cee4e00c5bcd89b347f972b9"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 8674323
+project-id = 1543648

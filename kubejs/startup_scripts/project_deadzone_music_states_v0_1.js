@@ -10,6 +10,7 @@ StartupEvents.registry('mob_effect', event => {
     ['music_aegis', 0x80cad0],
     ['music_warden', 0x9b72c7],
     ['music_infected', 0x718346],
+    ['music_spore_native', 0x536b45],
     ['music_named_survivor', 0xb8d890],
     ['music_named_cdf', 0x8ab8ef],
     ['music_named_raider', 0xef7b35],

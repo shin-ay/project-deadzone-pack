@@ -12,7 +12,7 @@ const DZ_ELITE_MNS_ENTITY_DATA = Java.loadClass('com.robertx22.mine_and_slash.ca
 const DZ_ELITE_MNS_HEALTH = Java.loadClass('com.robertx22.mine_and_slash.uncommon.utilityclasses.HealthUtils')
 
 function dzEliteTier(server) {
-  let tier = server.persistentData.getInt("deadzone_world_tier")
+  let tier = 0
   try { if (global.pdzThreatTier) tier = global.pdzThreatTier(server) }
   catch (ignored) {}
   return Math.max(0, Math.min(4, tier))

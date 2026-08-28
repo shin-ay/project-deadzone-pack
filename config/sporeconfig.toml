@@ -1,0 +1,20 @@
+# PROJECT DEADZONE overrides for Fungal Infection: Spore.
+# PDZ owns adaptive ambience and boss music, so Spore's independent music
+# controller is disabled to prevent rapid track switching and duplicate BGM.
+
+["Music System"]
+"Should we play songs in the minecraft menu?" = false
+"Should we play songs in certain entity encounters?" = false
+"Should we play songs in the minecraft world?" = false
+"Turn off Vanilla music?" = false
+"Turn off the system?" = true
+
+["Despawning system"]
+# Conservative multiplayer caps for the first beta. Spore's own despawn
+# system remains active; PDZ never removes a mob merely for crossing a ring.
+"Maximum number of regular infected" = 30
+"Maximum number of evolved infected" = 14
+"Maximum number of hyper infected" = 5
+"Maximum number of organoids" = 14
+"Maximum number of scents" = 10
+"Dissable despawn system?" = false

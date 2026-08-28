@@ -124,6 +124,10 @@ begin
     when ( any effect in $effects has effect == "project_deadzone:music_boss_13" end ) play boss_13 priority 8;
     when ( any effect in $effects has effect == "project_deadzone:music_boss_14" end ) play boss_14 priority 8;
 
+    // PDZ starts a registered Spore sound event itself inside T3+ fungal
+    // facilities. Yield only the location layer; combat/named/boss still win.
+    when ( any effect in $effects has effect == "project_deadzone:music_spore_native" end ) play instant [ ] priority 3;
+
     // Named threats override everything, but do not hard-cut. A lower
     // priority location track is paused and resumes after the threat leaves.
     when ( any effect in $effects has effect == "project_deadzone:music_named_survivor" end ) play named_survivor priority 6;

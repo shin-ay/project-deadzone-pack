@@ -59,7 +59,7 @@ function dzIsHostileMob(entity) {
     if (category==="monster") return true
   } catch (ignored) {}
   let id=String(entity.type)
-  return id.indexOf("infectious:")===0 || id.indexOf("apocalypsenow:")===0 ||
+  return id.indexOf("spore:")===0 || id.indexOf("infnexus:")===0 || id.indexOf("infectious:")===0 || id.indexOf("apocalypsenow:")===0 ||
     id.indexOf("apocalypse_zombies:")===0 || id.indexOf("mutantszombies:")===0 ||
     id.indexOf("tacz_hostiles:")===0 || id.indexOf("tacz_bandits:")===0 ||
     id==="simpleenemymod:ruunit" || id==="simpleenemymod:pmcunit"
