@@ -5,7 +5,7 @@ side = "both"
 [download]
 hash-format = "sha1"
 hash = "3c5dafae3d5fa4459738745366e2d1c8cc298dbe"
-mode = "metadata:modrinth"
+url = "https://cdn.modrinth.com/data/K9yEi5IL/versions/cgcG9hIt/customhealthhud-1.0.jar"
 
 [update]
 [update.modrinth]
