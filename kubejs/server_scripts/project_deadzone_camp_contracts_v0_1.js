@@ -287,7 +287,7 @@ function dzContractComplete(player, key, quality) {
   let lifeRepGain = (contract.lifeRep || 0) + (quality ? quality.repBonus || 0 : 0)
   let bonus = quality && quality.bonus ? quality.bonus : (contract.bonus || [])
   player.server.runCommandSilent("give " + player.username + " apocalypsenow:money " + money)
-  player.server.runCommandSilent("puffish_skills experience add " + player.username + " " + contract.skill + " " + xp)
+  if(global.pdzUnifiedProgressionAward)global.pdzUnifiedProgressionAward(player,contract.skill,xp,true)
   ;(bonus || []).forEach(entry => player.server.runCommandSilent(
     "give " + player.username + " " + entry[0] + " " + entry[1]))
   if (lifeRepGain > 0) {

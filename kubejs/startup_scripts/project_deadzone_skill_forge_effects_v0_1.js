@@ -57,50 +57,6 @@ ForgeEvents.onEvent("net.minecraftforge.event.entity.living.LivingFallEvent", ev
   }
 })
 
-ForgeEvents.onEvent("net.minecraftforge.event.entity.living.LivingDeathEvent", event => {
-  let victim = event.entity
-  let attacker = event.source.entity
-  if (!attacker || !attacker.isPlayer() || attacker.level.clientSide) return
-  if (attacker.distanceTo(victim) > 5.0) return
-
-  // TaCZ gun kills have their own event and must not also count as Melee.
-  let heldId = String(attacker.mainHandItem.id)
-  if (heldId === "tacz:modern_kinetic_gun") return
-
-  attacker.server.runCommandSilent(
-    "puffish_skills experience add " + attacker.username + " melee 5"
-  )
-})
-
-// Award a small amount on real melee contact so progression is visible before
-// a kill. Requiring the direct damage entity to be the attacker excludes TaCZ
-// bullets, arrows and other projectiles while remaining compatible with Epic Fight.
-ForgeEvents.onEvent("net.minecraftforge.event.entity.living.LivingHurtEvent", event => {
-  let victim = event.entity
-  let attacker = event.source.entity
-  let direct = event.source.directEntity
-  if (!victim || !attacker || !attacker.isPlayer() || attacker.level.clientSide) return
-  if (!direct || String(direct.uuid) !== String(attacker.uuid)) return
-  if (attacker.distanceTo(victim) > 6.0 || event.amount <= 0) return
-
-  let heldId = String(attacker.mainHandItem.id)
-  if (heldId === "tacz:modern_kinetic_gun" || heldId === "minecraft:bow"
-      || heldId === "minecraft:crossbow" || heldId === "minecraft:trident") return
-
-  let now = Date.now()
-  let last = attacker.persistentData.getLong("dz_xp_cd_melee_hit")
-  if (now - last < 2000) return
-  attacker.persistentData.putLong("dz_xp_cd_melee_hit", now)
-
-  let result = attacker.server.runCommandSilent(
-    "puffish_skills experience add " + attacker.username + " melee 1"
-  )
-  if (result > 0) {
-    attacker.server.runCommandSilent('title ' + attacker.username
-      + ' actionbar {"text":"+1 Melee XP","color":"aqua"}')
-  }
-})
-
 // A nearby trained medic can automatically stabilize a dying player.
 // The cooldown belongs to the medic, so a party cannot chain one healer.
 ForgeEvents.onEvent("net.minecraftforge.event.entity.living.LivingDeathEvent", event => {
@@ -187,13 +143,6 @@ ForgeEvents.onEvent("net.minecraftforge.event.entity.living.LivingHurtEvent", ev
     }
   }
 
-  let now = Date.now()
-  let last = player.persistentData.getLong("dz_xp_cd_armor_hurt")
-  if (now - last < 30000) return
-  player.persistentData.putLong("dz_xp_cd_armor_hurt", now)
-  player.server.runCommandSilent(
-    "puffish_skills experience add " + player.username + " armor 1"
-  )
 })
 
 // Medical Revive is registered above and gets the first opportunity to save

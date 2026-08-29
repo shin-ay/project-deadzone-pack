@@ -2,9 +2,9 @@
 // Uses TaCZ's official KubeJS event group. No gun NBT or animation timing changes.
 
 function dzAddSkillXp(player, category, amount) {
-  player.server.runCommandSilent(
-    "puffish_skills experience add " + player.username + " " + category + " " + amount
-  )
+  // M&S already owns combat XP and the unified gun-kill bridge records JOB
+  // activity. Keep this retired entry point as a no-op to prevent double XP.
+  return 0
 }
 
 function dzIsServerPlayer(entity) {

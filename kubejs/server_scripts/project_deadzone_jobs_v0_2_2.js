@@ -679,8 +679,7 @@ ServerEvents.commandRegistry(event => {
   // XP sources are intentionally disabled until TACZ firearm detection is implemented.
   root.then(Commands.literal("firearms_xp_test").requires(s => s.hasPermission(2)).executes(ctx => {
     let p=ctx.source.player
-    dzPuffishCommand(p, "puffish_skills experience add {player} firearms 100")
-    p.tell(Text.of("Added 100 Firearms XP. Open the Skill Tree with K.").aqua())
+    p.tell(Text.of("旧Firearms XPは廃止済み。/deadzonecareer action_test_300 を使用してください。").yellow())
     return 1
   }))
 
@@ -759,9 +758,7 @@ ServerEvents.commandRegistry(event => {
     let category=DZ_SKILL_CATEGORIES[skillName]
     root.then(Commands.literal("xp_test_"+category).requires(s => s.hasPermission(2)).executes(ctx => {
       let p=ctx.source.player
-      dzPuffishCommand(p,
-        "puffish_skills experience add {player} "+category+" 100")
-      p.tell(Text.of("Added 100 "+skillName+" XP.").aqua())
+      p.tell(Text.of("旧"+skillName+" XPは廃止済み。成長はM&S総合Lvへ統一されています。").yellow())
       return 1
     }))
   })

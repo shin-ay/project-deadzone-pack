@@ -181,7 +181,7 @@ function dzMenuComplete(player, key) {
   player.persistentData.putLong("dz_menu_next", Date.now() + DZ_MENU_COOLDOWN_MS)
   player.persistentData.remove("dz_menu_active")
   dzMenuResetProgress(player)
-  player.server.runCommandSilent("puffish_skills experience add " + player.username + " survival 8")
+  if(global.pdzUnifiedProgressionAward)global.pdzUnifiedProgressionAward(player,'cooking',8,true)
   player.server.runCommandSilent("ftbquests change_progress " + player.username + " complete " + DZ_MENU_QUESTS[key])
   dzMenuSyncQuests(player)
   player.tell(Text.of(plan.name + "完成。" + plan.description).gold())

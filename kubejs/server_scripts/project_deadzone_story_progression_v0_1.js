@@ -93,6 +93,16 @@ ServerEvents.commandRegistry(event => {
       return 1
     }))
 
+  root.then(Commands.literal("reset")
+    .requires(source => source.hasPermission(2))
+    .executes(ctx => {
+      dzStorySetTier(ctx.source.server, 0, true)
+      ctx.source.server.tell(Text.of(
+        "World/Story TierをT0へリセットし、オンラインプレイヤーの解放Stageを同期しました。"
+      ).green())
+      return 1
+    }))
+
   let set = Commands.literal("set").requires(source => source.hasPermission(2))
   for (let tier = 0; tier <= DZ_STORY_MAX_TIER; tier++) {
     let selected = tier

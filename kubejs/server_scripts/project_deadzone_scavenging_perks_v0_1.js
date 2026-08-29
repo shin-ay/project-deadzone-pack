@@ -17,9 +17,7 @@ function dzScavengingCooldown(player, key, milliseconds) {
 }
 
 function dzScavengingAddXp(player, amount) {
-  player.server.runCommandSilent(
-    "puffish_skills experience add " + player.username + " scavenging " + amount
-  )
+  if(global.pdzUnifiedProgressionAward)global.pdzUnifiedProgressionAward(player,'scavenging',amount,true)
 }
 
 function dzScavengingSearchReward(tier) {

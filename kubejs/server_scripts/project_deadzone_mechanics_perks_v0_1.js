@@ -34,9 +34,7 @@ function dzMechanicsCooldown(player, key, milliseconds) {
 }
 
 function dzMechanicsAddXp(player, amount) {
-  player.server.runCommandSilent(
-    "puffish_skills experience add " + player.username + " mechanics " + amount
-  )
+  if(global.pdzUnifiedProgressionAward)global.pdzUnifiedProgressionAward(player,'mechanics',amount,true)
 }
 
 ItemEvents.rightClicked(event => {

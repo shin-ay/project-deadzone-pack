@@ -5,6 +5,7 @@
 const PDZG_LOAD = Java.loadClass('com.robertx22.mine_and_slash.uncommon.datasaving.Load')
 const PDZG_SCHOOL = Java.loadClass('com.robertx22.mine_and_slash.database.data.talent_tree.TalentTree$SchoolType')
 const PDZG_POINT = Java.loadClass('com.robertx22.mine_and_slash.saveclasses.PointData')
+const PDZG_INTEGER = Java.loadClass('java.lang.Integer')
 
 const PDZG_JOB_ENTRY = {
   survivor:{id:'ascendant_class',x:54,y:46},
@@ -50,13 +51,44 @@ function pdzGJobId(player){
   return PDZG_JOB_ENTRY[id]?id:'survivor'
 }
 
+// Rhino numbers can enter M&S' HashMap<String, Integer> as java.lang.Double.
+// M&S 6.4.2 hard-casts these values during its periodic stat rebuild, so
+// normalize every stored rank before that rebuild gets another chance to run.
+function pdzGNormalizeSkillRanks(player){
+  try{
+    let pdata=PDZG_LOAD.player(player)
+    let levels=pdata.ascClass.allocated_lvls
+    let repaired=0
+    let entries=levels.entrySet().toArray()
+    for(let i=0;i<entries.length;i++){
+      let entry=entries[i]
+      let value=entry.getValue()
+      if(value===null||String(value.getClass().getName())!=='java.lang.Integer'){
+        let rank=Math.max(0,Math.round(Number(value)||0))
+        levels.put(String(entry.getKey()),PDZG_INTEGER.valueOf(rank))
+        repaired++
+      }
+    }
+    if(repaired>0){
+      pdata.forceNextSync()
+      pdata.syncToClient(player)
+      console.info('[PDZ G JOB] repaired '+repaired+' M&S skill rank type(s) for '+player.name.string)
+    }
+    return pdata
+  }catch(error){
+    console.error('[PDZ G JOB] skill rank type repair failed for '+player.name.string+': '+error)
+    return null
+  }
+}
+
 function pdzGSyncJob(player,force){
   if(!player||player.level.clientSide)return false
+  let pdata=pdzGNormalizeSkillRanks(player)
+  if(!pdata)return false
   let job=pdzGJobId(player)
   let d=player.persistentData
   if(!force&&String(d.getString('dz_g_synced_job'))===job)return false
   try{
-    let pdata=PDZG_LOAD.player(player)
     // PDZ Career owns promotions. M&S default ascendancies must never survive
     // a base JOB change, otherwise class passives can be mixed accidentally.
     pdata.talents.clearAllTalents(PDZG_SCHOOL.ASCENDANCY)
@@ -81,7 +113,7 @@ function pdzGSyncJob(player,force){
       let skillEntry=PDZG_SKILL_ENTRY[job]
       pdata.ascClass.allocated_lvls.clear()
       pdata.ascClass.school_order.clear()
-      pdata.ascClass.allocated_lvls.put(skillEntry.perk,1)
+      pdata.ascClass.allocated_lvls.put(skillEntry.perk,PDZG_INTEGER.valueOf(1))
       pdata.ascClass.school_order.add(skillEntry.school)
       d.putInt('dz_g_skill_field_schema',1)
       d.putString('dz_g_skill_field',skillEntry.school)
@@ -120,7 +152,10 @@ function pdzGJobStatus(player){
 
 // Do not force-clear ASCENDANCY on every reconnect. A forced clear is only
 // required when the PDZ base JOB changed or an administrator requests it.
-PlayerEvents.loggedIn(event=>event.server.scheduleInTicks(120,()=>pdzGSyncJob(event.player,false)))
+PlayerEvents.loggedIn(event=>{
+  event.server.scheduleInTicks(1,()=>pdzGNormalizeSkillRanks(event.player))
+  event.server.scheduleInTicks(120,()=>pdzGSyncJob(event.player,false))
+})
 PlayerEvents.respawned(event=>event.server.scheduleInTicks(60,()=>pdzGSyncJob(event.player,false)))
 PlayerEvents.tick(event=>{if(event.player.age%200===0)pdzGSyncJob(event.player,false)})
 

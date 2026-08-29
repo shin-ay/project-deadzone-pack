@@ -1,12 +1,12 @@
 name = "PROJECT DEADZONE"
 author = "PROJECT DEADZONE Team"
-version = "BETA-20260828-SPORE-TIER-MUSIC-1"
+version = "BETA-20260829-UNIFIED-PROGRESSION-1"
 pack-format = "packwiz:1.1.0"
 
 [index]
 file = "index.toml"
 hash-format = "sha256"
-hash = "b6364af1f80f351f1b0d397f857cc04324af229d2cecbf5611b8597540e40bbc"
+hash = "d481bf0029406536c9066fc5a01deea095168bf789c950a654b484e0ec56b263"
 
 [versions]
 forge = "47.4.10"

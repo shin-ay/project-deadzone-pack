@@ -1,10 +1,12 @@
 ﻿// PROJECT DEADZONE Activity Skill XP v0.1
 // Low baseline rewards. Quests, elites and bosses remain the main late-game XP.
 
+// Retired by unified progression. Keep the file as a no-op so old pack updates
+// do not resurrect ten hidden Puffish Skills XP tracks.
+const PDZ_ACTIVITY_LEGACY_XP_ENABLED = false
+
 function dzActivityAddXp(player, category, amount) {
-  player.server.runCommandSilent(
-    "puffish_skills experience add " + player.username + " " + category + " " + amount
-  )
+  return 0
 }
 
 function dzActivityCooldown(player, key, milliseconds) {

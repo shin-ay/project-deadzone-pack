@@ -1,16 +1,7 @@
 // Story Tier owns unlocks. Region Tier owns geography. Threat Tier owns the
-// global difficulty floor and is derived only from elapsed days and the
-// strongest online player's M&S level.
-// Elapsed days never unlock quests, recipes or facilities, but waiting forever
-// can no longer freeze hostile pressure at T0.
-
-const DZ_THREAT_DAY_FLOORS = [
-  [55, 5],
-  [35, 4],
-  [20, 3],
-  [10, 2],
-  [4, 1]
-]
+// global difficulty floor and is derived from the strongest online player's
+// M&S level. Minecraft world days are deliberately informational only: a
+// dedicated server must never become harder just because it stayed online.
 
 // The world never forgets story unlocks, but the director temporarily lowers
 // ambient pressure after repeated combat losses so a struggling party can
@@ -28,13 +19,6 @@ function dzThreatDay(server) {
       return Math.floor(Number(server.players[0].level.getDayTime()) / 24000) + 1
   } catch (ignored) {}
   return 1
-}
-
-function dzThreatDayFloor(server) {
-  let day = dzThreatDay(server)
-  for (let i = 0; i < DZ_THREAT_DAY_FLOORS.length; i++)
-    if (day >= DZ_THREAT_DAY_FLOORS[i][0]) return DZ_THREAT_DAY_FLOORS[i][1]
-  return 0
 }
 
 function dzThreatHighestPlayerLevel(server) {
@@ -65,7 +49,7 @@ function dzThreatRelief(server) {
 }
 
 function dzThreatBaseTier(server) {
-  return Math.max(dzThreatDayFloor(server), dzThreatPlayerFloor(server))
+  return dzThreatPlayerFloor(server)
 }
 
 function dzThreatTier(server) {
@@ -126,17 +110,6 @@ ServerEvents.tick(event => {
   DZ_THREAT_TICKS++
   if (DZ_THREAT_TICKS % 200 !== 0 || event.server.players.length <= 0) return
   let server = event.server
-  let floor = dzThreatDayFloor(server)
-  let initialized = server.persistentData.getBoolean('dz_threat_floor_initialized_v1')
-  let previous = server.persistentData.getInt('dz_threat_day_floor_v1')
-  server.persistentData.putBoolean('dz_threat_floor_initialized_v1', true)
-  server.persistentData.putInt('dz_threat_day_floor_v1', floor)
-  if (initialized && floor > previous) {
-    let message = '[レイ緊急通信] 経過日数による脅威下限がT' + floor + 'へ上昇。ストーリー解放Tierは変化しません。'
-    let safe = message.replace(/\\/g, '\\\\').replace(/"/g, '\\"')
-    server.runCommandSilent('title @a actionbar {"text":"' + safe + '","color":"red","bold":true}')
-    server.runCommandSilent('execute as @a at @s run playsound minecraft:block.note_block.didgeridoo player @s ~ ~ ~ 0.7 0.65')
-  }
 
   let relief = dzThreatRelief(server)
   let reliefInitialized = server.persistentData.getBoolean('dz_threat_relief_initialized_v1')
@@ -186,11 +159,28 @@ EntityEvents.death(event => {
 
 ServerEvents.commandRegistry(event=>{
   const {commands:Commands}=event
-  event.register(Commands.literal('deadzoneworld').then(Commands.literal('status').executes(ctx=>{
+  let root=Commands.literal('deadzoneworld')
+  root.then(Commands.literal('status').executes(ctx=>{
     let p=ctx.source.player,day=Math.floor(Number(p.level.getDayTime())/24000)+1
     p.tell(Text.of('Day '+day+' / Story Unlock T'+p.server.persistentData.getInt('deadzone_world_tier')+
       ' / Highest M&S Lv'+dzThreatHighestPlayerLevel(p.server)+' / Threat T'+dzThreatTier(p.server)+
       ' / Recovery -'+dzThreatRelief(p.server)).gold())
-    p.tell(Text.of('Region: distance / Threat: max(days, highest online level) - recovery / Unlocks: story only').gray());return 1
-  })))
+    p.tell(Text.of('Region: distance / Threat: highest online M&S level - recovery / World days: informational only').gray());return 1
+  }))
+  root.then(Commands.literal('reset_threat')
+    .requires(source=>source.hasPermission(2))
+    .executes(ctx=>{
+      let data=ctx.source.server.persistentData
+      data.putInt('dz_threat_death_count_v1',0)
+      data.putLong('dz_threat_last_valid_death_ms_v1',0)
+      data.putInt('dz_threat_applied_relief_v1',0)
+      data.putBoolean('dz_threat_relief_initialized_v1',false)
+      // Clear the retired day-floor cache so old worlds cannot display or
+      // restore it if a previous script version is inspected.
+      data.putInt('dz_threat_day_floor_v1',0)
+      data.putBoolean('dz_threat_floor_initialized_v1',false)
+      ctx.source.server.tell(Text.of('Threat履歴をリセットしました。現在値は最高オンラインM&Sレベルから再計算されます。').green())
+      return 1
+    }))
+  event.register(root)
 })
