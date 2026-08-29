@@ -59,6 +59,7 @@ function pdzMnsHasAnyTag(stack,tags){
 // count therefore is not enough. Use the item's intrinsic stack limit.
 function pdzMnsMaxStackSize(stack){
   if(!stack||stack.isEmpty())return 64
+  try{return Math.max(1,Number(stack.getMaxStackSize())||64)}catch(ignored){}
   try{return Math.max(1,Number(stack.item.getMaxStackSize(stack))||64)}catch(ignored){}
   try{return Math.max(1,Number(stack.maxStackSize)||64)}catch(ignored){}
   return 64
