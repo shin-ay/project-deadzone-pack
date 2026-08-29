@@ -2953,6 +2953,10 @@ file = "config/rightclickharvest.json5"
 hash = "6eb5169563472ae96184c94e9f42ff7d76fdba403ed3190ffb308e817ea0a21e"
 
 [[files]]
+file = "config/scalinghealth-client.toml"
+hash = "378a364c9d17fcf5c08cd7e9bd6388dbeebaf9c5b4ac0a3050b94c10de11eb29"
+
+[[files]]
 file = "config/securitycraft-client.toml"
 hash = "b389265c37589ce6ff1581890fd2c0766b6477e223447a9670ba153008d331e1"
 
