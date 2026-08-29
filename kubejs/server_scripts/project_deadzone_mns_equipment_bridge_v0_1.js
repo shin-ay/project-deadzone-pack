@@ -54,6 +54,16 @@ function pdzMnsHasAnyTag(stack,tags){
   return false
 }
 
+// M&S gear must never be written onto stackable resources. A chest can expose
+// a one-count slime ball, ingot, food or ammunition stack; checking the current
+// count therefore is not enough. Use the item's intrinsic stack limit.
+function pdzMnsMaxStackSize(stack){
+  if(!stack||stack.isEmpty())return 64
+  try{return Math.max(1,Number(stack.item.getMaxStackSize(stack))||64)}catch(ignored){}
+  try{return Math.max(1,Number(stack.maxStackSize)||64)}catch(ignored){}
+  return 64
+}
+
 function pdzMnsRoot(stack,create){
   if(!stack||stack.isEmpty())return null
   try{
@@ -111,7 +121,7 @@ function pdzMnsArmorType(stack){
 }
 
 function pdzMnsGearType(stack){
-  if(!stack||stack.isEmpty()||Number(stack.count)!==1)return null
+  if(!stack||stack.isEmpty()||pdzMnsMaxStackSize(stack)>1)return null
   if(pdzMnsIsGun(stack))return pdzMnsGunType(stack)
   for(let i=0;i<PDZMNS_TAG_ALIASES.length;i++){
     let alias=PDZMNS_TAG_ALIASES[i]
@@ -133,25 +143,41 @@ function pdzMnsGearType(stack){
   if(id==='minecraft:crossbow')return 'crossbow'
   if(id==='minecraft:trident')return 'trident'
   if(id==='minecraft:shield')return 'shield_middle'
-  if(/great[_-]?sword|claymore|zweihander/.test(id))return 'great_sword'
-  if(/short[_-]?sword/.test(id))return 'short_sword'
-  if(/knife|dagger/.test(id))return 'dagger'
-  if(/machete|katana/.test(id))return 'katana'
-  if(/halberd/.test(id))return 'halberd'
-  if(/javelin/.test(id))return 'javelin'
-  if(/pike/.test(id))return 'pike'
-  if(/spear/.test(id))return 'spear'
-  if(/warhammer/.test(id))return 'warhammer'
-  if(/hammer|sledge/.test(id))return 'hammer'
-  if(/scythe/.test(id))return 'scythe'
-  if(/rapier/.test(id))return 'rapier'
-  if(/knuckle|gauntlet/.test(id))return 'knuckle'
-  if(/baton|club|crowbar|mace/.test(id))return 'mace'
+  // Never infer equipment from its registry name. The pack contains furniture,
+  // vehicle parts, crafting tools, traps and spawn eggs whose IDs include words
+  // such as hammer, knife, mace, spear or katana. Legitimate compatibility is
+  // declared through the mmorpg/common equipment tags above.
   return null
 }
 
 function pdzMnsHasGear(stack){
   try{return PDZMNS_EXILE_STACK.of(stack).get(PDZMNS_STACK_KEYS.GEAR).has()}catch(ignored){}
+  return false
+}
+
+function pdzMnsCleanInvalidUnified(stack){
+  let root=pdzMnsRoot(stack,false)
+  if(!root)return false
+  let unified=false
+  try{unified=root.getBoolean('PDZMnsUnified')}catch(ignored){}
+  if(!unified)return false
+  try{
+    let exile=PDZMNS_EXILE_STACK.of(stack)
+    ;[PDZMNS_STACK_KEYS.GEAR,PDZMNS_STACK_KEYS.POTENTIAL,PDZMNS_STACK_KEYS.CUSTOM,PDZMNS_STACK_KEYS.DROPPED]
+      .forEach(key=>{try{exile.get(key).delete()}catch(ignored){}})
+    root=pdzMnsRoot(stack,false)
+    if(root){
+      ;['PDZMnsUnified','PDZMnsGearType','PDZMnsDynamicV3','PDZMnsCrafted','PDZMnsCraftLevelCap',
+        'PDZMnsBaseRarity','PDZMnsBaseLevel','PDZMnsPolicyV2'].forEach(key=>root.remove(key))
+      try{if(root.isEmpty())stack.nbt=null}catch(ignored){}
+    }
+    return true
+  }catch(err){
+    if(pdzMnsBridgeErrors<8){
+      console.error('[PDZ M&S Bridge] invalid non-equipment cleanup '+String(stack.id)+' : '+err)
+      pdzMnsBridgeErrors++
+    }
+  }
   return false
 }
 
@@ -246,7 +272,14 @@ function pdzMnsCleanLegacy(stack){
 function pdzMnsConvert(stack,player,forced,maxLevel){
   if(!stack||stack.isEmpty())return false
   let cleanedLegacy=pdzMnsCleanLegacy(stack)
+  let type=pdzMnsGearType(stack)
   let hasGear=pdzMnsHasGear(stack),policyMigration=false
+  // Repair stacks polluted by older broad conversion passes. Only PDZ-created
+  // M&S data is removed; native M&S items and legitimate mod NBT stay intact.
+  if(hasGear&&!type){
+    let cleanedInvalid=pdzMnsCleanInvalidUnified(stack)
+    return cleanedInvalid||cleanedLegacy
+  }
   if(hasGear){
     if(maxLevel!==undefined&&maxLevel!==null){
       return pdzMnsCapExistingGearLevel(stack,maxLevel)||cleanedLegacy
@@ -260,7 +293,6 @@ function pdzMnsConvert(stack,player,forced,maxLevel){
     }catch(ignored){}
     if(!policyMigration)return cleanedLegacy
   }
-  let type=pdzMnsGearType(stack)
   if(!type)return cleanedLegacy
   try{
     let info=player?PDZMNS_LOOT_INFO.ofPlayer(player):PDZMNS_LOOT_INFO.ofLevel(1)

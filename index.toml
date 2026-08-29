@@ -11210,7 +11210,7 @@ hash = "7cc6d2352d1db1e07a98c26855ff2153864698b099f1f7752428c3cb8c09052b"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_mns_equipment_bridge_v0_1.js"
-hash = "1b5935098ac9447606890e5ed4b65f31bae787ef7a86f01d8b8c1724ffaf2830"
+hash = "38d54a88ed398db6b225c8b5f7ee4487a946a1fcea4f6ae518bf18a77c16c78e"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_mns_limb_damage_bridge_v0_1.js"
@@ -11903,7 +11903,7 @@ hash = "9f4870e0073f46f83effd31ace8410dac5c52448aab67dba08380c04f5d8af12"
 
 [[files]]
 file = "mods/PROJECT_DEADZONE_JOB_UI-0.1.0.jar"
-hash = "fe67d171b37b33d9f054436a208b65f917935a4341c4bf0fd27875cf1c327f5e"
+hash = "a68e25e4d9a6a6ecc8a87dd2378cc3024da4908ef3aefb3c33ecb7260aeb821e"
 
 [[files]]
 file = "mods/PROJECT_DEADZONE_Vehicle_Compatibility-1.4.0.jar"
