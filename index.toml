@@ -3386,7 +3386,7 @@ hash = "77ad29b36566f13d3c164fbe92bcea575040da41e96c1e340af8f1cccc8d71cd"
 
 [[files]]
 file = "defaultconfigs/mine_and_slash-server.toml"
-hash = "cb24bc4805ad827505df8f157f4e9d4ff335202c4df03c3d520f9fceb9fe191a"
+hash = "e69c2f2790f3de726120ec89205b51561f5f18b427409bb212978e96ad301120"
 
 [[files]]
 file = "defaultconfigs/mine_and_slash_compatibility-server.toml"
