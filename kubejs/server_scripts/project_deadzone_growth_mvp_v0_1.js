@@ -1,8 +1,7 @@
 // PROJECT DEADZONE Growth MVP v0.1
-// Test-only bridge: JOB aptitude, safe legacy preview, activity XP and mastery grades.
-
-const DZG_CATEGORIES = ['dz_survival','dz_scavenging','dz_livelihood','dz_mobility','dz_industry','dz_combat']
-const DZG_LEGACY = ['firearms','melee','reload','armor','survival','medical','scavenging','fitness','mechanics','engineering']
+// Activity bridge: JOB aptitude and all combat/life/industry actions feed the
+// one visible M&S character level.  No second rank, profession or mastery
+// currency is created here.
 const DZG_JOB = {
   survivor:       {primary:'dz_survival',   secondary:'dz_scavenging', seed:3},
   weapons_expert: {primary:'dz_combat',     secondary:'dz_industry',   seed:3},
@@ -19,57 +18,6 @@ function dzgJobId(player) {
   return DZG_JOB[id] ? id : 'survivor'
 }
 
-function dzgPoints(player, category) {
-  try { return Number(PufferfishSkills.getPointsLeft(player, category)) }
-  catch (error) { return 0 }
-}
-
-function dzgLevel(player, category) {
-  try { return Number(PufferfishSkills.getExperienceLevel(player, category)) }
-  catch (error) { return 0 }
-}
-
-function dzgPstTrack(category) {
-  if (category === 'dz_combat') return 'combat'
-  if (category === 'dz_livelihood') return 'life'
-  if (category === 'dz_industry' || category === 'dz_mobility') return 'industry'
-  return 'survival'
-}
-
-function dzgPstTrackName(track) {
-  if (track === 'combat') return '戦闘'
-  if (track === 'life') return '生活'
-  if (track === 'industry') return '工業'
-  return 'サバイバル'
-}
-
-function dzgPstThreshold(rank) {
-  return 60 + Math.min(240, rank * 20)
-}
-
-function dzgPstXp(player, category, amount) {
-  let track=dzgPstTrack(category)
-  let xpKey='pdz_pst_xp_' + track
-  let rankKey='pdz_pst_rank_' + track
-  let xp=player.persistentData.getInt(xpKey) + amount
-  let rank=player.persistentData.getInt(rankKey)
-  let gained=0
-  let threshold=dzgPstThreshold(rank)
-  while (xp >= threshold && gained < 8) {
-    xp -= threshold
-    rank++
-    gained++
-    threshold=dzgPstThreshold(rank)
-  }
-  player.persistentData.putInt(xpKey,xp)
-  player.persistentData.putInt(rankKey,rank)
-  if (gained > 0) {
-    player.server.runCommandSilent('skilltree points add ' + player.username + ' ' + gained)
-    player.tell(Text.of('[行動熟練] ' + dzgPstTrackName(track) + ' Rank ' + rank + ' / Talent SP +' + gained).gold())
-  }
-  return {track:track,xp:xp,rank:rank,next:threshold,gained:gained}
-}
-
 function dzgXp(player, category, base) {
   let source=arguments.length>=4?String(arguments[3]):({
     dz_combat:'combat',dz_livelihood:'survival',dz_industry:'craft',
@@ -78,14 +26,6 @@ function dzgXp(player, category, base) {
   let awardMns=arguments.length>=5?arguments[4]:source!=='combat'&&source!=='firearms'&&source!=='melee'&&source!=='elite'
   if(global.pdzUnifiedProgressionAward)return global.pdzUnifiedProgressionAward(player,source,base,awardMns)
   return 0
-}
-
-function dzgSetPoints(player, category, points) {
-  player.server.runCommandSilent('puffish_skills points set ' + player.username + ' ' + category + ' ' + Math.max(0, Math.floor(points)))
-}
-
-function dzgAddPoints(player, category, amount) {
-  dzgSetPoints(player, category, dzgPoints(player, category) + amount)
 }
 
 function dzgCooldown(player, key, ms) {
@@ -158,38 +98,9 @@ function dzgSeed(player) {
   return true
 }
 
-function dzgTagCount(player, prefix) {
-  let count = 0
-  player.tags.forEach(tag => { if (String(tag).startsWith(prefix)) count++ })
-  return count
-}
-
-function dzgSyncMastery(player) {
-  let jobId = dzgJobId(player)
-  let job = DZG_JOB[jobId]
-  let a = dzgTagCount(player, 'dz_growth_' + job.primary.substring(3) + '_')
-  let b = dzgTagCount(player, 'dz_growth_' + job.secondary.substring(3) + '_')
-  let invested = a + b
-  let grade = invested >= 12 ? 3 : invested >= 8 ? 2 : invested >= 4 ? 1 : 0
-  for (let i=1;i<=3;i++) {
-    let generic='dz_job_mastery_' + i
-    let specific='dz_job_' + jobId + '_mastery_' + i
-    if (i <= grade) { player.addTag(generic); player.addTag(specific) }
-    else { player.removeTag(generic); player.removeTag(specific) }
-  }
-  player.persistentData.putInt('dz_growth_mastery_grade', grade)
-  player.persistentData.putInt('dz_growth_related_nodes', invested)
-  return {grade:grade, invested:invested}
-}
-
-PlayerEvents.loggedIn(event => {
-  event.player.server.scheduleInTicks(40, () => dzgSyncMastery(event.player))
-})
-
 PlayerEvents.tick(event => {
   let player=event.player
   if (player.level.clientSide || player.age % 100 !== 0) return
-  dzgSyncMastery(player)
 
   // Exploration rewards actual travel, not standing still or circling one block.
   let x=Number(player.x), y=Number(player.y), z=Number(player.z)
@@ -299,9 +210,8 @@ ServerEvents.commandRegistry(event => {
 
   root.then(Commands.literal('status').executes(ctx => {
     let p=ctx.source.player
-    let m=dzgSyncMastery(p)
-    p.tell(Text.of('JOB: ' + dzgJobId(p) + ' / Mastery G' + m.grade + ' (' + m.invested + '/12 related nodes)').gold())
-    p.tell(Text.of('総合レベルと経験値はM&Sへ統合済み。J=JOB / M&S画面=Talent').aqua())
+    p.tell(Text.of('JOB: ' + dzgJobId(p) + ' / 適性行動のM&S XP +25%').gold())
+    p.tell(Text.of('総合Lv=M&S / 役割=JOB / ビルド=Talent。独立熟練度は使用しません。').aqua())
     return 1
   }))
 
@@ -312,41 +222,10 @@ ServerEvents.commandRegistry(event => {
     return 1
   }))
 
-  root.then(Commands.literal('migration_preview').executes(ctx => {
-    let p=ctx.source.player
-    let total=0
-    p.tell(Text.of('旧進捗の安全プレビュー（まだ変換・削除しません）').aqua())
-    DZG_LEGACY.forEach(c => {
-      let lv=dzgLevel(p,c), sp=dzgPoints(p,c)
-      total += lv
-      p.tell(Text.of(c + ': Lv' + lv + ' / 未使用SP ' + sp).gray())
-    })
-    p.tell(Text.of('暫定変換基準値: ' + total + '（正式配分前に保存予定）').gold())
-    return 1
-  }))
-
-  root.then(Commands.literal('grant_test').requires(s => s.hasPermission(2)).executes(ctx => {
-    let p=ctx.source.player
-    DZG_CATEGORIES.forEach(c => dzgSetPoints(p,c,20))
-    p.tell(Text.of('新6カテゴリへ各20テストSPを付与しました。').aqua())
-    return 1
-  }))
-
   root.then(Commands.literal('xp_test').requires(s => s.hasPermission(2)).executes(ctx => {
     let p=ctx.source.player
     dzgXp(p,'dz_survival',100,'survival',true)
     p.tell(Text.of('M&S総合XPをテスト付与しました。').aqua())
-    return 1
-  }))
-
-  root.then(Commands.literal('reset_test').requires(s => s.hasPermission(2)).executes(ctx => {
-    let p=ctx.source.player
-    DZG_CATEGORIES.forEach(c => {
-      p.server.runCommandSilent('puffish_skills category erase ' + p.username + ' ' + c)
-      dzgSetPoints(p,c,0)
-    })
-    p.persistentData.putBoolean('dz_growth_seed_v1',false)
-    p.tell(Text.of('新6カテゴリのみリセットしました。旧進捗は保持されています。').gray())
     return 1
   }))
 

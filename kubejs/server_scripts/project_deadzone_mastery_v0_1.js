@@ -7,6 +7,11 @@ const DZ_MASTERY_CAPS = {
   survival: 20
 }
 
+// Retired by the unified progression contract. Keep the old implementation in
+// place for save-data reference, but do not register its player-facing command.
+// Existing points/tags are intentionally preserved and can be migrated later.
+const DZ_LEGACY_MASTERY_ENABLED = false
+
 function dzMasteryPointsLeft(player, category) {
   try {
     return Number(PufferfishSkills.getPointsLeft(player, category))
@@ -67,7 +72,7 @@ function dzConvertMastery(player, category) {
   }
 }
 
-ServerEvents.commandRegistry(event => {
+if (DZ_LEGACY_MASTERY_ENABLED) ServerEvents.commandRegistry(event => {
   const {commands: Commands, arguments: Arguments} = event
   let root = Commands.literal("deadzonemastery")
 

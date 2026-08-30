@@ -1594,7 +1594,7 @@ hash = "41bb0b1222c5879fd8f8d1b88d84881adbed559fd12897b5c598dff49ba62abb"
 
 [[files]]
 file = "config/hordes-common.toml"
-hash = "e834f7ab93881da6a381d445931c45b1a5c9d57554e05c79f4ae2faf44c0745a"
+hash = "7817e0ee2b90cb9c071aa4439e4f3898e390759486da9c4d3d3fd30dfb66ef98"
 
 [[files]]
 file = "config/hordes/assets/hordes/attributes.json"
@@ -9906,7 +9906,7 @@ hash = "1c0c235bbc3b88913b8f91e1dfacfc05652c90319af035147124e24fb6370f2a"
 
 [[files]]
 file = "kubejs/data/project_deadzone/loot_tables/chests/hospital_locker.json"
-hash = "19aabde6b3d1b6bfca2d0653af264d1d76ddeeef974b2157c5d4ba4880a4e2e3"
+hash = "717d8f5d4709a575b3606d07a24b35fc96db9d5c796a6cfb96c6be8399b0e660"
 
 [[files]]
 file = "kubejs/data/project_deadzone/loot_tables/chests/hospital_pharmacy.json"
@@ -11130,7 +11130,7 @@ hash = "62af1d449305eae01b5ed3b7ae8abdb20b889aeb422c1a70f8ce4231894f6c08"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_growth_mvp_v0_1.js"
-hash = "c1599d17eabbc3c40f037fa62e612f43c2b2b6143cd0897e5c0c6d289724bb44"
+hash = "f72182c2481747bf1ed223f2ab32c79ad562ba07de80318f3b9702572cd5d842"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_hank_armory_v0_1.js"
@@ -11182,7 +11182,7 @@ hash = "2c00e83346996750ec73c8cc8c14d1baa8039b464a27fcbdc2d08029e316443f"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_mastery_v0_1.js"
-hash = "f561079c18f1428be26a6d032b08c35af6d99a1f415b53d6fd16d6e53e4f5ccc"
+hash = "b11df85bc0c1b850b90d3d3ffcb857dbb3e54e2fb20d77e417fab0856edc77b6"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_material_unification_v0_1.js"
@@ -11246,7 +11246,7 @@ hash = "952e18c37cc997075fdf461c59c6672e3cb3274d74c655db5570044ea845de62"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_professions_v0_1.js"
-hash = "5963d917de0fc640ede03f64abd8e1920610f77fbf250c401260a4110f384744"
+hash = "74950921307f391513afe8630eabb7eba3045a1b22f2f048aaea300d45c88dad"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_progression_unified_v0_1.js"
@@ -12658,6 +12658,11 @@ hash = "ed086cdfde6ba4bb175468a76f3df3b9517aea3fe95b09bed0f1fa70f7caeb6a"
 metafile = true
 
 [[files]]
+file = "mods/lc2h.pw.toml"
+hash = "912220d366701097473aee0f38955d16f974b4d512d4cf7807c798e4b8294280"
+metafile = true
+
+[[files]]
 file = "mods/legendary-survival-overhaul.pw.toml"
 hash = "3d2ba45f2586438819ce7a876a1b671834b5df0ae07d6c04cbb0eca0c794ac02"
 metafile = true
@@ -12892,6 +12897,10 @@ hash = "13e92501fb23e484ffd323438f85a82825d4d93426f20e19a1856c7bff289ad9"
 metafile = true
 
 [[files]]
+file = "mods/pdz-loot-compat-1.0.0.jar"
+hash = "503b5d8cd333c3fe88ecff4ba26d0782c8d5d7113ce9e6461fbaa87d5c4c672b"
+
+[[files]]
 file = "mods/ping.pw.toml"
 hash = "95f37f25194402246b7ed309e2b8549e3d2b9f1f0baa19fd04cbe6862437326b"
 metafile = true
@@ -12972,7 +12981,7 @@ metafile = true
 
 [[files]]
 file = "mods/quantified-api.pw.toml"
-hash = "4f1160b5650302be2865f9c13cd665ff2f3ce617a1e3ba173f387df2e7d85a7b"
+hash = "f54d0b172762f3a55919f44325aa5cb32fb3425c24400731114e837079d61ac3"
 metafile = true
 
 [[files]]
@@ -13341,7 +13350,7 @@ metafile = true
 
 [[files]]
 file = "mods/the-lost-cities.pw.toml"
-hash = "4bbbbbd2b51e936bf0ee08afd25cc5c2b8d4a0811eaac20170527e76f887f3ee"
+hash = "d4a176b8a286f6139acb5793a50b38f80d8060d2edf553e5be55d9435f9a5366"
 metafile = true
 
 [[files]]
@@ -21860,12 +21869,20 @@ file = "pdz_tools/keymap/apply_keymap.ps1"
 hash = "09e7c8e1a4746532e86edbde440f8758dd6752bac9ba50fb26361beefa51d33e"
 
 [[files]]
+file = "projectfiles/LC2H_4.1_ADOPTION_REVIEW_20260830.md"
+hash = "f021e2fe85bbdb026f1be835405df55ce1017751146e7b23040f443e605ba12c"
+
+[[files]]
 file = "projectfiles/PDZ_MULTIPLAYER_BETA_20260825_JP.md"
 hash = "24eafe3029b548f57b3683410fc6ba9f56bbc80117c21b66e0114ec9861515d6"
 
 [[files]]
 file = "projectfiles/PDZ_WORLDGEN_LOOT_TIER_POLICY_20260821_JP.md"
 hash = "f8f5990f1111712efe4b4c18b19dc5afecb1b4610e04ab719d696123714df8c3"
+
+[[files]]
+file = "projectfiles/PREDEPLOY_REVIEW_20260830.md"
+hash = "1fe628f1393754a6a9738d316f13e04f56b854b3485fdc7d76618c3f5da11d27"
 
 [[files]]
 file = "projectfiles/PROJECT_DEADZONE_20260816_Update_and_Test_Checklist.md"
@@ -21962,6 +21979,10 @@ hash = "07dfe69cdc7ed1ea8b63567a8e53b22956562436306a58328d3ec60ce80b5282"
 [[files]]
 file = "projectfiles/PROJECT_DEADZONE_Remaining_Tasks_v0.1.md"
 hash = "b910e04ad6e1de2b8adee6e4ada7136274d570f62a2ebdf65319e458fac348fa"
+
+[[files]]
+file = "projectfiles/PROJECT_DEADZONE_SYSTEM_RESPONSIBILITY_v1.0.md"
+hash = "c5640c7ece7f306f172a8c6fad96cf910564c2bf5f28ec202ac89debd52172d5"
 
 [[files]]
 file = "projectfiles/PROJECT_DEADZONE_Settlement_Faction_Integration_v0.1.md"

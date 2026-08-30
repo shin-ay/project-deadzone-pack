@@ -8,6 +8,10 @@ const DZ_PROFESSION_ROOTS = [
   {category: "survival", skill: "cook_field_kitchen", tag: "dz_profession_cook"}
 ]
 
+// Retired by the unified progression contract. JOB owns role identity and the
+// main Talent tree owns build choices; a third profession-slot layer is hidden.
+const DZ_LEGACY_PROFESSIONS_ENABLED = false
+
 function dzProfessionCount(player) {
   let count = 0
   DZ_PROFESSION_ROOTS.forEach(entry => {
@@ -30,13 +34,13 @@ function dzSyncProfessionSlots(player) {
   return count
 }
 
-PlayerEvents.loggedIn(event => {
+if (DZ_LEGACY_PROFESSIONS_ENABLED) PlayerEvents.loggedIn(event => {
   event.player.server.scheduleInTicks(30, callback => {
     if (event.player && event.player.alive) dzSyncProfessionSlots(event.player)
   })
 })
 
-PlayerEvents.tick(event => {
+if (DZ_LEGACY_PROFESSIONS_ENABLED) PlayerEvents.tick(event => {
   let player = event.player
   if (player.level.clientSide || player.age % 100 !== 0) return
   let current = dzProfessionCount(player)
@@ -45,7 +49,7 @@ PlayerEvents.tick(event => {
   }
 })
 
-ServerEvents.commandRegistry(event => {
+if (DZ_LEGACY_PROFESSIONS_ENABLED) ServerEvents.commandRegistry(event => {
   const {commands: Commands} = event
   let root = Commands.literal("deadzoneprofession")
 

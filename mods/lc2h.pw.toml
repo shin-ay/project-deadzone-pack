@@ -1,0 +1,13 @@
+name = "LC²H [Lost Cities: Multithreaded]"
+filename = "lc2h-4.1.0-BETA.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "5c7e4cc961ccbce931d13d6b648095cded460cc8"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 8763534
+project-id = 1325431
