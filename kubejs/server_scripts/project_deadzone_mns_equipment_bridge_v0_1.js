@@ -84,6 +84,24 @@ function pdzMnsIsGun(stack){
   return false
 }
 
+// Ammunition must remain a plain consumable even when a gun pack makes its
+// item intrinsically unstackable. M&S gear data itself can also force an
+// already-polluted stack down to a max stack size of one, so this check must
+// run before the generic stack-size and equipment-tag detection.
+function pdzMnsIsAmmo(stack){
+  if(!stack||stack.isEmpty())return false
+  let root=pdzMnsRoot(stack,false)
+  try{
+    if(root&&root.contains('AmmoId')&&!root.contains('GunId'))return true
+  }catch(ignored){}
+  if(pdzMnsHasAnyTag(stack,[
+    'tacz:ammo','tacz:ammunition','forge:ammo','forge:ammunition',
+    'c:ammo','c:ammunition','c:bullets','c:cartridges','c:shells','c:magazines'
+  ]))return true
+  let id=String(stack.id).toLowerCase(),path=id.indexOf(':')>=0?id.split(':')[1]:id
+  return /(^|_)(ammo|ammunition|bullet|bullets|cartridge|cartridges|shell|shells|magazine|magazines)($|_)/.test(path)
+}
+
 function pdzMnsGunType(stack){
   let root=pdzMnsRoot(stack,false),gunId=''
   try{if(root&&root.contains('GunId'))gunId=String(root.getString('GunId')).toLowerCase()}catch(ignored){}
@@ -122,7 +140,7 @@ function pdzMnsArmorType(stack){
 }
 
 function pdzMnsGearType(stack){
-  if(!stack||stack.isEmpty()||pdzMnsMaxStackSize(stack)>1)return null
+  if(!stack||stack.isEmpty()||pdzMnsIsAmmo(stack)||pdzMnsMaxStackSize(stack)>1)return null
   if(pdzMnsIsGun(stack))return pdzMnsGunType(stack)
   for(let i=0;i<PDZMNS_TAG_ALIASES.length;i++){
     let alias=PDZMNS_TAG_ALIASES[i]
