@@ -12878,7 +12878,7 @@ metafile = true
 
 [[files]]
 file = "mods/pdz-loot-compat-1.0.0.jar"
-hash = "503b5d8cd333c3fe88ecff4ba26d0782c8d5d7113ce9e6461fbaa87d5c4c672b"
+hash = "2f343751c11871b6d5edbd4eaa5cbda133e463e1cef5917eccdfdd3601baf74f"
 
 [[files]]
 file = "mods/ping.pw.toml"
