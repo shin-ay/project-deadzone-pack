@@ -10,13 +10,12 @@
 	quests: [
 		{
 			description: [
-				"レイの無線卓は、サーバー共有のWorld Tier、確保施設、キャンプ襲撃、勢力判断をFTB QuestsのGUIへ同期する。"
+				"レイの無線卓は、現在地のWorld Tier、ストーリー解禁、脅威度、確保施設、キャンプ襲撃、勢力判断をFTB QuestsのGUIへ同期する。"
 				"完了したカードが、実際に世界へ反映済みの出来事。ロック中のカードは次の変化と解放条件を示す。"
-				"Story Tierは目標達成で施設・報酬を解放する。Threat Tierは max(Story Tier, 経過日数の下限) で屋外の敵圧を決める。"
-				"日数下限は Day 4=T1、10=T2、20=T3、35=T4、55=T5。待機ファームで解放は進まないが、敵だけをT0へ固定することもできない。"
-				"JOB選択後、キャンプ外の戦闘・感染死が30分以内に3回でThreat -1、6回で-2。最後の有効死亡から45分間だけ立て直し猶予が入る。Story Tierと解放済みコンテンツは巻き戻らない。"
-				"同じ隊員の死亡は5分に1回まで集計。遠方の地域Tierは下がらないため、自殺による低Tier化や高Tier地域の安全なファームには利用できない。"
-				"キャンプ中心100mは新規参加者とNPC利用のため永久安全。旧T0郊外保護はDay 5で終了する。"
+				"World Tierはキャンプからの距離でT0～T5へ変化し、地域の敵レベルと構造物候補を担当する。ストーリー解禁S0～S4は目標達成による施設・依頼・在庫の解放だけを担当する。"
+				"脅威度はオンライン中の最高M&S Lvを基準にする。サーバー日数は表示だけで、放置しても難易度は上がらない。"
+				"JOB選択後、キャンプ外の戦闘・感染死が30分以内に3回で脅威度-1、6回で-2。最後の有効死亡から45分間だけ立て直し猶予が入る。ストーリー解禁と地域Tierは巻き戻らない。"
+				"同じ隊員の死亡は5分に1回まで集計。キャンプ中心100mは新規参加者とNPC利用のため永久安全。"
 			]
 			icon: "apocalypsenow:radio"
 			id: "6D8F010000000101"
@@ -29,13 +28,13 @@
 		{
 			dependencies: ["6D8F010000000101"]
 			description: [
-				"Gas Stationの確保で燃料ルートとWorld Tier 1が解放される。"
-				"Tier上昇は地域Tier、Camp契約・発展条件、店の買取候補へ同期される。一般レシピは現状ベースライン解放で、Tierロックされていない。敵のM&Sレベル帯は距離とThreat Tierの高い側が担当する。"
+				"Gas Stationの確保とCamp帰還で燃料ルートとストーリー解禁S1が開く。現在地のWorld Tierは距離だけで決まり、この達成では変化しない。"
+				"S1はCamp契約・発展条件・店の候補を更新する。敵のM&Sレベル帯はWorld Tierと脅威度の高い側が担当する。"
 			]
 			icon: "apocalypsenow:gas_canister"
 			id: "6D8F010000000102"
 			subtitle: "解放条件: Gas Stationを確保し、キャンプへ帰還"
-			tasks: [{ id: "6D8F010000002102", title: "World Tier 1へ到達", type: "custom" }]
+			tasks: [{ id: "6D8F010000002102", title: "ストーリー解禁S1へ到達", type: "custom" }]
 			title: "T1報告：燃料ルート復旧"
 			x: 2.0d
 			y: -2.0d
@@ -49,7 +48,7 @@
 			icon: "minecraft:compass"
 			id: "6D8F010000000103"
 			subtitle: "解放条件: T2ストーリー目標を達成"
-			tasks: [{ id: "6D8F010000002103", title: "World Tier 2へ到達", type: "custom" }]
+			tasks: [{ id: "6D8F010000002103", title: "ストーリー解禁S2へ到達", type: "custom" }]
 			title: "T2報告：地域勢力が動き出す"
 			x: 4.0d
 			y: -2.0d
@@ -63,7 +62,7 @@
 			icon: "apocalypsenow:military_communication_radio"
 			id: "6D8F010000000104"
 			subtitle: "解放条件: Radio Towerを復旧"
-			tasks: [{ id: "6D8F010000002104", title: "World Tier 3へ到達", type: "custom" }]
+			tasks: [{ id: "6D8F010000002104", title: "ストーリー解禁S3へ到達", type: "custom" }]
 			title: "T3報告：都市通信網復旧"
 			x: 6.0d
 			y: -2.0d
@@ -77,7 +76,7 @@
 			icon: "superbwarfare:blueprint_research_table"
 			id: "6D8F010000000105"
 			subtitle: "解放条件: ARGUS-9処理後、T4準備3系統を完了"
-			tasks: [{ id: "6D8F010000002105", title: "World Tier 4へ到達", type: "custom" }]
+			tasks: [{ id: "6D8F010000002105", title: "ストーリー解禁S4へ到達", type: "custom" }]
 			title: "T4報告：封鎖網の外から"
 			x: 8.0d
 			y: -2.0d
@@ -123,6 +122,48 @@
 			title: "終幕報告：接続済み／未接続"
 			x: 7.0d
 			y: 1.5d
+		}
+		{
+			dependencies: ["6D8F010000000101"]
+			description: [
+				"JOBを選び、既存のチュートリアルで探索準備を整え、Gas Stationを確保して無線卓へ帰還する。"
+				"戦闘だけで終わらず、持ち帰った燃料によってCamp在庫と次の依頼が変化するところまでがT0の一巡。"
+			]
+			icon: "minecraft:campfire"
+			id: "6D8F010000000109"
+			subtitle: "JOB選択 → 準備 → Gas Station → Camp帰還"
+			tasks: [{ id: "6D8F010000002109", title: "T0の一巡を完了", type: "custom" }]
+			title: "T0縦切り：最初の帰還"
+			x: 1.0d
+			y: 3.5d
+		}
+		{
+			dependencies: ["6D8F010000000109" "6D8F010000000102"]
+			description: [
+				"初回Camp襲撃を退け、生活供給でCamp Lv1を成立させて無線卓へ報告する。"
+				"戦闘成果と生活成果の両方が拠点サービスへ戻ることを確認するS1の一巡。"
+			]
+			icon: "minecraft:shield"
+			id: "6D8F010000000110"
+			subtitle: "初回防衛 → 生活供給 → Camp Lv1 → 帰還"
+			tasks: [{ id: "6D8F010000002110", title: "S1の一巡を完了", type: "custom" }]
+			title: "S1縦切り：守った場所を育てる"
+			x: 3.0d
+			y: 3.5d
+		}
+		{
+			dependencies: ["6D8F010000000110" "6D8F010000000103"]
+			description: [
+				"T2支援ルートを現地で完了し、いずれかの勢力判断を確定して無線卓へ帰還する。"
+				"支援先と判断は既存の勢力・店・依頼へ渡される。新しい評判ゲージは追加しない。"
+			]
+			icon: "minecraft:compass"
+			id: "6D8F010000000111"
+			subtitle: "支援ルート → 勢力判断 → Camp帰還"
+			tasks: [{ id: "6D8F010000002111", title: "S2の一巡を完了", type: "custom" }]
+			title: "S2縦切り：地域へ影響を返す"
+			x: 5.0d
+			y: 3.5d
 		}
 	]
 	title: "レイ無線局：世界情勢"

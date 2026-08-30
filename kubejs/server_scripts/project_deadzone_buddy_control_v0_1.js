@@ -45,7 +45,7 @@ function dzBctlOrder(player, order, message) {
   player.tell(Text.of(message).green())
   return 1
 }
-function dzBctlTier(player) {
+function dzBctlStoryUnlock(player) {
   try { return dzStoryTier(player.server) } catch (ignored) {
     return Math.max(0, Math.min(5,
       player.server.persistentData.getInt("deadzone_world_tier")))
@@ -53,7 +53,7 @@ function dzBctlTier(player) {
 }
 function dzBctlApplyLoadout(player, buddy, role) {
   try {
-    let tier = dzBctlTier(player)
+    let tier = dzBctlStoryUnlock(player)
     let pool = DZ_BCTL_GUNS[role] || DZ_BCTL_GUNS.assault
     let gunId = pool[Math.max(0, Math.min(5, tier))]
     let gunRl = new DZ_BCTL_RL(gunId)
@@ -91,7 +91,7 @@ function dzBctlApplyProfile(player, buddy, role, healToFull) {
   buddy.tags.remove("dz_faction_medic")
   buddy.tags.add("dz_buddy_role_" + role)
 
-  let tier = dzBctlTier(player)
+  let tier = dzBctlStoryUnlock(player)
   let health = 48, armor = 7, toughness = 1, speed = 0.30
   if (role === "support") { health = 56; armor = 10; toughness = 2; speed = 0.25 }
   if (role === "scout") { health = 38; armor = 4; toughness = 0; speed = 0.36 }
@@ -99,7 +99,7 @@ function dzBctlApplyProfile(player, buddy, role, healToFull) {
     health = 46; armor = 6; toughness = 1; speed = 0.28
     buddy.tags.add("dz_faction_medic")
   }
-  // Alpha profile: each World Tier improves survivability without changing
+  // Alpha profile: each Story Unlock improves survivability without changing
   // the role identity. Visible weapon/armor sets can be layered on later.
   health += tier * 4
   armor += tier * 1.5
@@ -215,7 +215,7 @@ PlayerEvents.tick(event => {
   let buddy=dzBctlFind(player)
   if (!buddy || buddy.tags.contains("dz_buddy_downed")) return
   let role=player.persistentData.getString("dz_buddy_role") || "assault"
-  let tier=dzBctlTier(player)
+  let tier=dzBctlStoryUnlock(player)
   if (buddy.persistentData.getInt("dz_buddy_applied_tier") !== tier) {
     dzBctlApplyProfile(player, buddy, role, false)
     dzBctlApplyLoadout(player, buddy, role)
@@ -229,8 +229,8 @@ ServerEvents.commandRegistry(event => {
   root.then(Commands.literal("status").executes(ctx => {
     let player = ctx.source.player, buddy = dzBctlFind(player)
     let role = player.persistentData.getString("dz_buddy_role")
-    let tier = dzBctlTier(player)
-    player.tell(Text.of("Role: " + (role || "assault") + " / World Tier: T" + tier).gold())
+  let tier = dzBctlStoryUnlock(player)
+  player.tell(Text.of("Role: " + (role || "assault") + " / 支援装備解禁: S" + tier).gold())
     player.tell(Text.of(
       buddy ? "Loaded: YES / HP: " + Math.ceil(buddy.health) + "/" +
         Math.ceil(buddy.maxHealth) + " / Down: " + buddy.tags.contains("dz_buddy_downed") +
@@ -278,7 +278,7 @@ ServerEvents.commandRegistry(event => {
     let ok = dzBctlApplyLoadout(player, buddy, role)
     if (ok) player.tell(Text.of("Buddy loadout applied: " +
       buddy.persistentData.getString("dz_buddy_loadout_gun") +
-      " / T" + dzBctlTier(player)).green())
+      " / Story S" + dzBctlStoryUnlock(player)).green())
     return ok ? 1 : 0
   }))
   root.then(Commands.literal("field_status").executes(ctx => {

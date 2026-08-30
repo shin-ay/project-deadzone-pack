@@ -236,7 +236,7 @@
 				"3FE9D0F62386FC0C"
 			]
 			description: [
-				"World Tier 3ではTFMGのSteel MechanismとCircuit Boardを使い、電力・燃料設備を大型化する。"
+				"ストーリー解禁S3ではTFMGのSteel MechanismとCircuit Boardを使い、電力・燃料設備を大型化する。"
 				"途中工程のSequenced Assemblyは、JEIで工程順とループ回数を確認してからラインを組む。"
 			]
 			icon: "tfmg:steel_mechanism"

@@ -113,8 +113,8 @@ function dzRotateOneShop(server,shop){
   let stockPool=shop.pool.filter(v=>(v.rep||0)<=lifeRank&&(v.camp||0)<=campLevel&&(v.community||0)<=communityRank)
   let stockCount=2+((shop.key==="food"&&lifeRank>=2)?1:0)+(campLevel>=2?1:0)+(communityRank>=1?1:0)+(communityRank>=3?1:0)
   let stock=shop.fixed.concat(dzShopShuffle(stockPool).slice(0,stockCount))
-  let tier=Math.max(0,server.persistentData.getInt("deadzone_world_tier"))
-  let eligibleBuyback=(shop.buyback||[]).filter(v=>tier>=v.tier&&(v.rep||0)<=lifeRank)
+  let storyUnlock=Math.max(0,server.persistentData.getInt("deadzone_world_tier"))
+  let eligibleBuyback=(shop.buyback||[]).filter(v=>storyUnlock>=v.tier&&(v.rep||0)<=lifeRank)
   // Four rotating entries give multiplayer groups more outlets without making
   // any single renewable resource a permanent money farm.
   let buyback=dzShopShuffle(eligibleBuyback).slice(0,4+(campLevel>=2?1:0)+(communityRank>=2?1:0))
@@ -122,7 +122,7 @@ function dzRotateOneShop(server,shop){
   let recipes=stock.map(s=>dzShopOffer(s,storyFactor)).concat(buyback.map(s=>dzShopBuybackOffer(s,storyFactor)))
   let nbt='{Offers:{Inventory:{},Recipes:{Recipes:['+recipes.join(",")+']}},TradingData:{TradingDataSet:{LastReset:0L,MaxUses:24,ResetsEveryMin:120,RewardedXP:0,Type:"BASIC"}}}'
   if(server.runCommandSilent("data merge entity "+selector+" "+nbt)<=0)return false
-  console.info("[PROJECT DEADZONE][Camp Shop] "+shop.key+" T"+tier+" lifeRank="+lifeRank+" campLevel="+campLevel+" communityRank="+communityRank+" storyFactor="+storyFactor.toFixed(2)+" stock="+stock.map(v=>v.id).join(", ")+" buyback="+buyback.map(v=>v.id).join(", "))
+  console.info("[PROJECT DEADZONE][Camp Shop] "+shop.key+" Story S"+storyUnlock+" lifeRank="+lifeRank+" campLevel="+campLevel+" communityRank="+communityRank+" storyFactor="+storyFactor.toFixed(2)+" stock="+stock.map(v=>v.id).join(", ")+" buyback="+buyback.map(v=>v.id).join(", "))
   return true
 }
 function dzRotateCampShops(server,announce){

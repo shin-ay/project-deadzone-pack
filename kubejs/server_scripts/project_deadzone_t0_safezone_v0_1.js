@@ -5,7 +5,7 @@
 
 const DZ_T0_SUBURB_RADIUS = 700
 // Basecamp is a permanent onboarding/trading safe zone.  Do not tie this
-// radius to world tier or elapsed days: players must always be able to use
+// radius to Story Unlock or elapsed days: players must always be able to use
 // camp services without newly spawned hostiles appearing inside the walls.
 const DZ_T0_CAMP_RADIUS = 100
 const DZ_T0_VERTICAL_RADIUS = 24

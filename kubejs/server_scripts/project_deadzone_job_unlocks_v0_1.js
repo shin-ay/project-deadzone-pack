@@ -1,6 +1,6 @@
 // PROJECT DEADZONE JOB Unlocks v0.1 - test profile
 // Career promotion grants one-time field equipment and production bonuses.
-// Recipes themselves are universal and are never gated by JOB or World Tier.
+// Recipes themselves are universal and are never gated by JOB or Story Unlock.
 
 const PDZ_JOB_STAGE_UNLOCKS = {
   ground_tech:[['dz_mechanics_vehicle_1',0]],
@@ -97,7 +97,7 @@ const PDZ_JOB_T3_EQUIPMENT_EFFECT = {
   hunter:'狩猟素材・戦闘性能強化', homesteader:'収穫時に栽培副産物'
 }
 
-function pdzJobWorldTier(player) {
+function pdzJobStoryUnlock(player) {
   for (let i=5;i>=0;i--) if (player.stages.has('deadzone_tier_'+i)) return i
   return 0
 }
@@ -234,7 +234,7 @@ function pdzJobSyncUnlocks(player,announce) {
   let t3=String(player.persistentData.getString('dz_career_t3'))
   if (t2) pdzJobGiveKit(player,t2,2)
   if (t3) pdzJobGiveKit(player,t3,3)
-  let tier=pdzJobWorldTier(player)
+  let tier=pdzJobStoryUnlock(player)
   ;[t2,t3].forEach(id=>(PDZ_JOB_STAGE_UNLOCKS[id]||[]).forEach(entry=>{
     let stage=entry[0],neededTier=entry[1]
     if (tier>=neededTier) {
@@ -310,7 +310,7 @@ ServerEvents.commandRegistry(event=>{
     .then(Commands.literal('status').executes(ctx=>{
       let p=ctx.source.player,t2=String(p.persistentData.getString('dz_career_t2')),t3=String(p.persistentData.getString('dz_career_t3'))
       p.tell(Text.of('=== JOB Unlock Status ===').gold())
-      p.tell(Text.of('World Tier: T'+pdzJobWorldTier(p)+' / T2: '+(t2||'-')+' / T3: '+(t3||'-')).aqua())
+    p.tell(Text.of('ストーリー解禁: S'+pdzJobStoryUnlock(p)+' / JOB T2: '+(t2||'-')+' / JOB T3: '+(t3||'-')).aqua())
       ;[t2,t3].forEach(id=>(PDZ_JOB_STAGE_UNLOCKS[id]||[]).forEach(e=>p.tell(Text.of((p.stages.has(e[0])?'OPEN ':'LOCK ')+e[0]+' (T'+e[1]+')')[p.stages.has(e[0])?'green':'gray']())))
       return 1
     }))

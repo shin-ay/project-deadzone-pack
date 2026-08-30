@@ -52,23 +52,23 @@ const DZ_RECIPE_JOB_UNLOCKS = {
   ordnance_specialist: [['dz_engineering_weapons_2', 1], ['dz_engineering_weapons_3', 2], ['dz_engineering_fortification_2', 1], ['dz_engineering_fortification_3', 2]]
 }
 
-function dzRecipeWorldTier(player) {
+function dzRecipeStoryUnlock(player) {
   for (let i = 5; i >= 0; i--) if (player.stages.has('deadzone_tier_' + i)) return i
   return 0
 }
 
-function dzRecipeCareerOwns(player, stage, worldTier) {
+function dzRecipeCareerOwns(player, stage, storyUnlock) {
   let careers = [String(player.persistentData.getString('dz_career_t2')), String(player.persistentData.getString('dz_career_t3'))]
-  return careers.some(id => (DZ_RECIPE_JOB_UNLOCKS[id] || []).some(entry => entry[0] === stage && worldTier >= entry[1]))
+  return careers.some(id => (DZ_RECIPE_JOB_UNLOCKS[id] || []).some(entry => entry[0] === stage && storyUnlock >= entry[1]))
 }
 
-function dzRecipeTalentOwns(player, stage, worldTier) {
+function dzRecipeTalentOwns(player, stage, storyUnlock) {
   let entry = DZ_RECIPE_TALENT_UNLOCKS[stage]
-  return !!entry && worldTier >= entry[1] && player.tags.contains('pdz_talent_node_' + entry[0])
+  return !!entry && storyUnlock >= entry[1] && player.tags.contains('pdz_talent_node_' + entry[0])
 }
 
 function dzSyncRecipeStages(player) {
-  let worldTier = dzRecipeWorldTier(player)
+  let storyUnlock = dzRecipeStoryUnlock(player)
   DZ_RECIPE_SKILL_STAGES.forEach(stage => {
     let unlocked = true // recipes are baseline; talents now grant efficiency/yield
     if (unlocked && !player.tags.contains(stage)) player.addTag(stage)
@@ -114,9 +114,9 @@ ServerEvents.commandRegistry(event => {
 
   root.then(Commands.literal("audit").executes(ctx => {
     let player = ctx.source.player
-    let worldTier = 0
-    try { worldTier = dzStoryTier(player.server) } catch (ignored) {
-      worldTier = player.server.persistentData.getInt("deadzone_world_tier")
+    let storyUnlock = 0
+    try { storyUnlock = dzStoryTier(player.server) } catch (ignored) {
+      storyUnlock = player.server.persistentData.getInt("deadzone_world_tier")
     }
     let stageTier = -1
     for (let i = 5; i >= 0; i--) {
@@ -131,10 +131,10 @@ ServerEvents.commandRegistry(event => {
       if (active) recipeStages++
       if (tagged !== active) recipeMismatch++
     })
-    let consistent = worldTier === stageTier && worldTier === skillTier && recipeMismatch === 0
+    let consistent = storyUnlock === stageTier && storyUnlock === skillTier && recipeMismatch === 0
     player.tell(Text.of("=== 進行同期監査 ===").gold())
-    player.tell(Text.of("World T" + worldTier + " / Stage T" + stageTier +
-      " / Skill Gate T" + skillTier).aqua())
+    player.tell(Text.of("Story S" + storyUnlock + " / Legacy Stage S" + stageTier +
+      " / Talent Gate S" + skillTier).aqua())
     player.tell(Text.of("Recipe: TAG " + recipeTags + " / STAGE " +
       recipeStages + " / 不一致 " + recipeMismatch).gray())
     player.tell(consistent ? Text.of("同期: OK").green() : Text.of("同期: 修復が必要").red())
@@ -146,7 +146,7 @@ ServerEvents.commandRegistry(event => {
     try { dzStoryApplyPlayer(player, dzStoryTier(player.server)) } catch (ignored) {}
     try { dzSyncSkillTierGates(player, false) } catch (ignored) {}
     dzSyncRecipeStages(player)
-    player.tell(Text.of("World Tier・Skill Gate・Recipe Stageを一括同期しました。").green())
+    player.tell(Text.of("ストーリー解禁・Talent Gate・Recipe Stageを一括同期しました。").green())
     return 1
   }))
 
@@ -155,7 +155,7 @@ ServerEvents.commandRegistry(event => {
     player.tell(Text.of("=== 進行テスト ===").gold())
     ;[
       ["AUDIT", "/deadzoneprogression audit"], ["SYNC ALL", "/deadzoneprogression sync_all"],
-      ["WORLD TIER", "/deadzonetier status"], ["SKILL GATE", "/deadzoneskillgate status"],
+      ["STORY UNLOCK", "/deadzonetier status"], ["TALENT GATE", "/deadzoneskillgate status"],
       ["RECIPE STAGES", "/deadzoneprogression status"]
     ].forEach(entry => player.tell(Text.of("[ " + entry[0] + " ]").aqua()
       .clickRunCommand(entry[1]).hover(Text.of(entry[1]))))

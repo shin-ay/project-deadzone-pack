@@ -12,7 +12,7 @@ const DZ_CONTRACTS = {
   },
   raiders: {
     name: "略奪者の排除", target: 6, money: 11, skill: "firearms", xp: 16, killType: "raiders", securityRep: 3,
-    description: "Raider勢力を6体排除する。World Tier 1以降向け。", tier: 1
+    description: "Raider勢力を6体排除する。ストーリー解禁S1以降向け。", tier: 1
   },
   medical: {
     name: "医療物資の補充", money: 8, skill: "medical", xp: 14, securityRep: 1,
@@ -252,7 +252,7 @@ function dzContractAccept(player, key) {
     return 0
   }
   if ((contract.tier || 0) > dzContractTier(player)) {
-    player.tell(Text.of("この依頼はWorld Tier " + contract.tier + "で解放されます。" ).red())
+    player.tell(Text.of("この依頼はストーリー解禁S" + contract.tier + "で解放されます。" ).red())
     return 0
   }
   if (contract.seasons && contract.seasons.indexOf(dzCurrentSeason(player)) < 0) {

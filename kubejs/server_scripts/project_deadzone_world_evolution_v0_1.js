@@ -1,11 +1,11 @@
-// Story Tier owns unlocks. Region Tier owns geography. Threat Tier owns the
+// Story Unlock owns narrative gates. World Tier owns geography. Threat owns the
 // global difficulty floor and is derived from the strongest online player's
 // M&S level. Minecraft world days are deliberately informational only: a
 // dedicated server must never become harder just because it stayed online.
 
 // The world never forgets story unlocks, but the director temporarily lowers
 // ambient pressure after repeated combat losses so a struggling party can
-// recover.  Distance/region tiers remain an independent floor in the combat
+// recover. Geographic World Tiers remain an independent floor in the combat
 // scaling script, so this cannot make end-game regions into T0 farms.
 const DZ_THREAT_DEATH_WINDOW_MS = 30 * 60 * 1000
 const DZ_THREAT_RELIEF_DURATION_MS = 45 * 60 * 1000
@@ -121,7 +121,7 @@ ServerEvents.tick(event => {
       server.persistentData.putInt('dz_threat_death_count_v1', 0)
       server.persistentData.putLong('dz_threat_last_valid_death_ms_v1', 0)
     }
-    let message = '[レイ定時通信] 回復猶予が終了。Threat TierはT' + dzThreatTier(server) + 'へ復帰しました。'
+    let message = '[レイ定時通信] 回復猶予が終了。脅威度はT' + dzThreatTier(server) + 'へ復帰しました。'
     let safe = message.replace(/\\/g, '\\\\').replace(/"/g, '\\"')
     server.runCommandSilent('title @a actionbar {"text":"' + safe + '","color":"gold"}')
   }
@@ -149,7 +149,7 @@ EntityEvents.death(event => {
   server.persistentData.putBoolean('dz_threat_relief_initialized_v1', true)
 
   if (after > before) {
-    let message = '[レイ緊急通信] 部隊損耗を検知。45分間、Threat Tierを-' + after +
+    let message = '[レイ緊急通信] 部隊損耗を検知。45分間、脅威度を-' + after +
       '（現在T' + dzThreatTier(server) + '）へ一時調整します。'
     let safe = message.replace(/\\/g, '\\\\').replace(/"/g, '\\"')
     server.runCommandSilent('title @a actionbar {"text":"' + safe + '","color":"yellow","bold":true}')
@@ -162,10 +162,12 @@ ServerEvents.commandRegistry(event=>{
   let root=Commands.literal('deadzoneworld')
   root.then(Commands.literal('status').executes(ctx=>{
     let p=ctx.source.player,day=Math.floor(Number(p.level.getDayTime())/24000)+1
-    p.tell(Text.of('Day '+day+' / Story Unlock T'+p.server.persistentData.getInt('deadzone_world_tier')+
+    let story=global.pdzStoryUnlockTier?global.pdzStoryUnlockTier(p.server):p.server.persistentData.getInt('deadzone_world_tier')
+    let world=global.pdzWorldTierAt?global.pdzWorldTierAt(p.server,p.x,p.z):p.persistentData.getInt('dz_world_tier')
+    p.tell(Text.of('Day '+day+' / World T'+world+' / Story S'+story+
       ' / Highest M&S Lv'+dzThreatHighestPlayerLevel(p.server)+' / Threat T'+dzThreatTier(p.server)+
       ' / Recovery -'+dzThreatRelief(p.server)).gold())
-    p.tell(Text.of('Region: distance / Threat: highest online M&S level - recovery / World days: informational only').gray());return 1
+    p.tell(Text.of('World Tier: distance / Threat: highest online M&S level - recovery / Days: informational only').gray());return 1
   }))
   root.then(Commands.literal('reset_threat')
     .requires(source=>source.hasPermission(2))

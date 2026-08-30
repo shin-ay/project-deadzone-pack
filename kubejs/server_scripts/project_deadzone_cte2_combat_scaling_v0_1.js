@@ -1,6 +1,6 @@
 // PROJECT DEADZONE - CTE2-inspired combat level bands v0.1
 // CTE2 uses bounded dimension ranges plus per-mob role multipliers. PDZ has one
-// playable overworld, so the higher of geographic Region Tier and Threat Tier
+// playable overworld, so the higher of geographic World Tier and Threat
 // selects the band. Waiting at low Story Tier therefore cannot freeze nearby
 // outdoor enemies at M&S level 1 forever.
 // This script changes M&S level only; existing PDZ hp/damage role profiles stay
@@ -51,7 +51,7 @@ function pdzCteExcluded(entity){
 
 function pdzCteRegion(entity){
   let tier=0
-  try{tier=dzRegionTierAt(entity.server,entity.x,entity.z)}catch(ignored){}
+  try{tier=global.pdzWorldTierAt?global.pdzWorldTierAt(entity.server,entity.x,entity.z):dzRegionTierAt(entity.server,entity.x,entity.z)}catch(ignored){}
   try{if(global.pdzThreatTier)tier=Math.max(tier,global.pdzThreatTier(entity.server))}catch(ignored){}
   return Math.max(0,Math.min(5,tier))
 }
@@ -145,7 +145,7 @@ EntityEvents.death(event=>{
   killer.tell(Text.of('[BALANCE] '+String(target.hoverName.string)+' / M&S Lv'+level).gold())
   killer.tell(Text.of(d.getString('dz_balance_mode')+' '+d.getInt('dz_balance_hits')+' hits ('+
     d.getInt('dz_balance_heads')+' head / '+d.getInt('dz_balance_bodies')+' body) / '+elapsed.toFixed(2)+'s').aqua())
-  killer.tell(Text.of('記録damage合計 '+d.getDouble('dz_balance_damage_total').toFixed(2)+' / Region T'+pdzCteRegion(target)).gray())
+  killer.tell(Text.of('記録damage合計 '+d.getDouble('dz_balance_damage_total').toFixed(2)+' / World T'+pdzCteRegion(target)).gray())
 })
 
 function pdzCteNearestHostile(player){
@@ -168,7 +168,7 @@ ServerEvents.commandRegistry(event=>{
   root.then(Commands.literal('status').executes(ctx=>{
       let p=ctx.source.player
       let tier=pdzCteRegion(p),band=PDZCTE_LEVEL_BANDS[tier]
-      p.tell(Text.of('[CTE2式戦闘帯] Region T'+tier+' / M&S Lv '+band.min+'-'+band.max).gold())
+      p.tell(Text.of('[CTE2式戦闘帯] World T'+tier+' / M&S Lv '+band.min+'-'+band.max).gold())
       p.tell(Text.of('通常感染者: 低HP・高火力 / 特殊個体: 個別profile / Boss: 専用mechanics').gray())
       return 1
     }))
@@ -203,7 +203,7 @@ ServerEvents.commandRegistry(event=>{
       mnsHp=Number(PDZCTE_HEALTH.getMaxHealth(target)).toFixed(1)
     }catch(ignored){}
     p.tell(Text.of('[BALANCE SCAN] '+String(target.hoverName.string)+' / '+String(target.type)).gold())
-    p.tell(Text.of('Region T'+pdzCteRegion(target)+' / M&S Lv'+level+' / '+rarity).aqua())
+    p.tell(Text.of('World T'+pdzCteRegion(target)+' / M&S Lv'+level+' / '+rarity).aqua())
     p.tell(Text.of('HP '+Number(target.health).toFixed(1)+' / M&S max '+mnsHp+' / vanilla max '+Number(target.maxHealth).toFixed(1)).gray())
     return 1
   }))

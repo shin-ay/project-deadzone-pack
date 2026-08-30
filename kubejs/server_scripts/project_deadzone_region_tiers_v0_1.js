@@ -1,5 +1,6 @@
-// PROJECT DEADZONE regional difficulty rings v0.1
-// Region Tier is geographical. World Tier remains story/recipe progression.
+// PROJECT DEADZONE geographic World Tier rings v0.2
+// World Tier is geographical. Story Unlock owns narrative progression and
+// Threat owns enemy pressure. dz_region_* keys remain compatibility mirrors.
 
 // Camp protection itself is enforced by project_deadzone_t0_safezone_v0_1.js.
 // Keep the map/area label on the same permanent 100 m boundary.
@@ -137,6 +138,11 @@ function dzRegionTierAt(server, x, z) {
   return 5 // extreme exclusion zone
 }
 
+// Canonical API for new integrations. The old function name remains for
+// scripts already deployed to existing worlds.
+global.pdzWorldTierAt = dzRegionTierAt
+global.pdzRegionTierAt = dzRegionTierAt
+
 function dzRegionName(tier, distance) {
   if (distance <= DZ_REGION_RADII[0]) return "キャンプ安全圏"
   return [
@@ -153,8 +159,12 @@ PlayerEvents.tick(event => {
   let dx = player.x - camp.x, dz = player.z - camp.z
   let distance = Math.floor(Math.sqrt(dx * dx + dz * dz))
   let tier = dzRegionTierAt(player.server, player.x, player.z)
-  let previous = player.persistentData.getInt("dz_region_tier")
-  let initialized = player.persistentData.getBoolean("dz_region_initialized")
+  let previous = player.persistentData.getInt("dz_world_tier")
+  let initialized = player.persistentData.getBoolean("dz_world_tier_initialized")
+  player.persistentData.putInt("dz_world_tier", tier)
+  player.persistentData.putInt("dz_world_distance", distance)
+  player.persistentData.putBoolean("dz_world_tier_initialized", true)
+  // Compatibility mirrors for already released scripts and player data.
   player.persistentData.putInt("dz_region_tier", tier)
   player.persistentData.putInt("dz_region_distance", distance)
   player.persistentData.putBoolean("dz_region_initialized", true)
@@ -214,8 +224,10 @@ ServerEvents.commandRegistry(event => {
     let distance = Math.floor(Math.sqrt(dx * dx + dz * dz))
     let tier = dzRegionTierAt(player.server, player.x, player.z)
     player.tell(Text.of(dzRegionName(tier, distance) + " / " + distance + "m").gold())
-    player.tell(Text.of("Story Unlock T" + player.server.persistentData.getInt("deadzone_world_tier") +
-      " / Region Tier T" + tier).gray())
+    let story = player.server.persistentData.getInt("deadzone_story_unlock_tier")
+    if (!player.server.persistentData.getBoolean("dz_story_unlock_schema_v1"))
+      story = player.server.persistentData.getInt("deadzone_world_tier")
+    player.tell(Text.of("World Tier T" + tier + " / ストーリー解禁 S" + story).gray())
     return 1
   }))
 

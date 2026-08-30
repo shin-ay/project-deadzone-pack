@@ -514,14 +514,14 @@ EntityEvents.death(event => {
   if (npc.tags.contains("dz_story_boss_gasstation")) {
     event.server.persistentData.putBoolean("dz_story_gasstation_secured", true)
     dzStoryBossCheckpoint(event.server, "gasstation", DZ_STORY_QUESTS.gasstation,
-      "[PROJECT DEADZONE] Gas Stationを確保。World Tier 1を解放", 1,
+      "[PROJECT DEADZONE] Gas Stationを確保。ストーリー解禁S1へ進行", 1,
       DZ_STORY_QUESTS.tier1)
   } else if (npc.tags.contains("dz_story_boss_gunshop")) {
     dzStoryBossCheckpoint(event.server, "gunshop", DZ_STORY_QUESTS.gunshop,
       "[PROJECT DEADZONE] Gun Shopを制圧した", 0, null)
   } else if (npc.tags.contains("dz_story_boss_policestation")) {
     dzStoryBossCheckpoint(event.server, "policestation", DZ_STORY_QUESTS.policestation,
-      "[PROJECT DEADZONE] Raider Wardenを撃破。World Tier 2を解放", 2, null)
+      "[PROJECT DEADZONE] Raider Wardenを撃破。ストーリー解禁S2へ進行", 2, null)
   } else if (npc.tags.contains("dz_story_boss_hospital")) {
     dzStoryBossCheckpoint(event.server, "hospital", DZ_STORY_QUESTS.hospital,
       "[PROJECT DEADZONE] Hospitalの薬品保管区画を確保した", 0, null)
@@ -530,7 +530,7 @@ EntityEvents.death(event => {
       "[PROJECT DEADZONE] Raider Ash Captainを撃破した", 0, null)
   } else if (npc.tags.contains("dz_story_boss_radio_tower")) {
     dzStoryBossCheckpoint(event.server, "radio_tower", DZ_STORY_QUESTS.radioTower,
-      "[PROJECT DEADZONE] 都市通信網を復旧。World Tier 3を解放", 3,
+      "[PROJECT DEADZONE] 都市通信網を復旧。ストーリー解禁S3へ進行", 3,
       DZ_STORY_QUESTS.tier3)
   }
 })
@@ -571,7 +571,7 @@ ServerEvents.commandRegistry(event => {
       let line = Text.of((done ? "✓ " : "－ ") + key)
       ctx.source.player.tell(done ? line.green() : line.gray())
     })
-    ctx.source.player.tell(Text.of("World Tier: T" + dzStoryTier(server)).aqua())
+      ctx.source.player.tell(Text.of("ストーリー解禁: S" + dzStoryTier(server)).aqua())
     return 1
   }))
 

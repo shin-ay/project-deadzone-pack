@@ -1,5 +1,5 @@
 // PROJECT DEADZONE Skill Tier Gates v0.1
-// Uses PufferfishSkillsJS to prevent unlocking skills above the shared World Tier.
+// Uses PufferfishSkillsJS to prevent unlocking talents above Story Unlock.
 
 const DZ_SKILL_GATE_DATA = {
   armor: [
@@ -64,7 +64,7 @@ const DZ_SKILL_GATE_DATA = {
   ]
 }
 
-function dzSkillGateWorldTier(player) {
+function dzSkillGateStoryUnlock(player) {
   for (let tier = 5; tier >= 0; tier--) {
     if (player.stages.has("deadzone_tier_" + tier)) return tier
   }
@@ -72,13 +72,13 @@ function dzSkillGateWorldTier(player) {
 }
 
 function dzSyncSkillTierGates(player, notify) {
-  let worldTier = dzSkillGateWorldTier(player)
+  let storyUnlock = dzSkillGateStoryUnlock(player)
 
   Object.keys(DZ_SKILL_GATE_DATA).forEach(category => {
     let tierGroups = DZ_SKILL_GATE_DATA[category]
     tierGroups.forEach((skills, requiredTier) => {
       skills.forEach(skill => {
-        if (worldTier >= requiredTier) {
+        if (storyUnlock >= requiredTier) {
           PufferfishSkills.allowSkillUnlock(player, category, skill)
         } else {
           PufferfishSkills.disallowSkillUnlock(player, category, skill)
@@ -88,10 +88,11 @@ function dzSyncSkillTierGates(player, notify) {
   })
 
   player.persistentData.putBoolean("dz_skill_gate_initialized", true)
-  player.persistentData.putInt("dz_skill_gate_world_tier", worldTier)
+  // Legacy storage name retained so existing saves do not need a destructive migration.
+  player.persistentData.putInt("dz_skill_gate_world_tier", storyUnlock)
   if (notify) {
     player.tell(Text.of(
-      "スキル取得上限をWorld Tier T" + worldTier + "へ同期しました。"
+      "タレント取得上限をストーリー解禁S" + storyUnlock + "へ同期しました。"
     ).aqua())
   }
 }
@@ -110,7 +111,7 @@ PlayerEvents.tick(event => {
   let player = event.player
   if (player.level.clientSide || player.age % 100 !== 0) return
 
-  let tier = dzSkillGateWorldTier(player)
+  let tier = dzSkillGateStoryUnlock(player)
   if (!player.persistentData.getBoolean("dz_skill_gate_initialized")
     || player.persistentData.getInt("dz_skill_gate_world_tier") !== tier) {
     dzSyncSkillTierGates(player, true)
@@ -123,8 +124,8 @@ ServerEvents.commandRegistry(event => {
 
   root.then(Commands.literal("status").executes(ctx => {
     let player = ctx.source.player
-    let tier = dzSkillGateWorldTier(player)
-    player.tell(Text.of("Skill Gate: World Tier T" + tier).gold())
+    let tier = dzSkillGateStoryUnlock(player)
+    player.tell(Text.of("Talent Gate: ストーリー解禁S" + tier).gold())
     player.tell(Text.of("T0: Core Lv1").gray())
     player.tell(Text.of("T1: Core Lv2 / Perk Tier 1").green())
     player.tell(Text.of("T2: Core Lv3-4 / Perk Tier 2").aqua())

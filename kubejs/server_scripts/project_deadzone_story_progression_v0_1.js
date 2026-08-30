@@ -1,11 +1,20 @@
-// PROJECT DEADZONE Story Progression v0.1
-// Stores one shared World Tier for the server and synchronizes it to all players.
+// PROJECT DEADZONE Story Progression v0.2
+// Story Unlock is narrative progress only. Geographic World Tier belongs to
+// project_deadzone_region_tiers_v0_1.js and enemy pressure belongs to Threat.
 
+const DZ_STORY_UNLOCK_KEY = "deadzone_story_unlock_tier"
+// Compatibility mirror for existing saves and older scripts. Never present
+// this key to players as geographic World Tier.
 const DZ_STORY_TIER_KEY = "deadzone_world_tier"
 const DZ_STORY_MAX_TIER = 5
 
 function dzStoryTier(server) {
-  let tier = server.persistentData.getInt(DZ_STORY_TIER_KEY)
+  let data = server.persistentData
+  if (!data.getBoolean("dz_story_unlock_schema_v1")) {
+    data.putInt(DZ_STORY_UNLOCK_KEY, data.getInt(DZ_STORY_TIER_KEY))
+    data.putBoolean("dz_story_unlock_schema_v1", true)
+  }
+  let tier = data.getInt(DZ_STORY_UNLOCK_KEY)
   return Math.max(0, Math.min(DZ_STORY_MAX_TIER, tier))
 }
 
@@ -20,25 +29,30 @@ function dzStoryApplyPlayer(player, tier) {
       if (player.stages.has(stage)) player.stages.remove(stage)
     }
   }
+  player.persistentData.putInt(DZ_STORY_UNLOCK_KEY, tier)
   player.persistentData.putInt(DZ_STORY_TIER_KEY, tier)
 }
 
 function dzStorySetTier(server, tier, announce) {
   let next = Math.max(0, Math.min(DZ_STORY_MAX_TIER, tier))
   let previous = dzStoryTier(server)
+  server.persistentData.putInt(DZ_STORY_UNLOCK_KEY, next)
   server.persistentData.putInt(DZ_STORY_TIER_KEY, next)
+  server.persistentData.putBoolean("dz_story_unlock_schema_v1", true)
 
   server.players.forEach(player => dzStoryApplyPlayer(player, next))
 
   if (announce && previous !== next) {
     server.tell(Text.of(
-      "[PROJECT DEADZONE] World Tier " + previous + " → " + next
+      "[PROJECT DEADZONE] ストーリー解禁 " + previous + " → " + next
     ).gold())
     server.tell(Text.of(
       "新しいストーリー進行・Loot・レシピ解禁条件が同期されました。"
     ).yellow())
   }
 }
+
+global.pdzStoryUnlockTier = dzStoryTier
 
 PlayerEvents.loggedIn(event => {
   dzStoryApplyPlayer(event.player, dzStoryTier(event.player.server))
@@ -68,14 +82,13 @@ PlayerEvents.tick(event => {
 
 ServerEvents.commandRegistry(event => {
   const {commands: Commands} = event
-  // Keep narrative mission commands on /deadzonestory. World Tier has its own
-  // root so command registration never depends on script load order.
+  // Compatibility command root retained for administrators and old buttons.
   let root = Commands.literal("deadzonetier")
 
   root.then(Commands.literal("status").executes(ctx => {
     let player = ctx.source.player
     let tier = dzStoryTier(player.server)
-    player.tell(Text.of("PROJECT DEADZONE World Tier: T" + tier).gold())
+    player.tell(Text.of("PROJECT DEADZONE ストーリー解禁段階: S" + tier).gold())
     for (let i = 0; i <= DZ_STORY_MAX_TIER; i++) {
       let stage = "deadzone_tier_" + i
       let active = player.stages.has(stage)
@@ -98,7 +111,7 @@ ServerEvents.commandRegistry(event => {
     .executes(ctx => {
       dzStorySetTier(ctx.source.server, 0, true)
       ctx.source.server.tell(Text.of(
-        "World/Story TierをT0へリセットし、オンラインプレイヤーの解放Stageを同期しました。"
+        "ストーリー解禁をS0へリセットし、オンラインプレイヤーの解放Stageを同期しました。"
       ).green())
       return 1
     }))
@@ -118,7 +131,7 @@ ServerEvents.commandRegistry(event => {
     .executes(ctx => {
       let server = ctx.source.server
       server.players.forEach(player => dzStoryApplyPlayer(player, dzStoryTier(server)))
-      ctx.source.player.tell(Text.of("World Tier stages synchronized.").aqua())
+      ctx.source.player.tell(Text.of("Story Unlock stages synchronized.").aqua())
       return 1
     }))
 

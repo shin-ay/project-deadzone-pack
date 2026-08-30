@@ -98,7 +98,7 @@
 		{
 			description: [
 				"解析結果は、封鎖区域外に複数のCHOIR中継点が存在することを示した。"
-				"World Tier 4では精鋭分隊、強化Horde、軍用研究、外縁中継点攻略が解放される。単純な全MobのHP増加ではなく、編成と装備を変化させる。"
+				"ストーリー解禁S4では精鋭分隊、強化Horde、軍用研究、外縁中継点攻略が解放される。単純な全MobのHP増加ではなく、編成と装備を変化させる。"
 			]
 			icon: {
 				Count: 1
@@ -110,13 +110,13 @@
 			id: "259E544FE7CEAC94"
 			shape: "hexagon"
 			size: 2.0d
-			subtitle: "解放条件: T4準備3系統を完了／条件達成時にWorld Tier 4を自動解放"
+			subtitle: "解放条件: S4準備3系統を完了／条件達成時にストーリー解禁S4へ自動進行"
 			tasks: [{
 				id: "6A3DAB47E0ED44A4"
 				title: "T4外縁作戦の準備を完了した"
 				type: "custom"
 			}]
-			title: "World Tier 4：外縁作戦"
+			title: "ストーリーS4：外縁作戦"
 			x: 6.0d
 			y: 0.0d
 		}
@@ -128,7 +128,7 @@
 			]
 			icon: "doomsday_decoration:broadcaster"
 			id: "512BA8BAB5024734"
-			subtitle: "解放条件: 「World Tier 4：外縁作戦」を完了"
+			subtitle: "解放条件: 「ストーリーS4：外縁作戦」を完了"
 			tasks: [{
 				id: "20C1987430424A41"
 				title: "最初の外縁中継点を発見した"
@@ -196,7 +196,7 @@
 			dependencies: ["0F8B4E1A0C9E457F"]
 			description: [
 				"3本の外縁信号から、First Voice中継個体の移動経路を特定した。"
-				"次の作戦ではARGUS-9の判断結果に応じて支援、敵編成、報酬経路が変化する。World Tierや一般MobのHPを一律に増やすことはしない。"
+				"次の作戦ではARGUS-9の判断結果に応じて支援、敵編成、報酬経路が変化する。ストーリー進行だけで一般MobのHPを一律に増やすことはしない。"
 			]
 			icon: "minecraft:spyglass"
 			id: "8E64D6D02C8C4481"

@@ -11,21 +11,21 @@ const DZ_CAMP_DEV_QUESTS = {
 const DZ_CAMP_DEV_LEVELS = {
   1: {
     name: "安定拠点",
-    worldTier: 0,
+    storyUnlock: 0,
     lifeRep: 10,
     fuel: true,
     items: [["minecraft:oak_log", 32], ["minecraft:iron_ingot", 16], ["minecraft:bread", 16]]
   },
   2: {
     name: "サービス拠点",
-    worldTier: 1,
+    storyUnlock: 1,
     lifeRep: 25,
     fuel: true,
     items: [["minecraft:chest", 12], ["minecraft:copper_ingot", 24], ["immersiveengineering:component_electronic", 4]]
   },
   3: {
     name: "地域ハブ",
-    worldTier: 2,
+    storyUnlock: 2,
     lifeRep: 50,
     fuel: true,
     items: [["immersiveengineering:ingot_steel", 24], ["minecraft:diamond", 4], ["tfmg:gasoline_bucket", 2]]
@@ -59,12 +59,12 @@ function dzCampDevSyncQuests(player) {
 function dzCampDevRequirementStatus(player, target) {
   let spec = DZ_CAMP_DEV_LEVELS[target]
   let server = player.server
-  let worldTier = Math.max(0, server.persistentData.getInt("deadzone_world_tier"))
+  let storyUnlock = Math.max(0, server.persistentData.getInt("deadzone_world_tier"))
   let lifeRep = dzCampDevLifeRep(server)
   let fuel = server.persistentData.getBoolean("dz_camp_fuel_route_restored")
   player.tell(Text.of("次段階 Lv" + target + "「" + spec.name + "」").yellow())
-  player.tell((worldTier >= spec.worldTier ? Text.of("✓ ").green() : Text.of("× ").red())
-    .append(Text.of("World Tier " + worldTier + "/" + spec.worldTier).gray()))
+  player.tell((storyUnlock >= spec.storyUnlock ? Text.of("✓ ").green() : Text.of("× ").red())
+    .append(Text.of("ストーリー解禁 S" + storyUnlock + "/S" + spec.storyUnlock).gray()))
   player.tell((lifeRep >= spec.lifeRep ? Text.of("✓ ").green() : Text.of("× ").red())
     .append(Text.of("生活評判 " + lifeRep + "/" + spec.lifeRep).gray()))
   player.tell((!spec.fuel || fuel ? Text.of("✓ ").green() : Text.of("× ").red())
@@ -106,7 +106,7 @@ function dzCampDevUpgrade(player) {
   }
   let target = current + 1
   let spec = DZ_CAMP_DEV_LEVELS[target]
-  if (server.persistentData.getInt("deadzone_world_tier") < spec.worldTier ||
+  if (server.persistentData.getInt("deadzone_world_tier") < spec.storyUnlock ||
       dzCampDevLifeRep(server) < spec.lifeRep ||
       (spec.fuel && !server.persistentData.getBoolean("dz_camp_fuel_route_restored"))) {
     player.tell(Text.of("発展条件を満たしていません。" ).red())

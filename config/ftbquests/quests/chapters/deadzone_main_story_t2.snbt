@@ -313,7 +313,7 @@
 			subtitle: "解放条件: 「T2 Story Boss：原初感染体」を完了"
 			tasks: [{
 				id: "15B4E15FEF0F430A"
-				title: "World Tier 3を解禁する"
+			title: "ストーリー解禁S3へ進む"
 				type: "custom"
 			}]
 			title: "Act 2完了：三つの命令"

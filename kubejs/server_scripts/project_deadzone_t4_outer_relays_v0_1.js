@@ -376,7 +376,7 @@ ServerEvents.commandRegistry(event => {
     let player = ctx.source.player
     let ledger = dzT4rRead(player.server)
     player.tell(Text.of('=== T4 OUTER RELAYS ===').gold())
-    player.tell(Text.of('Registered: ' + ledger.length + '/3 / World T' +
+    player.tell(Text.of('Registered: ' + ledger.length + '/3 / Story S' +
       player.server.persistentData.getInt('deadzone_world_tier')).aqua())
     ledger.forEach(record => player.tell(Text.of('0' + record.index + ' ' + record.state + ' / ' +
       record.role + ' / ' + record.x + ', ' + record.y + ', ' + record.z).gray()))

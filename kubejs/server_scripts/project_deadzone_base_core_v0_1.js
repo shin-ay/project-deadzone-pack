@@ -85,7 +85,7 @@ BlockEvents.rightClicked("kubejs:deadzone_base_core", event => {
     player.server.runCommandSilent(
       "ftbquests change_progress @a complete 162BAA0F1AF6097C")
     player.server.tell(Text.of(
-      "[PROJECT DEADZONE] 燃料ルート復旧。World Tier 1を解放しました。").gold())
+      "[PROJECT DEADZONE] 燃料ルート復旧。ストーリー解禁S1へ進みました。").gold())
   }
 })
 

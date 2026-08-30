@@ -192,7 +192,7 @@
 				"162BAA0F1AF6097C"
 			]
 			description: [
-				"World Tier 1でBlast Furnaceへ進む。Blast Brick 27個を3×3×3に積み、中央面をHammerで完成させる。"
+				"ストーリー解禁S1でBlast Furnaceへ進む。Blast Brick 27個を3×3×3に積み、中央面をHammerで完成させる。"
 				"鉄とCoal Cokeから鋼鉄を作る。Coke Ovenと同じく電力不要だが、処理には時間がかかる。"
 			]
 			icon: "immersiveengineering:blastbrick"
