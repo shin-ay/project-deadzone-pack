@@ -1,12 +1,14 @@
 // PROJECT DEADZONE active career equipment v0.2
 
+const PDZ_CAREER_MNS_HEALTH = Java.loadClass('com.robertx22.mine_and_slash.uncommon.utilityclasses.HealthUtils')
+
 const PDZ_CAREER_GEAR = {
   'kubejs:career_salvage_scanner':{career:'scavenger',name:'Salvage Scanner',cd:90,effects:[['minecraft:luck',45,1],['minecraft:haste',25,0]],summary:'Luck II 45s / Haste I 25s'},
   'kubejs:career_survival_rig':{career:'adapter',name:'Adaptive Survival Rig',cd:120,effects:[['minecraft:absorption',30,1],['minecraft:regeneration',10,0],['minecraft:resistance',10,0]],summary:'Absorption II 30s / Regeneration I 10s / Resistance I 10s'},
   'kubejs:career_rangefinder':{career:'marksman',name:'Ballistic Rangefinder',cd:60,effects:[['minecraft:luck',35,1],['minecraft:speed',20,0],['minecraft:strength',12,0]],summary:'Luck II 35s / Speed I 20s / Strength I 12s'},
   'kubejs:career_assault_injector':{career:'assault',name:'Assault Injector',cd:120,effects:[['minecraft:speed',18,1],['minecraft:resistance',10,0],['minecraft:strength',12,0]],summary:'Speed II 18s / Resistance I 10s / Strength I 12s'},
-  'kubejs:career_trauma_station':{career:'surgeon',name:'Portable Trauma Station',cd:90,heal:8,effects:[['minecraft:regeneration',10,1]],summary:'Heal 4 hearts / Regeneration II 10s'},
-  'kubejs:career_responder_beacon':{career:'combat_medic',name:'Responder Beacon',cd:120,auraHeal:6,effects:[['minecraft:regeneration',8,0]],summary:'Nearby allies heal 3 hearts / Regeneration I 8s'},
+  'kubejs:career_trauma_station':{career:'surgeon',name:'Portable Trauma Station',cd:90,heal:8,effects:[['minecraft:regeneration',10,1]],summary:'M&S HP +8 / Regeneration II 10s'},
+  'kubejs:career_responder_beacon':{career:'combat_medic',name:'Responder Beacon',cd:120,auraHeal:6,effects:[['minecraft:regeneration',8,0]],summary:'Nearby allies M&S HP +6 / Regeneration I 8s'},
   'kubejs:career_diagnostic_tool':{career:'ground_tech',name:'Vehicle Diagnostic Tool',cd:90,effects:[['minecraft:haste',60,1],['minecraft:luck',30,0]],summary:'Haste II 60s / Luck I 30s'},
   'kubejs:career_flight_computer':{career:'pilot',name:'Portable Flight Computer',cd:60,effects:[['minecraft:slow_falling',50,0],['minecraft:speed',25,1]],summary:'Slow Falling 50s / Speed II 25s'},
   'kubejs:career_control_tablet':{career:'automation',name:'Automation Control Tablet',cd:90,effects:[['minecraft:haste',75,1],['minecraft:resistance',15,0]],summary:'Haste II 75s / Resistance I 15s'},
@@ -20,6 +22,11 @@ const PDZ_CAREER_GEAR = {
 }
 
 function pdzCareerGearT3(player){return String(player.persistentData.getString('dz_career_t3')).length>0}
+function pdzCareerHealMns(player,amount){
+  let real=Math.max(0,Number(amount))
+  if(real<=0)return
+  PDZ_CAREER_MNS_HEALTH.heal(player,Math.max(0,Number(PDZ_CAREER_MNS_HEALTH.realToVanilla(player,real))))
+}
 function pdzCareerGearEffect(player,effect,t3){
   let seconds=effect[1]+(t3?Math.ceil(effect[1]*0.35):0)
   let amp=effect[2]+(t3?1:0)
@@ -35,13 +42,13 @@ Object.keys(PDZ_CAREER_GEAR).forEach(itemId=>ItemEvents.rightClicked(itemId,even
   if(remaining>0){p.tell(Text.of('[JOB] Cooldown: '+Math.ceil(remaining/1000)+'s').gray());return}
   p.persistentData.putLong(key,now)
   let t3=pdzCareerGearT3(p)
-  if(gear.heal)p.heal(gear.heal+(t3?4:0))
+  if(gear.heal)pdzCareerHealMns(p,gear.heal+(t3?4:0))
   if(gear.food)p.foodData.setFoodLevel(Math.min(20,p.foodData.getFoodLevel()+gear.food+(t3?4:0)))
   ;(gear.effects||[]).forEach(effect=>pdzCareerGearEffect(p,effect,t3))
   if(gear.auraHeal)p.server.players.forEach(friend=>{
     if(!friend||!friend.alive||!friend.level.dimension.equals(p.level.dimension))return
     let dx=friend.x-p.x,dy=friend.y-p.y,dz=friend.z-p.z
-    if(dx*dx+dy*dy+dz*dz<=(t3?100:49))friend.heal(gear.auraHeal+(t3?2:0))
+    if(dx*dx+dy*dy+dz*dz<=(t3?100:49))pdzCareerHealMns(friend,gear.auraHeal+(t3?2:0))
   })
   p.runCommandSilent('playsound minecraft:block.beacon.activate player @s ~ ~ ~ 0.7 1.1')
   p.tell(Text.of('[JOB EQUIPMENT] '+gear.name).gold())

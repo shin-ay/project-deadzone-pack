@@ -1,7 +1,9 @@
 // PROJECT DEADZONE - M&S authoritative HP -> LSO localized injury bridge v0.1
-// Mine and Slash owns death HP. Legendary Survival Overhaul owns persistent
-// limb trauma only. This bridge observes the real post-mitigation M&S health
-// loss and creates one proportional limb injury without replaying HP damage.
+// Mine and Slash owns current/max HP, healing and death. Legendary Survival
+// Overhaul only owns localized trauma ratios/effects. LSO listens to the same
+// LivingDamageEvent in vanilla-health units, so its native limb loss can drift
+// away from M&S when M&S uses scaled health. This bridge measures the actual
+// post-mitigation M&S loss and normalizes LSO trauma to that exact ratio.
 
 const PDZ_LIMB_MNS_HEALTH = Java.loadClass('com.robertx22.mine_and_slash.uncommon.utilityclasses.HealthUtils')
 const PDZ_LIMB_BODY_UTIL = Java.loadClass('sfiomn.legendarysurvivaloverhaul.api.bodydamage.BodyDamageUtil')
@@ -19,7 +21,12 @@ let PDZ_LIMB_PENDING = {}
 let PDZ_LIMB_API_ERROR = false
 
 function pdzLimbMnsHealth(player) {
-  try { return Number(PDZ_LIMB_MNS_HEALTH.getCurrentHealth(player)) }
+  // HealthUtils#getCurrentHealth returns an int. Preserve the real fractional
+  // delta by projecting vanilla's current ratio onto the M&S max-health pool.
+  try {
+    let vanillaMax = Math.max(0.0001, Number(player.maxHealth))
+    return Math.max(0, Number(player.health) / vanillaMax * pdzLimbMnsMax(player))
+  }
   catch (ignored) { return Number(player.health) }
 }
 
@@ -41,6 +48,10 @@ function pdzLimbRatios(player) {
   }
 }
 
+function pdzLimbMaxima(player) {
+  return PDZ_LIMB_ALL.map(part => Math.max(0, Number(PDZ_LIMB_BODY_UTIL.getMaxHealth(player, part))))
+}
+
 function pdzLimbKind(event) {
   let source = event.source
   let id = ''
@@ -60,6 +71,42 @@ function pdzLimbNativeLoss(before, after) {
   let loss = 0
   for (let i = 0; i < before.length; i++) loss += Math.max(0, Number(before[i]) - Number(after[i]))
   return loss
+}
+
+function pdzLimbNativePart(before, after) {
+  let best = -1
+  let bestLoss = 0
+  for (let i = 0; i < before.length; i++) {
+    let loss = Math.max(0, Number(before[i]) - Number(after[i]))
+    if (loss > bestLoss) { best = i; bestLoss = loss }
+  }
+  return best >= 0 ? PDZ_LIMB_ALL[best] : null
+}
+
+function pdzLimbNormalizeNative(player, before, after, desiredLoss) {
+  let actual = pdzLimbNativeLoss(before, after)
+  let difference = desiredLoss - actual
+  if (Math.abs(difference) <= 0.001) return actual
+
+  let maxima = pdzLimbMaxima(player)
+  let changed = []
+  for (let i = 0; i < before.length; i++) {
+    let loss = Math.max(0, Number(before[i]) - Number(after[i]))
+    if (loss > 0.0001 && maxima[i] > 0) changed.push({index: i, loss: loss})
+  }
+
+  if (difference < 0 && changed.length > 0) {
+    // LSO over-recorded the hit. Heal only the excess it added for this hit;
+    // older injuries and the real M&S HP pool are never touched here.
+    let excess = -difference
+    let changedTotal = changed.reduce((sum, entry) => sum + entry.loss, 0)
+    changed.forEach(entry => {
+      let ratio = Math.min(entry.loss, excess * entry.loss / Math.max(0.0001, changedTotal))
+      PDZ_LIMB_BODY_UTIL.healBodyPart(player, PDZ_LIMB_ALL[entry.index], maxima[entry.index] * ratio)
+    })
+    return desiredLoss
+  }
+  return actual
 }
 
 function pdzLimbPick(player, kind) {
@@ -88,21 +135,18 @@ function pdzLimbHurtRatio(player, part, ratio) {
   return amount
 }
 
-function pdzLimbApply(player, kind, healthLossRatio) {
-  // Systemic hazards affect the M&S health pool but do not invent a broken
-  // arm or leg. Temperature, thirst and infection retain their native effects.
-  if (kind === 'systemic') return 0
-  let scale = kind === 'fall' ? 1.85 : kind === 'projectile' ? 1.65 :
-    kind === 'explosion' ? 1.25 : kind === 'burn' ? 1.05 : 1.40
-  let ratio = Math.max(0.015, Math.min(0.40, healthLossRatio * scale))
+function pdzLimbApplyMissing(player, kind, missingRatio, nativePart) {
+  if (kind === 'systemic' || missingRatio <= 0) return 0
+  let ratio = Math.max(0, Math.min(0.40, missingRatio))
   if (kind === 'explosion' || kind === 'burn') {
     let amount = 0
     let parts = kind === 'explosion' ? PDZ_LIMB_ALL :
       [PDZ_LIMB_PART.CHEST, PDZ_LIMB_PART.LEFT_ARM, PDZ_LIMB_PART.RIGHT_ARM]
-    parts.forEach(part => { amount += pdzLimbHurtRatio(player, part, ratio * 0.42) })
+    let each = ratio / parts.length
+    parts.forEach(part => { amount += pdzLimbHurtRatio(player, part, each) })
     return amount
   }
-  return pdzLimbHurtRatio(player, pdzLimbPick(player, kind), ratio)
+  return pdzLimbHurtRatio(player, nativePart || pdzLimbPick(player, kind), ratio)
 }
 
 function pdzLimbResolve(player, key) {
@@ -116,19 +160,27 @@ function pdzLimbResolve(player, key) {
   if (!isFinite(loss) || loss <= 0 || max <= 0) return
 
   let ratiosAfter = pdzLimbRatios(player)
-  // If LSO already received this damage path natively, never duplicate it.
-  if (pdzLimbNativeLoss(pending.ratios, ratiosAfter) > 0.002) return
+  if (!ratiosAfter) return
+  // Systemic damage still belongs to M&S but should not invent a broken limb.
+  let desired = pending.kind === 'systemic' ? 0 : Math.max(0, Math.min(0.40, loss / max))
+  let native = 0
   let applied = 0
-  try { applied = pdzLimbApply(player, pending.kind, loss / max) }
+  try {
+    native = pdzLimbNormalizeNative(player, pending.ratios, ratiosAfter, desired)
+    let missing = Math.max(0, desired - native)
+    applied = pdzLimbApplyMissing(player, pending.kind, missing,
+      pdzLimbNativePart(pending.ratios, ratiosAfter))
+  }
   catch (error) {
     if (!PDZ_LIMB_API_ERROR) {
       PDZ_LIMB_API_ERROR = true
       console.error('[PROJECT DEADZONE][M&S Limb Bridge] Injury apply failed: ' + error)
     }
   }
-  if (applied > 0 && player.persistentData.getBoolean('dz_limb_bridge_monitor')) {
+  if (player.persistentData.getBoolean('dz_limb_bridge_monitor')) {
     player.tell(Text.of('[負傷監査] M&S -' + loss.toFixed(1) + ' / ' + pending.kind +
-      ' / 部位損傷 ' + applied.toFixed(2)).yellow())
+      ' / HP比 ' + (loss / max * 100).toFixed(2) + '% / 部位比 ' +
+      (desired * 100).toFixed(2) + '%').yellow())
   }
 }
 
@@ -185,5 +237,4 @@ ServerEvents.commandRegistry(event => {
   event.register(root)
 })
 
-console.info('[PROJECT DEADZONE][M&S Limb Bridge] v0.1 loaded: post-mitigation HP loss -> LSO trauma.')
-
+console.info('[PROJECT DEADZONE][M&S Limb Bridge] v0.2 loaded: authoritative M&S HP ratio -> normalized LSO trauma.')

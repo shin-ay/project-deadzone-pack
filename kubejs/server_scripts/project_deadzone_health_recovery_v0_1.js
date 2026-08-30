@@ -1,8 +1,10 @@
-// PROJECT DEADZONE injury, infection and recovery bridge v0.1
-// Legendary Survival Overhaul limb health and The Hordes infection remain authoritative.
+// PROJECT DEADZONE injury, infection and recovery bridge v0.2
+// M&S current/max HP is authoritative. LSO stores localized injury ratios and
+// effects only; The Hordes/Infectious stores infection state.
 
 const DZ_HEALTH_BODY_UTIL = Java.loadClass("sfiomn.legendarysurvivaloverhaul.api.bodydamage.BodyDamageUtil")
 const DZ_HEALTH_BODY_PART = Java.loadClass("sfiomn.legendarysurvivaloverhaul.api.bodydamage.BodyPartEnum")
+const DZ_HEALTH_MNS = Java.loadClass("com.robertx22.mine_and_slash.uncommon.utilityclasses.HealthUtils")
 
 const DZ_HEALTH_QUESTS = {
   intro: "6D4F010000000101",
@@ -165,11 +167,32 @@ function dzHealthHealOverTime(player, part, amount, ticks) {
   DZ_HEALTH_BODY_UTIL.applyHealingTimeBodyPart(player, part, Number(amount), Number(ticks))
 }
 
+function dzHealthMnsCurrent(player) {
+  try { return Math.max(0, Number(DZ_HEALTH_MNS.getCurrentHealth(player))) }
+  catch (ignored) { return Math.max(0, Number(player.health)) }
+}
+
+function dzHealthMnsMax(player) {
+  try { return Math.max(1, Number(DZ_HEALTH_MNS.getMaxHealth(player))) }
+  catch (ignored) { return Math.max(1, Number(player.maxHealth)) }
+}
+
+function dzHealthHealMnsRatio(player, ratio) {
+  let safeRatio = Math.max(0, Math.min(1, Number(ratio)))
+  if (safeRatio <= 0) return
+  // HealthUtils#heal consumes vanilla-space health. realToVanilla converts a
+  // requested M&S amount without creating a second HP pool.
+  let mnsAmount = dzHealthMnsMax(player) * safeRatio
+  let vanillaAmount = Number(DZ_HEALTH_MNS.realToVanilla(player, mnsAmount))
+  DZ_HEALTH_MNS.heal(player, Math.max(0, vanillaAmount))
+}
+
 function dzHealthAdminRestoreLimbs(player) {
   DZ_HEALTH_PARTS.forEach(entry => {
     let max = Number(DZ_HEALTH_BODY_UTIL.getMaxHealth(player, entry.part))
     DZ_HEALTH_BODY_UTIL.healBodyPart(player, entry.part, max * 2)
   })
+  dzHealthHealMnsRatio(player, 1)
 }
 
 function dzHealthStatus(player, completeIntro) {
@@ -183,6 +206,7 @@ function dzHealthStatus(player, completeIntro) {
   let hospital = dzHealthHospitalLevel(player)
   let shiori = dzHealthShioriRank(player)
   player.tell(Text.of("=== PDZ 診断記録 ===").aqua())
+  player.tell(Text.of("M&S HP: " + dzHealthMnsCurrent(player) + " / " + dzHealthMnsMax(player) + "（死亡判定の正本）").aqua())
   player.tell(Text.of("総合判定: " + dzHealthSeverityName(snapshot.severity) + "｜最低部位 " + snapshot.worst.name + " " + Math.round(snapshot.minimum * 100) + "%").color(dzHealthSeverityColor(snapshot.severity)))
   player.tell(Text.of("感染検査: " + (infected ? "陽性" : "陰性")).color(infected ? "red" : "green"))
   player.tell(Text.of("シオリ信頼 Rank " + shiori + "｜MineColonies病院 Lv" + hospital).gray())
@@ -210,6 +234,7 @@ function dzHealthTreatLight(player) {
   }
   dzHealthConsume(player, items, price)
   dzHealthHealOverTime(player, snapshot.worst.part, snapshot.worst.max * 0.35, 600)
+  dzHealthHealMnsRatio(player, 0.15)
   player.persistentData.putBoolean("dz_health_light_treated", true)
   dzHealthComplete(player, DZ_HEALTH_QUESTS.lightTreated)
   dzHealthSyncQuests(player)
@@ -232,7 +257,7 @@ function dzHealthTreatTrauma(player) {
   let ratio = 0.35 + Math.min(0.20, hospital * 0.04)
   let ticks = Math.max(500, 1000 - hospital * 100)
   snapshot.parts.filter(entry => entry.ratio < 0.85).forEach(entry => dzHealthHealOverTime(player, entry.part, entry.max * ratio, ticks))
-  player.potionEffects.add("minecraft:regeneration", 200, 0, false, false)
+  dzHealthHealMnsRatio(player, ratio)
   player.persistentData.putBoolean("dz_health_trauma_treated", true)
   dzHealthComplete(player, DZ_HEALTH_QUESTS.traumaTreated)
   if (hospital > 0) {
@@ -352,4 +377,4 @@ ServerEvents.commandRegistry(event => {
 
 PlayerEvents.loggedIn(event => event.player.server.scheduleInTicks(180, callback => dzHealthSyncQuests(event.player)))
 
-console.info("[PROJECT DEADZONE][Health Recovery] v0.1 loaded: LSO limbs / Hordes infection / Camp clinic.")
+console.info("[PROJECT DEADZONE][Health Recovery] v0.2 loaded: M&S HP / LSO injury ratios / infection / Camp clinic.")
