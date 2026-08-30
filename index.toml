@@ -22132,3 +22132,11 @@ metafile = true
 file = "tacz/immersive-armorer.pw.toml"
 hash = "5f316c3735b248f22c3fabeece8ea930e146f39193b13b32f2d1f296c9f3790d"
 metafile = true
+
+[[files]]
+file = "kubejs/client_scripts/project_deadzone_food_buff_tooltips_v0_1.js"
+hash = "ff9a346fc691d1c9d70eb42f39165b81ddd942861eacb3d05ae79ad936a998d6"
+
+[[files]]
+file = "kubejs/server_scripts/project_deadzone_food_buffs_v0_1.js"
+hash = "240b6c62cfce0420e156b10fe7ebd5c40f477ee37b216655fc4e643357c025b8"

@@ -1,12 +1,12 @@
 name = "PROJECT DEADZONE"
 author = "PROJECT DEADZONE Team"
-version = "BETA-20260830-LC2H-LOOT-COMPAT-1"
+version = "BETA-20260831-AUTO-FOOD-BUFFS-1"
 pack-format = "packwiz:1.1.0"
 
 [index]
 file = "index.toml"
 hash-format = "sha256"
-hash = "f9994e6e61b18edc906db8a86f86ee9dfe819439933cce8525a538799c92fe37"
+hash = "f0e6ccec3fcc6e0c745d6725fd72a397c0b235d64f6fe8eefe9c8ca2364d019b"
 
 [versions]
 forge = "47.4.10"
