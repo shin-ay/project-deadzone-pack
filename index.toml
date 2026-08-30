@@ -3169,26 +3169,6 @@ file = "config/tfmg-common.toml"
 hash = "d91be8bffe5618e564ff447925bd23f3299f9bf0a7c928028d235505a4b7314e"
 
 [[files]]
-file = "config/thirst/client.toml"
-hash = "315e92d20ca8372c06a4f7ba310bce09e030d1e5004b6fe5ec19f4705db8b8d3"
-
-[[files]]
-file = "config/thirst/common.toml"
-hash = "8f4813ee8331a9fdfc7992c86b83efe5b94e9381c77aaa1a5edbda3ea5fa12c8"
-
-[[files]]
-file = "config/thirst/container.toml"
-hash = "add7b4dd4feca681131ff87f343254cdc254fc49ceeb9b8f30467811782c9b76"
-
-[[files]]
-file = "config/thirst/item_settings.toml"
-hash = "ea4a063a15d7ac9a8727b5544123d83620a33c08d76c62213cc994c8ccd8f046"
-
-[[files]]
-file = "config/thirst/keyword.toml"
-hash = "464f72dae78d99be7d2ad9fbf1c8cb7be54ae1fb6dc242e92c208105768795f5"
-
-[[files]]
 file = "config/tinymultiblocklib-client.toml"
 hash = "1b02632de5c49ad1d79518a886bd3f29305eecb831c283962a1c21091ceed001"
 
@@ -13361,11 +13341,6 @@ metafile = true
 [[files]]
 file = "mods/the-roads-more-travelled.pw.toml"
 hash = "5d4c1ecdc79bdee796ec8880c95d311ef4a0a6a81e672aabf305a5d88f82b60d"
-metafile = true
-
-[[files]]
-file = "mods/thirst-was-taken.pw.toml"
-hash = "435e86380f442b28ab298cb300fa0f51d1772e854252c31726b17ccb1ec5041e"
 metafile = true
 
 [[files]]
