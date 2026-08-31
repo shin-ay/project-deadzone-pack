@@ -1,0 +1,23 @@
+{
+  "itemGroup.waystones.waystones": "集落中継局（管理者用）",
+  "block.waystones.waystone": "集落中継局",
+  "block.waystones.mossy_waystone": "旧式集落中継局",
+  "block.waystones.sandy_waystone": "砂漠集落中継局",
+  "block.waystones.blackstone_waystone": "黒石集落中継局",
+  "block.waystones.deepslate_waystone": "深層集落中継局",
+  "block.waystones.end_stone_waystone": "終端集落中継局",
+  "container.waystones.waystone_selection": "公共移動網：移動先を選択",
+  "container.waystones.waystone_settings": "中継局名を入力",
+  "gui.waystones.waystone_selection.current_location": "現在の中継局：",
+  "gui.waystones.waystone_selection.unnamed_waystone": "<名称未登録地点>",
+  "gui.waystones.waystone_selection.no_waystones_activated": "登録済みの集落中継局がありません",
+  "gui.waystones.waystone_selection.level_requirement": "移動コスト：%dレベル",
+  "chat.waystones.waystone_activated": "集落中継局「%s」を登録しました",
+  "chat.waystones.cannot_dimension_warp": "公共移動網は異なるディメンジョンへ接続されていません",
+  "chat.waystones.cannot_transport_leashed": "Mobを連れたまま公共移動網は利用できません",
+  "chat.waystones.cannot_break_waystone": "この中継局は公共設備のため撤去できません",
+  "tooltip.waystones.not_enough_xp": "移動に必要な経験レベルが足りません（%dレベル必要）",
+  "tooltip.waystones.undiscovered": "未発見",
+  "stat.waystones.waystone_activated": "登録した集落中継局",
+  "waystones.map.untitled_waystone": "名称未登録地点"
+}

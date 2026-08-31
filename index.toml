@@ -3305,6 +3305,10 @@ file = "config/voicechat/voicechat-server.properties"
 hash = "20d120bbeac13aa9a4e94e815af59d3345c4ecf61bce4c5bb3d21997dc22e0a5"
 
 [[files]]
+file = "config/waystones-common.toml"
+hash = "fb28e6ee56c3090268952ec13ec8d63a1590606a38ed43ebc63c89a766d73640"
+
+[[files]]
 file = "config/weight/backpack_ratios.json"
 hash = "47a41beec18a48d83929a82728bcfb2eb999d54d3be5ceadaf58b517febc7c7e"
 
@@ -3745,6 +3749,10 @@ file = "kubejs/assets/village_recruits/lang/ja_jp.json"
 hash = "93bde578bba9469779b41be68e9cb27e0b8d21648ea9d6340a50450792e09c13"
 
 [[files]]
+file = "kubejs/assets/waystones/lang/ja_jp.json"
+hash = "aa69b408d6e35eb13bdc5168baeeb8fafaa7699f1740c4b4050014fba8620af5"
+
+[[files]]
 file = "kubejs/assets/workers/lang/ja_jp.json"
 hash = "593c92c52917bb11e33fcf5cce6b30822c082e757735500695e9c16c0d13b9e3"
 
@@ -3775,6 +3783,10 @@ hash = "4cd2b44781045084e2634fccf543c96c900a81061e8d4569c45e4528b8b21a66"
 [[files]]
 file = "kubejs/client_scripts/project_deadzone_medical_tooltips_v0_1.js"
 hash = "820000194508b790e69c70ba3a5ca3de126d455fba584306f1020542f875a65f"
+
+[[files]]
+file = "kubejs/client_scripts/project_deadzone_waystones_public_transit_v0_1.js"
+hash = "4f3f376fda3ce0d46cbb4a25e09c411ead648324630574f2bf0b1c4b367863de"
 
 [[files]]
 file = "kubejs/config/client.properties"
@@ -11457,6 +11469,10 @@ file = "kubejs/server_scripts/project_deadzone_usunit_alliance_v0_1.js"
 hash = "0f2effb86e78856c471684c2eff9d31521a84f8e3bf1bee512dcbe294fd1db30"
 
 [[files]]
+file = "kubejs/server_scripts/project_deadzone_waystones_public_transit_v0_1.js"
+hash = "f626f1cdbcdef34d2882fa23feb12dacd15626a1c41bd43babe6d6b6c1ecdacd"
+
+[[files]]
 file = "kubejs/server_scripts/project_deadzone_wilderness_sites_v0_1.js"
 hash = "b136aea0c3aed3db244acfa56318fd615f35aa8f16635e2b1e38271241644ffb"
 
@@ -12058,6 +12074,11 @@ metafile = true
 [[files]]
 file = "mods/baguettelib.pw.toml"
 hash = "724fe40135f0ed7f2614cd14116706686df7b092052af048dfbd109dad0c6863"
+metafile = true
+
+[[files]]
+file = "mods/balm.pw.toml"
+hash = "ddff810b39bb8873325aa34230c2a174073ad9bbf002e04a66835735550a1b7b"
 metafile = true
 
 [[files]]
@@ -13478,6 +13499,11 @@ metafile = true
 [[files]]
 file = "mods/vminus.pw.toml"
 hash = "c3954a7cc5a8cb778bfe04abdb38bfc7da2e160ec72f1ff7fbac195fecf0ea57"
+metafile = true
+
+[[files]]
+file = "mods/waystones.pw.toml"
+hash = "5ab6f2a4a50bd53506496d3da0c2c09d5a3ca363c3ebc7ca8641ecd3f7104365"
 metafile = true
 
 [[files]]

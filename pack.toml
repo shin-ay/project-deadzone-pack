@@ -1,12 +1,12 @@
 name = "PROJECT DEADZONE"
 author = "PROJECT DEADZONE Team"
-version = "BETA-20260831-UI-0.4.2-SALVAGE"
+version = "BETA-20260831-VILLAGE-WAYSTONES"
 pack-format = "packwiz:1.1.0"
 
 [index]
 file = "index.toml"
 hash-format = "sha256"
-hash = "ccf47ec5e4142685ae7a939a04c86a241500bba610141af027433faea991cea8"
+hash = "e20f50d84cfa0fe29498c41f21fb554feea62f9a61875a5c81f57b90e7daaf21"
 
 [versions]
 forge = "47.4.10"

@@ -1,0 +1,68 @@
+# PROJECT DEADZONE public transit tuning v0.1
+# Waystones are public infrastructure discovered through exploration.
+# Players cannot craft, place, rename, relocate or break the network.
+
+[inventoryButton]
+	inventoryButton = "NONE"
+	warpButtonX = 58
+	warpButtonY = 60
+	creativeWarpButtonX = 88
+	creativeWarpButtonY = 33
+
+[cooldowns]
+	globalWaystoneCooldownMultiplier = 1.0
+	warpStoneCooldown = 300
+	warpStoneUseTime = 60
+	warpPlateUseTime = 60
+	scrollUseTime = 60
+	inventoryButtonCooldown = 300
+
+[worldGen]
+	# Village network only. No freely generated wilderness stations.
+	worldGenStyle = "BIOME"
+	frequency = 0
+	dimensionAllowList = ["minecraft:overworld"]
+	dimensionDenyList = []
+	nameGenerationMode = "RANDOM_ONLY"
+	customWaystoneNames = []
+	spawnInVillages = true
+	forceSpawnInVillages = true
+
+[restrictions]
+	# Recipes are removed separately. Creative restriction also blocks placement,
+	# renaming and relocation of any item obtained through commands or old saves.
+	restrictToCreative = true
+	restrictRenameToOwner = true
+	generatedWaystonesUnbreakable = true
+	transportLeashed = false
+	transportLeashedDimensional = false
+	leashedDenyList = ["minecraft:wither"]
+	dimensionalWarp = "DENY"
+	dimensionalWarpAllowList = []
+	dimensionalWarpDenyList = []
+	allowWaystoneToWaystoneTeleport = true
+	globalWaystoneSetupRequiresCreativeMode = true
+
+[client]
+	disableTextGlow = false
+
+[xpCost]
+	# Public transit costs 1 level minimum and 3 levels maximum. This makes
+	# discovered villages convenient without replacing vehicles for routine travel.
+	inverseXpCost = false
+	blocksPerXpLevel = 1000
+	minimumBaseXpCost = 1.0
+	maximumBaseXpCost = 3.0
+	xpCostPerLeashed = 0
+	dimensionalWarpXpCost = 3
+	globalWaystoneXpCostMultiplier = 0.0
+	warpStoneXpCostMultiplier = 0.0
+	waystoneXpCostMultiplier = 1.0
+	sharestoneXpCostMultiplier = 0.0
+	portstoneXpCostMultiplier = 0.0
+	warpPlateXpCostMultiplier = 0.0
+	inventoryButtonXpCostMultiplier = 0.0
+
+[compatibility]
+	displayWaystonesOnJourneyMap = false
+	preferJourneyMapIntegration = true
