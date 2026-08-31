@@ -12483,6 +12483,11 @@ hash = "5bd0506bc0be25116b234f2b5af9447f60d82ae1cb6c5be4e12d8841f6c2501c"
 metafile = true
 
 [[files]]
+file = "mods/fluidlogged.pw.toml"
+hash = "8332d64f7a722db51c6c06ad06d8c4c8c07f009963a62509cc6e5fc15fa59cd9"
+metafile = true
+
+[[files]]
 file = "mods/framedblocks.pw.toml"
 hash = "a06a97ba002c875926da3c83ef2027388c4e8a66e01b8bf1fd3d69be54bd6e64"
 metafile = true
@@ -12555,6 +12560,11 @@ metafile = true
 [[files]]
 file = "mods/horror-elements-mod.pw.toml"
 hash = "7b4079b8f4db0f5caf3a889e4e8f38ea8a0c190e46388d454e40284f3fc72a07"
+metafile = true
+
+[[files]]
+file = "mods/hotbath.pw.toml"
+hash = "65ef5a0072502cf720667f7cf24c6021e7104d9de41a48916aab12106a818567"
 metafile = true
 
 [[files]]
