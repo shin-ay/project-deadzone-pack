@@ -31,8 +31,21 @@ ItemEvents.tooltip(event => {
     Text.gray('Camp重傷処置に必要な総合医療物資'),
     Text.aqua('LSO Medkitと組み合わせて /deadzonehealth treat_trauma')
   ])
-  event.add('apocalypsenow:antibiotics', [
-    Text.green('The Hordes / Apocalypse Now / Infectiousの感染を治療'),
-    Text.aqua('治療後はThe Hordes再感染免疫 5分')
+event.add('apocalypsenow:antibiotics', [
+    Text.green('全感染系統の軽症～重症を完全治療'),
+    Text.aqua('治療後は再感染免疫 5分')
+  ])
+  event.add('apocalypsenow:homemadeantibiotics', [
+    Text.yellow('全感染系統に有効: 軽症は完治 / 中等症以上は1段階緩和')
+  ])
+  event.add('infectious:antibiotics', [
+    Text.green('全感染系統に有効: 中等症まで完治 / 重症は1段階緩和')
+  ])
+  event.add('minecraft:golden_apple', [
+    Text.yellow('全感染系統に有効: 軽症は完治 / 中等症以上は1段階緩和')
+  ])
+  event.add('minecraft:enchanted_golden_apple', [
+    Text.green('全感染系統の軽症～重症を完全治療'),
+    Text.aqua('治療後は再感染免疫 10分')
   ])
 })

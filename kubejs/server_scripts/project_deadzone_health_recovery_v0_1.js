@@ -76,6 +76,7 @@ function dzHealthHasInfection(player) {
 }
 
 function dzHealthCureInfection(player) {
+  if (typeof dzInfectionClear === "function") return dzInfectionClear(player, 6000)
   let cured = false
   DZ_HEALTH_INFECTIONS.forEach(id => {
     if (player.hasEffect(id)) {
@@ -203,12 +204,13 @@ function dzHealthStatus(player, completeIntro) {
   }
   if (completeIntro) dzHealthMarkSeen(player, snapshot)
   let infected = dzHealthHasInfection(player)
+  let infectionStage = typeof dzInfectionSnapshot === "function" ? dzInfectionSnapshot(player).severity : (infected ? 1 : 0)
   let hospital = dzHealthHospitalLevel(player)
   let shiori = dzHealthShioriRank(player)
   player.tell(Text.of("=== PDZ 診断記録 ===").aqua())
   player.tell(Text.of("M&S HP: " + dzHealthMnsCurrent(player) + " / " + dzHealthMnsMax(player) + "（死亡判定の正本）").aqua())
   player.tell(Text.of("総合判定: " + dzHealthSeverityName(snapshot.severity) + "｜最低部位 " + snapshot.worst.name + " " + Math.round(snapshot.minimum * 100) + "%").color(dzHealthSeverityColor(snapshot.severity)))
-  player.tell(Text.of("感染検査: " + (infected ? "陽性" : "陰性")).color(infected ? "red" : "green"))
+  player.tell(Text.of("感染検査: " + (typeof dzInfectionName === "function" ? dzInfectionName(infectionStage) : (infected ? "陽性" : "陰性"))).color(infectionStage >= 3 ? "red" : infectionStage >= 1 ? "yellow" : "green"))
   player.tell(Text.of("シオリ信頼 Rank " + shiori + "｜MineColonies病院 Lv" + hospital).gray())
   snapshot.parts.forEach(entry => {
     let color = entry.ratio < 0.40 ? "red" : entry.ratio < 0.70 ? "yellow" : "green"

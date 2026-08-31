@@ -1,46 +1,12 @@
 // PROJECT DEADZONE urgent multiplayer QoL v0.1
 // Infection care, durability safety, fish economy and sapling relief.
 
-const DZQ_INFECTIONS = [
-  'hordes:infected',
-  'apocalypsenow:infection',
-  'apocalypsenow:posinfectioneffect',
-  'infectious:infection'
-]
-const DZQ_ANTIBIOTICS = [
-  'apocalypsenow:antibiotics',
-  'apocalypsenow:homemadeantibiotics',
-  'infectious:antibiotics'
-]
-
 function dzqHasInfection(player) {
-  for (let i=0;i<DZQ_INFECTIONS.length;i++) {
-    if (player.hasEffect(DZQ_INFECTIONS[i])) return true
-  }
-  return false
+  return typeof dzInfectionHas === 'function' ? dzInfectionHas(player) : false
 }
 function dzqCureInfection(player) {
-  let cured=false
-  DZQ_INFECTIONS.forEach(id=>{
-    if (player.hasEffect(id)) {
-      player.removeEffect(id)
-      cured=true
-    }
-  })
-  if (cured) player.potionEffects.add('hordes:immunity',6000,0,false,true)
-  if (cured && typeof dzHealthRecordInfectionTreatment === 'function') dzHealthRecordInfectionTreatment(player)
-  return cured
+  return typeof dzInfectionClear === 'function' ? dzInfectionClear(player,6000) : false
 }
-
-// All three antibiotic families cure both infection mods consistently.
-DZQ_ANTIBIOTICS.forEach(itemId=>ItemEvents.rightClicked(itemId,event=>{
-  let p=event.player
-  if (!p || p.level.clientSide || !dzqHasInfection(p)) return
-  if (dzqCureInfection(p)) {
-    p.tell(Text.of('抗生物質で感染症を治療しました。').green())
-    p.runCommandSilent('playsound minecraft:block.brewing_stand.brew player @s ~ ~ ~ 0.7 1.15')
-  }
-}))
 
 // Converted hostiles occasionally inherit NPC down tags. The old version
 // scanned every entity once per player, which scaled terribly in multiplayer.
@@ -110,7 +76,9 @@ ServerEvents.commandRegistry(event=>{
   let care=Commands.literal('deadzoneinfection')
   care.then(Commands.literal('status').executes(ctx=>{
     let p=ctx.source.player
-    p.tell(Text.of(dzqHasInfection(p)?'感染症：陽性（抗生物質またはMedic治療が必要）':'感染症：陰性').color(dzqHasInfection(p)?'red':'green'))
+    let stage=typeof dzInfectionSnapshot==='function'?dzInfectionSnapshot(p).severity:(dzqHasInfection(p)?1:0)
+    let name=typeof dzInfectionName==='function'?dzInfectionName(stage):(stage>0?'陽性':'陰性')
+    p.tell(Text.of('感染症：'+name+(stage>0?'（段階に合う治療薬またはMedic治療が必要）':'')).color(stage>=3?'red':stage>0?'yellow':'green'))
     return 1
   }))
   care.then(Commands.literal('medic_cure').executes(ctx=>{

@@ -5,6 +5,7 @@ const DZ_FIRSTAID_DRESSING = "legendarysurvivaloverhaul:bandage"
 const DZ_FIELD_KIT_COOLDOWN_MS = 8000
 
 function dzFieldKitCureInfection(target) {
+  if (typeof dzInfectionTreat === "function") return dzInfectionTreat(target, 3, 6000, "フィールド医療キット").cured
   let effects = ["hordes:infected", "apocalypsenow:infection", "apocalypsenow:posinfectioneffect", "infectious:infection"]
   let cured = false
   effects.forEach(id => {
@@ -55,11 +56,8 @@ ItemEvents.rightClicked(DZ_FIELD_KIT, event => {
   if (player.level.clientSide) return
   event.cancel()
   if (!dzIssueDressing(player, player, event.item)) return
-  let infected = dzFieldKitCureInfection(player)
-  if (infected) {
-    if (typeof dzHealthRecordInfectionTreatment === "function") dzHealthRecordInfectionTreatment(player)
-    player.tell(Text.of("感染症の治療も完了しました。").green())
-  }
+  dzFieldKitCureInfection(player)
+  // Unified infection treatment reports and records the result.
 })
 
 ItemEvents.entityInteracted(event => {
@@ -75,9 +73,8 @@ ItemEvents.entityInteracted(event => {
   if (String(target.uuid) === String(healer.uuid)) return
   if (!dzIssueDressing(healer, target, event.item)) return
   let infected = dzFieldKitCureInfection(target)
-  if (infected && typeof dzHealthRecordInfectionTreatment === "function") dzHealthRecordInfectionTreatment(target)
   if (typeof dzHealthMedicStabilize === "function") dzHealthMedicStabilize(healer, target)
-  if (infected) healer.tell(Text.of(target.username + " の感染症も治療しました。").green())
+  if (infected) healer.tell(Text.of(target.username + " の感染症治療を完了しました。").green())
   healer.tell(Text.of(target.username + " に応急処置用品を渡しました。").aqua())
 })
 

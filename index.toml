@@ -1594,7 +1594,7 @@ hash = "41bb0b1222c5879fd8f8d1b88d84881adbed559fd12897b5c598dff49ba62abb"
 
 [[files]]
 file = "config/hordes-common.toml"
-hash = "7817e0ee2b90cb9c071aa4439e4f3898e390759486da9c4d3d3fd30dfb66ef98"
+hash = "c84ac41cb78bbe816ea2b33765d0e4f8d3c174833c88dc6243ef776d8ef3d520"
 
 [[files]]
 file = "config/hordes/assets/hordes/attributes.json"
@@ -1710,7 +1710,7 @@ hash = "cf2baa687d39f6e3ac1f42be2b8c84da3fb5bca63ae7488f95614db6b6d16c6a"
 
 [[files]]
 file = "config/hordes/data/hordes/infection/immunity_items.json"
-hash = "59ebd27b0a1ab6e783b5ec3f7a5fb427dceee37eb7f13123650bae5f92b8422e"
+hash = "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
 
 [[files]]
 file = "config/hordes/data/hordes/infection/infection_conversions.json"
@@ -1726,11 +1726,35 @@ hash = "840846a89a997507a4d6716ce17ecdc8ff7ff1a996d9010b806ea55a13c96580"
 
 [[files]]
 file = "config/hordes/data/hordes/tags/items/infection_cures.json"
-hash = "b66d3f532ba81123a5ff9ab3482a81dbd4813e0db42d1b7bb3fdf71170d0cb37"
+hash = "349e8b0b9e6f1cbb0b91344dbeff0dc1144219637a6e99aa702e53587f6ccfd7"
 
 [[files]]
 file = "config/hordes/data/hordes/tags/worldgen/biome/husk_player_spawn_biomes.json"
 hash = "083e811b4483358d62396f6e1517ff25791b2253c72d54f81a09bab5d0beb6a2"
+
+[[files]]
+file = "config/hordes/data/project_deadzone/horde_data/tables/pdz_t0.json"
+hash = "fb19b3ada1dfe0883ce29d7bb8eb2376a48d74910bd3b74542e63bf483e3aee8"
+
+[[files]]
+file = "config/hordes/data/project_deadzone/horde_data/tables/pdz_t1.json"
+hash = "c8be561b0e82c0580e5e92bec1afca077e04171535b78e9f081898930431b0f7"
+
+[[files]]
+file = "config/hordes/data/project_deadzone/horde_data/tables/pdz_t2.json"
+hash = "ebb56f465da6f34e9b64b932f399a4d45d8f8a028695b5022711ec3e9bb324c2"
+
+[[files]]
+file = "config/hordes/data/project_deadzone/horde_data/tables/pdz_t3.json"
+hash = "e5860c1a8e0fbe5d53039c648bcefa7baa16d449467875dd7f9f99346a1db31f"
+
+[[files]]
+file = "config/hordes/data/project_deadzone/horde_data/tables/pdz_t4.json"
+hash = "52c5aa46fb0abdffa23c79d34f92f43a6f95ea056f0fe299e61310c1768ac047"
+
+[[files]]
+file = "config/hordes/data/project_deadzone/horde_data/tables/pdz_t5.json"
+hash = "91a973005dfc792fc725927195fd8528f8502fada146423e66b72dd955c915cc"
 
 [[files]]
 file = "config/hordes/hordes-info.json"
@@ -3750,7 +3774,7 @@ hash = "4cd2b44781045084e2634fccf543c96c900a81061e8d4569c45e4528b8b21a66"
 
 [[files]]
 file = "kubejs/client_scripts/project_deadzone_medical_tooltips_v0_1.js"
-hash = "6b7ae2a5576c88a6b1df1f45e79b54ad2d69bae91adc173f7aef52b6c3937111"
+hash = "820000194508b790e69c70ba3a5ca3de126d455fba584306f1020542f875a65f"
 
 [[files]]
 file = "kubejs/config/client.properties"
@@ -10985,6 +11009,10 @@ file = "kubejs/server_scripts/project_deadzone_auto_basecamp_v0_1.js"
 hash = "ec246c53f9c3fa29ecf5cff8817cd5a7e8c53474f24202af0a60d480b8fff1c8"
 
 [[files]]
+file = "kubejs/server_scripts/project_deadzone_auto_horde_v0_1.js"
+hash = "9b66fac1dd1db1aebf5ef81cfc811c32c775a607dc329ace4b9cb91e8866112a"
+
+[[files]]
 file = "kubejs/server_scripts/project_deadzone_base_core_v0_1.js"
 hash = "253fbd32f5bcdf0f4d9c15e08a3e4d3ab4495371ada3fc982bd6c439fafa7c5e"
 
@@ -11086,7 +11114,7 @@ hash = "9890ac3c73c26591bfb0e26f946a26d5b967118b1d731d60b7005c59e33e1cc0"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_field_medical_kit_v0_1.js"
-hash = "3036b1eb6fae3d7fd3a709d35cc28ded5af2e213512f1d11236b1252c6543a2b"
+hash = "5623899158dd37c9ca1d539ecf8401c1226951516c56951e53943113522b8461"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_field_repair_v0_1.js"
@@ -11126,7 +11154,7 @@ hash = "103f023baf9b9248cd552046f8613182a916f4e4c44cc5cee22dbc5911105178"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_health_recovery_v0_1.js"
-hash = "347ea6dceb4e7af689382f089f9fa6bc7036f240bd7323ad7d088e585f348daf"
+hash = "ee53a9bca374f23465a9c4b837236461105f63457b50d65681baf666d935c172"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_hydration_bridge_v0_1.js"
@@ -11139,6 +11167,10 @@ hash = "639c481a0b0d52cc61bd4f43717c504c7733d9f6bdba7e076ea6cc449bcf9c90"
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_industry_smelting_fallbacks_v0_1.js"
 hash = "44fa2d2172610f4fb886ff7824b292cf536c0fc34d327f128830bba79ce1b9a0"
+
+[[files]]
+file = "kubejs/server_scripts/project_deadzone_infection_recovery_v0_2.js"
+hash = "aed7892d964167d594c59f6b90089f74653fdc20cbbc708b9156a31e5876e53b"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_job_abilities_v0_1.js"
@@ -11410,7 +11442,7 @@ hash = "24f383a9b1e2b196149907f27b5bfecb8a6bf851d85127f3ef5e409fc45009ef"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_urgent_qol_v0_1.js"
-hash = "ebd374cf043e09a13d84b9bc8a4b90b133d8e784bc6a2a24c8bbd5151404d731"
+hash = "8faa9001bdab28a2a00a688ad8c6bcdb0b29667c2ac27381c56751a4d87d0c05"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_usunit_alliance_v0_1.js"
