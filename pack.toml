@@ -1,12 +1,12 @@
 name = "PROJECT DEADZONE"
 author = "PROJECT DEADZONE Team"
-version = "BETA-20260831-POLLUTION-COMBAT-BALANCE"
+version = "BETA-20260901-REMOVE-SCALING-HEALTH"
 pack-format = "packwiz:1.1.0"
 
 [index]
 file = "index.toml"
 hash-format = "sha256"
-hash = "dd58e82e477655592a5305e894a6f24f56d2b46da23daaa6a2d831bc36a9b10e"
+hash = "a49c16207175e117668987f9d402148d20444d8986aed8859c608a26f0d57ddc"
 
 [versions]
 forge = "47.4.10"

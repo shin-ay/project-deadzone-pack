@@ -3005,10 +3005,6 @@ file = "config/rightclickharvest.json5"
 hash = "6eb5169563472ae96184c94e9f42ff7d76fdba403ed3190ffb308e817ea0a21e"
 
 [[files]]
-file = "config/scalinghealth-client.toml"
-hash = "378a364c9d17fcf5c08cd7e9bd6388dbeebaf9c5b4ac0a3050b94c10de11eb29"
-
-[[files]]
 file = "config/securitycraft-client.toml"
 hash = "b389265c37589ce6ff1581890fd2c0766b6477e223447a9670ba153008d331e1"
 
@@ -3439,10 +3435,6 @@ hash = "915f998e192c57a17cf14ff9842346d88276b4260622995656883554694a5266"
 [[files]]
 file = "defaultconfigs/partyhealth-server.toml"
 hash = "3ed8257302950822cd63426d2932776525c8338f786cca759e16d2249175a13b"
-
-[[files]]
-file = "defaultconfigs/scalinghealth-server.toml"
-hash = "c83d9732859d796315cfdbcff72a41b974109b3ca52f7dd1de4a55cb568f8271"
 
 [[files]]
 file = "defaultconfigs/skilltree-server.toml"
@@ -10873,14 +10865,6 @@ file = "kubejs/data/realmrpg_quests/worldgen/structure_set/piglin_gamblers_with_
 hash = "fbf7463615ea7e088fc2570254483934e957dc96585cfcb4af2fb63d644c5301"
 
 [[files]]
-file = "kubejs/data/scalinghealth/sh_mechanics/difficulty.json"
-hash = "be0387572b68c9da4b26ae482dc72c516e62f3bbbbf5e966cfd5e1876dd2e30a"
-
-[[files]]
-file = "kubejs/data/scalinghealth/sh_mechanics/mobs.json"
-hash = "3da3e06581e14a3099fc10f1eb949fcb66fbd28343ff042e862f7b6050248a06"
-
-[[files]]
 file = "kubejs/data/starcatcher/data_maps/item/catch_modifiers.json"
 hash = "f30b35ee4f39dbddb34f4788d99e1055b512a93061a1baf963e00b29ef1f8430"
 
@@ -13150,11 +13134,6 @@ metafile = true
 [[files]]
 file = "mods/sbw-heavy-bunker.pw.toml"
 hash = "54f341a4422dbcdfda0c981bdd5eb51e418dfc82418e7f376d43cb3503337695"
-metafile = true
-
-[[files]]
-file = "mods/scaling-health.pw.toml"
-hash = "6f90db52e02fbb0129053fbf94a0c3fde4e889272f9e0ddfc99a10985aee4fd3"
 metafile = true
 
 [[files]]
