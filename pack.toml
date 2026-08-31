@@ -1,12 +1,12 @@
 name = "PROJECT DEADZONE"
 author = "PROJECT DEADZONE Team"
-version = "BETA-20260831-GEOGRAPHIC-RISK-REWARDS-1"
+version = "BETA-20260831-UI-0.4.2-SALVAGE"
 pack-format = "packwiz:1.1.0"
 
 [index]
 file = "index.toml"
 hash-format = "sha256"
-hash = "3fbd3ff81fc64af5fdec5a72c2428c9a96aec80f57f28ba998bca7d2d4d5c6c0"
+hash = "ccf47ec5e4142685ae7a939a04c86a241500bba610141af027433faea991cea8"
 
 [versions]
 forge = "47.4.10"
