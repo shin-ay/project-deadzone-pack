@@ -11162,7 +11162,7 @@ hash = "ee53a9bca374f23465a9c4b837236461105f63457b50d65681baf666d935c172"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_hot_spring_recovery_v0_1.js"
-hash = "277b1ee81c4e9746eecbfae69d9bf53fddd8d49c12c2d8d0492ba86d79e314e1"
+hash = "e0f9e4fd8e3cc596e282e904c6e476357fff5b88b459d2d96583f9f7a31a4364"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_hydration_bridge_v0_1.js"

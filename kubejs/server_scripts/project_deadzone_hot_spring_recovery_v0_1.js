@@ -48,10 +48,8 @@ function pdzSpringIsBathing(player) {
   } catch (ignored) { return false }
 }
 
-function pdzSpringReset(player, notify) {
+function pdzSpringReset(player) {
   let key = pdzSpringKey(player)
-  let state = pdzSpringState[key]
-  if (notify && state && state.active) player.tell(Text.of('温泉療養が中断されました。再び30秒安静にしてください。').gray())
   delete pdzSpringState[key]
 }
 
@@ -81,7 +79,6 @@ function pdzSpringHealOne(player) {
   let amount = Math.min(missing, injury.max * PDZ_SPRING_HEAL_RATIO)
   if (amount <= 0.001) return false
   PDZ_SPRING_BODY_UTIL.applyHealingTimeBodyPart(player, injury.part, amount, PDZ_SPRING_HEAL_TIME)
-  player.tell(Text.of('♨ 温泉療養：' + injury.name + 'の回復が進んでいます（最大15%）。').green())
   return true
 }
 
@@ -102,14 +99,17 @@ function pdzSpringCleanseOne(player) {
   if (effects.length <= 0) return false
   let id = effects[Math.floor(Math.random() * effects.length)]
   player.removeEffect(id)
-  player.tell(Text.of('♨ 温泉療養：不調がひとつ和らぎました（' + id + '）。').aqua())
   return true
 }
 
 function pdzSpringTreat(player) {
-  if (pdzSpringHealOne(player)) return
-  if (pdzSpringCleanseOne(player)) return
-  player.tell(Text.of('♨ 温泉療養：治療が必要な負傷や不調はありません。').gray())
+  if (pdzSpringHealOne(player)) return true
+  if (pdzSpringCleanseOne(player)) return true
+  return false
+}
+
+function pdzSpringIsFullyRecovered(player) {
+  return !pdzSpringWorstInjury(player) && pdzSpringHarmfulEffects(player).length <= 0
 }
 
 ServerEvents.tick(event => {
@@ -117,18 +117,21 @@ ServerEvents.tick(event => {
   event.server.players.forEach(player => {
     let key = pdzSpringKey(player)
     if (!pdzSpringIsBathing(player)) {
-      pdzSpringReset(player, false)
+      pdzSpringReset(player)
       return
     }
     let now = pdzSpringNow(player)
     let state = pdzSpringState[key]
     if (!state) {
-      pdzSpringState[key] = {active: true, next: now + PDZ_SPRING_INTERVAL}
-      player.tell(Text.of('♨ 温泉療養を開始しました。30秒間、安静にしてください。').gold())
+      pdzSpringState[key] = {active: true, next: now + PDZ_SPRING_INTERVAL, treated: false, completeNotified: false}
       return
     }
+    if (state.treated && !state.completeNotified && pdzSpringIsFullyRecovered(player)) {
+      state.completeNotified = true
+      player.tell(Text.of('♨ 温泉療養が完了し、全快しました。').green())
+    }
     if (now < state.next) return
-    pdzSpringTreat(player)
+    if (pdzSpringTreat(player)) state.treated = true
     state.next = now + PDZ_SPRING_INTERVAL
   })
 })
@@ -136,10 +139,10 @@ ServerEvents.tick(event => {
 EntityEvents.hurt(event => {
   let player = event.entity
   if (!player || player.level.clientSide || !player.isPlayer || !player.isPlayer()) return
-  if (pdzSpringState[pdzSpringKey(player)]) pdzSpringReset(player, true)
+  if (pdzSpringState[pdzSpringKey(player)]) pdzSpringReset(player)
 })
 
-PlayerEvents.loggedOut(event => pdzSpringReset(event.player, false))
+PlayerEvents.loggedOut(event => pdzSpringReset(event.player))
 
 ServerEvents.commandRegistry(event => {
   const {commands: Commands} = event
