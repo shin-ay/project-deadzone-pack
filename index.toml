@@ -11141,6 +11141,10 @@ file = "kubejs/server_scripts/project_deadzone_g_job_sync_v0_1.js"
 hash = "cc2e963c48bd837b9afc2f60dd152253a19ceb88232db813719a76a4c24b8ea1"
 
 [[files]]
+file = "kubejs/server_scripts/project_deadzone_geographic_risk_rewards_v0_1.js"
+hash = "f10ffe69e9153410413ac5d90bba994b00b64b061133ecf69af98374dd491a4a"
+
+[[files]]
 file = "kubejs/server_scripts/project_deadzone_growth_effects_v0_1.js"
 hash = "62af1d449305eae01b5ed3b7ae8abdb20b889aeb422c1a70f8ce4231894f6c08"
 
