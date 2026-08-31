@@ -1,0 +1,13 @@
+name = "TongDaRailway-for"
+filename = "tongdarailway_for_forge-0.0.4.3.3-SNAPSHOT.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "9d598f52f0f9301184c0c342b6a9cb073942c90f"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 7924144
+project-id = 1412452
