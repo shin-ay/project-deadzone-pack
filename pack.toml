@@ -1,12 +1,12 @@
 name = "PROJECT DEADZONE"
 author = "PROJECT DEADZONE Team"
-version = "BETA-20260831-HORDE-INFECTION-1"
+version = "BETA-20260831-UNIFIED-UI-0.4.1"
 pack-format = "packwiz:1.1.0"
 
 [index]
 file = "index.toml"
 hash-format = "sha256"
-hash = "69f91f38ee633457bb18d55aad2e512925b7236551fc9d20131507d89ee76b7b"
+hash = "0e97fc657a2177700b8d8f20ea52e274fa2b29425dbc924c757fa77fb3606b75"
 
 [versions]
 forge = "47.4.10"
