@@ -1,5 +1,19 @@
-// PROJECT DEADZONE - damage diagnostics only.
-// Legendary Survival Overhaul owns health, limb damage and lethal conditions.
+// PROJECT DEADZONE - M&S health/death diagnostics.
+// Mine and Slash is authoritative for HP and death. LSO owns localized trauma
+// only. This script never invents a second health pool or cancels a valid death.
+
+const PDZ_DAMAGE_MNS_HEALTH = Java.loadClass('com.robertx22.mine_and_slash.uncommon.utilityclasses.HealthUtils')
+const PDZ_DAMAGE_EFFECT_REGISTRY = Java.loadClass('net.minecraft.core.registries.BuiltInRegistries').MOB_EFFECT
+
+function pdzDamageMnsHealth(player) {
+  try { return Math.max(0, Number(PDZ_DAMAGE_MNS_HEALTH.getCurrentHealth(player))) }
+  catch (ignored) { return Math.max(0, Number(player.health)) }
+}
+
+function pdzDamageMnsMax(player) {
+  try { return Math.max(1, Number(PDZ_DAMAGE_MNS_HEALTH.getMaxHealth(player))) }
+  catch (ignored) { return Math.max(1, Number(player.maxHealth)) }
+}
 
 function pdzDamageSourceId(source) {
   try { return String(source.type()) } catch (ignored) {}
@@ -38,7 +52,11 @@ function pdzDamageCapabilitySummary(player) {
 function pdzDamageEffectSummary(player) {
   try {
     let effects = []
-    player.potionEffects.active.forEach(effect => effects.push(String(effect.effect) + ':' + Number(effect.amplifier)))
+    player.potionEffects.active.forEach(effect => {
+      let id = 'unknown'
+      try { id = String(PDZ_DAMAGE_EFFECT_REGISTRY.getKey(effect.effect)) } catch (ignored) {}
+      effects.push(id + ':' + Number(effect.amplifier))
+    })
     return effects.length ? effects.join(',') : 'none'
   } catch (ignored) {
     return 'unavailable'
@@ -86,6 +104,8 @@ EntityEvents.hurt(event => {
 
   let health = Math.max(0, Number(player.health))
   let maxHealth = Math.max(1, Number(player.maxHealth))
+  let mnsHealth = pdzDamageMnsHealth(player)
+  let mnsMaxHealth = pdzDamageMnsMax(player)
   let absorption = Math.max(0, Number(player.absorptionAmount || 0))
   let lethal = incoming >= health + absorption
   let attacker = pdzDamageEntityName(event.source.actual)
@@ -96,6 +116,7 @@ EntityEvents.hurt(event => {
       + ' source=' + source
       + ' incoming=' + incoming.toFixed(2)
       + ' health=' + health.toFixed(2) + '/' + maxHealth.toFixed(2)
+      + ' mnsHealth=' + mnsHealth.toFixed(2) + '/' + mnsMaxHealth.toFixed(2)
       + ' absorption=' + absorption.toFixed(2)
       + ' armor=' + Number(player.armorValue || 0)
       + ' attacker=' + attacker
@@ -109,8 +130,25 @@ EntityEvents.hurt(event => {
     player.persistentData.putDouble('dz_last_damage_incoming', incoming)
     player.persistentData.putDouble('dz_last_damage_health', health)
     player.persistentData.putDouble('dz_last_damage_max_health', maxHealth)
+    player.persistentData.putDouble('dz_last_damage_mns_health', mnsHealth)
+    player.persistentData.putDouble('dz_last_damage_mns_max_health', mnsMaxHealth)
     player.persistentData.putDouble('dz_last_damage_absorption', absorption)
-    try { player.persistentData.putLong('dz_last_damage_tick', player.level.gameTime) } catch (ignored) {}
+    try { player.persistentData.putDouble('dz_last_damage_tick', Number(player.level.gameTime)) } catch (ignored) {}
+
+    let beforeHealth = health
+    let beforeMns = mnsHealth
+    player.server.scheduleInTicks(2, () => {
+      if (!player) return
+      let afterHealth = Math.max(0, Number(player.health))
+      let afterMns = pdzDamageMnsHealth(player)
+      console.warn('[PDZ DamageAuditPost] player=' + player.username
+        + ' source=' + source
+        + ' vanilla=' + beforeHealth.toFixed(2) + '->' + afterHealth.toFixed(2)
+        + ' delta=' + Math.max(0, beforeHealth - afterHealth).toFixed(2)
+        + ' mns=' + beforeMns.toFixed(2) + '->' + afterMns.toFixed(2)
+        + ' delta=' + Math.max(0, beforeMns - afterMns).toFixed(2)
+        + ' effects=' + pdzDamageEffectSummary(player))
+    })
   }
 
 })
@@ -121,14 +159,17 @@ EntityEvents.death(event => {
 
   let data = player.persistentData
   let age = -1
-  try { age = Number(player.level.gameTime) - Number(data.getLong('dz_last_damage_tick')) } catch (ignored) {}
+  try { age = Number(player.level.gameTime) - Number(data.getDouble('dz_last_damage_tick')) } catch (ignored) {}
   console.warn('[PDZ DeathAudit] player=' + player.username
     + ' deathSource=' + pdzDamageSourceId(event.source)
     + ' health=' + Number(player.health).toFixed(2) + '/' + Number(player.maxHealth).toFixed(2)
+    + ' mnsHealth=' + pdzDamageMnsHealth(player).toFixed(2) + '/' + pdzDamageMnsMax(player).toFixed(2)
     + ' lastSource=' + String(data.getString('dz_last_damage_source'))
     + ' lastIncoming=' + Number(data.getDouble('dz_last_damage_incoming')).toFixed(2)
     + ' lastHealth=' + Number(data.getDouble('dz_last_damage_health')).toFixed(2)
     + '/' + Number(data.getDouble('dz_last_damage_max_health')).toFixed(2)
+    + ' lastMnsHealth=' + Number(data.getDouble('dz_last_damage_mns_health')).toFixed(2)
+    + '/' + Number(data.getDouble('dz_last_damage_mns_max_health')).toFixed(2)
     + ' lastAbsorption=' + Number(data.getDouble('dz_last_damage_absorption')).toFixed(2)
     + ' lastAttacker=' + String(data.getString('dz_last_damage_attacker'))
     + ' lastDirect=' + String(data.getString('dz_last_damage_direct'))

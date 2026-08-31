@@ -1,0 +1,14 @@
+{
+  "block.adchimneys.cobblestone_chimney": "丸石の煙突",
+  "block.adchimneys.duct": "排気ダクト",
+  "block.adchimneys.glass_chimney": "ガラスの煙突",
+  "block.adchimneys.large_brick_chimney": "大型レンガ煙突",
+  "block.adchimneys.metal_chimney": "金属製煙突",
+  "block.adchimneys.metal_pump": "金属製排気ポンプ",
+  "block.adchimneys.metal_vent": "金属製排気口",
+  "block.adchimneys.pipe": "ポンプ配管",
+  "block.adchimneys.small_brick_chimney": "小型レンガ煙突",
+  "block.adchimneys.stone_chimney": "石の煙突",
+  "block.adchimneys.stone_pump": "石製排気ポンプ",
+  "block.adchimneys.stone_vent": "石製排気口"
+}

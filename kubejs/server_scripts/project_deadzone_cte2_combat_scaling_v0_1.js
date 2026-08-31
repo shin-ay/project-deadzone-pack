@@ -8,6 +8,7 @@
 
 const PDZCTE_ENTITY_DATA = Java.loadClass('com.robertx22.mine_and_slash.capability.entity.EntityData')
 const PDZCTE_HEALTH = Java.loadClass('com.robertx22.mine_and_slash.uncommon.utilityclasses.HealthUtils')
+const PDZCTE_DAMAGE_MODIFIER = 'd34db300-0000-4000-8000-000000000001'
 const PDZCTE_LEVEL_BANDS = [
   {min:1,max:8},
   {min:9,max:18},
@@ -56,9 +57,23 @@ function pdzCteRegion(entity){
   return Math.max(0,Math.min(5,tier))
 }
 
+function pdzCteApplyIncomingBalance(entity){
+  if(!entity||entity.tags.contains('dz_cte2_incoming_v2'))return
+  entity.removeAttribute('minecraft:generic.attack_damage',PDZCTE_DAMAGE_MODIFIER)
+  entity.modifyAttribute('minecraft:generic.attack_damage',PDZCTE_DAMAGE_MODIFIER,
+    entity.tags.contains('dz_elite')?-0.15:-0.30,'multiply_total')
+  entity.addTag('dz_cte2_incoming_v2')
+}
+
 function pdzCteApply(entity){
   if(!entity||entity.level.clientSide||!entity.alive||!pdzCteIsHostile(entity)||pdzCteExcluded(entity))return
-  if(entity.tags.contains('dz_cte2_level_band'))return
+  // EntityEvents.spawned is backed by EntityJoinLevelEvent and also runs when
+  // an older mob is loaded from disk. This migration path therefore updates
+  // already-generated enemies without resetting their HP or M&S level.
+  if(entity.tags.contains('dz_cte2_level_band')){
+    try{pdzCteApplyIncomingBalance(entity)}catch(ignored){}
+    return
+  }
   let tier=pdzCteRegion(entity),band=PDZCTE_LEVEL_BANDS[tier]
   let level=band.min
   try{
@@ -72,6 +87,12 @@ function pdzCteApply(entity){
     let data=PDZCTE_ENTITY_DATA.get(entity)
     data.setLevel(level)
     data.recalcStats_DONT_CALL()
+    // M&S levels are intentionally used for enemy durability and progression,
+    // but their vanilla attack attribute stacks with several infection/LSO
+    // effects. Keep ordinary enemies dangerous without letting one basic melee
+    // hit erase an entire full-health player. Boss profiles are excluded above;
+    // elites retain more of their damage as a visible difficulty spike.
+    pdzCteApplyIncomingBalance(entity)
     entity.health=entity.maxHealth
     entity.addTag('dz_cte2_level_band')
     entity.addTag('dz_cte2_region_'+tier)
@@ -205,6 +226,17 @@ ServerEvents.commandRegistry(event=>{
     p.tell(Text.of('[BALANCE SCAN] '+String(target.hoverName.string)+' / '+String(target.type)).gold())
     p.tell(Text.of('World T'+pdzCteRegion(target)+' / M&S Lv'+level+' / '+rarity).aqua())
     p.tell(Text.of('HP '+Number(target.health).toFixed(1)+' / M&S max '+mnsHp+' / vanilla max '+Number(target.maxHealth).toFixed(1)).gray())
+    return 1
+  }))
+  root.then(Commands.literal('apply_nearest').executes(ctx=>{
+    let p=ctx.source.player,target=pdzCteNearestHostile(p)
+    if(!target){p.tell(Text.of('16m以内に補正対象の敵がいません。').yellow());return 0}
+    // Operational repair/probe for a mob imported by another mod without a
+    // normal spawn event. This is intentionally op-only with the root command.
+    pdzCteApply(target)
+    let value='?'
+    try{value=Number(target.getAttributeValue('minecraft:generic.attack_damage')).toFixed(2)}catch(ignored){}
+    p.tell(Text.of('[BALANCE APPLY] '+String(target.type)+' / attack '+value).green())
     return 1
   }))
   event.register(root)

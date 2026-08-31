@@ -1,4 +1,4 @@
-// PROJECT DEADZONE automatic Horde director v0.1
+// PROJECT DEADZONE automatic Horde director v0.2
 //
 // One shared director prevents multiplayer Horde stacking. Time advances only
 // while at least one player is online. The permanent 100 m camp ring blocks
@@ -16,12 +16,64 @@ const PDZ_AH_WARNING = 600               // 30 s warning
 const PDZ_AH_COOLDOWN_MIN = 120000       // 5 active Minecraft days / about 100 min
 const PDZ_AH_COOLDOWN_SPREAD = 48000     // +0..2 active days
 const PDZ_AH_CAMP_RADIUS = 100
+const PDZ_AH_POLLUTION_WARNING = 75      // brief warning effects begin here
+const PDZ_AH_POLLUTION_CRITICAL = 90     // urgent raid pressure begins here
+const PDZ_AH_POLLUTION_PULSE = 1200      // at most once per active minute
+const PDZ_AH_POLLUTION_WARNING_CAP = 18000 // raid within 15 active minutes
+const PDZ_AH_POLLUTION_CRITICAL_CAP = 6000 // raid within 5 active minutes
 const PDZ_AH_TABLES = [
   'project_deadzone:pdz_t0', 'project_deadzone:pdz_t1',
   'project_deadzone:pdz_t2', 'project_deadzone:pdz_t3',
   'project_deadzone:pdz_t4', 'project_deadzone:pdz_t5'
 ]
 const PDZ_AH_DURATIONS = [2400, 2800, 3200, 3600, 4000, 4400]
+const PDZ_AH_POLLUTANTS = Java.loadClass('com.endertech.minecraft.mods.adpother.init.Pollutants$BuiltIn')
+
+function pdzAhPollution(player) {
+  try {
+    let pos = player.blockPosition()
+    let carbon = Number(PDZ_AH_POLLUTANTS.CARBON.get().getPercentageAtChunk(player.level, pos).getValue())
+    let sulfur = Number(PDZ_AH_POLLUTANTS.SULFUR.get().getPercentageAtChunk(player.level, pos).getValue())
+    if (!isFinite(carbon)) carbon = 0
+    if (!isFinite(sulfur)) sulfur = 0
+    return Math.max(0, Math.min(200, Math.max(carbon, sulfur)))
+  } catch (ignored) { return 0 }
+}
+
+function pdzAhPollutionBand(value) {
+  if (value >= PDZ_AH_POLLUTION_CRITICAL) return 2
+  if (value >= PDZ_AH_POLLUTION_WARNING) return 1
+  return 0
+}
+
+function pdzAhPollutionPulse(player, value, activeTicks) {
+  let band = pdzAhPollutionBand(value)
+  let previous = player.persistentData.getInt('dz_pollution_band_v1')
+  player.persistentData.putInt('dz_pollution_band_v1', band)
+  player.persistentData.putInt('dz_pollution_percent_v1', Math.floor(value))
+
+  if (band !== previous) {
+    if (band === 0 && previous > 0) {
+      player.runCommandSilent('tellraw @s [{"text":"[POLLUTION] ","color":"dark_aqua","bold":true},{"text":"排煙濃度が安定域へ戻った。","color":"aqua"}]')
+    } else if (band === 1) {
+      player.runCommandSilent('tellraw @s [{"text":"[POLLUTION WARNING] ","color":"gold","bold":true},{"text":"排煙を追って感染群が集まり始めている。","color":"yellow"}]')
+      player.runCommandSilent('playsound minecraft:block.note_block.didgeridoo player @s ~ ~ ~ 0.55 0.65')
+    } else if (band === 2) {
+      player.runCommandSilent('tellraw @s [{"text":"[POLLUTION CRITICAL] ","color":"dark_red","bold":true},{"text":"襲撃危険域。排煙処理か迎撃準備を。","color":"red"}]')
+      player.runCommandSilent('playsound minecraft:block.bell.resonate player @s ~ ~ ~ 0.8 0.55')
+    }
+  }
+
+  if (band <= 0) return
+  let last = player.persistentData.getLong('dz_pollution_effect_tick_v1')
+  if (activeTicks - last < PDZ_AH_POLLUTION_PULSE) return
+  player.persistentData.putLong('dz_pollution_effect_tick_v1', activeTicks)
+
+  // A short warning, not a constant survival tax. No slowness or suffocation.
+  player.runCommandSilent('effect give @s minecraft:weakness ' + (band === 2 ? 8 : 5) + ' 0 true')
+  if (band === 2) player.runCommandSilent('effect give @s minecraft:poison 2 0 true')
+  player.runCommandSilent('playsound minecraft:entity.panda.sneeze player @s ~ ~ ~ 0.35 0.8')
+}
 
 function pdzAhAtCamp(player) {
   try {
@@ -73,8 +125,10 @@ function pdzAhClearPending(server) {
 function pdzAhWarn(server, player, activeTicks) {
   server.persistentData.putLong(PDZ_AH_PENDING_AT, activeTicks + PDZ_AH_WARNING)
   server.persistentData.putString(PDZ_AH_PENDING_PLAYER, String(player.uuid))
+  let pollution = pdzAhPollution(player)
+  let cause = pollution >= PDZ_AH_POLLUTION_WARNING ? '工業排煙と活動音' : '活動音'
   server.runCommandSilent('tellraw @a [{"text":"[HORDE WARNING] ","color":"dark_red","bold":true},' +
-    '{"text":"大量の感染者が活動音へ接近中。約30秒で接触。","color":"red"}]')
+    '{"text":"大量の感染者が' + cause + 'へ接近中。約30秒で接触。","color":"red"}]')
   player.runCommandSilent('title @s title {"text":"HORDE 接近","color":"dark_red","bold":true}')
   player.runCommandSilent('title @s subtitle {"text":"退路と弾薬を確認せよ","color":"yellow"}')
   player.runCommandSilent('playsound minecraft:entity.zombie.ambient player @s ~ ~ ~ 0.9 0.55')
@@ -89,6 +143,9 @@ function pdzAhStart(server, player, activeTicks) {
   let tier = pdzAhTier(player)
   let table = PDZ_AH_TABLES[tier] || PDZ_AH_TABLES[0]
   let duration = PDZ_AH_DURATIONS[tier] || PDZ_AH_DURATIONS[0]
+  let pollution = pdzAhPollution(player)
+  if (pollution >= PDZ_AH_POLLUTION_CRITICAL) duration = Math.floor(duration * 1.2)
+  else if (pollution >= PDZ_AH_POLLUTION_WARNING) duration = Math.floor(duration * 1.1)
   let result = server.runCommandSilent('execute as ' + player.username + ' at @s run hordes start ' + duration + ' ' + table)
   pdzAhClearPending(server)
   if (result <= 0) {
@@ -101,7 +158,7 @@ function pdzAhStart(server, player, activeTicks) {
   server.runCommandSilent('tellraw @a [{"text":"[HORDE] ","color":"dark_red","bold":true},' +
     '{"text":"T' + tier + '感染群が ' + player.username + ' の周辺へ到達。","color":"red"}]')
   console.info('[PROJECT DEADZONE][HORDE] Started T' + tier + ' for ' + player.username +
-    ' duration=' + duration + ' table=' + table)
+    ' duration=' + duration + ' table=' + table + ' pollution=' + Math.floor(pollution) + '%')
   return true
 }
 
@@ -119,6 +176,29 @@ ServerEvents.tick(event => {
     server.persistentData.putLong(PDZ_AH_NEXT_TICK, next)
   }
 
+  let eligible = pdzAhEligiblePlayers(server)
+  let target = null
+  let targetPollution = -1
+  eligible.forEach(player => {
+    let pollution = pdzAhPollution(player)
+    pdzAhPollutionPulse(player, pollution, activeTicks)
+    if (pollution > targetPollution) {
+      target = player
+      targetPollution = pollution
+    }
+  })
+
+  // Pollution never raises world tier or raw mob damage. It pulls the next
+  // Horde closer and slightly extends that Horde instead.
+  if (targetPollution >= PDZ_AH_POLLUTION_WARNING) {
+    let cap = targetPollution >= PDZ_AH_POLLUTION_CRITICAL ?
+      PDZ_AH_POLLUTION_CRITICAL_CAP : PDZ_AH_POLLUTION_WARNING_CAP
+    if (next - activeTicks > cap) {
+      next = activeTicks + cap
+      server.persistentData.putLong(PDZ_AH_NEXT_TICK, next)
+    }
+  }
+
   let pendingAt = server.persistentData.getLong(PDZ_AH_PENDING_AT)
   if (pendingAt > 0) {
     if (activeTicks < pendingAt) return
@@ -132,12 +212,11 @@ ServerEvents.tick(event => {
     return
   }
   if (activeTicks < next) return
-  let eligible = pdzAhEligiblePlayers(server)
   if (eligible.length <= 0) {
     pdzAhScheduleNext(server, activeTicks, true)
     return
   }
-  pdzAhWarn(server, eligible[Math.floor(Math.random() * eligible.length)], activeTicks)
+  pdzAhWarn(server, target || eligible[Math.floor(Math.random() * eligible.length)], activeTicks)
 })
 
 ServerEvents.commandRegistry(event => {
@@ -148,9 +227,10 @@ ServerEvents.commandRegistry(event => {
     let active = server.persistentData.getLong(PDZ_AH_ACTIVE_TICKS)
     let next = server.persistentData.getLong(PDZ_AH_NEXT_TICK)
     let pending = server.persistentData.getLong(PDZ_AH_PENDING_AT)
+    let pollution = pdzAhPollution(ctx.source.player)
     ctx.source.player.tell(Text.of('AUTO HORDE: T0+ / 発生 ' + server.persistentData.getInt(PDZ_AH_COUNT) +
       '回 / 次回まで約' + Math.max(0, Math.ceil((next - active) / 1200)) + '分' +
-      (pending > 0 ? ' / 警告中' : '') + ' / Camp 100m除外').gold())
+      (pending > 0 ? ' / 警告中' : '') + ' / 汚染 ' + Math.floor(pollution) + '% / Camp 100m除外').gold())
     return 1
   }))
   root.then(Commands.literal('test').requires(source => source.hasPermission(2)).executes(ctx => {
@@ -173,4 +253,4 @@ ServerEvents.commandRegistry(event => {
   event.register(root)
 })
 
-console.info('[PROJECT DEADZONE] Auto Horde director loaded: T0+, player-active time, Camp 100m excluded')
+console.info('[PROJECT DEADZONE] Auto Horde director loaded: v0.2 pollution pressure, T0+, Camp 100m excluded')

@@ -1,0 +1,45 @@
+# PROJECT DEADZONE industrial pollution tuning v0.1
+# Pollution is an industrial pressure system. Direct environmental punishment
+# is intentionally handled by the PDZ Horde director instead of this mod.
+
+# Keep pollution visible and meaningful, but slower than the upstream default.
+globalEmissionRate = 0.65
+# World damage is flavor, not the main punishment.
+environmentDegradationRate = 0.02
+filterReplacingExpGain = 0
+maxGasEntitiesInChunk = 8
+
+[GasExplosions]
+	# Avoid untelegraphed base destruction. Pollution escalates raids instead.
+	ignitionSources = false
+	enclosedEmitters = false
+	setOnFire = false
+	explosionInteraction = "NONE"
+	maxChainLength = 0
+	alwaysDestroyEmitter = false
+
+[EmissionSources]
+	# Keep the score tied to machines, processing and deliberate combustion.
+	Breakables = 0.0
+	Entities = 0.0
+	WallTorches = 0.0
+	DroppedTorches = 0.0
+	Campfires = 0.0
+	BurntItems = 0.25
+	Furnaces = true
+	BurntBlocks = true
+	Explosion = true
+	LavaTouchingWater = false
+	HostileMobDying = false
+	HostileMobBurning = false
+	PlayerEating = false
+	PlayerBurning = false
+	AnimalBurning = false
+	AnimalFeeding = false
+	AnimalDying = false
+	PlayerDying = false
+
+	[EmissionSources.Mods]
+		ImmersiveVehicles = 0.65
+		TrajansTanks = 0.65
+		CreateFanProcessing = true

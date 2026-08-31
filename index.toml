@@ -341,6 +341,34 @@ file = "config/RadioTowersAndAirDrops.toml"
 hash = "c321e14dd1b4ddf2daabf96f691a8de4da006b97086369e0d686fd8a90089f9d"
 
 [[files]]
+file = "config/adchimneys-common.toml"
+hash = "bc993d23a48242bbadfbbca3db9f0fd422f8e572e9c11aa8c09daef5e8543056"
+
+[[files]]
+file = "config/adpother-common.toml"
+hash = "3dc464c901b657c5400a90cedb2fc1a1c2fcb956079edc7e31e6dd72bee0597a"
+
+[[files]]
+file = "config/adpother/Impacts/hostile_mobs.cfg"
+hash = "1b746b7a998a0ebd5a4c32f69aba3abfe90bbe03489e44de8fd30932840e72bf"
+
+[[files]]
+file = "config/adpother/Impacts/livings.cfg"
+hash = "5a1110d01ac34cadf179ef122e5d5f1d884c90ddcb86d3bb8281a71f8fb4a805"
+
+[[files]]
+file = "config/adpother/Pollutants/carbon.cfg"
+hash = "445c0211e66ebb02f551e78c4a79fb4e176f2d9eb6fc80c808b508faa3b4368c"
+
+[[files]]
+file = "config/adpother/Pollutants/dust.cfg"
+hash = "4599680a461fb530c102ae4e1db3a62772899c2da4bf86cd7b3adec935f0a6ba"
+
+[[files]]
+file = "config/adpother/Pollutants/sulfur.cfg"
+hash = "fbfe770b44d32e62b087e1f5826e2e88273aa3b3bddb3b664820d83d29855f13"
+
+[[files]]
 file = "config/alexsmobs.toml"
 hash = "7c01df704a66653df7793e4c6a856815be283106df03765f196c89bd962d463c"
 
@@ -1970,7 +1998,7 @@ hash = "a27a9011243c7b378aee4512f6ce6c6fe9f7a818194b3fd223f20ba8781de9a6"
 
 [[files]]
 file = "config/legendarysurvivaloverhaul/legendarysurvivaloverhaul-common.toml"
-hash = "b444f08e69ff87e51cc61889135e9c22d160ec23e567ed4e3043b1c3a4775def"
+hash = "63c0042422d50e604567fd24ffdd8a82b5c1fccc8c0e8fba2ae75109e8b49b76"
 
 [[files]]
 file = "config/libtooltips-client.toml"
@@ -3431,6 +3459,14 @@ hash = "e4a31bde876b0ad9d832714a4af06a1eea9f88c6122139f4e7a882dc3b94ba41"
 [[files]]
 file = "kubejs/all_block_ids.csv"
 hash = "4f96cf080e06710c801794512ebd05556f7d214155961fedc9e6cf9715251bde"
+
+[[files]]
+file = "kubejs/assets/adchimneys/lang/ja_jp.json"
+hash = "50b99a4f1aefe43cd7e6748eb2b75cd0488b24a59608a886da5be4375167ed47"
+
+[[files]]
+file = "kubejs/assets/adpother/lang/ja_jp.json"
+hash = "7db5c99d5af732ccd8d10565332511ac1edf4c6a554622b99fd5514ab2ffcc59"
 
 [[files]]
 file = "kubejs/assets/attributeslib/lang/ja_jp.json"
@@ -11022,7 +11058,7 @@ hash = "ec246c53f9c3fa29ecf5cff8817cd5a7e8c53474f24202af0a60d480b8fff1c8"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_auto_horde_v0_1.js"
-hash = "9b66fac1dd1db1aebf5ef81cfc811c32c775a607dc329ace4b9cb91e8866112a"
+hash = "8d7722bdf40fef19f5b3ba26075c1e63884e96d532878a5ab5250b48e71d3124"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_base_core_v0_1.js"
@@ -11094,7 +11130,7 @@ hash = "dcd8e0ec9e27e08d2ce7c0a7fd5a72303c29527f3819ba500cf91b5d6c238a49"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_cte2_combat_scaling_v0_1.js"
-hash = "2ca6e082ebdec0a6df9340119295aa484d9356bfd4180e677ee2a03ca8665652"
+hash = "9add1793ea4a1eb501be193d4fe284005b944dee77542eac246d7b91cc6e7d08"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_currency_v0_1.js"
@@ -11278,7 +11314,7 @@ hash = "5f0d6b2e2827501c0beb40b427cb55b8ae38fe448b24e6f54f11410a036b98ac"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_player_damage_guard_v0_1.js"
-hash = "b73d22af70aa854187e71d6e22e283bc75e09dd51ebb6088963f25e541e203c4"
+hash = "2c965acf69858c2fe28a06fcda4eef7af0801b6f03b75766035939b840399150"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_player_zombie_recovery_v0_1.js"
@@ -11982,6 +12018,11 @@ file = "mods/[TACZ ONLY] jeffs_cursed_walking_structures-1.0.6-forge-1.20.1.jar"
 hash = "c9fb06c1137e06a64c6178a39fd05324365411368b924d7e77ebf8a87f61b1b3"
 
 [[files]]
+file = "mods/advanced-chimneys.pw.toml"
+hash = "c2d5a31992f91a0b218dcf496be35dbc1cd02f02c01506c8b920a5de6894dd90"
+metafile = true
+
+[[files]]
 file = "mods/alexs-delight.pw.toml"
 hash = "99f6d4e46f784953d16aa1ce5f72327b21487dc0e27d3143c8a6b60c6d02381a"
 metafile = true
@@ -12517,6 +12558,11 @@ hash = "8332d64f7a722db51c6c06ad06d8c4c8c07f009963a62509cc6e5fc15fa59cd9"
 metafile = true
 
 [[files]]
+file = "mods/forgeendertech.pw.toml"
+hash = "c95c9ed5119b86144a4ec99e31698e8748d6f3dfb755761a1bb31b7d265a0e08"
+metafile = true
+
+[[files]]
 file = "mods/framedblocks.pw.toml"
 hash = "a06a97ba002c875926da3c83ef2027388c4e8a66e01b8bf1fd3d69be54bd6e64"
 metafile = true
@@ -12982,6 +13028,11 @@ metafile = true
 [[files]]
 file = "mods/playerrevive_compat-1.0.3.jar"
 hash = "3320d0bc65375b8c0148fd8fa7cda87b604e691c1ad05dac104e209316cfc3f5"
+
+[[files]]
+file = "mods/pollution-of-the-realms.pw.toml"
+hash = "7f6149e367525a87b31b826edf4cc6a72178fe9d7618fcd40491dbc17da4224b"
+metafile = true
 
 [[files]]
 file = "mods/polymorph.pw.toml"

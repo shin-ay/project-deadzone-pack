@@ -18,7 +18,7 @@
 	#   HARD - Temperature and Thirst can kill the player.
 	# Any other value will default to HARD.
 	#Allowed Values: PEACEFUL, EASY, NORMAL, HARD
-	"Temperature Difficulty Mode" = "HARD"
+	"Temperature Difficulty Mode" = "EASY"
 
 	[core.advanced]
 		# How often player temperature, thirst, body damage and health is regularly synced between the client and server, in ticks.
@@ -57,9 +57,9 @@
 # Options related to the temperature system
 [temperature]
 	# If enabled, players will take damage from the effects of high temperature.
-	"Dangerous Heat Temperature Effects" = true
+	"Dangerous Heat Temperature Effects" = false
 	# If enabled, players will take damage from the effects of low temperature.
-	"Dangerous Cold Temperature Effects" = true
+	"Dangerous Cold Temperature Effects" = false
 	# Chance of the ferns to become a gold fern when grow mature.
 	#Range: 0.0 ~ 1.0
 	"Gold Fern Chance" = 0.01
@@ -74,19 +74,19 @@
 	# The sea level can be defined via datapack under the dimension's temperature.
 	# As an example, a value of -6 will reduce the player's temperature by 6 for each 64 blocks (the calculus is done linearly).
 	#Range: -1000.0 ~ 1000.0
-	"Altitude Modifier" = -6.0
+	"Altitude Modifier" = -2.0
 
 	[temperature.temperature-immunity]
 		# If enabled, players will be immune to temperature effects after death.
 		"Temperature Immunity On Death Enabled" = true
 		# Temperature immunity period in ticks while the player is immune to temperature effects after death.
 		#Range: 0 ~ 100000
-		"Temperature Immunity On Death Time" = 1800
+		"Temperature Immunity On Death Time" = 6000
 		# If enabled, players will be immune to temperature effects on first spawn in a world.
 		"Temperature Immunity On First Spawn Enabled" = true
 		# Temperature immunity period in ticks while the player is immune to temperature effects on first spawn.
 		#Range: 0 ~ 100000
-		"Temperature Immunity On First Spawn Time" = 1800
+		"Temperature Immunity On First Spawn Time" = 6000
 
 	[temperature.secondary_effects]
 		# If enabled, players will also receive other effects from their current temperature state.
@@ -97,11 +97,11 @@
 		"Cold Temperature Secondary Effects" = true
 		# How much thirst exhaustion will be added every 50 ticks with no amplification effect, when the player suffers from heat.
 		#Range: 0.0 ~ 1000.0
-		"Heat Thirst Effect Modifier" = 0.2
+		"Heat Thirst Effect Modifier" = 0.015
 		# How much food exhaustion will be added every 50 ticks with no amplification effect, when the player suffers from frostbite.
 		# As reference, the hunger effect add 0.025 food exhaustion every 50 ticks.
 		#Range: 0.0 ~ 1000.0
-		"Cold Hunger Modifier" = 0.1
+		"Cold Hunger Modifier" = 0.015
 
 	[temperature.wetness]
 		# Enable the wetness mechanic.
@@ -111,7 +111,7 @@
 		# How much being wet influences the player's temperature.
 		# It means that for a value of -10, the body temperature of the player is reduced by 10.
 		#Range: -1000.0 ~ 1000.0
-		"Wetness Modifier" = -10.0
+		"Wetness Modifier" = -3.0
 		# How frequently the wetness is modified.
 		# By default, every 10 ticks, the wetness will either increase or decrease, based on the conditions.
 		#Range: 1 ~ 100000
@@ -139,7 +139,7 @@
 	[temperature.biomes]
 		# How much a biome's temperature effects are multiplied.
 		#Range: 0.0 ~ 1000.0
-		"Biome Temperature Multiplier" = 18.0
+		"Biome Temperature Multiplier" = 2.5
 		# Whether biomes will have an effect on a player's temperature.
 		"Biomes affect Temperature" = true
 		# How much hot biome's dryness will make nights really cold.
@@ -167,11 +167,11 @@
 		# How much of an effect rain has on temperature.
 		# It means that for a value of -2, the body temperature of the player is reduced by 2.
 		#Range: -1000.0 ~ 1000.0
-		"Rain Temperature Modifier" = -2.0
+		"Rain Temperature Modifier" = -1.0
 		# How much of an effect snow has on temperature.
 		# It means that for a value of -6, the body temperature of the player is reduced by 6.
 		#Range: -1000.0 ~ 1000.0
-		"Snow Temperature Modifier" = -6.0
+		"Snow Temperature Modifier" = -2.5
 
 	# Freeze effect increases while inside snow powder.
 	[temperature.freeze]
@@ -186,16 +186,16 @@
 		# How much Time has effect on Temperature.
 		# Maximum effect at noon (positive) and midnight (negative), following a sinusoidal
 		#Range: 0.0 ~ Infinity
-		"Time Based Temperature Modifier" = 2.0
+		"Time Based Temperature Modifier" = 1.0
 		# How strongly time in extreme temperature biomes affect player's temperature.
 		# Extreme temperature biomes (like snowy taiga, deserts, ...) will multiply the time based temperature by this value, while temperate biome won't be affected by this value, following a linear.
 		#Range: 1.0 ~ Infinity
-		"Biome Time Multiplier" = 1.75
+		"Biome Time Multiplier" = 1.25
 		# Staying in the shade or during cloudy weather will reduce player's temperature by this amount based on time of the day (maximum effect at noon, following sinusoidal).
 		# It means that for a value of -6, the body temperature of the player is reduced by 6.
 		# Only effective when reaching the threshold and during day time!
 		#Range: -1000.0 ~ 1000.0
-		"Shade Time Modifier" = -6.0
+		"Shade Time Modifier" = -2.0
 		# Defines when the biome temperature added by the season temperature (if seasons mod loaded) will trigger a shade effect.
 		#Range: 0.0 ~ 10000.0
 		"Shade Time Modifier Threshold" = 9.0
@@ -250,15 +250,15 @@
 		[temperature.advanced.temperature-modification]
 			# Amount of time in ticks between 2 player temperature modification. The bigger is this value, the more time it takes between temperature adjustments.
 			#Range: > 5
-			"Temperature Tick Time" = 20
+			"Temperature Tick Time" = 40
 			# Maximum amount of temperature the player's temperature can be modified at each temperature tick time.
 			# Correspond to the amount of temperature given when temperature difference is maximum, meaning 40.
 			#Range: 0.1 ~ 2.147483647E9
-			"Maximum Temperature Modification" = 1.0
+			"Maximum Temperature Modification" = 0.5
 			# Minimum amount of temperature the player's temperature can be modified at each temperature tick time.
 			# Correspond to the amount of temperature given when there is no temperature difference
 			#Range: 0.1 ~ 2.147483647E9
-			"Minimum Temperature Modification" = 0.2
+			"Minimum Temperature Modification" = 0.1
 
 	[temperature.integration]
 
@@ -352,12 +352,12 @@
 # Options related to thirst feature
 [thirst]
 	# If enabled, players will take damage from the complete dehydration.
-	"Dangerous Dehydration" = true
+	"Dangerous Dehydration" = false
 	# If enabled, each time the player receives a thirst effect, its duration will be added to the thirst effect duration if already on the player.
 	"Cumulative Thirst Effect Duration" = true
 	# Scaling of the damages dealt when completely dehydrated. Each tick damage will be increased by this value.
 	#Range: 0.0 ~ 1000.0
-	"Dehydration Damage Scaling" = 0.3
+	"Dehydration Damage Scaling" = 0.1
 	# How much thirst exhaustion will be added every 50 ticks when the player suffers from non amplified Thirst Effect.
 	# The player will suffer Thirst Effect from dirty water for example.
 	#Range: 0.0 ~ 1000.0
@@ -492,10 +492,10 @@
 [body-damage]
 	# Multiply the damage taken by the player when shot in the head without helmet.
 	#Range: 1.0 ~ 1000.0
-	"Headshot Multiplier" = 2.0
+	"Headshot Multiplier" = 1.25
 	# How much of the hurt player's damage is assigned to the body parts.
 	#Range: 0.0 ~ 1000.0
-	"Body Damage Multiplier" = 1.25
+	"Body Damage Multiplier" = 0.7
 	# How much health ratio are recovered in all body parts from bed sleeping.
 	#Range: 0.0 ~ 1.0
 	"Body Part Health Ratio Recovered" = 0.45
@@ -629,18 +629,18 @@
 		#Allowed Values: SIMPLE, DYNAMIC
 		"Body Part Health Mode" = "DYNAMIC"
 		#Range: 0.0 ~ 1000.0
-		"Head Part Health" = 0.4
+		"Head Part Health" = 0.75
 		# Both arms will have this health.
 		#Range: 0.0 ~ 1000.0
-		"Arms Part Health" = 0.4
+		"Arms Part Health" = 0.75
 		#Range: 0.0 ~ 1000.0
-		"Chest Part Health" = 0.6
+		"Chest Part Health" = 1.0
 		# Both legs will have this health.
 		#Range: 0.0 ~ 1000.0
-		"Legs Part Health" = 0.6
+		"Legs Part Health" = 0.75
 		# Both feet will have this health.
 		#Range: 0.0 ~ 1000.0
-		"Feet Part Health" = 0.4
+		"Feet Part Health" = 0.6
 
 	[body-damage.body-parts-effects]
 

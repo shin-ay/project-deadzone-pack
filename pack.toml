@@ -1,12 +1,12 @@
 name = "PROJECT DEADZONE"
 author = "PROJECT DEADZONE Team"
-version = "BETA-20260831-VILLAGE-WAYSTONES"
+version = "BETA-20260831-POLLUTION-COMBAT-BALANCE"
 pack-format = "packwiz:1.1.0"
 
 [index]
 file = "index.toml"
 hash-format = "sha256"
-hash = "e20f50d84cfa0fe29498c41f21fb554feea62f9a61875a5c81f57b90e7daaf21"
+hash = "dd58e82e477655592a5305e894a6f24f56d2b46da23daaa6a2d831bc36a9b10e"
 
 [versions]
 forge = "47.4.10"
