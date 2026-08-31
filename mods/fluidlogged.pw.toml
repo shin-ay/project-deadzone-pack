@@ -1,0 +1,13 @@
+name = "Fluidlogged (Forge/Fabric)"
+filename = "fluidlogged-2.0.1-beta.2-forge-mc1.20.1.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "2bdba3786fd37d2b912a17a5d778c5267e2895a7"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 4752166
+project-id = 620894
