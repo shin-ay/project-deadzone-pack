@@ -5,7 +5,7 @@
 # Keep pollution visible and meaningful, but slower than the upstream default.
 globalEmissionRate = 0.65
 # World damage is flavor, not the main punishment.
-environmentDegradationRate = 0.02
+environmentDegradationRate = 0.0
 filterReplacingExpGain = 0
 maxGasEntitiesInChunk = 8
 

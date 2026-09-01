@@ -9,23 +9,23 @@ const PDZ_AH_NEXT_TICK = 'dz_auto_horde_next_tick_v1'
 const PDZ_AH_PENDING_AT = 'dz_auto_horde_pending_at_v1'
 const PDZ_AH_PENDING_PLAYER = 'dz_auto_horde_pending_player_v1'
 const PDZ_AH_COUNT = 'dz_auto_horde_count_v1'
-const PDZ_AH_INITIAL_GRACE = 72000       // 3 active Minecraft days / about 60 min
+const PDZ_AH_INITIAL_GRACE = 54000       // 45 active minutes
 const PDZ_AH_RETRY_DELAY = 12000         // 10 min if every player is in the camp ring
 const PDZ_AH_WARNING = 600               // 30 s warning
-const PDZ_AH_COOLDOWN_MIN = 120000       // 5 active Minecraft days / about 100 min
-const PDZ_AH_COOLDOWN_SPREAD = 48000     // +0..2 active days
+const PDZ_AH_COOLDOWN_MIN = 72000        // 60 active minutes
+const PDZ_AH_COOLDOWN_SPREAD = 24000     // +0..20 active minutes
 const PDZ_AH_CAMP_RADIUS = 100
 const PDZ_AH_POLLUTION_WARNING = 75      // brief warning effects begin here
 const PDZ_AH_POLLUTION_CRITICAL = 90     // urgent raid pressure begins here
 const PDZ_AH_POLLUTION_PULSE = 1200      // at most once per active minute
-const PDZ_AH_POLLUTION_WARNING_CAP = 18000 // raid within 15 active minutes
-const PDZ_AH_POLLUTION_CRITICAL_CAP = 6000 // raid within 5 active minutes
+const PDZ_AH_POLLUTION_WARNING_CAP = 14400 // raid within 12 active minutes
+const PDZ_AH_POLLUTION_CRITICAL_CAP = 3600 // raid within 3 active minutes
 const PDZ_AH_TABLES = [
   'project_deadzone:pdz_t0', 'project_deadzone:pdz_t1',
   'project_deadzone:pdz_t2', 'project_deadzone:pdz_t3',
   'project_deadzone:pdz_t4', 'project_deadzone:pdz_t5'
 ]
-const PDZ_AH_DURATIONS = [2400, 2800, 3200, 3600, 4000, 4400]
+const PDZ_AH_DURATIONS = [3000, 3500, 4000, 4500, 5000, 5500]
 const PDZ_AH_POLLUTANTS = Java.loadClass('com.endertech.minecraft.mods.adpother.init.Pollutants$BuiltIn')
 
 function pdzAhPollution(player) {
@@ -148,8 +148,8 @@ function pdzAhStart(server, player, activeTicks) {
   let table = PDZ_AH_TABLES[tier] || PDZ_AH_TABLES[0]
   let duration = PDZ_AH_DURATIONS[tier] || PDZ_AH_DURATIONS[0]
   let pollution = pdzAhPollution(player)
-  if (pollution >= PDZ_AH_POLLUTION_CRITICAL) duration = Math.floor(duration * 1.2)
-  else if (pollution >= PDZ_AH_POLLUTION_WARNING) duration = Math.floor(duration * 1.1)
+  if (pollution >= PDZ_AH_POLLUTION_CRITICAL) duration = Math.floor(duration * 1.25)
+  else if (pollution >= PDZ_AH_POLLUTION_WARNING) duration = Math.floor(duration * 1.125)
   let result = server.runCommandSilent('execute as ' + player.username + ' at @s run hordes start ' + duration + ' ' + table)
   pdzAhClearPending(server)
   if (result <= 0) {

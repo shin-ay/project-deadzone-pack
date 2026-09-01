@@ -346,7 +346,7 @@ hash = "bc993d23a48242bbadfbbca3db9f0fd422f8e572e9c11aa8c09daef5e8543056"
 
 [[files]]
 file = "config/adpother-common.toml"
-hash = "3dc464c901b657c5400a90cedb2fc1a1c2fcb956079edc7e31e6dd72bee0597a"
+hash = "1283324e4af6a6845aa56fee125b6740537ae99d26689348e2b3edc0a54cbba5"
 
 [[files]]
 file = "config/adpother/Impacts/hostile_mobs.cfg"
@@ -354,7 +354,7 @@ hash = "1b746b7a998a0ebd5a4c32f69aba3abfe90bbe03489e44de8fd30932840e72bf"
 
 [[files]]
 file = "config/adpother/Impacts/livings.cfg"
-hash = "5a1110d01ac34cadf179ef122e5d5f1d884c90ddcb86d3bb8281a71f8fb4a805"
+hash = "30a011c0288113bfa54a14a184e9ffabeab66262ad361477e99bc3ab95669900"
 
 [[files]]
 file = "config/adpother/Pollutants/carbon.cfg"
@@ -1626,7 +1626,7 @@ hash = "41bb0b1222c5879fd8f8d1b88d84881adbed559fd12897b5c598dff49ba62abb"
 
 [[files]]
 file = "config/hordes-common.toml"
-hash = "c84ac41cb78bbe816ea2b33765d0e4f8d3c174833c88dc6243ef776d8ef3d520"
+hash = "f7ca85049774bbd6c8f1dc7787b87aa495f9551c0df385cec5979327cb1a1c8e"
 
 [[files]]
 file = "config/hordes/assets/hordes/attributes.json"
@@ -11074,7 +11074,7 @@ hash = "ec246c53f9c3fa29ecf5cff8817cd5a7e8c53474f24202af0a60d480b8fff1c8"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_auto_horde_v0_1.js"
-hash = "8180995f8806aec10ba7bfa367342fc9ae868d6d525234c056f9ad9d02a09f20"
+hash = "5aa94dd571594a25ca50d1554033f7abb05d090af8c3ded2e272d14da653cda4"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_base_core_v0_1.js"
