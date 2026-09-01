@@ -1274,7 +1274,7 @@ hash = "aad4151bdef6fdcdde8a2bf22c6e2cb77bc638889d6f06047653b2b83fcd1836"
 
 [[files]]
 file = "config/epicfight-common.toml"
-hash = "72998c091e995f4b05f6d28f1d2aa4429adb148b9e8d2d440627e9ce41a4bcf2"
+hash = "68ed8dcc135ba1c13f605674e9e0cf0709a46595b470e8709d78c2f89ae58458"
 
 [[files]]
 file = "config/epicfight/native/ServerCommunicationHelper.dll"
@@ -3345,6 +3345,10 @@ file = "config/voicechat/voicechat-server.properties"
 hash = "20d120bbeac13aa9a4e94e815af59d3345c4ecf61bce4c5bb3d21997dc22e0a5"
 
 [[files]]
+file = "config/waves/waves.json"
+hash = "88558dad3453c578f879a506e21d4d1d03c3ce08dac6cce2ce573ae4998b995b"
+
+[[files]]
 file = "config/waystones-common.toml"
 hash = "fb28e6ee56c3090268952ec13ec8d63a1590606a38ed43ebc63c89a766d73640"
 
@@ -3823,6 +3827,10 @@ hash = "1776204694438dfce5c69f65df89b398a7c696adb2c9bfcd1ac6ee5ac57a307e"
 [[files]]
 file = "kubejs/client_scripts/project_deadzone_currency_client_v0_1.js"
 hash = "ab6599d9df4241d1a4a76bc78b979047597f07e5a8734a4e367fb7285571d35c"
+
+[[files]]
+file = "kubejs/client_scripts/project_deadzone_expedition_sleeping_bag_client_v0_1.js"
+hash = "69692242246da5271ab26a5d9fe8a236d3d66a6ff8c895d7acdcddb7e2ca7ce9"
 
 [[files]]
 file = "kubejs/client_scripts/project_deadzone_food_buff_tooltips_v0_1.js"
@@ -11417,6 +11425,10 @@ file = "kubejs/server_scripts/project_deadzone_skill_tier_gates_v0_1.js"
 hash = "43e99bae29fb083ef7b839ab70e61515129584126cd91898d56bdf2b6ad60d25"
 
 [[files]]
+file = "kubejs/server_scripts/project_deadzone_spore_food_separation_v0_1.js"
+hash = "b19ea29c0be07fc248475731a728cd55ab86089941a8a50431f167f004b2f1c2"
+
+[[files]]
 file = "kubejs/server_scripts/project_deadzone_spore_regions_v0_1.js"
 hash = "c3598999f27cbf85e431c0c7f962d99e7d8d893b46d0d9f74d75fd194240e9b0"
 
@@ -11567,6 +11579,10 @@ hash = "739ed80863e17f79b9cd7dd3e3041b6d50a436aa9aaa508640c6bdf18c19002f"
 [[files]]
 file = "kubejs/startup_scripts/project_deadzone_decontamination_unit_v0_1.js"
 hash = "e3d03fc17f90b606550fd6a8bfcd73e8063f691e2aa258b833a9a45a6ba6779c"
+
+[[files]]
+file = "kubejs/startup_scripts/project_deadzone_epicfight_reward_v0_1.js"
+hash = "0e61ffec2afd54f2ec4b21cf6aa4e9c398a22686325fc2e9f32c8a18ce916d18"
 
 [[files]]
 file = "kubejs/startup_scripts/project_deadzone_field_medical_kit_v0_1.js"
@@ -12276,8 +12292,18 @@ hash = "96204145e12506e0625d8b9bfa05aad54e9a62fd511bae39f0d57fcb5e39f4cc"
 metafile = true
 
 [[files]]
+file = "mods/coastal-waves.pw.toml"
+hash = "48f8b59c1c1899a029442982d8353d33a542a6bc57a6dfb8a02cf41646f091e1"
+metafile = true
+
+[[files]]
 file = "mods/collective.pw.toml"
 hash = "bba3705506df4b1ed7456b3cc211a3c6b61ab571c95dc11a579e2ff49d1eb40b"
+metafile = true
+
+[[files]]
+file = "mods/comforts.pw.toml"
+hash = "dbcc0438167282b33e120d87127510cea1b1c6769113c309e7c324814b6d546a"
 metafile = true
 
 [[files]]

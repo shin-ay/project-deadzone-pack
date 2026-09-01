@@ -1,0 +1,11 @@
+{
+  "replace": true,
+  "waves": [
+    {
+      "dimensions": [
+        "minecraft:overworld"
+      ],
+      "sea_level": 63
+    }
+  ]
+}

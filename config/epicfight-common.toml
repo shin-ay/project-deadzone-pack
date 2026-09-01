@@ -17,7 +17,7 @@
 	#Range: 0 ~ 1
 	initialMode = 0
 	#Range: 0 ~ 100
-	weightPenalty = 100
+	weightPenalty = 45
 	epicDrop = false
 	#Range: > 0
 	skillReplaceCooldown = 6000
