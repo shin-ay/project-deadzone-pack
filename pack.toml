@@ -1,12 +1,12 @@
 name = "PROJECT DEADZONE"
 author = "PROJECT DEADZONE Team"
-version = "BETA-20260901-CAMP-PROTECTION-T1"
+version = "BETA-20260901-THIRST-LOOT-RESIDUE-FIX-1"
 pack-format = "packwiz:1.1.0"
 
 [index]
 file = "index.toml"
 hash-format = "sha256"
-hash = "fd9114b6ccf31d634da45f8866702f659c32c4f1f597814e92a5eee711104d2b"
+hash = "86b056c1dc146d368fca56499247b147cdd1b3b4531d789e728d5545d557da70"
 
 [versions]
 forge = "47.4.10"
