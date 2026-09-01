@@ -1,12 +1,12 @@
 name = "PROJECT DEADZONE"
 author = "PROJECT DEADZONE Team"
-version = "BETA-20260901-REMOVE-SCALING-HEALTH"
+version = "BETA-20260901-VEHICLE-MARKER-ONESHOT"
 pack-format = "packwiz:1.1.0"
 
 [index]
 file = "index.toml"
 hash-format = "sha256"
-hash = "a49c16207175e117668987f9d402148d20444d8986aed8859c608a26f0d57ddc"
+hash = "37bbd8f12d9ddaaa333e7f33d60b05878edbe24fde8fef843ca8689bedec9acf"
 
 [versions]
 forge = "47.4.10"

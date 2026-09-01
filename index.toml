@@ -11970,8 +11970,8 @@ file = "mods/PROJECT_DEADZONE_JOB_UI-0.4.2.jar"
 hash = "21cabfe37ae3a223960d7ab463e1a1d6931d1a8ae4457e9a7e0ba2e1e3b8767c"
 
 [[files]]
-file = "mods/PROJECT_DEADZONE_Vehicle_Compatibility-1.4.0.jar"
-hash = "c261ad9e5593ef2d6f8a973add19203b97b8548cf3b40121f556dce61df560fc"
+file = "mods/PROJECT_DEADZONE_Vehicle_Compatibility-1.4.1.jar"
+hash = "02c6ff05427bac7e123513b598af0d1f314267dbd9d11279bbfb88dde72e4f6f"
 
 [[files]]
 file = "mods/PROJECT_DEADZONE_VineClimbControl-0.1.0.jar.disabled"
