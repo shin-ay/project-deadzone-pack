@@ -369,6 +369,10 @@ file = "config/adpother/Pollutants/sulfur.cfg"
 hash = "fbfe770b44d32e62b087e1f5826e2e88273aa3b3bddb3b664820d83d29855f13"
 
 [[files]]
+file = "config/ambientsounds-client.json"
+hash = "56e8e2eeed6535e9d0e2f65e61245508aeb7dd918b6429b9b50af0f8ceaf2207"
+
+[[files]]
 file = "config/alexsmobs.toml"
 hash = "7c01df704a66653df7793e4c6a856815be283106df03765f196c89bd962d463c"
 
@@ -12024,6 +12028,11 @@ metafile = true
 [[files]]
 file = "mods/ambience-mini.pw.toml"
 hash = "855f26e14952711fd1e8dd63f554ec1a7b06221c2aec52fc1beff680699398d1"
+metafile = true
+
+[[files]]
+file = "mods/ambientsounds.pw.toml"
+hash = "b53d79f0e8c240a2d5ff72126fb16a58a5fec431219d5e78f18248672e7f21c3"
 metafile = true
 
 [[files]]

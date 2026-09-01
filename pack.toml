@@ -1,12 +1,12 @@
 name = "PROJECT DEADZONE"
 author = "PROJECT DEADZONE Team"
-version = "BETA-20260901-THIRST-LOOT-RESIDUE-FIX-1"
+version = "BETA-20260901-AMBIENTSOUNDS-LOW"
 pack-format = "packwiz:1.1.0"
 
 [index]
 file = "index.toml"
 hash-format = "sha256"
-hash = "86b056c1dc146d368fca56499247b147cdd1b3b4531d789e728d5545d557da70"
+hash = "208049a8f25cf42e463935dd9dfd53a5409126548eed206120494a8b8d1a5036"
 
 [versions]
 forge = "47.4.10"
