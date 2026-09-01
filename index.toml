@@ -369,10 +369,6 @@ file = "config/adpother/Pollutants/sulfur.cfg"
 hash = "fbfe770b44d32e62b087e1f5826e2e88273aa3b3bddb3b664820d83d29855f13"
 
 [[files]]
-file = "config/ambientsounds-client.json"
-hash = "56e8e2eeed6535e9d0e2f65e61245508aeb7dd918b6429b9b50af0f8ceaf2207"
-
-[[files]]
 file = "config/alexsmobs.toml"
 hash = "7c01df704a66653df7793e4c6a856815be283106df03765f196c89bd962d463c"
 
@@ -739,6 +735,10 @@ hash = "72126b26d7f3ae03b80df97dd103e0cec87d10829e86ac8b08da23abc7b318d8"
 [[files]]
 file = "config/ambience_mini-client.toml"
 hash = "582cad9009871de5a28827feaaa02849de8d099b2a57984017b103c5b97783da"
+
+[[files]]
+file = "config/ambientsounds-client.json"
+hash = "56e8e2eeed6535e9d0e2f65e61245508aeb7dd918b6429b9b50af0f8ceaf2207"
 
 [[files]]
 file = "config/animation_overhaul/animations.json5"
@@ -12032,7 +12032,7 @@ metafile = true
 
 [[files]]
 file = "mods/ambientsounds.pw.toml"
-hash = "b53d79f0e8c240a2d5ff72126fb16a58a5fec431219d5e78f18248672e7f21c3"
+hash = "81b5d343477a128714b012bde0c77f64207bf7da648bb2a9468e653f930ce834"
 metafile = true
 
 [[files]]
