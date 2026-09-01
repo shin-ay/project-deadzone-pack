@@ -591,9 +591,14 @@ function pdzWildFindNearbySite(player,radius) {
         let structures=starts.keySet().toArray()
         for(let si=0;si<structures.length;si++){
           let structure=structures[si],siteId=String(registry.getKey(structure))
-          if(!PDZ_WILD_SITES[siteId])continue
+          let isVillage=typeof pdzVillageIsVillageStructure==='function'&&pdzVillageIsVillageStructure(siteId)
+          if(!PDZ_WILD_SITES[siteId]&&!isVillage)continue
           let start=player.level.structureManager().getStructureWithPieceAt(new PDZ_WILD_BLOCKPOS(x,y,z),structure)
           if(!start||!start.isValid())continue
+          // Village public services piggyback on this already-loaded structure
+          // sample. No second player tick loop or forced chunk scan is added.
+          if(isVillage&&typeof pdzVillageEnsureServices==='function')pdzVillageEnsureServices(player,siteId,start,{x:x,y:y,z:z})
+          if(!PDZ_WILD_SITES[siteId])continue
           let box=start.getBoundingBox(),minX=Number(box.minX()),minY=Number(box.minY()),minZ=Number(box.minZ())
           let maxX=Number(box.maxX()),maxZ=Number(box.maxZ())
           return {siteId:siteId,x:Math.floor((minX+maxX)/2),y:minY+1,z:Math.floor((minZ+maxZ)/2),
@@ -810,19 +815,19 @@ function pdzWildBarter(buyId,buyCount,buyBId,buyBCount,sellId,sellCount,maxUses)
 
 function pdzWildTraderOffers(kind) {
   if(kind==='civildef') return [
-    pdzWildOffer('apocalypsenow:money',2,'minecraft:bread',4,12),
-    pdzWildOffer('apocalypsenow:money',3,'apocalypsenow:bandage',2,8),
-    pdzWildOffer('minecraft:iron_ingot',8,'apocalypsenow:money',1,6),
+    pdzWildOffer('lightmanscurrency:coin_copper',2,'minecraft:bread',4,12),
+    pdzWildOffer('lightmanscurrency:coin_copper',3,'apocalypsenow:bandage',2,8),
+    pdzWildOffer('minecraft:iron_ingot',8,'lightmanscurrency:coin_copper',1,6),
     pdzWildOffer('minecraft:gunpowder',12,'minecraft:iron_ingot',4,8),
     pdzWildBarter('minecraft:copper_ingot',12,'minecraft:redstone',8,'kubejs:field_repair_kit',1,5),
     pdzWildOffer('minecraft:leather',10,'apocalypsenow:bandage',2,6),
     pdzWildOffer('minecraft:coal',20,'minecraft:iron_ingot',3,8),
-    pdzWildOffer('minecraft:paper',24,'apocalypsenow:money',1,8)
+    pdzWildOffer('minecraft:paper',24,'lightmanscurrency:coin_copper',1,8)
   ]
   if(kind==='survivor') return [
-    pdzWildOffer('apocalypsenow:money',1,'minecraft:bread',5,16),
-    pdzWildOffer('minecraft:cod',8,'apocalypsenow:money',1,8),
-    pdzWildOffer('minecraft:leather',12,'apocalypsenow:money',1,6),
+    pdzWildOffer('lightmanscurrency:coin_copper',1,'minecraft:bread',5,16),
+    pdzWildOffer('minecraft:cod',8,'lightmanscurrency:coin_copper',1,8),
+    pdzWildOffer('minecraft:leather',12,'lightmanscurrency:coin_copper',1,6),
     pdzWildOffer('minecraft:wheat',20,'minecraft:cooked_beef',4,10),
     pdzWildOffer('minecraft:potato',24,'minecraft:bread',6,10),
     pdzWildBarter('minecraft:string',12,'minecraft:leather',4,'apocalypsenow:bandage',2,7),
@@ -830,19 +835,19 @@ function pdzWildTraderOffers(kind) {
     pdzWildOffer('minecraft:bone',16,'minecraft:leather',3,8)
   ]
   if(kind==='raider') return [
-    pdzWildOffer('apocalypsenow:money',5,'immersiveengineering:component_iron',2,5),
-    pdzWildOffer('apocalypsenow:money',12,'immersiveengineering:component_steel',2,2),
-    pdzWildOffer('minecraft:gold_ingot',6,'apocalypsenow:money',2,4),
+    pdzWildOffer('lightmanscurrency:coin_copper',5,'immersiveengineering:component_iron',2,5),
+    pdzWildOffer('lightmanscurrency:coin_copper',12,'immersiveengineering:component_steel',2,2),
+    pdzWildOffer('minecraft:gold_ingot',6,'lightmanscurrency:coin_copper',2,4),
     pdzWildBarter('minecraft:gunpowder',16,'minecraft:iron_ingot',6,'immersiveengineering:component_iron',1,5),
     pdzWildOffer('minecraft:copper_ingot',24,'kubejs:field_repair_kit',1,5),
     pdzWildOffer('minecraft:coal',24,'minecraft:gunpowder',8,7),
     pdzWildOffer('minecraft:leather',16,'minecraft:iron_ingot',5,6),
-    pdzWildOffer('minecraft:redstone',24,'apocalypsenow:money',2,5)
+    pdzWildOffer('minecraft:redstone',24,'lightmanscurrency:coin_copper',2,5)
   ]
   return [
-    pdzWildOffer('apocalypsenow:money',2,'minecraft:cooked_beef',4,10),
-    pdzWildOffer('apocalypsenow:money',4,'kubejs:field_repair_kit',1,6),
-    pdzWildOffer('minecraft:copper_ingot',12,'apocalypsenow:money',1,8),
+    pdzWildOffer('lightmanscurrency:coin_copper',2,'minecraft:cooked_beef',4,10),
+    pdzWildOffer('lightmanscurrency:coin_copper',4,'kubejs:field_repair_kit',1,6),
+    pdzWildOffer('minecraft:copper_ingot',12,'lightmanscurrency:coin_copper',1,8),
     pdzWildOffer('minecraft:cod',10,'minecraft:iron_ingot',3,8),
     pdzWildOffer('minecraft:salmon',8,'minecraft:leather',4,8),
     pdzWildBarter('minecraft:coal',16,'minecraft:copper_ingot',8,'kubejs:field_repair_kit',1,6),

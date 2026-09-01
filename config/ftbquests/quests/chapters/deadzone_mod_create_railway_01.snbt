@@ -17,7 +17,7 @@
 				{
 					count: 12
 					id: "6520000000000009"
-					item: "apocalypsenow:money"
+					item: "lightmanscurrency:coin_copper"
 					type: "item"
 				}
 				{
@@ -47,7 +47,7 @@
 				{
 					count: 16
 					id: "652000000000000B"
-					item: "apocalypsenow:money"
+					item: "lightmanscurrency:coin_copper"
 					type: "item"
 				}
 				{
@@ -90,7 +90,7 @@
 				{
 					count: 16
 					id: "652000000000000D"
-					item: "apocalypsenow:money"
+					item: "lightmanscurrency:coin_copper"
 					type: "item"
 				}
 				{
@@ -119,7 +119,7 @@
 				{
 					count: 20
 					id: "652000000000000F"
-					item: "apocalypsenow:money"
+					item: "lightmanscurrency:coin_copper"
 					type: "item"
 				}
 				{
@@ -167,7 +167,7 @@
 				{
 					count: 24
 					id: "6520000000000011"
-					item: "apocalypsenow:money"
+					item: "lightmanscurrency:coin_copper"
 					type: "item"
 				}
 				{

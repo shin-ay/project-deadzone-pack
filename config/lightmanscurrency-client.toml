@@ -1,0 +1,9 @@
+[wallet_hud]
+enabled = false
+
+[notification]
+notificationsInChat = false
+
+[tax_warnings]
+serverTaxWarning = false
+playerTaxWarning = false

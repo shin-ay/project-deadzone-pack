@@ -121,7 +121,7 @@ LootJS.modifiers(event => {
       .randomChance(0.24)
       .addWeightedLoot(1, [
         Item.of("apocalypsenow:coins", 4).withChance(72),
-        Item.of("apocalypsenow:money", 1).withChance(28)
+        Item.of("lightmanscurrency:coin_copper", 1).withChance(28)
       ])
   })
 
@@ -283,7 +283,7 @@ LootJS.modifiers(event => {
       Item.of("apocalypsenow:pain_killers", 2).withChance(24),
       Item.of("survival_instinct:gallon_of_water", 2).withChance(22),
       Item.of("minecraft:golden_apple", 1).withChance(6),
-      Item.of("apocalypsenow:money", 2).withChance(10)
+      Item.of("lightmanscurrency:coin_copper", 2).withChance(10)
     ])
 
   // ChoiceTheorem's Overhauled Village ships its own chest tables, so the
@@ -320,7 +320,7 @@ LootJS.modifiers(event => {
         Item.of("survival_instinct:rope", 3).withChance(38),
         Item.of("immersiveengineering:hemp_fiber", 3).withChance(30),
         Item.of("apocalypsenow:coins", 4).withChance(22),
-        Item.of("apocalypsenow:money", 1).withChance(10)
+        Item.of("lightmanscurrency:coin_copper", 1).withChance(10)
       ])
   })
 

@@ -5,7 +5,7 @@
 	group: "23C996B606E0CFE9"
 	icon: "apocalypsenow:bandage"
 	id: "728C1EE8201FFA92"
-	order_index: 1
+	order_index: 2
 	quest_links: [ ]
 	quests: [
 		{
@@ -58,7 +58,7 @@
 				{
 					count: 24
 					id: "18BCA26857F3BAE7"
-					item: "apocalypsenow:money"
+					item: "lightmanscurrency:coin_copper"
 					type: "item"
 				}
 				{

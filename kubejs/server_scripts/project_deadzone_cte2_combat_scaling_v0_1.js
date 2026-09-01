@@ -62,11 +62,13 @@ function pdzCteRegion(entity){
 }
 
 function pdzCteApplyIncomingBalance(entity){
-  if(!entity||entity.tags.contains('dz_cte2_incoming_v2'))return
+  if(!entity||entity.tags.contains('dz_cte2_incoming_v3'))return
+  let tier=pdzCteRegion(entity)
+  let reduction=tier===1?(entity.tags.contains('dz_elite')?-0.40:-0.55):
+    (entity.tags.contains('dz_elite')?-0.15:-0.30)
   entity.removeAttribute('minecraft:generic.attack_damage',PDZCTE_DAMAGE_MODIFIER)
-  entity.modifyAttribute('minecraft:generic.attack_damage',PDZCTE_DAMAGE_MODIFIER,
-    entity.tags.contains('dz_elite')?-0.15:-0.30,'multiply_total')
-  entity.addTag('dz_cte2_incoming_v2')
+  entity.modifyAttribute('minecraft:generic.attack_damage',PDZCTE_DAMAGE_MODIFIER,reduction,'multiply_total')
+  entity.addTag('dz_cte2_incoming_v3')
 }
 
 function pdzCteApply(entity){

@@ -33,14 +33,14 @@ const PDZ_RR_POOLS = [
     {w:24, id:'tacz:ammo', min:6, max:10, nbt:'{AmmoId:"tacz:9mm"}'}
   ],
   [
-    {w:18, id:'apocalypsenow:money', min:1, max:1},
+    {w:18, id:'lightmanscurrency:coin_copper', min:1, max:1},
     {w:20, id:'apocalypsenow:pain_killers', min:1, max:1},
     {w:22, id:'immersiveengineering:ingot_steel', min:1, max:2},
     {w:20, id:'minecraft:redstone', min:3, max:6},
     {w:20, id:'tacz:ammo', min:10, max:16, nbt:'{AmmoId:"tacz:45acp"}'}
   ],
   [
-    {w:22, id:'apocalypsenow:money', min:1, max:2},
+    {w:22, id:'lightmanscurrency:coin_copper', min:1, max:2},
     {w:18, id:'apocalypsenow:pain_killers', min:1, max:2},
     {w:20, id:'immersiveengineering:component_iron', min:1, max:2},
     {w:18, id:'minecraft:gold_ingot', min:2, max:4},
@@ -48,14 +48,14 @@ const PDZ_RR_POOLS = [
     {w:12, id:'tacz:ammo', min:16, max:24, nbt:'{AmmoId:"tacz:12g"}'}
   ],
   [
-    {w:28, id:'apocalypsenow:money', min:2, max:3},
+    {w:28, id:'lightmanscurrency:coin_copper', min:2, max:3},
     {w:20, id:'minecraft:diamond', min:1, max:1},
     {w:20, id:'minecraft:golden_apple', min:1, max:1},
     {w:12, id:'minecraft:netherite_scrap', min:1, max:1},
     {w:20, id:'tacz:ammo', min:20, max:30, nbt:'{AmmoId:"tacz:12g"}'}
   ],
   [
-    {w:30, id:'apocalypsenow:money', min:3, max:5},
+    {w:30, id:'lightmanscurrency:coin_copper', min:3, max:5},
     {w:22, id:'minecraft:diamond', min:1, max:2},
     {w:20, id:'minecraft:netherite_scrap', min:1, max:1},
     {w:14, id:'minecraft:echo_shard', min:1, max:2},

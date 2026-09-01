@@ -2,7 +2,6 @@
 // Only Damage is mutated. M&S gear, mastery, TaCZ attachment/magazine and custom
 // equipment NBT remain on the original ItemStack.
 
-const DZ_REPAIR_MONEY="apocalypsenow:money"
 const DZ_REPAIR_STEEL="immersiveengineering:component_steel"
 
 function dzRepairJob(player) {
@@ -59,7 +58,7 @@ function dzRepairTellQuote(player,stack) {
   let c=dzRepairCosts(player,stack)
   player.tell(Text.of("=== 工業整備・完全修理 ===").gold())
   player.tell(Text.of(String(stack.hoverName.string)+" / 損傷 "+Number(stack.damageValue)+" / "+Number(stack.maxDamage)).white())
-  player.tell(Text.of("必要: Money x"+c.money+" / Steel Component x"+c.steel).aqua())
+  player.tell(Text.of("必要: Credit x"+c.money+" / Steel Component x"+c.steel).aqua())
   player.tell(Text.of(dzRepairDescribeBonus(player)).green())
   return true
 }
@@ -117,15 +116,15 @@ ServerEvents.commandRegistry(event => {
       return 0
     }
     let c=dzRepairCosts(p,stack)
-    let moneyCount=dzRepairCount(p,DZ_REPAIR_MONEY)
+    let moneyCount=global.pdzCreditBalance(p)
     let steelCount=dzRepairCount(p,DZ_REPAIR_STEEL)
     if (moneyCount<c.money || steelCount<c.steel) {
-      p.tell(Text.of("完全修理には Money x"+c.money+" / Steel Component x"+c.steel+" が必要です。").red())
-      p.tell(Text.of("所持: Money x"+moneyCount+" / Steel Component x"+steelCount).gray())
+      p.tell(Text.of("完全修理には Credit x"+c.money+" / Steel Component x"+c.steel+" が必要です。").red())
+      p.tell(Text.of("所持: Credit x"+moneyCount+" / Steel Component x"+steelCount).gray())
       return 0
     }
     let repaired=Number(stack.damageValue)
-    p.runCommandSilent("clear @s "+DZ_REPAIR_MONEY+" "+c.money)
+    if (!global.pdzCreditTake(p,c.money)) return 0
     p.runCommandSilent("clear @s "+DZ_REPAIR_STEEL+" "+c.steel)
     stack.damageValue=0
     p.getInventory().setChanged()
@@ -146,9 +145,9 @@ ServerEvents.commandRegistry(event => {
   root.then(Commands.literal("buy_kit").executes(ctx => {
     let p=ctx.source.player
     let price=2
-    let money=dzRepairCount(p,DZ_REPAIR_MONEY)
-    if(money<price){p.tell(Text.of("修理キットは Money x"+price+" です。所持 x"+money).red());return 0}
-    p.runCommandSilent("clear @s "+DZ_REPAIR_MONEY+" "+price)
+    let money=global.pdzCreditBalance(p)
+    if(money<price){p.tell(Text.of("修理キットは Credit x"+price+" です。所持 x"+money).red());return 0}
+    if (!global.pdzCreditTake(p,price)) return 0
     p.give(Item.of("kubejs:field_repair_kit",1))
     p.tell(Text.of("工具・工業部品担当から携帯修理キットを購入しました。").green())
     return 1

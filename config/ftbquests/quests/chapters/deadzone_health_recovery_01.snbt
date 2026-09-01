@@ -81,7 +81,7 @@
 		{
 			dependencies: ["6D4F010000000102"]
 			description: [
-				"Survivor Campでシオリに話しかけ、「軽傷処置」を選ぶ。LSO包帯1個とMoneyを消費し、最も損傷した部位を30秒かけて治療する。"
+				"Survivor Campでシオリに話しかけ、「軽傷処置」を選ぶ。LSO包帯1個とCreditを消費し、最も損傷した部位を30秒かけて治療する。"
 				"シオリとの個人信頼が高いほど診療価格が下がる。"
 			]
 			icon: "legendarysurvivaloverhaul:bandage"
@@ -89,7 +89,7 @@
 			rewards: [{
 				count: 2
 				id: "6D4F010000001401"
-				item: "apocalypsenow:money"
+				item: "lightmanscurrency:coin_copper"
 				type: "item"
 			}]
 			subtitle: "解放条件: 「軽傷：動けるうちに」を完了"
@@ -108,7 +108,7 @@
 				"6D4F010000000104"
 			]
 			description: [
-				"重傷時にLSO Medkit、Apocalypse Now Medical Kit、Moneyを用意し、シオリの診療から「重傷処置」を選ぶ。"
+				"重傷時にLSO Medkit、Apocalypse Now Medical Kit、Creditを用意し、シオリの診療から「重傷処置」を選ぶ。"
 				"損傷した全部位を時間回復させる。MineColonies病院Lvが高いほど安価・高速・高回復になる。"
 			]
 			icon: "legendarysurvivaloverhaul:medkit"
@@ -131,7 +131,7 @@
 		{
 			dependencies: ["6D4F010000000101"]
 			description: [
-				"The Hordes、Apocalypse Now、Infectiousの感染を共通診断する。Camp治療はAntibioticsとMoneyを消費する。"
+				"The Hordes、Apocalypse Now、Infectiousの感染を共通診断する。Camp治療はAntibioticsとCreditを消費する。"
 				"治療後はThe Hordesの再感染免疫が5分付く。Field Medical Kitと対応抗生物質も全感染系統を治療できる。"
 			]
 			icon: "apocalypsenow:antibiotics"
@@ -250,7 +250,7 @@
 				{
 					count: 12
 					id: "6D4F010000001A01"
-					item: "apocalypsenow:money"
+					item: "lightmanscurrency:coin_copper"
 					type: "item"
 				}
 				{

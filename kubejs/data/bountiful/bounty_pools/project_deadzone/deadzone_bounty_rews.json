@@ -1,6 +1,6 @@
 {
   "content": {
-    "pdz_rew_money": { "type": "item", "content": "apocalypsenow:money", "amount": { "min": 4, "max": 12 }, "unitWorth": 350, "weightMult": 2.0 },
+    "pdz_rew_money": { "type": "item", "content": "lightmanscurrency:coin_copper", "amount": { "min": 4, "max": 12 }, "unitWorth": 350, "weightMult": 2.0 },
     "pdz_rew_bandage": { "type": "item", "content": "apocalypsenow:bandage", "amount": { "min": 1, "max": 3 }, "unitWorth": 900, "weightMult": 1.0 },
     "pdz_rew_component_iron": { "type": "item", "content": "immersiveengineering:component_iron", "amount": { "min": 1, "max": 3 }, "unitWorth": 2800, "rarity": "RARE", "weightMult": 0.45 },
     "pdz_rew_component_steel": { "type": "item", "content": "immersiveengineering:component_steel", "amount": { "min": 1, "max": 2 }, "unitWorth": 5200, "rarity": "EPIC", "weightMult": 0.18 }

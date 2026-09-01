@@ -42,7 +42,7 @@ EntityEvents.death(event => {
   for(let i=1;i<=4;i++) if(entity.tags.contains("dz_aquatic_tier_"+i)) tier=i
   entity.block.popItem(Item.of("hybrid_aquatic:comically_large_nautilus_shell",1))
   if(Math.random()<0.45+tier*0.1) entity.block.popItem(Item.of("hybrid_aquatic:black_pearl",1))
-  entity.block.popItem(Item.of("apocalypsenow:money",5+tier*3))
+  entity.block.popItem(Item.of("lightmanscurrency:coin_copper",5+tier*3))
   entity.block.popItem(Item.of("aquaculture:neptunium_nugget",1+Math.floor(tier/2)))
   let killer=event.source?event.source.actual:null
   if(killer && killer.isPlayer && killer.isPlayer()) {

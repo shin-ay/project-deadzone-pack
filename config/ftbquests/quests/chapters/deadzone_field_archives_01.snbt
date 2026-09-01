@@ -19,7 +19,7 @@
 			rewards: [{
 				count: 24
 				id: "3CA80A314D0DE80D"
-				item: "apocalypsenow:money"
+				item: "lightmanscurrency:coin_copper"
 				type: "item"
 			}]
 			subtitle: "解放条件: 「Gas Stationを確保せよ」を完了"
@@ -43,7 +43,7 @@
 			rewards: [{
 				count: 24
 				id: "3D1C0CA9A227DB13"
-				item: "apocalypsenow:money"
+				item: "lightmanscurrency:coin_copper"
 				type: "item"
 			}]
 			subtitle: "解放条件: 「Gun Shop制圧」を完了"
@@ -163,7 +163,7 @@
 			rewards: [{
 				count: 16
 				id: "3432672E3339C216"
-				item: "apocalypsenow:money"
+				item: "lightmanscurrency:coin_copper"
 				type: "item"
 			}]
 			subtitle: "解放条件: 「Protocol座標断片」を完了"
@@ -187,7 +187,7 @@
 			rewards: [{
 				count: 16
 				id: "3F70F603D64077B7"
-				item: "apocalypsenow:money"
+				item: "lightmanscurrency:coin_copper"
 				type: "item"
 			}]
 			subtitle: "解放条件: 「送信中：位置を特定された」を完了"

@@ -35,7 +35,7 @@
 [gun_ai_shooting_config]
 	#Maximum shooting distance
 	#Range: 10.0 ~ 384.0
-	maxShootDistance = 90.0
+	maxShootDistance = 64.0
 	#Base bullet spread (lower = more accurate)
 	#Range: 0.0 ~ 10.0
 	baseSpread = 1.4
@@ -45,19 +45,19 @@
 	#Maximum bullet spread limit
 	#Prevents accuracy penalties from increasing indefinitely at long range
 	#Range: 0.0 ~ 10.0
-	maxSpread = 1.2
+	maxSpread = 3.0
 	#Minimum shots per burst
 	#Range: 1 ~ 20
-	minBurst = 3
+	minBurst = 2
 	#Maximum shots per burst
 	#Range: 1 ~ 30
-	maxBurst = 5
+	maxBurst = 4
 	#Minimum cooldown between bursts (ticks)
 	#Range: 0 ~ 200
-	minBurstCooldown = 10
+	minBurstCooldown = 20
 	#Maximum cooldown between bursts (ticks)
 	#Range: 0 ~ 400
-	maxBurstCooldown = 15
+	maxBurstCooldown = 35
 
 [event_spawn]
 	#--------------------------------------------------

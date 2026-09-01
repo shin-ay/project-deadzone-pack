@@ -64,7 +64,7 @@ EntityEvents.death(event => {
   let tier = 0
   for (let i = 0; i <= 4; i++) if (entity.tags.contains("dz_elite_tier_" + i)) tier = i
   let money = 3 + tier * 2 + Math.floor(Math.random() * 3)
-  entity.block.popItem(Item.of("apocalypsenow:money", money))
+  entity.block.popItem(Item.of("lightmanscurrency:coin_copper", money))
   entity.block.popItem(Item.of(tier >= 2 ? "apocalypsenow:pain_killers" : "apocalypsenow:bandage", tier >= 2 ? 2 : 3))
   entity.block.popItem(Item.of(tier >= 3 ? "minecraft:gold_ingot" : "minecraft:iron_ingot", 2 + tier))
   if (tier >= 2) entity.block.popItem(Item.of("immersiveengineering:component_iron", 1))

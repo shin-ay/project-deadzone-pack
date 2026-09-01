@@ -106,12 +106,12 @@ function pdzMnsGunType(stack){
   let root=pdzMnsRoot(stack,false),gunId=''
   try{if(root&&root.contains('GunId'))gunId=String(root.getString('GunId')).toLowerCase()}catch(ignored){}
   if(/rpg|rocket|launcher|grenade|mgl|m79|at4|javelin/.test(gunId))return 'launcher'
-  if(/minigun|m249|m240|mg42|pkm|rpk|machine_gun|hmg|lmg/.test(gunId))return 'heavy_machine_gun'
-  if(/sniper|awm|awp|m700|kar98|mosin|svd|dragunov|barrett|m82|m200|intervention/.test(gunId))return 'sniper_rifle'
-  if(/shotgun|spas|m870|m1014|aa12|saiga|ks23|db_|double_barrel/.test(gunId))return 'shotgun'
+  if(/minigun|m249|m240|mg42|pkm|rpk|machine_gun|hmg|lmg|emx_mg57|emx_mg90|emx_sf7b/.test(gunId))return 'heavy_machine_gun'
+  if(/sniper|awm|awp|m700|kar98|mosin|svd|dragunov|barrett|m82|m200|intervention|emx_mk88|emx_pmg90/.test(gunId))return 'sniper_rifle'
+  if(/shotgun|spas|m870|m1014|aa12|saiga|ks23|db_|double_barrel|emx_draftsman|emx_enforcer|emx_scgraves/.test(gunId))return 'shotgun'
   if(/magnum|deagle|desert_eagle|revolver|python/.test(gunId))return 'magnum'
-  if(/smg|mp5|mp7|uzi|vector|p90|ump|pp19|mac10|tec9/.test(gunId))return 'sub_machine_gun'
-  if(/pistol|glock|m1911|1911|usp|p226|m9|tt33|makarov|cz75|five_seven/.test(gunId))return 'handgun'
+  if(/smg|mp5|mp7|uzi|vector|p90|ump|pp19|mac10|tec9|emx_expel32|emx_umx32|emx_mac50flux/.test(gunId))return 'sub_machine_gun'
+  if(/pistol|glock|m1911|1911|usp|p226|m9|tt33|makarov|cz75|five_seven|emx_kund50|emx_mac100|emx_mac50|emx_nikana|emx_pulse|emx_tknife/.test(gunId))return 'handgun'
   return gunId ? 'assault_rifle' : 'kinetic_gun'
 }
 

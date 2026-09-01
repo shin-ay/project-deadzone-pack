@@ -6,8 +6,8 @@ const DZ_USUNIT_TYPE = "simpleenemymod:usunit"
 // Civil Defense and Remnant US units are allies too. Only explicitly hostile
 // authored units are excluded from the alliance repair.
 const DZ_USUNIT_HOSTILE_TAGS = ["dz_raider", "dz_hostile", "dz_enemy"]
-const DZ_USUNIT_NATURAL_KEEP_CHANCE = 0.12
-const DZ_USUNIT_LOADED_CAP = 4
+const DZ_USUNIT_NATURAL_KEEP_CHANCE = 0.16
+const DZ_USUNIT_LOADED_CAP = 6
 
 function dzUsunitHasOwner(entity) {
   try {

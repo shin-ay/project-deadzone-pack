@@ -152,7 +152,7 @@
 			rewards: [{
 				count: 24
 				id: "621105B124C207D9"
-				item: "apocalypsenow:money"
+				item: "lightmanscurrency:coin_copper"
 				type: "item"
 			}]
 			shape: "hexagon"
@@ -357,7 +357,7 @@
 				{
 					count: 32
 					id: "45188D1D40399765"
-					item: "apocalypsenow:money"
+					item: "lightmanscurrency:coin_copper"
 					type: "item"
 				}
 				{

@@ -157,7 +157,7 @@
 			rewards: [{
 				count: 8
 				id: "6D50010000001601"
-				item: "apocalypsenow:money"
+				item: "lightmanscurrency:coin_copper"
 				type: "item"
 			}]
 			subtitle: "解放条件: 「外周補強」・「撃つ前に食わせる」・「救護所を先に作る」をすべて完了"
@@ -181,7 +181,7 @@
 			rewards: [{
 				count: 6
 				id: "6D50010000001701"
-				item: "apocalypsenow:money"
+				item: "lightmanscurrency:coin_copper"
 				type: "item"
 			}]
 			subtitle: "解放条件: 「壁のこちら側」を完了"
@@ -283,7 +283,7 @@
 				{
 					count: 12
 					id: "6D50010000001B01"
-					item: "apocalypsenow:money"
+					item: "lightmanscurrency:coin_copper"
 					type: "item"
 				}
 				{

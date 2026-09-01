@@ -105,7 +105,7 @@ ServerEvents.commandRegistry(event => {
     if (server.persistentData.getBoolean("dz_logistics_route_rail")) player.give(Item.of("mts:mtsofficialpack.solidfuel", 2))
     if (server.persistentData.getBoolean("dz_logistics_route_sea")) player.give(Item.of("minecraft:cooked_cod", 4))
     if (server.persistentData.getBoolean("dz_logistics_route_air")) player.give(Item.of("legendarysurvivaloverhaul:bandage", 1))
-    player.give(Item.of("apocalypsenow:money", 4))
+    player.give(Item.of("lightmanscurrency:coin_copper", 4))
     player.persistentData.putInt("dz_fuel_supply_day", day)
     player.persistentData.putBoolean("dz_fuel_supply_claimed", true)
     player.tell(Text.of("本日の地域航路連動補給を受け取りました。").green())

@@ -337,7 +337,7 @@
 			rewards: [{
 				count: 16
 				id: "6D47010000001C01"
-				item: "apocalypsenow:money"
+				item: "lightmanscurrency:coin_copper"
 				type: "item"
 			}]
 			subtitle: "解放条件: 「11：風力をFEへ変換」を完了"
@@ -386,7 +386,7 @@
 				{
 					count: 32
 					id: "6D47010000001E01"
-					item: "apocalypsenow:money"
+					item: "lightmanscurrency:coin_copper"
 					type: "item"
 				}
 				{

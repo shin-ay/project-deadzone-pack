@@ -34,7 +34,7 @@ function dzArmoryShuffle(values) {
 }
 
 function dzArmoryWeaponOffer(spec) {
-  return '{buy:{Count:' + spec.price + 'b,id:"apocalypsenow:money"},buyB:{},' +
+  return '{buy:{Count:' + spec.price + 'b,id:"lightmanscurrency:coin_copper"},buyB:{},' +
     'demand:0,maxUses:1,priceMultiplier:0.0f,rewardExp:0b,' +
     'sell:{Count:1b,id:"tacz:modern_kinetic_gun",tag:{GunFireMode:"' +
     spec.mode + '",GunId:"' + spec.gun + '",HasBulletInBarrel:1b}},' +
@@ -43,7 +43,7 @@ function dzArmoryWeaponOffer(spec) {
 
 function dzArmoryAmmoOffer(ammoId) {
   let spec = DZ_ARMORY_AMMO[ammoId]
-  return '{buy:{Count:' + spec.price + 'b,id:"apocalypsenow:money"},buyB:{},' +
+  return '{buy:{Count:' + spec.price + 'b,id:"lightmanscurrency:coin_copper"},buyB:{},' +
     'demand:0,maxUses:' + spec.maxUses + ',priceMultiplier:0.0f,rewardExp:0b,' +
     'sell:{Count:' + spec.count + 'b,id:"tacz:ammo",tag:{AmmoId:"' + ammoId + '"}},' +
     'specialPrice:0,uses:0,xp:0}'

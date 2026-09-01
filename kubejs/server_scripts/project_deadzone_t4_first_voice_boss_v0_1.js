@@ -288,7 +288,7 @@ function dzT4bReward(player) {
   let raw = player.server.persistentData.getString('dz_t4_boss_participants_v1')
   if (!raw || raw.split(';').indexOf(String(player.uuid)) < 0) return
   player.persistentData.putBoolean('dz_t4_boss_reward_v1', true)
-  player.give(Item.of('apocalypsenow:money', 40))
+  player.give(Item.of('lightmanscurrency:coin_copper', 40))
   let outcome = player.server.persistentData.getString('dz_story_argus_outcome')
   if (outcome === 'destroy') player.give(Item.of('immersiveengineering:component_steel', 6))
   else if (outcome === 'reprogram') player.give(Item.of('superbwarfare:epic_blueprint_data_chip', 1))

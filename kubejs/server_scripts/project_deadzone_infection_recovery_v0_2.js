@@ -7,11 +7,18 @@ const PDZ_INFECTION_EFFECTS = [
   'apocalypsenow:posinfectioneffect',
   'infectious:infection'
 ]
+const PDZ_INFECTION_REGISTRY = Java.loadClass('net.minecraft.core.registries.BuiltInRegistries').MOB_EFFECT
+const PDZ_INFECTION_IMMUNITY_KEY = 'dz_infection_immunity_until_ms'
+
+function dzInfectionEffectId(instance) {
+  try { return String(PDZ_INFECTION_REGISTRY.getKey(instance.effect)) }
+  catch (ignored) { return String(instance.effect) }
+}
 
 function dzInfectionSnapshot(player) {
   let found = []
   player.potionEffects.active.forEach(instance => {
-    let id = String(instance.effect)
+    let id = dzInfectionEffectId(instance)
     if (PDZ_INFECTION_EFFECTS.indexOf(id) < 0) return
     found.push({
       id: id,
@@ -54,6 +61,8 @@ function dzInfectionClear(player, immunityTicks) {
   player.persistentData.putInt('dz_infection_care_stage', 0)
   player.persistentData.putLong('dz_infection_care_until', 0)
   if (immunityTicks > 0) player.potionEffects.add('hordes:immunity', immunityTicks, 0, false, true)
+  if (immunityTicks > 0)
+    player.persistentData.putLong(PDZ_INFECTION_IMMUNITY_KEY, Date.now() + immunityTicks * 50)
   if (typeof dzHealthRecordInfectionTreatment === 'function') dzHealthRecordInfectionTreatment(player)
   return true
 }
@@ -112,4 +121,15 @@ ItemEvents.foodEaten(event => {
   if (id === 'minecraft:enchanted_golden_apple') dzInfectionTreat(event.player, 3, 12000, 'エンチャントされた金のリンゴ')
 })
 
-console.info('[PROJECT DEADZONE][Infection] v0.2 loaded: unified staged recovery for Hordes / Apocalypse Now / Infectious.')
+// Keep complete-treatment immunity consistent across all supported infection
+// mods, not only Hordes' own immunity effect.
+PlayerEvents.tick(event => {
+  let player = event.player
+  if (!player || player.level.clientSide || player.age % 10 !== 0) return
+  let until = Number(player.persistentData.getLong(PDZ_INFECTION_IMMUNITY_KEY))
+  if (until <= Date.now()) return
+  let snapshot = dzInfectionSnapshot(player)
+  snapshot.effects.forEach(entry => player.removeEffect(entry.id))
+})
+
+console.info('[PROJECT DEADZONE][Infection] v0.3 loaded: registry-safe detection and cross-mod treatment immunity.')

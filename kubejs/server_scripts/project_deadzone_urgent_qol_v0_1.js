@@ -59,11 +59,11 @@ function dzqTurnInFish(player) {
     stack.count=0
   }
   if(count<=0){player.tell(Text.of('納品できる魚を持っていません。').yellow());return 0}
-  player.give(Item.of('apocalypsenow:money',earned))
+  player.give(Item.of('lightmanscurrency:coin_copper',earned))
   // Fishing-only milestone roll: useful supplies, not raw power every turn-in.
   if(count>=12 && Math.random()<0.35) player.give(Item.of('minecraft:iron_ingot',2))
   if(count>=24 && Math.random()<0.20) player.give(Item.of('minecraft:nautilus_shell',1))
-  player.tell(Text.of('魚 '+count+'匹を納品：Money x'+earned).aqua())
+    player.tell(Text.of('魚 '+count+'匹を納品：Credit x'+earned).aqua())
   return 1
 }
 

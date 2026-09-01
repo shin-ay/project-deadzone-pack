@@ -151,17 +151,17 @@ function dzHealthCanPay(player, items, money) {
   for (let i = 0; i < items.length; i++) {
     if (dzHealthItemCount(player, items[i][0]) < items[i][1]) return false
   }
-  return dzHealthItemCount(player, "apocalypsenow:money") >= money
+  return global.pdzCreditCanAfford(player, money)
 }
 
 function dzHealthConsume(player, items, money) {
   items.forEach(entry => player.runCommandSilent("clear @s " + entry[0] + " " + entry[1]))
-  if (money > 0) player.runCommandSilent("clear @s apocalypsenow:money " + money)
+  if (money > 0) global.pdzCreditTake(player, money)
 }
 
 function dzHealthTellCost(player, items, money) {
   items.forEach(entry => player.tell(Text.of("- " + entry[0] + " " + dzHealthItemCount(player, entry[0]) + "/" + entry[1]).gray()))
-  player.tell(Text.of("- Money " + dzHealthItemCount(player, "apocalypsenow:money") + "/" + money).gray())
+  player.tell(Text.of("- Credit " + global.pdzCreditBalance(player) + "/" + money).gray())
 }
 
 function dzHealthHealOverTime(player, part, amount, ticks) {
@@ -240,7 +240,7 @@ function dzHealthTreatLight(player) {
   player.persistentData.putBoolean("dz_health_light_treated", true)
   dzHealthComplete(player, DZ_HEALTH_QUESTS.lightTreated)
   dzHealthSyncQuests(player)
-  player.tell(Text.of("シオリが" + snapshot.worst.name + "を処置しました。30秒かけて回復します。Money -" + price).green())
+  player.tell(Text.of("シオリが" + snapshot.worst.name + "を処置しました。30秒かけて回復します。Credit -" + price).green())
   return 1
 }
 
@@ -267,7 +267,7 @@ function dzHealthTreatTrauma(player) {
     dzHealthComplete(player, DZ_HEALTH_QUESTS.hospital)
   }
   dzHealthSyncQuests(player)
-  player.tell(Text.of("全身の重傷処置を開始しました。MineColonies病院 Lv" + hospital + "補正 / Money -" + price).green())
+  player.tell(Text.of("全身の重傷処置を開始しました。MineColonies病院 Lv" + hospital + "補正 / Credit -" + price).green())
   return 1
 }
 
@@ -282,7 +282,7 @@ function dzHealthTreatInfection(player) {
   }
   dzHealthConsume(player, items, price)
   if (!dzHealthCureInfection(player)) return 0
-  player.tell(Text.of("感染症を治療し、5分間の再感染免疫を付与しました。Money -" + price).green())
+  player.tell(Text.of("感染症を治療し、5分間の再感染免疫を付与しました。Credit -" + price).green())
   return 1
 }
 

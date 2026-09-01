@@ -11,7 +11,7 @@
 		}
 	}
 	id: "6B75036863EC83AD"
-	order_index: 4
+	order_index: 5
 	quest_links: [ ]
 	quests: [
 		{
@@ -216,7 +216,7 @@
 				{
 					count: 40
 					id: "252D9CCF2B20AB54"
-					item: "apocalypsenow:money"
+					item: "lightmanscurrency:coin_copper"
 					type: "item"
 				}
 				{

@@ -322,7 +322,7 @@
 				{
 					count: 6
 					id: "6D52010000001A01"
-					item: "apocalypsenow:money"
+					item: "lightmanscurrency:coin_copper"
 					team_reward: true
 					type: "item"
 				}

@@ -35,7 +35,7 @@ function dzClothierRotate(server, announce) {
   if (server.runCommandSilent("execute if entity " + dzClothierSelector()) <= 0) return false
   let selected = dzClothierShuffle(DZ_CLOTHIER_ITEMS).slice(0, 4)
   let offers = selected.map(spec =>
-    '{buy:{Count:' + spec.price + 'b,id:"apocalypsenow:money"},buyB:{},' +
+    '{buy:{Count:' + spec.price + 'b,id:"lightmanscurrency:coin_copper"},buyB:{},' +
     'demand:0,maxUses:2,priceMultiplier:0.0f,rewardExp:0b,' +
     'sell:{Count:1b,id:"' + spec.id + '"},specialPrice:0,uses:0,xp:0}'
   )

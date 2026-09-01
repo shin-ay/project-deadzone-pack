@@ -233,7 +233,7 @@
 			rewards: [{
 				count: 8
 				id: "6D44010000001901"
-				item: "apocalypsenow:money"
+				item: "lightmanscurrency:coin_copper"
 				type: "item"
 			}]
 			subtitle: "解放条件: 「08：水車で常設動力を作る」を完了"

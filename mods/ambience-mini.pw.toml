@@ -1,13 +1,13 @@
 name = "Ambience Mini"
-filename = "AmbienceMini-1.20.1-2.7.5.jar"
+filename = "AmbienceMini-1.20.1-2.7.10.jar"
 side = "both"
 
 [download]
 hash-format = "sha1"
-hash = "9e9170085dcae14646abdfaf9803d715661f5fd5"
+hash = "cff7121767936d98c346849f5798286261ccb9f6"
 mode = "metadata:curseforge"
 
 [update]
 [update.curseforge]
-file-id = 8446686
+file-id = 8515423
 project-id = 1311926

@@ -20,7 +20,7 @@
 				{
 					count: 24
 					id: "7A42000000000001"
-					item: "apocalypsenow:money"
+					item: "lightmanscurrency:coin_copper"
 					type: "item"
 				}
 				{
@@ -56,7 +56,7 @@
 				{
 					count: 24
 					id: "7A42000000000003"
-					item: "apocalypsenow:money"
+					item: "lightmanscurrency:coin_copper"
 					type: "item"
 				}
 			]
@@ -94,7 +94,7 @@
 				{
 					count: 27
 					id: "7A42000000000004"
-					item: "apocalypsenow:money"
+					item: "lightmanscurrency:coin_copper"
 					type: "item"
 				}
 				{
@@ -129,7 +129,7 @@
 			rewards: [{
 				count: 27
 				id: "7A42000000000006"
-				item: "apocalypsenow:money"
+				item: "lightmanscurrency:coin_copper"
 				type: "item"
 			}]
 			subtitle: "解放条件: 「最初の回転力」を完了"
@@ -151,7 +151,7 @@
 				{
 					count: 27
 					id: "7A42000000000007"
-					item: "apocalypsenow:money"
+					item: "lightmanscurrency:coin_copper"
 					type: "item"
 				}
 				{
@@ -186,7 +186,7 @@
 				{
 					count: 27
 					id: "7A42000000000009"
-					item: "apocalypsenow:money"
+					item: "lightmanscurrency:coin_copper"
 					type: "item"
 				}
 			]
@@ -219,7 +219,7 @@
 				{
 					count: 16
 					id: "7A4200000000000A"
-					item: "apocalypsenow:money"
+					item: "lightmanscurrency:coin_copper"
 					type: "item"
 				}
 				{
@@ -254,7 +254,7 @@
 				{
 					count: 16
 					id: "7A4200000000000C"
-					item: "apocalypsenow:money"
+					item: "lightmanscurrency:coin_copper"
 					type: "item"
 				}
 				{
@@ -291,7 +291,7 @@
 				{
 					count: 12
 					id: "7A4200000000000E"
-					item: "apocalypsenow:money"
+					item: "lightmanscurrency:coin_copper"
 					type: "item"
 				}
 				{
@@ -335,7 +335,7 @@
 				{
 					count: 12
 					id: "7A42000000000010"
-					item: "apocalypsenow:money"
+					item: "lightmanscurrency:coin_copper"
 					type: "item"
 				}
 				{
@@ -367,7 +367,7 @@
 				{
 					count: 20
 					id: "7A42000000000012"
-					item: "apocalypsenow:money"
+					item: "lightmanscurrency:coin_copper"
 					type: "item"
 				}
 				{
@@ -397,7 +397,7 @@
 				{
 					count: 16
 					id: "23758F7677B2D01F"
-					item: "apocalypsenow:money"
+					item: "lightmanscurrency:coin_copper"
 					type: "item"
 				}
 				{
@@ -427,7 +427,7 @@
 				{
 					count: 20
 					id: "7A42000000000015"
-					item: "apocalypsenow:money"
+					item: "lightmanscurrency:coin_copper"
 					type: "item"
 				}
 				{
@@ -459,7 +459,7 @@
 				{
 					count: 24
 					id: "7696A5CC14AD3E3F"
-					item: "apocalypsenow:money"
+					item: "lightmanscurrency:coin_copper"
 					type: "item"
 				}
 				{

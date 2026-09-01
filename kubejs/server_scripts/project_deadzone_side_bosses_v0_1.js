@@ -37,7 +37,7 @@ EntityEvents.death(event => {
   entity.tags.add("dz_sideboss_rewarded")
   let killer = event.source ? event.source.actual : null
   let tank = entity.tags.contains("dz_sideboss_tank")
-  entity.block.popItem(Item.of("apocalypsenow:money", tank ? 8 : 12))
+  entity.block.popItem(Item.of("lightmanscurrency:coin_copper", tank ? 8 : 12))
   entity.block.popItem(Item.of("apocalypsenow:bandage", tank ? 4 : 6))
   entity.block.popItem(Item.of("immersiveengineering:ingot_steel", tank ? 3 : 5))
   if (killer && killer.isPlayer && killer.isPlayer()) {

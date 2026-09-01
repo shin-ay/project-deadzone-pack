@@ -325,11 +325,11 @@ BlockEvents.broken(event => {
     let dx=member.x-core.x, dy=member.y-core.y, dz=member.z-core.z
     if (dx*dx+dy*dy+dz*dz>80*80) return
     if (faction==="raider") {
-      member.runCommandSilent("give @s apocalypsenow:money 6")
+      member.runCommandSilent("give @s lightmanscurrency:coin_copper 6")
       member.runCommandSilent('give @s tacz:ammo{AmmoId:"tacz:9mm"} 24')
       member.runCommandSilent("give @s apocalypsenow:bandage 2")
     } else {
-      member.runCommandSilent("give @s apocalypsenow:money 10")
+      member.runCommandSilent("give @s lightmanscurrency:coin_copper 10")
       member.runCommandSilent('give @s tacz:ammo{AmmoId:"tacz:45acp"} 24')
       member.runCommandSilent("give @s create:electron_tube 2")
     }

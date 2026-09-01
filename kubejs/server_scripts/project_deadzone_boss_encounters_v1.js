@@ -236,7 +236,7 @@ EntityEvents.death(event => {
   entity.addTag("dz_boss_rewarded")
   entity.runCommandSilent("tag @a[tag=" + PDZ_BOSS_AXEL_PARTICIPANT_TAG + ",distance=..64,gamemode=!spectator] add " + PDZ_BOSS_AXEL_CLEAR_TAG)
   entity.runCommandSilent("ftbquests change_progress @a[tag=" + PDZ_BOSS_AXEL_PARTICIPANT_TAG + ",distance=..64,gamemode=!spectator] complete " + PDZ_BOSS_AXEL_QUEST)
-  entity.runCommandSilent("give @a[tag=" + PDZ_BOSS_AXEL_PARTICIPANT_TAG + ",distance=..64,gamemode=!spectator] apocalypsenow:money 10")
+  entity.runCommandSilent("give @a[tag=" + PDZ_BOSS_AXEL_PARTICIPANT_TAG + ",distance=..64,gamemode=!spectator] lightmanscurrency:coin_copper 10")
   entity.runCommandSilent("give @a[tag=" + PDZ_BOSS_AXEL_PARTICIPANT_TAG + ",distance=..64,gamemode=!spectator] immersiveengineering:ingot_steel 4")
   entity.runCommandSilent("give @a[tag=" + PDZ_BOSS_AXEL_PARTICIPANT_TAG + ",distance=..64,gamemode=!spectator] apocalypsenow:bandage 3")
   pdzAxelCleanupAround(entity, 96)

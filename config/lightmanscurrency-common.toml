@@ -1,0 +1,39 @@
+debugLevel = 2
+
+[crafting.coin_mint]
+canCraftCoinMint = false
+canMint = false
+canMelt = false
+
+[events]
+chocolate = false
+startingRewards = false
+lootReplacements = false
+
+[villagers]
+piglinsBarterCoins = false
+addCustomWanderingTrades = false
+addBanker = false
+addCashier = false
+
+[villagers.modification]
+changeVanillaTrades = false
+changeModdedTrades = false
+changeWanderingTrades = false
+
+[loot.entities]
+enabled = false
+allowSpawnedDrops = false
+allowFakePlayerDrops = false
+
+[loot.chests]
+enabled = false
+
+[structures]
+villageHouses = false
+ancientCity = false
+idasStructures = false
+
+[mixins]
+giveCommandIntercept = true
+itemHelperIntercept = true

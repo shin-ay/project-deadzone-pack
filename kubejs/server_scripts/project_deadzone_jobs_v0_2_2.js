@@ -125,7 +125,6 @@ const DZ_SKILL_CATEGORIES = {
 
 const DZ_ALL_SKILLS = Object.keys(DZ_SKILL_CATEGORIES)
 const DZ_RETRAIN_COST = 24
-const DZ_RETRAIN_CURRENCY = "apocalypsenow:money"
 const DZ_STARTER_GRANT_VERSION = 6
 const DZ_MINECOLONIES_SUPPLY_CAMP_ITEM = "minecolonies:supplycampdeployer"
 const DZ_MINECOLONIES_SUPPLY_CAMP_FLAG = "dz_minecolonies_supply_camp_received"
@@ -378,7 +377,7 @@ function dzRetrainMenu(player) {
   player.tell(Text.of("=== ミナト：JOB再訓練 ===").gold())
   player.tell(Text.of(free
     ? "初回の再訓練は無料です。スターターキットは再配布されません。"
-    : "再訓練費用：Money ×"+DZ_RETRAIN_COST+"（スターターキット再配布なし）").gray())
+    : "再訓練費用：Credit ×"+DZ_RETRAIN_COST+"（スターターキット再配布なし）").gray())
   player.tell(Text.of("JOB初期値を超えて獲得した成長Lvは維持され、取得Perkは一度リセットして振り直せます。").aqua())
 
   Object.keys(DZ_JOBS).forEach(id => {
@@ -405,7 +404,7 @@ function dzRetrainPreview(player,id) {
   let free=!d.getBoolean("dz_retrain_free_used")
   player.tell(Text.of("=== 再訓練の最終確認 ===").gold())
   player.tell(Text.of(d.getString("dz_job_name")+" → "+j.name).white())
-  player.tell(Text.of(free ? "費用：初回無料" : "費用：Money ×"+DZ_RETRAIN_COST).yellow())
+  player.tell(Text.of(free ? "費用：初回無料" : "費用：Credit ×"+DZ_RETRAIN_COST).yellow())
   player.tell(Text.of("取得Perkと各Tree内XPはリセットされますが、獲得済みの成長Lvは維持されます。").gray())
   player.tell(
     Text.of("[ この内容で再訓練する ]")
@@ -428,14 +427,12 @@ function dzRetrainJob(player,id) {
 
   let free=!d.getBoolean("dz_retrain_free_used")
   if (!free) {
-    let held=player.server.runCommandSilent(
-      "clear "+player.username+" "+DZ_RETRAIN_CURRENCY+" 0")
+    let held=global.pdzCreditBalance(player)
     if (held < DZ_RETRAIN_COST) {
-      player.tell(Text.of("Moneyが不足しています（必要："+DZ_RETRAIN_COST+" / 所持："+held+"）。").red())
+      player.tell(Text.of("Creditが不足しています（必要："+DZ_RETRAIN_COST+" / 所持："+held+"）。").red())
       return false
     }
-    player.server.runCommandSilent(
-      "clear "+player.username+" "+DZ_RETRAIN_CURRENCY+" "+DZ_RETRAIN_COST)
+    if (!global.pdzCreditTake(player,DZ_RETRAIN_COST)) return false
   }
 
   let oldId=d.getString("dz_job_id")

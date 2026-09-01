@@ -15,7 +15,7 @@
 			]
 			description: [
 				"MekanismはFEで動く高速加工系。最初に全自動化を狙わず、電力、入力、補助素材、出力の4欄を読めるようにする。"
-			"この章はストーリー解禁S2以降。先に発電とLV蓄電のチュートリアルを終えておこう。"
+				"この章はストーリー解禁S2以降。先に発電とLV蓄電のチュートリアルを終えておこう。"
 			]
 			icon: "mekanism:steel_casing"
 			id: "6D48010000000101"
@@ -151,7 +151,7 @@
 			rewards: [{
 				count: 8
 				id: "6D48010000001501"
-				item: "apocalypsenow:money"
+				item: "lightmanscurrency:coin_copper"
 				type: "item"
 			}]
 			subtitle: "解放条件: 「04：Universal Cable」を完了"
@@ -230,7 +230,7 @@
 			rewards: [{
 				count: 8
 				id: "6D48010000001801"
-				item: "apocalypsenow:money"
+				item: "lightmanscurrency:coin_copper"
 				type: "item"
 			}]
 			subtitle: "解放条件: 「06：濃縮工程」を完了"
@@ -280,7 +280,7 @@
 			rewards: [{
 				count: 24
 				id: "6D48010000001A01"
-				item: "apocalypsenow:money"
+				item: "lightmanscurrency:coin_copper"
 				type: "item"
 			}]
 			subtitle: "解放条件: 「09：面設定と自動排出」を完了"
@@ -337,7 +337,7 @@
 				{
 					count: 32
 					id: "6D48010000001C01"
-					item: "apocalypsenow:money"
+					item: "lightmanscurrency:coin_copper"
 					type: "item"
 				}
 				{

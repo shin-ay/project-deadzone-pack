@@ -417,8 +417,8 @@ function dzDefenseStopWilderness(player, success, reason) {
   if (success) {
     player.persistentData.putBoolean("dz_defense_wilderness_survived", true)
     dzDefenseComplete(player, DZ_DEFENSE_QUESTS.wilderness)
-    player.give(Item.of("apocalypsenow:money", 8))
-    player.tell(Text.of("野外Hordeを生還。感染者を居住圏へ誘導せず排除した。Money x8").green().bold())
+    player.give(Item.of("lightmanscurrency:coin_copper", 8))
+  player.tell(Text.of("野外Hordeを生還。感染者を居住圏へ誘導せず排除した。Credit x8").green().bold())
     dzDefenseSyncQuests(player, false)
   } else player.tell(Text.of("野外Horde契約失敗: " + reason).red())
 }

@@ -42,7 +42,7 @@
 				{
 					count: 24
 					id: "5A30AF5A7362A501"
-					item: "apocalypsenow:money"
+					item: "lightmanscurrency:coin_copper"
 					type: "item"
 				}
 			]
@@ -119,7 +119,7 @@
 				{
 					count: 16
 					id: "672B1E9D5F513684"
-					item: "apocalypsenow:money"
+					item: "lightmanscurrency:coin_copper"
 					type: "item"
 				}
 				{

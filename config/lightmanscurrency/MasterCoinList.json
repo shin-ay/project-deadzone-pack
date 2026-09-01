@@ -1,0 +1,44 @@
+{
+  "Chains": [
+    {
+      "chain": "main",
+      "name": {
+        "text": "PDZ Credit"
+      },
+      "displayType": "lightmanscurrency:number",
+      "displayFormat": {
+        "text": "{value} C"
+      },
+      "displayFormatWordy": {
+        "text": "{value} Credit"
+      },
+      "InputType": "TEXT",
+      "CoreChain": [
+        {
+          "Coin": "lightmanscurrency:coin_copper",
+          "baseUnit": true
+        },
+        {
+          "Coin": "lightmanscurrency:coin_iron",
+          "exchangeRate": 10
+        },
+        {
+          "Coin": "lightmanscurrency:coin_gold",
+          "exchangeRate": 10
+        },
+        {
+          "Coin": "lightmanscurrency:coin_emerald",
+          "exchangeRate": 10
+        },
+        {
+          "Coin": "lightmanscurrency:coin_diamond",
+          "exchangeRate": 10
+        },
+        {
+          "Coin": "lightmanscurrency:coin_netherite",
+          "exchangeRate": 10
+        }
+      ]
+    }
+  ]
+}

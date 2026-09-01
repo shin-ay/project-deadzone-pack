@@ -112,7 +112,7 @@
 				{
 					count: 16
 					id: "330FCB55BB47ACC9"
-					item: "apocalypsenow:money"
+					item: "lightmanscurrency:coin_copper"
 					type: "item"
 				}
 				{
@@ -146,7 +146,7 @@
 				{
 					count: 24
 					id: "1846190ABB64EFD2"
-					item: "apocalypsenow:money"
+					item: "lightmanscurrency:coin_copper"
 					type: "item"
 				}
 				{
@@ -221,7 +221,7 @@
 				{
 					count: 20
 					id: "1A7EA83F8B2480AD"
-					item: "apocalypsenow:money"
+					item: "lightmanscurrency:coin_copper"
 					type: "item"
 				}
 				{
@@ -317,7 +317,7 @@
 				{
 					count: 28
 					id: "636D20BC832009C0"
-					item: "apocalypsenow:money"
+					item: "lightmanscurrency:coin_copper"
 					type: "item"
 				}
 				{

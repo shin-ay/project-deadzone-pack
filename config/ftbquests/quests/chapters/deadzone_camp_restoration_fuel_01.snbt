@@ -85,7 +85,7 @@
 				{
 					count: 8
 					id: "7120000000000003"
-					item: "apocalypsenow:money"
+					item: "lightmanscurrency:coin_copper"
 					team_reward: true
 					type: "item"
 				}

@@ -26,7 +26,7 @@
 				{
 					count: 8
 					id: "7D2A10E1C4A80114"
-					item: "apocalypsenow:money"
+					item: "lightmanscurrency:coin_copper"
 					type: "item"
 				}
 				{
@@ -168,7 +168,7 @@
 			title: "装備成長の正本"
 			x: 4.0d
 			y: 2.0d
-		},
+		}
 		{
 			dependencies: ["7D2A10E1C4A80160"]
 			description: [

@@ -7,7 +7,7 @@ ItemEvents.tooltip(event => {
   ])
   event.add("kubejs:seasonal_supply_lot_select", [
     Text.green("旬の供給品 5種類 x8 を検品したロット"),
-    Text.darkGray("標準よりMoney・XP・Supply評判が増加")
+      Text.darkGray("標準よりCredit・XP・Supply評判が増加")
   ])
   event.add("kubejs:seasonal_supply_lot_prime", [
     Text.aqua("旬の供給品 7種類 x10 を検品した最高等級"),
@@ -26,4 +26,3 @@ ItemEvents.tooltip(event => {
     Text.darkGray("MineColonies料理を含む特選報酬")
   ])
 })
-

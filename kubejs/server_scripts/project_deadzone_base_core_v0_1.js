@@ -13,6 +13,16 @@ ServerEvents.loaded(event => {
       "execute as @e[tag=dz_basecamp_core_anchor,limit=1] at @s"
       + " if block ~-12 ~-10 ~11 minecraft:air"
       + " run setblock ~-12 ~-10 ~11 bountiful:bountyboard")
+    server.runCommandSilent(
+      "execute as @e[tag=dz_basecamp_core_anchor,limit=1] at @s"
+      + " if block ~-11 ~-10 ~11 minecraft:air"
+      + " if block ~-11 ~-9 ~11 minecraft:air"
+      + " run setblock ~-11 ~-10 ~11 lightmanscurrency:atm[bottom=true,facing=north]")
+    server.runCommandSilent(
+      "execute as @e[tag=dz_basecamp_core_anchor,limit=1] at @s"
+      + " if block ~-11 ~-10 ~11 lightmanscurrency:atm"
+      + " if block ~-11 ~-9 ~11 minecraft:air"
+      + " run setblock ~-11 ~-9 ~11 lightmanscurrency:atm[bottom=false,facing=north]")
   })
 })
 
@@ -65,6 +75,17 @@ BlockEvents.rightClicked("kubejs:deadzone_base_core", event => {
     "execute if block " + boardX + " " + boardY + " " + boardZ
     + " minecraft:air run setblock " + boardX + " " + boardY + " " + boardZ
     + " bountiful:bountyboard")
+  let atmX = boardX + 1
+  event.server.runCommandSilent(
+    "execute if block " + atmX + " " + boardY + " " + boardZ
+    + " minecraft:air if block " + atmX + " " + (boardY + 1) + " " + boardZ
+    + " minecraft:air run setblock " + atmX + " " + boardY + " " + boardZ
+    + " lightmanscurrency:atm[bottom=true,facing=north]")
+  event.server.runCommandSilent(
+    "execute if block " + atmX + " " + boardY + " " + boardZ
+    + " lightmanscurrency:atm if block " + atmX + " " + (boardY + 1) + " " + boardZ
+    + " minecraft:air run setblock " + atmX + " " + (boardY + 1) + " " + boardZ
+    + " lightmanscurrency:atm[bottom=false,facing=north]")
 
   // Common players get a real screen. The old chat panel remains as a
   // temporary advanced/recovery route behind sneak-right-click.

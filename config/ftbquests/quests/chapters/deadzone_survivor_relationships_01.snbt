@@ -22,7 +22,7 @@
 			rewards: [{
 				count: 4
 				id: "6D4E010000001101"
-				item: "apocalypsenow:money"
+				item: "lightmanscurrency:coin_copper"
 				type: "item"
 			}]
 			subtitle: "解放条件: 「地域経済：三つの不足」を完了"
@@ -191,7 +191,7 @@
 				{
 					count: 24
 					id: "6D4E010000001801"
-					item: "apocalypsenow:money"
+					item: "lightmanscurrency:coin_copper"
 					type: "item"
 				}
 				{

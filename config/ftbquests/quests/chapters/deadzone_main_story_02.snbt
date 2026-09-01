@@ -5,7 +5,7 @@
 	group: "23C996B606E0CFE9"
 	icon: "apocalypsenow:aabattery"
 	id: "2A2CEA89BA913F97"
-	order_index: 2
+	order_index: 3
 	quest_links: [ ]
 	quests: [
 		{
@@ -70,7 +70,7 @@
 				{
 					count: 24
 					id: "0014CD6A7F8AF7AE"
-					item: "apocalypsenow:money"
+					item: "lightmanscurrency:coin_copper"
 					type: "item"
 				}
 				{
@@ -189,7 +189,7 @@
 				{
 					count: 28
 					id: "40281B7A8798596D"
-					item: "apocalypsenow:money"
+					item: "lightmanscurrency:coin_copper"
 					type: "item"
 				}
 				{
@@ -228,7 +228,7 @@
 				{
 					count: 32
 					id: "319F688409E605DF"
-					item: "apocalypsenow:money"
+					item: "lightmanscurrency:coin_copper"
 					type: "item"
 				}
 				{

@@ -137,7 +137,7 @@ function dzPeopleTellLine(player, key) {
   let nextService = player.persistentData.getLong(person.cooldownKey) - Date.now()
   player.tell(Text.of(person.name + "｜" + person.role + "  Rank " + rank + "「" + dzPeopleRankName(rank) + "」  " + next)[person.color]())
   player.tell(Text.of("  『" + person.lines[rank] + "』").gray())
-  player.tell(Text.of("  専用サービス Money " + person.prices[rank] + (nextService > 0 ? "｜再利用まで " + dzPeopleTimeText(nextService) : "｜利用可能")).yellow())
+  player.tell(Text.of("  専用サービス Credit " + person.prices[rank] + (nextService > 0 ? "｜再利用まで " + dzPeopleTimeText(nextService) : "｜利用可能")).yellow())
 }
 
 function dzPeopleStatus(player, intro) {
@@ -156,10 +156,7 @@ function dzPeopleStatus(player, intro) {
 }
 
 function dzPeopleTakeMoney(player, count) {
-  let have = player.server.runCommandSilent("clear " + player.username + " apocalypsenow:money 0")
-  if (have < count) return false
-  player.runCommandSilent("clear @s apocalypsenow:money " + count)
-  return true
+  return global.pdzCreditTake(player, count)
 }
 
 function dzPeopleGive(player, item, count) {
@@ -185,7 +182,7 @@ function dzPeopleService(player, key) {
   let rank = dzPeopleRank(player, key)
   let price = person.prices[rank]
   if (!dzPeopleTakeMoney(player, price)) {
-    player.tell(Text.of("Moneyが不足しています。必要: " + price).red())
+    player.tell(Text.of("Creditが不足しています。必要: " + price).red())
     return 0
   }
   if (key === "maya") {
@@ -207,7 +204,7 @@ function dzPeopleService(player, key) {
     if (rank === 3) { dzPeopleGive(player, "mts:mtsofficialpack.repairkit", 1); dzPeopleGive(player, "immersiveengineering:component_electronic", 1) }
   }
   player.persistentData.putLong(person.cooldownKey, Date.now() + DZ_PEOPLE_SERVICE_COOLDOWN_MS)
-  player.tell(Text.of(person.name + "の専用サービスを利用しました。Money -" + price)[person.color]())
+  player.tell(Text.of(person.name + "の専用サービスを利用しました。Credit -" + price)[person.color]())
   player.tell(Text.of(person.lines[rank]).gray())
   return 1
 }

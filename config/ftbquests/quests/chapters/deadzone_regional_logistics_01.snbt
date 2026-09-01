@@ -69,7 +69,7 @@
 			rewards: [{
 				count: 4
 				id: "6D51010000001301"
-				item: "apocalypsenow:money"
+				item: "lightmanscurrency:coin_copper"
 				type: "item"
 			}]
 			subtitle: "解放条件: 「需要は毎日同じじゃない」・「T1・道路輸送班」をすべて完了"
@@ -96,7 +96,7 @@
 			rewards: [{
 				count: 6
 				id: "6D51010000001401"
-				item: "apocalypsenow:money"
+				item: "lightmanscurrency:coin_copper"
 				type: "item"
 			}]
 			subtitle: "解放条件: 「需要は毎日同じじゃない」・「T1・地域鉄道網」をすべて完了"
@@ -123,7 +123,7 @@
 			rewards: [{
 				count: 4
 				id: "6D51010000001501"
-				item: "apocalypsenow:money"
+				item: "lightmanscurrency:coin_copper"
 				type: "item"
 			}]
 			subtitle: "解放条件: 「需要は毎日同じじゃない」・「危険海域への航路」をすべて完了"
@@ -150,7 +150,7 @@
 			rewards: [{
 				count: 4
 				id: "6D51010000001601"
-				item: "apocalypsenow:money"
+				item: "lightmanscurrency:coin_copper"
 				type: "item"
 			}]
 			subtitle: "解放条件: 「需要は毎日同じじゃない」・「T3・航空輸送網」をすべて完了"
@@ -172,14 +172,14 @@
 			]
 			description: [
 				"物流ボードの当日優先需要と一致する輸送契約を完遂する。"
-				"需要一致時だけMoney 4と対応評判が追加される。最短手段を毎回選ぶのではなく、地域が必要としている輸送を読む。"
+				"需要一致時だけCredit 4と対応評判が追加される。最短手段を毎回選ぶのではなく、地域が必要としている輸送を読む。"
 			]
 			icon: "minecraft:emerald"
 			id: "6D51010000000107"
 			rewards: [{
 				count: 6
 				id: "6D51010000001701"
-				item: "apocalypsenow:money"
+				item: "lightmanscurrency:coin_copper"
 				type: "item"
 			}]
 			subtitle: "解放条件: 「重いが、どこへでも行ける」・「量なら線路が勝つ」・「海岸線は天然の道路」・「少量を、今すぐ」をすべて完了"
@@ -262,7 +262,7 @@
 				{
 					count: 10
 					id: "6D51010000001A01"
-					item: "apocalypsenow:money"
+					item: "lightmanscurrency:coin_copper"
 					type: "item"
 				}
 				{

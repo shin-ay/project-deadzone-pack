@@ -3,7 +3,6 @@
 
 const PDZ_TALENT_PROVIDER = Java.loadClass('daripher.skilltree.capability.skill.PlayerSkillsProvider')
 const PDZ_TALENT_RESPEC_COST = 16
-const PDZ_TALENT_RESPEC_CURRENCY = 'apocalypsenow:money'
 
 const PDZ_TALENT_JOB_START = {
   weapons_expert: 'talent_start_weapons',
@@ -210,7 +209,7 @@ ServerEvents.commandRegistry(event => {
     let free=!d.getBoolean('pdz_talent_respec_free_used')
     d.putLong('pdz_talent_respec_pending_until',p.level.gameTime+1200)
     p.tell(Text.of('=== Talent振り直し ===').gold())
-    p.tell(Text.of(free ? '初回は無料です。' : '費用: Money ×'+PDZ_TALENT_RESPEC_COST).yellow())
+    p.tell(Text.of(free ? '初回は無料です。' : '費用: Credit ×'+PDZ_TALENT_RESPEC_COST).yellow())
     p.tell(Text.of('取得ノードを初期化し、使ったTPは返還されます。JOBとJOB開始ノードは維持します。').gray())
     p.tell(Text.of('[ 振り直しを実行 ]').red().clickRunCommand('/deadzonetalent respec_confirm'))
     return 1
@@ -224,12 +223,12 @@ ServerEvents.commandRegistry(event => {
     }
     let free=!d.getBoolean('pdz_talent_respec_free_used')
     if (!free) {
-      let held=p.server.runCommandSilent('clear '+p.username+' '+PDZ_TALENT_RESPEC_CURRENCY+' 0')
+      let held=global.pdzCreditBalance(p)
       if (held < PDZ_TALENT_RESPEC_COST) {
-        p.tell(Text.of('Moneyが不足しています（必要: '+PDZ_TALENT_RESPEC_COST+' / 所持: '+held+'）。').red())
+        p.tell(Text.of('Creditが不足しています（必要: '+PDZ_TALENT_RESPEC_COST+' / 所持: '+held+'）。').red())
         return 0
       }
-      p.server.runCommandSilent('clear '+p.username+' '+PDZ_TALENT_RESPEC_CURRENCY+' '+PDZ_TALENT_RESPEC_COST)
+      if (!global.pdzCreditTake(p,PDZ_TALENT_RESPEC_COST)) return 0
     }
     p.server.runCommandSilent('skilltree reset '+p.username)
     d.putBoolean('pdz_talent_respec_free_used',true)

@@ -71,7 +71,7 @@
 			rewards: [{
 				count: 16
 				id: "6D49010000001301"
-				item: "apocalypsenow:money"
+				item: "lightmanscurrency:coin_copper"
 				type: "item"
 			}]
 			subtitle: "解放条件: 「02：発酵設備」を完了"
@@ -119,7 +119,7 @@
 			rewards: [{
 				count: 16
 				id: "6D49010000001501"
-				item: "apocalypsenow:money"
+				item: "lightmanscurrency:coin_copper"
 				type: "item"
 			}]
 			subtitle: "解放条件: 「04：Diesel Engine」を完了"
@@ -143,7 +143,7 @@
 			rewards: [{
 				count: 24
 				id: "6D49010000001601"
-				item: "apocalypsenow:money"
+				item: "lightmanscurrency:coin_copper"
 				type: "item"
 			}]
 			subtitle: "解放条件: 「05：単独負荷試験」を完了"
@@ -190,7 +190,7 @@
 			rewards: [{
 				count: 24
 				id: "6D49010000001801"
-				item: "apocalypsenow:money"
+				item: "lightmanscurrency:coin_copper"
 				type: "item"
 			}]
 			subtitle: "解放条件: 「07：原油精製設備」を完了"
@@ -217,7 +217,7 @@
 			rewards: [{
 				count: 32
 				id: "6D49010000001901"
-				item: "apocalypsenow:money"
+				item: "lightmanscurrency:coin_copper"
 				type: "item"
 			}]
 			subtitle: "解放条件: 「05：単独負荷試験」・「08：Diesel精製」をすべて完了"
@@ -310,7 +310,7 @@
 				{
 					count: 32
 					id: "6D49010000001C01"
-					item: "apocalypsenow:money"
+					item: "lightmanscurrency:coin_copper"
 					type: "item"
 				}
 				{

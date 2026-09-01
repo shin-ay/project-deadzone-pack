@@ -19,7 +19,7 @@
 			rewards: [{
 				count: 12
 				id: "03BC95D1FDA1FC6A"
-				item: "apocalypsenow:money"
+				item: "lightmanscurrency:coin_copper"
 				type: "item"
 			}]
 			subtitle: "ミナト人物ライン II｜解放条件: 「帰還経路の確保」を完了"
@@ -44,7 +44,7 @@
 			rewards: [{
 				count: 12
 				id: "02DBB062B88B9A23"
-				item: "apocalypsenow:money"
+				item: "lightmanscurrency:coin_copper"
 				type: "item"
 			}]
 			subtitle: "レイ人物ライン II｜解放条件: 「途切れた周波数」を完了"
@@ -84,7 +84,7 @@
 				{
 					count: 12
 					id: "6FC0819A8672A14B"
-					item: "apocalypsenow:money"
+					item: "lightmanscurrency:coin_copper"
 					type: "item"
 				}
 			]
@@ -116,7 +116,7 @@
 			rewards: [{
 				count: 12
 				id: "4E005A624AA1846F"
-				item: "apocalypsenow:money"
+				item: "lightmanscurrency:coin_copper"
 				type: "item"
 			}]
 			subtitle: "ハンク人物ライン II｜解放条件: 「外周警戒」を完了"
@@ -149,7 +149,7 @@
 			rewards: [{
 				count: 12
 				id: "0BBFA6E9446FB7CC"
-				item: "apocalypsenow:money"
+				item: "lightmanscurrency:coin_copper"
 				type: "item"
 			}]
 			subtitle: "マヤ人物ライン II｜解放条件: 「共同備蓄」を完了"
@@ -182,7 +182,7 @@
 			rewards: [{
 				count: 12
 				id: "04B336E0158718ED"
-				item: "apocalypsenow:money"
+				item: "lightmanscurrency:coin_copper"
 				type: "item"
 			}]
 			subtitle: "ゴロウ人物ライン II｜解放条件: 「使える部品」を完了"
@@ -213,7 +213,7 @@
 			rewards: [{
 				count: 12
 				id: "5023FE888E5EA64D"
-				item: "apocalypsenow:money"
+				item: "lightmanscurrency:coin_copper"
 				type: "item"
 			}]
 			subtitle: "ユイ人物ライン I｜解放条件: 「Survivor Camp」を完了"

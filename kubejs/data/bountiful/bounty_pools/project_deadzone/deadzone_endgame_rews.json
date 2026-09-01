@@ -2,7 +2,7 @@
   "content": {
     "pdz_end_money": {
       "type": "item",
-      "content": "apocalypsenow:money",
+      "content": "lightmanscurrency:coin_copper",
       "amount": { "min": 10, "max": 24 },
       "unitWorth": 350,
       "weightMult": 2.0

@@ -235,7 +235,7 @@ function dzContractTellMenu(player) {
     }
     player.tell(Text.of("[受注] " + contract.name).aqua()
       .clickRunCommand("/deadzonecontracts accept_" + key)
-      .hover(Text.of(contract.description + " 報酬: Money " + contract.money + " / " + contract.skill + " XP " + contract.xp)))
+        .hover(Text.of(contract.description + " 報酬: Credit " + contract.money + " / " + contract.skill + " XP " + contract.xp)))
   })
 }
 
@@ -286,7 +286,7 @@ function dzContractComplete(player, key, quality) {
   let xp = contract.xp + (quality ? quality.xpBonus || 0 : 0)
   let lifeRepGain = (contract.lifeRep || 0) + (quality ? quality.repBonus || 0 : 0)
   let bonus = quality && quality.bonus ? quality.bonus : (contract.bonus || [])
-  player.server.runCommandSilent("give " + player.username + " apocalypsenow:money " + money)
+  player.server.runCommandSilent("give " + player.username + " lightmanscurrency:coin_copper " + money)
   if(global.pdzUnifiedProgressionAward)global.pdzUnifiedProgressionAward(player,contract.skill,xp,true)
   ;(bonus || []).forEach(entry => player.server.runCommandSilent(
     "give " + player.username + " " + entry[0] + " " + entry[1]))
@@ -334,7 +334,7 @@ function dzContractComplete(player, key, quality) {
     console.error("[PROJECT DEADZONE][Contracts] Relationship hook failed after safe contract close: " + error)
   }
   player.tell(Text.of("依頼完了: " + contract.name + (quality ? "（" + quality.grade + "）" : "")).gold())
-  player.tell(Text.of("報酬: Money " + money + " / " + contract.skill + " XP " + xp
+  player.tell(Text.of("報酬: Credit " + money + " / " + contract.skill + " XP " + xp
     + (lifeRepGain > 0 ? " / 生活評判 +" + lifeRepGain : "")
     + ((contract.securityRep || 0) > 0 ? " / 治安評判 +" + contract.securityRep : "")
     + ((contract.restorationRep || 0) > 0 ? " / 復旧評判 +" + contract.restorationRep : "")).green())

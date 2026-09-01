@@ -26,7 +26,7 @@
 				{
 					count: 27
 					id: "39772C0DC2DB393D"
-					item: "apocalypsenow:money"
+					item: "lightmanscurrency:coin_copper"
 					type: "item"
 				}
 				{
@@ -85,7 +85,7 @@
 				{
 					count: 27
 					id: "699F49653CE56234"
-					item: "apocalypsenow:money"
+					item: "lightmanscurrency:coin_copper"
 					type: "item"
 				}
 				{
@@ -125,7 +125,7 @@
 				{
 					count: 12
 					id: "58BC4E196C5AB926"
-					item: "apocalypsenow:money"
+					item: "lightmanscurrency:coin_copper"
 					type: "item"
 				}
 				{
@@ -177,7 +177,7 @@
 				{
 					count: 12
 					id: "73854E679F3D58F7"
-					item: "apocalypsenow:money"
+					item: "lightmanscurrency:coin_copper"
 					type: "item"
 				}
 				{
@@ -222,7 +222,7 @@
 				{
 					count: 16
 					id: "6D5F89E7EA13310D"
-					item: "apocalypsenow:money"
+					item: "lightmanscurrency:coin_copper"
 					type: "item"
 				}
 				{
@@ -263,7 +263,7 @@
 				{
 					count: 24
 					id: "412663772E061C8F"
-					item: "apocalypsenow:money"
+					item: "lightmanscurrency:coin_copper"
 					type: "item"
 				}
 				{
@@ -307,7 +307,7 @@
 				{
 					count: 12
 					id: "23B8BDA2AB7732DA"
-					item: "apocalypsenow:money"
+					item: "lightmanscurrency:coin_copper"
 					type: "item"
 				}
 				{
@@ -355,7 +355,7 @@
 				{
 					count: 12
 					id: "5EF6F4DD84213DA3"
-					item: "apocalypsenow:money"
+					item: "lightmanscurrency:coin_copper"
 					type: "item"
 				}
 				{
@@ -399,7 +399,7 @@
 				{
 					count: 16
 					id: "00ECDE0AA7928F32"
-					item: "apocalypsenow:money"
+					item: "lightmanscurrency:coin_copper"
 					type: "item"
 				}
 				{
@@ -468,7 +468,7 @@
 				{
 					count: 20
 					id: "6AEFBF71E7B940E6"
-					item: "apocalypsenow:money"
+					item: "lightmanscurrency:coin_copper"
 					type: "item"
 				}
 				{
@@ -508,7 +508,7 @@
 				{
 					count: 24
 					id: "451A6334D3E90CE6"
-					item: "apocalypsenow:money"
+					item: "lightmanscurrency:coin_copper"
 					type: "item"
 				}
 				{
@@ -544,7 +544,7 @@
 				{
 					count: 24
 					id: "05FE04DC684E54DA"
-					item: "apocalypsenow:money"
+					item: "lightmanscurrency:coin_copper"
 					type: "item"
 				}
 				{

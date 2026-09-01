@@ -1,0 +1,10 @@
+{
+  "item.lightmanscurrency.coin_copper": "1 Credit",
+  "item.lightmanscurrency.coin_iron": "10 Credit",
+  "item.lightmanscurrency.coin_gold": "100 Credit",
+  "item.lightmanscurrency.coin_emerald": "1,000 Credit",
+  "item.lightmanscurrency.coin_diamond": "10,000 Credit",
+  "item.lightmanscurrency.coin_netherite": "100,000 Credit",
+  "item.lightmanscurrency.wallet_leather": "PDZ Credit Wallet",
+  "block.lightmanscurrency.atm": "PDZ Credit Terminal"
+}

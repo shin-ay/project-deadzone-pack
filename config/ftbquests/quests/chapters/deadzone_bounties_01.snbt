@@ -20,7 +20,7 @@
 				{
 					count: 12
 					id: "13182649CF47E97E"
-					item: "apocalypsenow:money"
+					item: "lightmanscurrency:coin_copper"
 					type: "item"
 				}
 				{
@@ -59,7 +59,7 @@
 				{
 					count: 24
 					id: "3728AA93CCE63823"
-					item: "apocalypsenow:money"
+					item: "lightmanscurrency:coin_copper"
 					type: "item"
 				}
 				{
@@ -93,7 +93,7 @@
 				{
 					count: 30
 					id: "04837B2BC5FA91F0"
-					item: "apocalypsenow:money"
+					item: "lightmanscurrency:coin_copper"
 					type: "item"
 				}
 				{
@@ -131,7 +131,7 @@
 				{
 					count: 8
 					id: "42FF1E615F3A4D16"
-					item: "apocalypsenow:money"
+					item: "lightmanscurrency:coin_copper"
 					team_reward: true
 					type: "item"
 				}
@@ -174,7 +174,7 @@
 				{
 					count: 32
 					id: "4254F6D98427465E"
-					item: "apocalypsenow:money"
+					item: "lightmanscurrency:coin_copper"
 					team_reward: true
 					type: "item"
 				}
@@ -218,7 +218,7 @@
 				{
 					count: 12
 					id: "648D8144945836FE"
-					item: "apocalypsenow:money"
+					item: "lightmanscurrency:coin_copper"
 					team_reward: true
 					type: "item"
 				}
@@ -254,7 +254,7 @@
 				{
 					count: 40
 					id: "73029846DF1D413B"
-					item: "apocalypsenow:money"
+					item: "lightmanscurrency:coin_copper"
 					team_reward: true
 					type: "item"
 				}
@@ -299,7 +299,7 @@
 				{
 					count: 16
 					id: "4B8515FCCEAD8E1C"
-					item: "apocalypsenow:money"
+					item: "lightmanscurrency:coin_copper"
 					team_reward: true
 					type: "item"
 				}

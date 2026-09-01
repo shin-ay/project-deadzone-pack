@@ -102,8 +102,8 @@ function dzShopStoryFactor(server,shopKey){
   factor-=dzShopCommunityRank(server)*0.03
   return Math.max(0.55,Math.min(1.45,factor))
 }
-function dzShopOffer(s,factor){let price=Math.max(1,Math.round(s.price*factor));return '{buy:{Count:'+price+'b,id:"apocalypsenow:money"},buyB:{},demand:0,maxUses:'+s.uses+',priceMultiplier:0.0f,rewardExp:0b,sell:{Count:'+s.count+'b,id:"'+s.id+'"},specialPrice:0,uses:0,xp:0}'}
-function dzShopBuybackOffer(s,factor){let money=Math.max(1,Math.round(s.money/Math.max(0.55,factor)));return '{buy:{Count:'+s.count+'b,id:"'+s.id+'"},buyB:{},demand:0,maxUses:'+s.uses+',priceMultiplier:0.0f,rewardExp:0b,sell:{Count:'+money+'b,id:"apocalypsenow:money"},specialPrice:0,uses:0,xp:0}'}
+function dzShopOffer(s,factor){let price=Math.max(1,Math.round(s.price*factor));return '{buy:{Count:'+price+'b,id:"lightmanscurrency:coin_copper"},buyB:{},demand:0,maxUses:'+s.uses+',priceMultiplier:0.0f,rewardExp:0b,sell:{Count:'+s.count+'b,id:"'+s.id+'"},specialPrice:0,uses:0,xp:0}'}
+function dzShopBuybackOffer(s,factor){let money=Math.max(1,Math.round(s.money/Math.max(0.55,factor)));return '{buy:{Count:'+s.count+'b,id:"'+s.id+'"},buyB:{},demand:0,maxUses:'+s.uses+',priceMultiplier:0.0f,rewardExp:0b,sell:{Count:'+money+'b,id:"lightmanscurrency:coin_copper"},specialPrice:0,uses:0,xp:0}'}
 function dzRotateOneShop(server,shop){
   let selector="@e[type=easy_npc:humanoid,tag="+shop.tag+",limit=1]"
   if(server.runCommandSilent("execute if entity "+selector)<=0)return false

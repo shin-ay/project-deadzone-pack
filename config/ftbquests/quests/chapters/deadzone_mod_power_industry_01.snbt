@@ -26,7 +26,7 @@
 				{
 					count: 8
 					id: "6420000000000001"
-					item: "apocalypsenow:money"
+					item: "lightmanscurrency:coin_copper"
 					type: "item"
 				}
 				{
@@ -74,7 +74,7 @@
 				{
 					count: 12
 					id: "6420000000000003"
-					item: "apocalypsenow:money"
+					item: "lightmanscurrency:coin_copper"
 					type: "item"
 				}
 				{
@@ -104,7 +104,7 @@
 				{
 					count: 16
 					id: "6420000000000005"
-					item: "apocalypsenow:money"
+					item: "lightmanscurrency:coin_copper"
 					type: "item"
 				}
 				{
@@ -137,14 +137,14 @@
 				"6400000000000003"
 				"162BAA0F1AF6097C"
 			]
-		description: ["ストーリー解禁S1でBlast Furnace工程を開始する。27個のBlast Brickから鋼鉄精錬設備を組み上げる。"]
+			description: ["ストーリー解禁S1でBlast Furnace工程を開始する。27個のBlast Brickから鋼鉄精錬設備を組み上げる。"]
 			icon: "immersiveengineering:blastbrick"
 			id: "6400000000000004"
 			rewards: [
 				{
 					count: 24
 					id: "6420000000000007"
-					item: "apocalypsenow:money"
+					item: "lightmanscurrency:coin_copper"
 					type: "item"
 				}
 				{
@@ -174,7 +174,7 @@
 				{
 					count: 12
 					id: "6420000000000009"
-					item: "apocalypsenow:money"
+					item: "lightmanscurrency:coin_copper"
 					type: "item"
 				}
 				{
@@ -212,7 +212,7 @@
 				{
 					count: 20
 					id: "642000000000000B"
-					item: "apocalypsenow:money"
+					item: "lightmanscurrency:coin_copper"
 					type: "item"
 				}
 				{
@@ -250,7 +250,7 @@
 				{
 					count: 12
 					id: "642000000000000D"
-					item: "apocalypsenow:money"
+					item: "lightmanscurrency:coin_copper"
 					type: "item"
 				}
 				{
@@ -282,7 +282,7 @@
 				{
 					count: 12
 					id: "642000000000000F"
-					item: "apocalypsenow:money"
+					item: "lightmanscurrency:coin_copper"
 					type: "item"
 				}
 				{
@@ -311,7 +311,7 @@
 				{
 					count: 16
 					id: "6420000000000011"
-					item: "apocalypsenow:money"
+					item: "lightmanscurrency:coin_copper"
 					type: "item"
 				}
 				{
@@ -348,7 +348,7 @@
 				{
 					count: 16
 					id: "6420000000000013"
-					item: "apocalypsenow:money"
+					item: "lightmanscurrency:coin_copper"
 					type: "item"
 				}
 				{
@@ -389,7 +389,7 @@
 				{
 					count: 16
 					id: "6420000000000015"
-					item: "apocalypsenow:money"
+					item: "lightmanscurrency:coin_copper"
 					type: "item"
 				}
 				{
@@ -414,14 +414,14 @@
 				"640000000000000A"
 				"74065A02DB68DAE2"
 			]
-		description: ["ストーリー解禁S2で作物と廃材からBiodieselを生産する。農業担当と工業担当が共同で維持できる燃料だ。"]
+			description: ["ストーリー解禁S2で作物と廃材からBiodieselを生産する。農業担当と工業担当が共同で維持できる燃料だ。"]
 			icon: "createdieselgenerators:biodiesel_bucket"
 			id: "640000000000000C"
 			rewards: [
 				{
 					count: 20
 					id: "6420000000000017"
-					item: "apocalypsenow:money"
+					item: "lightmanscurrency:coin_copper"
 					type: "item"
 				}
 				{
@@ -456,7 +456,7 @@
 				{
 					count: 20
 					id: "6420000000000019"
-					item: "apocalypsenow:money"
+					item: "lightmanscurrency:coin_copper"
 					type: "item"
 				}
 				{
@@ -484,7 +484,7 @@
 				{
 					count: 20
 					id: "642000000000001B"
-					item: "apocalypsenow:money"
+					item: "lightmanscurrency:coin_copper"
 					type: "item"
 				}
 				{
@@ -522,7 +522,7 @@
 				{
 					count: 24
 					id: "642000000000001D"
-					item: "apocalypsenow:money"
+					item: "lightmanscurrency:coin_copper"
 					type: "item"
 				}
 				{
@@ -556,14 +556,14 @@
 				"640000000000000F"
 				"3FE9D0F62386FC0C"
 			]
-		description: ["ストーリー解禁S3の重工業区画を完成させる。大型発電、車両整備、防衛設備を同時運用できる基盤になる。"]
+			description: ["ストーリー解禁S3の重工業区画を完成させる。大型発電、車両整備、防衛設備を同時運用できる基盤になる。"]
 			icon: "tfmg:generator"
 			id: "6400000000000010"
 			rewards: [
 				{
 					count: 32
 					id: "642000000000001F"
-					item: "apocalypsenow:money"
+					item: "lightmanscurrency:coin_copper"
 					type: "item"
 				}
 				{
