@@ -1,9 +1,8 @@
 // PROJECT DEADZONE automatic Horde director v0.2
 //
 // One shared director prevents multiplayer Horde stacking. Time advances only
-// while at least one player is online. The permanent 100 m camp ring blocks
-// event selection; project_deadzone_t0_safezone_v0_1.js also rejects any
-// individual hostile spawn that lands inside that ring.
+// while at least one player is online. The 100 m camp ring blocks event
+// selection during the first twenty online-active days, then becomes T1.
 
 const PDZ_AH_ACTIVE_TICKS = 'dz_auto_horde_active_ticks_v1'
 const PDZ_AH_NEXT_TICK = 'dz_auto_horde_next_tick_v1'
@@ -84,6 +83,8 @@ function pdzAhAtCamp(player) {
 
 function pdzAhTier(player) {
   try {
+    if (typeof global.pdzCombatTierAt === 'function')
+      return Math.max(0, Math.min(5, Number(global.pdzCombatTierAt(player.server, player.x, player.z, player.level.dimension))))
     if (typeof global.pdzWorldTierAt === 'function')
       return Math.max(0, Math.min(5, Number(global.pdzWorldTierAt(player.server, player.x, player.z))))
     return Math.max(0, Math.min(5, player.persistentData.getInt('dz_world_tier')))
@@ -94,7 +95,10 @@ function pdzAhEligible(player) {
   if (!player || player.level.clientSide) return false
   if (String(player.level.dimension) !== 'minecraft:overworld') return false
   if (player.isCreative() || player.isSpectator()) return false
-  return !pdzAhAtCamp(player)
+  let atCamp = pdzAhAtCamp(player)
+  let protection = true
+  try { if (typeof global.pdzCampProtectionActive === 'function') protection = global.pdzCampProtectionActive(player.server) } catch (ignored) {}
+  return !(atCamp && protection)
 }
 
 function pdzAhEligiblePlayers(server) {
@@ -230,13 +234,14 @@ ServerEvents.commandRegistry(event => {
     let pollution = pdzAhPollution(ctx.source.player)
     ctx.source.player.tell(Text.of('AUTO HORDE: T0+ / 発生 ' + server.persistentData.getInt(PDZ_AH_COUNT) +
       '回 / 次回まで約' + Math.max(0, Math.ceil((next - active) / 1200)) + '分' +
-      (pending > 0 ? ' / 警告中' : '') + ' / 汚染 ' + Math.floor(pollution) + '% / Camp 100m除外').gold())
+      (pending > 0 ? ' / 警告中' : '') + ' / 汚染 ' + Math.floor(pollution) + '% / Camp保護 ' +
+      ((typeof global.pdzCampProtectionActive === 'function' && global.pdzCampProtectionActive(server)) ? 'ON' : 'OFF/T1')).gold())
     return 1
   }))
   root.then(Commands.literal('test').requires(source => source.hasPermission(2)).executes(ctx => {
     let player = ctx.source.player
     if (!pdzAhEligible(player)) {
-      player.tell(Text.of('Camp 100m以内・別Dimension・Creative/Spectatorでは開始できません。').red())
+      player.tell(Text.of('保護期間中のCamp 100m以内・別Dimension・Creative/Spectatorでは開始できません。').red())
       return 0
     }
     return pdzAhStart(ctx.source.server, player,
@@ -253,4 +258,4 @@ ServerEvents.commandRegistry(event => {
   event.register(root)
 })
 
-console.info('[PROJECT DEADZONE] Auto Horde director loaded: v0.2 pollution pressure, T0+, Camp 100m excluded')
+console.info('[PROJECT DEADZONE] Auto Horde director loaded: v0.3 pollution pressure, T0+, Camp protected for 20 active days')

@@ -77,6 +77,12 @@ function dzRadioSummary(player) {
   try { if (global.pdzThreatRelief) relief = global.pdzThreatRelief(server) } catch (ignored) {}
   let raid = server.persistentData.getInt("dz_basecamp_first_raid_state")
   let message = "[レイ定時通信] World T" + world + " / Story S" + tier + " / Threat T" + threat
+  try {
+    if (global.pdzCampProtectionActive) {
+      if (global.pdzCampProtectionActive(server)) message += " / Camp保護 Day " + global.pdzCampProtectionDay(server) + "/20"
+      else message += " / Camp保護終了・Combat T1"
+    }
+  } catch (ignored) {}
   if (relief > 0) message += " / 回復猶予 -" + relief
   if (raid > 0 && raid < 5) message += " / キャンプ警戒中"
   else if (server.persistentData.getString("dz_story_argus_outcome") !== "") message += " / T4外縁作戦を確認"

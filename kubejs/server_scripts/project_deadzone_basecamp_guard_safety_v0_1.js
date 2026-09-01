@@ -59,6 +59,12 @@ function pdzIsMineColoniesRaider(entity) {
 
 function pdzSanitizeMineColoniesRaider(entity) {
   if (!pdzIsMineColoniesRaider(entity)) return
+  let dirty = !entity.tags.contains('dz_faction_sanitized') ||
+    entity.tags.contains('dz_survivor') || entity.tags.contains('dz_friendly') ||
+    entity.tags.contains('dz_buddy') || entity.tags.contains('dz_story_npc') ||
+    entity.tags.contains('dz_settlement_civilian') || entity.tags.contains('dz_starter_colony_resident') ||
+    entity.tags.contains('dz_faction_civil_defense') || entity.tags.contains('dz_survivor_guard')
+  if (!dirty) return
   ;['dz_survivor', 'dz_friendly', 'dz_buddy', 'dz_story_npc',
     'dz_settlement_civilian', 'dz_starter_colony_resident',
     'dz_faction_civil_defense', 'dz_survivor_guard'].forEach(tag => {
@@ -67,11 +73,20 @@ function pdzSanitizeMineColoniesRaider(entity) {
   entity.runCommandSilent('tag @s add dz_hostile')
   entity.runCommandSilent('tag @s add dz_enemy')
   entity.runCommandSilent('tag @s add dz_raider')
+  entity.runCommandSilent('tag @s add dz_faction_sanitized')
   entity.runCommandSilent('team leave @s')
 }
 
 function pdzSanitizeInfectedFaction(entity) {
   if (!pdzIsInfectedFaction(entity)) return
+  let dirty = !entity.tags.contains('dz_faction_sanitized') ||
+    entity.tags.contains('dz_survivor') || entity.tags.contains('dz_friendly') ||
+    entity.tags.contains('dz_buddy') || entity.tags.contains('dz_story_npc') ||
+    entity.tags.contains('dz_settlement_civilian') || entity.tags.contains('dz_starter_colony_resident') ||
+    entity.tags.contains('dz_faction_civil_defense') || entity.tags.contains('dz_survivor_guard') ||
+    entity.tags.contains('dz_basecamp_guard') || entity.tags.contains('dz_starter_colony_guard') ||
+    entity.tags.contains('dz_colony_guard') || entity.tags.contains('dz_settlement_guard')
+  if (!dirty) return
   ;['dz_survivor', 'dz_friendly', 'dz_buddy', 'dz_story_npc',
     'dz_settlement_civilian', 'dz_starter_colony_resident',
     'dz_faction_civil_defense', 'dz_survivor_guard',
@@ -82,6 +97,7 @@ function pdzSanitizeInfectedFaction(entity) {
   entity.runCommandSilent('tag @s add dz_hostile')
   entity.runCommandSilent('tag @s add dz_enemy')
   entity.runCommandSilent('tag @s add dz_force_infected')
+  entity.runCommandSilent('tag @s add dz_faction_sanitized')
   entity.runCommandSilent('team leave @s')
 }
 
@@ -181,43 +197,54 @@ EntityEvents.hurt(event => {
 })
 
 ServerEvents.tick(event => {
-  if (event.server.tickCount % 40 !== 0) return
+  // Hurt events still retaliate immediately. The maintenance pass only needs
+  // to repair stale faction data, so run it every five seconds and inspect
+  // each loaded dimension once instead of once per player.
+  if (event.server.tickCount % 100 !== 0) return
   let seen = {}
   let raiderSeen = {}
-  let loadedSeen = {}
-  let infectedEntities = []
-  let factionTargets = []
+  let dimensions = {}
   let gearPulse = event.server.tickCount % 200 === 0
   event.server.players.forEach(player => {
+    let dimension = String(player.level.dimension)
+    if (dimensions[dimension]) return
+    dimensions[dimension] = true
+    let infectedEntities = []
+    let factionTargets = []
+    let guards = []
+    let hostiles = []
     player.level.entities.forEach(entity => {
       let uuid = String(entity.uuid)
-      if (!loadedSeen[uuid]) {
-        loadedSeen[uuid] = true
-        if (pdzIsInfectedFaction(entity)) {
-          pdzSanitizeInfectedFaction(entity)
-          infectedEntities.push(entity)
-        } else if (pdzIsInfectedTarget(entity)) {
-          factionTargets.push(entity)
-        }
+      if (pdzIsInfectedFaction(entity)) {
+        pdzSanitizeInfectedFaction(entity)
+        infectedEntities.push(entity)
+        hostiles.push(entity)
+      } else {
+        if (pdzIsInfectedTarget(entity)) factionTargets.push(entity)
+        if (pdzIsFactionHostile(entity)) hostiles.push(entity)
       }
       if (pdzIsMineColoniesRaider(entity) && !raiderSeen[String(entity.uuid)]) {
         raiderSeen[String(entity.uuid)] = true
         pdzSanitizeMineColoniesRaider(entity)
       }
-      if (!pdzIsCampGuard(entity) || seen[String(entity.uuid)]) return
+      if (pdzIsCampGuard(entity) && !seen[uuid]) guards.push(entity)
+    })
+    guards.forEach(entity => {
+      let uuid = String(entity.uuid)
       seen[String(entity.uuid)] = true
+      let newlyRegistered = !entity.tags.contains('dz_survivor_guard')
       entity.tags.add('dz_survivor_guard')
       entity.tags.add('dz_survivor')
       entity.tags.add('dz_friendly')
       entity.tags.add('dz_faction_civil_defense')
-      entity.runCommandSilent('team join dz_survivors @s')
-      if (gearPulse) pdzEnsureGuardGear(entity)
+      if (newlyRegistered) entity.runCommandSilent('team join dz_survivors @s')
+      if (newlyRegistered || gearPulse) pdzEnsureGuardGear(entity)
       try {
         if (pdzIsSurvivorAlly(entity.target)) entity.setTarget(null)
       } catch (ignored) {}
 
       let best = null, bestDistance = 28 * 28
-      entity.level.entities.forEach(candidate => {
+      hostiles.forEach(candidate => {
         if (!pdzIsFactionHostile(candidate) || !candidate.alive) return
         let dx = candidate.x - entity.x, dy = candidate.y - entity.y, dz = candidate.z - entity.z
         let distance = dx * dx + dy * dy + dz * dz
@@ -225,6 +252,6 @@ ServerEvents.tick(event => {
       })
       if (best) pdzGuardSetTarget(entity, best)
     })
+    infectedEntities.forEach(infected => pdzInfectedSetNearestFactionTarget(infected, factionTargets))
   })
-  infectedEntities.forEach(infected => pdzInfectedSetNearestFactionTarget(infected, factionTargets))
 })

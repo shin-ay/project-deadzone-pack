@@ -1,12 +1,12 @@
 name = "PROJECT DEADZONE"
 author = "PROJECT DEADZONE Team"
-version = "BETA-20260901-VEHICLE-MARKER-ONESHOT"
+version = "BETA-20260901-CAMP-PROTECTION-T1"
 pack-format = "packwiz:1.1.0"
 
 [index]
 file = "index.toml"
 hash-format = "sha256"
-hash = "37bbd8f12d9ddaaa333e7f33d60b05878edbe24fde8fef843ca8689bedec9acf"
+hash = "fd9114b6ccf31d634da45f8866702f659c32c4f1f597814e92a5eee711104d2b"
 
 [versions]
 forge = "47.4.10"

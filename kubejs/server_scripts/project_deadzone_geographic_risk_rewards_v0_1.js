@@ -84,6 +84,8 @@ function pdzRrIsRewardTarget(entity) {
 
 function pdzRrAreaTier(entity) {
   try {
+    if (global.pdzCombatTierAt)
+      return pdzRrClampTier(global.pdzCombatTierAt(entity.server, entity.x, entity.z, entity.level.dimension))
     if (global.pdzWorldTierAt)
       return pdzRrClampTier(global.pdzWorldTierAt(entity.server, entity.x, entity.z))
   } catch (ignored) {}
@@ -194,7 +196,10 @@ ServerEvents.commandRegistry(event => {
   root.then(Commands.literal('status').executes(ctx => {
     let player = ctx.source.player
     let area = 0
-    try { if (global.pdzWorldTierAt) area = pdzRrClampTier(global.pdzWorldTierAt(player.server, player.x, player.z)) }
+    try {
+      if (global.pdzCombatTierAt) area = pdzRrClampTier(global.pdzCombatTierAt(player.server, player.x, player.z, player.level.dimension))
+      else if (global.pdzWorldTierAt) area = pdzRrClampTier(global.pdzWorldTierAt(player.server, player.x, player.z))
+    }
     catch (ignored) {}
     player.tell(Text.of('現在地 Area T' + area + ' / Area XP bonus +' + PDZ_RR_AREA_XP[area]).gold())
     player.tell(Text.of('Enemy T0–T5 bonus: +0 / +1 / +2 / +3 / +5 / +8 XP').aqua())

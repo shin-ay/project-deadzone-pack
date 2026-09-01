@@ -52,7 +52,11 @@ function pdzCteExcluded(entity){
 
 function pdzCteRegion(entity){
   let tier=0
-  try{tier=global.pdzWorldTierAt?global.pdzWorldTierAt(entity.server,entity.x,entity.z):dzRegionTierAt(entity.server,entity.x,entity.z)}catch(ignored){}
+  try{
+    tier=global.pdzCombatTierAt?
+      global.pdzCombatTierAt(entity.server,entity.x,entity.z,entity.level.dimension):
+      (global.pdzWorldTierAt?global.pdzWorldTierAt(entity.server,entity.x,entity.z):dzRegionTierAt(entity.server,entity.x,entity.z))
+  }catch(ignored){}
   try{if(global.pdzThreatTier)tier=Math.max(tier,global.pdzThreatTier(entity.server))}catch(ignored){}
   return Math.max(0,Math.min(5,tier))
 }

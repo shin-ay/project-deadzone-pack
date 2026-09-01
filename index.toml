@@ -11042,7 +11042,7 @@ hash = "ec246c53f9c3fa29ecf5cff8817cd5a7e8c53474f24202af0a60d480b8fff1c8"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_auto_horde_v0_1.js"
-hash = "8d7722bdf40fef19f5b3ba26075c1e63884e96d532878a5ab5250b48e71d3124"
+hash = "8180995f8806aec10ba7bfa367342fc9ae868d6d525234c056f9ad9d02a09f20"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_base_core_v0_1.js"
@@ -11050,7 +11050,7 @@ hash = "253fbd32f5bcdf0f4d9c15e08a3e4d3ab4495371ada3fc982bd6c439fafa7c5e"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_basecamp_guard_safety_v0_1.js"
-hash = "c5962b906710a41478186ea838b51aaa1252ff8050c33c3a3236e9578cb384ef"
+hash = "cd88e1641a097bd59a290f205c1902ef59b2fb706ba6c04c11d42f9f7f5bede9"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_basecamp_raid_v0_1.js"
@@ -11114,7 +11114,7 @@ hash = "dcd8e0ec9e27e08d2ce7c0a7fd5a72303c29527f3819ba500cf91b5d6c238a49"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_cte2_combat_scaling_v0_1.js"
-hash = "9add1793ea4a1eb501be193d4fe284005b944dee77542eac246d7b91cc6e7d08"
+hash = "6840f477df0eb3db6c087dd3bb4fee149cab54658f89bf802dca37f6f8381205"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_currency_v0_1.js"
@@ -11174,7 +11174,7 @@ hash = "cc2e963c48bd837b9afc2f60dd152253a19ceb88232db813719a76a4c24b8ea1"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_geographic_risk_rewards_v0_1.js"
-hash = "f10ffe69e9153410413ac5d90bba994b00b64b061133ecf69af98374dd491a4a"
+hash = "e368fa5e8c5c40e9f068ff30356a4b5846e42e9ce701a493a9c25ce0f461e71a"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_growth_effects_v0_1.js"
@@ -11322,7 +11322,7 @@ hash = "9b5b283e07218505a85e82b6a281c6d3dc1fae406cb06b29ab5f01397eca3aef"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_radio_world_status_v0_1.js"
-hash = "2d53ed1cdeefd953e3ba33e639790b18b1916266f9771f822a50dabbfdc9f16b"
+hash = "6d014cf65233adec34257b9bbc91666bd89e4f9dec8fd0a3211bab98636d1708"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_recipe_stage_sync_v0_1.js"
@@ -11438,7 +11438,7 @@ hash = "b6b3616e3aca98daa6bd76fc0cc8e0a1343a364c4ead1e874c72a61765aefbc7"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_t0_safezone_v0_1.js"
-hash = "364c51a537f2f22461eb8d3e5d6a9c067a5a79c38c084446ad9928f48cbecf70"
+hash = "dd329bd50244c00beb2875e3e91e2765a4b78d1e2d02c1861b49b458c28eeb2e"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_t4_first_voice_boss_v0_1.js"
