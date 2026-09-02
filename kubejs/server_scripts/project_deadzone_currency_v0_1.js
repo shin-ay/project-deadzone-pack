@@ -7,6 +7,7 @@ const DZ_CREDIT_ITEM = "lightmanscurrency:coin_copper"
 const DZ_CREDIT_WALLET = "lightmanscurrency:wallet_leather"
 const DZ_LEGACY_MONEY_ITEM = "apocalypsenow:money"
 const DZ_CREDIT_WALLET_GRANT = "pdz_credit_wallet_granted_v1"
+const DZ_ADMIN_MARKET_GRANT = "pdz_admin_market_granted_v1"
 
 const DZ_CREDIT_MONEY_API = Java.loadClass("io.github.lightman314.lightmanscurrency.api.money.MoneyAPI")
 const DZ_CREDIT_COIN_VALUE = Java.loadClass("io.github.lightman314.lightmanscurrency.api.money.value.builtin.CoinValue")
@@ -106,6 +107,14 @@ function dzCreditPreparePlayer(player) {
     player.persistentData.putBoolean(DZ_CREDIT_WALLET_GRANT, true)
     player.tell(Text.of("PDZ Credit Walletを支給しました。CuriosのWallet枠へ装備してください。").aqua())
     player.tell(Text.of("拾ったCreditは財布へ自動収納され、商人・治療・修理でも直接使えます。").gray())
+  }
+  if (String(player.username).toLowerCase() === 'natsumamire' &&
+      !player.persistentData.getBoolean(DZ_ADMIN_MARKET_GRANT)) {
+    player.give(Item.of('lightmanscurrency:vending_machine_large'))
+    player.persistentData.putBoolean(DZ_ADMIN_MARKET_GRANT, true)
+    player.tell(Text.of('管理拠点用の大型自動販売機を支給しました。').gold())
+    player.tell(Text.of('設置者が所有者になり、12枠の販売・買取・物々交換を設定できます。').gray())
+    console.info('[PROJECT DEADZONE][Credit] granted admin market to ' + player.username)
   }
 }
 

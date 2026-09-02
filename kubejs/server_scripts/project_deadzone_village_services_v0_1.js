@@ -1,4 +1,4 @@
-// PROJECT DEADZONE village public services v0.1
+// PROJECT DEADZONE village public services v0.2
 //
 // Village detection is supplied by the existing wilderness-site scan. That
 // scan only samples already-loaded terrain when a player changes chunks, so
@@ -11,6 +11,73 @@ const PDZ_VILLAGE_BLOCKPOS = Java.loadClass('net.minecraft.core.BlockPos')
 const PDZ_VILLAGE_POI_TYPES = Java.loadClass('net.minecraft.world.entity.ai.village.poi.PoiTypes')
 const PDZ_VILLAGE_POI_OCCUPANCY = Java.loadClass('net.minecraft.world.entity.ai.village.poi.PoiManager$Occupancy')
 const PDZ_VILLAGE_HEIGHTMAP = Java.loadClass('net.minecraft.world.level.levelgen.Heightmap$Types')
+const PDZ_VILLAGE_ITEM_STACK = Java.loadClass('net.minecraft.world.item.ItemStack')
+const PDZ_VILLAGE_RESOURCE_LOCATION = Java.loadClass('net.minecraft.resources.ResourceLocation')
+const PDZ_VILLAGE_FORGE_REGISTRIES = Java.loadClass('net.minecraftforge.registries.ForgeRegistries')
+const PDZ_VILLAGE_TRADE_DIRECTION = Java.loadClass('io.github.lightman314.lightmanscurrency.api.traders.trade.TradeDirection')
+const PDZ_VILLAGE_PLAYER_TRADE_LIMIT = Java.loadClass('io.github.lightman314.lightmanscurrency.common.traders.rules.types.PlayerTradeLimit')
+const PDZ_VILLAGE_MARKET_VERSION = 1
+const PDZ_VILLAGE_MARKET_RESET_MS = 86400000
+
+const PDZ_VILLAGE_MARKETS = {
+  agriculture: {
+    name:'PDZ 農業集積所',
+    offers:[
+      {direction:'purchase', item:'minecraft:wheat', count:16, price:8, limit:12, label:'小麦納入'},
+      {direction:'purchase', item:'minecraft:carrot', count:16, price:8, limit:12, label:'ニンジン納入'},
+      {direction:'purchase', item:'minecraft:beef', count:8, price:12, limit:8, label:'生肉納入'},
+      {direction:'sale', item:'minecraft:bread', count:8, price:12, limit:8, label:'主食パック'},
+      {direction:'sale', item:'minecraft:cooked_beef', count:4, price:16, limit:6, label:'保存食パック'},
+      {direction:'sale', item:'minecraft:bone_meal', count:16, price:18, limit:4, label:'農業資材'}
+    ]
+  },
+  fishing: {
+    name:'PDZ 水産物資所',
+    offers:[
+      {direction:'purchase', item:'minecraft:cod', count:8, price:10, limit:12, label:'タラ納入'},
+      {direction:'purchase', item:'minecraft:salmon', count:8, price:12, limit:12, label:'サケ納入'},
+      {direction:'purchase', item:'minecraft:string', count:16, price:10, limit:8, label:'繊維資材納入'},
+      {direction:'sale', item:'minecraft:cooked_cod', count:4, price:12, limit:8, label:'魚保存食'},
+      {direction:'sale', item:'minecraft:fishing_rod', count:1, price:30, limit:2, label:'漁具補給'},
+      {direction:'sale', item:'minecraft:lantern', count:2, price:18, limit:4, label:'沿岸照明'}
+    ]
+  },
+  mining: {
+    name:'PDZ 鉱業物資所',
+    offers:[
+      {direction:'purchase', item:'minecraft:coal', count:16, price:12, limit:12, label:'石炭納入'},
+      {direction:'purchase', item:'minecraft:raw_copper', count:16, price:16, limit:10, label:'銅鉱石納入'},
+      {direction:'purchase', item:'minecraft:raw_iron', count:8, price:24, limit:8, label:'鉄鉱石納入'},
+      {direction:'sale', item:'minecraft:torch', count:32, price:12, limit:8, label:'坑道照明'},
+      {direction:'sale', item:'minecraft:iron_pickaxe', count:1, price:80, limit:2, label:'採掘工具'},
+      {direction:'sale', item:'minecraft:cooked_porkchop', count:4, price:18, limit:6, label:'作業食'}
+    ]
+  }
+}
+
+function pdzVillageNativeStack(id, count) {
+  let item = PDZ_VILLAGE_FORGE_REGISTRIES.ITEMS.getValue(new PDZ_VILLAGE_RESOURCE_LOCATION(String(id)))
+  if (!item) return PDZ_VILLAGE_ITEM_STACK.EMPTY
+  return new PDZ_VILLAGE_ITEM_STACK(item, Math.max(1, Math.floor(Number(count) || 1)))
+}
+
+function pdzVillageBiomeId(level, pos) {
+  try {
+    let key = level.getBiome(pos).unwrapKey()
+    if (key && key.isPresent()) return String(key.get().location())
+  } catch (ignored) {}
+  return ''
+}
+
+function pdzVillageMarketPreset(level, siteId, bell) {
+  let pos = new PDZ_VILLAGE_BLOCKPOS(bell.x, bell.y, bell.z)
+  let hint = (String(siteId || '') + ' ' + pdzVillageBiomeId(level, pos)).toLowerCase()
+  if (/(ocean|coast|beach|river|swamp|mangrove|fishing|harbor|port)/.test(hint)) return 'fishing'
+  if (/(mountain|hill|peak|taiga|snow|alpine|mining|quarry|badlands)/.test(hint)) return 'mining'
+  if (/(plains|savanna|desert|meadow|farm)/.test(hint)) return 'agriculture'
+  let stable = Math.abs((Number(bell.x) * 31 + Number(bell.z) * 17) % 3)
+  return stable === 0 ? 'agriculture' : stable === 1 ? 'fishing' : 'mining'
+}
 
 function pdzVillageIsVillageStructure(siteId) {
   siteId = String(siteId || '')
@@ -152,11 +219,132 @@ function pdzVillagePlaceServices(player, spot) {
   return false
 }
 
+function pdzVillageFindMarketSpot(level, bell) {
+  let directions = [
+    {dx:0, dz:-1, ax:1, az:0, facing:'south'},
+    {dx:1, dz:0, ax:0, az:1, facing:'west'},
+    {dx:0, dz:1, ax:1, az:0, facing:'north'},
+    {dx:-1, dz:0, ax:0, az:1, facing:'east'}
+  ]
+  for (let radius = 3; radius <= 11; radius++) for (let d = 0; d < directions.length; d++) {
+    let dir = directions[d]
+    for (let lateral = -5; lateral <= 5; lateral++) {
+      let x = bell.x + dir.dx * radius + dir.ax * lateral
+      let z = bell.z + dir.dz * radius + dir.az * lateral
+      if (!level.hasChunkAt(new PDZ_VILLAGE_BLOCKPOS(x, bell.y, z))) continue
+      let y = Number(level.getHeight(PDZ_VILLAGE_HEIGHTMAP.MOTION_BLOCKING_NO_LEAVES, x, z))
+      if (Math.abs(y - bell.y) > 3) continue
+      if (!pdzVillageAir(level, x, y, z) || !pdzVillageAir(level, x, y + 1, z)) continue
+      if (pdzVillageBadFloor(level.getBlock(x, y - 1, z).id)) continue
+      return {x:x, y:y, z:z, facing:dir.facing}
+    }
+  }
+  return null
+}
+
+function pdzVillageConfigureMarket(player, spot, presetId) {
+  try {
+    let level = player.level
+    let pos = new PDZ_VILLAGE_BLOCKPOS(spot.x, spot.y, spot.z)
+    let blockEntity = level.getBlockEntity(pos)
+    if (!blockEntity) return false
+    let trader = blockEntity.getTraderData()
+    if (!trader) {
+      blockEntity.initialize(player, PDZ_VILLAGE_ITEM_STACK.EMPTY)
+      trader = blockEntity.getTraderData()
+    }
+    if (!trader) return false
+
+    let preset = PDZ_VILLAGE_MARKETS[presetId]
+    trader.setCreative(true)
+    trader.setStoreCreativeMoney(false)
+    trader.setIgnoreAllTaxes(true)
+    trader.setCustomName(preset.name)
+    // The public service is server-owned. Clearing the discoverer's temporary
+    // placement ownership prevents ordinary players from editing admin stock.
+    trader.getOwner().SetOwner(null)
+
+    for (let i = 0; i < preset.offers.length; i++) {
+      let offer = preset.offers[i]
+      let trade = trader.getTrade(i)
+      if (!trade) return false
+      trade.setItem(PDZ_VILLAGE_ITEM_STACK.EMPTY, 0)
+      trade.setItem(PDZ_VILLAGE_ITEM_STACK.EMPTY, 1)
+      trade.setItem(PDZ_VILLAGE_ITEM_STACK.EMPTY, 2)
+      trade.setItem(PDZ_VILLAGE_ITEM_STACK.EMPTY, 3)
+      trade.getRules().clear()
+      trade.setTradeDirection(offer.direction === 'purchase' ?
+        PDZ_VILLAGE_TRADE_DIRECTION.PURCHASE : PDZ_VILLAGE_TRADE_DIRECTION.SALE)
+      trade.setItem(pdzVillageNativeStack(offer.item, offer.count), 0)
+      trade.setEnforceNBT(0, false)
+      trade.setCustomName(0, offer.label)
+      trade.setCost(dzCreditValue(offer.price))
+
+      let limit = PDZ_VILLAGE_PLAYER_TRADE_LIMIT.TYPE.createNew()
+      limit.setLimit(offer.limit)
+      limit.setTimeLimit(PDZ_VILLAGE_MARKET_RESET_MS)
+      limit.setActive(true)
+      trade.getRules().add(limit)
+    }
+    trader.markTradesDirty()
+    trader.markTradeRulesDirty()
+    blockEntity.markDirty()
+    console.info('[PDZ VILLAGE] Configured ' + presetId + ' market at ' +
+      spot.x + ',' + spot.y + ',' + spot.z)
+    return true
+  } catch (err) {
+    console.error('[PDZ VILLAGE] Market configuration failed at ' +
+      spot.x + ',' + spot.y + ',' + spot.z + ': ' + err)
+    return false
+  }
+}
+
+function pdzVillagePlaceMarket(player, spot, presetId) {
+  let server = player.server, level = player.level
+  let bottom = 'lightmanscurrency:vending_machine[bottom=true,facing=' + spot.facing + ']'
+  let top = 'lightmanscurrency:vending_machine[bottom=false,facing=' + spot.facing + ']'
+  server.runCommandSilent('setblock ' + spot.x + ' ' + spot.y + ' ' + spot.z + ' ' + bottom)
+  server.runCommandSilent('setblock ' + spot.x + ' ' + (spot.y + 1) + ' ' + spot.z + ' ' + top)
+  let ok = String(level.getBlock(spot.x, spot.y, spot.z).id) === 'lightmanscurrency:vending_machine' &&
+    String(level.getBlock(spot.x, spot.y + 1, spot.z).id) === 'lightmanscurrency:vending_machine'
+  if (!ok) {
+    server.runCommandSilent('setblock ' + spot.x + ' ' + (spot.y + 1) + ' ' + spot.z + ' ' + top)
+    server.runCommandSilent('setblock ' + spot.x + ' ' + spot.y + ' ' + spot.z + ' ' + bottom)
+    ok = String(level.getBlock(spot.x, spot.y, spot.z).id) === 'lightmanscurrency:vending_machine' &&
+      String(level.getBlock(spot.x, spot.y + 1, spot.z).id) === 'lightmanscurrency:vending_machine'
+  }
+  if (!ok || !pdzVillageConfigureMarket(player, spot, presetId)) {
+    server.runCommandSilent('setblock ' + spot.x + ' ' + spot.y + ' ' + spot.z + ' minecraft:air')
+    server.runCommandSilent('setblock ' + spot.x + ' ' + (spot.y + 1) + ' ' + spot.z + ' minecraft:air')
+    return false
+  }
+  return true
+}
+
 function pdzVillageEnsureServices(player, siteId, start, hint) {
   if (!pdzVillageIsVillageStructure(siteId) || !start || !start.isValid()) return false
   let key = pdzVillageStructureKey(player, siteId, start)
   let registry = pdzVillageReadServices(player.server)
-  if (registry[key] && registry[key].placed) return true
+  let current = registry[key]
+  if (current && current.placed && Number(current.marketVersion || 0) >= PDZ_VILLAGE_MARKET_VERSION) return true
+
+  // Existing worlds already have ATM + board entries. Add only the missing
+  // market machine instead of duplicating or moving their public services.
+  if (current && current.placed) {
+    let oldBell = current.bell || pdzVillageFindMeeting(player.level, start, hint)
+    if (!oldBell) return true
+    let oldMarketSpot = pdzVillageFindMarketSpot(player.level, oldBell)
+    if (!oldMarketSpot) return true
+    let oldPreset = pdzVillageMarketPreset(player.level, siteId, oldBell)
+    if (!pdzVillagePlaceMarket(player, oldMarketSpot, oldPreset)) return true
+    current.marketVersion = PDZ_VILLAGE_MARKET_VERSION
+    current.marketPreset = oldPreset
+    current.market = {x:oldMarketSpot.x,y:oldMarketSpot.y,z:oldMarketSpot.z}
+    current.marketPlacedAt = Date.now()
+    registry[key] = current
+    pdzVillageWriteServices(player.server, registry)
+    return true
+  }
   // Claim before placement so two players discovering one village on the same
   // server tick cannot create duplicate terminals.
   registry[key] = {placed:false, claimedAt:Date.now(), structure:String(siteId)}
@@ -168,14 +356,26 @@ function pdzVillageEnsureServices(player, siteId, start, hint) {
     pdzVillageWriteServices(player.server, registry)
     return false
   }
-  registry[key] = {
+  let installed = {
     placed:true, structure:String(siteId), placedAt:Date.now(),
     bell:{x:bell.x,y:bell.y,z:bell.z},
     board:{x:spot.boardX,y:spot.y,z:spot.boardZ},
     atm:{x:spot.atmX,y:spot.y,z:spot.atmZ}
   }
+  let marketSpot = pdzVillageFindMarketSpot(player.level, bell)
+  if (marketSpot) {
+    let preset = pdzVillageMarketPreset(player.level, siteId, bell)
+    if (pdzVillagePlaceMarket(player, marketSpot, preset)) {
+      installed.marketVersion = PDZ_VILLAGE_MARKET_VERSION
+      installed.marketPreset = preset
+      installed.market = {x:marketSpot.x,y:marketSpot.y,z:marketSpot.z}
+      installed.marketPlacedAt = Date.now()
+    }
+  }
+  registry[key] = installed
   pdzVillageWriteServices(player.server, registry)
-  console.info('[PDZ VILLAGE] Installed Bountiful Board + ATM at ' +
+  console.info('[PDZ VILLAGE] Installed Bountiful Board + ATM' +
+    (installed.market ? ' + ' + installed.marketPreset + ' market' : '') + ' at ' +
     spot.boardX + ',' + spot.y + ',' + spot.boardZ + ' for ' + siteId)
   return true
 }

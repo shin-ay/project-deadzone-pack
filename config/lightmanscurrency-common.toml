@@ -13,8 +13,8 @@ lootReplacements = false
 [villagers]
 piglinsBarterCoins = false
 addCustomWanderingTrades = false
-addBanker = false
-addCashier = false
+addBanker = true
+addCashier = true
 
 [villagers.modification]
 changeVanillaTrades = false
@@ -22,15 +22,15 @@ changeModdedTrades = false
 changeWanderingTrades = false
 
 [loot.entities]
-enabled = false
+enabled = true
 allowSpawnedDrops = false
 allowFakePlayerDrops = false
 
 [loot.chests]
-enabled = false
+enabled = true
 
 [structures]
-villageHouses = false
+villageHouses = true
 ancientCity = false
 idasStructures = false
 

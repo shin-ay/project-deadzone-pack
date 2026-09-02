@@ -2014,7 +2014,7 @@ hash = "af2b1b5d914216fc614c79869f32f93b7e44890895e77f376f1ccdbfc213f200"
 
 [[files]]
 file = "config/lightmanscurrency-common.toml"
-hash = "ea8f95febf2904a6d70b9de7a455ff0edbf5c96d0f513c1e6e727c54fb89f5c9"
+hash = "2ae8bf382406f95fbb6524f2abb7966b7d3f966b1aa54cb7a4004136653dbea2"
 
 [[files]]
 file = "config/lightmanscurrency/MasterCoinList.json"
@@ -11166,7 +11166,7 @@ hash = "ab304788495837f97f4952a60ad821aa6d2cdc1f9bed22ccb7541a281136eca5"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_currency_v0_1.js"
-hash = "6f2aab22adc8b5bdff55b09efac22646ef9070f5652176ae0943b3cd33ccf350"
+hash = "6cbf5b77df9ee8a8053d766081fc631112efb9e24b1fdbd75f9072772dc2154f"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_decontamination_unit_v0_1.js"
@@ -11542,7 +11542,7 @@ hash = "f9b4bc43356d49772520923ae245cc1c7a8dfcc26cc3f010a69bf38c5ed702be"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_village_services_v0_1.js"
-hash = "ab416cc2ad9ab9e9a130e18a0df0157b9a74f301616362926728c6c11f9e9b4b"
+hash = "3469cd38b83baed5d78f3fffaf636f2586831fab092e2ff3262f875bad83c8b5"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_waystones_public_transit_v0_1.js"
