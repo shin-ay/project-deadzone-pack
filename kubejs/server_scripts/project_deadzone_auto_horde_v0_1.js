@@ -12,8 +12,15 @@ const PDZ_AH_COUNT = 'dz_auto_horde_count_v1'
 const PDZ_AH_INITIAL_GRACE = 54000       // 45 active minutes
 const PDZ_AH_RETRY_DELAY = 12000         // 10 min if every player is in the camp ring
 const PDZ_AH_WARNING = 600               // 30 s warning
-const PDZ_AH_COOLDOWN_MIN = 72000        // 60 active minutes
-const PDZ_AH_COOLDOWN_SPREAD = 24000     // +0..20 active minutes
+// Cooldown shortens as the world ages. Values are active-online ticks, so an
+// empty server never burns through the timer even when the calendar is old.
+const PDZ_AH_COOLDOWNS = [
+  [84000, 108000], // day 0-19: 70-90 active minutes
+  [72000, 90000],  // day 20-39: 60-75 active minutes
+  [60000, 78000],  // day 40-59: 50-65 active minutes
+  [48000, 66000],  // day 60-79: 40-55 active minutes
+  [42000, 60000]   // day 80+: 35-50 active minutes
+]
 const PDZ_AH_CAMP_RADIUS = 100
 const PDZ_AH_POLLUTION_WARNING = 75      // brief warning effects begin here
 const PDZ_AH_POLLUTION_CRITICAL = 90     // urgent raid pressure begins here
@@ -115,9 +122,29 @@ function pdzAhFindPlayer(server, uuid) {
   return found
 }
 
+function pdzAhWorldDay(server) {
+  try {
+    let level = server.overworld
+    let dayTime = Number(level.dayTime)
+    if (!isFinite(dayTime) && typeof level.getDayTime === 'function') dayTime = Number(level.getDayTime())
+    if (isFinite(dayTime)) return Math.max(0, Math.floor(dayTime / 24000))
+  } catch (ignored) {}
+  return 0
+}
+
+function pdzAhCooldownBounds(server) {
+  let day = pdzAhWorldDay(server)
+  if (day >= 80) return PDZ_AH_COOLDOWNS[4]
+  if (day >= 60) return PDZ_AH_COOLDOWNS[3]
+  if (day >= 40) return PDZ_AH_COOLDOWNS[2]
+  if (day >= 20) return PDZ_AH_COOLDOWNS[1]
+  return PDZ_AH_COOLDOWNS[0]
+}
+
 function pdzAhScheduleNext(server, activeTicks, shortRetry) {
+  let bounds = pdzAhCooldownBounds(server)
   let delay = shortRetry ? PDZ_AH_RETRY_DELAY :
-    PDZ_AH_COOLDOWN_MIN + Math.floor(Math.random() * (PDZ_AH_COOLDOWN_SPREAD + 1))
+    bounds[0] + Math.floor(Math.random() * (bounds[1] - bounds[0] + 1))
   server.persistentData.putLong(PDZ_AH_NEXT_TICK, activeTicks + delay)
 }
 
@@ -232,7 +259,8 @@ ServerEvents.commandRegistry(event => {
     let next = server.persistentData.getLong(PDZ_AH_NEXT_TICK)
     let pending = server.persistentData.getLong(PDZ_AH_PENDING_AT)
     let pollution = pdzAhPollution(ctx.source.player)
-    ctx.source.player.tell(Text.of('AUTO HORDE: T0+ / 発生 ' + server.persistentData.getInt(PDZ_AH_COUNT) +
+    ctx.source.player.tell(Text.of('AUTO HORDE: T0+ / Day ' + pdzAhWorldDay(server) +
+      ' / 発生 ' + server.persistentData.getInt(PDZ_AH_COUNT) +
       '回 / 次回まで約' + Math.max(0, Math.ceil((next - active) / 1200)) + '分' +
       (pending > 0 ? ' / 警告中' : '') + ' / 汚染 ' + Math.floor(pollution) + '% / Camp保護 ' +
       ((typeof global.pdzCampProtectionActive === 'function' && global.pdzCampProtectionActive(server)) ? 'ON' : 'OFF/T1')).gold())
@@ -258,4 +286,4 @@ ServerEvents.commandRegistry(event => {
   event.register(root)
 })
 
-console.info('[PROJECT DEADZONE] Auto Horde director loaded: v0.3 pollution pressure, T0+, Camp protected for 20 active days')
+console.info('[PROJECT DEADZONE] Auto Horde director loaded: v0.4 age-scaled cooldown, pollution pressure, T0+, Camp protected for 20 active days')

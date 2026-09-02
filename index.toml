@@ -3253,6 +3253,10 @@ file = "config/toms_storage-common.toml"
 hash = "cb2644a6bbca7895ef4ff9a7237a51302839493c7d7e9ffbea74e8bc93494b64"
 
 [[files]]
+file = "config/tongdarailway_for_forge-common.toml"
+hash = "8e3a3368ea5f7729599d170a988cae98dfb23802bebe66687550e59cfc5347fa"
+
+[[files]]
 file = "config/trmt-client.json"
 hash = "3f05a62ecf2b307ec62e5bf24f645121685bde1bb8ceae1c0fc375a121dac8c8"
 
@@ -11110,7 +11114,7 @@ hash = "ec246c53f9c3fa29ecf5cff8817cd5a7e8c53474f24202af0a60d480b8fff1c8"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_auto_horde_v0_1.js"
-hash = "5aa94dd571594a25ca50d1554033f7abb05d090af8c3ded2e272d14da653cda4"
+hash = "f9492e98fdabcb8824cda44e8f4cf2e3a4368adbcea97be98f9dbb68dddaccd7"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_base_core_v0_1.js"

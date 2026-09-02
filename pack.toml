@@ -1,12 +1,12 @@
 name = "PROJECT DEADZONE"
 author = "PROJECT DEADZONE Team"
-version = "BETA-20260902-IMMERSIVE-HOLSTERS-RC2"
+version = "BETA-20260903-HORDE-RAIL-TUNING-1"
 pack-format = "packwiz:1.1.0"
 
 [index]
 file = "index.toml"
 hash-format = "sha256"
-hash = "d0d4f9c6cfd5c218317fca954aaae93eaa9687ead94735a201201e2076034257"
+hash = "01a39346e51b63520cd5199dc71a405e75ea2ec63bcbbd075e0056b980fa247d"
 
 [versions]
 forge = "47.4.10"
