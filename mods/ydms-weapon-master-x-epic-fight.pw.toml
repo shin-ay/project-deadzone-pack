@@ -1,0 +1,13 @@
+name = "YDM's Weapon Master x Epic Fight"
+filename = "EFM-20.14.4-WeaponMaster-X-EpicFight-Forge-1.2.0.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "54f4829f750c7e3829ece7ec43e94a12a6185e3e"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 7986186
+project-id = 1455909

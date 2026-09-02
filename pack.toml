@@ -1,12 +1,12 @@
 name = "PROJECT DEADZONE"
 author = "PROJECT DEADZONE Team"
-version = "BETA-20260902-CURRENCY-MARKETS-RC1"
+version = "BETA-20260902-IMMERSIVE-HOLSTERS-RC1"
 pack-format = "packwiz:1.1.0"
 
 [index]
 file = "index.toml"
 hash-format = "sha256"
-hash = "148f63d75627489363bbe6c2dedd517abef598b31e0bfb245325f35fa785b770"
+hash = "feb649ee45e10c6e67a76f327632d3dfc6f51835b10e621ede733bf116be414c"
 
 [versions]
 forge = "47.4.10"

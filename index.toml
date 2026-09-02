@@ -341,6 +341,10 @@ file = "config/RadioTowersAndAirDrops.toml"
 hash = "c321e14dd1b4ddf2daabf96f691a8de4da006b97086369e0d686fd8a90089f9d"
 
 [[files]]
+file = "config/WeaponMaster-X-EpicFight-Client.toml"
+hash = "2f6b7a791edae9f4cdefee5ca7921890211a146d7315d95f2c8a8af2010f3f17"
+
+[[files]]
 file = "config/adchimneys-common.toml"
 hash = "bc993d23a48242bbadfbbca3db9f0fd422f8e572e9c11aa8c09daef5e8543056"
 
@@ -3357,6 +3361,10 @@ file = "config/waystones-common.toml"
 hash = "fb28e6ee56c3090268952ec13ec8d63a1590606a38ed43ebc63c89a766d73640"
 
 [[files]]
+file = "config/weaponmaster_ydm-common.toml"
+hash = "e33207f7647ea789646e0d8c007e21aa67f39c0c109f117e7aada39003e502a1"
+
+[[files]]
 file = "config/weight/backpack_ratios.json"
 hash = "47a41beec18a48d83929a82728bcfb2eb999d54d3be5ceadaf58b517febc7c7e"
 
@@ -3467,6 +3475,10 @@ hash = "3ed8257302950822cd63426d2932776525c8338f786cca759e16d2249175a13b"
 [[files]]
 file = "defaultconfigs/skilltree-server.toml"
 hash = "58a0475b579a8aa2dce35dd426e8b877dde1eb1e66832c2c93fd93f80befa9b3"
+
+[[files]]
+file = "defaultconfigs/taczslings-server.toml"
+hash = "11a0085f4b8420a48be50b30b5d16bfd27ef2f6afa364042b661b800601909ed"
 
 [[files]]
 file = "kubejs/README.txt"
@@ -3809,12 +3821,20 @@ file = "kubejs/assets/smallships_upgrades/lang/ja_jp.json"
 hash = "94a1e1858e45cec7f26c4fa1c227e290ba0e42ed321195d441755f109ce3c9cb"
 
 [[files]]
+file = "kubejs/assets/taczslings/lang/ja_jp.json"
+hash = "ac235c8dc3d5f4d4c87b6b0372829fad6590f70d996f12e1053ad33b4790c576"
+
+[[files]]
 file = "kubejs/assets/village_recruits/lang/ja_jp.json"
 hash = "93bde578bba9469779b41be68e9cb27e0b8d21648ea9d6340a50450792e09c13"
 
 [[files]]
 file = "kubejs/assets/waystones/lang/ja_jp.json"
 hash = "aa69b408d6e35eb13bdc5168baeeb8fafaa7699f1740c4b4050014fba8620af5"
+
+[[files]]
+file = "kubejs/assets/weaponmaster_ydm/lang/ja_jp.json"
+hash = "8ba9a6f3fc0a177c5ad1ecdd525e1b03bdba35ed0bdb340d1b4b47dc0bcef514"
 
 [[files]]
 file = "kubejs/assets/workers/lang/ja_jp.json"
@@ -13461,6 +13481,11 @@ hash = "28daa08173918614fc50fb14fb2b4a509103105ae22dff641b9e4e21cf70851b"
 metafile = true
 
 [[files]]
+file = "mods/tacz-slings.pw.toml"
+hash = "ab8785a8dd416911b0ccae409cb2d89b6f12258a7c515b770fd12e9431e0d27b"
+metafile = true
+
+[[files]]
 file = "mods/tacz-sound-attracts-zombies.pw.toml"
 hash = "4328eedefcd9c64c69042a8edf07ab54566039a953636a697448d9dd9b3d6ca6"
 metafile = true
@@ -13628,6 +13653,16 @@ hash = "c7c59a7a87bf51ec5ffbadfe5340f854f92397591a52ab5af1df8bffd71d941e"
 [[files]]
 file = "mods/yacl.pw.toml"
 hash = "c08817fe8025a9d62c8f7abd5f56a54b90673e5ab60f39ae8fa1d70d5ace529b"
+metafile = true
+
+[[files]]
+file = "mods/ydms-weapon-master-x-epic-fight.pw.toml"
+hash = "00ee5c7cbb404c22a88d778a437c4242dafa1e40fb52e05f2f28aaa1c32e1a57"
+metafile = true
+
+[[files]]
+file = "mods/ydms-weapon-master.pw.toml"
+hash = "c4968d2539190a1a2e2623814db027d8229fd75800f58f76b51a39f25e7ea3b2"
 metafile = true
 
 [[files]]
@@ -22038,7 +22073,7 @@ hash = "4d3255713094eb378d3b9661d32a0c61a511db46eb20c879a97911c1d65051e7"
 
 [[files]]
 file = "options.txt"
-hash = "05202e68197752af3f45475becd8e31423273d49cf661a0e4f1905df202755f8"
+hash = "f0929aba1c021730007121b9a93f35f3bc5a677ea402e476516c9e6419d87592"
 
 [[files]]
 file = "pdz_tools/keymap/APPLY_KEYMAP.bat"
