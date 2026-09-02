@@ -1,0 +1,31 @@
+["block settings"]
+	# Keep Urushi's materials deterministic and avoid background block conversion.
+	"max height(1～2147483647)" = 10
+	"instantry open and close sliding doors(true/false)" = false
+	"play wind bell sound(true/false)" = true
+	"disable changing Sand to Salty Sand (true/false)" = true
+
+["item settings"]
+	"magatama(1～2147483647)" = 5600
+	"disable displaying block element(true/false)" = false
+	"indicate furigana(true/false)" = true
+
+["blockentity settings"]
+	"Shichirin icon(1～2147483647)" = 6
+	"Shichirin cooking difficulty(1～2147483647)" = 2000
+
+["entity settings"]
+	# Urushi normally grants a global walking-speed bonus for easier building.
+	# PDZ movement and stamina balance must remain authoritative.
+	"walking speed(true/false)" = false
+
+["particle settings"]
+	# Preserve the Japanese atmosphere without using the high upstream defaults.
+	"falling leaf(1～100)" = 20
+	"falling sakura(1～100)" = 24
+
+["world settings"]
+	# The biome modifier is also replaced with an empty target set by PDZ.
+	# This maximum value is a second safety layer for worlds without that datapack.
+	"kakuriyo portal(1～2147483647)" = 2147483647
+	"version message (true/false)" = false

@@ -3269,6 +3269,10 @@ file = "config/unionlib-server.toml"
 hash = "a2c7c8e678d4437c3fe94be969720457f15dbe12d7beeba90c55942f0d18cecb"
 
 [[files]]
+file = "config/urushi.toml"
+hash = "ff6300a636250b1c04d62a6711a72889420b247de20ad5f34c5343404a3441dc"
+
+[[files]]
 file = "config/vehicle-client.toml"
 hash = "2adf123f5eecc08556cd8001876414188e908ef2b54c2e3e8510bd4fade59b5e"
 
@@ -3590,11 +3594,11 @@ hash = "0e219671fa5c9513f92a687034e3753f053d12e38184f3e8b314929cec50e5f1"
 
 [[files]]
 file = "kubejs/assets/mmorpg/lang/en_us.json"
-hash = "61de3d175b5ed479be33ca1aa20d0924f20baa5cc7feee8f60a996b7defbd8dc"
+hash = "586f4f0e3f3dd33c5ccd075314dd425ea05bd0dba32f5fa046828c1f00fcefee"
 
 [[files]]
 file = "kubejs/assets/mmorpg/lang/ja_jp.json"
-hash = "8f53388e866c10de828ac445efa379252cb0bd8e44e121f03ceb88dbb71cfd73"
+hash = "7e13850601af29c739f1a0a01f3af8aad920ebf86b1cc902d1aaa3b741e16de8"
 
 [[files]]
 file = "kubejs/assets/mmorpg/lang/skills_en_us.json"
@@ -11009,6 +11013,10 @@ file = "kubejs/data/underground_bunkers/worldgen/template_pool/underground_bunke
 hash = "4038ce6c33a3aab94de8a97d0c9b6dbb3da9268906825a537eddb8cd20ff2e35"
 
 [[files]]
+file = "kubejs/data/urushi/forge/biome_modifier/add_kakuriyo_portal_in_overworld.json"
+hash = "d4ebccd5482995fe01a55a25ffb2ab31f91df5f11f69593dd60f9478220b2da7"
+
+[[files]]
 file = "kubejs/data/zombiekit/worldgen/structure_set/gas_station.json"
 hash = "95a51c6ebb208bc5e7d099000f5080736908fc0de3b361beee60bad84ef3d8bf"
 
@@ -11582,7 +11590,7 @@ hash = "e3d03fc17f90b606550fd6a8bfcd73e8063f691e2aa258b833a9a45a6ba6779c"
 
 [[files]]
 file = "kubejs/startup_scripts/project_deadzone_epicfight_reward_v0_1.js"
-hash = "0e61ffec2afd54f2ec4b21cf6aa4e9c398a22686325fc2e9f32c8a18ce916d18"
+hash = "ac875374452c362bd88eb8a35c2f015c0a07f8fa78fb5fb1b6567b2cedd8a749"
 
 [[files]]
 file = "kubejs/startup_scripts/project_deadzone_field_medical_kit_v0_1.js"
@@ -13582,6 +13590,11 @@ metafile = true
 [[files]]
 file = "mods/unu-parts-pack.pw.toml"
 hash = "81e8b4f0b328134982bf1d27721048ea0451368227ec17d27c8c93ee8a848645"
+metafile = true
+
+[[files]]
+file = "mods/urushi.pw.toml"
+hash = "2e279307097d76ec12b0c12989d19813ac9ba4ebcc532e084099f8bd13feef2b"
 metafile = true
 
 [[files]]
