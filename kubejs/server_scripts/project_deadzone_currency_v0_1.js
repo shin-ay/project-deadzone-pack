@@ -121,8 +121,12 @@ function dzCreditPreparePlayer(player) {
 ServerEvents.loaded(event => {
   // Keep the wallet itself, but drop 20% of carried wallet contents on death.
   // Bank deposits remain safe.
-  event.server.runCommandSilent("gamerule keepWallet true")
-  event.server.runCommandSilent("gamerule coinDropPercent 20")
+  // Lightman's Currency resolves its custom game rules through the active
+  // server instance. Delay one second so that reference exists after startup.
+  event.server.scheduleInTicks(20, callback => {
+    event.server.runCommandSilent("gamerule keepWallet true")
+    event.server.runCommandSilent("gamerule coinDropPercent 20")
+  })
 })
 
 PlayerEvents.loggedIn(event => {

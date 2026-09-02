@@ -11186,7 +11186,7 @@ hash = "ab304788495837f97f4952a60ad821aa6d2cdc1f9bed22ccb7541a281136eca5"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_currency_v0_1.js"
-hash = "6cbf5b77df9ee8a8053d766081fc631112efb9e24b1fdbd75f9072772dc2154f"
+hash = "7e1bd4a11cae9f61c8f9f46a7e58b663fd431cad8b60f704934b2209d0b475e7"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_decontamination_unit_v0_1.js"
