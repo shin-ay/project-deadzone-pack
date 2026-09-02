@@ -1,12 +1,12 @@
 name = "PROJECT DEADZONE"
 author = "PROJECT DEADZONE Team"
-version = "BETA-20260903-HORDE-RAIL-TUNING-1"
+version = "BETA-20260903-SAFE-CHUNK-PREGEN-1"
 pack-format = "packwiz:1.1.0"
 
 [index]
 file = "index.toml"
 hash-format = "sha256"
-hash = "01a39346e51b63520cd5199dc71a405e75ea2ec63bcbbd075e0056b980fa247d"
+hash = "7182b65e317b44fe988ddc9a36ec95cff0818bf7c9b1ab39bf49720512f56d04"
 
 [versions]
 forge = "47.4.10"
