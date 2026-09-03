@@ -52,6 +52,23 @@ const PDZ_VILLAGE_MARKETS = {
       {direction:'sale', item:'minecraft:iron_pickaxe', count:1, price:80, limit:2, label:'採掘工具'},
       {direction:'sale', item:'minecraft:cooked_porkchop', count:4, price:18, limit:6, label:'作業食'}
     ]
+  },
+  base: {
+    name:'PDZ 拠点総合補給所',
+    offers:[
+      {direction:'purchase', item:'minecraft:wheat', count:16, price:8, limit:12, label:'小麦納入'},
+      {direction:'purchase', item:'minecraft:cod', count:8, price:10, limit:12, label:'タラ納入'},
+      {direction:'purchase', item:'minecraft:string', count:16, price:10, limit:8, label:'繊維資材納入'},
+      {direction:'purchase', item:'minecraft:coal', count:16, price:12, limit:12, label:'石炭納入'},
+      {direction:'purchase', item:'minecraft:raw_copper', count:16, price:16, limit:10, label:'銅鉱石納入'},
+      {direction:'purchase', item:'minecraft:raw_iron', count:8, price:24, limit:8, label:'鉄鉱石納入'},
+      {direction:'sale', item:'minecraft:bread', count:8, price:12, limit:8, label:'主食パック'},
+      {direction:'sale', item:'minecraft:cooked_beef', count:4, price:16, limit:6, label:'保存食パック'},
+      {direction:'sale', item:'minecraft:torch', count:32, price:12, limit:8, label:'照明資材'},
+      {direction:'sale', item:'minecraft:lantern', count:2, price:18, limit:4, label:'拠点照明'},
+      {direction:'sale', item:'minecraft:fishing_rod', count:1, price:30, limit:2, label:'漁具補給'},
+      {direction:'sale', item:'minecraft:iron_pickaxe', count:1, price:80, limit:2, label:'採掘工具'}
+    ]
   }
 }
 
@@ -242,7 +259,7 @@ function pdzVillageFindMarketSpot(level, bell) {
   return null
 }
 
-function pdzVillageConfigureMarket(player, spot, presetId) {
+function pdzVillageConfigureMarket(player, spot, presetId, publicService) {
   try {
     let level = player.level
     let pos = new PDZ_VILLAGE_BLOCKPOS(spot.x, spot.y, spot.z)
@@ -262,7 +279,7 @@ function pdzVillageConfigureMarket(player, spot, presetId) {
     trader.setCustomName(preset.name)
     // The public service is server-owned. Clearing the discoverer's temporary
     // placement ownership prevents ordinary players from editing admin stock.
-    trader.getOwner().SetOwner(null)
+    if (publicService !== false) trader.getOwner().SetOwner(null)
 
     for (let i = 0; i < preset.offers.length; i++) {
       let offer = preset.offers[i]
@@ -298,6 +315,41 @@ function pdzVillageConfigureMarket(player, spot, presetId) {
     return false
   }
 }
+
+BlockEvents.rightClicked(event => {
+  let player = event.player
+  if (!player || player.level.clientSide) return
+  if (String(event.block.id) !== 'lightmanscurrency:vending_machine_large') return
+  let held = event.item
+  if (!held || held.empty || !held.nbt || Number(held.nbt.PDZMarketSetupCard || 0) !== 1) return
+  if (String(player.username).toLowerCase() !== 'natsumamire' && !player.hasPermissions(2)) {
+    player.tell(Text.of('この設定カードはサーバー管理者専用です。').red())
+    event.cancel()
+    return
+  }
+
+  let x = Number(event.block.x), y = Number(event.block.y), z = Number(event.block.z), targetY = y
+  let configured = pdzVillageConfigureMarket(player, {x:x, y:y, z:z}, 'base', false)
+  if (!configured) {
+    targetY = y - 1
+    configured = pdzVillageConfigureMarket(player, {x:x, y:targetY, z:z}, 'base', false)
+  }
+
+  let registered = false
+  if (configured && global.pdzRegisterManagedVending)
+    registered = global.pdzRegisterManagedVending(player.server, String(player.level.dimension), x, targetY, z, 'base', 'admin-card')
+
+  if (configured && registered) {
+    player.tell(Text.of('大型自販機を「PDZ 拠点総合補給所」に設定し、自動更新へ登録しました。').green())
+    player.tell(Text.of('固定必需品＋ランダム販売・買取枠を2時間ごとに更新します。').gray())
+    console.info('[PDZ MARKET] Base market configured and registered by ' + player.username + ' at ' + x + ',' + targetY + ',' + z)
+  } else if (configured) {
+    player.tell(Text.of('固定設定は完了しましたが、自動更新登録に失敗しました。サーバー更新世代を確認してください。').red())
+  } else {
+    player.tell(Text.of('自販機の設定に失敗しました。下段ブロックを右クリックしてください。').red())
+  }
+  event.cancel()
+})
 
 function pdzVillagePlaceMarket(player, spot, presetId) {
   let server = player.server, level = player.level

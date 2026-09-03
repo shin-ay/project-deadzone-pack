@@ -66,6 +66,17 @@ function dzVmImportVillages(server,r){
   Object.keys(villages).forEach(k=>{let v=villages[k];if(!v||!v.market)return;let dim=String(k).split('|village|')[0];let key=dzVmKey(dim,v.market.x,v.market.y,v.market.z);if(!r[key]){r[key]={dim:dim,x:v.market.x,y:v.market.y,z:v.market.z,market:v.marketPreset||'agriculture',source:'village',next:0};changed=true}})
   return changed
 }
+// Shared entry point for the older setup-card handler. That handler may cancel
+// the click event before this file's listener runs, so registration must not
+// depend on listener order.
+global.pdzRegisterManagedVending=function(server,dim,x,y,z,market,source){
+  let r=dzVmRead(server),key=dzVmKey(dim,x,y,z)
+  let entry={dim:String(dim),x:Math.floor(x),y:Math.floor(y),z:Math.floor(z),market:String(market||'base'),source:String(source||'admin-card'),next:0}
+  r[key]=entry
+  if(!dzVmConfigure(server,entry,true))return false
+  dzVmWrite(server,r)
+  return true
+}
 function dzVmServicePlayer(player){
   let server=player.server,r=dzVmRead(server),changed=dzVmImportVillages(server,r),dim=String(player.level.dimension)
   Object.keys(r).forEach(k=>{let e=r[k];if(e.dim!==dim)return;if(Math.abs((e.x>>4)-(Math.floor(player.x)>>4))>8||Math.abs((e.z>>4)-(Math.floor(player.z)>>4))>8)return;if(dzVmConfigure(server,e,false))changed=true})
@@ -75,11 +86,7 @@ PlayerEvents.tick(event=>{if(!event.player.level.clientSide&&event.player.age%40
 BlockEvents.rightClicked(event=>{
   let id=String(event.block.id);if(id!=='lightmanscurrency:vending_machine'&&id!=='lightmanscurrency:vending_machine_large')return
   let player=event.player,server=player.server,r=dzVmRead(server),dim=String(player.level.dimension),key=dzVmKey(dim,event.block.x,event.block.y,event.block.z),entry=r[key]
-  let card=false;try{card=event.item&&event.item.nbt&&Number(event.item.nbt.PDZMarketSetupCard)===1}catch(ignored){}
-  if(card&&player.isCrouching()&&(player.hasPermissions(2)||String(player.username).toLowerCase()==='natsumamire')){
-    entry={dim:dim,x:event.block.x,y:event.block.y,z:event.block.z,market:'base',source:'admin-card',next:0};r[key]=entry
-    if(dzVmConfigure(server,entry,true)){dzVmWrite(server,r);player.tell(Text.of('PDZ管理市場として登録・修復しました。私営機はこのカードなしでは登録されません。').gold())}
-    return
-  }
+  // Setup-card registration is owned by village_services so it can resolve the
+  // lower half of large machines before this generic use listener runs.
   if(entry&&dzVmConfigure(server,entry,false))dzVmWrite(server,r)
 })
