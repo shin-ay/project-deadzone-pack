@@ -1,12 +1,12 @@
 name = "PROJECT DEADZONE"
 author = "PROJECT DEADZONE Team"
-version = "BETA-20260903-CHUNKY-CLIENT-HOTFIX-1"
+version = "BETA-20260903-REMOVE-TACZ-SLINGS-1"
 pack-format = "packwiz:1.1.0"
 
 [index]
 file = "index.toml"
 hash-format = "sha256"
-hash = "71c568093e6214c78f9dbf188669b9f176dc82c95afaa9dc65d3ac791f95fdac"
+hash = "cf6988bbfd65d0554f2cf510c973f14f3b363849bca3dab3a74e9ece56680ebd"
 
 [versions]
 forge = "47.4.10"

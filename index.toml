@@ -3481,10 +3481,6 @@ file = "defaultconfigs/skilltree-server.toml"
 hash = "58a0475b579a8aa2dce35dd426e8b877dde1eb1e66832c2c93fd93f80befa9b3"
 
 [[files]]
-file = "defaultconfigs/taczslings-server.toml"
-hash = "11a0085f4b8420a48be50b30b5d16bfd27ef2f6afa364042b661b800601909ed"
-
-[[files]]
 file = "kubejs/README.txt"
 hash = "989f3737ae4621b8ff6730bce4cbeeee756921e7e510e0c281c8a350501d98af"
 
@@ -3823,10 +3819,6 @@ hash = "80a44b4719460fcfdd5b05aba3e968b53ba191468a61e9cb111ab146df88c4fd"
 [[files]]
 file = "kubejs/assets/smallships_upgrades/lang/ja_jp.json"
 hash = "94a1e1858e45cec7f26c4fa1c227e290ba0e42ed321195d441755f109ce3c9cb"
-
-[[files]]
-file = "kubejs/assets/taczslings/lang/ja_jp.json"
-hash = "ac235c8dc3d5f4d4c87b6b0372829fad6590f70d996f12e1053ad33b4790c576"
 
 [[files]]
 file = "kubejs/assets/village_recruits/lang/ja_jp.json"
@@ -13513,11 +13505,6 @@ hash = "28daa08173918614fc50fb14fb2b4a509103105ae22dff641b9e4e21cf70851b"
 metafile = true
 
 [[files]]
-file = "mods/tacz-slings.pw.toml"
-hash = "ab8785a8dd416911b0ccae409cb2d89b6f12258a7c515b770fd12e9431e0d27b"
-metafile = true
-
-[[files]]
 file = "mods/tacz-sound-attracts-zombies.pw.toml"
 hash = "4328eedefcd9c64c69042a8edf07ab54566039a953636a697448d9dd9b3d6ca6"
 metafile = true
@@ -22105,7 +22092,7 @@ hash = "4d3255713094eb378d3b9661d32a0c61a511db46eb20c879a97911c1d65051e7"
 
 [[files]]
 file = "options.txt"
-hash = "f0929aba1c021730007121b9a93f35f3bc5a677ea402e476516c9e6419d87592"
+hash = "e40ef576086d9447f58ece28c908d785af8433d178de452e330389d76c2edd4d"
 
 [[files]]
 file = "pdz_tools/keymap/APPLY_KEYMAP.bat"

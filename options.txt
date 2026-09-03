@@ -333,7 +333,6 @@ key_key.beautiful_statistics_screen.quick_export:key.keyboard.unknown
 key_key.smallships.ship_sail:key.keyboard.unknown
 key_key.mca.skin_library:key.keyboard.u
 key_key.tacz.inspect.desc:key.keyboard.h
-key_key.taczslings.swap:key.keyboard.grave.accent
 key_key.weaponmaster_ydm.opengui:key.keyboard.unknown
 key_key.tacz.reload.desc:key.keyboard.r
 key_key.tacz.shoot.desc:key.mouse.left
