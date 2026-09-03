@@ -1,12 +1,12 @@
 name = "PROJECT DEADZONE"
 author = "PROJECT DEADZONE Team"
-version = "BETA-20260903-COMBAT-FACTIONS-SNIPER-RC2"
+version = "BETA-20260903-CHUNKY-CLIENT-HOTFIX-1"
 pack-format = "packwiz:1.1.0"
 
 [index]
 file = "index.toml"
 hash-format = "sha256"
-hash = "a5eeedcd81d6e0e90f8a09156605de65527b1348b4beb7449260476ee24e2456"
+hash = "71c568093e6214c78f9dbf188669b9f176dc82c95afaa9dc65d3ac791f95fdac"
 
 [versions]
 forge = "47.4.10"
