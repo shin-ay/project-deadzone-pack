@@ -18,6 +18,7 @@ const PDZ_VILLAGE_TRADE_DIRECTION = Java.loadClass('io.github.lightman314.lightm
 const PDZ_VILLAGE_PLAYER_TRADE_LIMIT = Java.loadClass('io.github.lightman314.lightmanscurrency.common.traders.rules.types.PlayerTradeLimit')
 const PDZ_VILLAGE_MARKET_VERSION = 1
 const PDZ_VILLAGE_MARKET_RESET_MS = 86400000
+const PDZ_VILLAGE_MARKET_RETRY_MS = 30 * 60 * 1000
 
 const PDZ_VILLAGE_MARKETS = {
   agriculture: {
@@ -267,6 +268,9 @@ function pdzVillageConfigureMarket(player, spot, presetId, publicService) {
     if (!blockEntity) return false
     let trader = blockEntity.getTraderData()
     if (!trader) {
+      // Existing machines may contain ownership, tax, storage or trade data.
+      // Never re-initialize those from a setup-card repair operation.
+      if (publicService === false) return false
       blockEntity.initialize(player, PDZ_VILLAGE_ITEM_STACK.EMPTY)
       trader = blockEntity.getTraderData()
     }
@@ -277,9 +281,8 @@ function pdzVillageConfigureMarket(player, spot, presetId, publicService) {
     trader.setStoreCreativeMoney(false)
     trader.setIgnoreAllTaxes(true)
     trader.setCustomName(preset.name)
-    // The public service is server-owned. Clearing the discoverer's temporary
-    // placement ownership prevents ordinary players from editing admin stock.
-    if (publicService !== false) trader.getOwner().SetOwner(null)
+    // Preserve the valid owner created by Lightman's Currency. An ownerless
+    // reassignment can throw during the internal copy and trigger safeguards.
 
     for (let i = 0; i < preset.offers.length; i++) {
       let offer = preset.offers[i]
@@ -316,6 +319,17 @@ function pdzVillageConfigureMarket(player, spot, presetId, publicService) {
   }
 }
 
+function pdzVillageMarketBottom(level, x, y, z) {
+  for (let dy = 0; dy >= -1; dy--) {
+    let py = y + dy, pos = new PDZ_VILLAGE_BLOCKPOS(x, py, z)
+    let block = level.getBlock(x, py, z)
+    if (String(block.id) !== 'lightmanscurrency:vending_machine_large') continue
+    let be = level.getBlockEntity(pos)
+    try { if (be && be.getTraderData) return {x:x, y:py, z:z} } catch (ignored) {}
+  }
+  return null
+}
+
 BlockEvents.rightClicked(event => {
   let player = event.player
   if (!player || player.level.clientSide) return
@@ -328,12 +342,10 @@ BlockEvents.rightClicked(event => {
     return
   }
 
-  let x = Number(event.block.x), y = Number(event.block.y), z = Number(event.block.z), targetY = y
-  let configured = pdzVillageConfigureMarket(player, {x:x, y:y, z:z}, 'base', false)
-  if (!configured) {
-    targetY = y - 1
-    configured = pdzVillageConfigureMarket(player, {x:x, y:targetY, z:z}, 'base', false)
-  }
+  let x = Number(event.block.x), y = Number(event.block.y), z = Number(event.block.z)
+  let target = pdzVillageMarketBottom(player.level, x, y, z)
+  let targetY = target ? target.y : y
+  let configured = target ? pdzVillageConfigureMarket(player, target, 'base', false) : false
 
   let registered = false
   if (configured && global.pdzRegisterManagedVending)
@@ -359,17 +371,10 @@ function pdzVillagePlaceMarket(player, spot, presetId) {
   server.runCommandSilent('setblock ' + spot.x + ' ' + (spot.y + 1) + ' ' + spot.z + ' ' + top)
   let ok = String(level.getBlock(spot.x, spot.y, spot.z).id) === 'lightmanscurrency:vending_machine' &&
     String(level.getBlock(spot.x, spot.y + 1, spot.z).id) === 'lightmanscurrency:vending_machine'
-  if (!ok) {
-    server.runCommandSilent('setblock ' + spot.x + ' ' + (spot.y + 1) + ' ' + spot.z + ' ' + top)
-    server.runCommandSilent('setblock ' + spot.x + ' ' + spot.y + ' ' + spot.z + ' ' + bottom)
-    ok = String(level.getBlock(spot.x, spot.y, spot.z).id) === 'lightmanscurrency:vending_machine' &&
-      String(level.getBlock(spot.x, spot.y + 1, spot.z).id) === 'lightmanscurrency:vending_machine'
-  }
-  if (!ok || !pdzVillageConfigureMarket(player, spot, presetId)) {
-    server.runCommandSilent('setblock ' + spot.x + ' ' + spot.y + ' ' + spot.z + ' minecraft:air')
-    server.runCommandSilent('setblock ' + spot.x + ' ' + (spot.y + 1) + ' ' + spot.z + ' minecraft:air')
-    return false
-  }
+  // Never destroy or replace a trader after placement failure. LC treats that
+  // as an illegal break and ejects its storage. Leave it intact and quarantine
+  // retries in the village registry instead.
+  if (!ok || !pdzVillageConfigureMarket(player, spot, presetId, true)) return false
   return true
 }
 
@@ -383,12 +388,25 @@ function pdzVillageEnsureServices(player, siteId, start, hint) {
   // Existing worlds already have ATM + board entries. Add only the missing
   // market machine instead of duplicating or moving their public services.
   if (current && current.placed) {
+    if (current.marketQuarantined) return true
+    if (Number(current.marketRetryAfter || 0) > Date.now()) return true
     let oldBell = current.bell || pdzVillageFindMeeting(player.level, start, hint)
     if (!oldBell) return true
     let oldMarketSpot = pdzVillageFindMarketSpot(player.level, oldBell)
     if (!oldMarketSpot) return true
     let oldPreset = pdzVillageMarketPreset(player.level, siteId, oldBell)
-    if (!pdzVillagePlaceMarket(player, oldMarketSpot, oldPreset)) return true
+    if (!pdzVillagePlaceMarket(player, oldMarketSpot, oldPreset)) {
+      current.marketRetryAfter = Date.now() + PDZ_VILLAGE_MARKET_RETRY_MS
+      current.marketFailureCount = Number(current.marketFailureCount || 0) + 1
+      current.marketQuarantined = true
+      registry[key] = current
+      pdzVillageWriteServices(player.server, registry)
+      console.warn('[PDZ VILLAGE] Market setup quarantined for 30 minutes at ' + oldMarketSpot.x + ',' + oldMarketSpot.y + ',' + oldMarketSpot.z)
+      return true
+    }
+    delete current.marketRetryAfter
+    delete current.marketFailureCount
+    delete current.marketQuarantined
     current.marketVersion = PDZ_VILLAGE_MARKET_VERSION
     current.marketPreset = oldPreset
     current.market = {x:oldMarketSpot.x,y:oldMarketSpot.y,z:oldMarketSpot.z}
@@ -422,6 +440,10 @@ function pdzVillageEnsureServices(player, siteId, start, hint) {
       installed.marketPreset = preset
       installed.market = {x:marketSpot.x,y:marketSpot.y,z:marketSpot.z}
       installed.marketPlacedAt = Date.now()
+    } else {
+      installed.marketRetryAfter = Date.now() + PDZ_VILLAGE_MARKET_RETRY_MS
+      installed.marketFailureCount = 1
+      installed.marketQuarantined = true
     }
   }
   registry[key] = installed

@@ -10,7 +10,7 @@ hash = "528d6f3d1d10b47ad0394f88f622c64ad325aaa8b1d0b191270a9cfc598280d0"
 
 [[files]]
 file = "PDZ_CUMULATIVE_FIX_20260903_JP.md"
-hash = "683383849f7564559cdf87bc7213d95c171296a196bdd0999c3e9d04aada3f11"
+hash = "9e81925dffff30dbc71a7ba8f1d3137b195e3e57ec182a54c407bd09a0911bc6"
 
 [[files]]
 file = "README_R4_JP.txt"
@@ -11342,7 +11342,7 @@ hash = "c76020f2c0a82afd54e70a4f719c11d759565509923264cd830431662ef52eb3"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_managed_vending_rotation_v0_1.js"
-hash = "783d8458d3f462725e2a5df3d4c20417334ca53be8aaa5f572e26b0b1b2bed27"
+hash = "a1bfb08a10e0bbdefcfb6475ea5cf45869b6129bfdb25f266093de17ece3c01a"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_mastery_v0_1.js"
@@ -11610,7 +11610,7 @@ hash = "f9b4bc43356d49772520923ae245cc1c7a8dfcc26cc3f010a69bf38c5ed702be"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_village_services_v0_1.js"
-hash = "c72a2e61d972264385e1284420734cddf24d6afb2861b1d37f7c91aa58cc5e0a"
+hash = "fa27f3fbccb0b084d67f58e75d423d87955192f524c09ead1f78f7d341b22fa4"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_waystones_public_transit_v0_1.js"

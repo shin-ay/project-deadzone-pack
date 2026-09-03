@@ -30,6 +30,7 @@
 - Infectiousスポーン試験: 通常/Radioactive/Farmer/Fungal/Hazmat/Balloon/Burning/Crawling/Climber/Ancientを含む13回で`marked as removed already` 0件、`Fetching packet for removed entity` 0件。
 - MCAスポーン試験: 最初のZombieVillagerEntityMCA生成時だけ`defineId`が37件（数ms内）発生し、その後3体の追加生成で再発0件。MCA 7.6.26のクラス静的初期化警告で、PDZの反復スポーン処理ではなく生成実害も確認されないため本体改変は行わない。
 - 変更したHUDポリシー/職業/タレント/スキルスクリプトは専用サーバーで全てロードし、対象KubeJSエラー0件。Mine and Slash連携クラスも正常ロード。
+- 所有者なし大型自販機の隔離試験: 登録は安全にfalseとなり、`Owner.copy`例外、`illegal means`、`emergency eject`、ブロック破壊はいずれも0件。失敗座標は30分隔離され、KubeJS reloadもエラー0件。
 - 実サーバーは未変更。startup scriptと新規MODを含むため、本番適用には完全停止、client/server同時配備、再起動が必要。
 
 ## 再起動後の監視基準
@@ -43,4 +44,5 @@
 - Crabber's Delightのヤシ、貝殻、カニ等のworldgenは新規生成チャンクにのみ現れる。既存チャンクは変更しない。
 - 既存の拠点大型自販機は、管理者がPDZ設定カードを持ってスニーク右クリックすると管理市場として登録・修復される。
 - 旧固定プリセットの設定カード処理と管理市場登録を同一トランザクションへ統合。成功メッセージが出た機体は必ず2時間ローテーション対象となり、大型機の上段をクリックした場合も下段座標へ正規化する。
+- Lightman's Currency所有者は既存値を常に保持し、ownerless再設定を廃止。設定失敗時もTraderブロックを破壊・再配置せず、村市場は失敗隔離、管理市場は30分クールダウンへ移す。
 - 自動設置村市場は既存の村サービス座標レジストリから取り込み、ロード済みチャンクだけを遅延更新する。強制チャンクロードと全ワールド走査は行わない。
