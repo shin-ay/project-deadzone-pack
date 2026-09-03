@@ -8,7 +8,7 @@ ItemEvents.foodEaten(event => {
   let tier = dzHighestTier(player, "dz_survival_metabolism_", 3)
   if (tier > 0) {
     // Saturation is instant: Tier 1/2/3 restores 2/4/6 additional food points.
-    player.potionEffects.add("minecraft:saturation", 1, tier - 1, false, false)
+    global.pdzAddHiddenEffect(player, "minecraft:saturation", 1, tier - 1)
   }
 
   // Cook profession: meals become a small multiplayer support action.

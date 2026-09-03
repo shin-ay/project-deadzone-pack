@@ -81,8 +81,8 @@ EntityEvents.hurt(event=>{
   if (!pdztrIsGun(player.mainHandItem)) {
     let stagger=pdztrValue(player,'stagger')
     if (stagger>0 && Math.random()<Math.min(0.40,stagger)) {
-      event.entity.potionEffects.add('minecraft:slowness',Math.round(30+stagger*160),stagger>=0.20?1:0,false,false)
-      event.entity.potionEffects.add('minecraft:weakness',Math.round(25+stagger*100),0,false,false)
+      global.pdzAddHiddenEffect(event.entity,'minecraft:slowness',Math.round(30+stagger*160),stagger>=0.20?1:0)
+      global.pdzAddHiddenEffect(event.entity,'minecraft:weakness',Math.round(25+stagger*100),0)
     }
     return
   }
@@ -98,8 +98,8 @@ TimelessGunEvents.entityKillByGun(event=>{
   if (!p || !p.isPlayer || !p.isPlayer() || p.level.clientSide) return
   let weak=pdztrValue(p,'weakpoint'), ammo=pdztrValue(p,'ammoEfficiency')
   if (event.headShot && weak>0) {
-    p.potionEffects.add('minecraft:speed',Math.round(40+weak*180),0,false,false)
-    p.potionEffects.add('minecraft:strength',Math.round(30+weak*120),0,false,false)
+    global.pdzAddHiddenEffect(p,'minecraft:speed',Math.round(40+weak*180),0)
+    global.pdzAddHiddenEffect(p,'minecraft:strength',Math.round(30+weak*120),0)
   }
   if (ammo>0 && Math.random()<Math.min(0.45,ammo)) {
     pdztrGiveAmmo(p,p.mainHandItem,event.headShot&&ammo>=0.20?2:1,'弾薬効率')
@@ -110,8 +110,8 @@ TimelessGunEvents.gunReload(event=>{
   let p=event.entity
   if (!p || !p.isPlayer || p.level.clientSide) return
   let reload=pdztrValue(p,'reload'), handling=pdztrValue(p,'handling'), ammo=pdztrValue(p,'ammoEfficiency')
-  if (reload>0) p.potionEffects.add('minecraft:speed',Math.round(25+reload*120),reload>=0.20?1:0,false,false)
-  if (handling>0) p.potionEffects.add('minecraft:resistance',Math.round(25+handling*100),0,false,false)
+  if (reload>0) global.pdzAddHiddenEffect(p,'minecraft:speed',Math.round(25+reload*120),reload>=0.20?1:0)
+  if (handling>0) global.pdzAddHiddenEffect(p,'minecraft:resistance',Math.round(25+handling*100),0)
   if (ammo>0 && pdztrCooldown(p,'reload_refund',30) && Math.random()<Math.min(0.30,ammo*0.65)) {
     pdztrGiveAmmo(p,event.gunItemStack,1,'マガジン保持')
   }
@@ -124,9 +124,9 @@ ItemEvents.rightClicked(event=>{
   let healing=pdztrValue(p,'healing'), stim=pdztrValue(p,'stim')
   if (healing>0) {
     let amplifier=Math.min(2,Math.floor(healing/0.18))
-    p.potionEffects.add('minecraft:regeneration',Math.round(40+healing*300),amplifier,false,false)
+    global.pdzAddHiddenEffect(p,'minecraft:regeneration',Math.round(40+healing*300),amplifier)
   }
-  if (stim>0) p.potionEffects.add('minecraft:speed',Math.round(60+stim*200),0,false,false)
+  if (stim>0) global.pdzAddHiddenEffect(p,'minecraft:speed',Math.round(60+stim*200),0)
 })
 
 // Cooking and recovery make prepared food more useful than scavenged snacks.
@@ -187,16 +187,16 @@ PlayerEvents.tick(event=>{
   let stamina=pdztrValue(p,'stamina'), aura=pdztrValue(p,'aura'), revive=pdztrValue(p,'revive')
   let power=pdztrValue(p,'power'), marine=pdztrValue(p,'marine'), aviation=pdztrValue(p,'aviation')
   let tracking=pdztrValue(p,'tracking'), fishing=pdztrValue(p,'fishing')
-  if (stealth>=0.08 && p.isCrouching()) p.potionEffects.add('minecraft:invisibility',25,0,false,false)
+  if (stealth>=0.08 && p.isCrouching()) global.pdzAddHiddenEffect(p,'minecraft:invisibility',25,0)
   if (hazard>=0.12) {
-    p.potionEffects.add('minecraft:fire_resistance',30,0,false,false)
+    global.pdzAddHiddenEffect(p,'minecraft:fire_resistance',30,0)
   }
-  if (stamina>=0.08 && p.isSprinting() && p.age%100===0) p.potionEffects.add('minecraft:saturation',2,0,false,false)
-  if (power>=0.10) p.potionEffects.add('minecraft:haste',30,power>=0.25?1:0,false,false)
-  if (marine>=0.08 && p.isInWater()) p.potionEffects.add('minecraft:water_breathing',30,0,false,false)
-  if (aviation>=0.10 && p.fallDistance>4) p.potionEffects.add('minecraft:slow_falling',30,0,false,false)
+  if (stamina>=0.08 && p.isSprinting() && p.age%100===0) global.pdzAddHiddenEffect(p,'minecraft:saturation',2,0)
+  if (power>=0.10) global.pdzAddHiddenEffect(p,'minecraft:haste',30,power>=0.25?1:0)
+  if (marine>=0.08 && p.isInWater()) global.pdzAddHiddenEffect(p,'minecraft:water_breathing',30,0)
+  if (aviation>=0.10 && p.fallDistance>4) global.pdzAddHiddenEffect(p,'minecraft:slow_falling',30,0)
   if (fishing>=0.08 && String(p.mainHandItem.id).indexOf('fishing_rod')>=0) {
-    p.potionEffects.add('minecraft:luck',30,Math.min(2,Math.floor(fishing/0.15)),false,false)
+    global.pdzAddHiddenEffect(p,'minecraft:luck',30,Math.min(2,Math.floor(fishing/0.15)))
     p.persistentData.putDouble('dz_fishing_talent_loot_bonus',Math.min(0.50,fishing))
   }
   if (p.age%100===0 && tracking>=0.08) {

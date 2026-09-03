@@ -54,16 +54,16 @@ TimelessGunEvents.entityKillByGun(event=>{
   let p=event.attacker
   if (!p || !p.isPlayer || !p.isPlayer() || p.level.clientSide) return
   if (dzcaT2(p,'marksman') && event.headShot) {
-    p.potionEffects.add('minecraft:speed',100,0,false,false)
-    p.potionEffects.add('minecraft:luck',160,0,false,false)
+    global.pdzAddHiddenEffect(p,'minecraft:speed',100,0)
+    global.pdzAddHiddenEffect(p,'minecraft:luck',160,0)
   }
   if (dzcaT2(p,'assault')) {
-    p.potionEffects.add('minecraft:speed',80,0,false,false)
-    p.potionEffects.add('minecraft:resistance',60,0,false,false)
+    global.pdzAddHiddenEffect(p,'minecraft:speed',80,0)
+    global.pdzAddHiddenEffect(p,'minecraft:resistance',60,0)
   }
   if (dzcaT3(p,'sniper') && event.headShot) {
-    p.potionEffects.add('minecraft:speed',140,1,false,false)
-    p.potionEffects.add('minecraft:luck',240,1,false,false)
+    global.pdzAddHiddenEffect(p,'minecraft:speed',140,1)
+    global.pdzAddHiddenEffect(p,'minecraft:luck',240,1)
     p.tell(Text.of('[JOB] Ghost Focus').aqua())
   }
   if (dzcaT3(p,'overwatch')) {
@@ -71,12 +71,12 @@ TimelessGunEvents.entityKillByGun(event=>{
     p.server.runCommandSilent('execute at '+p.username+' run effect give @a[distance=0.1..10] minecraft:resistance 6 0 true')
   }
   if (dzcaT3(p,'gunner')) {
-    p.potionEffects.add('minecraft:resistance',100,1,false,false)
-    p.potionEffects.add('minecraft:absorption',160,0,false,false)
+    global.pdzAddHiddenEffect(p,'minecraft:resistance',100,1)
+    global.pdzAddHiddenEffect(p,'minecraft:absorption',160,0)
   }
   if (dzcaT3(p,'breacher')) {
-    p.potionEffects.add('minecraft:speed',100,1,false,false)
-    p.potionEffects.add('minecraft:strength',100,1,false,false)
+    global.pdzAddHiddenEffect(p,'minecraft:speed',100,1)
+    global.pdzAddHiddenEffect(p,'minecraft:strength',100,1)
   }
 })
 
@@ -93,16 +93,16 @@ EntityEvents.death(event=>{
     p.give(Item.of(Math.random()<0.65?'minecraft:leather':'minecraft:bone',1))
   }
   if (dzcaT2(p,'enforcer')&&target&&target.isMonster&&target.isMonster()) {
-    p.potionEffects.add('minecraft:strength',100,0,false,false)
+    global.pdzAddHiddenEffect(p,'minecraft:strength',100,0)
   }
   if (dzcaT3(p,'quartermaster')&&target&&target.isMonster&&target.isMonster()&&Math.random()<0.18) {
     p.give(Item.of(Math.random()<0.6?'minecraft:iron_nugget':'minecraft:string',2))
   }
   if (dzcaT3(p,'juggernaut')&&target&&target.isMonster&&target.isMonster()) {
-    p.potionEffects.add('minecraft:strength',140,1,false,false)
+    global.pdzAddHiddenEffect(p,'minecraft:strength',140,1)
   }
   if (dzcaT3(p,'saboteur')&&target&&target.isMonster&&target.isMonster()) {
-    p.potionEffects.add('minecraft:invisibility',80,0,false,false)
+    global.pdzAddHiddenEffect(p,'minecraft:invisibility',80,0)
   }
   if (dzcaT3(p,'hunter')&&dzcaAnimal(target)&&Math.random()<0.50) {
     p.give(Item.of(Math.random()<0.7?'minecraft:leather':'minecraft:bone',2))
@@ -149,10 +149,10 @@ ItemEvents.rightClicked(event=>{
   let id=String(event.item.id).toLowerCase()
   let medical=id.indexOf('bandage')>=0||id.indexOf('medical')>=0||id.indexOf('medkit')>=0||id.indexOf('morphine')>=0||id.indexOf('syringe')>=0
   if (medical&&dzcaT2(p,'surgeon')&&dzcaCooldown(p,'surgeon',100)) {
-    p.potionEffects.add('minecraft:regeneration',100,0,false,false)
+    global.pdzAddHiddenEffect(p,'minecraft:regeneration',100,0)
   }
   if (medical&&dzcaT3(p,'trauma_specialist')&&dzcaCooldown(p,'trauma',100)) {
-    p.potionEffects.add('minecraft:regeneration',160,1,false,false)
+    global.pdzAddHiddenEffect(p,'minecraft:regeneration',160,1)
   }
 })
 
@@ -160,28 +160,28 @@ PlayerEvents.tick(event=>{
   let p=event.player
   if (p.level.clientSide||p.age%20!==0) return
   if (dzcaT2(p,'infiltrator')&&p.isCrouching()) {
-    p.potionEffects.add('minecraft:invisibility',30,0,false,false)
+    global.pdzAddHiddenEffect(p,'minecraft:invisibility',30,0)
   }
   if (dzcaT2(p,'guardian')&&p.health<=p.maxHealth*0.35) {
-    p.potionEffects.add('minecraft:resistance',30,0,false,false)
+    global.pdzAddHiddenEffect(p,'minecraft:resistance',30,0)
   }
   if (dzcaT3(p,'bulwark')&&p.health<=p.maxHealth*0.40) {
-    p.potionEffects.add('minecraft:resistance',30,1,false,false)
+    global.pdzAddHiddenEffect(p,'minecraft:resistance',30,1)
   }
   if (dzcaT3(p,'wasteland_veteran')&&p.health<=p.maxHealth*0.30&&dzcaCooldown(p,'veteran',600)) {
-    p.potionEffects.add('minecraft:regeneration',100,1,false,false)
-    p.potionEffects.add('minecraft:resistance',100,0,false,false)
+    global.pdzAddHiddenEffect(p,'minecraft:regeneration',100,1)
+    global.pdzAddHiddenEffect(p,'minecraft:resistance',100,0)
   }
   if (dzcaT2(p,'adapter')&&p.health<=p.maxHealth*0.50&&dzcaCooldown(p,'adapter',600)) {
-    p.potionEffects.add('minecraft:regeneration',60,0,false,false)
+    global.pdzAddHiddenEffect(p,'minecraft:regeneration',60,0)
   }
   if (dzcaT2(p,'pilot')&&p.fallDistance>5&&dzcaCooldown(p,'pilot_landing',200)) {
-    p.potionEffects.add('minecraft:slow_falling',40,0,false,false)
+    global.pdzAddHiddenEffect(p,'minecraft:slow_falling',40,0)
   }
-  if (dzcaT3(p,'ace_pilot')&&p.fallDistance>3) p.potionEffects.add('minecraft:slow_falling',40,0,false,false)
+  if (dzcaT3(p,'ace_pilot')&&p.fallDistance>3) global.pdzAddHiddenEffect(p,'minecraft:slow_falling',40,0)
   if (dzcaT3(p,'ghost')&&p.isCrouching()) {
-    p.potionEffects.add('minecraft:invisibility',30,0,false,false)
-    p.potionEffects.add('minecraft:speed',30,0,false,false)
+    global.pdzAddHiddenEffect(p,'minecraft:invisibility',30,0)
+    global.pdzAddHiddenEffect(p,'minecraft:speed',30,0)
   }
   if (dzcaT3(p,'bio_support')&&p.age%40===0) {
     p.server.runCommandSilent('effect clear '+String(p.username)+' minecraft:poison')
@@ -194,8 +194,8 @@ PlayerEvents.tick(event=>{
     let dx=x-ox,dz=z-oz
     d.putInt('dz_career_ability_travel_x',x);d.putInt('dz_career_ability_travel_z',z)
     if (ox!==0&&oz!==0&&dx*dx+dz*dz>=4096) {
-      if (dzcaT3(p,'expeditionist')) p.potionEffects.add('minecraft:absorption',200,0,false,false)
-      if (dzcaT3(p,'pathfinder')) p.potionEffects.add('minecraft:speed',200,1,false,false)
+      if (dzcaT3(p,'expeditionist')) global.pdzAddHiddenEffect(p,'minecraft:absorption',200,0)
+      if (dzcaT3(p,'pathfinder')) global.pdzAddHiddenEffect(p,'minecraft:speed',200,1)
     }
   }
   if (dzcaT2(p,'combat_medic')) {
@@ -245,7 +245,7 @@ ServerEvents.commandRegistry(event=>{
   }))
   root.then(Commands.literal('pulse_test').requires(s=>s.hasPermission(2)).executes(ctx=>{
     let p=ctx.source.player
-    p.potionEffects.add('minecraft:regeneration',100,0,false,false)
+    global.pdzAddHiddenEffect(p,'minecraft:regeneration',100,0)
     p.tell(Text.of('[JOB TEST] Ability event pipeline OK').green());return 1
   }))
   event.register(root)

@@ -1,4 +1,4 @@
-// PROJECT DEADZONE radiation progression gate v0.2
+// PROJECT DEADZONE radiation progression gate v0.3
 // Infectious' radioactive enemy/effect is reserved for geographic Region T3+.
 // Its effect also throws repeatedly when it meets some current damage hooks,
 // so removing it before T3 protects both early balance and server stability.
@@ -10,21 +10,11 @@ function dzRadiationTier(entity) {
   catch (ignored) { return 0 }
 }
 
-EntityEvents.spawned("infectious:radioactive_zombie", event => {
-  let entity = event.entity
-  if (!entity || !entity.server) return
-  if (entity.tags.contains("dz_boss_showroom") || entity.tags.contains("dz_boss_loadtest")) return
-  let tier = dzRadiationTier(entity)
-  if (tier >= DZ_RADIATION_UNLOCK_TIER) return
-  // EntityEvents.spawned is backed by Forge's EntityJoinLevelEvent. discard()
-  // here marks the object removed but still lets the add/tracker path continue,
-  // leaving a removed entity in ServerEntity and replaying stale packets at login.
-  // Cancel the join transaction itself so no entity id or tracker is published.
-  event.cancel()
-  console.info("[PROJECT DEADZONE][Radiation gate] cancelled radioactive zombie join at " +
-    Math.floor(entity.x) + "," + Math.floor(entity.y) + "," + Math.floor(entity.z) +
-    " (region tier " + tier + ")")
-})
+// Infectious finalises several variants after EntityJoinLevelEvent and may try
+// to add the same instance again.  Cancelling or discarding any Infectious
+// entity from EntityEvents.spawned therefore creates "removed already" adds.
+// Keep its entity lifecycle entirely owned by the mod.  Progression is enforced
+// on the exposure/effect side below and in authored Horde spawn pools.
 
 PlayerEvents.tick(event => {
   let player = event.player
@@ -36,4 +26,4 @@ PlayerEvents.tick(event => {
   player.runCommandSilent("effect clear @s apocalypsenow:radiationsickness")
 })
 
-console.info("[PROJECT DEADZONE] Radiation enemies/effects are restricted to geographic Region T3+")
+console.info("[PROJECT DEADZONE] Radiation exposure is restricted to geographic Region T3+ without intercepting Infectious entity joins")

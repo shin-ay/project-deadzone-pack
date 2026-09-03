@@ -10,7 +10,7 @@ hash = "528d6f3d1d10b47ad0394f88f622c64ad325aaa8b1d0b191270a9cfc598280d0"
 
 [[files]]
 file = "PDZ_CUMULATIVE_FIX_20260903_JP.md"
-hash = "6dad397ef20d84ac72d66ba140530fd5990401e49d8ce670c2cc477b9c2b6570"
+hash = "54f7e2fc9706d505743f9a04227432c7f498f83e82e43f3653d078dedf4e1012"
 
 [[files]]
 file = "README_R4_JP.txt"
@@ -11221,6 +11221,10 @@ file = "kubejs/server_scripts/project_deadzone_defense_recovery_v0_1.js"
 hash = "e47d003a9e25eee3fdbbdf4dc606c8f508c7004629fdebbe29131fb264d556bc"
 
 [[files]]
+file = "kubejs/server_scripts/project_deadzone_effect_visibility_policy_v0_1.js"
+hash = "6078388cbdc41241fbfea85d170300cade16f091e00900063ef145beb9a915b9"
+
+[[files]]
 file = "kubejs/server_scripts/project_deadzone_epicfight_mobility_v0_1.js"
 hash = "36325b5aae6b535c2cb85d573402efba30447d5ffc7b3e8fc6ad35f8dbf61b4c"
 
@@ -11310,7 +11314,7 @@ hash = "1bb5f39b03dface86391cdbb6c2ab2b512f48978b2c6a74e3f619f9deccfe889"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_job_abilities_v0_1.js"
-hash = "0ea776c150a048f61232b10afe6f8094e99ce6c8aefbf710ecca58ab44213845"
+hash = "a2d36ea7f6f652d1bb66c399f768448e367a0c0a01bcdcf7f13af26af27208dc"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_job_career_v0_1.js"
@@ -11422,7 +11426,7 @@ hash = "ae1515f5e658b984684ef1abde4787f9f1b3f0f97ef48d8adb244a284ccdf0b0"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_radiation_tier_gate_v0_1.js"
-hash = "e3c9f98f17ebd9fc8b64737897ceaf86145a5775af22854a47cddaf3b8209fa8"
+hash = "5259c20ad4ce0ae2e7054abaac1d2a33c7c1bb912c476e16c47728a74c6f9367"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_radio_world_status_v0_1.js"
@@ -11482,7 +11486,7 @@ hash = "0a3f5645416d3d5cc35a9c7c2b9e7e01dabf5357d55507158c427e2d4398ca5f"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_skill_event_effects_v0_1.js"
-hash = "220c2e7eb44003f969a9056bdbc7cfb4aa244e250c820d1afd16dd279a526ee1"
+hash = "94cc8e857abdb4e3899fcbc583fb92a3cd6b3159c80dbe27e48da0c2285f880a"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_skill_tier_gates_v0_1.js"
@@ -11550,7 +11554,7 @@ hash = "94286824cdc64ab99106f7554edb98e070d951ca9847a8e0b50aecc12e919cdd"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_t0_safezone_v0_1.js"
-hash = "dd329bd50244c00beb2875e3e91e2765a4b78d1e2d02c1861b49b458c28eeb2e"
+hash = "d27b86a2e33bb2933e6e1a1164ca722783b7d98e69c84c5692c6097816da78a6"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_t4_first_voice_boss_v0_1.js"
@@ -11582,7 +11586,7 @@ hash = "ce8e4e91805a4a4aebc958e561ebc2c00d992349736cc4329bc39a80ea970411"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_talent_runtime_v0_1.js"
-hash = "ab035111fbba08de2a1238bbfff9cb58f0489323b7afd66f4f39cb7ead8b12d7"
+hash = "7e485f9836d50aeb660794151806e73b6ee587a21f22546b325cdc8c0126a37b"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_temperature_nonlethal_v0_1.js"
@@ -13133,6 +13137,10 @@ metafile = true
 file = "mods/patchouli.pw.toml"
 hash = "13e92501fb23e484ffd323438f85a82825d4d93426f20e19a1856c7bff289ad9"
 metafile = true
+
+[[files]]
+file = "mods/pdz-infectious-lifecycle-compat-1.0.0.jar"
+hash = "61a02df84a0dfddcaf5592317132dc32011859336ffc46c8d1617d991d48695a"
 
 [[files]]
 file = "mods/pdz-loot-compat-1.0.0.jar"

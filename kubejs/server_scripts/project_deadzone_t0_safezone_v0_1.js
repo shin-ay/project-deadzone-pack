@@ -1,4 +1,4 @@
-// PROJECT DEADZONE T0 onboarding safe zone v0.3
+// PROJECT DEADZONE T0 onboarding safe zone v0.4
 // Reject unwanted spawns individually with discard(). The old implementation
 // scanned a 1400x56x1400 box every five seconds and used /kill, triggering
 // death/drop/XP hooks in bulk and causing visible server stalls.
@@ -139,6 +139,10 @@ function dzT0RejectSpawn(event, radius) {
 
 function dzCampRejectSpawn(event) {
   let entity=event.entity
+  // Infectious owns a post-join variant finaliser. Cancelling its join here
+  // makes that finaliser re-add an already removed instance. Never intercept
+  // this namespace; camp safety is handled by exposure and combat systems.
+  if (entity && String(entity.type).indexOf("infectious:")===0) return
   if (!entity || dzT0Exempt(entity) || !dzIsHostileMob(entity) ||
       !dzCampProtectedSpawn(entity,DZ_T0_CAMP_RADIUS)) return
   event.cancel()
