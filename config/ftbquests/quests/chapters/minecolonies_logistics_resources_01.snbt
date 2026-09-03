@@ -8704,7 +8704,8 @@
 				}
 				{
 					id: "0BBC22333B472582"
-					item: "minecraft:emerald_block"
+					count: 9
+					item: "lightmanscurrency:coin_copper"
 					team_reward: true
 					type: "item"
 				}
@@ -23231,7 +23232,8 @@
 				}
 				{
 					id: "2CDAC98836A36EB3"
-					item: "minecraft:emerald_block"
+					count: 9
+					item: "lightmanscurrency:coin_copper"
 					team_reward: true
 					type: "item"
 				}

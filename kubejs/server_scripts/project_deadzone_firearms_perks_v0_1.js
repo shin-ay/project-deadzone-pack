@@ -233,7 +233,7 @@ TimelessGunEvents.entityHurtByGunPre(event => {
   } catch (ignored) {}
   // Do not apply M&S weapon damage here. PDZ's gun WeaponType override routes
   // the TaCZ result through M&S compatibility conversion after this hook, so
-  // Weapon Damage, Crit, Affix and mitigation are calculated exactly once.
+  // Weapon Damage, Affix and mitigation are calculated exactly once.
   // Base JOB passive. JOB progression is independent from Talent SP.
   if (String(player.persistentData.getString('dz_job_id')) === 'weapons_expert') multiplier += 0.05
   let motion = player.getDeltaMovement()
@@ -283,7 +283,9 @@ TimelessGunEvents.entityHurtByGunPre(event => {
   }
 
   stage = 'apply'
-  let criticalMultiplier = 1.0
+  // TaCZ damage enters after the normal M&S weapon critical path. Connect the
+  // already-defined M&S critical roll exactly once to the bridged gun damage.
+  let criticalMultiplier = dzMnsGunCritical(player)
   let finalAmount = Number(baseAmount * multiplier * criticalMultiplier)
   if (!isFinite(finalAmount) || finalAmount <= 0) return
   // Keep a cheap last-hit snapshot for balancing. It has no chat/network cost
@@ -311,8 +313,9 @@ TimelessGunEvents.entityHurtByGunPre(event => {
   }
 })
 
-// M&S compatibility conversion owns Crit, Lifesteal, Health on Kill and Magic
-// Shield on Kill. Replaying them from TaCZ Post/Kill events would double proc.
+// Gun critical is bridged above because TaCZ bypasses the native critical roll.
+// M&S compatibility still owns Lifesteal, Health on Kill and Magic Shield on
+// Kill; replaying those from TaCZ Post/Kill events would double proc.
 
 ServerEvents.commandRegistry(event => {
   const {commands: Commands} = event
@@ -335,7 +338,7 @@ ServerEvents.commandRegistry(event => {
       +' x crit '+Number(player.persistentData.getDouble('dz_firearms_last_crit_multiplier')).toFixed(2)
       +' = '+Number(player.persistentData.getDouble('dz_firearms_last_final')).toFixed(2)+' pre-armor'
     ).gray())
-    player.tell(Text.of('M&S Weapon Damage・Crit・Affix・Leech: native compatibility conversion').gray())
+    player.tell(Text.of('M&S gun Crit: PDZ bridge / Affix・Leech: native compatibility conversion').gray())
     return 1
   }))
 

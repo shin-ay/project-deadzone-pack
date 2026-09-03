@@ -33,6 +33,10 @@ ServerEvents.tags("item", event => {
   ])
 
   event.add("project_deadzone:raw_shellfish", [
+    "crabbersdelight:crab",
+    "crabbersdelight:shrimp",
+    "crabbersdelight:clam",
+    "crabbersdelight:clawster",
     "hybrid_aquatic:raw_crab",
     "hybrid_aquatic:raw_shrimp",
     "hybrid_aquatic:raw_lobster",

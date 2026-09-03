@@ -27,7 +27,7 @@ const PDZ_RR_HOSTILES = [
 const PDZ_RR_POOLS = [
   [],
   [
-    {w:28, id:'apocalypsenow:coins', min:2, max:5},
+    {w:28, id:'lightmanscurrency:coin_copper', min:2, max:5},
     {w:24, id:'apocalypsenow:bandage', min:1, max:2},
     {w:24, id:'minecraft:iron_ingot', min:1, max:3},
     {w:24, id:'tacz:ammo', min:6, max:10, nbt:'{AmmoId:"tacz:9mm"}'}
@@ -44,7 +44,7 @@ const PDZ_RR_POOLS = [
     {w:18, id:'apocalypsenow:pain_killers', min:1, max:2},
     {w:20, id:'immersiveengineering:component_iron', min:1, max:2},
     {w:18, id:'minecraft:gold_ingot', min:2, max:4},
-    {w:10, id:'minecraft:emerald', min:1, max:2},
+    {w:10, id:'lightmanscurrency:coin_copper', min:2, max:4},
     {w:12, id:'tacz:ammo', min:16, max:24, nbt:'{AmmoId:"tacz:12g"}'}
   ],
   [

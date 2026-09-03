@@ -1,4 +1,4 @@
-// PROJECT DEADZONE Epic Fight combat reward v0.2
+// PROJECT DEADZONE Epic Fight combat reward v0.3
 // Epic Fight battle mode is the committed melee stance. Mining-mode attacks
 // remain available for work and emergencies. Melee attacks now receive a real
 // per-hit damage roll, while battle-mode attack animations receive a short
@@ -19,7 +19,11 @@ const PDZ_EF_MNS_STACK_SAVING = Java.loadClass(
 const PDZ_EF_STAMINA_LISTENER_ID = PDZ_EF_UUID.fromString(
   "d34db300-0000-4000-8000-000000000020"
 )
+const PDZ_EF_COMBO_LISTENER_ID = PDZ_EF_UUID.fromString(
+  "d34db300-0000-4000-8000-000000000021"
+)
 const PDZ_EF_STAMINA_COST_MULTIPLIER = 0.72
+const PDZ_EF_BATTLE_DAMAGE_MULTIPLIER = 1.20
 let PDZ_EF_STAMINA_LISTENERS = {}
 
 function pdzEpicFightStackId(stack) {
@@ -82,6 +86,23 @@ function pdzEpicFightInstallStaminaListener(player) {
         consumeEvent.setAmount(adjusted)
         activePlayer.persistentData.putDouble("dz_epicfight_last_stamina_original", original)
         activePlayer.persistentData.putDouble("dz_epicfight_last_stamina_adjusted", adjusted)
+      }
+    )
+    // BasicAttack advances COMBO_COUNTER before the Forge hurt event. Capture
+    // the event's previous value: it is the animation stage that actually hit,
+    // while reading the container later can describe the *next* swing.
+    listener.removeListener(PDZ_EF_EVENT_TYPES.COMBO_COUNTER_HANDLE_EVENT, PDZ_EF_COMBO_LISTENER_ID)
+    listener.addEventListener(
+      PDZ_EF_EVENT_TYPES.COMBO_COUNTER_HANDLE_EVENT,
+      PDZ_EF_COMBO_LISTENER_ID,
+      comboEvent => {
+        let activePatch = comboEvent.getPlayerPatch()
+        let activePlayer = activePatch ? activePatch.getOriginal() : null
+        if (!activePlayer) return
+        activePlayer.persistentData.putInt("dz_epicfight_observed_combo", Math.max(0, Number(comboEvent.getPrevValue()) || 0))
+        activePlayer.persistentData.putLong("dz_epicfight_observed_combo_tick", Math.floor(Number(activePlayer.level.gameTime)))
+        try { activePlayer.persistentData.putString("dz_epicfight_last_animation", String(comboEvent.getAnimation())) }
+        catch (ignored) {}
       }
     )
     PDZ_EF_STAMINA_LISTENERS[key] = identity
@@ -150,13 +171,21 @@ function pdzEpicFightRollDamage(player, stack, amount) {
   return amount * roll
 }
 
-function pdzEpicFightCombo(patch) {
+function pdzEpicFightCombo(player, patch) {
+  let now = Math.floor(Number(player.level.gameTime))
+  let observedAt = Number(player.persistentData.getLong("dz_epicfight_observed_combo_tick"))
+  if (now - observedAt >= 0 && now - observedAt <= 20)
+    return Math.max(0, Number(player.persistentData.getInt("dz_epicfight_observed_combo")) || 0)
   try {
     let basic = patch.getSkill(PDZ_EF_SKILL_SLOTS.BASIC_ATTACK)
     if (!basic || basic.isEmpty()) return 0
     let key = PDZ_EF_SKILL_DATA_KEYS.COMBO_COUNTER.get()
     return Math.max(0, Number(basic.getDataManager().getDataValue(key)) || 0)
-  } catch (ignored) {
+  } catch (error) {
+    if (!player.persistentData.getBoolean("dz_epicfight_combo_read_error")) {
+      player.persistentData.putBoolean("dz_epicfight_combo_read_error", true)
+      console.error("[PROJECT DEADZONE][Epic Fight] combo counter read failed: " + error)
+    }
     return 0
   }
 }
@@ -210,9 +239,10 @@ ForgeEvents.onEvent("net.minecraftforge.event.entity.living.LivingHurtEvent", ev
   let patch = pdzEpicFightPatch(attacker)
   if (!patch || !patch.isEpicFightMode()) return
 
-  let combo = pdzEpicFightCombo(patch)
+  let combo = pdzEpicFightCombo(attacker, patch)
   let multiplier = pdzEpicFightMultiplier(combo)
-  if (multiplier > 1.0) event.setAmount(event.amount * multiplier)
+  let beforeBattle = Number(event.amount)
+  event.setAmount(beforeBattle * PDZ_EF_BATTLE_DAMAGE_MULTIPLIER * multiplier)
 
   let now = Number(attacker.level.gameTime)
   let guardTicks = combo >= 2 ? 18 : (combo === 1 ? 15 : 12)
@@ -226,5 +256,8 @@ ForgeEvents.onEvent("net.minecraftforge.event.entity.living.LivingHurtEvent", ev
   } catch (ignored) {}
 
   attacker.persistentData.putInt("dz_epicfight_last_combo", combo)
+  attacker.persistentData.putDouble("dz_epicfight_last_base_multiplier", PDZ_EF_BATTLE_DAMAGE_MULTIPLIER)
   attacker.persistentData.putDouble("dz_epicfight_last_multiplier", multiplier)
+  attacker.persistentData.putDouble("dz_epicfight_last_before_battle", beforeBattle)
+  attacker.persistentData.putDouble("dz_epicfight_last_after_battle", Number(event.amount))
 })

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "sullysmod"
+    }
+  ],
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "crabbersdelight:lanternfish_barrel"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "sullysmod:lanternfish"
+  }
+}

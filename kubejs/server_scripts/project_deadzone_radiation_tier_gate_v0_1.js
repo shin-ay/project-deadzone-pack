@@ -1,4 +1,4 @@
-// PROJECT DEADZONE radiation progression gate v0.1
+// PROJECT DEADZONE radiation progression gate v0.2
 // Infectious' radioactive enemy/effect is reserved for geographic Region T3+.
 // Its effect also throws repeatedly when it meets some current damage hooks,
 // so removing it before T3 protects both early balance and server stability.
@@ -14,9 +14,16 @@ EntityEvents.spawned("infectious:radioactive_zombie", event => {
   let entity = event.entity
   if (!entity || !entity.server) return
   if (entity.tags.contains("dz_boss_showroom") || entity.tags.contains("dz_boss_loadtest")) return
-  if (dzRadiationTier(entity) < DZ_RADIATION_UNLOCK_TIER) {
-    entity.discard()
-  }
+  let tier = dzRadiationTier(entity)
+  if (tier >= DZ_RADIATION_UNLOCK_TIER) return
+  // EntityEvents.spawned is backed by Forge's EntityJoinLevelEvent. discard()
+  // here marks the object removed but still lets the add/tracker path continue,
+  // leaving a removed entity in ServerEntity and replaying stale packets at login.
+  // Cancel the join transaction itself so no entity id or tracker is published.
+  event.cancel()
+  console.info("[PROJECT DEADZONE][Radiation gate] cancelled radioactive zombie join at " +
+    Math.floor(entity.x) + "," + Math.floor(entity.y) + "," + Math.floor(entity.z) +
+    " (region tier " + tier + ")")
 })
 
 PlayerEvents.tick(event => {

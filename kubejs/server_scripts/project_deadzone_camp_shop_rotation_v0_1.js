@@ -1,4 +1,4 @@
-// PROJECT DEADZONE common camp shop rotation v0.5
+// PROJECT DEADZONE common camp shop rotation v0.6
 // Shops rotate both stock and category-specific buyback offers every two hours.
 const DZ_SHOP_INTERVAL = 120 * 60 * 1000
 const DZ_SHOP_RETRY_LOG_INTERVAL = 10 * 60 * 1000
@@ -65,6 +65,27 @@ function dzShopShuffle(values) {
   for(let i=result.length-1;i>0;i--){let j=Math.floor(Math.random()*(i+1));let t=result[i];result[i]=result[j];result[j]=t}
   return result
 }
+function dzShopPickWithoutRepeat(server,key,values,count){
+  let last=server.persistentData.getString("dz_camp_shop_last_"+key)
+  let picked=[]
+  for(let attempt=0;attempt<8;attempt++){
+    picked=dzShopShuffle(values).slice(0,count)
+    let signature=picked.map(v=>v.id).sort().join("|")
+    if(signature!==last||values.length<=count)break
+  }
+  server.persistentData.putString("dz_camp_shop_last_"+key,picked.map(v=>v.id).sort().join("|"))
+  return picked
+}
+function dzShopNextKey(shop){return "dz_camp_shop_next_"+shop.key}
+function dzShopDue(server,shop,now){
+  let next=Number(server.persistentData.getLong(dzShopNextKey(shop)))
+  if(next<=0){
+    // Migrate the old shared deadline without postponing an overdue shop.
+    next=Number(server.persistentData.getLong("dz_camp_shops_next_rotation"))
+    if(next>0)server.persistentData.putLong(dzShopNextKey(shop),next)
+  }
+  return next<=0||now>=next
+}
 function dzShopLifeReputation(server){return Math.max(0,server.persistentData.getInt("dz_life_supply_reputation"))}
 function dzShopLifeRank(server){let r=dzShopLifeReputation(server);return r>=50?3:r>=25?2:r>=10?1:0}
 function dzShopCampLevel(server){return Math.max(0,Math.min(3,server.persistentData.getInt("dz_camp_development_level")))}
@@ -112,24 +133,25 @@ function dzRotateOneShop(server,shop){
   let communityRank=dzShopCommunityRank(server)
   let stockPool=shop.pool.filter(v=>(v.rep||0)<=lifeRank&&(v.camp||0)<=campLevel&&(v.community||0)<=communityRank)
   let stockCount=2+((shop.key==="food"&&lifeRank>=2)?1:0)+(campLevel>=2?1:0)+(communityRank>=1?1:0)+(communityRank>=3?1:0)
-  let stock=shop.fixed.concat(dzShopShuffle(stockPool).slice(0,stockCount))
+  let stock=shop.fixed.concat(dzShopPickWithoutRepeat(server,shop.key+"_sale",stockPool,stockCount))
   let storyUnlock=Math.max(0,server.persistentData.getInt("deadzone_world_tier"))
   let eligibleBuyback=(shop.buyback||[]).filter(v=>storyUnlock>=v.tier&&(v.rep||0)<=lifeRank)
   // Four rotating entries give multiplayer groups more outlets without making
   // any single renewable resource a permanent money farm.
-  let buyback=dzShopShuffle(eligibleBuyback).slice(0,4+(campLevel>=2?1:0)+(communityRank>=2?1:0))
+  let buyback=dzShopPickWithoutRepeat(server,shop.key+"_buy",eligibleBuyback,4+(campLevel>=2?1:0)+(communityRank>=2?1:0))
   let storyFactor=dzShopStoryFactor(server,shop.key)
   let recipes=stock.map(s=>dzShopOffer(s,storyFactor)).concat(buyback.map(s=>dzShopBuybackOffer(s,storyFactor)))
   let nbt='{Offers:{Inventory:{},Recipes:{Recipes:['+recipes.join(",")+']}},TradingData:{TradingDataSet:{LastReset:0L,MaxUses:24,ResetsEveryMin:120,RewardedXP:0,Type:"BASIC"}}}'
   if(server.runCommandSilent("data merge entity "+selector+" "+nbt)<=0)return false
+  server.persistentData.putLong(dzShopNextKey(shop),Date.now()+DZ_SHOP_INTERVAL)
   console.info("[PROJECT DEADZONE][Camp Shop] "+shop.key+" Story S"+storyUnlock+" lifeRank="+lifeRank+" campLevel="+campLevel+" communityRank="+communityRank+" storyFactor="+storyFactor.toFixed(2)+" stock="+stock.map(v=>v.id).join(", ")+" buyback="+buyback.map(v=>v.id).join(", "))
   return true
 }
 function dzRotateCampShops(server,announce){
   let changed=0
-  DZ_SHOPS.forEach(shop=>{if(dzRotateOneShop(server,shop))changed++})
+  let now=Date.now()
+  DZ_SHOPS.forEach(shop=>{if(dzShopDue(server,shop,now)&&dzRotateOneShop(server,shop))changed++})
   if(changed>0){
-    server.persistentData.putLong("dz_camp_shops_next_rotation",Date.now()+DZ_SHOP_INTERVAL)
     server.persistentData.putLong("dz_camp_shops_next_missing_log",0)
     console.info("[PROJECT DEADZONE][Camp Shop] rotation complete: "+changed+"/"+DZ_SHOPS.length+" shops (sale and buyback offers reset)")
     if(announce)server.runCommandSilent('tellraw @a {"text":"キャンプ各店の販売品・買取品が更新されました。","color":"yellow"}')
@@ -147,27 +169,30 @@ function dzRotateCampShops(server,announce){
   return changed
 }
 function dzShopStatus(server,player){
-  let next=Number(server.persistentData.getLong("dz_camp_shops_next_rotation"))
-  let minutes=next<=0?0:Math.max(0,Math.ceil((next-Date.now())/60000))
+  let due=[]
   let loaded=[]
   DZ_SHOPS.forEach(shop=>{
     if(server.runCommandSilent("execute if entity @e[type=easy_npc:humanoid,tag="+shop.tag+",limit=1]")>0)loaded.push(shop.key)
+    if(dzShopDue(server,shop,Date.now()))due.push(shop.key)
   })
-  player.tell(Text.of("Camp Shops: 次の販売・買取更新まで約"+minutes+"分 / 読込済み "+loaded.length+"/"+DZ_SHOPS.length+" ["+loaded.join(", ")+"] / 生活評判 "+dzShopLifeReputation(server)+" Rank "+dzShopLifeRank(server)+" / Camp Lv"+dzShopCampLevel(server)+" / 総合Rank "+dzShopCommunityRank(server)).gold())
+  player.tell(Text.of("Camp Shops: 期限切れ ["+due.join(", ")+"] / 読込済み "+loaded.length+"/"+DZ_SHOPS.length+" ["+loaded.join(", ")+"] / 生活評判 "+dzShopLifeReputation(server)+" Rank "+dzShopLifeRank(server)+" / Camp Lv"+dzShopCampLevel(server)+" / 総合Rank "+dzShopCommunityRank(server)).gold())
   return 1
 }
 let dzShopTicks=0
 ServerEvents.tick(event=>{
   if(++dzShopTicks<1200)return
   dzShopTicks=0
-  let next=Number(event.server.persistentData.getLong("dz_camp_shops_next_rotation"))
-  if(next<=0||Date.now()>=next)dzRotateCampShops(event.server,next>0)
+  dzRotateCampShops(event.server,true)
 })
 PlayerEvents.loggedIn(event=>event.player.server.scheduleInTicks(120,callback=>{
   let server=event.player.server
-  let next=Number(server.persistentData.getLong("dz_camp_shops_next_rotation"))
-  if(next<=0||Date.now()>=next)dzRotateCampShops(server,false)
+  dzRotateCampShops(server,false)
 }))
+EntityEvents.spawned("easy_npc:humanoid",event=>event.server.scheduleInTicks(5,callback=>dzRotateCampShops(event.server,false)))
+ItemEvents.entityInteracted(event=>{
+  let entity=event.target
+  if(entity&&String(entity.type)==="easy_npc:humanoid")event.server.scheduleInTicks(1,callback=>dzRotateCampShops(event.server,false))
+})
 ServerEvents.commandRegistry(event=>{
   const {commands:Commands}=event
   let root=Commands.literal("deadzoneshops")

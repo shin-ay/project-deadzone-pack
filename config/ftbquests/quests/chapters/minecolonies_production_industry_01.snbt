@@ -12534,7 +12534,8 @@
 				}
 				{
 					id: "72A7D3FF1F875B51"
-					item: "minecraft:emerald_block"
+					count: 9
+					item: "lightmanscurrency:coin_copper"
 					team_reward: true
 					type: "item"
 				}
@@ -38606,9 +38607,9 @@
 					type: "item"
 				}
 				{
-					count: 4
+					count: 36
 					id: "109767A273CEE86C"
-					item: "minecraft:emerald_block"
+					item: "lightmanscurrency:coin_copper"
 					team_reward: true
 					type: "item"
 				}

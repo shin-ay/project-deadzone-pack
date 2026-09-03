@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "sullysmod"
+    }
+  ],
+  "category": "building",
+  "key": {
+    "#": {
+      "item": "sullysmod:lanternfish"
+    }
+  },
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "result": {
+    "item": "crabbersdelight:lanternfish_barrel"
+  },
+  "show_notification": true
+}

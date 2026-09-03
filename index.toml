@@ -9,6 +9,10 @@ file = "PDZ_BGM_TEST_ON.bat"
 hash = "528d6f3d1d10b47ad0394f88f622c64ad325aaa8b1d0b191270a9cfc598280d0"
 
 [[files]]
+file = "PDZ_CUMULATIVE_FIX_20260903_JP.md"
+hash = "6dad397ef20d84ac72d66ba140530fd5990401e49d8ce670c2cc477b9c2b6570"
+
+[[files]]
 file = "README_R4_JP.txt"
 hash = "02ba75b4b3c779b214882951c1e163c93c262c8b4c2566af7acc9c2d1fc0c943"
 
@@ -1526,7 +1530,7 @@ hash = "c52315bc5e82a05507e0d1357160caf4f5a8edd0954c633f1c963e9a21b069de"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/deadzone_settlement_industries_01.snbt"
-hash = "a7d6d8bee467de01f3ec7da60ea195f2f637620b52dc0dae12544be271269738"
+hash = "7329aec3fb50b36b695a61ca53b6b96866dfa0bc68539d3b2f4fca3038161e10"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/deadzone_settlement_liberation_01.snbt"
@@ -1554,7 +1558,7 @@ hash = "c517e730223311d665b09cc6b2595b43a664d2a329ed3061136f9c434ec7b965"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/minecolonies_civic_education_01.snbt"
-hash = "049d738ec222163c21680f5b985528171533356ec40820066ad8db36fdc0b666"
+hash = "98a651a5318ddfaa8853c235c8c1db15adecc2efa228cb49b387259dc66771a4"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/minecolonies_colony_onboarding_01.snbt"
@@ -1574,7 +1578,7 @@ hash = "8c42d4bc97fa4f01bfc3fb899e162dd192d30362c96987a11b1521adc2d13142"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/minecolonies_logistics_resources_01.snbt"
-hash = "c0285598445ae1da4c92bf221280703573ae33230a2f37e544561a9b60c2994c"
+hash = "3cd08b25df2f90680001ecd27ae7f2d830a8e045ea98864d0bad7e3443b76e9a"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/minecolonies_operations_01.snbt"
@@ -1586,7 +1590,7 @@ hash = "a6989c88adee2f89c58fdb912e1ba33dba6d175a56effb3e30317a42de9e13eb"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/minecolonies_production_industry_01.snbt"
-hash = "fb2447f3186c784f731406dda7d856b3fcd0b5945af8175c8db1cc6e002d50e8"
+hash = "6ab6011c83f0bb73458f44b330662d0603aa82ac6c87a0f0679836959278e869"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/minecolonies_residence_materials_01.snbt"
@@ -4287,6 +4291,14 @@ hash = "9fa99b815135fd5f9796d5af56c93f66b82096fd15811553f52492a5f5010ee3"
 [[files]]
 file = "kubejs/data/chaoszpack_structures/worldgen/structure_set/watch_tower_1.json"
 hash = "e46090eb9a7247c91a7274708fa34ecae7ae7b48384127a24dbd49603e150731"
+
+[[files]]
+file = "kubejs/data/crabbersdelight/recipes/lanternfish_barrel.json"
+hash = "66d14e4bdca47c3801417e8ebe20ba1965a11415bc8ea99eef60de2b54554319"
+
+[[files]]
+file = "kubejs/data/crabbersdelight/recipes/lanternfish_from_barrel.json"
+hash = "cdd338313a5548e95afc2fcff1f5eb67c5fb43ada34c5acfeb75fc84cb0f41e9"
 
 [[files]]
 file = "kubejs/data/createmechanicalcompanion/worldgen/structure_set/illager_workshop.json"
@@ -8202,7 +8214,7 @@ hash = "91c719f59fc16481bd2390248e7c516f209032c2d1233e0d6772db647babd7bb"
 
 [[files]]
 file = "kubejs/data/project_deadzone/functions/basecamp/apply_staff_profiles.mcfunction"
-hash = "0e3d3e94b08ba6087e0620df3b6ea715d1fd6cef39022b48f3e2a4d7e0601c63"
+hash = "744313ff636048e6dfffd9dd529c45fddaac755e934fb9263aa44ec0825b087e"
 
 [[files]]
 file = "kubejs/data/project_deadzone/functions/basecamp/apply_staff_random_dialogues.mcfunction"
@@ -8210,11 +8222,11 @@ hash = "b7377e2c3d4b5afe5619d64801a6783457a9d5e7460b7e91ba8d7e43d160e1d9"
 
 [[files]]
 file = "kubejs/data/project_deadzone/functions/basecamp/apply_staff_services.mcfunction"
-hash = "aa4a3d258bd7f82aa9b47695ea719577f19d771f63fc83ece0158ddf6b3f586a"
+hash = "0766703a1594d61c751ea8a91c354f83e981021f5ee5e03a939a4c25833666b4"
 
 [[files]]
 file = "kubejs/data/project_deadzone/functions/basecamp/apply_trade_economy.mcfunction"
-hash = "b9840db6589fd750d0c18f34b8885320b558537241c195a7ec0cdfc4f0163cf4"
+hash = "6848839e0b44d7b0aa876341d7a26898e345c854da0e35e694eb4eb2831fb542"
 
 [[files]]
 file = "kubejs/data/project_deadzone/functions/basecamp/easy_npc_import_test.mcfunction"
@@ -9654,7 +9666,7 @@ hash = "8db73ee4e5d76d64b53e31fc340e97819b5af66fd6648d4062cd5c472edbbe4d"
 
 [[files]]
 file = "kubejs/data/project_deadzone/functions/factions/activity/spawn_trade_caravan.mcfunction"
-hash = "c3d6990f47d138dc068b5f8615983937b7ca2063004cb9e8171d8bea75a86a57"
+hash = "ef5093b7ec544c256641681a4686efb108e587d4948a1ea225cad3c9476f4294"
 
 [[files]]
 file = "kubejs/data/project_deadzone/functions/factions/cleanup_near.mcfunction"
@@ -10050,7 +10062,7 @@ hash = "49755d32fb2f7d5932f7fd4eebbe24ee863e1d213abdb5fd5825e5331127120e"
 
 [[files]]
 file = "kubejs/data/project_deadzone/loot_tables/chests/raider_roadblock.json"
-hash = "92ee1b83ac85bb3f99025cdc52469e42b0358f53e3f536f066af9a87d3eb526f"
+hash = "f5fb21eeaac99be6505591251aa6360d23ff349d265ebc2010695c9894d0a61c"
 
 [[files]]
 file = "kubejs/data/project_deadzone/loot_tables/chests/remnant_relay.json"
@@ -10066,7 +10078,7 @@ hash = "5725881b03e18580a2c29b7c664216e5eff22b5b67c9cec26ad115794b2b433c"
 
 [[files]]
 file = "kubejs/data/project_deadzone/loot_tables/chests/tier0_common.json"
-hash = "0f18af16d6448be03108769ee1d9e6364f92279895f77af010f62b028c83fe92"
+hash = "9af5f72a5ae9d793e584ae1f3368ca3ec9be583ffc0c5165bb1cd5c1509f8874"
 
 [[files]]
 file = "kubejs/data/project_deadzone/loot_tables/chests/tier1_utility.json"
@@ -11166,7 +11178,7 @@ hash = "b5965da32e508918d0890957ba7138467fcfec37e98693e8c0e30ba1b76523e0"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_camp_shop_rotation_v0_1.js"
-hash = "efd98eb60f46e5b49608d45b0ab4cdfb8c1f9341984fd921db3747f9b3e73d11"
+hash = "5fb09ad6c01414bbf8b916edc56c9d435dff40cea283ff5a3a8553e7f11d298f"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_career_equipment_use_v0_1.js"
@@ -11186,7 +11198,11 @@ hash = "e4ffc9d79d471dd43d697fa8a7d5a43a01aa3cb08d001e894be6d128f1f0a1ec"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_cooking_menus_v0_1.js"
-hash = "dcd8e0ec9e27e08d2ce7c0a7fd5a72303c29527f3819ba500cf91b5d6c238a49"
+hash = "0a054505752ac0d5a1bf182b03842c200205de54c74a774014fd76fabc44af2f"
+
+[[files]]
+file = "kubejs/server_scripts/project_deadzone_credit_only_merchants_v0_1.js"
+hash = "fceed9bfd1e59a7a255b5549ea8cbb22c161a1604cb471ef123607e92bdc70c5"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_cte2_combat_scaling_v0_1.js"
@@ -11194,7 +11210,7 @@ hash = "ab304788495837f97f4952a60ad821aa6d2cdc1f9bed22ccb7541a281136eca5"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_currency_v0_1.js"
-hash = "7e1bd4a11cae9f61c8f9f46a7e58b663fd431cad8b60f704934b2209d0b475e7"
+hash = "f3c64b56dca3b56631bc5481ffae41098d5b7273cb5f08ae5e38ff21f3fc02b1"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_decontamination_unit_v0_1.js"
@@ -11234,7 +11250,7 @@ hash = "de2327b1e19d91d2607c4efad5f9ecdeb81971923f10a337b32bdb2e691882a9"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_firearms_perks_v0_1.js"
-hash = "24c6ddc381798c7ffbf55d7a9e0e777a21c6342ad69719697397d6fa99464f29"
+hash = "fc4835d38a271416660751e60ed1ef1a9ba0a2d4e22e1989e6e3a54691962527"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_fitness_perks_v0_1.js"
@@ -11254,7 +11270,7 @@ hash = "cc2e963c48bd837b9afc2f60dd152253a19ceb88232db813719a76a4c24b8ea1"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_geographic_risk_rewards_v0_1.js"
-hash = "bd6350e20b88335a3fd3f080b4766ae128bafd7acb6ba7b79e982d4b82a185aa"
+hash = "afaeae6f594744a1c5426d2a2290a8a7c85eef663df4470f6b71eea5ac03274b"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_growth_effects_v0_1.js"
@@ -11319,6 +11335,10 @@ hash = "f427499b6c1a5d66f52da100fc258d86650a795669806044a25a73108f7eb9da"
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_logistics_network_v0_1.js"
 hash = "c76020f2c0a82afd54e70a4f719c11d759565509923264cd830431662ef52eb3"
+
+[[files]]
+file = "kubejs/server_scripts/project_deadzone_managed_vending_rotation_v0_1.js"
+hash = "fe85f6f9f992363754c01198c448c0e7697fb43594a66302077180b1c139c427"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_mastery_v0_1.js"
@@ -11402,7 +11422,7 @@ hash = "ae1515f5e658b984684ef1abde4787f9f1b3f0f97ef48d8adb244a284ccdf0b0"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_radiation_tier_gate_v0_1.js"
-hash = "9b5b283e07218505a85e82b6a281c6d3dc1fae406cb06b29ab5f01397eca3aef"
+hash = "e3c9f98f17ebd9fc8b64737897ceaf86145a5775af22854a47cddaf3b8209fa8"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_radio_world_status_v0_1.js"
@@ -11430,7 +11450,7 @@ hash = "34f13f359d38aa1a5fd33424495d150f275200c7e720a6ae1d757306e07d25f3"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_seafood_bridge_v0_1.js"
-hash = "d87c67f17d674ac06e73d03e62ea4c088523ecdcea4ba0fcf134a527301c9a2a"
+hash = "f58a381fec7cecc4866647ece5da9c5fd7625ebd014582ff82ceff7cf8bf4575"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_settlement_faction_bridge_v0_1.js"
@@ -11602,7 +11622,7 @@ hash = "40459e3f90491ffd225500d54cd164955502c6d3eb747434fa1565cb224252f2"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_world_loot_v0_1.js"
-hash = "a0183a0901c17e7571c13e786a17a3953f9ff3cf1b34c509a61006f4bc4140d5"
+hash = "e0bf822866269de851bc0ce916e9b7e1b61fc643693a926be0ef4d86fd096c28"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_xp_talent_enchant_v0_1.js"
@@ -11634,7 +11654,7 @@ hash = "e3d03fc17f90b606550fd6a8bfcd73e8063f691e2aa258b833a9a45a6ba6779c"
 
 [[files]]
 file = "kubejs/startup_scripts/project_deadzone_epicfight_reward_v0_1.js"
-hash = "9d27a6fab9bb64db0770835c9af151ecad42d21a9a67d42146591e9a9edfb51d"
+hash = "9d9bab2e4c9e4e4f15ab21605e972275fc7daf798e5222063993d27c4bedd8a9"
 
 [[files]]
 file = "kubejs/startup_scripts/project_deadzone_field_medical_kit_v0_1.js"
@@ -12391,6 +12411,11 @@ metafile = true
 [[files]]
 file = "mods/cosmetic-armor-reworked.pw.toml"
 hash = "cfa8aa9c0437721dab2057c932c9cf8ec3d3a11f672040601305238d13df85e8"
+metafile = true
+
+[[files]]
+file = "mods/crabbers-delight.pw.toml"
+hash = "a31894c45bf1f9f6ef9e5662682f688f85c23745b50af55f0be525b2b22f5e9c"
 metafile = true
 
 [[files]]

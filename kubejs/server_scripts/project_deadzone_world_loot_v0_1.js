@@ -120,7 +120,7 @@ LootJS.modifiers(event => {
     event.addLootTableModifier(table)
       .randomChance(0.24)
       .addWeightedLoot(1, [
-        Item.of("apocalypsenow:coins", 4).withChance(72),
+        Item.of("lightmanscurrency:coin_copper", 4).withChance(72),
         Item.of("lightmanscurrency:coin_copper", 1).withChance(28)
       ])
   })
@@ -272,7 +272,7 @@ LootJS.modifiers(event => {
         Item.of("minecraft:compass", 1).withChance(17),
         Item.of("minecraft:arrow", 10).withChance(20),
         Item.of("create:copper_nugget", 6).withChance(20),
-        Item.of("apocalypsenow:coins", 5).withChance(15)
+        Item.of("lightmanscurrency:coin_copper", 5).withChance(15)
       ])
   })
 
@@ -319,7 +319,7 @@ LootJS.modifiers(event => {
       .addWeightedLoot(1, [
         Item.of("survival_instinct:rope", 3).withChance(38),
         Item.of("immersiveengineering:hemp_fiber", 3).withChance(30),
-        Item.of("apocalypsenow:coins", 4).withChance(22),
+        Item.of("lightmanscurrency:coin_copper", 4).withChance(22),
         Item.of("lightmanscurrency:coin_copper", 1).withChance(10)
       ])
   })
@@ -363,7 +363,7 @@ LootJS.modifiers(event => {
         Item.of("minecraft:compass", 1).withChance(18),
         Item.of("apocalypsenow:bandage", 2).withChance(20),
         Item.of("survival_instinct:rope", 3).withChance(18),
-        Item.of("apocalypsenow:coins", 5).withChance(14)
+        Item.of("lightmanscurrency:coin_copper", 5).withChance(14)
       ])
   })
 })

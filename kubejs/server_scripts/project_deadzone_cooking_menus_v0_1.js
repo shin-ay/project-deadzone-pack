@@ -45,7 +45,7 @@ global.pdzIsPreparedMeal = stack => {
   if (!id) return false
   let namespace = id.split(":")[0]
   if (namespace === "pamhc2foodextended") return true
-  if (["farmersdelight", "aquaculturedelight", "alexsdelight", "moredelight", "cogs_delight", "cogsdelight", "pamhc2foodcore", "minecolonies"].indexOf(namespace) < 0) return false
+  if (["farmersdelight", "crabbersdelight", "aquaculturedelight", "alexsdelight", "moredelight", "cogs_delight", "cogsdelight", "pamhc2foodcore", "minecolonies"].indexOf(namespace) < 0) return false
   let name = id.split(":")[1] || ""
   return [
     "soup", "stew", "chowder", "sandwich", "burger", "pasta", "noodle", "rice",
@@ -58,7 +58,7 @@ global.pdzIsPreparedMeal = stack => {
 
 global.pdzIsFishMeal = stack => {
   let id = dzMenuFoodId(stack)
-  return global.pdzIsPreparedMeal(stack) && ["fish", "cod", "salmon", "tuna", "seafood", "sushi", "chowder"].some(token => id.indexOf(token) >= 0)
+  return global.pdzIsPreparedMeal(stack) && ["fish", "cod", "salmon", "tuna", "seafood", "sushi", "chowder", "crab", "shrimp", "clam", "clawster", "bisque", "gumbo"].some(token => id.indexOf(token) >= 0)
 }
 
 function dzMenuIsWarm(id) {

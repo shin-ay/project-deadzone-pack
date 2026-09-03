@@ -269,7 +269,7 @@
 			rewards: [{
 				count: 2
 				id: "6D52010000001801"
-				item: "minecraft:emerald"
+				item: "lightmanscurrency:coin_copper"
 				type: "item"
 			}]
 			subtitle: "解放条件: 「村をもう一つのCampにするな」を完了"
@@ -329,7 +329,7 @@
 				{
 					count: 4
 					id: "6D52010000001A02"
-					item: "minecraft:emerald"
+					item: "lightmanscurrency:coin_copper"
 					team_reward: true
 					type: "item"
 				}
