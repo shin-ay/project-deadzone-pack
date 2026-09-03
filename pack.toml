@@ -1,12 +1,12 @@
 name = "PROJECT DEADZONE"
 author = "PROJECT DEADZONE Team"
-version = "BETA-20260903-SAFE-CHUNK-PREGEN-1"
+version = "BETA-20260903-COMBAT-FACTIONS-SNIPER-RC2"
 pack-format = "packwiz:1.1.0"
 
 [index]
 file = "index.toml"
 hash-format = "sha256"
-hash = "7182b65e317b44fe988ddc9a36ec95cff0818bf7c9b1ab39bf49720512f56d04"
+hash = "a5eeedcd81d6e0e90f8a09156605de65527b1348b4beb7449260476ee24e2456"
 
 [versions]
 forge = "47.4.10"

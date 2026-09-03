@@ -1,0 +1,61 @@
+{
+  "type": "minecraft:generic",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "name": "tacznpcs:armor/vanilla/leather",
+          "weight": 3
+        },
+        {
+          "type": "minecraft:loot_table",
+          "name": "tacznpcs:armor/vanilla/iron",
+          "weight": 2
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "tacz:modern_kinetic_gun",
+          "weight": 28,
+          "functions": [{"function": "minecraft:set_nbt", "tag": "{GunId:\"tacz:m16a1\"}"}]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tacz:modern_kinetic_gun",
+          "weight": 26,
+          "functions": [{"function": "minecraft:set_nbt", "tag": "{GunId:\"tacz:ak47\"}"}]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tacz:modern_kinetic_gun",
+          "weight": 18,
+          "functions": [{"function": "minecraft:set_nbt", "tag": "{GunId:\"tacz:type_81\"}"}]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tacz:modern_kinetic_gun",
+          "weight": 14,
+          "functions": [{"function": "minecraft:set_nbt", "tag": "{GunId:\"tacz:db_long\"}"}]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tacz:modern_kinetic_gun",
+          "weight": 9,
+          "functions": [{"function": "minecraft:set_nbt", "tag": "{GunId:\"tacz:m870\"}"}]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "tacz:modern_kinetic_gun",
+          "weight": 5,
+          "functions": [{"function": "minecraft:set_nbt", "tag": "{GunId:\"tacz:m700\"}"}]
+        }
+      ]
+    }
+  ]
+}

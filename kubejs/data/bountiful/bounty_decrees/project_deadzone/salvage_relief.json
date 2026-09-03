@@ -1,5 +1,5 @@
 {
   "name": "回収拠点生活令",
   "objectives": ["salvage_imports"],
-  "rewards": ["salvage_exports"]
+  "rewards": ["salvage_exports", "deadzone_relief_pay"]
 }

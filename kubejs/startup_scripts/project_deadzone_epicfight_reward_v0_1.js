@@ -9,9 +9,18 @@ const PDZ_EF_CAPABILITIES = Java.loadClass(
 )
 const PDZ_EF_SKILL_SLOTS = Java.loadClass("yesman.epicfight.skill.SkillSlots")
 const PDZ_EF_SKILL_DATA_KEYS = Java.loadClass("yesman.epicfight.skill.SkillDataKeys")
+const PDZ_EF_EVENT_TYPES = Java.loadClass(
+  "yesman.epicfight.world.entity.eventlistener.PlayerEventListener$EventType"
+)
+const PDZ_EF_UUID = Java.loadClass("java.util.UUID")
 const PDZ_EF_MNS_STACK_SAVING = Java.loadClass(
   "com.robertx22.mine_and_slash.uncommon.datasaving.StackSaving"
 )
+const PDZ_EF_STAMINA_LISTENER_ID = PDZ_EF_UUID.fromString(
+  "d34db300-0000-4000-8000-000000000020"
+)
+const PDZ_EF_STAMINA_COST_MULTIPLIER = 0.72
+let PDZ_EF_STAMINA_LISTENERS = {}
 
 function pdzEpicFightStackId(stack) {
   try { return String(stack.id).toLowerCase() } catch (ignored) {}
@@ -49,6 +58,48 @@ function pdzEpicFightPatch(player) {
   try { return PDZ_EF_CAPABILITIES.getServerPlayerPatch(player) } catch (ignored) {}
   return null
 }
+
+function pdzEpicFightInstallStaminaListener(player) {
+  if (!player || player.level.clientSide) return
+  let patch = pdzEpicFightPatch(player)
+  if (!patch) return
+  let key = String(player.uuid)
+  let identity = String(patch.hashCode())
+  if (PDZ_EF_STAMINA_LISTENERS[key] === identity) return
+  try {
+    let listener = patch.getEventListener()
+    listener.removeListener(PDZ_EF_EVENT_TYPES.STAMINA_CONSUME_EVENT, PDZ_EF_STAMINA_LISTENER_ID)
+    listener.addEventListener(
+      PDZ_EF_EVENT_TYPES.STAMINA_CONSUME_EVENT,
+      PDZ_EF_STAMINA_LISTENER_ID,
+      consumeEvent => {
+        let activePatch = consumeEvent.getPlayerPatch()
+        let activePlayer = activePatch ? activePatch.getOriginal() : null
+        if (!activePlayer || !activePatch.isEpicFightMode() ||
+            !pdzEpicFightIsMeleeStack(activePlayer.mainHandItem)) return
+        let original = Math.max(0, Number(consumeEvent.getAmount()) || 0)
+        let adjusted = original * PDZ_EF_STAMINA_COST_MULTIPLIER
+        consumeEvent.setAmount(adjusted)
+        activePlayer.persistentData.putDouble("dz_epicfight_last_stamina_original", original)
+        activePlayer.persistentData.putDouble("dz_epicfight_last_stamina_adjusted", adjusted)
+      }
+    )
+    PDZ_EF_STAMINA_LISTENERS[key] = identity
+  } catch (error) {
+    if (!player.persistentData.getBoolean("dz_epicfight_stamina_listener_error")) {
+      player.persistentData.putBoolean("dz_epicfight_stamina_listener_error", true)
+      console.error("[PROJECT DEADZONE][Epic Fight] stamina listener failed: " + error)
+    }
+  }
+}
+
+// PlayerPatch is recreated after login/respawn. Check its identity at low
+// frequency and attach exactly one listener to the current server patch.
+ForgeEvents.onEvent("net.minecraftforge.event.entity.living.LivingEvent$LivingTickEvent", event => {
+  let player = event.entity
+  if (!player || !player.isPlayer || !player.isPlayer() || player.level.clientSide || player.tickCount % 20 !== 0) return
+  pdzEpicFightInstallStaminaListener(player)
+})
 
 function pdzEpicFightClamp(value, minimum, maximum) {
   return Math.max(minimum, Math.min(maximum, value))
@@ -170,7 +221,7 @@ ForgeEvents.onEvent("net.minecraftforge.event.entity.living.LivingHurtEvent", ev
   // Successful pressure restores enough stamina to fund guard/dodge play,
   // with the largest refund on the third and later combo motions.
   try {
-    let refund = combo >= 2 ? 4.0 : (combo === 1 ? 2.0 : 1.0)
+    let refund = combo >= 2 ? 5.5 : (combo === 1 ? 3.5 : 2.0)
     patch.setStamina(Math.min(patch.getMaxStamina(), patch.getStamina() + refund))
   } catch (ignored) {}
 

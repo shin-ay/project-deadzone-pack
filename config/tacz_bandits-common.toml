@@ -7,7 +7,7 @@
 
 [BehaviorSettings]
 	#If true, Bandits will break glass blocks to shoot.
-	canBreakWindows = true
+	canBreakWindows = false
 	#If true, Bandits will open doors.
 	canOpenDoors = true
 

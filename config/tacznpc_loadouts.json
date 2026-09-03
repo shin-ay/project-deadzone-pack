@@ -108,6 +108,60 @@
       }
     ]
   },
+  "pdz_illager_rifle": {
+    "aligned": [
+      "illagers",
+      "deadzone_raiders"
+    ],
+    "opposed": [
+      "players",
+      "villagers",
+      "deadzone_civildef",
+      "deadzone_remnant",
+      "monster"
+    ],
+    "equipment": {
+      "table": "project_deadzone:npc/modern_illager",
+      "dropChances": {
+        "mainhand": 0.08,
+        "head": 0.04,
+        "chest": 0.04,
+        "legs": 0.04,
+        "feet": 0.04
+      }
+    },
+    "skin": [
+      {"id": "tacznpcs:entity/illager1.png"},
+      {"id": "tacznpcs:entity/illager1.png"},
+      {"id": "tacznpcs:entity/illager2.png"}
+    ]
+  },
+  "pdz_illager_rocket": {
+    "aligned": [
+      "illagers",
+      "deadzone_raiders"
+    ],
+    "opposed": [
+      "players",
+      "villagers",
+      "deadzone_civildef",
+      "deadzone_remnant",
+      "monster"
+    ],
+    "equipment": {
+      "table": "project_deadzone:npc/modern_illager_rocket",
+      "dropChances": {
+        "mainhand": 0.03,
+        "head": 0.04,
+        "chest": 0.04,
+        "legs": 0.04,
+        "feet": 0.04
+      }
+    },
+    "skin": [
+      {"id": "tacznpcs:entity/illager2.png"}
+    ]
+  },
   "default": {
     "primary": "%tacz:glock_17",
     "skin": {"id": "tacznpcs:entity/default.png"},

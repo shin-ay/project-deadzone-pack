@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:generic",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {"type": "minecraft:loot_table", "name": "tacznpcs:armor/vanilla/iron"}
+      ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "tacz:modern_kinetic_gun",
+          "functions": [{"function": "minecraft:set_nbt", "tag": "{GunId:\"tacz:rpg7\"}"}]
+        }
+      ]
+    }
+  ]
+}

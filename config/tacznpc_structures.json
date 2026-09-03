@@ -4,18 +4,20 @@
      "entities": [
        "minecraft:pillager"
      ],
-     "loadout": "illagers",
-     "chance": 0.25
+       "loadout": "pdz_illager_rifle",
+       "chance": 1.0
    }
  ],
  "minecraft:mansion": [
    {
-     "entities": [
+       "entities": [
        "minecraft:pillager",
-       "minecraft:vindicator"
+       "minecraft:vindicator",
+       "minecraft:evoker",
+       "minecraft:illusioner"
      ],
-     "loadout": "illagers",
-     "chance": 0.25
+     "loadout": "pdz_illager_rifle",
+     "chance": 1.0
    }
  ],
  "minecraft:village_plains": [

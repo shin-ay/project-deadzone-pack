@@ -11,7 +11,7 @@
 	hasFallAnimation = true
 	disapleEntityUI = false
 	canSwitchPlayerMode = true
-	stiffComboAttacks = true
+	stiffComboAttacks = false
 	noMobsInBossfight = true
 	#0 = vanilla, 1 = epicfight
 	#Range: 0 ~ 1

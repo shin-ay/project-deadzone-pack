@@ -52,7 +52,7 @@
 
 [rules]
 	#When true, only blocks in block_whitelist can be damaged.
-	use_whitelist = false
+	use_whitelist = true
 	#Blocks/tags that may be damaged when use_whitelist is true. Format: 'namespace:block' or '#namespace:tag'.
 	block_whitelist = []
 	#Blocks/tags that can never be damaged. Format: 'namespace:block' or '#namespace:tag'.

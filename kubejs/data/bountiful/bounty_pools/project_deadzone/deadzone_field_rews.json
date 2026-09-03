@@ -1,17 +1,27 @@
 {
   "content": {
-    "pdz_rew_lapis": {
+    "pdz_rew_field_repair": {
       "type": "item",
-      "content": "minecraft:lapis_lazuli",
-      "amount": { "min": 3, "max": 12 },
-      "unitWorth": 180,
-      "weightMult": 1.4
+      "content": "kubejs:field_repair_kit",
+      "amount": { "min": 1, "max": 2 },
+      "unitWorth": 1700,
+      "weightMult": 1.2
     },
-    "pdz_rew_books": {
+    "pdz_rew_painkillers": {
       "type": "item",
-      "content": "minecraft:book",
-      "amount": { "min": 1, "max": 5 },
-      "unitWorth": 320
+      "content": "apocalypsenow:pain_killers",
+      "amount": { "min": 1, "max": 3 },
+      "unitWorth": 1500,
+      "rarity": "UNCOMMON",
+      "weightMult": 0.8
+    },
+    "pdz_rew_medkit": {
+      "type": "item",
+      "content": "apocalypsenow:medicalkit",
+      "amount": { "min": 1, "max": 1 },
+      "unitWorth": 3600,
+      "rarity": "RARE",
+      "weightMult": 0.3
     },
     "pdz_rew_medical": {
       "type": "item",

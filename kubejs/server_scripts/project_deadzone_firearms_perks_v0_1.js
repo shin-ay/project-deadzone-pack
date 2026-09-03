@@ -4,6 +4,58 @@
 
 const PDZ_FIREARMS_MNS_ENTITY_DATA = Java.loadClass('com.robertx22.mine_and_slash.capability.entity.EntityData')
 const PDZ_FIREARMS_MNS_RESOURCE_TYPE = Java.loadClass('com.robertx22.mine_and_slash.saveclasses.unit.ResourceType')
+const PDZ_FIREARMS_TACZ_IGUN = Java.loadClass('com.tacz.guns.api.item.IGun')
+const PDZ_FIREARMS_TACZ_ASSETS = Java.loadClass('com.tacz.guns.resource.CommonAssetsManager')
+
+// TaCZ gun packs already expose a common weapon type in their gun index. Use
+// that metadata instead of maintaining a brittle list of hundreds of GunIds.
+// These multipliers put firearms above ordinary melee per committed attack,
+// while preserving the different RPM, magazine, recoil and ammunition costs.
+const PDZ_FIREARMS_ARCHETYPE_MULTIPLIERS = {
+  pistol: 1.60,
+  handgun: 1.60,
+  revolver: 1.75,
+  smg: 1.55,
+  submachine_gun: 1.55,
+  rifle: 1.75,
+  assault_rifle: 1.75,
+  battle_rifle: 1.90,
+  dmr: 2.00,
+  marksman_rifle: 2.00,
+  sniper: 2.25,
+  sniper_rifle: 2.25,
+  shotgun: 1.55,
+  machine_gun: 1.65,
+  mg: 1.65,
+  lmg: 1.65,
+  launcher: 1.35,
+  rocket_launcher: 1.35
+}
+
+function dzFirearmsProfile(stack) {
+  let profile = {id:'unknown', type:'unknown', multiplier:1.65}
+  try {
+    let gun = PDZ_FIREARMS_TACZ_IGUN.getIGunOrNull(stack)
+    if (!gun) return profile
+    let gunId = gun.getGunId(stack)
+    profile.id = String(gunId)
+    let index = PDZ_FIREARMS_TACZ_ASSETS.get().getGunIndex(gunId)
+    if (!index) return profile
+    let type = String(index.getType() || 'unknown').toLowerCase().replace(/[ -]/g, '_')
+    profile.type = type
+    if (PDZ_FIREARMS_ARCHETYPE_MULTIPLIERS[type]) {
+      profile.multiplier = PDZ_FIREARMS_ARCHETYPE_MULTIPLIERS[type]
+    } else if (type.indexOf('sniper') >= 0) profile.multiplier = 2.25
+    else if (type.indexOf('marksman') >= 0 || type.indexOf('dmr') >= 0) profile.multiplier = 2.00
+    else if (type.indexOf('shotgun') >= 0) profile.multiplier = 1.55
+    else if (type.indexOf('machine') >= 0 || type.indexOf('lmg') >= 0) profile.multiplier = 1.65
+    else if (type.indexOf('smg') >= 0) profile.multiplier = 1.55
+    else if (type.indexOf('pistol') >= 0 || type.indexOf('handgun') >= 0) profile.multiplier = 1.60
+    else if (type.indexOf('rifle') >= 0) profile.multiplier = 1.75
+    else if (type.indexOf('launcher') >= 0) profile.multiplier = 1.35
+  } catch (ignored) {}
+  return profile
+}
 
 function dzMnsStatValue(player, id) {
   try {
@@ -170,8 +222,9 @@ TimelessGunEvents.entityHurtByGunPre(event => {
   stage = 'bonuses'
   let core = dzFirearmsCore(player)
   let handling = dzFirearmsTier(player, "handling")
+  let gunProfile = dzFirearmsProfile(player.mainHandItem)
 
-  let multiplier = 1.0 + core * 0.01
+  let multiplier = gunProfile.multiplier + core * 0.01
 
   // Keep every firearm damage modifier on TaCZ's single pre-damage path.
   // Generic hurt handlers must not subtract HP again after this event.
@@ -239,12 +292,14 @@ TimelessGunEvents.entityHurtByGunPre(event => {
   player.persistentData.putDouble('dz_firearms_last_multiplier',multiplier)
   player.persistentData.putDouble('dz_firearms_last_crit_multiplier',criticalMultiplier)
   player.persistentData.putDouble('dz_firearms_last_final',finalAmount)
+  player.persistentData.putString('dz_firearms_last_gun_id',gunProfile.id)
+  player.persistentData.putString('dz_firearms_last_gun_type',gunProfile.type)
   try{
     if(typeof pdzCteRecordOutgoing==='function')pdzCteRecordOutgoing(player,hurtEntity,finalAmount,event.isHeadShot()?'gun_head':'gun_body')
   }catch(ignored){}
   event.setBaseAmount(finalAmount)
   if (player.persistentData.getBoolean('dz_firearms_damage_debug')) {
-    player.tell(Text.of('[Gun DMG] TaCZ base '+baseAmount.toFixed(2)+' x PDZ '+multiplier.toFixed(3)+' = pre-armor '+finalAmount.toFixed(2)).gray())
+    player.tell(Text.of('[Gun DMG] '+gunProfile.type+' / TaCZ base '+baseAmount.toFixed(2)+' x PDZ '+multiplier.toFixed(3)+' = pre-armor '+finalAmount.toFixed(2)).gray())
   }
   } catch (error) {
     // TaCZ's event bridge otherwise reports only "null" and floods the log on
@@ -273,7 +328,9 @@ ServerEvents.commandRegistry(event => {
       + " / Maintenance " + dzFirearmsTier(player, "maintenance")
     ).aqua())
     player.tell(Text.of(
-      'Last hit: base '+Number(player.persistentData.getDouble('dz_firearms_last_base')).toFixed(2)
+      'Last hit: '+player.persistentData.getString('dz_firearms_last_gun_type')
+      +' / '+player.persistentData.getString('dz_firearms_last_gun_id')
+      +' / base '+Number(player.persistentData.getDouble('dz_firearms_last_base')).toFixed(2)
       +' x '+Number(player.persistentData.getDouble('dz_firearms_last_multiplier')).toFixed(3)
       +' x crit '+Number(player.persistentData.getDouble('dz_firearms_last_crit_multiplier')).toFixed(2)
       +' = '+Number(player.persistentData.getDouble('dz_firearms_last_final')).toFixed(2)+' pre-armor'

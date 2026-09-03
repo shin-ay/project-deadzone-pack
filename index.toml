@@ -1278,7 +1278,7 @@ hash = "aad4151bdef6fdcdde8a2bf22c6e2cb77bc638889d6f06047653b2b83fcd1836"
 
 [[files]]
 file = "config/epicfight-common.toml"
-hash = "68ed8dcc135ba1c13f605674e9e0cf0709a46595b470e8709d78c2f89ae58458"
+hash = "577ab28688b96d348c47bf954291fe3e636a55482a538faff6c3b039e4731889"
 
 [[files]]
 file = "config/epicfight/native/ServerCommunicationHelper.dll"
@@ -3186,11 +3186,11 @@ hash = "afda743b110bdd216b571642a1983f6c65cfff6d1566581a695fab535d6c5fc9"
 
 [[files]]
 file = "config/tacz-common.toml"
-hash = "2c5645c6cb879b8f1917d4473c5b6c26fc57cc814d408703c9ac774f3b523958"
+hash = "a96ae838810d7feb19c549a6fa57b649702df3d9a12d2aaefa1c68f85b4a1ab5"
 
 [[files]]
 file = "config/tacz_bandits-common.toml"
-hash = "65a1f56dcff1be326b847872431cf342c6639ad54d45340a1e02d3f2bf9fa91c"
+hash = "b23fba5d3ff445aaba446cc437710e75d085b77434b36b62b45b6cb3262e5c8e"
 
 [[files]]
 file = "config/tacz_hostiles-common.toml"
@@ -3202,7 +3202,7 @@ hash = "da2dd4520c3de9f54d390129674fcba2edf89da52e304db0550709d7f69dc754"
 
 [[files]]
 file = "config/tacz_tactical_breaching-common.toml"
-hash = "3bb2cc0adae5f3f08e2d4f9e50900db133d4c3b6997099502011fd3ca0500b05"
+hash = "056bb51783dbe3b08460e83b99de443f56cc337c5cd3ed78e22051abb1c8625c"
 
 [[files]]
 file = "config/taczaddon-client.toml"
@@ -3214,11 +3214,11 @@ hash = "4811ae8d4542f17d0e4bc90d770fe8eae317f7646cecde8e2b084a5f46045c2e"
 
 [[files]]
 file = "config/tacznpc_loadouts.json"
-hash = "3048432f17705c07869a65e9d40d5638eae0aeb89f9b3afcf100110581fa675a"
+hash = "976183dad78991742936e1fd1dd793bb5f9b621ddde385af324f8768011d0204"
 
 [[files]]
 file = "config/tacznpc_structures.json"
-hash = "69dea8de1cc0c7516cdc5722f6b52ba1112b28c13aedad3cda7e98b0951ea84b"
+hash = "5f0d578a3694d4f5793ad499d8db9d6c582751649315948a73f436d5a52a7387"
 
 [[files]]
 file = "config/tacztweaks.json"
@@ -4190,11 +4190,11 @@ hash = "efccf22d402c1dcab0c8d583f25e7148f7ea7e3c417e778dc5fcdee87ef9e676"
 
 [[files]]
 file = "kubejs/data/bountiful/bounty_decrees/project_deadzone/agrarian_relief.json"
-hash = "61a000bf43e2311cee9e9aa92f338e6ffb3c27560bd41b819d933440782bcdbd"
+hash = "61773facd6648a7fcecb2ea6639172878f5646dc8fcb51a40940b5fc8b0c218f"
 
 [[files]]
 file = "kubejs/data/bountiful/bounty_decrees/project_deadzone/coastal_relief.json"
-hash = "a7d24db01be7e062c705b5641233c66d6f70c5754e13e73bdd2bbcf8da8e0072"
+hash = "eeb6c54c80d8c9dab002dc44656f16f84fa3271fc8959f8b6aee1efda50958ea"
 
 [[files]]
 file = "kubejs/data/bountiful/bounty_decrees/project_deadzone/deadzone_endgame.json"
@@ -4206,15 +4206,15 @@ hash = "c940ad10c32f2ae747c4622b991e1e69fb032da3daa1b3143bbd6079b04c8cf3"
 
 [[files]]
 file = "kubejs/data/bountiful/bounty_decrees/project_deadzone/forest_relief.json"
-hash = "fe99d4793e0ce0d51c391c82e9b7128905945acfd1673bb80f8b99d4a0a7ed30"
+hash = "728a3d5096e13d75e502da689453fcdf10669bbd46b460da03b1576179a382a4"
 
 [[files]]
 file = "kubejs/data/bountiful/bounty_decrees/project_deadzone/highland_relief.json"
-hash = "727987514a4332395bd30afd62fa7d62c1def3223fb845c91563eb02c8ed1e56"
+hash = "77ce4c6b7e961b27f5f41194390a2c98b9ab1a3b2b15b3a5b08dd3c63c9a9e6c"
 
 [[files]]
 file = "kubejs/data/bountiful/bounty_decrees/project_deadzone/salvage_relief.json"
-hash = "c9af66521fad9e4f6a82099ddc2ad3a7cea680c50d812507203fd1dedc7c47a0"
+hash = "7397b0ac977797cc93081dc3f4f24172728ccdfbaf9ccade77e749acb684056b"
 
 [[files]]
 file = "kubejs/data/bountiful/bounty_pools/project_deadzone/agrarian_exports.json"
@@ -4238,7 +4238,7 @@ hash = "80d013ba29a560b8a6d0a679f8c119f66814c3cfcbc93bd633cb48dcc313716d"
 
 [[files]]
 file = "kubejs/data/bountiful/bounty_pools/project_deadzone/deadzone_bounty_rews.json"
-hash = "293112505fdcc33ec1515f8add056d4d6f16be7dc4c1f1fa27898b5aab0b8134"
+hash = "abc7195c8df05c5591832cf5c5c246d37b86228b7e523850aa31165c623c5025"
 
 [[files]]
 file = "kubejs/data/bountiful/bounty_pools/project_deadzone/deadzone_endgame_objs.json"
@@ -4246,11 +4246,15 @@ hash = "78aab600e08a5d5ecf33378dedfff7ad54f1afb5bb3a3fe1ed7c6738c383a732"
 
 [[files]]
 file = "kubejs/data/bountiful/bounty_pools/project_deadzone/deadzone_endgame_rews.json"
-hash = "f98cebe2af7eb048586c783bafad60c504c16a1df87613ed7042bcef911b9188"
+hash = "7e69125103ddb0e3510af9dbf6a8a06c3ca0a4645b6ae4bd4941967b34296e0d"
 
 [[files]]
 file = "kubejs/data/bountiful/bounty_pools/project_deadzone/deadzone_field_rews.json"
-hash = "2270853bb32a1d30c9c177567a7fb2898f793e55c9e7437d0b9e91e3dc334d85"
+hash = "9e73e8d59889c8b02ed28b0f261c43814143c9619a611991e4ec1bf4eb68a939"
+
+[[files]]
+file = "kubejs/data/bountiful/bounty_pools/project_deadzone/deadzone_relief_pay.json"
+hash = "69d92184b3543bc3ead137b5b19f4d373b8083995101f56eeb12a1d946e3a699"
 
 [[files]]
 file = "kubejs/data/bountiful/bounty_pools/project_deadzone/forest_exports.json"
@@ -10097,6 +10101,14 @@ file = "kubejs/data/project_deadzone/loot_tables/npc/basecamp_staff.json"
 hash = "5ed439fe5ad708bb87c19e18f40b66874c56811cc7ebdfe05b703a85bdba6bb7"
 
 [[files]]
+file = "kubejs/data/project_deadzone/loot_tables/npc/modern_illager.json"
+hash = "6addf6b79b3835a237e1a23b251f556a596893be544be30d6ae2733e522d1ce5"
+
+[[files]]
+file = "kubejs/data/project_deadzone/loot_tables/npc/modern_illager_rocket.json"
+hash = "44a5462635678c7a98dfb7b652b040f89c334decb0541b308ac13e8d579c723f"
+
+[[files]]
 file = "kubejs/data/project_deadzone/lostcities/conditions/firestation.json"
 hash = "cd6d4416011357403404641df42fe8ee2bf6deb200dbff7364f466fe00c016d7"
 
@@ -11201,6 +11213,10 @@ file = "kubejs/server_scripts/project_deadzone_defense_recovery_v0_1.js"
 hash = "e47d003a9e25eee3fdbbdf4dc606c8f508c7004629fdebbe29131fb264d556bc"
 
 [[files]]
+file = "kubejs/server_scripts/project_deadzone_epicfight_mobility_v0_1.js"
+hash = "36325b5aae6b535c2cb85d573402efba30447d5ffc7b3e8fc6ad35f8dbf61b4c"
+
+[[files]]
 file = "kubejs/server_scripts/project_deadzone_faction_activity_v0_1.js"
 hash = "8a82e521b3c4a5a2f4c62e91e231ccd6ffc48a0303fa7e1b6bf712a1028230aa"
 
@@ -11226,7 +11242,7 @@ hash = "de2327b1e19d91d2607c4efad5f9ecdeb81971923f10a337b32bdb2e691882a9"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_firearms_perks_v0_1.js"
-hash = "afdfe91326d76728d7d70e20c0f2ec97651bf8a01b18ec09523b68dcbcab90d7"
+hash = "24c6ddc381798c7ffbf55d7a9e0e777a21c6342ad69719697397d6fa99464f29"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_fitness_perks_v0_1.js"
@@ -11353,6 +11369,10 @@ file = "kubejs/server_scripts/project_deadzone_mns_progression_bridge_v0_1.js"
 hash = "9face9c66a9a80ac6c4b5642f7c82b28f0b26d39b8eb35ffcd0c468cc02aa126"
 
 [[files]]
+file = "kubejs/server_scripts/project_deadzone_modern_illager_raids_v0_1.js"
+hash = "aad90160a3a05565814eab316850c8c073717d7abf73960bee23cafba77bdd7d"
+
+[[files]]
 file = "kubejs/server_scripts/project_deadzone_multiplayer_preflight_v0_1.js"
 hash = "590bf96ff6e54b14a0a73ef84b995aba26b1d4668f8555b520a7f4374791d4bb"
 
@@ -11457,6 +11477,10 @@ file = "kubejs/server_scripts/project_deadzone_skill_tier_gates_v0_1.js"
 hash = "43e99bae29fb083ef7b839ab70e61515129584126cd91898d56bdf2b6ad60d25"
 
 [[files]]
+file = "kubejs/server_scripts/project_deadzone_sniper_overwatch_v0_1.js"
+hash = "b78e1fd61c9be2acfffb22c0e54b93a27b798c3a5ce3158f47b3fcc033af90bf"
+
+[[files]]
 file = "kubejs/server_scripts/project_deadzone_spore_food_separation_v0_1.js"
 hash = "b19ea29c0be07fc248475731a728cd55ab86089941a8a50431f167f004b2f1c2"
 
@@ -11553,6 +11577,10 @@ file = "kubejs/server_scripts/project_deadzone_temperature_nonlethal_v0_1.js"
 hash = "0050cdca2dc2df2fa75d123b707e3fc1b651ef596e30fb0ee8a7d5a6cfca0b02"
 
 [[files]]
+file = "kubejs/server_scripts/project_deadzone_territory_v0_1.js"
+hash = "4a89853bfdc0e0c8d17dd4aaedf14ccdb4a7c56b8c082ac863bd2a7c38eb7d0d"
+
+[[files]]
 file = "kubejs/server_scripts/project_deadzone_tutorial_progress_v0_1.js"
 hash = "24f383a9b1e2b196149907f27b5bfecb8a6bf851d85127f3ef5e409fc45009ef"
 
@@ -11614,7 +11642,7 @@ hash = "e3d03fc17f90b606550fd6a8bfcd73e8063f691e2aa258b833a9a45a6ba6779c"
 
 [[files]]
 file = "kubejs/startup_scripts/project_deadzone_epicfight_reward_v0_1.js"
-hash = "ac875374452c362bd88eb8a35c2f015c0a07f8fa78fb5fb1b6567b2cedd8a749"
+hash = "9d27a6fab9bb64db0770835c9af151ecad42d21a9a67d42146591e9a9edfb51d"
 
 [[files]]
 file = "kubejs/startup_scripts/project_deadzone_field_medical_kit_v0_1.js"

@@ -1,5 +1,5 @@
 {
   "name": "沿岸集落補給令",
   "objectives": ["coastal_imports"],
-  "rewards": ["coastal_exports"]
+  "rewards": ["coastal_exports", "deadzone_relief_pay"]
 }

@@ -1,33 +1,41 @@
 {
   "content": {
-    "pdz_end_money": {
+    "pdz_end_money_iron": {
       "type": "item",
-      "content": "lightmanscurrency:coin_copper",
-      "amount": { "min": 10, "max": 24 },
-      "unitWorth": 350,
-      "weightMult": 2.0
+      "content": "lightmanscurrency:coin_iron",
+      "amount": { "min": 5, "max": 18 },
+      "unitWorth": 900,
+      "weightMult": 2.2
+    },
+    "pdz_end_money_gold": {
+      "type": "item",
+      "content": "lightmanscurrency:coin_gold",
+      "amount": { "min": 1, "max": 4 },
+      "unitWorth": 9000,
+      "rarity": "RARE",
+      "weightMult": 0.45
     },
     "pdz_end_steel": {
       "type": "item",
       "content": "immersiveengineering:ingot_steel",
-      "amount": { "min": 4, "max": 10 },
-      "unitWorth": 1300,
+      "amount": { "min": 6, "max": 16 },
+      "unitWorth": 1050,
       "rarity": "UNCOMMON",
       "weightMult": 1.0
     },
     "pdz_end_component": {
       "type": "item",
       "content": "immersiveengineering:component_steel",
-      "amount": { "min": 1, "max": 3 },
-      "unitWorth": 5200,
+      "amount": { "min": 2, "max": 5 },
+      "unitWorth": 4300,
       "rarity": "RARE",
       "weightMult": 0.55
     },
     "pdz_end_morphine": {
       "type": "item",
       "content": "apocalypsenow:morphine",
-      "amount": { "min": 1, "max": 3 },
-      "unitWorth": 3600,
+      "amount": { "min": 2, "max": 4 },
+      "unitWorth": 3000,
       "rarity": "RARE",
       "weightMult": 0.45
     }
