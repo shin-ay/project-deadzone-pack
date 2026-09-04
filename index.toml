@@ -11406,7 +11406,7 @@ hash = "2feb979c118f3786bee04de9fc2fb0b1854ba1a7ac61a52580adc4523692fce6"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_onboarding_v0_1.js"
-hash = "cbf2690cdb7fe4df1a954ac5576d2267db44716b6259a74104f5b5d1dce24293"
+hash = "ccf9181ec4b8dc5f5d46ea0c066967b0248b8e3af977d9f0fcc1a776c8df4555"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_outpost_garrisons_v0_1.js"
@@ -11530,7 +11530,7 @@ hash = "070b653df6a030d02e07e2970483225c34c97457749ec26cf532c087a5385674"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_starter_village_v0_1.js"
-hash = "5297bb89174d8de43ec9ea0b99fd4d341256c2867d23e25385a635efb58b9a03"
+hash = "f3bed48f3c1d046dabf13c2f664cbb1d5ac5537b14b08431967e1c5ce6fb1477"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_story_branches_v0_1.js"

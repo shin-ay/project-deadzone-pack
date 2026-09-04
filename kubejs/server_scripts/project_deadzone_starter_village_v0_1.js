@@ -16,11 +16,6 @@ const DZ_STARTER_VILLAGE_TAG = DZ_STARTER_TAG_KEY.create(
   new DZ_STARTER_RESOURCE_LOCATION("project_deadzone", "starter_village")
 )
 
-function dzStarterIsLobby(player) {
-  try { return String(player.level.dimension).indexOf("lobby:lobby_dimension") >= 0 }
-  catch (ignored) { return false }
-}
-
 function dzStarterOverworld(server) {
   try { let level = server.getLevel("minecraft:overworld"); if (level) return level } catch (ignored) {}
   try { return server.overworld() } catch (ignored) {}
@@ -75,7 +70,7 @@ function dzStarterVerifyVillage(level, foundPos, holder) {
       for (let dx = -ring; dx <= ring; dx += 16) for (let dz = -ring; dz <= ring; dz += 16) {
         if (ring > 0 && Math.abs(dx) !== ring && Math.abs(dz) !== ring) continue
         let px = baseX + dx, pz = baseZ + dz
-        level.getChunk(Math.floor(px / 16), Math.floor(pz / 16))
+        let probeChunk = level.getChunk(Math.floor(px / 16), Math.floor(pz / 16))
         let probeY = baseY
         try { probeY = Number(level.getHeight(DZ_STARTER_HEIGHTMAP.MOTION_BLOCKING_NO_LEAVES, Math.floor(px), Math.floor(pz))) } catch (ignored) {}
         let probe = new DZ_STARTER_BLOCK_POS(Math.floor(px), Math.floor(probeY), Math.floor(pz))
@@ -93,7 +88,12 @@ function dzStarterVerifyVillage(level, foundPos, holder) {
           let structureId = String(registry.getKey(structure))
           if (!dzStarterIsVillageStructureId(structureId)) continue
           let start = null
-          try { start = manager.getStructureAt(probe, structure) } catch (ignored) {}
+          // A locate result points at the structure's start chunk, but its
+          // returned block position is not guaranteed to lie inside an actual
+          // jigsaw piece (and the surface Y may be above its bounding box).
+          // Read the StructureStart directly from the loaded chunk first.
+          try { start = probeChunk.getStartForStructure(structure) } catch (ignored) {}
+          if (!start || !start.isValid()) try { start = manager.getStructureAt(probe, structure) } catch (ignored) {}
           if (!start || !start.isValid()) try { start = manager.getStructureWithPieceAt(probe, structure) } catch (ignored) {}
           if (!start || !start.isValid()) continue
           let box = start.getBoundingBox()
@@ -186,7 +186,8 @@ function dzStarterStore(server, arrival, village) {
   data.putInt(DZ_STARTER_VILLAGE_STATE, 2)
   try { if (global.pdzRegisterStarterColony) global.pdzRegisterStarterColony(server, arrival, village) }
   catch (error) { console.error("[PDZ][Starter City] settlement registration failed: " + error) }
-  server.runCommandSilent("execute in minecraft:overworld run setworldspawn " + arrival.x + " " + arrival.y + " " + arrival.z)
+  // Village Spawn Point owns world-spawn selection. PDZ only records the
+  // selected village and attaches settlement/faction policy to it.
   server.scheduleInTicks(20, callback => {
     try { server.players.forEach(p => { if (global.pdzJourneyMapSync) global.pdzJourneyMapSync(p) }) } catch (ignored) {}
   })
@@ -197,87 +198,26 @@ function dzStarterKitReady(player) {
   return data.getBoolean("dz_starter_received") && data.getInt("dz_starter_grant_version") >= 6
 }
 
-function dzStarterTeleport(player) {
-  let data = player.server.persistentData
-  if (data.getInt(DZ_STARTER_VILLAGE_STATE) !== 2 || data.getInt("dz_starter_village_layout_version") !== DZ_STARTER_VILLAGE_VERSION) return 0
-  let x = data.getInt("dz_starter_village_arrival_x") + 0.5
-  let y = data.getInt("dz_starter_village_arrival_y")
-  let z = data.getInt("dz_starter_village_arrival_z") + 0.5
-  let result = player.runCommandSilent("execute in minecraft:overworld run tp @s " + x + " " + y + " " + z)
-  if (result <= 0) return 0
-  player.runCommandSilent("effect give @s minecraft:resistance 12 4 true")
-  player.runCommandSilent("effect give @s minecraft:slow_falling 12 0 true")
-  player.runCommandSilent("effect clear @s minecraft:blindness")
-  player.persistentData.putBoolean("dz_starter_depart_complete", true)
-  player.persistentData.remove("dz_starter_depart_requested")
-  player.tell(Text.of("[PROJECT DEADZONE] \u521d\u671f\u8857\u300c" + DZ_STARTER_CITY_NAME + "\u300d\u3078\u5230\u7740\u3057\u307e\u3057\u305f\u3002").green())
-  return 1
-}
-
-function dzStarterRegisterNearest(player, radiusChunks) {
-  let server = player.server, data = server.persistentData
-  if (data.getInt(DZ_STARTER_VILLAGE_STATE) === 2 && data.getInt("dz_starter_village_layout_version") === DZ_STARTER_VILLAGE_VERSION && data.getString("dz_starter_village_source") === DZ_STARTER_SOURCE) return 1
-  if (data.getInt(DZ_STARTER_VILLAGE_STATE) === 1) return 0
-  data.putInt(DZ_STARTER_VILLAGE_STATE, 1)
+// Prefer a village already proven by the settlement scanner. This avoids a
+// second broad locate when the player happened to load a CTOV village first.
+global.pdzAdoptVerifiedRescueVillage = function(player, site) {
   try {
-    let level = dzStarterOverworld(server)
-    if (!level) {
-      data.putInt(DZ_STARTER_VILLAGE_STATE, 0)
-      return 0
+    if (!player || !site || site.structureVerified !== true) return 0
+    let structure=String(site.structureId || "")
+    if (!structure || String(site.settlementType || "") !== "survivor_colony") return 0
+    let village={
+      x:Math.floor(Number(site.x)), y:Math.floor(Number(site.y)), z:Math.floor(Number(site.z)),
+      structure:structure, instance:String(site.structureInstance || ""), bounds:site.structureBounds || null
     }
-    player.tell(Text.of("[PDZ] \u6700\u5bc4\u308a\u306e\u751f\u6210\u6e08\u307f\u306e\u6751\u3092\u78ba\u8a8d\u3057\u3066\u3044\u307e\u3059\u3002\u521d\u56de\u3060\u3051\u5c11\u3057\u5f85\u3063\u3066\u306d\u3002").aqua())
-    let village = dzStarterLocate(level, radiusChunks || 128)
-    if (!village) {
-      data.putInt(DZ_STARTER_VILLAGE_STATE, 0)
-      player.tell(Text.of("[PDZ] \u5b9f\u5728\u3059\u308b\u6751\u3092\u78ba\u8a8d\u3067\u304d\u307e\u305b\u3093\u3067\u3057\u305f\u3002\u30ed\u30d3\u30fc\u306b\u7559\u307e\u308a\u307e\u3059\u3002").red())
-      player.tell(Text.of("[ \u521d\u671f\u8857\u306e\u63a2\u7d22\u3092\u518d\u8a66\u884c ]").gold().bold().clickRunCommand("/deadzonevillage retry"))
-      console.error("[PDZ][Starter City] no verified village found within " + (radiusChunks || 128) + " chunks")
-      return 0
-    }
-    let arrival = dzStarterSafeArrival(level, village)
-    dzStarterStore(server, arrival, village)
-    console.info("[PDZ][Starter City] registered " + DZ_STARTER_CITY_NAME + " structure=" + village.structure + " village=" + village.x + "," + village.y + "," + village.z + " arrival=" + arrival.x + "," + arrival.y + "," + arrival.z)
-    player.tell(Text.of("[PDZ] " + DZ_STARTER_CITY_NAME + "\u3092\u521d\u671f\u8857\u3068\u3057\u3066\u767b\u9332\u3057\u307e\u3057\u305f\u3002\u4ee5\u5f8c\u306e\u53c2\u52a0\u8005\u3082\u540c\u3058\u8857\u3092\u4f7f\u7528\u3057\u307e\u3059\u3002").green())
+    let arrival=dzStarterSafeArrival(player.level,village)
+    dzStarterStore(player.server,arrival,village)
+    console.info("[PDZ][Starter City] adopted verified rescue village " + structure +
+      " at " + village.x + "," + village.y + "," + village.z)
     return 1
   } catch (error) {
-    data.putInt(DZ_STARTER_VILLAGE_STATE, 0)
-    console.error("[PDZ][Starter City] registration failed and state was reset: " + error)
-    player.tell(Text.of("[PDZ] \u521d\u671f\u8857\u306e\u78ba\u5b9a\u4e2d\u306b\u30a8\u30e9\u30fc\u304c\u767a\u751f\u3057\u307e\u3057\u305f\u3002\u30ed\u30d3\u30fc\u306b\u7559\u307e\u308a\u307e\u3059\u3002").red())
+    console.error("[PDZ][Starter City] verified village adoption failed: " + error)
     return 0
   }
-}
-
-global.pdzRegisterNearestStarterCity = function(player) {
-  try { return dzStarterRegisterNearest(player, 128) }
-  catch (error) {
-    try { player.server.persistentData.putInt(DZ_STARTER_VILLAGE_STATE, 0) } catch (ignored) {}
-    console.error("[PDZ][Starter City] registration trigger failed: " + error)
-    return 0
-  }
-}
-
-function dzStarterDepart(player) {
-  if (!player.persistentData.getBoolean("dz_job_chosen")) {
-    player.tell(Text.of("[PDZ] \u5148\u306b\u767b\u9332\u53d7\u4ed8\u5b98\u30a2\u30aa\u30a4\u3078\u8a71\u3057\u304b\u3051\u3001\u521d\u671fJOB\u3092\u9078\u629e\u3057\u3066\u304f\u3060\u3055\u3044\u3002").red())
-    return 0
-  }
-  if (!dzStarterKitReady(player)) {
-    player.runCommandSilent("deadzonejob starter_claim")
-    if (!player.persistentData.getBoolean("dz_starter_received")) {
-      player.tell(Text.of("[PDZ] \u30b9\u30bf\u30fc\u30bf\u30fc\u30ad\u30c3\u30c8\u652f\u7d66\u3092\u78ba\u8a8d\u3067\u304d\u306a\u3044\u305f\u3081\u3001\u51fa\u767a\u3092\u4e2d\u6b62\u3057\u307e\u3057\u305f\u3002").red())
-      return 0
-    }
-  }
-  if (!dzStarterIsLobby(player)) {
-    player.tell(Text.of("[PDZ] \u521d\u56de\u51fa\u767a\u306f\u30ed\u30d3\u30fc\u304b\u3089\u306e\u307f\u5b9f\u884c\u3067\u304d\u307e\u3059\u3002").yellow())
-    return 0
-  }
-  let data = player.server.persistentData
-  if (data.getInt(DZ_STARTER_VILLAGE_STATE) === 2 && data.getInt("dz_starter_village_layout_version") !== DZ_STARTER_VILLAGE_VERSION) data.putInt(DZ_STARTER_VILLAGE_STATE, 0)
-  player.persistentData.putBoolean("dz_starter_depart_requested", true)
-  player.runCommandSilent("effect give @s minecraft:resistance 120 255 true")
-  if (data.getInt(DZ_STARTER_VILLAGE_STATE) !== 2 && !dzStarterRegisterNearest(player, 128)) return 0
-  return dzStarterTeleport(player)
 }
 
 ServerEvents.commandRegistry(event => {
@@ -291,19 +231,6 @@ ServerEvents.commandRegistry(event => {
     p.tell(Text.of("\u69cb\u9020\u7269: " + d.getString("dz_starter_native_village_structure")).aqua())
     p.tell(Text.of("\u52e2\u529b: \u53cb\u597d\u30fb\u6c11\u9593\u9632\u885b\u968a / \u7d4c\u6e08: \u5730\u57df\u5fa9\u8208\u30cf\u30d6").green())
     return 1
-  }))
-  root.then(Commands.literal("depart").executes(ctx => dzStarterDepart(ctx.source.player)))
-  root.then(Commands.literal("retry").executes(ctx => {
-    let p=ctx.source.player,d=p.server.persistentData
-    d.putInt(DZ_STARTER_VILLAGE_STATE,0); d.putInt("dz_starter_village_layout_version",0)
-    return dzStarterRegisterNearest(p,256)
-  }))
-  root.then(Commands.literal("teleport").requires(s=>s.hasPermission(2)).executes(ctx => dzStarterTeleport(ctx.source.player)))
-  root.then(Commands.literal("generate_here").requires(s=>s.hasPermission(2)).executes(ctx => {
-    let p=ctx.source.player,d=p.server.persistentData
-    d.putInt(DZ_STARTER_VILLAGE_STATE,0); d.putInt("dz_starter_village_layout_version",0)
-    p.tell(Text.of("[PDZ] \u73fe\u5728\u5730\u3067\u306f\u306a\u304f\u3001\u30ef\u30fc\u30eb\u30c9\u30b9\u30dd\u30fc\u30f3\u304b\u3089\u6700\u5bc4\u308a\u306e\u5b9f\u5728\u6751\u3092\u518d\u691c\u7d22\u3057\u307e\u3059\u3002").aqua())
-    return dzStarterRegisterNearest(p,256)
   }))
   root.then(Commands.literal("reset").requires(s=>s.hasPermission(2)).executes(ctx => {
     let d=ctx.source.server.persistentData

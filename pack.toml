@@ -1,12 +1,12 @@
 name = "PROJECT DEADZONE"
 author = "PROJECT DEADZONE Team"
-version = "BETA-20260904-VILLAGE-RECRUITS-WORLDGEN-RC1"
+version = "BETA-20260904-VILLAGE-SPAWN-OWNERSHIP-FIX-1"
 pack-format = "packwiz:1.1.0"
 
 [index]
 file = "index.toml"
 hash-format = "sha256"
-hash = "01f8950cab7ff3cf39f7518fb478f12e2bc8c94452798fe263a8f95275a58561"
+hash = "9b39ec5dacfde14b7a5bf60494034016c5f210c1db6f0968a4f83a05db223ba7"
 
 [versions]
 forge = "47.4.10"
