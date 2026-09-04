@@ -1,0 +1,97 @@
+{
+  "format": 2,
+  "title": "PDZ ストーリー兵器研究",
+  "icon": "tacz:glock_17",
+  "weapon_placement_mode": "authored_only",
+  "layout": {
+    "width_mode": "dynamic",
+    "min_nodes_per_layer": 10,
+    "max_nodes_per_layer": 24
+  },
+  "bands": {
+    "mode": "configured",
+    "basis": "rank",
+    "definitions": [
+      {
+        "id": "project_deadzone:s0",
+        "title": "S0 生存用火器",
+        "maximum": 1,
+        "color": 4699609,
+        "icon": "tacz:glock_17"
+      },
+      {
+        "id": "project_deadzone:s1",
+        "title": "S1 現場火器",
+        "maximum": 3,
+        "color": 14860602,
+        "icon": "tacz:m4a1"
+      },
+      {
+        "id": "project_deadzone:s2",
+        "title": "S2 精密・支援火器",
+        "maximum": 5,
+        "color": 3437876,
+        "icon": "tacz:m700"
+      },
+      {
+        "id": "project_deadzone:s3",
+        "title": "S3 統合・試験兵器",
+        "color": 11815412,
+        "icon": "tacz:rpg7"
+      }
+    ]
+  },
+  "domains": [
+    {
+      "id": "weapons",
+      "title": "兵器研究",
+      "icon": "tacz:glock_17",
+      "fallback_lane": "project_deadzone:weapons/experimental",
+      "fallback_tier": "elite",
+      "lanes": [
+        {
+          "id": "project_deadzone:weapons/handguns",
+          "title": "拳銃",
+          "icon": "tacz:glock_17",
+          "order": 10
+        },
+        {
+          "id": "project_deadzone:weapons/smgs",
+          "title": "SMG",
+          "icon": "tacz:uzi",
+          "order": 20
+        },
+        {
+          "id": "project_deadzone:weapons/shotguns",
+          "title": "ショットガン",
+          "icon": "tacz:m870",
+          "order": 30
+        },
+        {
+          "id": "project_deadzone:weapons/rifles",
+          "title": "AR・ライフル",
+          "icon": "tacz:m4a1",
+          "order": 40
+        },
+        {
+          "id": "project_deadzone:weapons/precision",
+          "title": "SR・DMR",
+          "icon": "tacz:m700",
+          "order": 50
+        },
+        {
+          "id": "project_deadzone:weapons/support",
+          "title": "支援火器",
+          "icon": "tacz:m249",
+          "order": 60
+        },
+        {
+          "id": "project_deadzone:weapons/experimental",
+          "title": "ランチャー・試験兵器",
+          "icon": "tacz:rpg7",
+          "order": 70
+        }
+      ]
+    }
+  ]
+}

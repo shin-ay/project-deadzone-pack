@@ -1,0 +1,40 @@
+{
+  "format": 2,
+  "profile": "project_deadzone:story_arsenal",
+  "priority": 1000,
+  "target": {
+    "blueprints": [
+      "tacz:m700"
+    ]
+  },
+  "visibility": "full",
+  "tree_enabled": true,
+  "research_enabled": false,
+  "requires_discovery": false,
+  "research_cost": {
+    "points": 10,
+    "ingredients": [
+      {
+        "items": [
+          "minecraft:paper"
+        ],
+        "count": 4
+      },
+      {
+        "items": [
+          "minecraft:gold_ingot"
+        ],
+        "count": 1
+      },
+      {
+        "tag": "forge:ingots/steel",
+        "count": 1
+      }
+    ]
+  },
+  "reverse_engineering": {
+    "enabled": false,
+    "physical_blueprint_learning": "disabled",
+    "output_recyclable": false
+  }
+}

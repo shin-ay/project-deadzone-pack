@@ -1,0 +1,48 @@
+{
+  "format": 1,
+  "profile": "project_deadzone:story_arsenal",
+  "title": "ランチャー・試験兵器",
+  "icon": "tacz:rpg7",
+  "order": 70,
+  "include_in_overview": true,
+  "ranks": [
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [
+      "tacz:rpg7"
+    ],
+    [
+      "elitex:mustang_and_sally",
+      "elitex:ray_gun_mk2",
+      "elitex:raygun_bo6",
+      "maxstuff:thunderbird",
+      "maxstuff:thunderbird_short",
+      "elitex:origin_electric_staff",
+      "elitex:origin_fire_staff",
+      "elitex:origin_ice_staff",
+      "elitex:origin_wind_staff",
+      "bf1:f_faust",
+      "bf1:lunge_mine",
+      "bf1:mhgl",
+      "ccrp:lmt_m203",
+      "ccrp:m4_bolter",
+      "classicr:mgl_40mm",
+      "daffas_arsenal:m79",
+      "daffas_arsenal:m79sohrt",
+      "immersive_armorer:chemical_thrower",
+      "immersive_armorer:dual_barrel_cannon",
+      "immersive_armorer:plasma_gun",
+      "maxstuff:can_cannon",
+      "maxstuff:m320t",
+      "tacz:m320",
+      "ccrp:mk18_mjolnir",
+      "immersive_armorer:railgun",
+      "maxstuff:excaliber",
+      "maxstuff:mk18_mjolnir"
+    ]
+  ]
+}

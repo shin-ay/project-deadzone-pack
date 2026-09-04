@@ -1,0 +1,21 @@
+{
+  "format": 2,
+  "profile": "project_deadzone:story_arsenal",
+  "priority": 0,
+  "target": {
+    "selector": {
+      "blueprint_kinds": [
+        "gun"
+      ]
+    }
+  },
+  "visibility": "name",
+  "tree_enabled": false,
+  "research_enabled": false,
+  "recycling_enabled": true,
+  "reverse_engineering": {
+    "enabled": false,
+    "physical_blueprint_learning": "disabled",
+    "output_recyclable": false
+  }
+}

@@ -1,6 +1,7 @@
-// PROJECT DEADZONE Arsenal Authorization v0.2 (local candidate)
+// PROJECT DEADZONE Arsenal Authorization v0.3 (local candidate)
 // TaCZ uses its own gun-smith recipe type, which RecipeStages 8 cannot gate.
-// Enforce the same large story milestones at the point a weapon is used.
+// Weapon Research owns crafting/unlock progression. This script is only a
+// safety guard and consumes its exact generated S0-S3 classification.
 
 const PDZ_ARSENAL_IGUN = Java.loadClass('com.tacz.guns.api.item.IGun')
 const PDZ_ARSENAL_ASSETS = Java.loadClass('com.tacz.guns.resource.CommonAssetsManager')
@@ -29,19 +30,11 @@ function dzArsenalProfile(stack) {
 
 function dzArsenalRequiredTier(profile) {
   if (!profile.gun) return 0
-  let id = profile.id, type = profile.type
-  let family = (type + ' ' + id).toLowerCase()
+  let tier = global.pdzArsenalTierById ? global.pdzArsenalTierById[profile.id] : undefined
+  if (tier !== undefined && tier !== null) return Math.max(0, Math.min(3, Number(tier) || 0))
 
-  // Story authorization is owned by the weapon family, not by the add-on
-  // pack it came from. A simple SMG must stay usable at S0 even when a pack
-  // also contains late-game weapons.
-  if (/(launcher|rocket|grenade_launcher|cannon|railgun|plasma|chemical|energy_weapon)/.test(family)) return 3
-  if (/(sniper|marksman|dmr|anti_materiel|anti-material|machine_gun|heavy_machine|\blmg\b|\bhmg\b|minigun)/.test(family)) return 2
-  if (/(shotgun|assault|battle_rifle|automatic_rifle|\brifle\b)/.test(family)) return 1
-  if (/(smg|submachine|machine_pistol|pistol|handgun|revolver|glock|m1911|cz75|mp5|mp7|uzi|vector|p90|ump|pp19)/.test(family)) return 0
-
-  // Unknown or genuinely experimental weapons fail safely into S3. The
-  // diagnostic command prints both ID and type so new packs can be classified.
+  // New guns from a later pack update fail closed until the catalog generator
+  // is rerun; they can never leak into S0 due to a guessed type string.
   return 3
 }
 

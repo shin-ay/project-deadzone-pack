@@ -1,0 +1,36 @@
+{
+  "format": 2,
+  "profile": "project_deadzone:story_arsenal",
+  "priority": 1000,
+  "target": {
+    "blueprints": [
+      "tacz:m4a1"
+    ]
+  },
+  "visibility": "full",
+  "tree_enabled": true,
+  "research_enabled": false,
+  "requires_discovery": false,
+  "research_cost": {
+    "points": 6,
+    "ingredients": [
+      {
+        "items": [
+          "minecraft:paper"
+        ],
+        "count": 3
+      },
+      {
+        "items": [
+          "minecraft:iron_ingot"
+        ],
+        "count": 2
+      }
+    ]
+  },
+  "reverse_engineering": {
+    "enabled": false,
+    "physical_blueprint_learning": "disabled",
+    "output_recyclable": false
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "format": 2,
+  "profile": "project_deadzone:story_arsenal",
+  "priority": 1000,
+  "target": {
+    "blueprints": [
+      "tacz:glock_17"
+    ]
+  },
+  "visibility": "full",
+  "tree_enabled": true,
+  "research_enabled": true,
+  "requires_discovery": false,
+  "research_cost": {
+    "points": 3,
+    "ingredients": [
+      {
+        "items": [
+          "minecraft:paper"
+        ],
+        "count": 2
+      },
+      {
+        "items": [
+          "minecraft:iron_ingot"
+        ],
+        "count": 1
+      }
+    ]
+  }
+}

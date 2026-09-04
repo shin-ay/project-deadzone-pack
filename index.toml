@@ -14,7 +14,7 @@ hash = "9e81925dffff30dbc71a7ba8f1d3137b195e3e57ec182a54c407bd09a0911bc6"
 
 [[files]]
 file = "PDZ_CUMULATIVE_UPDATE_20260905_JP.md"
-hash = "fa5995a2ad76e368417488deb545ef63f07a614e93fc0fe85c05fb29dbec6398"
+hash = "17e862815e90879b64b98d3db038c1e744061a29c47f9828d9d37f56a1a4e609"
 
 [[files]]
 file = "README_R4_JP.txt"
@@ -1494,7 +1494,7 @@ hash = "b25b0d8388b4e38c267669c35fb6ea3929c5c855740089c1ca7421f58d2bea10"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/deadzone_mod_combat_01.snbt"
-hash = "6770f279d35f727ef46f20614367b0e204097844251b9b7892d28781b9f8279e"
+hash = "1dd922ec0d4c4f8c8db2a53a785d059c222a50950ae18c359cf9df1a6e607fd5"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/deadzone_mod_create_railway_01.snbt"
@@ -3242,7 +3242,7 @@ hash = "9f6a46490376b70e9d0e2ab1f8659ed36ae81dfb38907370cccfbe765c32a179"
 
 [[files]]
 file = "config/taczweaponblueprints/blueprint.toml"
-hash = "415d1e7747d3dd4b2ececc452f8606970e4bed6e711a204807e7f5e0e50dd087"
+hash = "048dd3af1cf2b2ea0f20c236eecdde698caf14d0182408b6e5689787e25fbac7"
 
 [[files]]
 file = "config/talkingheads.json5"
@@ -3851,6 +3851,10 @@ hash = "94a1e1858e45cec7f26c4fa1c227e290ba0e42ed321195d441755f109ce3c9cb"
 [[files]]
 file = "kubejs/assets/taa/lang/ja_jp.json"
 hash = "75173cbdd0feddde56b055e0d4adff41013d28105d5b0a40d14625235bf40f54"
+
+[[files]]
+file = "kubejs/assets/taczweaponblueprints/lang/ja_jp.json"
+hash = "5bb230ef5945d6cb0390bc0dece3a3bb921f287c585826f593618a635d71918d"
 
 [[files]]
 file = "kubejs/assets/village_recruits/lang/ja_jp.json"
@@ -11158,7 +11162,11 @@ hash = "5df59e485636b791e259d8910c26f85228740dd172c0fb7e17a0e0296b60a19c"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_arsenal_authorization_v0_1.js"
-hash = "9b0d67891b36376718a58f5d8ab3173baf575a2a9736a2cd5e115dd8beeebde5"
+hash = "e081afca18a84ee703fdde12160a6b0a8ec3243c7afda611a86fe0cb31bcae90"
+
+[[files]]
+file = "kubejs/server_scripts/project_deadzone_arsenal_catalog_generated.js"
+hash = "1a111e76362c1b2c5ad8c1bf8e25f270fbe7c85270164baef0014baf9517503b"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_auto_basecamp_v0_1.js"
@@ -11470,7 +11478,7 @@ hash = "6d014cf65233adec34257b9bbc91666bd89e4f9dec8fd0a3211bab98636d1708"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_recipe_stage_sync_v0_1.js"
-hash = "3feb2582aaf966e186553c67121701eb143596e73c2c0a734350db9010dd94e3"
+hash = "93854461e018b7c0d7c2d1543f8a8811dc56ba50cf72bc264d1efc6ee26dacc7"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_region_tiers_v0_1.js"
@@ -11562,7 +11570,7 @@ hash = "f3bed48f3c1d046dabf13c2f664cbb1d5ac5537b14b08431967e1c5ce6fb1477"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_story_boss_bridge_rewards_v0_1.js"
-hash = "75568b2d6cfa405e19b3f7dd9600ef9f2a06f140038684536a54e249f4146067"
+hash = "3c6e172acbeb1551b95d993da8390652fa133672676c008027b034a5be344aca"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_story_branches_v0_1.js"
@@ -22185,6 +22193,90 @@ hash = "839f6cfc36d6090f6a7fe0fd4948921dadc32475092fe582992093ed886798d9"
 [[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/pack.mcmeta"
 hash = "0ebb0c12eb7a11c4de1071a98531a7a293bb942f70354d263c84bb527c281da2"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_story_arsenal_research/data/project_deadzone/taczweaponblueprints/research_profiles/story_arsenal.json"
+hash = "462e99b0e4e1809df4d90d1d7073af8dab9f685e2182b657af0df335ccb271c9"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_story_arsenal_research/data/project_deadzone/taczweaponblueprints/research_rules/story_arsenal/s0_gateway.json"
+hash = "d7e4382534737d8d2694f731e19e9ea1feb5df96b74a52f16d73b82bd71220ac"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_story_arsenal_research/data/project_deadzone/taczweaponblueprints/research_rules/story_arsenal/s0_weapons.json"
+hash = "9fd4f3018e1ff8b651c53e4ec7e7761ee3349a352b61b46aad5c37adf1d37b27"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_story_arsenal_research/data/project_deadzone/taczweaponblueprints/research_rules/story_arsenal/s1_gateway.json"
+hash = "b70359f525f5f7efb4f21eb28d246473fd76084e04a653f7442b934ae25e0279"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_story_arsenal_research/data/project_deadzone/taczweaponblueprints/research_rules/story_arsenal/s1_weapons.json"
+hash = "9acc9a077bf3846848658a11a36f8c1e5d51899edff988d573f8a5ab4854ea49"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_story_arsenal_research/data/project_deadzone/taczweaponblueprints/research_rules/story_arsenal/s2_gateway.json"
+hash = "641a87f4642b010c20988fb43335da0409576b6334cc4a6511c04b17ec24b4ce"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_story_arsenal_research/data/project_deadzone/taczweaponblueprints/research_rules/story_arsenal/s2_weapons.json"
+hash = "a08e3f537ac0491790f81f29237b0054d02ec9166356053d24e25223a3629180"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_story_arsenal_research/data/project_deadzone/taczweaponblueprints/research_rules/story_arsenal/s3_gateway.json"
+hash = "a9170f90ca07b5eb9ae9ec2b796f36c416e1536b53426977a9d1365f1a6f5534"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_story_arsenal_research/data/project_deadzone/taczweaponblueprints/research_rules/story_arsenal/s3_weapons.json"
+hash = "992c7a6f65344464887bb04be73825e69847dd61c4d87383eaeda5bcf547b795"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_story_arsenal_research/data/project_deadzone/taczweaponblueprints/research_rules/story_arsenal/unclassified_guns_fail_closed.json"
+hash = "31ead2fa1efec0baeb1a8bbb9c9b79b943e090c8cc9b70e91fe3091d78abade8"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_story_arsenal_research/data/project_deadzone/taczweaponblueprints/research_tech_tree_entries/story_arsenal.json"
+hash = "ccb4eef06bbd5279f776d95e6b26bdb954b4036905944fe5ac5a1ed0cd73d09b"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_story_arsenal_research/data/project_deadzone/taczweaponblueprints/research_tech_trees/story_arsenal.json"
+hash = "96cded47cbaf1f15d1ad3033624cdd9bc91071ae35c4a33f2ac5f1a5e1debf24"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_story_arsenal_research/data/project_deadzone/taczweaponblueprints/research_tree_groups/experimental.json"
+hash = "4d2ee43989590c1e4b5d50970dcdd5ba79c0f1f26607f7ac7ec7c6a2c5874bd5"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_story_arsenal_research/data/project_deadzone/taczweaponblueprints/research_tree_groups/handguns.json"
+hash = "23d538d4815803530142680e90d4c945dcfcd996a54f0627ee1008daae5a0161"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_story_arsenal_research/data/project_deadzone/taczweaponblueprints/research_tree_groups/precision.json"
+hash = "77026caff27372e0f559a3199a3eec5e8cb168a91e8c6041b3d5fda8b6e98f20"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_story_arsenal_research/data/project_deadzone/taczweaponblueprints/research_tree_groups/rifles.json"
+hash = "9ec11eda845c524376c6582f4c26e8b127e4ace9376484d96393e1085c25a282"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_story_arsenal_research/data/project_deadzone/taczweaponblueprints/research_tree_groups/shotguns.json"
+hash = "6c1099712a7c3c7caff2b25127a2858caaef092ae0c8e8b2891b00ebe69c5de9"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_story_arsenal_research/data/project_deadzone/taczweaponblueprints/research_tree_groups/smgs.json"
+hash = "e9a5d0ae54215c48975b334c4110ee3b2f914644bcc6d81911ce729860c55bfc"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_story_arsenal_research/data/project_deadzone/taczweaponblueprints/research_tree_groups/support.json"
+hash = "b3020e165463fd35ab0ec15883df5d685b5fb51b0cd1f3f500372d87a05b84ac"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_story_arsenal_research/pack.mcmeta"
+hash = "8b947dcbea2aa31042a65a666c7a59ca7ddf21b67e343444addaa7591fd96bb1"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_story_arsenal_research/pdz_arsenal_catalog_manifest.json"
+hash = "0e13993365babe614f1a9fe5f04be908fa6ac334497eef35e160d57ad092973c"
 
 [[files]]
 file = "moonlight-global-datapacks/pdz_worldgen_test/data/bettermineshafts/worldgen/structure_set/mineshafts.json"

@@ -29,6 +29,28 @@
 			y: 0.0d
 		}
 		{
+			dependencies: ["7542EEC66461563F"]
+			description: [
+				"銃本体の製造解禁は、ストーリー段階と兵器研究を一本化して管理する。研究ベンチ、またはJキーのBlueprint Journalで系統図を確認できる。"
+				"S0：拳銃・SMG。開始時からGlock 17を基点に研究可能。"
+				"S1：AR・SG。Gas Station作戦のボス撃破でM4A1系統を解禁。"
+				"S2：SR・DMR・機関銃。Police Station作戦のボス撃破でM700系統を解禁。"
+				"S3：ランチャー・試験兵器。Radio Tower作戦のボス撃破でRPG7系統を解禁。"
+				"ボス撃破は段階の入口を開く。以後は研究ポイントと素材を使い、同じ段階の欲しい銃を選んで研究する。弾薬とアタッチメントにはストーリー制限をかけない。"
+				"物理Blueprintから直接習得する場合も、未解禁段階を飛び越えることはできない。"
+			]
+			icon: "taczweaponblueprints:research_bench"
+			id: "5B6E7A9D1C42F803"
+			tasks: [{
+				id: "71A4CC82D0035E19"
+				title: "兵器研究の流れを確認した"
+				type: "checkmark"
+			}]
+			title: "兵器研究：S0～S3"
+			x: 0.0d
+			y: -2.0d
+		}
+		{
 			description: ["近接はEpic Fightの攻撃モーション・スタミナ・間合いを使う。銃を持っている時は銃モーションが優先される。"]
 			icon: {
 				Count: 1

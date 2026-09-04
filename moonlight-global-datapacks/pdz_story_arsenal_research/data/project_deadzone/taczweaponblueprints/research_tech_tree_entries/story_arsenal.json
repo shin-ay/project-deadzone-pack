@@ -1,0 +1,5935 @@
+{
+  "format": 2,
+  "tree": "project_deadzone:story_arsenal",
+  "priority": 500,
+  "entries": [
+    {
+      "target": {
+        "blueprints": [
+          "bf1:handgun"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/handguns",
+      "tier": "starter",
+      "rank": 1,
+      "order": 0
+    },
+    {
+      "target": {
+        "blueprints": [
+          "bf1:kolibri"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/handguns",
+      "tier": "starter",
+      "rank": 1,
+      "order": 10
+    },
+    {
+      "target": {
+        "blueprints": [
+          "bf1:obrez"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/handguns",
+      "tier": "starter",
+      "rank": 1,
+      "order": 20
+    },
+    {
+      "target": {
+        "blueprints": [
+          "bf1:sw_model3"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/handguns",
+      "tier": "starter",
+      "rank": 1,
+      "order": 30
+    },
+    {
+      "target": {
+        "blueprints": [
+          "bf1:syringe"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/handguns",
+      "tier": "starter",
+      "rank": 1,
+      "order": 40
+    },
+    {
+      "target": {
+        "blueprints": [
+          "bf1:welrod"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/handguns",
+      "tier": "starter",
+      "rank": 1,
+      "order": 50
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:af2011"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/handguns",
+      "tier": "starter",
+      "rank": 1,
+      "order": 60
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:block_17"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/handguns",
+      "tier": "starter",
+      "rank": 1,
+      "order": 70
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:chisato_m1911"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/handguns",
+      "tier": "starter",
+      "rank": 1,
+      "order": 80
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:crow_and_egret"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/handguns",
+      "tier": "starter",
+      "rank": 1,
+      "order": 90
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:deagle_nightingale"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/handguns",
+      "tier": "starter",
+      "rank": 1,
+      "order": 100
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:deagle_xix"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/handguns",
+      "tier": "starter",
+      "rank": 1,
+      "order": 110
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:fightlite_scr_hg"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/handguns",
+      "tier": "starter",
+      "rank": 1,
+      "order": 120
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:glock20gen5mos"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/handguns",
+      "tier": "starter",
+      "rank": 1,
+      "order": 130
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:glock40gen5mos"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/handguns",
+      "tier": "starter",
+      "rank": 1,
+      "order": 140
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:keltec_p50"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/handguns",
+      "tier": "starter",
+      "rank": 1,
+      "order": 150
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:requiem"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/handguns",
+      "tier": "starter",
+      "rank": 1,
+      "order": 160
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:samurai_edge"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/handguns",
+      "tier": "starter",
+      "rank": 1,
+      "order": 170
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:shield_ots33"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/handguns",
+      "tier": "starter",
+      "rank": 1,
+      "order": 180
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:timeless_50"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/handguns",
+      "tier": "starter",
+      "rank": 1,
+      "order": 190
+    },
+    {
+      "target": {
+        "blueprints": [
+          "classicr:b93r"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/handguns",
+      "tier": "starter",
+      "rank": 1,
+      "order": 200
+    },
+    {
+      "target": {
+        "blueprints": [
+          "classicr:colt_python"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/handguns",
+      "tier": "starter",
+      "rank": 1,
+      "order": 210
+    },
+    {
+      "target": {
+        "blueprints": [
+          "classicr:glock_18"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/handguns",
+      "tier": "starter",
+      "rank": 1,
+      "order": 220
+    },
+    {
+      "target": {
+        "blueprints": [
+          "classicr:m92fs"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/handguns",
+      "tier": "starter",
+      "rank": 1,
+      "order": 230
+    },
+    {
+      "target": {
+        "blueprints": [
+          "classicr:mac10"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/handguns",
+      "tier": "starter",
+      "rank": 1,
+      "order": 240
+    },
+    {
+      "target": {
+        "blueprints": [
+          "classicr:mauser_c96"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/handguns",
+      "tier": "starter",
+      "rank": 1,
+      "order": 250
+    },
+    {
+      "target": {
+        "blueprints": [
+          "classicr:sti2011"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/handguns",
+      "tier": "starter",
+      "rank": 1,
+      "order": 260
+    },
+    {
+      "target": {
+        "blueprints": [
+          "classicr:tec_9"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/handguns",
+      "tier": "starter",
+      "rank": 1,
+      "order": 270
+    },
+    {
+      "target": {
+        "blueprints": [
+          "classicr:tti_g34"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/handguns",
+      "tier": "starter",
+      "rank": 1,
+      "order": 280
+    },
+    {
+      "target": {
+        "blueprints": [
+          "daffas_arsenal:hk45"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/handguns",
+      "tier": "starter",
+      "rank": 1,
+      "order": 290
+    },
+    {
+      "target": {
+        "blueprints": [
+          "daffas_arsenal:hk45_sup"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/handguns",
+      "tier": "starter",
+      "rank": 1,
+      "order": 300
+    },
+    {
+      "target": {
+        "blueprints": [
+          "daffas_arsenal:p99_hak"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/handguns",
+      "tier": "starter",
+      "rank": 1,
+      "order": 310
+    },
+    {
+      "target": {
+        "blueprints": [
+          "daffas_arsenal:p99_nohak"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/handguns",
+      "tier": "starter",
+      "rank": 1,
+      "order": 320
+    },
+    {
+      "target": {
+        "blueprints": [
+          "daffas_arsenal:taurus"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/handguns",
+      "tier": "starter",
+      "rank": 1,
+      "order": 330
+    },
+    {
+      "target": {
+        "blueprints": [
+          "daffas_arsenal:taurus2"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/handguns",
+      "tier": "starter",
+      "rank": 1,
+      "order": 340
+    },
+    {
+      "target": {
+        "blueprints": [
+          "daffas_arsenal:welrod"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/handguns",
+      "tier": "starter",
+      "rank": 1,
+      "order": 350
+    },
+    {
+      "target": {
+        "blueprints": [
+          "elitex:bo1_1911"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/handguns",
+      "tier": "starter",
+      "rank": 1,
+      "order": 360
+    },
+    {
+      "target": {
+        "blueprints": [
+          "elitex:colt_m1911x1"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/handguns",
+      "tier": "starter",
+      "rank": 1,
+      "order": 370
+    },
+    {
+      "target": {
+        "blueprints": [
+          "elitex:five_seven"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/handguns",
+      "tier": "starter",
+      "rank": 1,
+      "order": 380
+    },
+    {
+      "target": {
+        "blueprints": [
+          "elitex:jrx"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/handguns",
+      "tier": "starter",
+      "rank": 1,
+      "order": 390
+    },
+    {
+      "target": {
+        "blueprints": [
+          "elitex:op1911"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/handguns",
+      "tier": "starter",
+      "rank": 1,
+      "order": 400
+    },
+    {
+      "target": {
+        "blueprints": [
+          "elitex:springfield_m1911"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/handguns",
+      "tier": "starter",
+      "rank": 1,
+      "order": 410
+    },
+    {
+      "target": {
+        "blueprints": [
+          "elitex:srz_2011"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/handguns",
+      "tier": "starter",
+      "rank": 1,
+      "order": 420
+    },
+    {
+      "target": {
+        "blueprints": [
+          "elitex:trs_bull"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/handguns",
+      "tier": "starter",
+      "rank": 1,
+      "order": 430
+    },
+    {
+      "target": {
+        "blueprints": [
+          "emxarms:emx_kund50"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/handguns",
+      "tier": "starter",
+      "rank": 1,
+      "order": 440
+    },
+    {
+      "target": {
+        "blueprints": [
+          "emxarms:emx_kund50ex"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/handguns",
+      "tier": "starter",
+      "rank": 1,
+      "order": 450
+    },
+    {
+      "target": {
+        "blueprints": [
+          "emxarms:emx_mac100"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/handguns",
+      "tier": "starter",
+      "rank": 1,
+      "order": 460
+    },
+    {
+      "target": {
+        "blueprints": [
+          "emxarms:emx_mac50"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/handguns",
+      "tier": "starter",
+      "rank": 1,
+      "order": 470
+    },
+    {
+      "target": {
+        "blueprints": [
+          "emxarms:emx_nikana"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/handguns",
+      "tier": "starter",
+      "rank": 1,
+      "order": 480
+    },
+    {
+      "target": {
+        "blueprints": [
+          "emxarms:emx_pulse"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/handguns",
+      "tier": "starter",
+      "rank": 1,
+      "order": 490
+    },
+    {
+      "target": {
+        "blueprints": [
+          "emxarms:emx_pulsex2"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/handguns",
+      "tier": "starter",
+      "rank": 1,
+      "order": 500
+    },
+    {
+      "target": {
+        "blueprints": [
+          "emxarms:emx_tknife"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/handguns",
+      "tier": "starter",
+      "rank": 1,
+      "order": 510
+    },
+    {
+      "target": {
+        "blueprints": [
+          "immersive_armorer:pistol_9mm"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/handguns",
+      "tier": "starter",
+      "rank": 1,
+      "order": 520
+    },
+    {
+      "target": {
+        "blueprints": [
+          "immersive_armorer:revolver"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/handguns",
+      "tier": "starter",
+      "rank": 1,
+      "order": 530
+    },
+    {
+      "target": {
+        "blueprints": [
+          "immersive_armorer:standard_rail_pistol_mk2"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/handguns",
+      "tier": "starter",
+      "rank": 1,
+      "order": 540
+    },
+    {
+      "target": {
+        "blueprints": [
+          "immersive_armorer:standard_rail_pistol_mk3"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/handguns",
+      "tier": "starter",
+      "rank": 1,
+      "order": 550
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:1851_navy"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/handguns",
+      "tier": "starter",
+      "rank": 1,
+      "order": 560
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:af2011"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/handguns",
+      "tier": "starter",
+      "rank": 1,
+      "order": 570
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:blicky"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/handguns",
+      "tier": "starter",
+      "rank": 1,
+      "order": 580
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:c96"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/handguns",
+      "tier": "starter",
+      "rank": 1,
+      "order": 590
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:deagle_12g"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/handguns",
+      "tier": "starter",
+      "rank": 1,
+      "order": 600
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:deagle_50bmg"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/handguns",
+      "tier": "starter",
+      "rank": 1,
+      "order": 610
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:glock_18c"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/handguns",
+      "tier": "starter",
+      "rank": 1,
+      "order": 620
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:glock_54"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/handguns",
+      "tier": "starter",
+      "rank": 1,
+      "order": 630
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:glock_bulpup"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/handguns",
+      "tier": "starter",
+      "rank": 1,
+      "order": 640
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:m17"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/handguns",
+      "tier": "starter",
+      "rank": 1,
+      "order": 650
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:mk23"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/handguns",
+      "tier": "starter",
+      "rank": 1,
+      "order": 660
+    },
+    {
+      "target": {
+        "blueprints": [
+          "tacz:b93r"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/handguns",
+      "tier": "starter",
+      "rank": 1,
+      "order": 670
+    },
+    {
+      "target": {
+        "blueprints": [
+          "tacz:cz75"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/handguns",
+      "tier": "starter",
+      "rank": 1,
+      "order": 680
+    },
+    {
+      "target": {
+        "blueprints": [
+          "tacz:deagle"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/handguns",
+      "tier": "starter",
+      "rank": 1,
+      "order": 690
+    },
+    {
+      "target": {
+        "blueprints": [
+          "tacz:deagle_golden"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/handguns",
+      "tier": "starter",
+      "rank": 1,
+      "order": 700
+    },
+    {
+      "target": {
+        "blueprints": [
+          "tacz:glock_17"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/handguns",
+      "tier": "starter",
+      "rank": 0,
+      "order": 710
+    },
+    {
+      "target": {
+        "blueprints": [
+          "tacz:hk_mk23"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/handguns",
+      "tier": "starter",
+      "rank": 1,
+      "order": 720
+    },
+    {
+      "target": {
+        "blueprints": [
+          "tacz:lonetrail"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/handguns",
+      "tier": "starter",
+      "rank": 1,
+      "order": 730
+    },
+    {
+      "target": {
+        "blueprints": [
+          "tacz:m1911"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/handguns",
+      "tier": "starter",
+      "rank": 1,
+      "order": 740
+    },
+    {
+      "target": {
+        "blueprints": [
+          "tacz:m9a4"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/handguns",
+      "tier": "starter",
+      "rank": 1,
+      "order": 750
+    },
+    {
+      "target": {
+        "blueprints": [
+          "tacz:p320"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/handguns",
+      "tier": "starter",
+      "rank": 1,
+      "order": 760
+    },
+    {
+      "target": {
+        "blueprints": [
+          "tacz:rhino357"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/handguns",
+      "tier": "starter",
+      "rank": 1,
+      "order": 770
+    },
+    {
+      "target": {
+        "blueprints": [
+          "tacz:taurus500"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/handguns",
+      "tier": "starter",
+      "rank": 1,
+      "order": 780
+    },
+    {
+      "target": {
+        "blueprints": [
+          "tacz:taurus943"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/handguns",
+      "tier": "starter",
+      "rank": 1,
+      "order": 790
+    },
+    {
+      "target": {
+        "blueprints": [
+          "tacz:timeless50"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/handguns",
+      "tier": "starter",
+      "rank": 1,
+      "order": 800
+    },
+    {
+      "target": {
+        "blueprints": [
+          "bf1:smg0818"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/smgs",
+      "tier": "starter",
+      "rank": 1,
+      "order": 0
+    },
+    {
+      "target": {
+        "blueprints": [
+          "bf1:vp1915"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/smgs",
+      "tier": "starter",
+      "rank": 1,
+      "order": 10
+    },
+    {
+      "target": {
+        "blueprints": [
+          "bf1:zk383"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/smgs",
+      "tier": "starter",
+      "rank": 1,
+      "order": 20
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:aks74u"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/smgs",
+      "tier": "starter",
+      "rank": 1,
+      "order": 30
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:apc_9k_pro_g"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/smgs",
+      "tier": "starter",
+      "rank": 1,
+      "order": 40
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:ar57"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/smgs",
+      "tier": "starter",
+      "rank": 1,
+      "order": 50
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:aug_para"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/smgs",
+      "tier": "starter",
+      "rank": 1,
+      "order": 60
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:camg_cheetah40"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/smgs",
+      "tier": "starter",
+      "rank": 1,
+      "order": 70
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:m231"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/smgs",
+      "tier": "starter",
+      "rank": 1,
+      "order": 80
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:mp5_sd"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/smgs",
+      "tier": "starter",
+      "rank": 1,
+      "order": 90
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:mp5k"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/smgs",
+      "tier": "starter",
+      "rank": 1,
+      "order": 100
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:mp5k_pdw"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/smgs",
+      "tier": "starter",
+      "rank": 1,
+      "order": 110
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:mp7a3"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/smgs",
+      "tier": "starter",
+      "rank": 1,
+      "order": 120
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:mp9_thunder"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/smgs",
+      "tier": "starter",
+      "rank": 1,
+      "order": 130
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:mpx"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/smgs",
+      "tier": "starter",
+      "rank": 1,
+      "order": 140
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:msh41"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/smgs",
+      "tier": "starter",
+      "rank": 1,
+      "order": 150
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:p90_effen_90"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/smgs",
+      "tier": "starter",
+      "rank": 1,
+      "order": 160
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:p90_paw"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/smgs",
+      "tier": "starter",
+      "rank": 1,
+      "order": 170
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:p90_shround_s"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/smgs",
+      "tier": "starter",
+      "rank": 1,
+      "order": 180
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:ro635"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/smgs",
+      "tier": "starter",
+      "rank": 1,
+      "order": 190
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:sr_3m"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/smgs",
+      "tier": "starter",
+      "rank": 1,
+      "order": 200
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:tti_mpx"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/smgs",
+      "tier": "starter",
+      "rank": 1,
+      "order": 210
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:uzi45"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/smgs",
+      "tier": "starter",
+      "rank": 1,
+      "order": 220
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:vector10"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/smgs",
+      "tier": "starter",
+      "rank": 1,
+      "order": 230
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:x95_smg"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/smgs",
+      "tier": "starter",
+      "rank": 1,
+      "order": 240
+    },
+    {
+      "target": {
+        "blueprints": [
+          "classicr:m1a1_smg"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/smgs",
+      "tier": "starter",
+      "rank": 1,
+      "order": 250
+    },
+    {
+      "target": {
+        "blueprints": [
+          "classicr:mp7"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/smgs",
+      "tier": "starter",
+      "rank": 1,
+      "order": 260
+    },
+    {
+      "target": {
+        "blueprints": [
+          "classicr:mp9"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/smgs",
+      "tier": "starter",
+      "rank": 1,
+      "order": 270
+    },
+    {
+      "target": {
+        "blueprints": [
+          "classicr:udp_9"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/smgs",
+      "tier": "starter",
+      "rank": 1,
+      "order": 280
+    },
+    {
+      "target": {
+        "blueprints": [
+          "daffas_arsenal:apacoba9"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/smgs",
+      "tier": "starter",
+      "rank": 1,
+      "order": 290
+    },
+    {
+      "target": {
+        "blueprints": [
+          "daffas_arsenal:apacoba9_sup"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/smgs",
+      "tier": "starter",
+      "rank": 1,
+      "order": 300
+    },
+    {
+      "target": {
+        "blueprints": [
+          "daffas_arsenal:harpa9"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/smgs",
+      "tier": "starter",
+      "rank": 1,
+      "order": 310
+    },
+    {
+      "target": {
+        "blueprints": [
+          "daffas_arsenal:makten_single"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/smgs",
+      "tier": "starter",
+      "rank": 1,
+      "order": 320
+    },
+    {
+      "target": {
+        "blueprints": [
+          "daffas_arsenal:makten_single_taktis"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/smgs",
+      "tier": "starter",
+      "rank": 1,
+      "order": 330
+    },
+    {
+      "target": {
+        "blueprints": [
+          "daffas_arsenal:mp5k"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/smgs",
+      "tier": "starter",
+      "rank": 1,
+      "order": 340
+    },
+    {
+      "target": {
+        "blueprints": [
+          "daffas_arsenal:pego"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/smgs",
+      "tier": "starter",
+      "rank": 1,
+      "order": 350
+    },
+    {
+      "target": {
+        "blueprints": [
+          "daffas_arsenal:pegont"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/smgs",
+      "tier": "starter",
+      "rank": 1,
+      "order": 360
+    },
+    {
+      "target": {
+        "blueprints": [
+          "daffas_arsenal:uji"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/smgs",
+      "tier": "starter",
+      "rank": 1,
+      "order": 370
+    },
+    {
+      "target": {
+        "blueprints": [
+          "elitex:mp5_classic"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/smgs",
+      "tier": "starter",
+      "rank": 1,
+      "order": 380
+    },
+    {
+      "target": {
+        "blueprints": [
+          "elitex:mp7r"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/smgs",
+      "tier": "starter",
+      "rank": 1,
+      "order": 390
+    },
+    {
+      "target": {
+        "blueprints": [
+          "elitex:ro635v3"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/smgs",
+      "tier": "starter",
+      "rank": 1,
+      "order": 400
+    },
+    {
+      "target": {
+        "blueprints": [
+          "elitex:vector45acp"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/smgs",
+      "tier": "starter",
+      "rank": 1,
+      "order": 410
+    },
+    {
+      "target": {
+        "blueprints": [
+          "emxarms:emx_expel32"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/smgs",
+      "tier": "starter",
+      "rank": 1,
+      "order": 420
+    },
+    {
+      "target": {
+        "blueprints": [
+          "emxarms:emx_expel32se"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/smgs",
+      "tier": "starter",
+      "rank": 1,
+      "order": 430
+    },
+    {
+      "target": {
+        "blueprints": [
+          "emxarms:emx_mac50flux"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/smgs",
+      "tier": "starter",
+      "rank": 1,
+      "order": 440
+    },
+    {
+      "target": {
+        "blueprints": [
+          "emxarms:emx_umx32"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/smgs",
+      "tier": "starter",
+      "rank": 1,
+      "order": 450
+    },
+    {
+      "target": {
+        "blueprints": [
+          "immersive_armorer:short_smg"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/smgs",
+      "tier": "starter",
+      "rank": 1,
+      "order": 460
+    },
+    {
+      "target": {
+        "blueprints": [
+          "immersive_armorer:standard_rail_smg_mk1"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/smgs",
+      "tier": "starter",
+      "rank": 1,
+      "order": 470
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:ar57"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/smgs",
+      "tier": "starter",
+      "rank": 1,
+      "order": 480
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:aug_a3_para"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/smgs",
+      "tier": "starter",
+      "rank": 1,
+      "order": 490
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:colt_mars"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/smgs",
+      "tier": "starter",
+      "rank": 1,
+      "order": 500
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:hk_mp5k"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/smgs",
+      "tier": "starter",
+      "rank": 1,
+      "order": 510
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:hk_mp5sd"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/smgs",
+      "tier": "starter",
+      "rank": 1,
+      "order": 520
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:luty"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/smgs",
+      "tier": "starter",
+      "rank": 1,
+      "order": 530
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:mp7"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/smgs",
+      "tier": "starter",
+      "rank": 1,
+      "order": 540
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:nailgun"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/smgs",
+      "tier": "starter",
+      "rank": 1,
+      "order": 550
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:ro635"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/smgs",
+      "tier": "starter",
+      "rank": 1,
+      "order": 560
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:saiga9"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/smgs",
+      "tier": "starter",
+      "rank": 1,
+      "order": 570
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:udp9"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/smgs",
+      "tier": "starter",
+      "rank": 1,
+      "order": 580
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:ump9"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/smgs",
+      "tier": "starter",
+      "rank": 1,
+      "order": 590
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:vector9"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/smgs",
+      "tier": "starter",
+      "rank": 1,
+      "order": 600
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:vityas"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/smgs",
+      "tier": "starter",
+      "rank": 1,
+      "order": 610
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:z80"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/smgs",
+      "tier": "starter",
+      "rank": 1,
+      "order": 620
+    },
+    {
+      "target": {
+        "blueprints": [
+          "tacz:hk_mp5a5"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/smgs",
+      "tier": "starter",
+      "rank": 1,
+      "order": 630
+    },
+    {
+      "target": {
+        "blueprints": [
+          "tacz:p90"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/smgs",
+      "tier": "starter",
+      "rank": 1,
+      "order": 640
+    },
+    {
+      "target": {
+        "blueprints": [
+          "tacz:ump45"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/smgs",
+      "tier": "starter",
+      "rank": 1,
+      "order": 650
+    },
+    {
+      "target": {
+        "blueprints": [
+          "tacz:uzi"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/smgs",
+      "tier": "starter",
+      "rank": 1,
+      "order": 660
+    },
+    {
+      "target": {
+        "blueprints": [
+          "tacz:vector45"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/smgs",
+      "tier": "starter",
+      "rank": 1,
+      "order": 670
+    },
+    {
+      "target": {
+        "blueprints": [
+          "bf1:de_lisle"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 0
+    },
+    {
+      "target": {
+        "blueprints": [
+          "bf1:liu"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 10
+    },
+    {
+      "target": {
+        "blueprints": [
+          "bf1:m1916"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 20
+    },
+    {
+      "target": {
+        "blueprints": [
+          "bf1:rsc1917"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 30
+    },
+    {
+      "target": {
+        "blueprints": [
+          "bf1:vg15"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 40
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:a545"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 50
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:aac_honeybadger"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 60
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:ak103"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 70
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:ak47_spent_bullet"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 80
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:ak74"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 90
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:ak74m"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 100
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:am17"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 110
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:aug_a3"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 120
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:aug_a3_m2kit"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 130
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:aug_a3s"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 140
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:aug_camg_kit"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 150
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:brn_180_bullpup"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 160
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:camg_dexterous"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 170
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:camg_krait"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 180
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:camg_m4_sopmod2"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 190
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:camg_mk18"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 200
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:car_15"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 210
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:cr300"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 220
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:cslr_42a"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 230
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:cslr_43a"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 240
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:cslr_44"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 250
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:ddm4"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 260
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:ddm4_pdw"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 270
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:ddm4_v7_pro"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 280
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:ddm4a1"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 290
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:dsa_sa58"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 300
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:f90"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 310
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:f90_mbr"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 320
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:g95a1"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 330
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:hk_g28_patrol"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 340
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:hk416"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 350
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:hk416_sopmod"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 360
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:hk416a8"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 370
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:hk416c"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 380
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:hk417"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 390
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:hk433"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 400
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:honeybadger"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 410
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:kac_ks_1"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 420
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:km_ak74m"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 430
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:m16a3"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 440
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:m305a"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 450
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:m38_spr"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 460
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:m4_cqbr"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 470
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:m4_sopmod2_fsp"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 480
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:m4_ss"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 490
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:marlin_1895"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 500
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:mcx_spear_tombstone"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 510
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:mcx_virtus"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 520
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:mk17"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 530
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:mk556"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 540
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:psa_ak556"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 550
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:qbu_191"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 560
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:qbz_191"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 570
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:rd704"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 580
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:sai_gry_lite_black"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 590
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:scar_16s"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 600
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:scar_17s"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 610
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:scar_sc"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 620
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:scar16_ariana"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 630
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:scar17_armarise"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 640
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:sig277"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 650
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:silence_meteor"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 660
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:solgw_mk1"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 670
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:tti_tr1"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 680
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:type_192"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 690
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:type_97_gen2"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 700
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:v308"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 710
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:x95r"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 720
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:zenit_ak104"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 730
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:zenit_ak105"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 740
+    },
+    {
+      "target": {
+        "blueprints": [
+          "classicr:ak12"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 750
+    },
+    {
+      "target": {
+        "blueprints": [
+          "classicr:fn_fal_tac"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 760
+    },
+    {
+      "target": {
+        "blueprints": [
+          "classicr:hk416_a5"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 770
+    },
+    {
+      "target": {
+        "blueprints": [
+          "classicr:mk18_mod1"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 780
+    },
+    {
+      "target": {
+        "blueprints": [
+          "classicr:mk47"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 790
+    },
+    {
+      "target": {
+        "blueprints": [
+          "classicr:ngsw_r_renewed"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 800
+    },
+    {
+      "target": {
+        "blueprints": [
+          "classicr:qbz191_renewed"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 810
+    },
+    {
+      "target": {
+        "blueprints": [
+          "classicr:spr_15"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 820
+    },
+    {
+      "target": {
+        "blueprints": [
+          "daffas_arsenal:ak47"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 830
+    },
+    {
+      "target": {
+        "blueprints": [
+          "daffas_arsenal:aksopmod"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 840
+    },
+    {
+      "target": {
+        "blueprints": [
+          "daffas_arsenal:g36c"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 850
+    },
+    {
+      "target": {
+        "blueprints": [
+          "daffas_arsenal:g36c_commando"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 860
+    },
+    {
+      "target": {
+        "blueprints": [
+          "daffas_arsenal:gerosa"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 870
+    },
+    {
+      "target": {
+        "blueprints": [
+          "daffas_arsenal:hk416"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 880
+    },
+    {
+      "target": {
+        "blueprints": [
+          "daffas_arsenal:hk416_sup"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 890
+    },
+    {
+      "target": {
+        "blueprints": [
+          "daffas_arsenal:hk417"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 900
+    },
+    {
+      "target": {
+        "blueprints": [
+          "daffas_arsenal:pegomc"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 910
+    },
+    {
+      "target": {
+        "blueprints": [
+          "daffas_arsenal:pegontmc"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 920
+    },
+    {
+      "target": {
+        "blueprints": [
+          "daffas_arsenal:samula3"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 930
+    },
+    {
+      "target": {
+        "blueprints": [
+          "daffas_arsenal:sg550"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 940
+    },
+    {
+      "target": {
+        "blueprints": [
+          "daffas_arsenal:sg552"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 950
+    },
+    {
+      "target": {
+        "blueprints": [
+          "daffas_arsenal:southeastmomssecretweapon"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 960
+    },
+    {
+      "target": {
+        "blueprints": [
+          "daffas_arsenal:ss1_v2"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 970
+    },
+    {
+      "target": {
+        "blueprints": [
+          "daffas_arsenal:ss1_v5"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 980
+    },
+    {
+      "target": {
+        "blueprints": [
+          "daffas_arsenal:ss1_v5g"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 990
+    },
+    {
+      "target": {
+        "blueprints": [
+          "elitex:ak47"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 1000
+    },
+    {
+      "target": {
+        "blueprints": [
+          "elitex:akx105"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 1010
+    },
+    {
+      "target": {
+        "blueprints": [
+          "elitex:famas_f1"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 1020
+    },
+    {
+      "target": {
+        "blueprints": [
+          "elitex:fh_scar18"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 1030
+    },
+    {
+      "target": {
+        "blueprints": [
+          "elitex:fs_scar19"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 1040
+    },
+    {
+      "target": {
+        "blueprints": [
+          "elitex:golden_ak"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 1050
+    },
+    {
+      "target": {
+        "blueprints": [
+          "elitex:m16"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 1060
+    },
+    {
+      "target": {
+        "blueprints": [
+          "elitex:m4_sopmod"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 1070
+    },
+    {
+      "target": {
+        "blueprints": [
+          "elitex:m4a1_classic"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 1080
+    },
+    {
+      "target": {
+        "blueprints": [
+          "elitex:mcs_spear"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 1090
+    },
+    {
+      "target": {
+        "blueprints": [
+          "elitex:wonder_waffle"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 1100
+    },
+    {
+      "target": {
+        "blueprints": [
+          "emxarms:emx_mk951l"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 1110
+    },
+    {
+      "target": {
+        "blueprints": [
+          "emxarms:emx_mk951r"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 1120
+    },
+    {
+      "target": {
+        "blueprints": [
+          "emxarms:emx_rivet"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 1130
+    },
+    {
+      "target": {
+        "blueprints": [
+          "emxarms:emx_umx57"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 1140
+    },
+    {
+      "target": {
+        "blueprints": [
+          "immersive_armorer:assult_rifle"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 1150
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:aa50beowulf"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 1160
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:adar2"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 1170
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:ak_alpha"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 1180
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:ak_delta"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 1190
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:ak107"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 1200
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:ak108"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 1210
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:ak109"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 1220
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:ak12"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 1230
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:ak15"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 1240
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:ak19"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 1250
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:ak22"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 1260
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:ak308"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 1270
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:ak63e"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 1280
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:ak74"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 1290
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:ak74m"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 1300
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:ak9"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 1310
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:aks74u"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 1320
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:aks74ub"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 1330
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:ar10"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 1340
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:ar10b"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 1350
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:ar18"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 1360
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:ar762"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 1370
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:arp"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 1380
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:aug_a2"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 1390
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:aug_a3"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 1400
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:aug_a5"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 1410
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:beowulf_ecr"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 1420
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:beowulf_tcr"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 1430
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:brn10"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 1440
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:colt_933"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 1450
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:cursed15"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 1460
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:g36"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 1470
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:hk_g33"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 1480
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:hk416c"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 1490
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:hk417"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 1500
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:honey_badger"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 1510
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:m1_garand"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 1520
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:m1_garand_tac"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 1530
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:m16a2"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 1540
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:m16a3"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 1550
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:mk18"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 1560
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:mk18_auto"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 1570
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:mk18_burst"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 1580
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:mk47"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 1590
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:mojave223"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 1600
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:potassium_power"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 1610
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:qbz_97"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 1620
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:scar_15p"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 1630
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:scar_pdw"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 1640
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:scar_sbr"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 1650
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:sr15"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 1660
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:sr16"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 1670
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:xm177"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 1680
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:z15"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 1690
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:z15_a"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 1700
+    },
+    {
+      "target": {
+        "blueprints": [
+          "tacz:ak47"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 1710
+    },
+    {
+      "target": {
+        "blueprints": [
+          "tacz:aug"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 1720
+    },
+    {
+      "target": {
+        "blueprints": [
+          "tacz:fn_fal"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 1730
+    },
+    {
+      "target": {
+        "blueprints": [
+          "tacz:g36k"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 1740
+    },
+    {
+      "target": {
+        "blueprints": [
+          "tacz:hk_g3"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 1750
+    },
+    {
+      "target": {
+        "blueprints": [
+          "tacz:hk416d"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 1760
+    },
+    {
+      "target": {
+        "blueprints": [
+          "tacz:m16a1"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 1770
+    },
+    {
+      "target": {
+        "blueprints": [
+          "tacz:m16a4"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 1780
+    },
+    {
+      "target": {
+        "blueprints": [
+          "tacz:m4a1"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 2,
+      "order": 1790
+    },
+    {
+      "target": {
+        "blueprints": [
+          "tacz:qbz_191"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 1800
+    },
+    {
+      "target": {
+        "blueprints": [
+          "tacz:qbz_95"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 1810
+    },
+    {
+      "target": {
+        "blueprints": [
+          "tacz:scar_h"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 1820
+    },
+    {
+      "target": {
+        "blueprints": [
+          "tacz:scar_l"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 1830
+    },
+    {
+      "target": {
+        "blueprints": [
+          "tacz:spr15hb"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 1840
+    },
+    {
+      "target": {
+        "blueprints": [
+          "tacz:type_81"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "established",
+      "rank": 3,
+      "order": 1850
+    },
+    {
+      "target": {
+        "blueprints": [
+          "bf1:ef46"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/shotguns",
+      "tier": "established",
+      "rank": 3,
+      "order": 0
+    },
+    {
+      "target": {
+        "blueprints": [
+          "bf1:m2_2"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/shotguns",
+      "tier": "established",
+      "rank": 3,
+      "order": 10
+    },
+    {
+      "target": {
+        "blueprints": [
+          "bf1:model10"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/shotguns",
+      "tier": "established",
+      "rank": 3,
+      "order": 20
+    },
+    {
+      "target": {
+        "blueprints": [
+          "bf1:sjogren"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/shotguns",
+      "tier": "established",
+      "rank": 3,
+      "order": 30
+    },
+    {
+      "target": {
+        "blueprints": [
+          "bf1:wex"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/shotguns",
+      "tier": "established",
+      "rank": 3,
+      "order": 40
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:camg_m1014"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/shotguns",
+      "tier": "established",
+      "rank": 3,
+      "order": 50
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:lastwar"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/shotguns",
+      "tier": "established",
+      "rank": 3,
+      "order": 60
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:m1887_long"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/shotguns",
+      "tier": "established",
+      "rank": 3,
+      "order": 70
+    },
+    {
+      "target": {
+        "blueprints": [
+          "classicr:aa410"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/shotguns",
+      "tier": "established",
+      "rank": 3,
+      "order": 80
+    },
+    {
+      "target": {
+        "blueprints": [
+          "daffas_arsenal:sgputer"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/shotguns",
+      "tier": "established",
+      "rank": 3,
+      "order": 90
+    },
+    {
+      "target": {
+        "blueprints": [
+          "daffas_arsenal:sgputer2"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/shotguns",
+      "tier": "established",
+      "rank": 3,
+      "order": 100
+    },
+    {
+      "target": {
+        "blueprints": [
+          "daffas_arsenal:southeastmomssecretweapon2"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/shotguns",
+      "tier": "established",
+      "rank": 3,
+      "order": 110
+    },
+    {
+      "target": {
+        "blueprints": [
+          "daffas_arsenal:spasi15"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/shotguns",
+      "tier": "established",
+      "rank": 3,
+      "order": 120
+    },
+    {
+      "target": {
+        "blueprints": [
+          "elitex:benelli_super"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/shotguns",
+      "tier": "established",
+      "rank": 3,
+      "order": 130
+    },
+    {
+      "target": {
+        "blueprints": [
+          "elitex:spaz12"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/shotguns",
+      "tier": "established",
+      "rank": 3,
+      "order": 140
+    },
+    {
+      "target": {
+        "blueprints": [
+          "emxarms:emx_draftsman"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/shotguns",
+      "tier": "established",
+      "rank": 3,
+      "order": 150
+    },
+    {
+      "target": {
+        "blueprints": [
+          "emxarms:emx_enforcer"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/shotguns",
+      "tier": "established",
+      "rank": 3,
+      "order": 160
+    },
+    {
+      "target": {
+        "blueprints": [
+          "emxarms:emx_scgraves"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/shotguns",
+      "tier": "established",
+      "rank": 3,
+      "order": 170
+    },
+    {
+      "target": {
+        "blueprints": [
+          "immersive_armorer:double_shotgun"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/shotguns",
+      "tier": "established",
+      "rank": 3,
+      "order": 180
+    },
+    {
+      "target": {
+        "blueprints": [
+          "immersive_armorer:pump_shotgun"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/shotguns",
+      "tier": "established",
+      "rank": 3,
+      "order": 190
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:db_50"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/shotguns",
+      "tier": "established",
+      "rank": 3,
+      "order": 200
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:db_long_d"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/shotguns",
+      "tier": "established",
+      "rank": 3,
+      "order": 210
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:db_short_d"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/shotguns",
+      "tier": "established",
+      "rank": 3,
+      "order": 220
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:db_short_tactical"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/shotguns",
+      "tier": "established",
+      "rank": 3,
+      "order": 230
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:genesis12"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/shotguns",
+      "tier": "established",
+      "rank": 3,
+      "order": 240
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:genesis12_dragons_breath"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/shotguns",
+      "tier": "established",
+      "rank": 3,
+      "order": 250
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:genesis12_fl"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/shotguns",
+      "tier": "established",
+      "rank": 3,
+      "order": 260
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:m870t"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/shotguns",
+      "tier": "established",
+      "rank": 3,
+      "order": 270
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:saiga12"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/shotguns",
+      "tier": "established",
+      "rank": 3,
+      "order": 280
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:sap6"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/shotguns",
+      "tier": "established",
+      "rank": 3,
+      "order": 290
+    },
+    {
+      "target": {
+        "blueprints": [
+          "tacz:aa12"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/shotguns",
+      "tier": "established",
+      "rank": 3,
+      "order": 300
+    },
+    {
+      "target": {
+        "blueprints": [
+          "tacz:db_long"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/shotguns",
+      "tier": "established",
+      "rank": 3,
+      "order": 310
+    },
+    {
+      "target": {
+        "blueprints": [
+          "tacz:db_short"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/shotguns",
+      "tier": "established",
+      "rank": 3,
+      "order": 320
+    },
+    {
+      "target": {
+        "blueprints": [
+          "tacz:m1014"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/shotguns",
+      "tier": "established",
+      "rank": 3,
+      "order": 330
+    },
+    {
+      "target": {
+        "blueprints": [
+          "tacz:m870"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/shotguns",
+      "tier": "established",
+      "rank": 3,
+      "order": 340
+    },
+    {
+      "target": {
+        "blueprints": [
+          "tacz:spas_12"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/shotguns",
+      "tier": "established",
+      "rank": 3,
+      "order": 350
+    },
+    {
+      "target": {
+        "blueprints": [
+          "bf1:chauchat"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/support",
+      "tier": "advanced",
+      "rank": 5,
+      "order": 0
+    },
+    {
+      "target": {
+        "blueprints": [
+          "bf1:lewis"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/support",
+      "tier": "advanced",
+      "rank": 5,
+      "order": 10
+    },
+    {
+      "target": {
+        "blueprints": [
+          "bf1:mg0815"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/support",
+      "tier": "advanced",
+      "rank": 5,
+      "order": 20
+    },
+    {
+      "target": {
+        "blueprints": [
+          "bf1:mg42"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/support",
+      "tier": "advanced",
+      "rank": 5,
+      "order": 30
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:aug_hbar"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/support",
+      "tier": "advanced",
+      "rank": 5,
+      "order": 40
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:hk21"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/support",
+      "tier": "advanced",
+      "rank": 5,
+      "order": 50
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:m249_saw"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/support",
+      "tier": "advanced",
+      "rank": 5,
+      "order": 60
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:m27_iar"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/support",
+      "tier": "advanced",
+      "rank": 5,
+      "order": 70
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:mg36"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/support",
+      "tier": "advanced",
+      "rank": 5,
+      "order": 80
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:rpk_203"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/support",
+      "tier": "advanced",
+      "rank": 5,
+      "order": 90
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:rpk74m"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/support",
+      "tier": "advanced",
+      "rank": 5,
+      "order": 100
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:type_95_longbow"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/support",
+      "tier": "advanced",
+      "rank": 5,
+      "order": 110
+    },
+    {
+      "target": {
+        "blueprints": [
+          "classicr:dp28"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/support",
+      "tier": "advanced",
+      "rank": 5,
+      "order": 120
+    },
+    {
+      "target": {
+        "blueprints": [
+          "classicr:m60"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/support",
+      "tier": "advanced",
+      "rank": 5,
+      "order": 130
+    },
+    {
+      "target": {
+        "blueprints": [
+          "classicr:minigun"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/support",
+      "tier": "advanced",
+      "rank": 5,
+      "order": 140
+    },
+    {
+      "target": {
+        "blueprints": [
+          "daffas_arsenal:g36"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/support",
+      "tier": "advanced",
+      "rank": 5,
+      "order": 150
+    },
+    {
+      "target": {
+        "blueprints": [
+          "daffas_arsenal:migraine3"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/support",
+      "tier": "advanced",
+      "rank": 5,
+      "order": 160
+    },
+    {
+      "target": {
+        "blueprints": [
+          "daffas_arsenal:pego762"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/support",
+      "tier": "advanced",
+      "rank": 5,
+      "order": 170
+    },
+    {
+      "target": {
+        "blueprints": [
+          "elitex:m249x"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/support",
+      "tier": "advanced",
+      "rank": 5,
+      "order": 180
+    },
+    {
+      "target": {
+        "blueprints": [
+          "emxarms:emx_mg57"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/support",
+      "tier": "advanced",
+      "rank": 5,
+      "order": 190
+    },
+    {
+      "target": {
+        "blueprints": [
+          "emxarms:emx_mg90"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/support",
+      "tier": "advanced",
+      "rank": 5,
+      "order": 200
+    },
+    {
+      "target": {
+        "blueprints": [
+          "emxarms:emx_mk951lmg"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/support",
+      "tier": "advanced",
+      "rank": 5,
+      "order": 210
+    },
+    {
+      "target": {
+        "blueprints": [
+          "emxarms:emx_sf7b"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/support",
+      "tier": "advanced",
+      "rank": 5,
+      "order": 220
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:aug_hbar"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/support",
+      "tier": "advanced",
+      "rank": 5,
+      "order": 230
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:dp28"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/support",
+      "tier": "advanced",
+      "rank": 5,
+      "order": 240
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:m231"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/support",
+      "tier": "advanced",
+      "rank": 5,
+      "order": 250
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:quatro15"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/support",
+      "tier": "advanced",
+      "rank": 5,
+      "order": 260
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:rpk_74"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/support",
+      "tier": "advanced",
+      "rank": 5,
+      "order": 270
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:rpk_74m"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/support",
+      "tier": "advanced",
+      "rank": 5,
+      "order": 280
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:rpk16"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/support",
+      "tier": "advanced",
+      "rank": 5,
+      "order": 290
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:scar_hamr"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/support",
+      "tier": "advanced",
+      "rank": 5,
+      "order": 300
+    },
+    {
+      "target": {
+        "blueprints": [
+          "tacz:fn_evolys"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/support",
+      "tier": "advanced",
+      "rank": 5,
+      "order": 310
+    },
+    {
+      "target": {
+        "blueprints": [
+          "tacz:m249"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/support",
+      "tier": "advanced",
+      "rank": 5,
+      "order": 320
+    },
+    {
+      "target": {
+        "blueprints": [
+          "tacz:minigun"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/support",
+      "tier": "advanced",
+      "rank": 5,
+      "order": 330
+    },
+    {
+      "target": {
+        "blueprints": [
+          "tacz:rpk"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/support",
+      "tier": "advanced",
+      "rank": 5,
+      "order": 340
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:aug_a3_dmr"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "advanced",
+      "rank": 5,
+      "order": 1860
+    },
+    {
+      "target": {
+        "blueprints": [
+          "elitex:sassy_dmr"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "advanced",
+      "rank": 5,
+      "order": 1870
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:mk11"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "advanced",
+      "rank": 5,
+      "order": 1880
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:sks_golden"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "advanced",
+      "rank": 5,
+      "order": 1890
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:sks_wooden"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "advanced",
+      "rank": 5,
+      "order": 1900
+    },
+    {
+      "target": {
+        "blueprints": [
+          "tacz:mk14"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "advanced",
+      "rank": 5,
+      "order": 1910
+    },
+    {
+      "target": {
+        "blueprints": [
+          "tacz:sks_tactical"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/rifles",
+      "tier": "advanced",
+      "rank": 5,
+      "order": 1920
+    },
+    {
+      "target": {
+        "blueprints": [
+          "bf1:man_m95"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/precision",
+      "tier": "advanced",
+      "rank": 5,
+      "order": 0
+    },
+    {
+      "target": {
+        "blueprints": [
+          "bf1:martini"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/precision",
+      "tier": "advanced",
+      "rank": 5,
+      "order": 10
+    },
+    {
+      "target": {
+        "blueprints": [
+          "bf1:rorsch_mk4"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/precision",
+      "tier": "advanced",
+      "rank": 5,
+      "order": 20
+    },
+    {
+      "target": {
+        "blueprints": [
+          "bf1:tg1918"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/precision",
+      "tier": "advanced",
+      "rank": 5,
+      "order": 30
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:aics_m700"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/precision",
+      "tier": "advanced",
+      "rank": 5,
+      "order": 40
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:hk_g28"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/precision",
+      "tier": "advanced",
+      "rank": 5,
+      "order": 50
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:m110"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/precision",
+      "tier": "advanced",
+      "rank": 5,
+      "order": 60
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:m110a3"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/precision",
+      "tier": "advanced",
+      "rank": 5,
+      "order": 70
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:m14_hbar"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/precision",
+      "tier": "advanced",
+      "rank": 5,
+      "order": 80
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:m39_emr"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/precision",
+      "tier": "advanced",
+      "rank": 5,
+      "order": 90
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:mk13_mod5"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/precision",
+      "tier": "advanced",
+      "rank": 5,
+      "order": 100
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:springfield1873_tube_mag"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/precision",
+      "tier": "advanced",
+      "rank": 5,
+      "order": 110
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:sr25"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/precision",
+      "tier": "advanced",
+      "rank": 5,
+      "order": 120
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:troy_m14_sass"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/precision",
+      "tier": "advanced",
+      "rank": 5,
+      "order": 130
+    },
+    {
+      "target": {
+        "blueprints": [
+          "classicr:kar98"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/precision",
+      "tier": "advanced",
+      "rank": 5,
+      "order": 140
+    },
+    {
+      "target": {
+        "blueprints": [
+          "classicr:m24_renewed"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/precision",
+      "tier": "advanced",
+      "rank": 5,
+      "order": 150
+    },
+    {
+      "target": {
+        "blueprints": [
+          "classicr:m82a2"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/precision",
+      "tier": "advanced",
+      "rank": 5,
+      "order": 160
+    },
+    {
+      "target": {
+        "blueprints": [
+          "classicr:mrad"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/precision",
+      "tier": "advanced",
+      "rank": 5,
+      "order": 170
+    },
+    {
+      "target": {
+        "blueprints": [
+          "classicr:mrad_elr"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/precision",
+      "tier": "advanced",
+      "rank": 5,
+      "order": 180
+    },
+    {
+      "target": {
+        "blueprints": [
+          "classicr:msr"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/precision",
+      "tier": "advanced",
+      "rank": 5,
+      "order": 190
+    },
+    {
+      "target": {
+        "blueprints": [
+          "classicr:scar_mk20"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/precision",
+      "tier": "advanced",
+      "rank": 5,
+      "order": 200
+    },
+    {
+      "target": {
+        "blueprints": [
+          "daffas_arsenal:sl8"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/precision",
+      "tier": "advanced",
+      "rank": 5,
+      "order": 210
+    },
+    {
+      "target": {
+        "blueprints": [
+          "daffas_arsenal:southeastmomssecretweapon3"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/precision",
+      "tier": "advanced",
+      "rank": 5,
+      "order": 220
+    },
+    {
+      "target": {
+        "blueprints": [
+          "daffas_arsenal:ssg69"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/precision",
+      "tier": "advanced",
+      "rank": 5,
+      "order": 230
+    },
+    {
+      "target": {
+        "blueprints": [
+          "daffas_arsenal:ssg69s"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/precision",
+      "tier": "advanced",
+      "rank": 5,
+      "order": 240
+    },
+    {
+      "target": {
+        "blueprints": [
+          "daffas_arsenal:wawan2000"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/precision",
+      "tier": "advanced",
+      "rank": 5,
+      "order": 250
+    },
+    {
+      "target": {
+        "blueprints": [
+          "daffas_arsenal:wawan20002"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/precision",
+      "tier": "advanced",
+      "rank": 5,
+      "order": 260
+    },
+    {
+      "target": {
+        "blueprints": [
+          "elitex:inter_m200"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/precision",
+      "tier": "advanced",
+      "rank": 5,
+      "order": 270
+    },
+    {
+      "target": {
+        "blueprints": [
+          "elitex:kar98k"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/precision",
+      "tier": "advanced",
+      "rank": 5,
+      "order": 280
+    },
+    {
+      "target": {
+        "blueprints": [
+          "elitex:lee"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/precision",
+      "tier": "advanced",
+      "rank": 5,
+      "order": 290
+    },
+    {
+      "target": {
+        "blueprints": [
+          "elitex:m1_garand"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/precision",
+      "tier": "advanced",
+      "rank": 5,
+      "order": 300
+    },
+    {
+      "target": {
+        "blueprints": [
+          "elitex:sp_m1903"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/precision",
+      "tier": "advanced",
+      "rank": 5,
+      "order": 310
+    },
+    {
+      "target": {
+        "blueprints": [
+          "emxarms:emx_mk88"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/precision",
+      "tier": "advanced",
+      "rank": 5,
+      "order": 320
+    },
+    {
+      "target": {
+        "blueprints": [
+          "emxarms:emx_pmg90"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/precision",
+      "tier": "advanced",
+      "rank": 5,
+      "order": 330
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:ai_awp"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/precision",
+      "tier": "advanced",
+      "rank": 5,
+      "order": 340
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:ai_aws"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/precision",
+      "tier": "advanced",
+      "rank": 5,
+      "order": 350
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:ar338"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/precision",
+      "tier": "advanced",
+      "rank": 5,
+      "order": 360
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:dragonuv_svd"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/precision",
+      "tier": "advanced",
+      "rank": 5,
+      "order": 370
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:dragonuv_svdm"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/precision",
+      "tier": "advanced",
+      "rank": 5,
+      "order": 380
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:dragonuv_svds"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/precision",
+      "tier": "advanced",
+      "rank": 5,
+      "order": 390
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:gm6_lynx"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/precision",
+      "tier": "advanced",
+      "rank": 5,
+      "order": 400
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:kar98"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/precision",
+      "tier": "advanced",
+      "rank": 5,
+      "order": 410
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:m82a2"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/precision",
+      "tier": "advanced",
+      "rank": 5,
+      "order": 420
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:mini_fix"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/precision",
+      "tier": "advanced",
+      "rank": 5,
+      "order": 430
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:mrad"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/precision",
+      "tier": "advanced",
+      "rank": 5,
+      "order": 440
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:msr"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/precision",
+      "tier": "advanced",
+      "rank": 5,
+      "order": 450
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:scar_ssr"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/precision",
+      "tier": "advanced",
+      "rank": 5,
+      "order": 460
+    },
+    {
+      "target": {
+        "blueprints": [
+          "tacz:ai_awp"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/precision",
+      "tier": "advanced",
+      "rank": 5,
+      "order": 470
+    },
+    {
+      "target": {
+        "blueprints": [
+          "tacz:kar98"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/precision",
+      "tier": "advanced",
+      "rank": 5,
+      "order": 480
+    },
+    {
+      "target": {
+        "blueprints": [
+          "tacz:m107"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/precision",
+      "tier": "advanced",
+      "rank": 5,
+      "order": 490
+    },
+    {
+      "target": {
+        "blueprints": [
+          "tacz:m700"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/precision",
+      "tier": "advanced",
+      "rank": 4,
+      "order": 500
+    },
+    {
+      "target": {
+        "blueprints": [
+          "tacz:m95"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/precision",
+      "tier": "advanced",
+      "rank": 5,
+      "order": 510
+    },
+    {
+      "target": {
+        "blueprints": [
+          "tacz:springfield1873"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/precision",
+      "tier": "advanced",
+      "rank": 5,
+      "order": 520
+    },
+    {
+      "target": {
+        "blueprints": [
+          "elitex:mustang_and_sally"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/experimental",
+      "tier": "elite",
+      "rank": 7,
+      "order": 0
+    },
+    {
+      "target": {
+        "blueprints": [
+          "elitex:ray_gun_mk2"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/experimental",
+      "tier": "elite",
+      "rank": 7,
+      "order": 10
+    },
+    {
+      "target": {
+        "blueprints": [
+          "elitex:raygun_bo6"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/experimental",
+      "tier": "elite",
+      "rank": 7,
+      "order": 20
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:thunderbird"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/experimental",
+      "tier": "elite",
+      "rank": 7,
+      "order": 30
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:thunderbird_short"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/experimental",
+      "tier": "elite",
+      "rank": 7,
+      "order": 40
+    },
+    {
+      "target": {
+        "blueprints": [
+          "elitex:origin_electric_staff"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/experimental",
+      "tier": "elite",
+      "rank": 7,
+      "order": 50
+    },
+    {
+      "target": {
+        "blueprints": [
+          "elitex:origin_fire_staff"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/experimental",
+      "tier": "elite",
+      "rank": 7,
+      "order": 60
+    },
+    {
+      "target": {
+        "blueprints": [
+          "elitex:origin_ice_staff"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/experimental",
+      "tier": "elite",
+      "rank": 7,
+      "order": 70
+    },
+    {
+      "target": {
+        "blueprints": [
+          "elitex:origin_wind_staff"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/experimental",
+      "tier": "elite",
+      "rank": 7,
+      "order": 80
+    },
+    {
+      "target": {
+        "blueprints": [
+          "bf1:f_faust"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/experimental",
+      "tier": "elite",
+      "rank": 7,
+      "order": 90
+    },
+    {
+      "target": {
+        "blueprints": [
+          "bf1:lunge_mine"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/experimental",
+      "tier": "elite",
+      "rank": 7,
+      "order": 100
+    },
+    {
+      "target": {
+        "blueprints": [
+          "bf1:mhgl"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/experimental",
+      "tier": "elite",
+      "rank": 7,
+      "order": 110
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:lmt_m203"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/experimental",
+      "tier": "elite",
+      "rank": 7,
+      "order": 120
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:m4_bolter"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/experimental",
+      "tier": "elite",
+      "rank": 7,
+      "order": 130
+    },
+    {
+      "target": {
+        "blueprints": [
+          "classicr:mgl_40mm"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/experimental",
+      "tier": "elite",
+      "rank": 7,
+      "order": 140
+    },
+    {
+      "target": {
+        "blueprints": [
+          "daffas_arsenal:m79"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/experimental",
+      "tier": "elite",
+      "rank": 7,
+      "order": 150
+    },
+    {
+      "target": {
+        "blueprints": [
+          "daffas_arsenal:m79sohrt"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/experimental",
+      "tier": "elite",
+      "rank": 7,
+      "order": 160
+    },
+    {
+      "target": {
+        "blueprints": [
+          "immersive_armorer:chemical_thrower"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/experimental",
+      "tier": "elite",
+      "rank": 7,
+      "order": 170
+    },
+    {
+      "target": {
+        "blueprints": [
+          "immersive_armorer:dual_barrel_cannon"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/experimental",
+      "tier": "elite",
+      "rank": 7,
+      "order": 180
+    },
+    {
+      "target": {
+        "blueprints": [
+          "immersive_armorer:plasma_gun"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/experimental",
+      "tier": "elite",
+      "rank": 7,
+      "order": 190
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:can_cannon"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/experimental",
+      "tier": "elite",
+      "rank": 7,
+      "order": 200
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:m320t"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/experimental",
+      "tier": "elite",
+      "rank": 7,
+      "order": 210
+    },
+    {
+      "target": {
+        "blueprints": [
+          "tacz:m320"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/experimental",
+      "tier": "elite",
+      "rank": 7,
+      "order": 220
+    },
+    {
+      "target": {
+        "blueprints": [
+          "tacz:rpg7"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/experimental",
+      "tier": "elite",
+      "rank": 6,
+      "order": 230
+    },
+    {
+      "target": {
+        "blueprints": [
+          "ccrp:mk18_mjolnir"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/experimental",
+      "tier": "elite",
+      "rank": 7,
+      "order": 240
+    },
+    {
+      "target": {
+        "blueprints": [
+          "immersive_armorer:railgun"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/experimental",
+      "tier": "elite",
+      "rank": 7,
+      "order": 250
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:excaliber"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/experimental",
+      "tier": "elite",
+      "rank": 7,
+      "order": 260
+    },
+    {
+      "target": {
+        "blueprints": [
+          "maxstuff:mk18_mjolnir"
+        ]
+      },
+      "domain": "weapons",
+      "lane": "project_deadzone:weapons/experimental",
+      "tier": "elite",
+      "rank": 7,
+      "order": 270
+    }
+  ]
+}

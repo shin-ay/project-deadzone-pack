@@ -1,0 +1,4475 @@
+{
+  "schema": 1,
+  "generated_at": "2026-09-05T04:29:34.8674402+09:00",
+  "source_root": "instance/tacz",
+  "total_guns": 494,
+  "stages": {
+    "S0": 149,
+    "S1": 222,
+    "S2": 95,
+    "S3": 28
+  },
+  "types": {
+    "mg": 35,
+    "pistol": 86,
+    "rifle": 197,
+    "rpg": 15,
+    "shotgun": 36,
+    "smg": 68,
+    "sniper": 57
+  },
+  "gateways": [
+    "tacz:glock_17",
+    "tacz:m4a1",
+    "tacz:m700",
+    "tacz:rpg7"
+  ],
+  "guns": [
+    {
+      "id": "bf1:handgun",
+      "type": "pistol",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/handguns",
+      "pack": "Apocalypse_v1.1.7_G.zip",
+      "source": "Apocalypse_v1.1.7_G.zip!data/bf1/index/guns/handgun.json",
+      "rank": 1
+    },
+    {
+      "id": "bf1:kolibri",
+      "type": "pistol",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/handguns",
+      "pack": "Apocalypse_v1.1.7_G.zip",
+      "source": "Apocalypse_v1.1.7_G.zip!data/bf1/index/guns/kolibri.json",
+      "rank": 1
+    },
+    {
+      "id": "bf1:obrez",
+      "type": "pistol",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/handguns",
+      "pack": "Apocalypse_v1.1.7_G.zip",
+      "source": "Apocalypse_v1.1.7_G.zip!data/bf1/index/guns/obrez.json",
+      "rank": 1
+    },
+    {
+      "id": "bf1:sw_model3",
+      "type": "pistol",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/handguns",
+      "pack": "Apocalypse_v1.1.7_G.zip",
+      "source": "Apocalypse_v1.1.7_G.zip!data/bf1/index/guns/sw_model3.json",
+      "rank": 1
+    },
+    {
+      "id": "bf1:syringe",
+      "type": "pistol",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/handguns",
+      "pack": "Apocalypse_v1.1.7_G.zip",
+      "source": "Apocalypse_v1.1.7_G.zip!data/bf1/index/guns/syringe.json",
+      "rank": 1
+    },
+    {
+      "id": "bf1:welrod",
+      "type": "pistol",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/handguns",
+      "pack": "Apocalypse_v1.1.7_G.zip",
+      "source": "Apocalypse_v1.1.7_G.zip!data/bf1/index/guns/welrod.json",
+      "rank": 1
+    },
+    {
+      "id": "ccrp:af2011",
+      "type": "pistol",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/handguns",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/af2011.json",
+      "rank": 1
+    },
+    {
+      "id": "ccrp:block_17",
+      "type": "pistol",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/handguns",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/block_17.json",
+      "rank": 1
+    },
+    {
+      "id": "ccrp:chisato_m1911",
+      "type": "pistol",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/handguns",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/chisato_m1911.json",
+      "rank": 1
+    },
+    {
+      "id": "ccrp:crow_and_egret",
+      "type": "pistol",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/handguns",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/crow_and_egret.json",
+      "rank": 1
+    },
+    {
+      "id": "ccrp:deagle_nightingale",
+      "type": "pistol",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/handguns",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/deagle_nightingale.json",
+      "rank": 1
+    },
+    {
+      "id": "ccrp:deagle_xix",
+      "type": "pistol",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/handguns",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/deagle_xix.json",
+      "rank": 1
+    },
+    {
+      "id": "ccrp:fightlite_scr_hg",
+      "type": "pistol",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/handguns",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/fightlite_scr_hg.json",
+      "rank": 1
+    },
+    {
+      "id": "ccrp:glock20gen5mos",
+      "type": "pistol",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/handguns",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/glock20gen5mos.json",
+      "rank": 1
+    },
+    {
+      "id": "ccrp:glock40gen5mos",
+      "type": "pistol",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/handguns",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/glock40gen5mos.json",
+      "rank": 1
+    },
+    {
+      "id": "ccrp:keltec_p50",
+      "type": "pistol",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/handguns",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/keltec_p50.json",
+      "rank": 1
+    },
+    {
+      "id": "ccrp:requiem",
+      "type": "pistol",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/handguns",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/requiem.json",
+      "rank": 1
+    },
+    {
+      "id": "ccrp:samurai_edge",
+      "type": "pistol",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/handguns",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/samurai_edge.json",
+      "rank": 1
+    },
+    {
+      "id": "ccrp:shield_ots33",
+      "type": "pistol",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/handguns",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/shield_ots33.json",
+      "rank": 1
+    },
+    {
+      "id": "ccrp:timeless_50",
+      "type": "pistol",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/handguns",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/timeless_50.json",
+      "rank": 1
+    },
+    {
+      "id": "classicr:b93r",
+      "type": "pistol",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/handguns",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/classicr/index/guns/b93r.json",
+      "rank": 1
+    },
+    {
+      "id": "classicr:colt_python",
+      "type": "pistol",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/handguns",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/classicr/index/guns/colt_python.json",
+      "rank": 1
+    },
+    {
+      "id": "classicr:glock_18",
+      "type": "pistol",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/handguns",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/classicr/index/guns/glock_18.json",
+      "rank": 1
+    },
+    {
+      "id": "classicr:m92fs",
+      "type": "pistol",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/handguns",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/classicr/index/guns/m92fs.json",
+      "rank": 1
+    },
+    {
+      "id": "classicr:mac10",
+      "type": "pistol",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/handguns",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/classicr/index/guns/mac10.json",
+      "rank": 1
+    },
+    {
+      "id": "classicr:mauser_c96",
+      "type": "pistol",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/handguns",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/classicr/index/guns/mauser_c96.json",
+      "rank": 1
+    },
+    {
+      "id": "classicr:sti2011",
+      "type": "pistol",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/handguns",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/classicr/index/guns/sti2011.json",
+      "rank": 1
+    },
+    {
+      "id": "classicr:tec_9",
+      "type": "pistol",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/handguns",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/classicr/index/guns/tec_9.json",
+      "rank": 1
+    },
+    {
+      "id": "classicr:tti_g34",
+      "type": "pistol",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/handguns",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/classicr/index/guns/tti_g34.json",
+      "rank": 1
+    },
+    {
+      "id": "daffas_arsenal:hk45",
+      "type": "pistol",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/handguns",
+      "pack": "daffas",
+      "source": "daffas/data/daffas_arsenal/index/guns/hk45.json",
+      "rank": 1
+    },
+    {
+      "id": "daffas_arsenal:hk45_sup",
+      "type": "pistol",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/handguns",
+      "pack": "daffas",
+      "source": "daffas/data/daffas_arsenal/index/guns/hk45_sup.json",
+      "rank": 1
+    },
+    {
+      "id": "daffas_arsenal:p99_hak",
+      "type": "pistol",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/handguns",
+      "pack": "daffas",
+      "source": "daffas/data/daffas_arsenal/index/guns/p99_hak.json",
+      "rank": 1
+    },
+    {
+      "id": "daffas_arsenal:p99_nohak",
+      "type": "pistol",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/handguns",
+      "pack": "daffas",
+      "source": "daffas/data/daffas_arsenal/index/guns/p99_nohak.json",
+      "rank": 1
+    },
+    {
+      "id": "daffas_arsenal:taurus",
+      "type": "pistol",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/handguns",
+      "pack": "daffas",
+      "source": "daffas/data/daffas_arsenal/index/guns/taurus.json",
+      "rank": 1
+    },
+    {
+      "id": "daffas_arsenal:taurus2",
+      "type": "pistol",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/handguns",
+      "pack": "daffas",
+      "source": "daffas/data/daffas_arsenal/index/guns/taurus2.json",
+      "rank": 1
+    },
+    {
+      "id": "daffas_arsenal:welrod",
+      "type": "pistol",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/handguns",
+      "pack": "daffas",
+      "source": "daffas/data/daffas_arsenal/index/guns/welrod.json",
+      "rank": 1
+    },
+    {
+      "id": "elitex:bo1_1911",
+      "type": "pistol",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/handguns",
+      "pack": "elitex_quality_guns",
+      "source": "elitex_quality_guns/data/elitex/index/guns/bo1_1911.json",
+      "rank": 1
+    },
+    {
+      "id": "elitex:colt_m1911x1",
+      "type": "pistol",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/handguns",
+      "pack": "elitex_quality_guns",
+      "source": "elitex_quality_guns/data/elitex/index/guns/colt_m1911x1.json",
+      "rank": 1
+    },
+    {
+      "id": "elitex:five_seven",
+      "type": "pistol",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/handguns",
+      "pack": "elitex_quality_guns",
+      "source": "elitex_quality_guns/data/elitex/index/guns/five_seven.json",
+      "rank": 1
+    },
+    {
+      "id": "elitex:jrx",
+      "type": "pistol",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/handguns",
+      "pack": "elitex_quality_guns",
+      "source": "elitex_quality_guns/data/elitex/index/guns/jrx.json",
+      "rank": 1
+    },
+    {
+      "id": "elitex:op1911",
+      "type": "pistol",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/handguns",
+      "pack": "elitex_quality_guns",
+      "source": "elitex_quality_guns/data/elitex/index/guns/op1911.json",
+      "rank": 1
+    },
+    {
+      "id": "elitex:springfield_m1911",
+      "type": "pistol",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/handguns",
+      "pack": "elitex_quality_guns",
+      "source": "elitex_quality_guns/data/elitex/index/guns/springfield_m1911.json",
+      "rank": 1
+    },
+    {
+      "id": "elitex:srz_2011",
+      "type": "pistol",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/handguns",
+      "pack": "elitex_quality_guns",
+      "source": "elitex_quality_guns/data/elitex/index/guns/srz_2011.json",
+      "rank": 1
+    },
+    {
+      "id": "elitex:trs_bull",
+      "type": "pistol",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/handguns",
+      "pack": "elitex_quality_guns",
+      "source": "elitex_quality_guns/data/elitex/index/guns/trs_bull.json",
+      "rank": 1
+    },
+    {
+      "id": "emxarms:emx_kund50",
+      "type": "pistol",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/handguns",
+      "pack": "[Tacz1.1.5+]EMX-Arms GunsPack ver1.1.5.zip.zip",
+      "source": "[Tacz1.1.5+]EMX-Arms GunsPack ver1.1.5.zip.zip!data/emxarms/index/guns/emx_kund50.json",
+      "rank": 1
+    },
+    {
+      "id": "emxarms:emx_kund50ex",
+      "type": "pistol",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/handguns",
+      "pack": "[Tacz1.1.5+]EMX-Arms GunsPack ver1.1.5.zip.zip",
+      "source": "[Tacz1.1.5+]EMX-Arms GunsPack ver1.1.5.zip.zip!data/emxarms/index/guns/emx_kund50ex.json",
+      "rank": 1
+    },
+    {
+      "id": "emxarms:emx_mac100",
+      "type": "pistol",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/handguns",
+      "pack": "[Tacz1.1.5+]EMX-Arms GunsPack ver1.1.5.zip.zip",
+      "source": "[Tacz1.1.5+]EMX-Arms GunsPack ver1.1.5.zip.zip!data/emxarms/index/guns/emx_mac100.json",
+      "rank": 1
+    },
+    {
+      "id": "emxarms:emx_mac50",
+      "type": "pistol",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/handguns",
+      "pack": "[Tacz1.1.5+]EMX-Arms GunsPack ver1.1.5.zip.zip",
+      "source": "[Tacz1.1.5+]EMX-Arms GunsPack ver1.1.5.zip.zip!data/emxarms/index/guns/emx_mac50.json",
+      "rank": 1
+    },
+    {
+      "id": "emxarms:emx_nikana",
+      "type": "pistol",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/handguns",
+      "pack": "[Tacz1.1.5+]EMX-Arms GunsPack ver1.1.5.zip.zip",
+      "source": "[Tacz1.1.5+]EMX-Arms GunsPack ver1.1.5.zip.zip!data/emxarms/index/guns/emx_nikana.json",
+      "rank": 1
+    },
+    {
+      "id": "emxarms:emx_pulse",
+      "type": "pistol",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/handguns",
+      "pack": "[Tacz1.1.5+]EMX-Arms GunsPack ver1.1.5.zip.zip",
+      "source": "[Tacz1.1.5+]EMX-Arms GunsPack ver1.1.5.zip.zip!data/emxarms/index/guns/emx_pulse.json",
+      "rank": 1
+    },
+    {
+      "id": "emxarms:emx_pulsex2",
+      "type": "pistol",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/handguns",
+      "pack": "[Tacz1.1.5+]EMX-Arms GunsPack ver1.1.5.zip.zip",
+      "source": "[Tacz1.1.5+]EMX-Arms GunsPack ver1.1.5.zip.zip!data/emxarms/index/guns/emx_pulsex2.json",
+      "rank": 1
+    },
+    {
+      "id": "emxarms:emx_tknife",
+      "type": "pistol",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/handguns",
+      "pack": "[Tacz1.1.5+]EMX-Arms GunsPack ver1.1.5.zip.zip",
+      "source": "[Tacz1.1.5+]EMX-Arms GunsPack ver1.1.5.zip.zip!data/emxarms/index/guns/emx_tknife.json",
+      "rank": 1
+    },
+    {
+      "id": "immersive_armorer:pistol_9mm",
+      "type": "pistol",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/handguns",
+      "pack": "Immersive Armorer-v1.2.1-for117.zip",
+      "source": "Immersive Armorer-v1.2.1-for117.zip!data/immersive_armorer/index/guns/pistol_9mm.json",
+      "rank": 1
+    },
+    {
+      "id": "immersive_armorer:revolver",
+      "type": "pistol",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/handguns",
+      "pack": "Immersive Armorer-v1.2.1-for117.zip",
+      "source": "Immersive Armorer-v1.2.1-for117.zip!data/immersive_armorer/index/guns/revolver.json",
+      "rank": 1
+    },
+    {
+      "id": "immersive_armorer:standard_rail_pistol_mk2",
+      "type": "pistol",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/handguns",
+      "pack": "Immersive Armorer-v1.2.1-for117.zip",
+      "source": "Immersive Armorer-v1.2.1-for117.zip!data/immersive_armorer/index/guns/standard_rail_pistol_mk2.json",
+      "rank": 1
+    },
+    {
+      "id": "immersive_armorer:standard_rail_pistol_mk3",
+      "type": "pistol",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/handguns",
+      "pack": "Immersive Armorer-v1.2.1-for117.zip",
+      "source": "Immersive Armorer-v1.2.1-for117.zip!data/immersive_armorer/index/guns/standard_rail_pistol_mk3.json",
+      "rank": 1
+    },
+    {
+      "id": "maxstuff:1851_navy",
+      "type": "pistol",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/handguns",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/1851_navy.json",
+      "rank": 1
+    },
+    {
+      "id": "maxstuff:af2011",
+      "type": "pistol",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/handguns",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/af2011.json",
+      "rank": 1
+    },
+    {
+      "id": "maxstuff:blicky",
+      "type": "pistol",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/handguns",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/blicky.json",
+      "rank": 1
+    },
+    {
+      "id": "maxstuff:c96",
+      "type": "pistol",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/handguns",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/c96.json",
+      "rank": 1
+    },
+    {
+      "id": "maxstuff:deagle_12g",
+      "type": "pistol",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/handguns",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/deagle_12g.json",
+      "rank": 1
+    },
+    {
+      "id": "maxstuff:deagle_50bmg",
+      "type": "pistol",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/handguns",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/deagle_50bmg.json",
+      "rank": 1
+    },
+    {
+      "id": "maxstuff:glock_18c",
+      "type": "pistol",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/handguns",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/glock_18c.json",
+      "rank": 1
+    },
+    {
+      "id": "maxstuff:glock_54",
+      "type": "pistol",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/handguns",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/glock_54.json",
+      "rank": 1
+    },
+    {
+      "id": "maxstuff:glock_bulpup",
+      "type": "pistol",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/handguns",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/glock_bulpup.json",
+      "rank": 1
+    },
+    {
+      "id": "maxstuff:m17",
+      "type": "pistol",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/handguns",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/m17.json",
+      "rank": 1
+    },
+    {
+      "id": "maxstuff:mk23",
+      "type": "pistol",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/handguns",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/mk23.json",
+      "rank": 1
+    },
+    {
+      "id": "tacz:b93r",
+      "type": "pistol",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/handguns",
+      "pack": "tacz_default_gun",
+      "source": "tacz_default_gun/data/tacz/index/guns/b93r.json",
+      "rank": 1
+    },
+    {
+      "id": "tacz:cz75",
+      "type": "pistol",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/handguns",
+      "pack": "tacz_default_gun",
+      "source": "tacz_default_gun/data/tacz/index/guns/cz75.json",
+      "rank": 1
+    },
+    {
+      "id": "tacz:deagle",
+      "type": "pistol",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/handguns",
+      "pack": "tacz_default_gun",
+      "source": "tacz_default_gun/data/tacz/index/guns/deagle.json",
+      "rank": 1
+    },
+    {
+      "id": "tacz:deagle_golden",
+      "type": "pistol",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/handguns",
+      "pack": "tacz_default_gun",
+      "source": "tacz_default_gun/data/tacz/index/guns/deagle_golden.json",
+      "rank": 1
+    },
+    {
+      "id": "tacz:glock_17",
+      "type": "pistol",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/handguns",
+      "pack": "tacz_default_gun",
+      "source": "tacz_default_gun/data/tacz/index/guns/glock_17.json",
+      "rank": 0
+    },
+    {
+      "id": "tacz:hk_mk23",
+      "type": "pistol",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/handguns",
+      "pack": "tacz_default_gun",
+      "source": "tacz_default_gun/data/tacz/index/guns/hk_mk23.json",
+      "rank": 1
+    },
+    {
+      "id": "tacz:lonetrail",
+      "type": "pistol",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/handguns",
+      "pack": "tacz_default_gun",
+      "source": "tacz_default_gun/data/tacz/index/guns/lonetrail.json",
+      "rank": 1
+    },
+    {
+      "id": "tacz:m1911",
+      "type": "pistol",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/handguns",
+      "pack": "tacz_default_gun",
+      "source": "tacz_default_gun/data/tacz/index/guns/m1911.json",
+      "rank": 1
+    },
+    {
+      "id": "tacz:m9a4",
+      "type": "pistol",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/handguns",
+      "pack": "tacz_default_gun",
+      "source": "tacz_default_gun/data/tacz/index/guns/m9a4.json",
+      "rank": 1
+    },
+    {
+      "id": "tacz:p320",
+      "type": "pistol",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/handguns",
+      "pack": "tacz_default_gun",
+      "source": "tacz_default_gun/data/tacz/index/guns/p320.json",
+      "rank": 1
+    },
+    {
+      "id": "tacz:rhino357",
+      "type": "pistol",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/handguns",
+      "pack": "tacz_default_gun",
+      "source": "tacz_default_gun/data/tacz/index/guns/rhino357.json",
+      "rank": 1
+    },
+    {
+      "id": "tacz:taurus500",
+      "type": "pistol",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/handguns",
+      "pack": "tacz_default_gun",
+      "source": "tacz_default_gun/data/tacz/index/guns/taurus500.json",
+      "rank": 1
+    },
+    {
+      "id": "tacz:taurus943",
+      "type": "pistol",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/handguns",
+      "pack": "tacz_default_gun",
+      "source": "tacz_default_gun/data/tacz/index/guns/taurus943.json",
+      "rank": 1
+    },
+    {
+      "id": "tacz:timeless50",
+      "type": "pistol",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/handguns",
+      "pack": "tacz_default_gun",
+      "source": "tacz_default_gun/data/tacz/index/guns/timeless50.json",
+      "rank": 1
+    },
+    {
+      "id": "bf1:smg0818",
+      "type": "smg",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/smgs",
+      "pack": "Apocalypse_v1.1.7_G.zip",
+      "source": "Apocalypse_v1.1.7_G.zip!data/bf1/index/guns/smg0818.json",
+      "rank": 1
+    },
+    {
+      "id": "bf1:vp1915",
+      "type": "smg",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/smgs",
+      "pack": "Apocalypse_v1.1.7_G.zip",
+      "source": "Apocalypse_v1.1.7_G.zip!data/bf1/index/guns/vp1915.json",
+      "rank": 1
+    },
+    {
+      "id": "bf1:zk383",
+      "type": "smg",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/smgs",
+      "pack": "Apocalypse_v1.1.7_G.zip",
+      "source": "Apocalypse_v1.1.7_G.zip!data/bf1/index/guns/zk383.json",
+      "rank": 1
+    },
+    {
+      "id": "ccrp:aks74u",
+      "type": "smg",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/smgs",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/aks74u.json",
+      "rank": 1
+    },
+    {
+      "id": "ccrp:apc_9k_pro_g",
+      "type": "smg",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/smgs",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/apc_9k_pro_g.json",
+      "rank": 1
+    },
+    {
+      "id": "ccrp:ar57",
+      "type": "smg",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/smgs",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/ar57.json",
+      "rank": 1
+    },
+    {
+      "id": "ccrp:aug_para",
+      "type": "smg",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/smgs",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/aug_para.json",
+      "rank": 1
+    },
+    {
+      "id": "ccrp:camg_cheetah40",
+      "type": "smg",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/smgs",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/camg_cheetah40.json",
+      "rank": 1
+    },
+    {
+      "id": "ccrp:m231",
+      "type": "smg",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/smgs",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/m231.json",
+      "rank": 1
+    },
+    {
+      "id": "ccrp:mp5_sd",
+      "type": "smg",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/smgs",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/mp5_sd.json",
+      "rank": 1
+    },
+    {
+      "id": "ccrp:mp5k",
+      "type": "smg",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/smgs",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/mp5k.json",
+      "rank": 1
+    },
+    {
+      "id": "ccrp:mp5k_pdw",
+      "type": "smg",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/smgs",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/mp5k_pdw.json",
+      "rank": 1
+    },
+    {
+      "id": "ccrp:mp7a3",
+      "type": "smg",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/smgs",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/mp7a3.json",
+      "rank": 1
+    },
+    {
+      "id": "ccrp:mp9_thunder",
+      "type": "smg",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/smgs",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/mp9_thunder.json",
+      "rank": 1
+    },
+    {
+      "id": "ccrp:mpx",
+      "type": "smg",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/smgs",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/mpx.json",
+      "rank": 1
+    },
+    {
+      "id": "ccrp:msh41",
+      "type": "smg",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/smgs",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/msh41.json",
+      "rank": 1
+    },
+    {
+      "id": "ccrp:p90_effen_90",
+      "type": "smg",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/smgs",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/p90_effen_90.json",
+      "rank": 1
+    },
+    {
+      "id": "ccrp:p90_paw",
+      "type": "smg",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/smgs",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/p90_paw.json",
+      "rank": 1
+    },
+    {
+      "id": "ccrp:p90_shround_s",
+      "type": "smg",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/smgs",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/p90_shround_s.json",
+      "rank": 1
+    },
+    {
+      "id": "ccrp:ro635",
+      "type": "smg",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/smgs",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/ro635.json",
+      "rank": 1
+    },
+    {
+      "id": "ccrp:sr_3m",
+      "type": "smg",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/smgs",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/sr_3m.json",
+      "rank": 1
+    },
+    {
+      "id": "ccrp:tti_mpx",
+      "type": "smg",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/smgs",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/tti_mpx.json",
+      "rank": 1
+    },
+    {
+      "id": "ccrp:uzi45",
+      "type": "smg",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/smgs",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/uzi45.json",
+      "rank": 1
+    },
+    {
+      "id": "ccrp:vector10",
+      "type": "smg",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/smgs",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/vector10.json",
+      "rank": 1
+    },
+    {
+      "id": "ccrp:x95_smg",
+      "type": "smg",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/smgs",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/x95_smg.json",
+      "rank": 1
+    },
+    {
+      "id": "classicr:m1a1_smg",
+      "type": "smg",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/smgs",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/classicr/index/guns/m1a1_smg.json",
+      "rank": 1
+    },
+    {
+      "id": "classicr:mp7",
+      "type": "smg",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/smgs",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/classicr/index/guns/mp7.json",
+      "rank": 1
+    },
+    {
+      "id": "classicr:mp9",
+      "type": "smg",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/smgs",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/classicr/index/guns/mp9.json",
+      "rank": 1
+    },
+    {
+      "id": "classicr:udp_9",
+      "type": "smg",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/smgs",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/classicr/index/guns/udp_9.json",
+      "rank": 1
+    },
+    {
+      "id": "daffas_arsenal:apacoba9",
+      "type": "smg",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/smgs",
+      "pack": "daffas",
+      "source": "daffas/data/daffas_arsenal/index/guns/apacoba9.json",
+      "rank": 1
+    },
+    {
+      "id": "daffas_arsenal:apacoba9_sup",
+      "type": "smg",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/smgs",
+      "pack": "daffas",
+      "source": "daffas/data/daffas_arsenal/index/guns/apacoba9_sup.json",
+      "rank": 1
+    },
+    {
+      "id": "daffas_arsenal:harpa9",
+      "type": "smg",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/smgs",
+      "pack": "daffas",
+      "source": "daffas/data/daffas_arsenal/index/guns/harpa9.json",
+      "rank": 1
+    },
+    {
+      "id": "daffas_arsenal:makten_single",
+      "type": "smg",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/smgs",
+      "pack": "daffas",
+      "source": "daffas/data/daffas_arsenal/index/guns/makten_single.json",
+      "rank": 1
+    },
+    {
+      "id": "daffas_arsenal:makten_single_taktis",
+      "type": "smg",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/smgs",
+      "pack": "daffas",
+      "source": "daffas/data/daffas_arsenal/index/guns/makten_single_taktis.json",
+      "rank": 1
+    },
+    {
+      "id": "daffas_arsenal:mp5k",
+      "type": "smg",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/smgs",
+      "pack": "daffas",
+      "source": "daffas/data/daffas_arsenal/index/guns/mp5k.json",
+      "rank": 1
+    },
+    {
+      "id": "daffas_arsenal:pego",
+      "type": "smg",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/smgs",
+      "pack": "daffas",
+      "source": "daffas/data/daffas_arsenal/index/guns/pego.json",
+      "rank": 1
+    },
+    {
+      "id": "daffas_arsenal:pegont",
+      "type": "smg",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/smgs",
+      "pack": "daffas",
+      "source": "daffas/data/daffas_arsenal/index/guns/pegont.json",
+      "rank": 1
+    },
+    {
+      "id": "daffas_arsenal:uji",
+      "type": "smg",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/smgs",
+      "pack": "daffas",
+      "source": "daffas/data/daffas_arsenal/index/guns/uji.json",
+      "rank": 1
+    },
+    {
+      "id": "elitex:mp5_classic",
+      "type": "smg",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/smgs",
+      "pack": "elitex_quality_guns",
+      "source": "elitex_quality_guns/data/elitex/index/guns/mp5_classic.json",
+      "rank": 1
+    },
+    {
+      "id": "elitex:mp7r",
+      "type": "smg",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/smgs",
+      "pack": "elitex_quality_guns",
+      "source": "elitex_quality_guns/data/elitex/index/guns/mp7r.json",
+      "rank": 1
+    },
+    {
+      "id": "elitex:ro635v3",
+      "type": "smg",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/smgs",
+      "pack": "elitex_quality_guns",
+      "source": "elitex_quality_guns/data/elitex/index/guns/ro635v3.json",
+      "rank": 1
+    },
+    {
+      "id": "elitex:vector45acp",
+      "type": "smg",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/smgs",
+      "pack": "elitex_quality_guns",
+      "source": "elitex_quality_guns/data/elitex/index/guns/vector45acp.json",
+      "rank": 1
+    },
+    {
+      "id": "emxarms:emx_expel32",
+      "type": "smg",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/smgs",
+      "pack": "[Tacz1.1.5+]EMX-Arms GunsPack ver1.1.5.zip.zip",
+      "source": "[Tacz1.1.5+]EMX-Arms GunsPack ver1.1.5.zip.zip!data/emxarms/index/guns/emx_expel32.json",
+      "rank": 1
+    },
+    {
+      "id": "emxarms:emx_expel32se",
+      "type": "smg",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/smgs",
+      "pack": "[Tacz1.1.5+]EMX-Arms GunsPack ver1.1.5.zip.zip",
+      "source": "[Tacz1.1.5+]EMX-Arms GunsPack ver1.1.5.zip.zip!data/emxarms/index/guns/emx_expel32se.json",
+      "rank": 1
+    },
+    {
+      "id": "emxarms:emx_mac50flux",
+      "type": "smg",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/smgs",
+      "pack": "[Tacz1.1.5+]EMX-Arms GunsPack ver1.1.5.zip.zip",
+      "source": "[Tacz1.1.5+]EMX-Arms GunsPack ver1.1.5.zip.zip!data/emxarms/index/guns/emx_mac50flux.json",
+      "rank": 1
+    },
+    {
+      "id": "emxarms:emx_umx32",
+      "type": "smg",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/smgs",
+      "pack": "[Tacz1.1.5+]EMX-Arms GunsPack ver1.1.5.zip.zip",
+      "source": "[Tacz1.1.5+]EMX-Arms GunsPack ver1.1.5.zip.zip!data/emxarms/index/guns/emx_umx32.json",
+      "rank": 1
+    },
+    {
+      "id": "immersive_armorer:short_smg",
+      "type": "smg",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/smgs",
+      "pack": "Immersive Armorer-v1.2.1-for117.zip",
+      "source": "Immersive Armorer-v1.2.1-for117.zip!data/immersive_armorer/index/guns/short_smg.json",
+      "rank": 1
+    },
+    {
+      "id": "immersive_armorer:standard_rail_smg_mk1",
+      "type": "smg",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/smgs",
+      "pack": "Immersive Armorer-v1.2.1-for117.zip",
+      "source": "Immersive Armorer-v1.2.1-for117.zip!data/immersive_armorer/index/guns/standard_rail_smg_mk1.json",
+      "rank": 1
+    },
+    {
+      "id": "maxstuff:ar57",
+      "type": "smg",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/smgs",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/ar57.json",
+      "rank": 1
+    },
+    {
+      "id": "maxstuff:aug_a3_para",
+      "type": "smg",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/smgs",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/aug_a3_para.json",
+      "rank": 1
+    },
+    {
+      "id": "maxstuff:colt_mars",
+      "type": "smg",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/smgs",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/colt_mars.json",
+      "rank": 1
+    },
+    {
+      "id": "maxstuff:hk_mp5k",
+      "type": "smg",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/smgs",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/hk_mp5k.json",
+      "rank": 1
+    },
+    {
+      "id": "maxstuff:hk_mp5sd",
+      "type": "smg",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/smgs",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/hk_mp5sd.json",
+      "rank": 1
+    },
+    {
+      "id": "maxstuff:luty",
+      "type": "smg",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/smgs",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/luty.json",
+      "rank": 1
+    },
+    {
+      "id": "maxstuff:mp7",
+      "type": "smg",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/smgs",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/mp7.json",
+      "rank": 1
+    },
+    {
+      "id": "maxstuff:nailgun",
+      "type": "smg",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/smgs",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/nailgun.json",
+      "rank": 1
+    },
+    {
+      "id": "maxstuff:ro635",
+      "type": "smg",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/smgs",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/ro635.json",
+      "rank": 1
+    },
+    {
+      "id": "maxstuff:saiga9",
+      "type": "smg",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/smgs",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/saiga9.json",
+      "rank": 1
+    },
+    {
+      "id": "maxstuff:udp9",
+      "type": "smg",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/smgs",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/udp9.json",
+      "rank": 1
+    },
+    {
+      "id": "maxstuff:ump9",
+      "type": "smg",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/smgs",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/ump9.json",
+      "rank": 1
+    },
+    {
+      "id": "maxstuff:vector9",
+      "type": "smg",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/smgs",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/vector9.json",
+      "rank": 1
+    },
+    {
+      "id": "maxstuff:vityas",
+      "type": "smg",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/smgs",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/vityas.json",
+      "rank": 1
+    },
+    {
+      "id": "maxstuff:z80",
+      "type": "smg",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/smgs",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/z80.json",
+      "rank": 1
+    },
+    {
+      "id": "tacz:hk_mp5a5",
+      "type": "smg",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/smgs",
+      "pack": "tacz_default_gun",
+      "source": "tacz_default_gun/data/tacz/index/guns/hk_mp5a5.json",
+      "rank": 1
+    },
+    {
+      "id": "tacz:p90",
+      "type": "smg",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/smgs",
+      "pack": "tacz_default_gun",
+      "source": "tacz_default_gun/data/tacz/index/guns/p90.json",
+      "rank": 1
+    },
+    {
+      "id": "tacz:ump45",
+      "type": "smg",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/smgs",
+      "pack": "tacz_default_gun",
+      "source": "tacz_default_gun/data/tacz/index/guns/ump45.json",
+      "rank": 1
+    },
+    {
+      "id": "tacz:uzi",
+      "type": "smg",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/smgs",
+      "pack": "tacz_default_gun",
+      "source": "tacz_default_gun/data/tacz/index/guns/uzi.json",
+      "rank": 1
+    },
+    {
+      "id": "tacz:vector45",
+      "type": "smg",
+      "stage": 0,
+      "lane": "project_deadzone:weapons/smgs",
+      "pack": "tacz_default_gun",
+      "source": "tacz_default_gun/data/tacz/index/guns/vector45.json",
+      "rank": 1
+    },
+    {
+      "id": "bf1:de_lisle",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "Apocalypse_v1.1.7_G.zip",
+      "source": "Apocalypse_v1.1.7_G.zip!data/bf1/index/guns/de_lisle.json",
+      "rank": 3
+    },
+    {
+      "id": "bf1:liu",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "Apocalypse_v1.1.7_G.zip",
+      "source": "Apocalypse_v1.1.7_G.zip!data/bf1/index/guns/liu.json",
+      "rank": 3
+    },
+    {
+      "id": "bf1:m1916",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "Apocalypse_v1.1.7_G.zip",
+      "source": "Apocalypse_v1.1.7_G.zip!data/bf1/index/guns/m1916.json",
+      "rank": 3
+    },
+    {
+      "id": "bf1:rsc1917",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "Apocalypse_v1.1.7_G.zip",
+      "source": "Apocalypse_v1.1.7_G.zip!data/bf1/index/guns/rsc1917.json",
+      "rank": 3
+    },
+    {
+      "id": "bf1:vg15",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "Apocalypse_v1.1.7_G.zip",
+      "source": "Apocalypse_v1.1.7_G.zip!data/bf1/index/guns/vg15.json",
+      "rank": 3
+    },
+    {
+      "id": "ccrp:a545",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/a545.json",
+      "rank": 3
+    },
+    {
+      "id": "ccrp:aac_honeybadger",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/aac_honeybadger.json",
+      "rank": 3
+    },
+    {
+      "id": "ccrp:ak103",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/ak103.json",
+      "rank": 3
+    },
+    {
+      "id": "ccrp:ak47_spent_bullet",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/ak47_spent_bullet.json",
+      "rank": 3
+    },
+    {
+      "id": "ccrp:ak74",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/ak74.json",
+      "rank": 3
+    },
+    {
+      "id": "ccrp:ak74m",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/ak74m.json",
+      "rank": 3
+    },
+    {
+      "id": "ccrp:am17",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/am17.json",
+      "rank": 3
+    },
+    {
+      "id": "ccrp:aug_a3",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/aug_a3.json",
+      "rank": 3
+    },
+    {
+      "id": "ccrp:aug_a3_m2kit",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/aug_a3_m2kit.json",
+      "rank": 3
+    },
+    {
+      "id": "ccrp:aug_a3s",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/aug_a3s.json",
+      "rank": 3
+    },
+    {
+      "id": "ccrp:aug_camg_kit",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/aug_camg_kit.json",
+      "rank": 3
+    },
+    {
+      "id": "ccrp:brn_180_bullpup",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/brn_180_bullpup.json",
+      "rank": 3
+    },
+    {
+      "id": "ccrp:camg_dexterous",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/camg_dexterous.json",
+      "rank": 3
+    },
+    {
+      "id": "ccrp:camg_krait",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/camg_krait.json",
+      "rank": 3
+    },
+    {
+      "id": "ccrp:camg_m4_sopmod2",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/camg_m4_sopmod2.json",
+      "rank": 3
+    },
+    {
+      "id": "ccrp:camg_mk18",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/camg_mk18.json",
+      "rank": 3
+    },
+    {
+      "id": "ccrp:car_15",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/car_15.json",
+      "rank": 3
+    },
+    {
+      "id": "ccrp:cr300",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/cr300.json",
+      "rank": 3
+    },
+    {
+      "id": "ccrp:cslr_42a",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/cslr_42a.json",
+      "rank": 3
+    },
+    {
+      "id": "ccrp:cslr_43a",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/cslr_43a.json",
+      "rank": 3
+    },
+    {
+      "id": "ccrp:cslr_44",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/cslr_44.json",
+      "rank": 3
+    },
+    {
+      "id": "ccrp:ddm4",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/ddm4.json",
+      "rank": 3
+    },
+    {
+      "id": "ccrp:ddm4_pdw",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/ddm4_pdw.json",
+      "rank": 3
+    },
+    {
+      "id": "ccrp:ddm4_v7_pro",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/ddm4_v7_pro.json",
+      "rank": 3
+    },
+    {
+      "id": "ccrp:ddm4a1",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/ddm4a1.json",
+      "rank": 3
+    },
+    {
+      "id": "ccrp:dsa_sa58",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/dsa_sa58.json",
+      "rank": 3
+    },
+    {
+      "id": "ccrp:f90",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/f90.json",
+      "rank": 3
+    },
+    {
+      "id": "ccrp:f90_mbr",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/f90_mbr.json",
+      "rank": 3
+    },
+    {
+      "id": "ccrp:g95a1",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/g95a1.json",
+      "rank": 3
+    },
+    {
+      "id": "ccrp:hk_g28_patrol",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/hk_g28_patrol.json",
+      "rank": 3
+    },
+    {
+      "id": "ccrp:hk416",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/hk416.json",
+      "rank": 3
+    },
+    {
+      "id": "ccrp:hk416_sopmod",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/hk416_sopmod.json",
+      "rank": 3
+    },
+    {
+      "id": "ccrp:hk416a8",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/hk416a8.json",
+      "rank": 3
+    },
+    {
+      "id": "ccrp:hk416c",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/hk416c.json",
+      "rank": 3
+    },
+    {
+      "id": "ccrp:hk417",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/hk417.json",
+      "rank": 3
+    },
+    {
+      "id": "ccrp:hk433",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/hk433.json",
+      "rank": 3
+    },
+    {
+      "id": "ccrp:honeybadger",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/honeybadger.json",
+      "rank": 3
+    },
+    {
+      "id": "ccrp:kac_ks_1",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/kac_ks_1.json",
+      "rank": 3
+    },
+    {
+      "id": "ccrp:km_ak74m",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/km_ak74m.json",
+      "rank": 3
+    },
+    {
+      "id": "ccrp:m16a3",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/m16a3.json",
+      "rank": 3
+    },
+    {
+      "id": "ccrp:m305a",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/m305a.json",
+      "rank": 3
+    },
+    {
+      "id": "ccrp:m38_spr",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/m38_spr.json",
+      "rank": 3
+    },
+    {
+      "id": "ccrp:m4_cqbr",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/m4_cqbr.json",
+      "rank": 3
+    },
+    {
+      "id": "ccrp:m4_sopmod2_fsp",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/m4_sopmod2_fsp.json",
+      "rank": 3
+    },
+    {
+      "id": "ccrp:m4_ss",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/m4_ss.json",
+      "rank": 3
+    },
+    {
+      "id": "ccrp:marlin_1895",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/marlin_1895.json",
+      "rank": 3
+    },
+    {
+      "id": "ccrp:mcx_spear_tombstone",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/mcx_spear_tombstone.json",
+      "rank": 3
+    },
+    {
+      "id": "ccrp:mcx_virtus",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/mcx_virtus.json",
+      "rank": 3
+    },
+    {
+      "id": "ccrp:mk17",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/mk17.json",
+      "rank": 3
+    },
+    {
+      "id": "ccrp:mk556",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/mk556.json",
+      "rank": 3
+    },
+    {
+      "id": "ccrp:psa_ak556",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/psa_ak556.json",
+      "rank": 3
+    },
+    {
+      "id": "ccrp:qbu_191",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/qbu_191.json",
+      "rank": 3
+    },
+    {
+      "id": "ccrp:qbz_191",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/qbz_191.json",
+      "rank": 3
+    },
+    {
+      "id": "ccrp:rd704",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/rd704.json",
+      "rank": 3
+    },
+    {
+      "id": "ccrp:sai_gry_lite_black",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/sai_gry_lite_black.json",
+      "rank": 3
+    },
+    {
+      "id": "ccrp:scar_16s",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/scar_16s.json",
+      "rank": 3
+    },
+    {
+      "id": "ccrp:scar_17s",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/scar_17s.json",
+      "rank": 3
+    },
+    {
+      "id": "ccrp:scar_sc",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/scar_sc.json",
+      "rank": 3
+    },
+    {
+      "id": "ccrp:scar16_ariana",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/scar16_ariana.json",
+      "rank": 3
+    },
+    {
+      "id": "ccrp:scar17_armarise",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/scar17_armarise.json",
+      "rank": 3
+    },
+    {
+      "id": "ccrp:sig277",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/sig277.json",
+      "rank": 3
+    },
+    {
+      "id": "ccrp:silence_meteor",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/silence_meteor.json",
+      "rank": 3
+    },
+    {
+      "id": "ccrp:solgw_mk1",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/solgw_mk1.json",
+      "rank": 3
+    },
+    {
+      "id": "ccrp:tti_tr1",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/tti_tr1.json",
+      "rank": 3
+    },
+    {
+      "id": "ccrp:type_192",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/type_192.json",
+      "rank": 3
+    },
+    {
+      "id": "ccrp:type_97_gen2",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/type_97_gen2.json",
+      "rank": 3
+    },
+    {
+      "id": "ccrp:v308",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/v308.json",
+      "rank": 3
+    },
+    {
+      "id": "ccrp:x95r",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/x95r.json",
+      "rank": 3
+    },
+    {
+      "id": "ccrp:zenit_ak104",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/zenit_ak104.json",
+      "rank": 3
+    },
+    {
+      "id": "ccrp:zenit_ak105",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/zenit_ak105.json",
+      "rank": 3
+    },
+    {
+      "id": "classicr:ak12",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/classicr/index/guns/ak12.json",
+      "rank": 3
+    },
+    {
+      "id": "classicr:fn_fal_tac",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/classicr/index/guns/fn_fal_tac.json",
+      "rank": 3
+    },
+    {
+      "id": "classicr:hk416_a5",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/classicr/index/guns/hk416_a5.json",
+      "rank": 3
+    },
+    {
+      "id": "classicr:mk18_mod1",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/classicr/index/guns/mk18_mod1.json",
+      "rank": 3
+    },
+    {
+      "id": "classicr:mk47",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/classicr/index/guns/mk47.json",
+      "rank": 3
+    },
+    {
+      "id": "classicr:ngsw_r_renewed",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/classicr/index/guns/ngsw_r_renewed.json",
+      "rank": 3
+    },
+    {
+      "id": "classicr:qbz191_renewed",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/classicr/index/guns/qbz191_renewed.json",
+      "rank": 3
+    },
+    {
+      "id": "classicr:spr_15",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/classicr/index/guns/spr_15.json",
+      "rank": 3
+    },
+    {
+      "id": "daffas_arsenal:ak47",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "daffas",
+      "source": "daffas/data/daffas_arsenal/index/guns/ak47.json",
+      "rank": 3
+    },
+    {
+      "id": "daffas_arsenal:aksopmod",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "daffas",
+      "source": "daffas/data/daffas_arsenal/index/guns/aksopmod.json",
+      "rank": 3
+    },
+    {
+      "id": "daffas_arsenal:g36c",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "daffas",
+      "source": "daffas/data/daffas_arsenal/index/guns/g36c.json",
+      "rank": 3
+    },
+    {
+      "id": "daffas_arsenal:g36c_commando",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "daffas",
+      "source": "daffas/data/daffas_arsenal/index/guns/g36c_commando.json",
+      "rank": 3
+    },
+    {
+      "id": "daffas_arsenal:gerosa",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "daffas",
+      "source": "daffas/data/daffas_arsenal/index/guns/gerosa.json",
+      "rank": 3
+    },
+    {
+      "id": "daffas_arsenal:hk416",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "daffas",
+      "source": "daffas/data/daffas_arsenal/index/guns/hk416.json",
+      "rank": 3
+    },
+    {
+      "id": "daffas_arsenal:hk416_sup",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "daffas",
+      "source": "daffas/data/daffas_arsenal/index/guns/hk416_sup.json",
+      "rank": 3
+    },
+    {
+      "id": "daffas_arsenal:hk417",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "daffas",
+      "source": "daffas/data/daffas_arsenal/index/guns/hk417.json",
+      "rank": 3
+    },
+    {
+      "id": "daffas_arsenal:pegomc",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "daffas",
+      "source": "daffas/data/daffas_arsenal/index/guns/pegomc.json",
+      "rank": 3
+    },
+    {
+      "id": "daffas_arsenal:pegontmc",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "daffas",
+      "source": "daffas/data/daffas_arsenal/index/guns/pegontmc.json",
+      "rank": 3
+    },
+    {
+      "id": "daffas_arsenal:samula3",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "daffas",
+      "source": "daffas/data/daffas_arsenal/index/guns/samula3.json",
+      "rank": 3
+    },
+    {
+      "id": "daffas_arsenal:sg550",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "daffas",
+      "source": "daffas/data/daffas_arsenal/index/guns/sg550.json",
+      "rank": 3
+    },
+    {
+      "id": "daffas_arsenal:sg552",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "daffas",
+      "source": "daffas/data/daffas_arsenal/index/guns/sg552.json",
+      "rank": 3
+    },
+    {
+      "id": "daffas_arsenal:southeastmomssecretweapon",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "daffas",
+      "source": "daffas/data/daffas_arsenal/index/guns/southeastmomssecretweapon.json",
+      "rank": 3
+    },
+    {
+      "id": "daffas_arsenal:ss1_v2",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "daffas",
+      "source": "daffas/data/daffas_arsenal/index/guns/ss1_v2.json",
+      "rank": 3
+    },
+    {
+      "id": "daffas_arsenal:ss1_v5",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "daffas",
+      "source": "daffas/data/daffas_arsenal/index/guns/ss1_v5.json",
+      "rank": 3
+    },
+    {
+      "id": "daffas_arsenal:ss1_v5g",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "daffas",
+      "source": "daffas/data/daffas_arsenal/index/guns/ss1_v5g.json",
+      "rank": 3
+    },
+    {
+      "id": "elitex:ak47",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "elitex_quality_guns",
+      "source": "elitex_quality_guns/data/elitex/index/guns/ak47.json",
+      "rank": 3
+    },
+    {
+      "id": "elitex:akx105",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "elitex_quality_guns",
+      "source": "elitex_quality_guns/data/elitex/index/guns/akx105.json",
+      "rank": 3
+    },
+    {
+      "id": "elitex:famas_f1",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "elitex_quality_guns",
+      "source": "elitex_quality_guns/data/elitex/index/guns/famas_f1.json",
+      "rank": 3
+    },
+    {
+      "id": "elitex:fh_scar18",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "elitex_quality_guns",
+      "source": "elitex_quality_guns/data/elitex/index/guns/fh_scar18.json",
+      "rank": 3
+    },
+    {
+      "id": "elitex:fs_scar19",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "elitex_quality_guns",
+      "source": "elitex_quality_guns/data/elitex/index/guns/fs_scar19.json",
+      "rank": 3
+    },
+    {
+      "id": "elitex:golden_ak",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "elitex_quality_guns",
+      "source": "elitex_quality_guns/data/elitex/index/guns/golden_ak.json",
+      "rank": 3
+    },
+    {
+      "id": "elitex:m16",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "elitex_quality_guns",
+      "source": "elitex_quality_guns/data/elitex/index/guns/m16.json",
+      "rank": 3
+    },
+    {
+      "id": "elitex:m4_sopmod",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "elitex_quality_guns",
+      "source": "elitex_quality_guns/data/elitex/index/guns/m4_sopmod.json",
+      "rank": 3
+    },
+    {
+      "id": "elitex:m4a1_classic",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "elitex_quality_guns",
+      "source": "elitex_quality_guns/data/elitex/index/guns/m4a1_classic.json",
+      "rank": 3
+    },
+    {
+      "id": "elitex:mcs_spear",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "elitex_quality_guns",
+      "source": "elitex_quality_guns/data/elitex/index/guns/mcs_spear.json",
+      "rank": 3
+    },
+    {
+      "id": "elitex:wonder_waffle",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "elitex_quality_guns",
+      "source": "elitex_quality_guns/data/elitex/index/guns/wonder_waffle.json",
+      "rank": 3
+    },
+    {
+      "id": "emxarms:emx_mk951l",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "[Tacz1.1.5+]EMX-Arms GunsPack ver1.1.5.zip.zip",
+      "source": "[Tacz1.1.5+]EMX-Arms GunsPack ver1.1.5.zip.zip!data/emxarms/index/guns/emx_mk951l.json",
+      "rank": 3
+    },
+    {
+      "id": "emxarms:emx_mk951r",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "[Tacz1.1.5+]EMX-Arms GunsPack ver1.1.5.zip.zip",
+      "source": "[Tacz1.1.5+]EMX-Arms GunsPack ver1.1.5.zip.zip!data/emxarms/index/guns/emx_mk951r.json",
+      "rank": 3
+    },
+    {
+      "id": "emxarms:emx_rivet",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "[Tacz1.1.5+]EMX-Arms GunsPack ver1.1.5.zip.zip",
+      "source": "[Tacz1.1.5+]EMX-Arms GunsPack ver1.1.5.zip.zip!data/emxarms/index/guns/emx_rivet.json",
+      "rank": 3
+    },
+    {
+      "id": "emxarms:emx_umx57",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "[Tacz1.1.5+]EMX-Arms GunsPack ver1.1.5.zip.zip",
+      "source": "[Tacz1.1.5+]EMX-Arms GunsPack ver1.1.5.zip.zip!data/emxarms/index/guns/emx_umx57.json",
+      "rank": 3
+    },
+    {
+      "id": "immersive_armorer:assult_rifle",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "Immersive Armorer-v1.2.1-for117.zip",
+      "source": "Immersive Armorer-v1.2.1-for117.zip!data/immersive_armorer/index/guns/assult_rifle.json",
+      "rank": 3
+    },
+    {
+      "id": "maxstuff:aa50beowulf",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/aa50beowulf.json",
+      "rank": 3
+    },
+    {
+      "id": "maxstuff:adar2",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/adar2.json",
+      "rank": 3
+    },
+    {
+      "id": "maxstuff:ak_alpha",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/ak_alpha.json",
+      "rank": 3
+    },
+    {
+      "id": "maxstuff:ak_delta",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/ak_delta.json",
+      "rank": 3
+    },
+    {
+      "id": "maxstuff:ak107",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/ak107.json",
+      "rank": 3
+    },
+    {
+      "id": "maxstuff:ak108",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/ak108.json",
+      "rank": 3
+    },
+    {
+      "id": "maxstuff:ak109",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/ak109.json",
+      "rank": 3
+    },
+    {
+      "id": "maxstuff:ak12",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/ak12.json",
+      "rank": 3
+    },
+    {
+      "id": "maxstuff:ak15",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/ak15.json",
+      "rank": 3
+    },
+    {
+      "id": "maxstuff:ak19",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/ak19.json",
+      "rank": 3
+    },
+    {
+      "id": "maxstuff:ak22",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/ak22.json",
+      "rank": 3
+    },
+    {
+      "id": "maxstuff:ak308",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/ak308.json",
+      "rank": 3
+    },
+    {
+      "id": "maxstuff:ak63e",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/ak63e.json",
+      "rank": 3
+    },
+    {
+      "id": "maxstuff:ak74",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/ak74.json",
+      "rank": 3
+    },
+    {
+      "id": "maxstuff:ak74m",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/ak74m.json",
+      "rank": 3
+    },
+    {
+      "id": "maxstuff:ak9",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/ak9.json",
+      "rank": 3
+    },
+    {
+      "id": "maxstuff:aks74u",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/aks74u.json",
+      "rank": 3
+    },
+    {
+      "id": "maxstuff:aks74ub",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/aks74ub.json",
+      "rank": 3
+    },
+    {
+      "id": "maxstuff:ar10",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/ar10.json",
+      "rank": 3
+    },
+    {
+      "id": "maxstuff:ar10b",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/ar10b.json",
+      "rank": 3
+    },
+    {
+      "id": "maxstuff:ar18",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/ar18.json",
+      "rank": 3
+    },
+    {
+      "id": "maxstuff:ar762",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/ar762.json",
+      "rank": 3
+    },
+    {
+      "id": "maxstuff:arp",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/arp.json",
+      "rank": 3
+    },
+    {
+      "id": "maxstuff:aug_a2",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/aug_a2.json",
+      "rank": 3
+    },
+    {
+      "id": "maxstuff:aug_a3",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/aug_a3.json",
+      "rank": 3
+    },
+    {
+      "id": "maxstuff:aug_a5",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/aug_a5.json",
+      "rank": 3
+    },
+    {
+      "id": "maxstuff:beowulf_ecr",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/beowulf_ecr.json",
+      "rank": 3
+    },
+    {
+      "id": "maxstuff:beowulf_tcr",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/beowulf_tcr.json",
+      "rank": 3
+    },
+    {
+      "id": "maxstuff:brn10",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/brn10.json",
+      "rank": 3
+    },
+    {
+      "id": "maxstuff:colt_933",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/colt_933.json",
+      "rank": 3
+    },
+    {
+      "id": "maxstuff:cursed15",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/cursed15.json",
+      "rank": 3
+    },
+    {
+      "id": "maxstuff:g36",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/g36.json",
+      "rank": 3
+    },
+    {
+      "id": "maxstuff:hk_g33",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/hk_g33.json",
+      "rank": 3
+    },
+    {
+      "id": "maxstuff:hk416c",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/hk416c.json",
+      "rank": 3
+    },
+    {
+      "id": "maxstuff:hk417",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/hk417.json",
+      "rank": 3
+    },
+    {
+      "id": "maxstuff:honey_badger",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/honey_badger.json",
+      "rank": 3
+    },
+    {
+      "id": "maxstuff:m1_garand",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/m1_garand.json",
+      "rank": 3
+    },
+    {
+      "id": "maxstuff:m1_garand_tac",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/m1_garand_tac.json",
+      "rank": 3
+    },
+    {
+      "id": "maxstuff:m16a2",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/m16a2.json",
+      "rank": 3
+    },
+    {
+      "id": "maxstuff:m16a3",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/m16a3.json",
+      "rank": 3
+    },
+    {
+      "id": "maxstuff:mk18",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/mk18.json",
+      "rank": 3
+    },
+    {
+      "id": "maxstuff:mk18_auto",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/mk18_auto.json",
+      "rank": 3
+    },
+    {
+      "id": "maxstuff:mk18_burst",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/mk18_burst.json",
+      "rank": 3
+    },
+    {
+      "id": "maxstuff:mk47",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/mk47.json",
+      "rank": 3
+    },
+    {
+      "id": "maxstuff:mojave223",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/mojave223.json",
+      "rank": 3
+    },
+    {
+      "id": "maxstuff:potassium_power",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/potassium_power.json",
+      "rank": 3
+    },
+    {
+      "id": "maxstuff:qbz_97",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/qbz_97.json",
+      "rank": 3
+    },
+    {
+      "id": "maxstuff:scar_15p",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/scar_15p.json",
+      "rank": 3
+    },
+    {
+      "id": "maxstuff:scar_pdw",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/scar_pdw.json",
+      "rank": 3
+    },
+    {
+      "id": "maxstuff:scar_sbr",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/scar_sbr.json",
+      "rank": 3
+    },
+    {
+      "id": "maxstuff:sr15",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/sr15.json",
+      "rank": 3
+    },
+    {
+      "id": "maxstuff:sr16",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/sr16.json",
+      "rank": 3
+    },
+    {
+      "id": "maxstuff:xm177",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/xm177.json",
+      "rank": 3
+    },
+    {
+      "id": "maxstuff:z15",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/z15.json",
+      "rank": 3
+    },
+    {
+      "id": "maxstuff:z15_a",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/z15_a.json",
+      "rank": 3
+    },
+    {
+      "id": "tacz:ak47",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "tacz_default_gun",
+      "source": "tacz_default_gun/data/tacz/index/guns/ak47.json",
+      "rank": 3
+    },
+    {
+      "id": "tacz:aug",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "tacz_default_gun",
+      "source": "tacz_default_gun/data/tacz/index/guns/aug.json",
+      "rank": 3
+    },
+    {
+      "id": "tacz:fn_fal",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "tacz_default_gun",
+      "source": "tacz_default_gun/data/tacz/index/guns/fn_fal.json",
+      "rank": 3
+    },
+    {
+      "id": "tacz:g36k",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "tacz_default_gun",
+      "source": "tacz_default_gun/data/tacz/index/guns/g36k.json",
+      "rank": 3
+    },
+    {
+      "id": "tacz:hk_g3",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "tacz_default_gun",
+      "source": "tacz_default_gun/data/tacz/index/guns/hk_g3.json",
+      "rank": 3
+    },
+    {
+      "id": "tacz:hk416d",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "tacz_default_gun",
+      "source": "tacz_default_gun/data/tacz/index/guns/hk416d.json",
+      "rank": 3
+    },
+    {
+      "id": "tacz:m16a1",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "tacz_default_gun",
+      "source": "tacz_default_gun/data/tacz/index/guns/m16a1.json",
+      "rank": 3
+    },
+    {
+      "id": "tacz:m16a4",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "tacz_default_gun",
+      "source": "tacz_default_gun/data/tacz/index/guns/m16a4.json",
+      "rank": 3
+    },
+    {
+      "id": "tacz:m4a1",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "tacz_default_gun",
+      "source": "tacz_default_gun/data/tacz/index/guns/m4a1.json",
+      "rank": 2
+    },
+    {
+      "id": "tacz:qbz_191",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "tacz_default_gun",
+      "source": "tacz_default_gun/data/tacz/index/guns/qbz_191.json",
+      "rank": 3
+    },
+    {
+      "id": "tacz:qbz_95",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "tacz_default_gun",
+      "source": "tacz_default_gun/data/tacz/index/guns/qbz_95.json",
+      "rank": 3
+    },
+    {
+      "id": "tacz:scar_h",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "tacz_default_gun",
+      "source": "tacz_default_gun/data/tacz/index/guns/scar_h.json",
+      "rank": 3
+    },
+    {
+      "id": "tacz:scar_l",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "tacz_default_gun",
+      "source": "tacz_default_gun/data/tacz/index/guns/scar_l.json",
+      "rank": 3
+    },
+    {
+      "id": "tacz:spr15hb",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "tacz_default_gun",
+      "source": "tacz_default_gun/data/tacz/index/guns/spr15hb.json",
+      "rank": 3
+    },
+    {
+      "id": "tacz:type_81",
+      "type": "rifle",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "tacz_default_gun",
+      "source": "tacz_default_gun/data/tacz/index/guns/type_81.json",
+      "rank": 3
+    },
+    {
+      "id": "bf1:ef46",
+      "type": "shotgun",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/shotguns",
+      "pack": "Apocalypse_v1.1.7_G.zip",
+      "source": "Apocalypse_v1.1.7_G.zip!data/bf1/index/guns/ef46.json",
+      "rank": 3
+    },
+    {
+      "id": "bf1:m2_2",
+      "type": "shotgun",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/shotguns",
+      "pack": "Apocalypse_v1.1.7_G.zip",
+      "source": "Apocalypse_v1.1.7_G.zip!data/bf1/index/guns/m2_2.json",
+      "rank": 3
+    },
+    {
+      "id": "bf1:model10",
+      "type": "shotgun",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/shotguns",
+      "pack": "Apocalypse_v1.1.7_G.zip",
+      "source": "Apocalypse_v1.1.7_G.zip!data/bf1/index/guns/model10.json",
+      "rank": 3
+    },
+    {
+      "id": "bf1:sjogren",
+      "type": "shotgun",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/shotguns",
+      "pack": "Apocalypse_v1.1.7_G.zip",
+      "source": "Apocalypse_v1.1.7_G.zip!data/bf1/index/guns/sjogren.json",
+      "rank": 3
+    },
+    {
+      "id": "bf1:wex",
+      "type": "shotgun",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/shotguns",
+      "pack": "Apocalypse_v1.1.7_G.zip",
+      "source": "Apocalypse_v1.1.7_G.zip!data/bf1/index/guns/wex.json",
+      "rank": 3
+    },
+    {
+      "id": "ccrp:camg_m1014",
+      "type": "shotgun",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/shotguns",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/camg_m1014.json",
+      "rank": 3
+    },
+    {
+      "id": "ccrp:lastwar",
+      "type": "shotgun",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/shotguns",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/lastwar.json",
+      "rank": 3
+    },
+    {
+      "id": "ccrp:m1887_long",
+      "type": "shotgun",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/shotguns",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/m1887_long.json",
+      "rank": 3
+    },
+    {
+      "id": "classicr:aa410",
+      "type": "shotgun",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/shotguns",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/classicr/index/guns/aa410.json",
+      "rank": 3
+    },
+    {
+      "id": "daffas_arsenal:sgputer",
+      "type": "shotgun",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/shotguns",
+      "pack": "daffas",
+      "source": "daffas/data/daffas_arsenal/index/guns/sgputer.json",
+      "rank": 3
+    },
+    {
+      "id": "daffas_arsenal:sgputer2",
+      "type": "shotgun",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/shotguns",
+      "pack": "daffas",
+      "source": "daffas/data/daffas_arsenal/index/guns/sgputer2.json",
+      "rank": 3
+    },
+    {
+      "id": "daffas_arsenal:southeastmomssecretweapon2",
+      "type": "shotgun",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/shotguns",
+      "pack": "daffas",
+      "source": "daffas/data/daffas_arsenal/index/guns/southeastmomssecretweapon2.json",
+      "rank": 3
+    },
+    {
+      "id": "daffas_arsenal:spasi15",
+      "type": "shotgun",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/shotguns",
+      "pack": "daffas",
+      "source": "daffas/data/daffas_arsenal/index/guns/spasi15.json",
+      "rank": 3
+    },
+    {
+      "id": "elitex:benelli_super",
+      "type": "shotgun",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/shotguns",
+      "pack": "elitex_quality_guns",
+      "source": "elitex_quality_guns/data/elitex/index/guns/benelli_super.json",
+      "rank": 3
+    },
+    {
+      "id": "elitex:spaz12",
+      "type": "shotgun",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/shotguns",
+      "pack": "elitex_quality_guns",
+      "source": "elitex_quality_guns/data/elitex/index/guns/spaz12.json",
+      "rank": 3
+    },
+    {
+      "id": "emxarms:emx_draftsman",
+      "type": "shotgun",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/shotguns",
+      "pack": "[Tacz1.1.5+]EMX-Arms GunsPack ver1.1.5.zip.zip",
+      "source": "[Tacz1.1.5+]EMX-Arms GunsPack ver1.1.5.zip.zip!data/emxarms/index/guns/emx_draftsman.json",
+      "rank": 3
+    },
+    {
+      "id": "emxarms:emx_enforcer",
+      "type": "shotgun",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/shotguns",
+      "pack": "[Tacz1.1.5+]EMX-Arms GunsPack ver1.1.5.zip.zip",
+      "source": "[Tacz1.1.5+]EMX-Arms GunsPack ver1.1.5.zip.zip!data/emxarms/index/guns/emx_enforcer.json",
+      "rank": 3
+    },
+    {
+      "id": "emxarms:emx_scgraves",
+      "type": "shotgun",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/shotguns",
+      "pack": "[Tacz1.1.5+]EMX-Arms GunsPack ver1.1.5.zip.zip",
+      "source": "[Tacz1.1.5+]EMX-Arms GunsPack ver1.1.5.zip.zip!data/emxarms/index/guns/emx_scgraves.json",
+      "rank": 3
+    },
+    {
+      "id": "immersive_armorer:double_shotgun",
+      "type": "shotgun",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/shotguns",
+      "pack": "Immersive Armorer-v1.2.1-for117.zip",
+      "source": "Immersive Armorer-v1.2.1-for117.zip!data/immersive_armorer/index/guns/double_shotgun.json",
+      "rank": 3
+    },
+    {
+      "id": "immersive_armorer:pump_shotgun",
+      "type": "shotgun",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/shotguns",
+      "pack": "Immersive Armorer-v1.2.1-for117.zip",
+      "source": "Immersive Armorer-v1.2.1-for117.zip!data/immersive_armorer/index/guns/pump_shotgun.json",
+      "rank": 3
+    },
+    {
+      "id": "maxstuff:db_50",
+      "type": "shotgun",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/shotguns",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/db_50.json",
+      "rank": 3
+    },
+    {
+      "id": "maxstuff:db_long_d",
+      "type": "shotgun",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/shotguns",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/db_long_d.json",
+      "rank": 3
+    },
+    {
+      "id": "maxstuff:db_short_d",
+      "type": "shotgun",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/shotguns",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/db_short_d.json",
+      "rank": 3
+    },
+    {
+      "id": "maxstuff:db_short_tactical",
+      "type": "shotgun",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/shotguns",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/db_short_tactical.json",
+      "rank": 3
+    },
+    {
+      "id": "maxstuff:genesis12",
+      "type": "shotgun",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/shotguns",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/genesis12.json",
+      "rank": 3
+    },
+    {
+      "id": "maxstuff:genesis12_dragons_breath",
+      "type": "shotgun",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/shotguns",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/genesis12_dragons_breath.json",
+      "rank": 3
+    },
+    {
+      "id": "maxstuff:genesis12_fl",
+      "type": "shotgun",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/shotguns",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/genesis12_fl.json",
+      "rank": 3
+    },
+    {
+      "id": "maxstuff:m870t",
+      "type": "shotgun",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/shotguns",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/m870t.json",
+      "rank": 3
+    },
+    {
+      "id": "maxstuff:saiga12",
+      "type": "shotgun",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/shotguns",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/saiga12.json",
+      "rank": 3
+    },
+    {
+      "id": "maxstuff:sap6",
+      "type": "shotgun",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/shotguns",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/sap6.json",
+      "rank": 3
+    },
+    {
+      "id": "tacz:aa12",
+      "type": "shotgun",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/shotguns",
+      "pack": "tacz_default_gun",
+      "source": "tacz_default_gun/data/tacz/index/guns/aa12.json",
+      "rank": 3
+    },
+    {
+      "id": "tacz:db_long",
+      "type": "shotgun",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/shotguns",
+      "pack": "tacz_default_gun",
+      "source": "tacz_default_gun/data/tacz/index/guns/db_long.json",
+      "rank": 3
+    },
+    {
+      "id": "tacz:db_short",
+      "type": "shotgun",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/shotguns",
+      "pack": "tacz_default_gun",
+      "source": "tacz_default_gun/data/tacz/index/guns/db_short.json",
+      "rank": 3
+    },
+    {
+      "id": "tacz:m1014",
+      "type": "shotgun",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/shotguns",
+      "pack": "tacz_default_gun",
+      "source": "tacz_default_gun/data/tacz/index/guns/m1014.json",
+      "rank": 3
+    },
+    {
+      "id": "tacz:m870",
+      "type": "shotgun",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/shotguns",
+      "pack": "tacz_default_gun",
+      "source": "tacz_default_gun/data/tacz/index/guns/m870.json",
+      "rank": 3
+    },
+    {
+      "id": "tacz:spas_12",
+      "type": "shotgun",
+      "stage": 1,
+      "lane": "project_deadzone:weapons/shotguns",
+      "pack": "tacz_default_gun",
+      "source": "tacz_default_gun/data/tacz/index/guns/spas_12.json",
+      "rank": 3
+    },
+    {
+      "id": "bf1:chauchat",
+      "type": "mg",
+      "stage": 2,
+      "lane": "project_deadzone:weapons/support",
+      "pack": "Apocalypse_v1.1.7_G.zip",
+      "source": "Apocalypse_v1.1.7_G.zip!data/bf1/index/guns/chauchat.json",
+      "rank": 5
+    },
+    {
+      "id": "bf1:lewis",
+      "type": "mg",
+      "stage": 2,
+      "lane": "project_deadzone:weapons/support",
+      "pack": "Apocalypse_v1.1.7_G.zip",
+      "source": "Apocalypse_v1.1.7_G.zip!data/bf1/index/guns/lewis.json",
+      "rank": 5
+    },
+    {
+      "id": "bf1:mg0815",
+      "type": "mg",
+      "stage": 2,
+      "lane": "project_deadzone:weapons/support",
+      "pack": "Apocalypse_v1.1.7_G.zip",
+      "source": "Apocalypse_v1.1.7_G.zip!data/bf1/index/guns/mg0815.json",
+      "rank": 5
+    },
+    {
+      "id": "bf1:mg42",
+      "type": "mg",
+      "stage": 2,
+      "lane": "project_deadzone:weapons/support",
+      "pack": "Apocalypse_v1.1.7_G.zip",
+      "source": "Apocalypse_v1.1.7_G.zip!data/bf1/index/guns/mg42.json",
+      "rank": 5
+    },
+    {
+      "id": "ccrp:aug_hbar",
+      "type": "mg",
+      "stage": 2,
+      "lane": "project_deadzone:weapons/support",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/aug_hbar.json",
+      "rank": 5
+    },
+    {
+      "id": "ccrp:hk21",
+      "type": "mg",
+      "stage": 2,
+      "lane": "project_deadzone:weapons/support",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/hk21.json",
+      "rank": 5
+    },
+    {
+      "id": "ccrp:m249_saw",
+      "type": "mg",
+      "stage": 2,
+      "lane": "project_deadzone:weapons/support",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/m249_saw.json",
+      "rank": 5
+    },
+    {
+      "id": "ccrp:m27_iar",
+      "type": "mg",
+      "stage": 2,
+      "lane": "project_deadzone:weapons/support",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/m27_iar.json",
+      "rank": 5
+    },
+    {
+      "id": "ccrp:mg36",
+      "type": "mg",
+      "stage": 2,
+      "lane": "project_deadzone:weapons/support",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/mg36.json",
+      "rank": 5
+    },
+    {
+      "id": "ccrp:rpk_203",
+      "type": "mg",
+      "stage": 2,
+      "lane": "project_deadzone:weapons/support",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/rpk_203.json",
+      "rank": 5
+    },
+    {
+      "id": "ccrp:rpk74m",
+      "type": "mg",
+      "stage": 2,
+      "lane": "project_deadzone:weapons/support",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/rpk74m.json",
+      "rank": 5
+    },
+    {
+      "id": "ccrp:type_95_longbow",
+      "type": "mg",
+      "stage": 2,
+      "lane": "project_deadzone:weapons/support",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/type_95_longbow.json",
+      "rank": 5
+    },
+    {
+      "id": "classicr:dp28",
+      "type": "mg",
+      "stage": 2,
+      "lane": "project_deadzone:weapons/support",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/classicr/index/guns/dp28.json",
+      "rank": 5
+    },
+    {
+      "id": "classicr:m60",
+      "type": "mg",
+      "stage": 2,
+      "lane": "project_deadzone:weapons/support",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/classicr/index/guns/m60.json",
+      "rank": 5
+    },
+    {
+      "id": "classicr:minigun",
+      "type": "mg",
+      "stage": 2,
+      "lane": "project_deadzone:weapons/support",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/classicr/index/guns/minigun.json",
+      "rank": 5
+    },
+    {
+      "id": "daffas_arsenal:g36",
+      "type": "mg",
+      "stage": 2,
+      "lane": "project_deadzone:weapons/support",
+      "pack": "daffas",
+      "source": "daffas/data/daffas_arsenal/index/guns/g36.json",
+      "rank": 5
+    },
+    {
+      "id": "daffas_arsenal:migraine3",
+      "type": "mg",
+      "stage": 2,
+      "lane": "project_deadzone:weapons/support",
+      "pack": "daffas",
+      "source": "daffas/data/daffas_arsenal/index/guns/migraine3.json",
+      "rank": 5
+    },
+    {
+      "id": "daffas_arsenal:pego762",
+      "type": "mg",
+      "stage": 2,
+      "lane": "project_deadzone:weapons/support",
+      "pack": "daffas",
+      "source": "daffas/data/daffas_arsenal/index/guns/pego762.json",
+      "rank": 5
+    },
+    {
+      "id": "elitex:m249x",
+      "type": "mg",
+      "stage": 2,
+      "lane": "project_deadzone:weapons/support",
+      "pack": "elitex_quality_guns",
+      "source": "elitex_quality_guns/data/elitex/index/guns/m249x.json",
+      "rank": 5
+    },
+    {
+      "id": "emxarms:emx_mg57",
+      "type": "mg",
+      "stage": 2,
+      "lane": "project_deadzone:weapons/support",
+      "pack": "[Tacz1.1.5+]EMX-Arms GunsPack ver1.1.5.zip.zip",
+      "source": "[Tacz1.1.5+]EMX-Arms GunsPack ver1.1.5.zip.zip!data/emxarms/index/guns/emx_mg57.json",
+      "rank": 5
+    },
+    {
+      "id": "emxarms:emx_mg90",
+      "type": "mg",
+      "stage": 2,
+      "lane": "project_deadzone:weapons/support",
+      "pack": "[Tacz1.1.5+]EMX-Arms GunsPack ver1.1.5.zip.zip",
+      "source": "[Tacz1.1.5+]EMX-Arms GunsPack ver1.1.5.zip.zip!data/emxarms/index/guns/emx_mg90.json",
+      "rank": 5
+    },
+    {
+      "id": "emxarms:emx_mk951lmg",
+      "type": "mg",
+      "stage": 2,
+      "lane": "project_deadzone:weapons/support",
+      "pack": "[Tacz1.1.5+]EMX-Arms GunsPack ver1.1.5.zip.zip",
+      "source": "[Tacz1.1.5+]EMX-Arms GunsPack ver1.1.5.zip.zip!data/emxarms/index/guns/emx_mk951lmg.json",
+      "rank": 5
+    },
+    {
+      "id": "emxarms:emx_sf7b",
+      "type": "mg",
+      "stage": 2,
+      "lane": "project_deadzone:weapons/support",
+      "pack": "[Tacz1.1.5+]EMX-Arms GunsPack ver1.1.5.zip.zip",
+      "source": "[Tacz1.1.5+]EMX-Arms GunsPack ver1.1.5.zip.zip!data/emxarms/index/guns/emx_sf7b.json",
+      "rank": 5
+    },
+    {
+      "id": "maxstuff:aug_hbar",
+      "type": "mg",
+      "stage": 2,
+      "lane": "project_deadzone:weapons/support",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/aug_hbar.json",
+      "rank": 5
+    },
+    {
+      "id": "maxstuff:dp28",
+      "type": "mg",
+      "stage": 2,
+      "lane": "project_deadzone:weapons/support",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/dp28.json",
+      "rank": 5
+    },
+    {
+      "id": "maxstuff:m231",
+      "type": "mg",
+      "stage": 2,
+      "lane": "project_deadzone:weapons/support",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/m231.json",
+      "rank": 5
+    },
+    {
+      "id": "maxstuff:quatro15",
+      "type": "mg",
+      "stage": 2,
+      "lane": "project_deadzone:weapons/support",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/quatro15.json",
+      "rank": 5
+    },
+    {
+      "id": "maxstuff:rpk_74",
+      "type": "mg",
+      "stage": 2,
+      "lane": "project_deadzone:weapons/support",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/rpk_74.json",
+      "rank": 5
+    },
+    {
+      "id": "maxstuff:rpk_74m",
+      "type": "mg",
+      "stage": 2,
+      "lane": "project_deadzone:weapons/support",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/rpk_74m.json",
+      "rank": 5
+    },
+    {
+      "id": "maxstuff:rpk16",
+      "type": "mg",
+      "stage": 2,
+      "lane": "project_deadzone:weapons/support",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/rpk16.json",
+      "rank": 5
+    },
+    {
+      "id": "maxstuff:scar_hamr",
+      "type": "mg",
+      "stage": 2,
+      "lane": "project_deadzone:weapons/support",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/scar_hamr.json",
+      "rank": 5
+    },
+    {
+      "id": "tacz:fn_evolys",
+      "type": "mg",
+      "stage": 2,
+      "lane": "project_deadzone:weapons/support",
+      "pack": "tacz_default_gun",
+      "source": "tacz_default_gun/data/tacz/index/guns/fn_evolys.json",
+      "rank": 5
+    },
+    {
+      "id": "tacz:m249",
+      "type": "mg",
+      "stage": 2,
+      "lane": "project_deadzone:weapons/support",
+      "pack": "tacz_default_gun",
+      "source": "tacz_default_gun/data/tacz/index/guns/m249.json",
+      "rank": 5
+    },
+    {
+      "id": "tacz:minigun",
+      "type": "mg",
+      "stage": 2,
+      "lane": "project_deadzone:weapons/support",
+      "pack": "tacz_default_gun",
+      "source": "tacz_default_gun/data/tacz/index/guns/minigun.json",
+      "rank": 5
+    },
+    {
+      "id": "tacz:rpk",
+      "type": "mg",
+      "stage": 2,
+      "lane": "project_deadzone:weapons/support",
+      "pack": "tacz_default_gun",
+      "source": "tacz_default_gun/data/tacz/index/guns/rpk.json",
+      "rank": 5
+    },
+    {
+      "id": "ccrp:aug_a3_dmr",
+      "type": "rifle",
+      "stage": 2,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/aug_a3_dmr.json",
+      "rank": 5
+    },
+    {
+      "id": "elitex:sassy_dmr",
+      "type": "rifle",
+      "stage": 2,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "elitex_quality_guns",
+      "source": "elitex_quality_guns/data/elitex/index/guns/sassy_dmr.json",
+      "rank": 5
+    },
+    {
+      "id": "maxstuff:mk11",
+      "type": "rifle",
+      "stage": 2,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/mk11.json",
+      "rank": 5
+    },
+    {
+      "id": "maxstuff:sks_golden",
+      "type": "rifle",
+      "stage": 2,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/sks_golden.json",
+      "rank": 5
+    },
+    {
+      "id": "maxstuff:sks_wooden",
+      "type": "rifle",
+      "stage": 2,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/sks_wooden.json",
+      "rank": 5
+    },
+    {
+      "id": "tacz:mk14",
+      "type": "rifle",
+      "stage": 2,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "tacz_default_gun",
+      "source": "tacz_default_gun/data/tacz/index/guns/mk14.json",
+      "rank": 5
+    },
+    {
+      "id": "tacz:sks_tactical",
+      "type": "rifle",
+      "stage": 2,
+      "lane": "project_deadzone:weapons/rifles",
+      "pack": "tacz_default_gun",
+      "source": "tacz_default_gun/data/tacz/index/guns/sks_tactical.json",
+      "rank": 5
+    },
+    {
+      "id": "bf1:man_m95",
+      "type": "sniper",
+      "stage": 2,
+      "lane": "project_deadzone:weapons/precision",
+      "pack": "Apocalypse_v1.1.7_G.zip",
+      "source": "Apocalypse_v1.1.7_G.zip!data/bf1/index/guns/man_m95.json",
+      "rank": 5
+    },
+    {
+      "id": "bf1:martini",
+      "type": "sniper",
+      "stage": 2,
+      "lane": "project_deadzone:weapons/precision",
+      "pack": "Apocalypse_v1.1.7_G.zip",
+      "source": "Apocalypse_v1.1.7_G.zip!data/bf1/index/guns/martini.json",
+      "rank": 5
+    },
+    {
+      "id": "bf1:rorsch_mk4",
+      "type": "sniper",
+      "stage": 2,
+      "lane": "project_deadzone:weapons/precision",
+      "pack": "Apocalypse_v1.1.7_G.zip",
+      "source": "Apocalypse_v1.1.7_G.zip!data/bf1/index/guns/rorsch_mk4.json",
+      "rank": 5
+    },
+    {
+      "id": "bf1:tg1918",
+      "type": "sniper",
+      "stage": 2,
+      "lane": "project_deadzone:weapons/precision",
+      "pack": "Apocalypse_v1.1.7_G.zip",
+      "source": "Apocalypse_v1.1.7_G.zip!data/bf1/index/guns/tg1918.json",
+      "rank": 5
+    },
+    {
+      "id": "ccrp:aics_m700",
+      "type": "sniper",
+      "stage": 2,
+      "lane": "project_deadzone:weapons/precision",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/aics_m700.json",
+      "rank": 5
+    },
+    {
+      "id": "ccrp:hk_g28",
+      "type": "sniper",
+      "stage": 2,
+      "lane": "project_deadzone:weapons/precision",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/hk_g28.json",
+      "rank": 5
+    },
+    {
+      "id": "ccrp:m110",
+      "type": "sniper",
+      "stage": 2,
+      "lane": "project_deadzone:weapons/precision",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/m110.json",
+      "rank": 5
+    },
+    {
+      "id": "ccrp:m110a3",
+      "type": "sniper",
+      "stage": 2,
+      "lane": "project_deadzone:weapons/precision",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/m110a3.json",
+      "rank": 5
+    },
+    {
+      "id": "ccrp:m14_hbar",
+      "type": "sniper",
+      "stage": 2,
+      "lane": "project_deadzone:weapons/precision",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/m14_hbar.json",
+      "rank": 5
+    },
+    {
+      "id": "ccrp:m39_emr",
+      "type": "sniper",
+      "stage": 2,
+      "lane": "project_deadzone:weapons/precision",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/m39_emr.json",
+      "rank": 5
+    },
+    {
+      "id": "ccrp:mk13_mod5",
+      "type": "sniper",
+      "stage": 2,
+      "lane": "project_deadzone:weapons/precision",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/mk13_mod5.json",
+      "rank": 5
+    },
+    {
+      "id": "ccrp:springfield1873_tube_mag",
+      "type": "sniper",
+      "stage": 2,
+      "lane": "project_deadzone:weapons/precision",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/springfield1873_tube_mag.json",
+      "rank": 5
+    },
+    {
+      "id": "ccrp:sr25",
+      "type": "sniper",
+      "stage": 2,
+      "lane": "project_deadzone:weapons/precision",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/sr25.json",
+      "rank": 5
+    },
+    {
+      "id": "ccrp:troy_m14_sass",
+      "type": "sniper",
+      "stage": 2,
+      "lane": "project_deadzone:weapons/precision",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/troy_m14_sass.json",
+      "rank": 5
+    },
+    {
+      "id": "classicr:kar98",
+      "type": "sniper",
+      "stage": 2,
+      "lane": "project_deadzone:weapons/precision",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/classicr/index/guns/kar98.json",
+      "rank": 5
+    },
+    {
+      "id": "classicr:m24_renewed",
+      "type": "sniper",
+      "stage": 2,
+      "lane": "project_deadzone:weapons/precision",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/classicr/index/guns/m24_renewed.json",
+      "rank": 5
+    },
+    {
+      "id": "classicr:m82a2",
+      "type": "sniper",
+      "stage": 2,
+      "lane": "project_deadzone:weapons/precision",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/classicr/index/guns/m82a2.json",
+      "rank": 5
+    },
+    {
+      "id": "classicr:mrad",
+      "type": "sniper",
+      "stage": 2,
+      "lane": "project_deadzone:weapons/precision",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/classicr/index/guns/mrad.json",
+      "rank": 5
+    },
+    {
+      "id": "classicr:mrad_elr",
+      "type": "sniper",
+      "stage": 2,
+      "lane": "project_deadzone:weapons/precision",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/classicr/index/guns/mrad_elr.json",
+      "rank": 5
+    },
+    {
+      "id": "classicr:msr",
+      "type": "sniper",
+      "stage": 2,
+      "lane": "project_deadzone:weapons/precision",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/classicr/index/guns/msr.json",
+      "rank": 5
+    },
+    {
+      "id": "classicr:scar_mk20",
+      "type": "sniper",
+      "stage": 2,
+      "lane": "project_deadzone:weapons/precision",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/classicr/index/guns/scar_mk20.json",
+      "rank": 5
+    },
+    {
+      "id": "daffas_arsenal:sl8",
+      "type": "sniper",
+      "stage": 2,
+      "lane": "project_deadzone:weapons/precision",
+      "pack": "daffas",
+      "source": "daffas/data/daffas_arsenal/index/guns/sl8.json",
+      "rank": 5
+    },
+    {
+      "id": "daffas_arsenal:southeastmomssecretweapon3",
+      "type": "sniper",
+      "stage": 2,
+      "lane": "project_deadzone:weapons/precision",
+      "pack": "daffas",
+      "source": "daffas/data/daffas_arsenal/index/guns/southeastmomssecretweapon3.json",
+      "rank": 5
+    },
+    {
+      "id": "daffas_arsenal:ssg69",
+      "type": "sniper",
+      "stage": 2,
+      "lane": "project_deadzone:weapons/precision",
+      "pack": "daffas",
+      "source": "daffas/data/daffas_arsenal/index/guns/ssg69.json",
+      "rank": 5
+    },
+    {
+      "id": "daffas_arsenal:ssg69s",
+      "type": "sniper",
+      "stage": 2,
+      "lane": "project_deadzone:weapons/precision",
+      "pack": "daffas",
+      "source": "daffas/data/daffas_arsenal/index/guns/ssg69s.json",
+      "rank": 5
+    },
+    {
+      "id": "daffas_arsenal:wawan2000",
+      "type": "sniper",
+      "stage": 2,
+      "lane": "project_deadzone:weapons/precision",
+      "pack": "daffas",
+      "source": "daffas/data/daffas_arsenal/index/guns/wawan2000.json",
+      "rank": 5
+    },
+    {
+      "id": "daffas_arsenal:wawan20002",
+      "type": "sniper",
+      "stage": 2,
+      "lane": "project_deadzone:weapons/precision",
+      "pack": "daffas",
+      "source": "daffas/data/daffas_arsenal/index/guns/wawan20002.json",
+      "rank": 5
+    },
+    {
+      "id": "elitex:inter_m200",
+      "type": "sniper",
+      "stage": 2,
+      "lane": "project_deadzone:weapons/precision",
+      "pack": "elitex_quality_guns",
+      "source": "elitex_quality_guns/data/elitex/index/guns/inter_m200.json",
+      "rank": 5
+    },
+    {
+      "id": "elitex:kar98k",
+      "type": "sniper",
+      "stage": 2,
+      "lane": "project_deadzone:weapons/precision",
+      "pack": "elitex_quality_guns",
+      "source": "elitex_quality_guns/data/elitex/index/guns/kar98k.json",
+      "rank": 5
+    },
+    {
+      "id": "elitex:lee",
+      "type": "sniper",
+      "stage": 2,
+      "lane": "project_deadzone:weapons/precision",
+      "pack": "elitex_quality_guns",
+      "source": "elitex_quality_guns/data/elitex/index/guns/lee.json",
+      "rank": 5
+    },
+    {
+      "id": "elitex:m1_garand",
+      "type": "sniper",
+      "stage": 2,
+      "lane": "project_deadzone:weapons/precision",
+      "pack": "elitex_quality_guns",
+      "source": "elitex_quality_guns/data/elitex/index/guns/m1_garand.json",
+      "rank": 5
+    },
+    {
+      "id": "elitex:sp_m1903",
+      "type": "sniper",
+      "stage": 2,
+      "lane": "project_deadzone:weapons/precision",
+      "pack": "elitex_quality_guns",
+      "source": "elitex_quality_guns/data/elitex/index/guns/sp_m1903.json",
+      "rank": 5
+    },
+    {
+      "id": "emxarms:emx_mk88",
+      "type": "sniper",
+      "stage": 2,
+      "lane": "project_deadzone:weapons/precision",
+      "pack": "[Tacz1.1.5+]EMX-Arms GunsPack ver1.1.5.zip.zip",
+      "source": "[Tacz1.1.5+]EMX-Arms GunsPack ver1.1.5.zip.zip!data/emxarms/index/guns/emx_mk88.json",
+      "rank": 5
+    },
+    {
+      "id": "emxarms:emx_pmg90",
+      "type": "sniper",
+      "stage": 2,
+      "lane": "project_deadzone:weapons/precision",
+      "pack": "[Tacz1.1.5+]EMX-Arms GunsPack ver1.1.5.zip.zip",
+      "source": "[Tacz1.1.5+]EMX-Arms GunsPack ver1.1.5.zip.zip!data/emxarms/index/guns/emx_pmg90.json",
+      "rank": 5
+    },
+    {
+      "id": "maxstuff:ai_awp",
+      "type": "sniper",
+      "stage": 2,
+      "lane": "project_deadzone:weapons/precision",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/ai_awp.json",
+      "rank": 5
+    },
+    {
+      "id": "maxstuff:ai_aws",
+      "type": "sniper",
+      "stage": 2,
+      "lane": "project_deadzone:weapons/precision",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/ai_aws.json",
+      "rank": 5
+    },
+    {
+      "id": "maxstuff:ar338",
+      "type": "sniper",
+      "stage": 2,
+      "lane": "project_deadzone:weapons/precision",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/ar338.json",
+      "rank": 5
+    },
+    {
+      "id": "maxstuff:dragonuv_svd",
+      "type": "sniper",
+      "stage": 2,
+      "lane": "project_deadzone:weapons/precision",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/dragonuv_svd.json",
+      "rank": 5
+    },
+    {
+      "id": "maxstuff:dragonuv_svdm",
+      "type": "sniper",
+      "stage": 2,
+      "lane": "project_deadzone:weapons/precision",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/dragonuv_svdm.json",
+      "rank": 5
+    },
+    {
+      "id": "maxstuff:dragonuv_svds",
+      "type": "sniper",
+      "stage": 2,
+      "lane": "project_deadzone:weapons/precision",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/dragonuv_svds.json",
+      "rank": 5
+    },
+    {
+      "id": "maxstuff:gm6_lynx",
+      "type": "sniper",
+      "stage": 2,
+      "lane": "project_deadzone:weapons/precision",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/gm6_lynx.json",
+      "rank": 5
+    },
+    {
+      "id": "maxstuff:kar98",
+      "type": "sniper",
+      "stage": 2,
+      "lane": "project_deadzone:weapons/precision",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/kar98.json",
+      "rank": 5
+    },
+    {
+      "id": "maxstuff:m82a2",
+      "type": "sniper",
+      "stage": 2,
+      "lane": "project_deadzone:weapons/precision",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/m82a2.json",
+      "rank": 5
+    },
+    {
+      "id": "maxstuff:mini_fix",
+      "type": "sniper",
+      "stage": 2,
+      "lane": "project_deadzone:weapons/precision",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/mini_fix.json",
+      "rank": 5
+    },
+    {
+      "id": "maxstuff:mrad",
+      "type": "sniper",
+      "stage": 2,
+      "lane": "project_deadzone:weapons/precision",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/mrad.json",
+      "rank": 5
+    },
+    {
+      "id": "maxstuff:msr",
+      "type": "sniper",
+      "stage": 2,
+      "lane": "project_deadzone:weapons/precision",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/msr.json",
+      "rank": 5
+    },
+    {
+      "id": "maxstuff:scar_ssr",
+      "type": "sniper",
+      "stage": 2,
+      "lane": "project_deadzone:weapons/precision",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/scar_ssr.json",
+      "rank": 5
+    },
+    {
+      "id": "tacz:ai_awp",
+      "type": "sniper",
+      "stage": 2,
+      "lane": "project_deadzone:weapons/precision",
+      "pack": "tacz_default_gun",
+      "source": "tacz_default_gun/data/tacz/index/guns/ai_awp.json",
+      "rank": 5
+    },
+    {
+      "id": "tacz:kar98",
+      "type": "sniper",
+      "stage": 2,
+      "lane": "project_deadzone:weapons/precision",
+      "pack": "tacz_default_gun",
+      "source": "tacz_default_gun/data/tacz/index/guns/kar98.json",
+      "rank": 5
+    },
+    {
+      "id": "tacz:m107",
+      "type": "sniper",
+      "stage": 2,
+      "lane": "project_deadzone:weapons/precision",
+      "pack": "tacz_default_gun",
+      "source": "tacz_default_gun/data/tacz/index/guns/m107.json",
+      "rank": 5
+    },
+    {
+      "id": "tacz:m700",
+      "type": "sniper",
+      "stage": 2,
+      "lane": "project_deadzone:weapons/precision",
+      "pack": "tacz_default_gun",
+      "source": "tacz_default_gun/data/tacz/index/guns/m700.json",
+      "rank": 4
+    },
+    {
+      "id": "tacz:m95",
+      "type": "sniper",
+      "stage": 2,
+      "lane": "project_deadzone:weapons/precision",
+      "pack": "tacz_default_gun",
+      "source": "tacz_default_gun/data/tacz/index/guns/m95.json",
+      "rank": 5
+    },
+    {
+      "id": "tacz:springfield1873",
+      "type": "sniper",
+      "stage": 2,
+      "lane": "project_deadzone:weapons/precision",
+      "pack": "tacz_default_gun",
+      "source": "tacz_default_gun/data/tacz/index/guns/springfield1873.json",
+      "rank": 5
+    },
+    {
+      "id": "elitex:mustang_and_sally",
+      "type": "pistol",
+      "stage": 3,
+      "lane": "project_deadzone:weapons/experimental",
+      "pack": "elitex_quality_guns",
+      "source": "elitex_quality_guns/data/elitex/index/guns/mustang_and_sally.json",
+      "rank": 7
+    },
+    {
+      "id": "elitex:ray_gun_mk2",
+      "type": "pistol",
+      "stage": 3,
+      "lane": "project_deadzone:weapons/experimental",
+      "pack": "elitex_quality_guns",
+      "source": "elitex_quality_guns/data/elitex/index/guns/ray_gun_mk2.json",
+      "rank": 7
+    },
+    {
+      "id": "elitex:raygun_bo6",
+      "type": "pistol",
+      "stage": 3,
+      "lane": "project_deadzone:weapons/experimental",
+      "pack": "elitex_quality_guns",
+      "source": "elitex_quality_guns/data/elitex/index/guns/raygun_bo6.json",
+      "rank": 7
+    },
+    {
+      "id": "maxstuff:thunderbird",
+      "type": "pistol",
+      "stage": 3,
+      "lane": "project_deadzone:weapons/experimental",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/thunderbird.json",
+      "rank": 7
+    },
+    {
+      "id": "maxstuff:thunderbird_short",
+      "type": "pistol",
+      "stage": 3,
+      "lane": "project_deadzone:weapons/experimental",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/thunderbird_short.json",
+      "rank": 7
+    },
+    {
+      "id": "elitex:origin_electric_staff",
+      "type": "rifle",
+      "stage": 3,
+      "lane": "project_deadzone:weapons/experimental",
+      "pack": "elitex_quality_guns",
+      "source": "elitex_quality_guns/data/elitex/index/guns/origin_electric_staff.json",
+      "rank": 7
+    },
+    {
+      "id": "elitex:origin_fire_staff",
+      "type": "rifle",
+      "stage": 3,
+      "lane": "project_deadzone:weapons/experimental",
+      "pack": "elitex_quality_guns",
+      "source": "elitex_quality_guns/data/elitex/index/guns/origin_fire_staff.json",
+      "rank": 7
+    },
+    {
+      "id": "elitex:origin_ice_staff",
+      "type": "rifle",
+      "stage": 3,
+      "lane": "project_deadzone:weapons/experimental",
+      "pack": "elitex_quality_guns",
+      "source": "elitex_quality_guns/data/elitex/index/guns/origin_ice_staff.json",
+      "rank": 7
+    },
+    {
+      "id": "elitex:origin_wind_staff",
+      "type": "rifle",
+      "stage": 3,
+      "lane": "project_deadzone:weapons/experimental",
+      "pack": "elitex_quality_guns",
+      "source": "elitex_quality_guns/data/elitex/index/guns/origin_wind_staff.json",
+      "rank": 7
+    },
+    {
+      "id": "bf1:f_faust",
+      "type": "rpg",
+      "stage": 3,
+      "lane": "project_deadzone:weapons/experimental",
+      "pack": "Apocalypse_v1.1.7_G.zip",
+      "source": "Apocalypse_v1.1.7_G.zip!data/bf1/index/guns/f_faust.json",
+      "rank": 7
+    },
+    {
+      "id": "bf1:lunge_mine",
+      "type": "rpg",
+      "stage": 3,
+      "lane": "project_deadzone:weapons/experimental",
+      "pack": "Apocalypse_v1.1.7_G.zip",
+      "source": "Apocalypse_v1.1.7_G.zip!data/bf1/index/guns/lunge_mine.json",
+      "rank": 7
+    },
+    {
+      "id": "bf1:mhgl",
+      "type": "rpg",
+      "stage": 3,
+      "lane": "project_deadzone:weapons/experimental",
+      "pack": "Apocalypse_v1.1.7_G.zip",
+      "source": "Apocalypse_v1.1.7_G.zip!data/bf1/index/guns/mhgl.json",
+      "rank": 7
+    },
+    {
+      "id": "ccrp:lmt_m203",
+      "type": "rpg",
+      "stage": 3,
+      "lane": "project_deadzone:weapons/experimental",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/lmt_m203.json",
+      "rank": 7
+    },
+    {
+      "id": "ccrp:m4_bolter",
+      "type": "rpg",
+      "stage": 3,
+      "lane": "project_deadzone:weapons/experimental",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/m4_bolter.json",
+      "rank": 7
+    },
+    {
+      "id": "classicr:mgl_40mm",
+      "type": "rpg",
+      "stage": 3,
+      "lane": "project_deadzone:weapons/experimental",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/classicr/index/guns/mgl_40mm.json",
+      "rank": 7
+    },
+    {
+      "id": "daffas_arsenal:m79",
+      "type": "rpg",
+      "stage": 3,
+      "lane": "project_deadzone:weapons/experimental",
+      "pack": "daffas",
+      "source": "daffas/data/daffas_arsenal/index/guns/m79.json",
+      "rank": 7
+    },
+    {
+      "id": "daffas_arsenal:m79sohrt",
+      "type": "rpg",
+      "stage": 3,
+      "lane": "project_deadzone:weapons/experimental",
+      "pack": "daffas",
+      "source": "daffas/data/daffas_arsenal/index/guns/m79sohrt.json",
+      "rank": 7
+    },
+    {
+      "id": "immersive_armorer:chemical_thrower",
+      "type": "rpg",
+      "stage": 3,
+      "lane": "project_deadzone:weapons/experimental",
+      "pack": "Immersive Armorer-v1.2.1-for117.zip",
+      "source": "Immersive Armorer-v1.2.1-for117.zip!data/immersive_armorer/index/guns/chemical_thrower.json",
+      "rank": 7
+    },
+    {
+      "id": "immersive_armorer:dual_barrel_cannon",
+      "type": "rpg",
+      "stage": 3,
+      "lane": "project_deadzone:weapons/experimental",
+      "pack": "Immersive Armorer-v1.2.1-for117.zip",
+      "source": "Immersive Armorer-v1.2.1-for117.zip!data/immersive_armorer/index/guns/dual_barrel_cannon.json",
+      "rank": 7
+    },
+    {
+      "id": "immersive_armorer:plasma_gun",
+      "type": "rpg",
+      "stage": 3,
+      "lane": "project_deadzone:weapons/experimental",
+      "pack": "Immersive Armorer-v1.2.1-for117.zip",
+      "source": "Immersive Armorer-v1.2.1-for117.zip!data/immersive_armorer/index/guns/plasma_gun.json",
+      "rank": 7
+    },
+    {
+      "id": "maxstuff:can_cannon",
+      "type": "rpg",
+      "stage": 3,
+      "lane": "project_deadzone:weapons/experimental",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/can_cannon.json",
+      "rank": 7
+    },
+    {
+      "id": "maxstuff:m320t",
+      "type": "rpg",
+      "stage": 3,
+      "lane": "project_deadzone:weapons/experimental",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/m320t.json",
+      "rank": 7
+    },
+    {
+      "id": "tacz:m320",
+      "type": "rpg",
+      "stage": 3,
+      "lane": "project_deadzone:weapons/experimental",
+      "pack": "tacz_default_gun",
+      "source": "tacz_default_gun/data/tacz/index/guns/m320.json",
+      "rank": 7
+    },
+    {
+      "id": "tacz:rpg7",
+      "type": "rpg",
+      "stage": 3,
+      "lane": "project_deadzone:weapons/experimental",
+      "pack": "tacz_default_gun",
+      "source": "tacz_default_gun/data/tacz/index/guns/rpg7.json",
+      "rank": 6
+    },
+    {
+      "id": "ccrp:mk18_mjolnir",
+      "type": "sniper",
+      "stage": 3,
+      "lane": "project_deadzone:weapons/experimental",
+      "pack": "ClassicRCCRP-1.1.6-hotfix2.zip",
+      "source": "ClassicRCCRP-1.1.6-hotfix2.zip!data/ccrp/index/guns/mk18_mjolnir.json",
+      "rank": 7
+    },
+    {
+      "id": "immersive_armorer:railgun",
+      "type": "sniper",
+      "stage": 3,
+      "lane": "project_deadzone:weapons/experimental",
+      "pack": "Immersive Armorer-v1.2.1-for117.zip",
+      "source": "Immersive Armorer-v1.2.1-for117.zip!data/immersive_armorer/index/guns/railgun.json",
+      "rank": 7
+    },
+    {
+      "id": "maxstuff:excaliber",
+      "type": "sniper",
+      "stage": 3,
+      "lane": "project_deadzone:weapons/experimental",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/excaliber.json",
+      "rank": 7
+    },
+    {
+      "id": "maxstuff:mk18_mjolnir",
+      "type": "sniper",
+      "stage": 3,
+      "lane": "project_deadzone:weapons/experimental",
+      "pack": "maxstuff",
+      "source": "maxstuff/data/maxstuff/index/guns/mk18_mjolnir.json",
+      "rank": 7
+    }
+  ]
+}

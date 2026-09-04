@@ -1,0 +1,65 @@
+{
+  "format": 2,
+  "journal_enabled": true,
+  "tree_enabled": false,
+  "visibility": "full",
+  "research_enabled": true,
+  "recycling_enabled": true,
+  "allow_unlearned_recycling": false,
+  "recycling_value": 1,
+  "research_cost": {
+    "points": 4,
+    "ingredients": [
+      {
+        "items": [
+          "minecraft:paper"
+        ],
+        "count": 2
+      },
+      {
+        "items": [
+          "minecraft:iron_ingot"
+        ],
+        "count": 1
+      }
+    ]
+  },
+  "requires_discovery": false,
+  "creative_bypasses_cost": false,
+  "domain_policies": {
+    "weapons": {
+      "tree_enabled": true,
+      "research_enabled": true
+    },
+    "attachments": {
+      "tree_enabled": false,
+      "research_enabled": false
+    },
+    "ammo": {
+      "tree_enabled": false,
+      "research_enabled": false
+    }
+  },
+  "tech_tree": "project_deadzone:story_arsenal",
+  "entry_point_candidates": [
+    "tacz:glock_17"
+  ],
+  "reverse_engineering": {
+    "enabled": true,
+    "cost": {
+      "points": 3,
+      "ingredients": [
+        {
+          "items": [
+            "minecraft:paper"
+          ],
+          "count": 2
+        }
+      ]
+    },
+    "allow_known": false,
+    "allow_modified": true,
+    "physical_blueprint_learning": "require_tree_prerequisites",
+    "output_recyclable": false
+  }
+}
