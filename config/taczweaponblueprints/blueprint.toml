@@ -1,0 +1,31 @@
+# Don't change this! Version used to track needed updates.
+version = 0
+enableBlueprints = true
+enableDiscoveryTracking = true
+enableJournal = true
+balancePreset = "CUSTOM"
+maximumUndiscoveredVisibility = "FULL"
+enableResearch = true
+researchCostMode = "POINTS_AND_ITEMS"
+treeResearchResultMode = "DIRECT_LEARN"
+duplicateBlueprintPolicy = "MANUAL_RECYCLING"
+allowUnlearnedRecycling = false
+foundWeaponRecoveryMode = "PROTECTED_BLUEPRINT_ONLY"
+researchPointCap = 1000000
+creativeBypassesResearchCost = false
+activeResearchProfile = "taczweaponblueprints:duplicate_recovery"
+enableResearchPointAwards = true
+enableCombatResearchPointAwards = false
+blueprintSpawnChance = 0.2
+minBlueprints = 1
+maxBlueprints = 2
+progressionExemptBlueprints = [  ]
+progressionExemptKinds = [
+    "ammo",
+    "attachment"
+]
+progressionExemptItemTypes = [  ]
+startingBlueprints = [  ]
+gunBlacklist = [  ]
+ammoBlacklist = [  ]
+attachmentBlacklist = [  ]

@@ -28,8 +28,8 @@ const PDZT_ATTR = {
 // firearm, medical, loot and vehicle scripts can consume one shared source.
 const PDZT_EFFECTS = {
   weapons:{
-    precision:{gunDamage:0.004,weakpoint:0.006,luck:0.025},
-    assault:{gunDamage:0.003,health:0.12,speed:0.0005},
+    precision:{gunDamage:0.012,weakpoint:0.008,luck:0.025},
+    assault:{gunDamage:0.010,health:0.12,speed:0.0005},
     handling:{reload:0.006,handling:0.008,attackSpeed:0.0015},
     ammo:{ammoEfficiency:0.006,carry:0.5}
   },
@@ -49,7 +49,7 @@ const PDZT_EFFECTS = {
     processing:{processing:0.012,luck:0.035},
     power:{power:0.012,health:0.08,toughness:0.03},
     automation:{automation:0.012,carry:0.6},
-    gunsmith:{gunsmith:0.012,gunDamage:0.002,attackSpeed:0.001}
+    gunsmith:{gunsmith:0.012,gunDamage:0.006,attackSpeed:0.001}
   },
   mechanic:{
     repair:{repair:0.012,toughness:0.03},

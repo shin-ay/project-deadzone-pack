@@ -1,11 +1,11 @@
-// PROJECT DEADZONE verified initial settlement bootstrap v0.4
-// Stable onboarding: generate the original EasyNPC camp once after a player
-// has selected a JOB. This is separate from each player's MineColonies camp.
+// PROJECT DEADZONE village-linked settlement bootstrap v0.5 (local prototype)
+// Village Spawn Point owns the start. Generate the shared EasyNPC camp once,
+// 100-500m from the rescue village, without teleporting the player there.
 
 const DZ_CAMP_STATE_KEY = "dz_auto_basecamp_state"
 const DZ_CAMP_DIRECT_AUTO_ENABLED = true
 const DZ_CAMP_LAYOUT_VERSION = 3
-// Lobby briefing and JOB selection must not consume the whole generation
+// Village rescue and JOB selection must not consume the whole generation
 // window. Ten in-game days is still conservative enough to avoid mutating an
 // established server while making a deliberate first departure reliable.
 const DZ_CAMP_FRESH_LIMIT = 240000
@@ -14,7 +14,9 @@ const DZ_CAMP_ARRIVAL_Y = 2
 const DZ_CAMP_ARRIVAL_Z = 20
 const DZ_CAMP_LOSTCITIES = Java.loadClass("mcjty.lostcities.LostCities")
 const DZ_CAMP_HEIGHTMAP = Java.loadClass("net.minecraft.world.level.levelgen.Heightmap$Types")
-const DZ_CAMP_SEARCH_RADII = [256, 384, 512, 640, 768, 1024, 1280]
+const DZ_CAMP_SEARCH_RADII = [384, 416, 448, 480]
+const DZ_CAMP_MIN_VILLAGE_DISTANCE = 360
+const DZ_CAMP_MAX_VILLAGE_DISTANCE = 500
 const DZ_CAMP_DIRECTIONS = [
   [1,0],[-1,0],[0,1],[0,-1],[1,1],[1,-1],[-1,1],[-1,-1]
 ]
@@ -218,13 +220,27 @@ function dzCampVanillaSurfaceSite(player,x,z) {
 function dzCampFindSafeSite(player) {
   let info=dzCampLostInfo(player)
   if (!info) return null
+  let world=player.server.persistentData
   let baseX=Math.floor(player.x), baseZ=Math.floor(player.z)
+  if (world.getInt("dz_starter_village_state")===2) {
+    baseX=world.getInt("dz_starter_village_arrival_x")
+    baseZ=world.getInt("dz_starter_village_arrival_z")
+  } else if (world.contains("dz_onboarding_village_x")) {
+    baseX=world.getInt("dz_onboarding_village_x")
+    baseZ=world.getInt("dz_onboarding_village_z")
+  }
   let cityClearCount=0
+  function validDistance(site) {
+    if (!site) return false
+    let dx=site.x-baseX,dz=site.z-baseZ
+    let distance=Math.sqrt(dx*dx+dz*dz)
+    return distance>=DZ_CAMP_MIN_VILLAGE_DISTANCE && distance<=DZ_CAMP_MAX_VILLAGE_DISTANCE
+  }
   for (let r=0;r<DZ_CAMP_SEARCH_RADII.length;r++) {
     let radius=DZ_CAMP_SEARCH_RADII[r]
     for (let d=0;d<DZ_CAMP_DIRECTIONS.length;d++) {
       let dir=DZ_CAMP_DIRECTIONS[d]
-      let scale=Math.max(Math.abs(dir[0]),Math.abs(dir[1]))
+      let scale=Math.sqrt(dir[0]*dir[0]+dir[1]*dir[1])
       let x=Math.floor((baseX+radius*dir[0]/scale)/16)*16+8
       let z=Math.floor((baseZ+radius*dir[1]/scale)/16)*16+8
       // Two non-city chunks around the whole 32x32 footprint leave a practical
@@ -232,7 +248,7 @@ function dzCampFindSafeSite(player) {
       if (!dzCampCityFree(info,x,z,2)) continue
       cityClearCount++
       let site=dzCampVanillaSurfaceSite(player,x,z)
-      if (site) return site
+      if (validDistance(site)) return site
     }
   }
   // Dense ChaosZ seeds may not have a 5x5 non-city area. Fall back to a 3x3
@@ -241,13 +257,13 @@ function dzCampFindSafeSite(player) {
     let radius=DZ_CAMP_SEARCH_RADII[r]
     for (let d=0;d<DZ_CAMP_DIRECTIONS.length;d++) {
       let dir=DZ_CAMP_DIRECTIONS[d]
-      let scale=Math.max(Math.abs(dir[0]),Math.abs(dir[1]))
+      let scale=Math.sqrt(dir[0]*dir[0]+dir[1]*dir[1])
       let x=Math.floor((baseX+radius*dir[0]/scale)/16)*16+8
       let z=Math.floor((baseZ+radius*dir[1]/scale)/16)*16+8
       if (!dzCampCityFree(info,x,z,1)) continue
       cityClearCount++
       let site=dzCampVanillaSurfaceSite(player,x,z)
-      if (site) {
+      if (validDistance(site)) {
         console.info("[PROJECT DEADZONE][Camp Auto] using compact city buffer")
         return site
       }
@@ -258,7 +274,7 @@ function dzCampFindSafeSite(player) {
   return null
 }
 
-function dzCampGenerateAtSite(player, site, automatic) {
+function dzCampGenerateAtSite(player, site, automatic, preserveVillageStart) {
   let server = player.server
   let data = server.persistentData
   let originX = Math.floor(site.x) - DZ_CAMP_ARRIVAL_X
@@ -304,21 +320,30 @@ function dzCampGenerateAtSite(player, site, automatic) {
     data.putInt("dz_auto_basecamp_origin_y", originY)
     data.putInt("dz_auto_basecamp_origin_z", originZ)
     data.putString("dz_auto_basecamp_owner", String(player.uuid))
-    player.persistentData.putBoolean("dz_starter_depart_complete", true)
-    player.persistentData.remove("dz_starter_depart_requested")
-    player.teleportTo(site.x+0.5,site.y+1,site.z+0.5)
-    player.runCommandSilent("effect clear @s minecraft:blindness")
-    player.runCommandSilent("effect clear @s minecraft:resistance")
-    player.runCommandSilent("title @s times 10 70 30")
-    player.runCommandSilent(
-      'title @s subtitle {"text":"DAY 1 — 生存者拠点","color":"gray"}')
-    player.runCommandSilent(
-      'title @s title {"text":"SURVIVOR CAMP","color":"gold","bold":true}')
-    player.tell(Text.of(
-      automatic
-        ? "[PROJECT DEADZONE] 初期スポーン地点にSurvivor Campを展開しました。"
-        : "[PROJECT DEADZONE] 現在地を到着地点としてSurvivor Campを展開しました。"
-    ).green())
+    if (preserveVillageStart) {
+      player.persistentData.putBoolean("dz_onboarding_camp_ready", true)
+      player.persistentData.putBoolean("dz_onboarding_complete", true)
+      player.persistentData.remove("dz_starter_depart_complete")
+      player.persistentData.remove("dz_starter_depart_requested")
+      if (global.pdzOnCampPrepared) global.pdzOnCampPrepared(player,site)
+      player.tell(Text.of("[救助記録] 生存者の通信拠点を検出できる状態になりました。").gray())
+    } else {
+      player.persistentData.putBoolean("dz_starter_depart_complete", true)
+      player.persistentData.remove("dz_starter_depart_requested")
+      player.teleportTo(site.x+0.5,site.y+1,site.z+0.5)
+      player.runCommandSilent("effect clear @s minecraft:blindness")
+      player.runCommandSilent("effect clear @s minecraft:resistance")
+      player.runCommandSilent("title @s times 10 70 30")
+      player.runCommandSilent(
+        'title @s subtitle {"text":"DAY 1 — 生存者拠点","color":"gray"}')
+      player.runCommandSilent(
+        'title @s title {"text":"SURVIVOR CAMP","color":"gold","bold":true}')
+      player.tell(Text.of(
+        automatic
+          ? "[PROJECT DEADZONE] Survivor Campを展開しました。"
+          : "[PROJECT DEADZONE] 現在地を到着地点としてSurvivor Campを展開しました。"
+      ).green())
+    }
     return 1
   }
 
@@ -334,7 +359,7 @@ function dzCampGenerateAtSite(player, site, automatic) {
 
 // A single ranged forceload made Lost Cities generate the whole footprint in
 // one server tick. Prepare one chunk per tick to avoid multi-minute freezes.
-function dzCampLoadSiteThenGenerate(player, site, automatic) {
+function dzCampLoadSiteThenGenerate(player, site, automatic, preserveVillageStart) {
   let server=player.server
   let originX=Math.floor(site.x)-DZ_CAMP_ARRIVAL_X
   let originZ=Math.floor(site.z)-DZ_CAMP_ARRIVAL_Z
@@ -350,7 +375,7 @@ function dzCampLoadSiteThenGenerate(player, site, automatic) {
   let index=0
   function loadNext() {
     if (index>=chunks.length) {
-      dzCampGenerateAtSite(player,site,automatic)
+      dzCampGenerateAtSite(player,site,automatic,preserveVillageStart)
       return
     }
     let chunk=chunks[index++]
@@ -379,7 +404,7 @@ function dzCampLoadSiteThenGenerate(player, site, automatic) {
 function dzCampGenerateAtPlayer(player, automatic) {
   return dzCampGenerateAtSite(player,{
     x:Math.floor(player.x),y:Math.floor(player.y),z:Math.floor(player.z)
-  },automatic)
+  },automatic,false)
 }
 
 function dzCampStartBootstrap(player) {
@@ -402,8 +427,23 @@ function dzCampStartBootstrap(player) {
     player.tell(Text.of(
       "[PROJECT DEADZONE] 旧キャンプの不完全な配置を無効化し、安全な再配置を試行します。"
     ).yellow())
+  } else if (existingState===2) {
+    player.persistentData.putBoolean("dz_onboarding_camp_ready",true)
+    player.persistentData.putBoolean("dz_onboarding_complete",true)
+    if (global.pdzOnCampPrepared) global.pdzOnCampPrepared(player,{
+      x:data.getInt("dz_auto_basecamp_origin_x")+DZ_CAMP_ARRIVAL_X,
+      y:data.getInt("dz_auto_basecamp_origin_y")+DZ_CAMP_ARRIVAL_Y,
+      z:data.getInt("dz_auto_basecamp_origin_z")+DZ_CAMP_ARRIVAL_Z
+    })
+    return true
+  } else if (existingState===1) {
+    // A simultaneous first join may reach this while another player is
+    // preparing the shared camp. Keep the intro protected and wait for it.
+    server.scheduleInTicks(20,()=>dzCampStartBootstrap(player))
+    return true
   } else if (existingState!==0) {
-    return
+    if (global.pdzOnCampPrepared) global.pdzOnCampPrepared(player,null)
+    return false
   }
   let dimension = dzCampDimension(player)
   if (!dzCampIsOverworld(player)) {
@@ -447,19 +487,10 @@ function dzCampStartBootstrap(player) {
     }
     player.runCommandSilent("effect give @s minecraft:blindness 180 0 true")
     player.runCommandSilent("effect give @s minecraft:resistance 180 255 true")
-    player.runCommandSilent("title @s times 20 100 20")
-    player.runCommandSilent(
-      'title @s subtitle {"text":"PROLOGUE — 最後の周波数","color":"gray"}')
-    player.runCommandSilent(
-      'title @s title {"text":"PROJECT DEADZONE","color":"gold","bold":true}')
-    let site=dzCampFindLoadedSpawnSite(player)
+    let site=dzCampFindSafeSite(player)
     if (!site) {
       loadedSiteAttempts++
-      if (loadedSiteAttempts<15) {
-        player.runCommandSilent(
-          'title @s subtitle {"text":"周辺地形を確認中……","color":"gray"}')
-        player.runCommandSilent(
-          'title @s title {"text":"PROJECT DEADZONE","color":"gold","bold":true}')
+      if (loadedSiteAttempts<4) {
         server.scheduleInTicks(20,bootstrapCamp)
         return
       }
@@ -469,18 +500,21 @@ function dzCampStartBootstrap(player) {
       player.tell(Text.of(
         "[PROJECT DEADZONE] 市街地から離れた安全なキャンプ候補地を発見できませんでした。"
       ).red())
+      if (global.pdzOnCampPrepared) global.pdzOnCampPrepared(player,null)
       return
     }
     console.info("[PROJECT DEADZONE][Camp Auto] safe site: "+
       site.x+" "+site.y+" "+site.z)
-    dzCampGenerateAtSite(player,site,true)
+    dzCampLoadSiteThenGenerate(player,site,true,true)
   }
   server.scheduleInTicks(1,bootstrapCamp)
   return true
 }
 
-// The lobby flow is retired. Probe once per second and let the first player
-// who has completed JOB selection start the one-time world camp bootstrap.
+global.pdzStartVillageCampBootstrap = dzCampStartBootstrap
+
+// Probe once per second and let the first player who has completed JOB
+// selection start the one-time world camp bootstrap.
 PlayerEvents.tick(event => {
   if (!DZ_CAMP_DIRECT_AUTO_ENABLED) return
   let player=event.player

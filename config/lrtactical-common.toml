@@ -1,7 +1,7 @@
 
 [grenade]
 	#Whether grenade explosion can damage blocks (if it can)
-	grenadeExplosionBlockDamage = true
+	grenadeExplosionBlockDamage = false
 
 [melee]
 	#Whether melee items consume durability on attack

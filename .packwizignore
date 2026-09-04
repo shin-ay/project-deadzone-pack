@@ -14,6 +14,7 @@ user-prefs.json
 config/classmod/auth_*
 
 # Generated caches and backups
+.pdz_stage_backups/
 config/QuantifiedAPI/cache/
 **/cache/
 **/backup/

@@ -1,0 +1,13 @@
+name = "[TaCZ] Weapon Research & Blueprints"
+filename = "taczweaponblueprints-1.1.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "3b9448533ac81cd1bc63943041e9341a7c6a3f3d"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 8786046
+project-id = 1167017

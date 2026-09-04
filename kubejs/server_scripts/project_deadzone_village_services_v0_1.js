@@ -1,4 +1,4 @@
-// PROJECT DEADZONE village public services v0.2
+// PROJECT DEADZONE village public services v0.4
 //
 // Village detection is supplied by the existing wilderness-site scan. That
 // scan only samples already-loaded terrain when a player changes chunks, so
@@ -19,6 +19,7 @@ const PDZ_VILLAGE_PLAYER_TRADE_LIMIT = Java.loadClass('io.github.lightman314.lig
 const PDZ_VILLAGE_MARKET_VERSION = 1
 const PDZ_VILLAGE_MARKET_RESET_MS = 86400000
 const PDZ_VILLAGE_MARKET_RETRY_MS = 30 * 60 * 1000
+const PDZ_VILLAGE_MEETING_POI_ID = 'minecraft:meeting'
 
 const PDZ_VILLAGE_MARKETS = {
   agriculture: {
@@ -120,6 +121,29 @@ function pdzVillageWriteServices(server, registry) {
   server.persistentData.putString(PDZ_VILLAGE_SERVICES_REGISTRY, JSON.stringify(registry))
 }
 
+function pdzVillageRetireLegacyBoard(player, key, current, registry) {
+  if (!current || !current.board) return false
+  let board = current.board
+  let x = Math.floor(Number(board.x)), y = Math.floor(Number(board.y)), z = Math.floor(Number(board.z))
+  if (![x, y, z].every(Number.isFinite)) {
+    delete current.board
+  } else {
+    let pos = new PDZ_VILLAGE_BLOCKPOS(x, y, z)
+    // Do not force-load old villages. The exact recorded coordinate is cleaned
+    // only when a player naturally loads that village again.
+    if (!player.level.hasChunkAt(pos)) return false
+    if (String(player.level.getBlock(x, y, z).id) === 'bountiful:bountyboard') {
+      player.server.runCommandSilent('setblock ' + x + ' ' + y + ' ' + z + ' minecraft:air')
+      console.info('[PDZ VILLAGE] Removed legacy PDZ-placed Bountiful Board at ' + x + ',' + y + ',' + z)
+    }
+    delete current.board
+  }
+  current.boardRetiredAt = Date.now()
+  registry[key] = current
+  pdzVillageWriteServices(player.server, registry)
+  return true
+}
+
 function pdzVillageStructureKey(player, siteId, start) {
   let box = start.getBoundingBox()
   return String(player.level.dimension) + '|village|' + siteId + '|' +
@@ -141,7 +165,24 @@ function pdzVillageBadFloor(id) {
     id === 'minecraft:void_air' || id.indexOf('water') >= 0 ||
     id.indexOf('lava') >= 0 || id.indexOf('leaves') >= 0 ||
     id.indexOf('fence') >= 0 || id.indexOf('_wall') >= 0 ||
-    id.indexOf('pane') >= 0 || id.indexOf('bars') >= 0
+    id.indexOf('pane') >= 0 || id.indexOf('bars') >= 0 ||
+    id.indexOf('stairs') >= 0 || id.indexOf('slab') >= 0 ||
+    id.indexOf('carpet') >= 0 || id.indexOf('trapdoor') >= 0 ||
+    id.indexOf('pressure_plate') >= 0 || id.indexOf('campfire') >= 0 ||
+    id.indexOf('farmland') >= 0 || id.indexOf('dirt_path') >= 0
+}
+
+function pdzVillageIsMeetingPoi(holder) {
+  // Holder.Reference#is is overloaded for ResourceKey and TagKey. Rhino cannot
+  // choose between those overloads when a ResourceKey is passed from JS, which
+  // used to throw once for every village scan. Compare the unwrapped key instead.
+  try {
+    let key = holder.unwrapKey()
+    return key && key.isPresent() &&
+      String(key.get().location()) === PDZ_VILLAGE_MEETING_POI_ID
+  } catch (ignored) {
+    return false
+  }
 }
 
 function pdzVillageFindMeeting(level, start, hint) {
@@ -154,7 +195,7 @@ function pdzVillageFindMeeting(level, start, hint) {
     Math.ceil(Math.max(maxX - minX, maxZ - minZ) / 2) + 24))
   try {
     let found = level.getPoiManager().findClosest(
-      holder => holder.is(PDZ_VILLAGE_POI_TYPES.MEETING),
+      holder => pdzVillageIsMeetingPoi(holder),
       new PDZ_VILLAGE_BLOCKPOS(cx, cy, cz), radius,
       PDZ_VILLAGE_POI_OCCUPANCY.ANY)
     if (found && found.isPresent()) {
@@ -195,19 +236,14 @@ function pdzVillageFindServiceSpot(level, bell) {
   for (let radius = 3; radius <= 9; radius++) for (let d = 0; d < directions.length; d++) {
     let dir = directions[d]
     for (let lateral = -4; lateral <= 3; lateral++) {
-      let bx = bell.x + dir.dx * radius + dir.ax * lateral
-      let bz = bell.z + dir.dz * radius + dir.az * lateral
-      let ax = bx + dir.ax, az = bz + dir.az
-      if (!level.hasChunkAt(new PDZ_VILLAGE_BLOCKPOS(bx, bell.y, bz)) ||
-          !level.hasChunkAt(new PDZ_VILLAGE_BLOCKPOS(ax, bell.y, az))) continue
-      let by = Number(level.getHeight(PDZ_VILLAGE_HEIGHTMAP.MOTION_BLOCKING_NO_LEAVES, bx, bz))
-      let ay = Number(level.getHeight(PDZ_VILLAGE_HEIGHTMAP.MOTION_BLOCKING_NO_LEAVES, ax, az))
-      if (by !== ay || Math.abs(by - bell.y) > 3) continue
-      if (!pdzVillageAir(level, bx, by, bz) || !pdzVillageAir(level, bx, by + 1, bz)) continue
-      if (!pdzVillageAir(level, ax, ay, az) || !pdzVillageAir(level, ax, ay + 1, az)) continue
-      if (pdzVillageBadFloor(level.getBlock(bx, by - 1, bz).id) ||
-          pdzVillageBadFloor(level.getBlock(ax, ay - 1, az).id)) continue
-      return {boardX:bx, atmX:ax, y:by, boardZ:bz, atmZ:az, facing:dir.facing}
+      let x = bell.x + dir.dx * radius + dir.ax * lateral
+      let z = bell.z + dir.dz * radius + dir.az * lateral
+      if (!level.hasChunkAt(new PDZ_VILLAGE_BLOCKPOS(x, bell.y, z))) continue
+      let y = Number(level.getHeight(PDZ_VILLAGE_HEIGHTMAP.MOTION_BLOCKING_NO_LEAVES, x, z))
+      if (Math.abs(y - bell.y) > 3) continue
+      if (!pdzVillageAir(level, x, y, z) || !pdzVillageAir(level, x, y + 1, z)) continue
+      if (pdzVillageBadFloor(level.getBlock(x, y - 1, z).id)) continue
+      return {atmX:x, y:y, atmZ:z, facing:dir.facing}
     }
   }
   return null
@@ -230,11 +266,7 @@ function pdzVillagePlaceServices(player, spot) {
       String(level.getBlock(spot.atmX, spot.y + 1, spot.atmZ).id) === 'lightmanscurrency:atm'
   }
   if (!atmOk) return false
-  server.runCommandSilent('setblock ' + spot.boardX + ' ' + spot.y + ' ' + spot.boardZ + ' bountiful:bountyboard')
-  if (String(level.getBlock(spot.boardX, spot.y, spot.boardZ).id) === 'bountiful:bountyboard') return true
-  server.runCommandSilent('setblock ' + spot.atmX + ' ' + spot.y + ' ' + spot.atmZ + ' minecraft:air')
-  server.runCommandSilent('setblock ' + spot.atmX + ' ' + (spot.y + 1) + ' ' + spot.atmZ + ' minecraft:air')
-  return false
+  return true
 }
 
 function pdzVillageFindMarketSpot(level, bell) {
@@ -383,10 +415,15 @@ function pdzVillageEnsureServices(player, siteId, start, hint) {
   let key = pdzVillageStructureKey(player, siteId, start)
   let registry = pdzVillageReadServices(player.server)
   let current = registry[key]
+  if (current && current.board) pdzVillageRetireLegacyBoard(player, key, current, registry)
   if (current && current.placed && Number(current.marketVersion || 0) >= PDZ_VILLAGE_MARKET_VERSION) return true
+  // A missing bell or unsuitable service spot is not a reason to repeat the
+  // expensive structure/surface search on every wilderness scan. Retry later.
+  if (current && !current.placed && Number(current.retryAfter || 0) > Date.now()) return true
 
-  // Existing worlds already have ATM + board entries. Add only the missing
-  // market machine instead of duplicating or moving their public services.
+  // Existing worlds may still have legacy ATM entries. Preserve them and add
+  // only the missing market machine. Legacy boards are retired separately from
+  // their exact PDZ registry coordinates, without scanning native boards.
   if (current && current.placed) {
     if (current.marketQuarantined) return true
     if (Number(current.marketRetryAfter || 0) > Date.now()) return true
@@ -422,14 +459,23 @@ function pdzVillageEnsureServices(player, siteId, start, hint) {
   let bell = pdzVillageFindMeeting(player.level, start, hint)
   let spot = bell ? pdzVillageFindServiceSpot(player.level, bell) : null
   if (!spot || !pdzVillagePlaceServices(player, spot)) {
-    delete registry[key]
+    let failures = Number(current && current.failureCount || 0) + 1
+    registry[key] = {
+      placed:false,
+      claimedAt:Number(current && current.claimedAt || Date.now()),
+      structure:String(siteId),
+      retryAfter:Date.now() + PDZ_VILLAGE_MARKET_RETRY_MS,
+      failureCount:failures,
+      lastFailure:!bell ? 'meeting_poi_not_found' : 'service_spot_or_placement_failed'
+    }
     pdzVillageWriteServices(player.server, registry)
-    return false
+    console.warn('[PDZ VILLAGE] Service setup deferred for 30 minutes (' +
+      registry[key].lastFailure + ') at ' + key)
+    return true
   }
   let installed = {
     placed:true, structure:String(siteId), placedAt:Date.now(),
     bell:{x:bell.x,y:bell.y,z:bell.z},
-    board:{x:spot.boardX,y:spot.y,z:spot.boardZ},
     atm:{x:spot.atmX,y:spot.y,z:spot.atmZ}
   }
   let marketSpot = pdzVillageFindMarketSpot(player.level, bell)
@@ -448,8 +494,8 @@ function pdzVillageEnsureServices(player, siteId, start, hint) {
   }
   registry[key] = installed
   pdzVillageWriteServices(player.server, registry)
-  console.info('[PDZ VILLAGE] Installed Bountiful Board + ATM' +
+  console.info('[PDZ VILLAGE] Installed ATM' +
     (installed.market ? ' + ' + installed.marketPreset + ' market' : '') + ' at ' +
-    spot.boardX + ',' + spot.y + ',' + spot.boardZ + ' for ' + siteId)
+    spot.atmX + ',' + spot.y + ',' + spot.atmZ + ' for ' + siteId)
   return true
 }

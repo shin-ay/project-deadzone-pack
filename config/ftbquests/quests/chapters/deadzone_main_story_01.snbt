@@ -10,26 +10,26 @@
 	quests: [
 		{
 			description: [
-				"大規模感染と都市封鎖から数週間。"
-				"緊急周波数107.3の放送を確認し、生存者の拠点を探そう。"
+				"意識を取り戻すと、見知らぬ村の寝床にいた。"
+				"住民によれば、村外れで倒れていたところを救助されたらしい。"
 			]
 			icon: "apocalypsenow:aabattery"
 			id: "4262970F1B621A1D"
 			shape: "hexagon"
 			size: 1.5d
-			subtitle: "周波数107.3は、まだ同じ言葉を繰り返している。"
+			subtitle: "失った記憶の代わりに、身体に残る役割を選ぶ。"
 			tasks: [{
 				id: "79A594E0347CB8C7"
-				title: "途切れた放送を確認した"
+				title: "村で意識を取り戻した"
 				type: "custom"
 			}]
-			title: "Chapter 0：最後の放送"
+			title: "Chapter 0：借りた命"
 			x: 0.0d
 			y: 0.0d
 		}
 		{
 			dependencies: ["4262970F1B621A1D"]
-			description: ["JOBを選択してStarter Kitを受け取り、自分の役割を確認しよう。"]
+			description: ["事故以前に身につけていた役割を選び、残された装備を確認しよう。"]
 			icon: "apocalypsenow:badge"
 			id: "52F2869C3820DF98"
 			subtitle: "自分の役割を選び、最初の装備を受け取る。｜解放条件: 「Chapter 0：最後の放送」を完了"
@@ -44,7 +44,7 @@
 		}
 		{
 			dependencies: ["52F2869C3820DF98"]
-			description: ["避難所は物資補給、Buddy募集、次の任務を受ける活動拠点になる。"]
+			description: ["村人に話しかけて回収された無線機を受け取り、右クリックで残存周波数を走査する。"]
 			icon: {
 				Count: 1
 				id: "apocalypsenow:army_helmet"
@@ -53,30 +53,30 @@
 				}
 			}
 			id: "1920AEAAF4D75E94"
-			subtitle: "生存者と最初の協力者を確認する。｜解放条件: 「生き残るための役割」を完了"
+			subtitle: "救助時に回収された通信機から、生存者の信号を探す。｜解放条件: 「生き残るための役割」を完了"
 			tasks: [{
 				id: "14269D36893694F9"
-				title: "Survivor Campへ到達した"
+				title: "周波数107.3を受信した"
 				type: "custom"
 			}]
-			title: "Survivor Camp"
+			title: "残された周波数"
 			x: 4.0d
 			y: 0.0d
 		}
 		{
 			dependencies: ["1920AEAAF4D75E94"]
-			description: ["避難所の発電機を維持する燃料が足りない。Gas Stationを調査する。"]
+			description: ["受信した座標を頼りに村を離れ、100〜500m先のSurvivor Campへ合流する。"]
 			icon: "apocalypsenow:aabattery"
 			id: "23E782D769F4E809"
 			shape: "hexagon"
 			size: 1.5d
-			subtitle: "避難所の発電機を動かす燃料が必要だ。｜解放条件: 「Survivor Camp」を完了"
+			subtitle: "単独行動を避け、道中の脅威に備えて通信拠点へ向かう。｜解放条件: 「残された周波数」を完了"
 			tasks: [{
 				id: "6C3CB7B29C88A47A"
-				title: "燃料確保の依頼を受けた"
+				title: "Survivor Campへ到達した"
 				type: "custom"
 			}]
-			title: "Chapter 1：最初の72時間"
+			title: "Chapter 1：生存者との合流"
 			x: 6.0d
 			y: 0.0d
 		}

@@ -333,14 +333,19 @@ PlayerEvents.tick(event => {
   dzGrantEndgameDecree(player)
   dzSyncT4Foundation(player)
   // Story quests are completed by actual game events, not manual checkmarks.
-  if (player.persistentData.getBoolean("dz_job_chosen")) {
+  if (player.persistentData.getBoolean("dz_job_chosen") &&
+      player.persistentData.getBoolean("dz_onboarding_awake")) {
     dzCompletePlayerStoryQuest(player, "prologue", DZ_STORY_QUESTS.prologue)
     dzCompletePlayerStoryQuest(player, "job", DZ_STORY_QUESTS.job)
   }
-  if (player.server.runCommandSilent("execute as " + player.username +
-    " at @s if entity @e[tag=dz_basecamp_core_anchor,distance=..96,limit=1]") > 0) {
+  if (player.persistentData.getBoolean("dz_story_camp_signal_received"))
     dzCompletePlayerStoryQuest(player, "camp", DZ_STORY_QUESTS.camp)
-    dzCompletePlayerStoryQuest(player, "briefing", DZ_STORY_QUESTS.briefing)
+  if (player.server.runCommandSilent("execute as " + player.username +
+    " at @s if entity @e[tag=dz_basecamp_core_anchor,distance=..96,limit=1]") > 0 &&
+      player.persistentData.getBoolean("dz_story_camp_signal_received")) {
+    if (dzCompletePlayerStoryQuest(player, "briefing", DZ_STORY_QUESTS.briefing))
+      player.persistentData.putBoolean("dz_story_auto_briefing", true)
+    try { if (global.pdzSyncRecipeStages) global.pdzSyncRecipeStages(player) } catch (ignored) {}
   }
   // Preparation is a permanent checkpoint. Starter-kit items may satisfy the
   // requirements before the prerequisite Camp/briefing quests become active,

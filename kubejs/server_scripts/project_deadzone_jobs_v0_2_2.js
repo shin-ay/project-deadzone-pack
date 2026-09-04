@@ -484,19 +484,14 @@ function dzApplyJob(player,id) {
   }
 
   d.putBoolean("dz_job_chosen",true)
-  d.putBoolean("dz_onboarding_complete",true)
+  // The village-rescue onboarding completes only after the nearby Survivor
+  // Camp has been prepared and the eye-opening sequence starts.
+  d.putBoolean("dz_onboarding_complete",false)
   d.putString("dz_job_id",id)
   d.putString("dz_job_name",j.name)
   d.putBoolean("dz_starter_received",true)
   d.putInt("dz_starter_grant_version",DZ_STARTER_GRANT_VERSION)
-  try {
-    if (global.pdzSetJobSelectionProtection) global.pdzSetJobSelectionProtection(player,false)
-    else player.removeTag("dz_job_selection_protected")
-  } catch (ignored) {}
   dzEnsureMineColoniesSupplyCamp(player)
-  // Main story: choosing a JOB is an actual objective, not a manual checkbox.
-  player.server.runCommandSilent(
-    "ftbquests change_progress " + player.username + " complete 52F2869C3820DF98")
 
   Object.keys(j.skills).forEach(k => {
     d.putInt("dz_skill_"+k,j.skills[k])
@@ -518,7 +513,14 @@ function dzApplyJob(player,id) {
   })
 
   player.tell(Text.of("JOB登録完了: "+j.name).gold())
-  player.tell(Text.of("スターターキットと個人用補給キャンプを確認してください。").green())
+  player.tell(Text.of("周辺の安全確認と救助処置を続行しています……").green())
+  try {
+    if (global.pdzOnJobSelected) global.pdzOnJobSelected(player)
+    else if (global.pdzSetJobSelectionProtection) global.pdzSetJobSelectionProtection(player,false)
+  } catch (error) {
+    console.error("[PDZ][JOB] onboarding callback failed for "+player.username+": "+error)
+    try { if (global.pdzSetJobSelectionProtection) global.pdzSetJobSelectionProtection(player,false) } catch (ignored) {}
+  }
   return true
 }
 

@@ -56,13 +56,20 @@
             }
           ],
           "en_preds": [],
-          "ifs": [],
+          "ifs": [
+            {
+              "type": "x_ticks_condition",
+              "map": {
+                "tick_rate": 5.0
+              }
+            }
+          ],
           "targets": [
             {
               "type": "aoe",
               "map": {
                 "en_predicate": "enemies",
-                "radius": 3.0,
+                "radius": 6.0,
                 "selection_type": "RADIUS"
               }
             }
@@ -90,7 +97,7 @@
               "type": "aoe",
               "map": {
                 "en_predicate": "enemies",
-                "radius": 2.0,
+                "radius": 5.0,
                 "selection_type": "RADIUS"
               }
             }
@@ -212,7 +219,7 @@
                 "entity_name": "block",
                 "find_surface": true,
                 "is_falling_block": false,
-                "life_ticks": 60.0
+                "life_ticks": 100.0
               }
             }
           ],
@@ -285,7 +292,7 @@
     "charge_name": "",
     "charge_regen": 0,
     "charges": 0,
-    "cooldown_ticks": 900,
+    "cooldown_ticks": 700,
     "ene_cost": {
       "max": 0.0,
       "min": 0.0

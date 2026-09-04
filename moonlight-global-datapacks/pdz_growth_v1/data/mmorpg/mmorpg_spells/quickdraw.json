@@ -30,8 +30,8 @@
               "count": 1.0,
               "potion_action": "GIVE_STACKS",
               "potion_dur": 160.0,
-              "potion_id": "mmorpg:instant_arrows",
-              "potion_str": 16.0
+              "potion_id": "project_deadzone:smart_link",
+              "potion_str": 1.0
             }
           }
         ],
@@ -133,9 +133,9 @@
   },
   "default_lvl": 0,
   "disabled_dims": [],
-  "effect_tip": "",
+  "effect_tip": "TaCZ gun hits acquire up to two nearby hostiles as secondary targets for 8 seconds.",
   "identifier": "quickdraw",
-  "loc_name": "Quickdraw",
+  "loc_name": "Smart Link Protocol",
   "lvl_based_on_spell": "",
   "manual_tip": true,
   "max_lvl": 5,

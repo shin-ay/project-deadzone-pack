@@ -1,4 +1,4 @@
-// PROJECT DEADZONE Firearms Perks v0.1
+// PROJECT DEADZONE Firearms Perks v0.3
 // Uses TaCZ's official pre-damage event. It does not modify gun NBT,
 // magazines, animations or reload timing.
 
@@ -12,28 +12,51 @@ const PDZ_FIREARMS_TACZ_ASSETS = Java.loadClass('com.tacz.guns.resource.CommonAs
 // These multipliers put firearms above ordinary melee per committed attack,
 // while preserving the different RPM, magazine, recoil and ammunition costs.
 const PDZ_FIREARMS_ARCHETYPE_MULTIPLIERS = {
-  pistol: 1.60,
-  handgun: 1.60,
-  revolver: 1.75,
-  smg: 1.55,
-  submachine_gun: 1.55,
-  rifle: 1.75,
-  assault_rifle: 1.75,
-  battle_rifle: 1.90,
-  dmr: 2.00,
-  marksman_rifle: 2.00,
-  sniper: 2.25,
-  sniper_rifle: 2.25,
-  shotgun: 1.55,
-  machine_gun: 1.65,
-  mg: 1.65,
-  lmg: 1.65,
-  launcher: 1.35,
-  rocket_launcher: 1.35
+  pistol: 2.25,
+  handgun: 2.25,
+  revolver: 2.55,
+  smg: 2.20,
+  submachine_gun: 2.20,
+  rifle: 2.55,
+  assault_rifle: 2.55,
+  battle_rifle: 2.75,
+  dmr: 3.05,
+  marksman_rifle: 3.05,
+  sniper: 3.40,
+  sniper_rifle: 3.40,
+  shotgun: 2.25,
+  machine_gun: 2.40,
+  mg: 2.40,
+  lmg: 2.40,
+  launcher: 2.20,
+  rocket_launcher: 2.20
+}
+
+// M&S performs its armor calculation after TaCZ's pre-damage event. Give each
+// firearm family a bounded ballistic compensation against that later armor
+// pass; this is what prevents an otherwise valid SMG build collapsing to a
+// permanent 1-damage hit against geared enemies. It is deliberately not true
+// damage, so armor and the player's M&S Armor Penetration still matter.
+const PDZ_FIREARMS_ARCHETYPE_PIERCE = {
+  pistol:0.30, handgun:0.30, revolver:0.36,
+  smg:0.28, submachine_gun:0.28,
+  rifle:0.36, assault_rifle:0.36, battle_rifle:0.42,
+  dmr:0.48, marksman_rifle:0.48, sniper:0.55, sniper_rifle:0.55,
+  shotgun:0.32, machine_gun:0.38, mg:0.38, lmg:0.38,
+  launcher:0.50, rocket_launcher:0.50
+}
+
+const PDZ_FIREARMS_ARCHETYPE_VARIANCE = {
+  pistol:[0.92,1.08], handgun:[0.92,1.08], revolver:[0.88,1.12],
+  smg:[0.94,1.06], submachine_gun:[0.94,1.06],
+  rifle:[0.90,1.10], assault_rifle:[0.90,1.10], battle_rifle:[0.88,1.12],
+  dmr:[0.88,1.12], marksman_rifle:[0.88,1.12], sniper:[0.84,1.16], sniper_rifle:[0.84,1.16],
+  shotgun:[0.90,1.10], machine_gun:[0.95,1.05], mg:[0.95,1.05], lmg:[0.95,1.05],
+  launcher:[0.90,1.10], rocket_launcher:[0.90,1.10]
 }
 
 function dzFirearmsProfile(stack) {
-  let profile = {id:'unknown', type:'unknown', multiplier:1.65}
+  let profile = {id:'unknown', type:'unknown', multiplier:2.35, pierce:0.32, variance:[0.92,1.08]}
   try {
     let gun = PDZ_FIREARMS_TACZ_IGUN.getIGunOrNull(stack)
     if (!gun) return profile
@@ -45,16 +68,40 @@ function dzFirearmsProfile(stack) {
     profile.type = type
     if (PDZ_FIREARMS_ARCHETYPE_MULTIPLIERS[type]) {
       profile.multiplier = PDZ_FIREARMS_ARCHETYPE_MULTIPLIERS[type]
-    } else if (type.indexOf('sniper') >= 0) profile.multiplier = 2.25
-    else if (type.indexOf('marksman') >= 0 || type.indexOf('dmr') >= 0) profile.multiplier = 2.00
-    else if (type.indexOf('shotgun') >= 0) profile.multiplier = 1.55
-    else if (type.indexOf('machine') >= 0 || type.indexOf('lmg') >= 0) profile.multiplier = 1.65
-    else if (type.indexOf('smg') >= 0) profile.multiplier = 1.55
-    else if (type.indexOf('pistol') >= 0 || type.indexOf('handgun') >= 0) profile.multiplier = 1.60
-    else if (type.indexOf('rifle') >= 0) profile.multiplier = 1.75
-    else if (type.indexOf('launcher') >= 0) profile.multiplier = 1.35
+    } else if (type.indexOf('sniper') >= 0) profile.multiplier = 3.40
+    else if (type.indexOf('marksman') >= 0 || type.indexOf('dmr') >= 0) profile.multiplier = 3.05
+    else if (type.indexOf('shotgun') >= 0) profile.multiplier = 2.25
+    else if (type.indexOf('machine') >= 0 || type.indexOf('lmg') >= 0) profile.multiplier = 2.40
+    else if (type.indexOf('smg') >= 0) profile.multiplier = 2.20
+    else if (type.indexOf('pistol') >= 0 || type.indexOf('handgun') >= 0) profile.multiplier = 2.25
+    else if (type.indexOf('rifle') >= 0) profile.multiplier = 2.55
+    else if (type.indexOf('launcher') >= 0 || type === 'rpg' || profile.id.indexOf('rpg') >= 0) profile.multiplier = 2.20
+    if (PDZ_FIREARMS_ARCHETYPE_PIERCE[type] !== undefined) profile.pierce = PDZ_FIREARMS_ARCHETYPE_PIERCE[type]
+    else if (type.indexOf('sniper') >= 0) profile.pierce = 0.55
+    else if (type.indexOf('marksman') >= 0 || type.indexOf('dmr') >= 0) profile.pierce = 0.48
+    else if (type.indexOf('rifle') >= 0) profile.pierce = 0.36
+    else if (type.indexOf('smg') >= 0) profile.pierce = 0.28
+    else if (type.indexOf('launcher') >= 0 || type === 'rpg' || profile.id.indexOf('rpg') >= 0) profile.pierce = 0.50
+    if (PDZ_FIREARMS_ARCHETYPE_VARIANCE[type]) profile.variance = PDZ_FIREARMS_ARCHETYPE_VARIANCE[type]
   } catch (ignored) {}
   return profile
+}
+
+function dzFirearmsArmorCompensation(player, target, profile) {
+  let armor = dzMnsStatValue(target, 'armor')
+  let penetration = dzMnsStatValue(player, 'armor_penetration')
+  let remaining = Math.max(0, armor - penetration)
+  let pierce = Math.max(0, Math.min(0.70, Number(profile.pierce) || 0))
+  // Ratio between the same bounded mitigation curve before and after the
+  // firearm family's effective penetration. It never removes armor outright.
+  let compensation = (100 + remaining) / (100 + remaining * (1 - pierce))
+  if (!isFinite(compensation)) compensation = 1
+  return {
+    armor:armor,
+    penetration:penetration,
+    familyPierce:pierce,
+    multiplier:Math.max(1, Math.min(1.85, compensation))
+  }
 }
 
 function dzMnsStatValue(player, id) {
@@ -141,20 +188,6 @@ function dzMnsWeaponDamageBonus(player) {
   }
 }
 
-function dzMnsGunCritical(player) {
-  // M&S native bases are 1% critical_hit and 100% critical_damage. TaCZ does
-  // not enter M&S's on_damage critical pipeline, so reproduce that one roll
-  // here with M&S's own documented stat maxima instead of inventing a tier.
-  let chance = Math.min(100, dzMnsStatValue(player, 'critical_hit'))
-  let damage = Math.min(500, dzMnsStatValue(player, 'critical_damage'))
-  let critical = chance > 0 && Math.random() * 100 < chance
-  let multiplier = critical ? 1 + damage / 100 : 1
-  player.persistentData.putDouble('dz_firearms_last_crit_chance', chance)
-  player.persistentData.putDouble('dz_firearms_last_crit_damage', damage)
-  player.persistentData.putBoolean('dz_firearms_last_critical', critical)
-  return multiplier
-}
-
 function dzFirearmsTier(player, branch) {
   for (let tier = 3; tier >= 1; tier--) {
     if (player.tags.contains("dz_firearms_" + branch + "_" + tier)) return tier
@@ -187,6 +220,57 @@ function dzBallisticFx(player, target, mode) {
   }
 }
 
+function dzBallisticSecondaryTargets(origin, radius, limit) {
+  let targets = [], maxDistance = radius * radius
+  try {
+    origin.level.entities.forEach(entity => {
+      if (!entity || entity === origin || !entity.alive || entity.isPlayer()) return
+      let hostile = false
+      try { hostile = entity.isMonster && entity.isMonster() } catch (ignored) {}
+      if (!hostile) return
+      let dx = Number(entity.x) - Number(origin.x)
+      let dy = Number(entity.y) - Number(origin.y)
+      let dz = Number(entity.z) - Number(origin.z)
+      let distance = dx * dx + dy * dy + dz * dz
+      if (distance <= maxDistance) targets.push({entity:entity, distance:distance})
+    })
+  } catch (ignored) {}
+  targets.sort((a, b) => a.distance - b.distance)
+  return targets.slice(0, limit).map(entry => entry.entity)
+}
+
+function dzBallisticDamageSecondary(player, target, amount, particle) {
+  if (!target || !target.alive || !isFinite(amount) || amount <= 0) return
+  let damage = Math.max(0.5, Number(amount)).toFixed(2)
+  try {
+    target.runCommandSilent('damage @s ' + damage + ' minecraft:magic by ' + String(player.username))
+    target.runCommandSilent('particle ' + particle + ' ~ ~1 ~ 0.12 0.12 0.12 0.02 8 force')
+  } catch (ignored) {}
+}
+
+function dzBallisticAbilityFollowup(player, primary, finalAmount, smartLink, explosiveRounds, corrosiveRounds) {
+  let server = player.server
+  server.scheduleInTicks(1, () => {
+    if (smartLink) {
+      dzBallisticSecondaryTargets(primary, 7, 2).forEach(target =>
+        dzBallisticDamageSecondary(player, target, finalAmount * 0.45, 'minecraft:electric_spark'))
+    }
+    if (explosiveRounds) {
+      dzBallisticSecondaryTargets(primary, 4, 5).forEach(target =>
+        dzBallisticDamageSecondary(player, target, finalAmount * 0.35, 'minecraft:flame'))
+    }
+    if (corrosiveRounds) {
+      dzBallisticSecondaryTargets(primary, 5, 6).forEach(target => {
+        try {
+          target.potionEffects.add('minecraft:poison', 120, 1, false, true)
+          target.potionEffects.add('minecraft:weakness', 120, 0, false, true)
+          target.runCommandSilent('particle minecraft:item_slime ~ ~1 ~ 0.25 0.2 0.25 0.03 10 force')
+        } catch (ignored) {}
+      })
+    }
+  })
+}
+
 TimelessGunEvents.entityHurtByGunPre(event => {
   let stage = 'event'
   let player = null
@@ -208,8 +292,10 @@ TimelessGunEvents.entityHurtByGunPre(event => {
   stage = 'ability-markers'
   let explosiveRounds = false
   let corrosiveRounds = false
+  let smartLink = false
   try { explosiveRounds = player.hasEffect('project_deadzone:explosive_rounds') } catch (ignored) {}
   try { corrosiveRounds = player.hasEffect('project_deadzone:corrosive_rounds') } catch (ignored) {}
+  try { smartLink = player.hasEffect('project_deadzone:smart_link') } catch (ignored) {}
   if (explosiveRounds) {
     baseAmount *= 1.35
     dzBallisticFx(player, hurtEntity, 'explosive')
@@ -224,13 +310,16 @@ TimelessGunEvents.entityHurtByGunPre(event => {
   let handling = dzFirearmsTier(player, "handling")
   let gunProfile = dzFirearmsProfile(player.mainHandItem)
 
-  let multiplier = gunProfile.multiplier + core * 0.01
+  let gunTalent = 0
+  try {
+    if (typeof pdztrValue === 'function') gunTalent = Math.max(0, Number(pdztrValue(player, 'gunDamage')) || 0)
+  } catch (ignored) {}
+  // Core rank and ranged Talent investment scale the firearm family instead
+  // of adding a few hundredths to an already-large archetype number.
+  let multiplier = gunProfile.multiplier * (1 + core * 0.05) * (1 + gunTalent)
 
   // Keep every firearm damage modifier on TaCZ's single pre-damage path.
   // Generic hurt handlers must not subtract HP again after this event.
-  try {
-    if (typeof pdztrValue === 'function') multiplier += Math.max(0, Number(pdztrValue(player, 'gunDamage')))
-  } catch (ignored) {}
   // Do not apply M&S weapon damage here. PDZ's gun WeaponType override routes
   // the TaCZ result through M&S compatibility conversion after this hook, so
   // Weapon Damage, Affix and mitigation are calculated exactly once.
@@ -283,16 +372,25 @@ TimelessGunEvents.entityHurtByGunPre(event => {
   }
 
   stage = 'apply'
-  // TaCZ damage enters after the normal M&S weapon critical path. Connect the
-  // already-defined M&S critical roll exactly once to the bridged gun damage.
-  let criticalMultiplier = dzMnsGunCritical(player)
-  let finalAmount = Number(baseAmount * multiplier * criticalMultiplier)
+  // M&S compatibility creates a native basic-attack DamageEvent after this
+  // TaCZ hook. Critical, Affix and final mitigation therefore belong there;
+  // rolling a second PDZ critical here caused occasional double criticals.
+  let criticalMultiplier = 1.0
+  let armorProfile = dzFirearmsArmorCompensation(player, hurtEntity, gunProfile)
+  let varianceMin = Number(gunProfile.variance[0]), varianceMax = Number(gunProfile.variance[1])
+  let damageRoll = varianceMin + Math.random() * (varianceMax - varianceMin)
+  let finalAmount = Number(baseAmount * multiplier * criticalMultiplier * armorProfile.multiplier * damageRoll)
   if (!isFinite(finalAmount) || finalAmount <= 0) return
   // Keep a cheap last-hit snapshot for balancing. It has no chat/network cost
   // unless an administrator explicitly opens the diagnostic screen.
   player.persistentData.putDouble('dz_firearms_last_base',baseAmount)
   player.persistentData.putDouble('dz_firearms_last_multiplier',multiplier)
   player.persistentData.putDouble('dz_firearms_last_crit_multiplier',criticalMultiplier)
+  player.persistentData.putDouble('dz_firearms_last_damage_roll',damageRoll)
+  player.persistentData.putDouble('dz_firearms_last_target_armor',armorProfile.armor)
+  player.persistentData.putDouble('dz_firearms_last_armor_penetration',armorProfile.penetration)
+  player.persistentData.putDouble('dz_firearms_last_family_pierce',armorProfile.familyPierce)
+  player.persistentData.putDouble('dz_firearms_last_armor_compensation',armorProfile.multiplier)
   player.persistentData.putDouble('dz_firearms_last_final',finalAmount)
   player.persistentData.putString('dz_firearms_last_gun_id',gunProfile.id)
   player.persistentData.putString('dz_firearms_last_gun_type',gunProfile.type)
@@ -300,8 +398,10 @@ TimelessGunEvents.entityHurtByGunPre(event => {
     if(typeof pdzCteRecordOutgoing==='function')pdzCteRecordOutgoing(player,hurtEntity,finalAmount,event.isHeadShot()?'gun_head':'gun_body')
   }catch(ignored){}
   event.setBaseAmount(finalAmount)
+  if (smartLink || explosiveRounds || corrosiveRounds)
+    dzBallisticAbilityFollowup(player, hurtEntity, finalAmount, smartLink, explosiveRounds, corrosiveRounds)
   if (player.persistentData.getBoolean('dz_firearms_damage_debug')) {
-    player.tell(Text.of('[Gun DMG] '+gunProfile.type+' / TaCZ base '+baseAmount.toFixed(2)+' x PDZ '+multiplier.toFixed(3)+' = pre-armor '+finalAmount.toFixed(2)).gray())
+    player.tell(Text.of('[Gun DMG] '+gunProfile.type+' / base '+baseAmount.toFixed(2)+' x build '+multiplier.toFixed(3)+' x armor '+armorProfile.multiplier.toFixed(3)+' x roll '+damageRoll.toFixed(3)+' = pre-armor '+finalAmount.toFixed(2)).gray())
   }
   } catch (error) {
     // TaCZ's event bridge otherwise reports only "null" and floods the log on
@@ -313,9 +413,8 @@ TimelessGunEvents.entityHurtByGunPre(event => {
   }
 })
 
-// Gun critical is bridged above because TaCZ bypasses the native critical roll.
-// M&S compatibility still owns Lifesteal, Health on Kill and Magic Shield on
-// Kill; replaying those from TaCZ Post/Kill events would double proc.
+// M&S compatibility owns Critical, Lifesteal, Health on Kill and Magic Shield
+// on Kill. Replaying those from TaCZ Post/Kill events would double proc.
 
 ServerEvents.commandRegistry(event => {
   const {commands: Commands} = event
@@ -335,10 +434,14 @@ ServerEvents.commandRegistry(event => {
       +' / '+player.persistentData.getString('dz_firearms_last_gun_id')
       +' / base '+Number(player.persistentData.getDouble('dz_firearms_last_base')).toFixed(2)
       +' x '+Number(player.persistentData.getDouble('dz_firearms_last_multiplier')).toFixed(3)
-      +' x crit '+Number(player.persistentData.getDouble('dz_firearms_last_crit_multiplier')).toFixed(2)
+      +' x armor '+Number(player.persistentData.getDouble('dz_firearms_last_armor_compensation')).toFixed(3)
+      +' x roll '+Number(player.persistentData.getDouble('dz_firearms_last_damage_roll')).toFixed(3)
       +' = '+Number(player.persistentData.getDouble('dz_firearms_last_final')).toFixed(2)+' pre-armor'
     ).gray())
-    player.tell(Text.of('M&S gun Crit: PDZ bridge / Affix・Leech: native compatibility conversion').gray())
+    player.tell(Text.of('Target Armor '+Number(player.persistentData.getDouble('dz_firearms_last_target_armor')).toFixed(1)
+      +' / M&S Pen '+Number(player.persistentData.getDouble('dz_firearms_last_armor_penetration')).toFixed(1)
+      +' / Ballistic '+(Number(player.persistentData.getDouble('dz_firearms_last_family_pierce'))*100).toFixed(0)+'%').gray())
+    player.tell(Text.of('M&S Weapon Damage・Critical・Affix・mitigation: native compatibility conversion').gray())
     return 1
   }))
 

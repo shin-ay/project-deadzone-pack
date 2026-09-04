@@ -23,8 +23,8 @@ const PDZMNS_JOB_STATS = {
 // TaCZ/vehicle/medical bridges and are not duplicated here.
 const PDZMNS_BRANCH_STATS = {
   weapons:{
-    precision:[['accuracy',0.55,'PERCENT'],['critical_hit',0.22,'PERCENT'],['critical_damage',0.35,'PERCENT']],
-    assault:[['weapon_damage',0.48,'PERCENT'],['mana_on_hit',0.10,'FLAT'],['physical_damage',0.30,'PERCENT']],
+    precision:[['accuracy',0.55,'PERCENT'],['critical_hit',0.22,'PERCENT'],['critical_damage',0.35,'PERCENT'],['armor_penetration',0.35,'FLAT']],
+    assault:[['weapon_damage',0.75,'PERCENT'],['mana_on_hit',0.10,'FLAT'],['physical_damage',0.45,'PERCENT'],['armor_penetration',0.50,'FLAT']],
     handling:[['mana_regen',0.22,'PERCENT'],['cdr',0.10,'FLAT'],['dodge',0.18,'PERCENT']],
     ammo:[['increased_quantity',0.35,'PERCENT'],['currency_find',0.18,'PERCENT']]
   },
@@ -44,7 +44,7 @@ const PDZMNS_BRANCH_STATS = {
     processing:[['stat_roll_quality',0.42,'PERCENT'],['currency_find',0.22,'PERCENT']],
     power:[['mana',0.18,'FLAT'],['mana_regen',0.25,'PERCENT'],['magic_shield',0.15,'FLAT']],
     automation:[['increased_quantity',0.32,'PERCENT'],['extra_mob_drops',0.16,'PERCENT']],
-    gunsmith:[['weapon_damage',0.25,'PERCENT'],['stat_roll_quality',0.30,'PERCENT']]
+    gunsmith:[['weapon_damage',0.35,'PERCENT'],['armor_penetration',0.20,'FLAT'],['stat_roll_quality',0.30,'PERCENT']]
   },
   mechanic:{
     repair:[['gear_defense',0.35,'PERCENT'],['stat_roll_quality',0.28,'PERCENT']],

@@ -1,4 +1,4 @@
-// PROJECT DEADZONE G JOB sync v0.1
+// PROJECT DEADZONE G JOB sync v0.2
 // DEV: Makes the PDZ JOB id the only source of truth for Mine and Slash's
 // ASCENDANCY entry. This does not award or consume player Talent points.
 
@@ -6,6 +6,14 @@ const PDZG_LOAD = Java.loadClass('com.robertx22.mine_and_slash.uncommon.datasavi
 const PDZG_SCHOOL = Java.loadClass('com.robertx22.mine_and_slash.database.data.talent_tree.TalentTree$SchoolType')
 const PDZG_POINT = Java.loadClass('com.robertx22.mine_and_slash.saveclasses.PointData')
 const PDZG_INTEGER = Java.loadClass('java.lang.Integer')
+
+function pdzGInteger(value){
+  // Rhino can resolve Integer.valueOf(number) to valueOf(String) and stringify
+  // 1 as "1.0".  Pass an explicitly integral string so M&S always receives a
+  // genuine java.lang.Integer rather than throwing NumberFormatException.
+  let rank=Math.max(0,Math.round(Number(value)||0))
+  return PDZG_INTEGER.valueOf(String(rank))
+}
 
 const PDZG_JOB_ENTRY = {
   survivor:{id:'ascendant_class',x:54,y:46},
@@ -46,6 +54,11 @@ const PDZG_SKILL_ENTRY = {
   anomaly_researcher:{school:'sorcerer',perk:'frost_nova'}
 }
 
+// M&S classes are hidden in PDZ, but their spell schools are a useful and
+// complete ability editor. Expose every school as a tactical protocol family;
+// the PDZ JOB only decides the free starter protocol, never the allowed build.
+const PDZG_TACTICAL_SCHOOLS = ['hunter','minstrel','shaman','sorcerer','warlock','warrior']
+
 function pdzGJobId(player){
   let id=String(player.persistentData.getString('dz_job_id'))
   return PDZG_JOB_ENTRY[id]?id:'survivor'
@@ -65,7 +78,7 @@ function pdzGNormalizeSkillRanks(player){
       let value=entry.getValue()
       if(value===null||String(value.getClass().getName())!=='java.lang.Integer'){
         let rank=Math.max(0,Math.round(Number(value)||0))
-        levels.put(String(entry.getKey()),PDZG_INTEGER.valueOf(rank))
+        levels.put(String(entry.getKey()),pdzGInteger(rank))
         repaired++
       }
     }
@@ -107,19 +120,20 @@ function pdzGSyncJob(player,force){
       d.putString('dz_g_talent_entry',talentEntry.id)
     }
 
-    // One-time migration only. Preserve later player choices and upgrades.
-    // allocated_lvls stores both learned active skills and passive ranks.
-    if(d.getInt('dz_g_skill_field_schema')<1||String(d.getString('dz_g_skill_job'))!==job){
+    // One-time migration only. Preserve every later player choice and upgrade,
+    // including when the base JOB changes. allocated_lvls stores both learned
+    // active protocols and passive ranks.
+    if(d.getInt('dz_g_skill_field_schema')<2){
       let skillEntry=PDZG_SKILL_ENTRY[job]
-      pdata.ascClass.allocated_lvls.clear()
       pdata.ascClass.school_order.clear()
-      pdata.ascClass.allocated_lvls.put(skillEntry.perk,PDZG_INTEGER.valueOf(1))
-      pdata.ascClass.school_order.add(skillEntry.school)
-      d.putInt('dz_g_skill_field_schema',1)
-      d.putString('dz_g_skill_field',skillEntry.school)
+      PDZG_TACTICAL_SCHOOLS.forEach(schoolId=>pdata.ascClass.school_order.add(schoolId))
+      if(pdata.ascClass.allocated_lvls.isEmpty())
+        pdata.ascClass.allocated_lvls.put(skillEntry.perk,pdzGInteger(1))
+      d.putInt('dz_g_skill_field_schema',2)
+      d.putString('dz_g_skill_field','all_protocols')
       d.putString('dz_g_starter_skill',skillEntry.perk)
-      d.putString('dz_g_skill_job',job)
     }
+    d.putString('dz_g_skill_job',job)
     pdata.forceNextSync()
     pdata.syncToClient(player)
     let unit=PDZG_LOAD.Unit(player)

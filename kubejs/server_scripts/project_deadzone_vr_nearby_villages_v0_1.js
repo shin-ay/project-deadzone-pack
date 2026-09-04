@@ -1,6 +1,6 @@
-// PROJECT DEADZONE - nearby Village Recruits center inspector v0.3
-// Local test utility. Lists registered Village Recruits centers, not every
-// structure that happens to be tagged as a Minecraft village.
+// PROJECT DEADZONE - nearby Village Recruits center inspector v0.5
+// Automatically adopts loaded vanilla/modded villages while retaining manual
+// scan/apply commands for diagnostics and recovery.
 
 const PDZ_VR_FACTION_MANAGER = Java.loadClass('com.example.villagerecruits.faction.VillageFactionManager')
 const PDZ_VR_INTEGER_ARGUMENT = Java.loadClass('com.mojang.brigadier.arguments.IntegerArgumentType')
@@ -11,6 +11,8 @@ const PDZ_VR_HEIGHTMAP_TYPES = Java.loadClass('net.minecraft.world.level.levelge
 const PDZ_VR_MIN_MCA = 6
 const PDZ_VR_MIN_VANILLA = 4
 const PDZ_VR_MIN_RECRUITS = 3
+const PDZ_VR_AUTO_RADIUS = 192
+const PDZ_VR_AUTO_INTERVAL = 600
 
 function pdzVrEntityTypeId(entity) {
   // KubeJS exposes the stable namespaced id directly. Looking the wrapped
@@ -340,6 +342,16 @@ function pdzVrPlaceRecruitTable(server, level, group) {
   return new PDZ_VR_BLOCK_POS(tx, ty, tz)
 }
 
+function pdzVrSuppressStandaloneRoads(faction, tablePos) {
+  if (faction == null || tablePos == null) return
+  faction.center = tablePos
+  faction.rootBed = tablePos
+  faction.centerLocked = true
+  // Adopted vanilla/modded villages already have streets. Treat the founding
+  // cross as complete so Village Recruits never terraforms a second network.
+  faction.roadsGenerated = true
+}
+
 function pdzVrSpawnPoint(level, group, index) {
   let offsets = [
     [4, 4], [-4, 4], [4, -4], [-4, -4], [7, 0], [-7, 0], [0, 7], [0, -7],
@@ -389,7 +401,7 @@ function pdzVrBootstrapPopulation(source, group, factionId) {
   return { mca:spawnedMca, vanilla:spawnedVanilla, recruits:spawnedRecruits }
 }
 
-function pdzVrAdoptNearby(ctx, radius) {
+function pdzVrAdoptNearby(ctx, radius, automatic) {
   let source = ctx.source
   let player = source.player
   if (player == null) {
@@ -398,7 +410,7 @@ function pdzVrAdoptNearby(ctx, radius) {
   }
 
   try {
-    console.info('[PDZ VR Adopt] apply started by ' + player.name.string + ' radius=' + radius)
+    if (!automatic) console.info('[PDZ VR Adopt] apply started by ' + player.name.string + ' radius=' + radius)
     let adoptionGroups = pdzVrCandidateRows(source.level, player, radius, source.server)
     let adopted = 0
     let populated = 0
@@ -406,6 +418,9 @@ function pdzVrAdoptNearby(ctx, radius) {
     let failed = 0
     for (let n = 0; n < adoptionGroups.length; n++) {
       let adoptionGroup = adoptionGroups[n]
+      // Background discovery only handles genuinely new settlements. Manual
+      // apply remains the explicit repair/population command for known ones.
+      if (automatic && adoptionGroup.registered != null) continue
       // Safety cap prevents a mistaken huge radius from modifying dozens of
       // settlements in one tick. Re-run the command after moving if needed.
       if (adopted + populated >= 16) break
@@ -419,7 +434,7 @@ function pdzVrAdoptNearby(ctx, radius) {
         tablePos = pdzVrPlaceRecruitTable(source.server, source.level, adoptionGroup)
         if (tablePos == null) {
           failed++
-          source.sendFailure(Text.red('[VR登録] 鐘が見つからないため地形を変更せずスキップ: [' +
+          if (!automatic) source.sendFailure(Text.red('[VR登録] 鐘が見つからないため地形を変更せずスキップ: [' +
             Math.floor(adoptionGroup.x) + ', ' + Math.floor(adoptionGroup.y) + ', ' + Math.floor(adoptionGroup.z) + ']'))
           continue
         }
@@ -430,16 +445,18 @@ function pdzVrAdoptNearby(ctx, radius) {
         // one-time standalone road cross, which otherwise cuts the terrain.
         let preparedFaction = PDZ_VR_FACTION_MANAGER.getOrCreate(factionId)
         if (adoptionGroup.registered == null) {
-          preparedFaction.center = tablePos
-          preparedFaction.rootBed = tablePos
-          preparedFaction.centerLocked = true
-          preparedFaction.roadsGenerated = true
+          pdzVrSuppressStandaloneRoads(preparedFaction, tablePos)
         }
         PDZ_VR_FACTION_MANAGER.ensureFactionExists(source.level, factionId, tablePos)
         let createdFaction = PDZ_VR_FACTION_MANAGER.getFaction(factionId)
         if (createdFaction == null) {
           failed++
           continue
+        }
+        // ensureFactionExists may normalize a newly-created faction. Reassert
+        // the no-road adoption contract after registration as well.
+        if (adoptionGroup.registered == null) {
+          pdzVrSuppressStandaloneRoads(createdFaction, tablePos)
         }
         // Delegate naming to Village Recruits itself. Factions adopted through
         // this bridge used to retain their coordinate id as the visible name.
@@ -451,7 +468,7 @@ function pdzVrAdoptNearby(ctx, radius) {
         let additions = pdzVrBootstrapPopulation(source, adoptionGroup, factionId)
         if (adoptionGroup.registered == null) adopted++
         else populated++
-        source.sendSuccess(Text.green(
+        if (!automatic) source.sendSuccess(Text.green(
           '[VR村整備] ' + String(createdFaction.specialName) + ' (' + factionId + ') [' + tablePos.getX() + ', ' + tablePos.getY() + ', ' + tablePos.getZ() + ']' +
           ' / MCA +' + additions.mca + ' / 通常 +' + additions.vanilla + ' / Recruit +' + additions.recruits
         ), false)
@@ -461,13 +478,16 @@ function pdzVrAdoptNearby(ctx, radius) {
       }
     }
 
-    source.sendSuccess(Text.aqua(
-      '[VR登録完了] 新規勢力:' + adopted + ' / 既存勢力整備:' + populated + ' / 失敗:' + failed +
-      (adopted + populated >= 16 ? ' / 安全上限16件で停止' : '')
-    ), false)
-    console.info('[PDZ VR Adopt] apply completed: candidates=' + adoptionGroups.length +
+    if (!automatic) {
+      source.sendSuccess(Text.aqua(
+        '[VR登録完了] 新規勢力:' + adopted + ' / 既存勢力整備:' + populated + ' / 失敗:' + failed +
+        (adopted + populated >= 16 ? ' / 安全上限16件で停止' : '')
+      ), false)
+      source.sendSuccess(Text.gray('最低人口: MCA ' + PDZ_VR_MIN_MCA + ' / 通常 ' + PDZ_VR_MIN_VANILLA + ' / Recruit ' + PDZ_VR_MIN_RECRUITS + '。再実行時は不足分だけ補充します。'), false)
+    }
+    if (!automatic || adopted > 0 || failed > 0) console.info(
+      '[PDZ VR Adopt] ' + (automatic ? 'automatic ' : '') + 'apply completed: candidates=' + adoptionGroups.length +
       ' adopted=' + adopted + ' populated=' + populated + ' failed=' + failed)
-    source.sendSuccess(Text.gray('最低人口: MCA ' + PDZ_VR_MIN_MCA + ' / 通常 ' + PDZ_VR_MIN_VANILLA + ' / Recruit ' + PDZ_VR_MIN_RECRUITS + '。再実行時は不足分だけ補充します。'), false)
     return adopted + populated > 0 ? adopted + populated : 1
   } catch (error) {
     source.sendFailure(Text.red('[VR登録] 処理失敗: ' + error))
@@ -475,6 +495,24 @@ function pdzVrAdoptNearby(ctx, radius) {
     return 0
   }
 }
+
+PlayerEvents.tick(event => {
+  let player = event.player
+  if (!player || !player.alive || String(player.level.dimension).indexOf('minecraft:overworld') < 0) return
+  let ticks = player.persistentData.getInt('pdz_vr_auto_adopt_ticks') + 1
+  if (ticks < PDZ_VR_AUTO_INTERVAL) {
+    player.persistentData.putInt('pdz_vr_auto_adopt_ticks', ticks)
+    return
+  }
+  player.persistentData.putInt('pdz_vr_auto_adopt_ticks', 0)
+  pdzVrAdoptNearby({source:{
+    player:player,
+    level:player.level,
+    server:player.server,
+    sendFailure:message => console.error('[PDZ VR Auto Adopt] ' + message),
+    sendSuccess:(message, broadcast) => {}
+  }}, PDZ_VR_AUTO_RADIUS, true)
+})
 
 ServerEvents.commandRegistry(event => {
   let Commands = event.commands
