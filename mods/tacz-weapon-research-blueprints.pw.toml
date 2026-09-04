@@ -5,7 +5,8 @@ side = "both"
 [download]
 hash-format = "sha1"
 hash = "3b9448533ac81cd1bc63943041e9341a7c6a3f3d"
-mode = "metadata:curseforge"
+mode = "url"
+url = "https://cursemaven.com/curse/maven/tacz-weapon-research-blueprints-1167017/8786046/tacz-weapon-research-blueprints-1167017-8786046.jar"
 
 [update]
 [update.curseforge]
