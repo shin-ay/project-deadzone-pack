@@ -957,6 +957,10 @@ file = "config/createmechanicalcompanion-common.toml"
 hash = "195d81068ce683e9f19a3fa2e34794db983dde238adf13c7b7b0c6507350e719"
 
 [[files]]
+file = "config/cristellib/minecraftP.json5"
+hash = "a06e7430843e91322e15af3488229e968fcc7d826e6d825c156e81f95428cbc0"
+
+[[files]]
 file = "config/cupboard.json"
 hash = "08bda8a4a20d302cb97d06bf11c4991e152a3a9e04c17302ea3b42aa77e6b028"
 
@@ -3261,6 +3265,10 @@ file = "config/tongdarailway_for_forge-common.toml"
 hash = "8e3a3368ea5f7729599d170a988cae98dfb23802bebe66687550e59cfc5347fa"
 
 [[files]]
+file = "config/towns_and_towers/structure_rarity_new.json5"
+hash = "c03d17a19c2fc429a6b493bcad03c3cb95d49a4e0ba5e69b26dd6ac884915079"
+
+[[files]]
 file = "config/trmt-client.json"
 hash = "3f05a62ecf2b307ec62e5bf24f645121685bde1bb8ceae1c0fc375a121dac8c8"
 
@@ -3294,11 +3302,11 @@ hash = "ebf692c917bae16435148c20a163a3989920437665f981033fec6fd6aec2ef17"
 
 [[files]]
 file = "config/village_recruits/building.toml"
-hash = "46d4f0a8e6d27b001a43b76545eb97cbc9008f849bf66a9556679dbb5a4f1750"
+hash = "45e38e64f1f2a41e37b344cd816c19c5290be5a25ff5ec02ec979e9143a22287"
 
 [[files]]
 file = "config/village_recruits/economy.toml"
-hash = "3465b9b027dbdc9e5603525b0dcbbc083c7bc8dc0347ea41aeb61bae99c94251"
+hash = "bdfe4e311380a510dc369eafb8127eff3ddd38e3f4d14381c306e57c73b9fba0"
 
 [[files]]
 file = "config/village_recruits/general.toml"
@@ -3310,7 +3318,7 @@ hash = "69360426c5ec8ee2b180a348d0c2e50414ded6aa5b35c32979114563b65a0fab"
 
 [[files]]
 file = "config/village_recruits/politics.toml"
-hash = "5596f4ee0af96ca6628d93b2307a36b20054ef830cda353a88164eb9f43945c8"
+hash = "4138f2ab2790dbd38a630c034d8385c55c5ffa539a247f5aee67b757a6417048"
 
 [[files]]
 file = "config/village_recruits/sky.toml"
@@ -11611,6 +11619,10 @@ hash = "f9b4bc43356d49772520923ae245cc1c7a8dfcc26cc3f010a69bf38c5ed702be"
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_village_services_v0_1.js"
 hash = "fa27f3fbccb0b084d67f58e75d423d87955192f524c09ead1f78f7d341b22fa4"
+
+[[files]]
+file = "kubejs/server_scripts/project_deadzone_vr_nearby_villages_v0_1.js"
+hash = "b213067fa08edc19d005e31e026ecfea4ca7c6bdf2daa2ad604607c9b26c58e7"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_waystones_public_transit_v0_1.js"

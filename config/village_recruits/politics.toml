@@ -108,7 +108,7 @@
 	#at war with the parent and immediately besieges its own village.
 	#Default: true
 	#
-	rebellionEnabled = false
+	rebellionEnabled = true
 	#How often (in ticks) each faction's secondary villages are evaluated for
 	#rebellion. Default: 2400 (~2 minutes)
 	#
@@ -714,7 +714,7 @@
 	#villages, send some settlers to a far empty spot and, after
 	#a delay, found a brand new village belonging to that faction.
 	#
-	enabled = false
+	enabled = true
 	#Money a faction must spend to found a new village. Paid from the
 	#SEPARATE expansion war chest (see economy.expansionIncomeFraction),
 	#not the normal treasury. This is the price of the faction's FIRST
@@ -759,7 +759,7 @@
 	#founded next to a village that simply had not woken up.
 	#
 	#Range: 16 ~ 5000
-	minDistanceFromOtherCenters = 320
+	minDistanceFromOtherCenters = 480
 	#Do naturally generated tower spawners found a village?
 	#Default: true
 	#
@@ -912,7 +912,7 @@
 	#sitting in the ground near a village will now refuse to build.
 	#
 	#Range: 0 ~ 5000
-	naturalVillageMinDistance = 320
+	naturalVillageMinDistance = 384
 	#Minimum distance (in blocks) a village founded BY HAND -- a player
 	#(or a villager) using a recruit table, which turns that block into a
 	#new village center -- must keep from an already existing village
@@ -937,7 +937,7 @@
 	#320 a site the AI itself would have settled could be denied to him.
 	#
 	#Range: 0 ~ 5000
-	manualVillageMinDistance = 275
+	manualVillageMinDistance = 320
 	#Radius (in blocks) around a refused village site within which online
 	#players are told, in chat, that the new village would be too close to
 	#an existing one. 0 = never tell anyone. Default: 64
@@ -948,7 +948,7 @@
 	#valid settle spot. Must be larger than minDistance. Default: 700
 	#
 	#Range: 100 ~ 10000
-	searchRadius = 700
+	searchRadius = 1600
 	#Delay (in ticks) between sending the settlers and the new village
 	#actually being built. 20 ticks = 1 second. Default: 12000 (10 min)
 	#

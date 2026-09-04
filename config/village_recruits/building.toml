@@ -522,7 +522,7 @@
 	#building.toml or run /vrconfig reset building confirm.
 	#Default: false
 	#
-	repairBuilderEnabled = false
+	repairBuilderEnabled = true
 	#Maximum hole depth (blocks below the surrounding ground level) that gets
 	#filled completely. Deeper voids (cave shafts, ravines) only get a 2-block
 	#PLUG at ground level - the cave below stays intact. Default: 6

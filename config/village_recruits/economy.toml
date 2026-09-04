@@ -79,7 +79,7 @@
 	#offline/unloaded villages instant-place the structure but still pay for it.
 	#false = fall back to the old direct-placement builder. Default: true
 	#
-	constructionEnabled = false
+	constructionEnabled = true
 	#Fraction of every income payout credited into the faction's separate
 	#CONSTRUCTION war chest, used to buy the blocks the builder worker places.
 	#This is an EXTRA generated ON TOP of the income — it is NOT taken out of the
@@ -2030,7 +2030,7 @@
 	#sender, and by factionless BANDITS. Turning this off leaves convoys as
 	#pure logistics with nothing to escort them against. Default: true
 	#
-	convoyRaidsEnabled = false
+	convoyRaidsEnabled = true
 	#Game ticks between two ambush rolls on the same convoy. Default: 600
 	#Range: 20 ~ 24000
 	convoyRaidIntervalTicks = 600

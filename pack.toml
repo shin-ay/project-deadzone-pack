@@ -1,12 +1,12 @@
 name = "PROJECT DEADZONE"
 author = "PROJECT DEADZONE Team"
-version = "BETA-20260903-REMOVE-TACZ-SLINGS-1"
+version = "BETA-20260904-VILLAGE-RECRUITS-WORLDGEN-RC1"
 pack-format = "packwiz:1.1.0"
 
 [index]
 file = "index.toml"
 hash-format = "sha256"
-hash = "3e795049bbe679c098c53a032860828412b0b3963dba609616f67486853af066"
+hash = "d928f1c6ab5edc2f49b40a9c259c79bd41b3caea70e7edd30ca126458872b166"
 
 [versions]
 forge = "47.4.10"
