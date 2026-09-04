@@ -1,94 +1,25 @@
-// PROJECT DEADZONE automatic Horde director v0.2
-//
-// One shared director prevents multiplayer Horde stacking. Time advances only
-// while at least one player is online. The 100 m camp ring blocks event
-// selection during the first twenty online-active days, then becomes T1.
+// PROJECT DEADZONE explicit Horde bridge v1.0
+// The Hordes owns normal cadence, waves, spawning and completion.
+// PDZ may request an extra Horde only for a named pollution or story event.
 
-const PDZ_AH_ACTIVE_TICKS = 'dz_auto_horde_active_ticks_v1'
-const PDZ_AH_NEXT_TICK = 'dz_auto_horde_next_tick_v1'
-const PDZ_AH_PENDING_AT = 'dz_auto_horde_pending_at_v1'
-const PDZ_AH_PENDING_PLAYER = 'dz_auto_horde_pending_player_v1'
-const PDZ_AH_COUNT = 'dz_auto_horde_count_v1'
-const PDZ_AH_INITIAL_GRACE = 54000       // 45 active minutes
-const PDZ_AH_RETRY_DELAY = 12000         // 10 min if every player is in the camp ring
-const PDZ_AH_WARNING = 600               // 30 s warning
-// Cooldown shortens as the world ages. Values are active-online ticks, so an
-// empty server never burns through the timer even when the calendar is old.
-const PDZ_AH_COOLDOWNS = [
-  [84000, 108000], // day 0-19: 70-90 active minutes
-  [72000, 90000],  // day 20-39: 60-75 active minutes
-  [60000, 78000],  // day 40-59: 50-65 active minutes
-  [48000, 66000],  // day 60-79: 40-55 active minutes
-  [42000, 60000]   // day 80+: 35-50 active minutes
-]
-const PDZ_AH_CAMP_RADIUS = 100
-const PDZ_AH_POLLUTION_WARNING = 75      // brief warning effects begin here
-const PDZ_AH_POLLUTION_CRITICAL = 90     // urgent raid pressure begins here
-const PDZ_AH_POLLUTION_PULSE = 1200      // at most once per active minute
-const PDZ_AH_POLLUTION_WARNING_CAP = 14400 // raid within 12 active minutes
-const PDZ_AH_POLLUTION_CRITICAL_CAP = 3600 // raid within 3 active minutes
-const PDZ_AH_TABLES = [
+const PDZ_HORDE_TABLES = [
   'project_deadzone:pdz_t0', 'project_deadzone:pdz_t1',
   'project_deadzone:pdz_t2', 'project_deadzone:pdz_t3',
   'project_deadzone:pdz_t4', 'project_deadzone:pdz_t5'
 ]
-const PDZ_AH_DURATIONS = [3000, 3500, 4000, 4500, 5000, 5500]
-const PDZ_AH_POLLUTANTS = Java.loadClass('com.endertech.minecraft.mods.adpother.init.Pollutants$BuiltIn')
+const PDZ_HORDE_DURATIONS = [3000, 3500, 4000, 4500, 5000, 5500]
+const PDZ_HORDE_POLLUTANTS = Java.loadClass('com.endertech.minecraft.mods.adpother.init.Pollutants$BuiltIn')
 
-function pdzAhPollution(player) {
+function pdzHordePollution(player) {
   try {
     let pos = player.blockPosition()
-    let carbon = Number(PDZ_AH_POLLUTANTS.CARBON.get().getPercentageAtChunk(player.level, pos).getValue())
-    let sulfur = Number(PDZ_AH_POLLUTANTS.SULFUR.get().getPercentageAtChunk(player.level, pos).getValue())
-    if (!isFinite(carbon)) carbon = 0
-    if (!isFinite(sulfur)) sulfur = 0
-    return Math.max(0, Math.min(200, Math.max(carbon, sulfur)))
+    let carbon = Number(PDZ_HORDE_POLLUTANTS.CARBON.get().getPercentageAtChunk(player.level, pos).getValue())
+    let sulfur = Number(PDZ_HORDE_POLLUTANTS.SULFUR.get().getPercentageAtChunk(player.level, pos).getValue())
+    return Math.max(0, Math.min(200, Math.max(isFinite(carbon) ? carbon : 0, isFinite(sulfur) ? sulfur : 0)))
   } catch (ignored) { return 0 }
 }
 
-function pdzAhPollutionBand(value) {
-  if (value >= PDZ_AH_POLLUTION_CRITICAL) return 2
-  if (value >= PDZ_AH_POLLUTION_WARNING) return 1
-  return 0
-}
-
-function pdzAhPollutionPulse(player, value, activeTicks) {
-  let band = pdzAhPollutionBand(value)
-  let previous = player.persistentData.getInt('dz_pollution_band_v1')
-  player.persistentData.putInt('dz_pollution_band_v1', band)
-  player.persistentData.putInt('dz_pollution_percent_v1', Math.floor(value))
-
-  if (band !== previous) {
-    if (band === 0 && previous > 0) {
-      player.runCommandSilent('tellraw @s [{"text":"[POLLUTION] ","color":"dark_aqua","bold":true},{"text":"排煙濃度が安定域へ戻った。","color":"aqua"}]')
-    } else if (band === 1) {
-      player.runCommandSilent('tellraw @s [{"text":"[POLLUTION WARNING] ","color":"gold","bold":true},{"text":"排煙を追って感染群が集まり始めている。","color":"yellow"}]')
-      player.runCommandSilent('playsound minecraft:block.note_block.didgeridoo player @s ~ ~ ~ 0.55 0.65')
-    } else if (band === 2) {
-      player.runCommandSilent('tellraw @s [{"text":"[POLLUTION CRITICAL] ","color":"dark_red","bold":true},{"text":"襲撃危険域。排煙処理か迎撃準備を。","color":"red"}]')
-      player.runCommandSilent('playsound minecraft:block.bell.resonate player @s ~ ~ ~ 0.8 0.55')
-    }
-  }
-
-  if (band <= 0) return
-  let last = player.persistentData.getLong('dz_pollution_effect_tick_v1')
-  if (activeTicks - last < PDZ_AH_POLLUTION_PULSE) return
-  player.persistentData.putLong('dz_pollution_effect_tick_v1', activeTicks)
-
-  // A short warning, not a constant survival tax. No slowness or suffocation.
-  player.runCommandSilent('effect give @s minecraft:weakness ' + (band === 2 ? 8 : 5) + ' 0 true')
-  if (band === 2) player.runCommandSilent('effect give @s minecraft:poison 2 0 true')
-  player.runCommandSilent('playsound minecraft:entity.panda.sneeze player @s ~ ~ ~ 0.35 0.8')
-}
-
-function pdzAhAtCamp(player) {
-  try {
-    return player.runCommandSilent('execute if entity @e[type=minecraft:marker,tag=dz_basecamp_core_anchor,distance=..' +
-      PDZ_AH_CAMP_RADIUS + ',limit=1]') > 0
-  } catch (ignored) { return true }
-}
-
-function pdzAhTier(player) {
+function pdzHordeTier(player) {
   try {
     if (typeof global.pdzCombatTierAt === 'function')
       return Math.max(0, Math.min(5, Number(global.pdzCombatTierAt(player.server, player.x, player.z, player.level.dimension))))
@@ -98,192 +29,59 @@ function pdzAhTier(player) {
   } catch (ignored) { return 0 }
 }
 
-function pdzAhEligible(player) {
-  if (!player || player.level.clientSide) return false
-  if (String(player.level.dimension) !== 'minecraft:overworld') return false
-  if (player.isCreative() || player.isSpectator()) return false
-  let atCamp = pdzAhAtCamp(player)
-  let protection = true
-  try { if (typeof global.pdzCampProtectionActive === 'function') protection = global.pdzCampProtectionActive(player.server) } catch (ignored) {}
-  return !(atCamp && protection)
+function pdzHordeEligible(player) {
+  return player && !player.level.clientSide && String(player.level.dimension) === 'minecraft:overworld' &&
+    !player.isCreative() && !player.isSpectator()
 }
 
-function pdzAhEligiblePlayers(server) {
-  let list = []
-  server.players.forEach(player => { if (pdzAhEligible(player)) list.push(player) })
-  return list
-}
-
-function pdzAhFindPlayer(server, uuid) {
-  let found = null
-  server.players.forEach(player => {
-    if (!found && String(player.uuid) === String(uuid)) found = player
-  })
-  return found
-}
-
-function pdzAhWorldDay(server) {
-  try {
-    let level = server.overworld
-    let dayTime = Number(level.dayTime)
-    if (!isFinite(dayTime) && typeof level.getDayTime === 'function') dayTime = Number(level.getDayTime())
-    if (isFinite(dayTime)) return Math.max(0, Math.floor(dayTime / 24000))
-  } catch (ignored) {}
-  return 0
-}
-
-function pdzAhCooldownBounds(server) {
-  let day = pdzAhWorldDay(server)
-  if (day >= 80) return PDZ_AH_COOLDOWNS[4]
-  if (day >= 60) return PDZ_AH_COOLDOWNS[3]
-  if (day >= 40) return PDZ_AH_COOLDOWNS[2]
-  if (day >= 20) return PDZ_AH_COOLDOWNS[1]
-  return PDZ_AH_COOLDOWNS[0]
-}
-
-function pdzAhScheduleNext(server, activeTicks, shortRetry) {
-  let bounds = pdzAhCooldownBounds(server)
-  let delay = shortRetry ? PDZ_AH_RETRY_DELAY :
-    bounds[0] + Math.floor(Math.random() * (bounds[1] - bounds[0] + 1))
-  server.persistentData.putLong(PDZ_AH_NEXT_TICK, activeTicks + delay)
-}
-
-function pdzAhClearPending(server) {
-  server.persistentData.putLong(PDZ_AH_PENDING_AT, 0)
-  server.persistentData.putString(PDZ_AH_PENDING_PLAYER, '')
-}
-
-function pdzAhWarn(server, player, activeTicks) {
-  server.persistentData.putLong(PDZ_AH_PENDING_AT, activeTicks + PDZ_AH_WARNING)
-  server.persistentData.putString(PDZ_AH_PENDING_PLAYER, String(player.uuid))
-  let pollution = pdzAhPollution(player)
-  let cause = pollution >= PDZ_AH_POLLUTION_WARNING ? '工業排煙と活動音' : '活動音'
-  server.runCommandSilent('tellraw @a [{"text":"[HORDE WARNING] ","color":"dark_red","bold":true},' +
-    '{"text":"大量の感染者が' + cause + 'へ接近中。約30秒で接触。","color":"red"}]')
-  player.runCommandSilent('title @s title {"text":"HORDE 接近","color":"dark_red","bold":true}')
-  player.runCommandSilent('title @s subtitle {"text":"退路と弾薬を確認せよ","color":"yellow"}')
-  player.runCommandSilent('playsound minecraft:entity.zombie.ambient player @s ~ ~ ~ 0.9 0.55')
-}
-
-function pdzAhStart(server, player, activeTicks) {
-  if (!pdzAhEligible(player)) {
-    pdzAhClearPending(server)
-    pdzAhScheduleNext(server, activeTicks, true)
+global.pdzStartExplicitHorde = function(server, player, cause) {
+  cause = String(cause || '').toLowerCase()
+  let allowed = cause === 'pollution' || cause.indexOf('pollution:') === 0 ||
+    cause === 'story' || cause.indexOf('story:') === 0
+  if (!server || !pdzHordeEligible(player) || !allowed) {
+    console.warn('[PROJECT DEADZONE][HORDE] rejected explicit request cause=' + cause)
     return false
   }
-  let tier = pdzAhTier(player)
-  let table = PDZ_AH_TABLES[tier] || PDZ_AH_TABLES[0]
-  let duration = PDZ_AH_DURATIONS[tier] || PDZ_AH_DURATIONS[0]
-  let pollution = pdzAhPollution(player)
-  if (pollution >= PDZ_AH_POLLUTION_CRITICAL) duration = Math.floor(duration * 1.25)
-  else if (pollution >= PDZ_AH_POLLUTION_WARNING) duration = Math.floor(duration * 1.125)
+  let tier = pdzHordeTier(player)
+  let table = PDZ_HORDE_TABLES[tier]
+  let duration = PDZ_HORDE_DURATIONS[tier]
+  if (cause.indexOf('pollution') === 0) {
+    let pollution = pdzHordePollution(player)
+    if (pollution < 75) {
+      console.warn('[PROJECT DEADZONE][HORDE] pollution request below threshold: ' + Math.floor(pollution) + '%')
+      return false
+    }
+    duration = Math.floor(duration * (pollution >= 90 ? 1.25 : 1.125))
+  }
   let result = server.runCommandSilent('execute as ' + player.username + ' at @s run hordes start ' + duration + ' ' + table)
-  pdzAhClearPending(server)
   if (result <= 0) {
-    console.warn('[PROJECT DEADZONE][HORDE] Start failed for ' + player.username + ' table=' + table)
-    pdzAhScheduleNext(server, activeTicks, true)
+    console.warn('[PROJECT DEADZONE][HORDE] explicit start failed cause=' + cause + ' table=' + table)
     return false
   }
-  server.persistentData.putInt(PDZ_AH_COUNT, server.persistentData.getInt(PDZ_AH_COUNT) + 1)
-  pdzAhScheduleNext(server, activeTicks, false)
+  server.persistentData.putInt('dz_explicit_horde_count_v1',
+    server.persistentData.getInt('dz_explicit_horde_count_v1') + 1)
   server.runCommandSilent('tellraw @a [{"text":"[HORDE] ","color":"dark_red","bold":true},' +
-    '{"text":"T' + tier + '感染群が ' + player.username + ' の周辺へ到達。","color":"red"}]')
-  console.info('[PROJECT DEADZONE][HORDE] Started T' + tier + ' for ' + player.username +
-    ' duration=' + duration + ' table=' + table + ' pollution=' + Math.floor(pollution) + '%')
+    '{"text":"' + (cause.indexOf('pollution') === 0 ? '汚染に引き寄せられた感染群' : '物語イベントの感染群') +
+    'が ' + player.username + ' 周辺へ接近。","color":"red"}]')
+  console.info('[PROJECT DEADZONE][HORDE] explicit start cause=' + cause + ' tier=' + tier + ' duration=' + duration)
   return true
 }
-
-let PDZ_AH_TICK = 0
-ServerEvents.tick(event => {
-  PDZ_AH_TICK++
-  if (PDZ_AH_TICK % 20 !== 0) return
-  let server = event.server
-  if (server.players.length <= 0) return
-  let activeTicks = server.persistentData.getLong(PDZ_AH_ACTIVE_TICKS) + 20
-  server.persistentData.putLong(PDZ_AH_ACTIVE_TICKS, activeTicks)
-  let next = server.persistentData.getLong(PDZ_AH_NEXT_TICK)
-  if (next <= 0) {
-    next = activeTicks + PDZ_AH_INITIAL_GRACE
-    server.persistentData.putLong(PDZ_AH_NEXT_TICK, next)
-  }
-
-  let eligible = pdzAhEligiblePlayers(server)
-  let target = null
-  let targetPollution = -1
-  eligible.forEach(player => {
-    let pollution = pdzAhPollution(player)
-    pdzAhPollutionPulse(player, pollution, activeTicks)
-    if (pollution > targetPollution) {
-      target = player
-      targetPollution = pollution
-    }
-  })
-
-  // Pollution never raises world tier or raw mob damage. It pulls the next
-  // Horde closer and slightly extends that Horde instead.
-  if (targetPollution >= PDZ_AH_POLLUTION_WARNING) {
-    let cap = targetPollution >= PDZ_AH_POLLUTION_CRITICAL ?
-      PDZ_AH_POLLUTION_CRITICAL_CAP : PDZ_AH_POLLUTION_WARNING_CAP
-    if (next - activeTicks > cap) {
-      next = activeTicks + cap
-      server.persistentData.putLong(PDZ_AH_NEXT_TICK, next)
-    }
-  }
-
-  let pendingAt = server.persistentData.getLong(PDZ_AH_PENDING_AT)
-  if (pendingAt > 0) {
-    if (activeTicks < pendingAt) return
-    let target = pdzAhFindPlayer(server, server.persistentData.getString(PDZ_AH_PENDING_PLAYER))
-    if (!target) {
-      pdzAhClearPending(server)
-      pdzAhScheduleNext(server, activeTicks, true)
-      return
-    }
-    pdzAhStart(server, target, activeTicks)
-    return
-  }
-  if (activeTicks < next) return
-  if (eligible.length <= 0) {
-    pdzAhScheduleNext(server, activeTicks, true)
-    return
-  }
-  pdzAhWarn(server, target || eligible[Math.floor(Math.random() * eligible.length)], activeTicks)
-})
 
 ServerEvents.commandRegistry(event => {
   const {commands: Commands} = event
   let root = Commands.literal('deadzonehorde')
   root.then(Commands.literal('status').executes(ctx => {
-    let server = ctx.source.server
-    let active = server.persistentData.getLong(PDZ_AH_ACTIVE_TICKS)
-    let next = server.persistentData.getLong(PDZ_AH_NEXT_TICK)
-    let pending = server.persistentData.getLong(PDZ_AH_PENDING_AT)
-    let pollution = pdzAhPollution(ctx.source.player)
-    ctx.source.player.tell(Text.of('AUTO HORDE: T0+ / Day ' + pdzAhWorldDay(server) +
-      ' / 発生 ' + server.persistentData.getInt(PDZ_AH_COUNT) +
-      '回 / 次回まで約' + Math.max(0, Math.ceil((next - active) / 1200)) + '分' +
-      (pending > 0 ? ' / 警告中' : '') + ' / 汚染 ' + Math.floor(pollution) + '% / Camp保護 ' +
-      ((typeof global.pdzCampProtectionActive === 'function' && global.pdzCampProtectionActive(server)) ? 'ON' : 'OFF/T1')).gold())
+    let pollution = pdzHordePollution(ctx.source.player)
+    ctx.source.player.tell(Text.of('HORDE OWNER: The Hordes / PDZ scheduler: OFF / PDZ explicit: ' +
+      ctx.source.server.persistentData.getInt('dz_explicit_horde_count_v1') + ' / Pollution: ' +
+      Math.floor(pollution) + '%').gold())
     return 1
   }))
-  root.then(Commands.literal('test').requires(source => source.hasPermission(2)).executes(ctx => {
-    let player = ctx.source.player
-    if (!pdzAhEligible(player)) {
-      player.tell(Text.of('保護期間中のCamp 100m以内・別Dimension・Creative/Spectatorでは開始できません。').red())
-      return 0
-    }
-    return pdzAhStart(ctx.source.server, player,
-      ctx.source.server.persistentData.getLong(PDZ_AH_ACTIVE_TICKS)) ? 1 : 0
-  }))
-  root.then(Commands.literal('reset_timer').requires(source => source.hasPermission(2)).executes(ctx => {
-    let server = ctx.source.server
-    let active = server.persistentData.getLong(PDZ_AH_ACTIVE_TICKS)
-    pdzAhClearPending(server)
-    server.persistentData.putLong(PDZ_AH_NEXT_TICK, active + PDZ_AH_INITIAL_GRACE)
-    ctx.source.player.tell(Text.of('Auto Horde timerを初回猶予へリセットしました。').yellow())
-    return 1
-  }))
+  root.then(Commands.literal('test_story').requires(source => source.hasPermission(2)).executes(ctx =>
+    global.pdzStartExplicitHorde(ctx.source.server, ctx.source.player, 'story:test') ? 1 : 0))
+  root.then(Commands.literal('test_pollution').requires(source => source.hasPermission(2)).executes(ctx =>
+    global.pdzStartExplicitHorde(ctx.source.server, ctx.source.player, 'pollution:test') ? 1 : 0))
   event.register(root)
 })
 
-console.info('[PROJECT DEADZONE] Auto Horde director loaded: v0.4 age-scaled cooldown, pollution pressure, T0+, Camp protected for 20 active days')
+console.info('[PROJECT DEADZONE] Explicit Horde bridge loaded; The Hordes owns normal cadence')

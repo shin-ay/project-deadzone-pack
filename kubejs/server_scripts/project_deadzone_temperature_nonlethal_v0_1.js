@@ -1,20 +1,6 @@
-// PROJECT DEADZONE - temperature stays meaningful but is never directly lethal.
-// Legendary Survival Overhaul still supplies heat/cold debuffs and resource drain.
-
-EntityEvents.hurt(event => {
-  let entity = event.entity
-  if (!entity || String(entity.type) !== "minecraft:player") return
-
-  let source = "unknown"
-  try { source = String(event.source.type()) }
-  catch (ignored) {
-    try { source = String(event.source.getType()) }
-    catch (ignored2) { source = String(event.source) }
-  }
-  if (source.indexOf("legendarysurvivaloverhaul:hyperthermia") >= 0 ||
-      source.indexOf("legendarysurvivaloverhaul:hypothermia") >= 0 ||
-      source.indexOf("hyperthermia") >= 0 ||
-      source.indexOf("hypothermia") >= 0) {
-    event.cancel()
-  }
-})
+// PROJECT DEADZONE temperature ownership policy (retired compatibility hook).
+// Legendary Survival Overhaul is the sole runtime owner of temperature.
+// Its common config keeps secondary effects enabled while dangerous heat and
+// cold effects are disabled. Temperature affects actions/resources but does
+// not directly damage the player. No hurt-event cancellation belongs here.
+console.info('[PROJECT DEADZONE] Temperature hurt hook retired: LSO config owns nonlethal temperature policy')

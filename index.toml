@@ -1638,7 +1638,7 @@ hash = "41bb0b1222c5879fd8f8d1b88d84881adbed559fd12897b5c598dff49ba62abb"
 
 [[files]]
 file = "config/hordes-common.toml"
-hash = "f7ca85049774bbd6c8f1dc7787b87aa495f9551c0df385cec5979327cb1a1c8e"
+hash = "98d21419099602c5401fe7b7a939f9a4f564b64c7f6d3dbe82d9308b59b7d987"
 
 [[files]]
 file = "config/hordes/assets/hordes/attributes.json"
@@ -11138,7 +11138,7 @@ hash = "ec246c53f9c3fa29ecf5cff8817cd5a7e8c53474f24202af0a60d480b8fff1c8"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_auto_horde_v0_1.js"
-hash = "f9492e98fdabcb8824cda44e8f4cf2e3a4368adbcea97be98f9dbb68dddaccd7"
+hash = "236e8c647abd95f8251eaf5e0f3f58162e40d6e4b619ef3e74e6b201c86d1b61"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_base_core_v0_1.js"
@@ -11486,7 +11486,7 @@ hash = "3e66494635f1fb2a5fae8ed2c6388a1ad06cb25e007eda8703416536e04492ed"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_simpleenemy_elites_v0_1.js"
-hash = "36aba1dbb9b0e9b35d12847dd83f00298ea7fc21c8bcdb2b896f4ef0ac5d2a53"
+hash = "72af98b2d7ffbbf83197ef92d815ca9bb41194e81ebb021b5fca0819377b49c8"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_skill_effects_v0_1.js"
@@ -11598,7 +11598,7 @@ hash = "7e485f9836d50aeb660794151806e73b6ee587a21f22546b325cdc8c0126a37b"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_temperature_nonlethal_v0_1.js"
-hash = "0050cdca2dc2df2fa75d123b707e3fc1b651ef596e30fb0ee8a7d5a6cfca0b02"
+hash = "7a03e1ccf9fda1dce3c8df4a3cb6f2dd0c75317425957f5e69c6b655636a6375"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_territory_v0_1.js"
@@ -13151,8 +13151,8 @@ hash = "13e92501fb23e484ffd323438f85a82825d4d93426f20e19a1856c7bff289ad9"
 metafile = true
 
 [[files]]
-file = "mods/pdz-infectious-lifecycle-compat-1.0.0.jar"
-hash = "61a02df84a0dfddcaf5592317132dc32011859336ffc46c8d1617d991d48695a"
+file = "mods/pdz-infectious-lifecycle-compat-1.0.1.jar"
+hash = "d95c65f316d1cb514414f0dcd5d70de6817d84052688b6fa8a2fec1dd8a35548"
 
 [[files]]
 file = "mods/pdz-loot-compat-1.0.0.jar"
