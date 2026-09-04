@@ -13159,8 +13159,8 @@ file = "mods/pdz-loot-compat-1.0.0.jar"
 hash = "c8b97292101e1d425300c7a034129f40a2e02ad0e2ea165b3ebbfd16f2621274"
 
 [[files]]
-file = "mods/pdz-recruits-village-spawn-compat-1.0.0.jar"
-hash = "3d5b7fe92de2b120415a1d682e493b9dd63a6d11718b002f334b0f128a1fceb2"
+file = "mods/pdz-recruits-village-spawn-compat-1.0.1.jar"
+hash = "01baabd5bb91ebc3eb5ead86fcc02286644fa12187f87c748377fbb05a391ca6"
 
 [[files]]
 file = "mods/ping.pw.toml"

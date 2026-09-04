@@ -1,12 +1,12 @@
 name = "PROJECT DEADZONE"
 author = "PROJECT DEADZONE Team"
-version = "BETA-20260905-RECRUITS-VILLAGE-SPAWN-COMPAT-1"
+version = "BETA-20260905-RECRUITS-VILLAGE-SPAWN-COMPAT-2"
 pack-format = "packwiz:1.1.0"
 
 [index]
 file = "index.toml"
 hash-format = "sha256"
-hash = "f729393c6195dfddd0a938f6a64732ed700251e5f80aacc6e8885d781e134492"
+hash = "84107bd0fe146a25ec1633c6c7d6f9df92587f0c8f74ad78b165ce9ce1be1c25"
 
 [versions]
 forge = "47.4.10"
