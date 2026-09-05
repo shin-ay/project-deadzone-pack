@@ -1642,7 +1642,7 @@ hash = "41bb0b1222c5879fd8f8d1b88d84881adbed559fd12897b5c598dff49ba62abb"
 
 [[files]]
 file = "config/hordes-common.toml"
-hash = "98d21419099602c5401fe7b7a939f9a4f564b64c7f6d3dbe82d9308b59b7d987"
+hash = "86db0b839a852d510e944fd6e0ddaf03eca70d46663d1c4b5e2f6cb03a06633d"
 
 [[files]]
 file = "config/hordes/assets/hordes/attributes.json"
@@ -2218,7 +2218,7 @@ hash = "9bcdd9f5ae6c9fecc3a0dfee7507bf17c56702f14e40db9cdde90148f1d3b387"
 
 [[files]]
 file = "config/mine_and_slash-client.toml"
-hash = "9888d6af7110b01ee8084cda0263a5522c59f7e07943cf98e70362a6cf43cab0"
+hash = "f4f73682d12819f521d6c6620812a30d1ef15e98dbbe76694cf9ddaa63f74edb"
 
 [[files]]
 file = "config/minetraps-client.toml"
@@ -11162,7 +11162,7 @@ hash = "5df59e485636b791e259d8910c26f85228740dd172c0fb7e17a0e0296b60a19c"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_arsenal_authorization_v0_1.js"
-hash = "e081afca18a84ee703fdde12160a6b0a8ec3243c7afda611a86fe0cb31bcae90"
+hash = "845c09434db5641ffe8fe731e166fc4b95c4ce8a27ef91e7e25592c056d6f4b8"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_arsenal_catalog_generated.js"
@@ -11386,7 +11386,7 @@ hash = "c76020f2c0a82afd54e70a4f719c11d759565509923264cd830431662ef52eb3"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_managed_vending_rotation_v0_1.js"
-hash = "a1bfb08a10e0bbdefcfb6475ea5cf45869b6129bfdb25f266093de17ece3c01a"
+hash = "610b5383bfb606c2b4cb448168e5d01ccd591f8b2cfa6542f301e53a5d18dc2a"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_mastery_v0_1.js"
@@ -13621,11 +13621,6 @@ hash = "b4d15c5213b212c0cbefbb5f426ec29a1ac0e051b7f41bd463b5c5a203d8ae8b"
 metafile = true
 
 [[files]]
-file = "mods/tacz-weapon-research-blueprints.pw.toml"
-hash = "f158c188bbd51a66f4896e8d541cfba3eca07bd7aa002d68ce875df22ef725fa"
-metafile = true
-
-[[files]]
 file = "mods/tacz-weapons-and-tactics-mod.pw.toml"
 hash = "aca7de14aa01b8082c14d3ced2dbd155afa61e2bb4befe53cbcc9e93ec4333a5"
 metafile = true
@@ -13647,6 +13642,10 @@ metafile = true
 file = "mods/taczattributeadd.pw.toml"
 hash = "96211ee4dad8d4ae8890750894a2b645c60ad1e69f0e929924b37fac9d9e22cf"
 metafile = true
+
+[[files]]
+file = "mods/taczweaponblueprints-1.1-pdzfix.jar"
+hash = "eb743ea4fbaa39166c7dd258ce688e4f71e1f1e337127a393b1b0b6ce7a5d73b"
 
 [[files]]
 file = "mods/talkingheads.pw.toml"

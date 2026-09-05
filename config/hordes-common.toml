@@ -50,11 +50,11 @@
 	#Amount of days a horde event can be randomly delayed by
 	hordeSpawnVariation = 0
 	#Max cap for the number of entities that can exist from the horde at once.
-	hordeSpawnMax = 100
+	hordeSpawnMax = 70
 	#Length of a day (use only if you have another day that changes the length of the day/night cycle) Default is 24000
 	dayLength = 24000
 	#How many ticks does the horde pathing ai take before recalculating? (Increase this if you are having server slowdown during horde events.)
-	hordePathingInterval = 20
+	hordePathingInterval = 40
 	#How fast do horde mobs move towards their tracked player?
 	hordeEntitySpeed = 1.08
 	#Set to true to enable the horde spawning on the first day. (Game day 0)

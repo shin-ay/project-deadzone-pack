@@ -1,4 +1,4 @@
-// PROJECT DEADZONE Arsenal Authorization v0.3 (local candidate)
+// PROJECT DEADZONE Arsenal Authorization v0.4 (local candidate)
 // TaCZ uses its own gun-smith recipe type, which RecipeStages 8 cannot gate.
 // Weapon Research owns crafting/unlock progression. This script is only a
 // safety guard and consumes its exact generated S0-S3 classification.
@@ -38,6 +38,20 @@ function dzArsenalRequiredTier(profile) {
   return 3
 }
 
+// A gun positively stamped by Weapon Research during loot-table generation is
+// a usable field find. Crafting remains gated by the research/catalog system;
+// unstamped, command-created, starter, and crafted guns receive no bypass.
+function dzArsenalIsVerifiedLoot(stack) {
+  try {
+    if (!stack || stack.isEmpty() || !stack.nbt) return false
+    let provenance = stack.nbt.getCompound('taczweaponblueprints:weapon_provenance')
+    return provenance && provenance.getInt('format') === 1 &&
+      String(provenance.getString('origin')) === 'loot_generated' &&
+      String(provenance.getString('source_id')).indexOf(':') > 0
+  } catch (ignored) {}
+  return false
+}
+
 function dzArsenalTierLabel(tier) {
   if (tier <= 0) return 'S0 拳銃・SMG'
   if (tier === 1) return 'S1 AR・SG / Gas Station'
@@ -58,6 +72,7 @@ ItemEvents.rightClicked(event => {
   if (!player || player.level.clientSide) return
   let profile = dzArsenalProfile(event.item)
   if (!profile.gun) return
+  if (dzArsenalIsVerifiedLoot(event.item)) return
   let required = dzArsenalRequiredTier(profile)
   if (dzArsenalStoryTier(player) >= required) return
   event.cancel()
@@ -70,7 +85,9 @@ ItemEvents.rightClicked(event => {
 TimelessGunEvents.entityHurtByGunPre(event => {
   let player = event.getAttacker()
   if (!player || !player.isPlayer() || player.level.clientSide) return
-  let profile = dzArsenalProfile(player.mainHandItem)
+  let held = player.mainHandItem
+  let profile = dzArsenalProfile(held)
+  if (dzArsenalIsVerifiedLoot(held)) return
   let required = dzArsenalRequiredTier(profile)
   if (!profile.gun || dzArsenalStoryTier(player) >= required) return
   event.setBaseAmount(0)
@@ -79,6 +96,7 @@ TimelessGunEvents.entityHurtByGunPre(event => {
 
 global.pdzArsenalProfile = dzArsenalProfile
 global.pdzArsenalRequiredTier = dzArsenalRequiredTier
+global.pdzArsenalIsVerifiedLoot = dzArsenalIsVerifiedLoot
 
 ServerEvents.commandRegistry(event => {
   const {commands: Commands} = event
@@ -88,6 +106,10 @@ ServerEvents.commandRegistry(event => {
     let profile = dzArsenalProfile(player.mainHandItem)
     let required = dzArsenalRequiredTier(profile)
     player.tell(Text.of('Story S' + dzArsenalStoryTier(player) + ' / ' + profile.id + ' / ' + profile.type).aqua())
+    if (dzArsenalIsVerifiedLoot(player.mainHandItem)) {
+      player.tell(Text.of('取得区分: ルート品（射撃許可）').green())
+      return 1
+    }
     player.tell(Text.of('承認段階: ' + dzArsenalTierLabel(required))
       .color(dzArsenalStoryTier(player) >= required ? 'green' : 'red'))
     return 1

@@ -1,2 +1,5 @@
 [general]
-	render_floating_damage = "ON"
+	 render_floating_damage = "ON"
+
+	[general.buttons]
+		enable_quick_loot_button = false
