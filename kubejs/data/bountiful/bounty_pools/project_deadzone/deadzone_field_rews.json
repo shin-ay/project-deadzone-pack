@@ -23,6 +23,31 @@
       "rarity": "RARE",
       "weightMult": 0.3
     },
+    "pdz_rew_field_antibiotics": {
+      "type": "item",
+      "content": "apocalypsenow:antibiotics",
+      "amount": { "min": 1, "max": 2 },
+      "unitWorth": 4200,
+      "rarity": "RARE",
+      "weightMult": 0.65
+    },
+    "pdz_rew_rifle_ammo": {
+      "type": "item",
+      "content": "tacz:ammo",
+      "amount": { "min": 12, "max": 24 },
+      "unitWorth": 310,
+      "rarity": "RARE",
+      "nbt": "{AmmoId:\"tacz:556x45\"}",
+      "weightMult": 0.55
+    },
+    "pdz_rew_armor": {
+      "type": "item",
+      "content": "minecraft:iron_chestplate",
+      "amount": { "min": 1, "max": 1 },
+      "unitWorth": 4800,
+      "rarity": "RARE",
+      "weightMult": 0.32
+    },
     "pdz_rew_medical": {
       "type": "item",
       "content": "minecraft:golden_apple",

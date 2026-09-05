@@ -1813,6 +1813,10 @@ file = "config/hordes/pack.mcmeta"
 hash = "801d74e10366d6c45c3aa6a4484b856d15aecb676abcf584a6c8609270d62996"
 
 [[files]]
+file = "config/hotbath-common.toml"
+hash = "ff847b55c450244963de99d99b3cff8f14d39749b6aa07e6458782787b879f45"
+
+[[files]]
 file = "config/hybrid_aquatic.json"
 hash = "dc1244ec2840ba8c5761cd4a3fa16317c85528fb03516e3b9f89ee912c639b47"
 
@@ -4221,6 +4225,54 @@ file = "kubejs/data/blocky_bikes/worldgen/structure_set/garage_2.json"
 hash = "efccf22d402c1dcab0c8d583f25e7148f7ea7e3c417e778dc5fcdee87ef9e676"
 
 [[files]]
+file = "kubejs/data/bountiful/bounty_decrees/bountiful/armorer.json"
+hash = "325f20433133af5dc0bb7b216e37b84130e0c6372c5294ce27b517c56b3042c6"
+
+[[files]]
+file = "kubejs/data/bountiful/bounty_decrees/bountiful/butcher.json"
+hash = "e63df61617b23994394d72ee2a54582a91bc77ab4ed2c4d518253e229e6f76d2"
+
+[[files]]
+file = "kubejs/data/bountiful/bounty_decrees/bountiful/cleric.json"
+hash = "275e7e4fb9570f59dd635bd333b190cc1c0bcdd4ca2f577b5862bfccd95efd39"
+
+[[files]]
+file = "kubejs/data/bountiful/bounty_decrees/bountiful/farmer.json"
+hash = "e3cb35f50ee0c580bf265be633528c2822919fd40802a259586ebd8acb469252"
+
+[[files]]
+file = "kubejs/data/bountiful/bounty_decrees/bountiful/fisherman.json"
+hash = "d319089d096005cd9c82763721a3ae7c3a49fdb60e2056f50352d32bdee614fc"
+
+[[files]]
+file = "kubejs/data/bountiful/bounty_decrees/bountiful/fletcher.json"
+hash = "aeb7fb231c346c7e334f9e1a0971907262b6a6067c6672783066fa145d9dc26f"
+
+[[files]]
+file = "kubejs/data/bountiful/bounty_decrees/bountiful/inventor.json"
+hash = "c24190c573364134b4559293a012025d6a42e8c09cf7fe1a9661638b05d06ab5"
+
+[[files]]
+file = "kubejs/data/bountiful/bounty_decrees/bountiful/leatherer.json"
+hash = "9a0c66c76eb810eff07a1499c27f6eb27d779c79106039975232574c63082165"
+
+[[files]]
+file = "kubejs/data/bountiful/bounty_decrees/bountiful/librarian.json"
+hash = "a74603b345ef22fadcabaa11a9399215531d039c9cfffb2b584bad7d41917ec8"
+
+[[files]]
+file = "kubejs/data/bountiful/bounty_decrees/bountiful/mapper.json"
+hash = "7ddd5b5a54b390ed6048622e8ce6e1d662b26a04be4c79ccd2f663295ab7ca64"
+
+[[files]]
+file = "kubejs/data/bountiful/bounty_decrees/bountiful/shepherd.json"
+hash = "e430f672b1edbd0e60dae2781db48ae2faa1a4924d343b72147cdaf8cb875ee6"
+
+[[files]]
+file = "kubejs/data/bountiful/bounty_decrees/bountiful/toolsmith.json"
+hash = "02f8ca833d146e7035d76fd3b648e0e92cf038f54d23164d154e937c07caec46"
+
+[[files]]
 file = "kubejs/data/bountiful/bounty_decrees/project_deadzone/agrarian_relief.json"
 hash = "61773facd6648a7fcecb2ea6639172878f5646dc8fcb51a40940b5fc8b0c218f"
 
@@ -4249,6 +4301,10 @@ file = "kubejs/data/bountiful/bounty_decrees/project_deadzone/salvage_relief.jso
 hash = "7397b0ac977797cc93081dc3f4f24172728ccdfbaf9ccade77e749acb684056b"
 
 [[files]]
+file = "kubejs/data/bountiful/bounty_pools/bountiful/_all_rews.json"
+hash = "5a2460f59130ae82bd54e6da8a81a27afe27d3c6dc78aaa0215ab73b0a01de60"
+
+[[files]]
 file = "kubejs/data/bountiful/bounty_pools/project_deadzone/agrarian_exports.json"
 hash = "94587ff47f0f45cd10f980b1e00ad0187f33ac31c42c8513d19a62b5a79233a0"
 
@@ -4270,7 +4326,7 @@ hash = "80d013ba29a560b8a6d0a679f8c119f66814c3cfcbc93bd633cb48dcc313716d"
 
 [[files]]
 file = "kubejs/data/bountiful/bounty_pools/project_deadzone/deadzone_bounty_rews.json"
-hash = "abc7195c8df05c5591832cf5c5c246d37b86228b7e523850aa31165c623c5025"
+hash = "7bd1a751def4ccf30f3706a8182397c54cf6268c7ed9da9a5c59580f42343f62"
 
 [[files]]
 file = "kubejs/data/bountiful/bounty_pools/project_deadzone/deadzone_endgame_objs.json"
@@ -4282,11 +4338,11 @@ hash = "7e69125103ddb0e3510af9dbf6a8a06c3ca0a4645b6ae4bd4941967b34296e0d"
 
 [[files]]
 file = "kubejs/data/bountiful/bounty_pools/project_deadzone/deadzone_field_rews.json"
-hash = "9e73e8d59889c8b02ed28b0f261c43814143c9619a611991e4ec1bf4eb68a939"
+hash = "e89934b18cd784ed3d6b7b9d67596918a1ddeb00562b8c9fbdee486fba33ce83"
 
 [[files]]
 file = "kubejs/data/bountiful/bounty_pools/project_deadzone/deadzone_relief_pay.json"
-hash = "69d92184b3543bc3ead137b5b19f4d373b8083995101f56eeb12a1d946e3a699"
+hash = "53a3be0b51f456556a929a992776c571d9be0f49d53d51645ab6348c0893d8a1"
 
 [[files]]
 file = "kubejs/data/bountiful/bounty_pools/project_deadzone/forest_exports.json"

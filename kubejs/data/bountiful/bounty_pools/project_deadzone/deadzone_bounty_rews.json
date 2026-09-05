@@ -1,10 +1,13 @@
 {
   "content": {
-    "pdz_rew_money": { "type": "item", "content": "lightmanscurrency:coin_copper", "amount": { "min": 10, "max": 36 }, "unitWorth": 175, "weightMult": 2.4 },
-    "pdz_rew_money_iron": { "type": "item", "content": "lightmanscurrency:coin_iron", "amount": { "min": 1, "max": 6 }, "unitWorth": 1400, "rarity": "UNCOMMON", "weightMult": 0.75 },
-    "pdz_rew_bandage": { "type": "item", "content": "apocalypsenow:bandage", "amount": { "min": 2, "max": 5 }, "unitWorth": 700, "weightMult": 1.0 },
+    "pdz_rew_money_iron": { "type": "item", "content": "lightmanscurrency:coin_iron", "amount": { "min": 2, "max": 7 }, "unitWorth": 1400, "weightMult": 0.55 },
+    "pdz_rew_bandage": { "type": "item", "content": "apocalypsenow:bandage", "amount": { "min": 3, "max": 7 }, "unitWorth": 700, "weightMult": 1.15 },
+    "pdz_rew_food": { "type": "item", "content": "minecraft:cooked_beef", "amount": { "min": 6, "max": 14 }, "unitWorth": 420, "weightMult": 1.0 },
+    "pdz_rew_ammo_9mm": { "type": "item", "content": "tacz:ammo", "amount": { "min": 18, "max": 36 }, "unitWorth": 170, "nbt": "{AmmoId:\"tacz:9mm\"}", "weightMult": 1.15 },
+    "pdz_rew_ammo_45acp": { "type": "item", "content": "tacz:ammo", "amount": { "min": 14, "max": 28 }, "unitWorth": 210, "nbt": "{AmmoId:\"tacz:45acp\"}", "weightMult": 0.8 },
+    "pdz_rew_ammo_12g": { "type": "item", "content": "tacz:ammo", "amount": { "min": 8, "max": 18 }, "unitWorth": 320, "rarity": "UNCOMMON", "nbt": "{AmmoId:\"tacz:12g\"}", "weightMult": 0.6 },
     "pdz_rew_repair_kit": { "type": "item", "content": "kubejs:field_repair_kit", "amount": { "min": 1, "max": 2 }, "unitWorth": 1800, "rarity": "UNCOMMON", "weightMult": 0.7 },
-    "pdz_rew_component_iron": { "type": "item", "content": "immersiveengineering:component_iron", "amount": { "min": 1, "max": 3 }, "unitWorth": 2800, "rarity": "RARE", "weightMult": 0.45 },
-    "pdz_rew_component_steel": { "type": "item", "content": "immersiveengineering:component_steel", "amount": { "min": 1, "max": 2 }, "unitWorth": 5200, "rarity": "EPIC", "weightMult": 0.18 }
+    "pdz_rew_antibiotics": { "type": "item", "content": "apocalypsenow:antibiotics", "amount": { "min": 1, "max": 2 }, "unitWorth": 4200, "rarity": "RARE", "weightMult": 0.38 },
+    "pdz_rew_component_steel": { "type": "item", "content": "immersiveengineering:component_steel", "amount": { "min": 1, "max": 2 }, "unitWorth": 5200, "rarity": "EPIC", "weightMult": 0.16 }
   }
 }

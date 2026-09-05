@@ -1,0 +1,17 @@
+{
+  "content": {
+    "pdz_board_food": { "type": "item", "content": "minecraft:cooked_beef", "amount": { "min": 6, "max": 14 }, "unitWorth": 420, "weightMult": 1.15 },
+    "pdz_board_bandage": { "type": "item", "content": "apocalypsenow:bandage", "amount": { "min": 3, "max": 7 }, "unitWorth": 700, "weightMult": 1.15 },
+    "pdz_board_painkillers": { "type": "item", "content": "apocalypsenow:pain_killers", "amount": { "min": 1, "max": 3 }, "unitWorth": 1500, "rarity": "UNCOMMON", "weightMult": 0.8 },
+    "pdz_board_repair_kit": { "type": "item", "content": "kubejs:field_repair_kit", "amount": { "min": 1, "max": 2 }, "unitWorth": 1800, "rarity": "UNCOMMON", "weightMult": 0.65 },
+    "pdz_board_ammo_9mm": { "type": "item", "content": "tacz:ammo", "amount": { "min": 18, "max": 36 }, "unitWorth": 170, "nbt": "{AmmoId:\"tacz:9mm\"}", "weightMult": 1.15 },
+    "pdz_board_ammo_45acp": { "type": "item", "content": "tacz:ammo", "amount": { "min": 14, "max": 28 }, "unitWorth": 210, "nbt": "{AmmoId:\"tacz:45acp\"}", "weightMult": 0.8 },
+    "pdz_board_ammo_12g": { "type": "item", "content": "tacz:ammo", "amount": { "min": 8, "max": 18 }, "unitWorth": 320, "rarity": "UNCOMMON", "nbt": "{AmmoId:\"tacz:12g\"}", "weightMult": 0.65 },
+    "pdz_board_ammo_556": { "type": "item", "content": "tacz:ammo", "amount": { "min": 12, "max": 24 }, "unitWorth": 310, "rarity": "RARE", "nbt": "{AmmoId:\"tacz:556x45\"}", "weightMult": 0.4 },
+    "pdz_board_antibiotics": { "type": "item", "content": "apocalypsenow:antibiotics", "amount": { "min": 1, "max": 2 }, "unitWorth": 4200, "rarity": "RARE", "weightMult": 0.42 },
+    "pdz_board_medkit": { "type": "item", "content": "apocalypsenow:medicalkit", "amount": { "min": 1, "max": 1 }, "unitWorth": 4800, "rarity": "RARE", "weightMult": 0.3 },
+    "pdz_board_helmet": { "type": "item", "content": "minecraft:iron_helmet", "amount": { "min": 1, "max": 1 }, "unitWorth": 3600, "rarity": "RARE", "weightMult": 0.25 },
+    "pdz_board_chestplate": { "type": "item", "content": "minecraft:iron_chestplate", "amount": { "min": 1, "max": 1 }, "unitWorth": 4800, "rarity": "RARE", "weightMult": 0.2 },
+    "pdz_board_coin": { "type": "item", "content": "lightmanscurrency:coin_iron", "amount": { "min": 2, "max": 7 }, "unitWorth": 1400, "weightMult": 0.45 }
+  }
+}
