@@ -12643,6 +12643,11 @@ hash = "0c31830076574eb7ebd96c64d3a8be767cf42b52bffb9b4bc3a9143d184985c8"
 metafile = true
 
 [[files]]
+file = "mods/cycle-paintings.pw.toml"
+hash = "a58b149c1f5866fe8b5a822f766a1f2149a5c173bddea347894f526016b1f6dd"
+metafile = true
+
+[[files]]
 file = "mods/data-anchor.pw.toml"
 hash = "acb7ebe72eeb476a26e5777cbbbad0a270db8ff85de0aa417be8e1228d26e2f4"
 metafile = true
@@ -13082,6 +13087,11 @@ metafile = true
 [[files]]
 file = "mods/macaws-furniture.pw.toml"
 hash = "3706f6817a641198fc325d578d189d502af7c3444148a72e4dc23f214c3611a1"
+metafile = true
+
+[[files]]
+file = "mods/macaws-paintings.pw.toml"
+hash = "17711f089f8088e654f7bb3bdfd27f350a541e7f62626db38873c01f64163c37"
 metafile = true
 
 [[files]]

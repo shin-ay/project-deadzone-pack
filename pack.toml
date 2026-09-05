@@ -1,12 +1,12 @@
 name = "PROJECT DEADZONE"
 author = "PROJECT DEADZONE Team"
-version = "BETA-20260905-STORY-ARSENAL-RC4-2"
+version = "BETA-20260906-PAINTINGS-RC1"
 pack-format = "packwiz:1.1.0"
 
 [index]
 file = "index.toml"
 hash-format = "sha256"
-hash = "578c98ff8590fefdebc1da1f3ce1e29da9cb9998f1aa6b550a1d7266c6b386f5"
+hash = "bf048dbc8314523394d2b6c8135979fbcb8e8d099d0965e29cdc850e75d7da7a"
 
 [versions]
 forge = "47.4.10"
