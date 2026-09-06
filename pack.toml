@@ -1,12 +1,12 @@
 name = "PROJECT DEADZONE"
 author = "PROJECT DEADZONE Team"
-version = "BETA-20260906-GUN-STORY-HOTFIX-RC1"
+version = "BETA-20260906-GUN-STORY-RESEARCH-ABILITY-RC1"
 pack-format = "packwiz:1.1.0"
 
 [index]
 file = "index.toml"
 hash-format = "sha256"
-hash = "b2888467aa75178ece85b54845ecd25142bd62a3772d5daffc01263e2549898f"
+hash = "5f1b410a8d5233f1e5237822b6c9ff125d8c2746abad9cf06acc150394f6ca6b"
 
 [versions]
 forge = "47.4.10"

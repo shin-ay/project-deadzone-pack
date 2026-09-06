@@ -12218,8 +12218,8 @@ file = "mods/PROJECT_DEADZONE_EpicTaCZ_Compat-0.1.0.jar"
 hash = "9f4870e0073f46f83effd31ace8410dac5c52448aab67dba08380c04f5d8af12"
 
 [[files]]
-file = "mods/PROJECT_DEADZONE_JOB_UI-0.5.3.jar"
-hash = "9a39c6b5940d976710d59bb9ffece6613240fcdd1abe9a98d308bddd87b14ecf"
+file = "mods/PROJECT_DEADZONE_JOB_UI-0.5.4.jar"
+hash = "19e14f5062a137d83fdc6f27cc9b8728832f09d6f78afb5551d70ef0b0f8caec"
 
 [[files]]
 file = "mods/PROJECT_DEADZONE_Vehicle_Compatibility-1.4.1.jar"
@@ -22340,12 +22340,28 @@ file = "moonlight-global-datapacks/pdz_story_arsenal_research/data/project_deadz
 hash = "b3020e165463fd35ab0ec15883df5d685b5fb51b0cd1f3f500372d87a05b84ac"
 
 [[files]]
+file = "moonlight-global-datapacks/pdz_story_arsenal_research/data/taczweaponblueprints/taczweaponblueprints/loot_pools/easy.json"
+hash = "2c64da55efcb31872d3831737480d3692be9efe096e35f442baf9216f3106b0c"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_story_arsenal_research/data/taczweaponblueprints/taczweaponblueprints/loot_pools/hard.json"
+hash = "d766e9d0dcd5c4ac4b61df33bbf37e3f51459b47463ab9fc02b3e19afeb98cd0"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_story_arsenal_research/data/taczweaponblueprints/taczweaponblueprints/loot_pools/medium.json"
+hash = "c9334b03d666042fef9fbeda8c897ce8c65db8d34140cd1718bd2e1fe3fcaa43"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_story_arsenal_research/data/taczweaponblueprints/taczweaponblueprints/loot_pools/nether.json"
+hash = "ae46519720544e4b17b8e9c6a4771b6f0bb682554d80fc7b3364a106ad67faf5"
+
+[[files]]
 file = "moonlight-global-datapacks/pdz_story_arsenal_research/pack.mcmeta"
 hash = "8b947dcbea2aa31042a65a666c7a59ca7ddf21b67e343444addaa7591fd96bb1"
 
 [[files]]
 file = "moonlight-global-datapacks/pdz_story_arsenal_research/pdz_arsenal_catalog_manifest.json"
-hash = "0e13993365babe614f1a9fe5f04be908fa6ac334497eef35e160d57ad092973c"
+hash = "c6b9f1d74c7fd9815ee1d0355365f5ca760e7bc474dfb99ff478566729b20ea9"
 
 [[files]]
 file = "moonlight-global-datapacks/pdz_worldgen_test/data/bettermineshafts/worldgen/structure_set/mineshafts.json"

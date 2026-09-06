@@ -1,0 +1,117 @@
+{
+  "format": 1,
+  "entries": [
+    {
+      "blueprint": "elitex:mustang_and_sally",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "elitex:ray_gun_mk2",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "elitex:raygun_bo6",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:thunderbird",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:thunderbird_short",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "elitex:origin_electric_staff",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "elitex:origin_fire_staff",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "elitex:origin_ice_staff",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "elitex:origin_wind_staff",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "bf1:f_faust",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "bf1:lunge_mine",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "bf1:mhgl",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:lmt_m203",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:m4_bolter",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "classicr:mgl_40mm",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "daffas_arsenal:m79",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "daffas_arsenal:m79sohrt",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "immersive_armorer:chemical_thrower",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "immersive_armorer:dual_barrel_cannon",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "immersive_armorer:plasma_gun",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:can_cannon",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:m320t",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "tacz:m320",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "tacz:rpg7",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:mk18_mjolnir",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "immersive_armorer:railgun",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:excaliber",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:mk18_mjolnir",
+      "weight": 1.0
+    }
+  ]
+}

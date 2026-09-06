@@ -1,0 +1,385 @@
+{
+  "format": 1,
+  "entries": [
+    {
+      "blueprint": "bf1:chauchat",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "bf1:lewis",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "bf1:mg0815",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "bf1:mg42",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:aug_hbar",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:hk21",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:m249_saw",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:m27_iar",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:mg36",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:rpk_203",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:rpk74m",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:type_95_longbow",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "classicr:dp28",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "classicr:m60",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "classicr:minigun",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "daffas_arsenal:g36",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "daffas_arsenal:migraine3",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "daffas_arsenal:pego762",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "elitex:m249x",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "emxarms:emx_mg57",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "emxarms:emx_mg90",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "emxarms:emx_mk951lmg",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "emxarms:emx_sf7b",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:aug_hbar",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:dp28",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:m231",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:quatro15",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:rpk_74",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:rpk_74m",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:rpk16",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:scar_hamr",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "tacz:fn_evolys",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "tacz:m249",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "tacz:minigun",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "tacz:rpk",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:aug_a3_dmr",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "elitex:sassy_dmr",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:mk11",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:sks_golden",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:sks_wooden",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "tacz:mk14",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "tacz:sks_tactical",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "bf1:man_m95",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "bf1:martini",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "bf1:rorsch_mk4",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "bf1:tg1918",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:aics_m700",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:hk_g28",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:m110",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:m110a3",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:m14_hbar",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:m39_emr",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:mk13_mod5",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:springfield1873_tube_mag",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:sr25",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:troy_m14_sass",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "classicr:kar98",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "classicr:m24_renewed",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "classicr:m82a2",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "classicr:mrad",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "classicr:mrad_elr",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "classicr:msr",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "classicr:scar_mk20",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "daffas_arsenal:sl8",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "daffas_arsenal:southeastmomssecretweapon3",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "daffas_arsenal:ssg69",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "daffas_arsenal:ssg69s",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "daffas_arsenal:wawan2000",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "daffas_arsenal:wawan20002",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "elitex:inter_m200",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "elitex:kar98k",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "elitex:lee",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "elitex:m1_garand",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "elitex:sp_m1903",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "emxarms:emx_mk88",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "emxarms:emx_pmg90",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:ai_awp",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:ai_aws",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:ar338",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:dragonuv_svd",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:dragonuv_svdm",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:dragonuv_svds",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:gm6_lynx",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:kar98",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:m82a2",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:mini_fix",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:mrad",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:msr",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:scar_ssr",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "tacz:ai_awp",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "tacz:kar98",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "tacz:m107",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "tacz:m700",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "tacz:m95",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "tacz:springfield1873",
+      "weight": 1.0
+    }
+  ]
+}

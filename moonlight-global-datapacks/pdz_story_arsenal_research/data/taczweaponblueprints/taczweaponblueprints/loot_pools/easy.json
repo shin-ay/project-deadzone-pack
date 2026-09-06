@@ -1,0 +1,601 @@
+{
+  "format": 1,
+  "entries": [
+    {
+      "blueprint": "bf1:handgun",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "bf1:kolibri",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "bf1:obrez",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "bf1:sw_model3",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "bf1:syringe",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "bf1:welrod",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:af2011",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:block_17",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:chisato_m1911",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:crow_and_egret",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:deagle_nightingale",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:deagle_xix",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:fightlite_scr_hg",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:glock20gen5mos",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:glock40gen5mos",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:keltec_p50",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:requiem",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:samurai_edge",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:shield_ots33",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:timeless_50",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "classicr:b93r",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "classicr:colt_python",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "classicr:glock_18",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "classicr:m92fs",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "classicr:mac10",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "classicr:mauser_c96",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "classicr:sti2011",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "classicr:tec_9",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "classicr:tti_g34",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "daffas_arsenal:hk45",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "daffas_arsenal:hk45_sup",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "daffas_arsenal:p99_hak",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "daffas_arsenal:p99_nohak",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "daffas_arsenal:taurus",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "daffas_arsenal:taurus2",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "daffas_arsenal:welrod",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "elitex:bo1_1911",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "elitex:colt_m1911x1",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "elitex:five_seven",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "elitex:jrx",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "elitex:op1911",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "elitex:springfield_m1911",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "elitex:srz_2011",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "elitex:trs_bull",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "emxarms:emx_kund50",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "emxarms:emx_kund50ex",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "emxarms:emx_mac100",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "emxarms:emx_mac50",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "emxarms:emx_nikana",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "emxarms:emx_pulse",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "emxarms:emx_pulsex2",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "emxarms:emx_tknife",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "immersive_armorer:pistol_9mm",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "immersive_armorer:revolver",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "immersive_armorer:standard_rail_pistol_mk2",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "immersive_armorer:standard_rail_pistol_mk3",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:1851_navy",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:af2011",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:blicky",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:c96",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:deagle_12g",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:deagle_50bmg",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:glock_18c",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:glock_54",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:glock_bulpup",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:m17",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:mk23",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "tacz:b93r",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "tacz:cz75",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "tacz:deagle",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "tacz:deagle_golden",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "tacz:glock_17",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "tacz:hk_mk23",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "tacz:lonetrail",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "tacz:m1911",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "tacz:m9a4",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "tacz:p320",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "tacz:rhino357",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "tacz:taurus500",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "tacz:taurus943",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "tacz:timeless50",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "bf1:smg0818",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "bf1:vp1915",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "bf1:zk383",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:aks74u",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:apc_9k_pro_g",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:ar57",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:aug_para",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:camg_cheetah40",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:m231",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:mp5_sd",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:mp5k",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:mp5k_pdw",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:mp7a3",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:mp9_thunder",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:mpx",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:msh41",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:p90_effen_90",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:p90_paw",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:p90_shround_s",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:ro635",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:sr_3m",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:tti_mpx",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:uzi45",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:vector10",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:x95_smg",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "classicr:m1a1_smg",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "classicr:mp7",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "classicr:mp9",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "classicr:udp_9",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "daffas_arsenal:apacoba9",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "daffas_arsenal:apacoba9_sup",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "daffas_arsenal:harpa9",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "daffas_arsenal:makten_single",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "daffas_arsenal:makten_single_taktis",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "daffas_arsenal:mp5k",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "daffas_arsenal:pego",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "daffas_arsenal:pegont",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "daffas_arsenal:uji",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "elitex:mp5_classic",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "elitex:mp7r",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "elitex:ro635v3",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "elitex:vector45acp",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "emxarms:emx_expel32",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "emxarms:emx_expel32se",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "emxarms:emx_mac50flux",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "emxarms:emx_umx32",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "immersive_armorer:short_smg",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "immersive_armorer:standard_rail_smg_mk1",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:ar57",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:aug_a3_para",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:colt_mars",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:hk_mp5k",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:hk_mp5sd",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:luty",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:mp7",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:nailgun",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:ro635",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:saiga9",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:udp9",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:ump9",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:vector9",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:vityas",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:z80",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "tacz:hk_mp5a5",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "tacz:p90",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "tacz:ump45",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "tacz:uzi",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "tacz:vector45",
+      "weight": 1.0
+    }
+  ]
+}

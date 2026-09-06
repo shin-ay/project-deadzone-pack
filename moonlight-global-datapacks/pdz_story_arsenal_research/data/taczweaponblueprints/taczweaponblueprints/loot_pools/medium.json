@@ -1,0 +1,893 @@
+{
+  "format": 1,
+  "entries": [
+    {
+      "blueprint": "bf1:de_lisle",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "bf1:liu",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "bf1:m1916",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "bf1:rsc1917",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "bf1:vg15",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:a545",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:aac_honeybadger",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:ak103",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:ak47_spent_bullet",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:ak74",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:ak74m",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:am17",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:aug_a3",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:aug_a3_m2kit",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:aug_a3s",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:aug_camg_kit",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:brn_180_bullpup",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:camg_dexterous",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:camg_krait",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:camg_m4_sopmod2",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:camg_mk18",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:car_15",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:cr300",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:cslr_42a",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:cslr_43a",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:cslr_44",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:ddm4",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:ddm4_pdw",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:ddm4_v7_pro",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:ddm4a1",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:dsa_sa58",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:f90",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:f90_mbr",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:g95a1",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:hk_g28_patrol",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:hk416",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:hk416_sopmod",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:hk416a8",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:hk416c",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:hk417",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:hk433",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:honeybadger",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:kac_ks_1",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:km_ak74m",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:m16a3",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:m305a",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:m38_spr",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:m4_cqbr",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:m4_sopmod2_fsp",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:m4_ss",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:marlin_1895",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:mcx_spear_tombstone",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:mcx_virtus",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:mk17",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:mk556",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:psa_ak556",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:qbu_191",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:qbz_191",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:rd704",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:sai_gry_lite_black",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:scar_16s",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:scar_17s",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:scar_sc",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:scar16_ariana",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:scar17_armarise",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:sig277",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:silence_meteor",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:solgw_mk1",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:tti_tr1",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:type_192",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:type_97_gen2",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:v308",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:x95r",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:zenit_ak104",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:zenit_ak105",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "classicr:ak12",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "classicr:fn_fal_tac",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "classicr:hk416_a5",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "classicr:mk18_mod1",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "classicr:mk47",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "classicr:ngsw_r_renewed",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "classicr:qbz191_renewed",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "classicr:spr_15",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "daffas_arsenal:ak47",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "daffas_arsenal:aksopmod",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "daffas_arsenal:g36c",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "daffas_arsenal:g36c_commando",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "daffas_arsenal:gerosa",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "daffas_arsenal:hk416",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "daffas_arsenal:hk416_sup",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "daffas_arsenal:hk417",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "daffas_arsenal:pegomc",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "daffas_arsenal:pegontmc",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "daffas_arsenal:samula3",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "daffas_arsenal:sg550",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "daffas_arsenal:sg552",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "daffas_arsenal:southeastmomssecretweapon",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "daffas_arsenal:ss1_v2",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "daffas_arsenal:ss1_v5",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "daffas_arsenal:ss1_v5g",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "elitex:ak47",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "elitex:akx105",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "elitex:famas_f1",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "elitex:fh_scar18",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "elitex:fs_scar19",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "elitex:golden_ak",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "elitex:m16",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "elitex:m4_sopmod",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "elitex:m4a1_classic",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "elitex:mcs_spear",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "elitex:wonder_waffle",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "emxarms:emx_mk951l",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "emxarms:emx_mk951r",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "emxarms:emx_rivet",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "emxarms:emx_umx57",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "immersive_armorer:assult_rifle",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:aa50beowulf",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:adar2",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:ak_alpha",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:ak_delta",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:ak107",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:ak108",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:ak109",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:ak12",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:ak15",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:ak19",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:ak22",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:ak308",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:ak63e",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:ak74",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:ak74m",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:ak9",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:aks74u",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:aks74ub",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:ar10",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:ar10b",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:ar18",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:ar762",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:arp",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:aug_a2",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:aug_a3",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:aug_a5",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:beowulf_ecr",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:beowulf_tcr",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:brn10",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:colt_933",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:cursed15",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:g36",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:hk_g33",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:hk416c",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:hk417",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:honey_badger",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:m1_garand",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:m1_garand_tac",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:m16a2",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:m16a3",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:mk18",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:mk18_auto",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:mk18_burst",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:mk47",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:mojave223",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:potassium_power",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:qbz_97",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:scar_15p",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:scar_pdw",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:scar_sbr",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:sr15",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:sr16",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:xm177",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:z15",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:z15_a",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "tacz:ak47",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "tacz:aug",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "tacz:fn_fal",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "tacz:g36k",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "tacz:hk_g3",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "tacz:hk416d",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "tacz:m16a1",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "tacz:m16a4",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "tacz:m4a1",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "tacz:qbz_191",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "tacz:qbz_95",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "tacz:scar_h",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "tacz:scar_l",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "tacz:spr15hb",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "tacz:type_81",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "bf1:ef46",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "bf1:m2_2",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "bf1:model10",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "bf1:sjogren",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "bf1:wex",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:camg_m1014",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:lastwar",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "ccrp:m1887_long",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "classicr:aa410",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "daffas_arsenal:sgputer",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "daffas_arsenal:sgputer2",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "daffas_arsenal:southeastmomssecretweapon2",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "daffas_arsenal:spasi15",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "elitex:benelli_super",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "elitex:spaz12",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "emxarms:emx_draftsman",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "emxarms:emx_enforcer",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "emxarms:emx_scgraves",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "immersive_armorer:double_shotgun",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "immersive_armorer:pump_shotgun",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:db_50",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:db_long_d",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:db_short_d",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:db_short_tactical",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:genesis12",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:genesis12_dragons_breath",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:genesis12_fl",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:m870t",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:saiga12",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "maxstuff:sap6",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "tacz:aa12",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "tacz:db_long",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "tacz:db_short",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "tacz:m1014",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "tacz:m870",
+      "weight": 1.0
+    },
+    {
+      "blueprint": "tacz:spas_12",
+      "weight": 1.0
+    }
+  ]
+}
