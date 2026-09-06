@@ -269,7 +269,9 @@
 	#recruits fill the whole cap). Default: 0.25
 	#
 	#Range: 0.0 ~ 1.0
-	populationVillagerFraction = 0.25
+	#PDZ profile: civilians are the visible majority; recruits are a compact
+	#defensive garrison and must not crowd MCA residents out of a village.
+	populationVillagerFraction = 0.65
 	#Seed BABY villagers into an online village that still has room to grow.
 	#This is a free spawn on top of normal vanilla breeding: it exists so a
 	#village that lost its civilians (siege, conscription, a player killing
@@ -358,19 +360,22 @@
 	#BELOW this value. Above it, villagers are left alone. Default: 10
 	#
 	#Range: 0 ~ 100000
-	conscriptionMinRecruits = 6
+	#PDZ profile: four guards are enough for peacetime village defence.
+	conscriptionMinRecruits = 4
 	#Minimum villagers a center always keeps: conscription only draws from
 	#the villagers ABOVE this number (so a village needs more than this many
 	#villagers before any are drafted). Default: 10
 	#
 	#Range: 0 ~ 100000
-	conscriptionKeepVillagers = 4
+	#PDZ profile: preserve a viable civilian settlement before drafting anyone.
+	conscriptionKeepVillagers = 16
 	#Maximum villagers converted into recruits per village center on each
 	#conscription pass (~60s), so a village ramps up gradually rather than
 	#flipping its whole population at once. Default: 2
 	#
 	#Range: 1 ~ 100
-	conscriptionPerPass = 2
+	#PDZ profile: draft gradually so entity replacement is readable and bounded.
+	conscriptionPerPass = 1
 	#Let OFFLINE village centers conscript too. A loaded village drafts real
 	#villager entities; an offline one has none, so it drafts ON PAPER instead:
 	#the villagers are taken from the abstract population ledger and the
@@ -382,7 +387,8 @@
 	#player would never raise another soldier, and conscription is the only
 	#way an AI village makes new troops. Default: true
 	#
-	offlineConscriptionEnabled = true
+	#PDZ profile: disabled to prevent unseen villages returning as armies.
+	offlineConscriptionEnabled = false
 	#Fraction of the spare villagers (those above conscriptionKeepVillagers)
 	#an OFFLINE center drafts in ONE pass, instead of the slow
 	#conscriptionPerPass drip a loaded village gets every ~60s — an offline
@@ -391,7 +397,7 @@
 	#Default: 0.75
 	#
 	#Range: 0.0 ~ 1.0
-	offlineConscriptionFraction = 0.75
+	offlineConscriptionFraction = 0.25
 	#Money a faction keeps in reserve PER RECRUIT. The equipment/promotion/food
 	#spenders only ever draw the SURPLUS above this reserve (reservePerRecruit ×
 	#number of recruits), so a well-run faction accumulates a treasury while an
