@@ -1462,7 +1462,7 @@ hash = "cb5eb9ac98f526766785cd03c63431f617bfcf7531f38a65ede066f711a47239"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/deadzone_main_story_01.snbt"
-hash = "a7bca7345ea57cd3aa817a9dd3c5aa8257389bee0cdabf87055bca36d2175fef"
+hash = "a3e81473a6e3756268c2ebde5af52a3c1546c47a8f892671f797c98e15557644"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/deadzone_main_story_02.snbt"
@@ -11638,7 +11638,7 @@ hash = "41674e022663b6fdae9d6dedb786f4854a4ae08762ab7dcf789b0d8e54b4c61c"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_story_progress_v0_1.js"
-hash = "b6aeb156814aa9558b088ba0c0c13c835817b36276e41b5c6e1a4cf3f15abeb7"
+hash = "221d3efb10d73fc1306ffae3ee2942d7a502b0931faf0e2a4468da272ff987d7"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_story_progression_v0_1.js"

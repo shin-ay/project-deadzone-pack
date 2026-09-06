@@ -1,12 +1,12 @@
 name = "PROJECT DEADZONE"
 author = "PROJECT DEADZONE Team"
-version = "BETA-20260906-GUN-STORY-RESEARCH-ABILITY-RC1"
+version = "BETA-20260906-CAMP-BRIEFING-STORY-RC1"
 pack-format = "packwiz:1.1.0"
 
 [index]
 file = "index.toml"
 hash-format = "sha256"
-hash = "f4d7177bba1a8ba83f92c167319f028ecab73b227e0f727196ecb1d5279344e2"
+hash = "6bf74921ab33529ec01cce74cad3ec76b64d8c38aaae4ed2a2b53d2dca996546"
 
 [versions]
 forge = "47.4.10"

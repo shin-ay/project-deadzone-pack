@@ -224,21 +224,15 @@ function dzPreparationReady(state) {
 }
 
 function dzTellPreparation(player) {
-  let state = dzPreparationState(player)
   player.tell(Text.of("=== 探索準備 ===").gold())
-  if (player.persistentData.getBoolean("dz_story_preparation_latched") ||
-      player.persistentData.getBoolean("dz_story_auto_preparation")) {
-    player.tell(Text.of("✓ 達成記録済み（所持品を移動しても維持されます）").green())
-  }
-  let food = Text.of((state.food >= 2 ? "✓ " : "－ ") + "食料 2個以上: " + state.food)
-  let water = Text.of((state.water >= 1 ? "✓ " : "－ ") + "飲料 1個以上: " + state.water)
-  let medical = Text.of((state.medical >= 2 ? "✓ " : "－ ") + "治療用品 2個以上: " + state.medical)
-  let weapon = Text.of((state.weapon >= 1 ? "✓ " : "－ ") + "武器 1個以上: " + state.weapon)
-  player.tell(state.food >= 2 ? food.green() : food.gray())
-  player.tell(state.water >= 1 ? water.green() : water.gray())
-  player.tell(state.medical >= 2 ? medical.green() : medical.gray())
-  player.tell(state.weapon >= 1 ? weapon.green() : weapon.gray())
-  return state
+  let arrived = player.persistentData.getBoolean("dz_story_auto_briefing")
+  let acknowledged = player.persistentData.getBoolean("dz_story_preparation_briefing_ack")
+  player.tell(Text.of((arrived ? "✓ " : "－ ") + "Survivor Campへ合流")
+    [arrived ? "green" : "gray"]())
+  player.tell(Text.of((acknowledged ? "✓ " : "－ ") + "Campで作戦説明を確認")
+    [acknowledged ? "green" : "gray"]())
+  player.tell(Text.of("食料・飲料・治療用品・武器の所持数は進行条件に含まれません。").gray())
+  return { arrived: arrived, acknowledged: acknowledged }
 }
 
 function dzStoryBossCheckpoint(server, key, questId, message, unlockTier, tierQuestId) {
@@ -350,29 +344,16 @@ PlayerEvents.tick(event => {
     dzCompletePlayerStoryQuest(player, "briefing", DZ_STORY_QUESTS.briefing)
     try { if (global.pdzSyncRecipeStages) global.pdzSyncRecipeStages(player) } catch (ignored) {}
   }
-  // Preparation is a permanent checkpoint. Starter-kit items may satisfy the
-  // requirements before the prerequisite Camp/briefing quests become active,
-  // so remember the achievement separately and complete the quest once its
-  // dependency is available. Items can then be stored, consumed or traded.
-  let preparationLatched = player.persistentData.getBoolean("dz_story_preparation_latched")
-  // Migrate players affected by v0.1, which marked the one-shot command as
-  // handled even when FTB Quests rejected it because dependencies were locked.
-  if (!preparationLatched && player.persistentData.getBoolean("dz_story_auto_preparation")) {
-    player.persistentData.putBoolean("dz_story_preparation_latched", true)
-    preparationLatched = true
-  }
-  if (!preparationLatched && player.persistentData.getBoolean("dz_job_chosen") &&
-      dzPreparationReady(dzPreparationState(player))) {
-    player.persistentData.putBoolean("dz_story_preparation_latched", true)
-    preparationLatched = true
-    player.tell(Text.of("探索準備の条件を達成した。装備を収納しても達成状態は維持される。").green())
-    console.info("[DEADZONE STORY] Preparation requirements latched for " + player.username)
-  }
-  if (preparationLatched && player.persistentData.getBoolean("dz_story_auto_briefing") &&
+  // FTB Quests remains the progression owner. PDZ only bridges the authoritative
+  // Camp arrival event and the player's explicit briefing acknowledgement.
+  // Inventory composition is deliberately not used as a story gate.
+  if ((player.persistentData.getBoolean("dz_story_auto_preparation") ||
+      player.persistentData.getBoolean("dz_story_preparation_latched")) &&
+      !player.persistentData.getBoolean("dz_story_preparation_briefing_ack"))
+    player.persistentData.putBoolean("dz_story_preparation_briefing_ack", true)
+  if (player.persistentData.getBoolean("dz_story_auto_briefing") &&
+      player.persistentData.getBoolean("dz_story_preparation_briefing_ack") &&
       !player.persistentData.getBoolean("dz_story_auto_v3_preparation")) {
-    // Only persist completion after FTB Quests accepts it.  Older code wrote its
-    // own completion flag even when the dependency was still locked, preventing
-    // every later retry and leaving the quest visibly stuck.
     if (dzCompletePlayerStoryQuest(player, "preparation", DZ_STORY_QUESTS.preparation)) {
       player.persistentData.putBoolean("dz_story_auto_preparation", true)
       player.persistentData.putBoolean("dz_story_preparation_completion_v2", true)
@@ -617,8 +598,9 @@ ServerEvents.commandRegistry(event => {
     player.server.runCommandSilent(
       "ftbquests change_progress " + player.username + " complete " + DZ_STORY_QUESTS.briefing)
     player.persistentData.putBoolean("dz_story_auto_briefing", true)
+    player.persistentData.putBoolean("dz_story_preparation_briefing_ack", true)
     player.tell(Text.of("[レイ] Gas Stationから燃料反応を確認。装備を整えて偵察して。").aqua())
-    player.tell(Text.of("準備ができたらクエスト画面の「探索準備」を確認してください。").gray())
+    player.tell(Text.of("作戦説明を確認したため「探索準備」を完了します。所持品条件はありません。").gray())
     return 1
   }))
   story.then(Commands.literal("prep_status").executes(ctx => {
