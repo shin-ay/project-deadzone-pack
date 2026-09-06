@@ -343,8 +343,11 @@ PlayerEvents.tick(event => {
   if (player.server.runCommandSilent("execute as " + player.username +
     " at @s if entity @e[tag=dz_basecamp_core_anchor,distance=..96,limit=1]") > 0 &&
       player.persistentData.getBoolean("dz_story_camp_signal_received")) {
-    if (dzCompletePlayerStoryQuest(player, "briefing", DZ_STORY_QUESTS.briefing))
-      player.persistentData.putBoolean("dz_story_auto_briefing", true)
+    // Camp arrival is an authoritative world event. Latch it independently of
+    // the FTB command result: change_progress returns 0 when another GUI route
+    // already completed the quest, which previously left preparation locked.
+    player.persistentData.putBoolean("dz_story_auto_briefing", true)
+    dzCompletePlayerStoryQuest(player, "briefing", DZ_STORY_QUESTS.briefing)
     try { if (global.pdzSyncRecipeStages) global.pdzSyncRecipeStages(player) } catch (ignored) {}
   }
   // Preparation is a permanent checkpoint. Starter-kit items may satisfy the
@@ -613,6 +616,7 @@ ServerEvents.commandRegistry(event => {
     }
     player.server.runCommandSilent(
       "ftbquests change_progress " + player.username + " complete " + DZ_STORY_QUESTS.briefing)
+    player.persistentData.putBoolean("dz_story_auto_briefing", true)
     player.tell(Text.of("[レイ] Gas Stationから燃料反応を確認。装備を整えて偵察して。").aqua())
     player.tell(Text.of("準備ができたらクエスト画面の「探索準備」を確認してください。").gray())
     return 1

@@ -93,7 +93,7 @@
 			]
 			icon: "apocalypsenow:armorplate"
 			id: "633F4D540C6511A9"
-			subtitle: "街へ出る前に最低限の準備を整えよう。｜解放条件: 「Chapter 1：最初の72時間」を完了"
+			subtitle: "街へ出る前に最低限の準備を整えよう。｜解放条件: 「Chapter 1：生存者との合流」を完了"
 			tasks: [{
 				id: "28D1E41F430CD898"
 				title: "探索準備を完了した"

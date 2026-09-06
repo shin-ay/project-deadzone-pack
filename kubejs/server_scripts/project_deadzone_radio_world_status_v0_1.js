@@ -129,8 +129,10 @@ ServerEvents.commandRegistry(event => {
   event.register(Commands.literal("deadzoneradio").executes(ctx => {
     let player = ctx.source.player
     dzRadioSync(player)
-    if (player.persistentData.getBoolean("dz_job_chosen"))
+    if (player.persistentData.getBoolean("dz_job_chosen")) {
       player.server.runCommandSilent("ftbquests change_progress " + player.username + " complete 23E782D769F4E809")
+      player.persistentData.putBoolean("dz_story_auto_briefing", true)
+    }
     dzOpenQuestGui(player, DZ_RADIO_QUESTS.root)
     return 1
   }))
@@ -164,8 +166,12 @@ ServerEvents.commandRegistry(event => {
 
   event.register(Commands.literal("deadzonestoryui").executes(ctx => {
     let player = ctx.source.player
-    if (player.persistentData.getBoolean("dz_job_chosen"))
+    if (player.persistentData.getBoolean("dz_job_chosen")) {
       player.server.runCommandSilent("ftbquests change_progress " + player.username + " complete 23E782D769F4E809")
+      // Keep the bridge flag synchronized with the quest progress written by
+      // this legacy GUI route so existing testers are repaired automatically.
+      player.persistentData.putBoolean("dz_story_auto_briefing", true)
+    }
     dzOpenQuestGui(player, "23E782D769F4E809")
     return 1
   }))

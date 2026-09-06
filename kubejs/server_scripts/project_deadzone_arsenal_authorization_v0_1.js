@@ -1,11 +1,14 @@
-// PROJECT DEADZONE Arsenal Authorization v0.5 (local candidate)
-// TaCZ uses its own gun-smith recipe type, which RecipeStages 8 cannot gate.
-// Weapon Research owns crafting/unlock progression. This script is only a
-// safety guard and consumes its exact generated S0-S3 classification.
+// PROJECT DEADZONE Arsenal Progression Status v0.6
+//
+// Weapon Research & Blueprints is the sole owner of gun crafting/research
+// progression. Once a gun exists in a player's hands it must always be usable,
+// regardless of story tier or acquisition route. PDZ never cancels gun use or
+// changes gun damage here.
+//
+// This file keeps only catalog/status helpers for UI and diagnostics.
 
 const PDZ_ARSENAL_IGUN = Java.loadClass('com.tacz.guns.api.item.IGun')
 const PDZ_ARSENAL_ASSETS = Java.loadClass('com.tacz.guns.resource.CommonAssetsManager')
-const PDZ_ARSENAL_PROVENANCE = Java.loadClass('com.gamergaming.taczweaponblueprints.item.PhysicalWeaponProvenance')
 
 function dzArsenalStoryTier(player) {
   try {
@@ -34,27 +37,14 @@ function dzArsenalRequiredTier(profile) {
   let tier = global.pdzArsenalTierById ? global.pdzArsenalTierById[profile.id] : undefined
   if (tier !== undefined && tier !== null) return Math.max(0, Math.min(3, Number(tier) || 0))
 
-  // New guns from a later pack update fail closed until the catalog generator
-  // is rerun; they can never leak into S0 due to a guessed type string.
+  // Unknown entries stay in the highest research class for presentation and
+  // crafting progression only. This value never blocks an existing gun.
   return 3
 }
 
-// A gun positively stamped by Weapon Research during loot-table generation is
-// a usable field find. Crafting remains gated by the research/catalog system;
-// unstamped, command-created, starter, and crafted guns receive no bypass.
 function dzArsenalIsVerifiedLoot(stack) {
   try {
-    if (!stack || stack.isEmpty()) return false
-
-    // Weapon Research is the owner of physical-gun provenance. Use its API
-    // instead of re-parsing its private NBT representation in KubeJS; the
-    // latter can expose CompoundTag through a wrapper and was rejecting valid
-    // field loot as an unapproved crafted weapon.
-    let parsed = PDZ_ARSENAL_PROVENANCE.from(stack)
-    if (parsed && parsed.isPresent()) return !!parsed.get().verifiedLoot()
-
-    // Compatibility fallback for a runtime where the API cannot be reached.
-    if (!stack.nbt) return false
+    if (!stack || stack.isEmpty() || !stack.nbt) return false
     let provenance = stack.nbt.getCompound('taczweaponblueprints:weapon_provenance')
     return provenance && provenance.getInt('format') === 1 &&
       String(provenance.getString('origin')) === 'loot_generated' &&
@@ -70,41 +60,6 @@ function dzArsenalTierLabel(tier) {
   return 'S3 試験兵器 / Radio Tower'
 }
 
-function dzArsenalDeny(player, profile, required) {
-  let now = player.age, last = player.persistentData.getInt('dz_arsenal_deny_notice_tick')
-  if (last > 0 && now >= last && now - last < 40) return
-  player.persistentData.putInt('dz_arsenal_deny_notice_tick', now)
-  player.tell(Text.of('未承認火器: ' + profile.id).red())
-  player.tell(Text.of('必要: ' + dzArsenalTierLabel(required) + ' / 現在 S' + dzArsenalStoryTier(player)).gray())
-}
-
-ItemEvents.rightClicked(event => {
-  let player = event.player
-  if (!player || player.level.clientSide) return
-  let profile = dzArsenalProfile(event.item)
-  if (!profile.gun) return
-  if (dzArsenalIsVerifiedLoot(event.item)) return
-  let required = dzArsenalRequiredTier(profile)
-  if (dzArsenalStoryTier(player) >= required) return
-  event.cancel()
-  dzArsenalDeny(player, profile, required)
-})
-
-// Packet-driven/automatic fire can bypass a normal item-use callback. This
-// second guard makes the authorization authoritative; it does not alter valid
-// weapon damage and it never touches gun NBT or magazines.
-TimelessGunEvents.entityHurtByGunPre(event => {
-  let player = event.getAttacker()
-  if (!player || !player.isPlayer() || player.level.clientSide) return
-  let held = player.mainHandItem
-  let profile = dzArsenalProfile(held)
-  if (dzArsenalIsVerifiedLoot(held)) return
-  let required = dzArsenalRequiredTier(profile)
-  if (!profile.gun || dzArsenalStoryTier(player) >= required) return
-  event.setBaseAmount(0)
-  dzArsenalDeny(player, profile, required)
-})
-
 global.pdzArsenalProfile = dzArsenalProfile
 global.pdzArsenalRequiredTier = dzArsenalRequiredTier
 global.pdzArsenalIsVerifiedLoot = dzArsenalIsVerifiedLoot
@@ -117,12 +72,16 @@ ServerEvents.commandRegistry(event => {
     let profile = dzArsenalProfile(player.mainHandItem)
     let required = dzArsenalRequiredTier(profile)
     player.tell(Text.of('Story S' + dzArsenalStoryTier(player) + ' / ' + profile.id + ' / ' + profile.type).aqua())
-    if (dzArsenalIsVerifiedLoot(player.mainHandItem)) {
-      player.tell(Text.of('取得区分: ルート品（射撃許可）').green())
-      return 1
+    if (!profile.gun) {
+      player.tell(Text.of('TaCZ銃をメインハンドに持ってください。').gray())
+      return 0
     }
-    player.tell(Text.of('承認段階: ' + dzArsenalTierLabel(required))
-      .color(dzArsenalStoryTier(player) >= required ? 'green' : 'red'))
+    if (dzArsenalIsVerifiedLoot(player.mainHandItem)) {
+      player.tell(Text.of('取得区分: Weapon Research生成ルート品').green())
+    } else {
+      player.tell(Text.of('研究・作成区分: ' + dzArsenalTierLabel(required)).gray())
+    }
+    player.tell(Text.of('射撃: 常時許可（ストーリー段階・取得経路による制限なし）').green())
     return 1
   }))
   event.register(root)
