@@ -1,10 +1,11 @@
-// PROJECT DEADZONE Arsenal Authorization v0.4 (local candidate)
+// PROJECT DEADZONE Arsenal Authorization v0.5 (local candidate)
 // TaCZ uses its own gun-smith recipe type, which RecipeStages 8 cannot gate.
 // Weapon Research owns crafting/unlock progression. This script is only a
 // safety guard and consumes its exact generated S0-S3 classification.
 
 const PDZ_ARSENAL_IGUN = Java.loadClass('com.tacz.guns.api.item.IGun')
 const PDZ_ARSENAL_ASSETS = Java.loadClass('com.tacz.guns.resource.CommonAssetsManager')
+const PDZ_ARSENAL_PROVENANCE = Java.loadClass('com.gamergaming.taczweaponblueprints.item.PhysicalWeaponProvenance')
 
 function dzArsenalStoryTier(player) {
   try {
@@ -43,7 +44,17 @@ function dzArsenalRequiredTier(profile) {
 // unstamped, command-created, starter, and crafted guns receive no bypass.
 function dzArsenalIsVerifiedLoot(stack) {
   try {
-    if (!stack || stack.isEmpty() || !stack.nbt) return false
+    if (!stack || stack.isEmpty()) return false
+
+    // Weapon Research is the owner of physical-gun provenance. Use its API
+    // instead of re-parsing its private NBT representation in KubeJS; the
+    // latter can expose CompoundTag through a wrapper and was rejecting valid
+    // field loot as an unapproved crafted weapon.
+    let parsed = PDZ_ARSENAL_PROVENANCE.from(stack)
+    if (parsed && parsed.isPresent()) return !!parsed.get().verifiedLoot()
+
+    // Compatibility fallback for a runtime where the API cannot be reached.
+    if (!stack.nbt) return false
     let provenance = stack.nbt.getCompound('taczweaponblueprints:weapon_provenance')
     return provenance && provenance.getInt('format') === 1 &&
       String(provenance.getString('origin')) === 'loot_generated' &&

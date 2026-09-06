@@ -11218,7 +11218,7 @@ hash = "5df59e485636b791e259d8910c26f85228740dd172c0fb7e17a0e0296b60a19c"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_arsenal_authorization_v0_1.js"
-hash = "845c09434db5641ffe8fe731e166fc4b95c4ce8a27ef91e7e25592c056d6f4b8"
+hash = "5e98036144ff0bf1724a12150d31cf0b8e2406eaf5b44aa2ced778cdb73847d2"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_arsenal_catalog_generated.js"
@@ -11629,12 +11629,16 @@ file = "kubejs/server_scripts/project_deadzone_story_boss_bridge_rewards_v0_1.js
 hash = "3c6e172acbeb1551b95d993da8390652fa133672676c008027b034a5be344aca"
 
 [[files]]
+file = "kubejs/server_scripts/project_deadzone_story_boss_site_triggers_v0_1.js"
+hash = "fb4ca4a113e823f7375aa5969885a870b21573a50716ab39cf830a179f473f10"
+
+[[files]]
 file = "kubejs/server_scripts/project_deadzone_story_branches_v0_1.js"
 hash = "41674e022663b6fdae9d6dedb786f4854a4ae08762ab7dcf789b0d8e54b4c61c"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_story_progress_v0_1.js"
-hash = "ecbc0c3ff26741d38444fe2fb150f2bf5de119e591c67493a6d0f2366ea87306"
+hash = "0dec3c24bb4baca739c2062e13bf5464545bc46a52b4224753e295af86f0bf34"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_story_progression_v0_1.js"

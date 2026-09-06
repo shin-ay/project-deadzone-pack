@@ -192,7 +192,7 @@ const DZ_PREP_WATER = [
   "apocalypsenow:canned_water", "minecraft:potion"
 ]
 const DZ_PREP_MEDICAL = [
-  "apocalypsenow:bandage", "apocalypsenow:bandage", "apocalypsenow:morphine",
+  "apocalypsenow:bandage", "apocalypsenow:morphine",
   "apocalypsenow:pain_killers", "apocalypsenow:adrenaline_syringe"
 ]
 const DZ_PREP_WEAPONS = [
@@ -365,15 +365,17 @@ PlayerEvents.tick(event => {
     player.tell(Text.of("探索準備の条件を達成した。装備を収納しても達成状態は維持される。").green())
     console.info("[DEADZONE STORY] Preparation requirements latched for " + player.username)
   }
-  if (preparationLatched &&
-      player.persistentData.getBoolean("dz_story_auto_briefing") &&
-      !player.persistentData.getBoolean("dz_story_preparation_completion_v2")) {
-    player.server.runCommandSilent("ftbquests change_progress " + player.username +
-      " complete " + DZ_STORY_QUESTS.preparation)
-    player.persistentData.putBoolean("dz_story_auto_preparation", true)
-    player.persistentData.putBoolean("dz_story_preparation_completion_v2", true)
-    player.tell(Text.of("探索準備が完了した。Gas Stationへ向かおう。").gold())
-    console.info("[DEADZONE STORY] Preparation quest completed for " + player.username)
+  if (preparationLatched && player.persistentData.getBoolean("dz_story_auto_briefing") &&
+      !player.persistentData.getBoolean("dz_story_auto_v3_preparation")) {
+    // Only persist completion after FTB Quests accepts it.  Older code wrote its
+    // own completion flag even when the dependency was still locked, preventing
+    // every later retry and leaving the quest visibly stuck.
+    if (dzCompletePlayerStoryQuest(player, "preparation", DZ_STORY_QUESTS.preparation)) {
+      player.persistentData.putBoolean("dz_story_auto_preparation", true)
+      player.persistentData.putBoolean("dz_story_preparation_completion_v2", true)
+      player.tell(Text.of("探索準備が完了した。Gas Stationへ向かおう。").gold())
+      console.info("[DEADZONE STORY] Preparation quest completed for " + player.username)
+    }
   }
   if (dzNearbyStoryBoss(player, "dz_story_boss_gunshop", 96))
     dzCompletePlayerStoryQuest(player, "gunshop_intel", DZ_STORY_QUESTS.gunshopIntel)
