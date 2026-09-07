@@ -1,4 +1,4 @@
-// PROJECT DEADZONE - nearby Village Recruits center inspector v0.5
+// PROJECT DEADZONE - nearby Village Recruits center inspector v0.6
 // Automatically adopts loaded vanilla/modded villages while retaining manual
 // scan/apply commands for diagnostics and recovery.
 
@@ -438,26 +438,26 @@ function pdzVrAdoptNearby(ctx, radius, automatic) {
             Math.floor(adoptionGroup.x) + ', ' + Math.floor(adoptionGroup.y) + ', ' + Math.floor(adoptionGroup.z) + ']'))
           continue
         }
-        factionId = 'village_' + tablePos.getX() + '_' + tablePos.getY() + '_' + tablePos.getZ()
+        // Dedicated prefix is consumed by the PDZ Recruits compatibility mod.
+        // Existing villages retain their own streets and never receive a
+        // Village Recruits city plan or its 62-block founding road cross.
+        factionId = 'village_adopted_' + tablePos.getX() + '_' + tablePos.getY() + '_' + tablePos.getZ()
       }
       try {
-        // Existing modded villages already have streets. Suppress the addon's
-        // one-time standalone road cross, which otherwise cuts the terrain.
+        // Adopted villages already have streets. Suppress the addon's one-time
+        // standalone road cross even if its recruit table registered the
+        // faction before this bridge observed it.
         let preparedFaction = PDZ_VR_FACTION_MANAGER.getOrCreate(factionId)
-        if (adoptionGroup.registered == null) {
-          pdzVrSuppressStandaloneRoads(preparedFaction, tablePos)
-        }
+        pdzVrSuppressStandaloneRoads(preparedFaction, tablePos)
         PDZ_VR_FACTION_MANAGER.ensureFactionExists(source.level, factionId, tablePos)
         let createdFaction = PDZ_VR_FACTION_MANAGER.getFaction(factionId)
         if (createdFaction == null) {
           failed++
           continue
         }
-        // ensureFactionExists may normalize a newly-created faction. Reassert
-        // the no-road adoption contract after registration as well.
-        if (adoptionGroup.registered == null) {
-          pdzVrSuppressStandaloneRoads(createdFaction, tablePos)
-        }
+        // ensureFactionExists may normalize the faction. Reassert the no-road
+        // adoption contract after registration as well.
+        pdzVrSuppressStandaloneRoads(createdFaction, tablePos)
         // Delegate naming to Village Recruits itself. Factions adopted through
         // this bridge used to retain their coordinate id as the visible name.
         if (createdFaction.specialName == null || String(createdFaction.specialName).length === 0 ||

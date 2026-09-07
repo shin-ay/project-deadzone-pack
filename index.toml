@@ -11742,7 +11742,7 @@ hash = "2149ca2f2d94420179374e709bea4ea51aa2cea214492cc1d7f488ed7fb64ae1"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_vr_nearby_villages_v0_1.js"
-hash = "95f3f050a8093a100388bf38afcc0cfffbd6428782a9887a71ba5b0053b22ec8"
+hash = "39ab1998627234955ca257db263a64f7821426355701aedfbe0584623ca33709"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_waystones_public_transit_v0_1.js"
@@ -13299,8 +13299,8 @@ file = "mods/pdz-loot-compat-1.0.0.jar"
 hash = "c8b97292101e1d425300c7a034129f40a2e02ad0e2ea165b3ebbfd16f2621274"
 
 [[files]]
-file = "mods/pdz-recruits-village-spawn-compat-1.0.1.jar"
-hash = "01baabd5bb91ebc3eb5ead86fcc02286644fa12187f87c748377fbb05a391ca6"
+file = "mods/pdz-recruits-village-spawn-compat-1.0.2.jar"
+hash = "9d6a7e557a247b9ce8870989a2dcc0c3494f03ec20ee31ba5bce98636ca502c9"
 
 [[files]]
 file = "mods/ping.pw.toml"
