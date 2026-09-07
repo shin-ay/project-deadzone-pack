@@ -14,7 +14,9 @@ const PDZ_VR_MIN_VANILLA = 4
 // One standing guard is enough for a newly adopted settlement. The Recruits
 // profession table used to release its POI and this bridge also seeded three
 // soldiers, so villages were being militarised far beyond their population.
-const PDZ_VR_MIN_RECRUITS = 1
+// Guards must come from an existing villager population. Never conjure a
+// minimum garrison independently of settlement population.
+const PDZ_VR_MIN_RECRUITS = 0
 const PDZ_VR_AUTO_RADIUS = 192
 const PDZ_VR_AUTO_INTERVAL = 600
 

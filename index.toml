@@ -3514,7 +3514,7 @@ hash = "3ed8257302950822cd63426d2932776525c8338f786cca759e16d2249175a13b"
 
 [[files]]
 file = "defaultconfigs/recruits-server.toml"
-hash = "2a1db388b56ffa61014358e8205b8115c256d29a63be5903180f2f6e9ce1c2d2"
+hash = "5ba2daee4e5076980361af024d6147398d2588bb3e9b32f73d66611b45094b00"
 
 [[files]]
 file = "defaultconfigs/skilltree-server.toml"
@@ -11742,7 +11742,7 @@ hash = "2149ca2f2d94420179374e709bea4ea51aa2cea214492cc1d7f488ed7fb64ae1"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_vr_nearby_villages_v0_1.js"
-hash = "b8ea00b24a1daeba7ec10686312c3da45d0501a7e9fe481a363c44068eb239fa"
+hash = "4ca77c44c16a9150370070f56dcd0fe81386ee9425c4a856465bc1dbc23adce5"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_waystones_public_transit_v0_1.js"
