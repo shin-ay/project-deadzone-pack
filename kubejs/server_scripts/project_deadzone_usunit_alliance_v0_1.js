@@ -22,6 +22,14 @@ function dzUsunitIsManagedFaction(entity) {
   return DZ_USUNIT_HOSTILE_TAGS.some(tag => entity.tags.contains(tag))
 }
 
+function dzUsunitIsVillageAlly(entity) {
+  if (!entity) return false
+  let id = String(entity.type)
+  return id === "minecraft:villager" || id === "minecraft:wandering_trader" ||
+    id === "minecraft:iron_golem" || id.indexOf("mca:") === 0 ||
+    id.indexOf("recruits:") === 0 || id.indexOf("village_recruits:") === 0
+}
+
 function dzUsunitMakeFriendly(entity) {
   if (!entity || String(entity.type) !== DZ_USUNIT_TYPE) return
   if (dzUsunitIsManagedFaction(entity)) return
@@ -35,7 +43,7 @@ function dzUsunitMakeFriendly(entity) {
 
   try {
     let target = entity.target
-    if (target && (String(target.type) === "minecraft:player" ||
+    if (target && (String(target.type) === "minecraft:player" || dzUsunitIsVillageAlly(target) ||
         target.tags.contains("dz_survivor") || target.tags.contains("dz_friendly"))) {
       entity.setTarget(null)
     }
@@ -86,7 +94,7 @@ EntityEvents.hurt(event => {
   let attacker = event.source.actual
   let direct = event.source.direct
   if (String(victim.type) === DZ_USUNIT_TYPE && victim.tags.contains("dz_friendly") && attacker &&
-      (String(attacker.type) === "minecraft:player" ||
+      (String(attacker.type) === "minecraft:player" || dzUsunitIsVillageAlly(attacker) ||
         (attacker.tags && (attacker.tags.contains("dz_survivor") ||
           attacker.tags.contains("dz_friendly"))))) {
     event.cancel()
@@ -96,7 +104,7 @@ EntityEvents.hurt(event => {
       direct && String(direct.type) === DZ_USUNIT_TYPE) attacker = direct
   if (!attacker || String(attacker.type) !== DZ_USUNIT_TYPE ||
       !attacker.tags.contains("dz_friendly")) return
-  if (String(victim.type) === "minecraft:player" ||
+  if (String(victim.type) === "minecraft:player" || dzUsunitIsVillageAlly(victim) ||
       (victim.tags && (victim.tags.contains("dz_survivor") ||
         victim.tags.contains("dz_friendly")))) event.cancel()
 })
