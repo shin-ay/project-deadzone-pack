@@ -1,0 +1,13 @@
+name = "BetterWeather"
+filename = "betterweather-1.1.5.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "03cdb084c03a9230dfc27c3bec437150d119469f"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 8736561
+project-id = 1551289

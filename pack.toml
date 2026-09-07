@@ -1,12 +1,12 @@
 name = "PROJECT DEADZONE"
 author = "PROJECT DEADZONE Team"
-version = "BETA-20260906-CAMP-BRIEFING-STORY-RC1"
+version = "BETA-20260907-BETTERWEATHER-RC1"
 pack-format = "packwiz:1.1.0"
 
 [index]
 file = "index.toml"
 hash-format = "sha256"
-hash = "376a39930b6341d722f95bb8ed273727e93467c0c7d176338e80264ad12a4b15"
+hash = "4d069907dfe87f1e8964fdc85699cce9dd0bd6d973e3f3457ca995a7443bf0e5"
 
 [versions]
 forge = "47.4.10"

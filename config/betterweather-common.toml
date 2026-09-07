@@ -1,0 +1,24 @@
+
+[eclipses]
+	#Master toggle for Solar Eclipses on the server. Set to false to disable eclipses completely.
+	enableSolarEclipse = true
+	#Chance of a solar eclipse occurring at dawn each day (0.05 = 5%).
+	#Range: 0.0 ~ 1.0
+	eclipseChancePerDay = 0.05
+	#Set to true to allow monsters to spawn under the open sky during midday solar eclipses.
+	enableEclipseMonsterSpawning = true
+
+[sandstorms]
+	#Master toggle for sandstorm entity generation in desert biomes.
+	enableSandstorms = true
+	#Chance of a sandstorm spawning near players in deserts during storms (0.20 = 20%).
+	#Range: 0.0 ~ 1.0
+	sandstormSpawnChance = 0.2
+
+[tumbleweeds]
+	#Set to false to disable tumbleweeds rolling across desert and savanna biomes.
+	enableTumbleweeds = true
+	#Spawn chance of tumbleweeds near players in dry biomes (0.05 = 5%).
+	#Range: 0.0 ~ 1.0
+	tumbleweedSpawnChance = 0.05
+

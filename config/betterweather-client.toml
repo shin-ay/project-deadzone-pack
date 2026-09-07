@@ -1,0 +1,61 @@
+
+[visuals]
+	#Set to false to disable custom sun & moon textures, reverting to vanilla/resource pack sky.
+	enableCustomSunAndMoon = true
+	#Set to false to disable custom heavy rain texture, using vanilla rain.
+	enableCustomRainTexture = true
+	#Set to false to disable custom heavy snow texture, using vanilla snow.
+	enableCustomSnowTexture = true
+	#Set to false to disable rendering the eclipse moon disk over the sun during an eclipse.
+	enableEclipseVisuals = true
+	#Set to false to disable sky color darkening during an eclipse.
+	enableEclipseSkyDarkening = true
+	#Set to false to completely disable mystical swamp fog color & distance modifications.
+	enableSwampFog = true
+	#Set to false to disable 3D volumetric fog particles in swamps.
+	enableSwampFogParticles = false
+	#Set to true if you want the screen Darkness pulsing effect in deep fog. Keep false to prevent player/chest culling issues.
+	enableSwampDarknessEffect = false
+	#Near fog distance in blocks for swamps.
+	#Range: 0.0 ~ 100.0
+	swampFogNearDistance = 16.0
+	#Far fog distance in blocks for swamps (recommended >= 48.0 to prevent player/chest invisibility).
+	#Range: 10.0 ~ 300.0
+	swampFogFarDistance = 56.0
+	#Set to false to disable orange fog color & distance changes during sandstorms.
+	enableSandstormFog = true
+	#Set to false to disable screen dust vignette overlay during sandstorms.
+	enableSandstormVignette = true
+	#Set to false to disable 3D sandstorm dust cloud particles.
+	enableSandstormParticles = false
+	#Set to false to disable rendering rainbows after rain ends.
+	enableRainbow = true
+	#Duration in seconds that a rainbow stays visible after rain stops.
+	#Range: 10.0 ~ 1200.0
+	rainbowDurationSeconds = 180.0
+	#Maximum opacity/brightness of the rainbow (0.1 to 1.0).
+	#Range: 0.1 ~ 1.0
+	rainbowOpacity = 0.85
+	#Set to false to disable the global dynamic wind engine.
+	enableWindSystem = true
+	#Set to false to disable wind-blown drifting leaves in forests and plains.
+	enableWindLeafParticles = false
+	#Set to false to disable ambient ground fog particles.
+	enableAmbientFog = false
+	#Set to false to disable Northern Lights / Aurora Borealis rendering in cold biomes at night.
+	enableAuroraBorealis = true
+	#Set to false to disable intense sky flashes during lightning strikes.
+	enableThunderSkyFlash = true
+	#Set to false to disable ground rain splash particles.
+	enableRainSplashParticles = false
+
+[audio]
+	#Set to false to disable sandstorm wind sound effects.
+	enableSandstormSounds = true
+	#Set to false to disable enhanced rain audio and sound occlusion.
+	enableRainSounds = true
+	#Set to false to disable realistic delayed thunder audio.
+	enableThunderSounds = true
+	#Set to false to disable environmental sound muffling in swamp fog.
+	enableSwampSoundMuffling = true
+
