@@ -1,4 +1,4 @@
-// PROJECT DEADZONE - nearby Village Recruits center inspector v0.6
+// PROJECT DEADZONE - nearby Village Recruits center inspector v0.7
 // Automatically adopts loaded vanilla/modded villages while retaining manual
 // scan/apply commands for diagnostics and recovery.
 
@@ -439,8 +439,9 @@ function pdzVrAdoptNearby(ctx, radius, automatic) {
           continue
         }
         // Dedicated prefix is consumed by the PDZ Recruits compatibility mod.
-        // Existing villages retain their own streets and never receive a
-        // Village Recruits city plan or its 62-block founding road cross.
+        // Existing villages retain their own streets and never receive the
+        // 62-block founding cross. The compatibility mod permits only guarded,
+        // plot-by-plot growth after checking for standing construction.
         factionId = 'village_adopted_' + tablePos.getX() + '_' + tablePos.getY() + '_' + tablePos.getZ()
       }
       try {
