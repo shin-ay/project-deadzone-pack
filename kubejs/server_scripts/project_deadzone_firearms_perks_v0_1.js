@@ -317,12 +317,22 @@ function dzFirearmsQueueShotgunBlast(event, player, target, gunProfile, amount, 
     delete PDZ_FIREARMS_SHOTGUN_PENDING[key]
     if (!pending.target || !pending.target.alive || !isFinite(pending.amount) || pending.amount <= 0) return
     try {
-      // KubeJS does not expose LivingEntity#hurt on wrapped entities in this
-      // pack. Reapply through vanilla's server command using TaCZ's registered
-      // bullet damage type and the original shooter for attribution.
-      let applied = pending.target.runCommandSilent(
-        'damage @s ' + Number(pending.amount).toFixed(3) + ' tacz:bullet by ' + String(pending.player.username)
-      )
+      // Keep the original TaCZ DamageSource. Recreating the hit with /damage
+      // loses TaCZ's gun-kill path, so shotgun kills miss native M&S XP and
+      // other kill callbacks even when the command names the shooter.
+      let applied = false
+      if (pending.source && pending.target.minecraftEntity) {
+        try {
+          applied = pending.target.minecraftEntity.hurt(pending.source, Number(pending.amount))
+        } catch (ignored) {}
+      }
+      // Compatibility fallback for an unexpected wrapper/source mismatch.
+      // The normal path above is required for full TaCZ kill attribution.
+      if (!applied) {
+        applied = pending.target.runCommandSilent(
+          'damage @s ' + Number(pending.amount).toFixed(3) + ' tacz:bullet by ' + String(pending.player.username)
+        )
+      }
       if (!applied) pending.target.attack(pending.amount)
       try {
         if (typeof pdzCteRecordOutgoing === 'function')

@@ -3,6 +3,7 @@
 // scan/apply commands for diagnostics and recovery.
 
 const PDZ_VR_FACTION_MANAGER = Java.loadClass('com.example.villagerecruits.faction.VillageFactionManager')
+const PDZ_VR_CONFIG = Java.loadClass('com.example.villagerecruits.config.VRConfig')
 const PDZ_VR_INTEGER_ARGUMENT = Java.loadClass('com.mojang.brigadier.arguments.IntegerArgumentType')
 const PDZ_VR_BLOCK_POS = Java.loadClass('net.minecraft.core.BlockPos')
 const PDZ_VR_BUILTIN_REGISTRIES = Java.loadClass('net.minecraft.core.registries.BuiltInRegistries')
@@ -10,9 +11,27 @@ const PDZ_VR_HEIGHTMAP_TYPES = Java.loadClass('net.minecraft.world.level.levelge
 
 const PDZ_VR_MIN_MCA = 6
 const PDZ_VR_MIN_VANILLA = 4
-const PDZ_VR_MIN_RECRUITS = 3
+// One standing guard is enough for a newly adopted settlement. The Recruits
+// profession table used to release its POI and this bridge also seeded three
+// soldiers, so villages were being militarised far beyond their population.
+const PDZ_VR_MIN_RECRUITS = 1
 const PDZ_VR_AUTO_RADIUS = 192
 const PDZ_VR_AUTO_INTERVAL = 600
+
+function pdzVrFactionDisplayName(level, faction) {
+  if (!faction) return ''
+  if (faction.specialName != null && String(faction.specialName).length > 0) return String(faction.specialName)
+  try {
+    let scoreboard = level.getScoreboard()
+    let team = scoreboard.getPlayerTeam(String(faction.id))
+    if (team != null) {
+      let display = String(team.getDisplayName().getString())
+      if (display.length > 0 && display !== String(faction.id)) return display
+    }
+  } catch (ignored) {}
+  try { return String(PDZ_VR_FACTION_MANAGER.generatedNameFor(String(faction.id))) }
+  catch (ignored) { return String(faction.id) }
+}
 
 function pdzVrEntityTypeId(entity) {
   // KubeJS exposes the stable namespaced id directly. Looking the wrapped
@@ -80,9 +99,7 @@ function pdzVrCenterRows(level, origin, radius) {
 
       pdzVrRows.push({
         id: String(faction.id),
-        name: faction.specialName == null || String(faction.specialName).length === 0
-          ? String(faction.id)
-          : String(faction.specialName),
+        name: pdzVrFactionDisplayName(level, faction),
         x: center.getX(),
         y: center.getY(),
         z: center.getZ(),
@@ -98,6 +115,54 @@ function pdzVrCenterRows(level, origin, radius) {
   pdzVrRows.sort((a, b) => a.distance - b.distance)
   return pdzVrRows
 }
+
+// A naturally generated recruit block is named during faction minting, but a
+// player-placed recruiting post can become a center a few ticks later. Run the
+// mod's own deterministic name healer after both the initial and delayed
+// registration windows; this never renames an already named faction.
+function pdzVrProtectPlayerPlacedPost(level, pos) {
+  try {
+    let factionId = PDZ_VR_FACTION_MANAGER.getFactionIdForRecruitBlock(level, pos)
+    if (factionId == null || String(factionId).length === 0) return false
+    let faction = PDZ_VR_FACTION_MANAGER.getFaction(String(factionId))
+    if (faction == null) return false
+    pdzVrSuppressStandaloneRoads(faction, pos)
+    return true
+  } catch (error) {
+    console.error('[PDZ VR Nearby] recruit-post road suppression failed: ' + error)
+    return false
+  }
+}
+
+BlockEvents.placed('recruits:recruit_block', event => {
+  let level = event.level
+  let pos = new PDZ_VR_BLOCK_POS(event.block.x, event.block.y, event.block.z)
+  // If Village Recruits has already registered the block in its placement
+  // callback, close the road gate in the same tick as well.
+  pdzVrProtectPlayerPlacedPost(level, pos)
+  // Player-built bases must never receive the add-on's destructive founding
+  // road cross. Check every registration window, beginning on the next tick.
+  ;[1, 5, 20, 40, 200].forEach(delay => event.server.scheduleInTicks(delay, () => {
+    try {
+      pdzVrProtectPlayerPlacedPost(level, pos)
+      PDZ_VR_FACTION_MANAGER.healMissingNames(level)
+    }
+    catch (error) { console.error('[PDZ VR Nearby] recruit-post naming failed: ' + error) }
+  }))
+})
+
+ServerEvents.loaded(event => {
+  // The watch message is informational only and can flood chat for short-lived
+  // helper entities such as sona:sound_decoy. Combat AI remains unchanged.
+  try { PDZ_VR_CONFIG.COMMON.ANNOUNCE_ENEMY_SPOTTED.set(false) }
+  catch (error) { console.error('[PDZ VR Nearby] enemy-alert suppression failed: ' + error) }
+})
+
+// Also repairs an unnamed post that was already present before this update.
+PlayerEvents.loggedIn(event => event.server.scheduleInTicks(100, () => {
+  try { PDZ_VR_FACTION_MANAGER.healMissingNames(event.player.level) }
+  catch (error) { console.error('[PDZ VR Nearby] existing village naming failed: ' + error) }
+}))
 
 function pdzVrListNearby(ctx, radius) {
   let source = ctx.source

@@ -157,7 +157,7 @@
 	#False -> only one villager can become a recruit with one table.
 	#	(takes effect after restart)
 	#	default: true
-	RecruitTablesPOIReleasing = true
+	RecruitTablesPOIReleasing = false
 	#
 	#Does a Villager decide to become noble? Condition: 7 Villagers and no Noble Villager nearby
 	#	(takes effect after restart)
@@ -177,7 +177,7 @@
 	#Should Recruits instead of Iron Golems spawn in Villages
 	#	(takes effect after restart)
 	#	default: true
-	OverrideIronGolemSpawn = true
+	OverrideIronGolemSpawn = false
 	#
 	#Max Recruits in a Village Chunk to Spawn
 	#	(takes effect after restart)

@@ -3514,7 +3514,7 @@ hash = "3ed8257302950822cd63426d2932776525c8338f786cca759e16d2249175a13b"
 
 [[files]]
 file = "defaultconfigs/recruits-server.toml"
-hash = "43a8d8cc414549cf84acb854ceae1489cc98a39a9b169937e1109e8334b513ae"
+hash = "2a1db388b56ffa61014358e8205b8115c256d29a63be5903180f2f6e9ce1c2d2"
 
 [[files]]
 file = "defaultconfigs/skilltree-server.toml"
@@ -11362,7 +11362,7 @@ hash = "de2327b1e19d91d2607c4efad5f9ecdeb81971923f10a337b32bdb2e691882a9"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_firearms_perks_v0_1.js"
-hash = "b5a7fb2f98aec7bbdce48348cb2c64fd9a9d9ad050e5751bd11579b95bfe73f4"
+hash = "7f0964f1e00d7a147504bf4ae4b40c7aa9847f2a3029dd1922a74495126cf60f"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_fitness_perks_v0_1.js"
@@ -11742,7 +11742,7 @@ hash = "2149ca2f2d94420179374e709bea4ea51aa2cea214492cc1d7f488ed7fb64ae1"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_vr_nearby_villages_v0_1.js"
-hash = "ac2388365a1899b8b74318a70ec0ccc66ead098851e9b9b9dd40fb99cb5b1000"
+hash = "b8ea00b24a1daeba7ec10686312c3da45d0501a7e9fe481a363c44068eb239fa"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_waystones_public_transit_v0_1.js"
