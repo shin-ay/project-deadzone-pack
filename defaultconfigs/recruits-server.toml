@@ -177,7 +177,7 @@
 	#Should Recruits instead of Iron Golems spawn in Villages
 	#	(takes effect after restart)
 	#	default: true
-	OverrideIronGolemSpawn = false
+	OverrideIronGolemSpawn = true
 	#
 	#Max Recruits in a Village Chunk to Spawn
 	#	(takes effect after restart)
