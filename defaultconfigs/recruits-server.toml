@@ -13,7 +13,7 @@
 	#Currency
 	#	(takes effect after restart)
 	#	The Item defined here, will be used to hire recruits. For example: ["minecraft:diamond"]	default: ["minecraft:emerald"]
-	RecruitCurrency = "lightmanscurrency:coin_copper"
+	RecruitCurrency = "lightmanscurrency:coin_iron"
 	#
 	#Max XP a Recruit needs to Level Up.
 	#	(takes effect after restart)
@@ -52,37 +52,37 @@
 	#	(takes effect after restart)
 	#	default: 4
 	#Range: 0 ~ 1453
-	RecruitCost = 80
+	RecruitCost = 8
 	#
 	#The amount of currency required to hire a bowman.
 	#	(takes effect after restart)
 	#	default: 6
 	#Range: 0 ~ 1453
-	BowmanCost = 120
+	BowmanCost = 12
 	#
 	#The amount of currency required to hire a crossbowman.
 	#	(takes effect after restart)
 	#	default: 8
 	#Range: 0 ~ 1453
-	CrossbowmanCost = 160
+	CrossbowmanCost = 16
 	#
 	#The amount of currency required to hire a shieldman.
 	#	(takes effect after restart)
 	#	default: 10
 	#Range: 0 ~ 1453
-	ShieldmanCost = 200
+	ShieldmanCost = 20
 	#
 	#The amount of currency required to hire a horseman.
 	#	(takes effect after restart)
 	#	default: 20
 	#Range: 0 ~ 1453
-	HorsemanCost = 400
+	HorsemanCost = 40
 	#
 	#The amount of currency required to hire a nomad.
 	#	(takes effect after restart)
 	#	default: 19
 	#Range: 0 ~ 1453
-	NomadCost = 380
+	NomadCost = 38
 	#
 	#RecruitsPayment
 	#	(takes effect after restart)

@@ -4,6 +4,9 @@
 
 const DZ_CREDIT_CHAIN = "main"
 const DZ_CREDIT_ITEM = "lightmanscurrency:coin_copper"
+const DZ_RECRUIT_CREDIT_ITEM = "lightmanscurrency:coin_iron"
+const DZ_RECRUIT_CREDIT_VALUE = 10
+const DZ_RECRUIT_MAX_COST = 40
 const DZ_CREDIT_WALLET = "lightmanscurrency:wallet_leather"
 const DZ_LEGACY_MONEY_ITEMS = ["apocalypsenow:money", "apocalypsenow:coins"]
 const DZ_CREDIT_WALLET_GRANT = "pdz_credit_wallet_granted_v1"
@@ -81,6 +84,22 @@ global.pdzCreditBalance = dzCreditBalance
 global.pdzCreditCanAfford = dzCreditCanAfford
 global.pdzCreditTake = dzCreditTake
 global.pdzCreditGive = dzCreditGive
+
+// Recruits' hiring GUI accepts one exact Item type rather than Lightman's
+// denomination-aware MoneyValue. Normalize at most one stack on interaction;
+// total value is unchanged and any remainder stays in the wallet/inventory.
+function dzCreditPrepareRecruitPayment(player) {
+  let affordableCoins = Math.min(DZ_RECRUIT_MAX_COST,
+    Math.floor(dzCreditBalance(player) / DZ_RECRUIT_CREDIT_VALUE))
+  let currentCoins = Number(player.inventory.count(Item.of(DZ_RECRUIT_CREDIT_ITEM)))
+  if (affordableCoins <= currentCoins) return true
+  let value = affordableCoins * DZ_RECRUIT_CREDIT_VALUE
+  if (!dzCreditTake(player, value)) return false
+  player.give(Item.of(DZ_RECRUIT_CREDIT_ITEM, affordableCoins))
+  return true
+}
+
+global.pdzCreditPrepareRecruitPayment = dzCreditPrepareRecruitPayment
 
 function dzCreditHasEquippedWallet(player) {
   try { return !DZ_CREDIT_COIN_API.getApi().getEquippedWallet(player).isEmpty() }

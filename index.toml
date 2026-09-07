@@ -3514,7 +3514,7 @@ hash = "3ed8257302950822cd63426d2932776525c8338f786cca759e16d2249175a13b"
 
 [[files]]
 file = "defaultconfigs/recruits-server.toml"
-hash = "c3f38c879a7f334138f95dca26aa7eaf79081bc838a0fd70205f984d58d3005c"
+hash = "bffb62a25eac841d8928551968043f4c2dd798c3084f26a29da6263fa45d4283"
 
 [[files]]
 file = "defaultconfigs/skilltree-server.toml"
@@ -11310,7 +11310,7 @@ hash = "0a054505752ac0d5a1bf182b03842c200205de54c74a774014fd76fabc44af2f"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_credit_only_merchants_v0_1.js"
-hash = "77d8b2fbda53981a61639edc71e94553e81e3f1ae8eee494693d869a59f07013"
+hash = "c3bf35134ca8a9d894511d9b621e742f69a7d4858c3889c425836fb455228486"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_cte2_combat_scaling_v0_1.js"
@@ -11318,7 +11318,7 @@ hash = "ab304788495837f97f4952a60ad821aa6d2cdc1f9bed22ccb7541a281136eca5"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_currency_v0_1.js"
-hash = "f3c64b56dca3b56631bc5481ffae41098d5b7273cb5f08ae5e38ff21f3fc02b1"
+hash = "f06b35e7e1b9dfef9ac6a32b99602150eada7a863c684de4f15b21284a9af6eb"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_decontamination_unit_v0_1.js"
