@@ -11310,7 +11310,7 @@ hash = "0a054505752ac0d5a1bf182b03842c200205de54c74a774014fd76fabc44af2f"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_credit_only_merchants_v0_1.js"
-hash = "fceed9bfd1e59a7a255b5549ea8cbb22c161a1604cb471ef123607e92bdc70c5"
+hash = "77d8b2fbda53981a61639edc71e94553e81e3f1ae8eee494693d869a59f07013"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_cte2_combat_scaling_v0_1.js"

@@ -7,7 +7,7 @@ ItemEvents.entityInteracted(event=>{
   let type=String(target.type),looksLikeMerchant=/(villager|trader|merchant|noble)/.test(type)
   if(!(target instanceof DZ_CREDIT_MERCHANT)&&!looksLikeMerchant)return
   if(type==='easy_npc:humanoid')return
-  event.setCanceled(true)
+  event.cancel()
   let player=event.player,now=Date.now()
   if(player&&now-Number(player.persistentData.getLong('dz_credit_merchant_notice'))>3000){
     player.persistentData.putLong('dz_credit_merchant_notice',now)
