@@ -74,6 +74,10 @@ ServerEvents.tick(event => {
   event.server.players.forEach(player => {
     player.level.entities.forEach(entity => {
       if (String(entity.type) !== DZ_USUNIT_TYPE) return
+      // Temporary global ceasefire with settlements, including authored US
+      // factions that otherwise keep their own hostility tags.
+      try { if (dzUsunitIsVillageAlly(entity.target)) entity.setTarget(null) }
+      catch (ignored) {}
       if (dzUsunitIsManagedFaction(entity) || entity.tags.contains("dz_buddy") ||
           entity.tags.contains("dz_story_npc") || entity.tags.contains("dz_basecamp_guard")) return
       let key = String(entity.uuid)
@@ -102,6 +106,13 @@ EntityEvents.hurt(event => {
   }
   if ((!attacker || String(attacker.type) !== DZ_USUNIT_TYPE) &&
       direct && String(direct.type) === DZ_USUNIT_TYPE) attacker = direct
+  // Keep every US Unit neutral toward settlement NPCs for now. This is
+  // intentionally independent of PDZ faction tags and works in both directions.
+  if ((String(victim.type) === DZ_USUNIT_TYPE && dzUsunitIsVillageAlly(attacker)) ||
+      (attacker && String(attacker.type) === DZ_USUNIT_TYPE && dzUsunitIsVillageAlly(victim))) {
+    event.cancel()
+    return
+  }
   if (!attacker || String(attacker.type) !== DZ_USUNIT_TYPE ||
       !attacker.tags.contains("dz_friendly")) return
   if (String(victim.type) === "minecraft:player" || dzUsunitIsVillageAlly(victim) ||
