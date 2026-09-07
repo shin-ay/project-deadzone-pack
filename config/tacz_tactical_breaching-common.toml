@@ -85,7 +85,7 @@
 
 [dropped_magazines]
 	#Drop a physical magazine entity when a TaCZ magazine-fed weapon reloads normally.
-	dropMagazines = true
+	dropMagazines = false
 	#Allow players to pick dropped magazines back up.
 	allowPickup = true
 	#Preserve remaining rounds in dropped magazines and picked-up magazine items.

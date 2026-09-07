@@ -1,12 +1,12 @@
 name = "PROJECT DEADZONE"
 author = "PROJECT DEADZONE Team"
-version = "BETA-20260907-ABILITY-LOADOUT-RC1"
+version = "BETA-20260907-SHOTGUN-BALANCE-RC1"
 pack-format = "packwiz:1.1.0"
 
 [index]
 file = "index.toml"
 hash-format = "sha256"
-hash = "2a33522c1d9f60afec6b2f3726c642c7c5e5719d47ca8251a0ee7a3b4bb9825d"
+hash = "336b925a4508ac2a943f9d34479249de964e97c94212bac8a353ae4277580581"
 
 [versions]
 forge = "47.4.10"

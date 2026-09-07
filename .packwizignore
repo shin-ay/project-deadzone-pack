@@ -26,6 +26,7 @@ config/QuantifiedAPI/cache/
 # TaCZ ZIP binaries stay outside Git; explicit CurseForge metafiles are indexed.
 tacz/*
 !tacz/*.pw.toml
+!tacz/Immersive Armorer-v1.2.1-for117.zip
 resourcepacks/*
 !resourcepacks/PDZ_Audio_Test_v0.1/
 !resourcepacks/PDZ_Audio_Test_v0.1/**

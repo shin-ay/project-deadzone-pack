@@ -6,6 +6,13 @@ const PDZ_FIREARMS_MNS_ENTITY_DATA = Java.loadClass('com.robertx22.mine_and_slas
 const PDZ_FIREARMS_MNS_RESOURCE_TYPE = Java.loadClass('com.robertx22.mine_and_slash.saveclasses.unit.ResourceType')
 const PDZ_FIREARMS_TACZ_IGUN = Java.loadClass('com.tacz.guns.api.item.IGun')
 const PDZ_FIREARMS_TACZ_ASSETS = Java.loadClass('com.tacz.guns.resource.CommonAssetsManager')
+const PDZ_FIREARMS_TACZ_DAMAGE_PART = Java.loadClass('com.tacz.guns.api.event.common.GunDamageSourcePart')
+
+// M&S accepts only one final LivingDamageEvent from TaCZ shotgun pellets that
+// land during the same blast. Accumulate the pellets that actually hit and
+// replay them once with TaCZ's original bullet source after the burst settles.
+let PDZ_FIREARMS_SHOTGUN_PENDING = {}
+let PDZ_FIREARMS_SHOTGUN_TOKEN = 0
 
 // TaCZ gun packs already expose a common weapon type in their gun index. Use
 // that metadata instead of maintaining a brittle list of hundreds of GunIds.
@@ -271,6 +278,66 @@ function dzBallisticAbilityFollowup(player, primary, finalAmount, smartLink, exp
   })
 }
 
+function dzFirearmsQueueShotgunBlast(event, player, target, gunProfile, amount, smartLink, explosiveRounds, corrosiveRounds) {
+  let key = String(player.uuid) + '|' + String(target.uuid) + '|' + String(gunProfile.id)
+  let entry = PDZ_FIREARMS_SHOTGUN_PENDING[key]
+  if (!entry) {
+    let source = null
+    try { source = event.getDamageSource(PDZ_FIREARMS_TACZ_DAMAGE_PART.NON_ARMOR_PIERCING) } catch (ignored) {}
+    if (!source) {
+      try { source = event.getDamageSource(PDZ_FIREARMS_TACZ_DAMAGE_PART.ARMOR_PIERCING) } catch (ignored) {}
+    }
+    entry = {
+      player: player,
+      target: target,
+      source: source,
+      amount: 0,
+      pellets: 0,
+      token: 0,
+      smartLink: false,
+      explosiveRounds: false,
+      corrosiveRounds: false
+    }
+    PDZ_FIREARMS_SHOTGUN_PENDING[key] = entry
+  }
+  entry.amount += Number(amount)
+  entry.pellets += 1
+  entry.smartLink = entry.smartLink || smartLink
+  entry.explosiveRounds = entry.explosiveRounds || explosiveRounds
+  entry.corrosiveRounds = entry.corrosiveRounds || corrosiveRounds
+  entry.token = ++PDZ_FIREARMS_SHOTGUN_TOKEN
+  let token = entry.token
+
+  // Suppress the individual pellet. Its calculated amount is replayed as part
+  // of the single aggregate below, so M&S critical/affix/mitigation runs once.
+  event.setBaseAmount(0)
+  player.server.scheduleInTicks(2, () => {
+    let pending = PDZ_FIREARMS_SHOTGUN_PENDING[key]
+    if (!pending || pending.token !== token) return
+    delete PDZ_FIREARMS_SHOTGUN_PENDING[key]
+    if (!pending.target || !pending.target.alive || !isFinite(pending.amount) || pending.amount <= 0) return
+    try {
+      // KubeJS does not expose LivingEntity#hurt on wrapped entities in this
+      // pack. Reapply through vanilla's server command using TaCZ's registered
+      // bullet damage type and the original shooter for attribution.
+      let applied = pending.target.runCommandSilent(
+        'damage @s ' + Number(pending.amount).toFixed(3) + ' tacz:bullet by ' + String(pending.player.username)
+      )
+      if (!applied) pending.target.attack(pending.amount)
+      try {
+        if (typeof pdzCteRecordOutgoing === 'function')
+          pdzCteRecordOutgoing(pending.player, pending.target, pending.amount, 'gun_shotgun_blast')
+      } catch (ignored) {}
+      if (pending.smartLink || pending.explosiveRounds || pending.corrosiveRounds)
+        dzBallisticAbilityFollowup(pending.player, pending.target, pending.amount, pending.smartLink, pending.explosiveRounds, pending.corrosiveRounds)
+      if (pending.player.persistentData.getBoolean('dz_firearms_damage_debug'))
+        pending.player.tell(Text.of('[Gun DMG] shotgun aggregate / ' + pending.pellets + ' pellets = ' + pending.amount.toFixed(2) + ' pre-armor').gray())
+    } catch (error) {
+      console.error('[PDZ Gun Hook] shotgun aggregate failed: ' + String(error))
+    }
+  })
+}
+
 TimelessGunEvents.entityHurtByGunPre(event => {
   let stage = 'event'
   let player = null
@@ -394,6 +461,10 @@ TimelessGunEvents.entityHurtByGunPre(event => {
   player.persistentData.putDouble('dz_firearms_last_final',finalAmount)
   player.persistentData.putString('dz_firearms_last_gun_id',gunProfile.id)
   player.persistentData.putString('dz_firearms_last_gun_type',gunProfile.type)
+  if (String(gunProfile.type).indexOf('shotgun') >= 0) {
+    dzFirearmsQueueShotgunBlast(event, player, hurtEntity, gunProfile, finalAmount, smartLink, explosiveRounds, corrosiveRounds)
+    return
+  }
   try{
     if(typeof pdzCteRecordOutgoing==='function')pdzCteRecordOutgoing(player,hurtEntity,finalAmount,event.isHeadShot()?'gun_head':'gun_body')
   }catch(ignored){}

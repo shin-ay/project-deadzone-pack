@@ -3230,7 +3230,7 @@ hash = "da2dd4520c3de9f54d390129674fcba2edf89da52e304db0550709d7f69dc754"
 
 [[files]]
 file = "config/tacz_tactical_breaching-common.toml"
-hash = "056bb51783dbe3b08460e83b99de443f56cc337c5cd3ed78e22051abb1c8625c"
+hash = "497c60a74a9924a422b5f23885951d35b4e11eed335be0d9ce86a75800a8952c"
 
 [[files]]
 file = "config/taczaddon-client.toml"
@@ -11362,7 +11362,7 @@ hash = "de2327b1e19d91d2607c4efad5f9ecdeb81971923f10a337b32bdb2e691882a9"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_firearms_perks_v0_1.js"
-hash = "5f86a7ff4bda8111e94fca0c1209aa2644df0844c3a3b629591fca0548fe2eca"
+hash = "b5a7fb2f98aec7bbdce48348cb2c64fd9a9d9ad050e5751bd11579b95bfe73f4"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_fitness_perks_v0_1.js"
@@ -22675,6 +22675,10 @@ hash = "f9c48453be6131136ef987aa56b95e11c6ec3813ea997a84b6b0f231eacb8d37"
 metafile = true
 
 [[files]]
+file = "tacz/Immersive Armorer-v1.2.1-for117.zip"
+hash = "2c9a18786e564d2fc2f26489b951bf79aa1e44e1c8cbe48d3f9dee4011f0dc6f"
+
+[[files]]
 file = "tacz/apocalypse-gun-pack.pw.toml"
 hash = "aea46c91ac8f06366211843e999ea412aa4087e812949e2a135302b39fa17fbe"
 metafile = true
@@ -22682,11 +22686,6 @@ metafile = true
 [[files]]
 file = "tacz/classics-reborn.pw.toml"
 hash = "81bb87112f4f8b982316537e7ebea74c3acff5f3f98fd820710dbbdec193b4f3"
-metafile = true
-
-[[files]]
-file = "tacz/immersive-armorer.pw.toml"
-hash = "5f316c3735b248f22c3fabeece8ea930e146f39193b13b32f2d1f296c9f3790d"
 metafile = true
 
 [[files]]
