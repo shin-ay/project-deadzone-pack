@@ -148,7 +148,7 @@ function pdzHordeCommandPlayer(source) {
 }
 
 function pdzHordeCommandReply(source, message) {
-  source.sendSystemMessage(Text.of(message))
+  source.sendSuccess(Text.of(message), false)
 }
 
 let PDZ_POLLUTION_TICKS = 0
