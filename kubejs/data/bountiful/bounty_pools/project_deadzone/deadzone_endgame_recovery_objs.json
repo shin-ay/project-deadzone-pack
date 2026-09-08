@@ -1,0 +1,48 @@
+{
+  "content": {
+    "pdz_end_recovery_rations": {
+      "type": "item",
+      "content": "minecraft:cooked_beef",
+      "amount": { "min": 16, "max": 32 },
+      "unitWorth": 420,
+      "timeMult": 7.0,
+      "weightMult": 1.1
+    },
+    "pdz_end_recovery_bandages": {
+      "type": "item",
+      "content": "apocalypsenow:bandage",
+      "amount": { "min": 8, "max": 16 },
+      "unitWorth": 700,
+      "timeMult": 8.0,
+      "rarity": "UNCOMMON",
+      "weightMult": 1.0
+    },
+    "pdz_end_recovery_antibiotics": {
+      "type": "item",
+      "content": "apocalypsenow:antibiotics",
+      "amount": { "min": 2, "max": 4 },
+      "unitWorth": 4200,
+      "timeMult": 9.0,
+      "rarity": "RARE",
+      "weightMult": 0.55
+    },
+    "pdz_end_recovery_repair_kits": {
+      "type": "item",
+      "content": "kubejs:field_repair_kit",
+      "amount": { "min": 3, "max": 6 },
+      "unitWorth": 1800,
+      "timeMult": 8.0,
+      "rarity": "UNCOMMON",
+      "weightMult": 0.8
+    },
+    "pdz_end_recovery_components": {
+      "type": "item",
+      "content": "immersiveengineering:component_steel",
+      "amount": { "min": 4, "max": 8 },
+      "unitWorth": 4300,
+      "timeMult": 10.0,
+      "rarity": "RARE",
+      "weightMult": 0.45
+    }
+  }
+}

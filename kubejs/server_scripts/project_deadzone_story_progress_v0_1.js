@@ -54,7 +54,7 @@ const DZ_STORY_QUESTS = {
   t3ChoirVessel: "0E8A3FB0BED9A091",
   t3ArgusChoice: "5EF7DA85993329F7",
   t3Complete: "65F53D8012470726",
-  t3EndgameContracts: "A3E1000000000001",
+  t3EndgameContracts: "25E9D43FE79C5C2B",
   // These are the real quest IDs in deadzone_main_story_t4.snbt.  The old
   // A4E1 placeholders never existed in the chapter and silently prevented
   // automatic T4 completion.

@@ -18,14 +18,32 @@
       "rarity": "RARE",
       "weightMult": 0.8
     },
-    "pdz_end_mutated_sample": {
-      "type": "item",
-      "content": "infectious:mutated_rotten_flesh",
-      "amount": { "min": 16, "max": 32 },
-      "unitWorth": 700,
-      "timeMult": 9.0,
+    "pdz_end_spore_howler": {
+      "type": "entity",
+      "content": "spore:howler",
+      "amount": { "min": 3, "max": 7 },
+      "unitWorth": 2400,
+      "timeMult": 12.0,
       "rarity": "UNCOMMON",
-      "weightMult": 1.1
+      "weightMult": 0.75
+    },
+    "pdz_end_spore_brute": {
+      "type": "entity",
+      "content": "spore:brute",
+      "amount": { "min": 2, "max": 5 },
+      "unitWorth": 3600,
+      "timeMult": 13.0,
+      "rarity": "RARE",
+      "weightMult": 0.55
+    },
+    "pdz_end_spore_sieger": {
+      "type": "entity",
+      "content": "spore:sieger",
+      "amount": { "min": 1, "max": 2 },
+      "unitWorth": 8000,
+      "timeMult": 15.0,
+      "rarity": "EPIC",
+      "weightMult": 0.25
     },
     "pdz_end_siege_tank": {
       "type": "entity",

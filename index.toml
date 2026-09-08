@@ -1482,7 +1482,7 @@ hash = "eb574b7f57818f653b388dbd2345785be39ccfaa779f9f7f7f4827e343d69c06"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/deadzone_main_story_t3.snbt"
-hash = "ae94c0e23309581723ff722618c473dbc3a2b49ab24e1b6a787be55af792df82"
+hash = "eea440c1e02c298d96ed8429c10f6956ce4fa31f28f1ddf72fde25e9a6812a40"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/deadzone_main_story_t4.snbt"
@@ -4290,7 +4290,7 @@ hash = "eeb6c54c80d8c9dab002dc44656f16f84fa3271fc8959f8b6aee1efda50958ea"
 
 [[files]]
 file = "kubejs/data/bountiful/bounty_decrees/project_deadzone/deadzone_endgame.json"
-hash = "23a030c3999a7903b546a73f688e433b1f7f727c0174140d09ebe76dd13b6816"
+hash = "67d7349c9501244f1143a6f78c24e870df670a0a67082b025b707ae9e38cd411"
 
 [[files]]
 file = "kubejs/data/bountiful/bounty_decrees/project_deadzone/deadzone_fieldwork.json"
@@ -4337,8 +4337,16 @@ file = "kubejs/data/bountiful/bounty_pools/project_deadzone/deadzone_bounty_rews
 hash = "7bd1a751def4ccf30f3706a8182397c54cf6268c7ed9da9a5c59580f42343f62"
 
 [[files]]
-file = "kubejs/data/bountiful/bounty_pools/project_deadzone/deadzone_endgame_objs.json"
-hash = "78aab600e08a5d5ecf33378dedfff7ad54f1afb5bb3a3fe1ed7c6738c383a732"
+file = "kubejs/data/bountiful/bounty_pools/project_deadzone/deadzone_endgame_hazard_objs.json"
+hash = "db834afc0ed53a436d4ae1c077de8ebb032fea4ea6aab033b3b638e59bf7707a"
+
+[[files]]
+file = "kubejs/data/bountiful/bounty_pools/project_deadzone/deadzone_endgame_hunt_objs.json"
+hash = "557258d1189cee3324ed022d56b838a1759384a6c20a736456d052ab1b67294f"
+
+[[files]]
+file = "kubejs/data/bountiful/bounty_pools/project_deadzone/deadzone_endgame_recovery_objs.json"
+hash = "6ec770aa5bbead3d22a1ee4ebfb581c75aaece28a8f509805ce8ce71cb02cb99"
 
 [[files]]
 file = "kubejs/data/bountiful/bounty_pools/project_deadzone/deadzone_endgame_rews.json"
@@ -11646,7 +11654,7 @@ hash = "41674e022663b6fdae9d6dedb786f4854a4ae08762ab7dcf789b0d8e54b4c61c"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_story_progress_v0_1.js"
-hash = "bd98cec9c8bf095f8a7a20f6d4deee3636571279e271144c22dfe1ed80ef9f4f"
+hash = "39082868db4eadc60e68ca836556bd8bde8eaf15d81bbe3ce4abc4cde8058df9"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_story_progression_v0_1.js"

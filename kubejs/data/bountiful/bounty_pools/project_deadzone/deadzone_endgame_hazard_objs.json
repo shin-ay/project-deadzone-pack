@@ -1,0 +1,49 @@
+{
+  "content": {
+    "pdz_end_mutated_sample": {
+      "type": "item",
+      "content": "infectious:mutated_rotten_flesh",
+      "amount": { "min": 16, "max": 32 },
+      "unitWorth": 700,
+      "timeMult": 9.0,
+      "rarity": "UNCOMMON",
+      "weightMult": 1.1
+    },
+    "pdz_end_acidic_gland": {
+      "type": "item",
+      "content": "spore:acidic_gland",
+      "amount": { "min": 4, "max": 10 },
+      "unitWorth": 1700,
+      "timeMult": 10.0,
+      "rarity": "UNCOMMON",
+      "weightMult": 0.85
+    },
+    "pdz_end_armor_fragment": {
+      "type": "item",
+      "content": "spore:armor_fragment",
+      "amount": { "min": 4, "max": 12 },
+      "unitWorth": 1500,
+      "timeMult": 10.0,
+      "rarity": "UNCOMMON",
+      "weightMult": 0.8
+    },
+    "pdz_end_altered_spleen": {
+      "type": "item",
+      "content": "spore:altered_spleen",
+      "amount": { "min": 2, "max": 6 },
+      "unitWorth": 2800,
+      "timeMult": 11.0,
+      "rarity": "RARE",
+      "weightMult": 0.5
+    },
+    "pdz_end_living_core": {
+      "type": "item",
+      "content": "spore:living_core",
+      "amount": { "min": 1, "max": 2 },
+      "unitWorth": 7200,
+      "timeMult": 13.0,
+      "rarity": "EPIC",
+      "weightMult": 0.2
+    }
+  }
+}
