@@ -24,16 +24,26 @@ const PDZ_WILD_SITES = {
   'apocalypsenow:ruins_2':            {type:'ruins', preferred:'infected'},
   'apocalypsenow:scrapyard':          {type:'scrapyard', preferred:'raider', trade:'independent'},
   'apocalypsenow:survivorcamp':       {type:'survivor_camp', preferred:'survivor', trade:'survivor'},
+  'apocalypsenow:clinic':              {type:'hospital', preferred:'civildef', role:'medical'},
+  'apocalypsenow:police_st':           {type:'police_station', preferred:'civildef', role:'security'},
+  'apocalypsenow:firefighter_st':      {type:'fire_station', preferred:'civildef', role:'security'},
 
   // Radio Towers.
   'radiotowers:radiotower':           {type:'radio', preferred:'civildef', trade:'civildef'},
   'radiotowers:radiotower_2':         {type:'radio', preferred:'remnant'},
   'radiotowers:radiotoweroverrun':    {type:'radio_overrun', preferred:'infected'},
   'radiotowers:airdrop':              {type:'airdrop', preferred:'independent'},
+  'infectious:radio_tower':            {type:'radio_tower', preferred:'infected', role:'communications'},
 
   // Standalone roadside structures.
   'chaoszpack_structures:watch_tower_1': {type:'watchtower', preferred:'civildef', trade:'civildef'},
   'doomsday_structures:gas_station':  {type:'gas_station', preferred:'raider', trade:'independent'},
+  // Survival Instinct also provides a Gas Station and is enabled in PDZ
+  // worldgen. It was missing from this registry, so generated stations were
+  // invisible to /deadzonewild scan and could never receive the story boss.
+  'survival_instinct:gas_station':     {type:'gas_station', preferred:'raider', trade:'independent'},
+  // The source mod intentionally ships this misspelled registry id.
+  'survival_instinct:fire_staton':     {type:'fire_station', preferred:'raider', role:'security'},
   'doomsday_structures:shops':        {type:'shops', preferred:'independent', trade:'independent'},
   'doomsday_structures:fire_station': {type:'fire_station', preferred:'raider'},
 
@@ -67,6 +77,15 @@ const PDZ_WILD_SITES = {
   'jeffs_cursed_walking_structures:nuclearbunker': {type:'nuclear_shelter', preferred:'aegis', minRegionTier:3},
   'jeffs_cursed_walking_structures:nuclearsilo': {type:'nuclear_silo', preferred:'remnant', minRegionTier:3},
   'jeffs_cursed_walking_structures:nuclearreactor': {type:'underground_reactor', preferred:'warden', minRegionTier:3},
+  'jeffs_cursed_walking_structures:radio_tower_desert': {type:'radio_tower', preferred:'remnant', role:'communications'},
+  'jeffs_cursed_walking_structures:radio_tower_plains': {type:'radio_tower', preferred:'remnant', role:'communications'},
+  'jeffs_cursed_walking_structures:radio_tower_tundra': {type:'radio_tower', preferred:'remnant', role:'communications'},
+  'jeffs_cursed_walking_structures:collapsed_radio_tower_desert': {type:'radio_tower_ruin', preferred:'infected', role:'communications'},
+  'jeffs_cursed_walking_structures:collapsed_radio_tower_plains': {type:'radio_tower_ruin', preferred:'infected', role:'communications'},
+  'jeffs_cursed_walking_structures:collapsed_radio_tower_tundra': {type:'radio_tower_ruin', preferred:'infected', role:'communications'},
+  'jeffs_cursed_walking_structures:destroyed_radio_tower_desert': {type:'radio_tower_ruin', preferred:'infected', role:'communications'},
+  'jeffs_cursed_walking_structures:destroyed_radio_tower_plains': {type:'radio_tower_ruin', preferred:'infected', role:'communications'},
+  'jeffs_cursed_walking_structures:destroyed_radio_tower_tundra': {type:'radio_tower_ruin', preferred:'infected', role:'communications'},
   'jeffs_cursed_walking_structures:starterbunker': {type:'civilian_bunker', preferred:'survivor', trade:'survivor', minRegionTier:1},
   // Fungal Infection: Spore structures may be present in worldgen before the
   // camp-relative tier is known.  Below T3 they remain inert scenery: no PDZ
@@ -513,6 +532,53 @@ function pdzWildLostCurrent(player) {
   }
 }
 
+// Lost Cities story facilities may be multi-buildings. Requiring the player to
+// stand in the exact building chunk made entrances, forecourts and road edges
+// look valid to the player while remaining invisible to the story trigger.
+// Search only named story-facility types through Lost Cities metadata; this
+// neither loads chunks nor broadens ordinary building discovery.
+function pdzWildLostStoryFacilityNearby(player,radius) {
+  if(!PDZ_WILD_LOSTCITIES)return null
+  try {
+    let info=PDZ_WILD_LOSTCITIES.lostCitiesImp.getLostInfo(player.level)
+    if(!info)return null
+    let pcx=Math.floor(player.x/16),pcz=Math.floor(player.z/16)
+    let chunks=Math.max(1,Math.ceil(radius/16))
+    for(let ring=0;ring<=chunks;ring++){
+      for(let dx=-ring;dx<=ring;dx++)for(let dz=-ring;dz<=ring;dz++){
+        if(ring>0&&Math.abs(dx)!==ring&&Math.abs(dz)!==ring)continue
+        let cx=pcx+dx,cz=pcz+dz,chunk=info.getChunkInfo(cx,cz)
+        if(!chunk||!chunk.isCity())continue
+        let building=chunk.getBuildingId()
+        if(!building)continue
+        let buildingId=String(building),id=buildingId.toLowerCase()
+        let storyFacility=id.indexOf('gasstation')>=0||id.indexOf('gas_station')>=0||
+          id.indexOf('gun')>=0||id.indexOf('weapon')>=0||id.indexOf('police')>=0||
+          id.indexOf('hospital')>=0||id.indexOf('clinic')>=0||id.indexOf('medical')>=0||
+          id.indexOf('fire')>=0||id.indexOf('radio')>=0
+        if(!storyFacility)continue
+        let rootX=cx,rootZ=cz,multi=chunk.getMultiBuildingInfo()
+        if(multi){rootX=cx-Number(multi.offsetX());rootZ=cz-Number(multi.offsetZ())}
+        let x=rootX*16+8,z=rootZ*16+8
+        let distanceX=x-player.x,distanceZ=z-player.z
+        // A three-by-three Lost Cities multi-building can place its root up to
+        // two chunks from the visible forecourt, hence the bounded margin.
+        if(distanceX*distanceX+distanceZ*distanceZ>(radius+48)*(radius+48))continue
+        let def=pdzWildLostClassify(buildingId),city=pdzWildLostCityIdentity(player,info,chunk,cx,cz)
+        return {buildingId:buildingId,def:def,rootX:rootX,rootZ:rootZ,x:x,z:z,
+          instance:String(player.level.dimension)+'|lostcities|'+rootX+'|'+rootZ+'|'+buildingId,
+          cityKey:city.key,cityX:city.x,cityZ:city.z,cityRadius:city.radius,cityStyle:city.style}
+      }
+    }
+  } catch(err) {
+    if(!player.persistentData.getBoolean('dz_lostcities_gas_scan_warned')){
+      player.persistentData.putBoolean('dz_lostcities_gas_scan_warned',true)
+      console.warn('[PROJECT DEADZONE] Lost Cities story-facility scan failed: '+err)
+    }
+  }
+  return null
+}
+
 function pdzWildStructureInfo(player,siteId) {
   try {
     let registry=player.level.registryAccess().registryOrThrow(PDZ_WILD_REGISTRIES.STRUCTURE)
@@ -760,6 +826,16 @@ function pdzWildScan(player) {
     let known=pdzWildMarkerByInstance(player,nearbySite.instance,512)
     if(known)return pdzWildApplyOccupancy(player,known,PDZ_WILD_SITES[nearbySite.siteId]||{type:'facility'})
     return pdzWildCreateMarker(player,nearbySite.siteId,null,nearbySite.instance,nearbySite)
+  }
+  if(player.persistentData.getBoolean('dz_story_auto_v3_preparation')){
+    let lostStory=pdzWildLostStoryFacilityNearby(player,112)
+    if(lostStory){
+      let city=pdzWildLostCityProfile(player,lostStory),faction=pdzWildLostFaction(player,lostStory)
+      let known=pdzWildMarkerByInstance(player,lostStory.instance,384)
+      if(known)return pdzWildApplyOccupancy(player,known,lostStory.def)
+      return pdzWildCreateMarker(player,lostStory.buildingId,faction,lostStory.instance,
+        {x:lostStory.x,z:lostStory.z},lostStory.def,city)
+    }
   }
   let current=pdzWildFindCurrent(player)
   if(!current){

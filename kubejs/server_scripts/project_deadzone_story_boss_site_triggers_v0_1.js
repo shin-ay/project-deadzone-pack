@@ -30,17 +30,18 @@ const DZ_SITE_BOSSES = [
     site:d => d.type.indexOf('radio') >= 0 || d.role === 'communications'},
   {key:'primordial', tag:'dz_story_boss_primordial', fn:'project_deadzone:story/spawn_primordial_boss',
     ready:p => p.persistentData.getBoolean('dz_story_auto_v3_t2_aegis_record'),
-    site:d => d.faction === 'aegis' && (d.role === 'research' || d.type.indexOf('laboratory') >= 0 || d.type.indexOf('underground') >= 0)},
+    site:d => d.role === 'research' || d.type.indexOf('laboratory') >= 0 ||
+      (d.faction === 'aegis' && d.type.indexOf('underground') >= 0)},
   {key:'reactor_saint', tag:'dz_story_boss_reactor_saint', fn:'project_deadzone:story/spawn_reactor_saint',
     ready:p => p.persistentData.getBoolean('dz_story_auto_v3_t3_laboratory'),
-    site:d => d.faction === 'aegis' && (d.role === 'research' || d.type.indexOf('laboratory') >= 0 || d.type.indexOf('reactor') >= 0)},
+    site:d => d.role === 'research' || d.type.indexOf('laboratory') >= 0 || d.type.indexOf('reactor') >= 0},
   {key:'argus_fragment', tag:'dz_story_boss_argus_fragment', fn:'project_deadzone:story/spawn_argus_fragment',
     ready:p => p.server.persistentData.getBoolean('dz_story_boss_complete_reactor_saint') &&
       p.persistentData.getInt('dz_story_warden_core_count') >= 3,
     site:d => d.faction === 'warden' || d.role === 'machine_node' || d.type.indexOf('warden') >= 0},
   {key:'choir_vessel', tag:'dz_story_boss_choir_vessel', fn:'project_deadzone:story/spawn_choir_vessel',
     ready:p => p.persistentData.getBoolean('dz_story_auto_v3_t3_choir_discovery'),
-    site:d => d.faction === 'infected' && (d.role === 'nest' || d.type.indexOf('infect') >= 0 || d.type.indexOf('laboratory') >= 0)}
+    site:d => d.role === 'nest' || d.type.indexOf('infect') >= 0 || d.type.indexOf('spore_') >= 0}
 ]
 
 function dzSiteBossRead(server) {

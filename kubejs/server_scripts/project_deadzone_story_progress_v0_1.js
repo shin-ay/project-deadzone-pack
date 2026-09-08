@@ -364,6 +364,18 @@ PlayerEvents.tick(event => {
       player.persistentData.getBoolean("dz_story_preparation_latched")) &&
       !player.persistentData.getBoolean("dz_story_preparation_briefing_ack"))
     player.persistentData.putBoolean("dz_story_preparation_briefing_ack", true)
+  // Migration: some saves completed Preparation before the v3 success flag
+  // existed. FTB Quests returns 0 when asked to complete an already-completed
+  // quest, so retrying alone can never create the flag that enables the first
+  // site boss. The old latched/completion flags are authoritative evidence.
+  if (!player.persistentData.getBoolean("dz_story_auto_v3_preparation") &&
+      player.persistentData.getBoolean("dz_story_preparation_briefing_ack") &&
+      (player.persistentData.getBoolean("dz_story_auto_preparation") ||
+       player.persistentData.getBoolean("dz_story_preparation_latched") ||
+       player.persistentData.getBoolean("dz_story_preparation_completion_v2"))) {
+    player.persistentData.putBoolean("dz_story_auto_v3_preparation", true)
+    console.info("[DEADZONE STORY] Migrated preparation completion for " + player.username)
+  }
   if (player.persistentData.getBoolean("dz_story_auto_briefing") &&
       player.persistentData.getBoolean("dz_story_preparation_briefing_ack") &&
       !player.persistentData.getBoolean("dz_story_auto_v3_preparation")) {
