@@ -11250,7 +11250,7 @@ hash = "b202631591dd8a0b75ff57b8da3db4dae06ddc628a50e984eea7ed532ff29c6e"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_auto_horde_v0_1.js"
-hash = "8a3f58334196b8e996abe8bb305d3b79f9f7cafa091bc34e44c5ff0e52216878"
+hash = "895ad8c75ea9c745b6271deab47df04bbe642269ff04cde6225097c87ed7eb10"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_base_core_v0_1.js"

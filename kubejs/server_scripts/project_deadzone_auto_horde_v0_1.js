@@ -141,6 +141,16 @@ function pdzPollutionNotify(player, previous, stage, parts) {
   }
 }
 
+function pdzHordeCommandPlayer(source) {
+  try { if (source.player) return source.player } catch (ignored) {}
+  try { if (source.server.players.length > 0) return source.server.players[0] } catch (ignored) {}
+  return null
+}
+
+function pdzHordeCommandReply(source, message) {
+  source.sendSystemMessage(Text.of(message))
+}
+
 let PDZ_POLLUTION_TICKS = 0
 ServerEvents.tick(event => {
   PDZ_POLLUTION_TICKS++
@@ -197,20 +207,31 @@ ServerEvents.commandRegistry(event => {
   const {commands: Commands} = event
   let root = Commands.literal('deadzonehorde')
   root.then(Commands.literal('status').executes(ctx => {
-    let parts = pdzHordePollutionParts(ctx.source.player)
-    ctx.source.player.tell(Text.of('HORDE OWNER: The Hordes / PDZ explicit: ' +
+    let player = pdzHordeCommandPlayer(ctx.source)
+    let pollution = 'N/A (no online player context)'
+    if (player) {
+      let parts = pdzHordePollutionParts(player)
+      pollution = Math.floor(parts.score) + '% [C ' + Math.floor(parts.carbon) +
+        ' / S ' + Math.floor(parts.sulfur) + ' / D ' + Math.floor(parts.dust) + '] @ ' + player.username
+    }
+    pdzHordeCommandReply(ctx.source, 'HORDE OWNER: The Hordes / PDZ explicit: ' +
       ctx.source.server.persistentData.getInt('dz_explicit_horde_count_v1') +
-      ' / Pollution: ' + Math.floor(parts.score) + '% [C ' + Math.floor(parts.carbon) +
-      ' / S ' + Math.floor(parts.sulfur) + ' / D ' + Math.floor(parts.dust) + ']').gold())
+      ' / Pollution: ' + pollution)
     return 1
   }))
-  root.then(Commands.literal('test_story').requires(source => source.hasPermission(2)).executes(ctx =>
-    global.pdzStartExplicitHorde(ctx.source.server, ctx.source.player, 'story:test') ? 1 : 0))
-  root.then(Commands.literal('test_pollution').requires(source => source.hasPermission(2)).executes(ctx =>
-    global.pdzStartExplicitHorde(ctx.source.server, ctx.source.player, 'pollution:test') ? 1 : 0))
+  root.then(Commands.literal('test_story').requires(source => source.hasPermission(2)).executes(ctx => {
+    let player = pdzHordeCommandPlayer(ctx.source)
+    if (!player) { pdzHordeCommandReply(ctx.source, 'No online player is available as the Horde target.'); return 0 }
+    return global.pdzStartExplicitHorde(ctx.source.server, player, 'story:test') ? 1 : 0
+  }))
+  root.then(Commands.literal('test_pollution').requires(source => source.hasPermission(2)).executes(ctx => {
+    let player = pdzHordeCommandPlayer(ctx.source)
+    if (!player) { pdzHordeCommandReply(ctx.source, 'No online player is available as the Horde target.'); return 0 }
+    return global.pdzStartExplicitHorde(ctx.source.server, player, 'pollution:test') ? 1 : 0
+  }))
   root.then(Commands.literal('pollution_rearm').requires(source => source.hasPermission(2)).executes(ctx => {
     ctx.source.server.persistentData.putString(PDZ_POLLUTION_CELLS_KEY, '{}')
-    ctx.source.player.tell(Text.of('Pollution Horde cells re-armed for testing.').aqua())
+    pdzHordeCommandReply(ctx.source, 'Pollution Horde cells re-armed for testing.')
     return 1
   }))
   event.register(root)
