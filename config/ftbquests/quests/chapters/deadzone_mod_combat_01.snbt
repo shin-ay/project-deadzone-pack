@@ -41,6 +41,7 @@
 			]
 			icon: "taczweaponblueprints:research_bench"
 			id: "5B6E7A9D1C42F803"
+			subtitle: "解放条件: 「TaCZ：銃器の基本」を完了"
 			tasks: [{
 				id: "71A4CC82D0035E19"
 				title: "兵器研究の流れを確認した"

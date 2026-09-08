@@ -1,42 +1,42 @@
 [
 	{
 		"entity": "minecraft:zombie",
-		"chance": 0.75
+		"chance": 0.12
 	},
 	{
 		"entity": "minecraft:zombie_villager",
-		"chance": 0.75
+		"chance": 0.14
 	},
 	{
 		"entity": "minecraft:husk",
-		"chance": 0.8
+		"chance": 0.18
 	},
 	{
 		"entity": "minecraft:drowned",
-		"chance": 0.7
+		"chance": 0.14
 	},
 	{
 		"entity": "minecraft:zombie_horse",
-		"chance": 0.7
+		"chance": 0.10
 	},
 	{
 		"entity": "minecraft:zombified_piglin",
-		"chance": 0.7
+		"chance": 0.12
 	},
 	{
 		"entity": "minecraft:zoglin",
-		"chance": 0.5
+		"chance": 0.10
 	},
 	{
 		"entity": "hordes:zombie_player",
-		"chance": 0.75
+		"chance": 0.18
 	},
 	{
 		"entity": "hordes:husk_player",
-		"chance": 0.8
+		"chance": 0.22
 	},
 	{
 		"entity": "hordes:drowned_player",
-		"chance": 0.7
+		"chance": 0.18
 	}
 ]

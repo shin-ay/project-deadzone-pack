@@ -321,16 +321,20 @@ ServerEvents.tick(event => {
   let relay = dzT4bFinalRelay(server)
   if (!relay) return
   let near = null
+  let nearestDistance = Number.POSITIVE_INFINITY
   server.players.forEach(player => {
     if (!dzT4bAuthorized(player) || String(player.level.dimension) !== String(relay.dimension)) return
-    if (dzT4bDist2(player, relay.x, relay.y, relay.z) <= 128 * 128) near = player
+    let distance = dzT4bDist2(player, relay.x, relay.y, relay.z)
+    if (distance <= 128 * 128 && distance < nearestDistance) {
+      near = player
+      nearestDistance = distance
+    }
   })
   if (!near) {
     server.persistentData.putBoolean('dz_t4_boss_armed_v1', true)
     return
   }
-  if (!server.persistentData.getBoolean('dz_t4_boss_armed_v1') ||
-      dzT4bDist2(near, relay.x, relay.y, relay.z) > 96 * 96) return
+  if (!server.persistentData.getBoolean('dz_t4_boss_armed_v1') || nearestDistance > 96 * 96) return
   if (dzT4bBossNear(near, relay, 160)) return
   let retry = Number(server.persistentData.getLong('dz_t4_boss_spawn_retry_ms_v1'))
   if (Date.now() < retry) return

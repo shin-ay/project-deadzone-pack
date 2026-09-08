@@ -154,7 +154,7 @@
 				item: "lightmanscurrency:coin_copper"
 				type: "item"
 			}]
-			subtitle: "解放条件: 「04：Universal Cable」を完了"
+			subtitle: "解放条件: 「05A：筐体と制御回路」を完了"
 			tasks: [
 				{
 					id: "6D48010000002501"

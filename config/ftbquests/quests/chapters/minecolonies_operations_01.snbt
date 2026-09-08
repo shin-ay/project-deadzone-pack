@@ -138,7 +138,7 @@
 			dependencies: ["6D4B010000000103"]
 			description: [
 				"完成済みGuard Tower・Barracksを用意し、PDZ Survivor Camp防衛へ地域支援を送る。MineColonies蛮族は重複襲撃防止のため無効。"
-				"MineColonies Raidを外部設定で有効化した環境では従来どおりAPI監視も行う。無犠牲ならSecurity評判+5、損害ありでも+2。"
+				"襲撃進行はPDZ Camp防衛へ一本化する。コロニー支援付きで防衛を完了すると、無犠牲ならSecurity評判+5、損害ありでも+2。"
 			]
 			icon: "minecolonies:blockhutguardtower"
 			id: "6D4B010000000108"

@@ -5,7 +5,7 @@
 	group: "23C996B606E0CFE9"
 	icon: "superbwarfare:epic_blueprint_data_chip"
 	id: "35C6FB81E83748E3"
-	order_index: 5
+	order_index: 6
 	quest_links: [ ]
 	quests: [
 		{
@@ -29,6 +29,7 @@
 			y: 0.0d
 		}
 		{
+			dependencies: ["562B6555400E8922"]
 			description: [
 				"危険地区で得た変異サンプルを、耐圧部品を使った解析容器へ収める。"
 				"危険地区作戦令状、感染施設、Ancient Abominationなど既存のT3活動から集められる。確認後は保管・加工してよい。"
@@ -55,6 +56,7 @@
 			y: -1.0d
 		}
 		{
+			dependencies: ["562B6555400E8922"]
 			description: [
 				"回収した軍用Blueprintを解析するため、Superb Warfare純正の研究設備を組み立てる。"
 				"JEIでBlueprint Research Tableを確認し、Battery、Cartography Table、Steel、Redstone Blockを用意する。"
@@ -79,6 +81,7 @@
 			y: 1.0d
 		}
 		{
+			dependencies: ["6CB060E779D800E8", "3EFF60D0217A368B"]
 			description: [
 				"通常のData ChipではFirst Voiceの暗号層へ届かない。Cemented Carbideを使ったEpic Blueprint Data Chipを製作する。"
 				"この工程がT4以降のSuperb Warfare研究、重火器、車両設備の共通入口になる。"
@@ -96,6 +99,7 @@
 			y: 0.0d
 		}
 		{
+			dependencies: ["6CB060E779D800E8", "3EFF60D0217A368B", "1B7C4EB85094A35A"]
 			description: [
 				"解析結果は、封鎖区域外に複数のCHOIR中継点が存在することを示した。"
 				"ストーリー解禁S4では精鋭分隊、強化Horde、軍用研究、外縁中継点攻略が解放される。単純な全MobのHP増加ではなく、編成と装備を変化させる。"

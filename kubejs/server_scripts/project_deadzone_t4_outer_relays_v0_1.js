@@ -1,4 +1,4 @@
-// PROJECT DEADZONE T4 outer relay operation v0.1
+// PROJECT DEADZONE T4 outer relay operation v0.2
 // Reuses loaded wilderness facilities.  No new giant structure, item, currency
 // or player command is required: discover a relay, defeat its role-based squad,
 // then hold the existing Epic Blueprint Data Chip near the site for analysis.
@@ -29,6 +29,16 @@ function dzT4rRead(server) {
 
 function dzT4rWrite(server, ledger) {
   server.persistentData.putString(DZ_T4R_LEDGER, JSON.stringify(ledger))
+}
+
+function dzT4rContiguousSecured(ledger) {
+  let ordered = ledger.slice().sort((a, b) => Number(a.index) - Number(b.index))
+  let secured = 0
+  for (let i = 0; i < ordered.length; i++) {
+    if (Number(ordered[i].index) !== i + 1 || ordered[i].state !== 'SECURED') break
+    secured++
+  }
+  return secured
 }
 
 function dzT4rMarkerId(marker) {
@@ -62,7 +72,11 @@ function dzT4rEligible(marker) {
   if (!strategic || ['remnant', 'warden', 'raider'].indexOf(faction) < 0) return false
   try {
     if (dzRegionTierAt(marker.server, marker.x, marker.z) < 3) return false
-  } catch (ignored) {}
+  } catch (ignored) {
+    // Region ownership is required.  Failing open here can turn a T0/T1 site
+    // into a T4 encounter when the regional tier bridge is unavailable.
+    return false
+  }
   return true
 }
 
@@ -99,6 +113,7 @@ function dzT4rRegister(player, marker, force) {
   let existing = dzT4rRecordForMarker(ledger, marker)
   if (existing) return existing
   if (ledger.length >= DZ_T4R_MAX || (!force && !dzT4rEligible(marker))) return null
+  if (ledger.length > 0 && ledger[ledger.length - 1].state !== 'SECURED') return null
   let index = ledger.length + 1
   let record = {
     id: dzT4rMarkerId(marker),
@@ -266,7 +281,7 @@ function dzT4rQuest(player, key, id) {
 function dzT4rSyncQuests(player, ledger) {
   if (!dzT4rAuthorized(player)) return
   if (ledger.length > 0) dzT4rQuest(player, 'triangulation', DZ_T4R_QUESTS.triangulation)
-  let secured = ledger.filter(record => record.state === 'SECURED').length
+  let secured = dzT4rContiguousSecured(ledger)
   if (secured >= 1) dzT4rQuest(player, 'relay1', DZ_T4R_QUESTS.relay1)
   if (secured >= 2) dzT4rQuest(player, 'relay2', DZ_T4R_QUESTS.relay2)
   if (secured >= 3) {
@@ -302,7 +317,7 @@ function dzT4rChannel(player, record, ledger) {
   dzT4rWrite(player.server, ledger)
   player.persistentData.putString('dz_t4_relay_channel_site_v1', '')
   player.persistentData.putInt('dz_t4_relay_channel_ticks_v1', 0)
-  let secured = ledger.filter(value => value.state === 'SECURED').length
+  let secured = dzT4rContiguousSecured(ledger)
   player.server.persistentData.putInt('dz_t4_relay_secured_count_v1', secured)
   player.server.runCommandSilent('tellraw @a [{"text":"[作戦更新] ","color":"gold","bold":true},' +
     '{"text":"外縁中継点0' + record.index + 'を確保 (' + secured + '/3)","color":"green"}]')
@@ -391,7 +406,7 @@ ServerEvents.commandRegistry(event => {
     }
     let record = dzT4rRegister(player, marker, true)
     if (!record) {
-      player.tell(Text.of('中継点は既に3地点登録済みです。').red())
+      player.tell(Text.of('前の中継点が未確保、または3地点登録済みです。').red())
       return 0
     }
     player.tell(Text.of('既存施設をT4中継点0' + record.index + 'として登録しました。').green())

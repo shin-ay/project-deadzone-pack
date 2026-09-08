@@ -221,13 +221,15 @@ function dzLogDeliver(player) {
   server.persistentData.putBoolean("dz_logistics_ever_completed", true)
   if (demandBonus) server.persistentData.putBoolean("dz_logistics_ever_demand_match", true)
   dzLogAddReputation(server, spec, demandBonus)
-  player.give(Item.of("lightmanscurrency:coin_copper", spec.money + (demandBonus ? 4 : 0)))
+  let reward = spec.money + (demandBonus ? 4 : 0)
+  if (global.pdzCreditGive) global.pdzCreditGive(player, reward)
+  else player.give(Item.of("lightmanscurrency:coin_copper", reward))
   dzLogComplete(player, DZ_LOGISTICS_QUESTS[mode])
   if (demandBonus) dzLogComplete(player, DZ_LOGISTICS_QUESTS.matched)
   if (server.persistentData.getBoolean("dz_camp_fuel_route_restored")) dzLogComplete(player, DZ_LOGISTICS_QUESTS.fuel)
-  if (typeof dzMcOpsAddReputation === "function") {
+  if (global.pdzMcOpsAddReputation) {
     try {
-      dzMcOpsAddReputation(server, demandBonus ? 2 : 1, 0, 0)
+      global.pdzMcOpsAddReputation(server, demandBonus ? 2 : 1, 0, 0)
       dzLogComplete(player, DZ_LOGISTICS_QUESTS.colony)
     } catch (ignored) {}
   }

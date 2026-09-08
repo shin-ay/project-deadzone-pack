@@ -131,7 +131,7 @@
 			]
 			icon: "minecraft:campfire"
 			id: "6D8F010000000109"
-			subtitle: "JOB選択 → 準備 → Gas Station → Camp帰還"
+			subtitle: "JOB選択 → 準備 → Gas Station → Camp帰還｜解放条件: 「レイ定時報告：現在の世界」を完了"
 			tasks: [{ id: "6D8F010000002109", title: "T0の一巡を完了", type: "custom" }]
 			title: "T0縦切り：最初の帰還"
 			x: 1.0d
@@ -145,7 +145,7 @@
 			]
 			icon: "minecraft:shield"
 			id: "6D8F010000000110"
-			subtitle: "初回防衛 → 生活供給 → Camp Lv1 → 帰還"
+			subtitle: "初回防衛 → 生活供給 → Camp Lv1 → 帰還｜解放条件: 「T0縦切り：最初の帰還」・「T1報告：燃料ルート復旧」をすべて完了"
 			tasks: [{ id: "6D8F010000002110", title: "S1の一巡を完了", type: "custom" }]
 			title: "S1縦切り：守った場所を育てる"
 			x: 3.0d
@@ -159,7 +159,7 @@
 			]
 			icon: "minecraft:compass"
 			id: "6D8F010000000111"
-			subtitle: "支援ルート → 勢力判断 → Camp帰還"
+			subtitle: "支援ルート → 勢力判断 → Camp帰還｜解放条件: 「S1縦切り：守った場所を育てる」・「T2報告：地域勢力が動き出す」をすべて完了"
 			tasks: [{ id: "6D8F010000002111", title: "S2の一巡を完了", type: "custom" }]
 			title: "S2縦切り：地域へ影響を返す"
 			x: 5.0d

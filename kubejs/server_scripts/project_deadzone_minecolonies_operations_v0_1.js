@@ -1,5 +1,7 @@
-// PROJECT DEADZONE MineColonies operations bridge v0.1
+// PROJECT DEADZONE MineColonies operations bridge v0.2
 // Reads the public MineColonies API. No colony NBT mutation and no raid spawning.
+// PDZ Camp defense is the sole raid owner; disabled MineColonies barbarian
+// raids are not polled as a second background system.
 
 const DZ_MC_OPS_COLONY_MANAGER = Java.loadClass("com.minecolonies.api.colony.IColonyManager")
 
@@ -15,10 +17,9 @@ const DZ_MC_OPS_QUESTS = {
   regional: "6D4B010000000109"
 }
 
-let dzMcOpsTick = 0
+let dzMcOpsAuditTick = 0
 let dzMcOpsLookupErrorLogged = false
 let dzMcOpsSnapshotErrorLogged = false
-let dzMcOpsRaidErrorLogged = false
 
 function dzMcOpsColonyKey(colony, suffix) {
   return "dz_mc_ops_c" + colony.getID() + "_" + suffix
@@ -37,7 +38,6 @@ function dzMcOpsOwnedColony(player) {
 }
 
 function dzMcOpsSnapshot(colony) {
-  let raiders = colony.getRaiderManager()
   return {
     id: colony.getID(),
     name: "" + colony.getName(),
@@ -45,10 +45,7 @@ function dzMcOpsSnapshot(colony) {
     capacity: colony.getCitizenManager().getMaxCitizens(),
     happiness: Number(colony.getOverallHappiness()),
     research: colony.getResearchManager().getResearchTree().getCompletedList().size(),
-    playerRequests: colony.getRequestManager().getPlayerResolver().getAllAssignedRequests().size(),
-    raided: colony.isColonyUnderAttack() || raiders.isRaided(),
-    lostCitizen: raiders.getLostCitizen(),
-    raidLevel: raiders.getColonyRaidLevel()
+    playerRequests: colony.getRequestManager().getPlayerResolver().getAllAssignedRequests().size()
   }
 }
 
@@ -62,6 +59,10 @@ function dzMcOpsAddReputation(server, supply, security, restoration) {
   if (restoration > 0) server.persistentData.putInt("dz_camp_restoration_reputation", server.persistentData.getInt("dz_camp_restoration_reputation") + restoration)
   server.persistentData.putLong("dz_camp_shops_next_rotation", 0)
 }
+
+// Other PDZ bridges run in separate KubeJS script scopes. Export only the
+// narrow integration hook instead of relying on an engine-global function.
+global.pdzMcOpsAddReputation = dzMcOpsAddReputation
 
 function dzMcOpsCommunityRank1(server) {
   return server.persistentData.getInt("dz_camp_development_level") >= 1 &&
@@ -81,21 +82,6 @@ function dzMcOpsGrant(server, player, colony, milestone, title, questId, supply,
   dzMcOpsCompleteQuest(player, questId)
   server.players.forEach(target => target.tell(Text.of("[COLONY OPS] " + colony.getName() + "：" + title + "  Supply +" + supply + " / Security +" + security + " / Restoration +" + restoration).green()))
   return true
-}
-
-function dzMcOpsObserveRaid(server, colony, snapshot) {
-  let seenKey = dzMcOpsColonyKey(colony, "raid_seen")
-  let lossKey = dzMcOpsColonyKey(colony, "raid_loss_seen")
-  if (snapshot.raided) {
-    server.persistentData.putBoolean(seenKey, true)
-    if (snapshot.lostCitizen) server.persistentData.putBoolean(lossKey, true)
-    return
-  }
-  if (!server.persistentData.getBoolean(seenKey)) return
-  let hadLoss = server.persistentData.getBoolean(lossKey)
-  dzMcOpsGrant(server, null, colony, "raid1", hadLoss ? "襲撃対応完了（犠牲あり）" : "無犠牲で襲撃を防衛", DZ_MC_OPS_QUESTS.raid1, 0, hadLoss ? 2 : 5, 0)
-  server.persistentData.putBoolean(seenKey, false)
-  server.persistentData.putBoolean(lossKey, false)
 }
 
 // MineColonies barbarian spawning is intentionally disabled in PDZ. A real,
@@ -138,7 +124,6 @@ function dzMcOpsAudit(player, announce) {
     return 0
   }
 
-  dzMcOpsObserveRaid(server, colony, snapshot)
   dzMcOpsGrant(server, player, colony, "intro", "地域運営監査を開始", DZ_MC_OPS_QUESTS.intro, 0, 0, 0)
   if (snapshot.population >= 5) dzMcOpsGrant(server, player, colony, "population5", "人口5人へ成長", DZ_MC_OPS_QUESTS.population5, 0, 0, 2)
   if (snapshot.population >= 10) dzMcOpsGrant(server, player, colony, "population10", "人口10人へ成長", DZ_MC_OPS_QUESTS.population10, 1, 0, 3)
@@ -163,28 +148,16 @@ function dzMcOpsAudit(player, announce) {
     player.tell(Text.of("=== MineColonies 地域運営監査 ===").aqua())
     player.tell(Text.of(snapshot.name + "  Colony #" + snapshot.id).aqua())
     player.tell(Text.of("人口 " + snapshot.population + "/" + snapshot.capacity + "｜幸福度 " + snapshot.happiness.toFixed(2) + "/10｜完了研究 " + snapshot.research).gray())
-    player.tell(Text.of("プレイヤー待ち要求 " + snapshot.playerRequests + "｜Raid " + (snapshot.raided ? "発生中 Lv" + snapshot.raidLevel : "なし")).gray())
+    player.tell(Text.of("プレイヤー待ち要求 " + snapshot.playerRequests + "｜襲撃担当 PDZ Camp防衛").gray())
     if (!server.persistentData.getBoolean(dzMcOpsColonyKey(colony, "claimed_logistics1"))) {
       player.tell(Text.of("物流試験：要求が1件以上ある時と、解消後の2回監査すると達成になります。").yellow())
     }
     if (!server.persistentData.getBoolean(dzMcOpsColonyKey(colony, "claimed_raid1"))) {
-      player.tell(Text.of("防衛試験：完成した監視塔・兵舎でPDZ Camp防衛を支援すると達成。外部設定でMineColonies Raidを有効にした場合も監視します。").yellow())
+      player.tell(Text.of("防衛試験：完成した監視塔・兵舎でPDZ Camp防衛を支援すると達成します。").yellow())
     }
     player.tell(Text.of("[地域経済を確認]").aqua().clickRunCommand("/deadzonecommunity"))
   }
   return 1
-}
-
-function dzMcOpsObserveAllRaids(server) {
-  try {
-    let colonies = DZ_MC_OPS_COLONY_MANAGER.getInstance().getAllColonies()
-    colonies.forEach(colony => dzMcOpsObserveRaid(server, colony, dzMcOpsSnapshot(colony)))
-  } catch (error) {
-    if (!dzMcOpsRaidErrorLogged) {
-      dzMcOpsRaidErrorLogged = true
-      console.error("[PROJECT DEADZONE][MineColonies Ops] Raid observer failed: " + error)
-    }
-  }
 }
 
 ServerEvents.commandRegistry(event => {
@@ -208,11 +181,10 @@ ServerEvents.commandRegistry(event => {
 })
 
 ServerEvents.tick(event => {
-  dzMcOpsTick++
-  if (dzMcOpsTick % 100 === 0) dzMcOpsObserveAllRaids(event.server)
-  if (dzMcOpsTick % 600 === 0) event.server.players.forEach(player => dzMcOpsAudit(player, false))
+  dzMcOpsAuditTick++
+  if (dzMcOpsAuditTick % 600 === 0) event.server.players.forEach(player => dzMcOpsAudit(player, false))
 })
 
 PlayerEvents.loggedIn(event => event.player.server.scheduleInTicks(200, callback => dzMcOpsAudit(event.player, false)))
 
-console.info("[PROJECT DEADZONE][MineColonies Ops] v0.1 loaded.")
+console.info("[PROJECT DEADZONE][MineColonies Ops] v0.2 loaded.")

@@ -86,7 +86,7 @@
 	#Whether later levels of infected should deplete hunger quicker?
 	infectHunger = true
 	#Base infection resistance of players, corresponds to the percentage to not get infected.
-	playerInfectionResistance = 0.25
+	playerInfectionResistance = 0.55
 	#How long do each of the 4 effect phases last for before the next phase is activated?
 	ticksForEffectStage = 6000
 	#Do players who die to infection spawn a zombie?

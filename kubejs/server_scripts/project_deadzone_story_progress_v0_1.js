@@ -59,6 +59,9 @@ const DZ_STORY_QUESTS = {
   // A4E1 placeholders never existed in the chapter and silently prevented
   // automatic T4 completion.
   t4Aftermath: "562B6555400E8922",
+  t4Samples: "6CB060E779D800E8",
+  t4Arsenal: "3EFF60D0217A368B",
+  t4Cipher: "1B7C4EB85094A35A",
   t4Authorization: "259E544FE7CEAC94"
 }
 
@@ -108,6 +111,16 @@ function dzSyncT4Foundation(player) {
     player.persistentData.putBoolean("dz_story_t4_cipher_latched", true)
     player.tell(Text.of("[T4準備] 高度暗号化Data Chipを確保した。").green())
   }
+
+  // The evidence flags are authoritative once latched. Complete the matching
+  // FTB quests from those flags so players may safely place/process the items
+  // after the first inventory check without making progression impossible.
+  if (player.persistentData.getBoolean("dz_story_t4_samples_latched"))
+    dzCompletePlayerStoryQuest(player, "t4_samples", DZ_STORY_QUESTS.t4Samples)
+  if (player.persistentData.getBoolean("dz_story_t4_arsenal_latched"))
+    dzCompletePlayerStoryQuest(player, "t4_arsenal", DZ_STORY_QUESTS.t4Arsenal)
+  if (player.persistentData.getBoolean("dz_story_t4_cipher_latched"))
+    dzCompletePlayerStoryQuest(player, "t4_cipher", DZ_STORY_QUESTS.t4Cipher)
 
   let ready = player.persistentData.getBoolean("dz_story_t4_samples_latched") &&
     player.persistentData.getBoolean("dz_story_t4_arsenal_latched") &&
