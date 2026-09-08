@@ -361,6 +361,10 @@ file = "config/adpother-common.toml"
 hash = "1283324e4af6a6845aa56fee125b6740537ae99d26689348e2b3edc0a54cbba5"
 
 [[files]]
+file = "config/adpother/Blocks/filter_frame.cfg"
+hash = "e9bb130a6aa49c5bb31adc95ee6a14bfc8717385e4c68e3a9ccc3a8e9d0be74a"
+
+[[files]]
 file = "config/adpother/Impacts/hostile_mobs.cfg"
 hash = "1b746b7a998a0ebd5a4c32f69aba3abfe90bbe03489e44de8fd30932840e72bf"
 
@@ -370,15 +374,15 @@ hash = "30a011c0288113bfa54a14a184e9ffabeab66262ad361477e99bc3ab95669900"
 
 [[files]]
 file = "config/adpother/Pollutants/carbon.cfg"
-hash = "445c0211e66ebb02f551e78c4a79fb4e176f2d9eb6fc80c808b508faa3b4368c"
+hash = "fd17ff4a18c375df63288d3882b32007121912738ba54299a16f7bb495baaa70"
 
 [[files]]
 file = "config/adpother/Pollutants/dust.cfg"
-hash = "4599680a461fb530c102ae4e1db3a62772899c2da4bf86cd7b3adec935f0a6ba"
+hash = "95da173ee87d6165200b7a70010d8953399141aabade8b8fc9699e46bae3ae1a"
 
 [[files]]
 file = "config/adpother/Pollutants/sulfur.cfg"
-hash = "fbfe770b44d32e62b087e1f5826e2e88273aa3b3bddb3b664820d83d29855f13"
+hash = "8266b9a3c61d0b40e843b798287c1f8aad887088539a7383cbe7dc56706690bc"
 
 [[files]]
 file = "config/alexsmobs.toml"
@@ -1790,27 +1794,27 @@ hash = "083e811b4483358d62396f6e1517ff25791b2253c72d54f81a09bab5d0beb6a2"
 
 [[files]]
 file = "config/hordes/data/project_deadzone/horde_data/tables/pdz_t0.json"
-hash = "fb19b3ada1dfe0883ce29d7bb8eb2376a48d74910bd3b74542e63bf483e3aee8"
+hash = "20f1cac1f85e1559ccbc4029a1a4eaff7d63737b2d8c0d01083c36dfe64b21ac"
 
 [[files]]
 file = "config/hordes/data/project_deadzone/horde_data/tables/pdz_t1.json"
-hash = "c8be561b0e82c0580e5e92bec1afca077e04171535b78e9f081898930431b0f7"
+hash = "81a4a52f62b008959e36feb358b2e55b53baecdb1b39c500022ce0bbf37447dd"
 
 [[files]]
 file = "config/hordes/data/project_deadzone/horde_data/tables/pdz_t2.json"
-hash = "ebb56f465da6f34e9b64b932f399a4d45d8f8a028695b5022711ec3e9bb324c2"
+hash = "626a2b506e5700d90de0890171554512d150901d3c54e5ba9be8474204b1443d"
 
 [[files]]
 file = "config/hordes/data/project_deadzone/horde_data/tables/pdz_t3.json"
-hash = "e5860c1a8e0fbe5d53039c648bcefa7baa16d449467875dd7f9f99346a1db31f"
+hash = "4ac0aeca95122adbe39e8c5054563edddef1b21f78e371dd87df4a2ec9e92e94"
 
 [[files]]
 file = "config/hordes/data/project_deadzone/horde_data/tables/pdz_t4.json"
-hash = "52c5aa46fb0abdffa23c79d34f92f43a6f95ea056f0fe299e61310c1768ac047"
+hash = "993c2b657f3c6f08de1edb17368f78116d4bcfa7ebb52814d955f6572d13d1be"
 
 [[files]]
 file = "config/hordes/data/project_deadzone/horde_data/tables/pdz_t5.json"
-hash = "91a973005dfc792fc725927195fd8528f8502fada146423e66b72dd955c915cc"
+hash = "1b37cc2a56a7465535faf5e27926461bb38b87b709daa2d5c3bcd197508b8db0"
 
 [[files]]
 file = "config/hordes/hordes-info.json"
@@ -7034,7 +7038,7 @@ hash = "85f3d49df419fbc2c942f250aed938b6f1a483c9ee4510d4cf9df10506b13e2f"
 
 [[files]]
 file = "kubejs/data/mmorpg/mmorpg_game_balance/original_balance.json"
-hash = "c45e9abf24a214605cdd4dc19b80c627692933ff6936c649d4cf59243bb1e796"
+hash = "9e6acb310edb9a6809d6032ed5307e3cd619fa212709e58dd5678a630139740d"
 
 [[files]]
 file = "kubejs/data/mmorpg/mmorpg_gear_rarity/common.json"
@@ -11246,7 +11250,7 @@ hash = "b202631591dd8a0b75ff57b8da3db4dae06ddc628a50e984eea7ed532ff29c6e"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_auto_horde_v0_1.js"
-hash = "236e8c647abd95f8251eaf5e0f3f58162e40d6e4b619ef3e74e6b201c86d1b61"
+hash = "8a3f58334196b8e996abe8bb305d3b79f9f7cafa091bc34e44c5ff0e52216878"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_base_core_v0_1.js"
@@ -11646,7 +11650,7 @@ hash = "3c6e172acbeb1551b95d993da8390652fa133672676c008027b034a5be344aca"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_story_boss_site_triggers_v0_1.js"
-hash = "fb4ca4a113e823f7375aa5969885a870b21573a50716ab39cf830a179f473f10"
+hash = "30dfbcd93065ab34cec16ef0aeb8f0fa78489f89f92f94e4058d1b47193ba360"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_story_branches_v0_1.js"
@@ -11654,7 +11658,7 @@ hash = "41674e022663b6fdae9d6dedb786f4854a4ae08762ab7dcf789b0d8e54b4c61c"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_story_progress_v0_1.js"
-hash = "39082868db4eadc60e68ca836556bd8bde8eaf15d81bbe3ce4abc4cde8058df9"
+hash = "19b60357f195cf4db55c86e7e8a168289fc19158fc2b72746fe1d2a62a760c53"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_story_progression_v0_1.js"
@@ -11758,7 +11762,7 @@ hash = "f626f1cdbcdef34d2882fa23feb12dacd15626a1c41bd43babe6d6b6c1ecdacd"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_wilderness_sites_v0_1.js"
-hash = "46b11250c1ce2008f25263e945675344ff1f19e15dfec5718b3edae8d08d21b0"
+hash = "2fc8a63e149d8d9d7f75b6fb54a275ed1e71ad2444c41037fed63cdd70afaebc"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_world_evolution_v0_1.js"

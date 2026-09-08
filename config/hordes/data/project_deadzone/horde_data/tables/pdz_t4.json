@@ -1,5 +1,5 @@
 [
-  "minecraft:zombie-10-0-0",
+  "minecraft:zombie-3-0-0",
   "infectious:hazmat_zombie-12-0-0",
   "infectious:swat_zombie-14-0-0",
   "infectious:acid_zombie-10-0-0",
@@ -9,5 +9,7 @@
   "infectious:mutant_zombie-6-0-0",
   "infectious:zombie_bomber-6-0-0",
   "infectious:mecha_zombie-3-0-0",
-  "infectious:screamer-9-0-0"
+  "infectious:screamer-9-0-0",
+  "infectious:iron_door_zombie-3-0-0",
+  "infectious:zombie_climber-4-0-0"
 ]

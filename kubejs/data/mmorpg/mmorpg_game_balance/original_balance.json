@@ -21,7 +21,7 @@
   "MOB_DAMAGE_SCALING": {
     "base_scaling": 1.0,
     "cap_to_max_lvl": false,
-    "per_level_scaling": 0.25
+    "per_level_scaling": 0.2
   },
   "MOB_DMG_MULTI_PER_MAP_RES_REQ_LACKING": 0.0,
   "MOB_DMG_POWER_SCALING": 1.015,

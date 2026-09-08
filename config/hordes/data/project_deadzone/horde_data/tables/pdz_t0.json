@@ -1,6 +1,8 @@
 [
-  "minecraft:zombie-68-0-0",
+  "minecraft:zombie-61-0-0",
   "minecraft:zombie_villager-10-0-0",
   "minecraft:husk-17-0-0",
-  "minecraft:drowned-5-0-0"
+  "minecraft:drowned-5-0-0",
+  "infectious:door_zombie-4-0-0",
+  "infectious:zombie_climber-3-0-0"
 ]
