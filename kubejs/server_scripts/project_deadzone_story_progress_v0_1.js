@@ -279,6 +279,13 @@ function dzIsFacilityBoss(entity) {
     || entity.tags.contains("dz_story_boss_choir_vessel"))
 }
 
+function dzStoryBossHasPlayerCredit(event, boss) {
+  let attacker = event.source ? event.source.actual : null
+  if (attacker && attacker.isPlayer && attacker.isPlayer()) return true
+  let last = Number(boss.persistentData.getLong("dz_story_last_player_hit_ms") || 0)
+  return last > 0 && Date.now() - last <= 30000
+}
+
 function dzFacilityPartySize(server, boss) {
   let count = 0
   server.players.forEach(player => {
@@ -307,8 +314,12 @@ function dzScaleFacilityBoss(server, boss) {
     console.warn('[DEADZONE STORY] M&S party scaling failed: ' + err)
     scaledHealth = Math.round(boss.maxHealth)
   }
-  let armor = Math.min(16, 4 + (party - 1) * 1.5)
+  // Do not overwrite an authored boss profile with ordinary-mob armor. The
+  // previous solo value of 4 made even a four-digit-HP boss fold to ambient
+  // high-tier zombies before the player could engage it.
+  let armor = Math.min(28, 16 + (party - 1) * 2)
   boss.runCommandSilent("attribute @s minecraft:generic.armor base set " + armor)
+  boss.runCommandSilent("attribute @s minecraft:generic.armor_toughness base set 6")
   boss.runCommandSilent("attribute @s minecraft:generic.knockback_resistance base set 0.75")
   boss.runCommandSilent("effect give @s minecraft:glowing infinite 0 true")
   boss.health = boss.maxHealth
@@ -503,6 +514,11 @@ PlayerEvents.tick(event => {
 EntityEvents.death(event => {
   let npc = event.entity
   if (!npc || npc.level.clientSide) return
+
+  if (dzIsFacilityBoss(npc) && !dzStoryBossHasPlayerCredit(event, npc)) {
+    console.warn("[DEADZONE STORY] Ignored uncredited boss death: " + String(npc.type))
+    return
+  }
 
   if (npc.tags.contains("dz_story_boss_primordial")) {
     dzStoryBossCheckpoint(event.server, "primordial", DZ_STORY_QUESTS.t2Primordial,

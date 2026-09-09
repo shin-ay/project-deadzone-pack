@@ -39,6 +39,13 @@ function dzBridgeRewardSpec(entity) {
   return null
 }
 
+function dzBridgeBossHasPlayerCredit(event, boss) {
+  let attacker = event.source ? event.source.actual : null
+  if (attacker && attacker.isPlayer && attacker.isPlayer()) return true
+  let last = Number(boss.persistentData.getLong('dz_story_last_player_hit_ms') || 0)
+  return last > 0 && Date.now() - last <= 30000
+}
+
 function dzBridgeParticipant(player, boss) {
   if (String(player.level.dimension) !== String(boss.level.dimension)) return false
   let dx = player.x - boss.x, dy = player.y - boss.y, dz = player.z - boss.z
@@ -135,6 +142,10 @@ EntityEvents.death(event => {
   if (!boss || boss.level.clientSide || !boss.tags) return
   let spec = dzBridgeRewardSpec(boss)
   if (!spec) return
+  if (!dzBridgeBossHasPlayerCredit(event, boss)) {
+    console.warn('[BOSS REWARD] Ignored uncredited boss death: ' + String(boss.type))
+    return
+  }
   event.server.players.forEach(player => {
     if (dzBridgeParticipant(player, boss)) dzGiveBridgeReward(player, spec)
   })

@@ -88,9 +88,17 @@ function dzSiteBossSpawn(player, marker, spec, ledger) {
   let retryKey = spec.key
   let now = Date.now()
   if ((DZ_SITE_BOSS_FAILURE_RETRY[retryKey] || 0) > now) return false
+  // Story bosses are campaign checkpoints, not repeatable facility loot. Once
+  // the authoritative completion flag is set, no marker of this type may
+  // create another copy anywhere in the world.
+  if (player.server.persistentData.getBoolean('dz_story_boss_complete_' + spec.key)) return false
   let instance = dzSiteBossInstance(marker)
   let ledgerKey = spec.key + '|' + instance
-  if (ledger[ledgerKey]) return false
+  // A completed spawn record is diagnostic history, not a permanent lock.
+  // If a boss vanished without a credited player kill, the encounter must be
+  // recoverable. Only suppress a still-fresh same-tick spawn reservation.
+  if (ledger[ledgerKey] && ledger[ledgerKey].state === 'spawning' &&
+      Number(ledger[ledgerKey].at || 0) > now - 30000) return false
   if (dzSiteBossNear(player.server, marker, spec.tag, DZ_SITE_BOSS_DUPLICATE_RANGE)) return false
 
   // Reserve first to close the same-tick multiplayer race. Roll back if the

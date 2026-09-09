@@ -33,7 +33,8 @@ const PDZ_MECH_DEFS = [
 const PDZ_MECH_BOSS_GUNS = {
   '01':{gun:'tacz:minigun',mode:'AUTO',ammo:100},
   '04':{gun:'tacz:fn_evolys',mode:'AUTO',ammo:100},
-  '05':{gun:'elitex:mcs_spear',mode:'AUTO',ammo:30},
+  // 05 is a vanilla pillager. Replacing its crossbow with a TaCZ item leaves
+  // the pillager AI unable to fire, so its authored crossbow is preserved.
   '06':{gun:'elitex:m249x',mode:'AUTO',ammo:100},
   '07':{gun:'elitex:fh_scar18',mode:'AUTO',ammo:30},
   '08':{gun:'tacz:scar_h',mode:'AUTO',ammo:20},
@@ -247,11 +248,31 @@ function pdzMechPulse(boss,id){
     boss.runCommandSilent('damage @a[distance=..7,gamemode=!creative,gamemode=!spectator] 4 minecraft:on_fire')
     boss.runCommandSilent('effect give @a[distance=..7,gamemode=!creative,gamemode=!spectator] minecraft:weakness 4 0 true')
     pdzMechTell(boss,'焼夷制圧。炎上範囲から離脱！','red');pdzMechPulseCount++
-  }else if(id==='05'&&time%8===0){
-    boss.runCommandSilent('effect give @s minecraft:speed 4 2 true')
-    boss.runCommandSilent('effect give @s minecraft:invisibility 2 0 true')
-    boss.runCommandSilent('effect give @p[distance=..24,gamemode=!spectator] minecraft:glowing 5 0 true')
-    pdzMechTell(boss,'偵察標定。発光した対象へ高速接近。','yellow');pdzMechPulseCount++
+  }else if(id==='05'){
+    let ratio=Number(boss.health)/Math.max(1,Number(boss.maxHealth))
+    if(ratio<=0.66&&!boss.tags.contains('dz_gas_scout_phase_2')){
+      boss.addTag('dz_gas_scout_phase_2')
+      boss.runCommandSilent('effect give @s minecraft:resistance 8 1 true')
+      boss.runCommandSilent('summon minecraft:pillager ~3 ~ ~3 {PersistenceRequired:1b,HandItems:[{id:"minecraft:crossbow",Count:1b},{}],HandDropChances:[0.0f,0.0f],Tags:["dz_boss_runtime_05","dz_pdz_boss_minion","dz_raider","dz_hostile"]}')
+      boss.runCommandSilent('summon minecraft:pillager ~-3 ~ ~-3 {PersistenceRequired:1b,HandItems:[{id:"minecraft:crossbow",Count:1b},{}],HandDropChances:[0.0f,0.0f],Tags:["dz_boss_runtime_05","dz_pdz_boss_minion","dz_raider","dz_hostile"]}')
+      boss.runCommandSilent('playsound minecraft:item.crossbow.loading_end hostile @a[distance=..64] ~ ~ ~ 1.2 0.75')
+      pdzMechTell(boss,'増援信号。護衛射手が展開した！','red');pdzMechPulseCount++
+    }
+    if(ratio<=0.33&&!boss.tags.contains('dz_gas_scout_phase_3')){
+      boss.addTag('dz_gas_scout_phase_3')
+      boss.runCommandSilent('effect give @s minecraft:regeneration 10 1 true')
+      boss.runCommandSilent('effect give @s minecraft:speed 9999 1 true')
+      boss.runCommandSilent('effect give @s minecraft:resistance 9999 0 true')
+      pdzMechTell(boss,'最終退避機動。回復を止めて追い詰めろ！','dark_red');pdzMechPulseCount++
+    }
+    if(time%8===0){
+      boss.runCommandSilent('effect give @s minecraft:speed 4 2 true')
+      boss.runCommandSilent('effect give @s minecraft:invisibility 2 0 true')
+      boss.runCommandSilent('effect give @p[distance=..24,gamemode=!spectator] minecraft:glowing 5 0 true')
+      boss.runCommandSilent('particle minecraft:campfire_cosy_smoke ~ ~1 ~ 1.8 0.8 1.8 0.03 45 force @a[distance=..64]')
+      boss.runCommandSilent('effect give @a[distance=..8,gamemode=!creative,gamemode=!spectator] minecraft:blindness 2 0 true')
+      pdzMechTell(boss,'煙幕標定。発光した対象へ高速接近。','yellow');pdzMechPulseCount++
+    }
   }else if(id==='06'&&time%10===0){
     boss.runCommandSilent('effect give @a[distance=..18,gamemode=!creative,gamemode=!spectator] minecraft:slowness 4 1 true')
     boss.runCommandSilent('effect give @a[distance=..18,gamemode=!creative,gamemode=!spectator] minecraft:weakness 4 0 true')
@@ -311,6 +332,19 @@ function pdzMechChoirMultiplier(hitbox){
 EntityEvents.hurt(event=>{
   let hitbox=event.entity
   let attacker=event.source?event.source.actual:null
+  // Facility bosses belong to player-authored story combat. Hostile mobs may
+  // not steal the kill or silently advance/reward the campaign. Record a
+  // recent player hit so ranged attacks still carry credit into death events.
+  if(hitbox&&hitbox.tags&&hitbox.tags.contains('dz_story_boss')){
+    if(attacker&&attacker.isPlayer&&attacker.isPlayer()){
+      hitbox.persistentData.putString('dz_story_last_player_hit_uuid',String(attacker.uuid))
+      hitbox.persistentData.putLong('dz_story_last_player_hit_ms',Date.now())
+    }else if(attacker){
+      event.cancel()
+      try{attacker.setTarget(null)}catch(ignored){}
+      return
+    }
+  }
   if(pdzMechIsBoss(attacker)&&!pdzMechAllowedTarget(hitbox)){
     event.cancel()
     try{attacker.setTarget(null)}catch(ignored){}
@@ -340,6 +374,7 @@ EntityEvents.death(event=>{
   let boss=event.entity
   if(!boss||boss.level.clientSide)return
   if(boss.tags.contains('dz_boss_mech_03'))boss.runCommandSilent('kill @e[tag='+PDZ_CHOIR_HITBOX+',distance=..24]')
+  if(boss.tags.contains('dz_boss_mech_05'))boss.runCommandSilent('kill @e[tag=dz_boss_runtime_05,distance=..48]')
   if(boss.tags.contains('dz_boss_mech_09'))boss.runCommandSilent('kill @e[tag=dz_boss_runtime_09,distance=..40]')
 })
 
