@@ -112,6 +112,24 @@ function pdzMechEquipBossGun(boss,id){
   boss.addTag('dz_boss_weapon_applied')
 }
 
+function pdzMechUpgradeGasScout(boss,id){
+  if(id!=='05'||boss.tags.contains('dz_gas_scout_loadout_v2'))return
+  // Saved v1 scouts may still hold the unusable TaCZ item and retain the old
+  // solo armor value. Migrate them in place so a restart does not resurrect
+  // the broken encounter.
+  boss.runCommandSilent('item replace entity @s weapon.mainhand with minecraft:crossbow{Enchantments:[{id:"minecraft:quick_charge",lvl:3s},{id:"minecraft:piercing",lvl:2s},{id:"minecraft:unbreaking",lvl:3s}]}')
+  boss.runCommandSilent('item replace entity @s armor.head with minecraft:iron_helmet')
+  boss.runCommandSilent('item replace entity @s armor.chest with minecraft:iron_chestplate')
+  boss.runCommandSilent('item replace entity @s armor.legs with minecraft:iron_leggings')
+  boss.runCommandSilent('item replace entity @s armor.feet with minecraft:iron_boots')
+  boss.runCommandSilent('data merge entity @s {HandDropChances:[0.0f,0.0f],ArmorDropChances:[0.0f,0.0f,0.0f,0.0f]}')
+  boss.runCommandSilent('attribute @s minecraft:generic.armor base set 16')
+  boss.runCommandSilent('attribute @s minecraft:generic.armor_toughness base set 6')
+  boss.runCommandSilent('attribute @s minecraft:generic.knockback_resistance base set 0.8')
+  boss.addTag('dz_npc')
+  boss.addTag('dz_gas_scout_loadout_v2')
+}
+
 function pdzMechAllowedTarget(entity){
   if(!entity)return false
   let id=String(entity.type)
@@ -201,6 +219,7 @@ function pdzMechSpawnChoirHitboxes(boss){
 
 function pdzMechInit(boss,id){
   pdzMechEnsureHome(boss)
+  pdzMechUpgradeGasScout(boss,id)
   pdzMechEquipBossGun(boss,id)
   pdzMechApplyMnsBossProfile(boss)
   if(boss.tags.contains(PDZ_MECH_ACTIVE))return
