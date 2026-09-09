@@ -6,6 +6,8 @@
 const DZ_SITE_BOSS_LEDGER = 'dz_story_site_boss_ledger_v1'
 const DZ_SITE_BOSS_RANGE = 72
 const DZ_SITE_BOSS_DUPLICATE_RANGE = 160
+const DZ_SITE_BOSS_FAILURE_RETRY_MS = 60000
+const DZ_SITE_BOSS_FAILURE_RETRY = {}
 
 const DZ_SITE_BOSSES = [
   {key:'gasstation', tag:'dz_story_boss_gasstation', fn:'project_deadzone:story/spawn_gasstation_boss',
@@ -79,6 +81,13 @@ function dzSiteBossNear(server, marker, tag, distance) {
 }
 
 function dzSiteBossSpawn(player, marker, spec, ledger) {
+  // A Lost Cities facility exposes several part markers. When a summon fails,
+  // retrying once per marker every two seconds floods latest.log and burns a
+  // large amount of server time. One retry window per boss type is enough;
+  // successful encounters are still tracked per physical facility below.
+  let retryKey = spec.key
+  let now = Date.now()
+  if ((DZ_SITE_BOSS_FAILURE_RETRY[retryKey] || 0) > now) return false
   let instance = dzSiteBossInstance(marker)
   let ledgerKey = spec.key + '|' + instance
   if (ledger[ledgerKey]) return false
@@ -94,9 +103,12 @@ function dzSiteBossSpawn(player, marker, spec, ledger) {
   if (!dzSiteBossNear(player.server, marker, spec.tag, 24)) {
     delete ledger[ledgerKey]
     dzSiteBossWrite(player.server, ledger)
+    DZ_SITE_BOSS_FAILURE_RETRY[retryKey] = now + DZ_SITE_BOSS_FAILURE_RETRY_MS
     console.warn('[PDZ STORY BOSS] Spawn failed key=' + spec.key + ' instance=' + instance)
     return false
   }
+
+  delete DZ_SITE_BOSS_FAILURE_RETRY[retryKey]
 
   marker.level.entities.forEach(entity => {
     if (!entity.tags || !entity.tags.contains(spec.tag)) return
