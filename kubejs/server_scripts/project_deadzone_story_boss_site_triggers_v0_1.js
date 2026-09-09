@@ -106,7 +106,10 @@ function dzSiteBossSpawn(player, marker, spec, ledger) {
   ledger[ledgerKey] = {state:'spawning', at:Date.now(), dimension:String(marker.level.dimension),
     x:Math.floor(marker.x), y:Math.floor(marker.y), z:Math.floor(marker.z)}
   dzSiteBossWrite(player.server, ledger)
-  player.server.runCommandSilent('execute in ' + String(marker.level.dimension) +
+  // Brutal Bosses 8.5 only accepts spawnboss reliably when the command source
+  // has a player entity. Preserve that player source while moving the command
+  // position to the detected facility marker.
+  player.server.runCommandSilent('execute as ' + player.username + ' at @s in ' + String(marker.level.dimension) +
     ' positioned ' + marker.x + ' ' + (marker.y + 1) + ' ' + marker.z + ' run function ' + spec.fn)
   if (!dzSiteBossNear(player.server, marker, spec.tag, 24)) {
     delete ledger[ledgerKey]
