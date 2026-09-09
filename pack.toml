@@ -1,12 +1,12 @@
 name = "PROJECT DEADZONE"
 author = "PROJECT DEADZONE Team"
-version = "BETA-20260907-SHOTGUN-BALANCE-RC1"
+version = "BETA-20260909-SETTLEMENT-ROAD-DENSITY-RC1"
 pack-format = "packwiz:1.1.0"
 
 [index]
 file = "index.toml"
 hash-format = "sha256"
-hash = "c2c2bd781fdfcfa082fbcc700f5d436ac51cfa9491a724c22dae7acebe88f4ba"
+hash = "20a95eee1ad5f284eda279d978b5a4019156e102778d979ee6e581d1b0d7a9f3"
 
 [versions]
 forge = "47.4.10"

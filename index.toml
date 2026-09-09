@@ -3330,7 +3330,7 @@ hash = "ebf692c917bae16435148c20a163a3989920437665f981033fec6fd6aec2ef17"
 
 [[files]]
 file = "config/village_recruits/building.toml"
-hash = "45e38e64f1f2a41e37b344cd816c19c5290be5a25ff5ec02ec979e9143a22287"
+hash = "2042c42eff3b182049cd5ca8d27fd7b2d1ced23b25ca34fccde4b1949cf865c5"
 
 [[files]]
 file = "config/village_recruits/economy.toml"
@@ -13311,8 +13311,8 @@ file = "mods/pdz-loot-compat-1.0.0.jar"
 hash = "c8b97292101e1d425300c7a034129f40a2e02ad0e2ea165b3ebbfd16f2621274"
 
 [[files]]
-file = "mods/pdz-recruits-village-spawn-compat-1.1.0.jar"
-hash = "43550e71837ed58a70abb8a779432e97aeedfea350a0108012f23728a6d0fb25"
+file = "mods/pdz-recruits-village-spawn-compat-1.2.0.jar"
+hash = "bbe51eb31104671944cb8b660c4ea8371ab95d46fd77fdf861356fea818ff1f9"
 
 [[files]]
 file = "mods/ping.pw.toml"

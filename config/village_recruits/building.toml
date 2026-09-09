@@ -137,7 +137,7 @@
 	#Default: 12
 	#
 	#Range: 0 ~ 64
-	plotMaxRelief = 12
+	plotMaxRelief = 6
 	#Blocks a village refuses to put a building on. A plot holding any of
 	#them is skipped and a different slot is used.
 	#
@@ -401,7 +401,7 @@
 	#Turning this off restores the earth embankment at any height.
 	#Default: true
 	#
-	viaductEnabled = true
+	viaductEnabled = false
 	#How far the ground has to fall below a road before the road becomes a
 	#BRIDGE instead of an embankment (needs viaductEnabled).
 	#
@@ -458,7 +458,7 @@
 	#Default: 64
 	#
 	#Range: 0 ~ 256
-	rampExtendMax = 64
+	rampExtendMax = 12
 	#How many blocks FURTHER the path from a road to a building's door runs
 	#than the strict geometry calls for.
 	#
@@ -602,7 +602,7 @@
 	#Costs a handful of block reads per village per pass and stops for good
 	#once every road has been looked at. Needs roadHealEnabled. Default: true
 	#
-	roadAuditEnabled = true
+	roadAuditEnabled = false
 	#EXPERIMENTAL - OFF by default. Dig a village building back out when
 	#terrain has BURIED its interior.
 	#
@@ -1000,7 +1000,7 @@
 	#alike. OFF = a plot that would place a block in water is refused and
 	#its materials refunded (the old behaviour). Default: true
 	#
-	waterBuildEnabled = true
+	waterBuildEnabled = false
 	#The deepest water a village will build in, in blocks from the surface to
 	#the bed. Deeper than this the plot is refused and refunded: a plot in open
 	#ocean would otherwise be a tower of foundation blocks nobody asked for.
