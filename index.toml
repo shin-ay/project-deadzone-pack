@@ -11458,7 +11458,7 @@ hash = "f427499b6c1a5d66f52da100fc258d86650a795669806044a25a73108f7eb9da"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_logistics_network_v0_1.js"
-hash = "79053a7c794c439e01a316e383153f2f3e56c44f396b870dae7712fc123c0067"
+hash = "44474aebb71700302aa4621770701aa4e3739133a9d05ab5b147dbc5e663299c"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_managed_vending_rotation_v0_1.js"
@@ -12238,8 +12238,8 @@ file = "mods/PROJECT_DEADZONE_EpicTaCZ_Compat-0.1.0.jar"
 hash = "9f4870e0073f46f83effd31ace8410dac5c52448aab67dba08380c04f5d8af12"
 
 [[files]]
-file = "mods/PROJECT_DEADZONE_JOB_UI-0.6.0.jar"
-hash = "fe7cd6d43991626b33dfd21dd6c2c0265e669ed1c33295101d38332117723ab2"
+file = "mods/PROJECT_DEADZONE_JOB_UI-0.7.0.jar"
+hash = "66782f257e211f303a9b8fb499f21840653a2e682dd0eb159173058e7c385f7c"
 
 [[files]]
 file = "mods/PROJECT_DEADZONE_Vehicle_Compatibility-1.4.1.jar"

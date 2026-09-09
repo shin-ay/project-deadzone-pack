@@ -239,8 +239,49 @@ function dzLogDeliver(player) {
   return 1
 }
 
+function dzLogUiReputationRank(value) {
+  if (value >= 50) return 3
+  if (value >= 25) return 2
+  if (value >= 10) return 1
+  return 0
+}
+
+// The Java terminal intentionally does not own Camp or logistics progression.
+// Mirror the authoritative KubeJS state onto the requesting player's persisted
+// data so the UI packet can display it without adding another command or timer.
+function dzLogSyncOperationsUi(player) {
+  let server = player.server
+  let data = player.persistentData
+  let supply = Math.max(0, server.persistentData.getInt("dz_life_supply_reputation"))
+  let security = Math.max(0, server.persistentData.getInt("dz_camp_security_reputation"))
+  let restoration = Math.max(0, server.persistentData.getInt("dz_camp_restoration_reputation"))
+  let campLevel = Math.max(0, Math.min(3, server.persistentData.getInt("dz_camp_development_level")))
+  let communityRank = Math.min(campLevel, dzLogUiReputationRank(supply),
+    dzLogUiReputationRank(security), dzLogUiReputationRank(restoration))
+  data.putInt("dz_ui_camp_level", campLevel)
+  data.putInt("dz_ui_community_rank", communityRank)
+  data.putInt("dz_ui_supply_reputation", supply)
+  data.putInt("dz_ui_security_reputation", security)
+  data.putInt("dz_ui_restoration_reputation", restoration)
+  data.putInt("dz_ui_defense_debt", Math.max(0, server.persistentData.getInt("dz_defense_repair_debt")))
+  data.putString("dz_ui_logistics_demand", dzLogDemand(server))
+
+  let routes = 0
+  DZ_LOGISTICS_MODES.forEach((mode, index) => {
+    if (server.persistentData.getBoolean("dz_logistics_route_" + mode)) routes |= (1 << index)
+  })
+  data.putInt("dz_ui_logistics_routes", routes)
+
+  let mode = data.getString("dz_log_active")
+  let spec = DZ_LOGISTICS[mode]
+  data.putInt("dz_ui_logistics_required_travel", spec ? spec.travel : 0)
+  let remaining = spec ? Math.max(0, data.getLong("dz_log_deadline") - dzLogTime(server)) : 0
+  data.putInt("dz_ui_logistics_seconds_remaining", Math.floor(remaining / 20))
+}
+
 function dzLogTick(player) {
   if (player.age % 20 !== 0) return
+  dzLogSyncOperationsUi(player)
   let data = player.persistentData
   let mode = data.getString("dz_log_active")
   let spec = DZ_LOGISTICS[mode]
