@@ -9994,7 +9994,7 @@ hash = "d3ccc417783b32e67be31d442fe83b3a8990ce58bc4488e698677a015708875e"
 
 [[files]]
 file = "kubejs/data/project_deadzone/functions/story/spawn_gasstation_boss.mcfunction"
-hash = "25682b190e8590ccf6217ead1d34ff0d1eb075468d3e27c8dae90e7a812370c5"
+hash = "6c2234dc103177c082f8b38d0b2b89a38ca6f5822ea4f8956f8328ec6c452daf"
 
 [[files]]
 file = "kubejs/data/project_deadzone/functions/story/spawn_gunshop_boss.mcfunction"
@@ -11650,7 +11650,7 @@ hash = "3c6e172acbeb1551b95d993da8390652fa133672676c008027b034a5be344aca"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_story_boss_site_triggers_v0_1.js"
-hash = "30dfbcd93065ab34cec16ef0aeb8f0fa78489f89f92f94e4058d1b47193ba360"
+hash = "b47a131245b68895a44fcc127aaa34a2d2e944ededf3005a60824144a781d932"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_story_branches_v0_1.js"
@@ -13311,8 +13311,8 @@ file = "mods/pdz-loot-compat-1.0.0.jar"
 hash = "c8b97292101e1d425300c7a034129f40a2e02ad0e2ea165b3ebbfd16f2621274"
 
 [[files]]
-file = "mods/pdz-recruits-village-spawn-compat-1.2.0.jar"
-hash = "bbe51eb31104671944cb8b660c4ea8371ab95d46fd77fdf861356fea818ff1f9"
+file = "mods/pdz-recruits-village-spawn-compat-1.3.0.jar"
+hash = "c076b5d7934d8a87aaba942d544880cdf39f047cf8204a4343d47d1edbb431fc"
 
 [[files]]
 file = "mods/ping.pw.toml"
