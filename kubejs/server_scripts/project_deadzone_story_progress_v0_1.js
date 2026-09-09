@@ -296,17 +296,30 @@ function dzFacilityPartySize(server, boss) {
   return Math.max(1, count)
 }
 
+function dzFacilityHighestPlayerLevel(server, boss) {
+  let highest = 1
+  server.players.forEach(player => {
+    if (String(player.level.dimension) !== String(boss.level.dimension)) return
+    let dx = player.x - boss.x, dy = player.y - boss.y, dz = player.z - boss.z
+    if (dx * dx + dy * dy + dz * dz > 9216) return
+    try { highest = Math.max(highest, Number(DZ_STORY_MNS_ENTITY_DATA.get(player).getLevel()) || 1) }
+    catch (ignored) {}
+  })
+  return highest
+}
+
 function dzScaleFacilityBoss(server, boss) {
   if (!dzIsFacilityBoss(boss)
     || !boss.alive || boss.health <= 0
     || boss.persistentData.getBoolean("dz_party_scaled")) return
   let party = dzFacilityPartySize(server, boss)
-  let levelBonus = Math.min(12, (party - 1) * 2)
+  let playerLevel = dzFacilityHighestPlayerLevel(server, boss)
+  let bossLevel = Math.max(1, Math.round(playerLevel) + 5)
   let scaledHealth = 0
   try {
     let mns = DZ_STORY_MNS_ENTITY_DATA.get(boss)
     mns.setRarity('boss')
-    if (levelBonus > 0) mns.setLevel(mns.getLevel() + levelBonus)
+    mns.setLevel(bossLevel)
     mns.recalcStats_DONT_CALL()
     scaledHealth = Math.round(DZ_STORY_MNS_HEALTH.getMaxHealth(boss))
     boss.addTag('dz_mns_boss_profile')
@@ -342,7 +355,8 @@ function dzScaleFacilityBoss(server, boss) {
     '{"text":"Party ' + party + '人に合わせBossを強化（M&S HP ' + scaledHealth +
     ' / 護衛 ' + escorts + '）","color":"yellow"}]')
   console.info("[DEADZONE STORY] Party scaled boss=" + String(boss.uuid) +
-    " players=" + party + " hp=" + scaledHealth + " escorts=" + escorts)
+    " players=" + party + " playerLv=" + playerLevel + " bossLv=" + bossLevel +
+    " hp=" + scaledHealth + " escorts=" + escorts)
 }
 
 PlayerEvents.tick(event => {

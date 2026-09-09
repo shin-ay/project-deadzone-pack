@@ -1,0 +1,26 @@
+{
+  "entity": "tacz_hostiles:soldier",
+  "name": "Fuel Route Scout",
+  "visualscale": 1.12,
+  "experience": 300,
+  "protect_treasure": false,
+  "effects": {
+    "minecraft:fire_resistance": 0
+  },
+  "attributes": {
+    "generic.max_health": 160,
+    "generic.follow_range": 64,
+    "generic.knockback_resistance": 0.8,
+    "generic.movement_speed": 0.32,
+    "generic.armor": 16,
+    "generic.armor_toughness": 6
+  },
+  "customattributes": {
+    "dropgear": 0,
+    "projectile_damage_bonus": 2
+  },
+  "ai-goals": {
+    "brutalbosses:aftercombatregen": { "amount": 1 }
+  },
+  "spawnatchest": {}
+}

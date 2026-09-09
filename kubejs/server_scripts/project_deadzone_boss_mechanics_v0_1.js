@@ -112,29 +112,19 @@ function pdzMechEquipBossGun(boss,id){
   boss.addTag('dz_boss_weapon_applied')
 }
 
-function pdzMechUpgradeGasScout(boss,id){
-  if(id!=='05'||boss.tags.contains('dz_gas_scout_loadout_v2'))return
-  // Saved v1 scouts may still hold the unusable TaCZ item and retain the old
-  // solo armor value. Migrate them in place so a restart does not resurrect
-  // the broken encounter.
-  boss.runCommandSilent('item replace entity @s weapon.mainhand with minecraft:crossbow{Enchantments:[{id:"minecraft:quick_charge",lvl:3s},{id:"minecraft:piercing",lvl:2s},{id:"minecraft:unbreaking",lvl:3s}]}')
-  boss.runCommandSilent('item replace entity @s armor.head with minecraft:iron_helmet')
-  boss.runCommandSilent('item replace entity @s armor.chest with minecraft:iron_chestplate')
-  boss.runCommandSilent('item replace entity @s armor.legs with minecraft:iron_leggings')
-  boss.runCommandSilent('item replace entity @s armor.feet with minecraft:iron_boots')
-  boss.runCommandSilent('data merge entity @s {HandDropChances:[0.0f,0.0f],ArmorDropChances:[0.0f,0.0f,0.0f,0.0f]}')
-  boss.runCommandSilent('attribute @s minecraft:generic.armor base set 16')
-  boss.runCommandSilent('attribute @s minecraft:generic.armor_toughness base set 6')
-  boss.runCommandSilent('attribute @s minecraft:generic.knockback_resistance base set 0.8')
-  boss.addTag('dz_npc')
-  boss.addTag('dz_gas_scout_loadout_v2')
-}
-
 function pdzMechAllowedTarget(entity){
   if(!entity)return false
   let id=String(entity.type)
   if(id==='minecraft:player'||id==='minecraft:villager'||id==='minecraft:wandering_trader'||id==='minecolonies:citizen')return true
-  return id.indexOf('mca:')===0||id.indexOf('recruits:')===0||id.indexOf('village_recruits:')===0||id.indexOf('workers:')===0
+  if(id.indexOf('mca:')===0||id.indexOf('recruits:')===0||id.indexOf('village_recruits:')===0||id.indexOf('workers:')===0)return true
+  // Raider/remnant bosses may actively clear infected and other hostile mobs.
+  // Incoming damage protection is handled separately, making this explicitly
+  // one-way so ambient mobs cannot steal the campaign kill.
+  return id.indexOf('infectious:')===0||id.indexOf('apocalypse_zombies:')===0||
+    id.indexOf('mutantszombies:')===0||id.indexOf('zombieawareness:')===0||
+    ['minecraft:zombie','minecraft:husk','minecraft:drowned','minecraft:zombie_villager',
+      'minecraft:skeleton','minecraft:stray','minecraft:creeper','minecraft:spider',
+      'minecraft:cave_spider','minecraft:witch','minecraft:phantom'].indexOf(id)>=0
 }
 
 function pdzMechEnsureHome(boss){
@@ -219,7 +209,6 @@ function pdzMechSpawnChoirHitboxes(boss){
 
 function pdzMechInit(boss,id){
   pdzMechEnsureHome(boss)
-  pdzMechUpgradeGasScout(boss,id)
   pdzMechEquipBossGun(boss,id)
   pdzMechApplyMnsBossProfile(boss)
   if(boss.tags.contains(PDZ_MECH_ACTIVE))return
@@ -420,6 +409,14 @@ ServerEvents.tick(event=>{
     if(seen[uuid])return
     seen[uuid]=true
     let id=pdzMechId(entity)
+    // v1 used a vanilla pillager which could not operate the assigned TaCZ
+    // weapon. Remove only that saved legacy story boss; the site trigger will
+    // replace it with the Brutal Bosses soldier while preserving progression.
+    if(id==='05'&&String(entity.type)==='minecraft:pillager'&&!entity.tags.contains('dz_gas_scout_brutal_v1')){
+      console.info('[PROJECT DEADZONE][Boss 05] Retiring legacy pillager '+uuid)
+      entity.discard()
+      return
+    }
     if(entity.tags&&entity.tags.contains('dz_boss_axel')&&!entity.tags.contains('dz_boss_showroom')){
       pdzMechEnsureHome(entity)
       pdzMechEquipBossGun(entity,'01')
