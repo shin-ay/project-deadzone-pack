@@ -1,10 +1,15 @@
-// PROJECT DEADZONE Recipe Knowledge v0.5 (local candidate)
+// PROJECT DEADZONE Recipe Knowledge v0.6 (local candidate)
 // Large story beats, not JOB/Talent micro-gates, own technology progression.
 // RecipeStages 8 gates crafting-table recipes. Create processing recipes and
 // TaCZ gun-smith recipes need their own runtime authorization bridge.
 
 // S0: ordinary survival, basic Create, ordinary IE/Mekanism and simple guns.
 // S1 / Gas Station: the complete brass-era Create toolset opens at once.
+mods.recipestages.Recipes.setRecipeStage("dz_story_create_advanced", <item:create:brass_ingot>);
+mods.recipestages.Recipes.setRecipeStage("dz_story_create_advanced", <item:create:brass_nugget>);
+mods.recipestages.Recipes.setRecipeStage("dz_story_create_advanced", <item:create:brass_block>);
+mods.recipestages.Recipes.setRecipeStage("dz_story_create_advanced", <item:create:brass_hand>);
+mods.recipestages.Recipes.setRecipeStageByInput("dz_story_create_advanced", <item:create:brass_ingot>);
 mods.recipestages.Recipes.setRecipeStage("dz_story_create_advanced", <item:create:brass_casing>);
 mods.recipestages.Recipes.setRecipeStage("dz_story_create_advanced", <item:create:brass_funnel>);
 mods.recipestages.Recipes.setRecipeStage("dz_story_create_advanced", <item:create:brass_tunnel>);

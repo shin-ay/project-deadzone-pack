@@ -1506,7 +1506,7 @@ hash = "b25b0d8388b4e38c267669c35fb6ea3929c5c855740089c1ca7421f58d2bea10"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/deadzone_mod_combat_01.snbt"
-hash = "c7251256678ae8952d1c745d59924a4a4b4ef29d2226d2705c43752417297819"
+hash = "16d4eb4a76ca76951c60072cc67c5feb1c0dd19ab164fef509bd5c2bba069e6d"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/deadzone_mod_create_railway_01.snbt"
@@ -4391,6 +4391,10 @@ hash = "c04ec1b365a21157b4e24cbb7180758675415ca79b4844175f61b09fb16f8044"
 [[files]]
 file = "kubejs/data/brutalbosses/bosses/pdz_axel.json"
 hash = "c5bcdd6915d7282e3e011276280ddfae7dcac5c6b25de879052be3d4f73f2562"
+
+[[files]]
+file = "kubejs/data/brutalbosses/bosses/pdz_fuel_route_scout.json"
+hash = "8c345aea408bc3b33f567d822bc7f624b2cdf0c2ecc4c24e2c8064f5cebc34fe"
 
 [[files]]
 file = "kubejs/data/brutalbosses/bosses/rabbitboss.json"
@@ -9994,7 +9998,7 @@ hash = "d3ccc417783b32e67be31d442fe83b3a8990ce58bc4488e698677a015708875e"
 
 [[files]]
 file = "kubejs/data/project_deadzone/functions/story/spawn_gasstation_boss.mcfunction"
-hash = "6c2234dc103177c082f8b38d0b2b89a38ca6f5822ea4f8956f8328ec6c452daf"
+hash = "da121fbc01971ef7a37ee1da1651c44a0202a83fc32e9db3310cb9e50cb6a03e"
 
 [[files]]
 file = "kubejs/data/project_deadzone/functions/story/spawn_gunshop_boss.mcfunction"
@@ -11169,6 +11173,14 @@ file = "kubejs/data/urushi/forge/biome_modifier/add_kakuriyo_portal_in_overworld
 hash = "d4ebccd5482995fe01a55a25ffb2ab31f91df5f11f69593dd60f9478220b2da7"
 
 [[files]]
+file = "kubejs/data/vehicle/recipes/compact_helicopter_crafting.json"
+hash = "0bb31d54e66902691d78c14b17053b39f084a84535e899709ea6e148c42003a1"
+
+[[files]]
+file = "kubejs/data/vehicle/recipes/sports_plane_crafting.json"
+hash = "a99cfd7787afa0d3998b0da06854d5a6ae3484a2c47d888b24baf5391b1a4b3d"
+
+[[files]]
 file = "kubejs/data/zombiekit/worldgen/structure_set/gas_station.json"
 hash = "95a51c6ebb208bc5e7d099000f5080736908fc0de3b361beee60bad84ef3d8bf"
 
@@ -11270,7 +11282,7 @@ hash = "9e039a8cd19c1dee41abbf754e534a59778c739954259f8896ed826599069055"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_boss_mechanics_v0_1.js"
-hash = "dc4e3c9e648c24338163cca8f59dfe456046af8ad008d234785cea8415ffe813"
+hash = "59cd08838e509c2e15f9fcb3431acfa76bb371c9236aaa44dbe7275b9f97b4e2"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_buddy_control_v0_1.js"
@@ -11355,6 +11367,10 @@ hash = "8a82e521b3c4a5a2f4c62e91e231ccd6ffc48a0303fa7e1b6bf712a1028230aa"
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_faction_npc_identity_v0_1.js"
 hash = "b0da9cc96cfea15a1f01e045275636a45afc291c76c1b8ba7763e1e76891b0f1"
+
+[[files]]
+file = "kubejs/server_scripts/project_deadzone_faction_registry_audit_v0_1.js"
+hash = "21b7ddc4c574dc4a4b01c2ad1636142977e6cb73747979f88e4685b52beba0a4"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_faction_strongholds_v0_1.js"
@@ -11461,6 +11477,10 @@ file = "kubejs/server_scripts/project_deadzone_logistics_network_v0_1.js"
 hash = "44474aebb71700302aa4621770701aa4e3739133a9d05ab5b147dbc5e663299c"
 
 [[files]]
+file = "kubejs/server_scripts/project_deadzone_machine_recipe_stages_v0_1.js"
+hash = "d56e8c86d344e33dc600a9dc697bcb4f6c5936f71e3b42af00bee7469de7fc27"
+
+[[files]]
 file = "kubejs/server_scripts/project_deadzone_managed_vending_rotation_v0_1.js"
 hash = "610b5383bfb606c2b4cb448168e5d01ccd591f8b2cfa6542f301e53a5d18dc2a"
 
@@ -11554,7 +11574,7 @@ hash = "f153132dc7dd9bc32635ee81752e7106798ab656d2c423858410bc8e9bfe030e"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_recipe_stage_sync_v0_1.js"
-hash = "93854461e018b7c0d7c2d1543f8a8811dc56ba50cf72bc264d1efc6ee26dacc7"
+hash = "1cde0200d5895d230e50a53425794c9462f869dc3001b11e32180cac336c9d65"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_region_tiers_v0_1.js"
@@ -11646,11 +11666,11 @@ hash = "f3bed48f3c1d046dabf13c2f664cbb1d5ac5537b14b08431967e1c5ce6fb1477"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_story_boss_bridge_rewards_v0_1.js"
-hash = "3c6e172acbeb1551b95d993da8390652fa133672676c008027b034a5be344aca"
+hash = "d602bff0c8a9f26a7d89720c41b27488beaa831341af9a46561a131ab91e08bb"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_story_boss_site_triggers_v0_1.js"
-hash = "b47a131245b68895a44fcc127aaa34a2d2e944ededf3005a60824144a781d932"
+hash = "61cdbb62492bbf1b8ad33dc61c89f457db74ca853f629f2f404874463fdddf34"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_story_branches_v0_1.js"
@@ -11658,7 +11678,7 @@ hash = "41674e022663b6fdae9d6dedb786f4854a4ae08762ab7dcf789b0d8e54b4c61c"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_story_progress_v0_1.js"
-hash = "19b60357f195cf4db55c86e7e8a168289fc19158fc2b72746fe1d2a62a760c53"
+hash = "16050067548ab2cd84f8cfab0dc235a21b83c806fdde92d1cfa2518607196a19"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_story_progression_v0_1.js"
@@ -13459,6 +13479,11 @@ metafile = true
 [[files]]
 file = "mods/sbw-heavy-bunker.pw.toml"
 hash = "54f341a4422dbcdfda0c981bdd5eb51e418dfc82418e7f376d43cb3503337695"
+metafile = true
+
+[[files]]
+file = "mods/sdm-recipe-machine-stages.pw.toml"
+hash = "6804b0c98cde532f8735600f3702bcf24259c8d07836014f8d3870f7867499c6"
 metafile = true
 
 [[files]]
@@ -22674,7 +22699,7 @@ hash = "d2956469dabdbfe47b6fd4b1edfe09594549614c4b6917ce72bdac77fd3bf7cb"
 
 [[files]]
 file = "scripts/project_deadzone_recipe_progression_v0_1.zs"
-hash = "fd41e38a55c4fe99f21f9483e29f3c45d27d1bf3bd77a6447b7a3a474d7bb4c1"
+hash = "37ec446c6a31a3ad9ec7fd98ed185f093ff0fa6567a315d0a109f9617ceb95ad"
 
 [[files]]
 file = "sildurs-enhanced-default.pw.toml"

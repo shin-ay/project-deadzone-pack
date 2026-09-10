@@ -32,6 +32,7 @@
 			dependencies: ["7542EEC66461563F"]
 			description: [
 				"銃本体の製造解禁は、ストーリー段階と兵器研究を一本化して管理する。研究ベンチ、またはJキーのBlueprint Journalで系統図を確認できる。"
+				"Create・車両・Superb Warfareを含む現在の技術解禁一覧は、チャットで /deadzoneprogression status を実行すると確認できる。"
 				"S0：拳銃・SMG。開始時からGlock 17を基点に研究可能。"
 				"S1：AR・SG。Gas Station作戦のボス撃破でM4A1系統を解禁。"
 				"S2：SR・DMR・機関銃。Police Station作戦のボス撃破でM700系統を解禁。"

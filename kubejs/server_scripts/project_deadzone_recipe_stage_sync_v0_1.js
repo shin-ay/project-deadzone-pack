@@ -1,4 +1,4 @@
-// PROJECT DEADZONE Recipe Stage Sync v0.5
+// PROJECT DEADZONE Recipe Stage Sync v0.6
 // Story milestones are the only source of non-TaCZ technology authorization.
 // JOB and Talent choices improve a play style; they no longer decide whether
 // a player is allowed to build a whole technology family. TaCZ weapon crafting
@@ -63,9 +63,11 @@ global.pdzSyncRecipeStages = dzSyncRecipeStages
 
 ServerEvents.commandRegistry(event => {
   const {commands: Commands} = event
-  let root = Commands.literal('deadzoneprogression').requires(source => source.hasPermission(2))
+  // Every player needs to be able to inspect progression. Only mutation and
+  // diagnostics stay behind operator permission.
+  let root = Commands.literal('deadzoneprogression')
 
-  root.then(Commands.literal('sync').executes(ctx => {
+  root.then(Commands.literal('sync').requires(source => source.hasPermission(2)).executes(ctx => {
     dzSyncRecipeStages(ctx.source.player, false)
     ctx.source.player.tell(Text.of('ストーリー技術解禁を同期しました。').aqua())
     return 1
@@ -75,15 +77,25 @@ ServerEvents.commandRegistry(event => {
     let player = ctx.source.player
     let story = dzRecipeStoryUnlock(player)
     player.tell(Text.of('=== 技術解禁 / Story S' + story + ' ===').gold())
+    player.tell(Text.of('✓ S0  基礎工業・拳銃/SMG・Small Ships').green())
     DZ_RECIPE_MILESTONES.forEach(entry => {
       let active = player.stages.has(entry.id)
       let line = Text.of((active ? '✓ ' : '－ ') + 'S' + entry.tier + '  ' + entry.label)
       player.tell(active ? line.green() : line.gray())
     })
+    player.tell(Text.of('銃本体: Jキー／兵器研究ベンチで研究系統を確認').aqua())
+    player.tell(Text.of('弾薬・アタッチメント・Small Ships: ストーリー制限なし').gray())
+    if (story < 3) {
+      let next = story + 1
+      let nextNames = ['','Gas Station作戦','Police Station作戦','Radio Tower作戦']
+      player.tell(Text.of('次の段階: S' + next + ' / ' + nextNames[next] + 'のボス撃破').gold())
+    } else {
+      player.tell(Text.of('S3までの基礎技術を解禁済み').green())
+    }
     return 1
   }))
 
-  root.then(Commands.literal('audit').executes(ctx => {
+  root.then(Commands.literal('audit').requires(source => source.hasPermission(2)).executes(ctx => {
     let player = ctx.source.player
     let story = dzRecipeStoryUnlock(player), mismatches = 0, legacy = 0
     DZ_RECIPE_MILESTONES.forEach(entry => {
@@ -98,7 +110,7 @@ ServerEvents.commandRegistry(event => {
     return mismatches === 0 && legacy === 0 ? 1 : 0
   }))
 
-  root.then(Commands.literal('sync_all').executes(ctx => {
+  root.then(Commands.literal('sync_all').requires(source => source.hasPermission(2)).executes(ctx => {
     let player = ctx.source.player
     try { dzStoryApplyPlayer(player, dzStoryTier(player.server)) } catch (ignored) {}
     try { dzSyncSkillTierGates(player, false) } catch (ignored) {}
