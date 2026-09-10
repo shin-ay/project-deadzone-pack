@@ -791,7 +791,7 @@
 	#option exists as well (it works on an already generated world,
 	#and can be toggled at any time).
 	#
-	naturalVillagesEnabled = true
+	naturalVillagesEnabled = false
 	#May a village founded at NIGHT come into existence without waiting
 	#for dawn? Default: true
 	#
@@ -818,7 +818,7 @@
 	#Set to false to restore the old behaviour: villages founded at night
 	#wait for morning, and remotely founded ones may not appear at all.
 	#
-	nightFoundingNudge = true
+	nightFoundingNudge = false
 	#May a tower spawner found its village ON WATER (a lake, a river, a
 	#pond) instead of being vetoed? Default: true
 	#
@@ -1024,7 +1024,7 @@
 	#remoteTowerMaxPerTick first, then switch to STRUCTURE_ONLY or OFF.
 	#
 	#Allowed Values: OFF, STRUCTURE_ONLY, BOOTSTRAP
-	remoteTowerActivation = "BOOTSTRAP"
+	remoteTowerActivation = "OFF"
 	#BOOTSTRAP mode only: how long (in ticks) a freshly founded remote
 	#village is kept loaded so it can actually come into existence.
 	#20 ticks = 1 second. Default: 600 (30 seconds)
@@ -1197,7 +1197,7 @@
 	#that switch means the server does not want Nobles, and this must not
 	#reverse it. Default: true
 	#
-	nobleFallbackEnabled = true
+	nobleFallbackEnabled = false
 	#Ticks a village must be awake with no Noble before one is spawned at its
 	#recruit table. The clock only runs while the village is loaded, and is
 	#reset the moment a Noble appears - including one the base mod's own

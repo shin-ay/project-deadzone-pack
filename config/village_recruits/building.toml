@@ -522,7 +522,7 @@
 	#building.toml or run /vrconfig reset building confirm.
 	#Default: false
 	#
-	repairBuilderEnabled = true
+	repairBuilderEnabled = false
 	#Maximum hole depth (blocks below the surrounding ground level) that gets
 	#filled completely. Deeper voids (cave shafts, ravines) only get a 2-block
 	#PLUG at ground level - the cave below stays intact. Default: 6
@@ -568,7 +568,7 @@
 	#sleeping village is repaired when somebody visits it. Independent of
 	#repairBuilderEnabled. Default: true
 	#
-	roadHealEnabled = true
+	roadHealEnabled = false
 	#How many missing road stretches are re-laid per pass. Higher = a
 	#neglected village is repaired sooner, at the cost of more terrain work
 	#in one go. Default: 2
@@ -941,7 +941,7 @@
 	#behaviour: roads laid with a broken height profile and plots planned
 	#against stairs nobody could see. Default: true
 	#
-	terrainScanEnabled = true
+	terrainScanEnabled = false
 	#Columns read per tick while photographing. Lower = gentler on the server
 	#and a longer scan. Default: 512
 	#
