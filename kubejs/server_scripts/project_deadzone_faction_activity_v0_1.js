@@ -218,14 +218,15 @@ function pdzActPickFactionRoute(server,factions,minDistance,maxDistance,kind) {
 }
 function pdzActFactionBloc(faction) {
   faction=String(faction||'independent')
-  if(['cdf','civildef','survivor'].indexOf(faction)>=0)return 'survivor'
+  if(typeof pdzNormalizeFaction==='function')faction=pdzNormalizeFaction(faction)
+  if(faction==='cdf'||faction==='survivor')return 'survivor'
   return faction
 }
 function pdzActHostile(attacker,target) {
   let a=pdzActFactionBloc(attacker),b=pdzActFactionBloc(target)
+  if(typeof pdzFactionRelation==='function')return pdzFactionRelation(a,b)==='HOSTILE'
   if(a===b||a==='independent'||b==='independent')return false
-  if(a==='infected'||b==='infected')return true
-  return true
+  return a==='infected'||b==='infected'||a==='spore'||b==='spore'
 }
 function pdzActPickAssaultRoute(server,attackerFaction) {
   let attackerBloc=pdzActFactionBloc(attackerFaction)

@@ -27,6 +27,7 @@ function pdzIsProtectedBossTestEntity(entity) {
 
 function pdzIsInfectedFaction(entity) {
   if (!entity || pdzIsProtectedBossTestEntity(entity)) return false
+  if (typeof pdzFactionOfEntity === 'function') return pdzFactionOfEntity(entity) === 'infected'
   let id = String(entity.type)
   if (id.indexOf('infectious:') === 0 || id.indexOf('apocalypse_zombies:') === 0) return true
   if (id.indexOf('zombie') >= 0 || id === 'minecraft:husk' || id === 'minecraft:drowned') return true
@@ -35,6 +36,10 @@ function pdzIsInfectedFaction(entity) {
 
 function pdzIsSurvivorAlly(entity) {
   if (!entity) return false
+  if (typeof pdzFactionRelation === 'function' && typeof pdzFactionOfEntity === 'function') {
+    let relation = pdzFactionRelation('cdf', pdzFactionOfEntity(entity))
+    return relation === 'ALLY' || relation === 'FRIENDLY'
+  }
   // Hostility always wins over stale survivor/team tags. This is especially
   // important for infected MCA villagers and zombies copied from faction NPCs.
   if (pdzIsFactionHostile(entity)) return false
@@ -104,6 +109,8 @@ function pdzSanitizeInfectedFaction(entity) {
 function pdzIsFactionHostile(entity) {
   if (!entity) return false
   if (pdzIsProtectedBossTestEntity(entity)) return false
+  if (typeof pdzFactionRelation === 'function' && typeof pdzFactionOfEntity === 'function')
+    return pdzFactionRelation('cdf', pdzFactionOfEntity(entity)) === 'HOSTILE'
   if (pdzIsInfectedFaction(entity)) return true
   if (pdzIsMineColoniesRaider(entity)) return true
   let id = String(entity.type)
@@ -117,6 +124,8 @@ function pdzIsFactionHostile(entity) {
 
 function pdzIsInfectedTarget(entity) {
   if (!entity || !entity.alive || pdzIsInfectedFaction(entity) || pdzIsProtectedBossTestEntity(entity)) return false
+  if (typeof pdzFactionRelation === 'function' && typeof pdzFactionOfEntity === 'function')
+    return pdzFactionRelation('infected', pdzFactionOfEntity(entity)) === 'HOSTILE'
   let id = String(entity.type)
   if (id === 'minecraft:player' || id === 'minecraft:villager' ||
       id === 'minecraft:wandering_trader' || id === 'minecraft:iron_golem') return true
@@ -150,9 +159,67 @@ function pdzInfectedSetNearestFactionTarget(infected, candidates) {
   }
 }
 
-function pdzGuardSetTarget(guard, target) {
-  if (!guard || !target || !pdzIsCampGuard(guard) || !pdzIsFactionHostile(target)) return
+function pdzGuardSetTarget(guard, target, retaliation) {
+  if (!guard || !target || !pdzIsCampGuard(guard)) return
+  if (!retaliation && !pdzIsFactionHostile(target)) return
+  if (retaliation && typeof pdzRelationBlocksDamage === 'function' && pdzRelationBlocksDamage(guard, target)) return
   try { guard.setTarget(target) } catch (ignored) {}
+}
+
+function pdzIsFactionCombatUnit(entity) {
+  if (!entity || !entity.alive || pdzIsProtectedBossTestEntity(entity) ||
+      typeof pdzFactionOfEntity !== 'function') return false
+  let faction = pdzFactionOfEntity(entity)
+  if (['infected', 'spore', 'remnant', 'raider', 'aegis', 'warden', 'pmc'].indexOf(faction) >= 0) return true
+  if (faction !== 'cdf' && faction !== 'survivor') return false
+  return pdzIsCampGuard(entity) || (!!entity.tags && (entity.tags.contains('dz_buddy') ||
+    entity.tags.contains('dz_faction_combatant')))
+}
+
+function pdzFactionTargetCell(entity) {
+  return Math.floor(Number(entity.x) / 32) + '|' + Math.floor(Number(entity.z) / 32)
+}
+
+function pdzFactionTargetBuckets(entities) {
+  let buckets = {}
+  entities.forEach(entity => {
+    let key = pdzFactionTargetCell(entity)
+    if (!buckets[key]) buckets[key] = []
+    buckets[key].push(entity)
+  })
+  return buckets
+}
+
+function pdzSetNearestRelationTarget(unit, buckets) {
+  if (!pdzIsFactionCombatUnit(unit) || typeof pdzRelationAllowsTarget !== 'function') return
+  try {
+    if (unit.target && unit.target.alive && pdzRelationAllowsTarget(unit, unit.target)) {
+      let dx = Number(unit.target.x) - Number(unit.x)
+      let dy = Number(unit.target.y) - Number(unit.y)
+      let dz = Number(unit.target.z) - Number(unit.z)
+      if (Math.abs(dy) <= 12 && dx * dx + dy * dy + dz * dz <= 32 * 32 && unit.hasLineOfSight(unit.target)) return
+    }
+    if (unit.target) unit.setTarget(null)
+  } catch (ignored) {}
+
+  let cx = Math.floor(Number(unit.x) / 32), cz = Math.floor(Number(unit.z) / 32)
+  let best = null, bestDistance = 32 * 32
+  for (let ox = -1; ox <= 1; ox++) for (let oz = -1; oz <= 1; oz++) {
+    let candidates = buckets[(cx + ox) + '|' + (cz + oz)] || []
+    candidates.forEach(candidate => {
+      if (candidate === unit || !candidate.alive || !pdzRelationAllowsTarget(unit, candidate)) return
+      let dx = Number(candidate.x) - Number(unit.x)
+      let dy = Number(candidate.y) - Number(unit.y)
+      let dz = Number(candidate.z) - Number(unit.z)
+      if (Math.abs(dy) > 12) return
+      let distance = dx * dx + dy * dy + dz * dz
+      if (distance >= bestDistance) return
+      try { if (!unit.hasLineOfSight(candidate)) return } catch (ignored) {}
+      bestDistance = distance
+      best = candidate
+    })
+  }
+  if (best) try { unit.setTarget(best) } catch (ignored) {}
 }
 
 function pdzEnsureGuardGear(guard) {
@@ -181,18 +248,27 @@ EntityEvents.hurt(event => {
 
   // Friendly units never damage one another, irrespective of which AI mod
   // initiated the attack.
-  if (pdzIsSurvivorAlly(attacker) && pdzIsSurvivorAlly(victim)) {
+  let friendlyDamage = false
+  if (typeof pdzRelationBlocksDamage === 'function') friendlyDamage = pdzRelationBlocksDamage(attacker, victim)
+  else friendlyDamage = pdzIsSurvivorAlly(attacker) && pdzIsSurvivorAlly(victim)
+  if (attacker && attacker !== victim && friendlyDamage) {
     event.cancel()
     return
   }
 
+  // Neutral factions do not open fire first, but any combat unit may defend
+  // itself after a real hit. Friendly and allied damage was cancelled above.
+  if (attacker && pdzIsFactionCombatUnit(victim)) {
+    try { victim.setTarget(attacker) } catch (ignored) {}
+  }
+
   // Retaliate immediately when a hostile TaCZ/RU/PDZ faction attacks either a
   // guard or a protected colony resident.
-  if (!pdzIsFactionHostile(attacker) || (!pdzIsCampGuard(victim) && !pdzIsSurvivorAlly(victim))) return
+  if (!attacker || (!pdzIsCampGuard(victim) && !pdzIsSurvivorAlly(victim))) return
   victim.level.entities.forEach(entity => {
     if (!pdzIsCampGuard(entity)) return
     let dx = entity.x - victim.x, dy = entity.y - victim.y, dz = entity.z - victim.z
-    if (dx * dx + dy * dy + dz * dz <= 32 * 32) pdzGuardSetTarget(entity, attacker)
+    if (dx * dx + dy * dy + dz * dz <= 32 * 32) pdzGuardSetTarget(entity, attacker, true)
   })
 })
 
@@ -211,6 +287,7 @@ ServerEvents.tick(event => {
     dimensions[dimension] = true
     let infectedEntities = []
     let factionTargets = []
+    let relationEntities = []
     let guards = []
     let hostiles = []
     player.level.entities.forEach(entity => {
@@ -223,6 +300,8 @@ ServerEvents.tick(event => {
         if (pdzIsInfectedTarget(entity)) factionTargets.push(entity)
         if (pdzIsFactionHostile(entity)) hostiles.push(entity)
       }
+      if (typeof pdzFactionOfEntity === 'function' && pdzFactionOfEntity(entity) !== 'unknown')
+        relationEntities.push(entity)
       if (pdzIsMineColoniesRaider(entity) && !raiderSeen[String(entity.uuid)]) {
         raiderSeen[String(entity.uuid)] = true
         pdzSanitizeMineColoniesRaider(entity)
@@ -247,11 +326,17 @@ ServerEvents.tick(event => {
       hostiles.forEach(candidate => {
         if (!pdzIsFactionHostile(candidate) || !candidate.alive) return
         let dx = candidate.x - entity.x, dy = candidate.y - entity.y, dz = candidate.z - entity.z
+        if (Math.abs(dy) > 12) return
         let distance = dx * dx + dy * dy + dz * dz
-        if (distance < bestDistance) { bestDistance = distance; best = candidate }
+        if (distance >= bestDistance) return
+        try { if (!entity.hasLineOfSight(candidate)) return } catch (ignored) {}
+        bestDistance = distance; best = candidate
       })
       if (best) pdzGuardSetTarget(entity, best)
     })
-    infectedEntities.forEach(infected => pdzInfectedSetNearestFactionTarget(infected, factionTargets))
+    if (typeof pdzRelationAllowsTarget === 'function') {
+      let buckets = pdzFactionTargetBuckets(relationEntities)
+      relationEntities.forEach(entity => pdzSetNearestRelationTarget(entity, buckets))
+    } else infectedEntities.forEach(infected => pdzInfectedSetNearestFactionTarget(infected, factionTargets))
   })
 })
