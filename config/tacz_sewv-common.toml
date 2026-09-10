@@ -1,0 +1,25 @@
+# PROJECT DEADZONE full-load evaluation profile for Combined Arms 0.1.4a.
+# Enable all requested automatic content except shelling. AI chunk tickets stay
+# disabled so aircraft and artillery cannot keep unloaded terrain active.
+
+[events]
+	planesInEvents = true
+	convoyEventsEnabled = true
+	largeCombatEventsEnabled = true
+	navalEventsEnabled = true
+	invasionEventsEnabled = true
+	shellingEventsEnabled = false
+	derelictEventsEnabled = true
+	overflightEventsEnabled = true
+	garrisonVehiclesEnabled = true
+
+[structure_vehicles]
+	structureVehiclesEnabled = true
+
+[flight_ai]
+	heliChunkLoading = false
+	planeChunkLoading = false
+
+[mortar_ai]
+	mortarChunkLoading = false
+	artilleryChunkLoading = false

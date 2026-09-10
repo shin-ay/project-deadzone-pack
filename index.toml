@@ -3233,6 +3233,10 @@ file = "config/tacz_presence-client.toml"
 hash = "da2dd4520c3de9f54d390129674fcba2edf89da52e304db0550709d7f69dc754"
 
 [[files]]
+file = "config/tacz_sewv-common.toml"
+hash = "f272c24043d851102a1a35227097785ec0f5bf00c16e7cb58ff3ff2d45b04855"
+
+[[files]]
 file = "config/tacz_tactical_breaching-common.toml"
 hash = "497c60a74a9924a422b5f23885951d35b4e11eed335be0d9ce86a75800a8952c"
 
@@ -3242,7 +3246,7 @@ hash = "2328b88f89620191915d0fb53ea990ec09d4dd029fe1c985f4f29a5bc6ccf05b"
 
 [[files]]
 file = "config/tacznpc_factions.json"
-hash = "4811ae8d4542f17d0e4bc90d770fe8eae317f7646cecde8e2b084a5f46045c2e"
+hash = "562b8198786a7f68f7b119dcd3e0ef140bcc5e15afc41e767d7382e977960f8e"
 
 [[files]]
 file = "config/tacznpc_loadouts.json"
@@ -11361,6 +11365,10 @@ file = "kubejs/server_scripts/project_deadzone_faction_activity_v0_1.js"
 hash = "af086cd0b180cec3d79958e8e6a77bc4e59307852b5fc6d91280fcb67e2ae158"
 
 [[files]]
+file = "kubejs/server_scripts/project_deadzone_faction_cdu_defense_v0_1.js"
+hash = "e33ad8d8948ea65ab039a45f2438638cda137e1a1241aa9710a435d6b7c9a821"
+
+[[files]]
 file = "kubejs/server_scripts/project_deadzone_faction_npc_identity_v0_1.js"
 hash = "b0da9cc96cfea15a1f01e045275636a45afc291c76c1b8ba7763e1e76891b0f1"
 
@@ -11370,7 +11378,7 @@ hash = "21b7ddc4c574dc4a4b01c2ad1636142977e6cb73747979f88e4685b52beba0a4"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_faction_relations_v0_1.js"
-hash = "b78842e65cae6a92d0b41964ec2ed5a32707557f04267ae81b818766f524efee"
+hash = "fb1b3d58d03b5349e988714fb56c2f39e0a64468559cf0d6ab1e5886e380c2d7"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_faction_strongholds_v0_1.js"
@@ -11378,7 +11386,7 @@ hash = "6ee8b3055d36793858395f01cea4f7dbc0d48990558845083d4038f6a6a23881"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_faction_test_commands_v0_1.js"
-hash = "9890ac3c73c26591bfb0e26f946a26d5b967118b1d731d60b7005c59e33e1cc0"
+hash = "a01173566786e69d4906b71445cd3ce179b9c4319291c333d610af2028b362d8"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_field_medical_kit_v0_1.js"
@@ -11590,7 +11598,7 @@ hash = "2e9328cbd687554d50e3a938f8ca8dd93fe071b9fdf16eff32ff01ca03bd0121"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_ruunit_population_v0_1.js"
-hash = "20408e492420eecc7568c710bf327d5fcf21d047ed56629902944403e269b715"
+hash = "46ea3f0f2028d32cf82934839ca33aa924f7e44c50478000477900d2079d1b4c"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_scavenging_perks_v0_1.js"

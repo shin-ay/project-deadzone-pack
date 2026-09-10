@@ -6,7 +6,12 @@ const DZ_RUUNIT_LOADED_CAP = 6
 const DZ_RUUNIT_AUTHORED_TAGS = [
   'dz_raider','dz_story_npc','dz_story_boss','dz_elite','dz_t0_convoy',
   'dz_boss_showroom','dz_boss_loadtest','dz_basecamp_guard','dz_buddy',
-  'dz_named','dz_sideboss','dz_event_unit','dz_stronghold_guard'
+  'dz_named','dz_sideboss','dz_event_unit','dz_stronghold_guard',
+  // Every PDZ-authored Remnant/AEGIS formation must survive the natural
+  // population thinning below. These cover strongholds, territory patrols,
+  // wilderness garrisons and story relay defenders.
+  'dz_npc','dz_remnant','dz_aegis','dz_garrison_bound',
+  'dz_territory_patrol','dz_stronghold_defender','dz_t4_relay_guard'
 ]
 
 function dzRuunitIsAuthored(entity) {

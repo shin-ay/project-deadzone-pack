@@ -109,6 +109,11 @@ function pdzFactionOfEntity(entity) {
   else if (id === 'simpleenemymod:usunit') resolved = 'cdf'
   else if (id === 'simpleenemymod:ruunit') resolved = 'remnant'
   else if (id === 'simpleenemymod:pmcunit') resolved = 'pmc'
+  else if (id === 'tacz_sewv:us_medic' || id === 'tacz_sewv:us_engineer' ||
+      id === 'tacz_sewv:us_combat_engineer') resolved = 'cdf'
+  else if (id === 'tacz_sewv:ru_medic' || id === 'tacz_sewv:ru_engineer' ||
+      id === 'tacz_sewv:ru_combat_engineer') resolved = 'remnant'
+  else if (id === 'tacz_sewv:pmc_commander') resolved = 'pmc'
   else if (id.indexOf('tacz_bandits:') === 0 || pdzRelMineColoniesRaiderId(id)) resolved = 'raider'
   else if (pdzRelTypeInTag(id, PDZ_REL_ENTITY_TAGS.spore)) resolved = 'spore'
   else if (pdzRelTypeInTag(id, PDZ_REL_ENTITY_TAGS.infectious) ||
