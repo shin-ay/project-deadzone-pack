@@ -3,7 +3,10 @@
 // 100-500m from the rescue village, without teleporting the player there.
 
 const DZ_CAMP_STATE_KEY = "dz_auto_basecamp_state"
-const DZ_CAMP_DIRECT_AUTO_ENABLED = true
+// Disabled until camp chunks can be prepared outside a player's login tick.
+// Forceloading fresh Lost Cities chunks here can block the server thread for
+// over a minute, disconnect the joining player, and trip the watchdog.
+const DZ_CAMP_DIRECT_AUTO_ENABLED = false
 const DZ_CAMP_LAYOUT_VERSION = 3
 // Village rescue and JOB selection must not consume the whole generation
 // window. Ten in-game days is still conservative enough to avoid mutating an
@@ -485,7 +488,9 @@ function dzCampStartBootstrap(player) {
       server.scheduleInTicks(20,bootstrapCamp)
       return
     }
-    player.runCommandSilent("effect give @s minecraft:blindness 180 0 true")
+    // The login/wake-up blackout is disabled. Keep this clear here as a
+    // failsafe for players carrying an effect from an interrupted old flow.
+    player.runCommandSilent("effect clear @s minecraft:blindness")
     player.runCommandSilent("effect give @s minecraft:resistance 180 255 true")
     let site=dzCampFindSafeSite(player)
     if (!site) {
@@ -511,7 +516,11 @@ function dzCampStartBootstrap(player) {
   return true
 }
 
-global.pdzStartVillageCampBootstrap = dzCampStartBootstrap
+// Leave the onboarding hook absent while automatic generation is disabled so
+// onboarding falls back to waking the player in the rescue village.
+global.pdzStartVillageCampBootstrap = DZ_CAMP_DIRECT_AUTO_ENABLED
+  ? dzCampStartBootstrap
+  : null
 
 // Probe once per second and let the first player who has completed JOB
 // selection start the one-time world camp bootstrap.

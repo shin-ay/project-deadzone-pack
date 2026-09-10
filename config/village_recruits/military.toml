@@ -12,15 +12,15 @@
 	#Villages only attack when the odds are favorable and they can
 	#spare troops without leaving home undefended.
 	#
-	enabled = false
+	enabled = true
 	#Base cooldown (in ticks) between attacks launched by the same
 	#faction. Scaled down when the faction is stronger. Default: 12000 (10 min)
 	#
 	#Range: 200 ~ 1728000
-	baseCooldownTicks = 12000
+	baseCooldownTicks = 1200
 	#Max distance (blocks) between attacker and defender centers. Default: 700
 	#Range: 50 ~ 5000
-	radius = 700
+	radius = 1600
 	#Minimum local strength ratio attacker/(attacker+defender) required
 	#to launch an attack. 0.5 = even odds. Default: 0.55
 	#
@@ -42,7 +42,7 @@
 	#Default: 10
 	#
 	#Range: 0 ~ 200
-	minGarrison = 10
+	minGarrison = 3
 	#Equip and promote the attack party right before it deploys, paid from
 	#the attacking faction's real materials exactly like the normal evolution
 	#pass. An OFFLINE village never runs that pass (it only walks LOADED
@@ -188,7 +188,7 @@
 	#the settlers can be gathered, and the settle spot is kept loaded through
 	#the build so the new village actually materializes. Default: true
 	#
-	offlineExpansionLoadingEnabled = true
+	offlineExpansionLoadingEnabled = false
 	#OFFLINE VILLAGES: stop VILLAGE-OWNED recruits and workers from
 	#force-loading the chunks around themselves.
 	#
@@ -1457,7 +1457,7 @@
 	#casualties mean anything. A garrison is never emptied below
 	#attack.minGarrison to fight one. Default: true
 	#
-	battlesEnabled = false
+	battlesEnabled = true
 	#Chance that an attack the AI has decided on becomes a SKIRMISH in the
 	#field instead of going straight to a siege. Default: 0.35
 	#

@@ -4,6 +4,9 @@
 
 const DZ_ONBOARDING_JOB_DELAY_TICKS = 80
 const DZ_JOB_SELECTION_PROTECTION_TAG = "dz_job_selection_protected"
+// Temporary multiplayer diagnostic: keep onboarding/job protection active,
+// but do not trap the client behind the wake-up blackout or movement lock.
+const DZ_ONBOARDING_BLACKOUT_ENABLED = false
 
 function dzJobSelectionNeedsProtection(player) {
   return !!player && (!player.persistentData.getBoolean("dz_job_chosen") ||
@@ -18,8 +21,13 @@ function dzSetJobSelectionProtection(player, enabled) {
     // against modded damage paths that bypass the normal LivingHurt event.
     player.runCommandSilent("effect give @s minecraft:resistance 5 255 true")
     player.runCommandSilent("effect give @s minecraft:fire_resistance 5 0 true")
-    player.runCommandSilent("effect give @s minecraft:slowness 5 255 true")
-    player.runCommandSilent("effect give @s minecraft:blindness 5 0 true")
+    if (DZ_ONBOARDING_BLACKOUT_ENABLED) {
+      player.runCommandSilent("effect give @s minecraft:slowness 5 255 true")
+      player.runCommandSilent("effect give @s minecraft:blindness 5 0 true")
+    } else {
+      player.runCommandSilent("effect clear @s minecraft:slowness")
+      player.runCommandSilent("effect clear @s minecraft:blindness")
+    }
     return
   }
   if (player.tags.contains(DZ_JOB_SELECTION_PROTECTION_TAG)) player.removeTag(DZ_JOB_SELECTION_PROTECTION_TAG)
@@ -29,9 +37,9 @@ function dzSetJobSelectionProtection(player, enabled) {
 
 function dzHoldVillageIntro(player) {
   if (!player) return
-  player.persistentData.putBoolean("dz_onboarding_intro_pending", true)
+  player.persistentData.putBoolean("dz_onboarding_intro_pending", DZ_ONBOARDING_BLACKOUT_ENABLED)
   dzSetJobSelectionProtection(player, true)
-  player.runCommandSilent("pdzjobui intro hold")
+  player.runCommandSilent(DZ_ONBOARDING_BLACKOUT_ENABLED ? "pdzjobui intro hold" : "pdzjobui intro clear")
 }
 
 function dzWakeInVillage(player) {
@@ -43,7 +51,7 @@ function dzWakeInVillage(player) {
   player.runCommandSilent("effect clear @s minecraft:resistance")
   player.runCommandSilent("effect clear @s minecraft:fire_resistance")
   player.runCommandSilent("effect give @s minecraft:resistance 6 4 true")
-  player.runCommandSilent("pdzjobui intro wake")
+  player.runCommandSilent(DZ_ONBOARDING_BLACKOUT_ENABLED ? "pdzjobui intro wake" : "pdzjobui intro clear")
   player.runCommandSilent("title @s times 20 80 30")
   player.runCommandSilent('title @s subtitle {"text":"村人たちに救助されたようだ","color":"gray"}')
   player.runCommandSilent('title @s title {"text":"UNKNOWN SETTLEMENT","color":"gold","bold":true}')
