@@ -1,0 +1,13 @@
+name = "[TaCZ/SBW] Combined Arms"
+filename = "tacz_sewv-0.1.4a.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "1efcfb8f95ed0920dc321ea408ef2ab5eef25199"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 8752942
+project-id = 1605176

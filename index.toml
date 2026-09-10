@@ -13686,6 +13686,11 @@ hash = "c4cb4778564bc61b59d8da2eb7b61d753d6158125560db6c9312dda90e5eda34"
 metafile = true
 
 [[files]]
+file = "mods/tacz-combined-arms.pw.toml"
+hash = "acf25755e8d0159db8cf9e4b0d5ed5ed9abd60f8a23b2d3159ccd576c15c4862"
+metafile = true
+
+[[files]]
 file = "mods/tacz-create.pw.toml"
 hash = "e417ff955d6d43c4df74f7859be0dbddf406d33e67c643150b5befd60a2f09fc"
 metafile = true
@@ -13727,7 +13732,7 @@ metafile = true
 
 [[files]]
 file = "mods/tacz-simple-enemy.pw.toml"
-hash = "28daa08173918614fc50fb14fb2b4a509103105ae22dff641b9e4e21cf70851b"
+hash = "2118cf7a18864ffd08b108141bd99ccf0c9acfc69e84cb05d72af00eaf85b109"
 metafile = true
 
 [[files]]
