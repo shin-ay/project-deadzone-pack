@@ -37,6 +37,8 @@ function dzOpenLegacyBaseCorePanel(player) {
   player.tell(Text.of("[ 地域防衛 ]").red().clickRunCommand("/deadzonedefense status")
     .append(Text.of("  [ 地域物流 ]").aqua().clickRunCommand("/deadzonelogistics status"))
     .append(Text.of("  [ キャンプ発展 ]").gold().clickRunCommand("/deadzonecampdev status")))
+  player.tell(Text.of("[ Buddy同行 ]").aqua().clickRunCommand("/deadzonebuddyui")
+    .append(Text.of("  [ Buddy役割 ]").green().clickRunCommand("/deadzonebuddycontrol roles")))
   player.tell(Text.of("[ MineColonies監査 ]").green().clickRunCommand("/deadzonecolonyops audit")
     .append(Text.of("  [ 勢力判断 ]").yellow().clickRunCommand("/deadzonestorybranch status")))
   player.tell(Text.of("[ T2支援先の判断 ]").aqua().clickRunCommand("/deadzonestory support")

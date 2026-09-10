@@ -77,8 +77,9 @@
 			y: -2.0d
 		}
 		{
-			description: [
-				"キャンプには取引、買取、Buddy雇用、サブクエスト、物資納品の担当者がいる。"
+			 description: [
+				"キャンプには取引、買取、Buddy雇用、サブクエスト、物資納品の担当者がいる。Buddyはハンク横のRecruit Tableから1人雇用できる。"
+				"Buddyの役割・命令・補給・Medic救助は、ハンクの「Buddyガイド」またはチュートリアル内の「Buddy同行システム」で確認する。"
 				"序盤はキャンプ周辺が比較的安全だが、T1ボス討伐後は襲撃対象になる。"
 			]
 			icon: "minecraft:campfire"

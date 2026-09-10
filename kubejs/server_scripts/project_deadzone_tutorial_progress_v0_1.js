@@ -7,6 +7,7 @@ const DZ_TUTORIAL_QUESTS = {
   camp: "22F49EBF5BDC1FC1",
   preparation: "583CB8089686659D"
 }
+const DZ_BUDDY_GUIDE_QUEST = "6D57010000000101"
 
 function dzTutorialComplete(player, key) {
   // v2 retries saves that recorded completion while the old quest IDs no
@@ -18,6 +19,22 @@ function dzTutorialComplete(player, key) {
   if (result > 0) player.persistentData.putBoolean(flag, true)
 }
 
+function dzTutorialBuddyPrompt(player) {
+  let flag = "dz_buddy_guide_prompted_v1"
+  if (player.persistentData.getBoolean(flag)) return
+  player.persistentData.putBoolean(flag, true)
+  let hired = player.persistentData.getString("dz_buddy_uuid") !== ""
+  player.tell(Text.of(hired
+    ? "[ハンク] Buddyの役割・命令・補給方法を端末へ登録しておいた。"
+    : "[ハンク] 単独遠征は危険だ。隣のRecruit TableでBuddyを1人雇用できる。"
+  ).gold())
+  player.tell(
+    Text.of("[ BUDDY同行システムを確認 ]").aqua()
+      .clickRunCommand("/deadzonebuddyui")
+      .hover(Text.of("雇用、役割、命令、Medic救助を確認します"))
+  )
+}
+
 PlayerEvents.loggedIn(event => {
   event.server.scheduleInTicks(40, callback => dzTutorialComplete(event.player, "joined"))
 })
@@ -27,8 +44,10 @@ PlayerEvents.tick(event => {
   if (player.level.clientSide || player.age % 20 !== 0) return
   if (player.persistentData.getBoolean("dz_job_chosen")) dzTutorialComplete(player, "job")
   if (player.server.runCommandSilent("execute as " + player.username +
-      " at @s if entity @e[tag=dz_basecamp_core_anchor,distance=..96,limit=1]") > 0)
+      " at @s if entity @e[tag=dz_basecamp_core_anchor,distance=..96,limit=1]") > 0) {
     dzTutorialComplete(player, "camp")
+    dzTutorialBuddyPrompt(player)
+  }
   if (player.persistentData.getBoolean("dz_story_preparation_latched") ||
       player.persistentData.getBoolean("dz_story_auto_preparation"))
     dzTutorialComplete(player, "preparation")

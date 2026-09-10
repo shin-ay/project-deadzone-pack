@@ -1401,6 +1401,10 @@ file = "config/ftbquests/quests/chapters/deadzone_bounties_01.snbt"
 hash = "e3eb989e917fda0794ffea952d538e3dd47326278c38b41097d312e311ac8d28"
 
 [[files]]
+file = "config/ftbquests/quests/chapters/deadzone_buddy_operations_01.snbt"
+hash = "b2709151bbd6522ca4d5cfe4ebfd43f59731e64b5b68cd88ff2b7a17a0dac9e4"
+
+[[files]]
 file = "config/ftbquests/quests/chapters/deadzone_camp_development_01.snbt"
 hash = "78f7a7df86535e44aba729cbe9ecec47b37bc900ecaeec9aa1171a2e9b0e85f2"
 
@@ -1566,7 +1570,7 @@ hash = "742c2528bf6ae9605647994f6fb19910dbdcfde604198d8c5277a1577e4d1255"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/deadzone_tutorial_01.snbt"
-hash = "5e7ad0b14ae3299bfc0d03f45d3e05491afc08c7eaf73cdae619296307f0e93a"
+hash = "a491a51de800330f7d2b1d2fc29e7ff6b75c15d900d7936d5b499a9cbcc5e95f"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/deadzone_waterside_survival_01.snbt"
@@ -8338,7 +8342,7 @@ hash = "b7377e2c3d4b5afe5619d64801a6783457a9d5e7460b7e91ba8d7e43d160e1d9"
 
 [[files]]
 file = "kubejs/data/project_deadzone/functions/basecamp/apply_staff_services.mcfunction"
-hash = "0766703a1594d61c751ea8a91c354f83e981021f5ee5e03a939a4c25833666b4"
+hash = "159b318eb29337f31f421c42d9fb184a9ca4ba5ae4deae8a325575f8ddba0947"
 
 [[files]]
 file = "kubejs/data/project_deadzone/functions/basecamp/apply_trade_economy.mcfunction"
@@ -8390,7 +8394,7 @@ hash = "565533ec943ba3789116b9ec01f709b61c8891e5a3605107830d287dfc97c567"
 
 [[files]]
 file = "kubejs/data/project_deadzone/functions/basecamp/repair_staff_service_ui.mcfunction"
-hash = "4a0a87e616cb38cbba362b7f83628335f246b2b415660fb43a2187d8458bd3c1"
+hash = "5c3002ebdf5bc81ab94413cf6a18c2812e180675b138803e2ed4abf1a13e01fd"
 
 [[files]]
 file = "kubejs/data/project_deadzone/functions/basecamp/restore_guards_at_core.mcfunction"
@@ -11266,7 +11270,7 @@ hash = "4f786cef14ebd30d9f6b7a1bd66929a59ad9a75f791ecf99d264ec87b68eb384"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_base_core_v0_1.js"
-hash = "ff666776c6be23d6353a57476fcb015d6f59e3a2335c94baeff381470f527ea5"
+hash = "844276a6d09b4247dc1f87810964ea06b439683e992f6257490653de8d7cb17c"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_basecamp_guard_safety_v0_1.js"
@@ -11582,7 +11586,7 @@ hash = "5259c20ad4ce0ae2e7054abaac1d2a33c7c1bb912c476e16c47728a74c6f9367"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_radio_world_status_v0_1.js"
-hash = "f153132dc7dd9bc32635ee81752e7106798ab656d2c423858410bc8e9bfe030e"
+hash = "8c99acce49d019ff8ff7c7cd14ecbe15feb11d5bc64dca3edb4b870fa08ce751"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_recipe_stage_sync_v0_1.js"
@@ -11762,7 +11766,7 @@ hash = "4a89853bfdc0e0c8d17dd4aaedf14ccdb4a7c56b8c082ac863bd2a7c38eb7d0d"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_tutorial_progress_v0_1.js"
-hash = "24f383a9b1e2b196149907f27b5bfecb8a6bf851d85127f3ef5e409fc45009ef"
+hash = "da643b5ae210cdf8b3a166b57f0f920e70eee00c9e1cd17757365f079bc1365f"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_urgent_qol_v0_1.js"

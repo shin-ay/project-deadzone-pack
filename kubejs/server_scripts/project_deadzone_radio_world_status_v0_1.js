@@ -160,7 +160,7 @@ ServerEvents.commandRegistry(event => {
   }))
 
   event.register(Commands.literal("deadzonebuddyui").executes(ctx => {
-    dzOpenQuestGui(ctx.source.player, "1920AEAAF4D75E94")
+    dzOpenQuestGui(ctx.source.player, "6D57010000000101")
     return 1
   }))
 

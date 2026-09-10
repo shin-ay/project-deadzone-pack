@@ -1,0 +1,73 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: "circle"
+	filename: "deadzone_buddy_operations_01"
+	group: "2492E280835EEAE3"
+	icon: "simpleenemymod:recruit_table"
+	id: "6D57010000000001"
+	order_index: 3
+	quest_links: [ ]
+	quests: [
+		{
+			description: [
+				"Buddyは、単独遠征を支える1人用の同行者システム。プレイヤーのJOBとは別に役割を持ち、実弾とStory進行に応じた装備で戦う。"
+				"Survivor Campの募集担当ハンクと話し、隣のRecruit Tableを使う。同行できるBuddyはプレイヤーごとに1人まで。"
+				"雇用後はハンクの会話画面から役割変更・追従・待機・呼び戻しを操作できる。"
+			]
+			icon: "simpleenemymod:recruit_table"
+			id: "6D57010000000101"
+			title: "Buddy同行システム"
+			x: 0.0d
+			y: 0.0d
+		}
+		{
+			description: [
+				"Recruit Tableを使い、募集名簿から同行者を雇用する。募集には鉄インゴット12個を用意する。"
+				"すでにBuddyがいる間は2人目を雇えない。Buddyが死亡した場合は雇用枠が空き、改めて募集できる。"
+			]
+			icon: "minecraft:iron_ingot"
+			id: "6D57010000000102"
+			title: "ハンクとRecruit Table"
+			x: 2.0d
+			y: -2.0d
+		}
+		{
+			description: [
+				"ASSAULT：前衛。HP・防御と攻撃性能のバランスが良い。"
+				"SUPPORT：重装支援。周囲の味方へResistanceを付与する。"
+				"SCOUT：高速偵察。周囲の敵を発光させ、夜間視界を確保する。"
+				"MEDIC：衛生兵。味方を回復し、条件を満たすとダウンした雇用主を救助する。"
+			]
+			icon: "minecraft:spyglass"
+			id: "6D57010000000103"
+			title: "4つの役割"
+			x: 2.0d
+			y: 0.0d
+		}
+		{
+			description: [
+				"FOLLOWは同行、HOLDは現在地待機、RECALLは近くへ呼び戻す命令。すべてハンクの会話画面から実行できる。"
+				"Buddyは予備弾薬を実際に消費し、弾切れになると射撃を停止する。ハンクの緊急在庫や補給を利用しよう。"
+				"Story Unlockが進むと役割装備と生存性能が更新される。"
+			]
+			icon: "minecraft:compass"
+			id: "6D57010000000104"
+			title: "命令・補給・成長"
+			x: 2.0d
+			y: 2.0d
+		}
+		{
+			description: [
+				"MEDIC Buddyが近距離かつ視線内にいて、雇用主の所持品に包帯があれば、PlayerReviveのDown状態から5秒で救助する。"
+				"他プレイヤーによる蘇生、Medical Revive、Second Windが優先される。救助後はStory段階別のクールダウンが発生する。"
+				"救助中にBuddyと離れる、視線を切る、包帯を失うと成立しない。遠征前にハンクから状態を確認しよう。"
+			]
+			icon: "legendarysurvivaloverhaul:bandage"
+			id: "6D57010000000105"
+			title: "MEDICの緊急救助"
+			x: 4.0d
+			y: 0.0d
+		}
+	]
+	title: "Buddy同行システム"
+}
