@@ -1,12 +1,50 @@
-// PROJECT DEADZONE Story Progression v0.2
+// PROJECT DEADZONE Story Progression v0.3
 // Story Unlock is narrative progress only. Geographic World Tier belongs to
 // project_deadzone_region_tiers_v0_1.js and enemy pressure belongs to Threat.
 
+const DZ_STORY_MNS_BALANCE = Java.loadClass('com.robertx22.mine_and_slash.database.data.game_balance_config.GameBalanceConfig')
+const DZ_STORY_MNS_ENTITY = Java.loadClass('com.robertx22.mine_and_slash.capability.entity.EntityData')
 const DZ_STORY_UNLOCK_KEY = "deadzone_story_unlock_tier"
 // Compatibility mirror for existing saves and older scripts. Never present
 // this key to players as geographic World Tier.
 const DZ_STORY_TIER_KEY = "deadzone_world_tier"
 const DZ_STORY_MAX_TIER = 5
+// S0 is the pre-boss survival band. Gas Station, Police Station and Radio
+// Tower each open the next broad character band. S3 restores M&S's authored
+// level 100 endgame. The cap is server-wide because Story Unlock is shared.
+const DZ_STORY_MNS_LEVEL_CAPS = [20, 40, 60, 100, 100, 100]
+
+function dzStoryMnsLevelCap(tier) {
+  let index = Math.max(0, Math.min(DZ_STORY_MAX_TIER, Number(tier) || 0))
+  return DZ_STORY_MNS_LEVEL_CAPS[index]
+}
+
+function dzStoryApplyMnsLevelCap(server, tier) {
+  let cap = dzStoryMnsLevelCap(tier)
+  try {
+    let balance = DZ_STORY_MNS_BALANCE.get()
+    if (balance.MAX_LEVEL !== cap) balance.MAX_LEVEL = cap
+    server.persistentData.putInt('dz_story_mns_level_cap', cap)
+    return true
+  } catch (error) {
+    console.error('[DEADZONE STORY] Failed to apply M&S level cap ' + cap + ': ' + error)
+    return false
+  }
+}
+
+function dzStoryClampBankedMnsExp(player, cap) {
+  try {
+    let data = DZ_STORY_MNS_ENTITY.get(player)
+    if (data.getLevel() !== cap) return
+    let required = Math.max(0, Number(data.getExpRequiredForLevelUp()) || 0)
+    if (required > 0 && data.getExp() > required) data.setExp(required)
+  } catch (error) {
+    if (!player.persistentData.getBoolean('dz_story_mns_cap_error_logged_v1')) {
+      player.persistentData.putBoolean('dz_story_mns_cap_error_logged_v1', true)
+      console.error('[DEADZONE STORY] Failed to clamp M&S XP for ' + player.username + ': ' + error)
+    }
+  }
+}
 
 function dzStoryTier(server) {
   let data = server.persistentData
@@ -19,6 +57,7 @@ function dzStoryTier(server) {
 }
 
 function dzStoryApplyPlayer(player, tier) {
+  let levelCap = dzStoryMnsLevelCap(tier)
   for (let i = 0; i <= DZ_STORY_MAX_TIER; i++) {
     let stage = "deadzone_tier_" + i
     if (i <= tier) {
@@ -31,6 +70,7 @@ function dzStoryApplyPlayer(player, tier) {
   }
   player.persistentData.putInt(DZ_STORY_UNLOCK_KEY, tier)
   player.persistentData.putInt(DZ_STORY_TIER_KEY, tier)
+  player.persistentData.putInt('dz_story_mns_level_cap', levelCap)
 }
 
 function dzStorySetTier(server, tier, announce) {
@@ -39,6 +79,7 @@ function dzStorySetTier(server, tier, announce) {
   server.persistentData.putInt(DZ_STORY_UNLOCK_KEY, next)
   server.persistentData.putInt(DZ_STORY_TIER_KEY, next)
   server.persistentData.putBoolean("dz_story_unlock_schema_v1", true)
+  dzStoryApplyMnsLevelCap(server, next)
 
   server.players.forEach(player => dzStoryApplyPlayer(player, next))
 
@@ -47,15 +88,23 @@ function dzStorySetTier(server, tier, announce) {
       "[PROJECT DEADZONE] ストーリー解禁 " + previous + " → " + next
     ).gold())
     server.tell(Text.of(
-      "新しいストーリー進行・Loot・レシピ解禁条件が同期されました。"
+      "新しいストーリー進行・Loot・レシピ解禁条件とM&S Lv上限" +
+      dzStoryMnsLevelCap(next) + "が同期されました。"
     ).yellow())
   }
 }
 
 global.pdzStoryUnlockTier = dzStoryTier
+global.pdzStoryMnsLevelCap = dzStoryMnsLevelCap
+
+ServerEvents.loaded(event => {
+  dzStoryApplyMnsLevelCap(event.server, dzStoryTier(event.server))
+})
 
 PlayerEvents.loggedIn(event => {
-  dzStoryApplyPlayer(event.player, dzStoryTier(event.player.server))
+  let tier = dzStoryTier(event.player.server)
+  dzStoryApplyMnsLevelCap(event.player.server, tier)
+  dzStoryApplyPlayer(event.player, tier)
 })
 
 PlayerEvents.respawned(event => {
@@ -67,6 +116,9 @@ PlayerEvents.tick(event => {
   let player = event.player
   if (player.level.clientSide || player.age % 200 !== 0) return
   let worldTier = dzStoryTier(player.server)
+  let levelCap = dzStoryMnsLevelCap(worldTier)
+  dzStoryApplyMnsLevelCap(player.server, worldTier)
+  dzStoryClampBankedMnsExp(player, levelCap)
   if (player.persistentData.getInt(DZ_STORY_TIER_KEY) !== worldTier) {
     dzStoryApplyPlayer(player, worldTier)
     return
@@ -89,6 +141,13 @@ ServerEvents.commandRegistry(event => {
     let player = ctx.source.player
     let tier = dzStoryTier(player.server)
     player.tell(Text.of("PROJECT DEADZONE ストーリー解禁段階: S" + tier).gold())
+    try {
+      let mns = DZ_STORY_MNS_ENTITY.get(player)
+      let level = Math.max(1, Number(mns.getLevel()) || 1)
+      let cap = dzStoryMnsLevelCap(tier)
+      player.tell(Text.of("M&S Lv " + level + " / " + cap +
+        (level >= cap ? "（現在の上限）" : "")).aqua())
+    } catch (ignored) {}
     for (let i = 0; i <= DZ_STORY_MAX_TIER; i++) {
       let stage = "deadzone_tier_" + i
       let active = player.stages.has(stage)

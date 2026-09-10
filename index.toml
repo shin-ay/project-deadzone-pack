@@ -11698,7 +11698,7 @@ hash = "16050067548ab2cd84f8cfab0dc235a21b83c806fdde92d1cfa2518607196a19"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_story_progression_v0_1.js"
-hash = "d26deff690835d3c445cfdf98da3419b4ac93ff135ab81653a0bd4d6408e1818"
+hash = "51094c007fe576a1decdf8b9497baf92e6a7c71cae9ca36eb79d1bf3d6feb7aa"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_stronghold_defense_v0_2.js"
@@ -12274,8 +12274,8 @@ file = "mods/PROJECT_DEADZONE_EpicTaCZ_Compat-0.1.0.jar"
 hash = "9f4870e0073f46f83effd31ace8410dac5c52448aab67dba08380c04f5d8af12"
 
 [[files]]
-file = "mods/PROJECT_DEADZONE_JOB_UI-0.7.0.jar"
-hash = "66782f257e211f303a9b8fb499f21840653a2e682dd0eb159173058e7c385f7c"
+file = "mods/PROJECT_DEADZONE_JOB_UI-0.7.1.jar"
+hash = "1a77ff910d96b90e07d53e379dc90ce308af0f63a4933285a830a80a17e04cd6"
 
 [[files]]
 file = "mods/PROJECT_DEADZONE_Vehicle_Compatibility-1.4.1.jar"
