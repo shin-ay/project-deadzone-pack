@@ -1,12 +1,12 @@
 name = "PROJECT DEADZONE"
 author = "PROJECT DEADZONE Team"
-version = "BETA-20260909-SETTLEMENT-ROAD-DENSITY-RC1"
+version = "BETA-20260910-T0-STORY-INTEGRATION-RC1"
 pack-format = "packwiz:1.1.0"
 
 [index]
 file = "index.toml"
 hash-format = "sha256"
-hash = "1e3dfa127a9ac873a863fe47d4ccf109fac112cb09fb381489238cc44711964b"
+hash = "24edb836ace235866d541fae2a337e3f25d3b64a6ac309b4edd0771067909cb9"
 
 [versions]
 forge = "47.4.10"

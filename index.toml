@@ -3338,15 +3338,15 @@ hash = "6687c64162dd28937faeddb98d9dc36e1c8a7d545beba226b0a8aa24fcbabecb"
 
 [[files]]
 file = "config/village_recruits/general.toml"
-hash = "8f7b7a9252f84540d01c90068c690fc59f029f169dcd87db01f5e9206b676dab"
+hash = "60022268189e759ac9cab3e61d0ce8c527fbb88446271b3033aa177e3d637a71"
 
 [[files]]
 file = "config/village_recruits/military.toml"
-hash = "69360426c5ec8ee2b180a348d0c2e50414ded6aa5b35c32979114563b65a0fab"
+hash = "7e296a4829fe7d8c7f48d96fb9902933374df2acd1080aad12e5fdc3aab2d2d7"
 
 [[files]]
 file = "config/village_recruits/politics.toml"
-hash = "4138f2ab2790dbd38a630c034d8385c55c5ffa539a247f5aee67b757a6417048"
+hash = "11dad36f91f3534ff08804320582bb2880e9a0ddf6218dd8916c409968f33dee"
 
 [[files]]
 file = "config/village_recruits/sky.toml"
@@ -6883,10 +6883,6 @@ hash = "ff90e60b72305d44077371b3124b3a96410e0594eb8ba3ac82e4a67e68b2aaee"
 [[files]]
 file = "kubejs/data/mmorpg/mmorpg_base_gear_types/rune_scythe.json"
 hash = "f261a89d731f57229243d2cbcb5ed5f58d95634b98aecb36578b438ec01fab24"
-
-[[files]]
-file = "kubejs/data/mmorpg/mmorpg_base_gear_types/rune_shield.json"
-hash = "a875a1607abf7ba988d962c7c7ea846f75410260372ce820665d98849f892ff5"
 
 [[files]]
 file = "kubejs/data/mmorpg/mmorpg_base_gear_types/rune_shield_large.json"
@@ -11258,7 +11254,7 @@ hash = "1a111e76362c1b2c5ad8c1bf8e25f270fbe7c85270164baef0014baf9517503b"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_auto_basecamp_v0_1.js"
-hash = "b202631591dd8a0b75ff57b8da3db4dae06ddc628a50e984eea7ed532ff29c6e"
+hash = "1fb1d304654fed1d0f30c186e4efd51d6e491417e84b8ddcc8a526fd5d466f21"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_auto_horde_v0_1.js"
@@ -11462,7 +11458,7 @@ hash = "0f213fd2100cd18f01740ccd5a727c723c9ad5307db1271b4b4f0fd72dcfb453"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_job_unlocks_v0_1.js"
-hash = "13a886506051dbeb4f3fa3e63df8bf8707d3a3fcbe769c90d4d7b5350292e156"
+hash = "32e83a3d73e732f6eb5c5b8b91c65aaf731af6527d0e06adb8075c1590003a3a"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_jobs_v0_2_2.js"
@@ -11542,7 +11538,7 @@ hash = "2feb979c118f3786bee04de9fc2fb0b1854ba1a7ac61a52580adc4523692fce6"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_onboarding_v0_1.js"
-hash = "ccf9181ec4b8dc5f5d46ea0c066967b0248b8e3af977d9f0fcc1a776c8df4555"
+hash = "80c863dcb2cbdd2d767718196120addc7d908213d80a28e815263cc7f068f897"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_outpost_garrisons_v0_1.js"

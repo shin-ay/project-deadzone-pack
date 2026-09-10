@@ -1,20 +1,7 @@
 // PROJECT DEADZONE JOB Unlocks v0.1 - test profile
 // Career promotion grants one-time field equipment and production bonuses.
-// Recipes themselves are universal and are never gated by JOB or Story Unlock.
-
-const PDZ_JOB_STAGE_UNLOCKS = {
-  ground_tech:[['dz_mechanics_vehicle_1',0]],
-  convoy_master:[['dz_mechanics_vehicle_2',1]],
-  armor_mechanic:[['dz_mechanics_vehicle_2',1]],
-  ace_pilot:[['dz_mechanics_vehicle_3',2]],
-  crew_chief:[['dz_mechanics_vehicle_3',2]],
-  automation:[['dz_engineering_industry_1',0]],
-  systems_engineer:[['dz_engineering_industry_2',1]],
-  industrial_architect:[['dz_engineering_industry_2',1],['dz_engineering_industry_3',2],['dz_engineering_fortification_1',1],['dz_engineering_fortification_2',2]],
-  gunsmith:[['dz_engineering_weapons_1',0]],
-  weapon_engineer:[['dz_engineering_weapons_2',1],['dz_engineering_weapons_3',2]],
-  ordnance_specialist:[['dz_engineering_weapons_2',1],['dz_engineering_weapons_3',2],['dz_engineering_fortification_2',1],['dz_engineering_fortification_3',2]]
-}
+// Technology recipes are unlocked for every player by shared Story / Base /
+// Weapon Research progression. A missing JOB must never deadlock content.
 
 const PDZ_JOB_PROMOTION_KITS = {
   scavenger:[['kubejs:career_salvage_scanner',1]], adapter:[['kubejs:career_survival_rig',1]],
@@ -95,11 +82,6 @@ const PDZ_JOB_T3_EQUIPMENT_EFFECT = {
   juggernaut:'撃破時に強力な攻撃バフ', riot_leader:'周囲の味方へ攻撃Aura',
   angler:'食事後にLuck・釣り性能強化', chef:'食事で再生・吸収HP',
   hunter:'狩猟素材・戦闘性能強化', homesteader:'収穫時に栽培副産物'
-}
-
-function pdzJobStoryUnlock(player) {
-  for (let i=5;i>=0;i--) if (player.stages.has('deadzone_tier_'+i)) return i
-  return 0
 }
 
 function pdzJobApplyIdentity(stack,id,tier,name) {
@@ -234,19 +216,6 @@ function pdzJobSyncUnlocks(player,announce) {
   let t3=String(player.persistentData.getString('dz_career_t3'))
   if (t2) pdzJobGiveKit(player,t2,2)
   if (t3) pdzJobGiveKit(player,t3,3)
-  let tier=pdzJobStoryUnlock(player)
-  ;[t2,t3].forEach(id=>(PDZ_JOB_STAGE_UNLOCKS[id]||[]).forEach(entry=>{
-    let stage=entry[0],neededTier=entry[1]
-    if (tier>=neededTier) {
-      // recipe_stage_sync treats the same-named tag as the source of truth.
-      // Adding both keeps the career route compatible with its 40-tick sync.
-      if (!player.tags.contains(stage)) player.addTag(stage)
-      if (!player.stages.has(stage)) {
-        player.stages.add(stage)
-        if (announce) player.tell(Text.of('[JOB RECIPE] '+stage+' を解禁しました。').gold())
-      }
-    }
-  }))
 }
 
 PlayerEvents.loggedIn(event=>event.server.scheduleInTicks(100,()=>{
@@ -310,8 +279,8 @@ ServerEvents.commandRegistry(event=>{
     .then(Commands.literal('status').executes(ctx=>{
       let p=ctx.source.player,t2=String(p.persistentData.getString('dz_career_t2')),t3=String(p.persistentData.getString('dz_career_t3'))
       p.tell(Text.of('=== JOB Unlock Status ===').gold())
-    p.tell(Text.of('ストーリー解禁: S'+pdzJobStoryUnlock(p)+' / JOB T2: '+(t2||'-')+' / JOB T3: '+(t3||'-')).aqua())
-      ;[t2,t3].forEach(id=>(PDZ_JOB_STAGE_UNLOCKS[id]||[]).forEach(e=>p.tell(Text.of((p.stages.has(e[0])?'OPEN ':'LOCK ')+e[0]+' (T'+e[1]+')')[p.stages.has(e[0])?'green':'gray']())))
+      p.tell(Text.of('JOB T2: '+(t2||'-')+' / JOB T3: '+(t3||'-')).aqua())
+      p.tell(Text.of('レシピ解禁はストーリー・拠点研究・兵器研究で全員共通です。').green())
       return 1
     }))
   event.register(root)

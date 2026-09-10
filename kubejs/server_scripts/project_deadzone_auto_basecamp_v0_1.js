@@ -6,7 +6,9 @@ const DZ_CAMP_STATE_KEY = "dz_auto_basecamp_state"
 // Disabled until camp chunks can be prepared outside a player's login tick.
 // Forceloading fresh Lost Cities chunks here can block the server thread for
 // over a minute, disconnect the joining player, and trip the watchdog.
-const DZ_CAMP_DIRECT_AUTO_ENABLED = false
+// Fresh worlds need one Survivor Camp before the rescue radio can reveal its
+// coordinates. Established worlds remain protected by DZ_CAMP_FRESH_LIMIT.
+const DZ_CAMP_DIRECT_AUTO_ENABLED = true
 const DZ_CAMP_LAYOUT_VERSION = 3
 // Village rescue and JOB selection must not consume the whole generation
 // window. Ten in-game days is still conservative enough to avoid mutating an
