@@ -1,4 +1,4 @@
-// PROJECT DEADZONE Firearms Perks v0.3
+// PROJECT DEADZONE Firearms Perks v0.4
 // Uses TaCZ's official pre-damage event. It does not modify gun NBT,
 // magazines, animations or reload timing.
 
@@ -372,7 +372,11 @@ TimelessGunEvents.entityHurtByGunPre(event => {
   let smartLink = false
   try { explosiveRounds = player.hasEffect('project_deadzone:explosive_rounds') } catch (ignored) {}
   try { corrosiveRounds = player.hasEffect('project_deadzone:corrosive_rounds') } catch (ignored) {}
-  try { smartLink = player.hasEffect('project_deadzone:smart_link') } catch (ignored) {}
+  // PDZ presents M&S Quickdraw as Smart Link. The authoritative spell grants
+  // mmorpg:instant_arrows for its eight-second active window; there is no
+  // separate PDZ Smart Link effect. Checking the old nonexistent marker left
+  // the already implemented two-target gun follow-up permanently dormant.
+  try { smartLink = player.hasEffect('mmorpg:instant_arrows') } catch (ignored) {}
   if (explosiveRounds) {
     baseAmount *= 1.35
     dzBallisticFx(player, hurtEntity, 'explosive')

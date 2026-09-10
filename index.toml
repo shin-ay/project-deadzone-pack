@@ -11394,7 +11394,7 @@ hash = "de2327b1e19d91d2607c4efad5f9ecdeb81971923f10a337b32bdb2e691882a9"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_firearms_perks_v0_1.js"
-hash = "7f0964f1e00d7a147504bf4ae4b40c7aa9847f2a3029dd1922a74495126cf60f"
+hash = "be030923deaa9c2450d2c8b397506ef9fd4c3ed4573c18a3a0dfe243e0123e1d"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_fitness_perks_v0_1.js"
@@ -11722,7 +11722,7 @@ hash = "96c9104c549a1e60f916161f616fabdc60959cef89825a3606220a9238f652e9"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_tactical_resource_v0_1.js"
-hash = "9c40ab36135a31160ea5a90b210e0ae479fa6f1263558b03399a155cc6eb34bf"
+hash = "fbe30b8bb8e9c9ce11d2337096d75fde5508261ba653c8b3df644f5089337c98"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_tacz_enchant_quest_v0_1.js"

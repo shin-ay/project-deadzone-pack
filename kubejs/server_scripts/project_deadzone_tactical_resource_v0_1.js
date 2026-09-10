@@ -1,4 +1,4 @@
-// PROJECT DEADZONE tactical resource bridge v0.1
+// PROJECT DEADZONE tactical resource bridge v0.2
 // TaCZ gunplay feeds M&S Mana, presented to players as Tactical Resource.
 // This keeps active skills relevant without introducing another power system.
 
@@ -43,8 +43,9 @@ TimelessGunEvents.entityKillByGun(event => {
   pdzTRRestore(player, event.headShot ? 4 : 3)
 })
 
-// Quickdraw is re-presented as Assault Overdrive. Its existing M&S effect is
-// used as the marker so the ability also boosts real TaCZ hits for ten seconds.
+// Quickdraw is presented as Smart Link. Its authoritative M&S effect marks the
+// eight-second window: primary TaCZ hits gain a small boost here, while the
+// two-target 45% follow-up is owned by project_deadzone_firearms_perks_v0_1.js.
 TimelessGunEvents.entityHurtByGunPre(event => {
   let player = event.getAttacker()
   if (!player || !player.isPlayer() || player.level.clientSide) return
@@ -54,4 +55,3 @@ TimelessGunEvents.entityHurtByGunPre(event => {
   let amount = Number(event.getBaseAmount())
   if (isFinite(amount) && amount > 0) event.setBaseAmount(amount * 1.15)
 })
-
