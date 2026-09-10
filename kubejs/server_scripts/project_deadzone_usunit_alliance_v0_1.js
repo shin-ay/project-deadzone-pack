@@ -3,6 +3,12 @@
 // RU Units remain hostile. Explicit story-faction units keep their own setup.
 
 const DZ_USUNIT_TYPE = "simpleenemymod:usunit"
+const DZ_US_ALLY_TYPES = {
+  "simpleenemymod:usunit": true,
+  "tacz_sewv:us_medic": true,
+  "tacz_sewv:us_engineer": true,
+  "tacz_sewv:us_combat_engineer": true
+}
 // Civil Defense and Remnant US units are allies too. Only explicitly hostile
 // authored units are excluded from the alliance repair.
 const DZ_USUNIT_HOSTILE_TAGS = ["dz_raider", "dz_hostile", "dz_enemy"]
@@ -30,8 +36,12 @@ function dzUsunitIsVillageAlly(entity) {
     id.indexOf("recruits:") === 0 || id.indexOf("village_recruits:") === 0
 }
 
+function dzIsUsAllianceUnit(entity) {
+  return !!entity && !!DZ_US_ALLY_TYPES[String(entity.type)]
+}
+
 function dzUsunitMakeFriendly(entity) {
-  if (!entity || String(entity.type) !== DZ_USUNIT_TYPE) return
+  if (!dzIsUsAllianceUnit(entity)) return
   if (dzUsunitIsManagedFaction(entity)) return
 
   entity.tags.add("dz_usunit")
@@ -50,15 +60,16 @@ function dzUsunitMakeFriendly(entity) {
   } catch (ignored) {}
 }
 
-EntityEvents.spawned(DZ_USUNIT_TYPE, event => {
+EntityEvents.spawned(event => {
   let entity = event.entity
+  if (!dzIsUsAllianceUnit(entity)) return
   // Wait for scripted strongholds/buddies to attach their ownership tags. Only
   // unmanaged natural spawns are thinned; authored faction units are untouched.
   entity.server.scheduleInTicks(20, callback => {
     if (!entity || !entity.alive || dzUsunitIsManagedFaction(entity) ||
         entity.tags.contains("dz_buddy") || entity.tags.contains("dz_story_npc") ||
         entity.tags.contains("dz_basecamp_guard")) return
-    if (Math.random() > DZ_USUNIT_NATURAL_KEEP_CHANCE) {
+    if (String(entity.type) === DZ_USUNIT_TYPE && Math.random() > DZ_USUNIT_NATURAL_KEEP_CHANCE) {
       entity.discard()
       return
     }
@@ -73,13 +84,17 @@ ServerEvents.tick(event => {
   let retained = {}
   event.server.players.forEach(player => {
     player.level.entities.forEach(entity => {
-      if (String(entity.type) !== DZ_USUNIT_TYPE) return
+      if (!dzIsUsAllianceUnit(entity)) return
       // Temporary global ceasefire with settlements, including authored US
       // factions that otherwise keep their own hostility tags.
       try { if (dzUsunitIsVillageAlly(entity.target)) entity.setTarget(null) }
       catch (ignored) {}
       if (dzUsunitIsManagedFaction(entity) || entity.tags.contains("dz_buddy") ||
           entity.tags.contains("dz_story_npc") || entity.tags.contains("dz_basecamp_guard")) return
+      if (String(entity.type) !== DZ_USUNIT_TYPE) {
+        dzUsunitMakeFriendly(entity)
+        return
+      }
       let key = String(entity.uuid)
       if (retained[key]) return
       retained[key] = true
@@ -97,23 +112,22 @@ EntityEvents.hurt(event => {
   let victim = event.entity
   let attacker = event.source.actual
   let direct = event.source.direct
-  if (String(victim.type) === DZ_USUNIT_TYPE && victim.tags.contains("dz_friendly") && attacker &&
+  if (dzIsUsAllianceUnit(victim) && victim.tags.contains("dz_friendly") && attacker &&
       (String(attacker.type) === "minecraft:player" || dzUsunitIsVillageAlly(attacker) ||
         (attacker.tags && (attacker.tags.contains("dz_survivor") ||
           attacker.tags.contains("dz_friendly"))))) {
     event.cancel()
     return
   }
-  if ((!attacker || String(attacker.type) !== DZ_USUNIT_TYPE) &&
-      direct && String(direct.type) === DZ_USUNIT_TYPE) attacker = direct
+  if (!dzIsUsAllianceUnit(attacker) && dzIsUsAllianceUnit(direct)) attacker = direct
   // Keep every US Unit neutral toward settlement NPCs for now. This is
   // intentionally independent of PDZ faction tags and works in both directions.
-  if ((String(victim.type) === DZ_USUNIT_TYPE && dzUsunitIsVillageAlly(attacker)) ||
-      (attacker && String(attacker.type) === DZ_USUNIT_TYPE && dzUsunitIsVillageAlly(victim))) {
+  if ((dzIsUsAllianceUnit(victim) && dzUsunitIsVillageAlly(attacker)) ||
+      (dzIsUsAllianceUnit(attacker) && dzUsunitIsVillageAlly(victim))) {
     event.cancel()
     return
   }
-  if (!attacker || String(attacker.type) !== DZ_USUNIT_TYPE ||
+  if (!dzIsUsAllianceUnit(attacker) ||
       !attacker.tags.contains("dz_friendly")) return
   if (String(victim.type) === "minecraft:player" || dzUsunitIsVillageAlly(victim) ||
       (victim.tags && (victim.tags.contains("dz_survivor") ||
@@ -128,7 +142,7 @@ ServerEvents.commandRegistry(event => {
     let player = ctx.source.player
     let repaired = 0
     player.level.entities.forEach(entity => {
-      if (String(entity.type) !== DZ_USUNIT_TYPE || dzUsunitIsManagedFaction(entity)) return
+      if (!dzIsUsAllianceUnit(entity) || dzUsunitIsManagedFaction(entity)) return
       dzUsunitMakeFriendly(entity)
       repaired++
     })
@@ -140,7 +154,7 @@ ServerEvents.commandRegistry(event => {
     let player = ctx.source.player
     let total = 0, friendly = 0
     player.level.entities.forEach(entity => {
-      if (String(entity.type) !== DZ_USUNIT_TYPE) return
+      if (!dzIsUsAllianceUnit(entity)) return
       total++
       if (entity.tags.contains("dz_friendly") && entity.tags.contains("dz_survivor")) friendly++
     })

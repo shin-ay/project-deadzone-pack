@@ -11774,7 +11774,7 @@ hash = "7d2d2e20f03f822eeb00e36fc5d08807a402baa4bb7ed89a4ed05328c9d3c44f"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_usunit_alliance_v0_1.js"
-hash = "64be651d9ffd215b047b0182ec02365efc6b2583a59c0f35914c45d1d60295af"
+hash = "12085fbfdaef43e86217b3349bab62f622a7cf794eca252533f0bc6a8f18e2aa"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_vehicle_authorization_v0_1.js"
