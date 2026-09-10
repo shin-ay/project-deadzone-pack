@@ -1,4 +1,4 @@
-// PROJECT DEADZONE per-facility story boss triggers v0.1
+// PROJECT DEADZONE per-facility story boss triggers v0.2
 // Existing mods own world structures, entities and combat AI. PDZ only bridges
 // story authorization + a discovered facility marker to the existing boss
 // summon functions. Each boss may appear once per physical facility instance.
@@ -7,7 +7,7 @@ const DZ_SITE_BOSS_LEDGER = 'dz_story_site_boss_ledger_v1'
 const DZ_SITE_BOSS_ALERT_RANGE = 128
 const DZ_SITE_BOSS_RANGE = 96
 const DZ_SITE_BOSS_DUPLICATE_RANGE = 160
-const DZ_SITE_BOSS_FAILURE_RETRY_MS = 60000
+const DZ_SITE_BOSS_FAILURE_RETRY_MS = 600000
 const DZ_SITE_BOSS_FAILURE_RETRY = {}
 
 const DZ_SITE_BOSSES = [
@@ -109,10 +109,10 @@ function dzSiteBossSpawn(player, marker, spec, ledger) {
   // retrying once per marker every two seconds floods latest.log and burns a
   // large amount of server time. One retry window per boss type is enough;
   // successful encounters are still tracked per physical facility below.
-  let retryKey = spec.key
   let now = Date.now()
-  if ((DZ_SITE_BOSS_FAILURE_RETRY[retryKey] || 0) > now) return false
   let instance = dzSiteBossInstance(marker)
+  let retryKey = spec.key + '|' + instance
+  if ((DZ_SITE_BOSS_FAILURE_RETRY[retryKey] || 0) > now) return false
   let ledgerKey = spec.key + '|' + instance
   // One encounter per physical facility. A different facility of the same
   // type gets its own ledger key and can still create its own encounter.
@@ -139,7 +139,7 @@ function dzSiteBossSpawn(player, marker, spec, ledger) {
 
   delete DZ_SITE_BOSS_FAILURE_RETRY[retryKey]
 
-  marker.level.entities.forEach(entity => {
+  marker.level.getEntities(marker, marker.boundingBox.inflate(24)).forEach(entity => {
     if (!entity.tags || !entity.tags.contains(spec.tag)) return
     let dx=entity.x-marker.x, dz=entity.z-marker.z
     if (dx*dx+dz*dz <= 24*24)
@@ -157,14 +157,14 @@ function dzSiteBossSpawn(player, marker, spec, ledger) {
 
 let DZ_SITE_BOSS_TICKS = 0
 ServerEvents.tick(event => {
-  // Two seconds is responsive enough for an encounter boundary and avoids a
-  // full loaded-entity scan for every player on every game second.
-  if (++DZ_SITE_BOSS_TICKS % 40 !== 0) return
+  // Facility discovery is not combat-critical. Use the level spatial index in
+  // a local radius every five seconds instead of walking every loaded entity.
+  if (++DZ_SITE_BOSS_TICKS % 100 !== 0) return
   let server = event.server
   let ledger = dzSiteBossRead(server)
   server.players.forEach(player => {
     if (player.level.clientSide || player.spectator) return
-    player.level.entities.forEach(marker => {
+    player.level.getEntities(player, player.boundingBox.inflate(DZ_SITE_BOSS_ALERT_RANGE)).forEach(marker => {
       if (!marker.tags || !marker.tags.contains('dz_wilderness_site')) return
       let dx=marker.x-player.x, dy=marker.y-player.y, dz=marker.z-player.z
       let distanceSquared=dx*dx+dy*dy+dz*dz

@@ -1,4 +1,4 @@
-// PROJECT DEADZONE authoritative faction relation registry v0.1
+// PROJECT DEADZONE authoritative faction relation registry v0.2
 // Existing mods own their entities and AI. PDZ only resolves a common faction
 // identity and answers whether two factions may deliberately target each other.
 
@@ -78,6 +78,13 @@ function pdzRelMineColoniesRaiderId(id) {
     id.indexOf('norsemen') >= 0 || id.indexOf('drownedpirate') >= 0
 }
 
+function pdzRelIntrinsicInfectedId(id) {
+  return id === 'minecraft:zombie' || id === 'minecraft:zombie_villager' ||
+    id === 'minecraft:husk' || id === 'minecraft:drowned' ||
+    id === 'mca:male_zombie_villager' || id === 'mca:female_zombie_villager' ||
+    id.indexOf('mutantszombies:') === 0
+}
+
 function pdzFactionOfEntity(entity) {
   if (!entity) return 'unknown'
   let id = String(entity.type)
@@ -92,9 +99,14 @@ function pdzFactionOfEntity(entity) {
   if (pdzRelHasTag(entity, 'dz_force_raider') || pdzRelHasTag(entity, 'dz_force_ash_jackals') || pdzRelHasTag(entity, 'dz_raider')) return 'raider'
   if (pdzRelHasTag(entity, 'dz_force_pmc') || pdzRelHasTag(entity, 'dz_pmc')) return 'pmc'
   if (pdzRelHasTag(entity, 'dz_force_independent') || pdzRelHasTag(entity, 'dz_wilderness_trader')) return 'independent'
-  if (pdzRelHasTag(entity, 'dz_force_civil_defense') || pdzRelHasTag(entity, 'dz_force_civildef') ||
-      pdzRelHasTag(entity, 'dz_civildef') || pdzRelHasTag(entity, 'dz_faction_civil_defense')) return 'cdf'
-  if (pdzRelHasTag(entity, 'dz_force_survivor') || pdzRelHasTag(entity, 'dz_survivor') ||
+  // Explicit force tags may intentionally reuse a hostile model. Generic
+  // survivor/civil-defense tags may be stale after villager conversion, so an
+  // intrinsic zombie type must win before those generic tags are considered.
+  if (pdzRelHasTag(entity, 'dz_force_civil_defense') || pdzRelHasTag(entity, 'dz_force_civildef')) return 'cdf'
+  if (pdzRelHasTag(entity, 'dz_force_survivor')) return 'survivor'
+  if (pdzRelIntrinsicInfectedId(id)) return 'infected'
+  if (pdzRelHasTag(entity, 'dz_civildef') || pdzRelHasTag(entity, 'dz_faction_civil_defense')) return 'cdf'
+  if (pdzRelHasTag(entity, 'dz_survivor') ||
       pdzRelHasTag(entity, 'dz_buddy') || pdzRelHasTag(entity, 'dz_story_npc')) return 'survivor'
 
   if (Object.prototype.hasOwnProperty.call(PDZ_REL_TYPE_CACHE, id)) {
@@ -118,9 +130,7 @@ function pdzFactionOfEntity(entity) {
   else if (pdzRelTypeInTag(id, PDZ_REL_ENTITY_TAGS.spore)) resolved = 'spore'
   else if (pdzRelTypeInTag(id, PDZ_REL_ENTITY_TAGS.infectious) ||
       pdzRelTypeInTag(id, PDZ_REL_ENTITY_TAGS.apocalypse) ||
-      id === 'minecraft:zombie' || id === 'minecraft:zombie_villager' ||
-      id === 'minecraft:husk' || id === 'minecraft:drowned' ||
-      id.indexOf('mutantszombies:') === 0) resolved = 'infected'
+      pdzRelIntrinsicInfectedId(id)) resolved = 'infected'
 
   else if (id === 'minecraft:villager' || id === 'minecraft:wandering_trader' || id === 'minecraft:iron_golem' ||
       id.indexOf('mca:') === 0 || id.indexOf('minecolonies:citizen') === 0 ||

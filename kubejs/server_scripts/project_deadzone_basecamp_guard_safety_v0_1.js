@@ -1,4 +1,4 @@
-// PROJECT DEADZONE - survivor guard relations and retaliation v0.4
+// PROJECT DEADZONE - survivor guard relations and retaliation v0.5
 // Scoreboard teams stop friendly fire. These checks also bridge Recruits AI,
 // TaCZ NPC factions, and PDZ-authored faction tags.
 
@@ -32,6 +32,21 @@ function pdzIsInfectedFaction(entity) {
   if (id.indexOf('infectious:') === 0 || id.indexOf('apocalypse_zombies:') === 0) return true
   if (id.indexOf('zombie') >= 0 || id === 'minecraft:husk' || id === 'minecraft:drowned') return true
   return !!entity.tags && entity.tags.contains('dz_force_infected')
+}
+
+function pdzIsZombieAggressor(entity) {
+  if (!entity) return false
+  let id = String(entity.type)
+  return id === 'minecraft:zombie' || id === 'minecraft:zombie_villager' ||
+    id === 'minecraft:husk' || id === 'minecraft:drowned' ||
+    id === 'mca:male_zombie_villager' || id === 'mca:female_zombie_villager'
+}
+
+function pdzIsLivingVillagerTarget(entity) {
+  if (!entity || !entity.alive || pdzIsInfectedFaction(entity)) return false
+  let id = String(entity.type)
+  return id === 'minecraft:villager' || id === 'minecraft:wandering_trader' ||
+    id === 'mca:male_villager' || id === 'mca:female_villager'
 }
 
 function pdzIsSurvivorAlly(entity) {
@@ -265,78 +280,81 @@ EntityEvents.hurt(event => {
   // Retaliate immediately when a hostile TaCZ/RU/PDZ faction attacks either a
   // guard or a protected colony resident.
   if (!attacker || (!pdzIsCampGuard(victim) && !pdzIsSurvivorAlly(victim))) return
-  victim.level.entities.forEach(entity => {
+  // Query only the local spatial index. Iterating level.entities here made one
+  // attack scan every loaded entity in the dimension.
+  victim.level.getEntities(victim, victim.boundingBox.inflate(32)).forEach(entity => {
     if (!pdzIsCampGuard(entity)) return
     let dx = entity.x - victim.x, dy = entity.y - victim.y, dz = entity.z - victim.z
     if (dx * dx + dy * dy + dz * dz <= 32 * 32) pdzGuardSetTarget(entity, attacker, true)
   })
 })
 
-ServerEvents.tick(event => {
-  // Hurt events still retaliate immediately. The maintenance pass only needs
-  // to repair stale faction data, so run it every five seconds and inspect
-  // each loaded dimension once instead of once per player.
-  if (event.server.tickCount % 100 !== 0) return
-  let seen = {}
-  let raiderSeen = {}
-  let dimensions = {}
-  let gearPulse = event.server.tickCount % 200 === 0
-  event.server.players.forEach(player => {
-    let dimension = String(player.level.dimension)
-    if (dimensions[dimension]) return
-    dimensions[dimension] = true
-    let infectedEntities = []
-    let factionTargets = []
-    let relationEntities = []
-    let guards = []
-    let hostiles = []
-    player.level.entities.forEach(entity => {
-      let uuid = String(entity.uuid)
-      if (pdzIsInfectedFaction(entity)) {
-        pdzSanitizeInfectedFaction(entity)
-        infectedEntities.push(entity)
-        hostiles.push(entity)
-      } else {
-        if (pdzIsInfectedTarget(entity)) factionTargets.push(entity)
-        if (pdzIsFactionHostile(entity)) hostiles.push(entity)
-      }
-      if (typeof pdzFactionOfEntity === 'function' && pdzFactionOfEntity(entity) !== 'unknown')
-        relationEntities.push(entity)
-      if (pdzIsMineColoniesRaider(entity) && !raiderSeen[String(entity.uuid)]) {
-        raiderSeen[String(entity.uuid)] = true
-        pdzSanitizeMineColoniesRaider(entity)
-      }
-      if (pdzIsCampGuard(entity) && !seen[uuid]) guards.push(entity)
-    })
-    guards.forEach(entity => {
-      let uuid = String(entity.uuid)
-      seen[String(entity.uuid)] = true
-      let newlyRegistered = !entity.tags.contains('dz_survivor_guard')
-      entity.tags.add('dz_survivor_guard')
-      entity.tags.add('dz_survivor')
-      entity.tags.add('dz_friendly')
-      entity.tags.add('dz_faction_civil_defense')
-      if (newlyRegistered) entity.runCommandSilent('team join dz_survivors @s')
-      if (newlyRegistered || gearPulse) pdzEnsureGuardGear(entity)
-      try {
-        if (pdzIsSurvivorAlly(entity.target)) entity.setTarget(null)
-      } catch (ignored) {}
+// Faction hygiene and guard registration are properties of an entity, not a
+// reason to rescan the whole dimension forever. EntityEvents.spawned is backed
+// by EntityJoinLevelEvent, so this also covers entities loaded from chunks.
+EntityEvents.spawned(event => {
+  let entity = event.entity
+  pdzSanitizeMineColoniesRaider(entity)
+  pdzSanitizeInfectedFaction(entity)
+  if (!pdzIsCampGuard(entity)) return
+  let newlyRegistered = !entity.tags.contains('dz_survivor_guard')
+  entity.tags.add('dz_survivor_guard')
+  entity.tags.add('dz_survivor')
+  entity.tags.add('dz_friendly')
+  entity.tags.add('dz_faction_civil_defense')
+  if (newlyRegistered) entity.runCommandSilent('team join dz_survivors @s')
+  if (newlyRegistered) pdzEnsureGuardGear(entity)
+})
 
-      let best = null, bestDistance = 28 * 28
-      hostiles.forEach(candidate => {
-        if (!pdzIsFactionHostile(candidate) || !candidate.alive) return
-        let dx = candidate.x - entity.x, dy = candidate.y - entity.y, dz = candidate.z - entity.z
-        if (Math.abs(dy) > 12) return
-        let distance = dx * dx + dy * dy + dz * dz
-        if (distance >= bestDistance) return
-        try { if (!entity.hasLineOfSight(candidate)) return } catch (ignored) {}
-        bestDistance = distance; best = candidate
-      })
-      if (best) pdzGuardSetTarget(entity, best)
+// MCA villagers are not subclasses of vanilla Villager, so vanilla zombie AI
+// does not consistently acquire them. Keep a bounded event-fed queue and
+// service at most one idle zombie per tick with a spatially indexed local
+// query. This supports encounters after movement without restoring a global
+// level.entities scan.
+const PDZ_ZOMBIE_TARGET_QUEUE = []
+const PDZ_ZOMBIE_TARGET_QUEUED = {}
+const PDZ_ZOMBIE_TARGET_QUEUE_CAP = 512
+let PDZ_ZOMBIE_TARGET_TICKS = 0
+
+EntityEvents.spawned(event => {
+  let entity = event.entity
+  if (!pdzIsZombieAggressor(entity)) return
+  let key = String(entity.uuid)
+  if (PDZ_ZOMBIE_TARGET_QUEUED[key]) return
+  if (PDZ_ZOMBIE_TARGET_QUEUE.length >= PDZ_ZOMBIE_TARGET_QUEUE_CAP) return
+  PDZ_ZOMBIE_TARGET_QUEUED[key] = true
+  PDZ_ZOMBIE_TARGET_QUEUE.push(entity)
+})
+
+ServerEvents.tick(event => {
+  if (++PDZ_ZOMBIE_TARGET_TICKS % 5 !== 0) return
+  if (!PDZ_ZOMBIE_TARGET_QUEUE.length) return
+  let zombie = PDZ_ZOMBIE_TARGET_QUEUE.shift()
+  let key = zombie ? String(zombie.uuid) : ''
+  if (key) delete PDZ_ZOMBIE_TARGET_QUEUED[key]
+  if (!zombie || !zombie.alive || !pdzIsZombieAggressor(zombie)) return
+
+  let current = null
+  try { current = zombie.target } catch (ignored) {}
+  if (!current || !current.alive || !pdzRelationAllowsTarget(zombie, current)) {
+    let best = null, bestDistance = 32 * 32
+    zombie.level.getEntities(zombie, zombie.boundingBox.inflate(32)).forEach(candidate => {
+      if (!pdzIsLivingVillagerTarget(candidate)) return
+      let dx = Number(candidate.x) - Number(zombie.x)
+      let dy = Number(candidate.y) - Number(zombie.y)
+      let dz = Number(candidate.z) - Number(zombie.z)
+      let distance = dx * dx + dy * dy + dz * dz
+      if (distance >= bestDistance) return
+      bestDistance = distance
+      best = candidate
     })
-    if (typeof pdzRelationAllowsTarget === 'function') {
-      let buckets = pdzFactionTargetBuckets(relationEntities)
-      relationEntities.forEach(entity => pdzSetNearestRelationTarget(entity, buckets))
-    } else infectedEntities.forEach(infected => pdzInfectedSetNearestFactionTarget(infected, factionTargets))
-  })
+    if (best) try { zombie.setTarget(best) } catch (ignored) {}
+  }
+
+  // Requeue live zombies. With N zombies, each is revisited every N slots;
+  // work remains capped at four local queries per second.
+  if (zombie.alive && PDZ_ZOMBIE_TARGET_QUEUE.length < PDZ_ZOMBIE_TARGET_QUEUE_CAP) {
+    PDZ_ZOMBIE_TARGET_QUEUED[key] = true
+    PDZ_ZOMBIE_TARGET_QUEUE.push(zombie)
+  }
 })

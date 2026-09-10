@@ -1,4 +1,4 @@
-// PROJECT DEADZONE US Unit alliance v0.2
+// PROJECT DEADZONE US Unit alliance v0.3
 // Unrecruited US Units are friendly survivors.
 // RU Units remain hostile. Explicit story-faction units keep their own setup.
 
@@ -69,6 +69,13 @@ EntityEvents.spawned(event => {
     if (!entity || !entity.alive || dzUsunitIsManagedFaction(entity) ||
         entity.tags.contains("dz_buddy") || entity.tags.contains("dz_story_npc") ||
         entity.tags.contains("dz_basecamp_guard")) return
+    // EntityJoinLevelEvent also fires when a saved chunk is loaded. A unit that
+    // already passed the natural-spawn roll must not roll again on every load.
+    if (entity.persistentData.getBoolean("dz_usunit_natural_roll_done")) {
+      dzUsunitMakeFriendly(entity)
+      return
+    }
+    entity.persistentData.putBoolean("dz_usunit_natural_roll_done", true)
     if (String(entity.type) === DZ_USUNIT_TYPE && Math.random() > DZ_USUNIT_NATURAL_KEEP_CHANCE) {
       entity.discard()
       return
@@ -77,36 +84,9 @@ EntityEvents.spawned(event => {
   })
 })
 
-// Simple Enemy Mod may refresh its target after spawn, so periodically repair
-// the alliance state for loaded natural US Units and recruited buddies.
-ServerEvents.tick(event => {
-  if (event.server.tickCount % 20 !== 0) return
-  let retained = {}
-  event.server.players.forEach(player => {
-    player.level.entities.forEach(entity => {
-      if (!dzIsUsAllianceUnit(entity)) return
-      // Temporary global ceasefire with settlements, including authored US
-      // factions that otherwise keep their own hostility tags.
-      try { if (dzUsunitIsVillageAlly(entity.target)) entity.setTarget(null) }
-      catch (ignored) {}
-      if (dzUsunitIsManagedFaction(entity) || entity.tags.contains("dz_buddy") ||
-          entity.tags.contains("dz_story_npc") || entity.tags.contains("dz_basecamp_guard")) return
-      if (String(entity.type) !== DZ_USUNIT_TYPE) {
-        dzUsunitMakeFriendly(entity)
-        return
-      }
-      let key = String(entity.uuid)
-      if (retained[key]) return
-      retained[key] = true
-      let count = Object.keys(retained).length
-      if (count > DZ_USUNIT_LOADED_CAP) {
-        entity.discard()
-        return
-      }
-      dzUsunitMakeFriendly(entity)
-    })
-  })
-})
+// Do not poll every loaded entity to repair targets. Spawn/join establishes the
+// alliance, and the hurt bridge below blocks any stale AI target from dealing
+// friendly damage. The manual repair command remains available for diagnostics.
 
 EntityEvents.hurt(event => {
   let victim = event.entity

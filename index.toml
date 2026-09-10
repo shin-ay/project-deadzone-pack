@@ -11274,7 +11274,7 @@ hash = "844276a6d09b4247dc1f87810964ea06b439683e992f6257490653de8d7cb17c"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_basecamp_guard_safety_v0_1.js"
-hash = "d3a5c3b40d2078da92c41a08157a052909c7dc9b2fb77f762e4c91723178b94a"
+hash = "d5a98ec7a6ed4a6f89bb11a314397cef9be91534c2faf085c11eb48aeba3022e"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_basecamp_raid_v0_1.js"
@@ -11361,6 +11361,10 @@ file = "kubejs/server_scripts/project_deadzone_effect_visibility_policy_v0_1.js"
 hash = "6078388cbdc41241fbfea85d170300cade16f091e00900063ef145beb9a915b9"
 
 [[files]]
+file = "kubejs/server_scripts/project_deadzone_entity_load_audit_v0_1.js"
+hash = "e0f730ca4c5ef9977ac062d388c66918f91559cb5ead73ae6c036deb5363fe99"
+
+[[files]]
 file = "kubejs/server_scripts/project_deadzone_epicfight_mobility_v0_1.js"
 hash = "36325b5aae6b535c2cb85d573402efba30447d5ffc7b3e8fc6ad35f8dbf61b4c"
 
@@ -11382,7 +11386,7 @@ hash = "21b7ddc4c574dc4a4b01c2ad1636142977e6cb73747979f88e4685b52beba0a4"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_faction_relations_v0_1.js"
-hash = "fb1b3d58d03b5349e988714fb56c2f39e0a64468559cf0d6ab1e5886e380c2d7"
+hash = "27f830e829c5ca36c0eeee3f7083488f6ea7400535f9dbf1f9cb390b861f52b3"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_faction_strongholds_v0_1.js"
@@ -11680,7 +11684,7 @@ hash = "d602bff0c8a9f26a7d89720c41b27488beaa831341af9a46561a131ab91e08bb"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_story_boss_site_triggers_v0_1.js"
-hash = "cbc716c27a21c92f9a52c928750d48a642d80766d7875a13dbf2c2b0cec4daf3"
+hash = "47d38d99348c4c62e9ecd1267273017ccdc646b1fce4b42aff841cbb422ad1ce"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_story_branches_v0_1.js"
@@ -11768,7 +11772,7 @@ hash = "7d2d2e20f03f822eeb00e36fc5d08807a402baa4bb7ed89a4ed05328c9d3c44f"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_usunit_alliance_v0_1.js"
-hash = "12085fbfdaef43e86217b3349bab62f622a7cf794eca252533f0bc6a8f18e2aa"
+hash = "9cb84558f3cd8587f2a60b711188473080c21580394da672bb0a03a0a7a7d28f"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_vehicle_authorization_v0_1.js"
