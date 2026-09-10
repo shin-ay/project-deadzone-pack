@@ -11282,7 +11282,7 @@ hash = "59cd08838e509c2e15f9fcb3431acfa76bb371c9236aaa44dbe7275b9f97b4e2"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_buddy_control_v0_1.js"
-hash = "689f0888c71955c8c7e0e1553d37fe1c8b9d313295415b06c1a6f36ba7f74189"
+hash = "0c5b9e07967e2035a5fa8772c94f59a51b5b8937256e7a2720c039fef28607cb"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_buddy_system_v0_2.js"
@@ -11554,7 +11554,7 @@ hash = "952e18c37cc997075fdf461c59c6672e3cb3274d74c655db5570044ea845de62"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_playerrevive_skill_bridge_v0_1.js"
-hash = "fb911b2da53e6972c377ba3e613b69dda6093e048b03242ae57e01150d14771b"
+hash = "619a5ba40d1a2eea57f3b094782aa52ef22bff5326c7654430a9c1415ce70163"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_professions_v0_1.js"

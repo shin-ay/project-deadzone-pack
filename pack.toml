@@ -1,12 +1,12 @@
 name = "PROJECT DEADZONE"
 author = "PROJECT DEADZONE Team"
-version = "BETA-20260910-COMBAT-REVIVE-UNIFICATION-RC1"
+version = "BETA-20260910-BUDDY-MEDIC-REVIVE-RC1"
 pack-format = "packwiz:1.1.0"
 
 [index]
 file = "index.toml"
 hash-format = "sha256"
-hash = "91d0fa282a047d21a0ad3afe14e9aac4651b477e23a2c83ace0e6231896254b1"
+hash = "27ce6a13d9da4aa9c0ac4ab3a8c89b95fa6b1b20b4ba59d9eb21c34400d951f8"
 
 [versions]
 forge = "47.4.10"

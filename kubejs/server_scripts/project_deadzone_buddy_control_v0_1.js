@@ -133,7 +133,7 @@ function dzBctlRoleMenu(player) {
     ["assault","ASSAULT","前衛。高いHPと防御で積極的に交戦する。"],
     ["support","SUPPORT","重装。近くの雇用主へ耐性効果を与える。"],
     ["scout","SCOUT","高速偵察。近くの敵対勢力を短時間可視化する。"],
-    ["medic","MEDIC","衛生兵。近くにいる負傷した雇用主を治療する。"]
+    ["medic","MEDIC","衛生兵。負傷を治療し、包帯があればダウンした雇用主を5秒で救助する。"]
   ].forEach(entry => player.tell(
     Text.of("[ "+entry[1]+" ] "+entry[2]).green()
       .clickRunCommand("/deadzonebuddycontrol role "+entry[0])
@@ -202,8 +202,16 @@ function dzBctlFieldBehavior(player, buddy, role, tier) {
   } else if (role === "medic") {
     let cooldown = Math.max(60, 100 - tier * 8)
     if (player.age % cooldown < 40) {
-      buddy.runCommandSilent("effect give @e[tag=dz_survivor,distance=..10,sort=nearest,limit=3] minecraft:regeneration 4 0 true")
-      if (distanceSq <= 144 && player.health < player.maxHealth)
+      // Heal allied NPCs here; the owner is handled separately after checking
+      // PlayerRevive. This prevents the broad survivor selector from healing a
+      // downed player back to visible HP without actually reviving them.
+      buddy.runCommandSilent("effect give @e[tag=dz_survivor,type=!minecraft:player,distance=..10,sort=nearest,limit=3] minecraft:regeneration 4 0 true")
+      // PlayerRevive keeps a downed player alive at one vanilla HP. Healing
+      // that body does not revive it and only makes the M&S HUD appear to
+      // recover while the player is still down. The dedicated revive bridge
+      // handles this state instead.
+      let ownerDown = player.persistentData.getBoolean("playerrevive:bleeding")
+      if (!ownerDown && distanceSq <= 144 && player.health < player.maxHealth)
         player.runCommandSilent("effect give @s minecraft:regeneration 4 0 true")
     }
   }
@@ -290,7 +298,17 @@ ServerEvents.commandRegistry(event => {
       " / HP " + Math.ceil(buddy.health) + "/" + Math.ceil(buddy.maxHealth) +
       " / Reserve " + (ammo.known ? ammo.reserve : "?") +
       " / Retreat " + buddy.tags.contains("dz_buddy_retreating") +
-      " / OutOfAmmo " + buddy.tags.contains("dz_buddy_out_of_ammo")).aqua())
+       " / OutOfAmmo " + buddy.tags.contains("dz_buddy_out_of_ammo")).aqua())
+    if (role === "medic") {
+      let tier = dzBctlStoryUnlock(player)
+      let cooldownMs = tier >= 4 ? 300000 : (tier >= 2 ? 420000 : 600000)
+      let elapsed = Date.now() - Number(player.persistentData.getLong("dz_buddy_medic_revive_last_ms"))
+      let remaining = Math.max(0, Math.ceil((cooldownMs - elapsed) / 1000))
+      let supplies = Number(player.inventory.count(Item.of("legendarysurvivaloverhaul:bandage"))) +
+        Number(player.inventory.count(Item.of("apocalypsenow:bandage")))
+      player.tell(Text.of("Medic rescue: " + (remaining > 0 ? remaining + "s" : "READY") +
+        " / Bandages " + supplies + " / Channel 5s").gray())
+    }
     return 1
   }))
   root.then(Commands.literal("repair_alliance").executes(ctx => {
