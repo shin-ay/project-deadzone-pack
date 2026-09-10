@@ -3250,7 +3250,7 @@ hash = "2328b88f89620191915d0fb53ea990ec09d4dd029fe1c985f4f29a5bc6ccf05b"
 
 [[files]]
 file = "config/tacznpc_factions.json"
-hash = "562b8198786a7f68f7b119dcd3e0ef140bcc5e15afc41e767d7382e977960f8e"
+hash = "340432e11d5a39d8b2afdd38327bc5004b03a5b6b28916ae2fad48702513f628"
 
 [[files]]
 file = "config/tacznpc_loadouts.json"
@@ -3342,7 +3342,7 @@ hash = "2042c42eff3b182049cd5ca8d27fd7b2d1ced23b25ca34fccde4b1949cf865c5"
 
 [[files]]
 file = "config/village_recruits/economy.toml"
-hash = "6687c64162dd28937faeddb98d9dc36e1c8a7d545beba226b0a8aa24fcbabecb"
+hash = "a307d0cd0cc3c59b569b042f601013d0d813ca639193f55705b625e92d6b312d"
 
 [[files]]
 file = "config/village_recruits/general.toml"
@@ -11783,6 +11783,10 @@ hash = "6ebd16965e9b440b0ba02e5daf3dea08132ba152d20e1502d953d5fbb225527d"
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_village_prologue_v0_1.js"
 hash = "5a4b5738dedc40f0ebc99b47fa2cacdfbd4c1be42104095d20bcece7c0c9a8ac"
+
+[[files]]
+file = "kubejs/server_scripts/project_deadzone_village_ratio_conscription_v0_1.js"
+hash = "255c031aa29275c4aa93594a533d5a61673ff67bbe378ca435c3cc576408c746"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_village_services_v0_1.js"

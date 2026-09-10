@@ -37,7 +37,7 @@
 	#Growth is capped by the center's bed-driven population cap and costs
 	#food, so a village with no farm/pen does not grow. Default: true
 	#
-	offlinePopulationEnabled = true
+	offlinePopulationEnabled = false
 	#Villagers an offline center adds to its ledger per economy cycle
 	#(~3000 ticks / 2.5 min), while under its population cap and able to
 	#pay the food cost. Default: 1 (~24 villagers per real-time hour)
@@ -195,7 +195,7 @@
 	#if none has room, they are "sold" for money instead (see
 	#populationSellValue). Default: true
 	#
-	populationCapEnabled = true
+	populationCapEnabled = false
 	#LEGACY fallback cap. Only used when the growing cap is not in effect
 	#(kept for compatibility). The live per-village cap now grows from
 	#populationCapStart toward populationCapMax as a village prospers.
@@ -287,7 +287,7 @@
 	#Set to false to leave population growth entirely to vanilla breeding and
 	#the offline ledger. Default: true
 	#
-	babySpawnEnabled = true
+	babySpawnEnabled = false
 	#How often (in ticks) each online village is considered for the baby
 	#seeding above. 20 ticks = 1 second. Default: 6000 (5 minutes)
 	#
@@ -355,7 +355,7 @@
 	#The new recruit joins the village's faction/group automatically. Only
 	#AI (village_) factions conscript; loaded villagers only. Default: true
 	#
-	conscriptionEnabled = true
+	conscriptionEnabled = false
 	#A village center conscripts villagers only while its recruit count is
 	#BELOW this value. Above it, villagers are left alone. Default: 10
 	#
