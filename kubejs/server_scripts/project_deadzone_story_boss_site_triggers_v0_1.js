@@ -4,7 +4,8 @@
 // summon functions. Each boss may appear once per physical facility instance.
 
 const DZ_SITE_BOSS_LEDGER = 'dz_story_site_boss_ledger_v1'
-const DZ_SITE_BOSS_RANGE = 72
+const DZ_SITE_BOSS_ALERT_RANGE = 128
+const DZ_SITE_BOSS_RANGE = 96
 const DZ_SITE_BOSS_DUPLICATE_RANGE = 160
 const DZ_SITE_BOSS_FAILURE_RETRY_MS = 60000
 const DZ_SITE_BOSS_FAILURE_RETRY = {}
@@ -80,6 +81,29 @@ function dzSiteBossNear(server, marker, tag, distance) {
     ' if entity @e[tag=' + tag + ',distance=..' + distance + ',limit=1]') > 0
 }
 
+function dzSiteBossSurfacePrefix(player, marker) {
+  return 'execute as ' + player.username + ' in ' + String(marker.level.dimension) +
+    ' positioned ' + marker.x + ' 0 ' + marker.z +
+    ' positioned over motion_blocking_no_leaves '
+}
+
+function dzSiteBossNearSurface(player, marker, tag, distance) {
+  return player.server.runCommandSilent(dzSiteBossSurfacePrefix(player, marker) +
+    'if entity @e[tag=' + tag + ',distance=..' + distance + ',limit=1]') > 0
+}
+
+function dzSiteBossAlert(player, marker, spec, ledger) {
+  let instance = dzSiteBossInstance(marker)
+  let ledgerKey = spec.key + '|' + instance
+  if (ledger[ledgerKey]) return
+  ledger[ledgerKey] = {state:'alerted', at:Date.now(), dimension:String(marker.level.dimension),
+    x:Math.floor(marker.x), y:Math.floor(marker.y), z:Math.floor(marker.z)}
+  dzSiteBossWrite(player.server, ledger)
+  player.tell(Text.of('[警戒] 施設方向から強力な敵性反応を検知。接近に注意してください。').red())
+  player.server.runCommandSilent(dzSiteBossSurfacePrefix(player, marker) +
+    'run playsound minecraft:entity.warden.heartbeat hostile ' + player.username + ' ~ ~ ~ 1 0.75')
+}
+
 function dzSiteBossSpawn(player, marker, spec, ledger) {
   // A Lost Cities facility exposes several part markers. When a summon fails,
   // retrying once per marker every two seconds floods latest.log and burns a
@@ -88,15 +112,11 @@ function dzSiteBossSpawn(player, marker, spec, ledger) {
   let retryKey = spec.key
   let now = Date.now()
   if ((DZ_SITE_BOSS_FAILURE_RETRY[retryKey] || 0) > now) return false
-  // Story bosses are campaign checkpoints, not repeatable facility loot. Once
-  // the authoritative completion flag is set, no marker of this type may
-  // create another copy anywhere in the world.
-  if (player.server.persistentData.getBoolean('dz_story_boss_complete_' + spec.key)) return false
   let instance = dzSiteBossInstance(marker)
   let ledgerKey = spec.key + '|' + instance
-  // A completed spawn record is diagnostic history, not a permanent lock.
-  // If a boss vanished without a credited player kill, the encounter must be
-  // recoverable. Only suppress a still-fresh same-tick spawn reservation.
+  // One encounter per physical facility. A different facility of the same
+  // type gets its own ledger key and can still create its own encounter.
+  if (ledger[ledgerKey] && ledger[ledgerKey].state === 'spawned') return false
   if (ledger[ledgerKey] && ledger[ledgerKey].state === 'spawning' &&
       Number(ledger[ledgerKey].at || 0) > now - 30000) return false
   if (dzSiteBossNear(player.server, marker, spec.tag, DZ_SITE_BOSS_DUPLICATE_RANGE)) return false
@@ -106,12 +126,10 @@ function dzSiteBossSpawn(player, marker, spec, ledger) {
   ledger[ledgerKey] = {state:'spawning', at:Date.now(), dimension:String(marker.level.dimension),
     x:Math.floor(marker.x), y:Math.floor(marker.y), z:Math.floor(marker.z)}
   dzSiteBossWrite(player.server, ledger)
-  // Brutal Bosses 8.5 only accepts spawnboss reliably when the command source
-  // has a player entity. Preserve that player source while moving the command
-  // position to the detected facility marker.
-  player.server.runCommandSilent('execute as ' + player.username + ' at @s in ' + String(marker.level.dimension) +
-    ' positioned ' + marker.x + ' ' + (marker.y + 1) + ' ' + marker.z + ' run function ' + spec.fn)
-  if (!dzSiteBossNear(player.server, marker, spec.tag, 24)) {
+  // Lost Cities part markers can be inside a wall/floor. Keep the encounter at
+  // the facility, but lift its X/Z anchor to a safe motion-blocking surface.
+  player.server.runCommandSilent(dzSiteBossSurfacePrefix(player, marker) + 'run function ' + spec.fn)
+  if (!dzSiteBossNearSurface(player, marker, spec.tag, 24)) {
     delete ledger[ledgerKey]
     dzSiteBossWrite(player.server, ledger)
     DZ_SITE_BOSS_FAILURE_RETRY[retryKey] = now + DZ_SITE_BOSS_FAILURE_RETRY_MS
@@ -123,8 +141,8 @@ function dzSiteBossSpawn(player, marker, spec, ledger) {
 
   marker.level.entities.forEach(entity => {
     if (!entity.tags || !entity.tags.contains(spec.tag)) return
-    let dx=entity.x-marker.x, dy=entity.y-marker.y, dz=entity.z-marker.z
-    if (dx*dx+dy*dy+dz*dz <= 24*24)
+    let dx=entity.x-marker.x, dz=entity.z-marker.z
+    if (dx*dx+dz*dz <= 24*24)
       entity.persistentData.putString('dz_story_site_instance', instance)
   })
   ledger[ledgerKey].state = 'spawned'
@@ -149,11 +167,15 @@ ServerEvents.tick(event => {
     player.level.entities.forEach(marker => {
       if (!marker.tags || !marker.tags.contains('dz_wilderness_site')) return
       let dx=marker.x-player.x, dy=marker.y-player.y, dz=marker.z-player.z
-      if (dx*dx+dy*dy+dz*dz > DZ_SITE_BOSS_RANGE*DZ_SITE_BOSS_RANGE) return
+      let distanceSquared=dx*dx+dy*dy+dz*dz
+      if (distanceSquared > DZ_SITE_BOSS_ALERT_RANGE*DZ_SITE_BOSS_ALERT_RANGE) return
       let data = dzSiteBossData(marker)
       for (let i=0; i<DZ_SITE_BOSSES.length; i++) {
         let spec=DZ_SITE_BOSSES[i]
-        if (spec.ready(player) && spec.site(data)) dzSiteBossSpawn(player, marker, spec, ledger)
+        if (!spec.ready(player) || !spec.site(data)) continue
+        dzSiteBossAlert(player, marker, spec, ledger)
+        if (distanceSquared <= DZ_SITE_BOSS_RANGE*DZ_SITE_BOSS_RANGE)
+          dzSiteBossSpawn(player, marker, spec, ledger)
       }
     })
   })

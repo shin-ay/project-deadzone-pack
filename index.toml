@@ -11686,7 +11686,7 @@ hash = "d602bff0c8a9f26a7d89720c41b27488beaa831341af9a46561a131ab91e08bb"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_story_boss_site_triggers_v0_1.js"
-hash = "61cdbb62492bbf1b8ad33dc61c89f457db74ca853f629f2f404874463fdddf34"
+hash = "cbc716c27a21c92f9a52c928750d48a642d80766d7875a13dbf2c2b0cec4daf3"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_story_branches_v0_1.js"
