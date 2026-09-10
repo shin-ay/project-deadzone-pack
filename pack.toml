@@ -1,12 +1,12 @@
 name = "PROJECT DEADZONE"
 author = "PROJECT DEADZONE Team"
-version = "BETA-20260910-T0-STORY-INTEGRATION-RC1"
+version = "BETA-20260910-COMBAT-REVIVE-UNIFICATION-RC1"
 pack-format = "packwiz:1.1.0"
 
 [index]
 file = "index.toml"
 hash-format = "sha256"
-hash = "24edb836ace235866d541fae2a337e3f25d3b64a6ac309b4edd0771067909cb9"
+hash = "91d0fa282a047d21a0ad3afe14e9aac4651b477e23a2c83ace0e6231896254b1"
 
 [versions]
 forge = "47.4.10"

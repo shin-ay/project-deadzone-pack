@@ -3,10 +3,17 @@
 // only. This script never invents a second health pool or cancels a valid death.
 
 const PDZ_DAMAGE_MNS_HEALTH = Java.loadClass('com.robertx22.mine_and_slash.uncommon.utilityclasses.HealthUtils')
+const PDZ_DAMAGE_PLAYER_REVIVE = Java.loadClass('team.creative.playerrevive.server.PlayerReviveServer')
 const PDZ_DAMAGE_EFFECT_REGISTRY = Java.loadClass('net.minecraft.core.registries.BuiltInRegistries').MOB_EFFECT
 
 function pdzDamageMnsHealth(player) {
-  try { return Math.max(0, Number(PDZ_DAMAGE_MNS_HEALTH.getCurrentHealth(player))) }
+  // HealthUtils#getCurrentHealth truncates to an integer. M&S 6.4.2 derives
+  // current HP from vanilla's exact health ratio, so project that ratio here
+  // to keep diagnostics aligned with the HUD and limb bridge.
+  try {
+    let vanillaMax = Math.max(0.0001, Number(player.maxHealth))
+    return Math.max(0, Number(player.health) / vanillaMax * pdzDamageMnsMax(player))
+  }
   catch (ignored) { return Math.max(0, Number(player.health)) }
 }
 
@@ -58,6 +65,16 @@ function pdzDamageEffectSummary(player) {
       effects.push(id + ':' + Number(effect.amplifier))
     })
     return effects.length ? effects.join(',') : 'none'
+  } catch (ignored) {
+    return 'unavailable'
+  }
+}
+
+function pdzDamageReviveSummary(player) {
+  try {
+    return 'down=' + Boolean(PDZ_DAMAGE_PLAYER_REVIVE.isBleeding(player))
+      + ',timeLeft=' + Number(PDZ_DAMAGE_PLAYER_REVIVE.timeLeft(player))
+      + ',downedTicks=' + Number(PDZ_DAMAGE_PLAYER_REVIVE.downedTime(player))
   } catch (ignored) {
     return 'unavailable'
   }
@@ -147,6 +164,7 @@ EntityEvents.hurt(event => {
         + ' delta=' + Math.max(0, beforeHealth - afterHealth).toFixed(2)
         + ' mns=' + beforeMns.toFixed(2) + '->' + afterMns.toFixed(2)
         + ' delta=' + Math.max(0, beforeMns - afterMns).toFixed(2)
+        + ' revive={' + pdzDamageReviveSummary(player) + '}'
         + ' effects=' + pdzDamageEffectSummary(player))
     })
   }
@@ -174,6 +192,7 @@ EntityEvents.death(event => {
     + ' lastAttacker=' + String(data.getString('dz_last_damage_attacker'))
     + ' lastDirect=' + String(data.getString('dz_last_damage_direct'))
     + ' ageTicks=' + age
+    + ' revive={' + pdzDamageReviveSummary(player) + '}'
     + ' effects=' + pdzDamageEffectSummary(player)
     + ' capabilities={' + pdzDamageCapabilitySummary(player) + '}')
 })

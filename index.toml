@@ -11546,11 +11546,15 @@ hash = "5f0d6b2e2827501c0beb40b427cb55b8ae38fe448b24e6f54f11410a036b98ac"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_player_damage_guard_v0_1.js"
-hash = "2c965acf69858c2fe28a06fcda4eef7af0801b6f03b75766035939b840399150"
+hash = "48e63ae564d42676acd2d3af9f8fdce151a1941eea9c8d195d8350211edcde14"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_player_zombie_recovery_v0_1.js"
 hash = "952e18c37cc997075fdf461c59c6672e3cb3274d74c655db5570044ea845de62"
+
+[[files]]
+file = "kubejs/server_scripts/project_deadzone_playerrevive_skill_bridge_v0_1.js"
+hash = "fb911b2da53e6972c377ba3e613b69dda6093e048b03242ae57e01150d14771b"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_professions_v0_1.js"
@@ -11862,7 +11866,7 @@ hash = "0bc98be49f4fe4e242f988e2d31d7f386e20e86bc6828ea33ca2bc961047c7b2"
 
 [[files]]
 file = "kubejs/startup_scripts/project_deadzone_skill_forge_effects_v0_1.js"
-hash = "f5b9741cc70712006642d7ca82f493d620780b3e949e5c22a0ef4b66288893ac"
+hash = "e1fcd3e7a691165647f868ad82005d870653baf98852ef8e45ae77806d5cdc53"
 
 [[files]]
 file = "kubejs/startup_scripts/project_deadzone_talent_revive_v0_1.js"

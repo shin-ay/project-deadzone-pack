@@ -57,67 +57,9 @@ ForgeEvents.onEvent("net.minecraftforge.event.entity.living.LivingFallEvent", ev
   }
 })
 
-// A nearby trained medic can automatically stabilize a dying player.
-// The cooldown belongs to the medic, so a party cannot chain one healer.
-ForgeEvents.onEvent("net.minecraftforge.event.entity.living.LivingDeathEvent", event => {
-  let victim = event.entity
-  if (!victim || !victim.isPlayer() || victim.level.clientSide) return
-
-  let now = Date.now()
-  let chosen = null
-  let chosenTier = 0
-  let chosenDistance = 999999
-
-  victim.server.players.forEach(candidate => {
-    if (!candidate || String(candidate.uuid) === String(victim.uuid)) return
-    if (!candidate.level.dimension.equals(victim.level.dimension)) return
-    if (!candidate.alive || candidate.isSpectator()) return
-
-    let tier = dzForgeHighestTier(candidate, "dz_medical_revive_", 3)
-    if (tier <= 0) return
-
-    let maxRange = [0, 4, 6, 8][tier]
-    // ServerPlayer is exposed through Rhino without Entity#distanceTo on this
-    // Forge/KubeJS combination. Calculate it directly so a death-event error
-    // cannot prevent later listeners such as Gravestone from running.
-    let dx = candidate.x - victim.x
-    let dy = candidate.y - victim.y
-    let dz = candidate.z - victim.z
-    let distance = Math.sqrt(dx * dx + dy * dy + dz * dz)
-    if (distance > maxRange) return
-
-    let cooldownMs = [0, 900000, 600000, 300000][tier]
-    let last = candidate.persistentData.getLong("dz_medical_revive_last_ms")
-    if (now - last < cooldownMs) return
-
-    if (tier > chosenTier || (tier === chosenTier && distance < chosenDistance)) {
-      chosen = candidate
-      chosenTier = tier
-      chosenDistance = distance
-    }
-  })
-
-  if (!chosen) return
-
-  event.setCanceled(true)
-  victim.health = [0, 4, 6, 8][chosenTier]
-  victim.deathTime = 0
-  victim.clearFire()
-  chosen.persistentData.putLong("dz_medical_revive_last_ms", now)
-
-  victim.server.runCommandSilent(
-    "effect give " + victim.username + " minecraft:regeneration 5 1 true"
-  )
-  if (chosenTier >= 2) {
-    victim.server.runCommandSilent(
-      "effect give " + victim.username + " minecraft:resistance "
-      + (chosenTier >= 3 ? 8 : 4) + " 0 true"
-    )
-  }
-
-  victim.tell(Text.of(chosen.username + " により緊急蘇生されました").green())
-  chosen.tell(Text.of(victim.username + " を緊急蘇生しました").aqua())
-})
+// Medical Revive is resolved after PlayerRevive has created its downed state.
+// See project_deadzone_playerrevive_skill_bridge_v0_1.js.  Never cancel a
+// LivingDeathEvent here: PlayerRevive is the sole owner of down/revive state.
 
 ForgeEvents.onEvent("net.minecraftforge.event.entity.living.LivingHurtEvent", event => {
   let player = event.entity
@@ -143,33 +85,6 @@ ForgeEvents.onEvent("net.minecraftforge.event.entity.living.LivingHurtEvent", ev
     }
   }
 
-})
-
-// Medical Revive is registered above and gets the first opportunity to save
-// the victim. Second Wind is the tank's personal fallback.
-ForgeEvents.onEvent("net.minecraftforge.event.entity.living.LivingDeathEvent", event => {
-  if (event.isCanceled()) return
-  let player = event.entity
-  if (!player || !player.isPlayer() || player.level.clientSide) return
-  if (player.armorValue <= 0) return
-  if (dzForgeHighestTier(player, "dz_armor_recovery_", 3) < 3) return
-
-  let now = Date.now()
-  let last = player.persistentData.getLong("dz_armor_second_wind_ms")
-  if (now - last < 900000) return
-
-  event.setCanceled(true)
-  player.health = 4
-  player.deathTime = 0
-  player.clearFire()
-  player.persistentData.putLong("dz_armor_second_wind_ms", now)
-  player.server.runCommandSilent(
-    "effect give " + player.username + " minecraft:resistance 6 1 true"
-  )
-  player.server.runCommandSilent(
-    "effect give " + player.username + " minecraft:regeneration 6 1 true"
-  )
-  player.tell(Text.of("セカンドウィンド発動").gold())
 })
 
 // Survival Resistance covers hazards without replacing Armor in direct combat.
