@@ -1,4 +1,4 @@
-// PROJECT DEADZONE per-facility story boss triggers v0.2
+// PROJECT DEADZONE per-facility story boss triggers v0.3
 // Existing mods own world structures, entities and combat AI. PDZ only bridges
 // story authorization + a discovered facility marker to the existing boss
 // summon functions. Each boss may appear once per physical facility instance.
@@ -9,6 +9,11 @@ const DZ_SITE_BOSS_RANGE = 96
 const DZ_SITE_BOSS_DUPLICATE_RANGE = 160
 const DZ_SITE_BOSS_FAILURE_RETRY_MS = 600000
 const DZ_SITE_BOSS_FAILURE_RETRY = {}
+const DZ_SITE_BOSS_GAS_STATION_OFFSETS = [
+  [0, 0], [20, 0], [-20, 0], [0, 20], [0, -20],
+  [32, 0], [-32, 0], [0, 32], [0, -32],
+  [24, 24], [24, -24], [-24, 24], [-24, -24]
+]
 
 const DZ_SITE_BOSSES = [
   {key:'gasstation', tag:'dz_story_boss_gasstation', fn:'project_deadzone:story/spawn_gasstation_boss',
@@ -81,14 +86,16 @@ function dzSiteBossNear(server, marker, tag, distance) {
     ' if entity @e[tag=' + tag + ',distance=..' + distance + ',limit=1]') > 0
 }
 
-function dzSiteBossSurfacePrefix(player, marker) {
+function dzSiteBossSurfacePrefix(player, marker, offsetX, offsetZ) {
+  let x = marker.x + Number(offsetX || 0)
+  let z = marker.z + Number(offsetZ || 0)
   return 'execute as ' + player.username + ' in ' + String(marker.level.dimension) +
-    ' positioned ' + marker.x + ' 0 ' + marker.z +
+    ' positioned ' + x + ' 0 ' + z +
     ' positioned over motion_blocking_no_leaves '
 }
 
-function dzSiteBossNearSurface(player, marker, tag, distance) {
-  return player.server.runCommandSilent(dzSiteBossSurfacePrefix(player, marker) +
+function dzSiteBossNearSurface(player, marker, tag, distance, offsetX, offsetZ) {
+  return player.server.runCommandSilent(dzSiteBossSurfacePrefix(player, marker, offsetX, offsetZ) +
     'if entity @e[tag=' + tag + ',distance=..' + distance + ',limit=1]') > 0
 }
 
@@ -126,23 +133,40 @@ function dzSiteBossSpawn(player, marker, spec, ledger) {
   ledger[ledgerKey] = {state:'spawning', at:Date.now(), dimension:String(marker.level.dimension),
     x:Math.floor(marker.x), y:Math.floor(marker.y), z:Math.floor(marker.z)}
   dzSiteBossWrite(player.server, ledger)
-  // Lost Cities part markers can be inside a wall/floor. Keep the encounter at
-  // the facility, but lift its X/Z anchor to a safe motion-blocking surface.
-  player.server.runCommandSilent(dzSiteBossSurfacePrefix(player, marker) + 'run function ' + spec.fn)
-  if (!dzSiteBossNearSurface(player, marker, spec.tag, 24)) {
+  // Lost Cities part markers can be inside a wall/floor and Brutal Bosses may
+  // move a newly created entity while looking for collision-free ground. Gas
+  // stations therefore try a bounded set of surface anchors around the site.
+  // Stop after the first tagged result so one encounter cannot create copies.
+  let offsets = spec.key === 'gasstation' ? DZ_SITE_BOSS_GAS_STATION_OFFSETS : [[0, 0]]
+  let spawned = false
+  let attempted = []
+  for (let i = 0; i < offsets.length; i++) {
+    let ox = offsets[i][0]
+    let oz = offsets[i][1]
+    attempted.push(Math.floor(marker.x + ox) + ',' + Math.floor(marker.z + oz))
+    player.server.runCommandSilent(dzSiteBossSurfacePrefix(player, marker, ox, oz) +
+      'run function ' + spec.fn)
+    if (dzSiteBossNearSurface(player, marker, spec.tag, 64, ox, oz) ||
+        dzSiteBossNear(player.server, marker, spec.tag, DZ_SITE_BOSS_DUPLICATE_RANGE)) {
+      spawned = true
+      break
+    }
+  }
+  if (!spawned) {
     delete ledger[ledgerKey]
     dzSiteBossWrite(player.server, ledger)
     DZ_SITE_BOSS_FAILURE_RETRY[retryKey] = now + DZ_SITE_BOSS_FAILURE_RETRY_MS
-    console.warn('[PDZ STORY BOSS] Spawn failed key=' + spec.key + ' instance=' + instance)
+    console.warn('[PDZ STORY BOSS] Spawn failed key=' + spec.key + ' instance=' + instance +
+      ' anchors=' + attempted.join(';'))
     return false
   }
 
   delete DZ_SITE_BOSS_FAILURE_RETRY[retryKey]
 
-  marker.level.getEntities(marker, marker.boundingBox.inflate(24)).forEach(entity => {
+  marker.level.getEntities(marker, marker.boundingBox.inflate(DZ_SITE_BOSS_DUPLICATE_RANGE)).forEach(entity => {
     if (!entity.tags || !entity.tags.contains(spec.tag)) return
     let dx=entity.x-marker.x, dz=entity.z-marker.z
-    if (dx*dx+dz*dz <= 24*24)
+    if (dx*dx+dz*dz <= DZ_SITE_BOSS_DUPLICATE_RANGE*DZ_SITE_BOSS_DUPLICATE_RANGE)
       entity.persistentData.putString('dz_story_site_instance', instance)
   })
   ledger[ledgerKey].state = 'spawned'
@@ -164,6 +188,10 @@ ServerEvents.tick(event => {
   let ledger = dzSiteBossRead(server)
   server.players.forEach(player => {
     if (player.level.clientSide || player.spectator) return
+    // Lost Cities exposes one marker per building part. Select only the nearest
+    // matching marker for each boss type during this scan so a 3x3 gas station
+    // cannot issue six or more summon attempts in the same tick.
+    let nearest = {}
     player.level.getEntities(player, player.boundingBox.inflate(DZ_SITE_BOSS_ALERT_RANGE)).forEach(marker => {
       if (!marker.tags || !marker.tags.contains('dz_wilderness_site')) return
       let dx=marker.x-player.x, dy=marker.y-player.y, dz=marker.z-player.z
@@ -173,10 +201,16 @@ ServerEvents.tick(event => {
       for (let i=0; i<DZ_SITE_BOSSES.length; i++) {
         let spec=DZ_SITE_BOSSES[i]
         if (!spec.ready(player) || !spec.site(data)) continue
-        dzSiteBossAlert(player, marker, spec, ledger)
-        if (distanceSquared <= DZ_SITE_BOSS_RANGE*DZ_SITE_BOSS_RANGE)
-          dzSiteBossSpawn(player, marker, spec, ledger)
+        let current = nearest[spec.key]
+        if (!current || distanceSquared < current.distanceSquared)
+          nearest[spec.key] = {marker:marker, spec:spec, distanceSquared:distanceSquared}
       }
+    })
+    Object.keys(nearest).forEach(key => {
+      let candidate = nearest[key]
+      dzSiteBossAlert(player, candidate.marker, candidate.spec, ledger)
+      if (candidate.distanceSquared <= DZ_SITE_BOSS_RANGE*DZ_SITE_BOSS_RANGE)
+        dzSiteBossSpawn(player, candidate.marker, candidate.spec, ledger)
     })
   })
 })

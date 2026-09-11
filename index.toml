@@ -10010,7 +10010,7 @@ hash = "d3ccc417783b32e67be31d442fe83b3a8990ce58bc4488e698677a015708875e"
 
 [[files]]
 file = "kubejs/data/project_deadzone/functions/story/spawn_gasstation_boss.mcfunction"
-hash = "da121fbc01971ef7a37ee1da1651c44a0202a83fc32e9db3310cb9e50cb6a03e"
+hash = "ce06585b9ff489fb38a414a93fd5268eb096b07631cee2871bb32f73ab3651b6"
 
 [[files]]
 file = "kubejs/data/project_deadzone/functions/story/spawn_gunshop_boss.mcfunction"
@@ -11692,7 +11692,7 @@ hash = "d602bff0c8a9f26a7d89720c41b27488beaa831341af9a46561a131ab91e08bb"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_story_boss_site_triggers_v0_1.js"
-hash = "47d38d99348c4c62e9ecd1267273017ccdc646b1fce4b42aff841cbb422ad1ce"
+hash = "47d0299a0057a5d15ab3cccef57c08166f901afa5d2e390cc2ef31a70b8641f1"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_story_branches_v0_1.js"

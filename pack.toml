@@ -1,12 +1,12 @@
 name = "PROJECT DEADZONE"
 author = "PROJECT DEADZONE Team"
-version = "BETA-20260911-CHUNK-FIRST-VISIT-STABILITY-RC1"
+version = "BETA-20260911-GASSTATION-BOSS-SPAWN-FIX-RC1"
 pack-format = "packwiz:1.1.0"
 
 [index]
 file = "index.toml"
 hash-format = "sha256"
-hash = "75ebefadf33e35c6af7487001df509546afbae8ae5d6e0e17fc753ec2a4945a6"
+hash = "6727bf30a8a5101feaa5702b1ee4de1e1db15d3e46e56f7153fcc5f9633f7625"
 
 [versions]
 forge = "47.4.10"
