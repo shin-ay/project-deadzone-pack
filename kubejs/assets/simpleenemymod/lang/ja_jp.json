@@ -1,0 +1,9 @@
+{
+  "entity.simpleenemymod.pmcunit": "PMC契約兵",
+  "entity.simpleenemymod.usunit": "US兵士",
+  "entity.simpleenemymod.ruunit": "RU兵士",
+  "item.simpleenemymod.recruit_table": "PMC募集テーブル",
+  "block.simpleenemymod.recruit_table": "PMC募集テーブル",
+  "key.category.simpleenemymod.general": "Simple Enemy Mod",
+  "key.simpleenemymod.commander_menu": "PMC指揮メニューを開く"
+}

@@ -8,7 +8,7 @@ data modify entity @e[type=easy_npc:humanoid,tag=dz_basecamp_job_guide,limit=1] 
 data modify entity @e[type=easy_npc:humanoid,tag=dz_basecamp_radio,limit=1] DialogData.DialogDataSet[0].Texts set value [{Text:"……107.3、今日も同じ救難信号が三回。自動送信か、生存者かはまだ不明。"},{Text:"北東から短い軍用通信。PMCの符号に似ている。近づくなら慎重に。"},{Text:"無線は声だけじゃない。間隔、雑音、途切れ方にも送信者の状況が出る。"},{Text:"外で中継器を見つけたら壊さないで。位置を控えて私に知らせて。"},{Text:"静かに。今、誰かがこちらの周波数を探っている。"}]
 
 # Hank / Buddy recruiter
-data modify entity @e[type=easy_npc:humanoid,tag=dz_basecamp_buddy_recruiter,limit=1] DialogData.DialogDataSet[0].Texts set value [{Text:"背中を預ける相手は、射撃の腕だけで決めるな。帰る判断ができる奴を選べ。"},{Text:"Buddyには命令だけじゃなく状況を伝えろ。理由が分かれば動きも変わる。"},{Text:"一人で行くなら軽く、二人なら役割を分けろ。それだけで生存率は違う。"},{Text:"雇用するなら隣のRecruit Tableを使え。同行できるBuddyは一人までだ。"},{Text:"募集名簿は更新済みだ。相性まで保証はしないが、腕は俺が見ている。"}]
+data modify entity @e[type=easy_npc:humanoid,tag=dz_basecamp_buddy_recruiter,limit=1] DialogData.DialogDataSet[0].Texts set value [{Text:"背中を預ける相手は、射撃の腕だけで決めるな。帰る判断ができる奴を選べ。"},{Text:"Buddyには命令だけじゃなく状況を伝えろ。理由が分かれば動きも変わる。"},{Text:"最初から三人契約できる。車列を相手に一人で英雄ごっこはするな。"},{Text:"小隊を動かすならTactical Data Terminalを用意しろ。口頭命令だけじゃ車両までは回せない。"},{Text:"契約枠はTier 2で五人、Tier 4で七人だ。増やした分だけ補給も忘れるな。"}]
 
 # Maya / food and water
 data modify entity @e[type=easy_npc:humanoid,tag=dz_basecamp_trader_food,limit=1] DialogData.DialogDataSet[0].Texts set value [{Text:"空腹で持ち帰った物資を、その場で全部食べないこと。明日の分も必要よ。"},{Text:"水は見た目が透明でも信用しないで。封がある物を優先して持ち帰って。"},{Text:"棚が埋まっていると、みんな少しだけ未来を信じられるの。"},{Text:"缶詰を見つけたら日付より膨らみを確認。膨らんだ缶は触らないで。"},{Text:"食料の価値は味じゃない。安全に持ち運べて、必要な時に食べられることよ。"}]

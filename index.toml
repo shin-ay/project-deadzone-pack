@@ -1402,7 +1402,7 @@ hash = "e3eb989e917fda0794ffea952d538e3dd47326278c38b41097d312e311ac8d28"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/deadzone_buddy_operations_01.snbt"
-hash = "b2709151bbd6522ca4d5cfe4ebfd43f59731e64b5b68cd88ff2b7a17a0dac9e4"
+hash = "d0e26e8c4e7fdc1c0354869f32f5a974d0cabc5241264de05a9803f72786649c"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/deadzone_camp_development_01.snbt"
@@ -3098,7 +3098,7 @@ hash = "5040df07d90404ec6fb72797ae7d06af88db0a0f56c6c8a680b728031141b854"
 
 [[files]]
 file = "config/sem-common.toml"
-hash = "6dd155424a3857b293d3b739c47f12c0ede8ec3df4abb35134f5605ddeead40f"
+hash = "e0d71b305ec566512a81a64b5fc3c5ebad8b8ff83fd949483834b4fdd1578830"
 
 [[files]]
 file = "config/sereneseasons/fertility.toml"
@@ -3338,7 +3338,7 @@ hash = "ebf692c917bae16435148c20a163a3989920437665f981033fec6fd6aec2ef17"
 
 [[files]]
 file = "config/village_recruits/building.toml"
-hash = "2042c42eff3b182049cd5ca8d27fd7b2d1ced23b25ca34fccde4b1949cf865c5"
+hash = "3418e02a866dc0028d828c81dcc4c0c32d1bf089c8aa9ac116fa395622943d8a"
 
 [[files]]
 file = "config/village_recruits/economy.toml"
@@ -3354,7 +3354,7 @@ hash = "7e296a4829fe7d8c7f48d96fb9902933374df2acd1080aad12e5fdc3aab2d2d7"
 
 [[files]]
 file = "config/village_recruits/politics.toml"
-hash = "11dad36f91f3534ff08804320582bb2880e9a0ddf6218dd8916c409968f33dee"
+hash = "a33e383c6cb4876a39813a7e28118f5e4ae1b6bea240e858af9935b39dd3a77b"
 
 [[files]]
 file = "config/village_recruits/sky.toml"
@@ -3865,6 +3865,10 @@ file = "kubejs/assets/recruits/lang/ja_jp.json"
 hash = "172d10eebf248fe4020aed85b69c33634d3a615b3b10520fa1774e269b283f2e"
 
 [[files]]
+file = "kubejs/assets/simpleenemymod/lang/ja_jp.json"
+hash = "8b355a06aff7b6c8afc88e9cd21af7394829f6c9ce0e333bcafd52dbef34d28d"
+
+[[files]]
 file = "kubejs/assets/smallships/lang/ja_jp.json"
 hash = "80a44b4719460fcfdd5b05aba3e968b53ba191468a61e9cb111ab146df88c4fd"
 
@@ -3875,6 +3879,10 @@ hash = "94a1e1858e45cec7f26c4fa1c227e290ba0e42ed321195d441755f109ce3c9cb"
 [[files]]
 file = "kubejs/assets/taa/lang/ja_jp.json"
 hash = "75173cbdd0feddde56b055e0d4adff41013d28105d5b0a40d14625235bf40f54"
+
+[[files]]
+file = "kubejs/assets/tacz_sewv/lang/ja_jp.json"
+hash = "6d376b6faae2321535d9537ef51f2c628f487b3c0e81cdabafcb1a61d5231e0f"
 
 [[files]]
 file = "kubejs/assets/taczweaponblueprints/lang/ja_jp.json"
@@ -8338,11 +8346,11 @@ hash = "744313ff636048e6dfffd9dd529c45fddaac755e934fb9263aa44ec0825b087e"
 
 [[files]]
 file = "kubejs/data/project_deadzone/functions/basecamp/apply_staff_random_dialogues.mcfunction"
-hash = "b7377e2c3d4b5afe5619d64801a6783457a9d5e7460b7e91ba8d7e43d160e1d9"
+hash = "c062cedc900fdcba9c1084636c20f08eafaa947bb4b4a4e6e56e4c205a248940"
 
 [[files]]
 file = "kubejs/data/project_deadzone/functions/basecamp/apply_staff_services.mcfunction"
-hash = "159b318eb29337f31f421c42d9fb184a9ca4ba5ae4deae8a325575f8ddba0947"
+hash = "f086b6705863a2528995bda1c7f56382c3e3a52a4d1cb31dbf742296b6b2b54c"
 
 [[files]]
 file = "kubejs/data/project_deadzone/functions/basecamp/apply_trade_economy.mcfunction"
@@ -8394,7 +8402,7 @@ hash = "565533ec943ba3789116b9ec01f709b61c8891e5a3605107830d287dfc97c567"
 
 [[files]]
 file = "kubejs/data/project_deadzone/functions/basecamp/repair_staff_service_ui.mcfunction"
-hash = "5c3002ebdf5bc81ab94413cf6a18c2812e180675b138803e2ed4abf1a13e01fd"
+hash = "5878199f535f7f05068f1606a7108ae2798521b81936e45deacd04d6f9fb03c6"
 
 [[files]]
 file = "kubejs/data/project_deadzone/functions/basecamp/restore_guards_at_core.mcfunction"
@@ -11294,7 +11302,7 @@ hash = "0c5b9e07967e2035a5fa8772c94f59a51b5b8937256e7a2720c039fef28607cb"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_buddy_system_v0_2.js"
-hash = "799c92ba0b98faeec743206a24504de1a7dd83da7e3c6ba3d2acb75042cbfc96"
+hash = "bd76de4f1bf50b5b3cdd06a051b5e419a77521a44d12bd0df1e72a3d82c4ed3b"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_butchery_grave_compat_v0_1.js"
@@ -22490,7 +22498,7 @@ hash = "2c42742e19df74536c2793cceba08f7efecd824945aed1e8483d1e9e862797f9"
 
 [[files]]
 file = "projectfiles/PROJECT_DEADZONE_Buddy_Recruitment_Test_v0.1.md"
-hash = "1780720b4b955f0dccb05006bcc02944ef845da37ee1e21e2863127433edb28d"
+hash = "dbceb7e4a1e2f07ab45c4796bb18d0edeb49fea270009cf7e09249f8d505c055"
 
 [[files]]
 file = "projectfiles/PROJECT_DEADZONE_Building_Edit_Load_Test_v0.1.md"

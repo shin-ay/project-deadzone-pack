@@ -1,7 +1,7 @@
 
 [general_settings]
 	#When set to true, soldiers will spawn in villages. When set to false, the event is disabled
-	enableVillageGarrison = true
+	enableVillageGarrison = false
 
 [Factions]
 	#If true, Ru Units will be friendly with Players and PMC Units
@@ -63,53 +63,53 @@
 	#--------------------------------------------------
 	#Global cooldown ticks between events. 20 ticks = 1 second. 4800 = 4 minutes
 	#Range: 100 ~ 72000
-	eventGlobalCooldownTicks = 4800
+	eventGlobalCooldownTicks = 12000
 	#Ticks between event evaluation attempts per player. 20 ticks = 1 second. Default: 3600 = 1 minute
 	#Range: 100 ~ 72000
-	eventTickWindow = 1200
+	eventTickWindow = 2400
 	#Base spawn chance for Patrol Event (per minute)
 	#Range: 0.01 ~ 1.0
-	patrolBaseChance = 0.1
+	patrolBaseChance = 0.05
 	#--------------------------------------------------
 	#Chance accumulation rate on failure for Patrol Event
 	#Range: 0.01 ~ 0.5
-	patrolFailureMultiplier = 0.15
+	patrolFailureMultiplier = 0.05
 	#--------------------------------------------------
 	#Minimum squad size for Patrol Event
 	#Range: 1 ~ 10
-	patrolMinSize = 3
+	patrolMinSize = 2
 	#Maximum squad size for Patrol Event
 	#Range: 1 ~ 20
 	patrolMaxSize = 4
 	#Base spawn chance for Combat Event (per minute)
 	#Range: 0.01 ~ 1.0
-	combatBaseChance = 0.08
+	combatBaseChance = 0.04
 	#--------------------------------------------------
 	#Chance accumulation rate on failure for Combat Event
 	#Range: 0.01 ~ 0.5
-	combatFailureMultiplier = 0.12
+	combatFailureMultiplier = 0.04
 	#--------------------------------------------------
 	#Minimum squad size for Combat Event (per faction)
 	#Range: 1 ~ 10
-	combatMinSize = 3
+	combatMinSize = 2
 	#Maximum squad size for Combat Event (per faction)
 	#Range: 1 ~ 20
-	combatMaxSize = 5
+	combatMaxSize = 4
 	#Base spawn chance for Cave Extraction Event (per minute)
 	#Range: 0.01 ~ 1.0
 	caveBaseChance = 0.02
 	#--------------------------------------------------
 	#Chance accumulation rate on failure for Cave Extraction Event
 	#Range: 0.01 ~ 0.5
-	caveFailureMultiplier = 0.2
+	caveFailureMultiplier = 0.03
 	#--------------------------------------------------
 	#Minimum squad size for Cave Extraction Event
 	#Range: 1 ~ 10
-	caveMinSize = 2
+	caveMinSize = 1
 	#--------------------------------------------------
 	#Maximum squad size for Cave Extraction Event
 	#Range: 1 ~ 20
-	caveMaxSize = 4
+	caveMaxSize = 3
 
 [Drops]
 	#Enables or disables modified weapon drops for Units.

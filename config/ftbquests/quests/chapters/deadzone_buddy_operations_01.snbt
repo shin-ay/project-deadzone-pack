@@ -10,20 +10,20 @@
 	quests: [
 		{
 			description: [
-				"Buddyは、単独遠征を支える1人用の同行者システム。プレイヤーのJOBとは別に役割を持ち、実弾とStory進行に応じた装備で戦う。"
-				"Survivor Campの募集担当ハンクと話し、隣のRecruit Tableを使う。同行できるBuddyはプレイヤーごとに1人まで。"
+				"1人目のBuddyは単独遠征を支える専属同行者。追加のPMC契約兵と組み合わせ、車列や侵攻へ対抗する小隊を編成できる。"
+				"Survivor Campの募集担当ハンクと話し、隣のRecruit Tableを使う。契約上限はStory Tierに応じて3・5・7名へ拡張される。"
 				"雇用後はハンクの会話画面から役割変更・追従・待機・呼び戻しを操作できる。"
 			]
 			icon: "simpleenemymod:recruit_table"
 			id: "6D57010000000101"
-			title: "Buddy同行システム"
+			title: "Buddy・PMC契約部隊"
 			x: 0.0d
 			y: 0.0d
 		}
 		{
 			description: [
 				"Recruit Tableを使い、募集名簿から同行者を雇用する。募集には鉄インゴット12個を用意する。"
-				"すでにBuddyがいる間は2人目を雇えない。Buddyが死亡した場合は雇用枠が空き、改めて募集できる。"
+				"1人目は専属Buddy、2人目以降は一般契約兵になる。上限到達時は募集が停止され、死亡した兵士の枠は再び利用できる。"
 			]
 			icon: "minecraft:iron_ingot"
 			id: "6D57010000000102"
@@ -68,6 +68,54 @@
 			x: 4.0d
 			y: 0.0d
 		}
+		{
+			description: [
+				"専属Buddyは特殊能力を持つ1名の相棒。追加契約兵はCombined Arms純正の一般PMCとして扱い、Buddyの役割能力や自動Recallは持たない。"
+				"契約枠はStory Tier 0～1で3名、Tier 2～3で5名、Tier 4以降は最大7名。未読込や別ディメンションの兵士も契約枠へ数える。"
+				"車列・侵攻・車両守備隊へ対抗できる最小分隊を3名とし、Story進行で車両クルーと歩兵を両立できる規模へ拡張する。死亡した兵士の枠は自動的に空く。"
+			]
+			icon: "simpleenemymod:pmc_unit_spawn_egg"
+			id: "6D57010000000106"
+			title: "小隊契約枠"
+			x: 4.0d
+			y: -2.0d
+		}
+		{
+			description: [
+				"Tactical Data Terminalは、所有するBuddy・契約歩兵・PMC指揮官を選択してまとめて指揮するCombined Arms純正端末。"
+				"追従、待機、移動、射撃許可、目標指定、車両搭乗、護衛、巡回、捜索殲滅、塹壕配置などを命令できる。"
+				"Recipeはガラス板、ラピスラズリ、鉄インゴット。単独Buddyの操作にも使える。"
+			]
+			icon: "tacz_sewv:tactical_data_terminal"
+			id: "6D57010000000107"
+			title: "戦術データ端末"
+			x: 6.0d
+			y: -2.0d
+		}
+		{
+			description: [
+				"Story Tier 2以降、追加契約歩兵へMedal of Honorを使用するとPMC指揮官へ昇進できる。専属Buddyは役割能力を維持するため昇進対象外。"
+				"指揮官へ歩兵や車両クルーを編入すると、小隊単位の自動命令と編隊行動を利用できる。"
+				"Medalは赤色の羊毛2、黒色の羊毛1、金インゴット1で作成する。"
+			]
+			icon: "tacz_sewv:medal_of_honor"
+			id: "6D57010000000108"
+			title: "PMC指揮官への昇進"
+			x: 6.0d
+			y: 0.0d
+		}
+		{
+			description: [
+				"契約兵はTactical Data Terminalから車両へ搭乗させ、操縦手・砲手・随伴歩兵として運用できる。"
+				"放棄車両は低耐久のため、確保後に修理・補給してから部隊へ編入する。敵勢力車両の近くには護衛が残っている。"
+				"航空・海上部隊や火力支援も同じ所有者・勢力判定を使うが、イベントChunk LoadingはPDZ設定で無効化している。"
+			]
+			icon: "superbwarfare:repair_tool"
+			id: "6D57010000000109"
+			title: "車両クルーと機動部隊"
+			x: 6.0d
+			y: 2.0d
+		}
 	]
-	title: "Buddy同行システム"
+	title: "Buddy・PMC契約部隊"
 }
