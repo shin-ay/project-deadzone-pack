@@ -13311,8 +13311,8 @@ hash = "13e92501fb23e484ffd323438f85a82825d4d93426f20e19a1856c7bff289ad9"
 metafile = true
 
 [[files]]
-file = "mods/pdz-infectious-lifecycle-compat-1.0.4.jar"
-hash = "49880134693ec4a35858831bb207284456c2ae081932c82009586942cfe87e07"
+file = "mods/pdz-infectious-lifecycle-compat-1.0.5.jar"
+hash = "8d452ccd5cedbf62476db3ca90f3ee1180527603d8d89bbfa8d328ab738ddaab"
 
 [[files]]
 file = "mods/pdz-loot-compat-1.0.0.jar"
