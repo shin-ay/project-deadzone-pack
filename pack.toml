@@ -1,12 +1,12 @@
 name = "PROJECT DEADZONE"
 author = "PROJECT DEADZONE Team"
-version = "BETA-20260911-GASSTATION-BOSS-SPAWN-FIX-RC1"
+version = "BETA-20260911-JOB-UI-RECRUITS-REMOVAL-HOTFIX"
 pack-format = "packwiz:1.1.0"
 
 [index]
 file = "index.toml"
 hash-format = "sha256"
-hash = "15d684159f5b466c2cb09f7b581115b18b281cdc2af913c08d993cb0c8bdcb60"
+hash = "0d7e7bbe6caf9737c146cd1fa428b9280b7cbbc13b78491735d8e576f628f3cc"
 
 [versions]
 forge = "47.4.10"

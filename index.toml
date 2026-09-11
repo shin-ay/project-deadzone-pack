@@ -12242,8 +12242,8 @@ file = "mods/PROJECT_DEADZONE_EpicTaCZ_Compat-0.1.0.jar"
 hash = "9f4870e0073f46f83effd31ace8410dac5c52448aab67dba08380c04f5d8af12"
 
 [[files]]
-file = "mods/PROJECT_DEADZONE_JOB_UI-0.7.1.jar"
-hash = "1a77ff910d96b90e07d53e379dc90ce308af0f63a4933285a830a80a17e04cd6"
+file = "mods/PROJECT_DEADZONE_JOB_UI-0.7.2.jar"
+hash = "df3feaf5b09d67d1fe94734c63fba97d29f0232e3b232bdba3ca151a4db99860"
 
 [[files]]
 file = "mods/PROJECT_DEADZONE_TaCZ_NPC_AI_Compat-0.1.0.jar"
