@@ -15,7 +15,7 @@
 			]
 			description: [
 				"ここで扱う『集落』はMineColoniesでもSurvivor Campでもない。CTOV、Towns and Towers、バニラが生成した村を、地域ごとに役割の違う生活拠点として利用する。"
-				"最初はこの4段階だけ覚えればよい：①実在村へ入る ②自動表示された輸出と不足を見る ③Village Recruitsの商人・契約を使う ④Bountiful Boardへ産業令状を入れる。"
+				"最初はこの4段階だけ覚えればよい：①実在村へ入る ②自動表示された輸出と不足を見る ③Credit市場を使う ④Bountiful Boardへ産業令状を入れる。"
 				"村人AI・護衛・商人・輸送は既存MODが担当し、PDZは地域名、産業、需要、友好関係を接続する。"
 			]
 			icon: "minecraft:written_book"
@@ -71,11 +71,11 @@
 		{
 			dependencies: ["6D52010000000012"]
 			description: [
-				"Village Recruits：村の商人を右クリックして実在庫取引を行う。Nobleから不足契約を受け、護衛・地上コンボイ・村の防衛もこのMODが担当する。"
-				"Bountiful：Bounty Boardを右クリックし、プレイヤー向けの品目依頼を選んで受注する。Village Recruitsの契約とは別物。"
+				"MCA：住民・家族・村社会を担当する。村の武装護衛はTacZ NPC、プレイヤー運営コロニーはMineColoniesが担当する。"
+				"Bountiful：Bounty Boardを右クリックし、地域の不足に応じた品目依頼を選んで受注する。売買はCredit市場を利用する。"
 				"産業を初めて確認した時にもらう令状は、手に持ってBountiful Bounty Boardへ使用する。読み終えたら下の確認ボタンを押せばよく、コマンド入力は不要。"
 			]
-			icon: "village_recruits:merchant_post"
+		icon: "mca:civil_registry"
 			id: "6D52010000000013"
 			rewards: [{
 				id: "6D52010000001013"
@@ -85,7 +85,7 @@
 			subtitle: "解放条件: 「STEP 2：輸出と不足を読む」を完了"
 			tasks: [{
 				id: "6D52010000002013"
-				title: "Village RecruitsとBountifulの役割を確認した"
+				title: "MCA・TacZ NPC・Bountifulの役割を確認した"
 				type: "checkmark"
 			}]
 			title: "STEP 3：商人・契約・掲示板を分ける"
@@ -96,7 +96,7 @@
 			dependencies: ["6D52010000000013"]
 			description: [
 				"CTOV、Towns and Towers、バニラの実在村へ入り、自動表示される輸出と不足から地域産業を確認する。"
-				"村の生成と住民は既存MOD、実在庫・商人・Noble契約・コンボイはVillage Recruits、掲示依頼はBountifulが担当する。PDZは新しい村AIや交易GUIを作らない。"
+				"村の生成と住民はMCA、武装護衛はTacZ NPC、掲示依頼はBountiful、売買はCredit市場が担当する。PDZは各機能を接続する。"
 			]
 			icon: "minecraft:bell"
 			id: "6D52010000000101"
@@ -143,7 +143,7 @@
 			dependencies: ["6D52010000000101"]
 			description: [
 				"海岸・河川の沿岸漁業集落を発見する。医療、工具、電子部品、ロープを求め、魚と水産料理を輸出する。"
-				"Village Recruitsの漁業小屋はMOD側で挙動改修中のため停止を維持し、漁業そのものはAquaculture系とBountifulへ任せる。"
+				"漁業はAquaculture系とBountifulへ任せ、集落側に重複する自動漁業システムは追加しない。"
 			]
 			icon: "aquaculture:fish_fillet_raw"
 			id: "6D52010000000103"
@@ -261,10 +261,10 @@
 		{
 			dependencies: ["6D52010000000101"]
 			description: [
-				"集落へ入った時の地域産業案内を確認し、Village Recruitsの商人とNobleを利用する。"
-				"商人の価格と取扱量は村の実在庫、Noble契約はMonster Pressureや資材不足から生成される。PDZ独自の固定納品表で上書きしない。"
+				"集落へ入った時の地域産業案内を確認し、Credit市場とBountiful Boardを利用する。"
+				"地域ごとの輸出品と不足品を依頼へ反映し、PDZならではの生活・探索・防衛物資を循環させる。"
 			]
-			icon: "village_recruits:merchant_post"
+		icon: "mca:civil_registry"
 			id: "6D52010000000108"
 			rewards: [{
 				count: 2
@@ -275,7 +275,7 @@
 			subtitle: "解放条件: 「村をもう一つのCampにするな」を完了"
 			tasks: [{
 				id: "6D52010000002801"
-				title: "Village Recruitsの実在庫経済を確認した"
+				title: "地域のCredit市場を確認した"
 				type: "custom"
 			}]
 			title: "商人は無限倉庫じゃない"
@@ -286,7 +286,7 @@
 			dependencies: ["6D52010000000107"]
 			description: [
 				"Bountiful Bounty Boardをクラフトまたは入手して集落市場へ置き、受領した産業令状を挿入する。"
-				"Village RecruitsのNobleは村の内部状態、Bountifulはプレイヤー向けの品目依頼を担当する。二つは競合ではなく役割分担。"
+				"MCAは住民生活、Bountifulはプレイヤー向けの品目依頼、Credit市場は売買を担当する。互いに役割を重複させない。"
 			]
 			icon: "bountiful:bountyboard"
 			id: "6D52010000000109"
@@ -314,7 +314,7 @@
 			]
 			description: [
 				"友好・中立の異なる産業を3種類発見する。全5種類はBiome生成へ依存するため必須にしない。"
-				"地域物流の道路・鉄道・海上・航空と、Village Recruitsの商人・契約・コンボイ、Bountiful産業令状を組み合わせ、集落間で物資を循環させる。"
+				"地域物流の道路・鉄道・海上・航空と、Credit市場、Bountiful産業令状を組み合わせ、集落間で物資を循環させる。"
 			]
 			icon: "minecraft:filled_map"
 			id: "6D5201000000010A"

@@ -116,7 +116,7 @@ function pdzMechAllowedTarget(entity){
   if(!entity)return false
   let id=String(entity.type)
   if(id==='minecraft:player'||id==='minecraft:villager'||id==='minecraft:wandering_trader'||id==='minecolonies:citizen')return true
-  if(id.indexOf('mca:')===0||id.indexOf('recruits:')===0||id.indexOf('village_recruits:')===0||id.indexOf('workers:')===0)return true
+  if(id.indexOf('mca:')===0)return true
   // Raider/remnant bosses may actively clear infected and other hostile mobs.
   // Incoming damage protection is handled separately, making this explicitly
   // one-way so ambient mobs cannot steal the campaign kill.

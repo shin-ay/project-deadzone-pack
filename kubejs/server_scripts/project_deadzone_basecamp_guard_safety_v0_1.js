@@ -1,21 +1,31 @@
-// PROJECT DEADZONE - survivor guard relations and retaliation v0.5
-// Scoreboard teams stop friendly fire. These checks also bridge Recruits AI,
-// TaCZ NPC factions, and PDZ-authored faction tags.
-
-function pdzIsRecruitEntity(entity) {
-  if (!entity) return false
-  let id = String(entity.type)
-  return id.indexOf('recruits:') === 0 || id.indexOf('village_recruits:') === 0
-}
+// PROJECT DEADZONE - survivor guard relations and retaliation v0.7
+// Scoreboard teams stop friendly fire. These checks bridge TacZ NPC factions
+// and PDZ-authored faction tags.
 
 function pdzIsCampGuard(entity) {
   if (!entity || !entity.tags) return false
+  if (entity.tags.contains('dz_village_guard_v2')) return true
+  try { if (entity.persistentData.getBoolean('dz_village_guard_v2')) return true } catch (ignored) {}
   return entity.tags.contains('dz_basecamp_guard') ||
     entity.tags.contains('dz_starter_colony_guard') ||
     entity.tags.contains('dz_colony_guard') ||
     entity.tags.contains('dz_settlement_guard') ||
+    entity.tags.contains('dz_guard_bridge_pending') ||
     entity.tags.contains('dz_faction_civil_defense') ||
     (entity.tags.contains('dz_survivor_guard') && entity.tags.contains('dz_survivor'))
+}
+
+const PDZ_GUARD_TARGET_QUEUE = []
+const PDZ_GUARD_TARGET_QUEUED = {}
+const PDZ_GUARD_TARGET_QUEUE_CAP = 256
+let PDZ_GUARD_TARGET_TICKS = 0
+
+function pdzQueueGuardTargeting(guard) {
+  if (!guard || !guard.alive || !pdzIsCampGuard(guard)) return
+  let key = String(guard.uuid)
+  if (PDZ_GUARD_TARGET_QUEUED[key] || PDZ_GUARD_TARGET_QUEUE.length >= PDZ_GUARD_TARGET_QUEUE_CAP) return
+  PDZ_GUARD_TARGET_QUEUED[key] = true
+  PDZ_GUARD_TARGET_QUEUE.push(guard)
 }
 
 function pdzIsProtectedBossTestEntity(entity) {
@@ -60,7 +70,6 @@ function pdzIsSurvivorAlly(entity) {
   if (pdzIsFactionHostile(entity)) return false
   let id = String(entity.type)
   if (id === 'minecraft:player' || id === 'simpleenemymod:usunit' || id.indexOf('mca:') === 0) return true
-  if (pdzIsRecruitEntity(entity) && !pdzIsFactionHostile(entity)) return true
   return !!entity.tags && (entity.tags.contains('dz_survivor') || entity.tags.contains('dz_friendly') ||
     entity.tags.contains('dz_buddy') || entity.tags.contains('dz_story_npc') ||
     entity.tags.contains('dz_settlement_civilian') || entity.tags.contains('dz_starter_colony_resident') ||
@@ -145,7 +154,6 @@ function pdzIsInfectedTarget(entity) {
   if (id === 'minecraft:player' || id === 'minecraft:villager' ||
       id === 'minecraft:wandering_trader' || id === 'minecraft:iron_golem') return true
   if (id.indexOf('mca:') === 0 || id.indexOf('minecolonies:citizen') === 0 ||
-      id.indexOf('recruits:') === 0 || id.indexOf('village_recruits:') === 0 ||
       id.indexOf('simpleenemymod:') === 0 || id.indexOf('tacz_bandits:') === 0 ||
       id.indexOf('easy_npc:') === 0) return true
   if (!entity.tags) return false
@@ -237,17 +245,6 @@ function pdzSetNearestRelationTarget(unit, buckets) {
   if (best) try { unit.setTarget(best) } catch (ignored) {}
 }
 
-function pdzEnsureGuardGear(guard) {
-  if (!guard || !pdzIsRecruitEntity(guard)) return
-  // Never overwrite equipment supplied by Recruits, a faction function, or a
-  // player. Only fill genuinely empty slots on PDZ-tagged settlement guards.
-  guard.runCommandSilent('execute unless data entity @s HandItems[0].id run item replace entity @s weapon.mainhand with survival_instinct:tactical_knife')
-  guard.runCommandSilent('execute unless data entity @s ArmorItems[0].id run item replace entity @s armor.feet with survival_instinct:green_recluit_armor_boots')
-  guard.runCommandSilent('execute unless data entity @s ArmorItems[1].id run item replace entity @s armor.legs with survival_instinct:green_recluit_armor_leggings')
-  guard.runCommandSilent('execute unless data entity @s ArmorItems[2].id run item replace entity @s armor.chest with survival_instinct:green_recluit_armor_chestplate')
-  guard.runCommandSilent('execute unless data entity @s ArmorItems[3].id run item replace entity @s armor.head with survival_instinct:green_recluit_armor_helmet')
-}
-
 EntityEvents.hurt(event => {
   let victim = event.entity
   let attacker = event.source.actual
@@ -303,7 +300,38 @@ EntityEvents.spawned(event => {
   entity.tags.add('dz_friendly')
   entity.tags.add('dz_faction_civil_defense')
   if (newlyRegistered) entity.runCommandSilent('team join dz_survivors @s')
-  if (newlyRegistered) pdzEnsureGuardGear(entity)
+  pdzQueueGuardTargeting(entity)
+})
+
+// TacZ NPC normally owns target selection. This bounded bridge only repairs
+// acquisition when another conversion/load-order step left the guard idle.
+// One local query runs every 10 ticks, so cost does not scale with total mobs.
+ServerEvents.tick(event => {
+  if (++PDZ_GUARD_TARGET_TICKS % 10 !== 0) return
+  if (!PDZ_GUARD_TARGET_QUEUE.length) return
+  let guard = PDZ_GUARD_TARGET_QUEUE.shift()
+  let key = guard ? String(guard.uuid) : ''
+  if (key) delete PDZ_GUARD_TARGET_QUEUED[key]
+  if (!guard || !guard.alive || !pdzIsCampGuard(guard)) return
+
+  let current = null
+  try { current = guard.target } catch (ignored) {}
+  if (!current || !current.alive || !pdzIsFactionHostile(current)) {
+    let best = null, bestDistance = 32 * 32
+    guard.level.getEntities(guard, guard.boundingBox.inflate(32)).forEach(candidate => {
+      if (!pdzIsFactionHostile(candidate)) return
+      let dx = Number(candidate.x) - Number(guard.x)
+      let dy = Number(candidate.y) - Number(guard.y)
+      let dz = Number(candidate.z) - Number(guard.z)
+      let distance = dx * dx + dy * dy + dz * dz
+      if (distance >= bestDistance) return
+      bestDistance = distance
+      best = candidate
+    })
+    if (best) pdzGuardSetTarget(guard, best, false)
+  }
+
+  pdzQueueGuardTargeting(guard)
 })
 
 // MCA villagers are not subclasses of vanilla Villager, so vanilla zombie AI

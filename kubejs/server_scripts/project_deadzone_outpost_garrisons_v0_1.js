@@ -151,11 +151,9 @@ function pdzGarIsSettlementSeed(marker){
 function pdzGarRecruitResidents(marker,player,faction,tag,spots){
   if(!pdzGarIsSettlementSeed(marker))return 0
   if(!(faction==='survivor'||faction==='civildef'||faction==='cdf'||faction==='independent'))return 0
-  // Independent Recruits stay neutral. Survivor/CDF Recruits are explicit
-  // guards so only authored defenders receive friendly-fire and gear handling.
-  let residentTag=tag+'_resident',types=faction==='civildef'||faction==='cdf'
-    ? ['recruits:recruit','recruits:bowman']
-    : ['recruits:recruit','recruits:nomad']
+  // TacZ NPCs own armed settlement defense. They are spawned from one
+  // data-driven PDZ loadout so their guns, armor and drops stay configurable.
+  let residentTag=tag+'_resident'
   let extraTags=''
   if(faction==='survivor'||faction==='civildef'||faction==='cdf'){
     extraTags=',"dz_settlement_guard","dz_survivor_guard","dz_survivor","dz_friendly"'
@@ -164,7 +162,7 @@ function pdzGarRecruitResidents(marker,player,faction,tag,spots){
   let count=Math.min(2,Math.max(1,spots.length))
   for(let i=0;i<count;i++){
     let s=spots[(spots.length-1-i+spots.length)%spots.length]
-    player.runCommandSilent('execute positioned '+s.x+' '+s.y+' '+s.z+' run summon '+types[i%types.length]+' ~ ~ ~ {PersistenceRequired:1b,Tags:["dz_settlement_resident","dz_external_faction_npc","dz_garrison_bound","'+tag+'","'+residentTag+'"'+extraTags+']}')
+    player.runCommandSilent('execute positioned '+s.x+' '+s.y+' '+s.z+' run summon tacznpcs:npc ~ ~ ~ {template:"pdz_village_guard",PersistenceRequired:1b,Tags:["dz_settlement_resident","dz_external_faction_npc","dz_garrison_bound","'+tag+'","'+residentTag+'"'+extraTags+']}')
   }
   return count
 }

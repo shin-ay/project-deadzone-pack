@@ -7,4 +7,4 @@ tellraw @s [{"text":"鉱夫の拠点: ","color":"aqua"},{"text":"[検索]","colo
 tellraw @s [{"text":"モンスターハンターの拠点: ","color":"aqua"},{"text":"[検索]","color":"green","clickEvent":{"action":"suggest_command","value":"/locate structure realmrpg_quests:monster_hunters"}}]
 tellraw @s [{"text":"ピグリン賭博師の拠点: ","color":"aqua"},{"text":"[検索]","color":"green","clickEvent":{"action":"suggest_command","value":"/locate structure realmrpg_quests:piglin_gamblers"}}]
 tellraw @s [{"text":"首なし骸骨の小屋: ","color":"aqua"},{"text":"[検索]","color":"green","clickEvent":{"action":"suggest_command","value":"/locate structure realmrpg_quests:headless_skeletons"}}]
-tellraw @s [{"text":"軍事集落候補（Village Recruits）: ","color":"aqua"},{"text":"[塔]","color":"green","clickEvent":{"action":"suggest_command","value":"/locate structure village_recruits:tower_spawner"}},{"text":"  "},{"text":"[航空施設]","color":"green","clickEvent":{"action":"suggest_command","value":"/locate structure village_recruits:sky_spawner"}}]
+tellraw @s [{"text":"MCA居住区候補: ","color":"aqua"},{"text":"[最寄りの村を検索]","color":"green","clickEvent":{"action":"suggest_command","value":"/locate structure #minecraft:village"}}]

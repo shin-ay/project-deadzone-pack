@@ -1,9 +1,9 @@
 {
     "players": ["minecraft:player"],
-    "villagers": ["minecraft:villager", "minecraft:wandering_trader", "minecraft:iron_golem", "mca:male_villager", "mca:female_villager", "simpleenemymod:usunit", "tacz_sewv:us_medic", "tacz_sewv:us_engineer", "tacz_sewv:us_combat_engineer", "recruits:recruit", "recruits:bowman", "recruits:recruit_shieldman", "recruits:scout"],
+    "villagers": ["minecraft:villager", "minecraft:wandering_trader", "minecraft:iron_golem", "mca:male_villager", "mca:female_villager", "simpleenemymod:usunit", "tacz_sewv:us_medic", "tacz_sewv:us_engineer", "tacz_sewv:us_combat_engineer"],
     "illagers": ["minecraft:pillager", "minecraft:evoker", "minecraft:vindicator", "minecraft:illusioner", "minecraft:ravager", "minecraft:vex"],
     "deadzone_raiders": ["tacz_bandits:bandit"],
-    "deadzone_civildef": ["minecraft:villager", "minecraft:wandering_trader", "minecraft:iron_golem", "mca:male_villager", "mca:female_villager", "simpleenemymod:usunit", "tacz_sewv:us_medic", "tacz_sewv:us_engineer", "tacz_sewv:us_combat_engineer", "recruits:recruit", "recruits:bowman", "recruits:recruit_shieldman", "recruits:scout"],
+    "deadzone_civildef": ["minecraft:villager", "minecraft:wandering_trader", "minecraft:iron_golem", "mca:male_villager", "mca:female_villager", "simpleenemymod:usunit", "tacz_sewv:us_medic", "tacz_sewv:us_engineer", "tacz_sewv:us_combat_engineer"],
     "deadzone_remnant": ["simpleenemymod:ruunit", "tacz_sewv:ru_medic", "tacz_sewv:ru_engineer", "tacz_sewv:ru_combat_engineer"],
     "deadzone_pmc": ["simpleenemymod:pmcunit", "tacz_sewv:pmc_commander"]
 }

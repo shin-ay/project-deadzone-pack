@@ -1,8 +1,8 @@
 // PROJECT DEADZONE starter colony population v1.0
-// Execution layer: MCA Reborn residents + Recruits guards.
+// Execution layer: MCA Reborn residents + TacZ NPC armed guards.
 // PDZ only decides where/when the verified initial colony is populated.
 
-const DZ_COLONY_POP_VERSION = 3
+const DZ_COLONY_POP_VERSION = 4
 const DZ_COLONY_HEIGHTMAP = Java.loadClass("net.minecraft.world.level.levelgen.Heightmap$Types")
 
 function dzColonyOverworld(server) {
@@ -76,7 +76,7 @@ function dzEnsureStarterPopulation(server, force) {
   let data = server.persistentData
   if (data.getInt("dz_starter_village_state") !== 2) return 0
   // v7 uses the verified native village itself as the starter city. Population
-  // belongs to MCA/Recruits/Towns & Towers; never install the legacy camp roster.
+  // belongs to MCA/Towns & Towers; never install the legacy camp roster.
   if (String(data.getString("dz_starter_village_source")) === "starter_nearest_verified_village_v7") {
     data.putInt("dz_starter_colony_population_version", 999)
     data.putInt("dz_starter_colony_population_count", 0)
@@ -116,21 +116,12 @@ function dzEnsureStarterPopulation(server, force) {
     ["mca:female_villager", "医療補助住民"],
     ["mca:male_villager", "交易担当住民"]
   ]
-  let guardArmor = 'ArmorItems:[{id:"survival_instinct:green_recluit_armor_boots",Count:1b},' +
-    '{id:"survival_instinct:green_recluit_armor_leggings",Count:1b},' +
-    '{id:"survival_instinct:green_recluit_armor_chestplate",Count:1b},' +
-    '{id:"survival_instinct:green_recluit_armor_helmet",Count:1b}],' +
-    'ArmorDropChances:[0.0f,0.0f,0.0f,0.0f]'
-  let guardMeleeGear = guardArmor + ',HandItems:[{id:"survival_instinct:tactical_knife",Count:1b},' +
-    '{id:"survival_instinct:swat_shield",Count:1b}],HandDropChances:[0.0f,0.0f]'
-  let guardRangedGear = guardArmor + ',HandItems:[{id:"minecraft:bow",Count:1b},' +
-    '{id:"survival_instinct:tactical_knife",Count:1b}],HandDropChances:[0.0f,0.0f]'
   let guards = [
-    ["recruits:recruit", "復興コロニー警備員"],
-    ["recruits:recruit", "復興コロニー警備員"],
-    ["recruits:bowman", "復興コロニー監視員"],
-    ["recruits:recruit_shieldman", "復興コロニー防衛員"],
-    ["recruits:scout", "復興コロニー斥候"]
+    ["tacznpcs:npc", "復興コロニー警備員"],
+    ["tacznpcs:npc", "復興コロニー警備員"],
+    ["tacznpcs:npc", "復興コロニー監視員"],
+    ["tacznpcs:npc", "復興コロニー防衛員"],
+    ["tacznpcs:npc", "復興コロニー斥候"]
   ]
 
   let summoned = 0
@@ -141,11 +132,9 @@ function dzEnsureStarterPopulation(server, force) {
   }
   for (let i = 0; i < guards.length; i++) {
     let pos = dzColonySafePos(level, x, z, i + 20)
-    let gear = (guards[i][0] === "recruits:bowman" || guards[i][0] === "recruits:scout") ?
-      guardRangedGear : guardMeleeGear
     if (dzColonySummon(server, level, guards[i][0], pos,
       ["dz_starter_colony_guard", "dz_colony_guard", "dz_survivor_guard", "dz_survivor", "dz_friendly",
-        "dz_faction_civil_defense"], guards[i][1], gear)) summoned++
+        "dz_faction_civil_defense"], guards[i][1], 'template:"pdz_village_guard"')) summoned++
   }
 
   if (summoned < 13) {
@@ -165,7 +154,7 @@ function dzEnsureStarterPopulation(server, force) {
   }
   data.putInt("dz_starter_colony_population_version", DZ_COLONY_POP_VERSION)
   data.putInt("dz_starter_colony_population_count", liveAfter)
-  console.info("[PDZ][Starter Colony] MCA/Recruits population installed and verified: " + liveAfter)
+  console.info("[PDZ][Starter Colony] MCA/TacZ NPC population installed and verified: " + liveAfter)
   return 1
 }
 

@@ -155,7 +155,7 @@
 			dependencies: ["6D53010000000106"]
 			description: [
 				"3種類すべてのMentorへ接触し、Realm RPG依頼を10件完了する。"
-				"Village Recruits Nobleは村の不足契約、Realm RPG Mentorは個人の反復依頼、FTB Questsは節目だけを担当する。"
+				"Bountiful Boardは地域の不足契約、Realm RPG Mentorは個人の反復依頼、FTB Questsは節目だけを担当する。"
 			]
 			icon: "minecraft:compass"
 			id: "6D53010000000108"

@@ -1,4 +1,4 @@
-// PROJECT DEADZONE settlement/faction bridge v0.3
+// PROJECT DEADZONE settlement/faction bridge v0.4
 // Village mods own generation and resident AI. PDZ records identity, faction,
 // services and regional economy, then lets existing faction systems consume it.
 
@@ -6,8 +6,6 @@ const PDZ_SETTLEMENT_REGISTRIES = Java.loadClass('net.minecraft.core.registries.
 const PDZ_SETTLEMENT_BLOCKPOS = Java.loadClass('net.minecraft.core.BlockPos')
 const PDZ_SETTLEMENT_DECREE_ITEM = Java.loadClass('io.ejekta.bountiful.content.DecreeItem')
 const PDZ_SETTLEMENT_LEDGER = "dz_activity_outpost_ledger_v1"
-const PDZ_SETTLEMENT_POP_CAP = 36
-const PDZ_SETTLEMENT_PRODUCTION_ROLES = ["food","medical","logistics","industry","research","salvage","fishery","forestry"]
 const PDZ_SETTLEMENT_INDUSTRIES = {
   agrarian_colony: {quest:"6D52010000000102", decree:"agrarian_relief", label:"農業"},
   coastal_fishery: {quest:"6D52010000000103", decree:"coastal_relief", label:"沿岸漁業"},
@@ -230,7 +228,7 @@ function pdzSetHasLoadedAnchor(entity, site, radius) {
     try { linked = String(e.persistentData.getString("dz_settlement_site") || "") } catch (ignored) {}
     if (linked && linked === siteId) { found = true; return }
     let type = String(e.type || "")
-    if (type.indexOf("mca:") === 0 || type.indexOf("recruits:") === 0 || type.indexOf("village_recruits:") === 0) {
+    if (type.indexOf("mca:") === 0 || type.indexOf("tacznpcs:") === 0) {
       if (!linked && String(site.settlementType || "") === "survivor_colony") found = true
       return
     }
@@ -283,7 +281,6 @@ function pdzSetIndustryCount(player) {
 
 function pdzSetSyncIndustry(player, site, notify) {
   if (!site || String(site.relation || "") === "hostile") return false
-  if (typeof global.pdzVrMayUseSettlement === "function" && !global.pdzVrMayUseSettlement(player, site)) return false
   let role = String(site.economy || ""), industry = PDZ_SETTLEMENT_INDUSTRIES[role]
   if (!industry) return false
   let discoveredKey = "dz_settlement_industry_" + role
@@ -330,52 +327,11 @@ function pdzSetApplyCivilian(entity) {
   pdzSetUpsert(entity.server, site)
 }
 
-function pdzSetApplyRecruit(entity) {
-  let starterGuard = entity.tags.contains("dz_starter_colony_guard") || entity.tags.contains("dz_colony_guard") ||
-    entity.tags.contains("dz_basecamp_guard") || entity.tags.contains("dz_survivor_guard")
-  let site = starterGuard ? null : pdzSetNearest(entity, 160)
-  let faction = starterGuard ? "civil_defense" : (site ? String(site.faction || "independent") : "independent")
-  ;["civil_defense","independent","raider","remnant","ash_jackals","helix","infected"].forEach(value =>
-    entity.removeTag("dz_force_" + value))
-  entity.addTag("dz_settlement_force"); entity.addTag("dz_force_" + faction)
-  entity.addTag("dz_loadout_" + (faction === "raider" ? "scrap" : faction === "remnant" ? "military" : faction === "civil_defense" ? "security" : "survivor"))
-  entity.persistentData.putString("dz_settlement_faction", faction)
-  if (site) entity.persistentData.putString("dz_settlement_site", String(site.id || ""))
-  if (faction === "civil_defense" || faction === "independent") {
-    entity.addTag("dz_survivor_guard"); entity.addTag("dz_survivor"); entity.addTag("dz_friendly")
-    entity.removeTag("dz_hostile"); entity.removeTag("dz_enemy")
-    entity.runCommandSilent("team join dz_survivors @s")
-  } else {
-    entity.addTag("dz_hostile"); entity.addTag("dz_enemy")
-    entity.removeTag("dz_friendly"); entity.removeTag("dz_survivor")
-  }
-}
-
-function pdzSetWorkerAllowed(entity) {
-  let site = pdzSetNearest(entity, 96)
-  return !!site && PDZ_SETTLEMENT_PRODUCTION_ROLES.indexOf(String(site.role || "")) >= 0
-}
-
-function pdzSetCountMca(entity) {
-  let count = 0
-  entity.level.entities.forEach(e => {
-    if (String(e.type).indexOf("mca:") !== 0) return
-    let dx=e.x-entity.x,dz=e.z-entity.z
-    if(dx*dx+dz*dz<=96*96) count++
-  })
-  return count
-}
-
 EntityEvents.spawned(event => {
   let entity=event.entity,id=String(entity.type)
   if(!pdzSetIsOverworld(entity))return
   if(id.indexOf("mca:")===0){
-    if(pdzSetCountMca(entity)>PDZ_SETTLEMENT_POP_CAP){entity.server.scheduleInTicks(1,()=>entity.discard());return}
     entity.server.scheduleInTicks(4,()=>pdzSetApplyCivilian(entity))
-  }else if(id.indexOf("recruits:")===0||id.indexOf("village_recruits:")===0){
-    entity.server.scheduleInTicks(4,()=>pdzSetApplyRecruit(entity))
-  }else if(id.indexOf("workers:")===0){
-    entity.server.scheduleInTicks(4,()=>{if(!pdzSetWorkerAllowed(entity))entity.discard();else{entity.addTag("dz_limited_production_worker");entity.addTag("dz_friendly")}})
   }else if(id.indexOf("easy_npc:")===0){
     entity.server.scheduleInTicks(8,()=>{
       let site=pdzSetNearest(entity,144)
@@ -413,12 +369,11 @@ PlayerEvents.tick(event => {
   player.persistentData.putBoolean(key,true)
   player.tell(Text.of("[集落発見] "+String(site.name||site.id)+" / "+String(site.factionLabel||site.faction)+" / "+String(site.relation)).gold())
   player.tell(Text.of("[地域産業] 輸出: "+(site.exports||[]).join("・")+"｜不足: "+(site.imports||[]).join("・")).aqua())
-  if(String(site.relation||"")==="hostile" ||
-    (typeof global.pdzVrMayUseSettlement === "function" && !global.pdzVrMayUseSettlement(player,site))){
-    player.tell(Text.of("占領中の敵対集落では、商人・Noble契約・産業令状を利用できません。解放後に再訪してください。").red())
+  if(String(site.relation||"")==="hostile"){
+    player.tell(Text.of("占領中の敵対集落では、Credit市場・集落契約・産業令状を利用できません。解放後に再訪してください。").red())
   }else{
     pdzSetComplete(player,PDZ_SETTLEMENT_ECONOMY_QUESTS.native)
-    player.tell(Text.of("商人はVillage Recruitsの実在庫、Nobleは不足契約、掲示板はBountiful依頼を扱います。詳しい操作はFTB Questsの『地域集落・産業』章で確認できます。").gray())
+    player.tell(Text.of("MCA住民が村の生活を担い、Credit市場とBountiful Boardが地域の取引・依頼を扱います。詳しい操作はFTB Questsの『地域集落・産業』章で確認できます。").gray())
   }
   pdzSetTellLocation(player, site)
 })
@@ -491,22 +446,21 @@ ServerEvents.commandRegistry(event=>{
     if(p.persistentData.getBoolean("dz_settlement_tutorial_native"))pdzSetComplete(p,PDZ_SETTLEMENT_ECONOMY_QUESTS.intro)
     p.tell(Text.of("=== "+String(site.name||site.id)+" 地域産業 ===").gold())
     p.tell(Text.of("輸出: "+(site.exports||[]).join("・")+"｜不足: "+(site.imports||[]).join("・")).aqua())
-    if(String(site.relation||"")==="hostile" ||
-      (typeof global.pdzVrMayUseSettlement === "function" && !global.pdzVrMayUseSettlement(p,site))){
-      p.tell(Text.of("占領中の敵対集落では商人、Noble契約、産業令状を利用できません。").red())
+    if(String(site.relation||"")==="hostile"){
+      p.tell(Text.of("占領中の敵対集落ではCredit市場、集落契約、産業令状を利用できません。").red())
       return 1
     }
     pdzSetSyncIndustry(p,site,true)
     pdzSetComplete(p,PDZ_SETTLEMENT_ECONOMY_QUESTS.native)
-    p.tell(Text.of("Village Recruits: 商人は実在庫、Nobleは実際の不足から契約を生成。Bountiful Boardには受領した産業令状を挿入します。").gray())
-    p.tell(Text.of("[Village Recruits案内]").aqua().clickRunCommand("/deadzonecolony native_help"))
+    p.tell(Text.of("MCA: 住民と村社会 / TacZ NPC: 武装護衛 / Credit市場・Bountiful Board: 取引と依頼。").gray())
+    p.tell(Text.of("[集落システム案内]").aqua().clickRunCommand("/deadzonecolony native_help"))
     return 1
   }))
   c.then(Commands.literal("relation").executes(ctx=>{
-    let p=ctx.source.player
-    if(typeof global.pdzVrRelationStatus==="function")return global.pdzVrRelationStatus(p)
-    p.tell(Text.of("Village Recruits Standing連携は現在利用できません。").yellow())
-    return 0
+    let p=ctx.source.player,site=pdzSetNearestReal(p,256)
+    if(!site){p.tell(Text.of("256m以内に登録済み集落はありません。").yellow());return 0}
+    p.tell(Text.of("[集落関係] "+String(site.name||site.id)+" / "+String(site.relation||"neutral")).aqua())
+    return 1
   }))
   c.then(Commands.literal("nearest").executes(ctx=>{
     let p=ctx.source.player,site=pdzSetNearestReal(p,2048)
@@ -543,19 +497,17 @@ ServerEvents.commandRegistry(event=>{
     }else{
       p.tell(Text.of("チュートリアル進行には先に実在集落で /deadzonecolony economy を実行してください。").yellow())
     }
-    p.tell(Text.of("=== Village Recruits settlement layer ===").gold())
-    p.tell(Text.of("/vrvillages : village/faction overview").aqua())
-    p.tell(Text.of("/villcenters : registered village centers").aqua())
-    p.tell(Text.of("/vrconvoy : ground convoy status").aqua())
-    p.tell(Text.of("/vrcontracts : settlement contracts").aqua())
-    p.tell(Text.of("PDZ owns story/economy labels; Village Recruits owns AI, defense, trade and convoys.").gray())
+    p.tell(Text.of("=== PROJECT DEADZONE 集落レイヤー ===").gold())
+    p.tell(Text.of("MCA : 住民・家族・村社会").aqua())
+    p.tell(Text.of("TacZ NPC : 村落警備隊").aqua())
+    p.tell(Text.of("MineColonies : プレイヤー運営コロニー").aqua())
+    p.tell(Text.of("/deadzonecolony status : 最寄り集落の状態").gray())
+    p.tell(Text.of("/deadzonecolony economy : 地域産業と需要").gray())
     return 1
   }))
   c.then(Commands.literal("native_status").requires(s=>s.hasPermission(2)).executes(ctx=>{
     let p=ctx.source.player
-    p.runCommandSilent("vrvillages")
-    p.runCommandSilent("villcenters")
-    p.runCommandSilent("vrconvoy")
+    p.runCommandSilent("deadzonecolony status")
     return 1
   }))
   event.register(c)

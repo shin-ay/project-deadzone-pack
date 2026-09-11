@@ -1,4 +1,4 @@
-// PROJECT DEADZONE US Unit alliance v0.3
+// PROJECT DEADZONE US Unit alliance v0.4
 // Unrecruited US Units are friendly survivors.
 // RU Units remain hostile. Explicit story-faction units keep their own setup.
 
@@ -12,9 +12,6 @@ const DZ_US_ALLY_TYPES = {
 // Civil Defense and Remnant US units are allies too. Only explicitly hostile
 // authored units are excluded from the alliance repair.
 const DZ_USUNIT_HOSTILE_TAGS = ["dz_raider", "dz_hostile", "dz_enemy"]
-const DZ_USUNIT_NATURAL_KEEP_CHANCE = 0.16
-const DZ_USUNIT_LOADED_CAP = 6
-
 function dzUsunitHasOwner(entity) {
   try {
     let owner = entity.getOwnerUUID()
@@ -32,8 +29,8 @@ function dzUsunitIsVillageAlly(entity) {
   if (!entity) return false
   let id = String(entity.type)
   return id === "minecraft:villager" || id === "minecraft:wandering_trader" ||
-    id === "minecraft:iron_golem" || id.indexOf("mca:") === 0 ||
-    id.indexOf("recruits:") === 0 || id.indexOf("village_recruits:") === 0
+    id === "minecraft:iron_golem" || id === "mca:male_villager" ||
+    id === "mca:female_villager"
 }
 
 function dzIsUsAllianceUnit(entity) {
@@ -63,8 +60,9 @@ function dzUsunitMakeFriendly(entity) {
 EntityEvents.spawned(event => {
   let entity = event.entity
   if (!dzIsUsAllianceUnit(entity)) return
-  // Wait for scripted strongholds/buddies to attach their ownership tags. Only
-  // unmanaged natural spawns are thinned; authored faction units are untouched.
+  // Wait for scripted strongholds/buddies to attach their ownership tags, then
+  // establish relations only. Population control belongs to the source mod's
+  // spawn configuration; never let a unit appear and discard it afterward.
   entity.server.scheduleInTicks(20, callback => {
     if (!entity || !entity.alive || dzUsunitIsManagedFaction(entity) ||
         entity.tags.contains("dz_buddy") || entity.tags.contains("dz_story_npc") ||
@@ -76,10 +74,6 @@ EntityEvents.spawned(event => {
       return
     }
     entity.persistentData.putBoolean("dz_usunit_natural_roll_done", true)
-    if (String(entity.type) === DZ_USUNIT_TYPE && Math.random() > DZ_USUNIT_NATURAL_KEEP_CHANCE) {
-      entity.discard()
-      return
-    }
     dzUsunitMakeFriendly(entity)
   })
 })

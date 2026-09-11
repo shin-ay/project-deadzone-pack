@@ -80,6 +80,38 @@
       }
     ]
   },
+  "pdz_village_guard": {
+    "aligned": [
+      "players",
+      "villagers",
+      "deadzone_civildef"
+    ],
+    "opposed": [
+      "monster",
+      "illagers",
+      "deadzone_raiders",
+      "deadzone_remnant"
+    ],
+    "equipment": {
+      "table": "project_deadzone:npc/village_guard",
+      "dropChances": {
+        "mainhand": 0.0,
+        "head": 0.02,
+        "chest": 0.02,
+        "legs": 0.02,
+        "feet": 0.02
+      }
+    },
+    "skin": [
+      {"id": "tacznpcs:entity/villager1.png"},
+      {"id": "tacznpcs:entity/villager2.png"}
+    ],
+    "names": [
+      "村落警備隊員",
+      "居住区巡回員",
+      "民間防衛隊員"
+    ]
+  },
   "basecamp_staff": {
     "aligned": [
       "players",

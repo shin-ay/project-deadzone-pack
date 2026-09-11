@@ -742,8 +742,8 @@ function pdzActDirectorPulse(server,player,forced) {
   return created
 }
 
-// The virtual convoy/activity runtime is retired.  Village Expansion,
-// Recruits and the PDZ site/garrison ledger now own settlements and local
+// The virtual convoy/activity runtime is retired. MCA, MineColonies,
+// TacZ NPC guards and the PDZ site/garrison ledger own settlements and local
 // encounters.  Keeping both runtimes active duplicated NPCs, notifications
 // and pathfinding load.  The ledger itself is preserved for site ownership.
 function pdzActRetireRuntime(server){

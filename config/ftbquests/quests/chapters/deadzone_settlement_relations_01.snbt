@@ -3,7 +3,7 @@
 	default_quest_shape: "circle"
 	filename: "deadzone_settlement_relations_01"
 	group: "6A11000000000003"
-	icon: "recruits:villager_noble_spawn_egg"
+	icon: "mca:blueprint"
 	id: "6D54010000000001"
 	order_index: 2
 	quest_links: [ ]
@@ -11,10 +11,10 @@
 		{
 			dependencies: ["6D52010000000101"]
 			description: [
-				"Village RecruitsのNobleへ話しかけ、集落を実際の勢力Standingへ接続する。"
-				"友好はTrusted 20、中立はNeutral 0、敵対占領地はHated -50から開始する。以後の増減、永続化、敵対判定はVillage Recruitsが管理する。"
+				"集落へ入り、/deadzonecolony relation でその地域が友好・中立・敵対のどれかを確認する。"
+				"MCAの個人関係とPDZの地域関係は別物。住民との交流はMCA、地域サービスの利用可否はPDZが管理する。"
 			]
-			icon: "recruits:villager_noble_spawn_egg"
+			icon: "mca:blueprint"
 			id: "6D54010000000101"
 			rewards: [{
 				id: "6D54010000001101"
@@ -24,133 +24,119 @@
 			subtitle: "解放条件: 「村をもう一つのCampにするな」を完了"
 			tasks: [{
 				id: "6D54010000002101"
-				title: "集落のNobleへ話しかけた"
+				title: "集落の地域関係を確認した"
 				type: "custom"
 			}]
-			title: "第一印象をStandingへ"
+			title: "この集落は誰の側か"
 			x: 0.0d
 			y: 0.0d
 		}
 		{
 			dependencies: ["6D54010000000101"]
 			description: [
-				"集落代表へ話しかけると、現在のStandingと利用可能なサービス帯を確認できる。"
-				"村Merchantの買取価格は友好度ではなく実在庫の不足率で変わる。物資不足ほど良い価格になり、在庫目標へ達すると買取を停止する。"
+				"MCA住民へ話しかけ、会話や贈り物でハートを上げる。ハートはその住民個人との関係で、地域全体の友好状態ではない。"
+				"結婚、家族、職業、村の生活はMCAの画面と会話から扱う。"
 			]
-			icon: "village_recruits:merchant_post"
+			icon: "mca:civil_registry"
 			id: "6D54010000000102"
-			subtitle: "解放条件: 「第一印象をStandingへ」を完了"
+			subtitle: "解放条件: 「この集落は誰の側か」を完了"
 			tasks: [{
 				id: "6D54010000002201"
-				title: "需要価格とStandingの違いを確認した"
+				title: "MCA住民と会話した"
 				type: "custom"
 			}]
-			title: "安値ではなく、本当に不足しているか"
+			title: "地域ではなく、一人と知り合う"
 			x: 2.0d
 			y: -2.0d
 		}
 		{
 			dependencies: ["6D54010000000101"]
 			description: [
-				"勢力未所属の状態でNobleをスニーク右クリックし、その村が実際に必要としている契約を完了する。"
-				"納品、夜警、Monster Pressure、敵勢力討伐、包囲解除から状況に合う依頼だけが出る。完了とStanding獲得はVillage Recruitsの台帳から自動検知する。"
+				"村のBountiful Boardから、納品、夜警、敵勢力討伐などの地域依頼を受ける。"
+				"依頼内容はその土地の産業や不足物資に合わせて変わる。固定納品表を回すだけでは地域は育たない。"
 			]
-			icon: "minecraft:writable_book"
+			icon: "bountiful:bountyboard"
 			id: "6D54010000000103"
-			subtitle: "解放条件: 「第一印象をStandingへ」を完了"
+			subtitle: "解放条件: 「この集落は誰の側か」を完了"
 			tasks: [{
 				id: "6D54010000002301"
-				title: "Village Recruits契約を1件完了した"
+				title: "地域依頼を1件完了した"
 				type: "custom"
 			}]
-			title: "信頼は固定納品表では買えない"
+			title: "必要とされる仕事を選ぶ"
 			x: 2.0d
 			y: 0.0d
 		}
 		{
-			dependencies: ["6D54010000000101"]
+			dependencies: ["6D54010000000103"]
 			description: [
-				"Standing 20～49。通常依頼に加えてTrusted向け契約とReputation Shopの商品が開く。"
-				"友好集落はこの帯から開始し、中立集落は契約で到達する。Shop購入はStandingを消費する。"
+				"地域依頼と探索でCreditを得る。生活物資や装備はATMと自販機を使って売買する。"
+				"MCAのハートを通貨として消費することはない。個人関係と経済は別の進行として扱う。"
 			]
-			icon: {
-				Count: 1
-				id: "minecraft:shield"
-				tag: {
-					Damage: 0
-				}
-			}
+			icon: "lightmanscurrency:coin_copper"
 			id: "6D54010000000104"
-			subtitle: "解放条件: 「第一印象をStandingへ」を完了"
+			subtitle: "解放条件: 「必要とされる仕事を選ぶ」を完了"
 			tasks: [{
 				id: "6D54010000002401"
-				title: "いずれかの勢力でTrusted 20へ到達した"
+				title: "Credit市場を利用した"
 				type: "custom"
 			}]
-			title: "Trusted：仕事を任される"
+			title: "信頼と財布を混ぜない"
 			x: 4.0d
 			y: -1.0d
 		}
 		{
 			dependencies: ["6D54010000000104"]
 			description: [
-				"Standing 50～79。危険な契約と上位品質の装備が利用可能になる。"
-				"Standingは鍵ではなく通貨でもある。装備を買えば帯が下がり、再び地域へ貢献する必要がある。"
+				"産業令状をBountiful Boardへ入れると、その土地の輸入品・輸出品に沿った依頼へ切り替えられる。"
+				"集落の役割は住民数だけでなく、周辺資源とプレイヤーが整えた設備でも変わる。"
 			]
-			icon: {
-				Count: 1
-				id: "minecraft:diamond_sword"
-				tag: {
-					Damage: 0
-				}
-			}
+			icon: "minecraft:writable_book"
 			id: "6D54010000000105"
-			subtitle: "解放条件: 「Trusted：仕事を任される」を完了"
+			subtitle: "解放条件: 「信頼と財布を混ぜない」を完了"
 			tasks: [{
 				id: "6D54010000002501"
-				title: "いずれかの勢力でHonoured 50へ到達した"
+				title: "産業令状の用途を確認した"
 				type: "custom"
 			}]
-			title: "Honoured：上棚の商品"
+			title: "村ごとの仕事を作る"
 			x: 6.0d
 			y: -1.0d
 		}
 		{
 			dependencies: ["6D54010000000105"]
 			description: [
-				"Standing 80以上。Championは最高の関係帯だが、Reputation Shopで高級装備や対応銃器を買えばStandingを消費する。"
-				"FTBから同じ装備を重複配布しない。品質上昇と対価はVillage Recruits純正Shopが担当する。"
+				"MCA住民は生活と社会を担当し、銃を持つTacZ NPC護衛が外敵への防衛を担当する。"
+				"護衛は装備を落としにくく、プレイヤーへ銃を供給するための存在ではない。MineColoniesの衛兵とは別系統で動く。"
 			]
-			icon: "minecraft:nether_star"
+			icon: "tacz:modern_kinetic_gun"
 			id: "6D54010000000106"
-			subtitle: "解放条件: 「Honoured：上棚の商品」を完了"
+			subtitle: "解放条件: 「村ごとの仕事を作る」を完了"
 			tasks: [{
 				id: "6D54010000002601"
-				title: "いずれかの勢力でChampion 80へ到達した"
+				title: "武装護衛の役割を確認した"
 				type: "custom"
 			}]
-			title: "Champion：歓迎は消費できる"
+			title: "住民と護衛は別の仕事"
 			x: 8.0d
 			y: -1.0d
 		}
 		{
 			dependencies: ["6D54010000000101"]
 			description: [
-				"Standing -10以下では契約と入隊を拒否され、-50以下では攻撃対象・賞金首になる。住民、兵士、指揮官の殺害や契約放棄、コンボイ襲撃はVillage Recruitsの台帳へ残る。"
-				"このクエストは悪評を要求しない。Noble接触時に説明だけ完了し、犯罪報酬も配らない。"
+				"敵対集落ではCredit市場と地域依頼を利用できない。MCA住民への攻撃は個人関係を悪化させ、周辺の武装護衛も反撃する。"
+				"この項目は悪評を要求しない。仕組みを確認するだけで、犯罪行為に報酬はない。"
 			]
 			icon: {
 				Count: 1
 				id: "minecraft:crossbow"
-				tag: {
-					Damage: 0
-				}
+				tag: { Damage: 0 }
 			}
 			id: "6D54010000000107"
-			subtitle: "解放条件: 「第一印象をStandingへ」を完了"
+			subtitle: "解放条件: 「この集落は誰の側か」を完了"
 			tasks: [{
 				id: "6D54010000002701"
-				title: "Standing低下の結果を確認した"
+				title: "敵対時の制限を確認した"
 				type: "custom"
 			}]
 			title: "村は襲撃を忘れない"
@@ -158,5 +144,5 @@
 			y: 2.0d
 		}
 	]
-	title: "集落Standing・サービス品質"
+	title: "集落関係・MCA住民・地域サービス"
 }

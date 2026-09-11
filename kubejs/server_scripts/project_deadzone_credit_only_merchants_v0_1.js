@@ -5,14 +5,6 @@ const DZ_CREDIT_MERCHANT = Java.loadClass('net.minecraft.world.item.trading.Merc
 ItemEvents.entityInteracted(event=>{
   let target=event.target;if(!target)return
   let type=String(target.type),looksLikeMerchant=/(villager|trader|merchant|noble)/.test(type)
-  // Recruits uses a fixed ItemStack currency. Materialize one stack of the
-  // configured 10-Credit denomination from any mix of wallet coins, allowing
-  // its native hiring UI to charge normally and leave the remainder intact.
-  if(type.indexOf('recruits:')===0){
-    try { if(global.pdzCreditPrepareRecruitPayment) global.pdzCreditPrepareRecruitPayment(event.player) }
-    catch(error){console.error('[PROJECT DEADZONE][Credit] recruit auto-change failed: '+error)}
-    return
-  }
   if(!(target instanceof DZ_CREDIT_MERCHANT)&&!looksLikeMerchant)return
   if(type==='easy_npc:humanoid')return
   event.cancel()

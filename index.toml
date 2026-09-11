@@ -1550,19 +1550,15 @@ hash = "16de943de7633fb60b7e1bf8a43b1c9a2fb009ba4bf489a7f5e94eb30dba13ec"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/deadzone_regional_mentors_01.snbt"
-hash = "c52315bc5e82a05507e0d1357160caf4f5a8edd0954c633f1c963e9a21b069de"
+hash = "1863fa1ebe393fdfdf800997d5bf47fbe01170f16fbd64c2872fb760ce2c47eb"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/deadzone_settlement_industries_01.snbt"
-hash = "7329aec3fb50b36b695a61ca53b6b96866dfa0bc68539d3b2f4fca3038161e10"
-
-[[files]]
-file = "config/ftbquests/quests/chapters/deadzone_settlement_liberation_01.snbt"
-hash = "ecbd34b7f5d35fc445d5527d2f303bf9518fc0d0f378fc0a32ec259a77cb60eb"
+hash = "a3a2cd2e663e6060e750ad5044485549e070e41b7a17da76af33c2698716b683"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/deadzone_settlement_relations_01.snbt"
-hash = "96610f97a4acdf104fc142f143795fa8a702846c054c783466703ec34d8c1ff7"
+hash = "167388590d15fc8bf53f8e38fe458c167b8e2a73d0ffa3f1ba2c14fd1375fb95"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/deadzone_survivor_relationships_01.snbt"
@@ -1986,7 +1982,7 @@ hash = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
 
 [[files]]
 file = "config/jei/ingredient-list-mod-sort-order.ini"
-hash = "54d392478ecb6d0a6beca0effa123ea1f7ddfd2abc92bec095b4d39f395f9d69"
+hash = "ddf8b62c6b0fef017c9ddcf6300d92ebe41158d314a0313ad6dc0d510012f922"
 
 [[files]]
 file = "config/jei/ingredient-list-type-sort-order.ini"
@@ -2230,7 +2226,7 @@ hash = "4999c1eb012c6546cbffa8621b58dbab4ff577e9561ade7d1a2aa4ebf03b59c3"
 
 [[files]]
 file = "config/mca.json"
-hash = "5f67bac934db1fabefbceec805d874184e0456bdd4280e304157634457c61e10"
+hash = "ecdfcddc4615cdf7dcf055286880fa2722d6df4b8c8c9636149335dec152dd26"
 
 [[files]]
 file = "config/midnightlib.json"
@@ -3041,10 +3037,6 @@ file = "config/realmrpg/quests/monster_hunter.json"
 hash = "224d1eed93cfa1748c9d9e5f95ffadbd6eb2f2bbc8b71e05b7fe0e179d2e4250"
 
 [[files]]
-file = "config/recruits-client.toml"
-hash = "cb7b1456ba4f37331b0d91e203966235ce913ca8315e46627244582f2489ff3b"
-
-[[files]]
 file = "config/refurbished_furniture.client.toml"
 hash = "f151762bc99261b0244618cb3cc856e4d1fe089b6cf9eaf7b23c42a9fbc57970"
 
@@ -3190,7 +3182,7 @@ hash = "992ba9f3a4a7ce3de112eb95575328956fdc3ce6781c455ebce7b23db7e7da42"
 
 [[files]]
 file = "config/sporeconfig.toml"
-hash = "171380f91cde6a6e370a757fff714c2d548d13bd81661487278358faed3bc754"
+hash = "32cab623869065d6d0e2a23f1049c14957dbcf08f2bc2f0153c18227eedb8931"
 
 [[files]]
 file = "config/starcatcher-client.toml"
@@ -3250,15 +3242,15 @@ hash = "2328b88f89620191915d0fb53ea990ec09d4dd029fe1c985f4f29a5bc6ccf05b"
 
 [[files]]
 file = "config/tacznpc_factions.json"
-hash = "340432e11d5a39d8b2afdd38327bc5004b03a5b6b28916ae2fad48702513f628"
+hash = "3069a24cba31b5a351d8dd50a19a8039cd41c94724e6ac0dcbeecc95166f403c"
 
 [[files]]
 file = "config/tacznpc_loadouts.json"
-hash = "976183dad78991742936e1fd1dd793bb5f9b621ddde385af324f8768011d0204"
+hash = "babd90cac51b61530730409fa8c96b5247216aac564d6e70b5a9b05b4eea38ee"
 
 [[files]]
 file = "config/tacznpc_structures.json"
-hash = "5f0d578a3694d4f5793ad499d8db9d6c582751649315948a73f436d5a52a7387"
+hash = "e1e008d48d9688b586008781d13e8276802d5f651483ebe4f7c08e1ac749e17b"
 
 [[files]]
 file = "config/tacztweaks.json"
@@ -3331,38 +3323,6 @@ hash = "ff6300a636250b1c04d62a6711a72889420b247de20ad5f34c5343404a3441dc"
 [[files]]
 file = "config/vehicle-client.toml"
 hash = "2adf123f5eecc08556cd8001876414188e908ef2b54c2e3e8510bd4fade59b5e"
-
-[[files]]
-file = "config/village_recruits/README.txt"
-hash = "ebf692c917bae16435148c20a163a3989920437665f981033fec6fd6aec2ef17"
-
-[[files]]
-file = "config/village_recruits/building.toml"
-hash = "3418e02a866dc0028d828c81dcc4c0c32d1bf089c8aa9ac116fa395622943d8a"
-
-[[files]]
-file = "config/village_recruits/economy.toml"
-hash = "a307d0cd0cc3c59b569b042f601013d0d813ca639193f55705b625e92d6b312d"
-
-[[files]]
-file = "config/village_recruits/general.toml"
-hash = "60022268189e759ac9cab3e61d0ce8c527fbb88446271b3033aa177e3d637a71"
-
-[[files]]
-file = "config/village_recruits/military.toml"
-hash = "7e296a4829fe7d8c7f48d96fb9902933374df2acd1080aad12e5fdc3aab2d2d7"
-
-[[files]]
-file = "config/village_recruits/politics.toml"
-hash = "a33e383c6cb4876a39813a7e28118f5e4ae1b6bea240e858af9935b39dd3a77b"
-
-[[files]]
-file = "config/village_recruits/sky.toml"
-hash = "9bcd61fd0fa37666d5524b8cbe7c229e46fe38e8f67918485687494f82e64d3a"
-
-[[files]]
-file = "config/village_recruits/technology.toml"
-hash = "bc2277058eabc7a764476811b5f86f645aa0e15937d75a7ab096508dc6aad915"
 
 [[files]]
 file = "config/villagespawnpoint.json5"
@@ -3523,10 +3483,6 @@ hash = "915f998e192c57a17cf14ff9842346d88276b4260622995656883554694a5266"
 [[files]]
 file = "defaultconfigs/partyhealth-server.toml"
 hash = "3ed8257302950822cd63426d2932776525c8338f786cca759e16d2249175a13b"
-
-[[files]]
-file = "defaultconfigs/recruits-server.toml"
-hash = "bffb62a25eac841d8928551968043f4c2dd798c3084f26a29da6263fa45d4283"
 
 [[files]]
 file = "defaultconfigs/skilltree-server.toml"
@@ -3861,10 +3817,6 @@ file = "kubejs/assets/realmrpg_quests/lang/ja_jp.json"
 hash = "3ee60002cfc413017aba6d0a3cbb15bc0de8bbf4d12abfd0563bc194b778865c"
 
 [[files]]
-file = "kubejs/assets/recruits/lang/ja_jp.json"
-hash = "172d10eebf248fe4020aed85b69c33634d3a615b3b10520fa1774e269b283f2e"
-
-[[files]]
 file = "kubejs/assets/simpleenemymod/lang/ja_jp.json"
 hash = "8b355a06aff7b6c8afc88e9cd21af7394829f6c9ce0e333bcafd52dbef34d28d"
 
@@ -3889,20 +3841,12 @@ file = "kubejs/assets/taczweaponblueprints/lang/ja_jp.json"
 hash = "5bb230ef5945d6cb0390bc0dece3a3bb921f287c585826f593618a635d71918d"
 
 [[files]]
-file = "kubejs/assets/village_recruits/lang/ja_jp.json"
-hash = "93bde578bba9469779b41be68e9cb27e0b8d21648ea9d6340a50450792e09c13"
-
-[[files]]
 file = "kubejs/assets/waystones/lang/ja_jp.json"
 hash = "aa69b408d6e35eb13bdc5168baeeb8fafaa7699f1740c4b4050014fba8620af5"
 
 [[files]]
 file = "kubejs/assets/weaponmaster_ydm/lang/ja_jp.json"
 hash = "8ba9a6f3fc0a177c5ad1ecdd525e1b03bdba35ed0bdb340d1b4b47dc0bcef514"
-
-[[files]]
-file = "kubejs/assets/workers/lang/ja_jp.json"
-hash = "593c92c52917bb11e33fcf5cce6b30822c082e757735500695e9c16c0d13b9e3"
 
 [[files]]
 file = "kubejs/client_scripts/example.js"
@@ -4439,6 +4383,18 @@ hash = "4c689e88e926b4637fbac5f6e6a4928127d98c90cfda16961cf6d5cd91cdf692"
 [[files]]
 file = "kubejs/data/createtaczauto/recipes/large_gunpowder_recipe_2.json"
 hash = "ebdc7b29466fda896bc04ba8752724e6955c4e7c4bfa47bf22ad85809c8345a7"
+
+[[files]]
+file = "kubejs/data/ctov/worldgen/template_pool/village/bounty/swamp.json"
+hash = "558bb354b0ff027063587a70c3e6038323f70235d1a099a71ffca8b969372ae9"
+
+[[files]]
+file = "kubejs/data/ctov/worldgen/template_pool/village/vampirism/totem.json"
+hash = "0f04266e3fbea9d83b196e8065fbefa1446ee7ec941cb8dd539d70bf794b4c4e"
+
+[[files]]
+file = "kubejs/data/ctov/worldgen/template_pool/village/waystone/normal.json"
+hash = "2b22fecef57e75741f0ae9aae601bc8814ec11f5ad4de937b03002a34494b385"
 
 [[files]]
 file = "kubejs/data/curios/curios/slots/earwear.json"
@@ -6379,6 +6335,14 @@ hash = "54ea2b86f8584216616b90b240c599d74f91f3d5711aa72efb2ddaae23b65fb6"
 [[files]]
 file = "kubejs/data/lostcities/lostcities/parts/firestation12_2_1_4.json"
 hash = "54ea2b86f8584216616b90b240c599d74f91f3d5711aa72efb2ddaae23b65fb6"
+
+[[files]]
+file = "kubejs/data/lostcities/lostcities/parts/floodedmalll3ya_2_3_2.json"
+hash = "51dd7a403f125320f61011f2d4b5315271f23f2daa420df3ffbd7c65bc06b7a2"
+
+[[files]]
+file = "kubejs/data/lostcities/lostcities/parts/floodedmalll3ya_2_3_2_parts2.json"
+hash = "34222a9cf438f441ad9dcc2dfc75dc0cf2461f709730b0e6f3913c4c2f487283"
 
 [[files]]
 file = "kubejs/data/lostcities/lostcities/parts/gasstation1_0_0_0.json"
@@ -9978,7 +9942,7 @@ hash = "97812c5410580415ffc2db2af9df11534a9eb78b30814ce3e0621861efadc250"
 
 [[files]]
 file = "kubejs/data/project_deadzone/functions/settlement/locate_guide.mcfunction"
-hash = "bba19bb6049246ffae64850a23988b176a4083eeb1dfb46d3fb902f4c16145c2"
+hash = "127f976db47a505d52427baac508853ccd9e41a998fcec2a36a05ace7bec1202"
 
 [[files]]
 file = "kubejs/data/project_deadzone/functions/settlement_test/guide.mcfunction"
@@ -9986,15 +9950,15 @@ hash = "f779c2fa0527814c2a05b766469fba18f1be27e960cd4a55d4ed44e320b97fb2"
 
 [[files]]
 file = "kubejs/data/project_deadzone/functions/settlement_test/load_large.mcfunction"
-hash = "a00dcd3db5533a9cf474651cfca7156d7f3805b1ae8146275fb2ee90d3930d1f"
+hash = "b7500e8de5577c34ffc19add3869169cb049f62958b5a323ec4d02a17b68360c"
 
 [[files]]
 file = "kubejs/data/project_deadzone/functions/settlement_test/load_medium.mcfunction"
-hash = "c01c6b4944e5ad870b09ab987030cf46ca77e1cc7bdf06c08f2d975a0caeee56"
+hash = "de977f499eeab0f8a1240d4b3e0f805c7689a2031712dd496287d24a4ea0f7fa"
 
 [[files]]
 file = "kubejs/data/project_deadzone/functions/settlement_test/load_small.mcfunction"
-hash = "c04ea8344ad8ae7c2a4ffc6b529be7e13b7d1fd8826f56e3e7149003e305104b"
+hash = "33594b5bb7f76e50333dbd84420a4cc8899fc41a24e1bfd747c0709f1080dc02"
 
 [[files]]
 file = "kubejs/data/project_deadzone/functions/story/spawn_argus_fragment.mcfunction"
@@ -10239,6 +10203,10 @@ hash = "6addf6b79b3835a237e1a23b251f556a596893be544be30d6ae2733e522d1ce5"
 [[files]]
 file = "kubejs/data/project_deadzone/loot_tables/npc/modern_illager_rocket.json"
 hash = "44a5462635678c7a98dfb7b652b040f89c334decb0541b308ac13e8d579c723f"
+
+[[files]]
+file = "kubejs/data/project_deadzone/loot_tables/npc/village_guard.json"
+hash = "ffb2d5daadd1f2c0f7bb0e4286ff0e406f004bc50de7d4942be456d873139d74"
 
 [[files]]
 file = "kubejs/data/project_deadzone/lostcities/conditions/firestation.json"
@@ -11282,7 +11250,7 @@ hash = "844276a6d09b4247dc1f87810964ea06b439683e992f6257490653de8d7cb17c"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_basecamp_guard_safety_v0_1.js"
-hash = "d5a98ec7a6ed4a6f89bb11a314397cef9be91534c2faf085c11eb48aeba3022e"
+hash = "2b2b529dcd8e824f8967c4be7cd4f5ffdcb6fedddc370d6637f78705c21a0b0f"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_basecamp_raid_v0_1.js"
@@ -11294,7 +11262,7 @@ hash = "9e039a8cd19c1dee41abbf754e534a59778c739954259f8896ed826599069055"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_boss_mechanics_v0_1.js"
-hash = "59cd08838e509c2e15f9fcb3431acfa76bb371c9236aaa44dbe7275b9f97b4e2"
+hash = "d47397d665f9abeea24865fbb0a692a078d9a9a618f32c0dacd9a1f924c27e16"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_buddy_control_v0_1.js"
@@ -11346,7 +11314,7 @@ hash = "0a054505752ac0d5a1bf182b03842c200205de54c74a774014fd76fabc44af2f"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_credit_only_merchants_v0_1.js"
-hash = "c3bf35134ca8a9d894511d9b621e742f69a7d4858c3889c425836fb455228486"
+hash = "77d8b2fbda53981a61639edc71e94553e81e3f1ae8eee494693d869a59f07013"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_cte2_combat_scaling_v0_1.js"
@@ -11354,7 +11322,7 @@ hash = "ab304788495837f97f4952a60ad821aa6d2cdc1f9bed22ccb7541a281136eca5"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_currency_v0_1.js"
-hash = "f06b35e7e1b9dfef9ac6a32b99602150eada7a863c684de4f15b21284a9af6eb"
+hash = "f3c64b56dca3b56631bc5481ffae41098d5b7273cb5f08ae5e38ff21f3fc02b1"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_decontamination_unit_v0_1.js"
@@ -11369,16 +11337,12 @@ file = "kubejs/server_scripts/project_deadzone_effect_visibility_policy_v0_1.js"
 hash = "6078388cbdc41241fbfea85d170300cade16f091e00900063ef145beb9a915b9"
 
 [[files]]
-file = "kubejs/server_scripts/project_deadzone_entity_load_audit_v0_1.js"
-hash = "e0f730ca4c5ef9977ac062d388c66918f91559cb5ead73ae6c036deb5363fe99"
-
-[[files]]
 file = "kubejs/server_scripts/project_deadzone_epicfight_mobility_v0_1.js"
 hash = "36325b5aae6b535c2cb85d573402efba30447d5ffc7b3e8fc6ad35f8dbf61b4c"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_faction_activity_v0_1.js"
-hash = "af086cd0b180cec3d79958e8e6a77bc4e59307852b5fc6d91280fcb67e2ae158"
+hash = "4bcfa6eed3ff4b21edcd60634771dbdfb9d0a1666a242ceab215974ce58267ac"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_faction_cdu_defense_v0_1.js"
@@ -11394,7 +11358,7 @@ hash = "21b7ddc4c574dc4a4b01c2ad1636142977e6cb73747979f88e4685b52beba0a4"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_faction_relations_v0_1.js"
-hash = "27f830e829c5ca36c0eeee3f7083488f6ea7400535f9dbf1f9cb390b861f52b3"
+hash = "d70dd851c3f00663bc6a4291be8e66df7a234fe00b136d26d385bd5ddab2cc57"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_faction_strongholds_v0_1.js"
@@ -11566,7 +11530,7 @@ hash = "80c863dcb2cbdd2d767718196120addc7d908213d80a28e815263cc7f068f897"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_outpost_garrisons_v0_1.js"
-hash = "5f0d6b2e2827501c0beb40b427cb55b8ae38fe448b24e6f54f11410a036b98ac"
+hash = "5c3db2a93d5f41a95ca31f338f8dc9b561ef49af77752a4c13964fd64a526c95"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_player_damage_guard_v0_1.js"
@@ -11579,6 +11543,10 @@ hash = "952e18c37cc997075fdf461c59c6672e3cb3274d74c655db5570044ea845de62"
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_playerrevive_skill_bridge_v0_1.js"
 hash = "619a5ba40d1a2eea57f3b094782aa52ef22bff5326c7654430a9c1415ce70163"
+
+[[files]]
+file = "kubejs/server_scripts/project_deadzone_pomkots_trial_v0_1.js"
+hash = "757cd47d0c6e6e6a33bca94a484ddcca5ed1cc6cc8f6c1d6b11da6b0518a90b9"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_professions_v0_1.js"
@@ -11626,13 +11594,11 @@ hash = "f58a381fec7cecc4866647ece5da9c5fd7625ebd014582ff82ceff7cf8bf4575"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_settlement_faction_bridge_v0_1.js"
-hash = "566c6e05f2fa62c326447a2895a9a98bf4440cc129197b2e6c3fcab4b23e7e78"
-
+hash = "cc9a03f47e8387b35e15ca09d0bf7d1345fd5fdcbae791fffe937ec1d6b2bc2b"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_settlement_npc_compat_v0_1.js"
-hash = "a58e2f65ec1dcd1d388e5062170e59c21b77248b939532ecfef94198355e0ae0"
-
+hash = "e9c47acea2d79e0d6e11c0e5402b364d2c35e4c202fd976414ed7900f206344c"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_side_bosses_v0_1.js"
@@ -11676,7 +11642,7 @@ hash = "5b59cdd08b1b3bd375e180c38b4c0addb7f0fcb3e88f8b7c90ae0fb877b0fd2e"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_starter_colony_population_v0_1.js"
-hash = "8c213646354457f487bee1746dde8e9b2b3363b7c302d06d18526c7fe3f45c2d"
+hash = "dd4d67403f6aedf6044ade271754c8dcb808f2b8a3b454bfc127c206af23290e"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_starter_village_staff_v0_1.js"
@@ -11780,7 +11746,7 @@ hash = "7d2d2e20f03f822eeb00e36fc5d08807a402baa4bb7ed89a4ed05328c9d3c44f"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_usunit_alliance_v0_1.js"
-hash = "9cb84558f3cd8587f2a60b711188473080c21580394da672bb0a03a0a7a7d28f"
+hash = "d86ed84f7d56bf06a1364e35e92d4cfbfd5f3c274a63399962fb19b33239744d"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_vehicle_authorization_v0_1.js"
@@ -11790,11 +11756,9 @@ hash = "6ebd16965e9b440b0ba02e5daf3dea08132ba152d20e1502d953d5fbb225527d"
 file = "kubejs/server_scripts/project_deadzone_village_prologue_v0_1.js"
 hash = "5a4b5738dedc40f0ebc99b47fa2cacdfbd4c1be42104095d20bcece7c0c9a8ac"
 
-
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_village_services_v0_1.js"
 hash = "2149ca2f2d94420179374e709bea4ea51aa2cea214492cc1d7f488ed7fb64ae1"
-
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_waystones_public_transit_v0_1.js"
@@ -12280,6 +12244,10 @@ hash = "9f4870e0073f46f83effd31ace8410dac5c52448aab67dba08380c04f5d8af12"
 [[files]]
 file = "mods/PROJECT_DEADZONE_JOB_UI-0.7.1.jar"
 hash = "1a77ff910d96b90e07d53e379dc90ce308af0f63a4933285a830a80a17e04cd6"
+
+[[files]]
+file = "mods/PROJECT_DEADZONE_TaCZ_NPC_AI_Compat-0.1.0.jar"
+hash = "ac1e1c21c329a990fa8001bcab95716ccd840dbe6117f4779365a343f65ebb4a"
 
 [[files]]
 file = "mods/PROJECT_DEADZONE_Vehicle_Compatibility-1.4.1.jar"
@@ -13350,7 +13318,6 @@ hash = "49880134693ec4a35858831bb207284456c2ae081932c82009586942cfe87e07"
 file = "mods/pdz-loot-compat-1.0.0.jar"
 hash = "c8b97292101e1d425300c7a034129f40a2e02ad0e2ea165b3ebbfd16f2621274"
 
-
 [[files]]
 file = "mods/ping.pw.toml"
 hash = "95f37f25194402246b7ed309e2b8549e3d2b9f1f0baa19fd04cbe6862437326b"
@@ -13453,10 +13420,6 @@ hash = "15cd8dc07d6519ba1d355c58bf0ff833b3add8f05454441c7cd61ecb082b480a"
 file = "mods/recipe-stages.pw.toml"
 hash = "5163f0269a2aec05fe845f4d97f084ddb47fd45a941cad6116e2dc9a46eb136b"
 metafile = true
-
-[[files]]
-file = "mods/recruits-1.20.1-1.15.2.jar"
-hash = "4b53c1b752e886ba10985aad2df30d668971810230eb77867e07428a21d1af7f"
 
 [[files]]
 file = "mods/refurbished-furniture.pw.toml"
@@ -13903,7 +13866,6 @@ file = "mods/village-spawn-point.pw.toml"
 hash = "d370bd37f30ffff728dcc1e4ace6e38dc63d7e20e3a3baad764269491627fee2"
 metafile = true
 
-
 [[files]]
 file = "mods/visual-workbench.pw.toml"
 hash = "c1bf8d194ef2c39c6046fa53861571b7c569277923b35e6d95a58ee4644eedb6"
@@ -13918,10 +13880,6 @@ metafile = true
 file = "mods/waystones.pw.toml"
 hash = "5ab6f2a4a50bd53506496d3da0c2c09d5a3ca363c3ebc7ca8641ecd3f7104365"
 metafile = true
-
-[[files]]
-file = "mods/workers-1.20.1-2.0.3.jar"
-hash = "c7c59a7a87bf51ec5ffbadfe5340f854f92397591a52ab5af1df8bffd71d941e"
 
 [[files]]
 file = "mods/yacl.pw.toml"
@@ -22613,10 +22571,6 @@ file = "projectfiles/PROJECT_DEADZONE_Urban_Settlement_Trade_Job_Framework_v0.1.
 hash = "8c77c701a71f35351d06bcc35e11747d47cb58eca3c7978767a496bc812c3a13"
 
 [[files]]
-file = "projectfiles/PROJECT_DEADZONE_Village_Recruits_Profile_v0.1_JP.md"
-hash = "3209f0f6724d9128b2b65f305b04f295342c028b2fa906babd5be06ef3fb89c4"
-
-[[files]]
 file = "projectfiles/design/DEADZONE_DESIGN_HANDOFF_2026-07-30.md"
 hash = "8f3f7de5ece5ce79d6a358c926a9ada7c03f5c2a0c20e897d0daa1d7df9d3bae"
 
@@ -22748,23 +22702,3 @@ metafile = true
 file = "tacz/tacz-emx-arms-gunpack.pw.toml"
 hash = "abc1c796bac6b8d0b7ad54a072f1c4808728c5cd9c9da2a7400ca58bf8972269"
 metafile = true
-
-[[files]]
-file = "kubejs/data/ctov/worldgen/template_pool/village/bounty/swamp.json"
-hash = "558bb354b0ff027063587a70c3e6038323f70235d1a099a71ffca8b969372ae9"
-
-[[files]]
-file = "kubejs/data/ctov/worldgen/template_pool/village/vampirism/totem.json"
-hash = "0f04266e3fbea9d83b196e8065fbefa1446ee7ec941cb8dd539d70bf794b4c4e"
-
-[[files]]
-file = "kubejs/data/ctov/worldgen/template_pool/village/waystone/normal.json"
-hash = "2b22fecef57e75741f0ae9aae601bc8814ec11f5ad4de937b03002a34494b385"
-
-[[files]]
-file = "kubejs/data/lostcities/lostcities/parts/floodedmalll3ya_2_3_2_parts2.json"
-hash = "34222a9cf438f441ad9dcc2dfc75dc0cf2461f709730b0e6f3913c4c2f487283"
-
-[[files]]
-file = "kubejs/data/lostcities/lostcities/parts/floodedmalll3ya_2_3_2.json"
-hash = "51dd7a403f125320f61011f2d4b5315271f23f2daa420df3ffbd7c65bc06b7a2"

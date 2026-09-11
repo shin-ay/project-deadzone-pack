@@ -102,7 +102,9 @@ function pdzFactionOfEntity(entity) {
   // Explicit force tags may intentionally reuse a hostile model. Generic
   // survivor/civil-defense tags may be stale after villager conversion, so an
   // intrinsic zombie type must win before those generic tags are considered.
-  if (pdzRelHasTag(entity, 'dz_force_civil_defense') || pdzRelHasTag(entity, 'dz_force_civildef')) return 'cdf'
+  if (pdzRelHasTag(entity, 'dz_force_civil_defense') || pdzRelHasTag(entity, 'dz_force_civildef') ||
+      pdzRelHasTag(entity, 'dz_guard_bridge_pending') || pdzRelHasTag(entity, 'dz_settlement_guard') ||
+      pdzRelHasTag(entity, 'dz_starter_colony_guard') || pdzRelHasTag(entity, 'dz_colony_guard')) return 'cdf'
   if (pdzRelHasTag(entity, 'dz_force_survivor')) return 'survivor'
   if (pdzRelIntrinsicInfectedId(id)) return 'infected'
   if (pdzRelHasTag(entity, 'dz_civildef') || pdzRelHasTag(entity, 'dz_faction_civil_defense')) return 'cdf'
@@ -134,8 +136,7 @@ function pdzFactionOfEntity(entity) {
 
   else if (id === 'minecraft:villager' || id === 'minecraft:wandering_trader' || id === 'minecraft:iron_golem' ||
       id.indexOf('mca:') === 0 || id.indexOf('minecolonies:citizen') === 0 ||
-      id.indexOf('recruits:') === 0 || id.indexOf('village_recruits:') === 0 ||
-      id.indexOf('workers:') === 0 || id.indexOf('easy_npc:') === 0) resolved = 'independent'
+      id.indexOf('easy_npc:') === 0) resolved = 'independent'
   PDZ_REL_TYPE_CACHE[id] = resolved
   if (resolved !== 'unknown') return resolved
   if (pdzRelHasTag(entity, 'dz_hostile') || pdzRelHasTag(entity, 'dz_enemy')) return 'hostile'
