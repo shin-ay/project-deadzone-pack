@@ -1,0 +1,5 @@
+{
+  "name": "ctov:village/vampirism/totem",
+  "fallback": "minecraft:empty",
+  "elements": []
+}

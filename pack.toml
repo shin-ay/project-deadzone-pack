@@ -1,12 +1,12 @@
 name = "PROJECT DEADZONE"
 author = "PROJECT DEADZONE Team"
-version = "BETA-20260911-LAG-SCAN-FIX-RC2"
+version = "BETA-20260911-CHUNK-FIRST-VISIT-STABILITY-RC1"
 pack-format = "packwiz:1.1.0"
 
 [index]
 file = "index.toml"
 hash-format = "sha256"
-hash = "93953189c305169542ff8dafb91a07e29e819b41459e3bfca38a1353097f42f4"
+hash = "75ebefadf33e35c6af7487001df509546afbae8ae5d6e0e17fc753ec2a4945a6"
 
 [versions]
 forge = "47.4.10"

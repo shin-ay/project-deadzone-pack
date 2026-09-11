@@ -1,4 +1,4 @@
-debugLogging = true
+debugLogging = false
 
 [riderProtection]
 	#Cancel ordinary hostile-mob melee attacks against IV riders.
@@ -43,20 +43,20 @@ debugLogging = true
 	enabled = true
 	#How often each player triggers a nearby IV vehicle scan.
 	#Range: 20 ~ 1200
-	scanIntervalTicks = 100
+	scanIntervalTicks = 300
 	#Radius around players used for automatic vehicle discovery.
 	#Range: 16.0 ~ 256.0
-	scanRadius = 64.0
+	scanRadius = 32.0
 	#Maximum unprocessed vehicles wrecked per player scan pass.
 	#Range: 1 ~ 32
-	maxVehiclesPerPass = 4
+	maxVehiclesPerPass = 1
 
 [vehicleSpawnMarkers]
 	#Convert PROJECT DEADZONE vehicle spawn markers into IV vehicles.
 	enabled = true
 	#Marker scan interval per player.
 	#Range: 20 ~ 1200
-	scanIntervalTicks = 100
+	scanIntervalTicks = 200
 	#Horizontal block radius searched around each player.
 	#Range: 4 ~ 64
 	horizontalRadius = 24
@@ -65,7 +65,7 @@ debugLogging = true
 	verticalRadius = 8
 	#Maximum markers converted per player per scan.
 	#Range: 1 ~ 16
-	maxMarkersPerPass = 2
+	maxMarkersPerPass = 1
 	#Radius used to count existing Immersive Vehicles before converting markers.
 	#Range: 16.0 ~ 512.0
 	vehicleLimitRadius = 128.0

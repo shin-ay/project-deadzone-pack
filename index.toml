@@ -994,7 +994,7 @@ hash = "cfbc5f8d88c42afbdf7c3b633a349286f17ef144a84ba49d72c9ac2c47029531"
 
 [[files]]
 file = "config/deadzonevehiclecompat-common.toml"
-hash = "cbc53ea59caa57444eb1c203cedf5e072bb18edc9e39f380e514ca7500be87f0"
+hash = "16cee97603293706eb8e8c90d93ae2881e44199039b732f803c71de26689d626"
 
 [[files]]
 file = "config/diet-client.toml"
@@ -22748,3 +22748,23 @@ metafile = true
 file = "tacz/tacz-emx-arms-gunpack.pw.toml"
 hash = "abc1c796bac6b8d0b7ad54a072f1c4808728c5cd9c9da2a7400ca58bf8972269"
 metafile = true
+
+[[files]]
+file = "kubejs/data/ctov/worldgen/template_pool/village/bounty/swamp.json"
+hash = "558bb354b0ff027063587a70c3e6038323f70235d1a099a71ffca8b969372ae9"
+
+[[files]]
+file = "kubejs/data/ctov/worldgen/template_pool/village/vampirism/totem.json"
+hash = "0f04266e3fbea9d83b196e8065fbefa1446ee7ec941cb8dd539d70bf794b4c4e"
+
+[[files]]
+file = "kubejs/data/ctov/worldgen/template_pool/village/waystone/normal.json"
+hash = "2b22fecef57e75741f0ae9aae601bc8814ec11f5ad4de937b03002a34494b385"
+
+[[files]]
+file = "kubejs/data/lostcities/lostcities/parts/floodedmalll3ya_2_3_2_parts2.json"
+hash = "34222a9cf438f441ad9dcc2dfc75dc0cf2461f709730b0e6f3913c4c2f487283"
+
+[[files]]
+file = "kubejs/data/lostcities/lostcities/parts/floodedmalll3ya_2_3_2.json"
+hash = "51dd7a403f125320f61011f2d4b5315271f23f2daa420df3ffbd7c65bc06b7a2"
