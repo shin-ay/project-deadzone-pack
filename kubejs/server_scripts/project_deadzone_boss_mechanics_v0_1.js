@@ -11,6 +11,11 @@ const PDZ_MECH_HOME_RADIUS = 64
 const PDZ_MECH_HOME_VERTICAL = 24
 const PDZ_MECH_TARGET_RADIUS = 48
 const PDZ_MECH_MNS_ENTITY_DATA = Java.loadClass('com.robertx22.mine_and_slash.capability.entity.EntityData')
+const PDZ_MECH_MNS_HEALTH = Java.loadClass('com.robertx22.mine_and_slash.uncommon.utilityclasses.HealthUtils')
+const PDZ_MECH_PARTY_HEALTH_MODIFIER = '655854f1-df25-43ff-81c6-7cf547fca6b4'
+const PDZ_MECH_PHASE_THRESHOLDS = [0.66, 0.33]
+const PDZ_MECH_PHASE_LOCK_MS = 6000
+const PDZ_MECH_PARTY_HEALTH = [1.0, 1.5, 1.9, 2.2, 2.5]
 
 const PDZ_MECH_DEFS = [
   {id:'02',tag:'dz_story_boss_argus_fragment',name:'適応障壁'},
@@ -81,19 +86,110 @@ function pdzMechIsBoss(entity){
   return entity.tags.contains('dz_boss_axel')||entity.tags.contains(PDZ_MECH_ACTIVE)||pdzMechId(entity)!==null
 }
 
-function pdzMechApplyMnsBossProfile(boss){
-  if(!boss||!boss.tags||boss.tags.contains('dz_mns_boss_profile'))return
-  try{
-    let data=PDZ_MECH_MNS_ENTITY_DATA.get(boss)
-    data.setRarity('boss')
-    data.recalcStats_DONT_CALL()
-    boss.addTag('dz_mns_boss_profile')
-    // Imaginary M&S health follows the vanilla health ratio. New encounters
-    // should begin at 100%, while the displayed number comes from M&S.
-    boss.health=boss.maxHealth
-  }catch(err){
-    console.warn('[PROJECT DEADZONE][Boss] M&S profile failed: '+err)
+function pdzMechEncounterId(entity){
+  if(!entity||!entity.tags)return null
+  if(entity.tags.contains('dz_boss_axel'))return '01'
+  return pdzMechId(entity)
+}
+
+function pdzMechPartyProfile(boss){
+  let party=0,highest=1
+  boss.server.players.forEach(player=>{
+    if(player.spectator||String(player.level.dimension)!==String(boss.level.dimension))return
+    let dx=player.x-boss.x,dy=player.y-boss.y,dz=player.z-boss.z
+    if(dx*dx+dy*dy+dz*dz>96*96)return
+    party++
+    try{highest=Math.max(highest,Number(PDZ_MECH_MNS_ENTITY_DATA.get(player).getLevel())||1)}catch(ignored){}
+  })
+  return {party:Math.max(1,party),highest:highest}
+}
+
+function pdzMechApplyMnsBossProfile(boss,id){
+  if(!boss||!boss.tags)return
+  let profile=pdzMechPartyProfile(boss)
+  if(!boss.tags.contains('dz_mns_boss_profile')){
+    try{
+      let data=PDZ_MECH_MNS_ENTITY_DATA.get(boss)
+      // FIRST VOICE owns a fixed level-55 profile. Every other named boss is
+      // placed just above the strongest nearby player so the authored encounter
+      // does not spawn as a low-level ordinary mob.
+      if(id!=='14')data.setLevel(Math.max(1,Math.round(profile.highest)+5))
+      data.setRarity('boss')
+      data.recalcStats_DONT_CALL()
+      boss.addTag('dz_mns_boss_profile')
+    }catch(err){
+      console.warn('[PROJECT DEADZONE][Boss] M&S profile failed: '+err)
+    }
   }
+  if(boss.tags.contains('dz_boss_durability_v1'))return
+  let multiplier=PDZ_MECH_PARTY_HEALTH[Math.min(PDZ_MECH_PARTY_HEALTH.length,profile.party)-1]
+  try{
+    boss.removeAttribute('minecraft:generic.max_health',PDZ_MECH_PARTY_HEALTH_MODIFIER)
+    if(multiplier>1)boss.modifyAttribute('minecraft:generic.max_health',PDZ_MECH_PARTY_HEALTH_MODIFIER,multiplier-1,'multiply_total')
+  }catch(err){console.warn('[PROJECT DEADZONE][Boss] Party health modifier failed: '+err)}
+  boss.health=boss.maxHealth
+  boss.addTag('dz_boss_durability_v1')
+  boss.persistentData.putBoolean('dz_party_scaled',true)
+  boss.persistentData.putInt('dz_party_size',profile.party)
+  boss.persistentData.putDouble('dz_boss_party_health_multiplier',multiplier)
+  let mnsHealth=Number(boss.maxHealth)
+  try{mnsHealth=Math.round(Number(PDZ_MECH_MNS_HEALTH.getMaxHealth(boss)))}catch(ignored){}
+  console.info('[PROJECT DEADZONE][Boss Durability] id='+id+' entity='+String(boss.type)+
+    ' party='+profile.party+' playerLv='+profile.highest+' vanillaMax='+Number(boss.maxHealth)+
+    ' mnsMax='+mnsHealth+' multiplier='+multiplier)
+}
+
+function pdzMechDamageSourceId(source){
+  try{return String(source.type())}catch(ignored){}
+  try{return String(source.getType())}catch(ignored){}
+  try{return String(source)}catch(ignored){}
+  return 'unknown'
+}
+
+function pdzMechForcePhaseMechanic(boss,id){
+  if(!id||id==='01')return
+  try{pdzMechPulse(boss,id,true)}catch(err){
+    console.warn('[PROJECT DEADZONE][Boss] Forced phase mechanic failed id='+id+': '+err)
+  }
+}
+
+// A high-calibre hit may finish the current phase, but its overflow never skips
+// the next authored phase. The short reconfiguration lock gives the warning and
+// signature mechanic time to become readable without inventing a second HP pool.
+function pdzMechGateDamage(boss,id,incoming,source){
+  if(!boss||!boss.alive||incoming<=0)return false
+  let sourceId=pdzMechDamageSourceId(source).toLowerCase()
+  if(sourceId.indexOf('generic_kill')>=0||sourceId.indexOf('out_of_world')>=0||sourceId.indexOf('outofworld')>=0)return false
+  pdzMechApplyMnsBossProfile(boss,id)
+  boss.persistentData.putDouble('dz_boss_last_incoming_damage',incoming)
+  boss.persistentData.putDouble('dz_boss_max_incoming_damage',Math.max(
+    Number(boss.persistentData.getDouble('dz_boss_max_incoming_damage')),incoming))
+  boss.persistentData.putInt('dz_boss_damage_samples',boss.persistentData.getInt('dz_boss_damage_samples')+1)
+  let now=Date.now()
+  if(Number(boss.persistentData.getLong('dz_boss_phase_lock_until'))>now)return true
+  let hp=Math.max(0,Number(boss.health)),max=Math.max(1,Number(boss.maxHealth))
+  let projected=Math.max(0,hp-incoming)/max
+  let stage=boss.persistentData.getInt('dz_boss_phase_gate_stage')
+  let next=stage<1?0:(stage<2?1:-1)
+  if(next<0||projected>PDZ_MECH_PHASE_THRESHOLDS[next])return false
+  let threshold=PDZ_MECH_PHASE_THRESHOLDS[next]
+  // Stay fractionally below the authored threshold so float rounding cannot
+  // postpone the matching <= 66% / <= 33% phase callback by another second.
+  boss.health=Math.max(1,max*Math.max(0,threshold-0.001))
+  stage=next+1
+  boss.persistentData.putInt('dz_boss_phase_gate_stage',stage)
+  boss.persistentData.putLong('dz_boss_phase_lock_until',now+PDZ_MECH_PHASE_LOCK_MS)
+  boss.runCommandSilent('particle minecraft:electric_spark ~ ~1.5 ~ 1.4 1.2 1.4 0.08 36 force @a[distance=..64]')
+  boss.runCommandSilent('playsound minecraft:block.respawn_anchor.charge hostile @a[distance=..64] ~ ~ ~ 1 0.7')
+  pdzMechTell(boss,'防護層を再構成中。第'+(stage+1)+'戦闘段階へ移行！','gold')
+  pdzMechForcePhaseMechanic(boss,id)
+  return true
+}
+
+global.pdzBossEnsureDurability=function(boss){
+  let id=pdzMechEncounterId(boss)
+  if(id)pdzMechApplyMnsBossProfile(boss,id)
+  return id
 }
 
 function pdzMechGunTag(id){
@@ -210,7 +306,7 @@ function pdzMechSpawnChoirHitboxes(boss){
 function pdzMechInit(boss,id){
   pdzMechEnsureHome(boss)
   pdzMechEquipBossGun(boss,id)
-  pdzMechApplyMnsBossProfile(boss)
+  pdzMechApplyMnsBossProfile(boss,id)
   if(boss.tags.contains(PDZ_MECH_ACTIVE))return
   boss.addTag(PDZ_MECH_ACTIVE)
   boss.addTag('dz_boss_mech_'+id)
@@ -239,19 +335,19 @@ function pdzMechPhaseMutation(boss){
   }
 }
 
-function pdzMechPulse(boss,id){
+function pdzMechPulse(boss,id,forced){
   let time=boss.persistentData.getInt('dz_boss_mech_time')+1
   boss.persistentData.putInt('dz_boss_mech_time',time)
-  if(id==='02'&&time%14===1){
+  if(id==='02'&&(forced||time%14===1)){
     boss.runCommandSilent('effect give @s minecraft:resistance 5 2 true')
     boss.runCommandSilent('particle minecraft:electric_spark ~ ~2 ~ 1.2 1.8 1.2 0.08 28 force @a[distance=..64]')
     pdzMechTell(boss,'適応障壁を5秒展開。発光が消えるまで防御上昇。','gold');pdzMechPulseCount++
-  }else if(id==='03'&&time%11===0){
+  }else if(id==='03'&&(forced||time%11===0)){
     boss.runCommandSilent('particle minecraft:sonic_boom ~ ~4 ~ 0 0 0 0 1 force @a[distance=..64]')
     boss.runCommandSilent('damage @a[distance=..10,gamemode=!creative,gamemode=!spectator] 3 minecraft:magic')
     boss.runCommandSilent('effect give @a[distance=..10,gamemode=!creative,gamemode=!spectator] minecraft:darkness 3 0 true')
     pdzMechTell(boss,'共鳴衝撃波。距離を取れ！','dark_purple');pdzMechPulseCount++
-  }else if(id==='04'&&time%9===0){
+  }else if(id==='04'&&(forced||time%9===0)){
     boss.runCommandSilent('particle minecraft:flame ~ ~1 ~ 2 0.5 2 0.06 45 force @a[distance=..64]')
     boss.runCommandSilent('damage @a[distance=..7,gamemode=!creative,gamemode=!spectator] 4 minecraft:on_fire')
     boss.runCommandSilent('effect give @a[distance=..7,gamemode=!creative,gamemode=!spectator] minecraft:weakness 4 0 true')
@@ -273,7 +369,7 @@ function pdzMechPulse(boss,id){
       boss.runCommandSilent('effect give @s minecraft:resistance 9999 0 true')
       pdzMechTell(boss,'最終退避機動。回復を止めて追い詰めろ！','dark_red');pdzMechPulseCount++
     }
-    if(time%8===0){
+    if(forced||time%8===0){
       boss.runCommandSilent('effect give @s minecraft:speed 4 2 true')
       boss.runCommandSilent('effect give @s minecraft:invisibility 2 0 true')
       boss.runCommandSilent('effect give @p[distance=..24,gamemode=!spectator] minecraft:glowing 5 0 true')
@@ -281,34 +377,34 @@ function pdzMechPulse(boss,id){
       boss.runCommandSilent('effect give @a[distance=..8,gamemode=!creative,gamemode=!spectator] minecraft:blindness 2 0 true')
       pdzMechTell(boss,'煙幕標定。発光した対象へ高速接近。','yellow');pdzMechPulseCount++
     }
-  }else if(id==='06'&&time%10===0){
+  }else if(id==='06'&&(forced||time%10===0)){
     boss.runCommandSilent('effect give @a[distance=..18,gamemode=!creative,gamemode=!spectator] minecraft:slowness 4 1 true')
     boss.runCommandSilent('effect give @a[distance=..18,gamemode=!creative,gamemode=!spectator] minecraft:weakness 4 0 true')
     boss.runCommandSilent('playsound minecraft:block.dispenser.launch hostile @a[distance=..64] ~ ~ ~ 1 0.65')
     pdzMechTell(boss,'制圧射撃。移動・近接火力低下。','dark_red');pdzMechPulseCount++
-  }else if(id==='07'&&time%12===0){
+  }else if(id==='07'&&(forced||time%12===0)){
     boss.health=Math.min(Number(boss.maxHealth),Number(boss.health)+10)
     boss.runCommandSilent('effect give @e[distance=..12,tag=dz_raider] minecraft:regeneration 5 1 true')
     boss.runCommandSilent('particle minecraft:happy_villager ~ ~1.4 ~ 1 1 1 0.1 30 force @a[distance=..64]')
     pdzMechTell(boss,'戦場治療。自身と周辺部隊を回復。','green');pdzMechPulseCount++
-  }else if(id==='08'&&time%11===0){
+  }else if(id==='08'&&(forced||time%11===0)){
     boss.runCommandSilent('effect give @p[distance=..16,gamemode=!creative,gamemode=!spectator] minecraft:slowness 4 3 true')
     boss.runCommandSilent('effect give @p[distance=..16,gamemode=!creative,gamemode=!spectator] minecraft:weakness 4 1 true')
     boss.runCommandSilent('effect give @p[distance=..16,gamemode=!creative,gamemode=!spectator] minecraft:glowing 5 0 true')
     pdzMechTell(boss,'拘束命令。最寄りの生存者を制圧。','blue');pdzMechPulseCount++
   }else if(id==='09'){
     pdzMechPhaseMutation(boss)
-  }else if(id==='10'&&time%12===0){
+  }else if(id==='10'&&(forced||time%12===0)){
     boss.runCommandSilent('effect give @a[distance=..18,gamemode=!creative,gamemode=!spectator] minecraft:darkness 3 0 true')
     boss.runCommandSilent('effect give @a[distance=..18,gamemode=!creative,gamemode=!spectator] minecraft:glowing 6 0 true')
     boss.runCommandSilent('playsound minecraft:block.respawn_anchor.deplete hostile @a[distance=..64] ~ ~ ~ 0.8 0.55')
     pdzMechTell(boss,'通信妨害。視界喪失・位置暴露。','dark_purple');pdzMechPulseCount++
-  }else if(id==='11'&&time%8===0){
+  }else if(id==='11'&&(forced||time%8===0)){
     boss.runCommandSilent('particle minecraft:dust 0.2 1 0.1 1.5 ~ ~1 ~ 3 1 3 0 60 force @a[distance=..64]')
     boss.runCommandSilent('damage @a[distance=5..16,gamemode=!creative,gamemode=!spectator] 4 minecraft:magic')
     boss.runCommandSilent('effect give @a[distance=5..16,gamemode=!creative,gamemode=!spectator] minecraft:hunger 5 1 true')
     pdzMechTell(boss,'臨界放射環。懐へ入るか16m外へ退避！','green');pdzMechPulseCount++
-  }else if(id==='12'&&time%10===0){
+  }else if(id==='12'&&(forced||time%10===0)){
     boss.runCommandSilent('particle minecraft:dust 1 0.15 0.05 1.5 ~ ~0.2 ~ 4 0.1 4 0 70 force @a[distance=..64]')
     boss.runCommandSilent('playsound minecraft:block.note_block.basedrum hostile @a[distance=..64] ~ ~ ~ 1.2 0.5')
     pdzMechTell(boss,'地面叩きつけ予告。1.5秒後に衝撃！','red')
@@ -320,7 +416,7 @@ function pdzMechPulse(boss,id){
       ref.runCommandSilent('effect give @a[distance=..6,gamemode=!creative,gamemode=!spectator] minecraft:levitation 1 1 true')
     })
     pdzMechPulseCount++
-  }else if(id==='13'&&time%9===0){
+  }else if(id==='13'&&(forced||time%9===0)){
     boss.health=Math.min(Number(boss.maxHealth),Number(boss.health)+4)
     let testTag=boss.tags.contains(PDZ_MECH_LOADTEST)?',"dz_boss_loadtest_runtime"':''
     boss.runCommandSilent('summon minecraft:area_effect_cloud ~ ~ ~ {Duration:120,Radius:3.5f,RadiusPerTick:-0.02f,Particle:"spore_blossom_air",Effects:[{Id:19,Amplifier:0b,Duration:60}],Tags:["'+PDZ_MECH_RUNTIME+'","dz_boss_runtime_13"'+testTag+']}')
@@ -353,6 +449,11 @@ EntityEvents.hurt(event=>{
       return
     }
   }
+  let encounterId=pdzMechEncounterId(hitbox)
+  if(encounterId&&pdzMechGateDamage(hitbox,encounterId,Math.max(0,Number(event.damage||0)),event.source)){
+    event.cancel()
+    return
+  }
   if(pdzMechIsBoss(attacker)&&!pdzMechAllowedTarget(hitbox)){
     event.cancel()
     try{attacker.setTarget(null)}catch(ignored){}
@@ -371,11 +472,12 @@ EntityEvents.hurt(event=>{
   let amount=Math.max(0,Number(event.damage||0))*pdzMechChoirMultiplier(hitbox)
   if(amount<=0)return
   if(attacker&&attacker.isPlayer&&attacker.isPlayer())boss.persistentData.putString('dz_choir_last_attacker',String(attacker.uuid))
+  hitbox.health=2048
+  if(pdzMechGateDamage(boss,'03',amount,event.source))return
   if(amount>=Number(boss.health)){
     // Preserve the real attacker for kill credit on the lethal transferred hit.
     try{boss.hurt(event.source,100000)}catch(ignored){try{boss.attack(100000)}catch(ignored2){boss.health=0}}
   }else boss.health=Math.max(0,Number(boss.health)-amount)
-  hitbox.health=2048
 })
 
 EntityEvents.death(event=>{
@@ -420,7 +522,7 @@ ServerEvents.tick(event=>{
     if(entity.tags&&entity.tags.contains('dz_boss_axel')&&!entity.tags.contains('dz_boss_showroom')){
       pdzMechEnsureHome(entity)
       pdzMechEquipBossGun(entity,'01')
-      pdzMechApplyMnsBossProfile(entity)
+      pdzMechApplyMnsBossProfile(entity,'01')
       tracked.push(entity)
     }
     if(!id||!entity.alive)return
@@ -496,6 +598,29 @@ ServerEvents.commandRegistry(event=>{
     })
     p.tell(Text.of('Boss mechanics: active='+pdzMechActiveCount+' / test bosses='+tests+' / runtime='+runtime+' / CHOIR parts='+choirParts).aqua())
     p.tell(Text.of('1秒走査: last='+pdzMechLastMs+'ms / avg='+pdzMechAverageMs.toFixed(2)+'ms / max='+pdzMechMaxMs+'ms / gimmick pulses='+pdzMechPulseCount+' / arena returns='+pdzMechHomeReturnCount).gray())
+    return 1
+  }))
+  root.then(Commands.literal('probe').executes(ctx=>{
+    let p=ctx.source.player,nearest=null,best=128*128
+    p.level.entities.forEach(entity=>{
+      let id=pdzMechEncounterId(entity)
+      if(!id||!entity.alive)return
+      let dx=entity.x-p.x,dy=entity.y-p.y,dz=entity.z-p.z,d=dx*dx+dy*dy+dz*dz
+      if(d<best){best=d;nearest=entity}
+    })
+    if(!nearest){p.tell(Text.of('128m以内に稼働中のPDZ Bossはいません。').yellow());return 0}
+    let id=pdzMechEncounterId(nearest),max=Math.max(1,Number(nearest.maxHealth))
+    let mnsMax=max
+    try{mnsMax=Math.max(1,Number(PDZ_MECH_MNS_HEALTH.getMaxHealth(nearest)))}catch(ignored){}
+    let lock=Math.max(0,(Number(nearest.persistentData.getLong('dz_boss_phase_lock_until'))-Date.now())/1000)
+    p.tell(Text.of('Boss ['+id+'] '+String(nearest.name.string)+' / HP '+Number(nearest.health).toFixed(1)+' / '+max.toFixed(1)+
+      ' ('+(Number(nearest.health)/max*100).toFixed(1)+'%) / M&S Max '+Math.round(mnsMax)).aqua())
+    p.tell(Text.of('Party '+nearest.persistentData.getInt('dz_party_size')+' / HP倍率 '+
+      Number(nearest.persistentData.getDouble('dz_boss_party_health_multiplier')).toFixed(2)+' / Phase '+
+      nearest.persistentData.getInt('dz_boss_phase_gate_stage')+' / Lock '+lock.toFixed(1)+'秒').gray())
+    p.tell(Text.of('被ダメージ: last='+Number(nearest.persistentData.getDouble('dz_boss_last_incoming_damage')).toFixed(1)+
+      ' / max='+Number(nearest.persistentData.getDouble('dz_boss_max_incoming_damage')).toFixed(1)+
+      ' / samples='+nearest.persistentData.getInt('dz_boss_damage_samples')).gold())
     return 1
   }))
   root.then(Commands.literal('cleanup').executes(ctx=>{

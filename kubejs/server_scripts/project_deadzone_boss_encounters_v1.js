@@ -188,6 +188,8 @@ EntityEvents.hurt(event => {
   if (!boss || boss.level.clientSide || !boss.tags.contains(PDZ_BOSS_AXEL_TAG)) return
   if (boss.tags.contains(PDZ_BOSS_AXEL_RESET_TAG)) return
 
+  try { if (global.pdzBossEnsureDurability) global.pdzBossEnsureDurability(boss) } catch (ignored) {}
+
   let hp = Number(boss.health)
   let max = Math.max(1, Number(boss.maxHealth))
   let incoming = Math.max(0, Number(event.damage || 0))
@@ -203,7 +205,7 @@ EntityEvents.hurt(event => {
     pdzAxelBroadcast(boss, "弾薬手ラチェットが防護支援を開始。支援役か燃料ボンベを崩せ！", "gold")
   }
 
-  if (ratio <= 0.3 && !boss.tags.contains("dz_axel_phase3")) {
+  else if (ratio <= 0.3 && !boss.tags.contains("dz_axel_phase3")) {
     boss.addTag("dz_axel_phase3")
     boss.runCommandSilent("effect give @s minecraft:strength 9999 0 true")
     boss.runCommandSilent("effect give @s minecraft:glowing 9999 0 true")

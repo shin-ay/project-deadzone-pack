@@ -2866,7 +2866,7 @@ hash = "8ab8e89d9b9e7dd3af4a77fc4c59d66dfe2d7a2075eebd711cf46a65571fe705"
 
 [[files]]
 file = "config/puffish_skills/categories/fitness/definitions.json"
-hash = "d7a09ae059a348b0115ea6d485bc7dc3707e3fa9684483ac5843a85087cb87d2"
+hash = "33b55f1380131fb54181a3b74241961f6e9bc7da63c82dde5466f712c85d8ebb"
 
 [[files]]
 file = "config/puffish_skills/categories/fitness/experience.json"
@@ -7458,7 +7458,7 @@ hash = "66397bffdc9c05663818457f266730bf191a71fc6adea2364b335124019a77b8"
 
 [[files]]
 file = "kubejs/data/mmorpg/mmorpg_perk/p_dodge.json"
-hash = "0c9aeffd6a43a69bff6bdde96ad43b99c4b9564059ba7761bc086d8a46f9bf9c"
+hash = "9478dd8ace6004edbe9a59c78e8dad3fc70624029c360479f53de8f226883663"
 
 [[files]]
 file = "kubejs/data/mmorpg/mmorpg_perk/p_dot_dmg.json"
@@ -7826,11 +7826,11 @@ hash = "2c861658f8565b3da738f6b05a3b6cb425a0bb07a57f84234cc4d267eab7e507"
 
 [[files]]
 file = "kubejs/data/mmorpg/mmorpg_perk/pdz_survival_mobility.json"
-hash = "b2c563acf93df24181f4bb9cd27ce8a3f3a729eb71705f655b223c0adf0b1884"
+hash = "ca008a54b73205946364f95b3e0a9fc16a9b1bd034ed45b61f7922aafac7a271"
 
 [[files]]
 file = "kubejs/data/mmorpg/mmorpg_perk/pdz_survival_mobility_notable.json"
-hash = "e4addfa596e59c2376aac1e3acf2d9c103ba552f3afa43e8fd0da8111d4ec9ac"
+hash = "7b1fafed0853e5467221ad2303f28014fc4f87c34645834a66591a418e223190"
 
 [[files]]
 file = "kubejs/data/mmorpg/mmorpg_perk/pdz_survival_recovery.json"
@@ -11270,11 +11270,11 @@ hash = "27cf154fef2255fddc790c1cc5ec59e3cdbeb8fcedd191670af9de39064acebc"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_boss_encounters_v1.js"
-hash = "9e039a8cd19c1dee41abbf754e534a59778c739954259f8896ed826599069055"
+hash = "b1f4e3a04fd16ea13d835dc31fc9fecc5d713f31f981d60df765a74d5ec50f2b"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_boss_mechanics_v0_1.js"
-hash = "d47397d665f9abeea24865fbb0a692a078d9a9a618f32c0dacd9a1f924c27e16"
+hash = "30da72d9a8c03f5696b207cc279d225c17104baafae5448f92f496246e83945f"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_buddy_control_v0_1.js"
@@ -12254,8 +12254,8 @@ file = "mods/PROJECT_DEADZONE_EpicTaCZ_Compat-0.1.0.jar"
 hash = "9f4870e0073f46f83effd31ace8410dac5c52448aab67dba08380c04f5d8af12"
 
 [[files]]
-file = "mods/PROJECT_DEADZONE_JOB_UI-0.7.2.jar"
-hash = "df3feaf5b09d67d1fe94734c63fba97d29f0232e3b232bdba3ca151a4db99860"
+file = "mods/PROJECT_DEADZONE_JOB_UI-0.7.3.jar"
+hash = "851827f9d6c445e33436f8e5f84b2e6bfb1fb9f46a9afa1f08e71dc151a9c4e8"
 
 [[files]]
 file = "mods/PROJECT_DEADZONE_TaCZ_NPC_AI_Compat-0.1.0.jar"
@@ -14497,7 +14497,7 @@ hash = "66397bffdc9c05663818457f266730bf191a71fc6adea2364b335124019a77b8"
 
 [[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/mmorpg/mmorpg_perk/p_dodge.json"
-hash = "0c9aeffd6a43a69bff6bdde96ad43b99c4b9564059ba7761bc086d8a46f9bf9c"
+hash = "9478dd8ace6004edbe9a59c78e8dad3fc70624029c360479f53de8f226883663"
 
 [[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/mmorpg/mmorpg_perk/p_dot_dmg.json"
@@ -14865,11 +14865,11 @@ hash = "2c861658f8565b3da738f6b05a3b6cb425a0bb07a57f84234cc4d267eab7e507"
 
 [[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/mmorpg/mmorpg_perk/pdz_survival_mobility.json"
-hash = "b2c563acf93df24181f4bb9cd27ce8a3f3a729eb71705f655b223c0adf0b1884"
+hash = "ca008a54b73205946364f95b3e0a9fc16a9b1bd034ed45b61f7922aafac7a271"
 
 [[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/mmorpg/mmorpg_perk/pdz_survival_mobility_notable.json"
-hash = "e4addfa596e59c2376aac1e3acf2d9c103ba552f3afa43e8fd0da8111d4ec9ac"
+hash = "7b1fafed0853e5467221ad2303f28014fc4f87c34645834a66591a418e223190"
 
 [[files]]
 file = "moonlight-global-datapacks/pdz_growth_v1/data/mmorpg/mmorpg_perk/pdz_survival_recovery.json"

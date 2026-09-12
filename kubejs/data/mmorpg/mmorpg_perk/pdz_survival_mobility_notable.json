@@ -7,9 +7,9 @@
     "stats":  [
                   {
                       "type":  "FLAT",
-                      "scale_to_lvl":  false,
+                      "scale_to_lvl":  true,
                       "stat":  "dodge",
-                      "v1":  4.5
+                      "v1":  8.0
                   }
               ]
 }

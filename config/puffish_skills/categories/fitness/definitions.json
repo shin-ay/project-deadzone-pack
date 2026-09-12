@@ -333,8 +333,8 @@
     ]
   },
   "evasive_movement": {
-    "title": "回避機動",
-    "description": "移動速度+4%。落下ダメージを30%軽減する。",
+    "title": "機動訓練",
+    "description": "移動速度+4%。落下ダメージを30%軽減する。M&S回避率とは別効果。",
     "icon": {
       "type": "item",
       "data": {

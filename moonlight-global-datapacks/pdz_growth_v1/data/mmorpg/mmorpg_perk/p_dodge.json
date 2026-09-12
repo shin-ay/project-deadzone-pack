@@ -6,10 +6,16 @@
     "max_lvls":  5,
     "stats":  [
                   {
+                      "type":  "FLAT",
+                      "scale_to_lvl":  true,
+                      "stat":  "dodge",
+                      "v1":  3.0
+                  },
+                  {
                       "type":  "PERCENT",
                       "scale_to_lvl":  false,
                       "stat":  "dodge",
-                      "v1":  4.0
+                      "v1":  5.0
                   }
               ]
 }
