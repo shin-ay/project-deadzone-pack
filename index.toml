@@ -11570,7 +11570,7 @@ hash = "8c99acce49d019ff8ff7c7cd14ecbe15feb11d5bc64dca3edb4b870fa08ce751"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_recipe_stage_sync_v0_1.js"
-hash = "1cde0200d5895d230e50a53425794c9462f869dc3001b11e32180cac336c9d65"
+hash = "87840a803ee7ff92dfec1cb74232fde0ca08fabdd936255b9a00296808d93fe1"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_region_tiers_v0_1.js"
@@ -11670,7 +11670,7 @@ hash = "16050067548ab2cd84f8cfab0dc235a21b83c806fdde92d1cfa2518607196a19"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_story_progression_v0_1.js"
-hash = "51094c007fe576a1decdf8b9497baf92e6a7c71cae9ca36eb79d1bf3d6feb7aa"
+hash = "157fcc7ad0326a47107714c4a024d53f8e1596ff31aa5cb4f59adeed478d3fa5"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_stronghold_defense_v0_2.js"

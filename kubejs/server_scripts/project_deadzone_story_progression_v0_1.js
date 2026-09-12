@@ -1,4 +1,4 @@
-// PROJECT DEADZONE Story Progression v0.3
+// PROJECT DEADZONE Story Progression v0.4
 // Story Unlock is narrative progress only. Geographic World Tier belongs to
 // project_deadzone_region_tiers_v0_1.js and enemy pressure belongs to Threat.
 
@@ -13,6 +13,15 @@ const DZ_STORY_MAX_TIER = 5
 // Tower each open the next broad character band. S3 restores M&S's authored
 // level 100 endgame. The cap is server-wide because Story Unlock is shared.
 const DZ_STORY_MNS_LEVEL_CAPS = [20, 40, 60, 100, 100, 100]
+const DZ_STORY_RECIPE_RECOVERY_SCHEMA = 'dz_story_recipe_recovery_v1'
+const DZ_STORY_BOSS_TIER_RECORDS = [
+  {flag:'dz_story_boss_complete_gasstation', tier:1},
+  {flag:'dz_story_boss_complete_policestation', tier:2},
+  {flag:'dz_story_boss_complete_radio_tower', tier:3},
+  // Primordial is reached after the T2 route convergence and is also a safe
+  // S3 recovery anchor for worlds created before the recipe-stage bridge.
+  {flag:'dz_story_boss_complete_primordial', tier:3}
+]
 
 function dzStoryMnsLevelCap(tier) {
   let index = Math.max(0, Math.min(DZ_STORY_MAX_TIER, Number(tier) || 0))
@@ -73,6 +82,28 @@ function dzStoryApplyPlayer(player, tier) {
   player.persistentData.putInt('dz_story_mns_level_cap', levelCap)
 }
 
+function dzStorySyncDependentProgression(player, notify) {
+  try {
+    if (global.pdzSyncRecipeStages) global.pdzSyncRecipeStages(player, notify === true)
+  } catch (error) {
+    console.error('[DEADZONE STORY] Failed to sync recipe stages for ' + player.username + ': ' + error)
+  }
+  try {
+    if (global.pdzSyncSkillTierGates) global.pdzSyncSkillTierGates(player, false)
+  } catch (ignored) {}
+  try {
+    if (global.pdzSyncStoryResearchGateways) global.pdzSyncStoryResearchGateways(player, notify === true)
+  } catch (ignored) {}
+}
+
+function dzStoryTierFromBossRecords(server) {
+  let recovered = 0
+  DZ_STORY_BOSS_TIER_RECORDS.forEach(record => {
+    if (server.persistentData.getBoolean(record.flag)) recovered = Math.max(recovered, record.tier)
+  })
+  return recovered
+}
+
 function dzStorySetTier(server, tier, announce) {
   let next = Math.max(0, Math.min(DZ_STORY_MAX_TIER, tier))
   let previous = dzStoryTier(server)
@@ -81,7 +112,10 @@ function dzStorySetTier(server, tier, announce) {
   server.persistentData.putBoolean("dz_story_unlock_schema_v1", true)
   dzStoryApplyMnsLevelCap(server, next)
 
-  server.players.forEach(player => dzStoryApplyPlayer(player, next))
+  server.players.forEach(player => {
+    dzStoryApplyPlayer(player, next)
+    dzStorySyncDependentProgression(player, announce === true)
+  })
 
   if (announce && previous !== next) {
     server.tell(Text.of(
@@ -98,17 +132,34 @@ global.pdzStoryUnlockTier = dzStoryTier
 global.pdzStoryMnsLevelCap = dzStoryMnsLevelCap
 
 ServerEvents.loaded(event => {
-  dzStoryApplyMnsLevelCap(event.server, dzStoryTier(event.server))
+  let server = event.server
+  let current = dzStoryTier(server)
+  // One-time repair for worlds where the story boss quest completed before
+  // the shared recipe-stage system was installed. Boss records are server
+  // authoritative and never infer progress from geographic/world difficulty.
+  if (!server.persistentData.getBoolean(DZ_STORY_RECIPE_RECOVERY_SCHEMA)) {
+    let recovered = dzStoryTierFromBossRecords(server)
+    server.persistentData.putBoolean(DZ_STORY_RECIPE_RECOVERY_SCHEMA, true)
+    if (recovered > current) {
+      console.warn('[DEADZONE STORY] Recovered Story S' + recovered +
+        ' from completed story boss records (stored S' + current + ').')
+      dzStorySetTier(server, recovered, true)
+      return
+    }
+  }
+  dzStoryApplyMnsLevelCap(server, current)
 })
 
 PlayerEvents.loggedIn(event => {
   let tier = dzStoryTier(event.player.server)
   dzStoryApplyMnsLevelCap(event.player.server, tier)
   dzStoryApplyPlayer(event.player, tier)
+  dzStorySyncDependentProgression(event.player, false)
 })
 
 PlayerEvents.respawned(event => {
   dzStoryApplyPlayer(event.player, dzStoryTier(event.player.server))
+  dzStorySyncDependentProgression(event.player, false)
 })
 
 // Repairs stages if another mod or a command removed one during play.

@@ -1,4 +1,4 @@
-// PROJECT DEADZONE Recipe Stage Sync v0.6
+// PROJECT DEADZONE Recipe Stage Sync v0.7
 // Story milestones are the only source of non-TaCZ technology authorization.
 // JOB and Talent choices improve a play style; they no longer decide whether
 // a player is allowed to build a whole technology family. TaCZ weapon crafting
@@ -33,30 +33,48 @@ function dzRecipeStoryUnlock(player) {
 
 function dzRecipeSetStage(player, id, unlocked, notify, label) {
   let active = player.stages.has(id)
+  let changed = false
   if (unlocked) {
     if (!player.tags.contains(id)) player.addTag(id)
     if (!active) {
       player.stages.add(id)
+      changed = true
       if (notify) player.tell(Text.of('技術解禁: ' + label).gold())
     }
   } else {
     if (player.tags.contains(id)) player.removeTag(id)
-    if (active) player.stages.remove(id)
+    if (active) {
+      player.stages.remove(id)
+      changed = true
+    }
   }
+  return changed
 }
 
 function dzSyncRecipeStages(player, notify) {
   let storyUnlock = dzRecipeStoryUnlock(player)
-  DZ_RECIPE_LEGACY_STAGES.forEach(id => dzRecipeSetStage(player, id, false, false, id))
-  DZ_RECIPE_MILESTONES.forEach(entry =>
-    dzRecipeSetStage(player, entry.id, storyUnlock >= entry.tier, notify !== false, entry.label))
+  let changed = 0
+  DZ_RECIPE_LEGACY_STAGES.forEach(id => {
+    if (dzRecipeSetStage(player, id, false, false, id)) changed++
+  })
+  DZ_RECIPE_MILESTONES.forEach(entry => {
+    if (dzRecipeSetStage(player, entry.id, storyUnlock >= entry.tier, notify !== false, entry.label)) changed++
+  })
+  return changed
 }
 
 PlayerEvents.loggedIn(event => dzSyncRecipeStages(event.player, true))
 PlayerEvents.respawned(event => dzSyncRecipeStages(event.player, false))
 PlayerEvents.tick(event => {
-  if (!event.player.level.clientSide && event.player.age % 1200 === 0)
+  // Self-heal within ten seconds if another mod, a stale player capability or
+  // an older server update removed a shared technology stage.
+  if (!event.player.level.clientSide && event.player.age % 200 === 0)
     dzSyncRecipeStages(event.player, false)
+})
+
+ServerEvents.loaded(event => {
+  event.server.scheduleInTicks(40, () =>
+    event.server.players.forEach(player => dzSyncRecipeStages(player, false)))
 })
 
 global.pdzSyncRecipeStages = dzSyncRecipeStages
@@ -75,8 +93,10 @@ ServerEvents.commandRegistry(event => {
 
   root.then(Commands.literal('status').executes(ctx => {
     let player = ctx.source.player
+    let repaired = dzSyncRecipeStages(player, false)
     let story = dzRecipeStoryUnlock(player)
     player.tell(Text.of('=== 技術解禁 / Story S' + story + ' ===').gold())
+    if (repaired > 0) player.tell(Text.of('技術フラグを ' + repaired + ' 件修復しました。').aqua())
     player.tell(Text.of('✓ S0  基礎工業・拳銃/SMG・Small Ships').green())
     DZ_RECIPE_MILESTONES.forEach(entry => {
       let active = player.stages.has(entry.id)
