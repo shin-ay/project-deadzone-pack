@@ -12246,6 +12246,10 @@ file = "mods/NoChatReports-FORGE-1.20.1-v2.2.2.jar"
 hash = "ef7fa5096dfd492c3d3ae7228888ca4b92ce07d9b8e302297ceb2ceb1f8d238c"
 
 [[files]]
+file = "mods/PROJECT_DEADZONE_Compost_Concurrency_Compat-0.1.0.jar"
+hash = "e226c34fa043220e74ff1c91a261d46435e37d210579d1a1a04c2927cedc8434"
+
+[[files]]
 file = "mods/PROJECT_DEADZONE_EpicFight_BlockEntityGuard-0.3.0.jar"
 hash = "9912f1844dae6a1a24250ea46d5bb8e7f2ca82976b0d8dd76a62ca28082fdcb4"
 
