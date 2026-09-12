@@ -1,12 +1,12 @@
 name = "PROJECT DEADZONE"
 author = "PROJECT DEADZONE Team"
-version = "BETA-20260911-JOB-UI-RECRUITS-REMOVAL-HOTFIX"
+version = "BETA-20260912-CLIENT-STABILITY-PREGEN-FIX"
 pack-format = "packwiz:1.1.0"
 
 [index]
 file = "index.toml"
 hash-format = "sha256"
-hash = "8c7e13b205ebc8e51c0c1dc83e911ff8e78cb04f2432e8084672b969d71331be"
+hash = "fe6fce7aec1581ad361c39b4d181122f9300efa163dfe9c1d0e8b64df9a58882"
 
 [versions]
 forge = "47.4.10"
