@@ -2082,7 +2082,7 @@ hash = "a327f8a61c069fd3832b45813a5277e9e2a61f3228760720d78768d004d9895b"
 
 [[files]]
 file = "config/lost_cities_autoloader/deadzone_chaosz_v1_2_wilderness_mediumcity_FLAT_autoloader.json"
-hash = "32c5a9968e89a88a4e082dac14258d0eac89c7b076590b6432eaf0c2f624f40c"
+hash = "d658dd10d154377aa19a94fc2b17bc309f48cb587698671754d50f3f22b2c6f5"
 
 [[files]]
 file = "config/lost_cities_autoloader/deadzone_chaosz_v1_autoloader.json"
@@ -3461,8 +3461,8 @@ file = "defaultconfigs/lightmanscurrency-server.toml"
 hash = "192c1c8386fdad5f652446f878c16b1fc189d82e96be11132d78cbe6c8642334"
 
 [[files]]
-file = "defaultconfigs/lostcities-server_deadzone-chaosz-v1.toml"
-hash = "87eb4dd97a976bc1390397e64c1b4cac1d8ae56e1f203e7f5403e272e0444fd8"
+file = "defaultconfigs/lostcities-server.toml"
+hash = "a26f4e3aa8d25a7899ed3a14db4fb03c8b417e152e7e872606b7c8829059d633"
 
 [[files]]
 file = "defaultconfigs/lostsouls-server.toml"

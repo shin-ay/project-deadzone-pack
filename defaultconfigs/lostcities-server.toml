@@ -1,10 +1,14 @@
-# PROJECT DEADZONE ChaosZ v1
+# PROJECT DEADZONE Lost Cities defaults
+# The autoloader replaces selectedProfile with the customized ChaosZ profile
+# before world generation. Keep the remaining server settings here so Forge
+# copies them to every newly-created world's serverconfig directory.
 [profiles]
 specialBedBlock = "minecraft:diamond_block"
 selectedProfile = "deadzone_chaosz_v1"
 selectedCustomJson = ""
 todoQueueSize = 20
 forceSaplingGrowth = false
+cacheCleanupSeconds = 300
 avoidStructures = ["minecraft:mansion", "minecraft:jungle_pyramid", "minecraft:desert_pyramid", "minecraft:igloo", "minecraft:swamp_huts", "minecraft:pillager_outpost"]
 avoidStructuresAdjacent = false
 avoidVillagesAdjacent = false
