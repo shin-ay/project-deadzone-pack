@@ -1902,7 +1902,7 @@ hash = "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
 
 [[files]]
 file = "config/incontrol/spawner.json"
-hash = "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+hash = "8bf09e888bed90e831030d9ba5599d1d34021707d4b7fd1d6c9a6f6cc81308d2"
 
 [[files]]
 file = "config/incontrol/summonaid.json"
@@ -12404,6 +12404,14 @@ hash = "ddff810b39bb8873325aa34230c2a174073ad9bbf002e04a66835735550a1b7b"
 metafile = true
 
 [[files]]
+file = "mods/bamboomod-1.20.1-0.4.jar"
+hash = "aa6fb8100dee7c601723d8ebaedbd3851387f153a60924b32370380b99d43f36"
+
+[[files]]
+file = "mods/bamboomod-1.20.1-0.4.jar.source.txt"
+hash = "b781c0f4f0dfef34dc178ba9855b43628b6318a91eb1d345f5f85842ca0c0653"
+
+[[files]]
 file = "mods/basic-night-vision-goggles.pw.toml"
 hash = "c174a9f7124ffb1f420ec9c745c41d1f865aad5eec3f83013101afafc9b09438"
 metafile = true
@@ -22386,6 +22394,46 @@ hash = "8b947dcbea2aa31042a65a666c7a59ca7ddf21b67e343444addaa7591fd96bb1"
 [[files]]
 file = "moonlight-global-datapacks/pdz_story_arsenal_research/pdz_arsenal_catalog_manifest.json"
 hash = "c6b9f1d74c7fd9815ee1d0355365f5ca760e7bc474dfb99ff478566729b20ea9"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_volcanic_nether_geology/data/project_deadzone/forge/biome_modifier/add_volcanic_nether_geology.json"
+hash = "e850c87a15fbfc3d5f3e6c2b029a32701eead053d7061d755beb6aa5216d9906"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_volcanic_nether_geology/data/project_deadzone/worldgen/configured_feature/volcanic_basalt.json"
+hash = "ac7c3ad5d1c270cca4dde3547b0d85b0cbd418b4de40bf6a992d28fccddf9be7"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_volcanic_nether_geology/data/project_deadzone/worldgen/configured_feature/volcanic_blackstone.json"
+hash = "bcec58f72e4705e2c2631184e93d4c9be8d2a3f7bcb5b479bf763c3a21591b8a"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_volcanic_nether_geology/data/project_deadzone/worldgen/configured_feature/volcanic_magma.json"
+hash = "90113003d9d6b1ab102fc81610d7ba1a98c09ae151bb83a49448cf7eb6a821c8"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_volcanic_nether_geology/data/project_deadzone/worldgen/configured_feature/volcanic_netherrack.json"
+hash = "66d4fc12f7a48b1118e2d2bf3dd78be9a81ba98425faf3ea4ba8ce0e213f0cb9"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_volcanic_nether_geology/data/project_deadzone/worldgen/placed_feature/volcanic_basalt.json"
+hash = "90f12ea2f9f931b9219f0229a9459a3a8508d172327eb129c6129fc7f424c2a5"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_volcanic_nether_geology/data/project_deadzone/worldgen/placed_feature/volcanic_blackstone.json"
+hash = "1660702da142ac91d6150ba4fd49f98ea48595ee4a610497f6263f45bfca96e4"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_volcanic_nether_geology/data/project_deadzone/worldgen/placed_feature/volcanic_magma.json"
+hash = "eeff41008b8f1402b92f5dddc6014930c979210e9acb161f090d42d83acc41c6"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_volcanic_nether_geology/data/project_deadzone/worldgen/placed_feature/volcanic_netherrack.json"
+hash = "46f3ade1348aa4dbd4702ffecb1a5bcb61d668c0f849e091986dc4858e74d64c"
+
+[[files]]
+file = "moonlight-global-datapacks/pdz_volcanic_nether_geology/pack.mcmeta"
+hash = "d46f735a57c3ad8d0c0f5f91218543d17c5d9925865be0929c3771e2b2835a48"
 
 [[files]]
 file = "moonlight-global-datapacks/pdz_worldgen_test/data/bettermineshafts/worldgen/structure_set/mineshafts.json"

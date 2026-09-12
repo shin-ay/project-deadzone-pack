@@ -1,0 +1,11 @@
+BambooMod 1.20.1-0.4
+
+Upstream source: https://github.com/rubnsn/bambooo
+Built from commit: f4288d9664b7d49a0413004037c2dab7b6d622c8
+Binary SHA-256: AA6FB8100DEE7C601723D8EBAEDBD3851387F153A60924B32370380B99D43F36
+
+License:
+- Code and binary distribution: MMPL-1.0.1
+- Assets: CC BY-NC-SA 4.0
+
+The complete corresponding source is available free of charge at the upstream URL above.

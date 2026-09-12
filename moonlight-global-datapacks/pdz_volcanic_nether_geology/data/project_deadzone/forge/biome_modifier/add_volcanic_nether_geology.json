@@ -1,0 +1,16 @@
+{
+  "type": "forge:add_features",
+  "biomes": [
+    "terralith:ashen_savanna",
+    "terralith:caldera",
+    "terralith:volcanic_crater",
+    "terralith:volcanic_peaks"
+  ],
+  "features": [
+    "project_deadzone:volcanic_basalt",
+    "project_deadzone:volcanic_blackstone",
+    "project_deadzone:volcanic_netherrack",
+    "project_deadzone:volcanic_magma"
+  ],
+  "step": "underground_ores"
+}

@@ -1,12 +1,12 @@
 name = "PROJECT DEADZONE"
 author = "PROJECT DEADZONE Team"
-version = "BETA-20260912-INTEGRATED-SERVER-RECOVERY-RC1"
+version = "BETA-20260912-VOLCANIC-BAMBOO-RC1"
 pack-format = "packwiz:1.1.0"
 
 [index]
 file = "index.toml"
 hash-format = "sha256"
-hash = "fc9f1497d241f5390fada80a41bfb1029d470b489c1b6388aeb4558db9c08239"
+hash = "774211b0cf5cc35aafea51167a2c6dc471a863215c800a7a7e0c1de4ac458c62"
 
 [versions]
 forge = "47.4.10"
