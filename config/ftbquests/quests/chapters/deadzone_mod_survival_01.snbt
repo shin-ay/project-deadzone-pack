@@ -42,8 +42,36 @@
 				item: "survival_instinct:gallon_of_water"
 				type: "item"
 			}]
-			title: "水分確保"
-			x: 2.0d
+			 title: "水分確保"
+			 x: 2.0d
+			 y: -1.0d
+		}
+		{
+			dependencies: ["63203F6923C1FCB8"]
+			description: ["LSOの冷たい糸と暖かい糸は、防具へ付ける冷却コート／保温コートの基礎素材。村や廃墟の生活・繊維系Loot、PDZ管理自販機、Bountiful依頼報酬から確保できる。まず両方を受け取り、遠征先の気候に合わせて装備を準備しよう。"]
+			icon: "legendarysurvivaloverhaul:warm_string"
+			id: "A9C14E2B7F3058D1"
+			rewards: [
+				{
+					count: 3
+					id: "95D2B7C4018AE63F"
+					item: "legendarysurvivaloverhaul:warm_string"
+					type: "item"
+				}
+				{
+					count: 3
+					id: "E47A20D9563BC18A"
+					item: "legendarysurvivaloverhaul:cold_string"
+					type: "item"
+				}
+			]
+			tasks: [{
+				id: "C3F80A61D2479EB4"
+				title: "気候装備の補給経路を確認"
+				type: "checkmark"
+			}]
+			title: "気候適応ライニング"
+			x: 3.5d
 			y: -1.0d
 		}
 		{

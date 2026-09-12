@@ -2,7 +2,9 @@
   "README": "https://github.com/Luke100000/minecraft-comes-alive/wiki",
   "version": 1,
   "overwriteOriginalVillagers": true,
-  "moddedVillagerWhitelist": [],
+  "moddedVillagerWhitelist": [
+    "minecraft:villager"
+  ],
   "overwriteOriginalZombieVillagers": true,
   "overwriteAllZombiesWithZombieVillagers": false,
   "moddedZombieVillagerWhitelist": [],
@@ -113,7 +115,21 @@
   "villagerDimensionBlacklist": [],
   "allowedSpawnReasons": [
     "natural",
-    "structure"
+    "chunk_generation",
+    "spawner",
+    "structure",
+    "breeding",
+    "mob_summoned",
+    "jockey",
+    "event",
+    "conversion",
+    "reinforcement",
+    "triggered",
+    "bucket",
+    "spawn_egg",
+    "command",
+    "dispenser",
+    "patrol"
   ],
   "villagerInteractionItemBlacklist": [
     "minecraft:bucket"

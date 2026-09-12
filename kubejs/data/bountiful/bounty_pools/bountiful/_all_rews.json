@@ -12,6 +12,8 @@
     "pdz_board_medkit": { "type": "item", "content": "apocalypsenow:medicalkit", "amount": { "min": 1, "max": 1 }, "unitWorth": 4800, "rarity": "RARE", "weightMult": 0.3 },
     "pdz_board_helmet": { "type": "item", "content": "minecraft:iron_helmet", "amount": { "min": 1, "max": 1 }, "unitWorth": 3600, "rarity": "RARE", "weightMult": 0.25 },
     "pdz_board_chestplate": { "type": "item", "content": "minecraft:iron_chestplate", "amount": { "min": 1, "max": 1 }, "unitWorth": 4800, "rarity": "RARE", "weightMult": 0.2 },
-    "pdz_board_coin": { "type": "item", "content": "lightmanscurrency:coin_iron", "amount": { "min": 2, "max": 7 }, "unitWorth": 1400, "weightMult": 0.45 }
+    "pdz_board_coin": { "type": "item", "content": "lightmanscurrency:coin_iron", "amount": { "min": 2, "max": 7 }, "unitWorth": 1400, "weightMult": 0.45 },
+    "pdz_board_warm_string": { "type": "item", "content": "legendarysurvivaloverhaul:warm_string", "amount": { "min": 2, "max": 5 }, "unitWorth": 900, "rarity": "UNCOMMON", "weightMult": 0.65 },
+    "pdz_board_cold_string": { "type": "item", "content": "legendarysurvivaloverhaul:cold_string", "amount": { "min": 2, "max": 5 }, "unitWorth": 900, "rarity": "UNCOMMON", "weightMult": 0.65 }
   }
 }

@@ -1538,7 +1538,7 @@ hash = "c478f994009724e0fae15fa69de2714d44e127a0ee29a984691415556dd6b2b1"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/deadzone_mod_survival_01.snbt"
-hash = "c0a06e74db8865e417637b2b6ba89e4d0260c0c11a622af6fb6cf9f0396c13cf"
+hash = "87a9deb5fc119cd9ff8acc1e94ac0e01c9cb6294aab7927c270e79c23fca825b"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/deadzone_radio_world_status_01.snbt"
@@ -2226,7 +2226,7 @@ hash = "4999c1eb012c6546cbffa8621b58dbab4ff577e9561ade7d1a2aa4ebf03b59c3"
 
 [[files]]
 file = "config/mca.json"
-hash = "ecdfcddc4615cdf7dcf055286880fa2722d6df4b8c8c9636149335dec152dd26"
+hash = "69c28bc15a2efbb9aa90f25d2df122d067901b7ca4247792c07a95ee93aaf783"
 
 [[files]]
 file = "config/midnightlib.json"
@@ -4198,51 +4198,51 @@ hash = "efccf22d402c1dcab0c8d583f25e7148f7ea7e3c417e778dc5fcdee87ef9e676"
 
 [[files]]
 file = "kubejs/data/bountiful/bounty_decrees/bountiful/armorer.json"
-hash = "325f20433133af5dc0bb7b216e37b84130e0c6372c5294ce27b517c56b3042c6"
+hash = "4cb0e434eb3e928807c984dba4111ce2741d230ce7714c78353a57ef8ec48ab9"
 
 [[files]]
 file = "kubejs/data/bountiful/bounty_decrees/bountiful/butcher.json"
-hash = "e63df61617b23994394d72ee2a54582a91bc77ab4ed2c4d518253e229e6f76d2"
+hash = "2ce36e25b9639e8c58d2bd8141bbf557b73026e93830ddf9133334c1bab52e6a"
 
 [[files]]
 file = "kubejs/data/bountiful/bounty_decrees/bountiful/cleric.json"
-hash = "275e7e4fb9570f59dd635bd333b190cc1c0bcdd4ca2f577b5862bfccd95efd39"
+hash = "ccb6bf11471b0a07eef387dc16a37b58252a3f75ff1e5ced153e59f14504f7ab"
 
 [[files]]
 file = "kubejs/data/bountiful/bounty_decrees/bountiful/farmer.json"
-hash = "e3cb35f50ee0c580bf265be633528c2822919fd40802a259586ebd8acb469252"
+hash = "2ce36e25b9639e8c58d2bd8141bbf557b73026e93830ddf9133334c1bab52e6a"
 
 [[files]]
 file = "kubejs/data/bountiful/bounty_decrees/bountiful/fisherman.json"
-hash = "d319089d096005cd9c82763721a3ae7c3a49fdb60e2056f50352d32bdee614fc"
+hash = "f0f02b6f33aa82fd3c8f642ce7ece1d5c23164744a125066f22725a14fea84ea"
 
 [[files]]
 file = "kubejs/data/bountiful/bounty_decrees/bountiful/fletcher.json"
-hash = "aeb7fb231c346c7e334f9e1a0971907262b6a6067c6672783066fa145d9dc26f"
+hash = "931aa88511155892e91541b36eeb83a05ba815927a505d605fc7918e6a145569"
 
 [[files]]
 file = "kubejs/data/bountiful/bounty_decrees/bountiful/inventor.json"
-hash = "c24190c573364134b4559293a012025d6a42e8c09cf7fe1a9661638b05d06ab5"
+hash = "367a05bbca51eefdde03f2f58bb6f714ce606a8e88ef2b2850c6b1d0df608f2e"
 
 [[files]]
 file = "kubejs/data/bountiful/bounty_decrees/bountiful/leatherer.json"
-hash = "9a0c66c76eb810eff07a1499c27f6eb27d779c79106039975232574c63082165"
+hash = "f0f02b6f33aa82fd3c8f642ce7ece1d5c23164744a125066f22725a14fea84ea"
 
 [[files]]
 file = "kubejs/data/bountiful/bounty_decrees/bountiful/librarian.json"
-hash = "a74603b345ef22fadcabaa11a9399215531d039c9cfffb2b584bad7d41917ec8"
+hash = "d4ff4448201ecd781ff0751147729863cf7f261ff6edaafde0ecb4c86dbd3565"
 
 [[files]]
 file = "kubejs/data/bountiful/bounty_decrees/bountiful/mapper.json"
-hash = "7ddd5b5a54b390ed6048622e8ce6e1d662b26a04be4c79ccd2f663295ab7ca64"
+hash = "d4ff4448201ecd781ff0751147729863cf7f261ff6edaafde0ecb4c86dbd3565"
 
 [[files]]
 file = "kubejs/data/bountiful/bounty_decrees/bountiful/shepherd.json"
-hash = "e430f672b1edbd0e60dae2781db48ae2faa1a4924d343b72147cdaf8cb875ee6"
+hash = "2ce36e25b9639e8c58d2bd8141bbf557b73026e93830ddf9133334c1bab52e6a"
 
 [[files]]
 file = "kubejs/data/bountiful/bounty_decrees/bountiful/toolsmith.json"
-hash = "02f8ca833d146e7035d76fd3b648e0e92cf038f54d23164d154e937c07caec46"
+hash = "367a05bbca51eefdde03f2f58bb6f714ce606a8e88ef2b2850c6b1d0df608f2e"
 
 [[files]]
 file = "kubejs/data/bountiful/bounty_decrees/project_deadzone/agrarian_relief.json"
@@ -4274,7 +4274,7 @@ hash = "7397b0ac977797cc93081dc3f4f24172728ccdfbaf9ccade77e749acb684056b"
 
 [[files]]
 file = "kubejs/data/bountiful/bounty_pools/bountiful/_all_rews.json"
-hash = "5a2460f59130ae82bd54e6da8a81a27afe27d3c6dc78aaa0215ab73b0a01de60"
+hash = "04bf1ac721437b9b46d7ddbb4af416e4ea197a5f0ac622bb59a7d90507e4f796"
 
 [[files]]
 file = "kubejs/data/bountiful/bounty_pools/project_deadzone/agrarian_exports.json"
@@ -4298,7 +4298,7 @@ hash = "80d013ba29a560b8a6d0a679f8c119f66814c3cfcbc93bd633cb48dcc313716d"
 
 [[files]]
 file = "kubejs/data/bountiful/bounty_pools/project_deadzone/deadzone_bounty_rews.json"
-hash = "7bd1a751def4ccf30f3706a8182397c54cf6268c7ed9da9a5c59580f42343f62"
+hash = "99a062e62037fc19b8d2c622396d5caa590d85d1de74ea3dfc8cf873bef44daa"
 
 [[files]]
 file = "kubejs/data/bountiful/bounty_pools/project_deadzone/deadzone_endgame_hazard_objs.json"
@@ -4317,12 +4317,24 @@ file = "kubejs/data/bountiful/bounty_pools/project_deadzone/deadzone_endgame_rew
 hash = "7e69125103ddb0e3510af9dbf6a8a06c3ca0a4645b6ae4bd4941967b34296e0d"
 
 [[files]]
+file = "kubejs/data/bountiful/bounty_pools/project_deadzone/deadzone_field_objs.json"
+hash = "15d0392eecf29cd6ee9a9dfbd2a8dd505d758920d36dd79e2dc4c12273ea5769"
+
+[[files]]
 file = "kubejs/data/bountiful/bounty_pools/project_deadzone/deadzone_field_rews.json"
 hash = "e89934b18cd784ed3d6b7b9d67596918a1ddeb00562b8c9fbdee486fba33ce83"
 
 [[files]]
+file = "kubejs/data/bountiful/bounty_pools/project_deadzone/deadzone_industry_objs.json"
+hash = "4e1626237b95143ecf0641322f23b90fe8a3078d6cf761ae1623d161b68f3183"
+
+[[files]]
 file = "kubejs/data/bountiful/bounty_pools/project_deadzone/deadzone_relief_pay.json"
-hash = "53a3be0b51f456556a929a992776c571d9be0f49d53d51645ab6348c0893d8a1"
+hash = "49ff7a0845ed78fd5dd79d607c9b1e4910714d91277d8bf665aeb5a05076f802"
+
+[[files]]
+file = "kubejs/data/bountiful/bounty_pools/project_deadzone/deadzone_survival_objs.json"
+hash = "d3791c6ccf2003e03f977865727ee4e3775a958e31534eed3bc90e153f04e3b3"
 
 [[files]]
 file = "kubejs/data/bountiful/bounty_pools/project_deadzone/forest_exports.json"
@@ -11470,7 +11482,7 @@ hash = "d56e8c86d344e33dc600a9dc697bcb4f6c5936f71e3b42af00bee7469de7fc27"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_managed_vending_rotation_v0_1.js"
-hash = "610b5383bfb606c2b4cb448168e5d01ccd591f8b2cfa6542f301e53a5d18dc2a"
+hash = "905b436d149ec92647788408f52941602e5007ce3042d01e84ad8bddaf9f77eb"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_mastery_v0_1.js"
@@ -11479,6 +11491,10 @@ hash = "b11df85bc0c1b850b90d3d3ffcb857dbb3e54e2fb20d77e417fab0856edc77b6"
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_material_unification_v0_1.js"
 hash = "36005352a6d3582b8136df5502c7244b3fbac60aa9679fe11757b1863acad555"
+
+[[files]]
+file = "kubejs/server_scripts/project_deadzone_mca_villager_conversion_v0_1.js"
+hash = "6688bdd19b575d25822ebc843ae1cc87a77bd4b87df481ff895a45e04026de52"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_mechanical_companion_v0_1.js"
@@ -11579,10 +11595,6 @@ hash = "5501bef3482451c60457bfca495efdb48fa78fe8b6c2ca594316968c935038da"
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_regional_mentors_v0_1.js"
 hash = "2e9328cbd687554d50e3a938f8ca8dd93fe071b9fdf16eff32ff01ca03bd0121"
-
-[[files]]
-file = "kubejs/server_scripts/project_deadzone_ruunit_population_v0_1.js"
-hash = "46ea3f0f2028d32cf82934839ca33aa924f7e44c50478000477900d2079d1b4c"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_scavenging_perks_v0_1.js"
@@ -11774,7 +11786,7 @@ hash = "40459e3f90491ffd225500d54cd164955502c6d3eb747434fa1565cb224252f2"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_world_loot_v0_1.js"
-hash = "e0bf822866269de851bc0ce916e9b7e1b61fc643693a926be0ef4d86fd096c28"
+hash = "e7a5cedc07e5118fd0c3ac9cec718531f87c3b840e8459187e36c7200e59b306"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_xp_talent_enchant_v0_1.js"
@@ -13306,8 +13318,8 @@ hash = "13e92501fb23e484ffd323438f85a82825d4d93426f20e19a1856c7bff289ad9"
 metafile = true
 
 [[files]]
-file = "mods/pdz-infectious-lifecycle-compat-1.0.5.jar"
-hash = "8d452ccd5cedbf62476db3ca90f3ee1180527603d8d89bbfa8d328ab738ddaab"
+file = "mods/pdz-infectious-lifecycle-compat-1.0.6.jar"
+hash = "bd7e5e7e2411cfdf7102f5de6fea39b84d10c6ec40b23a92a195d1f355e3f6fb"
 
 [[files]]
 file = "mods/pdz-loot-compat-1.0.0.jar"
@@ -13623,11 +13635,6 @@ metafile = true
 [[files]]
 file = "mods/survival-instinct.pw.toml"
 hash = "00b68b3f9403bd71524583d6d1b40a5e8d28fb366749d51f0c3cdc5f4192ce0f"
-metafile = true
-
-[[files]]
-file = "mods/tactical-movement.pw.toml"
-hash = "0d4e1e7356b72cf0cbf9cada4945cbe598b80b64c2149da7a04a6ca0e2437938"
 metafile = true
 
 [[files]]

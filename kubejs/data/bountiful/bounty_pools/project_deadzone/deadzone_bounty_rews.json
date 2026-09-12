@@ -8,6 +8,8 @@
     "pdz_rew_ammo_12g": { "type": "item", "content": "tacz:ammo", "amount": { "min": 8, "max": 18 }, "unitWorth": 320, "rarity": "UNCOMMON", "nbt": "{AmmoId:\"tacz:12g\"}", "weightMult": 0.6 },
     "pdz_rew_repair_kit": { "type": "item", "content": "kubejs:field_repair_kit", "amount": { "min": 1, "max": 2 }, "unitWorth": 1800, "rarity": "UNCOMMON", "weightMult": 0.7 },
     "pdz_rew_antibiotics": { "type": "item", "content": "apocalypsenow:antibiotics", "amount": { "min": 1, "max": 2 }, "unitWorth": 4200, "rarity": "RARE", "weightMult": 0.38 },
-    "pdz_rew_component_steel": { "type": "item", "content": "immersiveengineering:component_steel", "amount": { "min": 1, "max": 2 }, "unitWorth": 5200, "rarity": "EPIC", "weightMult": 0.16 }
+    "pdz_rew_component_steel": { "type": "item", "content": "immersiveengineering:component_steel", "amount": { "min": 1, "max": 2 }, "unitWorth": 5200, "rarity": "EPIC", "weightMult": 0.16 },
+    "pdz_rew_warm_string": { "type": "item", "content": "legendarysurvivaloverhaul:warm_string", "amount": { "min": 2, "max": 5 }, "unitWorth": 900, "rarity": "UNCOMMON", "weightMult": 0.7 },
+    "pdz_rew_cold_string": { "type": "item", "content": "legendarysurvivaloverhaul:cold_string", "amount": { "min": 2, "max": 5 }, "unitWorth": 900, "rarity": "UNCOMMON", "weightMult": 0.7 }
   }
 }

@@ -1,0 +1,9 @@
+{
+  "content": {
+    "pdz_supply_water": {"type":"item","content":"survival_instinct:gallon_of_water","amount":{"min":2,"max":5},"unitWorth":300,"weightMult":1.3},
+    "pdz_supply_canned_food": {"type":"item","content":"survival_instinct:bean_can","amount":{"min":4,"max":10},"unitWorth":260,"weightMult":1.3},
+    "pdz_supply_bandage": {"type":"item","content":"apocalypsenow:bandage","amount":{"min":2,"max":5},"unitWorth":500,"weightMult":1.2},
+    "pdz_supply_rope": {"type":"item","content":"survival_instinct:rope","amount":{"min":3,"max":8},"unitWorth":280,"weightMult":1.1},
+    "pdz_supply_hemp": {"type":"item","content":"immersiveengineering:hemp_fiber","amount":{"min":6,"max":16},"unitWorth":120,"weightMult":1.0}
+  }
+}

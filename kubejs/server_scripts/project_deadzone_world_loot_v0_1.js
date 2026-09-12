@@ -109,10 +109,12 @@ LootJS.modifiers(event => {
     event.addLootTableModifier(table)
       .randomChance(0.48)
       .addWeightedLoot(1, [
-        Item.of("survival_instinct:rope", 2).withChance(34),
-        Item.of("create:copper_nugget", 4).withChance(28),
-        Item.of("immersiveengineering:hemp_fiber", 3).withChance(26),
-        Item.of("minecraft:paper", 3).withChance(12)
+        Item.of("survival_instinct:rope", 2).withChance(27),
+        Item.of("create:copper_nugget", 4).withChance(22),
+        Item.of("immersiveengineering:hemp_fiber", 3).withChance(21),
+        Item.of("minecraft:paper", 3).withChance(10),
+        Item.of("legendarysurvivaloverhaul:warm_string", 2).withChance(10),
+        Item.of("legendarysurvivaloverhaul:cold_string", 2).withChance(10)
       ])
 
     // Scavenged currency connects ordinary exploration to camp trading.
@@ -155,6 +157,14 @@ LootJS.modifiers(event => {
         Item.of("create:andesite_alloy", 2).withChance(18),
         Item.of("survival_instinct:rope", 3).withChance(20),
         Item.of("minecraft:leather", 3).withChance(16)
+      ])
+
+    // Climate lining is a practical T0 exploration supply, not a rare trophy.
+    event.addLootTableModifier(table)
+      .randomChance(0.28)
+      .addWeightedLoot(1, [
+        Item.of("legendarysurvivaloverhaul:warm_string", 2).withChance(50),
+        Item.of("legendarysurvivaloverhaul:cold_string", 2).withChance(50)
       ])
 
     // Ammunition is common enough to make a found/starter pistol usable, but
@@ -256,6 +266,13 @@ LootJS.modifiers(event => {
         Item.of("immersiveengineering:hemp_fiber", 5).withChance(24),
         Item.of("apocalypsenow:bandage", 3).withChance(14)
       ])
+
+    event.addLootTableModifier(table)
+      .randomChance(0.65)
+      .addWeightedLoot(1, [
+        Item.of("legendarysurvivaloverhaul:warm_string", 3).withChance(50),
+        Item.of("legendarysurvivaloverhaul:cold_string", 3).withChance(50)
+      ])
   })
 
   const villageCivicTables = [
@@ -321,6 +338,13 @@ LootJS.modifiers(event => {
         Item.of("immersiveengineering:hemp_fiber", 3).withChance(30),
         Item.of("lightmanscurrency:coin_copper", 4).withChance(22),
         Item.of("lightmanscurrency:coin_copper", 1).withChance(10)
+      ])
+
+    event.addLootTableModifier(table)
+      .randomChance(0.28)
+      .addWeightedLoot(1, [
+        Item.of("legendarysurvivaloverhaul:warm_string", 2).withChance(50),
+        Item.of("legendarysurvivaloverhaul:cold_string", 2).withChance(50)
       ])
   })
 

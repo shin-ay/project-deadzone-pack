@@ -1,0 +1,9 @@
+{
+  "content": {
+    "pdz_field_batteries": {"type":"item","content":"survival_instinct:batteries","amount":{"min":2,"max":6},"unitWorth":360,"weightMult":1.2},
+    "pdz_field_painkillers": {"type":"item","content":"apocalypsenow:pain_killers","amount":{"min":1,"max":3},"unitWorth":1500,"rarity":"UNCOMMON","weightMult":0.8},
+    "pdz_field_antibiotics": {"type":"item","content":"apocalypsenow:antibiotics","amount":{"min":1,"max":2},"unitWorth":4200,"rarity":"RARE","weightMult":0.35},
+    "pdz_field_repair": {"type":"item","content":"kubejs:field_repair_kit","amount":{"min":1,"max":2},"unitWorth":1800,"rarity":"UNCOMMON","weightMult":0.7},
+    "pdz_field_electrical_scrap": {"type":"item","content":"apocalypsenow:electrical_scrap","amount":{"min":3,"max":8},"unitWorth":520,"rarity":"UNCOMMON","weightMult":0.75}
+  }
+}
