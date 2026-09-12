@@ -1,13 +1,9 @@
-// PROJECT DEADZONE - settlement NPC compatibility v0.7
-// MCA owns residents. TacZ NPC loadouts own armed guards. This bridge waits
-// until MCA conversion has finished, then gives each loaded settlement a small,
-// deterministic defense quota without relying on structure processor order.
+// PROJECT DEADZONE - settlement NPC compatibility v0.8
+// MCA owns residents and its guardSpawnFraction owns the natural guard ratio.
+// This bridge only aligns existing TacZ village guards with PDZ factions and
+// hostile targets. It never creates residents or guards.
 
 const PDZ_CIVILIAN_NAMESPACES = ["mca:"]
-const PDZ_MCA_GUARD_RESIDENT_RADIUS = 96
-const PDZ_MCA_GUARD_MIN_RESIDENTS = 4
-const PDZ_MCA_GUARD_RESIDENTS_PER_GUARD = 6
-const PDZ_MCA_GUARD_ROLL_KEY = "dz_mca_guard_checked_v2"
 const PDZ_VILLAGE_GUARD_TAG = "dz_village_guard_v2"
 let PDZ_MCA_GUARD_MAINTENANCE_TICKS = 0
 let PDZ_MCA_GUARD_MAINTENANCE_PASSES = 0
@@ -62,20 +58,6 @@ function pdzJoinLoadedVillageGuards(server) {
     PDZ_VILLAGE_GUARD_TAG + "]")
 }
 
-function pdzMcaGuardWasChecked(entity) {
-  if (!entity || !entity.tags) return false
-  if (entity.tags.contains(PDZ_MCA_GUARD_ROLL_KEY)) return true
-  try { return entity.persistentData.getBoolean(PDZ_MCA_GUARD_ROLL_KEY) } catch (ignored) {}
-  return false
-}
-
-function pdzMarkMcaGuardChecked(entity) {
-  if (!entity || !entity.tags) return
-  // Entity tags are vanilla-saved NBT and work consistently for MCA wrappers;
-  // arbitrary ForgeData writes through persistentData do not on this build.
-  entity.tags.add(PDZ_MCA_GUARD_ROLL_KEY)
-}
-
 function pdzGuardTemplate(entity) {
   if (!entity || String(entity.type) !== "tacznpcs:npc") return ""
   try { return String(entity.nbt.getString("template")) } catch (ignored) {}
@@ -91,6 +73,11 @@ function pdzIsVillageGuard(entity) {
       entity.tags.contains("dz_settlement_guard") || entity.tags.contains("dz_starter_colony_guard") ||
       entity.tags.contains("dz_colony_guard"))) return true
   return pdzGuardTemplate(entity) === "pdz_village_guard"
+}
+
+function pdzIsLegacyAutoVillageGuard(entity) {
+  return !!entity && String(entity.type) === "tacznpcs:npc" && !!entity.tags &&
+    entity.tags.contains(PDZ_VILLAGE_GUARD_TAG) && entity.tags.contains("dz_force_civil_defense")
 }
 
 function pdzFinalizeVillageGuard(entity) {
@@ -145,29 +132,6 @@ function pdzVillageGuardAcquireTarget(guard, candidates) {
   return false
 }
 
-function pdzReconcileMcaVillageGuard(source) {
-  if (!pdzIsMcaLivingResident(source)) return false
-  // The nearby-entity query includes the source resident, so start from zero.
-  // Starting from one shifts every guard-quota boundary by one resident.
-  let residents = 0
-  let guards = 0
-  source.level.getEntities(source, source.boundingBox.inflate(PDZ_MCA_GUARD_RESIDENT_RADIUS)).forEach(entity => {
-    if (pdzIsMcaLivingResident(entity)) residents++
-    else if (pdzIsVillageGuard(entity)) guards++
-  })
-  if (residents < PDZ_MCA_GUARD_MIN_RESIDENTS) return false
-  let wanted = Math.max(1, Math.floor(residents / PDZ_MCA_GUARD_RESIDENTS_PER_GUARD))
-  if (guards >= wanted) return false
-
-  let dimension = String(source.level.dimension)
-  let x = Math.floor(Number(source.x)) + 0.5
-  let y = Math.floor(Number(source.y))
-  let z = Math.floor(Number(source.z)) + 0.5
-  let result = source.server.runCommandSilent('execute in ' + dimension + ' positioned ' + x + ' ' + y + ' ' + z +
-    ' run summon tacznpcs:npc ~ ~ ~ {template:"pdz_village_guard",PersistenceRequired:1b,Tags:["dz_guard_bridge_pending","dz_force_civil_defense"]}')
-  return result > 0
-}
-
 function pdzClearCustomCombatState(entity) {
   entity.tags.remove("dz_npc_downed")
   entity.tags.remove("dz_buddy_downed")
@@ -190,13 +154,18 @@ EntityEvents.spawned(event => {
   let entity = event.entity
   if (pdzIsMcaLivingResident(entity)) {
     entity.server.scheduleInTicks(2, () => pdzProtectSettlementEntity(entity))
-    if (!pdzMcaGuardWasChecked(entity)) {
-      pdzMarkMcaGuardChecked(entity)
-      entity.server.scheduleInTicks(60, () => pdzReconcileMcaVillageGuard(entity))
-    }
     return
   }
   if (String(entity.type) !== "tacznpcs:npc") return
+  // v0.7 and older created one persistent TacZ guard per six MCA residents.
+  // Remove only that bridge-owned population as it is loaded. Hand-placed and
+  // template-authored TacZ NPCs do not carry both migration tags.
+  if (pdzIsLegacyAutoVillageGuard(entity)) {
+    entity.server.scheduleInTicks(2, () => {
+      if (pdzEntityIsAlive(entity) && pdzIsLegacyAutoVillageGuard(entity)) entity.discard()
+    })
+    return
+  }
   // TacZ finishes applying its template after EntityJoinLevelEvent. Re-assert
   // ownership after that point so template initialization cannot drop PDZ tags.
   entity.server.scheduleInTicks(20, () => pdzFinalizeVillageGuard(entity))
@@ -205,12 +174,12 @@ EntityEvents.spawned(event => {
 
 ServerEvents.loaded(event => pdzEnsureVillageGuardTeam(event.server))
 
-// EntityEvents does not reliably fire for MCA/TacZ entities created by every
-// worldgen and conversion path. Reconcile the loaded overworld directly once
-// every five seconds. Use a script-owned counter: ServerEvent does not expose a
-// stable server.tickCount property on this KubeJS/Forge build.
+// EntityEvents does not reliably fire for TacZ entities loaded from every NBT
+// path. Inspect loaded entities once every ten seconds. Use a script-owned
+// counter: ServerEvent does not expose a stable server.tickCount property on
+// this KubeJS/Forge build.
 ServerEvents.tick(event => {
-  if (++PDZ_MCA_GUARD_MAINTENANCE_TICKS % 100 !== 0) return
+  if (++PDZ_MCA_GUARD_MAINTENANCE_TICKS % 200 !== 0) return
   PDZ_MCA_GUARD_MAINTENANCE_PASSES++
   let level = null
   try { level = event.server.getLevel("minecraft:overworld") } catch (ignored) {}
@@ -221,17 +190,21 @@ ServerEvents.tick(event => {
   }
   pdzEnsureVillageGuardTeam(event.server)
 
-  let unchecked = []
   let residents = []
   let guardEntities = []
   let hostiles = []
   let guards = 0
+  let legacyRemoved = 0
   try {
     level.entities.forEach(entity => {
       if (pdzIsMcaLivingResident(entity)) {
         residents.push(entity)
         pdzProtectSettlementEntity(entity)
-        if (!pdzMcaGuardWasChecked(entity)) unchecked.push(entity)
+        return
+      }
+      if (pdzIsLegacyAutoVillageGuard(entity)) {
+        entity.discard()
+        legacyRemoved++
         return
       }
       if (String(entity.type) === "tacznpcs:npc" && pdzFinalizeVillageGuard(entity)) {
@@ -247,14 +220,6 @@ ServerEvents.tick(event => {
   }
   pdzJoinLoadedVillageGuards(event.server)
 
-  // Cap first-contact work. A village becomes protected on the first pass,
-  // while very large loaded settlements finish marking over later passes.
-  let limit = Math.min(32, unchecked.length)
-  for (let i = 0; i < limit; i++) {
-    let resident = unchecked[i]
-    pdzMarkMcaGuardChecked(resident)
-  }
-
   // TacZ NPC's own opposed-faction selector can remain idle after a template
   // is loaded from NBT. Reuse this pass's loaded-entity snapshot and give each
   // guard the nearest hostile within 32m; native TacZ AI still owns movement,
@@ -262,27 +227,15 @@ ServerEvents.tick(event => {
   let targeted = 0
   guardEntities.forEach(guard => { if (pdzVillageGuardAcquireTarget(guard, hostiles)) targeted++ })
 
-  // Quotas are reconciled independently from the one-time marker. Add at most
-  // one guard per pass, so a 22-resident village converges to three guards in
-  // 15 seconds without a same-tick summon burst or login/reload duplication.
-  let summoned = false
-  for (let i = 0; i < residents.length; i++) {
-    if (pdzReconcileMcaVillageGuard(residents[i])) {
-      summoned = true
-      break
-    }
-  }
-
   // Short, state-change-only diagnostics make a dedicated-server regression
   // test observable without leaving a noisy production log behind.
-  let diagnostic = residents.length + "/" + guards + "/" + unchecked.length + "/" + summoned + "/" +
-    hostiles.length + "/" + targeted
+  let diagnostic = residents.length + "/" + guards + "/" + hostiles.length + "/" + targeted + "/" + legacyRemoved
   if (PDZ_MCA_GUARD_MAINTENANCE_PASSES <= 4 || diagnostic !== PDZ_MCA_GUARD_LAST_DIAGNOSTIC) {
-    console.info("[PROJECT DEADZONE][Settlement Compat] RC7 pass=" + PDZ_MCA_GUARD_MAINTENANCE_PASSES +
-      " residents=" + residents.length + " guards=" + guards + " unchecked=" + unchecked.length +
-      " summoned=" + summoned + " hostiles=" + hostiles.length + " targeted=" + targeted)
+    console.info("[PROJECT DEADZONE][Settlement Compat] RC8 pass=" + PDZ_MCA_GUARD_MAINTENANCE_PASSES +
+      " residents=" + residents.length + " existingTacZGuards=" + guards +
+      " hostiles=" + hostiles.length + " targeted=" + targeted + " legacyRemoved=" + legacyRemoved)
     PDZ_MCA_GUARD_LAST_DIAGNOSTIC = diagnostic
   }
 })
 
-console.info("[PROJECT DEADZONE][Settlement Compat] MCA residents + deterministic TaCZ village guard quota v7 loaded.")
+console.info("[PROJECT DEADZONE][Settlement Compat] MCA-owned natural population + non-spawning TacZ guard bridge v8 loaded.")

@@ -34,7 +34,7 @@
   "villagerMaxHealth": 20,
   "allowVillagerTeleporting": false,
   "villagerMinTeleportationDistance": 128.0,
-  "villagerPathfindingDistance": 96,
+  "villagerPathfindingDistance": 32,
   "childInitialHearts": 100,
   "greetHeartsThreshold": 75,
   "greetAfterDays": 1,

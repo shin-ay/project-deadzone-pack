@@ -2226,7 +2226,7 @@ hash = "4999c1eb012c6546cbffa8621b58dbab4ff577e9561ade7d1a2aa4ebf03b59c3"
 
 [[files]]
 file = "config/mca.json"
-hash = "69c28bc15a2efbb9aa90f25d2df122d067901b7ca4247792c07a95ee93aaf783"
+hash = "4e261987867eb2a36091c74c9f88b8ab79703632739d436c8c79523b9d595454"
 
 [[files]]
 file = "config/midnightlib.json"
@@ -2250,7 +2250,7 @@ hash = "fad9aea710ec3508eab562cd8f2b5f8e2dda6ee1c5fb1fe818f90ce253017f66"
 
 [[files]]
 file = "config/modernfix-mixins.properties"
-hash = "4dbc7f7446a336aba8d98cc444957850e9db05d9eda35212e55c0953ffd46c44"
+hash = "bdd32e59acd91ec535bb1a3e1a4f5c6f0fc598bdf2a901b52a20d94ed6f80ea6"
 
 [[files]]
 file = "config/moonlight-client.toml"
@@ -11610,7 +11610,7 @@ hash = "cc9a03f47e8387b35e15ca09d0bf7d1345fd5fdcbae791fffe937ec1d6b2bc2b"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_settlement_npc_compat_v0_1.js"
-hash = "e9c47acea2d79e0d6e11c0e5402b364d2c35e4c202fd976414ed7900f206344c"
+hash = "623f554120eec3bce8b2ab05c3f8392fbef28ea5c2b1b2d29262b6d7aedd5768"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_side_bosses_v0_1.js"
