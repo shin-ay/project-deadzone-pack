@@ -8326,7 +8326,7 @@ hash = "c062cedc900fdcba9c1084636c20f08eafaa947bb4b4a4e6e56e4c205a248940"
 
 [[files]]
 file = "kubejs/data/project_deadzone/functions/basecamp/apply_staff_services.mcfunction"
-hash = "f086b6705863a2528995bda1c7f56382c3e3a52a4d1cb31dbf742296b6b2b54c"
+hash = "159b318eb29337f31f421c42d9fb184a9ca4ba5ae4deae8a325575f8ddba0947"
 
 [[files]]
 file = "kubejs/data/project_deadzone/functions/basecamp/apply_trade_economy.mcfunction"
@@ -8378,7 +8378,7 @@ hash = "565533ec943ba3789116b9ec01f709b61c8891e5a3605107830d287dfc97c567"
 
 [[files]]
 file = "kubejs/data/project_deadzone/functions/basecamp/repair_staff_service_ui.mcfunction"
-hash = "5878199f535f7f05068f1606a7108ae2798521b81936e45deacd04d6f9fb03c6"
+hash = "5c3002ebdf5bc81ab94413cf6a18c2812e180675b138803e2ed4abf1a13e01fd"
 
 [[files]]
 file = "kubejs/data/project_deadzone/functions/basecamp/restore_guards_at_core.mcfunction"
