@@ -12266,6 +12266,10 @@ file = "mods/PROJECT_DEADZONE_JOB_UI-0.7.3.jar"
 hash = "851827f9d6c445e33436f8e5f84b2e6bfb1fb9f46a9afa1f08e71dc151a9c4e8"
 
 [[files]]
+file = "mods/PROJECT_DEADZONE_Orca_Render_Compat-0.1.0.jar"
+hash = "760b08bb1914e650039c5a8e5c2afe0c603fb736ec2bd2cc93e25eaacfc15d11"
+
+[[files]]
 file = "mods/PROJECT_DEADZONE_SBW_Mounted_Holster_Compat-0.1.0.jar"
 hash = "d48e8ddc03c90eb14984da1fd9124fc7c593f3ec4c8aefdfe56c98af0e08f45c"
 
