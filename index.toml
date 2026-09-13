@@ -11061,6 +11061,10 @@ file = "kubejs/data/starcatcher/data_maps/item/catch_modifiers.json"
 hash = "f30b35ee4f39dbddb34f4788d99e1055b512a93061a1baf963e00b29ef1f8430"
 
 [[files]]
+file = "kubejs/data/superbwarfare/sbw/vehicles/mi_28.json"
+hash = "3596a4c884d91926509fefd05e9b3dce6c38ad51e70eb8890d38bf983c90ba47"
+
+[[files]]
 file = "kubejs/data/supplementaries/worldgen/structure_set/way_signs.json"
 hash = "18a7e58d35b8f1d7602eeb4e06e782773bfe2c1347e809f1528c291a432e6f51"
 
@@ -13295,7 +13299,7 @@ metafile = true
 
 [[files]]
 file = "mods/oculus.pw.toml"
-hash = "5ef885f9912ff6aa73db254b63a3cd22520f06261bc3c38e7c92f449806a9044"
+hash = "6bb8b0848783cdf7108e499107a4991c2cee2a9240b963d427fa62b0f2a5820e"
 metafile = true
 
 [[files]]
