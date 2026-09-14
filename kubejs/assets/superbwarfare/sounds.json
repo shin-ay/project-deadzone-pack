@@ -1,0 +1,24 @@
+{
+  "ah_6_engine": {
+    "replace": true,
+    "sounds": [
+      {
+        "name": "superbwarfare:vehicle/ah_6/ah_6_engine",
+        "stream": true,
+        "attenuation_distance": 80,
+        "volume": 0.16
+      }
+    ]
+  },
+  "mi_28_engine": {
+    "replace": true,
+    "sounds": [
+      {
+        "name": "superbwarfare:vehicle/mi_28/mi_28_engine",
+        "stream": true,
+        "attenuation_distance": 80,
+        "volume": 0.16
+      }
+    ]
+  }
+}

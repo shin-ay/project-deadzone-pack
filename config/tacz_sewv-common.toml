@@ -17,6 +17,10 @@
 	structureVehiclesEnabled = true
 
 [flight_ai]
+	# Keep autonomous helicopters outside the immediate survivor-camp footprint
+	# while preserving their ability to acquire and engage nearby threats.
+	heliEngageRadius = 64.0
+	heliMinStandoff = 72.0
 	heliChunkLoading = false
 	planeChunkLoading = false
 

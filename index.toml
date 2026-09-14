@@ -3230,7 +3230,7 @@ hash = "da2dd4520c3de9f54d390129674fcba2edf89da52e304db0550709d7f69dc754"
 
 [[files]]
 file = "config/tacz_sewv-common.toml"
-hash = "f272c24043d851102a1a35227097785ec0f5bf00c16e7cb58ff3ff2d45b04855"
+hash = "f2bece7f12bb569150f4c37ff6a4af6f2ed049186e13aa2622c41f0a79e34a71"
 
 [[files]]
 file = "config/tacz_tactical_breaching-common.toml"
@@ -3526,7 +3526,15 @@ hash = "88fee8520815f262d89f96d55a15549911683e93e327dc38a8585b86c92f53df"
 
 [[files]]
 file = "kubejs/assets/kubejs/lang/ja_jp.json"
-hash = "43c05ab63298e447b6beab97c911b915460c0a0a3012cbd197b65939e679cc5e"
+hash = "c2c9bd4a6d67fc3d06587c21604dd55f1c3ab85c139ffdf0792f4b2ce55afd3c"
+
+[[files]]
+file = "kubejs/assets/kubejs/models/block/deadzone_base_core.json"
+hash = "e649064dec8231983c7071e700b07b82e8af2cf7d31ca59297ce3ce107989f5b"
+
+[[files]]
+file = "kubejs/assets/kubejs/models/item/deadzone_base_core.json"
+hash = "49d8bf9b2a0db2e71ab2a56f4bce02595c0d418fe2755c355374daca8c3c0603"
 
 [[files]]
 file = "kubejs/assets/kubejs/models/item/field_medical_kit.json"
@@ -3827,6 +3835,10 @@ hash = "80a44b4719460fcfdd5b05aba3e968b53ba191468a61e9cb111ab146df88c4fd"
 [[files]]
 file = "kubejs/assets/smallships_upgrades/lang/ja_jp.json"
 hash = "94a1e1858e45cec7f26c4fa1c227e290ba0e42ed321195d441755f109ce3c9cb"
+
+[[files]]
+file = "kubejs/assets/superbwarfare/sounds.json"
+hash = "4538cc857b8a3094fc8d3e2de23864b20dfb01dee1622f83370d14404ef35061"
 
 [[files]]
 file = "kubejs/assets/taa/lang/ja_jp.json"
@@ -11262,7 +11274,11 @@ hash = "4f786cef14ebd30d9f6b7a1bd66929a59ad9a75f791ecf99d264ec87b68eb384"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_base_core_v0_1.js"
-hash = "844276a6d09b4247dc1f87810964ea06b439683e992f6257490653de8d7cb17c"
+hash = "e67a6be9089855562076e0e359dda78f665bbae16c749e8f974982a8bf951ec0"
+
+[[files]]
+file = "kubejs/server_scripts/project_deadzone_basecamp_blast_protection_v0_1.js"
+hash = "d77efc79234141579922af69a909251d4deab522255146aeab946abd31b12420"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_basecamp_guard_safety_v0_1.js"
@@ -11814,7 +11830,7 @@ hash = "f987d85a70a9011de6b99890ba5095fba883106ba872c4ee42e3386e9f1623a2"
 
 [[files]]
 file = "kubejs/startup_scripts/project_deadzone_base_core_v0_1.js"
-hash = "5dd8d2d8753624648dababf714c9dbb59a04ac2059085f4b45213e11678ad910"
+hash = "fb706318732c9f9f0e0ff2a157586f9c2269ebed9c56c0a87d5604605035d3a0"
 
 [[files]]
 file = "kubejs/startup_scripts/project_deadzone_career_equipment_v0_1.js"

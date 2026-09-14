@@ -2,6 +2,22 @@
 
 const DZ_BASE_CORE_HUB_QUEST = "6D56010000000101"
 
+// A relocatable/community Base Core is intentionally an early utility block,
+// not a technology-stage reward. It marks player-built bases for blast
+// protection, so rebuilding away from the starter camp must remain practical.
+ServerEvents.recipes(event => {
+  event.shaped("kubejs:deadzone_base_core", [
+    "IRI",
+    "WSW",
+    "SSS"
+  ], {
+    I: "minecraft:iron_ingot",
+    R: "minecraft:redstone_torch",
+    W: "#minecraft:logs",
+    S: "minecraft:stone_bricks"
+  }).id("project_deadzone:deadzone_base_core")
+})
+
 // Existing worlds receive the public camp entrance without asking players to
 // reach the inconvenient Core or type a repair command.
 ServerEvents.loaded(event => {

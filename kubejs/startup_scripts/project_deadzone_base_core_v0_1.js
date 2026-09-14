@@ -9,5 +9,12 @@ StartupEvents.registry("block", event => {
     .requiresTool(true)
     .soundType("metal")
     .lightLevel(0.4)
-    .textureAll("minecraft:block/lodestone_top")
+    .opaque(false)
+    .fullBlock(false)
+    .notSolid()
+    .model("kubejs:block/deadzone_base_core")
+    // Stone plinth plus the central communications cage. The visual wooden
+    // braces remain non-colliding so the one-block device is easy to approach.
+    .box(1, 0, 1, 15, 4, 15)
+    .box(5, 4, 5, 11, 13, 11)
 })
