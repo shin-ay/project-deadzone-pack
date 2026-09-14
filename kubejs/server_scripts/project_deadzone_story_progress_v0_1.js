@@ -359,9 +359,38 @@ function dzScaleFacilityBoss(server, boss) {
     " hp=" + scaledHealth + " escorts=" + escorts)
 }
 
+// One-shot recovery cohort for the regenerated 2026-09-14 world. These UUIDs
+// already completed Preparation in the previous world, while their per-world
+// KubeJS persistent flag was lost. Keeping the cohort explicit prevents future
+// new players from silently skipping S0 progression.
+const DZ_STORY_PREPARATION_RECOVERY_20260914 = {
+  "908f197c-46c7-4c8c-aad8-3782f26cb6fa": true, // Natsumamire
+  "a6666afc-0680-43a6-84a9-69de3e0dafff": true, // ERIN_ng
+  "2a6a01b2-60f9-4771-9307-53a225785566": true, // tiku_miu
+  "f7d7465c-323f-4b99-b988-09e503bdbc05": true  // k1nococo
+}
+
+function dzRestorePreparationForRegeneratedWorld(player) {
+  let uuid = String(player.uuid).toLowerCase()
+  if (!DZ_STORY_PREPARATION_RECOVERY_20260914[uuid] ||
+      player.persistentData.getBoolean("dz_story_auto_v3_preparation")) return false
+  player.persistentData.putBoolean("dz_story_preparation_briefing_ack", true)
+  player.persistentData.putBoolean("dz_story_auto_v3_preparation", true)
+  player.persistentData.putBoolean("dz_story_preparation_recovery_20260914", true)
+  player.tell(Text.of("探索準備の進行フラグを復旧しました。Gas Stationへ向かえます。").gold())
+  console.info("[DEADZONE STORY] Restored S0 preparation flag on login for " + player.username)
+  return true
+}
+
+PlayerEvents.loggedIn(event => {
+  dzRestorePreparationForRegeneratedWorld(event.player)
+})
+
 PlayerEvents.tick(event => {
   let player = event.player
   if (player.level.clientSide || player.age % 20 !== 0) return
+  // Also covers players who were already online when this hotfix was reloaded.
+  dzRestorePreparationForRegeneratedWorld(player)
   dzGrantEndgameDecree(player)
   dzSyncT4Foundation(player)
   // Story quests are completed by actual game events, not manual checkmarks.

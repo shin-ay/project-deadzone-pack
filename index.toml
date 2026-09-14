@@ -11686,7 +11686,7 @@ hash = "41674e022663b6fdae9d6dedb786f4854a4ae08762ab7dcf789b0d8e54b4c61c"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_story_progress_v0_1.js"
-hash = "16050067548ab2cd84f8cfab0dc235a21b83c806fdde92d1cfa2518607196a19"
+hash = "e04daae7563892b0c2704ae077beb71c6c1e2fd45c1e222013856c11f9a7a6df"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_story_progression_v0_1.js"
