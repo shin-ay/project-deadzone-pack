@@ -8318,7 +8318,7 @@ hash = "91c719f59fc16481bd2390248e7c516f209032c2d1233e0d6772db647babd7bb"
 
 [[files]]
 file = "kubejs/data/project_deadzone/functions/basecamp/apply_staff_profiles.mcfunction"
-hash = "744313ff636048e6dfffd9dd529c45fddaac755e934fb9263aa44ec0825b087e"
+hash = "07239155e175bc41f6b125966c10dae0f4c1fb0393f35efb406c6a77e00ad4f5"
 
 [[files]]
 file = "kubejs/data/project_deadzone/functions/basecamp/apply_staff_random_dialogues.mcfunction"
