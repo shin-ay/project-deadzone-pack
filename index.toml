@@ -11502,7 +11502,11 @@ hash = "44474aebb71700302aa4621770701aa4e3739133a9d05ab5b147dbc5e663299c"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_machine_recipe_stages_v0_1.js"
-hash = "d56e8c86d344e33dc600a9dc697bcb4f6c5936f71e3b42af00bee7469de7fc27"
+hash = "d23f42bdddf14dbcdeecd366b6430d5bb481e8e5143225de800bf4f402884122"
+
+[[files]]
+file = "kubejs/server_scripts/project_deadzone_managed_casino_v0_1.js"
+hash = "2efba819eeb7807a243081bce319c8e4024affbd93bdc38b896cfef4e18801f0"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_managed_vending_rotation_v0_1.js"
@@ -22756,7 +22760,7 @@ hash = "d2956469dabdbfe47b6fd4b1edfe09594549614c4b6917ce72bdac77fd3bf7cb"
 
 [[files]]
 file = "scripts/project_deadzone_recipe_progression_v0_1.zs"
-hash = "b98ec59e0b37e748058dfae223c1e439824471b8d0c64dd98ef510c0a4ac7ded"
+hash = "42aa6e73616712ecd01a25e30a5c23de5a04f02308e1200aaf7a85c593643eee"
 
 [[files]]
 file = "sildurs-enhanced-default.pw.toml"
