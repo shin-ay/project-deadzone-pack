@@ -15,7 +15,10 @@ mods.recipestages.Recipes.setRecipeStage("dz_story_create_advanced", <item:creat
 mods.recipestages.Recipes.setRecipeStage("dz_story_create_advanced", <item:create:brass_tunnel>);
 mods.recipestages.Recipes.setRecipeStage("dz_story_create_advanced", <item:create:smart_chute>);
 mods.recipestages.Recipes.setRecipeStage("dz_story_create_advanced", <item:create:mechanical_arm>);
-mods.recipestages.Recipes.setRecipeStage("dz_story_create_advanced", <item:create:mechanical_crafter>);
+// Mechanical Crafter itself stays available once its already-gated brass
+// ingredients can be obtained. Wrapping this shaped recipe again caused
+// RecipeStages to return an empty crafting result even for players who had the
+// native dz_story_create_advanced GameStage.
 mods.recipestages.Recipes.setRecipeStage("dz_story_create_advanced", <item:create:rotation_speed_controller>);
 mods.recipestages.Recipes.setRecipeStage("dz_story_create_advanced", <item:create:stockpile_switch>);
 mods.recipestages.Recipes.setRecipeStage("dz_story_create_advanced", <item:create:content_observer>);

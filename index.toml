@@ -22756,7 +22756,7 @@ hash = "d2956469dabdbfe47b6fd4b1edfe09594549614c4b6917ce72bdac77fd3bf7cb"
 
 [[files]]
 file = "scripts/project_deadzone_recipe_progression_v0_1.zs"
-hash = "37ec446c6a31a3ad9ec7fd98ed185f093ff0fa6567a315d0a109f9617ceb95ad"
+hash = "b98ec59e0b37e748058dfae223c1e439824471b8d0c64dd98ef510c0a4ac7ded"
 
 [[files]]
 file = "sildurs-enhanced-default.pw.toml"
