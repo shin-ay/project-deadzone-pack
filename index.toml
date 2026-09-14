@@ -11266,7 +11266,7 @@ hash = "844276a6d09b4247dc1f87810964ea06b439683e992f6257490653de8d7cb17c"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_basecamp_guard_safety_v0_1.js"
-hash = "2b2b529dcd8e824f8967c4be7cd4f5ffdcb6fedddc370d6637f78705c21a0b0f"
+hash = "3e7d82c927b624da55a85ffa1d6e8114d95343347e3573519fd77638fb77f6c2"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_basecamp_raid_v0_1.js"
@@ -13692,11 +13692,6 @@ hash = "c4cb4778564bc61b59d8da2eb7b61d753d6158125560db6c9312dda90e5eda34"
 metafile = true
 
 [[files]]
-file = "mods/tacz-combined-arms.pw.toml"
-hash = "acf25755e8d0159db8cf9e4b0d5ed5ed9abd60f8a23b2d3159ccd576c15c4862"
-metafile = true
-
-[[files]]
 file = "mods/tacz-create.pw.toml"
 hash = "e417ff955d6d43c4df74f7859be0dbddf406d33e67c643150b5befd60a2f09fc"
 metafile = true
@@ -13759,6 +13754,10 @@ metafile = true
 [[files]]
 file = "mods/tacz_eo-1.2.0+1.20.1-forge.jar"
 hash = "1dcc24ad18368c5e1bd49502a01df05641ddbe8aaa9787fe9b52c2870c5ab240"
+
+[[files]]
+file = "mods/tacz_sewv-0.1.4a-pdz1.jar"
+hash = "b5e19acf3dc99d3a718208f222e0f35436a10479229f047768c27ba6b930d1c1"
 
 [[files]]
 file = "mods/tacz_tactical_breaching-forge-1.20.1-1.0.3.jar"

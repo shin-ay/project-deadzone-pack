@@ -1,4 +1,4 @@
-// PROJECT DEADZONE - survivor guard relations and retaliation v0.7
+// PROJECT DEADZONE - survivor guard relations and retaliation v0.8
 // Scoreboard teams stop friendly fire. These checks bridge TacZ NPC factions
 // and PDZ-authored faction tags.
 
@@ -19,6 +19,10 @@ const PDZ_GUARD_TARGET_QUEUE = []
 const PDZ_GUARD_TARGET_QUEUED = {}
 const PDZ_GUARD_TARGET_QUEUE_CAP = 256
 let PDZ_GUARD_TARGET_TICKS = 0
+const PDZ_DEFENSE_RESCUE_RADIUS = 128
+const PDZ_DEFENSE_RESCUE_HEIGHT = 48
+let PDZ_DEFENSE_ALERT_CLOCK = 0
+let PDZ_DEFENSE_ALERT_RECENT = {}
 
 function pdzQueueGuardTargeting(guard) {
   if (!guard || !guard.alive || !pdzIsCampGuard(guard)) return
@@ -189,6 +193,50 @@ function pdzGuardSetTarget(guard, target, retaliation) {
   try { guard.setTarget(target) } catch (ignored) {}
 }
 
+// Event-driven radio response. Plain US soldiers are CDF combatants even when they are not
+// settlement guards; medics stay neutral. Tagged buddies/PMC guards may answer the same call.
+function pdzIsDefenseResponder(entity) {
+  if (!entity || !entity.alive || pdzIsProtectedBossTestEntity(entity)) return false
+  let id = String(entity.type)
+  if (id === 'tacz_sewv:us_medic') return false
+  if (id === 'simpleenemymod:usunit' || id.indexOf('tacz_sewv:us_') === 0) return true
+  if (pdzIsCampGuard(entity)) return true
+  if (typeof pdzFactionOfEntity !== 'function' || !entity.tags) return false
+  let faction = pdzFactionOfEntity(entity)
+  return (faction === 'cdf' || faction === 'pmc') &&
+    (entity.tags.contains('dz_buddy') || entity.tags.contains('dz_faction_combatant'))
+}
+
+function pdzDefenseSetTarget(responder, target) {
+  if (!pdzIsDefenseResponder(responder) || !target || !target.alive) return
+  if (typeof pdzRelationAllowsTarget === 'function') {
+    if (!pdzRelationAllowsTarget(responder, target)) return
+  } else if (!pdzIsFactionHostile(target)) return
+  try { responder.setTarget(target) } catch (ignored) {}
+}
+
+function pdzBroadcastDefenseAlert(victim, attacker) {
+  if (!victim || !attacker || !attacker.alive || !pdzIsSurvivorAlly(victim)) return
+  if (typeof pdzRelationAllowsTarget === 'function' && !pdzRelationAllowsTarget(victim, attacker)) return
+  if (typeof pdzRelationAllowsTarget !== 'function' && !pdzIsFactionHostile(attacker)) return
+
+  let key = String(victim.uuid) + '|' + String(attacker.uuid)
+  let previous = Number(PDZ_DEFENSE_ALERT_RECENT[key] || -1000000)
+  if (PDZ_DEFENSE_ALERT_CLOCK - previous < 20) return
+  PDZ_DEFENSE_ALERT_RECENT[key] = PDZ_DEFENSE_ALERT_CLOCK
+
+  let radiusSq = PDZ_DEFENSE_RESCUE_RADIUS * PDZ_DEFENSE_RESCUE_RADIUS
+  victim.level.getEntities(victim, victim.boundingBox.inflate(
+    PDZ_DEFENSE_RESCUE_RADIUS, PDZ_DEFENSE_RESCUE_HEIGHT, PDZ_DEFENSE_RESCUE_RADIUS)).forEach(entity => {
+    if (!pdzIsDefenseResponder(entity)) return
+    let dx = Number(entity.x) - Number(victim.x)
+    let dy = Number(entity.y) - Number(victim.y)
+    let dz = Number(entity.z) - Number(victim.z)
+    if (Math.abs(dy) > PDZ_DEFENSE_RESCUE_HEIGHT || dx * dx + dy * dy + dz * dz > radiusSq) return
+    pdzDefenseSetTarget(entity, attacker)
+  })
+}
+
 function pdzIsFactionCombatUnit(entity) {
   if (!entity || !entity.alive || pdzIsProtectedBossTestEntity(entity) ||
       typeof pdzFactionOfEntity !== 'function') return false
@@ -274,16 +322,9 @@ EntityEvents.hurt(event => {
     try { victim.setTarget(attacker) } catch (ignored) {}
   }
 
-  // Retaliate immediately when a hostile TaCZ/RU/PDZ faction attacks either a
-  // guard or a protected colony resident.
-  if (!attacker || (!pdzIsCampGuard(victim) && !pdzIsSurvivorAlly(victim))) return
-  // Query only the local spatial index. Iterating level.entities here made one
-  // attack scan every loaded entity in the dimension.
-  victim.level.getEntities(victim, victim.boundingBox.inflate(32)).forEach(entity => {
-    if (!pdzIsCampGuard(entity)) return
-    let dx = entity.x - victim.x, dy = entity.y - victim.y, dz = entity.z - victim.z
-    if (dx * dx + dy * dy + dz * dz <= 32 * 32) pdzGuardSetTarget(entity, attacker, true)
-  })
+  // A real hit on a player/survivor is a radio alarm, not a permanent 128-block periodic scan.
+  // The pair cooldown bounds dense automatic fire to one spatial query per second.
+  if (attacker) pdzBroadcastDefenseAlert(victim, attacker)
 })
 
 // Faction hygiene and guard registration are properties of an entity, not a
@@ -307,6 +348,8 @@ EntityEvents.spawned(event => {
 // acquisition when another conversion/load-order step left the guard idle.
 // One local query runs every 10 ticks, so cost does not scale with total mobs.
 ServerEvents.tick(event => {
+  PDZ_DEFENSE_ALERT_CLOCK++
+  if (PDZ_DEFENSE_ALERT_CLOCK % 1200 === 0) PDZ_DEFENSE_ALERT_RECENT = {}
   if (++PDZ_GUARD_TARGET_TICKS % 10 !== 0) return
   if (!PDZ_GUARD_TARGET_QUEUE.length) return
   let guard = PDZ_GUARD_TARGET_QUEUE.shift()
