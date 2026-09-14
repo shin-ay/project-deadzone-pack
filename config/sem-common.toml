@@ -20,7 +20,7 @@
 	#--------------------------------------------------
 	#Detection Range for All Units
 	#Range: 32.0 ~ 384.0
-	detectionRange = 96.0
+	detectionRange = 128.0
 
 [ai_difficulty]
 	#AI Difficulty preset.

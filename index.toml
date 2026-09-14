@@ -3090,7 +3090,7 @@ hash = "5040df07d90404ec6fb72797ae7d06af88db0a0f56c6c8a680b728031141b854"
 
 [[files]]
 file = "config/sem-common.toml"
-hash = "e0d71b305ec566512a81a64b5fc3c5ebad8b8ff83fd949483834b4fdd1578830"
+hash = "c21c7215672925b340d09602c540fd3a48841d5c814b466cc65372b7a131a335"
 
 [[files]]
 file = "config/sereneseasons/fertility.toml"
@@ -11385,6 +11385,10 @@ file = "kubejs/server_scripts/project_deadzone_faction_test_commands_v0_1.js"
 hash = "a01173566786e69d4906b71445cd3ce179b9c4319291c333d610af2028b362d8"
 
 [[files]]
+file = "kubejs/server_scripts/project_deadzone_faction_unit_admin_v0_1.js"
+hash = "a9e24315b1f516963f365f6201741a2ebb33450063c094f2150f145d5e8de55c"
+
+[[files]]
 file = "kubejs/server_scripts/project_deadzone_field_medical_kit_v0_1.js"
 hash = "5623899158dd37c9ca1d539ecf8401c1226951516c56951e53943113522b8461"
 
@@ -13340,6 +13344,10 @@ metafile = true
 file = "mods/patchouli.pw.toml"
 hash = "13e92501fb23e484ffd323438f85a82825d4d93426f20e19a1856c7bff289ad9"
 metafile = true
+
+[[files]]
+file = "mods/pdz-faction-ai-compat-1.0.0.jar"
+hash = "03e5bc6980708cafd079b483a602a5cf120cc46a7d2eddc1d6f191394a87de79"
 
 [[files]]
 file = "mods/pdz-infectious-lifecycle-compat-1.0.7.jar"
