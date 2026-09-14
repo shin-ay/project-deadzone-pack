@@ -1,4 +1,4 @@
-// PROJECT DEADZONE US Unit alliance v0.4
+// PROJECT DEADZONE US Unit alliance v0.5
 // Unrecruited US Units are friendly survivors.
 // RU Units remain hostile. Explicit story-faction units keep their own setup.
 
@@ -78,9 +78,27 @@ EntityEvents.spawned(event => {
   })
 })
 
-// Do not poll every loaded entity to repair targets. Spawn/join establishes the
-// alliance, and the hurt bridge below blocks any stale AI target from dealing
-// friendly damage. The manual repair command remains available for diagnostics.
+// Simple Enemy Mod may reacquire a player after the spawn-time alliance repair.
+// Damage cancellation alone still leaves gunfire, bullets and suppression
+// packets running, so clear only invalid targets from explicitly friendly US
+// units at a modest cadence. Hostile-tagged US units and every RU unit are left
+// untouched.
+let DZ_USUNIT_TARGET_REPAIR_TICK = 0
+ServerEvents.tick(event => {
+  DZ_USUNIT_TARGET_REPAIR_TICK++
+  if (DZ_USUNIT_TARGET_REPAIR_TICK % 10 !== 0) return
+  event.server.getAllLevels().forEach(level => level.entities.forEach(entity => {
+    if (!dzIsUsAllianceUnit(entity) || dzUsunitIsManagedFaction(entity) ||
+        !entity.tags.contains("dz_friendly")) return
+    try {
+      let target = entity.target
+      if (target && (String(target.type) === "minecraft:player" || dzUsunitIsVillageAlly(target) ||
+          target.tags.contains("dz_survivor") || target.tags.contains("dz_friendly"))) {
+        entity.setTarget(null)
+      }
+    } catch (ignored) {}
+  }))
+})
 
 EntityEvents.hurt(event => {
   let victim = event.entity
