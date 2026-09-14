@@ -2046,11 +2046,11 @@ hash = "af2b1b5d914216fc614c79869f32f93b7e44890895e77f376f1ccdbfc213f200"
 
 [[files]]
 file = "config/lightmanscurrency-common.toml"
-hash = "2ae8bf382406f95fbb6524f2abb7966b7d3f966b1aa54cb7a4004136653dbea2"
+hash = "0033f4b77b5505913c1e7cbc1cab00094fba5ed945828d7d20113f493b8448fd"
 
 [[files]]
 file = "config/lightmanscurrency/MasterCoinList.json"
-hash = "a885f09544f328c0bd79ed4e1b9bac7b088fd62fad76f2fe4a6a24c31f8b4353"
+hash = "6e60ce6c62a1b23921d31b6c74b059ca7349fc6ea6d122ca9227c092d1f2f2c4"
 
 [[files]]
 file = "config/lithostitched.json"
@@ -11330,7 +11330,7 @@ hash = "0a054505752ac0d5a1bf182b03842c200205de54c74a774014fd76fabc44af2f"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_credit_only_merchants_v0_1.js"
-hash = "77d8b2fbda53981a61639edc71e94553e81e3f1ae8eee494693d869a59f07013"
+hash = "ac5948c6c010ed4c6fe3ff61031615dd03f6d9da56526a6021b620ddfdae9571"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_cte2_combat_scaling_v0_1.js"
@@ -11594,7 +11594,7 @@ hash = "8c99acce49d019ff8ff7c7cd14ecbe15feb11d5bc64dca3edb4b870fa08ce751"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_recipe_stage_sync_v0_1.js"
-hash = "87840a803ee7ff92dfec1cb74232fde0ca08fabdd936255b9a00296808d93fe1"
+hash = "11020672caebc66f5b24d7e784d1bc9e179ff04f83d03e53a84ba8a184e622fb"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_region_tiers_v0_1.js"
@@ -12266,8 +12266,8 @@ file = "mods/PROJECT_DEADZONE_EpicTaCZ_Compat-0.1.0.jar"
 hash = "9f4870e0073f46f83effd31ace8410dac5c52448aab67dba08380c04f5d8af12"
 
 [[files]]
-file = "mods/PROJECT_DEADZONE_JOB_UI-0.7.3.jar"
-hash = "851827f9d6c445e33436f8e5f84b2e6bfb1fb9f46a9afa1f08e71dc151a9c4e8"
+file = "mods/PROJECT_DEADZONE_JOB_UI-0.8.0.jar"
+hash = "8186df0b446fdab6f507421e6d72bb0791400a053760ac75bac99844728b9135"
 
 [[files]]
 file = "mods/PROJECT_DEADZONE_Orca_Render_Compat-0.5.0.jar"

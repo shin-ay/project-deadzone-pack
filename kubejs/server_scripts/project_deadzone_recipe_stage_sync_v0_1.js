@@ -1,4 +1,4 @@
-// PROJECT DEADZONE Recipe Stage Sync v0.7
+// PROJECT DEADZONE Recipe Stage Sync v0.8
 // Story milestones are the only source of non-TaCZ technology authorization.
 // JOB and Talent choices improve a play style; they no longer decide whether
 // a player is allowed to build a whole technology family. TaCZ weapon crafting
@@ -10,6 +10,12 @@ const DZ_RECIPE_MILESTONES = [
   {id:'dz_story_vehicle_air', tier:2, label:'航空機・ヘリコプター'},
   {id:'dz_story_superb_warfare', tier:3, label:'Superb Warfare'}
 ]
+
+// KubeJS updates the GameStages data correctly, but its own stage packet does
+// not emit GameStages' StagesSyncedEvent on the client. RecipeStages listens
+// for that native event to refresh JEI visibility, so finish PDZ stage changes
+// with the native full sync as well.
+const DZ_RECIPE_GAME_STAGE_HELPER = Java.loadClass('net.darkhax.gamestages.GameStageHelper')
 
 // Remove stale permissions from the former 12-way JOB/Talent recipe grid.
 const DZ_RECIPE_LEGACY_STAGES = [
@@ -51,7 +57,17 @@ function dzRecipeSetStage(player, id, unlocked, notify, label) {
   return changed
 }
 
-function dzSyncRecipeStages(player, notify) {
+function dzRecipeSyncClient(player) {
+  try {
+    DZ_RECIPE_GAME_STAGE_HELPER.syncPlayer(player)
+    return true
+  } catch (error) {
+    console.error('[PDZ PROGRESSION] Native GameStages client sync failed for ' + player.username + ': ' + error)
+    return false
+  }
+}
+
+function dzSyncRecipeStages(player, notify, forceClientSync) {
   let storyUnlock = dzRecipeStoryUnlock(player)
   let changed = 0
   DZ_RECIPE_LEGACY_STAGES.forEach(id => {
@@ -60,11 +76,21 @@ function dzSyncRecipeStages(player, notify) {
   DZ_RECIPE_MILESTONES.forEach(entry => {
     if (dzRecipeSetStage(player, entry.id, storyUnlock >= entry.tier, notify !== false, entry.label)) changed++
   })
+  if (changed > 0 || forceClientSync === true) dzRecipeSyncClient(player)
   return changed
 }
 
-PlayerEvents.loggedIn(event => dzSyncRecipeStages(event.player, true))
-PlayerEvents.respawned(event => dzSyncRecipeStages(event.player, false))
+PlayerEvents.loggedIn(event => {
+  let player = event.player
+  dzSyncRecipeStages(player, true)
+  // Run once more after the client recipe/JEI runtime has settled. This also
+  // repairs players whose stage was already present before this update.
+  event.server.scheduleInTicks(60, () => {
+    try { dzSyncRecipeStages(player, false, true) }
+    catch (error) { console.error('[PDZ PROGRESSION] Delayed login stage sync failed: ' + error) }
+  })
+})
+PlayerEvents.respawned(event => dzSyncRecipeStages(event.player, false, true))
 PlayerEvents.tick(event => {
   // Self-heal within ten seconds if another mod, a stale player capability or
   // an older server update removed a shared technology stage.
@@ -86,14 +112,14 @@ ServerEvents.commandRegistry(event => {
   let root = Commands.literal('deadzoneprogression')
 
   root.then(Commands.literal('sync').requires(source => source.hasPermission(2)).executes(ctx => {
-    dzSyncRecipeStages(ctx.source.player, false)
+    dzSyncRecipeStages(ctx.source.player, false, true)
     ctx.source.player.tell(Text.of('ストーリー技術解禁を同期しました。').aqua())
     return 1
   }))
 
   root.then(Commands.literal('status').executes(ctx => {
     let player = ctx.source.player
-    let repaired = dzSyncRecipeStages(player, false)
+    let repaired = dzSyncRecipeStages(player, false, true)
     let story = dzRecipeStoryUnlock(player)
     player.tell(Text.of('=== 技術解禁 / Story S' + story + ' ===').gold())
     if (repaired > 0) player.tell(Text.of('技術フラグを ' + repaired + ' 件修復しました。').aqua())
@@ -134,7 +160,7 @@ ServerEvents.commandRegistry(event => {
     let player = ctx.source.player
     try { dzStoryApplyPlayer(player, dzStoryTier(player.server)) } catch (ignored) {}
     try { dzSyncSkillTierGates(player, false) } catch (ignored) {}
-    dzSyncRecipeStages(player, false)
+    dzSyncRecipeStages(player, false, true)
     try { dzSyncStoryResearchGateways(player, false) } catch (ignored) {}
     player.tell(Text.of('ストーリー・Talent Gate・技術・兵器研究を一括同期しました。').green())
     return 1

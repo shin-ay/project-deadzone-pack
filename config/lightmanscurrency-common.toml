@@ -19,7 +19,7 @@ addCashier = true
 [villagers.modification]
 changeVanillaTrades = false
 changeModdedTrades = false
-changeWanderingTrades = false
+changeWanderingTrades = true
 
 [loot.entities]
 enabled = true
