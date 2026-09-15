@@ -232,6 +232,10 @@ ServerEvents.commandRegistry(event => {
     player.tell(Text.of('M&S HP ' + pdzLimbMnsHealth(player) + '/' + pdzLimbMnsMax(player)).aqua())
     if (ratios) ratios.forEach((ratio, i) => player.tell(Text.of(PDZ_LIMB_NAMES[i] + ' ' +
       Math.round(ratio * 100) + '%').color(ratio < 0.4 ? 'red' : ratio < 0.7 ? 'yellow' : 'green')))
+    try {
+      if (global.pdzLimbPenaltySummary)
+        player.tell(Text.of('機能ペナルティ: ' + global.pdzLimbPenaltySummary(player)).yellow())
+    } catch (ignored) {}
     return 1
   }))
   event.register(root)

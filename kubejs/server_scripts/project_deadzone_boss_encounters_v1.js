@@ -38,6 +38,10 @@ function pdzAxelBroadcast(entity, message, color) {
   entity.runCommandSilent('tellraw @a[distance=..96] {"text":"[BOSS] ' + message + '","color":"' + color + '","bold":true}')
 }
 
+function pdzAxelLog(message) {
+  console.info('[PROJECT DEADZONE][Axel] ' + message)
+}
+
 function pdzAxelIntro(entity) {
   entity.runCommandSilent('title @a[distance=..96,gamemode=!spectator] times 10 55 15')
   entity.runCommandSilent('title @a[distance=..96,gamemode=!spectator] title {"text":"AXEL // ROAD KING","color":"red","bold":true}')
@@ -62,6 +66,7 @@ function pdzAxelSpawnFuelTanks(server, positioned) {
   server.runCommandSilent(positioned + " as " + boss + " at @s rotated as @s run summon minecraft:block_display ^0.34 ^1.05 ^-0.38 " + rightVisual)
 
   let tankCount = server.runCommandSilent(positioned + " if entity @e[tag=" + PDZ_BOSS_AXEL_TANK_LEFT_TAG + ",distance=..24] if entity @e[tag=" + PDZ_BOSS_AXEL_TANK_RIGHT_TAG + ",distance=..24] run tag " + boss + " add dz_axel_tanks_verified")
+  pdzAxelLog('weakpoint_spawn verified=' + (tankCount > 0) + ' commandResult=' + tankCount)
   if (tankCount <= 0) {
     server.runCommandSilent(positioned + " run tag " + boss + " add dz_axel_left_tank_destroyed")
     server.runCommandSilent(positioned + " run tag " + boss + " add dz_axel_right_tank_destroyed")
@@ -88,6 +93,9 @@ function pdzAxelInitialize(candidate) {
     candidate.runCommandSilent("effect give @s minecraft:resistance 9999 0 true")
   pdzAxelIntro(candidate)
   pdzAxelBroadcast(candidate, "ロードキング先遣隊長アクセルが燃料拠点を封鎖した。背面燃料タンクを破壊せよ！", "red")
+  pdzAxelLog('initialize uuid=' + String(candidate.uuid) + ' dimension=' + String(candidate.level.dimension) +
+    ' pos=' + Number(candidate.x).toFixed(1) + ',' + Number(candidate.y).toFixed(1) + ',' + Number(candidate.z).toFixed(1) +
+    ' hp=' + Number(candidate.health).toFixed(1) + '/' + Number(candidate.maxHealth).toFixed(1))
   return true
 }
 
@@ -104,6 +112,7 @@ function pdzAxelSpawnPhaseCylinders(boss) {
   }
 
   let spawned = boss.runCommandSilent("execute if entity @e[tag=" + PDZ_BOSS_AXEL_CYLINDER_TAG + ",distance=..16,limit=1] run tag @s add dz_axel_cylinders_verified")
+  pdzAxelLog('phase2_cylinders verified=' + (spawned > 0) + ' commandResult=' + spawned + ' boss=' + String(boss.uuid))
   if (spawned <= 0) {
     boss.addTag("dz_axel_cylinders_failed_open")
     boss.runCommandSilent("effect clear @s minecraft:resistance")
@@ -129,6 +138,7 @@ function pdzAxelPhaseCylinderDestroyed(cylinder) {
   cylinder.runCommandSilent("effect give " + boss + " minecraft:slowness 5 1 true")
   cylinder.runCommandSilent("effect give " + boss + " minecraft:weakness 5 0 true")
   cylinder.runCommandSilent('tellraw @a[distance=..96] {"text":"[DETONATION] 燃料ボンベ ' + index + ' 爆破。アクセルに18ダメージ＋短時間弱体化！","color":"aqua","bold":true}')
+  pdzAxelLog('cylinder_destroyed index=' + index + ' uuid=' + String(cylinder.uuid))
 
   let allDestroyed = cylinder.runCommandSilent("execute if entity @e[tag=" + PDZ_BOSS_AXEL_TAG + ",tag=dz_axel_cylinder_1_destroyed,tag=dz_axel_cylinder_2_destroyed,tag=dz_axel_cylinder_3_destroyed,distance=..48,limit=1] run tag " + boss + " add dz_axel_cylinders_destroyed")
   if (allDestroyed > 0) {
@@ -136,6 +146,7 @@ function pdzAxelPhaseCylinderDestroyed(cylinder) {
     cylinder.runCommandSilent("effect give " + boss + " minecraft:slowness 10 2 true")
     cylinder.runCommandSilent("effect give " + boss + " minecraft:weakness 10 1 true")
     pdzAxelBroadcast(cylinder, "全ボンベ誘爆。アクセルが大きく体勢を崩した！", "aqua")
+    pdzAxelLog('cylinders_all_destroyed bossSelectorResult=' + allDestroyed)
   }
 }
 
@@ -181,6 +192,7 @@ function pdzAxelFuelTankDestroyed(tank) {
   tank.runCommandSilent("particle minecraft:explosion ~ ~ ~ 0 0 0 0 1 force @a[distance=..96]")
   tank.runCommandSilent("playsound minecraft:entity.generic.explode master @a[distance=..96] ~ ~ ~ 0.8 1.35")
   tank.runCommandSilent('tellraw @a[distance=..96] {"text":"[WEAKPOINT] ' + sideName + '燃料タンク破壊。アクセルの機動力が低下した。","color":"yellow","bold":true}')
+  pdzAxelLog('fuel_tank_destroyed side=' + sideName + ' uuid=' + String(tank.uuid))
   tank.runCommandSilent("effect clear @e[tag=" + PDZ_BOSS_AXEL_TAG + ",distance=..24,sort=nearest,limit=1] minecraft:speed")
   tank.runCommandSilent("effect give @e[tag=" + PDZ_BOSS_AXEL_TAG + ",distance=..24,sort=nearest,limit=1] minecraft:slowness 9999 0 true")
 
@@ -192,6 +204,7 @@ function pdzAxelFuelTankDestroyed(tank) {
     tank.runCommandSilent("effect give @e[tag=" + PDZ_BOSS_AXEL_TAG + ",distance=..24,sort=nearest,limit=1] minecraft:slowness 9999 1 true")
     tank.runCommandSilent("effect give @e[tag=" + PDZ_BOSS_AXEL_TAG + ",distance=..24,sort=nearest,limit=1] minecraft:glowing 15 0 true")
     tank.runCommandSilent('tellraw @a[distance=..96] {"text":"[BREAK] 両燃料タンク破壊。耐火・防護・機動強化が停止した！","color":"aqua","bold":true}')
+    pdzAxelLog('fuel_tanks_all_destroyed bossSelectorResult=' + both)
   }
 }
 
@@ -259,13 +272,26 @@ function pdzAxelLaunchGrenades(server) {
     server.runCommandSilent(positioned + ' run particle minecraft:dust 1 0.25 0 1 ~ ~0.15 ~ 2.5 0.1 2.5 0 80 force @a[distance=..96]')
     server.runCommandSilent(positioned + ' run playsound minecraft:block.note_block.bell hostile @a[distance=..96] ~ ~ ~ 1.1 0.55')
     server.runCommandSilent(positioned + ' run tellraw @a[distance=..96] {"text":"[WARNING] 焼夷グレネード着弾まで1.5秒。赤い範囲から退避！","color":"red","bold":true}')
+    pdzAxelLog('grenade_warning boss=' + String(boss.uuid) + ' target=' + String(target.username) +
+      ' pos=' + x + ',' + y + ',' + z)
     let source = boss
-    server.scheduleInTicks(30, () => {
+    ;[10, 20].forEach(delay => server.scheduleInTicks(delay, () => {
       if (!source || !source.alive || source.tags.contains(PDZ_BOSS_AXEL_RESET_TAG)) return
+      server.runCommandSilent(positioned + ' run particle minecraft:dust 1 0.1 0 1 ~ ~0.12 ~ 2.5 0.08 2.5 0 54 force @a[distance=..96]')
+      server.runCommandSilent(positioned + ' run playsound minecraft:block.note_block.hat hostile @a[distance=..96] ~ ~ ~ 0.65 ' + (delay === 10 ? '0.75' : '1.15'))
+    }))
+    server.scheduleInTicks(30, () => {
+      if (!source || !source.alive || source.tags.contains(PDZ_BOSS_AXEL_RESET_TAG)) {
+        pdzAxelLog('grenade_cancelled boss_missing_or_reset=true pos=' + x + ',' + y + ',' + z)
+        return
+      }
       server.runCommandSilent(positioned + ' run particle minecraft:explosion_emitter ~ ~0.2 ~ 0 0 0 0 1 force @a[distance=..96]')
+      server.runCommandSilent(positioned + ' run particle minecraft:flame ~ ~0.2 ~ 1.8 0.25 1.8 0.03 60 force @a[distance=..96]')
       server.runCommandSilent(positioned + ' run playsound minecraft:entity.generic.explode hostile @a[distance=..96] ~ ~ ~ 1.1 1.15')
-      server.runCommandSilent(positioned + ' run damage @a[distance=..3.5,gamemode=!creative,gamemode=!spectator] 4 minecraft:explosion')
-      server.runCommandSilent(positioned + ' run effect give @a[distance=..3.5,gamemode=!creative,gamemode=!spectator] minecraft:slowness 3 0 true')
+      let hitCount = server.runCommandSilent(positioned + ' run damage @a[distance=..3.5,gamemode=!creative,gamemode=!spectator] 4 minecraft:explosion')
+      let slowCount = server.runCommandSilent(positioned + ' run effect give @a[distance=..3.5,gamemode=!creative,gamemode=!spectator] minecraft:slowness 3 0 true')
+      pdzAxelLog('grenade_detonate boss=' + String(source.uuid) + ' hits=' + hitCount + ' slowed=' + slowCount +
+        ' pos=' + x + ',' + y + ',' + z)
     })
   })
 }
@@ -307,10 +333,12 @@ EntityEvents.hurt(event => {
   if (ratio <= 0.65 && !boss.tags.contains("dz_axel_phase2")) {
     boss.addTag("dz_axel_phase2")
     let bearerTags = pdzAxelRuntimeTags([PDZ_BOSS_AXEL_BEARER_TAG, "dz_pdz_boss_minion"])
-    boss.runCommandSilent('summon ' + PDZ_BOSS_AXEL_BEARER_ENTITY + ' ~3 ~ ~ {CustomName:\'{"text":"弾薬手ラチェット","color":"gold"}\',CustomNameVisible:1b,PersistenceRequired:1b,Tags:' + pdzAxelTagsNbt(bearerTags) + ',Team:"pdz_axel"}')
+    let bearerSpawned = boss.runCommandSilent('summon ' + PDZ_BOSS_AXEL_BEARER_ENTITY + ' ~3 ~ ~ {CustomName:\'{"text":"弾薬手ラチェット","color":"gold"}\',CustomNameVisible:1b,PersistenceRequired:1b,Tags:' + pdzAxelTagsNbt(bearerTags) + ',Team:"pdz_axel"}')
     if (!boss.tags.contains("dz_axel_tanks_destroyed")) boss.runCommandSilent("effect give @s minecraft:resistance 9999 1 true")
     pdzAxelSpawnPhaseCylinders(boss)
     pdzAxelBroadcast(boss, "弾薬手ラチェットが防護支援を開始。支援役か燃料ボンベを崩せ！", "gold")
+    pdzAxelLog('phase2_enter boss=' + String(boss.uuid) + ' ratio=' + ratio.toFixed(3) +
+      ' bearerSpawned=' + bearerSpawned)
   }
 
   else if (ratio <= 0.3 && !boss.tags.contains("dz_axel_phase3")) {
@@ -318,6 +346,7 @@ EntityEvents.hurt(event => {
     boss.runCommandSilent("effect give @s minecraft:strength 9999 0 true")
     boss.runCommandSilent("effect give @s minecraft:glowing 9999 0 true")
     pdzAxelBroadcast(boss, "最終攻勢。アクセルが前線へ出た！", "red")
+    pdzAxelLog('phase3_enter boss=' + String(boss.uuid) + ' ratio=' + ratio.toFixed(3))
   }
 })
 
@@ -339,6 +368,7 @@ EntityEvents.death(event => {
   if (entity.tags.contains(PDZ_BOSS_AXEL_BEARER_TAG)) {
     entity.runCommandSilent("effect clear @e[tag=" + PDZ_BOSS_AXEL_TAG + ",distance=..64,limit=1,sort=nearest] minecraft:resistance")
     pdzAxelBroadcast(entity, "弾薬手を排除。アクセルの防護支援が解除された！", "yellow")
+    pdzAxelLog('bearer_destroyed uuid=' + String(entity.uuid))
     return
   }
 
@@ -352,6 +382,7 @@ EntityEvents.death(event => {
   pdzAxelCleanupAround(entity, 96)
   entity.runCommandSilent("tag @a[tag=" + PDZ_BOSS_AXEL_PARTICIPANT_TAG + "] remove " + PDZ_BOSS_AXEL_PARTICIPANT_TAG)
   pdzAxelBroadcast(entity, "アクセル撃破。周辺参加者へ個人報酬を支給した。", "green")
+  pdzAxelLog('defeated uuid=' + String(entity.uuid) + ' cleanupRadius=96')
 })
 
 // Appearance-only boss showroom. Every exhibit has a stable numbered tag so

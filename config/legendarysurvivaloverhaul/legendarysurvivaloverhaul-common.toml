@@ -659,33 +659,36 @@
 		[body-damage.body-parts-effects.arms]
 			"Arms Part Effects" = ["minecraft:mining_fatigue"]
 			"Arms Part Effect Amplifiers" = [0]
-			"Arms Part Effect Thresholds" = [0.45]
+			"Arms Part Effect Thresholds" = [0.65]
 			# These effects will be triggered when both arms reach the thresholds.
 			# If a same effect is used with a higher amplifier, the higher prevails (normal Minecraft behaviour).
 			"Both Arms Part Effects" = ["minecraft:weakness"]
 			"Both Arms Part Effect Amplifiers" = [0]
-			"Both Arms Part Effect Thresholds" = [0.6]
+			"Both Arms Part Effect Thresholds" = [0.65]
 
 		[body-damage.body-parts-effects.chest]
-			"Chest Part Effects" = ["legendarysurvivaloverhaul:vulnerability"]
-			"Chest Part Effect Amplifier" = [0]
-			"Chest Part Effect Thresholds" = [0.45]
+			# PDZ replaces Vulnerability with an Epic Fight stamina-regeneration
+			# penalty. Extra incoming damage made burst deaths worse and duplicated
+			# Mine and Slash's authoritative defensive scaling.
+			"Chest Part Effects" = []
+			"Chest Part Effect Amplifier" = []
+			"Chest Part Effect Thresholds" = []
 
 		[body-damage.body-parts-effects.legs]
-			"Legs Part Effects" = ["legendarysurvivaloverhaul:hard_falling"]
-			"Legs Part Effect Amplifiers" = [0]
-			"Legs Part Effect Thresholds" = [0.5]
-			"Both Legs Part Effects" = ["legendarysurvivaloverhaul:hard_falling"]
-			"Both Legs Part Effect Amplifiers" = [1]
-			"Both Legs Part Effect Thresholds" = [0.6]
+			"Legs Part Effects" = ["minecraft:slowness", "legendarysurvivaloverhaul:hard_falling"]
+			"Legs Part Effect Amplifiers" = [0, 0]
+			"Legs Part Effect Thresholds" = [0.65, 0.5]
+			"Both Legs Part Effects" = ["minecraft:slowness", "legendarysurvivaloverhaul:hard_falling"]
+			"Both Legs Part Effect Amplifiers" = [1, 1]
+			"Both Legs Part Effect Thresholds" = [0.6, 0.6]
 
 		[body-damage.body-parts-effects.feet]
 			"Feet Part Effects" = ["minecraft:slowness"]
 			"Feet Part Effect Amplifiers" = [0]
-			"Feet Part Effect Thresholds" = [0.45]
+			"Feet Part Effect Thresholds" = [0.55]
 			"Both Feet Part Effects" = ["minecraft:slowness"]
 			"Both Feet Part Effect Amplifiers" = [1]
-			"Both Feet Part Effect Thresholds" = [0.6]
+			"Both Feet Part Effect Thresholds" = [0.65]
 
 	[body-damage.integration]
 

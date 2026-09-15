@@ -2034,7 +2034,7 @@ hash = "a27a9011243c7b378aee4512f6ce6c6fe9f7a818194b3fd223f20ba8781de9a6"
 
 [[files]]
 file = "config/legendarysurvivaloverhaul/legendarysurvivaloverhaul-common.toml"
-hash = "63c0042422d50e604567fd24ffdd8a82b5c1fccc8c0e8fba2ae75109e8b49b76"
+hash = "2f1e025114e54cb3d31f7bf92b51a543d62e91dca33ee43cf970d09e25e45e96"
 
 [[files]]
 file = "config/libtooltips-client.toml"
@@ -11286,7 +11286,7 @@ hash = "27cf154fef2255fddc790c1cc5ec59e3cdbeb8fcedd191670af9de39064acebc"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_boss_encounters_v1.js"
-hash = "4248be34873862d0430ac3255f2337ebf649eb8cb8c71c544a3d2a31923a8e28"
+hash = "7e4042075d6a0ab02f134b098f7b092978d04cfab2e41404b391392c5de1a0de"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_boss_mechanics_v0_1.js"
@@ -11493,6 +11493,10 @@ file = "kubejs/server_scripts/project_deadzone_life_quality_v0_1.js"
 hash = "f427499b6c1a5d66f52da100fc258d86650a795669806044a25a73108f7eb9da"
 
 [[files]]
+file = "kubejs/server_scripts/project_deadzone_limb_penalties_v0_1.js"
+hash = "bc6aee0f03323ae050d89c79875fbfdb0602539ad261a3af9997beaf31aba054"
+
+[[files]]
 file = "kubejs/server_scripts/project_deadzone_logistics_network_v0_1.js"
 hash = "44474aebb71700302aa4621770701aa4e3739133a9d05ab5b147dbc5e663299c"
 
@@ -11546,7 +11550,7 @@ hash = "8547819073e93b7ef6c218c728fd1c85d7392174789f78c56046c1dd05fd6501"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_mns_limb_damage_bridge_v0_1.js"
-hash = "90228148524068c3874796f6d2a97f73756c9ca4569e775f1e4645ecbde5afce"
+hash = "73f4f18590f0ea689a986ae8a628814509b47af2b4774396e2394dbb563b2966"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_mns_progression_bridge_v0_1.js"
@@ -11882,7 +11886,7 @@ hash = "0bc98be49f4fe4e242f988e2d31d7f386e20e86bc6828ea33ca2bc961047c7b2"
 
 [[files]]
 file = "kubejs/startup_scripts/project_deadzone_player_survivability_v0_1.js"
-hash = "46d97c557a2801f54964ca79c41b60676612bed8b697139b9bc8f8375e12c386"
+hash = "ec590b5d61132c41f0bd5f5432a3813b7663ebf63b1feede439039d22ff6ae2a"
 
 [[files]]
 file = "kubejs/startup_scripts/project_deadzone_skill_forge_effects_v0_1.js"

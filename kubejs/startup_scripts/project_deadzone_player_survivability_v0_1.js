@@ -27,6 +27,30 @@ function pdzSurviveStoryBoss(entity) {
   return false
 }
 
+function pdzSurviveAxel(entity) {
+  return pdzSurviveHasTag(entity,'dz_boss_axel')
+}
+
+function pdzSurviveSourceEntity(source,direct) {
+  if(!source)return null
+  let entity=null
+  // LivingHurtEvent exposes the native DamageSource. Use its Java accessors
+  // first; property aliases are not consistently resolved for TaCZ bullets.
+  try{entity=direct?source.getDirectEntity():source.getEntity()}catch(ignored){}
+  if(entity)return entity
+  try{entity=direct?source.directEntity:source.entity}catch(ignored){}
+  if(entity)return entity
+  try{entity=direct?source.direct:source.actual}catch(ignored){}
+  return entity||null
+}
+
+function pdzSurviveEntityId(entity) {
+  if(!entity)return 'none'
+  try{return String(entity.type)}catch(ignored){}
+  try{return String(entity.getType())}catch(ignored){}
+  return 'unknown'
+}
+
 ForgeEvents.onEvent('net.minecraftforge.event.entity.living.LivingHurtEvent',event=>{
   let player=event.entity
   if(!player||!player.isPlayer||!player.isPlayer()||player.level.clientSide)return
@@ -36,9 +60,8 @@ ForgeEvents.onEvent('net.minecraftforge.event.entity.living.LivingHurtEvent',eve
   sourceId=sourceId.toLowerCase()
   if(sourceId.indexOf('outofworld')>=0||sourceId.indexOf('out_of_world')>=0||sourceId.indexOf('generic_kill')>=0)return
 
-  let attacker=null,direct=null
-  try{attacker=source.entity}catch(ignored){}
-  try{direct=source.directEntity}catch(ignored){try{direct=source.direct}catch(ignored2){}}
+  let attacker=pdzSurviveSourceEntity(source,false)
+  let direct=pdzSurviveSourceEntity(source,true)
   // Environmental attrition remains LSO/vanilla territory. This protection is
   // deliberately limited to attacks caused by an entity or its projectile.
   if(!attacker&&!direct)return
@@ -47,7 +70,11 @@ ForgeEvents.onEvent('net.minecraftforge.event.entity.living.LivingHurtEvent',eve
   if(original<=0)return
   let adjusted=original
   let boss=pdzSurviveStoryBoss(attacker)||pdzSurviveStoryBoss(direct)
-  if(boss)adjusted*=0.60
+  let axel=pdzSurviveAxel(attacker)||pdzSurviveAxel(direct)
+  // Axel uses a full-auto M4A1. Per-hit one-shot protection cannot stop a
+  // whole burst, so his bullets receive a stronger encounter-specific scale.
+  if(axel)adjusted*=0.40
+  else if(boss)adjusted*=0.60
 
   let health=Math.max(0,Number(player.health)||0)
   let maxHealth=Math.max(1,Number(player.maxHealth)||1)
@@ -59,16 +86,40 @@ ForgeEvents.onEvent('net.minecraftforge.event.entity.living.LivingHurtEvent',eve
   let cap=absorption+maxHealth*capRatio
   if(healthy&&adjusted>cap)adjusted=cap
 
+  // A TaCZ burst consists of several individually non-lethal events. Limit
+  // Axel's total one-second damage instead of making later bullets invisible
+  // to the normal M&S health pool. The next second can still finish the player.
+  let data=player.persistentData
+  let gameTime=0
+  try{gameTime=Number(player.level.gameTime)}catch(ignored){}
+  if(axel){
+    let windowStart=Number(data.getLong('dz_axel_damage_window_start'))
+    if(windowStart<=0||gameTime<windowStart||gameTime-windowStart>=20){
+      windowStart=gameTime
+      data.putLong('dz_axel_damage_window_start',gameTime)
+      data.putDouble('dz_axel_damage_window_used',0)
+    }
+    let used=Math.max(0,Number(data.getDouble('dz_axel_damage_window_used')))
+    let budget=maxHealth*(tank?0.35:0.45)
+    adjusted=Math.max(0,Math.min(adjusted,budget-used))
+    data.putDouble('dz_axel_damage_window_used',Math.min(budget,used+adjusted))
+  }
+
   if(adjusted+0.001<original){
     event.setAmount(adjusted)
-    let data=player.persistentData
     data.putDouble('dz_survival_last_original',original)
     data.putDouble('dz_survival_last_final',adjusted)
     data.putString('dz_survival_last_profile',tank?'tank':'standard')
     data.putBoolean('dz_survival_last_boss',boss)
+    data.putBoolean('dz_survival_last_axel',axel)
     data.putInt('dz_survival_guard_count',data.getInt('dz_survival_guard_count')+1)
-    console.warn('[PDZ Survivability] player='+player.username+' original='+original.toFixed(2)+
-      ' final='+adjusted.toFixed(2)+' profile='+(tank?'tank':'standard')+' boss='+boss+
-      ' health='+health.toFixed(2)+'/'+maxHealth.toFixed(2))
+    let lastLog=Number(data.getLong('dz_survival_last_log_tick'))
+    if(lastLog<=0||gameTime<lastLog||gameTime-lastLog>=20){
+      data.putLong('dz_survival_last_log_tick',gameTime)
+      console.warn('[PDZ Survivability] player='+player.username+' original='+original.toFixed(2)+
+        ' final='+adjusted.toFixed(2)+' profile='+(tank?'tank':'standard')+' boss='+boss+
+        ' axel='+axel+' attacker='+pdzSurviveEntityId(attacker)+' direct='+pdzSurviveEntityId(direct)+
+        ' health='+health.toFixed(2)+'/'+maxHealth.toFixed(2))
+    }
   }
 })
