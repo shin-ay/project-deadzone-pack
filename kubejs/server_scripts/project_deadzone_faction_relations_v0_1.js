@@ -160,6 +160,12 @@ function pdzRelationSelfTest(source) {
   let checks = [
     ['survivor', 'cdf', 'ALLY'],
     ['survivor', 'independent', 'FRIENDLY'],
+    ['cdf', 'remnant', 'HOSTILE'],
+    ['remnant', 'cdf', 'HOSTILE'],
+    ['remnant', 'infected', 'HOSTILE'],
+    ['infected', 'remnant', 'HOSTILE'],
+    ['pmc', 'infected', 'HOSTILE'],
+    ['infected', 'pmc', 'HOSTILE'],
     ['remnant', 'aegis', 'NEUTRAL'],
     ['infected', 'spore', 'HOSTILE'],
     ['warden', 'survivor', 'HOSTILE']
@@ -182,4 +188,4 @@ ServerEvents.commandRegistry(event => {
     .then(Commands.literal('selftest').executes(context => pdzRelationSelfTest(context.source))))
 })
 
-console.info('[PROJECT DEADZONE] authoritative faction relations v0.1 loaded')
+console.info('[PROJECT DEADZONE] authoritative faction relations v0.2 loaded')

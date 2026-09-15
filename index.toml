@@ -11282,7 +11282,7 @@ hash = "d77efc79234141579922af69a909251d4deab522255146aeab946abd31b12420"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_basecamp_guard_safety_v0_1.js"
-hash = "3e7d82c927b624da55a85ffa1d6e8114d95343347e3573519fd77638fb77f6c2"
+hash = "494599dd8c61c393be908279142815cc175354f402505f0dad7be5f6675c7338"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_basecamp_raid_v0_1.js"
@@ -11390,7 +11390,7 @@ hash = "21b7ddc4c574dc4a4b01c2ad1636142977e6cb73747979f88e4685b52beba0a4"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_faction_relations_v0_1.js"
-hash = "d70dd851c3f00663bc6a4291be8e66df7a234fe00b136d26d385bd5ddab2cc57"
+hash = "6448e51290093793dd58158c0325820bda78b96a319556f60b80c20a961f5bc1"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_faction_strongholds_v0_1.js"

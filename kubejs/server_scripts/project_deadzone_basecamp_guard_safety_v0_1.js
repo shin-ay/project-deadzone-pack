@@ -1,4 +1,4 @@
-// PROJECT DEADZONE - survivor guard relations and retaliation v0.8
+// PROJECT DEADZONE - survivor guard relations and retaliation v0.9
 // Scoreboard teams stop friendly fire. These checks bridge TacZ NPC factions
 // and PDZ-authored faction tags.
 
@@ -46,21 +46,6 @@ function pdzIsInfectedFaction(entity) {
   if (id.indexOf('infectious:') === 0 || id.indexOf('apocalypse_zombies:') === 0) return true
   if (id.indexOf('zombie') >= 0 || id === 'minecraft:husk' || id === 'minecraft:drowned') return true
   return !!entity.tags && entity.tags.contains('dz_force_infected')
-}
-
-function pdzIsZombieAggressor(entity) {
-  if (!entity) return false
-  let id = String(entity.type)
-  return id === 'minecraft:zombie' || id === 'minecraft:zombie_villager' ||
-    id === 'minecraft:husk' || id === 'minecraft:drowned' ||
-    id === 'mca:male_zombie_villager' || id === 'mca:female_zombie_villager'
-}
-
-function pdzIsLivingVillagerTarget(entity) {
-  if (!entity || !entity.alive || pdzIsInfectedFaction(entity)) return false
-  let id = String(entity.type)
-  return id === 'minecraft:villager' || id === 'minecraft:wandering_trader' ||
-    id === 'mca:male_villager' || id === 'mca:female_villager'
 }
 
 function pdzIsSurvivorAlly(entity) {
@@ -150,42 +135,6 @@ function pdzIsFactionHostile(entity) {
     entity.tags.contains('dz_force_helix') || entity.tags.contains('dz_force_infected')
 }
 
-function pdzIsInfectedTarget(entity) {
-  if (!entity || !entity.alive || pdzIsInfectedFaction(entity) || pdzIsProtectedBossTestEntity(entity)) return false
-  if (typeof pdzFactionRelation === 'function' && typeof pdzFactionOfEntity === 'function')
-    return pdzFactionRelation('infected', pdzFactionOfEntity(entity)) === 'HOSTILE'
-  let id = String(entity.type)
-  if (id === 'minecraft:player' || id === 'minecraft:villager' ||
-      id === 'minecraft:wandering_trader' || id === 'minecraft:iron_golem') return true
-  if (id.indexOf('mca:') === 0 || id.indexOf('minecolonies:citizen') === 0 ||
-      id.indexOf('simpleenemymod:') === 0 || id.indexOf('tacz_bandits:') === 0 ||
-      id.indexOf('easy_npc:') === 0) return true
-  if (!entity.tags) return false
-  return entity.tags.contains('dz_survivor') || entity.tags.contains('dz_friendly') ||
-    entity.tags.contains('dz_buddy') || entity.tags.contains('dz_story_npc') ||
-    entity.tags.contains('dz_settlement_civilian') || entity.tags.contains('dz_starter_colony_resident') ||
-    entity.tags.contains('dz_faction_civil_defense') || entity.tags.contains('dz_force_raider') ||
-    entity.tags.contains('dz_force_remnant') || entity.tags.contains('dz_force_ash_jackals') ||
-    entity.tags.contains('dz_force_helix')
-}
-
-function pdzInfectedSetNearestFactionTarget(infected, candidates) {
-  if (!infected || !infected.alive) return
-  try {
-    if (pdzIsInfectedTarget(infected.target)) return
-  } catch (ignored) {}
-  let best = null, bestDistance = 32 * 32
-  candidates.forEach(candidate => {
-    if (!pdzIsInfectedTarget(candidate) || String(candidate.level.dimension) !== String(infected.level.dimension)) return
-    let dx = candidate.x - infected.x, dy = candidate.y - infected.y, dz = candidate.z - infected.z
-    let distance = dx * dx + dy * dy + dz * dz
-    if (distance < bestDistance) { bestDistance = distance; best = candidate }
-  })
-  if (best) {
-    try { infected.setTarget(best) } catch (ignored) {}
-  }
-}
-
 function pdzGuardSetTarget(guard, target, retaliation) {
   if (!guard || !target || !pdzIsCampGuard(guard)) return
   if (!retaliation && !pdzIsFactionHostile(target)) return
@@ -243,53 +192,64 @@ function pdzIsFactionCombatUnit(entity) {
   let faction = pdzFactionOfEntity(entity)
   if (['infected', 'spore', 'remnant', 'raider', 'aegis', 'warden', 'pmc'].indexOf(faction) >= 0) return true
   if (faction !== 'cdf' && faction !== 'survivor') return false
+  let id = String(entity.type)
+  if (id === 'simpleenemymod:usunit' || id.indexOf('tacz_sewv:us_') === 0) return true
   return pdzIsCampGuard(entity) || (!!entity.tags && (entity.tags.contains('dz_buddy') ||
     entity.tags.contains('dz_faction_combatant')))
 }
 
-function pdzFactionTargetCell(entity) {
-  return Math.floor(Number(entity.x) / 32) + '|' + Math.floor(Number(entity.z) / 32)
+// A single event-fed queue replaces the old dimension-wide scan for every
+// faction. Military units can notice distant contacts and move into their own
+// weapon range; infected retain a shorter awareness radius. Only one queued
+// unit is serviced per tick, so cost is bounded even in dense loaded areas.
+const PDZ_FACTION_TARGET_QUEUE = []
+const PDZ_FACTION_TARGET_QUEUED = {}
+const PDZ_FACTION_TARGET_QUEUE_CAP = 1024
+const PDZ_FACTION_MILITARY_ACQUIRE_RADIUS = 96
+const PDZ_FACTION_INFECTED_ACQUIRE_RADIUS = 48
+const PDZ_FACTION_TARGET_RETAIN_RADIUS = 128
+const PDZ_FACTION_TARGET_VERTICAL_RANGE = 32
+
+function pdzQueueFactionTargeting(unit) {
+  if (!pdzIsFactionCombatUnit(unit)) return
+  let key = String(unit.uuid)
+  if (PDZ_FACTION_TARGET_QUEUED[key] || PDZ_FACTION_TARGET_QUEUE.length >= PDZ_FACTION_TARGET_QUEUE_CAP) return
+  PDZ_FACTION_TARGET_QUEUED[key] = true
+  PDZ_FACTION_TARGET_QUEUE.push(unit)
 }
 
-function pdzFactionTargetBuckets(entities) {
-  let buckets = {}
-  entities.forEach(entity => {
-    let key = pdzFactionTargetCell(entity)
-    if (!buckets[key]) buckets[key] = []
-    buckets[key].push(entity)
-  })
-  return buckets
+function pdzFactionAcquireRadius(unit) {
+  let faction = pdzFactionOfEntity(unit)
+  return faction === 'infected' || faction === 'spore' ?
+    PDZ_FACTION_INFECTED_ACQUIRE_RADIUS : PDZ_FACTION_MILITARY_ACQUIRE_RADIUS
 }
 
-function pdzSetNearestRelationTarget(unit, buckets) {
+function pdzSetNearestRelationTarget(unit) {
   if (!pdzIsFactionCombatUnit(unit) || typeof pdzRelationAllowsTarget !== 'function') return
   try {
     if (unit.target && unit.target.alive && pdzRelationAllowsTarget(unit, unit.target)) {
       let dx = Number(unit.target.x) - Number(unit.x)
       let dy = Number(unit.target.y) - Number(unit.y)
       let dz = Number(unit.target.z) - Number(unit.z)
-      if (Math.abs(dy) <= 12 && dx * dx + dy * dy + dz * dz <= 32 * 32 && unit.hasLineOfSight(unit.target)) return
+      if (Math.abs(dy) <= PDZ_FACTION_TARGET_VERTICAL_RANGE &&
+          dx * dx + dy * dy + dz * dz <= PDZ_FACTION_TARGET_RETAIN_RADIUS * PDZ_FACTION_TARGET_RETAIN_RADIUS) return
     }
     if (unit.target) unit.setTarget(null)
   } catch (ignored) {}
 
-  let cx = Math.floor(Number(unit.x) / 32), cz = Math.floor(Number(unit.z) / 32)
-  let best = null, bestDistance = 32 * 32
-  for (let ox = -1; ox <= 1; ox++) for (let oz = -1; oz <= 1; oz++) {
-    let candidates = buckets[(cx + ox) + '|' + (cz + oz)] || []
-    candidates.forEach(candidate => {
-      if (candidate === unit || !candidate.alive || !pdzRelationAllowsTarget(unit, candidate)) return
-      let dx = Number(candidate.x) - Number(unit.x)
-      let dy = Number(candidate.y) - Number(unit.y)
-      let dz = Number(candidate.z) - Number(unit.z)
-      if (Math.abs(dy) > 12) return
-      let distance = dx * dx + dy * dy + dz * dz
-      if (distance >= bestDistance) return
-      try { if (!unit.hasLineOfSight(candidate)) return } catch (ignored) {}
-      bestDistance = distance
-      best = candidate
-    })
-  }
+  let radius = pdzFactionAcquireRadius(unit)
+  let best = null, bestDistance = radius * radius
+  unit.level.getEntities(unit, unit.boundingBox.inflate(radius)).forEach(candidate => {
+    if (candidate === unit || !candidate.alive || !pdzRelationAllowsTarget(unit, candidate)) return
+    let dx = Number(candidate.x) - Number(unit.x)
+    let dy = Number(candidate.y) - Number(unit.y)
+    let dz = Number(candidate.z) - Number(unit.z)
+    if (Math.abs(dy) > PDZ_FACTION_TARGET_VERTICAL_RANGE) return
+    let distance = dx * dx + dy * dy + dz * dz
+    if (distance >= bestDistance) return
+    bestDistance = distance
+    best = candidate
+  })
   if (best) try { unit.setTarget(best) } catch (ignored) {}
 }
 
@@ -334,6 +294,7 @@ EntityEvents.spawned(event => {
   let entity = event.entity
   pdzSanitizeMineColoniesRaider(entity)
   pdzSanitizeInfectedFaction(entity)
+  pdzQueueFactionTargeting(entity)
   if (!pdzIsCampGuard(entity)) return
   let newlyRegistered = !entity.tags.contains('dz_survivor_guard')
   entity.tags.add('dz_survivor_guard')
@@ -341,6 +302,7 @@ EntityEvents.spawned(event => {
   entity.tags.add('dz_friendly')
   entity.tags.add('dz_faction_civil_defense')
   if (newlyRegistered) entity.runCommandSilent('team join dz_survivors @s')
+  pdzQueueFactionTargeting(entity)
   pdzQueueGuardTargeting(entity)
 })
 
@@ -377,55 +339,14 @@ ServerEvents.tick(event => {
   pdzQueueGuardTargeting(guard)
 })
 
-// MCA villagers are not subclasses of vanilla Villager, so vanilla zombie AI
-// does not consistently acquire them. Keep a bounded event-fed queue and
-// service at most one idle zombie per tick with a spatially indexed local
-// query. This supports encounters after movement without restoring a global
-// level.entities scan.
-const PDZ_ZOMBIE_TARGET_QUEUE = []
-const PDZ_ZOMBIE_TARGET_QUEUED = {}
-const PDZ_ZOMBIE_TARGET_QUEUE_CAP = 512
-let PDZ_ZOMBIE_TARGET_TICKS = 0
-
-EntityEvents.spawned(event => {
-  let entity = event.entity
-  if (!pdzIsZombieAggressor(entity)) return
-  let key = String(entity.uuid)
-  if (PDZ_ZOMBIE_TARGET_QUEUED[key]) return
-  if (PDZ_ZOMBIE_TARGET_QUEUE.length >= PDZ_ZOMBIE_TARGET_QUEUE_CAP) return
-  PDZ_ZOMBIE_TARGET_QUEUED[key] = true
-  PDZ_ZOMBIE_TARGET_QUEUE.push(entity)
-})
-
+// This also covers MCA villagers: the relation matrix classifies them as
+// independent, so infected acquire them without a second zombie-only scanner.
 ServerEvents.tick(event => {
-  if (++PDZ_ZOMBIE_TARGET_TICKS % 5 !== 0) return
-  if (!PDZ_ZOMBIE_TARGET_QUEUE.length) return
-  let zombie = PDZ_ZOMBIE_TARGET_QUEUE.shift()
-  let key = zombie ? String(zombie.uuid) : ''
-  if (key) delete PDZ_ZOMBIE_TARGET_QUEUED[key]
-  if (!zombie || !zombie.alive || !pdzIsZombieAggressor(zombie)) return
-
-  let current = null
-  try { current = zombie.target } catch (ignored) {}
-  if (!current || !current.alive || !pdzRelationAllowsTarget(zombie, current)) {
-    let best = null, bestDistance = 32 * 32
-    zombie.level.getEntities(zombie, zombie.boundingBox.inflate(32)).forEach(candidate => {
-      if (!pdzIsLivingVillagerTarget(candidate)) return
-      let dx = Number(candidate.x) - Number(zombie.x)
-      let dy = Number(candidate.y) - Number(zombie.y)
-      let dz = Number(candidate.z) - Number(zombie.z)
-      let distance = dx * dx + dy * dy + dz * dz
-      if (distance >= bestDistance) return
-      bestDistance = distance
-      best = candidate
-    })
-    if (best) try { zombie.setTarget(best) } catch (ignored) {}
-  }
-
-  // Requeue live zombies. With N zombies, each is revisited every N slots;
-  // work remains capped at four local queries per second.
-  if (zombie.alive && PDZ_ZOMBIE_TARGET_QUEUE.length < PDZ_ZOMBIE_TARGET_QUEUE_CAP) {
-    PDZ_ZOMBIE_TARGET_QUEUED[key] = true
-    PDZ_ZOMBIE_TARGET_QUEUE.push(zombie)
-  }
+  if (!PDZ_FACTION_TARGET_QUEUE.length) return
+  let unit = PDZ_FACTION_TARGET_QUEUE.shift()
+  let key = unit ? String(unit.uuid) : ''
+  if (key) delete PDZ_FACTION_TARGET_QUEUED[key]
+  if (!unit || !unit.alive || !pdzIsFactionCombatUnit(unit)) return
+  pdzSetNearestRelationTarget(unit)
+  pdzQueueFactionTargeting(unit)
 })
