@@ -1,9 +1,9 @@
 {
   "entity": "tacz_hostiles:soldier",
   "name": "\u30a2\u30af\u30bb\u30eb\u300e\u30ed\u30fc\u30c9\u30ad\u30f3\u30b0\u5148\u9063\u968a\u9577\u300f",
-  "visualscale": 1.16,
+  "visualscale": 1.35,
   "experience": 450,
-  "protect_treasure": true,
+  "protect_treasure": false,
   "effects": {
     "minecraft:fire_resistance": 0,
     "minecraft:speed": 0
@@ -21,9 +21,5 @@
   "ai-goals": {
     "brutalbosses:aftercombatregen": { "amount": 1 }
   },
-  "spawnatchest": {
-    "dungeons_arise:chests/bandit_village/bandit_village_tents": 1,
-    "dungeons_arise:chests/bandit_towers/bandit_towers_treasure": 1,
-    "dungeons_arise:chests/illager_fort/illager_fort_treasure": 1
-  }
+  "spawnatchest": {}
 }

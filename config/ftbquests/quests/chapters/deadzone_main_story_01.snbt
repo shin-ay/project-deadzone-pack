@@ -101,7 +101,11 @@
 		}
 		{
 			dependencies: ["633F4D540C6511A9"]
-			description: ["Raider Scoutを排除し、建物と燃料庫の安全を確保する。"]
+			description: [
+				"ロードキング先遣隊長アクセルを撃破し、燃料輸送路を奪還する。"
+				"背面の左右燃料タンクを破壊すると防護と機動力が低下する。赤い着弾予告は1.5秒後に爆発するため、範囲外へ退避しよう。"
+				"HP 65%で支援兵と緊急燃料ボンベ、30%で最終攻勢へ移行する。"
+			]
 			icon: "apocalypsenow:bottle"
 			id: "19FC30DCB267A732"
 			rewards: [
@@ -123,13 +127,13 @@
 					xp: 40
 				}
 			]
-			subtitle: "Raidersの偵察隊が燃料輸送路を監視している。｜解放条件: 「探索準備」を完了"
+			subtitle: "最初の作戦BOSS。弱点破壊と攻撃予告を見切れ。｜解放条件: 「探索準備」を完了"
 			tasks: [{
 				id: "42AEC3D45A019DD6"
 				title: "Gas Stationを確保した"
 				type: "custom"
 			}]
-			title: "Gas Stationを確保せよ"
+			title: "Gas Station BOSS：アクセル"
 			x: 10.0d
 			y: 0.0d
 		}

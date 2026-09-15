@@ -121,9 +121,9 @@
 		{
 			dependencies: ["1920AEAAF4D75E94"]
 			description: [
-				"ロードキング先遣隊長アクセルは、Raider系大型拠点の戦利品庫を封鎖している。"
-				"Bandit Village、Bandit Tower、Illager Fortの高価値チェスト周辺を捜索する。背面燃料タンクと増援用ボンベを先に破壊しよう。"
-				"これは一度きりのNamedサブクエスト。再遭遇時は本体の通常Boss Lootだけを獲得できる。"
+				"ロードキング先遣隊長アクセルは、Gas Stationと燃料輸送路を封鎖している。"
+				"ストーリーのGas Station作戦で遭遇する。背面燃料タンクと増援用ボンベを先に破壊しよう。"
+				"ストーリー攻略とNamed討伐記録は同じ一体を参照する。"
 			]
 			icon: "tacz:modern_kinetic_gun"
 			id: "3AE47B2BEA8C8EB9"
@@ -149,7 +149,7 @@
 					xp: 60
 				}
 			]
-			subtitle: "解放条件: 「Survivor Camp」を完了／大型Bandit施設の戦利品庫で出現"
+			subtitle: "解放条件: 「Survivor Camp」を完了／Gas Station作戦で出現"
 			tasks: [{
 				id: "0C74DC9EAB628FD9"
 				title: "アクセル『ロードキング先遣隊長』を撃破した"

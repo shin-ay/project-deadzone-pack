@@ -36,7 +36,9 @@ const PDZ_MECH_DEFS = [
 // Boss-only silhouettes. Ordinary bandits already use AK/M4/SMG/Deagle/
 // double-barrel weapons, so named humanoid bosses deliberately avoid that pool.
 const PDZ_MECH_BOSS_GUNS = {
-  '01':{gun:'tacz:minigun',mode:'AUTO',ammo:100},
+  // Axel is the first mandatory boss. An assault rifle keeps the encounter
+  // readable at S0 while his weak points and grenades provide the spectacle.
+  '01':{gun:'tacz:m4a1',mode:'AUTO',ammo:30},
   '04':{gun:'tacz:fn_evolys',mode:'AUTO',ammo:100},
   // 05 is a vanilla pillager. Replacing its crossbow with a TaCZ item leaves
   // the pillager AI unable to fire, so its authored crossbow is preserved.
@@ -74,6 +76,9 @@ let pdzMechTrackedBosses=[]
 
 function pdzMechId(entity){
   if(!entity||!entity.tags||entity.tags.contains('dz_boss_showroom')||entity.tags.contains(PDZ_MECH_FROZEN_TEST))return null
+  // Gas Station now routes to the authored Axel encounter. Its story tag is
+  // also the legacy mechanic-05 tag, so never initialize both systems.
+  if(entity.tags.contains('dz_boss_axel'))return null
   for(let i=0;i<PDZ_MECH_DEFS.length;i++){
     let def=PDZ_MECH_DEFS[i]
     if(entity.tags.contains(def.tag)||entity.tags.contains('dz_boss_mech_'+def.id))return def.id

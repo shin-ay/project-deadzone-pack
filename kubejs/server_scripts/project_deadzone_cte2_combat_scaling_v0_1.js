@@ -21,6 +21,10 @@ const PDZCTE_LEVEL_BANDS = [
 function pdzCteIsHostile(entity){
   if(!entity||!entity.type)return false
   let id=String(entity.type)
+  // Namespace-wide hostile matching must not feed non-living projectile
+  // entities into M&S EntityData.  Mutant spitter shots were repeatedly doing
+  // exactly that and filling the log on every projectile spawn.
+  if(id.indexOf('projectile')>=0)return false
   let namespace=id.split(':')[0]
   if(['spore','infnexus','infectious','apocalypse_zombies','mutantszombies','tacz_bandits','tacz_hostiles'].indexOf(namespace)>=0)return true
   if(id==='simpleenemymod:ruunit')return true
@@ -62,13 +66,17 @@ function pdzCteRegion(entity){
 }
 
 function pdzCteApplyIncomingBalance(entity){
-  if(!entity||entity.tags.contains('dz_cte2_incoming_v3'))return
+  if(!entity||entity.tags.contains('dz_cte2_incoming_v4'))return
   let tier=pdzCteRegion(entity)
-  let reduction=tier===1?(entity.tags.contains('dz_elite')?-0.40:-0.55):
-    (entity.tags.contains('dz_elite')?-0.15:-0.30)
+  // M&S remains the damage owner.  This PDZ policy modifier only shapes its
+  // result into a readable tier curve: early ordinary enemies cannot randomly
+  // erase a healthy player, while late elites still keep most of their damage.
+  let normal=[-0.55,-0.50,-0.45,-0.40,-0.35,-0.30]
+  let elite=[-0.40,-0.35,-0.30,-0.25,-0.20,-0.15]
+  let reduction=entity.tags.contains('dz_elite')?elite[tier]:normal[tier]
   entity.removeAttribute('minecraft:generic.attack_damage',PDZCTE_DAMAGE_MODIFIER)
   entity.modifyAttribute('minecraft:generic.attack_damage',PDZCTE_DAMAGE_MODIFIER,reduction,'multiply_total')
-  entity.addTag('dz_cte2_incoming_v3')
+  entity.addTag('dz_cte2_incoming_v4')
 }
 
 function pdzCteApply(entity){

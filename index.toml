@@ -1398,7 +1398,7 @@ hash = "6cfcd3afa739562430a7484c9bf60761f1ffa097a29aa10e256775178bf7d6ce"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/deadzone_bounties_01.snbt"
-hash = "e3eb989e917fda0794ffea952d538e3dd47326278c38b41097d312e311ac8d28"
+hash = "899834c7ce0c5440935c6422b9c536acb4f83d4d5e11e65ff9a8fdf11d2eaf06"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/deadzone_buddy_operations_01.snbt"
@@ -1478,7 +1478,7 @@ hash = "cb5eb9ac98f526766785cd03c63431f617bfcf7531f38a65ede066f711a47239"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/deadzone_main_story_01.snbt"
-hash = "a3e81473a6e3756268c2ebde5af52a3c1546c47a8f892671f797c98e15557644"
+hash = "532ebdefd1427a6a890314a5b9a361c4e27b34c121691a7bd37de31ef7962760"
 
 [[files]]
 file = "config/ftbquests/quests/chapters/deadzone_main_story_02.snbt"
@@ -1626,11 +1626,11 @@ hash = "1749318f002c251afc8dd62fdd81f5c3fdfdacc7e294eb95e4c92380d5637752"
 
 [[files]]
 file = "config/ftbquests/quests/lang/en_us.snbt"
-hash = "67c9c6bf01b8603519589505e7bc80c37d220877a5a44a1a7ba456ba968b5f35"
+hash = "a98a05df16b5b7404890c33e0726e5112810462fe349ac9e1f316999e682e168"
 
 [[files]]
 file = "config/ftbquests/quests/lang/ja_jp.snbt"
-hash = "1d6dafd3b334163d495a8d33f0029623899478d604968933ac06e5f19682ad2b"
+hash = "ce759b1bc62214facfe8e1e9ae4f9e3b30928f99e887eb42b7c43c75a5cb9d3c"
 
 [[files]]
 file = "config/ftbxmodcompat.snbt"
@@ -4374,11 +4374,7 @@ hash = "c04ec1b365a21157b4e24cbb7180758675415ca79b4844175f61b09fb16f8044"
 
 [[files]]
 file = "kubejs/data/brutalbosses/bosses/pdz_axel.json"
-hash = "c5bcdd6915d7282e3e011276280ddfae7dcac5c6b25de879052be3d4f73f2562"
-
-[[files]]
-file = "kubejs/data/brutalbosses/bosses/pdz_fuel_route_scout.json"
-hash = "8c345aea408bc3b33f567d822bc7f624b2cdf0c2ecc4c24e2c8064f5cebc34fe"
+hash = "33696c7a8902915adc6c8f433632176f746b4bf1e16fb9fe07c7b1dfe9ad5ccb"
 
 [[files]]
 file = "kubejs/data/brutalbosses/bosses/rabbitboss.json"
@@ -9998,7 +9994,7 @@ hash = "d3ccc417783b32e67be31d442fe83b3a8990ce58bc4488e698677a015708875e"
 
 [[files]]
 file = "kubejs/data/project_deadzone/functions/story/spawn_gasstation_boss.mcfunction"
-hash = "ce06585b9ff489fb38a414a93fd5268eb096b07631cee2871bb32f73ab3651b6"
+hash = "07a5fecf75ff640af8a961610697944bacdc1bcfa6a046846afced50a413142e"
 
 [[files]]
 file = "kubejs/data/project_deadzone/functions/story/spawn_gunshop_boss.mcfunction"
@@ -11290,11 +11286,11 @@ hash = "27cf154fef2255fddc790c1cc5ec59e3cdbeb8fcedd191670af9de39064acebc"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_boss_encounters_v1.js"
-hash = "b1f4e3a04fd16ea13d835dc31fc9fecc5d713f31f981d60df765a74d5ec50f2b"
+hash = "4248be34873862d0430ac3255f2337ebf649eb8cb8c71c544a3d2a31923a8e28"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_boss_mechanics_v0_1.js"
-hash = "30da72d9a8c03f5696b207cc279d225c17104baafae5448f92f496246e83945f"
+hash = "44e39e96e306714149438634f98dff4ddbfbf1c60269de4a3d561f60d2f5834f"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_buddy_control_v0_1.js"
@@ -11350,7 +11346,7 @@ hash = "ac5948c6c010ed4c6fe3ff61031615dd03f6d9da56526a6021b620ddfdae9571"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_cte2_combat_scaling_v0_1.js"
-hash = "ab304788495837f97f4952a60ad821aa6d2cdc1f9bed22ccb7541a281136eca5"
+hash = "4cb6164b8a728b807a3fe260f69a115cfb226910660cfe579ad4ea3e0ae2912a"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_currency_v0_1.js"
@@ -11438,7 +11434,7 @@ hash = "afaeae6f594744a1c5426d2a2290a8a7c85eef663df4470f6b71eea5ac03274b"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_growth_effects_v0_1.js"
-hash = "62af1d449305eae01b5ed3b7ae8abdb20b889aeb422c1a70f8ce4231894f6c08"
+hash = "db111e6a173bbacef9f42206891e831926435e75d650cafd11501c4759d105e0"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_growth_mvp_v0_1.js"
@@ -11883,6 +11879,10 @@ hash = "b254cfbe38114053d235c38f0006608c5749921be4982f300be21e748baed8dc"
 [[files]]
 file = "kubejs/startup_scripts/project_deadzone_music_states_v0_1.js"
 hash = "0bc98be49f4fe4e242f988e2d31d7f386e20e86bc6828ea33ca2bc961047c7b2"
+
+[[files]]
+file = "kubejs/startup_scripts/project_deadzone_player_survivability_v0_1.js"
+hash = "46d97c557a2801f54964ca79c41b60676612bed8b697139b9bc8f8375e12c386"
 
 [[files]]
 file = "kubejs/startup_scripts/project_deadzone_skill_forge_effects_v0_1.js"
@@ -22509,6 +22509,10 @@ hash = "09e7c8e1a4746532e86edbde440f8758dd6752bac9ba50fb26361beefa51d33e"
 [[files]]
 file = "projectfiles/LC2H_4.1_ADOPTION_REVIEW_20260830.md"
 hash = "f021e2fe85bbdb026f1be835405df55ce1017751146e7b23040f443e605ba12c"
+
+[[files]]
+file = "projectfiles/PDZ_BOSS_VERTICAL_SLICE_GAS_STATION_RC1.md"
+hash = "828528e12e11fd1ea85ecc65f5f92cb43026afc876ca67a4ab3e0c57d642b8ae"
 
 [[files]]
 file = "projectfiles/PDZ_INTEGRATION_CONTRACT_IMPLEMENTATION_20260830.md"

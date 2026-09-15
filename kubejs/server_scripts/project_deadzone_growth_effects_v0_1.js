@@ -12,6 +12,23 @@ const DZGFX = {
   attackSpeed: ['minecraft:generic.attack_speed','d34db100-0000-4000-8000-000000000008']
 }
 
+const DZGFX_MNS_ENTITY_DATA = Java.loadClass('com.robertx22.mine_and_slash.capability.entity.EntityData')
+
+// The same vanilla max-health attribute backs the M&S HUD and localized limb
+// percentages.  Growing this value therefore expands the one authoritative HP
+// pool instead of creating a second health system.
+function dzgfxMnsLevel(p) {
+  try { return Math.max(1, Math.min(100, Number(DZGFX_MNS_ENTITY_DATA.get(p).getLevel()) || 1)) }
+  catch (ignored) { return 1 }
+}
+
+function dzgfxLevelHealth(level) {
+  // Lv1 +4 HP, Lv10 +7.6, Lv30 +15.6, Lv51+ +24 (cap).
+  // This makes character growth visible without letting late-game HP scale
+  // without bound against M&S damage and boss mechanics.
+  return Math.min(24, 4 + Math.max(0, level - 1) * 0.4)
+}
+
 // Base JOB passives. JOB defines the starting aptitude while Talents provide
 // the large long-term scaling.
 const DZGFX_JOB = {
@@ -91,7 +108,9 @@ function dzgfxAdd(p,key,amount,operation) {
 }
 
 function dzgfxValues(p) {
-  let v={health:0,speed:0,armor:0,toughness:0,knockback:0,luck:0,meleeDamage:0,attackSpeed:0,carry:0}
+  let level=dzgfxMnsLevel(p)
+  let levelHealth=dzgfxLevelHealth(level)
+  let v={health:levelHealth,level:level,levelHealth:levelHealth,speed:0,armor:0,toughness:0,knockback:0,luck:0,meleeDamage:0,attackSpeed:0,carry:0}
   let job=String(p.persistentData.getString('dz_job_id'))
   let base=DZGFX_JOB[job]
   if (base) Object.keys(base).forEach(k=>v[k]+=base[k])
@@ -143,6 +162,7 @@ function dzgfxRefresh(p) {
   p.persistentData.putInt('dz_growth_carry_bonus',v.carry)
   p.persistentData.putString('dz_effective_job',String(p.persistentData.getString('dz_job_id')))
   p.persistentData.putDouble('dz_effective_health_flat',v.health)
+  p.persistentData.putDouble('dz_effective_level_health_flat',v.levelHealth)
   p.persistentData.putDouble('dz_effective_speed_pct',v.speed*100)
   p.persistentData.putDouble('dz_effective_armor_flat',v.armor)
   p.persistentData.putDouble('dz_effective_toughness_flat',v.toughness)
@@ -165,6 +185,7 @@ ServerEvents.commandRegistry(event=>{
     let p=ctx.source.player,v=dzgfxValues(p)
     p.tell(Text.of('=== 現在の成長ステータス ===').gold())
     p.tell(Text.of('最大HP +' + v.health.toFixed(1) + ' / 移動速度 ' + (v.speed>=0?'+':'') + (v.speed*100).toFixed(1) + '%').aqua())
+    p.tell(Text.of('M&S Lv ' + v.level + ' の成長HP +' + v.levelHealth.toFixed(1) + '（上記最大HPに含む）').darkAqua())
     p.tell(Text.of('防具値 +' + v.armor.toFixed(1) + ' / 防具強度 +' + v.toughness.toFixed(1) + ' / KB耐性 +' + (v.knockback*100).toFixed(0) + '%').gray())
     p.tell(Text.of('近接攻撃力 ' + (v.meleeDamage>=0?'+':'') + (v.meleeDamage*100).toFixed(1) + '% / 攻撃速度 +' + (v.attackSpeed*100).toFixed(1) + '%').red())
     p.tell(Text.of('Luck +' + v.luck.toFixed(1) + ' / 携行上限 +' + v.carry + ' kg').green())
