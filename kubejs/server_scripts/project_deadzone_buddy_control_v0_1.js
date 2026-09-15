@@ -84,6 +84,16 @@ function dzBctlApplyLoadout(player, buddy, role) {
     return false
   }
 }
+function dzBctlProfile(role, tier) {
+  let health = 48, armor = 7, toughness = 1, speed = 0.30
+  if (role === "support") { health = 56; armor = 10; toughness = 2; speed = 0.25 }
+  if (role === "scout") { health = 38; armor = 4; toughness = 0; speed = 0.36 }
+  if (role === "medic") { health = 46; armor = 6; toughness = 1; speed = 0.28 }
+  health += tier * 4
+  armor += tier * 1.5
+  toughness += Math.floor(tier / 2)
+  return {tier:tier, health:health, armor:armor, toughness:toughness, speed:speed}
+}
 function dzBctlApplyProfile(player, buddy, role, healToFull) {
   ;["assault","support","scout","medic"].forEach(name =>
     buddy.tags.remove("dz_buddy_role_" + name))
@@ -92,28 +102,20 @@ function dzBctlApplyProfile(player, buddy, role, healToFull) {
   buddy.tags.add("dz_buddy_role_" + role)
 
   let tier = dzBctlStoryUnlock(player)
-  let health = 48, armor = 7, toughness = 1, speed = 0.30
-  if (role === "support") { health = 56; armor = 10; toughness = 2; speed = 0.25 }
-  if (role === "scout") { health = 38; armor = 4; toughness = 0; speed = 0.36 }
+  let profile = dzBctlProfile(role, tier)
   if (role === "medic") {
-    health = 46; armor = 6; toughness = 1; speed = 0.28
     buddy.tags.add("dz_faction_medic")
   }
-  // Alpha profile: each Story Unlock improves survivability without changing
-  // the role identity. Visible weapon/armor sets can be layered on later.
-  health += tier * 4
-  armor += tier * 1.5
-  toughness += Math.floor(tier / 2)
   buddy.tags.add("dz_buddy_tier_" + tier)
-  buddy.runCommandSilent("attribute @s minecraft:generic.max_health base set " + health)
-  buddy.runCommandSilent("attribute @s minecraft:generic.armor base set " + armor)
-  buddy.runCommandSilent("attribute @s minecraft:generic.armor_toughness base set " + toughness)
-  buddy.runCommandSilent("attribute @s minecraft:generic.movement_speed base set " + speed)
+  buddy.runCommandSilent("attribute @s minecraft:generic.max_health base set " + profile.health)
+  buddy.runCommandSilent("attribute @s minecraft:generic.armor base set " + profile.armor)
+  buddy.runCommandSilent("attribute @s minecraft:generic.armor_toughness base set " + profile.toughness)
+  buddy.runCommandSilent("attribute @s minecraft:generic.movement_speed base set " + profile.speed)
   buddy.runCommandSilent("attribute @s minecraft:generic.knockback_resistance base set " +
     Math.min(0.6, 0.05 + tier * 0.08))
-  if (healToFull && !buddy.tags.contains("dz_buddy_downed")) buddy.health = health
+  if (healToFull && !buddy.tags.contains("dz_buddy_downed")) buddy.health = profile.health
   buddy.persistentData.putInt("dz_buddy_applied_tier", tier)
-  return {tier:tier, health:health, armor:armor, toughness:toughness, speed:speed}
+  return profile
 }
 function dzBctlRole(player, role) {
   let buddy = dzBctlLoaded(player)
@@ -224,8 +226,16 @@ PlayerEvents.tick(event => {
   if (!buddy || buddy.tags.contains("dz_buddy_downed")) return
   let role=player.persistentData.getString("dz_buddy_role") || "assault"
   let tier=dzBctlStoryUnlock(player)
-  if (buddy.persistentData.getInt("dz_buddy_applied_tier") !== tier) {
+  let expected=dzBctlProfile(role,tier)
+  let maxHealthDrift=Math.abs(Number(buddy.maxHealth)-expected.health)>0.01
+  if (buddy.persistentData.getInt("dz_buddy_applied_tier") !== tier ||
+      !buddy.tags.contains("dz_buddy_role_"+role) || maxHealthDrift) {
+    let oldMax=Math.max(1,Number(buddy.maxHealth))
+    let oldRatio=Math.max(0,Math.min(1,Number(buddy.health)/oldMax))
     dzBctlApplyProfile(player, buddy, role, false)
+    // SEM may rebuild its base attributes after loading. Preserve the current
+    // health percentage while restoring the PDZ role profile.
+    if (maxHealthDrift) buddy.health=Math.max(1,Math.min(expected.health,expected.health*oldRatio))
     dzBctlApplyLoadout(player, buddy, role)
   }
   dzBctlFieldBehavior(player, buddy, role, tier)

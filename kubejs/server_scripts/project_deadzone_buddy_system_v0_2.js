@@ -8,11 +8,6 @@ const DZ_BUDDY_UUID_KEY = "dz_buddy_uuid"
 const DZ_PMC_ROSTER_PREFIX = "dz_pmc_roster_"
 const DZ_PMC_PROMOTION_PREFIX = "dz_pmc_promotion_"
 const DZ_BUDDY_MAX_HEALTH = 40
-const DZ_BUDDY_REVIVE_HEALTH = 20
-const DZ_BUDDY_REVIVE_ITEMS = [
-  "apocalypsenow:bandage",
-  "apocalypsenow:bandage"
-]
 
 function dzBuddyOwnerUuid(entity) {
   if (!entity || String(entity.type) !== DZ_BUDDY_TYPE) return ""
@@ -287,23 +282,6 @@ EntityEvents.death(DZ_BUDDY_TYPE, event => {
   let deadBuddyOwner = dzBuddyOwner(buddy.server, ownerUuid)
   if (deadBuddyOwner && deadBuddyOwner.persistentData.getString(DZ_BUDDY_UUID_KEY) === String(buddy.uuid))
     deadBuddyOwner.persistentData.putString(DZ_BUDDY_UUID_KEY, "")
-  return
-
-  event.cancel()
-  buddy.health = 1
-  buddy.tags.add("dz_buddy")
-  buddy.tags.add("dz_buddy_downed")
-  buddy.mergeNbt({
-    Invulnerable: 1,
-    NoAI: 1
-  })
-  buddy.runCommandSilent("effect give @s minecraft:glowing infinite 0 true")
-
-  let owner = dzBuddyOwner(buddy.server, dzBuddyOwnerUuid(buddy))
-  if (owner) {
-    owner.persistentData.putString(DZ_BUDDY_UUID_KEY, String(buddy.uuid))
-    owner.tell(Text.of("バディがダウンしました。包帯か絆創膏を持って右クリックすると蘇生できます。").red())
-  }
 })
 
 EntityEvents.death(DZ_PMC_COMMANDER_TYPE, event => {
@@ -332,32 +310,6 @@ ItemEvents.entityInteracted(event => {
     player.server.persistentData.putString(dzPmcPromotionKey(String(player.uuid)), String(buddy.uuid))
   }
 
-  if (String(buddy.type) !== DZ_BUDDY_TYPE || !buddy.tags.contains("dz_buddy_downed")) return
-
-  event.cancel()
-
-  if (dzBuddyOwnerUuid(buddy) !== String(player.uuid)) {
-    player.tell(Text.of("このバディを蘇生できるのは雇用者だけです。").red())
-    return
-  }
-
-  let itemId = String(event.item.id)
-  if (!DZ_BUDDY_REVIVE_ITEMS.includes(itemId)) {
-    player.tell(Text.of("蘇生には包帯か絆創膏が必要です。").yellow())
-    return
-  }
-
-  if (!player.creative) event.item.shrink(1)
-  buddy.mergeNbt({
-    Invulnerable: 0,
-    NoAI: 0
-  })
-  buddy.tags.remove("dz_buddy_downed")
-  buddy.health = DZ_BUDDY_REVIVE_HEALTH
-  buddy.runCommandSilent("effect clear @s minecraft:glowing")
-  buddy.runCommandSilent("effect give @s minecraft:regeneration 5 1 true")
-  buddy.runCommandSilent("playsound minecraft:item.totem.use neutral @a[distance=..16] ~ ~ ~ 0.6 1.2")
-  player.tell(Text.of("バディを蘇生しました。").green())
 })
 
 ServerEvents.commandRegistry(event => {

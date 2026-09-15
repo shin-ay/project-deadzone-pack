@@ -11298,11 +11298,11 @@ hash = "30da72d9a8c03f5696b207cc279d225c17104baafae5448f92f496246e83945f"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_buddy_control_v0_1.js"
-hash = "0c5b9e07967e2035a5fa8772c94f59a51b5b8937256e7a2720c039fef28607cb"
+hash = "854f56e7f1068edf5b27eacc44190e97a66f006b61365947ea951fb37d42741a"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_buddy_system_v0_2.js"
-hash = "bd76de4f1bf50b5b3cdd06a051b5e419a77521a44d12bd0df1e72a3d82c4ed3b"
+hash = "e844267ec41e4ab9cadc0eff85189cdd18baf15c9a373569247c5460b9ac14b0"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_butchery_grave_compat_v0_1.js"
@@ -11406,7 +11406,7 @@ hash = "a9e24315b1f516963f365f6201741a2ebb33450063c094f2150f145d5e8de55c"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_field_medical_kit_v0_1.js"
-hash = "5623899158dd37c9ca1d539ecf8401c1226951516c56951e53943113522b8461"
+hash = "5997a7de89bd94597df50a0b04f2204276dd22e01eec8e34e2d5cb4b0c4f34cb"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_field_repair_v0_1.js"
@@ -12282,8 +12282,8 @@ file = "mods/PROJECT_DEADZONE_EpicFight_BlockEntityGuard-0.3.0.jar"
 hash = "9912f1844dae6a1a24250ea46d5bb8e7f2ca82976b0d8dd76a62ca28082fdcb4"
 
 [[files]]
-file = "mods/PROJECT_DEADZONE_EpicTaCZ_Compat-0.1.0.jar"
-hash = "9f4870e0073f46f83effd31ace8410dac5c52448aab67dba08380c04f5d8af12"
+file = "mods/PROJECT_DEADZONE_EpicTaCZ_Compat-0.1.1.jar"
+hash = "5e7c30632844c4b85249f69c560f241217f32b34b076f3361afc1c181a196c0b"
 
 [[files]]
 file = "mods/PROJECT_DEADZONE_JOB_UI-0.8.0.jar"

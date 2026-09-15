@@ -3,6 +3,7 @@
 const DZ_FIELD_KIT = "kubejs:field_medical_kit"
 const DZ_FIRSTAID_DRESSING = "legendarysurvivaloverhaul:bandage"
 const DZ_FIELD_KIT_COOLDOWN_MS = 8000
+const DZ_BUDDY_DRESSINGS = ["legendarysurvivaloverhaul:bandage", "apocalypsenow:bandage"]
 
 function dzFieldKitCureInfection(target) {
   if (typeof dzInfectionTreat === "function") return dzInfectionTreat(target, 3, 6000, "フィールド医療キット").cured
@@ -64,7 +65,37 @@ ItemEvents.entityInteracted(event => {
   let healer = event.player
   let target = event.target
   if (!healer || healer.level.clientSide || !target) return
-  if (String(event.item.id) !== DZ_FIELD_KIT || String(target.type) !== "minecraft:player") return
+  let itemId = String(event.item.id)
+  if (String(target.type) === "simpleenemymod:pmcunit" &&
+      (target.tags.contains("dz_buddy") || target.tags.contains("dz_pmc_contract")) &&
+      (itemId === DZ_FIELD_KIT || DZ_BUDDY_DRESSINGS.includes(itemId))) {
+    event.cancel()
+    let ownerUuid = typeof dzBuddyOwnerUuid === "function" ? dzBuddyOwnerUuid(target) : ""
+    if (ownerUuid !== String(healer.uuid)) {
+      healer.tell(Text.of("このPMCを治療できるのは雇用者だけです。").red())
+      return
+    }
+    let cooldown = dzFieldKitRemaining(healer)
+    if (cooldown.remaining > 0) {
+      healer.tell(Text.of("再使用まで " + Math.ceil(cooldown.remaining / 1000) + " 秒").gray())
+      return
+    }
+    let maximum = Math.max(1, Number(target.maxHealth))
+    if (Number(target.health) >= maximum - 0.01) {
+      healer.tell(Text.of("PMCは負傷していません。").gray())
+      return
+    }
+    healer.persistentData.putLong("dz_field_medical_kit_last_ms", cooldown.now)
+    let amount = itemId === DZ_FIELD_KIT ? Math.max(12, maximum * 0.5) : Math.max(6, maximum * 0.25)
+    target.health = Math.min(maximum, Number(target.health) + amount)
+    target.runCommandSilent("effect give @s minecraft:regeneration 5 0 true")
+    target.runCommandSilent("playsound minecraft:item.armor.equip_leather neutral @a[distance=..16] ~ ~ ~ 0.65 1.15")
+    if (itemId === DZ_FIELD_KIT) dzConsumeFieldKitCharge(healer, event.item)
+    else if (!healer.creative) event.item.shrink(1)
+    healer.tell(Text.of("PMCを治療しました: " + Math.ceil(target.health) + "/" + Math.ceil(maximum)).green())
+    return
+  }
+  if (itemId !== DZ_FIELD_KIT || String(target.type) !== "minecraft:player") return
   event.cancel()
   if (String(healer.persistentData.getString("dz_job_id")) !== "medic") {
     healer.tell(Text.of("他人への処置にはMedicの専門知識が必要です。").red())
