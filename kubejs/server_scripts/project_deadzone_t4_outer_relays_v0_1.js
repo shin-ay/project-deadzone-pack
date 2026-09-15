@@ -168,6 +168,8 @@ function dzT4rProfile(entity, record, role) {
     console.warn('[PDZ T4 RELAY] M&S profile failed: ' + error)
   }
   entity.health = entity.maxHealth
+  try { if (global.pdzApplyGunSoldierDurability) global.pdzApplyGunSoldierDurability(entity) }
+  catch (error) { console.warn('[PDZ T4 RELAY] Gun-soldier durability failed: ' + error) }
 }
 
 function dzT4rSpawnRoles(player, record, roles) {

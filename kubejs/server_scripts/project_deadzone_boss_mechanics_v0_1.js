@@ -16,21 +16,24 @@ const PDZ_MECH_PARTY_HEALTH_MODIFIER = '655854f1-df25-43ff-81c6-7cf547fca6b4'
 const PDZ_MECH_PHASE_THRESHOLDS = [0.66, 0.33]
 const PDZ_MECH_PHASE_LOCK_MS = 6000
 const PDZ_MECH_PARTY_HEALTH = [1.0, 1.5, 1.9, 2.2, 2.5]
+const PDZ_MECH_PRESENTATION = 'dz_boss_presentation'
+const PDZ_MECH_COMPONENT = 'dz_boss_component'
 
 const PDZ_MECH_DEFS = [
-  {id:'02',tag:'dz_story_boss_argus_fragment',name:'適応障壁'},
-  {id:'03',tag:'dz_story_boss_choir_vessel',name:'共鳴衝撃波＋全身判定'},
-  {id:'04',tag:'dz_story_boss_firestation',name:'焼夷制圧'},
-  {id:'05',tag:'dz_story_boss_gasstation',name:'偵察機動'},
-  {id:'06',tag:'dz_story_boss_gunshop',name:'制圧射撃'},
-  {id:'07',tag:'dz_story_boss_hospital',name:'戦場治療'},
-  {id:'08',tag:'dz_story_boss_policestation',name:'拘束命令'},
-  {id:'09',tag:'dz_story_boss_primordial',name:'段階変異'},
-  {id:'10',tag:'dz_story_boss_radio_tower',name:'通信妨害'},
-  {id:'11',tag:'dz_story_boss_reactor_saint',name:'臨界放射環'},
-  {id:'12',tag:'dz_sideboss_tank',name:'予告式グラウンドスラム'},
-  {id:'13',tag:'dz_sideboss_abomination',name:'再生胞子'},
-  {id:'14',tag:'dz_story_boss_t4_relay_shepherd',name:'信号ノード＋座標砲撃'}
+  {id:'01',tag:'dz_boss_axel',name:'燃料タンク＋焼夷投擲',bossName:'AXEL // ROAD KING',bar:'red',style:'notched_10',icon:'minecraft:firework_star'},
+  {id:'02',tag:'dz_story_boss_argus_fragment',name:'適応障壁',bossName:'ARGUS FRAGMENT',bar:'blue',style:'notched_10',icon:'minecraft:end_crystal'},
+  {id:'03',tag:'dz_story_boss_choir_vessel',name:'共鳴衝撃波＋全身判定',bossName:'CHOIR VESSEL',bar:'purple',style:'notched_12',icon:'minecraft:echo_shard'},
+  {id:'04',tag:'dz_story_boss_firestation',name:'焼夷制圧',bossName:'CINDER',bar:'red',style:'notched_10',icon:'minecraft:fire_charge'},
+  {id:'05',tag:'dz_story_boss_gasstation',name:'偵察機動',bossName:'FUEL ROUTE SCOUT',bar:'yellow',style:'notched_10',icon:'minecraft:crossbow'},
+  {id:'06',tag:'dz_story_boss_gunshop',name:'弾薬セル＋制圧射撃',bossName:'BRASS HOUND',bar:'yellow',style:'notched_10',icon:'minecraft:netherite_chestplate'},
+  {id:'07',tag:'dz_story_boss_hospital',name:'妨害可能な戦場治療',bossName:'WHITE STITCH',bar:'white',style:'notched_10',icon:'minecraft:ghast_tear'},
+  {id:'08',tag:'dz_story_boss_policestation',name:'拘束命令＋増援',bossName:'MARSHAL GRAVES',bar:'blue',style:'notched_10',icon:'minecraft:shield'},
+  {id:'09',tag:'dz_story_boss_primordial',name:'段階変異',bossName:'PRIMORDIAL',bar:'purple',style:'notched_12',icon:'minecraft:fermented_spider_eye'},
+  {id:'10',tag:'dz_story_boss_radio_tower',name:'遮蔽可能な狙撃標定',bossName:'ECHO-7',bar:'blue',style:'notched_10',icon:'minecraft:spyglass'},
+  {id:'11',tag:'dz_story_boss_reactor_saint',name:'予告式臨界放射環',bossName:'REACTOR SAINT',bar:'green',style:'notched_12',icon:'minecraft:heart_of_the_sea'},
+  {id:'12',tag:'dz_sideboss_tank',name:'予告式グラウンドスラム',bossName:'SIEGE TANK',bar:'red',style:'notched_10',icon:'minecraft:iron_block'},
+  {id:'13',tag:'dz_sideboss_abomination',name:'焼却可能な再生胞子',bossName:'ANCIENT ABOMINATION',bar:'green',style:'notched_10',icon:'minecraft:spore_blossom'},
+  {id:'14',tag:'dz_story_boss_t4_relay_shepherd',name:'信号ノード＋座標砲撃',bossName:'RELAY SHEPHERD',bar:'purple',style:'notched_20',icon:'minecraft:recovery_compass'}
 ]
 
 // Boss-only silhouettes. Ordinary bandits already use AK/M4/SMG/Deagle/
@@ -51,13 +54,13 @@ const PDZ_MECH_BOSS_GUNS = {
 const PDZ_MECH_TEST_ENTRIES = [
   {id:'02',x:-12,z:16,entity:'infectious:mecha_zombie',name:'ARGUS Fragment',hp:240},
   {id:'03',x:-4,z:16,entity:'infectious:giant_zombie',name:'CHOIR VESSEL',hp:280},
-  {id:'04',x:4,z:16,entity:'tacz_bandits:bandit',name:'Raider Ash Captain',hp:55},
+  {id:'04',x:4,z:16,entity:'tacz_bandits:bandit',name:'CINDER',hp:55},
   {id:'05',x:12,z:16,entity:'tacz_bandits:bandit',name:'Fuel Route Scout',hp:36},
-  {id:'06',x:-12,z:25,entity:'tacz_bandits:bandit',name:'Gun Shop Enforcer',hp:55},
-  {id:'07',x:-4,z:25,entity:'tacz_bandits:bandit',name:'Corrupt Field Medic',hp:70},
-  {id:'08',x:4,z:25,entity:'tacz_bandits:bandit',name:'Raider Warden',hp:80},
-  {id:'09',x:12,z:25,entity:'infectious:mutant_zombie',name:'原初感染体',hp:180},
-  {id:'10',x:-12,z:34,entity:'simpleenemymod:ruunit',name:'Remnant Signal Hunter',hp:75},
+  {id:'06',x:-12,z:25,entity:'tacz_bandits:bandit',name:'BRASS HOUND',hp:55},
+  {id:'07',x:-4,z:25,entity:'tacz_bandits:bandit',name:'WHITE STITCH',hp:70},
+  {id:'08',x:4,z:25,entity:'tacz_bandits:bandit',name:'MARSHAL GRAVES',hp:80},
+  {id:'09',x:12,z:25,entity:'infectious:mutant_zombie',name:'PRIMORDIAL',hp:180},
+  {id:'10',x:-12,z:34,entity:'simpleenemymod:ruunit',name:'ECHO-7',hp:75},
   {id:'11',x:-4,z:34,entity:'infectious:radioactive_zombie',name:'REACTOR SAINT',hp:220},
   {id:'12',x:4,z:34,entity:'apocalypse_zombies:tank',name:'Siege Tank',hp:90,ready:true},
   {id:'13',x:12,z:34,entity:'infectious:ancient_zombie_boss',name:'Ancient Abomination',hp:120,ready:true},
@@ -109,19 +112,31 @@ function pdzMechPartyProfile(boss){
   return {party:Math.max(1,party),highest:highest}
 }
 
+function pdzMechBossLevel(server){
+  try{
+    if(global.pdzStoryBossLevel)return Math.max(1,Number(global.pdzStoryBossLevel(server))||12)
+  }catch(ignored){}
+  let cap=Math.max(10,Number(server.persistentData.getInt('dz_story_mns_level_cap'))||10)
+  return Math.min(102,cap+2)
+}
+
 function pdzMechApplyMnsBossProfile(boss,id){
   if(!boss||!boss.tags)return
   let profile=pdzMechPartyProfile(boss)
-  if(!boss.tags.contains('dz_mns_boss_profile')){
+  let bossLevel=pdzMechBossLevel(boss.server)
+  if(!boss.tags.contains('dz_mns_boss_cap_plus_2_v1')){
+    let healthRatio=Math.max(0,Number(boss.health))/Math.max(1,Number(boss.maxHealth))
     try{
       let data=PDZ_MECH_MNS_ENTITY_DATA.get(boss)
-      // FIRST VOICE owns a fixed level-55 profile. Every other named boss is
-      // placed just above the strongest nearby player so the authored encounter
-      // does not spawn as a low-level ordinary mob.
-      if(id!=='14')data.setLevel(Math.max(1,Math.round(profile.highest)+5))
+      // The same policy applies to every named/side boss: exactly two levels
+      // over the current story cap. A +5 gap suppressed too much of the
+      // player's avoidance and other level-sensitive defenses.
+      data.setLevel(bossLevel)
       data.setRarity('boss')
       data.recalcStats_DONT_CALL()
       boss.addTag('dz_mns_boss_profile')
+      boss.addTag('dz_mns_boss_cap_plus_2_v1')
+      boss.health=Math.max(1,Number(boss.maxHealth)*Math.min(1,healthRatio))
     }catch(err){
       console.warn('[PROJECT DEADZONE][Boss] M&S profile failed: '+err)
     }
@@ -140,7 +155,9 @@ function pdzMechApplyMnsBossProfile(boss,id){
   let mnsHealth=Number(boss.maxHealth)
   try{mnsHealth=Math.round(Number(PDZ_MECH_MNS_HEALTH.getMaxHealth(boss)))}catch(ignored){}
   console.info('[PROJECT DEADZONE][Boss Durability] id='+id+' entity='+String(boss.type)+
-    ' party='+profile.party+' playerLv='+profile.highest+' vanillaMax='+Number(boss.maxHealth)+
+    ' party='+profile.party+' playerLv='+profile.highest+' cap='+
+    Number(boss.server.persistentData.getInt('dz_story_mns_level_cap'))+' bossLv='+bossLevel+
+    ' vanillaMax='+Number(boss.maxHealth)+
     ' mnsMax='+mnsHealth+' multiplier='+multiplier)
 }
 
@@ -284,6 +301,173 @@ function pdzMechDef(id){
   return null
 }
 
+function pdzMechOwnerKey(entity){
+  return String(entity.uuid).replace(/-/g,'').toLowerCase()
+}
+
+function pdzMechBossBarId(entity){
+  return 'project_deadzone:boss_'+pdzMechOwnerKey(entity)
+}
+
+function pdzMechBossLevelOf(entity){
+  try{return Math.max(1,Number(PDZ_MECH_MNS_ENTITY_DATA.get(entity).getLevel())||pdzMechBossLevel(entity.server))}
+  catch(ignored){return pdzMechBossLevel(entity.server)}
+}
+
+function pdzMechPresentationInit(boss,id){
+  if(!boss||!boss.tags||boss.tags.contains('dz_boss_showroom'))return
+  let def=pdzMechDef(id)
+  if(!def)return
+  if(boss.tags.contains('dz_boss_presentation_initialized'))return
+  let owner='dz_boss_owner_'+pdzMechOwnerKey(boss)
+  let bar=pdzMechBossBarId(boss)
+  let title=def.bossName+' // Lv '+pdzMechBossLevelOf(boss)
+  boss.runCommandSilent('bossbar add '+bar+' {"text":"'+title+'","color":"'+def.bar+'","bold":true}')
+  boss.runCommandSilent('bossbar set '+bar+' color '+def.bar)
+  boss.runCommandSilent('bossbar set '+bar+' style '+def.style)
+  boss.runCommandSilent('bossbar set '+bar+' max 1000')
+  boss.persistentData.putString('dz_bossbar_id',bar)
+  boss.persistentData.putString('dz_boss_owner_tag',owner)
+  boss.persistentData.putString('dz_boss_display_name',def.bossName)
+  if(!boss.tags.contains('dz_boss_identity_applied')){
+    boss.runCommandSilent('data merge entity @s {CustomName:\'{"text":"'+def.bossName+'","color":"'+def.bar+'","bold":true}\',CustomNameVisible:1b,Glowing:1b}')
+    // A floating insignia gives every named encounter a readable silhouette
+    // without replacing the native AI or requiring an extra entity mod.
+    boss.runCommandSilent('summon minecraft:item_display ~ ~2.9 ~ {item:{id:"'+def.icon+'",Count:1b},billboard:"center",item_display:"fixed",Glowing:1b,Tags:["'+PDZ_MECH_RUNTIME+'","'+PDZ_MECH_PRESENTATION+'","'+owner+'"]}')
+    boss.addTag('dz_boss_identity_applied')
+  }
+  boss.runCommandSilent('title @a[distance=..96,gamemode=!spectator] times 10 45 15')
+  boss.runCommandSilent('title @a[distance=..96,gamemode=!spectator] title {"text":"'+def.bossName+'","color":"'+def.bar+'","bold":true}')
+  boss.runCommandSilent('title @a[distance=..96,gamemode=!spectator] subtitle {"text":"'+def.name+'","color":"gold"}')
+  boss.runCommandSilent('playsound minecraft:entity.warden.emerge hostile @a[distance=..96,gamemode=!spectator] ~ ~ ~ 0.65 1.25')
+  boss.addTag('dz_boss_presentation_initialized')
+}
+
+function pdzMechPresentationUpdate(boss,id){
+  if(!boss||!boss.alive||boss.tags.contains('dz_boss_showroom'))return
+  let def=pdzMechDef(id)
+  if(!def)return
+  if(!boss.persistentData.getString('dz_bossbar_id'))pdzMechPresentationInit(boss,id)
+  let bar=String(boss.persistentData.getString('dz_bossbar_id'))
+  let owner=String(boss.persistentData.getString('dz_boss_owner_tag'))
+  let value=Math.max(0,Math.min(1000,Math.floor(Number(boss.health)/Math.max(1,Number(boss.maxHealth))*1000)))
+  let title=def.bossName+' // Lv '+pdzMechBossLevelOf(boss)
+  boss.runCommandSilent('bossbar set '+bar+' name {"text":"'+title+'","color":"'+def.bar+'","bold":true}')
+  boss.runCommandSilent('bossbar set '+bar+' value '+value)
+  boss.runCommandSilent('execute at @s run bossbar set '+bar+' players @a[distance=..96,gamemode=!spectator]')
+  if(owner)boss.runCommandSilent('execute at @s run tp @e[tag='+owner+',tag='+PDZ_MECH_PRESENTATION+',sort=nearest,limit=1,distance=..48] ~ ~2.9 ~')
+  if(id==='06'){
+    let cells=pdzGunshopLiveCells(boss)
+    let objective=cells>0?'弱点：弾薬供給セル ×'+cells:(boss.tags.contains('dz_brass_phase_3')?'排熱中を狙って本体を制圧':'本体を制圧')
+    boss.runCommandSilent('title @a[distance=..96,gamemode=!spectator] actionbar {"text":"BRASS HOUND  '+Math.ceil(Number(boss.health))+' / '+Math.ceil(Number(boss.maxHealth))+' HP  |  '+objective+'","color":"yellow","bold":true}')
+    boss.runCommandSilent('execute at @s rotated as @s run tp @e[tag='+owner+',tag=dz_brass_backpack_left,sort=nearest,limit=1,distance=..16] ^-0.34 ^1.15 ^-0.38 ~ ~')
+    boss.runCommandSilent('execute at @s rotated as @s run tp @e[tag='+owner+',tag=dz_brass_backpack_right,sort=nearest,limit=1,distance=..16] ^0.34 ^1.15 ^-0.38 ~ ~')
+  }
+}
+
+function pdzMechPresentationRemove(boss){
+  if(!boss||!boss.persistentData)return
+  let bar=String(boss.persistentData.getString('dz_bossbar_id'))
+  let owner=String(boss.persistentData.getString('dz_boss_owner_tag'))
+  if(bar)boss.runCommandSilent('bossbar remove '+bar)
+  if(owner)boss.runCommandSilent('kill @e[tag='+owner+',distance=..64]')
+}
+
+function pdzMechApplyIdentity(boss,id){
+  if(!boss||boss.tags.contains('dz_boss_identity_nbt_v2'))return
+  // The native renderers expose stable appearance variants. Reserve distinct
+  // silhouettes for the four human facility bosses and ECHO-7.
+  if(String(boss.type)==='tacz_bandits:bandit'){
+    let variant=id==='04'?3:(id==='06'?2:(id==='07'?1:(id==='08'?2:0)))
+    boss.runCommandSilent('data merge entity @s {BanditVariant:'+variant+'}')
+  }else if(String(boss.type)==='simpleenemymod:ruunit'&&id==='10'){
+    boss.runCommandSilent('data merge entity @s {Variant:4}')
+  }
+  boss.addTag('dz_boss_identity_nbt_v2')
+}
+
+function pdzGunshopSpawnCells(boss){
+  if(!boss||boss.tags.contains('dz_brass_cells_spawned'))return
+  boss.addTag('dz_brass_cells_spawned')
+  let owner='dz_boss_owner_'+pdzMechOwnerKey(boss)
+  let packVisual='{block_state:{Name:"create:brass_casing"},Glowing:1b,brightness:{sky:15,block:9},view_range:1.0f,transformation:{translation:[-0.16f,-0.28f,-0.16f],scale:[0.32f,0.56f,0.32f]}'
+  boss.runCommandSilent('execute at @s rotated as @s run summon minecraft:block_display ^-0.34 ^1.15 ^-0.38 '+packVisual+',Tags:["'+PDZ_MECH_RUNTIME+'","dz_brass_backpack_left","'+owner+'"]}')
+  boss.runCommandSilent('execute at @s rotated as @s run summon minecraft:block_display ^0.34 ^1.15 ^-0.38 '+packVisual+',Tags:["'+PDZ_MECH_RUNTIME+'","dz_brass_backpack_right","'+owner+'"]}')
+  let offsets=['^-4 ^0.2 ^2','^4 ^0.2 ^2']
+  for(let i=0;i<2;i++){
+    let key='dz_brass_cell_'+(i+1)
+    let tags='["'+PDZ_MECH_RUNTIME+'","'+PDZ_MECH_COMPONENT+'","dz_brass_ammo_cell","'+key+'","'+owner+'"]'
+    let visualTags='["'+PDZ_MECH_RUNTIME+'","dz_brass_cell_visual","'+key+'_visual","'+owner+'"]'
+    boss.runCommandSilent('execute at @s rotated as @s run summon minecraft:slime '+offsets[i]+' {Size:1,Invisible:1b,Glowing:1b,NoAI:1b,NoGravity:1b,Silent:1b,PersistenceRequired:1b,Health:36.0f,Attributes:[{Name:"minecraft:generic.max_health",Base:36.0d}],CustomName:\'{"text":"弾薬供給セル '+(i+1)+'","color":"gold","bold":true}\',CustomNameVisible:1b,Tags:'+tags+'}')
+    boss.runCommandSilent('execute at @s rotated as @s run summon minecraft:block_display '+offsets[i]+' {block_state:{Name:"create:brass_casing"},Glowing:1b,brightness:{sky:15,block:10},view_range:1.0f,transformation:{translation:[-0.45f,-0.45f,-0.45f],scale:[0.9f,0.9f,0.9f]},Tags:'+visualTags+'}')
+  }
+  let count=boss.runCommandSilent('execute if entity @e[tag=dz_brass_ammo_cell,distance=..16,limit=1]')
+  if(count<=0){
+    boss.addTag('dz_brass_cells_destroyed')
+    boss.runCommandSilent('effect give @s minecraft:weakness 12 0 true')
+    pdzMechTell(boss,'弾薬セル生成失敗。防護を解除して戦闘を続行します。','yellow')
+  }else{
+    boss.runCommandSilent('effect give @s minecraft:resistance 9999 0 true')
+    pdzMechTell(boss,'BRASS HOUND起動。左右の弾薬供給セルを破壊せよ！','gold')
+  }
+}
+
+function pdzGunshopLiveCells(boss){
+  let owner='dz_boss_owner_'+pdzMechOwnerKey(boss),count=0
+  let nearby=boss.level.getEntities(boss,boss.boundingBox.inflate(32))
+  nearby.forEach(entity=>{if(entity.alive&&entity.tags&&entity.tags.contains(owner)&&entity.tags.contains('dz_brass_ammo_cell'))count++})
+  return count
+}
+
+function pdzGunshopCellDestroyed(cell){
+  let owner=''
+  cell.tags.forEach(tag=>{let s=String(tag);if(s.indexOf('dz_boss_owner_')===0)owner=s})
+  if(!owner)return
+  cell.runCommandSilent('kill @e[tag='+owner+',tag=dz_brass_cell_visual,distance=..8,sort=nearest,limit=1]')
+  cell.runCommandSilent('particle minecraft:explosion_emitter ~ ~ ~ 0 0 0 0 1 force @a[distance=..96]')
+  cell.runCommandSilent('playsound minecraft:entity.generic.explode hostile @a[distance=..96] ~ ~ ~ 1 1.25')
+  let boss=null
+  let nearby=cell.level.getEntities(cell,cell.boundingBox.inflate(48))
+  nearby.forEach(entity=>{if(!boss&&entity.alive&&entity.tags&&entity.tags.contains(owner)&&entity.tags.contains('dz_boss_mech_06'))boss=entity})
+  if(!boss)return
+  let destroyed=boss.persistentData.getInt('dz_brass_cells_destroyed_count')+1
+  boss.persistentData.putInt('dz_brass_cells_destroyed_count',destroyed)
+  boss.runCommandSilent('effect give @s minecraft:slowness 5 1 true')
+  boss.runCommandSilent('effect give @s minecraft:weakness 5 0 true')
+  if(destroyed>=2||pdzGunshopLiveCells(boss)<=0){
+    boss.addTag('dz_brass_cells_destroyed')
+    boss.runCommandSilent('effect clear @s minecraft:resistance')
+    boss.runCommandSilent('effect give @s minecraft:glowing 12 0 true')
+    pdzMechTell(boss,'全弾薬セル破壊。重装防護と無限給弾が停止した！','aqua')
+  }else pdzMechTell(boss,'弾薬セルを1基破壊。残り1基。','yellow')
+}
+
+function pdzMechNearestPlayer(boss,radius){
+  let nearest=null,best=radius*radius
+  boss.server.players.forEach(player=>{
+    if(player.spectator||player.creative||String(player.level.dimension)!==String(boss.level.dimension))return
+    let dx=player.x-boss.x,dy=player.y-boss.y,dz=player.z-boss.z,d=dx*dx+dy*dy+dz*dz
+    if(d<best){best=d;nearest=player}
+  })
+  return nearest
+}
+
+function pdzMechTargetedBlast(boss,label,color,particle,radius,damage,delay){
+  let target=pdzMechNearestPlayer(boss,40)
+  if(!target)return false
+  let x=Number(target.x).toFixed(2),y=Number(target.y).toFixed(2),z=Number(target.z).toFixed(2)
+  let positioned='execute in '+String(boss.level.dimension)+' positioned '+x+' '+y+' '+z
+  boss.server.runCommandSilent(positioned+' run particle '+particle+' ~ ~0.15 ~ '+radius+' 0.08 '+radius+' 0 64 force @a[distance=..96]')
+  pdzMechTell(boss,label+'：赤い予告範囲から退避！',color)
+  let ref=boss
+  boss.server.scheduleInTicks(delay,()=>{
+    if(!ref||!ref.alive)return
+    ref.server.runCommandSilent(positioned+' run particle minecraft:explosion ~ ~0.2 ~ '+radius+' 0.2 '+radius+' 0.03 28 force @a[distance=..96]')
+    ref.server.runCommandSilent(positioned+' run damage @a[distance=..'+radius+',gamemode=!creative,gamemode=!spectator] '+damage+' minecraft:explosion')
+  })
+  return true
+}
+
 function pdzMechTell(boss,text,color){
   boss.runCommandSilent('tellraw @a[distance=..64,gamemode=!spectator] {"text":"[BOSS] '+text+'","color":"'+color+'","bold":true}')
 }
@@ -312,12 +496,15 @@ function pdzMechInit(boss,id){
   pdzMechEnsureHome(boss)
   pdzMechEquipBossGun(boss,id)
   pdzMechApplyMnsBossProfile(boss,id)
+  pdzMechApplyIdentity(boss,id)
+  pdzMechPresentationInit(boss,id)
   if(boss.tags.contains(PDZ_MECH_ACTIVE))return
   boss.addTag(PDZ_MECH_ACTIVE)
   boss.addTag('dz_boss_mech_'+id)
   boss.persistentData.putInt('dz_boss_mech_time',0)
   boss.persistentData.putString('dz_boss_mech_id',id)
   if(id==='03')pdzMechSpawnChoirHitboxes(boss)
+  if(id==='06')pdzGunshopSpawnCells(boss)
   let def=pdzMechDef(id)
   if(def)pdzMechTell(boss,'['+id+'] '+def.name+' 起動','gold')
 }
@@ -330,13 +517,52 @@ function pdzMechPhaseMutation(boss){
     boss.runCommandSilent('summon infectious:spore_zombie ~3 ~ ~ {PersistenceRequired:1b,Tags:["'+PDZ_MECH_RUNTIME+'","dz_boss_runtime_09","dz_pdz_boss_minion"'+testTag+']}')
     boss.runCommandSilent('summon infectious:spore_zombie ~-3 ~ ~ {PersistenceRequired:1b,Tags:["'+PDZ_MECH_RUNTIME+'","dz_boss_runtime_09","dz_pdz_boss_minion"'+testTag+']}')
     boss.runCommandSilent('effect give @s minecraft:resistance 8 0 true')
+    boss.runCommandSilent('particle minecraft:sonic_boom ~ ~1.2 ~ 0 0 0 0 1 force @a[distance=..64]')
+    boss.runCommandSilent('effect give @a[distance=..8,gamemode=!creative,gamemode=!spectator] minecraft:slowness 3 1 true')
     pdzMechTell(boss,'第一変異。感染胞子体を分離した。','dark_purple')
   }
   if(ratio<=0.33&&!boss.tags.contains('dz_primordial_mutation_2')){
     boss.addTag('dz_primordial_mutation_2')
     boss.runCommandSilent('effect give @s minecraft:strength 9999 0 true')
     boss.runCommandSilent('effect give @s minecraft:speed 9999 0 true')
+    boss.runCommandSilent('particle minecraft:sculk_soul ~ ~1 ~ 2 1 2 0.08 50 force @a[distance=..64]')
     pdzMechTell(boss,'最終変異。攻撃性と機動力が上昇した。','red')
+  }
+}
+
+function pdzGunshopPulse(boss,time,forced){
+  let ratio=Number(boss.health)/Math.max(1,Number(boss.maxHealth))
+  let cells=pdzGunshopLiveCells(boss)
+  if(cells>0&&!boss.tags.contains('dz_brass_cells_destroyed'))boss.runCommandSilent('effect give @s minecraft:resistance 3 0 true')
+  if(ratio<=0.66&&!boss.tags.contains('dz_brass_phase_2')){
+    boss.addTag('dz_brass_phase_2')
+    boss.runCommandSilent('summon tacz_hostiles:scavenger ~3 ~ ~3 {PersistenceRequired:1b,CustomName:\'{"text":"BRASS LOADER","color":"gold","bold":true}\',CustomNameVisible:1b,Tags:["'+PDZ_MECH_RUNTIME+'","dz_boss_runtime_06","dz_pdz_boss_minion"]}')
+    boss.runCommandSilent('summon tacz_hostiles:scavenger ~-3 ~ ~-3 {PersistenceRequired:1b,CustomName:\'{"text":"BRASS LOADER","color":"gold","bold":true}\',CustomNameVisible:1b,Tags:["'+PDZ_MECH_RUNTIME+'","dz_boss_runtime_06","dz_pdz_boss_minion"]}')
+    pdzMechTell(boss,'PHASE 2：弾薬手を展開。包囲される前にセルを壊せ！','red')
+  }
+  if(ratio<=0.33&&!boss.tags.contains('dz_brass_phase_3')){
+    boss.addTag('dz_brass_phase_3')
+    boss.runCommandSilent('effect give @s minecraft:speed 9999 0 true')
+    boss.runCommandSilent('effect give @s minecraft:glowing 9999 0 true')
+    pdzMechTell(boss,'PHASE 3：銃身過熱。排熱中が最大の攻撃機会！','dark_red')
+  }
+  if(forced||time%11===0){
+    boss.runCommandSilent('particle minecraft:dust 1 0.55 0.05 1.2 ~ ~1.2 ~ 3 0.3 3 0 70 force @a[distance=..64]')
+    pdzMechTell(boss,'制圧射撃を予告。遮蔽へ退避！','gold')
+    let ref=boss
+    boss.server.scheduleInTicks(30,()=>{
+      if(!ref||!ref.alive)return
+      ref.runCommandSilent('effect give @a[distance=..20,gamemode=!creative,gamemode=!spectator] minecraft:slowness 4 1 true')
+      ref.runCommandSilent('effect give @a[distance=..20,gamemode=!creative,gamemode=!spectator] minecraft:weakness 4 0 true')
+      ref.runCommandSilent('playsound minecraft:block.dispenser.launch hostile @a[distance=..64] ~ ~ ~ 1 0.65')
+    })
+    pdzMechPulseCount++
+  }
+  if(boss.tags.contains('dz_brass_phase_3')&&time%15===5){
+    boss.runCommandSilent('effect give @s minecraft:slowness 5 3 true')
+    boss.runCommandSilent('effect give @s minecraft:weakness 5 1 true')
+    boss.runCommandSilent('particle minecraft:campfire_signal_smoke ~ ~1.6 ~ 0.5 0.8 0.5 0.02 35 force @a[distance=..64]')
+    pdzMechTell(boss,'排熱開始。5秒間、防御と機動が低下！','aqua')
   }
 }
 
@@ -344,19 +570,19 @@ function pdzMechPulse(boss,id,forced){
   let time=boss.persistentData.getInt('dz_boss_mech_time')+1
   boss.persistentData.putInt('dz_boss_mech_time',time)
   if(id==='02'&&(forced||time%14===1)){
-    boss.runCommandSilent('effect give @s minecraft:resistance 5 2 true')
     boss.runCommandSilent('particle minecraft:electric_spark ~ ~2 ~ 1.2 1.8 1.2 0.08 28 force @a[distance=..64]')
-    pdzMechTell(boss,'適応障壁を5秒展開。発光が消えるまで防御上昇。','gold');pdzMechPulseCount++
+    pdzMechTell(boss,'適応障壁を充電中。1秒後から5秒間は射撃を止めろ！','gold')
+    let ref=boss
+    boss.server.scheduleInTicks(20,()=>{if(ref&&ref.alive){ref.runCommandSilent('effect give @s minecraft:resistance 5 2 true');ref.runCommandSilent('effect give @s minecraft:glowing 5 0 true')}})
+    pdzMechPulseCount++
   }else if(id==='03'&&(forced||time%11===0)){
-    boss.runCommandSilent('particle minecraft:sonic_boom ~ ~4 ~ 0 0 0 0 1 force @a[distance=..64]')
-    boss.runCommandSilent('damage @a[distance=..10,gamemode=!creative,gamemode=!spectator] 3 minecraft:magic')
-    boss.runCommandSilent('effect give @a[distance=..10,gamemode=!creative,gamemode=!spectator] minecraft:darkness 3 0 true')
-    pdzMechTell(boss,'共鳴衝撃波。距離を取れ！','dark_purple');pdzMechPulseCount++
+    boss.runCommandSilent('particle minecraft:dust 0.7 0.1 1 1.4 ~ ~0.2 ~ 5 0.1 5 0 80 force @a[distance=..64]')
+    pdzMechTell(boss,'共鳴衝撃波を収束中。1.5秒以内に10m外へ！','dark_purple')
+    let ref=boss
+    boss.server.scheduleInTicks(30,()=>{if(ref&&ref.alive){ref.runCommandSilent('particle minecraft:sonic_boom ~ ~4 ~ 0 0 0 0 1 force @a[distance=..64]');ref.runCommandSilent('damage @a[distance=..10,gamemode=!creative,gamemode=!spectator] 3 minecraft:magic');ref.runCommandSilent('effect give @a[distance=..10,gamemode=!creative,gamemode=!spectator] minecraft:darkness 3 0 true')}})
+    pdzMechPulseCount++
   }else if(id==='04'&&(forced||time%9===0)){
-    boss.runCommandSilent('particle minecraft:flame ~ ~1 ~ 2 0.5 2 0.06 45 force @a[distance=..64]')
-    boss.runCommandSilent('damage @a[distance=..7,gamemode=!creative,gamemode=!spectator] 4 minecraft:on_fire')
-    boss.runCommandSilent('effect give @a[distance=..7,gamemode=!creative,gamemode=!spectator] minecraft:weakness 4 0 true')
-    pdzMechTell(boss,'焼夷制圧。炎上範囲から離脱！','red');pdzMechPulseCount++
+    if(pdzMechTargetedBlast(boss,'焼夷弾着弾予告','red','minecraft:dust 1 0.15 0.02 1.2',3.5,4,30))pdzMechPulseCount++
   }else if(id==='05'){
     let ratio=Number(boss.health)/Math.max(1,Number(boss.maxHealth))
     if(ratio<=0.66&&!boss.tags.contains('dz_gas_scout_phase_2')){
@@ -382,33 +608,46 @@ function pdzMechPulse(boss,id,forced){
       boss.runCommandSilent('effect give @a[distance=..8,gamemode=!creative,gamemode=!spectator] minecraft:blindness 2 0 true')
       pdzMechTell(boss,'煙幕標定。発光した対象へ高速接近。','yellow');pdzMechPulseCount++
     }
-  }else if(id==='06'&&(forced||time%10===0)){
-    boss.runCommandSilent('effect give @a[distance=..18,gamemode=!creative,gamemode=!spectator] minecraft:slowness 4 1 true')
-    boss.runCommandSilent('effect give @a[distance=..18,gamemode=!creative,gamemode=!spectator] minecraft:weakness 4 0 true')
-    boss.runCommandSilent('playsound minecraft:block.dispenser.launch hostile @a[distance=..64] ~ ~ ~ 1 0.65')
-    pdzMechTell(boss,'制圧射撃。移動・近接火力低下。','dark_red');pdzMechPulseCount++
+  }else if(id==='06'){
+    pdzGunshopPulse(boss,time,forced)
   }else if(id==='07'&&(forced||time%12===0)){
-    boss.health=Math.min(Number(boss.maxHealth),Number(boss.health)+10)
-    boss.runCommandSilent('effect give @e[distance=..12,tag=dz_raider] minecraft:regeneration 5 1 true')
+    let samples=boss.persistentData.getInt('dz_boss_damage_samples'),ref=boss
     boss.runCommandSilent('particle minecraft:happy_villager ~ ~1.4 ~ 1 1 1 0.1 30 force @a[distance=..64]')
-    pdzMechTell(boss,'戦場治療。自身と周辺部隊を回復。','green');pdzMechPulseCount++
+    pdzMechTell(boss,'4秒の戦場治療を開始。攻撃を当てて中断せよ！','green')
+    boss.server.scheduleInTicks(80,()=>{
+      if(!ref||!ref.alive)return
+      if(ref.persistentData.getInt('dz_boss_damage_samples')!==samples){pdzMechTell(ref,'治療を中断した！','aqua');return}
+      ref.health=Math.min(Number(ref.maxHealth),Number(ref.health)+Number(ref.maxHealth)*0.08)
+      ref.runCommandSilent('effect give @e[distance=..12,tag=dz_raider] minecraft:regeneration 5 1 true')
+      pdzMechTell(ref,'治療完了。HPを8%回復。','dark_green')
+    })
+    pdzMechPulseCount++
   }else if(id==='08'&&(forced||time%11===0)){
-    boss.runCommandSilent('effect give @p[distance=..16,gamemode=!creative,gamemode=!spectator] minecraft:slowness 4 3 true')
-    boss.runCommandSilent('effect give @p[distance=..16,gamemode=!creative,gamemode=!spectator] minecraft:weakness 4 1 true')
-    boss.runCommandSilent('effect give @p[distance=..16,gamemode=!creative,gamemode=!spectator] minecraft:glowing 5 0 true')
-    pdzMechTell(boss,'拘束命令。最寄りの生存者を制圧。','blue');pdzMechPulseCount++
+    let ratio=Number(boss.health)/Math.max(1,Number(boss.maxHealth))
+    if(ratio<=0.66&&!boss.tags.contains('dz_graves_phase_2')){
+      boss.addTag('dz_graves_phase_2')
+      boss.runCommandSilent('summon tacz_bandits:bandit ~3 ~ ~3 {BanditVariant:4,PersistenceRequired:1b,CustomName:\'{"text":"GRAVES DEPUTY","color":"blue"}\',CustomNameVisible:1b,Tags:["'+PDZ_MECH_RUNTIME+'","dz_boss_runtime_08","dz_pdz_boss_minion"]}')
+      pdzMechTell(boss,'PHASE 2：副官が射線を形成。先に増援を排除せよ！','blue')
+    }
+    if(ratio<=0.33&&!boss.tags.contains('dz_graves_phase_3')){
+      boss.addTag('dz_graves_phase_3')
+      boss.runCommandSilent('effect give @s minecraft:resistance 8 0 true')
+      boss.runCommandSilent('effect give @s minecraft:speed 9999 0 true')
+      pdzMechTell(boss,'PHASE 3：最終封鎖命令。8秒間だけ防護が上昇！','dark_blue')
+    }
+    let target=pdzMechNearestPlayer(boss,20),ref=boss
+    if(target){target.runCommandSilent('effect give @s minecraft:glowing 3 0 true');pdzMechTell(boss,'拘束対象を標定。2秒以内に遮蔽へ！','blue');boss.server.scheduleInTicks(40,()=>{if(ref&&ref.alive&&target&&target.alive&&ref.hasLineOfSight(target)){target.runCommandSilent('effect give @s minecraft:slowness 4 3 true');target.runCommandSilent('effect give @s minecraft:weakness 4 1 true')}});pdzMechPulseCount++}
   }else if(id==='09'){
     pdzMechPhaseMutation(boss)
   }else if(id==='10'&&(forced||time%12===0)){
-    boss.runCommandSilent('effect give @a[distance=..18,gamemode=!creative,gamemode=!spectator] minecraft:darkness 3 0 true')
-    boss.runCommandSilent('effect give @a[distance=..18,gamemode=!creative,gamemode=!spectator] minecraft:glowing 6 0 true')
-    boss.runCommandSilent('playsound minecraft:block.respawn_anchor.deplete hostile @a[distance=..64] ~ ~ ~ 0.8 0.55')
-    pdzMechTell(boss,'通信妨害。視界喪失・位置暴露。','dark_purple');pdzMechPulseCount++
+    let target=pdzMechNearestPlayer(boss,40),ref=boss
+    if(target){target.runCommandSilent('effect give @s minecraft:glowing 4 0 true');target.runCommandSilent('title @s actionbar {"text":"ECHO-7 狙撃標定：遮蔽へ移動","color":"red","bold":true}');pdzMechTell(boss,'長距離狙撃を標定。2.5秒以内に視線を切れ！','dark_purple');boss.server.scheduleInTicks(50,()=>{if(!ref||!ref.alive||!target||!target.alive)return;if(!ref.hasLineOfSight(target)){pdzMechTell(ref,'狙撃失敗。標的が遮蔽へ退避。','aqua');return}ref.runCommandSilent('damage '+String(target.username)+' 6 minecraft:arrow by @s');ref.runCommandSilent('playsound minecraft:entity.firework_rocket.blast hostile @a[distance=..64] ~ ~ ~ 1 0.5')});pdzMechPulseCount++}
   }else if(id==='11'&&(forced||time%8===0)){
     boss.runCommandSilent('particle minecraft:dust 0.2 1 0.1 1.5 ~ ~1 ~ 3 1 3 0 60 force @a[distance=..64]')
-    boss.runCommandSilent('damage @a[distance=5..16,gamemode=!creative,gamemode=!spectator] 4 minecraft:magic')
-    boss.runCommandSilent('effect give @a[distance=5..16,gamemode=!creative,gamemode=!spectator] minecraft:hunger 5 1 true')
-    pdzMechTell(boss,'臨界放射環。懐へ入るか16m外へ退避！','green');pdzMechPulseCount++
+    pdzMechTell(boss,'臨界放射環を予告。2秒以内に5m内か16m外へ！','green')
+    let ref=boss
+    boss.server.scheduleInTicks(40,()=>{if(ref&&ref.alive){ref.runCommandSilent('damage @a[distance=5..16,gamemode=!creative,gamemode=!spectator] 4 minecraft:magic');ref.runCommandSilent('effect give @a[distance=5..16,gamemode=!creative,gamemode=!spectator] minecraft:hunger 5 1 true')}})
+    pdzMechPulseCount++
   }else if(id==='12'&&(forced||time%10===0)){
     boss.runCommandSilent('particle minecraft:dust 1 0.15 0.05 1.5 ~ ~0.2 ~ 4 0.1 4 0 70 force @a[distance=..64]')
     boss.runCommandSilent('playsound minecraft:block.note_block.basedrum hostile @a[distance=..64] ~ ~ ~ 1.2 0.5')
@@ -422,10 +661,11 @@ function pdzMechPulse(boss,id,forced){
     })
     pdzMechPulseCount++
   }else if(id==='13'&&(forced||time%9===0)){
-    boss.health=Math.min(Number(boss.maxHealth),Number(boss.health)+4)
+    let burnedUntil=Number(boss.persistentData.getLong('dz_abomination_burn_lock_until'))
+    if(burnedUntil<=Date.now())boss.health=Math.min(Number(boss.maxHealth),Number(boss.health)+Number(boss.maxHealth)*0.03)
     let testTag=boss.tags.contains(PDZ_MECH_LOADTEST)?',"dz_boss_loadtest_runtime"':''
     boss.runCommandSilent('summon minecraft:area_effect_cloud ~ ~ ~ {Duration:120,Radius:3.5f,RadiusPerTick:-0.02f,Particle:"spore_blossom_air",Effects:[{Id:19,Amplifier:0b,Duration:60}],Tags:["'+PDZ_MECH_RUNTIME+'","dz_boss_runtime_13"'+testTag+']}')
-    pdzMechTell(boss,'再生胞子を放出。汚染域から離れろ！','dark_green');pdzMechPulseCount++
+    pdzMechTell(boss,burnedUntil>Date.now()?'胞子再生は焼却により停止中。':'再生胞子を放出。火炎で再生を8秒停止できる！','dark_green');pdzMechPulseCount++
   }else if(id==='14'&&global.pdzT4BossPulse){
     try { if(global.pdzT4BossPulse(boss,time))pdzMechPulseCount++ }
     catch(err){console.warn('[PROJECT DEADZONE][Boss 14] pulse failed: '+err)}
@@ -441,6 +681,12 @@ function pdzMechChoirMultiplier(hitbox){
 EntityEvents.hurt(event=>{
   let hitbox=event.entity
   let attacker=event.source?event.source.actual:null
+  if(hitbox&&hitbox.tags&&hitbox.tags.contains(PDZ_MECH_COMPONENT)){
+    let sourceId=pdzMechDamageSourceId(event.source).toLowerCase()
+    if(sourceId.indexOf('generic_kill')<0&&sourceId.indexOf('out_of_world')<0&&
+      (!attacker||!attacker.isPlayer||!attacker.isPlayer()))event.cancel()
+    return
+  }
   // Facility bosses belong to player-authored story combat. Hostile mobs may
   // not steal the kill or silently advance/reward the campaign. Record a
   // recent player hit so ranged attacks still carry credit into death events.
@@ -455,6 +701,10 @@ EntityEvents.hurt(event=>{
     }
   }
   let encounterId=pdzMechEncounterId(hitbox)
+  if(encounterId==='13'&&pdzMechDamageSourceId(event.source).toLowerCase().indexOf('fire')>=0){
+    hitbox.persistentData.putLong('dz_abomination_burn_lock_until',Date.now()+8000)
+    hitbox.runCommandSilent('particle minecraft:flame ~ ~1 ~ 0.8 0.8 0.8 0.04 24 force @a[distance=..64]')
+  }
   if(encounterId&&pdzMechGateDamage(hitbox,encounterId,Math.max(0,Number(event.damage||0)),event.source)){
     event.cancel()
     return
@@ -488,9 +738,14 @@ EntityEvents.hurt(event=>{
 EntityEvents.death(event=>{
   let boss=event.entity
   if(!boss||boss.level.clientSide)return
+  if(boss.tags.contains('dz_brass_ammo_cell')){pdzGunshopCellDestroyed(boss);return}
+  let encounterId=pdzMechEncounterId(boss)
+  if(encounterId)pdzMechPresentationRemove(boss)
   if(boss.tags.contains('dz_boss_mech_03'))boss.runCommandSilent('kill @e[tag='+PDZ_CHOIR_HITBOX+',distance=..24]')
   if(boss.tags.contains('dz_boss_mech_05'))boss.runCommandSilent('kill @e[tag=dz_boss_runtime_05,distance=..48]')
   if(boss.tags.contains('dz_boss_mech_09'))boss.runCommandSilent('kill @e[tag=dz_boss_runtime_09,distance=..40]')
+  if(boss.tags.contains('dz_boss_mech_06'))boss.runCommandSilent('kill @e[tag=dz_boss_runtime_06,distance=..48]')
+  if(boss.tags.contains('dz_boss_mech_08'))boss.runCommandSilent('kill @e[tag=dz_boss_runtime_08,distance=..48]')
 })
 
 // Five attached CHOIR parts need responsive tracking; all expensive mechanics
@@ -528,11 +783,15 @@ ServerEvents.tick(event=>{
       pdzMechEnsureHome(entity)
       pdzMechEquipBossGun(entity,'01')
       pdzMechApplyMnsBossProfile(entity,'01')
+      pdzMechApplyIdentity(entity,'01')
+      pdzMechPresentationInit(entity,'01')
+      pdzMechPresentationUpdate(entity,'01')
       tracked.push(entity)
     }
     if(!id||!entity.alive)return
     pdzMechInit(entity,id)
     pdzMechPulse(entity,id)
+    pdzMechPresentationUpdate(entity,id)
     tracked.push(entity)
     active++
     })
@@ -616,11 +875,13 @@ ServerEvents.commandRegistry(event=>{
     if(!nearest){p.tell(Text.of('128m以内に稼働中のPDZ Bossはいません。').yellow());return 0}
     let id=pdzMechEncounterId(nearest),max=Math.max(1,Number(nearest.maxHealth))
     let mnsMax=max
+    let bossLevel=pdzMechBossLevelOf(nearest),attack='native/ranged'
     try{mnsMax=Math.max(1,Number(PDZ_MECH_MNS_HEALTH.getMaxHealth(nearest)))}catch(ignored){}
+    try{attack=Number(nearest.getAttributeValue('minecraft:generic.attack_damage')).toFixed(2)}catch(ignored){}
     let lock=Math.max(0,(Number(nearest.persistentData.getLong('dz_boss_phase_lock_until'))-Date.now())/1000)
     p.tell(Text.of('Boss ['+id+'] '+String(nearest.name.string)+' / HP '+Number(nearest.health).toFixed(1)+' / '+max.toFixed(1)+
       ' ('+(Number(nearest.health)/max*100).toFixed(1)+'%) / M&S Max '+Math.round(mnsMax)).aqua())
-    p.tell(Text.of('Party '+nearest.persistentData.getInt('dz_party_size')+' / HP倍率 '+
+    p.tell(Text.of('M&S Lv '+bossLevel+' / Attack属性 '+attack+' / Party '+nearest.persistentData.getInt('dz_party_size')+' / HP倍率 '+
       Number(nearest.persistentData.getDouble('dz_boss_party_health_multiplier')).toFixed(2)+' / Phase '+
       nearest.persistentData.getInt('dz_boss_phase_gate_stage')+' / Lock '+lock.toFixed(1)+'秒').gray())
     p.tell(Text.of('被ダメージ: last='+Number(nearest.persistentData.getDouble('dz_boss_last_incoming_damage')).toFixed(1)+

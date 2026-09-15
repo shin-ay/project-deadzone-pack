@@ -31,6 +31,21 @@ function pdzSurviveAxel(entity) {
   return pdzSurviveHasTag(entity,'dz_boss_axel')
 }
 
+function pdzSurviveGunSoldier(entity) {
+  if(!entity)return false
+  try{if(entity.isPlayer&&entity.isPlayer())return false}catch(ignored){}
+  let id=pdzSurviveEntityId(entity)
+  let namespace=id.split(':')[0]
+  if(namespace==='tacz_bandits'||namespace==='tacz_hostiles')return true
+  if(id==='simpleenemymod:ruunit')return true
+  try{
+    let stack=entity.mainHandItem
+    if(stack&&String(stack.id)==='tacz:modern_kinetic_gun')return true
+  }catch(ignored){}
+  return pdzSurviveHasTag(entity,'dz_remnant')||pdzSurviveHasTag(entity,'dz_raider')||
+    pdzSurviveHasTag(entity,'dz_t4_relay_guard')
+}
+
 function pdzSurviveSourceEntity(source,direct) {
   if(!source)return null
   let entity=null
@@ -71,10 +86,13 @@ ForgeEvents.onEvent('net.minecraftforge.event.entity.living.LivingHurtEvent',eve
   let adjusted=original
   let boss=pdzSurviveStoryBoss(attacker)||pdzSurviveStoryBoss(direct)
   let axel=pdzSurviveAxel(attacker)||pdzSurviveAxel(direct)
-  // Axel uses a full-auto M4A1. Per-hit one-shot protection cannot stop a
-  // whole burst, so his bullets receive a stronger encounter-specific scale.
-  if(axel)adjusted*=0.40
-  else if(boss)adjusted*=0.60
+  let gunSoldier=pdzSurviveGunSoldier(attacker)||pdzSurviveGunSoldier(direct)
+  // Bosses and armed soldiers are meant to apply sustained pressure. Their
+  // authored M&S damage remains the source value, while this final pacing layer
+  // prevents one animation or one automatic burst from ending the encounter.
+  if(axel)adjusted*=0.32
+  else if(boss)adjusted*=0.45
+  else if(gunSoldier)adjusted*=0.58
 
   let health=Math.max(0,Number(player.health)||0)
   let maxHealth=Math.max(1,Number(player.maxHealth)||1)
@@ -82,27 +100,31 @@ ForgeEvents.onEvent('net.minecraftforge.event.entity.living.LivingHurtEvent',eve
   let tank=pdzSurviveTank(player)
   let threshold=tank?0.60:0.80
   let capRatio=tank?0.50:0.68
+  if(axel)capRatio=tank?0.18:0.24
+  else if(boss)capRatio=tank?0.22:0.30
+  else if(gunSoldier)capRatio=tank?0.16:0.22
   let healthy=health/maxHealth>=threshold
   let cap=absorption+maxHealth*capRatio
-  if(healthy&&adjusted>cap)adjusted=cap
+  if((boss||gunSoldier||healthy)&&adjusted>cap)adjusted=cap
 
-  // A TaCZ burst consists of several individually non-lethal events. Limit
-  // Axel's total one-second damage instead of making later bullets invisible
-  // to the normal M&S health pool. The next second can still finish the player.
+  // TaCZ automatic fire consists of several individually non-lethal events.
+  // A shared one-second budget covers every boss and armed NPC; the following
+  // second can still down the player, so this is pacing rather than immunity.
   let data=player.persistentData
   let gameTime=0
   try{gameTime=Number(player.level.gameTime)}catch(ignored){}
-  if(axel){
-    let windowStart=Number(data.getLong('dz_axel_damage_window_start'))
+  if(boss||gunSoldier){
+    let windowStart=Number(data.getLong('dz_hostile_ttk_window_start'))
     if(windowStart<=0||gameTime<windowStart||gameTime-windowStart>=20){
       windowStart=gameTime
-      data.putLong('dz_axel_damage_window_start',gameTime)
-      data.putDouble('dz_axel_damage_window_used',0)
+      data.putLong('dz_hostile_ttk_window_start',gameTime)
+      data.putDouble('dz_hostile_ttk_window_used',0)
     }
-    let used=Math.max(0,Number(data.getDouble('dz_axel_damage_window_used')))
-    let budget=maxHealth*(tank?0.35:0.45)
+    let used=Math.max(0,Number(data.getDouble('dz_hostile_ttk_window_used')))
+    let budgetRatio=axel?(tank?0.24:0.32):(boss?(tank?0.30:0.38):(tank?0.26:0.34))
+    let budget=maxHealth*budgetRatio
     adjusted=Math.max(0,Math.min(adjusted,budget-used))
-    data.putDouble('dz_axel_damage_window_used',Math.min(budget,used+adjusted))
+    data.putDouble('dz_hostile_ttk_window_used',Math.min(budget,used+adjusted))
   }
 
   if(adjusted+0.001<original){
@@ -112,13 +134,15 @@ ForgeEvents.onEvent('net.minecraftforge.event.entity.living.LivingHurtEvent',eve
     data.putString('dz_survival_last_profile',tank?'tank':'standard')
     data.putBoolean('dz_survival_last_boss',boss)
     data.putBoolean('dz_survival_last_axel',axel)
+    data.putBoolean('dz_survival_last_gun_soldier',gunSoldier)
     data.putInt('dz_survival_guard_count',data.getInt('dz_survival_guard_count')+1)
     let lastLog=Number(data.getLong('dz_survival_last_log_tick'))
     if(lastLog<=0||gameTime<lastLog||gameTime-lastLog>=20){
       data.putLong('dz_survival_last_log_tick',gameTime)
       console.warn('[PDZ Survivability] player='+player.username+' original='+original.toFixed(2)+
         ' final='+adjusted.toFixed(2)+' profile='+(tank?'tank':'standard')+' boss='+boss+
-        ' axel='+axel+' attacker='+pdzSurviveEntityId(attacker)+' direct='+pdzSurviveEntityId(direct)+
+        ' axel='+axel+' gunSoldier='+gunSoldier+' attacker='+pdzSurviveEntityId(attacker)+
+        ' direct='+pdzSurviveEntityId(direct)+
         ' health='+health.toFixed(2)+'/'+maxHealth.toFixed(2))
     }
   }

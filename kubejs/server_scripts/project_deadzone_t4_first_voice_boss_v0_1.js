@@ -109,10 +109,17 @@ function dzT4bInitialize(boss, relay, spots) {
   boss.persistentData.putString('dz_t4_argus_outcome', boss.server.persistentData.getString('dz_story_argus_outcome'))
   try {
     let mns = DZ_T4B_MNS_ENTITY_DATA.get(boss)
-    mns.setLevel(55)
+    let bossLevel = 102
+    try {
+      if (global.pdzStoryBossLevel) bossLevel = Math.max(1, Number(global.pdzStoryBossLevel(boss.server)) || 102)
+      else bossLevel = Math.min(102, Math.max(10,
+        Number(boss.server.persistentData.getInt('dz_story_mns_level_cap')) || 100) + 2)
+    } catch (ignored) {}
+    mns.setLevel(bossLevel)
     mns.setRarity('boss')
     mns.recalcStats_DONT_CALL()
     boss.addTag('dz_mns_boss_profile')
+    boss.addTag('dz_mns_boss_cap_plus_2_v1')
   } catch (error) {
     console.warn('[PDZ T4 BOSS] M&S profile failed: ' + error)
   }

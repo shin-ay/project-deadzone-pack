@@ -9,6 +9,7 @@
 const PDZCTE_ENTITY_DATA = Java.loadClass('com.robertx22.mine_and_slash.capability.entity.EntityData')
 const PDZCTE_HEALTH = Java.loadClass('com.robertx22.mine_and_slash.uncommon.utilityclasses.HealthUtils')
 const PDZCTE_DAMAGE_MODIFIER = 'd34db300-0000-4000-8000-000000000001'
+const PDZCTE_GUN_HEALTH_MODIFIER = 'd34db300-0000-4000-8000-000000000002'
 const PDZCTE_LEVEL_BANDS = [
   {min:1,max:8},
   {min:9,max:18},
@@ -41,18 +42,65 @@ function pdzCteExcluded(entity){
   if(!entity||!entity.tags)return true
   let excluded=['dz_buddy','dz_survivor','dz_usunit_friendly','dz_boss_showroom',
     'dz_boss_test_frozen','dz_boss_loadtest','dz_boss_axel','dz_mns_boss_profile','dz_spore_nexus',
-    'dz_boss_mechanics_active','dz_story_boss_argus_fragment','dz_story_boss_choir_vessel',
+    'dz_boss_mechanics_active','dz_boss_component','dz_story_boss_argus_fragment','dz_story_boss_choir_vessel',
     'dz_story_boss_firestation','dz_story_boss_gasstation','dz_story_boss_gunshop',
     'dz_story_boss_hospital','dz_story_boss_policestation','dz_story_boss_primordial',
     'dz_story_boss_radio_tower','dz_story_boss_reactor_saint','dz_story_boss_t4_relay_shepherd','dz_sideboss_tank',
     'dz_sideboss_abomination','dz_boss_mech_02','dz_boss_mech_03','dz_boss_mech_04',
     'dz_boss_mech_05','dz_boss_mech_06','dz_boss_mech_07','dz_boss_mech_08',
     'dz_boss_mech_09','dz_boss_mech_10','dz_boss_mech_11','dz_boss_mech_12',
-    'dz_boss_mech_13','dz_boss_mech_14','dz_t4_signal_node','dz_pdz_boss_weakpoint']
+    'dz_boss_mech_13','dz_boss_mech_14','dz_t4_signal_node','dz_pdz_boss_weakpoint',
+    // Authored T4 profiles own their M&S level/rarity and must not be replaced
+    // by the ordinary geographic band when their chunk reloads.
+    'dz_mns_elite_profile','dz_t4_relay_guard']
   for(let i=0;i<excluded.length;i++)if(entity.tags.contains(excluded[i]))return true
   try{if(entity.getOwnerUUID()!=null)return true}catch(ignored){}
   return false
 }
+
+function pdzCteIsGunSoldier(entity){
+  if(!entity||!entity.type)return false
+  let id=String(entity.type),namespace=id.split(':')[0]
+  if(namespace==='tacz_bandits'||namespace==='tacz_hostiles')return true
+  if(id==='simpleenemymod:ruunit')return true
+  try{
+    let stack=entity.mainHandItem
+    if(stack&&String(stack.id)==='tacz:modern_kinetic_gun')return true
+  }catch(ignored){}
+  return false
+}
+
+function pdzCteGunElite(entity){
+  if(!entity||!entity.tags)return false
+  let tags=['dz_elite','dz_raider_enforcer','dz_raider_warden','dz_remnant_heavy',
+    'dz_remnant_officer','dz_t4_relay_guard']
+  for(let i=0;i<tags.length;i++)if(entity.tags.contains(tags[i]))return true
+  return false
+}
+
+function pdzCteApplyGunSoldierDurability(entity){
+  if(!pdzCteIsGunSoldier(entity)||entity.tags.contains('dz_gun_soldier_ttk_v1'))return false
+  let oldMax=Math.max(1,Number(entity.maxHealth)||1)
+  let ratio=Math.max(0,Math.min(1,(Number(entity.health)||oldMax)/oldMax))
+  let multiplier=pdzCteGunElite(entity)?1.85:1.50
+  try{
+    entity.removeAttribute('minecraft:generic.max_health',PDZCTE_GUN_HEALTH_MODIFIER)
+    entity.modifyAttribute('minecraft:generic.max_health',PDZCTE_GUN_HEALTH_MODIFIER,
+      multiplier-1,'multiply_total')
+    entity.health=Math.max(1,Number(entity.maxHealth)*ratio)
+    entity.addTag('dz_gun_soldier_ttk_v1')
+    entity.persistentData.putDouble('dz_gun_soldier_health_multiplier',multiplier)
+    return true
+  }catch(error){
+    if(!entity.tags.contains('dz_gun_soldier_ttk_error')){
+      entity.addTag('dz_gun_soldier_ttk_error')
+      console.warn('[PROJECT DEADZONE][Gun TTK] durability profile failed for '+String(entity.type)+': '+error)
+    }
+  }
+  return false
+}
+
+global.pdzApplyGunSoldierDurability=pdzCteApplyGunSoldierDurability
 
 function pdzCteRegion(entity){
   let tier=0
@@ -86,6 +134,7 @@ function pdzCteApply(entity){
   // already-generated enemies without resetting their HP or M&S level.
   if(entity.tags.contains('dz_cte2_level_band')){
     try{pdzCteApplyIncomingBalance(entity)}catch(ignored){}
+    try{pdzCteApplyGunSoldierDurability(entity)}catch(ignored){}
     return
   }
   let tier=pdzCteRegion(entity),band=PDZCTE_LEVEL_BANDS[tier]
@@ -108,6 +157,7 @@ function pdzCteApply(entity){
     // elites retain more of their damage as a visible difficulty spike.
     pdzCteApplyIncomingBalance(entity)
     entity.health=entity.maxHealth
+    pdzCteApplyGunSoldierDurability(entity)
     entity.addTag('dz_cte2_level_band')
     entity.addTag('dz_cte2_region_'+tier)
   }catch(err){

@@ -262,6 +262,14 @@ function dzStoryBossCheckpoint(server, key, questId, message, unlockTier, tierQu
       server.runCommandSilent("deadzonestory set tier_" + unlockTier)
     }
   }
+  // Recipe/story tiers remain broad content gates, while character growth now
+  // advances after each main boss milestone. Refresh after recording the flag
+  // so optional bosses cannot accidentally grant the same milestone twice.
+  try {
+    if (global.pdzStoryRefreshMnsLevelCap) global.pdzStoryRefreshMnsLevelCap(server, true)
+  } catch (error) {
+    console.warn('[DEADZONE STORY] Boss level-cap refresh failed for ' + key + ': ' + error)
+  }
   return true
 }
 
@@ -308,13 +316,21 @@ function dzFacilityHighestPlayerLevel(server, boss) {
   return highest
 }
 
+function dzFacilityBossLevel(server) {
+  try {
+    if (global.pdzStoryBossLevel) return Math.max(1, Number(global.pdzStoryBossLevel(server)) || 12)
+  } catch (ignored) {}
+  let cap = Math.max(10, Number(server.persistentData.getInt('dz_story_mns_level_cap')) || 10)
+  return Math.min(102, cap + 2)
+}
+
 function dzScaleFacilityBoss(server, boss) {
   if (!dzIsFacilityBoss(boss)
     || !boss.alive || boss.health <= 0
     || boss.persistentData.getBoolean("dz_party_scaled")) return
   let party = dzFacilityPartySize(server, boss)
   let playerLevel = dzFacilityHighestPlayerLevel(server, boss)
-  let bossLevel = Math.max(1, Math.round(playerLevel) + 5)
+  let bossLevel = dzFacilityBossLevel(server)
   let scaledHealth = 0
   try {
     let mns = DZ_STORY_MNS_ENTITY_DATA.get(boss)
@@ -355,7 +371,8 @@ function dzScaleFacilityBoss(server, boss) {
     '{"text":"Party ' + party + '人に合わせBossを強化（M&S HP ' + scaledHealth +
     ' / 護衛 ' + escorts + '）","color":"yellow"}]')
   console.info("[DEADZONE STORY] Party scaled boss=" + String(boss.uuid) +
-    " players=" + party + " playerLv=" + playerLevel + " bossLv=" + bossLevel +
+    " players=" + party + " playerLv=" + playerLevel + " cap=" +
+    Number(server.persistentData.getInt('dz_story_mns_level_cap')) + " bossLv=" + bossLevel +
     " hp=" + scaledHealth + " escorts=" + escorts)
 }
 
