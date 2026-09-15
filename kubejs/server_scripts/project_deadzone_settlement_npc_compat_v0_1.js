@@ -179,7 +179,7 @@ ServerEvents.loaded(event => pdzEnsureVillageGuardTeam(event.server))
 // counter: ServerEvent does not expose a stable server.tickCount property on
 // this KubeJS/Forge build.
 ServerEvents.tick(event => {
-  if (++PDZ_MCA_GUARD_MAINTENANCE_TICKS % 200 !== 0) return
+  if (++PDZ_MCA_GUARD_MAINTENANCE_TICKS % 400 !== 0) return
   PDZ_MCA_GUARD_MAINTENANCE_PASSES++
   let level = null
   try { level = event.server.getLevel("minecraft:overworld") } catch (ignored) {}
@@ -211,14 +211,18 @@ ServerEvents.tick(event => {
         guards++
         guardEntities.push(entity)
       }
-      if (pdzVillageGuardHostile(entity)) hostiles.push(entity)
     })
   } catch (error) {
     if (PDZ_MCA_GUARD_MAINTENANCE_PASSES <= 3)
       console.error("[PROJECT DEADZONE][Settlement Compat] RC7 entity scan failed: " + String(error))
     return
   }
-  pdzJoinLoadedVillageGuards(event.server)
+  if (guardEntities.length) {
+    // Hostile collection is only needed when a loaded village guard can use it.
+    // Avoid the second predicate pass entirely on the usual zero-guard case.
+    level.entities.forEach(entity => { if (pdzVillageGuardHostile(entity)) hostiles.push(entity) })
+    pdzJoinLoadedVillageGuards(event.server)
+  }
 
   // TacZ NPC's own opposed-faction selector can remain idle after a template
   // is loaded from NBT. Reuse this pass's loaded-entity snapshot and give each

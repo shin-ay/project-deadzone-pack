@@ -388,7 +388,9 @@ PlayerEvents.loggedIn(event => {
 
 PlayerEvents.tick(event => {
   let player = event.player
-  if (player.level.clientSide || player.age % 20 !== 0) return
+  // Story proximity checks are not combat-critical. Five seconds keeps arrival
+  // feedback responsive without repeatedly scanning markers for every player.
+  if (player.level.clientSide || player.age % 100 !== 0) return
   // Also covers players who were already online when this hotfix was reloaded.
   dzRestorePreparationForRegeneratedWorld(player)
   dzGrantEndgameDecree(player)
@@ -544,10 +546,9 @@ PlayerEvents.tick(event => {
     return faction === "infected" && (role === "nest" || type.indexOf("infect") >= 0 ||
       type.indexOf("laboratory") >= 0)
   }, 160)) dzCompletePlayerStoryQuest(player, "t3_choir_discovery", DZ_STORY_QUESTS.t3ChoirDiscovery)
-  // A full entity scan for every player every second was expensive on a
-  // five-player server. Bosses only need this initialization once, so check at
-  // a five-second cadence instead.
-  if (player.age % 100 === 0) player.level.entities.forEach(entity => {
+  // This handler already runs every five seconds; keep boss initialization on
+  // the same pass instead of adding another scan cadence.
+  player.level.entities.forEach(entity => {
     if (dzIsFacilityBoss(entity) && entity.alive && entity.health > 0
       && !entity.persistentData.getBoolean("dz_party_scaled"))
       dzScaleFacilityBoss(player.server, entity)

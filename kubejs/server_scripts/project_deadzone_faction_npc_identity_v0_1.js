@@ -46,10 +46,15 @@ EntityEvents.spawned(event => {
 })
 
 ServerEvents.tick(event => {
-  if (event.server.tickCount % 20 !== 0) return
-  let checked={}
-  event.server.players.forEach(player => {
-    player.level.entities.forEach(entity => {
+  // Spawn hooks own normal naming. This pass only repairs legacy state, so a
+  // five-second cadence is sufficient and avoids one full scan per player/sec.
+  if (event.server.tickCount % 100 !== 0) return
+  // Scan each loaded player dimension once. The previous player-nested walk
+  // repeated the full entity list for every additional player in that level.
+  let levels={}
+  event.server.players.forEach(player => { levels[String(player.level.dimension)]=player.level })
+  Object.keys(levels).forEach(dimension => {
+    levels[dimension].entities.forEach(entity => {
       if (!entity.tags || (!entity.tags.contains("dz_npc") && !entity.tags.contains("dz_buddy"))) return
       let uuid=String(entity.uuid)
       if (checked[uuid]) return
@@ -69,7 +74,7 @@ ServerEvents.tick(event => {
           return
         }
       }
-      if (event.server.tickCount % 100 === 0) pdzNameFactionNpc(entity)
+      pdzNameFactionNpc(entity)
     })
   })
 })

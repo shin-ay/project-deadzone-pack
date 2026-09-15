@@ -1,0 +1,64 @@
+# PROJECT DEADZONE balanced multiplayer density profile.
+# Automatic combined-arms content stays enabled; concurrent NPC vehicle and
+# infantry density is reduced and expensive AI scans run less often.
+
+[events]
+	tankSpawnChanceRu = 0.05
+	tankSpawnChanceUs = 0.05
+	planesInEvents = true
+	planeSpawnChanceRu = 0.01
+	planeSpawnChanceUs = 0.01
+	convoyEventsEnabled = true
+	convoyBaseChance = 0.025
+	convoyFailureMultiplier = 0.025
+	largeCombatEventsEnabled = true
+	largeCombatBaseChance = 0.01
+	largeCombatFailureMultiplier = 0.01
+	largeCombatVehicles = 1
+	largeCombatEmplacementChance = 0.02
+	largeCombatPlaneChance = 0.01
+	navalEventsEnabled = true
+	navalBaseChance = 0.02
+	navalFailureMultiplier = 0.02
+	navalShipsPerSide = 2
+	invasionEventsEnabled = true
+	invasionBaseChance = 0.015
+	invasionFailureMultiplier = 0.015
+	invasionDefenderInfantry = 3
+	invasionDefenderTows = 1
+	invasionDefenderMortars = 1
+	shellingEventsEnabled = false
+	derelictEventsEnabled = true
+	derelictBaseChance = 0.02
+	derelictFailureMultiplier = 0.02
+	derelictGuards = 2
+	overflightEventsEnabled = true
+	overflightBaseChance = 0.015
+	overflightFailureMultiplier = 0.015
+	overflightPlanes = 1
+	garrisonVehiclesEnabled = true
+	garrisonVehicleChance = 0.2
+	largeCombatLifetimeTicks = 12000
+	largeCombatCleanupPlayerRadius = 160.0
+
+[structure_vehicles]
+	structureVehiclesEnabled = true
+	structureVehicleMaxCount = 2
+	structureVehicleRampDays = 24
+
+[crew_ai]
+	aiFireCooldownTicks = 10
+	atSecondGunnerChance = 0.2
+	droneDeployCheckIntervalTicks = 400
+	droneDeployChance = 0.08
+	droneScanIntervalTicks = 40
+	vehicleTargetScanRadius = 64.0
+	vehicleTargetScanHeight = 64.0
+	vehicleTargetScanIntervalTicks = 60
+	utilityRefreshIntervalTicks = 60
+	supportCallIntervalTicks = 400
+
+[map]
+	mapInfantryEnabled = true
+	mapSyncIntervalTicks = 40
+	mapSpotRadius = 128.0

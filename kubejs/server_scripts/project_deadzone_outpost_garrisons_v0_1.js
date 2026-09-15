@@ -6,8 +6,8 @@ const PDZ_GAR_LEDGER='dz_activity_outpost_ledger_v1'
 // faction/role, while guards only become physical inside 80m.
 const PDZ_GAR_NOTICE=224
 const PDZ_GAR_NEAR=112
-const PDZ_GAR_RELEASE=240
-const PDZ_GAR_RESPAWN=15*60*1000
+const PDZ_GAR_RELEASE=192
+const PDZ_GAR_RESPAWN=30*60*1000
 const PDZ_GAR_PLACEMENT_VERSION=3
 
 function pdzGarRead(server){
@@ -74,7 +74,7 @@ function pdzGarSize(type){
   if(type.indexOf('camp')>=0||type.indexOf('station')>=0||type.indexOf('settlement')>=0||type.indexOf('outpost')>=0)return 'medium'
   return 'small'
 }
-function pdzGarCount(size){return size==='large'?7:(size==='medium'?5:3)}
+function pdzGarCount(size){return size==='large'?4:(size==='medium'?3:2)}
 function pdzGarEntities(level,tag){
   let found=[]
   level.entities.forEach(e=>{if(e.tags&&e.tags.contains(tag))found.push(e)})
@@ -159,7 +159,7 @@ function pdzGarRecruitResidents(marker,player,faction,tag,spots){
     extraTags=',"dz_settlement_guard","dz_survivor_guard","dz_survivor","dz_friendly"'
     if(faction==='civildef'||faction==='cdf')extraTags+=',"dz_faction_civil_defense"'
   }
-  let count=Math.min(2,Math.max(1,spots.length))
+  let count=Math.min(1,Math.max(1,spots.length))
   for(let i=0;i<count;i++){
     let s=spots[(spots.length-1-i+spots.length)%spots.length]
     player.runCommandSilent('execute positioned '+s.x+' '+s.y+' '+s.z+' run summon tacznpcs:npc ~ ~ ~ {template:"pdz_village_guard",PersistenceRequired:1b,Tags:["dz_settlement_resident","dz_external_faction_npc","dz_garrison_bound","'+tag+'","'+residentTag+'"'+extraTags+']}')
@@ -219,12 +219,21 @@ function pdzGarSpawn(marker,player,faction,size,role,tag){
 function pdzGarPulse(server){
   let ledger=pdzGarRead(server),owners={}
   ledger.forEach(s=>owners[String(s.id)]=s)
-  let seen={}
+  let seen={},levelStates={}
   server.players.forEach(player=>{
-    let closeToAny=false
-    player.level.entities.forEach(marker=>{
-    if(marker.tags&&marker.tags.contains('dz_wilderness_site')&&(marker.x-player.x)*(marker.x-player.x)+(marker.z-player.z)*(marker.z-player.z)<=PDZ_GAR_NOTICE*PDZ_GAR_NOTICE)closeToAny=true
+    let dimension=String(player.level.dimension)
+    if(!levelStates[dimension])levelStates[dimension]={level:player.level,players:[]}
+    levelStates[dimension].players.push({player:player,closeToAny:false})
+  })
+  // One entity walk per loaded player dimension, regardless of player count.
+  Object.keys(levelStates).forEach(dimension=>{
+    let state=levelStates[dimension]
+    state.level.entities.forEach(marker=>{
     if(!marker.tags||!marker.tags.contains('dz_wilderness_site'))return
+    state.players.forEach(p=>{
+      let dx=marker.x-p.player.x,dz=marker.z-p.player.z
+      if(dx*dx+dz*dz<=PDZ_GAR_NOTICE*PDZ_GAR_NOTICE)p.closeToAny=true
+    })
     // Multiple detector markers may refer to the same logical structure.  The
     // old UUID-based guard allowed every duplicate marker to materialise its
     // own squad.  The stable site id is the authoritative deduplication key.
@@ -274,14 +283,14 @@ function pdzGarPulse(server){
     marker.persistentData.putString('dz_wild_faction',String(faction))
     pdzGarSpawn(marker,near,String(faction),site.size||pdzGarSize(marker.persistentData.getString('dz_wild_type')),role,tag)
     })
-    if(!closeToAny)player.persistentData.remove('dz_current_named_site')
+    state.players.forEach(p=>{if(!p.closeToAny)p.player.persistentData.remove('dz_current_named_site')})
   })
 }
 
 let PDZ_GAR_TICKS=0
 ServerEvents.tick(event=>{
   PDZ_GAR_TICKS++
-  if(PDZ_GAR_TICKS%100===0)pdzGarPulse(event.server)
+  if(PDZ_GAR_TICKS%200===0)pdzGarPulse(event.server)
 })
 
 ServerEvents.commandRegistry(event=>{

@@ -20,7 +20,7 @@
 	#--------------------------------------------------
 	#Detection Range for All Units
 	#Range: 32.0 ~ 384.0
-	detectionRange = 128.0
+	detectionRange = 72.0
 
 [ai_difficulty]
 	#AI Difficulty preset.
@@ -66,42 +66,42 @@
 	eventGlobalCooldownTicks = 12000
 	#Ticks between event evaluation attempts per player. 20 ticks = 1 second. Default: 3600 = 1 minute
 	#Range: 100 ~ 72000
-	eventTickWindow = 2400
+	eventTickWindow = 3600
 	#Base spawn chance for Patrol Event (per minute)
 	#Range: 0.01 ~ 1.0
-	patrolBaseChance = 0.05
+	patrolBaseChance = 0.025
 	#--------------------------------------------------
 	#Chance accumulation rate on failure for Patrol Event
 	#Range: 0.01 ~ 0.5
-	patrolFailureMultiplier = 0.05
+	patrolFailureMultiplier = 0.02
 	#--------------------------------------------------
 	#Minimum squad size for Patrol Event
 	#Range: 1 ~ 10
 	patrolMinSize = 2
 	#Maximum squad size for Patrol Event
 	#Range: 1 ~ 20
-	patrolMaxSize = 4
+	patrolMaxSize = 3
 	#Base spawn chance for Combat Event (per minute)
 	#Range: 0.01 ~ 1.0
-	combatBaseChance = 0.04
+	combatBaseChance = 0.02
 	#--------------------------------------------------
 	#Chance accumulation rate on failure for Combat Event
 	#Range: 0.01 ~ 0.5
-	combatFailureMultiplier = 0.04
+	combatFailureMultiplier = 0.02
 	#--------------------------------------------------
 	#Minimum squad size for Combat Event (per faction)
 	#Range: 1 ~ 10
 	combatMinSize = 2
 	#Maximum squad size for Combat Event (per faction)
 	#Range: 1 ~ 20
-	combatMaxSize = 4
+	combatMaxSize = 3
 	#Base spawn chance for Cave Extraction Event (per minute)
 	#Range: 0.01 ~ 1.0
-	caveBaseChance = 0.02
+	caveBaseChance = 0.01
 	#--------------------------------------------------
 	#Chance accumulation rate on failure for Cave Extraction Event
 	#Range: 0.01 ~ 0.5
-	caveFailureMultiplier = 0.03
+	caveFailureMultiplier = 0.015
 	#--------------------------------------------------
 	#Minimum squad size for Cave Extraction Event
 	#Range: 1 ~ 10
@@ -109,7 +109,7 @@
 	#--------------------------------------------------
 	#Maximum squad size for Cave Extraction Event
 	#Range: 1 ~ 20
-	caveMaxSize = 3
+	caveMaxSize = 2
 
 [Drops]
 	#Enables or disables modified weapon drops for Units.
@@ -131,4 +131,16 @@
 	#Amount of items required to recruit a PMC
 	#Range: 1 ~ 64
 	recruitPrice = 12
+
+# Performance profile for large combined-arms encounters. Missing SEM options
+# are populated by Forge from the installed mod's ConfigSpec.
+[tactical_ai_phase_2]
+	coverSearchCooldownTicks = 60
+	coverSearchMaxCandidates = 48
+	coverSearchMaxPathChecks = 2
+	coverSearchesPerTick = 1
+
+[tactical_ai_phase_4]
+	tacticalDecisionIntervalTicks = 24
+	closeThreatSwitchScanIntervalTicks = 12
 

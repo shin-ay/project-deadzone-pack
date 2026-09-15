@@ -3090,7 +3090,7 @@ hash = "5040df07d90404ec6fb72797ae7d06af88db0a0f56c6c8a680b728031141b854"
 
 [[files]]
 file = "config/sem-common.toml"
-hash = "c21c7215672925b340d09602c540fd3a48841d5c814b466cc65372b7a131a335"
+hash = "455837515cb1fd2b5f7b74512d0d8b0ccd85c02bc712705000ef1a3c394e2084"
 
 [[files]]
 file = "config/sereneseasons/fertility.toml"
@@ -3487,6 +3487,10 @@ hash = "3ed8257302950822cd63426d2932776525c8338f786cca759e16d2249175a13b"
 [[files]]
 file = "defaultconfigs/skilltree-server.toml"
 hash = "58a0475b579a8aa2dce35dd426e8b877dde1eb1e66832c2c93fd93f80befa9b3"
+
+[[files]]
+file = "defaultconfigs/tacz_sewv-server.toml"
+hash = "45f7bf12e46a4e4588e14c57366df700d4f1cc7f719a3e24c8f153c059316370"
 
 [[files]]
 file = "kubejs/README.txt"
@@ -11378,7 +11382,7 @@ hash = "e33ad8d8948ea65ab039a45f2438638cda137e1a1241aa9710a435d6b7c9a821"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_faction_npc_identity_v0_1.js"
-hash = "b0da9cc96cfea15a1f01e045275636a45afc291c76c1b8ba7763e1e76891b0f1"
+hash = "005b2b245458134139edbbbb867210e6593fb307ab6d45b5617ae6b855a470ec"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_faction_registry_audit_v0_1.js"
@@ -11467,6 +11471,10 @@ hash = "44fa2d2172610f4fb886ff7824b292cf536c0fc34d327f128830bba79ce1b9a0"
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_infection_recovery_v0_2.js"
 hash = "1bb5f39b03dface86391cdbb6c2ab2b512f48978b2c6a74e3f619f9deccfe889"
+
+[[files]]
+file = "kubejs/server_scripts/project_deadzone_item_despawn_v0_1.js"
+hash = "eaa0bb03fcc3e2b93458f8db96ffa4ffb63e79292483f594d356e095150dc348"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_job_abilities_v0_1.js"
@@ -11574,7 +11582,7 @@ hash = "80c863dcb2cbdd2d767718196120addc7d908213d80a28e815263cc7f068f897"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_outpost_garrisons_v0_1.js"
-hash = "5c3db2a93d5f41a95ca31f338f8dc9b561ef49af77752a4c13964fd64a526c95"
+hash = "f0ae8ae2c37d6d7a3afccb2eef0600b52d51c4f43e52374d64588c72c4b96523"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_player_damage_guard_v0_1.js"
@@ -11638,7 +11646,7 @@ hash = "cc9a03f47e8387b35e15ca09d0bf7d1345fd5fdcbae791fffe937ec1d6b2bc2b"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_settlement_npc_compat_v0_1.js"
-hash = "623f554120eec3bce8b2ab05c3f8392fbef28ea5c2b1b2d29262b6d7aedd5768"
+hash = "3e921212910dffa4bee30d8ad5fd4b001bbb14b437c5e2f467479936911fcb90"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_side_bosses_v0_1.js"
@@ -11706,7 +11714,7 @@ hash = "41674e022663b6fdae9d6dedb786f4854a4ae08762ab7dcf789b0d8e54b4c61c"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_story_progress_v0_1.js"
-hash = "e04daae7563892b0c2704ae077beb71c6c1e2fd45c1e222013856c11f9a7a6df"
+hash = "d6fb9f32af6f581d6fbbce0bc5edb54c7f143e4fa4d1136521a2d9059f55ad73"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_story_progression_v0_1.js"
@@ -11786,7 +11794,7 @@ hash = "7d2d2e20f03f822eeb00e36fc5d08807a402baa4bb7ed89a4ed05328c9d3c44f"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_usunit_alliance_v0_1.js"
-hash = "78d975383b88936a75b7e09af54d8c47892836a4309fea2d49e6750e4502627c"
+hash = "95a986d7e6f8204631f4856cd7ee3d75ab2b965b26a859cc4ffdd1801a0274fc"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_vehicle_authorization_v0_1.js"
@@ -11875,6 +11883,10 @@ hash = "2ff1c050d1b9f3ece86a0a299d3f34e43b3548603d4306951815680fd8d47595"
 [[files]]
 file = "kubejs/startup_scripts/project_deadzone_logistics_items_v0_1.js"
 hash = "ce3d6b0c91f99e9bf3434c0f6fb4a8e8b6caa38f24b8a5098866e3c9a779fc30"
+
+[[files]]
+file = "kubejs/startup_scripts/project_deadzone_lostcities_floating_water_cleanup_v0_1.js"
+hash = "881144b4dca31f824d0c9c4f499d4cb29d6738ba6d35cade92675c966d2e2fb4"
 
 [[files]]
 file = "kubejs/startup_scripts/project_deadzone_military_curios_v0_1.js"

@@ -86,7 +86,9 @@ EntityEvents.spawned(event => {
 let DZ_USUNIT_TARGET_REPAIR_TICK = 0
 ServerEvents.tick(event => {
   DZ_USUNIT_TARGET_REPAIR_TICK++
-  if (DZ_USUNIT_TARGET_REPAIR_TICK % 10 !== 0) return
+  // Two seconds is still fast enough to clear an invalid friendly target, while
+  // avoiding four loaded-entity scans per second on a multiplayer server.
+  if (DZ_USUNIT_TARGET_REPAIR_TICK % 40 !== 0) return
   event.server.getAllLevels().forEach(level => level.entities.forEach(entity => {
     if (!dzIsUsAllianceUnit(entity) || dzUsunitIsManagedFaction(entity) ||
         !entity.tags.contains("dz_friendly")) return
