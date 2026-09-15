@@ -17,3 +17,12 @@ mods.recipestages.Recipes.setRecipeStageByMod("dz_story_vehicle_air", "immersive
 
 // S3 / Radio Tower: heavy combined-arms manufacturing begins here.
 mods.recipestages.Recipes.setRecipeStageByMod("dz_story_superb_warfare", "superbwarfare");
+
+// RecipeStages requires a crafting player when assembling its wrapped recipe.
+// Create Mechanical Crafters have no player context, so wrapped infrastructure
+// recipes assemble to ItemStack.EMPTY and consume the ingredients. Keep these
+// entry-point machines progression-gated by their physical prerequisites
+// (SWF steel, battery and Ancient CPU), not by a player-bound recipe wrapper.
+mods.recipestages.Recipes.clearRecipeStage(<resource:superbwarfare:vehicle_assembling_table>);
+mods.recipestages.Recipes.clearRecipeStage(<resource:superbwarfare:blueprint_research_table>);
+mods.recipestages.Recipes.clearRecipeStage(<resource:superbwarfare:reforging_table>);
