@@ -12286,8 +12286,8 @@ file = "mods/NoChatReports-FORGE-1.20.1-v2.2.2.jar"
 hash = "ef7fa5096dfd492c3d3ae7228888ca4b92ce07d9b8e302297ceb2ceb1f8d238c"
 
 [[files]]
-file = "mods/PROJECT_DEADZONE_Bosses-0.1.0.jar"
-hash = "e2a0b8c2e07f5d3e6cde460c4fcee29156026d0f22e548160d7b37371a879ebc"
+file = "mods/PROJECT_DEADZONE_Bosses-0.1.1.jar"
+hash = "abc9fc90a3acfa8f9a70062185d312a8ac2543a5b371179bc70a0d427d29a1e0"
 
 [[files]]
 file = "mods/PROJECT_DEADZONE_Compost_Concurrency_Compat-0.1.0.jar"
