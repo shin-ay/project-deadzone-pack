@@ -12616,6 +12616,11 @@ hash = "dbcc0438167282b33e120d87127510cea1b1c6769113c309e7c324814b6d546a"
 metafile = true
 
 [[files]]
+file = "mods/concurrent-chunk-management-engine-forge.pw.toml"
+hash = "0ae5a3d3a794af3b42d5a0cbb3fa82fa5f52a93f3062e6b5818aef95a2d24d59"
+metafile = true
+
+[[files]]
 file = "mods/configured.pw.toml"
 hash = "c1bdeff356cd2ac164e2c0e6d0ceeda234db9774c2df44fb9f0e71d3960cc3f1"
 metafile = true
