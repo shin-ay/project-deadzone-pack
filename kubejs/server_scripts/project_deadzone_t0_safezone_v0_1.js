@@ -115,19 +115,6 @@ function dzIsHostileMob(entity) {
 
 function dzT0Exempt(entity) {
   for (let i=0;i<DZ_T0_EXEMPT_TAGS.length;i++) if (entity.tags.contains(DZ_T0_EXEMPT_TAGS[i])) return true
-  // Brutal Bosses adds Axel's showroom tag a few ticks after creating him.
-  // The marker already exists at that point, so protect only entities spawned
-  // directly beside that admin-only gallery anchor.
-  if (String(entity.type)!=="tacz_hostiles:soldier") return false
-  try {
-    let protectedByAnchor=false
-    entity.level.entities.forEach(candidate => {
-      if (protectedByAnchor || !candidate.tags || !candidate.tags.contains("dz_boss_showroom_axel_anchor")) return
-      let dx=Number(candidate.x)-Number(entity.x), dy=Number(candidate.y)-Number(entity.y), dz=Number(candidate.z)-Number(entity.z)
-      if (dx*dx+dy*dy+dz*dz<=12*12) protectedByAnchor=true
-    })
-    if (protectedByAnchor) return true
-  } catch (ignored) {}
   return false
 }
 
@@ -148,8 +135,8 @@ function dzCampRejectSpawn(event) {
   event.cancel()
 }
 
-// Catch modded monsters as well as vanilla monsters.  discard() prevents
-// loot/XP/death hooks, avoiding the lag spikes caused by repeated /kill.
+// Catch modded monsters as well as vanilla monsters. Cancel the join event at
+// the spawn boundary; never add a visible entity and remove it afterward.
 EntityEvents.spawned(event=>dzCampRejectSpawn(event))
 
 DZ_T0_GUN_TYPES.forEach(type=>EntityEvents.spawned(type,event=>dzT0RejectSpawn(event,DZ_T0_SUBURB_RADIUS)))

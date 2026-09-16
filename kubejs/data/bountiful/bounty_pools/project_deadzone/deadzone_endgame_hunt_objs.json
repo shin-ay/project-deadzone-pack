@@ -47,7 +47,7 @@
     },
     "pdz_end_siege_tank": {
       "type": "entity",
-      "content": "apocalypse_zombies:tank",
+      "content": "pdzbosses:siege_tank",
       "amount": { "min": 1, "max": 2 },
       "unitWorth": 9000,
       "timeMult": 14.0,
@@ -56,7 +56,7 @@
     },
     "pdz_end_abomination": {
       "type": "entity",
-      "content": "infectious:ancient_zombie_boss",
+      "content": "pdzbosses:ancient_abomination",
       "amount": { "min": 1, "max": 1 },
       "unitWorth": 12000,
       "timeMult": 16.0,

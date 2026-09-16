@@ -8,30 +8,26 @@ const DZ_SIDE_BOSS_QUESTS = {
 function dzStyleSideBoss(entity, key) {
   if (!entity || entity.level.clientSide || entity.tags.contains("dz_sideboss_ready")) return
   let tank = key === "tank"
-  let health = tank ? 90 : 120
   entity.addTag("dz_sideboss")
   entity.addTag("dz_sideboss_" + key)
   entity.addTag("dz_sideboss_ready")
-  entity.runCommandSilent("attribute @s minecraft:generic.max_health base set " + health)
-  entity.runCommandSilent("attribute @s minecraft:generic.armor base set " + (tank ? 10 : 12))
-  entity.runCommandSilent("attribute @s minecraft:generic.knockback_resistance base set 0.9")
+  // M&S plus the dedicated entity profile own combat stats. This bridge only
+  // assigns encounter identity/rewards and must not overwrite boss durability.
   entity.runCommandSilent("effect give @s minecraft:glowing infinite 0 true")
   let name = tank ? "Siege Tank" : "Ancient Abomination"
   let color = tank ? "dark_red" : "dark_purple"
-  entity.runCommandSilent("data merge entity @s {CustomName:'{\"text\":\"" + name + "\",\"color\":\"" + color + "\",\"bold\":true}',CustomNameVisible:1b,PersistenceRequired:1b,Health:" + health + ".0f}")
+  entity.runCommandSilent("data merge entity @s {CustomName:'{\"text\":\"" + name + "\",\"color\":\"" + color + "\",\"bold\":true}',CustomNameVisible:1b,PersistenceRequired:1b}")
 }
 
-EntityEvents.spawned("apocalypse_zombies:tank", event =>
+EntityEvents.spawned("pdzbosses:siege_tank", event =>
   event.server.scheduleInTicks(2, callback => dzStyleSideBoss(event.entity, "tank")))
-EntityEvents.spawned("infectious:ancient_zombie_boss", event =>
+EntityEvents.spawned("pdzbosses:ancient_abomination", event =>
   event.server.scheduleInTicks(2, callback => dzStyleSideBoss(event.entity, "abomination")))
 
 EntityEvents.death(event => {
   let entity = event.entity
   if (!entity || entity.level.clientSide || !entity.tags.contains("dz_sideboss")) return
-  // Apocalypse Zombies' Tank can remain in its death animation and emit the
-  // death hook more than once. Reward each entity only once so it cannot turn
-  // into an infinite money/item source.
+  // Reward each entity only once so retries cannot become an infinite source.
   if (entity.persistentData.getBoolean("dz_sideboss_rewarded")) return
   entity.persistentData.putBoolean("dz_sideboss_rewarded", true)
   entity.tags.add("dz_sideboss_rewarded")
@@ -49,25 +45,17 @@ EntityEvents.death(event => {
     if (first <= 0) killer.server.runCommandSilent("ftbquests change_progress " + killer.username +
       " complete " + quests.repeat)
   }
-  // The Tank mod occasionally leaves the dead entity ticking indefinitely.
-  // Remove that corpse after vanilla and DEADZONE drops have been processed.
-  if (tank) {
-    let deadTank = entity
-    event.server.scheduleInTicks(5, callback => {
-      if (deadTank && !deadTank.alive) deadTank.discard()
-    })
-  }
 })
 
 ServerEvents.commandRegistry(event => {
   const {commands:Commands}=event
   let root=Commands.literal("deadzonebounty").requires(source=>source.hasPermission(2))
   root.then(Commands.literal("spawn_tank").executes(ctx=>{
-    ctx.source.player.runCommandSilent("execute positioned ^ ^ ^8 run summon apocalypse_zombies:tank ~ ~ ~")
+    ctx.source.player.runCommandSilent("execute positioned ^ ^ ^8 run summon pdzbosses:siege_tank ~ ~ ~")
     return 1
   }))
   root.then(Commands.literal("spawn_abomination").executes(ctx=>{
-    ctx.source.player.runCommandSilent("execute positioned ^ ^ ^8 run summon infectious:ancient_zombie_boss ~ ~ ~")
+    ctx.source.player.runCommandSilent("execute positioned ^ ^ ^8 run summon pdzbosses:ancient_abomination ~ ~ ~")
     return 1
   }))
   event.register(root)

@@ -24,7 +24,6 @@ const PDZ_MECH_DEFS = [
   {id:'02',tag:'dz_story_boss_argus_fragment',name:'適応障壁',bossName:'ARGUS FRAGMENT',bar:'blue',style:'notched_10',icon:'minecraft:end_crystal'},
   {id:'03',tag:'dz_story_boss_choir_vessel',name:'共鳴衝撃波＋全身判定',bossName:'CHOIR VESSEL',bar:'purple',style:'notched_12',icon:'minecraft:echo_shard'},
   {id:'04',tag:'dz_story_boss_firestation',name:'焼夷制圧',bossName:'CINDER',bar:'red',style:'notched_10',icon:'minecraft:fire_charge'},
-  {id:'05',tag:'dz_story_boss_gasstation',name:'偵察機動',bossName:'FUEL ROUTE SCOUT',bar:'yellow',style:'notched_10',icon:'minecraft:crossbow'},
   {id:'06',tag:'dz_story_boss_gunshop',name:'弾薬セル＋制圧射撃',bossName:'BRASS HOUND',bar:'yellow',style:'notched_10',icon:'minecraft:netherite_chestplate'},
   {id:'07',tag:'dz_story_boss_hospital',name:'妨害可能な戦場治療',bossName:'WHITE STITCH',bar:'white',style:'notched_10',icon:'minecraft:ghast_tear'},
   {id:'08',tag:'dz_story_boss_policestation',name:'拘束命令＋増援',bossName:'MARSHAL GRAVES',bar:'blue',style:'notched_10',icon:'minecraft:shield'},
@@ -43,8 +42,6 @@ const PDZ_MECH_BOSS_GUNS = {
   // readable at S0 while his weak points and grenades provide the spectacle.
   '01':{gun:'tacz:m4a1',mode:'AUTO',ammo:30},
   '04':{gun:'tacz:fn_evolys',mode:'AUTO',ammo:100},
-  // 05 is a vanilla pillager. Replacing its crossbow with a TaCZ item leaves
-  // the pillager AI unable to fire, so its authored crossbow is preserved.
   '06':{gun:'elitex:m249x',mode:'AUTO',ammo:100},
   '07':{gun:'elitex:fh_scar18',mode:'AUTO',ammo:30},
   '08':{gun:'tacz:scar_h',mode:'AUTO',ammo:20},
@@ -52,19 +49,18 @@ const PDZ_MECH_BOSS_GUNS = {
 }
 
 const PDZ_MECH_TEST_ENTRIES = [
-  {id:'02',x:-12,z:16,entity:'infectious:mecha_zombie',name:'ARGUS Fragment',hp:240},
-  {id:'03',x:-4,z:16,entity:'infectious:giant_zombie',name:'CHOIR VESSEL',hp:280},
-  {id:'04',x:4,z:16,entity:'tacz_bandits:bandit',name:'CINDER',hp:55},
-  {id:'05',x:12,z:16,entity:'tacz_bandits:bandit',name:'Fuel Route Scout',hp:36},
-  {id:'06',x:-12,z:25,entity:'tacz_bandits:bandit',name:'BRASS HOUND',hp:55},
-  {id:'07',x:-4,z:25,entity:'tacz_bandits:bandit',name:'WHITE STITCH',hp:70},
-  {id:'08',x:4,z:25,entity:'tacz_bandits:bandit',name:'MARSHAL GRAVES',hp:80},
-  {id:'09',x:12,z:25,entity:'infectious:mutant_zombie',name:'PRIMORDIAL',hp:180},
-  {id:'10',x:-12,z:34,entity:'simpleenemymod:ruunit',name:'ECHO-7',hp:75},
-  {id:'11',x:-4,z:34,entity:'infectious:radioactive_zombie',name:'REACTOR SAINT',hp:220},
-  {id:'12',x:4,z:34,entity:'apocalypse_zombies:tank',name:'Siege Tank',hp:90,ready:true},
-  {id:'13',x:12,z:34,entity:'infectious:ancient_zombie_boss',name:'Ancient Abomination',hp:120,ready:true},
-  {id:'14',x:20,z:34,entity:'simpleenemymod:ruunit',name:'FIRST VOICE // RELAY SHEPHERD',hp:180}
+  {id:'02',x:-12,z:16,entity:'pdzbosses:argus_fragment',name:'ARGUS FRAGMENT',hp:240},
+  {id:'03',x:-4,z:16,entity:'pdzbosses:choir_vessel',name:'CHOIR VESSEL',hp:280},
+  {id:'04',x:4,z:16,entity:'pdzbosses:cinder',name:'CINDER',hp:210},
+  {id:'06',x:-12,z:25,entity:'pdzbosses:brass_hound',name:'BRASS HOUND',hp:230},
+  {id:'07',x:-4,z:25,entity:'pdzbosses:white_stitch',name:'WHITE STITCH',hp:205},
+  {id:'08',x:4,z:25,entity:'pdzbosses:marshal_graves',name:'MARSHAL GRAVES',hp:250},
+  {id:'09',x:12,z:25,entity:'pdzbosses:primordial',name:'PRIMORDIAL',hp:300},
+  {id:'10',x:-12,z:34,entity:'pdzbosses:echo_7',name:'ECHO-7',hp:225},
+  {id:'11',x:-4,z:34,entity:'pdzbosses:reactor_saint',name:'REACTOR SAINT',hp:330},
+  {id:'12',x:4,z:34,entity:'pdzbosses:siege_tank',name:'SIEGE TANK',hp:360,ready:true},
+  {id:'13',x:12,z:34,entity:'pdzbosses:ancient_abomination',name:'ANCIENT ABOMINATION',hp:420,ready:true},
+  {id:'14',x:20,z:34,entity:'pdzbosses:relay_shepherd',name:'RELAY SHEPHERD',hp:520}
 ]
 
 let pdzMechClock=0
@@ -220,8 +216,15 @@ function pdzMechGunTag(id){
   return '{GunId:"'+gun.gun+'",GunFireMode:"'+gun.mode+'",GunCurrentAmmoCount:'+gun.ammo+',HasBulletInBarrel:1b,MaxDummyAmmo:'+gun.ammo+',DummyAmmo:'+gun.ammo+'}'
 }
 
+function pdzMechDedicatedBoss(entity){
+  return entity&&String(entity.type).indexOf('pdzbosses:')===0
+}
+
 function pdzMechEquipBossGun(boss,id){
   if(!boss||!boss.tags||boss.tags.contains('dz_boss_weapon_applied'))return
+  // Dedicated bosses own their ranged attacks and visible weapons. Equipping
+  // TaCZ items would reintroduce humanoid renderer/AI assumptions.
+  if(pdzMechDedicatedBoss(boss)){boss.addTag('dz_boss_weapon_applied');return}
   let tag=pdzMechGunTag(id)
   if(!tag)return
   boss.runCommandSilent('item replace entity @s weapon.mainhand with tacz:modern_kinetic_gun'+tag)
@@ -322,6 +325,18 @@ function pdzMechPresentationInit(boss,id){
   let owner='dz_boss_owner_'+pdzMechOwnerKey(boss)
   let bar=pdzMechBossBarId(boss)
   let title=def.bossName+' // Lv '+pdzMechBossLevelOf(boss)
+  if(pdzMechDedicatedBoss(boss)){
+    // PdzBossEntity supplies the one authoritative ServerBossEvent. Do not
+    // create a second command bossbar or the old floating vanilla icon.
+    boss.persistentData.putString('dz_boss_owner_tag',owner)
+    boss.persistentData.putString('dz_boss_display_name',def.bossName)
+    boss.runCommandSilent('title @a[distance=..96,gamemode=!spectator] times 10 45 15')
+    boss.runCommandSilent('title @a[distance=..96,gamemode=!spectator] title {"text":"'+def.bossName+'","color":"'+def.bar+'","bold":true}')
+    boss.runCommandSilent('title @a[distance=..96,gamemode=!spectator] subtitle {"text":"'+def.name+'","color":"gold"}')
+    boss.runCommandSilent('playsound minecraft:entity.warden.emerge hostile @a[distance=..96,gamemode=!spectator] ~ ~ ~ 0.65 1.25')
+    boss.addTag('dz_boss_presentation_initialized')
+    return
+  }
   boss.runCommandSilent('bossbar add '+bar+' {"text":"'+title+'","color":"'+def.bar+'","bold":true}')
   boss.runCommandSilent('bossbar set '+bar+' color '+def.bar)
   boss.runCommandSilent('bossbar set '+bar+' style '+def.style)
@@ -347,6 +362,18 @@ function pdzMechPresentationUpdate(boss,id){
   if(!boss||!boss.alive||boss.tags.contains('dz_boss_showroom'))return
   let def=pdzMechDef(id)
   if(!def)return
+  if(pdzMechDedicatedBoss(boss)){
+    if(!boss.tags.contains('dz_boss_presentation_initialized'))pdzMechPresentationInit(boss,id)
+    if(id==='06'){
+      let cells=pdzGunshopLiveCells(boss)
+      let objective=cells>0?'弱点：弾薬供給セル ×'+cells:(boss.tags.contains('dz_brass_phase_3')?'排熱中を狙って本体を制圧':'本体を制圧')
+      let owner=String(boss.persistentData.getString('dz_boss_owner_tag'))
+      boss.runCommandSilent('title @a[distance=..96,gamemode=!spectator] actionbar {"text":"BRASS HOUND  '+Math.ceil(Number(boss.health))+' / '+Math.ceil(Number(boss.maxHealth))+' HP  |  '+objective+'","color":"yellow","bold":true}')
+      boss.runCommandSilent('execute at @s rotated as @s run tp @e[tag='+owner+',tag=dz_brass_cell_1,sort=nearest,limit=1,distance=..16] ^-1.20 ^1.62 ^-0.45 ~ ~')
+      boss.runCommandSilent('execute at @s rotated as @s run tp @e[tag='+owner+',tag=dz_brass_cell_2,sort=nearest,limit=1,distance=..16] ^1.20 ^1.62 ^-0.45 ~ ~')
+    }
+    return
+  }
   if(!boss.persistentData.getString('dz_bossbar_id'))pdzMechPresentationInit(boss,id)
   let bar=String(boss.persistentData.getString('dz_bossbar_id'))
   let owner=String(boss.persistentData.getString('dz_boss_owner_tag'))
@@ -360,8 +387,6 @@ function pdzMechPresentationUpdate(boss,id){
     let cells=pdzGunshopLiveCells(boss)
     let objective=cells>0?'弱点：弾薬供給セル ×'+cells:(boss.tags.contains('dz_brass_phase_3')?'排熱中を狙って本体を制圧':'本体を制圧')
     boss.runCommandSilent('title @a[distance=..96,gamemode=!spectator] actionbar {"text":"BRASS HOUND  '+Math.ceil(Number(boss.health))+' / '+Math.ceil(Number(boss.maxHealth))+' HP  |  '+objective+'","color":"yellow","bold":true}')
-    boss.runCommandSilent('execute at @s rotated as @s run tp @e[tag='+owner+',tag=dz_brass_backpack_left,sort=nearest,limit=1,distance=..16] ^-0.34 ^1.15 ^-0.38 ~ ~')
-    boss.runCommandSilent('execute at @s rotated as @s run tp @e[tag='+owner+',tag=dz_brass_backpack_right,sort=nearest,limit=1,distance=..16] ^0.34 ^1.15 ^-0.38 ~ ~')
   }
 }
 
@@ -375,6 +400,7 @@ function pdzMechPresentationRemove(boss){
 
 function pdzMechApplyIdentity(boss,id){
   if(!boss||boss.tags.contains('dz_boss_identity_nbt_v2'))return
+  if(pdzMechDedicatedBoss(boss)){boss.addTag('dz_boss_identity_nbt_v2');return}
   // The native renderers expose stable appearance variants. Reserve distinct
   // silhouettes for the four human facility bosses and ECHO-7.
   if(String(boss.type)==='tacz_bandits:bandit'){
@@ -390,16 +416,15 @@ function pdzGunshopSpawnCells(boss){
   if(!boss||boss.tags.contains('dz_brass_cells_spawned'))return
   boss.addTag('dz_brass_cells_spawned')
   let owner='dz_boss_owner_'+pdzMechOwnerKey(boss)
-  let packVisual='{block_state:{Name:"create:brass_casing"},Glowing:1b,brightness:{sky:15,block:9},view_range:1.0f,transformation:{translation:[-0.16f,-0.28f,-0.16f],scale:[0.32f,0.56f,0.32f]}'
-  boss.runCommandSilent('execute at @s rotated as @s run summon minecraft:block_display ^-0.34 ^1.15 ^-0.38 '+packVisual+',Tags:["'+PDZ_MECH_RUNTIME+'","dz_brass_backpack_left","'+owner+'"]}')
-  boss.runCommandSilent('execute at @s rotated as @s run summon minecraft:block_display ^0.34 ^1.15 ^-0.38 '+packVisual+',Tags:["'+PDZ_MECH_RUNTIME+'","dz_brass_backpack_right","'+owner+'"]}')
-  let offsets=['^-4 ^0.2 ^2','^4 ^0.2 ^2']
+  // The dedicated GeckoLib model owns both visible ammunition cells. Keeping
+  // block_display copies here produced white cubes with some shader/render
+  // paths and made the weak point look detached from the boss. These slimes
+  // are independent, shootable hitboxes only and follow the model bones.
+  let offsets=['^-1.20 ^1.62 ^-0.45','^1.20 ^1.62 ^-0.45']
   for(let i=0;i<2;i++){
     let key='dz_brass_cell_'+(i+1)
     let tags='["'+PDZ_MECH_RUNTIME+'","'+PDZ_MECH_COMPONENT+'","dz_brass_ammo_cell","'+key+'","'+owner+'"]'
-    let visualTags='["'+PDZ_MECH_RUNTIME+'","dz_brass_cell_visual","'+key+'_visual","'+owner+'"]'
     boss.runCommandSilent('execute at @s rotated as @s run summon minecraft:slime '+offsets[i]+' {Size:1,Invisible:1b,Glowing:1b,NoAI:1b,NoGravity:1b,Silent:1b,PersistenceRequired:1b,Health:36.0f,Attributes:[{Name:"minecraft:generic.max_health",Base:36.0d}],CustomName:\'{"text":"弾薬供給セル '+(i+1)+'","color":"gold","bold":true}\',CustomNameVisible:1b,Tags:'+tags+'}')
-    boss.runCommandSilent('execute at @s rotated as @s run summon minecraft:block_display '+offsets[i]+' {block_state:{Name:"create:brass_casing"},Glowing:1b,brightness:{sky:15,block:10},view_range:1.0f,transformation:{translation:[-0.45f,-0.45f,-0.45f],scale:[0.9f,0.9f,0.9f]},Tags:'+visualTags+'}')
   }
   let count=boss.runCommandSilent('execute if entity @e[tag=dz_brass_ammo_cell,distance=..16,limit=1]')
   if(count<=0){
@@ -423,7 +448,6 @@ function pdzGunshopCellDestroyed(cell){
   let owner=''
   cell.tags.forEach(tag=>{let s=String(tag);if(s.indexOf('dz_boss_owner_')===0)owner=s})
   if(!owner)return
-  cell.runCommandSilent('kill @e[tag='+owner+',tag=dz_brass_cell_visual,distance=..8,sort=nearest,limit=1]')
   cell.runCommandSilent('particle minecraft:explosion_emitter ~ ~ ~ 0 0 0 0 1 force @a[distance=..96]')
   cell.runCommandSilent('playsound minecraft:entity.generic.explode hostile @a[distance=..96] ~ ~ ~ 1 1.25')
   let boss=null
@@ -583,31 +607,6 @@ function pdzMechPulse(boss,id,forced){
     pdzMechPulseCount++
   }else if(id==='04'&&(forced||time%9===0)){
     if(pdzMechTargetedBlast(boss,'焼夷弾着弾予告','red','minecraft:dust 1 0.15 0.02 1.2',3.5,4,30))pdzMechPulseCount++
-  }else if(id==='05'){
-    let ratio=Number(boss.health)/Math.max(1,Number(boss.maxHealth))
-    if(ratio<=0.66&&!boss.tags.contains('dz_gas_scout_phase_2')){
-      boss.addTag('dz_gas_scout_phase_2')
-      boss.runCommandSilent('effect give @s minecraft:resistance 8 1 true')
-      boss.runCommandSilent('summon minecraft:pillager ~3 ~ ~3 {PersistenceRequired:1b,HandItems:[{id:"minecraft:crossbow",Count:1b},{}],HandDropChances:[0.0f,0.0f],Tags:["dz_boss_runtime_05","dz_pdz_boss_minion","dz_raider","dz_hostile"]}')
-      boss.runCommandSilent('summon minecraft:pillager ~-3 ~ ~-3 {PersistenceRequired:1b,HandItems:[{id:"minecraft:crossbow",Count:1b},{}],HandDropChances:[0.0f,0.0f],Tags:["dz_boss_runtime_05","dz_pdz_boss_minion","dz_raider","dz_hostile"]}')
-      boss.runCommandSilent('playsound minecraft:item.crossbow.loading_end hostile @a[distance=..64] ~ ~ ~ 1.2 0.75')
-      pdzMechTell(boss,'増援信号。護衛射手が展開した！','red');pdzMechPulseCount++
-    }
-    if(ratio<=0.33&&!boss.tags.contains('dz_gas_scout_phase_3')){
-      boss.addTag('dz_gas_scout_phase_3')
-      boss.runCommandSilent('effect give @s minecraft:regeneration 10 1 true')
-      boss.runCommandSilent('effect give @s minecraft:speed 9999 1 true')
-      boss.runCommandSilent('effect give @s minecraft:resistance 9999 0 true')
-      pdzMechTell(boss,'最終退避機動。回復を止めて追い詰めろ！','dark_red');pdzMechPulseCount++
-    }
-    if(forced||time%8===0){
-      boss.runCommandSilent('effect give @s minecraft:speed 4 2 true')
-      boss.runCommandSilent('effect give @s minecraft:invisibility 2 0 true')
-      boss.runCommandSilent('effect give @p[distance=..24,gamemode=!spectator] minecraft:glowing 5 0 true')
-      boss.runCommandSilent('particle minecraft:campfire_cosy_smoke ~ ~1 ~ 1.8 0.8 1.8 0.03 45 force @a[distance=..64]')
-      boss.runCommandSilent('effect give @a[distance=..8,gamemode=!creative,gamemode=!spectator] minecraft:blindness 2 0 true')
-      pdzMechTell(boss,'煙幕標定。発光した対象へ高速接近。','yellow');pdzMechPulseCount++
-    }
   }else if(id==='06'){
     pdzGunshopPulse(boss,time,forced)
   }else if(id==='07'&&(forced||time%12===0)){
@@ -771,14 +770,6 @@ ServerEvents.tick(event=>{
     if(seen[uuid])return
     seen[uuid]=true
     let id=pdzMechId(entity)
-    // v1 used a vanilla pillager which could not operate the assigned TaCZ
-    // weapon. Remove only that saved legacy story boss; the site trigger will
-    // replace it with the Brutal Bosses soldier while preserving progression.
-    if(id==='05'&&String(entity.type)==='minecraft:pillager'&&!entity.tags.contains('dz_gas_scout_brutal_v1')){
-      console.info('[PROJECT DEADZONE][Boss 05] Retiring legacy pillager '+uuid)
-      entity.discard()
-      return
-    }
     if(entity.tags&&entity.tags.contains('dz_boss_axel')&&!entity.tags.contains('dz_boss_showroom')){
       pdzMechEnsureHome(entity)
       pdzMechEquipBossGun(entity,'01')

@@ -4322,7 +4322,7 @@ hash = "db834afc0ed53a436d4ae1c077de8ebb032fea4ea6aab033b3b638e59bf7707a"
 
 [[files]]
 file = "kubejs/data/bountiful/bounty_pools/project_deadzone/deadzone_endgame_hunt_objs.json"
-hash = "557258d1189cee3324ed022d56b838a1759384a6c20a736456d052ab1b67294f"
+hash = "db943599dbf93f228d15f17224634ecf928da9adbe090b609e668c4f5b27218c"
 
 [[files]]
 file = "kubejs/data/bountiful/bounty_pools/project_deadzone/deadzone_endgame_recovery_objs.json"
@@ -4375,10 +4375,6 @@ hash = "d263b33b5d6f40310554747c736a117153d014275ea13cf3bc7d519904c9a64b"
 [[files]]
 file = "kubejs/data/bountiful/bounty_pools/project_deadzone/salvage_imports.json"
 hash = "c04ec1b365a21157b4e24cbb7180758675415ca79b4844175f61b09fb16f8044"
-
-[[files]]
-file = "kubejs/data/brutalbosses/bosses/pdz_axel.json"
-hash = "33696c7a8902915adc6c8f433632176f746b4bf1e16fb9fe07c7b1dfe9ad5ccb"
 
 [[files]]
 file = "kubejs/data/brutalbosses/bosses/rabbitboss.json"
@@ -9986,47 +9982,47 @@ hash = "33594b5bb7f76e50333dbd84420a4cc8899fc41a24e1bfd747c0709f1080dc02"
 
 [[files]]
 file = "kubejs/data/project_deadzone/functions/story/spawn_argus_fragment.mcfunction"
-hash = "1af8a6f67bbfde84da26e0655d148c2d818c18fb967900966ed2d58680e2705c"
+hash = "74f1c677632eca1149f633c7893bc6b19457e76af783fda135fcc9217a6c19c0"
 
 [[files]]
 file = "kubejs/data/project_deadzone/functions/story/spawn_choir_vessel.mcfunction"
-hash = "b7cc5b50307f09f82b6d36e55fee69d2e4bc52dc664acb6ce1525feb2aeaea73"
+hash = "263757ab945d8c662d8c8715ecfb41d7b3892e5a9c083f01df9d55dc94d0c249"
 
 [[files]]
 file = "kubejs/data/project_deadzone/functions/story/spawn_firestation_boss.mcfunction"
-hash = "4f6fbd1098a8f84d2ce408cc57e3164a77fdc24c2f04df0507985a77b6f9b335"
+hash = "17ee5c920d67525bbe75881ccaea8358785339b3b473f853c54d042b64599eef"
 
 [[files]]
 file = "kubejs/data/project_deadzone/functions/story/spawn_gasstation_boss.mcfunction"
-hash = "07a5fecf75ff640af8a961610697944bacdc1bcfa6a046846afced50a413142e"
+hash = "9b3ff140e7dad192ade06959e2938de72d4e436254d2a68c174f911460777fa1"
 
 [[files]]
 file = "kubejs/data/project_deadzone/functions/story/spawn_gunshop_boss.mcfunction"
-hash = "9775972344928055f361db4598918efaa88c70f950858997b918c061da27f813"
+hash = "a816df7ef350d662733212d82fc1e207514be7c35bfd227d6419d001c5b3a571"
 
 [[files]]
 file = "kubejs/data/project_deadzone/functions/story/spawn_hospital_boss.mcfunction"
-hash = "1cea881385d831427d9cff825516f57a1484735fdbe9babf8947716c45a3f671"
+hash = "9e60e14c6712cb6ed4595af5a44d772779415eb9b3f59612877cce8586ea4cca"
 
 [[files]]
 file = "kubejs/data/project_deadzone/functions/story/spawn_policestation_boss.mcfunction"
-hash = "ea201e65d46445836021153da700d063e4ad715247427a4d827742a3560b603a"
+hash = "afe469164f22eabb06772ab1c839ac02137114094d17259e2a4f2e175d139ce0"
 
 [[files]]
 file = "kubejs/data/project_deadzone/functions/story/spawn_primordial_boss.mcfunction"
-hash = "228bb737b3b05d46d9b6fac6ee3e98ccccb79eeceffaf7028701fa0ddb07a002"
+hash = "68dfeae61d47eaab4ceab4e242148e4a54641f264dc293c907c92c686c59d03d"
 
 [[files]]
 file = "kubejs/data/project_deadzone/functions/story/spawn_radio_tower_boss.mcfunction"
-hash = "d938f2d40fe2928d01c7aab2c26791b1fba28526cfd03c9f9cb021098788f7d0"
+hash = "a8723a0b16875c2049a302f94c4b793ef011e0866eebfc375e4a6a86a77a692a"
 
 [[files]]
 file = "kubejs/data/project_deadzone/functions/story/spawn_reactor_saint.mcfunction"
-hash = "8c7cae7da583185b59483cbf94a8cc520683aa15e1c8c430046637419b747c3a"
+hash = "3b3d4b6572859c2dcae388fe62268462992022fb0a243f7fe349d270622f2dc2"
 
 [[files]]
 file = "kubejs/data/project_deadzone/functions/story/spawn_t4_relay_shepherd.mcfunction"
-hash = "f2006dbc235574ec8fdf192a4a92fe3ea3ed6830f51a5a61ad3e26225393beca"
+hash = "b25685a6a56b2deb2ab874580d9e1ca6e44a8658cae90949c45b5cb446f4b084"
 
 [[files]]
 file = "kubejs/data/project_deadzone/loot_tables/chests/firestation.json"
@@ -11290,11 +11286,11 @@ hash = "27cf154fef2255fddc790c1cc5ec59e3cdbeb8fcedd191670af9de39064acebc"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_boss_encounters_v1.js"
-hash = "7e4042075d6a0ab02f134b098f7b092978d04cfab2e41404b391392c5de1a0de"
+hash = "310bccece064dc7398f0dd126be7d640831159b89e444bd749d86732aa0587cc"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_boss_mechanics_v0_1.js"
-hash = "c1b86eeac636df6196b892550a9c8f908666ce4b8185dbe742b28975bcb14c8a"
+hash = "852e33374733a7652afcb7f6c211a495d7816336cc610b4190db91aff135e8fa"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_buddy_control_v0_1.js"
@@ -11382,7 +11378,7 @@ hash = "e33ad8d8948ea65ab039a45f2438638cda137e1a1241aa9710a435d6b7c9a821"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_faction_npc_identity_v0_1.js"
-hash = "005b2b245458134139edbbbb867210e6593fb307ab6d45b5617ae6b855a470ec"
+hash = "cd8865eebb877834a9c6b405d61555301f70b828ddd3fa7cf682713b76793c61"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_faction_registry_audit_v0_1.js"
@@ -11650,7 +11646,7 @@ hash = "3e921212910dffa4bee30d8ad5fd4b001bbb14b437c5e2f467479936911fcb90"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_side_bosses_v0_1.js"
-hash = "3e66494635f1fb2a5fae8ed2c6388a1ad06cb25e007eda8703416536e04492ed"
+hash = "4e120096f4a6a05c61a2d375f2298b10f6959ef5e0d614ee9ac634378c0c3094"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_simpleenemy_elites_v0_1.js"
@@ -11738,7 +11734,7 @@ hash = "94286824cdc64ab99106f7554edb98e070d951ca9847a8e0b50aecc12e919cdd"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_t0_safezone_v0_1.js"
-hash = "d27b86a2e33bb2933e6e1a1164ca722783b7d98e69c84c5692c6097816da78a6"
+hash = "25a9de318acaf9eeeb14df39f3ca2004639e6c5af12c3511b652af30993a3a53"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_t4_first_voice_boss_v0_1.js"
@@ -11886,7 +11882,7 @@ hash = "ce3d6b0c91f99e9bf3434c0f6fb4a8e8b6caa38f24b8a5098866e3c9a779fc30"
 
 [[files]]
 file = "kubejs/startup_scripts/project_deadzone_lostcities_floating_water_cleanup_v0_1.js"
-hash = "881144b4dca31f824d0c9c4f499d4cb29d6738ba6d35cade92675c966d2e2fb4"
+hash = "6b3e2cb91cba5a5b5335a8e1ed5111064b41b58fd9848253ab66056aa1da6a5a"
 
 [[files]]
 file = "kubejs/startup_scripts/project_deadzone_military_curios_v0_1.js"
@@ -12288,6 +12284,10 @@ hash = "47dd8eb3038701a86b52ab11592de1d7b25bdf84cfffebd5dd95227e6b2f0f1c"
 [[files]]
 file = "mods/NoChatReports-FORGE-1.20.1-v2.2.2.jar"
 hash = "ef7fa5096dfd492c3d3ae7228888ca4b92ce07d9b8e302297ceb2ceb1f8d238c"
+
+[[files]]
+file = "mods/PROJECT_DEADZONE_Bosses-0.1.0.jar"
+hash = "e2a0b8c2e07f5d3e6cde460c4fcee29156026d0f22e548160d7b37371a879ebc"
 
 [[files]]
 file = "mods/PROJECT_DEADZONE_Compost_Concurrency_Compat-0.1.0.jar"
