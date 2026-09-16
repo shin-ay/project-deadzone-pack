@@ -51,6 +51,9 @@ ServerEvents.tick(event => {
   if (event.server.tickCount % 100 !== 0) return
   // Scan each loaded player dimension once. The previous player-nested walk
   // repeated the full entity list for every additional player in that level.
+  // De-duplicate entities across the level passes. Keep this map scoped to the
+  // five-second repair pass so unloaded/despawned UUIDs are never retained.
+  let checked={}
   let levels={}
   event.server.players.forEach(player => { levels[String(player.level.dimension)]=player.level })
   Object.keys(levels).forEach(dimension => {
