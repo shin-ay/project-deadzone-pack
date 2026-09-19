@@ -1,5 +1,7 @@
 {
+  "replace": false,
   "values": [
-    "project_deadzone:lobby/schedule_setup"
+    "project_deadzone:lobby/schedule_setup",
+    "tbmg:load"
   ]
 }

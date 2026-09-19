@@ -6686,7 +6686,7 @@ hash = "195cc2080a5b133085644be14b6627e05c4dc656708a52ea27c916eeb1c5f5a0"
 
 [[files]]
 file = "kubejs/data/minecraft/tags/functions/load.json"
-hash = "79121fe5ce90604178dfd276feb3078679180996add6efb3729baa1cb3b87330"
+hash = "546dc6cc8a24989e4ccb8cd8835f1b219c672a6b0bbd44599d1d0b0be6a5c9ac"
 
 [[files]]
 file = "kubejs/data/minecraft/tags/worldgen/biome/has_structure/village_desert.json"
@@ -11125,6 +11125,14 @@ file = "kubejs/data/survival_instinct/worldgen/structure_set/the_farm.json"
 hash = "2c752aacc10ec2c9c8a172eba49d37e2f994ee0491d4dce2e333f5721b1cbed0"
 
 [[files]]
+file = "kubejs/data/tbmg/functions/load.mcfunction"
+hash = "d21989e7990f96c66327e4472f56833074b94b09ba947597424a737430c796c6"
+
+[[files]]
+file = "kubejs/data/tbmg/functions/tick.mcfunction"
+hash = "0a66fbe3e55fc0aace2de39ad488c71a3b275b4b99a57e4c04e2e87e1651c22a"
+
+[[files]]
 file = "kubejs/data/terralith/worldgen/structure_set/mage.json"
 hash = "3605149b8ecf8930f6988338ff49ca6d08329a3d68097ae287c5b459d14f413d"
 
@@ -11289,7 +11297,8 @@ file = "kubejs/server_scripts/project_deadzone_boss_encounters_v1.js"
 hash = "310bccece064dc7398f0dd126be7d640831159b89e444bd749d86732aa0587cc"
 
 [[files]]
-$10c33aeed487da52aaa1ed22e3b2f21d7bc6716f61a0dc6f90129699060c7cb3b"
+file = "kubejs/server_scripts/project_deadzone_boss_mechanics_v0_1.js"
+hash = "0c33aeed487da52aaa1ed22e3b2f21d7bc6716f61a0dc6f90129699060c7cb3b"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_buddy_control_v0_1.js"
@@ -11892,7 +11901,8 @@ file = "kubejs/startup_scripts/project_deadzone_music_states_v0_1.js"
 hash = "0bc98be49f4fe4e242f988e2d31d7f386e20e86bc6828ea33ca2bc961047c7b2"
 
 [[files]]
-$156d632569035d9ae2a9849bcf68416ee5bb47020347f1784c5615b867a776f09"
+file = "kubejs/startup_scripts/project_deadzone_player_survivability_v0_1.js"
+hash = "56d632569035d9ae2a9849bcf68416ee5bb47020347f1784c5615b867a776f09"
 
 [[files]]
 file = "kubejs/startup_scripts/project_deadzone_skill_forge_effects_v0_1.js"
@@ -12284,8 +12294,8 @@ file = "mods/NoChatReports-FORGE-1.20.1-v2.2.2.jar"
 hash = "ef7fa5096dfd492c3d3ae7228888ca4b92ce07d9b8e302297ceb2ceb1f8d238c"
 
 [[files]]
-file = "mods/PROJECT_DEADZONE_Bosses-0.1.1.jar"
-hash = "abc9fc90a3acfa8f9a70062185d312a8ac2543a5b371179bc70a0d427d29a1e0"
+file = "mods/PROJECT_DEADZONE_Bosses-0.2.0.jar"
+hash = "41d3a07d15cd3a44652ba9dc85d47aae8d4b92985fd20b50167f506544d3bd03"
 
 [[files]]
 file = "mods/PROJECT_DEADZONE_Compost_Concurrency_Compat-0.1.0.jar"
