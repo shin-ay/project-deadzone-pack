@@ -11894,7 +11894,7 @@ hash = "0bc98be49f4fe4e242f988e2d31d7f386e20e86bc6828ea33ca2bc961047c7b2"
 
 [[files]]
 file = "kubejs/startup_scripts/project_deadzone_player_survivability_v0_1.js"
-hash = "2b2b0f71cba95936a9193f1d46186147e4f47582e3d62a6728eb0c4bf49c558a"
+hash = "3d6dee69356aa32a5c413c11a7e2aac6ef82a2f6d0911646f328d218c4a97875"
 
 [[files]]
 file = "kubejs/startup_scripts/project_deadzone_skill_forge_effects_v0_1.js"

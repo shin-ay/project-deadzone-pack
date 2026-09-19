@@ -66,6 +66,17 @@ function pdzSurviveEntityId(entity) {
   return 'unknown'
 }
 
+function pdzSurviveGameTime(player) {
+  let value=NaN
+  try{value=Number(player.level.getGameTime())}catch(ignored){}
+  if(Number.isFinite(value))return Math.max(0,Math.floor(value))
+  try{value=Number(player.server.overworld().getGameTime())}catch(ignored){}
+  if(Number.isFinite(value))return Math.max(0,Math.floor(value))
+  // A real-world tick fallback is only used when a wrapper exposes neither
+  // server-level getter. Never pass NaN/Infinity into CompoundTag#putLong.
+  return Math.max(0,Math.floor(Date.now()/50))
+}
+
 ForgeEvents.onEvent('net.minecraftforge.event.entity.living.LivingHurtEvent',event=>{
   let player=event.entity
   if(!player||!player.isPlayer||!player.isPlayer()||player.level.clientSide)return
@@ -111,8 +122,7 @@ ForgeEvents.onEvent('net.minecraftforge.event.entity.living.LivingHurtEvent',eve
   // A shared one-second budget covers every boss and armed NPC; the following
   // second can still down the player, so this is pacing rather than immunity.
   let data=player.persistentData
-  let gameTime=0
-  try{gameTime=Number(player.level.gameTime)}catch(ignored){}
+  let gameTime=pdzSurviveGameTime(player)
   if(boss||gunSoldier){
     let windowStart=Number(data.getLong('dz_hostile_ttk_window_start'))
     if(windowStart<=0||gameTime<windowStart||gameTime-windowStart>=20){
