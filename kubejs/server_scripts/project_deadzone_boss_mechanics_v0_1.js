@@ -16,6 +16,10 @@ const PDZ_MECH_PARTY_HEALTH_MODIFIER = '655854f1-df25-43ff-81c6-7cf547fca6b4'
 const PDZ_MECH_PHASE_THRESHOLDS = [0.66, 0.33]
 const PDZ_MECH_PHASE_LOCK_MS = 6000
 const PDZ_MECH_PARTY_HEALTH = [1.0, 1.5, 1.9, 2.2, 2.5]
+// BRASS HOUND trades burst lethality for a longer suppression encounter.
+// This multiplier is combined with party scaling, including solo play.
+const PDZ_MECH_BASE_DURABILITY = 1.20
+const PDZ_MECH_ENCOUNTER_DURABILITY = {'06':1.35}
 const PDZ_MECH_PRESENTATION = 'dz_boss_presentation'
 const PDZ_MECH_COMPONENT = 'dz_boss_component'
 
@@ -32,7 +36,13 @@ const PDZ_MECH_DEFS = [
   {id:'11',tag:'dz_story_boss_reactor_saint',name:'予告式臨界放射環',bossName:'REACTOR SAINT',bar:'green',style:'notched_12',icon:'minecraft:heart_of_the_sea'},
   {id:'12',tag:'dz_sideboss_tank',name:'予告式グラウンドスラム',bossName:'SIEGE TANK',bar:'red',style:'notched_10',icon:'minecraft:iron_block'},
   {id:'13',tag:'dz_sideboss_abomination',name:'焼却可能な再生胞子',bossName:'ANCIENT ABOMINATION',bar:'green',style:'notched_10',icon:'minecraft:spore_blossom'},
-  {id:'14',tag:'dz_story_boss_t4_relay_shepherd',name:'信号ノード＋座標砲撃',bossName:'RELAY SHEPHERD',bar:'purple',style:'notched_20',icon:'minecraft:recovery_compass'}
+  {id:'14',tag:'dz_story_boss_t4_relay_shepherd',name:'信号ノード＋座標砲撃',bossName:'RELAY SHEPHERD',bar:'purple',style:'notched_20',icon:'minecraft:recovery_compass'},
+  // Adopted bosses keep the original mod's renderer, bossbar, phases and
+  // attacks. PDZ only supplies story identity, M&S level and party durability.
+  {id:'15',tag:'dz_story_boss_harbinger',name:'レーザー／ミサイル／EMP',bossName:'HARBINGER // WAR MACHINE',bar:'red',style:'notched_12',icon:'minecraft:nether_star'},
+  {id:'16',tag:'dz_sideboss_wroughtnaut',name:'背面弱点＋重斧衝撃波',bossName:'WARDEN-0 // IRON SENTINEL',bar:'yellow',style:'notched_10',icon:'minecraft:netherite_axe'},
+  {id:'17',tag:'dz_story_boss_cornelia',name:'凍結海域＋亡霊船長',bossName:'CAPTAIN CORNELIA // LAST VOYAGE',bar:'purple',style:'notched_12',icon:'minecraft:heart_of_the_sea'},
+  {id:'18',tag:'dz_sideboss_frostmaw',name:'氷結吐息＋巨体制圧',bossName:'FROSTMAW // WHITEOUT',bar:'white',style:'notched_10',icon:'minecraft:blue_ice'}
 ]
 
 // Boss-only silhouettes. Ordinary bandits already use AK/M4/SMG/Deagle/
@@ -137,14 +147,16 @@ function pdzMechApplyMnsBossProfile(boss,id){
       console.warn('[PROJECT DEADZONE][Boss] M&S profile failed: '+err)
     }
   }
-  if(boss.tags.contains('dz_boss_durability_v1'))return
+  if(boss.tags.contains('dz_boss_durability_v2'))return
   let multiplier=PDZ_MECH_PARTY_HEALTH[Math.min(PDZ_MECH_PARTY_HEALTH.length,profile.party)-1]
+  multiplier*=Number(PDZ_MECH_ENCOUNTER_DURABILITY[id]||PDZ_MECH_BASE_DURABILITY)
   try{
     boss.removeAttribute('minecraft:generic.max_health',PDZ_MECH_PARTY_HEALTH_MODIFIER)
     if(multiplier>1)boss.modifyAttribute('minecraft:generic.max_health',PDZ_MECH_PARTY_HEALTH_MODIFIER,multiplier-1,'multiply_total')
   }catch(err){console.warn('[PROJECT DEADZONE][Boss] Party health modifier failed: '+err)}
   boss.health=boss.maxHealth
   boss.addTag('dz_boss_durability_v1')
+  boss.addTag('dz_boss_durability_v2')
   boss.persistentData.putBoolean('dz_party_scaled',true)
   boss.persistentData.putInt('dz_party_size',profile.party)
   boss.persistentData.putDouble('dz_boss_party_health_multiplier',multiplier)
@@ -183,6 +195,10 @@ function pdzMechGateDamage(boss,id,incoming,source){
   boss.persistentData.putDouble('dz_boss_max_incoming_damage',Math.max(
     Number(boss.persistentData.getDouble('dz_boss_max_incoming_damage')),incoming))
   boss.persistentData.putInt('dz_boss_damage_samples',boss.persistentData.getInt('dz_boss_damage_samples')+1)
+  // IDs 15+ are complete encounters adopted from dedicated boss mods. Their
+  // native phase state machines own damage gates; adding the PDZ generic gate
+  // would interrupt telegraphs and could make an invulnerability phase stick.
+  if(Number(id)>=15)return false
   let now=Date.now()
   if(Number(boss.persistentData.getLong('dz_boss_phase_lock_until'))>now)return true
   let hp=Math.max(0,Number(boss.health)),max=Math.max(1,Number(boss.maxHealth))
@@ -220,6 +236,10 @@ function pdzMechDedicatedBoss(entity){
   return entity&&String(entity.type).indexOf('pdzbosses:')===0
 }
 
+function pdzMechAdoptedBoss(id){
+  return Number(id)>=15
+}
+
 function pdzMechEquipBossGun(boss,id){
   if(!boss||!boss.tags||boss.tags.contains('dz_boss_weapon_applied'))return
   // Dedicated bosses own their ranged attacks and visible weapons. Equipping
@@ -236,6 +256,10 @@ function pdzMechEquipBossGun(boss,id){
 function pdzMechAllowedTarget(entity){
   if(!entity)return false
   let id=String(entity.type)
+  // Operator-spawned combat dummies are deliberate boss targets. Keeping the
+  // tag requirement prevents ordinary decorative dummies from pulling bosses
+  // away from players or settlements.
+  if(id==='dummmmmmy:target_dummy'&&entity.tags&&entity.tags.contains('dz_boss_test_target'))return true
   if(id==='minecraft:player'||id==='minecraft:villager'||id==='minecraft:wandering_trader'||id==='minecolonies:citizen')return true
   if(id.indexOf('mca:')===0)return true
   // Raider/remnant bosses may actively clear infected and other hostile mobs.
@@ -246,6 +270,20 @@ function pdzMechAllowedTarget(entity){
     ['minecraft:zombie','minecraft:husk','minecraft:drowned','minecraft:zombie_villager',
       'minecraft:skeleton','minecraft:stray','minecraft:creeper','minecraft:spider',
       'minecraft:cave_spider','minecraft:witch','minecraft:phantom'].indexOf(id)>=0
+}
+
+function pdzMechNearestTestDummy(boss,radius){
+  let nearest=null,best=radius*radius
+  try{
+    let nearby=boss.level.getEntities(boss,boss.boundingBox.inflate(radius))
+    nearby.forEach(candidate=>{
+      if(String(candidate.type)!=='dummmmmmy:target_dummy'||!candidate.alive||!candidate.tags||
+        !candidate.tags.contains('dz_boss_test_target'))return
+      let dx=candidate.x-boss.x,dy=candidate.y-boss.y,dz=candidate.z-boss.z,d=dx*dx+dy*dy+dz*dz
+      if(d<best){best=d;nearest=candidate}
+    })
+  }catch(ignored){}
+  return nearest
 }
 
 function pdzMechEnsureHome(boss){
@@ -281,6 +319,16 @@ function pdzMechRestrictTarget(boss){
   if(!boss||!boss.alive||!boss.tags||boss.tags.contains('dz_boss_showroom')||boss.tags.contains(PDZ_MECH_FROZEN_TEST))return
   try{
     if(pdzMechReturnHomeIfNeeded(boss))return
+    // A tagged dummy exists only during an operator test. Give it priority over
+    // an already selected player (including the nearby creative operator), or
+    // native boss AI can keep a non-attackable player and never exercise its
+    // real attacks against the dummy.
+    let testDummy=pdzMechNearestTestDummy(boss,PDZ_MECH_TARGET_RADIUS)
+    if(testDummy){
+      let currentUuid=boss.target?String(boss.target.uuid):''
+      if(currentUuid!==String(testDummy.uuid))boss.setTarget(testDummy)
+      return
+    }
     if(boss.target&&pdzMechAllowedTarget(boss.target)&&boss.target.alive){
       let tx=boss.target.x-boss.x,ty=boss.target.y-boss.y,tz=boss.target.z-boss.z
       if(tx*tx+ty*ty+tz*tz<=PDZ_MECH_TARGET_RADIUS*PDZ_MECH_TARGET_RADIUS)return
@@ -325,9 +373,10 @@ function pdzMechPresentationInit(boss,id){
   let owner='dz_boss_owner_'+pdzMechOwnerKey(boss)
   let bar=pdzMechBossBarId(boss)
   let title=def.bossName+' // Lv '+pdzMechBossLevelOf(boss)
-  if(pdzMechDedicatedBoss(boss)){
+  if(pdzMechDedicatedBoss(boss)||pdzMechAdoptedBoss(id)){
     // PdzBossEntity supplies the one authoritative ServerBossEvent. Do not
-    // create a second command bossbar or the old floating vanilla icon.
+    // create a second command bossbar or the old floating vanilla icon. The
+    // same rule applies to adopted mods: their native UI stays authoritative.
     boss.persistentData.putString('dz_boss_owner_tag',owner)
     boss.persistentData.putString('dz_boss_display_name',def.bossName)
     boss.runCommandSilent('title @a[distance=..96,gamemode=!spectator] times 10 45 15')
@@ -362,15 +411,12 @@ function pdzMechPresentationUpdate(boss,id){
   if(!boss||!boss.alive||boss.tags.contains('dz_boss_showroom'))return
   let def=pdzMechDef(id)
   if(!def)return
-  if(pdzMechDedicatedBoss(boss)){
+  if(pdzMechDedicatedBoss(boss)||pdzMechAdoptedBoss(id)){
     if(!boss.tags.contains('dz_boss_presentation_initialized'))pdzMechPresentationInit(boss,id)
     if(id==='06'){
       let cells=pdzGunshopLiveCells(boss)
       let objective=cells>0?'弱点：弾薬供給セル ×'+cells:(boss.tags.contains('dz_brass_phase_3')?'排熱中を狙って本体を制圧':'本体を制圧')
-      let owner=String(boss.persistentData.getString('dz_boss_owner_tag'))
       boss.runCommandSilent('title @a[distance=..96,gamemode=!spectator] actionbar {"text":"BRASS HOUND  '+Math.ceil(Number(boss.health))+' / '+Math.ceil(Number(boss.maxHealth))+' HP  |  '+objective+'","color":"yellow","bold":true}')
-      boss.runCommandSilent('execute at @s rotated as @s run tp @e[tag='+owner+',tag=dz_brass_cell_1,sort=nearest,limit=1,distance=..16] ^-1.20 ^1.62 ^-0.45 ~ ~')
-      boss.runCommandSilent('execute at @s rotated as @s run tp @e[tag='+owner+',tag=dz_brass_cell_2,sort=nearest,limit=1,distance=..16] ^1.20 ^1.62 ^-0.45 ~ ~')
     }
     return
   }
@@ -415,33 +461,17 @@ function pdzMechApplyIdentity(boss,id){
 function pdzGunshopSpawnCells(boss){
   if(!boss||boss.tags.contains('dz_brass_cells_spawned'))return
   boss.addTag('dz_brass_cells_spawned')
-  let owner='dz_boss_owner_'+pdzMechOwnerKey(boss)
-  // The dedicated GeckoLib model owns both visible ammunition cells. Keeping
-  // block_display copies here produced white cubes with some shader/render
-  // paths and made the weak point look detached from the boss. These slimes
-  // are independent, shootable hitboxes only and follow the model bones.
-  let offsets=['^-1.20 ^1.62 ^-0.45','^1.20 ^1.62 ^-0.45']
-  for(let i=0;i<2;i++){
-    let key='dz_brass_cell_'+(i+1)
-    let tags='["'+PDZ_MECH_RUNTIME+'","'+PDZ_MECH_COMPONENT+'","dz_brass_ammo_cell","'+key+'","'+owner+'"]'
-    boss.runCommandSilent('execute at @s rotated as @s run summon minecraft:slime '+offsets[i]+' {Size:1,Invisible:1b,Glowing:1b,NoAI:1b,NoGravity:1b,Silent:1b,PersistenceRequired:1b,Health:36.0f,Attributes:[{Name:"minecraft:generic.max_health",Base:36.0d}],CustomName:\'{"text":"弾薬供給セル '+(i+1)+'","color":"gold","bold":true}\',CustomNameVisible:1b,Tags:'+tags+'}')
-  }
-  let count=boss.runCommandSilent('execute if entity @e[tag=dz_brass_ammo_cell,distance=..16,limit=1]')
-  if(count<=0){
-    boss.addTag('dz_brass_cells_destroyed')
-    boss.runCommandSilent('effect give @s minecraft:weakness 12 0 true')
-    pdzMechTell(boss,'弾薬セル生成失敗。防護を解除して戦闘を続行します。','yellow')
-  }else{
-    boss.runCommandSilent('effect give @s minecraft:resistance 9999 0 true')
-    pdzMechTell(boss,'BRASS HOUND起動。左右の弾薬供給セルを破壊せよ！','gold')
-  }
+  // The cells are real model bones. Invisible slime followers leaked through
+  // outlines/shaders, so side-hit routing now damages those bones directly.
+  boss.persistentData.putDouble('dz_brass_cell_left_hp',36)
+  boss.persistentData.putDouble('dz_brass_cell_right_hp',36)
+  boss.persistentData.putInt('dz_brass_cells_destroyed_count',0)
+  boss.runCommandSilent('effect give @s minecraft:resistance 9999 0 true')
+  pdzMechTell(boss,'BRASS HOUND起動。側背面から左右の弾薬供給セルを破壊せよ！','gold')
 }
 
 function pdzGunshopLiveCells(boss){
-  let owner='dz_boss_owner_'+pdzMechOwnerKey(boss),count=0
-  let nearby=boss.level.getEntities(boss,boss.boundingBox.inflate(32))
-  nearby.forEach(entity=>{if(entity.alive&&entity.tags&&entity.tags.contains(owner)&&entity.tags.contains('dz_brass_ammo_cell'))count++})
-  return count
+  return Math.max(0,2-Number(boss.persistentData.getInt('dz_brass_cells_destroyed_count')))
 }
 
 function pdzGunshopCellDestroyed(cell){
@@ -466,13 +496,87 @@ function pdzGunshopCellDestroyed(cell){
   }else pdzMechTell(boss,'弾薬セルを1基破壊。残り1基。','yellow')
 }
 
+function pdzGunshopRouteCellHit(event,boss,attacker){
+  if(!boss||boss.tags.contains('dz_brass_cells_destroyed')||!attacker||
+    !attacker.isPlayer||!attacker.isPlayer())return false
+  let dx=Number(attacker.x)-Number(boss.x),dz=Number(attacker.z)-Number(boss.z)
+  let length=Math.sqrt(dx*dx+dz*dz)
+  if(length<0.01)return false
+  dx/=length;dz/=length
+  let yaw=Number(boss.yaw||0)*Math.PI/180
+  let fx=-Math.sin(yaw),fz=Math.cos(yaw)
+  // Front armour is not a cell hit. Broad side/rear cones are intentional so
+  // several players can flank the moving quadruped without pixel hunting.
+  if(fx*dx+fz*dz>0.35)return false
+  let left=(fx*dz-fz*dx)>=0
+  let leftBroken=boss.persistentData.getBoolean('dz_brass_cell_left_broken')
+  let rightBroken=boss.persistentData.getBoolean('dz_brass_cell_right_broken')
+  if(left&&leftBroken)left=false
+  else if(!left&&rightBroken)left=true
+  if((left&&leftBroken)||(!left&&rightBroken))return false
+  let key=left?'dz_brass_cell_left_hp':'dz_brass_cell_right_hp'
+  let hp=Number(boss.persistentData.getDouble(key))
+  if(hp<=0)hp=36
+  hp-=Math.min(14,Math.max(1,Number(event.damage||0)))
+  boss.persistentData.putDouble(key,Math.max(0,hp))
+  boss.runCommandSilent('particle minecraft:electric_spark ~ ~1.45 ~ 0.55 0.3 0.55 0.05 9 force @a[distance=..64]')
+  if(hp>0)return true
+  boss.persistentData.putBoolean(left?'dz_brass_cell_left_broken':'dz_brass_cell_right_broken',true)
+  let destroyed=Number(boss.persistentData.getInt('dz_brass_cells_destroyed_count'))+1
+  boss.persistentData.putInt('dz_brass_cells_destroyed_count',destroyed)
+  boss.runCommandSilent('particle minecraft:explosion ~ ~1.4 ~ 0.15 0.15 0.15 0.02 7 force @a[distance=..96]')
+  boss.runCommandSilent('playsound minecraft:entity.generic.explode hostile @a[distance=..96] ~ ~ ~ 1 1.25')
+  boss.runCommandSilent('effect give @s minecraft:slowness 5 1 true')
+  boss.runCommandSilent('effect give @s minecraft:weakness 5 0 true')
+  if(destroyed>=2){
+    boss.addTag('dz_brass_cells_destroyed')
+    boss.runCommandSilent('effect clear @s minecraft:resistance')
+    boss.runCommandSilent('effect give @s minecraft:glowing 12 0 true')
+    pdzMechTell(boss,'全弾薬セル破壊。重装防護と無限給弾が停止した！','aqua')
+  }else pdzMechTell(boss,'弾薬セルを1基破壊。残り1基。','yellow')
+  return true
+}
+
+function pdzMechValidWarnTarget(boss,target,radius){
+  if(!target||!target.alive||String(target.level.dimension)!==String(boss.level.dimension))return false
+  let player=false
+  try{player=!!(target.isPlayer&&target.isPlayer())}catch(ignored){}
+  if(player){
+    if(target.spectator||target.creative)return false
+  }else if(String(target.type)!=='dummmmmmy:target_dummy'||!target.tags||
+    !target.tags.contains('dz_boss_test_target'))return false
+  let dx=target.x-boss.x,dy=target.y-boss.y,dz=target.z-boss.z
+  return dx*dx+dy*dy+dz*dz<radius*radius
+}
+
 function pdzMechNearestPlayer(boss,radius){
+  // Coordinate gimmicks must use the same Mob#target exposed by the aggro UI.
+  // Otherwise the warning can point at one player while the scripted blast
+  // silently selects another one.
+  let current=null
+  try{current=boss.target}catch(ignored){}
+  if(pdzMechValidWarnTarget(boss,current,radius))return current
   let nearest=null,best=radius*radius
   boss.server.players.forEach(player=>{
     if(player.spectator||player.creative||String(player.level.dimension)!==String(boss.level.dimension))return
     let dx=player.x-boss.x,dy=player.y-boss.y,dz=player.z-boss.z,d=dx*dx+dy*dy+dz*dz
     if(d<best){best=d;nearest=player}
   })
+  // Creative operators are excluded above, so prefer the tagged test dummy
+  // when present. This also lets coordinate-based gimmicks be measured without
+  // asking a real player to stand in the warning marker.
+  try{
+    let nearby=boss.level.getEntities(boss,boss.boundingBox.inflate(radius))
+    nearby.forEach(entity=>{
+      if(String(entity.type)!=='dummmmmmy:target_dummy'||!entity.tags||
+        !entity.tags.contains('dz_boss_test_target')||!entity.alive)return
+      let dx=entity.x-boss.x,dy=entity.y-boss.y,dz=entity.z-boss.z,d=dx*dx+dy*dy+dz*dz
+      if(d<best){best=d;nearest=entity}
+    })
+  }catch(ignored){}
+  if(nearest){
+    try{boss.setTarget(nearest)}catch(ignored){}
+  }
   return nearest
 }
 
@@ -488,6 +592,7 @@ function pdzMechTargetedBlast(boss,label,color,particle,radius,damage,delay){
     if(!ref||!ref.alive)return
     ref.server.runCommandSilent(positioned+' run particle minecraft:explosion ~ ~0.2 ~ '+radius+' 0.2 '+radius+' 0.03 28 force @a[distance=..96]')
     ref.server.runCommandSilent(positioned+' run damage @a[distance=..'+radius+',gamemode=!creative,gamemode=!spectator] '+damage+' minecraft:explosion')
+    ref.server.runCommandSilent(positioned+' run damage @e[type=dummmmmmy:target_dummy,tag=dz_boss_test_target,distance=..'+radius+'] '+damage+' minecraft:explosion')
   })
   return true
 }
@@ -499,21 +604,11 @@ function pdzMechTell(boss,text,color){
 function pdzMechSpawnChoirHitboxes(boss){
   if(boss.tags.contains('dz_choir_hitboxes_spawned'))return
   boss.addTag('dz_choir_hitboxes_spawned')
-  let parts=[
-    {key:'head',label:'頭部',size:4,x:0,y:8.2,m:1.35},
-    {key:'arm_left',label:'左腕',size:3,x:-2.25,y:5.2,m:0.9},
-    {key:'arm_right',label:'右腕',size:3,x:2.25,y:5.2,m:0.9},
-    {key:'leg_left',label:'左脚',size:3,x:-0.85,y:2.0,m:0.9},
-    {key:'leg_right',label:'右脚',size:3,x:0.85,y:2.0,m:0.9}
-  ]
-  let testTag=boss.tags.contains(PDZ_MECH_LOADTEST)?',"dz_boss_loadtest_runtime"':''
-  parts.forEach(part=>{
-    let nbt='{Size:'+part.size+',Invisible:1b,NoAI:1b,NoGravity:1b,Silent:1b,PersistenceRequired:1b,Health:2048.0f,Attributes:[{Name:"minecraft:generic.max_health",Base:2048.0d}],CustomName:\'{"text":"CHOIR '+part.label+'判定","color":"dark_purple"}\',Tags:["'+PDZ_MECH_RUNTIME+'","'+PDZ_CHOIR_HITBOX+'","dz_choir_part_'+part.key+'","dz_choir_multiplier_'+String(part.m).replace('.','_')+'"'+testTag+']}'
-    boss.runCommandSilent('execute at @s rotated as @s run summon minecraft:slime ^'+part.x+' ^'+part.y+' ^0 '+nbt)
-  })
-  let count=boss.runCommandSilent('execute if entity @e[tag='+PDZ_CHOIR_HITBOX+',distance=..16,limit=1]')
-  if(count<=0){boss.addTag('dz_choir_hitboxes_failed');pdzMechTell(boss,'全身判定の生成に失敗。胴体判定のまま続行します。','yellow')}
-  else pdzMechTell(boss,'頭部・両腕・両脚へ攻撃判定が接続された。頭部は1.35倍。','light_purple')
+  // CHOIR's native entity dimensions are 7.5 x 10.5 blocks and cover the
+  // authored silhouette. Extra living hitbox slimes were both visible and
+  // counted as unrelated combatants by other mods.
+  boss.addTag('dz_choir_native_fullbody_hitbox')
+  pdzMechTell(boss,'巨体全域のネイティブ判定が起動した。音と地面予告を読め。','light_purple')
 }
 
 function pdzMechInit(boss,id){
@@ -603,7 +698,7 @@ function pdzMechPulse(boss,id,forced){
     boss.runCommandSilent('particle minecraft:dust 0.7 0.1 1 1.4 ~ ~0.2 ~ 5 0.1 5 0 80 force @a[distance=..64]')
     pdzMechTell(boss,'共鳴衝撃波を収束中。1.5秒以内に10m外へ！','dark_purple')
     let ref=boss
-    boss.server.scheduleInTicks(30,()=>{if(ref&&ref.alive){ref.runCommandSilent('particle minecraft:sonic_boom ~ ~4 ~ 0 0 0 0 1 force @a[distance=..64]');ref.runCommandSilent('damage @a[distance=..10,gamemode=!creative,gamemode=!spectator] 3 minecraft:magic');ref.runCommandSilent('effect give @a[distance=..10,gamemode=!creative,gamemode=!spectator] minecraft:darkness 3 0 true')}})
+    boss.server.scheduleInTicks(30,()=>{if(ref&&ref.alive){ref.runCommandSilent('particle minecraft:sonic_boom ~ ~4 ~ 0 0 0 0 1 force @a[distance=..64]');ref.runCommandSilent('damage @a[distance=..10,gamemode=!creative,gamemode=!spectator] 3 minecraft:magic');ref.runCommandSilent('damage @e[type=dummmmmmy:target_dummy,tag=dz_boss_test_target,distance=..10] 3 minecraft:magic');ref.runCommandSilent('effect give @a[distance=..10,gamemode=!creative,gamemode=!spectator] minecraft:darkness 3 0 true')}})
     pdzMechPulseCount++
   }else if(id==='04'&&(forced||time%9===0)){
     if(pdzMechTargetedBlast(boss,'焼夷弾着弾予告','red','minecraft:dust 1 0.15 0.02 1.2',3.5,4,30))pdzMechPulseCount++
@@ -640,12 +735,12 @@ function pdzMechPulse(boss,id,forced){
     pdzMechPhaseMutation(boss)
   }else if(id==='10'&&(forced||time%12===0)){
     let target=pdzMechNearestPlayer(boss,40),ref=boss
-    if(target){target.runCommandSilent('effect give @s minecraft:glowing 4 0 true');target.runCommandSilent('title @s actionbar {"text":"ECHO-7 狙撃標定：遮蔽へ移動","color":"red","bold":true}');pdzMechTell(boss,'長距離狙撃を標定。2.5秒以内に視線を切れ！','dark_purple');boss.server.scheduleInTicks(50,()=>{if(!ref||!ref.alive||!target||!target.alive)return;if(!ref.hasLineOfSight(target)){pdzMechTell(ref,'狙撃失敗。標的が遮蔽へ退避。','aqua');return}ref.runCommandSilent('damage '+String(target.username)+' 6 minecraft:arrow by @s');ref.runCommandSilent('playsound minecraft:entity.firework_rocket.blast hostile @a[distance=..64] ~ ~ ~ 1 0.5')});pdzMechPulseCount++}
+    if(target){target.runCommandSilent('effect give @s minecraft:glowing 4 0 true');if(target.isPlayer&&target.isPlayer())target.runCommandSilent('title @s actionbar {"text":"ECHO-7 レールガン標定：遮蔽へ移動","color":"red","bold":true}');pdzMechTell(boss,'レールガンを標定。2.5秒以内に視線を切れ！','dark_purple');boss.server.scheduleInTicks(50,()=>{if(!ref||!ref.alive||!target||!target.alive)return;if(!ref.hasLineOfSight(target)){pdzMechTell(ref,'レールガン不発。標的が遮蔽へ退避。','aqua');return}target.runCommandSilent('particle minecraft:flash ~ ~1 ~ 0 0 0 0 1 force @a[distance=..64]');target.runCommandSilent('particle minecraft:electric_spark ~ ~1 ~ 0.7 0.9 0.7 0.18 42 force @a[distance=..64]');if(target.isPlayer&&target.isPlayer())ref.runCommandSilent('damage '+String(target.username)+' 6 minecraft:sonic_boom by @s');else ref.runCommandSilent('damage @e[type=dummmmmmy:target_dummy,tag=dz_boss_test_target,sort=nearest,limit=1,distance=..48] 6 minecraft:sonic_boom by @s');ref.runCommandSilent('playsound minecraft:entity.warden.sonic_boom hostile @a[distance=..64] ~ ~ ~ 1 1.35')});pdzMechPulseCount++}
   }else if(id==='11'&&(forced||time%8===0)){
     boss.runCommandSilent('particle minecraft:dust 0.2 1 0.1 1.5 ~ ~1 ~ 3 1 3 0 60 force @a[distance=..64]')
     pdzMechTell(boss,'臨界放射環を予告。2秒以内に5m内か16m外へ！','green')
     let ref=boss
-    boss.server.scheduleInTicks(40,()=>{if(ref&&ref.alive){ref.runCommandSilent('damage @a[distance=5..16,gamemode=!creative,gamemode=!spectator] 4 minecraft:magic');ref.runCommandSilent('effect give @a[distance=5..16,gamemode=!creative,gamemode=!spectator] minecraft:hunger 5 1 true')}})
+    boss.server.scheduleInTicks(40,()=>{if(ref&&ref.alive){ref.runCommandSilent('damage @a[distance=5..16,gamemode=!creative,gamemode=!spectator] 4 minecraft:magic');ref.runCommandSilent('damage @e[type=dummmmmmy:target_dummy,tag=dz_boss_test_target,distance=5..16] 4 minecraft:magic');ref.runCommandSilent('effect give @a[distance=5..16,gamemode=!creative,gamemode=!spectator] minecraft:hunger 5 1 true')}})
     pdzMechPulseCount++
   }else if(id==='12'&&(forced||time%10===0)){
     boss.runCommandSilent('particle minecraft:dust 1 0.15 0.05 1.5 ~ ~0.2 ~ 4 0.1 4 0 70 force @a[distance=..64]')
@@ -656,6 +751,7 @@ function pdzMechPulse(boss,id,forced){
       if(!ref||!ref.alive||ref.tags.contains('dz_boss_showroom'))return
       ref.runCommandSilent('particle minecraft:explosion ~ ~0.2 ~ 2.5 0.2 2.5 0.05 25 force @a[distance=..64]')
       ref.runCommandSilent('damage @a[distance=..6,gamemode=!creative,gamemode=!spectator] 7 minecraft:explosion')
+      ref.runCommandSilent('damage @e[type=dummmmmmy:target_dummy,tag=dz_boss_test_target,distance=..6] 7 minecraft:explosion')
       ref.runCommandSilent('effect give @a[distance=..6,gamemode=!creative,gamemode=!spectator] minecraft:levitation 1 1 true')
     })
     pdzMechPulseCount++
@@ -700,6 +796,7 @@ EntityEvents.hurt(event=>{
     }
   }
   let encounterId=pdzMechEncounterId(hitbox)
+  if(encounterId==='06')pdzGunshopRouteCellHit(event,hitbox,attacker)
   if(encounterId==='13'&&pdzMechDamageSourceId(event.source).toLowerCase().indexOf('fire')>=0){
     hitbox.persistentData.putLong('dz_abomination_burn_lock_until',Date.now()+8000)
     hitbox.runCommandSilent('particle minecraft:flame ~ ~1 ~ 0.8 0.8 0.8 0.04 24 force @a[distance=..64]')
@@ -747,17 +844,12 @@ EntityEvents.death(event=>{
   if(boss.tags.contains('dz_boss_mech_08'))boss.runCommandSilent('kill @e[tag=dz_boss_runtime_08,distance=..48]')
 })
 
-// Five attached CHOIR parts need responsive tracking; all expensive mechanics
-// remain on the one-second pulse below.
+// Target validation stays responsive; encounter pulses and presentation remain
+// on the one-second scan below. No follower hitbox entities are maintained.
 ServerEvents.tick(event=>{
   pdzMechClock++
   let server=event.server
   if(pdzMechClock%5===0)pdzMechTrackedBosses.forEach(boss=>pdzMechRestrictTarget(boss))
-  if(pdzMechClock%2===0){
-    let parts=[['head',0,8.2],['arm_left',-2.25,5.2],['arm_right',2.25,5.2],['leg_left',-0.85,2],['leg_right',0.85,2]]
-    parts.forEach(part=>server.runCommandSilent('execute as @e[tag=dz_boss_mech_03,tag=!dz_boss_showroom] at @s rotated as @s run tp @e[tag=dz_choir_part_'+part[0]+',distance=..16,sort=nearest,limit=1] ^'+part[1]+' ^'+part[2]+' ^0 ~ ~'))
-  }
-  if(pdzMechClock%60===0)server.runCommandSilent('execute as @e[tag='+PDZ_CHOIR_HITBOX+'] at @s unless entity @e[tag=dz_boss_mech_03,distance=..32,limit=1] run kill @s')
   if(pdzMechClock%20!==0)return
 
   let started=Date.now(),seen={},seenLevels={},active=0,tracked=[]
@@ -813,6 +905,16 @@ function pdzMechSpawnTestSet(player,frozen){
   player.runCommandSilent('team join pdz_boss_test @e[tag='+PDZ_MECH_LOADTEST+',distance=..80]')
 }
 
+function pdzMechSpawnSingleTest(player,entry,frozen){
+  pdzMechTestCleanup(player)
+  player.server.runCommandSilent('team add pdz_boss_test')
+  let result=player.runCommandSilent('execute positioned ^ ^ ^10 run summon '+entry.entity+' ~ ~ ~ '+pdzMechTestNbt(entry,frozen))
+  player.runCommandSilent('team join pdz_boss_test @e[tag='+PDZ_MECH_LOADTEST+',distance=..24]')
+  if(result>0)player.tell(Text.of('['+entry.id+'] '+entry.name+' を10m先へ'+(frozen?'展示':'戦闘')+'召喚しました。').aqua())
+  else player.tell(Text.of('['+entry.id+'] '+entry.name+' の召喚に失敗しました。').red())
+  return result>0?1:0
+}
+
 function pdzMechTestCleanup(player){
   let count=0
   player.level.entities.forEach(entity=>{
@@ -823,6 +925,17 @@ function pdzMechTestCleanup(player){
     }
   })
   return count
+}
+
+function pdzMechNearestActiveBoss(player,radius){
+  let nearest=null,best=radius*radius
+  player.level.entities.forEach(entity=>{
+    let id=pdzMechEncounterId(entity)
+    if(!id||!entity.alive)return
+    let dx=entity.x-player.x,dy=entity.y-player.y,dz=entity.z-player.z,d=dx*dx+dy*dy+dz*dz
+    if(d<best){best=d;nearest=entity}
+  })
+  return nearest
 }
 
 ServerEvents.commandRegistry(event=>{
@@ -840,6 +953,32 @@ ServerEvents.commandRegistry(event=>{
     p.tell(Text.of('マルチ負荷テスト用ボス[02]～[14]を戦闘状態で配置しました。プレイヤー／村人系だけを狙います。').red())
     return 1
   }))
+  PDZ_MECH_TEST_ENTRIES.forEach(entry=>{
+    root.then(Commands.literal('spawn_'+entry.id).executes(ctx=>pdzMechSpawnSingleTest(ctx.source.player,entry,false)))
+    root.then(Commands.literal('view_'+entry.id).executes(ctx=>pdzMechSpawnSingleTest(ctx.source.player,entry,true)))
+  })
+  root.then(Commands.literal('phase2').executes(ctx=>{
+    let p=ctx.source.player,boss=pdzMechNearestActiveBoss(p,128)
+    if(!boss){p.tell(Text.of('128m以内にBOSSがいません。').yellow());return 0}
+    boss.health=Math.max(1,Number(boss.maxHealth)*0.64)
+    p.tell(Text.of('最寄りBOSSをPhase 2へ移しました。').gold())
+    return 1
+  }))
+  root.then(Commands.literal('phase3').executes(ctx=>{
+    let p=ctx.source.player,boss=pdzMechNearestActiveBoss(p,128)
+    if(!boss){p.tell(Text.of('128m以内にBOSSがいません。').yellow());return 0}
+    boss.health=Math.max(1,Number(boss.maxHealth)*0.31)
+    p.tell(Text.of('最寄りBOSSをPhase 3へ移しました。').red())
+    return 1
+  }))
+  root.then(Commands.literal('defeat').executes(ctx=>{
+    let p=ctx.source.player,boss=pdzMechNearestActiveBoss(p,128)
+    if(!boss){p.tell(Text.of('128m以内にBOSSがいません。').yellow());return 0}
+    boss.addTag('dz_boss_test_selected')
+    let result=boss.runCommandSilent('kill @s')
+    p.tell(Text.of('最寄りBOSSを撃破状態へ移しました。死亡モーションを確認してください。').aqua())
+    return result>0?1:0
+  }))
   root.then(Commands.literal('status').executes(ctx=>{
     let p=ctx.source.player
     let runtime=0,tests=0,choirParts=0
@@ -856,13 +995,7 @@ ServerEvents.commandRegistry(event=>{
     return 1
   }))
   root.then(Commands.literal('probe').executes(ctx=>{
-    let p=ctx.source.player,nearest=null,best=128*128
-    p.level.entities.forEach(entity=>{
-      let id=pdzMechEncounterId(entity)
-      if(!id||!entity.alive)return
-      let dx=entity.x-p.x,dy=entity.y-p.y,dz=entity.z-p.z,d=dx*dx+dy*dy+dz*dz
-      if(d<best){best=d;nearest=entity}
-    })
+    let p=ctx.source.player,nearest=pdzMechNearestActiveBoss(p,128)
     if(!nearest){p.tell(Text.of('128m以内に稼働中のPDZ Bossはいません。').yellow());return 0}
     let id=pdzMechEncounterId(nearest),max=Math.max(1,Number(nearest.maxHealth))
     let mnsMax=max

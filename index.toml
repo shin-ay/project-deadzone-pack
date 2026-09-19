@@ -11289,8 +11289,7 @@ file = "kubejs/server_scripts/project_deadzone_boss_encounters_v1.js"
 hash = "310bccece064dc7398f0dd126be7d640831159b89e444bd749d86732aa0587cc"
 
 [[files]]
-file = "kubejs/server_scripts/project_deadzone_boss_mechanics_v0_1.js"
-hash = "852e33374733a7652afcb7f6c211a495d7816336cc610b4190db91aff135e8fa"
+$10c33aeed487da52aaa1ed22e3b2f21d7bc6716f61a0dc6f90129699060c7cb3b"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_buddy_control_v0_1.js"
@@ -11893,8 +11892,7 @@ file = "kubejs/startup_scripts/project_deadzone_music_states_v0_1.js"
 hash = "0bc98be49f4fe4e242f988e2d31d7f386e20e86bc6828ea33ca2bc961047c7b2"
 
 [[files]]
-file = "kubejs/startup_scripts/project_deadzone_player_survivability_v0_1.js"
-hash = "3d6dee69356aa32a5c413c11a7e2aac6ef82a2f6d0911646f328d218c4a97875"
+$156d632569035d9ae2a9849bcf68416ee5bb47020347f1784c5615b867a776f09"
 
 [[files]]
 file = "kubejs/startup_scripts/project_deadzone_skill_forge_effects_v0_1.js"

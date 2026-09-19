@@ -31,6 +31,11 @@ function pdzSurviveAxel(entity) {
   return pdzSurviveHasTag(entity,'dz_boss_axel')
 }
 
+function pdzSurviveGunshopBoss(entity) {
+  return pdzSurviveHasTag(entity,'dz_story_boss_gunshop')||
+    pdzSurviveHasTag(entity,'dz_boss_mech_06')
+}
+
 function pdzSurviveGunSoldier(entity) {
   if(!entity)return false
   try{if(entity.isPlayer&&entity.isPlayer())return false}catch(ignored){}
@@ -97,12 +102,14 @@ ForgeEvents.onEvent('net.minecraftforge.event.entity.living.LivingHurtEvent',eve
   let adjusted=original
   let boss=pdzSurviveStoryBoss(attacker)||pdzSurviveStoryBoss(direct)
   let axel=pdzSurviveAxel(attacker)||pdzSurviveAxel(direct)
+  let gunshop=pdzSurviveGunshopBoss(attacker)||pdzSurviveGunshopBoss(direct)
   let gunSoldier=pdzSurviveGunSoldier(attacker)||pdzSurviveGunSoldier(direct)
   // Bosses and armed soldiers are meant to apply sustained pressure. Their
   // authored M&S damage remains the source value, while this final pacing layer
   // prevents one animation or one automatic burst from ending the encounter.
-  if(axel)adjusted*=0.32
-  else if(boss)adjusted*=0.45
+  if(gunshop)adjusted*=0.28
+  else if(axel)adjusted*=0.32
+  else if(boss)adjusted*=0.34
   else if(gunSoldier)adjusted*=0.58
 
   let health=Math.max(0,Number(player.health)||0)
@@ -111,8 +118,9 @@ ForgeEvents.onEvent('net.minecraftforge.event.entity.living.LivingHurtEvent',eve
   let tank=pdzSurviveTank(player)
   let threshold=tank?0.60:0.80
   let capRatio=tank?0.50:0.68
-  if(axel)capRatio=tank?0.18:0.24
-  else if(boss)capRatio=tank?0.22:0.30
+  if(gunshop)capRatio=tank?0.08:0.10
+  else if(axel)capRatio=tank?0.18:0.24
+  else if(boss)capRatio=tank?0.12:0.16
   else if(gunSoldier)capRatio=tank?0.16:0.22
   let healthy=health/maxHealth>=threshold
   let cap=absorption+maxHealth*capRatio
@@ -131,7 +139,10 @@ ForgeEvents.onEvent('net.minecraftforge.event.entity.living.LivingHurtEvent',eve
       data.putDouble('dz_hostile_ttk_window_used',0)
     }
     let used=Math.max(0,Number(data.getDouble('dz_hostile_ttk_window_used')))
-    let budgetRatio=axel?(tank?0.24:0.32):(boss?(tank?0.30:0.38):(tank?0.26:0.34))
+    // BRASS HOUND is a durable suppression boss: no individual bullet may
+    // erase a build, while uninterrupted automatic fire remains dangerous.
+    let budgetRatio=gunshop?(tank?0.22:0.28):
+      (axel?(tank?0.24:0.32):(boss?(tank?0.28:0.34):(tank?0.26:0.34)))
     let budget=maxHealth*budgetRatio
     adjusted=Math.max(0,Math.min(adjusted,budget-used))
     data.putDouble('dz_hostile_ttk_window_used',Math.min(budget,used+adjusted))
@@ -144,6 +155,7 @@ ForgeEvents.onEvent('net.minecraftforge.event.entity.living.LivingHurtEvent',eve
     data.putString('dz_survival_last_profile',tank?'tank':'standard')
     data.putBoolean('dz_survival_last_boss',boss)
     data.putBoolean('dz_survival_last_axel',axel)
+    data.putBoolean('dz_survival_last_gunshop',gunshop)
     data.putBoolean('dz_survival_last_gun_soldier',gunSoldier)
     data.putInt('dz_survival_guard_count',data.getInt('dz_survival_guard_count')+1)
     let lastLog=Number(data.getLong('dz_survival_last_log_tick'))
@@ -151,7 +163,7 @@ ForgeEvents.onEvent('net.minecraftforge.event.entity.living.LivingHurtEvent',eve
       data.putLong('dz_survival_last_log_tick',gameTime)
       console.warn('[PDZ Survivability] player='+player.username+' original='+original.toFixed(2)+
         ' final='+adjusted.toFixed(2)+' profile='+(tank?'tank':'standard')+' boss='+boss+
-        ' axel='+axel+' gunSoldier='+gunSoldier+' attacker='+pdzSurviveEntityId(attacker)+
+        ' axel='+axel+' gunshop='+gunshop+' gunSoldier='+gunSoldier+' attacker='+pdzSurviveEntityId(attacker)+
         ' direct='+pdzSurviveEntityId(direct)+
         ' health='+health.toFixed(2)+'/'+maxHealth.toFixed(2))
     }
