@@ -1,0 +1,22 @@
+{
+  "type": "cataclysm:ruined_citadel",
+  "biomes": "#project_deadzone:fixed_world_disabled_surface",
+  "step": "surface_structures",
+  "start_height": {
+    "absolute": 0
+  },
+  "use_expansion_hack": false,
+  "spawn_overrides": {
+    "monster": {
+      "bounding_box": "piece",
+      "spawns": [
+        {
+          "type": "cataclysm:endermaptera",
+          "weight": 3,
+          "minCount": 1,
+          "maxCount": 1
+        }
+      ]
+    }
+  }
+}

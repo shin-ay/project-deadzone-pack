@@ -26,5 +26,5 @@ BlockEvents.broken(event => {
   if (!id.startsWith('butchery:') || id.indexOf('corpse') < 0 || id.indexOf('playercorpse') >= 0) return
   const p = event.player
   if (!p || !p.isPlayer || !p.isPlayer()) return
-  if (typeof pdzCareerAddXp === 'function') pdzCareerAddXp(p, 2, 'hunting', false)
+  if (typeof global.pdzCharacterAwardXp === 'function') global.pdzCharacterAwardXp(p, 2, 'hunting', false)
 })

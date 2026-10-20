@@ -12533,8 +12533,8 @@
 					type: "item"
 				}
 				{
-					id: "72A7D3FF1F875B51"
 					count: 9
+					id: "72A7D3FF1F875B51"
 					item: "lightmanscurrency:coin_copper"
 					team_reward: true
 					type: "item"

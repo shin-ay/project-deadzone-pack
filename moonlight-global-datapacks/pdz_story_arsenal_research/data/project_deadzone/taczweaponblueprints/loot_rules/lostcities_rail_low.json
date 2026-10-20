@@ -1,0 +1,12 @@
+{
+  "format": 1,
+  "pool": "taczweaponblueprints:medium",
+  "loot_tables": [
+    "lostcities:chests/raildungeonchest"
+  ],
+  "chance": 0.05,
+  "rolls": {
+    "min": 1,
+    "max": 1
+  }
+}

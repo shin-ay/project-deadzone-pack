@@ -78,12 +78,12 @@ ServerEvents.commandRegistry(event=>{
     let p=ctx.source.player
     let stage=typeof dzInfectionSnapshot==='function'?dzInfectionSnapshot(p).severity:(dzqHasInfection(p)?1:0)
     let name=typeof dzInfectionName==='function'?dzInfectionName(stage):(stage>0?'陽性':'陰性')
-    p.tell(Text.of('感染症：'+name+(stage>0?'（段階に合う治療薬またはMedic治療が必要）':'')).color(stage>=3?'red':stage>0?'yellow':'green'))
+    p.tell(Text.of('感染症：'+name+(stage>0?'（段階に合う治療薬または野戦医療資格者の処置が必要）':'')).color(stage>=3?'red':stage>0?'yellow':'green'))
     return 1
   }))
   care.then(Commands.literal('medic_cure').executes(ctx=>{
     let p=ctx.source.player
-    if(String(p.persistentData.getString('dz_job_id'))!=='medic'){p.tell(Text.of('Medic専用処置です。').red());return 0}
+    if(!global.pdzHasQualification||!global.pdzHasQualification(p,'field_medicine')){p.tell(Text.of('野戦医療資格が必要です。').red());return 0}
     return dzqCureInfection(p)?1:0
   }))
   event.register(care)

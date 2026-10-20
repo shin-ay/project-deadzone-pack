@@ -1,6 +1,6 @@
 name = "project-1364036"
 filename = "beautifulstats-forge-1.2-SNAPSHOT.jar"
-side = "both"
+side = "client"
 
 [download]
 hash-format = "sha1"

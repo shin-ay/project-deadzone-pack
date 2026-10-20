@@ -16,6 +16,22 @@
       "rarity": "UNCOMMON",
       "weightMult": 0.65
     },
+    "pdz_relief_pay_warm_lining": {
+      "type": "item",
+      "content": "legendarysurvivaloverhaul:warm_string",
+      "amount": { "min": 2, "max": 4 },
+      "unitWorth": 850,
+      "rarity": "UNCOMMON",
+      "weightMult": 0.75
+    },
+    "pdz_relief_pay_cold_lining": {
+      "type": "item",
+      "content": "legendarysurvivaloverhaul:cold_string",
+      "amount": { "min": 2, "max": 4 },
+      "unitWorth": 850,
+      "rarity": "UNCOMMON",
+      "weightMult": 0.75
+    },
     "pdz_relief_pay_food": {
       "type": "item",
       "content": "minecraft:cooked_beef",
@@ -30,22 +46,6 @@
       "unitWorth": 170,
       "nbt": "{AmmoId:\"tacz:9mm\"}",
       "weightMult": 0.9
-    },
-    "pdz_relief_pay_warm_string": {
-      "type": "item",
-      "content": "legendarysurvivaloverhaul:warm_string",
-      "amount": { "min": 2, "max": 5 },
-      "unitWorth": 900,
-      "rarity": "UNCOMMON",
-      "weightMult": 0.65
-    },
-    "pdz_relief_pay_cold_string": {
-      "type": "item",
-      "content": "legendarysurvivaloverhaul:cold_string",
-      "amount": { "min": 2, "max": 5 },
-      "unitWorth": 900,
-      "rarity": "UNCOMMON",
-      "weightMult": 0.65
     },
     "pdz_relief_pay_antibiotics": {
       "type": "item",

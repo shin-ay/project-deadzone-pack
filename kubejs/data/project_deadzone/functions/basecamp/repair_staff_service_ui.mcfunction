@@ -12,9 +12,9 @@ data modify entity @e[type=easy_npc:humanoid,tag=dz_basecamp_trader_medical,limi
 data modify entity @e[type=easy_npc:humanoid,tag=dz_basecamp_trader_parts,limit=1] DialogData.Type set value "CUSTOM"
 data modify entity @e[type=easy_npc:humanoid,tag=dz_basecamp_trader_parts,limit=1] DialogData.DialogDataSet[0].Buttons set value [{Actions:[{ExecAsUser:1b,PermLevel:0,Type:"OPEN_TRADING_SCREEN"}],Label:"open_trade",Name:"工具と部品を見る"},{Actions:[{Cmd:"/deadzonepeopleui",ExecAsUser:1b,PermLevel:0,Type:"COMMAND"}],Label:"personal_service",Name:"信頼と整備箱をGUIで見る"},{Actions:[{Cmd:"/deadzonedefenseui",ExecAsUser:1b,PermLevel:0,Type:"COMMAND"}],Label:"defense_control",Name:"防衛・復旧ガイドを開く"},{Actions:[{Cmd:"/deadzonepeople service_goro",ExecAsUser:1b,PermLevel:0,Type:"COMMAND"}],Label:"claim_service",Name:"整備箱を受け取る"}]
 
-# Minato / JOB coordinator
+# Minato / expedition loadout and qualification officer
 data modify entity @e[type=easy_npc:humanoid,tag=dz_basecamp_job_guide,limit=1] DialogData.Type set value "CUSTOM"
-data modify entity @e[type=easy_npc:humanoid,tag=dz_basecamp_job_guide,limit=1] DialogData.DialogDataSet[0].Buttons set value [{Actions:[{Cmd:"/deadzonecareerui",ExecAsUser:1b,PermLevel:0,Type:"COMMAND"}],Label:"career_status",Name:"クラス・JOB進行をGUIで見る"},{Actions:[{Cmd:"/deadzonecareerui",ExecAsUser:1b,PermLevel:0,Type:"COMMAND"}],Label:"career_paths",Name:"昇格ルートをGUIで見る"}]
+data modify entity @e[type=easy_npc:humanoid,tag=dz_basecamp_job_guide,limit=1] DialogData.DialogDataSet[0].Buttons set value [{Actions:[{Cmd:"/deadzoneloadout menu",ExecAsUser:1b,PermLevel:0,Type:"COMMAND"}],Label:"loadout",Name:"最初の遠征装備を確認する"},{Actions:[{Cmd:"/deadzonequalification status",ExecAsUser:1b,PermLevel:0,Type:"COMMAND"}],Label:"qualifications",Name:"取得資格を確認する"},{Actions:[{Cmd:"/ftbquests open_book",ExecAsUser:1b,PermLevel:0,Type:"COMMAND"}],Label:"training",Name:"訓練・研究記録を開く"}]
 
 # Hank / Buddy recruiter
 data modify entity @e[type=easy_npc:humanoid,tag=dz_basecamp_buddy_recruiter,limit=1] DialogData.Type set value "CUSTOM"

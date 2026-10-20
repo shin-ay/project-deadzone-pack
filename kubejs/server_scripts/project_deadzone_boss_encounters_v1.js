@@ -41,6 +41,16 @@ function pdzAxelLog(message) {
   console.info('[PROJECT DEADZONE][Axel] ' + message)
 }
 
+function pdzAxelEntityName(entity) {
+  if (!entity) return 'none'
+  try {
+    let hover = entity.hoverName
+    if (hover && hover.string) return String(hover.string)
+  } catch (ignored) {}
+  try { return String(entity.type) } catch (ignored) {}
+  return 'unknown'
+}
+
 function pdzAxelIntro(entity) {
   entity.runCommandSilent('title @a[distance=..96,gamemode=!spectator] times 10 55 15')
   entity.runCommandSilent('title @a[distance=..96,gamemode=!spectator] title {"text":"AXEL // ROAD KING","color":"red","bold":true}')
@@ -50,27 +60,13 @@ function pdzAxelIntro(entity) {
 
 function pdzAxelSpawnFuelTanks(server, positioned) {
   let boss = "@e[tag=" + PDZ_BOSS_AXEL_TAG + ",distance=..24,sort=nearest,limit=1]"
-  let leftTankTags = pdzAxelRuntimeTags([PDZ_BOSS_AXEL_TANK_TAG, PDZ_BOSS_AXEL_TANK_LEFT_TAG, "dz_pdz_boss_weakpoint"])
-  let rightTankTags = pdzAxelRuntimeTags([PDZ_BOSS_AXEL_TANK_TAG, PDZ_BOSS_AXEL_TANK_RIGHT_TAG, "dz_pdz_boss_weakpoint"])
-  let leftTank = "{Size:0,Invisible:1b,Glowing:1b,NoAI:1b,NoGravity:1b,Silent:1b,PersistenceRequired:1b,Health:28.0f,Attributes:[{Name:\"minecraft:generic.max_health\",Base:28.0d}],CustomName:'{\"text\":\"左燃料タンク\",\"color\":\"yellow\"}',Team:\"pdz_axel\",Tags:" + pdzAxelTagsNbt(leftTankTags) + "}"
-  let rightTank = "{Size:0,Invisible:1b,Glowing:1b,NoAI:1b,NoGravity:1b,Silent:1b,PersistenceRequired:1b,Health:28.0f,Attributes:[{Name:\"minecraft:generic.max_health\",Base:28.0d}],CustomName:'{\"text\":\"右燃料タンク\",\"color\":\"yellow\"}',Team:\"pdz_axel\",Tags:" + pdzAxelTagsNbt(rightTankTags) + "}"
-
-  // The dedicated GeckoLib model owns the visible tanks. These two invisible
-  // entities provide independent, shootable hitboxes only.
-  server.runCommandSilent(positioned + " as " + boss + " at @s rotated as @s run summon minecraft:slime ^-0.48 ^1.68 ^-0.46 " + leftTank)
-  server.runCommandSilent(positioned + " as " + boss + " at @s rotated as @s run summon minecraft:slime ^0.48 ^1.68 ^-0.46 " + rightTank)
-
-  let tankCount = server.runCommandSilent(positioned + " if entity @e[tag=" + PDZ_BOSS_AXEL_TANK_LEFT_TAG + ",distance=..24] if entity @e[tag=" + PDZ_BOSS_AXEL_TANK_RIGHT_TAG + ",distance=..24] run tag " + boss + " add dz_axel_tanks_verified")
-  pdzAxelLog('weakpoint_spawn verified=' + (tankCount > 0) + ' commandResult=' + tankCount)
-  if (tankCount <= 0) {
-    server.runCommandSilent(positioned + " run tag " + boss + " add dz_axel_left_tank_destroyed")
-    server.runCommandSilent(positioned + " run tag " + boss + " add dz_axel_right_tank_destroyed")
-    server.runCommandSilent(positioned + " run tag " + boss + " add dz_axel_tanks_destroyed")
-    server.runCommandSilent(positioned + " run effect clear " + boss + " minecraft:fire_resistance")
-    server.runCommandSilent(positioned + " run effect clear " + boss + " minecraft:resistance")
-    server.runCommandSilent(positioned + " run effect give " + boss + " minecraft:glowing 15 0 true")
-    server.runCommandSilent(positioned + ' run tellraw @a[distance=..96] {"text":"[FAIL-OPEN] 弱点生成に失敗したため、アクセルの防護を自動解除しました。戦闘は続行できます。","color":"yellow","bold":true}')
-  }
+  // Weak points are authored bones on the real model. Older revisions used
+  // invisible slimes as attached hitboxes; shaders and entity-outline mods
+  // could still render those cubes. Rear-hit routing now lives on Axel itself.
+  server.runCommandSilent(positioned + " run data modify entity " + boss + " ForgeData.dz_axel_tank_left_hp set value 28.0d")
+  server.runCommandSilent(positioned + " run data modify entity " + boss + " ForgeData.dz_axel_tank_right_hp set value 28.0d")
+  server.runCommandSilent(positioned + " run tag " + boss + " add dz_axel_tanks_verified")
+  pdzAxelLog('weakpoint_model_routing initialized=true')
 }
 
 function pdzAxelInitialize(candidate) {
@@ -95,30 +91,11 @@ function pdzAxelInitialize(candidate) {
 }
 
 function pdzAxelSpawnPhaseCylinders(boss) {
-  let cylinderBase = "Size:1,Invisible:1b,Glowing:1b,NoAI:1b,NoGravity:1b,Silent:1b,PersistenceRequired:1b,Health:22.0f,Attributes:[{Name:\"minecraft:generic.max_health\",Base:22.0d}],Team:\"pdz_axel\""
-  // A vanilla barrel is intentionally used for these temporary arena props.
-  // The old IE block display rendered as an untextured white box on several
-  // shader paths. The attached fuel tanks remain part of Axel's custom model.
-  let visualBase = "block_state:{Name:\"minecraft:barrel\"},Glowing:1b,brightness:{sky:15,block:10},view_range:1.0f,transformation:{translation:[-0.35f,-0.65f,-0.35f],scale:[0.7f,1.3f,0.7f]}"
-  let offsets = ["^-2.8 ^0.2 ^1.8", "^2.8 ^0.2 ^1.8", "^0 ^0.2 ^3.4"]
-  for (let i = 1; i <= 3; i++) {
-    let hitboxTags = pdzAxelRuntimeTags([PDZ_BOSS_AXEL_CYLINDER_TAG, "dz_axel_cylinder_" + i, "dz_pdz_boss_weakpoint"])
-    let visualTags = pdzAxelRuntimeTags([PDZ_BOSS_AXEL_CYLINDER_VISUAL_TAG, "dz_axel_cylinder_visual_" + i])
-    let name = "緊急燃料ボンベ " + ["A", "B", "C"][i - 1]
-    boss.runCommandSilent("execute at @s rotated as @s run summon minecraft:slime " + offsets[i - 1] + " {" + cylinderBase + ",CustomName:'{\"text\":\"" + name + "\",\"color\":\"gold\"}',CustomNameVisible:1b,Tags:" + pdzAxelTagsNbt(hitboxTags) + "}")
-    boss.runCommandSilent("execute at @s rotated as @s run summon minecraft:block_display " + offsets[i - 1] + " {" + visualBase + ",Tags:" + pdzAxelTagsNbt(visualTags) + "}")
-  }
-
-  let spawned = boss.runCommandSilent("execute if entity @e[tag=" + PDZ_BOSS_AXEL_CYLINDER_TAG + ",distance=..16,limit=1] run tag @s add dz_axel_cylinders_verified")
-  pdzAxelLog('phase2_cylinders verified=' + (spawned > 0) + ' commandResult=' + spawned + ' boss=' + String(boss.uuid))
-  if (spawned <= 0) {
-    boss.addTag("dz_axel_cylinders_failed_open")
-    boss.runCommandSilent("effect clear @s minecraft:resistance")
-    boss.runCommandSilent("effect give @s minecraft:weakness 12 0 true")
-    pdzAxelBroadcast(boss, "燃料ボンベ生成失敗を検知。防護支援を自動解除した。", "yellow")
-  } else {
-    pdzAxelBroadcast(boss, "緊急燃料ボンベ展開。破壊すれば爆圧でアクセルを崩せる！", "gold")
-  }
+  // Phase two is now carried by the visible ammunition bearer and Axel's own
+  // vents. Detached helper mobs made the fight look like a broken debug scene.
+  boss.addTag("dz_axel_cylinders_destroyed")
+  boss.addTag("dz_axel_cylinders_verified")
+  pdzAxelLog('phase2_helper_entities retired=true boss=' + String(boss.uuid))
 }
 
 function pdzAxelPhaseCylinderDestroyed(cylinder) {
@@ -202,6 +179,52 @@ function pdzAxelFuelTankDestroyed(tank) {
   }
 }
 
+function pdzAxelDestroyModelTank(boss, left) {
+  let destroyedTag = left ? "dz_axel_left_tank_destroyed" : "dz_axel_right_tank_destroyed"
+  let sideName = left ? "左" : "右"
+  if (boss.tags.contains(destroyedTag)) return
+  boss.addTag(destroyedTag)
+  boss.runCommandSilent("particle minecraft:explosion ~ ~1.6 ~ 0.2 0.2 0.2 0.02 8 force @a[distance=..96]")
+  boss.runCommandSilent("playsound minecraft:entity.generic.explode hostile @a[distance=..96] ~ ~ ~ 0.8 1.35")
+  boss.runCommandSilent('tellraw @a[distance=..96] {"text":"[WEAKPOINT] ' + sideName + '燃料タンク破壊。アクセルの機動力が低下した。","color":"yellow","bold":true}')
+  boss.runCommandSilent("effect clear @s minecraft:speed")
+  boss.runCommandSilent("effect give @s minecraft:slowness 9999 0 true")
+  if (boss.tags.contains("dz_axel_left_tank_destroyed") && boss.tags.contains("dz_axel_right_tank_destroyed")) {
+    boss.addTag("dz_axel_tanks_destroyed")
+    boss.runCommandSilent("effect clear @s minecraft:fire_resistance")
+    boss.runCommandSilent("effect clear @s minecraft:resistance")
+    boss.runCommandSilent("effect give @s minecraft:slowness 9999 1 true")
+    boss.runCommandSilent("effect give @s minecraft:glowing 15 0 true")
+    boss.runCommandSilent('tellraw @a[distance=..96] {"text":"[BREAK] 両燃料タンク破壊。耐火・防護・機動強化が停止した！","color":"aqua","bold":true}')
+  }
+}
+
+function pdzAxelRouteRearWeakpoint(event, boss) {
+  if (!boss || boss.tags.contains("dz_axel_tanks_destroyed")) return false
+  let attacker = event.source ? event.source.actual : null
+  if (!attacker || !attacker.isPlayer || !attacker.isPlayer()) return false
+  let dx = Number(attacker.x) - Number(boss.x), dz = Number(attacker.z) - Number(boss.z)
+  let length = Math.sqrt(dx * dx + dz * dz)
+  if (length < 0.01) return false
+  dx /= length; dz /= length
+  let yaw = Number(boss.yaw || 0) * Math.PI / 180
+  let forwardX = -Math.sin(yaw), forwardZ = Math.cos(yaw)
+  // A generous 105-degree rear cone keeps the weak point usable in multiplayer
+  // without pretending the whole side of the vehicle is a fuel tank.
+  if (forwardX * dx + forwardZ * dz > -0.25) return false
+  let left = (forwardX * dz - forwardZ * dx) >= 0
+  if (left && boss.tags.contains("dz_axel_left_tank_destroyed")) left = false
+  else if (!left && boss.tags.contains("dz_axel_right_tank_destroyed")) left = true
+  let key = left ? "dz_axel_tank_left_hp" : "dz_axel_tank_right_hp"
+  let hp = Number(boss.persistentData.getDouble(key))
+  if (hp <= 0) hp = 28
+  hp -= Math.min(12, Math.max(1, Number(event.damage || 0)))
+  boss.persistentData.putDouble(key, Math.max(0, hp))
+  boss.runCommandSilent("particle minecraft:electric_spark ~ ~1.65 ~ 0.35 0.25 0.35 0.04 7 force @a[distance=..64]")
+  if (hp <= 0) pdzAxelDestroyModelTank(boss, left)
+  return true
+}
+
 function pdzAxelForEachLoadedBoss(server, consumer) {
   let seen = {}
   server.players.forEach(player => {
@@ -238,9 +261,8 @@ function pdzAxelUpdateHud(server) {
       let right = nearest.tags.contains("dz_axel_right_tank_destroyed") ? 0 : 1
       objective = "弱点：背面燃料タンク ×" + (left + right)
       color = "yellow"
-    } else if (nearest.tags.contains("dz_axel_phase2") && !nearest.tags.contains("dz_axel_phase3") &&
-               !nearest.tags.contains("dz_axel_cylinders_destroyed")) {
-      objective = "支援兵／緊急燃料ボンベを破壊"
+    } else if (nearest.tags.contains("dz_axel_phase2") && !nearest.tags.contains("dz_axel_phase3")) {
+      objective = "弾薬手を排除／排熱中の本体を攻撃"
       color = "gold"
     } else if (nearest.tags.contains("dz_axel_phase3")) {
       objective = "最終攻勢：アクセルを制圧"
@@ -253,20 +275,50 @@ function pdzAxelUpdateHud(server) {
 function pdzAxelLaunchGrenades(server) {
   pdzAxelForEachLoadedBoss(server, boss => {
     let target = null, best = 40 * 40
+    // Keep the grenade lock and the visible aggro indicator on the same player.
+    // Only fall back to a nearby participant when Axel has no valid AI target.
+    try {
+      let current = boss.target
+      if (current && current.alive && String(current.level.dimension) === String(boss.level.dimension)) {
+        let isPlayer = !!(current.isPlayer && current.isPlayer())
+        let isDummy = String(current.type) === 'dummmmmmy:target_dummy' && current.tags &&
+          current.tags.contains('dz_boss_test_target')
+        let dx = current.x - boss.x, dy = current.y - boss.y, dz = current.z - boss.z
+        let distance = dx * dx + dy * dy + dz * dz
+        if (distance < best && ((isPlayer && !current.spectator && !current.creative) || isDummy)) {
+          best = distance
+          target = current
+        }
+      }
+    } catch (ignored) {}
+    let keepCurrentTarget = target !== null
     server.players.forEach(player => {
+      if (keepCurrentTarget) return
       if (player.spectator || player.creative || String(player.level.dimension) !== String(boss.level.dimension)) return
       let dx = player.x - boss.x, dy = player.y - boss.y, dz = player.z - boss.z
       let distance = dx * dx + dy * dy + dz * dz
       if (distance < best) { best = distance; target = player }
     })
+    try {
+      let nearby = boss.level.getEntities(boss, boss.boundingBox.inflate(40))
+      nearby.forEach(entity => {
+        if (keepCurrentTarget) return
+        if (String(entity.type) !== 'dummmmmmy:target_dummy' || !entity.tags ||
+            !entity.tags.contains('dz_boss_test_target') || !entity.alive) return
+        let dx = entity.x - boss.x, dy = entity.y - boss.y, dz = entity.z - boss.z
+        let distance = dx * dx + dy * dy + dz * dz
+        if (distance < best) { best = distance; target = entity }
+      })
+    } catch (ignored) {}
     if (!target) return
+    try { if (!keepCurrentTarget) boss.setTarget(target) } catch (ignored) {}
     let dimension = String(boss.level.dimension)
     let x = Number(target.x).toFixed(2), y = Number(target.y).toFixed(2), z = Number(target.z).toFixed(2)
     let positioned = 'execute in ' + dimension + ' positioned ' + x + ' ' + y + ' ' + z
     server.runCommandSilent(positioned + ' run particle minecraft:dust 1 0.25 0 1 ~ ~0.15 ~ 2.5 0.1 2.5 0 80 force @a[distance=..96]')
     server.runCommandSilent(positioned + ' run playsound minecraft:block.note_block.bell hostile @a[distance=..96] ~ ~ ~ 1.1 0.55')
     server.runCommandSilent(positioned + ' run tellraw @a[distance=..96] {"text":"[WARNING] 焼夷グレネード着弾まで1.5秒。赤い範囲から退避！","color":"red","bold":true}')
-    pdzAxelLog('grenade_warning boss=' + String(boss.uuid) + ' target=' + String(target.username) +
+    pdzAxelLog('grenade_warning boss=' + String(boss.uuid) + ' target=' + pdzAxelEntityName(target) +
       ' pos=' + x + ',' + y + ',' + z)
     let source = boss
     ;[10, 20].forEach(delay => server.scheduleInTicks(delay, () => {
@@ -283,8 +335,9 @@ function pdzAxelLaunchGrenades(server) {
       server.runCommandSilent(positioned + ' run particle minecraft:flame ~ ~0.2 ~ 1.8 0.25 1.8 0.03 60 force @a[distance=..96]')
       server.runCommandSilent(positioned + ' run playsound minecraft:entity.generic.explode hostile @a[distance=..96] ~ ~ ~ 1.1 1.15')
       let hitCount = server.runCommandSilent(positioned + ' run damage @a[distance=..3.5,gamemode=!creative,gamemode=!spectator] 4 minecraft:explosion')
+      let dummyHitCount = server.runCommandSilent(positioned + ' run damage @e[type=dummmmmmy:target_dummy,tag=dz_boss_test_target,distance=..3.5] 4 minecraft:explosion')
       let slowCount = server.runCommandSilent(positioned + ' run effect give @a[distance=..3.5,gamemode=!creative,gamemode=!spectator] minecraft:slowness 3 0 true')
-      pdzAxelLog('grenade_detonate boss=' + String(source.uuid) + ' hits=' + hitCount + ' slowed=' + slowCount +
+      pdzAxelLog('grenade_detonate boss=' + String(source.uuid) + ' hits=' + hitCount + ' dummyHits=' + dummyHitCount + ' slowed=' + slowCount +
         ' pos=' + x + ',' + y + ',' + z)
     })
   })
@@ -294,8 +347,6 @@ let pdzAxelTankTicks = 0
 ServerEvents.tick(event => {
   if (++pdzAxelTankTicks % 3 !== 0) return
   let server = event.server
-  server.runCommandSilent("execute as @e[tag=" + PDZ_BOSS_AXEL_TAG + "] at @s rotated as @s run tp @e[tag=" + PDZ_BOSS_AXEL_TANK_LEFT_TAG + ",distance=..8,sort=nearest,limit=1] ^-0.48 ^1.68 ^-0.46 ~ ~")
-  server.runCommandSilent("execute as @e[tag=" + PDZ_BOSS_AXEL_TAG + "] at @s rotated as @s run tp @e[tag=" + PDZ_BOSS_AXEL_TANK_RIGHT_TAG + ",distance=..8,sort=nearest,limit=1] ^0.48 ^1.68 ^-0.46 ~ ~")
 
   // Runtime objects are never allowed to remain as arena debris. An unloaded boss
   // does not match the local selector, so cleanup is limited to objects whose own
@@ -315,6 +366,7 @@ EntityEvents.hurt(event => {
   if (boss.tags.contains(PDZ_BOSS_AXEL_RESET_TAG)) return
 
   try { if (global.pdzBossEnsureDurability) global.pdzBossEnsureDurability(boss) } catch (ignored) {}
+  pdzAxelRouteRearWeakpoint(event, boss)
 
   let hp = Number(boss.health)
   let max = Math.max(1, Number(boss.maxHealth))
@@ -328,7 +380,7 @@ EntityEvents.hurt(event => {
     let bearerSpawned = boss.runCommandSilent('summon ' + PDZ_BOSS_AXEL_BEARER_ENTITY + ' ~3 ~ ~ {CustomName:\'{"text":"弾薬手ラチェット","color":"gold"}\',CustomNameVisible:1b,PersistenceRequired:1b,Tags:' + pdzAxelTagsNbt(bearerTags) + ',Team:"pdz_axel"}')
     if (!boss.tags.contains("dz_axel_tanks_destroyed")) boss.runCommandSilent("effect give @s minecraft:resistance 9999 1 true")
     pdzAxelSpawnPhaseCylinders(boss)
-    pdzAxelBroadcast(boss, "弾薬手ラチェットが防護支援を開始。支援役か燃料ボンベを崩せ！", "gold")
+    pdzAxelBroadcast(boss, "弾薬手ラチェットが防護支援を開始。支援役を崩し、排熱中の本体を狙え！", "gold")
     pdzAxelLog('phase2_enter boss=' + String(boss.uuid) + ' ratio=' + ratio.toFixed(3) +
       ' bearerSpawned=' + bearerSpawned)
   }
@@ -487,9 +539,17 @@ ServerEvents.commandRegistry(event => {
 
   root.then(Commands.literal("axel_break_tanks").executes(ctx => {
     let p = ctx.source.player
-    let count = p.runCommandSilent("execute as @e[tag=" + PDZ_BOSS_AXEL_TANK_TAG + ",distance=..48] run damage @s 100 minecraft:generic_kill")
-    p.tell(Text.of(count > 0 ? "燃料タンク破壊テストを実行しました。" : "48m以内に燃料タンクがありません。").yellow())
-    return count > 0 ? 1 : 0
+    let boss=null,best=48*48
+    p.level.entities.forEach(entity=>{
+      if(!entity.alive||!entity.tags||!entity.tags.contains(PDZ_BOSS_AXEL_TAG))return
+      let dx=entity.x-p.x,dy=entity.y-p.y,dz=entity.z-p.z,d=dx*dx+dy*dy+dz*dz
+      if(d<best){best=d;boss=entity}
+    })
+    if(!boss){p.tell(Text.of("48m以内にアクセルがいません。").yellow());return 0}
+    pdzAxelDestroyModelTank(boss,true)
+    pdzAxelDestroyModelTank(boss,false)
+    p.tell(Text.of("モデル内蔵の左右燃料タンクを破壊状態へ移しました。").yellow())
+    return 1
   }))
 
   root.then(Commands.literal("axel_phase2").executes(ctx => {
@@ -501,25 +561,23 @@ ServerEvents.commandRegistry(event => {
 
   root.then(Commands.literal("axel_break_cylinders").executes(ctx => {
     let p = ctx.source.player
-    let count = p.runCommandSilent("execute as @e[tag=" + PDZ_BOSS_AXEL_CYLINDER_TAG + ",distance=..64] run damage @s 100 minecraft:generic_kill")
-    p.tell(Text.of(count > 0 ? "召喚ボンベ破壊テストを実行しました。" : "64m以内に召喚ボンベがありません。").yellow())
-    return count > 0 ? 1 : 0
+    let count=p.runCommandSilent("tag @e[tag="+PDZ_BOSS_AXEL_TAG+",distance=..64,sort=nearest,limit=1] add dz_axel_cylinders_destroyed")
+    p.tell(Text.of(count>0?"旧召喚ボンベは廃止済みです。フェーズ2を本体排熱状態へ移しました。":"64m以内にアクセルがいません。").yellow())
+    return count>0?1:0
   }))
 
   root.then(Commands.literal("axel_status").executes(ctx => {
     let p = ctx.source.player
     p.runCommandSilent('execute if entity @e[tag=' + PDZ_BOSS_AXEL_TAG + ',distance=..128] run tellraw @s {"text":"アクセル: ACTIVE（128m以内）","color":"green"}')
     p.runCommandSilent('execute unless entity @e[tag=' + PDZ_BOSS_AXEL_TAG + ',distance=..128] run tellraw @s {"text":"アクセル: NOT FOUND","color":"yellow"}')
-    p.runCommandSilent('execute if entity @e[tag=' + PDZ_BOSS_AXEL_TANK_LEFT_TAG + ',distance=..128] run tellraw @s {"text":"左燃料タンク: 稼働中","color":"yellow"}')
+    p.runCommandSilent('execute if entity @e[tag=' + PDZ_BOSS_AXEL_TAG + ',tag=!dz_axel_left_tank_destroyed,distance=..128] run tellraw @s {"text":"左燃料タンク: 稼働中","color":"yellow"}')
     p.runCommandSilent('execute if entity @e[tag=' + PDZ_BOSS_AXEL_TAG + ',tag=dz_axel_left_tank_destroyed,distance=..128] run tellraw @s {"text":"左燃料タンク: 破壊済み","color":"aqua"}')
-    p.runCommandSilent('execute if entity @e[tag=' + PDZ_BOSS_AXEL_TANK_RIGHT_TAG + ',distance=..128] run tellraw @s {"text":"右燃料タンク: 稼働中","color":"yellow"}')
+    p.runCommandSilent('execute if entity @e[tag=' + PDZ_BOSS_AXEL_TAG + ',tag=!dz_axel_right_tank_destroyed,distance=..128] run tellraw @s {"text":"右燃料タンク: 稼働中","color":"yellow"}')
     p.runCommandSilent('execute if entity @e[tag=' + PDZ_BOSS_AXEL_TAG + ',tag=dz_axel_right_tank_destroyed,distance=..128] run tellraw @s {"text":"右燃料タンク: 破壊済み","color":"aqua"}')
     p.runCommandSilent('execute if entity @e[tag=' + PDZ_BOSS_AXEL_TAG + ',tag=dz_axel_phase2,distance=..128] run tellraw @s {"text":"フェーズ: 2以上","color":"gold"}')
     p.runCommandSilent('execute if entity @e[tag=' + PDZ_BOSS_AXEL_TAG + ',tag=dz_axel_phase3,distance=..128] run tellraw @s {"text":"フェーズ: 最終攻勢","color":"red"}')
     p.runCommandSilent('execute if entity @e[tag=' + PDZ_BOSS_AXEL_BEARER_TAG + ',distance=..128] run tellraw @s {"text":"弾薬手ラチェット: 生存","color":"gold"}')
-    p.runCommandSilent('execute if entity @e[tag=' + PDZ_BOSS_AXEL_CYLINDER_TAG + ',distance=..128] run tellraw @s {"text":"召喚ボンベ: 残存中","color":"gold"}')
-    p.runCommandSilent('execute if entity @e[tag=' + PDZ_BOSS_AXEL_TAG + ',tag=dz_axel_cylinders_destroyed,distance=..128] run tellraw @s {"text":"召喚ボンベ: 全破壊済み","color":"aqua"}')
-    p.runCommandSilent('execute if entity @e[tag=' + PDZ_BOSS_AXEL_TAG + ',tag=dz_axel_cylinders_failed_open,distance=..128] run tellraw @s {"text":"召喚ボンベ: 生成失敗・救済適用済み","color":"yellow"}')
+    p.runCommandSilent('execute if entity @e[tag=' + PDZ_BOSS_AXEL_TAG + ',tag=dz_axel_phase2,distance=..128] run tellraw @s {"text":"補助判定Mob: 廃止済み（本体排熱＋弾薬手へ統合）","color":"aqua"}')
     p.runCommandSilent('execute if entity @e[tag=' + PDZ_BOSS_AXEL_RUNTIME_TAG + ',distance=..128] run tellraw @s {"text":"一時オブジェクト: 残存あり","color":"gray"}')
     p.runCommandSilent('execute if entity @s[tag=' + PDZ_BOSS_AXEL_CLEAR_TAG + '] run tellraw @s {"text":"クリア記録: 取得済み","color":"aqua"}')
     p.runCommandSilent('execute unless entity @s[tag=' + PDZ_BOSS_AXEL_CLEAR_TAG + '] run tellraw @s {"text":"クリア記録: 未取得","color":"gray"}')

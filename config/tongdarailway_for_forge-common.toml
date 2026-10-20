@@ -1,7 +1,3 @@
-# PROJECT DEADZONE TongDa Railway generation tuning v0.2
-# Smaller planning regions reduce new-chunk spikes. A tighter elevation limit
-# keeps generated tracks and stations closer to usable terrain height.
-
 #Can the track spawner work
 enableTrackSpawner = true
 #Can the track spawner be generated
@@ -10,7 +6,8 @@ generateTrackSpawner = true
 placeTracksUsingTrackSpawner = true
 #Size of a railway planning region in chunks
 #Range: 16 ~ 512
-chunkGroupSize = 32
+chunkGroupSize = 128
 #Maximum height increment for railway elevation changes
 #Range: 10 ~ 500
-heightMaxIncrement = 24
+heightMaxIncrement = 100
+

@@ -1,30 +1,14 @@
-// PROJECT DEADZONE Growth MVP v0.1
-// Activity bridge: JOB aptitude and all combat/life/industry actions feed the
-// one visible M&S character level.  No second rank, profession or mastery
-// currency is created here.
-const DZG_JOB = {
-  survivor:       {primary:'dz_survival',   secondary:'dz_scavenging', seed:3},
-  weapons_expert: {primary:'dz_combat',     secondary:'dz_industry',   seed:3},
-  medic:          {primary:'dz_survival',   secondary:'dz_livelihood', seed:3},
-  mechanic:       {primary:'dz_mobility',   secondary:'dz_industry',   seed:3},
-  engineer:       {primary:'dz_industry',   secondary:'dz_mobility',   seed:3},
-  scout:          {primary:'dz_scavenging', secondary:'dz_survival',   seed:3},
-  security:       {primary:'dz_combat',     secondary:'dz_survival',   seed:3},
-  survivalist:    {primary:'dz_livelihood', secondary:'dz_survival',   seed:3}
-}
-
-function dzgJobId(player) {
-  let id = String(player.persistentData.getString('dz_job_id'))
-  return DZG_JOB[id] ? id : 'survivor'
-}
+// PROJECT DEADZONE Growth MVP v0.2
+// Neutral field activities feed the small PDZ Character Level. Loadout and
+// qualifications define roles; there is no JOB aptitude multiplier.
 
 function dzgXp(player, category, base) {
   let source=arguments.length>=4?String(arguments[3]):({
     dz_combat:'combat',dz_livelihood:'survival',dz_industry:'craft',
     dz_mobility:'vehicle',dz_scavenging:'scavenging',dz_survival:'survival'
   }[category]||'survival')
-  let awardMns=arguments.length>=5?arguments[4]:source!=='combat'&&source!=='firearms'&&source!=='melee'&&source!=='elite'
-  if(global.pdzUnifiedProgressionAward)return global.pdzUnifiedProgressionAward(player,source,base,awardMns)
+  if(global.pdzCharacterAwardXp)return global.pdzCharacterAwardXp(player,base,source,false)
+  if(global.pdzUnifiedProgressionAward)return global.pdzUnifiedProgressionAward(player,source,base,false)
   return 0
 }
 
@@ -89,13 +73,6 @@ function dzgDangerousWildlife(target) {
     || id.indexOf('croc')>=0 || id.indexOf('alligator')>=0 || id.indexOf('shark')>=0
     || id.indexOf('rhino')>=0 || id.indexOf('elephant')>=0 || id.indexOf('boar')>=0
     || id.indexOf('anaconda')>=0 || id.indexOf('komodo')>=0
-}
-
-function dzgSeed(player) {
-  if (player.persistentData.getBoolean('dz_growth_seed_v1')) return false
-  player.addTag('dz_growth_job_' + dzgJobId(player))
-  player.persistentData.putBoolean('dz_growth_seed_v1', true)
-  return true
 }
 
 PlayerEvents.tick(event => {
@@ -210,22 +187,23 @@ ServerEvents.commandRegistry(event => {
 
   root.then(Commands.literal('status').executes(ctx => {
     let p=ctx.source.player
-    p.tell(Text.of('JOB: ' + dzgJobId(p) + ' / 適性行動のM&S XP +25%').gold())
-    p.tell(Text.of('総合Lv=M&S / 役割=JOB / ビルド=Talent。独立熟練度は使用しません。').aqua())
+    p.tell(Text.of('役割: 携行装備 + 複数取得可能な資格').gold())
+    p.tell(Text.of('Character Levelは最大HPだけを補正し、銃火力や敵強度は変えません。').aqua())
+    if(global.pdzCharacterStatus)global.pdzCharacterStatus(p)
     return 1
   }))
 
   root.then(Commands.literal('job_seed').executes(ctx => {
     let p=ctx.source.player
-    if (dzgSeed(p)) p.tell(Text.of('JOB適性を同期しました。旧6カテゴリSPの新規配布は廃止済みです。').green())
-    else p.tell(Text.of('JOB適性は同期済みです。').yellow())
+    p.tell(Text.of('固定JOBとJOB適性は廃止されました。').yellow())
+    if(global.pdzCharacterStatus)global.pdzCharacterStatus(p)
     return 1
   }))
 
   root.then(Commands.literal('xp_test').requires(s => s.hasPermission(2)).executes(ctx => {
     let p=ctx.source.player
     dzgXp(p,'dz_survival',100,'survival',true)
-    p.tell(Text.of('M&S総合XPをテスト付与しました。').aqua())
+    p.tell(Text.of('Character XPをテスト付与しました。').aqua())
     return 1
   }))
 

@@ -1,0 +1,320 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: "hexagon"
+	filename: "deadzone_boss_roster_01"
+	group: ""
+	icon: "minecraft:nether_star"
+	id: "09BF10933D7144C8"
+	order_index: 0
+	quest_links: [ ]
+	quests: [
+		{
+			description: [
+				"Gas Stationを封鎖するロードキング先遣隊長。最初に戦闘ルールを学ぶためのBOSS。"
+				"背面燃料タンクを破壊して焼夷攻撃を弱体化し、赤い着弾予告から離れる。"
+			]
+			icon: "minecraft:fire_charge"
+			id: "395DAF6AB8D616FB"
+			tasks: [{
+				id: "55AD865387A8301C"
+				title: "AXELを撃破した"
+				type: "custom"
+			}]
+			title: "01 // AXEL — ROAD KING"
+			x: -8.0d
+			y: -4.0d
+		}
+		{
+			description: [
+				"Gun Shopを占拠する四足重火器。低い姿勢から飛びつき、過熱時には周囲を焼き払う。"
+				"側面の弾薬セルを狙い、突進予告を見たら正面から外れる。"
+			]
+			icon: {
+				Count: 1
+				id: "minecraft:crossbow"
+				tag: {
+					Damage: 0
+				}
+			}
+			id: "2EAC4E174DD1A6D3"
+			tasks: [{
+				id: "1A0122D86EAD296A"
+				title: "BRASS HOUNDを撃破した"
+				type: "custom"
+			}]
+			title: "02 // BRASS HOUND"
+			x: -6.0d
+			y: -2.5d
+		}
+		{
+			description: [
+				"警察署の武装指揮官。盾打撃、精密射撃、破片弾幕と増援命令を切り替える。"
+				"青い命令表示を見て拘束範囲を離れ、増援より本体の射線を優先して切る。"
+			]
+			icon: {
+				Count: 1
+				id: "minecraft:shield"
+				tag: {
+					Damage: 0
+				}
+			}
+			id: "5CC1A1D1E013A8BB"
+			tasks: [{
+				id: "050EDD214E3123EC"
+				title: "MARSHAL GRAVESを撃破した"
+				type: "custom"
+			}]
+			title: "03 // MARSHAL GRAVES"
+			x: -4.0d
+			y: -4.5d
+		}
+		{
+			description: [
+				"病院の戦場外科医。注射器斉射と毒性薬剤を使い、詠唱完了で自身を修復する。"
+				"治療詠唱中に集中攻撃して中断させる。毒床では回復競争をしない。"
+			]
+			icon: "minecraft:ghast_tear"
+			id: "635676DCC7F548FA"
+			tasks: [{
+				id: "1EACC19E4C3236E2"
+				title: "WHITE STITCHを撃破した"
+				type: "custom"
+			}]
+			title: "04 // WHITE STITCH"
+			x: -4.0d
+			y: -0.5d
+		}
+		{
+			description: [
+				"消防署を焼却拠点へ変えた制圧兵。火炎掃射、焼夷弾、燃焼区域で退路を潰す。"
+				"炎を受けながら撃ち合わず、掃射方向と着弾円を見て安全側へ回る。"
+			]
+			icon: "minecraft:blaze_powder"
+			id: "3EB07A073104484A"
+			tasks: [{
+				id: "0A2341391C0F083C"
+				title: "CINDERを撃破した"
+				type: "custom"
+			}]
+			title: "05 // CINDER"
+			x: -2.0d
+			y: -4.0d
+		}
+		{
+			description: [
+				"Radio Towerを守るレールガン操縦者。単発狙撃、横薙ぎ、複数地点標定を使う。"
+				"頭上の標定表示と地面の線を確認し、発射前に遮蔽物へ入る。"
+			]
+			icon: "minecraft:spyglass"
+			id: "4F9ECB6BAF23E6E2"
+			tasks: [{
+				id: "26CFB000EC68D996"
+				title: "ECHO-7を撃破した"
+				type: "custom"
+			}]
+			title: "06 // ECHO-7"
+			x: -2.0d
+			y: 2.5d
+		}
+		{
+			description: [
+				"地下から現れる原初変異体。体力低下ごとに形態を変え、岩盤隆起の規模が増す。"
+				"大振りの叩きつけ後だけ接近し、連続する岩の予告地点を横切らない。"
+			]
+			icon: "minecraft:fermented_spider_eye"
+			id: "25611C1792E1EEFF"
+			tasks: [{
+				id: "7232475F22929E47"
+				title: "PRIMORDIALを撃破した"
+				type: "custom"
+			}]
+			title: "07 // PRIMORDIAL"
+			x: 0.0d
+			y: 5.0d
+		}
+		{
+			description: [
+				"崩壊した炉心を聖骸として纏う巨体。電撃弧、放電環、臨界フィールドを展開する。"
+				"内外どちらが安全かを予告色で判断し、環をまたぐ移動を最小限にする。"
+			]
+			icon: "minecraft:heart_of_the_sea"
+			id: "5D8F9E46D47F70CB"
+			tasks: [{
+				id: "59BCFC3EDA5F15D1"
+				title: "REACTOR SAINTを撃破した"
+				type: "custom"
+			}]
+			title: "08 // REACTOR SAINT"
+			x: 3.0d
+			y: 4.0d
+		}
+		{
+			description: [
+				"破損した戦術知性体。精密射撃とレール着弾を使い、受けた攻撃へ障壁を適応させる。"
+				"同じ攻撃属性だけを連打せず、障壁表示に合わせて手段を切り替える。"
+			]
+			icon: "minecraft:end_crystal"
+			id: "140D466D25E10D5D"
+			tasks: [{
+				id: "52B371AB65B43219"
+				title: "ARGUS FRAGMENTを撃破した"
+				type: "custom"
+			}]
+			title: "09 // ARGUS FRAGMENT"
+			x: 5.0d
+			y: 2.0d
+		}
+		{
+			description: [
+				"共鳴器官と装甲塊が融合した大型個体。音波、ミサイル、岩槍、隕石を段階解禁する。"
+				"全身に当たり判定がある。声と地面予告で次の攻撃を読み、巨体の下へ留まらない。"
+			]
+			icon: "minecraft:echo_shard"
+			id: "5FA0CCC421077431"
+			tasks: [{
+				id: "592CCA3221552A3F"
+				title: "CHOIR VESSELを撃破した"
+				type: "custom"
+			}]
+			title: "10 // CHOIR VESSEL"
+			x: 6.0d
+			y: -1.0d
+		}
+		{
+			description: [
+				"FIRST VOICEの信号中継者。信号ノードを維持しながら軌道攻撃とレール格子を誘導する。"
+				"本体を削る前に周囲のノードを止め、座標固定メッセージが出た地点から離れる。"
+			]
+			icon: "minecraft:recovery_compass"
+			id: "5B80C5B951FE27CB"
+			tasks: [{
+				id: "445CF93225B92198"
+				title: "RELAY SHEPHERDを撃破した"
+				type: "custom"
+			}]
+			title: "11 // RELAY SHEPHERD"
+			x: 4.0d
+			y: -4.0d
+		}
+		{
+			description: [
+				"旧軍の突破用重装甲。移動は遅いが、砲撃、ミサイル、広域爆撃で遮蔽物ごと制圧する。"
+				"正面装甲と撃ち合わず、砲口の向きと着弾予告を確認して側背面へ移る。"
+			]
+			icon: "minecraft:iron_block"
+			id: "3DBFA0CEB3D6F4F1"
+			tasks: [{
+				id: "4FC49B0AE2FE1FEB"
+				title: "SIEGE TANKを撃破した"
+				type: "custom"
+			}]
+			title: "SIDE // SIEGE TANK"
+			x: -8.0d
+			y: 2.0d
+		}
+		{
+			description: [
+				"長期汚染で肥大した古代変異体。胞子吐息、毒性床、降下物と再生胞子を使う。"
+				"再生胞子を炎で焼却してから本体を攻め、毒霧が重なる場所を捨てる。"
+			]
+			icon: "minecraft:spore_blossom"
+			id: "2A0205BFFB81BBF6"
+			tasks: [{
+				id: "77DFA0DC643A3A7B"
+				title: "ANCIENT ABOMINATIONを撃破した"
+				type: "custom"
+			}]
+			title: "SIDE // ANCIENT ABOMINATION"
+			x: -6.0d
+			y: 5.0d
+		}
+		{
+			description: [
+				"Cataclysm由来の完成済み大型戦闘兵器。レーザー、ミサイル、EMPを持つ長期戦向け脅威。"
+				"PDZは遭遇条件と耐久だけを担当し、攻撃と演出は原MODの完成された挙動を使う。"
+			]
+			icon: "minecraft:nether_star"
+			id: "36FE796B5FF37094"
+			tasks: [{
+				id: "71ED00EB7A46946D"
+				title: "HARBINGERを撃破した"
+				type: "custom"
+			}]
+			title: "ADOPTED // HARBINGER"
+			x: 1.0d
+			y: -5.5d
+		}
+		{
+			description: [
+				"Mowzie's Mobs由来の重斧騎士。正面装甲を無理に削らず、攻撃後に露出する背面を狙う。"
+				"原MODの振り、重量、弱点表現をそのまま採用した近接戦の基準個体。"
+			]
+			icon: {
+				Count: 1
+				id: "minecraft:netherite_axe"
+				tag: {
+					Damage: 0
+				}
+			}
+			id: "35F1F9CD357092C2"
+			tasks: [{
+				id: "0AA3E114AB83D95B"
+				title: "WARDEN-0を撃破した"
+				type: "custom"
+			}]
+			title: "ADOPTED // WARDEN-0"
+			x: 8.0d
+			y: 2.0d
+		}
+		{
+			description: [
+				"Aquamirae由来の亡霊船長。凍結海域と召喚を組み合わせる海上遭遇の完成形。"
+				"足場を先に確保し、凍結・召喚・本体攻撃が重なる前に役割分担する。"
+			]
+			icon: "minecraft:nautilus_shell"
+			id: "2EBA7837538110DB"
+			tasks: [{
+				id: "586171CEDEE16293"
+				title: "CAPTAIN CORNELIAを撃破した"
+				type: "custom"
+			}]
+			title: "ADOPTED // CAPTAIN CORNELIA"
+			x: 7.0d
+			y: -4.0d
+		}
+		{
+			description: [
+				"Mowzie's Mobs由来の氷雪巨獣。緩慢な巨体から広範囲の氷結吐息と踏み潰しを行う。"
+				"眠りからの移行を見逃さず、正面吐息を誘導して側面へ抜ける。"
+			]
+			icon: "minecraft:blue_ice"
+			id: "32A3F6D4C9B18D3B"
+			tasks: [{
+				id: "6F78A804E73457D0"
+				title: "FROSTMAWを撃破した"
+				type: "custom"
+			}]
+			title: "ADOPTED // FROSTMAW"
+			x: 8.0d
+			y: 5.0d
+		}
+		{
+			description: [
+				"すべての異常信号は一つの発信源へ収束している。"
+				"正体、戦場、攻略手段はストーリー進行で開示される。これがPROJECT DEADZONEの最終目標。"
+			]
+			icon: "minecraft:barrier"
+			id: "71CDC6EA252F0604"
+			size: 3.0d
+			tasks: [{
+				id: "437AD79E6ADA953E"
+				title: "発信源を特定し、最終脅威を排除する"
+				type: "custom"
+			}]
+			title: "??? // FINAL SIGNAL"
+			x: 0.0d
+			y: 0.0d
+		}
+	]
+	title: "BOSS目標：封鎖区域脅威一覧"
+}

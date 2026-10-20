@@ -7,9 +7,9 @@ ItemEvents.tooltip(event => {
   ])
   event.add('kubejs:field_medical_kit', [
     Text.green('右クリック: LSO包帯を1個取り出す'),
-    Text.aqua('Medicは他プレイヤーの最悪部位を安定化できます'),
+    Text.aqua('野戦医療資格者は他プレイヤーへ処置できます'),
     Text.gray('感染症がある場合は同時治療し、5分間の免疫を付与'),
-    Text.darkGray('/deadzonehealth で実部位HPを診断')
+    Text.darkGray('LSO身体画面と /deadzoneinfection status で状態を確認')
   ])
   event.add('apocalypsenow:bandage', [
     Text.gray('Apocalypse Nowの通常医療品・Camp医療供給品'),
@@ -29,7 +29,7 @@ ItemEvents.tooltip(event => {
   ])
   event.add('apocalypsenow:medicalkit', [
     Text.gray('Camp重傷処置に必要な総合医療物資'),
-    Text.aqua('LSO Medkitと組み合わせて /deadzonehealth treat_trauma')
+    Text.aqua('LSO Medkitと組み合わせて重傷部位を治療')
   ])
 event.add('apocalypsenow:antibiotics', [
     Text.green('全感染系統の軽症～重症を完全治療'),

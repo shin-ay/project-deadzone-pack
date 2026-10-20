@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "pack-format": 1,
+  "desc": "PROJECT DEADZONE fixed-world authoring components. Authoring use only.",
+  "authors": [
+    "PROJECT DEADZONE"
+  ],
+  "mods": [
+    "structurize",
+    "minecolonies"
+  ],
+  "name": "PDZ Fixed World"
+}

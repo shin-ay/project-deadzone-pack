@@ -8,7 +8,7 @@ const DZ_SV_STAFF_STATE = "dz_starter_village_staff_version"
 const DZ_SV_STAFF = [
   {
     building:"hq", role:"guide", preset:"deadzone_minato_job.npc.nbt",
-    serviceTag:"dz_basecamp_job_guide", name:"ミナト｜初期村案内官"
+    serviceTag:"dz_basecamp_training_officer", name:"ミナト｜遠征訓練・資格案内官"
   },
   {
     building:"clinic", role:"medical", preset:"deadzone_shiori_medical.npc.nbt",
@@ -102,9 +102,9 @@ function dzSvStaffConfigureService(server, spec) {
   if (spec.role === "guide") {
     server.runCommandSilent("data modify entity " + selector + " DialogData.Type set value \"CUSTOM\"")
     server.runCommandSilent("data modify entity " + selector + " DialogData.DialogDataSet[0].Buttons set value " +
-      '[{Actions:[{Cmd:"/deadzonecareer status",ExecAsUser:1b,PermLevel:0,Type:"COMMAND"}],Label:"career_status",Name:"クラスと進捗を確認する"},' +
-      '{Actions:[{Cmd:"/deadzonecareer paths",ExecAsUser:1b,PermLevel:0,Type:"COMMAND"}],Label:"career_paths",Name:"選択できるJOBを確認する"},' +
-      '{Actions:[{Cmd:"/ftbquests open_book",ExecAsUser:1b,PermLevel:0,Type:"COMMAND"}],Label:"career_quests",Name:"クエストブックを開く"}]')
+      '[{Actions:[{Cmd:"/deadzoneloadout menu",ExecAsUser:1b,PermLevel:0,Type:"COMMAND"}],Label:"starter_loadout",Name:"最初の遠征装備を確認する"},' +
+      '{Actions:[{Cmd:"/deadzonequalification status",ExecAsUser:1b,PermLevel:0,Type:"COMMAND"}],Label:"qualification_status",Name:"専門資格を確認する"},' +
+      '{Actions:[{Cmd:"/ftbquests open_book",ExecAsUser:1b,PermLevel:0,Type:"COMMAND"}],Label:"training_quests",Name:"訓練・物語クエストを開く"}]')
   }
   if (spec.role === "workshop") {
     server.runCommandSilent("data modify entity " + selector + " DialogData.Type set value \"CUSTOM\"")

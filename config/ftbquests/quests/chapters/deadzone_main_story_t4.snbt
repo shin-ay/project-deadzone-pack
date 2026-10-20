@@ -81,7 +81,10 @@
 			y: 1.0d
 		}
 		{
-			dependencies: ["6CB060E779D800E8", "3EFF60D0217A368B"]
+			dependencies: [
+				"6CB060E779D800E8"
+				"3EFF60D0217A368B"
+			]
 			description: [
 				"通常のData ChipではFirst Voiceの暗号層へ届かない。Cemented Carbideを使ったEpic Blueprint Data Chipを製作する。"
 				"この工程がT4以降のSuperb Warfare研究、重火器、車両設備の共通入口になる。"
@@ -99,7 +102,11 @@
 			y: 0.0d
 		}
 		{
-			dependencies: ["6CB060E779D800E8", "3EFF60D0217A368B", "1B7C4EB85094A35A"]
+			dependencies: [
+				"6CB060E779D800E8"
+				"3EFF60D0217A368B"
+				"1B7C4EB85094A35A"
+			]
 			description: [
 				"解析結果は、封鎖区域外に複数のCHOIR中継点が存在することを示した。"
 				"ストーリー解禁S4では精鋭分隊、強化Horde、軍用研究、外縁中継点攻略が解放される。単純な全MobのHP増加ではなく、編成と装備を変化させる。"
@@ -148,7 +155,13 @@
 				"中継点の精鋭分隊は役割を持つ。第1地点ではOfficerが周囲の兵を強化するため、指揮個体を先に落とすと突破しやすい。"
 				"全員を排除したらEpic Blueprint Data Chipを所持して中枢から10m以内に留まり、5秒間の解析を完了する。Chipは消費しない。"
 			]
-			icon: "minecraft:crossbow"
+			icon: {
+				Count: 1
+				id: "minecraft:crossbow"
+				tag: {
+					Damage: 0
+				}
+			}
 			id: "55E5369F5F0A4A0B"
 			subtitle: "解放条件: 「外縁周波数を三角測量」を完了"
 			tasks: [{
@@ -203,7 +216,7 @@
 				"次の作戦ではARGUS-9の判断結果に応じて支援、敵編成、報酬経路が変化する。ストーリー進行だけで一般MobのHPを一律に増やすことはしない。"
 			]
 			icon: "minecraft:spyglass"
-			id: "8E64D6D02C8C4481"
+			id: "297580566612B3C8"
 			shape: "hexagon"
 			size: 1.5d
 			subtitle: "解放条件: 外縁中継点を3地点確保"
@@ -217,7 +230,6 @@
 			y: 0.0d
 		}
 		{
-			dependencies: ["8E64D6D02C8C4481"]
 			description: [
 				"第3外縁中継点から128m以上離れ、部隊を再編してから戻る。96m以内へ再接近するとRELAY SHEPHERDが自動出現する。コマンド操作は不要。"
 				"敵は確保済み中継点を帰還経路として逆探知している。すぐ連戦にはならないため、弾薬・回復・防護装備を整えてから帰還すること。"
@@ -226,7 +238,7 @@
 			id: "067B7C4A04274550"
 			subtitle: "解放条件: 「First Voice追跡座標」を完了／第3中継点から一度離れて再接近"
 			tasks: [{
-				id: "DA60B5E30B7C49EF"
+				id: "05D169497051725F"
 				title: "RELAY SHEPHERDとの交戦が始まった"
 				type: "custom"
 			}]
@@ -242,12 +254,12 @@
 				"Bossは作戦地点から離れ過ぎると帰還し、プレイヤーと村人以外を追跡しない。死亡後のリスポーン地点まで追い回されることもない。"
 			]
 			icon: "minecraft:target"
-			id: "F8FA04084F1B4335"
+			id: "7144BD3B97F55993"
 			shape: "hexagon"
 			size: 1.5d
 			subtitle: "解放条件: 「帰還信号：狩る側へ」を完了／Signal Nodeを停止して本体を撃破"
 			tasks: [{
-				id: "FC45A3D623A04C09"
+				id: "476728B5BF22FD55"
 				title: "FIRST VOICE // RELAY SHEPHERDを撃破した"
 				type: "custom"
 			}]

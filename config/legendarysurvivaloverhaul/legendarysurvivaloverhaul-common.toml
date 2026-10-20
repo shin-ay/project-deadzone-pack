@@ -667,9 +667,6 @@
 			"Both Arms Part Effect Thresholds" = [0.65]
 
 		[body-damage.body-parts-effects.chest]
-			# PDZ replaces Vulnerability with an Epic Fight stamina-regeneration
-			# penalty. Extra incoming damage made burst deaths worse and duplicated
-			# Mine and Slash's authoritative defensive scaling.
 			"Chest Part Effects" = []
 			"Chest Part Effect Amplifier" = []
 			"Chest Part Effect Thresholds" = []

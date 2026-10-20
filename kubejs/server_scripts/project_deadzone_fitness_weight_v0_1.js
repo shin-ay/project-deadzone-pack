@@ -1,5 +1,6 @@
 // PROJECT DEADZONE Fitness / Weight System integration v0.1
-// Weight is a specialization advantage, not a punishment for ordinary looting.
+// Provisional baseline. Vehicle storage and field logistics must be connected
+// before stricter capacity balance is introduced.
 
 // The custom Weight mod is optional in multiplayer builds. Never resolve its
 // Java class unless Forge reports the mod as loaded, otherwise /reload fails.
@@ -8,12 +9,6 @@ const DZ_WEIGHT_ATTRIBUTES = DZ_WEIGHT_MOD_LOADED
   ? Java.loadClass("weight.WeightAttributes") : null
 
 const DZ_FITNESS_CARRY_CAPACITY = [100, 125, 160, 210]
-const DZ_JOB_WEIGHT_BONUS = {
-  scout: 20,
-  mechanic: 40,
-  engineer: 60
-}
-
 function dzFitnessCarryTier(player) {
   for (let tier = 3; tier >= 1; tier--) {
     if (player.tags.contains("dz_fitness_carry_" + tier)) return tier
@@ -23,19 +18,7 @@ function dzFitnessCarryTier(player) {
 
 function dzFitnessWeightCapacity(player) {
   let base = DZ_FITNESS_CARRY_CAPACITY[dzFitnessCarryTier(player)]
-  let jobId = player.persistentData.getString("dz_job_id")
-  let jobBonus = DZ_JOB_WEIGHT_BONUS[jobId] || 0
-  let careerBonus = Math.max(0, player.persistentData.getInt("dz_growth_carry_bonus"))
-  let talentBonus = Math.max(0, player.persistentData.getDouble("dz_talent_effect_carry"))
-  return base + jobBonus + careerBonus + talentBonus
-}
-
-function dzFitnessWeightJob(player) {
-  let jobId = player.persistentData.getString("dz_job_id")
-  return {
-    id: jobId || "none",
-    bonus: DZ_JOB_WEIGHT_BONUS[jobId] || 0
-  }
+  return base
 }
 
 function dzSyncFitnessWeight(player, force) {
@@ -87,13 +70,10 @@ ServerEvents.commandRegistry(event => {
     let player = ctx.source.player
     let tier = dzFitnessCarryTier(player)
     let capacity = dzFitnessWeightCapacity(player)
-    let job = dzFitnessWeightJob(player)
     player.tell(Text.of(
       "Fitness Carry " + tier
-      + " / Job " + job.id + " (+" + job.bonus + ")"
-      + " / Career +" + player.persistentData.getInt("dz_growth_carry_bonus")
-      + " / Talent +" + player.persistentData.getDouble("dz_talent_effect_carry").toFixed(1)
       + " / Max Weight " + capacity
+      + " / JOB・Lv補正なし（車両物流接続前の暫定値）"
     ).aqua())
     return 1
   }))

@@ -1,0 +1,13 @@
+name = "Aggro Indicator"
+filename = "aggroindicator-1.1.5+forge1.20.1.jar"
+side = "client"
+
+[download]
+hash-format = "sha1"
+hash = "1e8ff2f1d01657c16d12ae95e0729505a94271c0"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 7628634
+project-id = 882713

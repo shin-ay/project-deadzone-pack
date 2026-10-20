@@ -1,0 +1,13 @@
+name = "Modular Hub Style Pack"
+filename = "ModularHubStylePack-1-20-1-v1.1.jar"
+side = "client"
+
+[download]
+hash-format = "sha1"
+hash = "7e56002d6190445524f95398ae02565a88ba3c36"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 7756702
+project-id = 1469650

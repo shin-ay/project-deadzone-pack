@@ -1,0 +1,13 @@
+name = "Mine and Slash"
+filename = "Mine_and_Slash-1.20.1-6.4.2.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "dfda1b1a551fbf9402aca76bb7ddceeafa577645"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 8571793
+project-id = 306575

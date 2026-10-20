@@ -174,7 +174,7 @@ function pdzPomkotsReturnHome(unit, reason) {
   unit.persistentData.putInt('dz_pomkots_los_lost_ticks', 0)
   unit.persistentData.putInt('dz_pomkots_target_lost_ticks', 0)
   unit.persistentData.putBoolean('dz_pomkots_had_target', false)
-  unit.persistentData.putDouble('dz_pomkots_retarget_at', Number(unit.level.gameTime) + PDZ_POMKOTS_RETARGET_COOLDOWN)
+  unit.persistentData.putDouble('dz_pomkots_retarget_at', Number(unit.level.getGameTime()) + PDZ_POMKOTS_RETARGET_COOLDOWN)
   unit.persistentData.putString('dz_pomkots_last_return_reason', reason)
   return true
 }
@@ -195,7 +195,7 @@ function pdzPomkotsControlUnit(unit) {
     return
   }
 
-  if (data.getDouble('dz_pomkots_retarget_at') > Number(unit.level.gameTime)) {
+  if (data.getDouble('dz_pomkots_retarget_at') > Number(unit.level.getGameTime())) {
     pdzPomkotsClearAggro(unit)
     return
   }

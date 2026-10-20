@@ -1,0 +1,13 @@
+name = "Pomkots Mechs"
+filename = "pomkotsmechs-forge-0.0.1-alpha.8.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "1108dd2d12521a2e1aa9d8468394427f8c216cc8"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 8464539
+project-id = 1197961

@@ -1,0 +1,13 @@
+name = "TACtical Movement (Timeless and Classics and Vic's Point Blank addon)"
+filename = "tacmove-1.4.1-forge-1.20.1.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "61ef89a34e70d11bd92cd52d0f236d65990054d0"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 5571075
+project-id = 1048815

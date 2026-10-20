@@ -50,7 +50,7 @@ function dzRadioSync(player) {
 
   // End-to-end T0-T2 loops complete only after returning to the radio desk.
   // These cards summarize existing systems; no new rank or currency is added.
-  if (player.persistentData.getBoolean("dz_job_chosen") &&
+  if (player.persistentData.getBoolean("pdz_registration_complete") &&
       player.persistentData.getBoolean("dz_story_preparation_latched") &&
       server.persistentData.getBoolean("dz_story_gasstation_secured"))
     dzRadioComplete(player, DZ_RADIO_QUESTS.loop0)
@@ -129,7 +129,7 @@ ServerEvents.commandRegistry(event => {
   event.register(Commands.literal("deadzoneradio").executes(ctx => {
     let player = ctx.source.player
     dzRadioSync(player)
-    if (player.persistentData.getBoolean("dz_job_chosen")) {
+    if (player.persistentData.getBoolean("pdz_registration_complete")) {
       player.server.runCommandSilent("ftbquests change_progress " + player.username + " complete 23E782D769F4E809")
       player.persistentData.putBoolean("dz_story_auto_briefing", true)
     }
@@ -155,7 +155,10 @@ ServerEvents.commandRegistry(event => {
   }))
 
   event.register(Commands.literal("deadzonecareerui").executes(ctx => {
-    dzOpenQuestGui(ctx.source.player, "387BAACC78EDD7B2")
+    let player = ctx.source.player
+    player.tell(Text.of("固定JOBは廃止されました。現在は装備構成と取得資格で役割が決まります。").yellow())
+    if (global.pdzQualificationStatus) global.pdzQualificationStatus(player)
+    player.runCommandSilent("deadzoneloadout status")
     return 1
   }))
 
@@ -166,7 +169,7 @@ ServerEvents.commandRegistry(event => {
 
   event.register(Commands.literal("deadzonestoryui").executes(ctx => {
     let player = ctx.source.player
-    if (player.persistentData.getBoolean("dz_job_chosen")) {
+    if (player.persistentData.getBoolean("pdz_registration_complete")) {
       player.server.runCommandSilent("ftbquests change_progress " + player.username + " complete 23E782D769F4E809")
       // Keep the bridge flag synchronized with the quest progress written by
       // this legacy GUI route so existing testers are repaired automatically.

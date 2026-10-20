@@ -1,6 +1,6 @@
 name = "Immersive Aircraft: Camera Zoom"
 filename = "[Forge - 1.20.1] Camera Zoom - 2.0.1.jar"
-side = "both"
+side = "client"
 
 [download]
 hash-format = "sha1"

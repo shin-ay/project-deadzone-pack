@@ -1,18 +1,15 @@
 // PROJECT DEADZONE repair system v0.2
-// Only Damage is mutated. M&S gear, mastery, TaCZ attachment/magazine and custom
-// equipment NBT remain on the original ItemStack.
+// Only Damage is mutated. TaCZ attachment/magazine and custom equipment NBT
+// remain on the original ItemStack.
 
 const DZ_REPAIR_STEEL="immersiveengineering:component_steel"
 
-function dzRepairJob(player) {
-  return String(player.persistentData.getString("dz_job_id") || "")
+function dzRepairQualified(player) {
+  return Boolean(global.pdzHasQualification && global.pdzHasQualification(player,"maintenance"))
 }
 
 function dzRepairFieldRatio(player) {
-  let job=dzRepairJob(player)
-  if (job==="mechanic") return 0.40
-  if (job==="engineer") return 0.32
-  return 0.25
+  return dzRepairQualified(player) ? 0.40 : 0.25
 }
 
 function dzRepairTargetValid(stack) {
@@ -28,15 +25,12 @@ function dzRepairCosts(player,stack) {
   let ratio=Number(stack.damageValue)/Math.max(1,Number(stack.maxDamage))
   let money=Math.max(1,Math.ceil(ratio*8))
   let steel=Math.max(1,Math.ceil(ratio*2))
-  let job=dzRepairJob(player)
-  if (job==="mechanic") {
-    money=Math.max(1,Math.ceil(money*0.65))
-    steel=Math.max(1,Math.ceil(steel*0.75))
-  } else if (job==="engineer") {
-    money=Math.max(1,Math.ceil(money*0.80))
+  let qualified=dzRepairQualified(player)
+  if (qualified) {
+    money=Math.max(1,Math.ceil(money*0.75))
     steel=Math.max(1,Math.ceil(steel*0.75))
   }
-  return {money:money,steel:steel,ratio:ratio,job:job}
+  return {money:money,steel:steel,ratio:ratio,qualified:qualified}
 }
 
 function dzRepairCount(player,item) {
@@ -44,10 +38,8 @@ function dzRepairCount(player,item) {
 }
 
 function dzRepairDescribeBonus(player) {
-  let job=dzRepairJob(player)
-  if (job==="mechanic") return "Mechanic割引: 通貨-35% / 素材-25%"
-  if (job==="engineer") return "Engineer割引: 通貨-20% / 素材-25%"
-  return "JOB割引なし"
+  if (dzRepairQualified(player)) return "整備資格: 通貨-25% / 素材-25% / 野戦修理40%"
+  return "未資格: 野戦修理25% / 完全修理は利用不可"
 }
 
 function dzRepairTellQuote(player,stack) {
@@ -79,7 +71,7 @@ ItemEvents.rightClicked("kubejs:field_repair_kit", event => {
   event.item.shrink(1)
   player.getInventory().setChanged()
   player.tell(Text.of("野戦修理完了: 耐久 +"+repaired+" ("+Math.round(ratio*100)+"%)").green())
-  player.tell(Text.of("M&S装備・熟練度・内部データを維持しました。").gray())
+  player.tell(Text.of("装備の付属データを維持しました。").gray())
   player.runCommandSilent("playsound minecraft:block.anvil.use player @s ~ ~ ~ 0.45 1.25")
 })
 
@@ -111,6 +103,10 @@ ServerEvents.commandRegistry(event => {
 
   root.then(Commands.literal("full").executes(ctx => {
     let p=ctx.source.player, stack=p.mainHandItem
+    if (!dzRepairQualified(p)) {
+      p.tell(Text.of("完全修理には整備資格が必要です。").red())
+      return 0
+    }
     if (!dzRepairTargetValid(stack)) {
       p.tell(Text.of("損傷した装備をメインハンドに持ってください。").yellow())
       return 0
@@ -129,7 +125,7 @@ ServerEvents.commandRegistry(event => {
     stack.damageValue=0
     p.getInventory().setChanged()
     p.tell(Text.of("工業整備完了: 耐久 +"+repaired).green())
-    p.tell(Text.of("M&S装備・熟練度・内部データを維持しました。").aqua())
+    p.tell(Text.of("装備の付属データを維持しました。").aqua())
     p.runCommandSilent("playsound minecraft:block.anvil.use player @s ~ ~ ~ 0.7 0.9")
     return 1
   }))

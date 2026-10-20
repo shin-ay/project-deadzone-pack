@@ -16,6 +16,9 @@ config/classmod/auth_*
 # Generated caches and backups
 .pdz_stage_backups/
 config/QuantifiedAPI/cache/
+beautiful_statistics_screen/
+easy_npc/
+recruits/
 **/cache/
 **/backup/
 **/backups/
@@ -38,3 +41,4 @@ kubejs/server_scripts/project_deadzone_faction_territory_v0_1.js
 
 # Repository documentation is not installed into the game instance
 README.md
+projectfiles/

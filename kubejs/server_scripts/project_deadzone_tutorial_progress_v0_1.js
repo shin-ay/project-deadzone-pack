@@ -31,7 +31,7 @@ function dzTutorialBuddyPrompt(player) {
   player.tell(
     Text.of("[ BUDDY同行システムを確認 ]").aqua()
       .clickRunCommand("/deadzonebuddyui")
-      .hover(Text.of("雇用、役割、命令、Medic救助を確認します"))
+      .hover(Text.of("雇用、役割、命令、医療資格による救助を確認します"))
   )
 }
 
@@ -42,7 +42,9 @@ PlayerEvents.loggedIn(event => {
 PlayerEvents.tick(event => {
   let player = event.player
   if (player.level.clientSide || player.age % 20 !== 0) return
-  if (player.persistentData.getBoolean("dz_job_chosen")) dzTutorialComplete(player, "job")
+  // The existing quest task id is retained, but completion now means that the
+  // player registered and selected a first-expedition loadout.
+  if (player.persistentData.getBoolean("pdz_registration_complete")) dzTutorialComplete(player, "job")
   if (player.server.runCommandSilent("execute as " + player.username +
       " at @s if entity @e[tag=dz_basecamp_core_anchor,distance=..96,limit=1]") > 0) {
     dzTutorialComplete(player, "camp")

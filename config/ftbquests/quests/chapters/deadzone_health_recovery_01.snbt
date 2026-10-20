@@ -11,8 +11,8 @@
 		{
 			dependencies: ["1B82208C73A56C92"]
 			description: [
-				"死亡と戦闘継続の正本はM&Sが表示する現在HP／最大HP。LSOの8部位HPは、戦闘HPが戻っても残る負傷と機能障害の正本。感染はThe Hordesを含む既存Effectが担当する。"
-				"M&Sの自動回復は戦闘HPだけを戻す。部位は満タンHPだけでは自然治癒せず、LSO包帯・Medkit、シオリの処置、睡眠、Regeneration/Comfort効果が必要。"
+				"死亡と戦闘継続の正本はMinecraft／Forgeの現在HP・最大HP。LSOの8部位HPは、戦闘HPが戻っても残る負傷と機能障害の正本。感染はThe Hordesを含む既存Effectが担当する。"
+				"Character Levelの補正は最大HPだけを増やす。部位は満タンHPだけでは自然治癒せず、LSO包帯・Medkit、シオリの処置、睡眠、Regeneration/Comfort効果が必要。"
 				"インベントリのLSO人体図で負傷箇所を確認する。70%以上は安定、40～69%は軽傷、40%未満は重傷として治療方針を分ける。"
 			]
 			icon: "minecraft:compass"
@@ -28,7 +28,7 @@
 				title: "実部位HPを診断した"
 				type: "custom"
 			}]
-			title: "M&S HPと部位負傷は役割が違う"
+			title: "戦闘HPと部位負傷は役割が違う"
 			x: 0.0d
 			y: 0.0d
 		}
@@ -45,7 +45,7 @@
 				item: "legendarysurvivaloverhaul:bandage"
 				type: "item"
 			}]
-			subtitle: "解放条件: 「M&S HPと部位負傷は役割が違う」を完了"
+			subtitle: "解放条件: 「戦闘HPと部位負傷は役割が違う」を完了"
 			tasks: [{
 				id: "6D4F010000002201"
 				title: "軽傷を診断した"
@@ -141,7 +141,7 @@
 				item: "apocalypsenow:homemadeantibiotics"
 				type: "item"
 			}]
-			subtitle: "解放条件: 「M&S HPと部位負傷は役割が違う」を完了"
+			subtitle: "解放条件: 「戦闘HPと部位負傷は役割が違う」を完了"
 			tasks: [{
 				id: "6D4F010000002601"
 				title: "感染症を治療した"

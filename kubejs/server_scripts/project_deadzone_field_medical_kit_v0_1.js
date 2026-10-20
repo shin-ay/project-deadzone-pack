@@ -97,8 +97,8 @@ ItemEvents.entityInteracted(event => {
   }
   if (itemId !== DZ_FIELD_KIT || String(target.type) !== "minecraft:player") return
   event.cancel()
-  if (String(healer.persistentData.getString("dz_job_id")) !== "medic") {
-    healer.tell(Text.of("他人への処置にはMedicの専門知識が必要です。").red())
+  if (!global.pdzHasQualification || !global.pdzHasQualification(healer, "field_medicine")) {
+    healer.tell(Text.of("他人への処置には野戦医療資格が必要です。").red())
     return
   }
   if (String(target.uuid) === String(healer.uuid)) return

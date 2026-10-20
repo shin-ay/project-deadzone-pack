@@ -1,7 +1,7 @@
 // PROJECT DEADZONE - multiplayer baseline preflight / recovery
 // Administrative checks for the consolidated multiplayer test build.
 
-const PDZ_PREFLIGHT_VERSION = "2026.08.24-mp1"
+const PDZ_PREFLIGHT_VERSION = "2026.10.02-jobless1"
 
 function pdzPreflightTell(player, message, color) {
   let line = Text.of(message)
@@ -18,9 +18,9 @@ function pdzPreflightPlayerState(player) {
   let data = player.persistentData
   return {
     name: String(player.username),
-    job: data.getBoolean("dz_job_chosen"),
-    starter: data.getBoolean("dz_starter_received"),
-    camp: data.getBoolean("dz_minecolonies_supply_camp_received")
+    registration: data.getBoolean("pdz_registration_complete"),
+    loadout: data.getBoolean("pdz_starter_loadout_received"),
+    camp: data.getBoolean("pdz_minecolonies_supply_camp_received")
   }
 }
 
@@ -30,7 +30,7 @@ function pdzPreflightStatus(source) {
   let states = []
   server.players.forEach(p => states.push(pdzPreflightPlayerState(p)))
 
-  let pending = states.filter(s => !s.job || !s.starter || !s.camp)
+  let pending = states.filter(s => !s.registration || !s.loadout || !s.camp)
   let activityRetired = server.persistentData.getBoolean("dz_legacy_activity_runtime_retired_v3")
   let activityAuto = server.persistentData.getBoolean("dz_faction_activity_auto_enabled")
 
@@ -42,12 +42,12 @@ function pdzPreflightStatus(source) {
   pdzPreflightTell(player, "Legacy JourneyMap bridge: RETIRED (native JourneyMap only)", "green")
 
   states.forEach(s => {
-    let ok = s.job && s.starter && s.camp
+    let ok = s.registration && s.loadout && s.camp
     pdzPreflightTell(
       player,
       (ok ? "[OK] " : "[CHECK] ") + s.name +
-        " | JOB=" + (s.job ? "OK" : "NO") +
-        " Starter=" + (s.starter ? "OK" : "NO") +
+        " | Registration=" + (s.registration ? "OK" : "NO") +
+        " Loadout=" + (s.loadout ? "OK" : "NO") +
         " Camp=" + (s.camp ? "OK" : "NO"),
       ok ? "green" : "yellow"
     )
@@ -62,32 +62,32 @@ function pdzPreflightRecoverAll(source) {
   let failed = 0
 
   source.server.players.forEach(target => {
-    if (!target.persistentData.getBoolean("dz_job_chosen")) {
+    if (!target.persistentData.getBoolean("pdz_registration_complete")) {
       skipped++
-      pdzPreflightTell(player, "[SKIP] " + target.username + ": JOB not selected", "yellow")
+      pdzPreflightTell(player, "[SKIP] " + target.username + ": registration/loadout not complete", "yellow")
       return
     }
 
-    let starterReady = false
+    let loadoutReady = false
     let campReady = false
     try {
-      if (global.pdzEnsureStarterKit) global.pdzEnsureStarterKit(target)
-      if (global.pdzEnsureMineColoniesSupplyCamp) global.pdzEnsureMineColoniesSupplyCamp(target)
+      if (global.pdzEnsureStarterLoadout) global.pdzEnsureStarterLoadout(target)
+      if (global.pdzEnsurePersonalSupplyCamp) global.pdzEnsurePersonalSupplyCamp(target)
 
       // Recovery helpers do not share a guaranteed return-value contract.
       // Re-read the persisted result so this command reports the real state.
-      starterReady = target.persistentData.getBoolean("dz_starter_received")
+      loadoutReady = target.persistentData.getBoolean("pdz_starter_loadout_received")
       campReady = target.persistentData.getBoolean("dz_minecolonies_supply_camp_received")
     } catch (error) {
       console.error("[PDZ][Preflight] recovery failed for " + target.username + ": " + error)
     }
 
-    if (starterReady && campReady) {
+    if (loadoutReady && campReady) {
       recovered++
       pdzPreflightTell(player, "[OK] recovered/verified " + target.username, "green")
     } else {
       failed++
-      pdzPreflightTell(player, "[FAIL] " + target.username + " | Starter=" + starterReady + " Camp=" + campReady, "red")
+      pdzPreflightTell(player, "[FAIL] " + target.username + " | Loadout=" + loadoutReady + " Camp=" + campReady, "red")
     }
   })
 

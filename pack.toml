@@ -1,12 +1,12 @@
 name = "PROJECT DEADZONE"
 author = "PROJECT DEADZONE Team"
-version = "BETA-20260912-PARALLEL-INTEGRATION-RC1"
+version = "BETA-20261020-T097-PACKWIZ-RC1"
 pack-format = "packwiz:1.1.0"
 
 [index]
 file = "index.toml"
 hash-format = "sha256"
-hash = "09ba88a009e1bbed5ca23e9262ec4866cbaab6efd494ca4592ee3b8e24e06561"
+hash = "14387f2462000c3296e30f9f9e926b1b62a78067d8587d3014fe12dafb8ce6d8"
 
 [versions]
 forge = "47.4.10"

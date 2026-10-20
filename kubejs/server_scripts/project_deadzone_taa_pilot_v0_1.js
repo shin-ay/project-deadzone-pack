@@ -7,7 +7,7 @@
 // Ownership contract while TaCZ Tweaks and TAA coexist:
 // - TaCZ Tweaks: controls, movement/QoL and compatibility only.
 // - TAA: TaCZ-native build properties (handling, precision, multishot, etc.).
-// - PDZ + M&S: weapon baseline/rules and final combat resolution.
+// - TaCZ + PDZ: weapon baseline/rules and final combat resolution.
 // TaCZ Tweaks' entire modifiers section must remain neutral (0 / 1 / empty).
 
 const DZ_TAA_DEFAULTS = {
@@ -109,7 +109,7 @@ ServerEvents.commandRegistry(event => {
   root.then(Commands.literal('status').executes(ctx => {
     let player = ctx.source.player
     let profile = String(player.persistentData.getString('dz_taa_pilot_profile')) || 'baseline'
-    player.tell(Text.of('[TAA PILOT] profile=' + profile + ' / damage owner=PDZ+M&S / TAA damage=1.0').aqua())
+    player.tell(Text.of('[TAA PILOT] profile=' + profile + ' / damage owner=TaCZ+PDZ / TAA damage=1.0').aqua())
     player.tell(Text.of('確認順: handling → precision → multishot(単発銃推奨) → incendiary → clear').gray())
     return 1
   }))
@@ -119,7 +119,7 @@ ServerEvents.commandRegistry(event => {
     player.tell(Text.of('[TAA/TWEAKS] TaCZ Tweaks = 操作・移動・MOD互換（数値Modifierは等倍固定）').gold())
     player.tell(Text.of('[TAA/TWEAKS] TAA = ADS・装填・反動・精度・弾数・弾道などのビルド補正').aqua())
     player.tell(Text.of('[TAA/TWEAKS] PDZ = 武器カテゴリ基準値・ランダム幅・特殊弾ルール').yellow())
-    player.tell(Text.of('[TAA/TWEAKS] M&S = 装備Affix・防御・最終クリティカル・HP').lightPurple())
+    player.tell(Text.of('[TAA/TWEAKS] 装備・防御・HP = Minecraft/Forgeと各装備MOD').lightPurple())
     return 1
   }))
 

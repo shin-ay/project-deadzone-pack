@@ -1,4 +1,0 @@
-# PROJECT DEADZONE compatibility baseline
-# Required for TaCZ/other spell mods and the planned Mine and Spells bridge.
-COMPATIBILITY_PRESETS = "COMPATIBLE_MODE"
-

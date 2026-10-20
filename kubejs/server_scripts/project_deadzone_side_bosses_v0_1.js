@@ -11,7 +11,7 @@ function dzStyleSideBoss(entity, key) {
   entity.addTag("dz_sideboss")
   entity.addTag("dz_sideboss_" + key)
   entity.addTag("dz_sideboss_ready")
-  // M&S plus the dedicated entity profile own combat stats. This bridge only
+  // The dedicated entity profile owns combat stats. This bridge only
   // assigns encounter identity/rewards and must not overwrite boss durability.
   entity.runCommandSilent("effect give @s minecraft:glowing infinite 0 true")
   let name = tank ? "Siege Tank" : "Ancient Abomination"

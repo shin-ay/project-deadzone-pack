@@ -1,6 +1,6 @@
 #Lost Cities Autoloader Configuration
 #Enable the Lost Cities autoloader functionality
-enable_autoloader = true
+enable_autoloader = false
 #Name of the configuration file to load from config/lost_cities_autoloader/ directory (without .json extension)
 config_file_name = "deadzone_chaosz_v1_2_wilderness_mediumcity_FLAT_autoloader"
 #Dimension where Lost Cities should generate

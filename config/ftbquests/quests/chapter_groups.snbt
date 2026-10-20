@@ -2,11 +2,12 @@
 	chapter_groups: [
 		{ id: "2492E280835EEAE3", title: "1. チュートリアル" }
 		{ id: "23C996B606E0CFE9", title: "2. ストーリー" }
-		{ id: "4944EA3062E9681A", title: "3. サブクエスト" }
-		{ id: "72AA1A32F85FF9D3", title: "4. 生活系" }
-		{ id: "59FD4E11CFE90C47", title: "5. 拠点・産業" }
-		{ id: "6A11000000000001", title: "6. 交通系" }
-		{ id: "6A11000000000002", title: "7. MineColonies系" }
-		{ id: "6A11000000000003", title: "8. 集落系" }
+		{ id: "7982C72E152A7B73", title: "3. BOSS目標" }
+		{ id: "4944EA3062E9681A", title: "4. サブクエスト" }
+		{ id: "72AA1A32F85FF9D3", title: "5. 生活系" }
+		{ id: "59FD4E11CFE90C47", title: "6. 拠点・産業" }
+		{ id: "6A11000000000001", title: "7. 交通系" }
+		{ id: "6A11000000000002", title: "8. MineColonies系" }
+		{ id: "6A11000000000003", title: "9. 集落系" }
 	]
 }

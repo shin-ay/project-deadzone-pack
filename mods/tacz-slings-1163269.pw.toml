@@ -1,0 +1,13 @@
+name = "[Tacz] Slings"
+filename = "taczslings-2.0.0.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "ba5098343ae7bf991c6f52f4ee15a352766486bf"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 7366583
+project-id = 1163269

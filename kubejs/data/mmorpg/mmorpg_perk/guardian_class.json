@@ -1,8 +1,0 @@
-{
-  "type": "MAJOR",
-  "icon": "mmorpg:textures/gui/talent_icons/asc/guardian.png",
-  "id": "guardian_class",
-  "is_entry": false,
-  "max_lvls": 1,
-  "stats": []
-}

@@ -436,7 +436,7 @@
       },
       {
         "char": "",
-        "block": "shelfmod:floor_shelf_dark_oak"
+        "block": "shelfmod:floor_shelf_dark_oak[facing=north,waterlogged=false]"
       },
       {
         "char": "",
@@ -452,7 +452,7 @@
       },
       {
         "char": "",
-        "block": "shelfmod:floor_shelf_dark_oak"
+        "block": "shelfmod:floor_shelf_dark_oak[facing=north,waterlogged=false]"
       },
       {
         "char": "",

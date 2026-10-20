@@ -1,23 +1,20 @@
-// PROJECT DEADZONE - player combat survivability policy v0.1
-// Mine and Slash still owns HP and combat stats. This hook only provides the
-// missing final safety layer against unreadable combat one-shots.
+// PROJECT DEADZONE - player combat survivability policy v0.2
+// Equipment and vanilla/Forge HP are authoritative. This hook only provides
+// the final safety layer against unreadable automatic-fire one-shots.
 
 function pdzSurviveHasTag(entity, tag) {
   try { return entity.tags.contains(tag) } catch (ignored) { return false }
 }
 
 function pdzSurviveTank(player) {
-  let data=player.persistentData
-  let job=String(data.getString('dz_job_id'))
-  let c2=String(data.getString('dz_career_t2'))
-  let c3=String(data.getString('dz_career_t3'))
-  if(job==='security'||c2==='guardian'||['bulwark','sentinel','juggernaut','riot_leader'].indexOf(c3)>=0)return true
-  return pdzSurviveHasTag(player,'dz_growth_combat_tank')||pdzSurviveHasTag(player,'dz_growth_combat_bulwark')
+  // No permanent tank JOB or talent profile. Armor/loadout remains responsible
+  // for mitigation, so every player uses the same final-hit pacing limits.
+  return false
 }
 
 function pdzSurviveStoryBoss(entity) {
   if(!entity)return false
-  let tags=['dz_story_boss','dz_pdz_boss','dz_mns_boss_profile','dz_boss_axel',
+  let tags=['dz_story_boss','dz_pdz_boss','dz_pdz_boss_profile','dz_boss_axel',
     'dz_story_boss_gasstation','dz_story_boss_gunshop','dz_story_boss_firestation',
     'dz_story_boss_hospital','dz_story_boss_policestation','dz_story_boss_radio_tower',
     'dz_story_boss_argus_fragment','dz_story_boss_choir_vessel','dz_story_boss_reactor_saint',
@@ -105,7 +102,7 @@ ForgeEvents.onEvent('net.minecraftforge.event.entity.living.LivingHurtEvent',eve
   let gunshop=pdzSurviveGunshopBoss(attacker)||pdzSurviveGunshopBoss(direct)
   let gunSoldier=pdzSurviveGunSoldier(attacker)||pdzSurviveGunSoldier(direct)
   // Bosses and armed soldiers are meant to apply sustained pressure. Their
-  // authored M&S damage remains the source value, while this final pacing layer
+  // authored attack damage remains the source value, while this final pacing layer
   // prevents one animation or one automatic burst from ending the encounter.
   if(gunshop)adjusted*=0.28
   else if(axel)adjusted*=0.32

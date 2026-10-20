@@ -1,1 +1,8 @@
-[]
+[
+  {
+    "dimension": "lobby:lobby_dimension",
+    "item": "minecraft:bedrock",
+    "color": 16777215,
+    "priority": -1
+  }
+]

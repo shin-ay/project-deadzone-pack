@@ -49,7 +49,7 @@ function dzOpenLegacyBaseCorePanel(player) {
     .append(Text.of("  [ 地域経済 ]").green().clickRunCommand("/deadzonecommunity status")))
   player.tell(Text.of("[ 料理・献立 ]").aqua().clickRunCommand("/deadzonemenu")
     .append(Text.of("  [ 食材検品 ]").green().clickRunCommand("/deadzonequality status"))
-    .append(Text.of("  [ 医療・治療 ]").red().clickRunCommand("/deadzonehealth status")))
+    .append(Text.of("  [ 医療・治療 ]").red().clickRunCommand("/deadzonehealthui")))
   player.tell(Text.of("[ 地域防衛 ]").red().clickRunCommand("/deadzonedefense status")
     .append(Text.of("  [ 地域物流 ]").aqua().clickRunCommand("/deadzonelogistics status"))
     .append(Text.of("  [ キャンプ発展 ]").gold().clickRunCommand("/deadzonecampdev status")))

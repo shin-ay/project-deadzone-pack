@@ -1,0 +1,16 @@
+{
+  "enchantment.tacz_eo.bullseye": "急所狙い",
+  "enchantment.tacz_eo.bullseye.desc": "ヘッドショット時の弾丸ダメージを50%増加させます。",
+  "enchantment.tacz_eo.deep_impact": "深部貫通",
+  "enchantment.tacz_eo.deep_impact.desc": "弾丸の装甲貫通をレベルごとに5%増加させます。",
+  "enchantment.tacz_eo.firepower": "火力強化",
+  "enchantment.tacz_eo.firepower.desc": "弾丸の基礎ダメージをレベルごとに10%増加させます。",
+  "enchantment.tacz_eo.precision": "精密射撃",
+  "enchantment.tacz_eo.precision.desc": "弾の拡散をレベルごとに5%軽減します。",
+  "enchantment.tacz_eo.punch_through": "貫通射撃",
+  "enchantment.tacz_eo.punch_through.desc": "弾丸が追加で貫通できるエンティティ数をレベルごとに1体増加させます。",
+  "enchantment.tacz_eo.capacity": "大容量弾倉",
+  "enchantment.tacz_eo.capacity.desc": "基本装弾数をレベルごとに50%増加させます。",
+  "enchantment.tacz_eo.bullet_retention": "弾薬温存",
+  "enchantment.tacz_eo.bullet_retention.desc": "射撃時に弾薬を消費しない確率をレベルごとに10%増加させます。"
+}

@@ -1,5 +1,5 @@
-name = "Quantified API"
-filename = "quantified api-omni-2.2.0.jar"
+name = "[QAPI] | Quantified API"
+filename = "quantified-api-omni-2.2.0.jar"
 side = "both"
 
 [download]

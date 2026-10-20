@@ -113,7 +113,20 @@
     "apotheosis:stable_footing": 1,
     "apotheosis:tempting": 1,
     "butchery:butcherstouch": 1,
-    "minecolonies:raider_damage_enchant": 6
+    "minecolonies:raider_damage_enchant": 6,
+    "spore:corrosive_potency": 1,
+    "spore:cryogenic_aspect": 1,
+    "spore:gastric_spewage": 1,
+    "spore:mutagenic_reactant": 1,
+    "spore:serrated_thorns": 1,
+    "spore:symbiotic_reconstitution": 1,
+    "spore:unwavering_nature": 1,
+    "spore:voracious_maw": 1,
+    "lightmanscurrency:coin_magnet": 8,
+    "lightmanscurrency:money_mending": 1,
+    "obscure_api:distance": 7,
+    "obscure_api:fast_spin": 9,
+    "obscure_api:mirror": 1
   },
   "disabled_enchantments": {
     "minecraft:aqua_affinity": false,
@@ -223,7 +236,20 @@
     "apotheosis:stable_footing": false,
     "apotheosis:tempting": false,
     "butchery:butcherstouch": false,
-    "minecolonies:raider_damage_enchant": false
+    "minecolonies:raider_damage_enchant": false,
+    "spore:corrosive_potency": false,
+    "spore:cryogenic_aspect": false,
+    "spore:gastric_spewage": false,
+    "spore:mutagenic_reactant": false,
+    "spore:serrated_thorns": false,
+    "spore:symbiotic_reconstitution": false,
+    "spore:unwavering_nature": false,
+    "spore:voracious_maw": false,
+    "lightmanscurrency:coin_magnet": false,
+    "lightmanscurrency:money_mending": false,
+    "obscure_api:distance": false,
+    "obscure_api:fast_spin": false,
+    "obscure_api:mirror": false
   },
   "enchanting_table": {},
   "enchanting_upgrades": {

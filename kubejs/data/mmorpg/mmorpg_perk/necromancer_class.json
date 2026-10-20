@@ -1,8 +1,0 @@
-{
-  "type": "MAJOR",
-  "icon": "mmorpg:textures/gui/talent_icons/asc/necromancer.png",
-  "id": "necromancer_class",
-  "is_entry": false,
-  "max_lvls": 1,
-  "stats": []
-}

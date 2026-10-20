@@ -5,3 +5,4 @@ ServerEvents.recipes(event => {
   event.remove({ mod: 'waystones' })
   console.info('[PROJECT DEADZONE] Waystones public transit: all player recipes disabled')
 })
+

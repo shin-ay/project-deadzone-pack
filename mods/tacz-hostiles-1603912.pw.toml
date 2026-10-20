@@ -1,0 +1,13 @@
+name = "TaCZ Hostiles"
+filename = "tacz_hostiles-1.1.1.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "6e2b3dff45041bd232cd787062905a53e334cd99"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 8618380
+project-id = 1603912

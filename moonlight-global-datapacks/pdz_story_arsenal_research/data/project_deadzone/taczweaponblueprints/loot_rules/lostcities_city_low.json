@@ -1,0 +1,12 @@
+{
+  "format": 1,
+  "pool": "taczweaponblueprints:easy",
+  "loot_tables": [
+    "lostcities:chests/lostcitychest"
+  ],
+  "chance": 0.02,
+  "rolls": {
+    "min": 1,
+    "max": 1
+  }
+}

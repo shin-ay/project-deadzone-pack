@@ -327,7 +327,7 @@
 				"ARGUS-9を破壊、再設定、分離する判断は、敵の種類だけでなくSurvivor Campの未来を変える。"
 				"メインストーリーで最終判断を確定する。"
 			]
-			icon: "mmorpg:gear_crafting_station"
+			icon: "minecraft:nether_star"
 			id: "66A3889869794C1D"
 			rewards: [{
 				count: 4

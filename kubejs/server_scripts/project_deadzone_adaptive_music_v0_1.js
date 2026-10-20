@@ -32,7 +32,9 @@ const PDZ_MUSIC_SPORE_T4 = [
 
 const PDZ_MUSIC_EFFECTS = [
   'music_camp','music_survivor','music_cdf','music_raider','music_remnant',
-  'music_aegis','music_warden','music_infected','music_spore_native','music_named_survivor',
+  'music_aegis','music_warden','music_infected','music_culture_america',
+  'music_culture_asia','music_culture_europe','music_culture_nordic',
+  'music_culture_africa','music_culture_south_america','music_spore_native','music_named_survivor',
   'music_named_cdf','music_named_raider','music_named_remnant',
   'music_named_aegis','music_named_warden','music_named_infected','music_named_unknown',
   'music_boss_01','music_boss_02','music_boss_03','music_boss_04','music_boss_05',
@@ -43,17 +45,17 @@ const PDZ_MUSIC_EFFECTS = [
 const PDZ_MUSIC_BOSSES = [
   {key:'music_boss_01',tags:['dz_boss_axel']},
   {key:'music_boss_02',tags:['dz_boss_mech_02','dz_story_boss_argus_fragment']},
-  {key:'music_boss_03',tags:['dz_boss_mech_03','dz_story_boss_choir_vessel']},
+  {key:'music_boss_03',tags:['dz_boss_mech_03','dz_story_boss_choir_vessel','dz_story_boss_cornelia']},
   {key:'music_boss_04',tags:['dz_boss_mech_04','dz_story_boss_firestation']},
   {key:'music_boss_05',tags:['dz_boss_mech_05','dz_story_boss_gasstation']},
   {key:'music_boss_06',tags:['dz_boss_mech_06','dz_story_boss_gunshop']},
   {key:'music_boss_07',tags:['dz_boss_mech_07','dz_story_boss_hospital']},
-  {key:'music_boss_08',tags:['dz_boss_mech_08','dz_story_boss_policestation']},
+  {key:'music_boss_08',tags:['dz_boss_mech_08','dz_story_boss_policestation','dz_sideboss_wroughtnaut']},
   {key:'music_boss_09',tags:['dz_boss_mech_09','dz_story_boss_primordial']},
   {key:'music_boss_10',tags:['dz_boss_mech_10','dz_story_boss_radio_tower']},
   {key:'music_boss_11',tags:['dz_boss_mech_11','dz_story_boss_reactor_saint']},
-  {key:'music_boss_12',tags:['dz_boss_mech_12','dz_sideboss_tank']},
-  {key:'music_boss_13',tags:['dz_boss_mech_13','dz_sideboss_abomination']},
+  {key:'music_boss_12',tags:['dz_boss_mech_12','dz_sideboss_tank','dz_story_boss_harbinger']},
+  {key:'music_boss_13',tags:['dz_boss_mech_13','dz_sideboss_abomination','dz_sideboss_frostmaw']},
   {key:'music_boss_14',tags:['dz_boss_mech_14','dz_story_boss_t4_relay_shepherd']}
 ]
 
@@ -160,12 +162,58 @@ function pdzMusicInCamp(player, server) {
   let x=data.getInt('dz_auto_basecamp_origin_x'),y=data.getInt('dz_auto_basecamp_origin_y'),z=data.getInt('dz_auto_basecamp_origin_z')
   return pdzMusicDim(player)==='minecraft:overworld'&&pdzMusicHorizontalDist2(player,x,z)<=PDZ_MUSIC_CAMP_RADIUS*PDZ_MUSIC_CAMP_RADIUS
 }
+
+function pdzMusicBiomeId(player) {
+  try {
+    let key=player.level.getBiome(player.blockPosition()).unwrapKey()
+    return key.isPresent()?String(key.get().location()).toLowerCase():'minecraft:plains'
+  } catch(ignored) {
+    try { return String(player.block.biomeId).toLowerCase() }
+    catch(ignoredAgain) { return 'minecraft:plains' }
+  }
+}
+
+function pdzMusicHasAny(id, words) {
+  for(let i=0;i<words.length;i++)if(id.indexOf(words[i])>=0)return true
+  return false
+}
+
+// Culture is a broad terrain/climate identity, not a one-biome border.
+// Specific climate and vegetation signatures win. Generic plains, rivers and
+// oceans use the nearest broad map sector so their music does not form noisy
+// little islands between recognisable biomes.
+function pdzMusicCulture(player) {
+  if(pdzMusicDim(player)!=='minecraft:overworld')return ''
+  let id=pdzMusicBiomeId(player)
+
+  if(pdzMusicHasAny(id,['bamboo','sugi','sakura','cherry','wisteria','maple','orchid']))
+    return 'music_culture_asia'
+  if(pdzMusicHasAny(id,['snow','frozen','ice_','ice-','iceberg','taiga','tundra','fir_forest','boreal','conifer','glacial','frost','cold_shrubland']))
+    return 'music_culture_nordic'
+  if(pdzMusicHasAny(id,['jungle','tropical','mangrove','swamp','rainforest','cloud_forest','lush_valley','flowering_shrubland']))
+    return 'music_culture_south_america'
+  if(pdzMusicHasAny(id,['desert','dune','savanna','arid','ancient_sands','red_oasis','bryce_canyon']))
+    return 'music_culture_africa'
+  if(pdzMusicHasAny(id,['prairie','yellowstone','yosemite','rocky_mountain','canyon','badlands','brushland','red_meadow','wooded_drylands','mesa']))
+    return 'music_culture_america'
+  if(pdzMusicHasAny(id,['birch','oak','meadow','heather','lavender','alpine','highlands','forest','grove','woodland','shield']))
+    return 'music_culture_europe'
+
+  let x=Number(player.x),z=Number(player.z)
+  if(z<-900)return 'music_culture_nordic'
+  if(x>1800&&z<900)return 'music_culture_africa'
+  if(x<-700&&z>300)return 'music_culture_asia'
+  if(z>1300)return 'music_culture_south_america'
+  if(x<-1800)return 'music_culture_america'
+  return 'music_culture_europe'
+}
+
 function pdzMusicDesiredLocation(player, server, sites) {
   if(pdzMusicInCamp(player,server))return 'music_camp'
   let site=pdzMusicNearestSite(player,sites)
-  if(!site)return ''
+  if(!site)return pdzMusicCulture(player)
   let faction=pdzMusicFaction(site.faction)
-  return faction?'music_'+faction:''
+  return faction?'music_'+faction:pdzMusicCulture(player)
 }
 function pdzMusicHeldLocation(player, desired) {
   let data=player.persistentData

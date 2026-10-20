@@ -1,0 +1,19 @@
+{
+  "type": "mowziesmobs:monastery",
+  "biomes": "#project_deadzone:fixed_world_disabled_surface",
+  "step": "surface_structures",
+  "terrain_adaptation": "none",
+  "spawn_overrides": {
+    "monster": {
+      "bounding_box": "piece",
+      "spawns": [
+        {
+          "type": "mowziesmobs:bluff",
+          "weight": 100,
+          "minCount": 1,
+          "maxCount": 2
+        }
+      ]
+    }
+  }
+}

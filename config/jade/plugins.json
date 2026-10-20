@@ -54,6 +54,35 @@
     "painting": true,
     "chiseled_bookshelf": true
   },
+  "lightmanscurrency": {
+    "model_variant": true,
+    "model_variant.locked": false,
+    "paygate": true
+  },
+  "immersiveengineering": {
+    "multiblock_icon": true
+  },
+  "jade": {
+    "coordinates.rel": false,
+    "distance": false,
+    "block_face": false,
+    "coordinates": false,
+    "registry_name": "OFF",
+    "mod_name": true
+  },
+  "apotheosis": {
+    "ench": true
+  },
+  "superbwarfare": {
+    "dps_generator": true,
+    "vehicle_deployer": true,
+    "container_entity": true,
+    "vehicle_health": true,
+    "c4_info": true
+  },
+  "balm": {
+    "jade": true
+  },
   "mekanism": {
     "infuse_type": true,
     "gas": true,
@@ -64,19 +93,11 @@
     "energy": true,
     "tooltip_renderer": true
   },
-  "immersiveengineering": {
-    "multiblock_icon": true
+  "urushi": {
+    "block_element": true
   },
   "supplementaries": {
     "hat_stand": true
-  },
-  "jade": {
-    "coordinates.rel": false,
-    "distance": false,
-    "block_face": false,
-    "coordinates": false,
-    "registry_name": "OFF",
-    "mod_name": true
   },
   "dynamictrees": {
     "rooty_water": true,
@@ -85,18 +106,11 @@
     "rooty": true,
     "branch": true
   },
-  "apotheosis": {
-    "ench": true
+  "waystones": {
+    "waystone": true
   },
   "gravestone": {
     "grave": true
-  },
-  "superbwarfare": {
-    "dps_generator": true,
-    "vehicle_deployer": true,
-    "container_entity": true,
-    "vehicle_health": true,
-    "c4_info": true
   },
   "securitycraft": {
     "showowner": true,

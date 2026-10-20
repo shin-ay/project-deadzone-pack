@@ -5,7 +5,7 @@
 	group: "2492E280835EEAE3"
 	icon: "createdieselgenerators:diesel_engine"
 	id: "6D49010000000001"
-	order_index: 7
+	order_index: 8
 	quest_links: [ ]
 	quests: [
 		{

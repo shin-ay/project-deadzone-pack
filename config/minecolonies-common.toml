@@ -1,0 +1,11 @@
+
+#コアゲームプレイに関する全ての設定項目
+[gameplay]
+	#戦利品箱で補給船やキャンプを生成するかどうか。 [初期値: true]
+	generatesupplyloot = true
+
+#要求システムに関する全ての設定
+[requestsystem]
+	#リクエストシステムはdebug.logにデバッグ情報を表示すべきか？誤動作のときに便利です。 [初期値: false]
+	enabledebuglogging = false
+

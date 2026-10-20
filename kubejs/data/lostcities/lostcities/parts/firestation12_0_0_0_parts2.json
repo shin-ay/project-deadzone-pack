@@ -49,7 +49,7 @@
       },
       {
         "char": "Σ",
-        "block": "minecraft:air",
+        "block": "minecraft:chest[facing=north,type=single,waterlogged=false]",
         "loot": "project_deadzone:firestation",
         "tag": {
           "z": 565,

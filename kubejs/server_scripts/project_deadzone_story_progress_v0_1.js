@@ -3,8 +3,6 @@
 // campaign objectives.
 
 const DZ_STORY_DECREE_ITEM = Java.loadClass('io.ejekta.bountiful.content.DecreeItem')
-const DZ_STORY_MNS_ENTITY_DATA = Java.loadClass('com.robertx22.mine_and_slash.capability.entity.EntityData')
-const DZ_STORY_MNS_HEALTH = Java.loadClass('com.robertx22.mine_and_slash.uncommon.utilityclasses.HealthUtils')
 
 const DZ_STORY_QUESTS = {
   prologue: "4262970F1B621A1D",
@@ -266,7 +264,7 @@ function dzStoryBossCheckpoint(server, key, questId, message, unlockTier, tierQu
   // advances after each main boss milestone. Refresh after recording the flag
   // so optional bosses cannot accidentally grant the same milestone twice.
   try {
-    if (global.pdzStoryRefreshMnsLevelCap) global.pdzStoryRefreshMnsLevelCap(server, true)
+    if (global.pdzStoryRefreshProgression) global.pdzStoryRefreshProgression(server, true)
   } catch (error) {
     console.warn('[DEADZONE STORY] Boss level-cap refresh failed for ' + key + ': ' + error)
   }
@@ -310,8 +308,7 @@ function dzFacilityHighestPlayerLevel(server, boss) {
     if (String(player.level.dimension) !== String(boss.level.dimension)) return
     let dx = player.x - boss.x, dy = player.y - boss.y, dz = player.z - boss.z
     if (dx * dx + dy * dy + dz * dz > 9216) return
-    try { highest = Math.max(highest, Number(DZ_STORY_MNS_ENTITY_DATA.get(player).getLevel()) || 1) }
-    catch (ignored) {}
+    highest = Math.max(highest, Number(player.persistentData.getInt('pdz_character_level')) || 1)
   })
   return highest
 }
@@ -320,8 +317,7 @@ function dzFacilityBossLevel(server) {
   try {
     if (global.pdzStoryBossLevel) return Math.max(1, Number(global.pdzStoryBossLevel(server)) || 12)
   } catch (ignored) {}
-  let cap = Math.max(10, Number(server.persistentData.getInt('dz_story_mns_level_cap')) || 10)
-  return Math.min(102, cap + 2)
+  return 12 + Math.max(0, Number(server.persistentData.getInt('deadzone_story_unlock_tier')) || 0) * 10
 }
 
 function dzScaleFacilityBoss(server, boss) {
@@ -331,18 +327,11 @@ function dzScaleFacilityBoss(server, boss) {
   let party = dzFacilityPartySize(server, boss)
   let playerLevel = dzFacilityHighestPlayerLevel(server, boss)
   let bossLevel = dzFacilityBossLevel(server)
-  let scaledHealth = 0
-  try {
-    let mns = DZ_STORY_MNS_ENTITY_DATA.get(boss)
-    mns.setRarity('boss')
-    mns.setLevel(bossLevel)
-    mns.recalcStats_DONT_CALL()
-    scaledHealth = Math.round(DZ_STORY_MNS_HEALTH.getMaxHealth(boss))
-    boss.addTag('dz_mns_boss_profile')
-  } catch (err) {
-    console.warn('[DEADZONE STORY] M&S party scaling failed: ' + err)
-    scaledHealth = Math.round(boss.maxHealth)
-  }
+  let baseHealth = Math.max(20, Number(boss.maxHealth) || 20)
+  let partyMultiplier = Math.min(2.4, 1 + Math.max(0, party - 1) * 0.35)
+  let scaledHealth = Math.round(baseHealth * partyMultiplier)
+  boss.runCommandSilent("attribute @s minecraft:generic.max_health base set " + scaledHealth)
+  boss.addTag('dz_pdz_boss_profile')
   // Do not overwrite an authored boss profile with ordinary-mob armor. The
   // previous solo value of 4 made even a four-digit-HP boss fold to ambient
   // high-tier zombies before the player could engage it.
@@ -368,11 +357,10 @@ function dzScaleFacilityBoss(server, boss) {
       " run function " + spawnFunction)
   }
   server.runCommandSilent('tellraw @a [{"text":"[MISSION] ","color":"gold","bold":true},' +
-    '{"text":"Party ' + party + '人に合わせBossを強化（M&S HP ' + scaledHealth +
+    '{"text":"Party ' + party + '人に合わせBossを強化（HP ' + scaledHealth +
     ' / 護衛 ' + escorts + '）","color":"yellow"}]')
   console.info("[DEADZONE STORY] Party scaled boss=" + String(boss.uuid) +
-    " players=" + party + " playerLv=" + playerLevel + " cap=" +
-    Number(server.persistentData.getInt('dz_story_mns_level_cap')) + " bossLv=" + bossLevel +
+    " players=" + party + " characterLvMax=" + playerLevel + " encounterIndex=" + bossLevel +
     " hp=" + scaledHealth + " escorts=" + escorts)
 }
 
@@ -413,7 +401,7 @@ PlayerEvents.tick(event => {
   dzGrantEndgameDecree(player)
   dzSyncT4Foundation(player)
   // Story quests are completed by actual game events, not manual checkmarks.
-  if (player.persistentData.getBoolean("dz_job_chosen") &&
+  if (player.persistentData.getBoolean("pdz_registration_complete") &&
       player.persistentData.getBoolean("dz_onboarding_awake")) {
     dzCompletePlayerStoryQuest(player, "prologue", DZ_STORY_QUESTS.prologue)
     dzCompletePlayerStoryQuest(player, "job", DZ_STORY_QUESTS.job)
@@ -693,8 +681,8 @@ ServerEvents.commandRegistry(event => {
   let story = Commands.literal("deadzonestory")
   story.then(Commands.literal("briefing").executes(ctx => {
     let player = ctx.source.player
-    if (!player.persistentData.getBoolean("dz_job_chosen")) {
-      player.tell(Text.of("[レイ] 先にミナトからJOBの割り当てを受けて。").yellow())
+    if (!player.persistentData.getBoolean("pdz_registration_complete")) {
+      player.tell(Text.of("[レイ] 先にミナトから最初の遠征装備を受け取って。").yellow())
       return 0
     }
     player.server.runCommandSilent(
@@ -718,7 +706,7 @@ ServerEvents.commandRegistry(event => {
     player.tell(Text.of("=== T2 支援勢力を選択 ===").gold())
     ;[
       ["CDF：防具・地図・友軍巡回", "civildef", "aqua"],
-      ["Raiders：密輸武器・M&S強化資源・車両部品", "raider", "red"],
+      ["Raiders：密輸武器・武器改造資源・車両部品", "raider", "red"],
       ["Remnant：軍用品・T3座標・重工業部品", "remnant", "dark_red"]
     ].forEach(entry => player.tell(Text.of("[ " + entry[0] + " ]")[entry[2]]()
       .clickRunCommand("/deadzonestory choose_" + entry[1])

@@ -1,7 +1,7 @@
 // PROJECT DEADZONE regional mentors v0.1
 // Realm RPG Quests owns NPC dialogue, quest generation, journal and rewards.
 // PDZ only remembers which existing mentor the player met and converts the
-// mod's official advancement milestones into existing JOB action XP.
+// mod's official advancement milestones into Character XP.
 
 const PDZ_MENTORS = {
   "realmrpg_quests:angler": {
@@ -61,8 +61,8 @@ function pdzMentorSyncMilestones(player, notify) {
     let source=pdzMentorSource(player), gained=0
     if(typeof global.pdzCareerAddXp==="function")gained=global.pdzCareerAddXp(player,milestone.xp,source,false)
     if(notify){
-      player.tell(Text.of("[地域Mentor] "+milestone.label+"を確認。Realm RPG Questsの実績をJOB活動へ記録しました。 ").green())
-      if(gained>0)player.tell(Text.of("JOB Action XP +"+gained+" ("+source+")").aqua())
+      player.tell(Text.of("[地域Mentor] "+milestone.label+"を確認。Realm RPG Questsの実績を記録しました。 ").green())
+      if(gained>0)player.tell(Text.of("Character XP +"+gained+" ("+source+")").aqua())
     }
   })
   if(pdzMentorDiscoveryCount(player)>=3 && pdzMentorHasAdvancement(player,"realmrpg_quests:complete_10_quests")){
@@ -88,7 +88,7 @@ ItemEvents.entityInteracted(event=>{
     pdzMentorComplete(player,PDZ_MENTOR_QUESTS.intro)
     pdzMentorComplete(player,mentor.discoveryQuest)
     player.tell(Text.of("[地域Mentor] "+mentor.label+"と接触。依頼内容と報酬はRealm RPG Questsが管理します。").gold())
-    player.tell(Text.of("このMentorの依頼実績は "+mentor.source+" 系JOB活動として記録されます。").gray())
+    player.tell(Text.of("このMentorの依頼実績は "+mentor.source+" 活動として記録されます。").gray())
   }
   pdzMentorSyncMilestones(player,true)
 })
@@ -99,7 +99,7 @@ PlayerEvents.tick(event=>{
 })
 
 function pdzMentorStatus(player) {
-  player.tell(Text.of("=== 地域JOB Mentor ===").gold())
+  player.tell(Text.of("=== 地域Mentor ===").gold())
   Object.keys(PDZ_MENTORS).forEach(type=>{
     let mentor=PDZ_MENTORS[type],found=player.persistentData.getBoolean("dz_regional_mentor_"+mentor.id)
     player.tell(Text.of((found?"[確認済] ":"[未確認] ")+mentor.label+" / "+mentor.source)[found?"green":"gray"]())

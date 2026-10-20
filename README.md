@@ -1,6 +1,6 @@
 # PROJECT DEADZONE Distribution
 
-Current pack version: `BETA-20260825-MULTIPLAYER-2`
+Current pack version: `BETA-20261020-T097-PACKWIZ-RC1`
 
 This public repository contains only the packwiz manifest and multiplayer
 client configuration required to update PROJECT DEADZONE.

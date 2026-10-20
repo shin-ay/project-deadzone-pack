@@ -157,7 +157,7 @@
       },
       {
         "char": "϶",
-        "block": "minecraft:air",
+        "block": "minecraft:barrel[facing=up,open=false]",
         "loot": "project_deadzone:gunstore",
         "tag": {
           "z": 698,
@@ -181,7 +181,7 @@
       },
       {
         "char": "Ο",
-        "block": "minecraft:air",
+        "block": "minecraft:chest[facing=north,type=single,waterlogged=false]",
         "loot": "project_deadzone:gunstore",
         "tag": {
           "z": 699,
@@ -217,7 +217,7 @@
       },
       {
         "char": "ψ",
-        "block": "minecraft:air",
+        "block": "minecraft:chest[facing=north,type=single,waterlogged=false]",
         "loot": "project_deadzone:gunstore",
         "tag": {
           "z": 701,

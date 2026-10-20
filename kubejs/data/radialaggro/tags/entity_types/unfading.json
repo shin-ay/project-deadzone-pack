@@ -1,0 +1,22 @@
+{
+  "replace": false,
+  "values": [
+    "pdzbosses:axel",
+    "pdzbosses:argus_fragment",
+    "pdzbosses:choir_vessel",
+    "pdzbosses:cinder",
+    "pdzbosses:brass_hound",
+    "pdzbosses:white_stitch",
+    "pdzbosses:marshal_graves",
+    "pdzbosses:primordial",
+    "pdzbosses:echo_7",
+    "pdzbosses:reactor_saint",
+    "pdzbosses:siege_tank",
+    "pdzbosses:ancient_abomination",
+    "pdzbosses:relay_shepherd",
+    "cataclysm:the_harbinger",
+    "mowziesmobs:ferrous_wroughtnaut",
+    "aquamirae:captain_cornelia",
+    "mowziesmobs:frostmaw"
+  ]
+}

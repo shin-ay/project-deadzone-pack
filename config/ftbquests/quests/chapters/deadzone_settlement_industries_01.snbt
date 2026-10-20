@@ -75,7 +75,7 @@
 				"Bountiful：Bounty Boardを右クリックし、地域の不足に応じた品目依頼を選んで受注する。売買はCredit市場を利用する。"
 				"産業を初めて確認した時にもらう令状は、手に持ってBountiful Bounty Boardへ使用する。読み終えたら下の確認ボタンを押せばよく、コマンド入力は不要。"
 			]
-		icon: "mca:civil_registry"
+			icon: "mca:civil_registry"
 			id: "6D52010000000013"
 			rewards: [{
 				id: "6D52010000001013"
@@ -264,7 +264,7 @@
 				"集落へ入った時の地域産業案内を確認し、Credit市場とBountiful Boardを利用する。"
 				"地域ごとの輸出品と不足品を依頼へ反映し、PDZならではの生活・探索・防衛物資を循環させる。"
 			]
-		icon: "mca:civil_registry"
+			icon: "mca:civil_registry"
 			id: "6D52010000000108"
 			rewards: [{
 				count: 2

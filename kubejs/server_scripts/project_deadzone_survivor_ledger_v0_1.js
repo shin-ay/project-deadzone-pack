@@ -61,21 +61,21 @@ function pdzLedgerLink(label,command,color){
 
 function pdzLedgerStatus(player){
   player.server.runCommandSilent('ftbquests change_progress '+player.username+' complete '+PDZ_LEDGER_QUEST)
-  let job=String(player.persistentData.getString('dz_job_id'))||'未選択'
-  let t2=String(player.persistentData.getString('dz_career_t2'))||'-'
-  let t3=String(player.persistentData.getString('dz_career_t3'))||'-'
+  let loadout=String(player.persistentData.getString('pdz_starter_loadout_name'))||'未選択'
+  let characterLevel=Math.max(1,Number(player.persistentData.getInt('pdz_character_level'))||1)
   let camp=pdzLedgerCamp(player),condition=pdzLedgerCondition(player)
   let logistics=String(player.persistentData.getString('dz_log_active'))||'なし'
   let site=null
   try{if(typeof global.pdzSetNearestReal==='function')site=global.pdzSetNearestReal(player,256)}catch(ignored){}
 
   player.tell(Text.of('=== PROJECT DEADZONE / 生存者台帳 ===').gold())
-  player.tell(Text.of('現在地 World T'+pdzLedgerWorldTier(player)+'｜Story S'+pdzLedgerStoryUnlock(player)+'｜JOB '+job+'｜T2 '+t2+'｜T3 '+t3).aqua())
-  player.tell(Text.of('M&S連携 '+(player.persistentData.getBoolean('dz_mns_bridge_ok')?'OK':'未確認')+'｜身体 '+condition.injury+(condition.infection?'・感染中':'・感染なし'))[condition.color]())
+  player.tell(Text.of('現在地 World T'+pdzLedgerWorldTier(player)+'｜Story S'+pdzLedgerStoryUnlock(player)+'｜Lv '+characterLevel+'｜初期装備 '+loadout).aqua())
+  player.tell(Text.of('身体 '+condition.injury+(condition.infection?'・感染中':'・感染なし'))[condition.color]())
   player.tell(Text.of('Survivor Camp Lv'+camp.level+' / 総合Rank '+camp.rank+(camp.debt>0?' / 復旧負債 '+camp.debt:'')).color(camp.debt>0?'red':'green'))
   player.tell(Text.of('進行中の物流 '+logistics+'｜勢力判断 '+pdzLedgerChoices(player)+'/5｜近隣集落 '+(site?String(site.name||site.id):'256m以内なし')).gray())
 
-  player.tell(pdzLedgerLink('成長・SP','/deadzoneprogress status','lightPurple').append(Text.of(' ')).append(pdzLedgerLink('M&S装備','/deadzonemns status','aqua')).append(Text.of(' ')).append(pdzLedgerLink('身体・感染','/deadzonehealth status','red')))
+  player.tell(pdzLedgerLink('Character Lv','/deadzonelevel status','lightPurple').append(Text.of(' ')).append(pdzLedgerLink('装備構成','/deadzoneloadout status','aqua')).append(Text.of(' ')).append(pdzLedgerLink('身体・感染','/deadzonehealthui','red')))
+  player.tell(pdzLedgerLink('資格','/deadzonequalification status','yellow'))
   player.tell(pdzLedgerLink('Camp地域経済','/deadzonecommunity status','green').append(Text.of(' ')).append(pdzLedgerLink('依頼掲示板','/deadzonecontracts','yellow')).append(Text.of(' ')).append(pdzLedgerLink('個人信頼','/deadzonepeople status','lightPurple')))
   player.tell(pdzLedgerLink('近隣集落','/deadzonecolony status','gold').append(Text.of(' ')).append(pdzLedgerLink('物流','/deadzonelogistics status','aqua')).append(Text.of(' ')).append(pdzLedgerLink('MineColonies','/deadzonecolonyops status','green')))
   player.tell(pdzLedgerLink('勢力判断','/deadzonestorybranch status','yellow').append(Text.of(' ')).append(pdzLedgerLink('ストーリー解禁','/deadzonetier status','lightPurple')).append(Text.of(' ')).append(pdzLedgerLink('現在地Tier','/deadzonezone status','aqua')).append(Text.of(' ')).append(pdzLedgerLink('クエスト区分','/deadzonequests','gray')))

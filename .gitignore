@@ -3,3 +3,8 @@
 *.log
 *.tmp
 config/classmod/auth_*
+beautiful_statistics_screen/
+easy_npc/
+recruits/
+config/QuantifiedAPI/cache/
+resourcepacks/*.zip

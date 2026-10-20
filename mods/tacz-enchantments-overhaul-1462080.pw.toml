@@ -1,0 +1,13 @@
+name = "TaCZ Enchantments Overhaul"
+filename = "tacz_eo-1.2.0+1.20.1-forge.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "76608c66e1d8319ff2305580b6b3d33303d596d0"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 8308306
+project-id = 1462080

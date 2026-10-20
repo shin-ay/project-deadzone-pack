@@ -1,0 +1,2097 @@
+{
+  "profile": "C:\\Users\\shinc\\curseforge\\minecraft\\Instances\\PROJECT DEADZONE Fixed World Authoring",
+  "policy": {
+    "disable": "random Overworld surface structures",
+    "keep": [
+      "villages",
+      "underground structures",
+      "Nether/End structures"
+    ],
+    "lost_cities": "disabled separately through authoring profile config"
+  },
+  "disabled": [
+    {
+      "id": "apocalypsenow:apartament_st",
+      "reason": "worldbuilding_mod_surface",
+      "source": "kubejs:apocalypsenow/worldgen/structure/apartament_st.json"
+    },
+    {
+      "id": "apocalypsenow:clinic",
+      "reason": "worldbuilding_mod_surface",
+      "source": "kubejs:apocalypsenow/worldgen/structure/clinic.json"
+    },
+    {
+      "id": "apocalypsenow:firefighter_st",
+      "reason": "worldbuilding_mod_surface",
+      "source": "kubejs:apocalypsenow/worldgen/structure/firefighter_st.json"
+    },
+    {
+      "id": "apocalypsenow:house_st",
+      "reason": "worldbuilding_mod_surface",
+      "source": "kubejs:apocalypsenow/worldgen/structure/house_st.json"
+    },
+    {
+      "id": "apocalypsenow:mansion_st",
+      "reason": "worldbuilding_mod_surface",
+      "source": "kubejs:apocalypsenow/worldgen/structure/mansion_st.json"
+    },
+    {
+      "id": "apocalypsenow:market_st",
+      "reason": "worldbuilding_mod_surface",
+      "source": "kubejs:apocalypsenow/worldgen/structure/market_st.json"
+    },
+    {
+      "id": "apocalypsenow:medicalpost_st",
+      "reason": "worldbuilding_mod_surface",
+      "source": "kubejs:apocalypsenow/worldgen/structure/medicalpost_st.json"
+    },
+    {
+      "id": "apocalypsenow:military_st",
+      "reason": "worldbuilding_mod_surface",
+      "source": "mod:apocalypsenow-3.0.5-forge-1.20.1.jar"
+    },
+    {
+      "id": "apocalypsenow:police_st",
+      "reason": "worldbuilding_mod_surface",
+      "source": "kubejs:apocalypsenow/worldgen/structure/police_st.json"
+    },
+    {
+      "id": "apocalypsenow:post",
+      "reason": "worldbuilding_mod_surface",
+      "source": "mod:apocalypsenow-3.0.5-forge-1.20.1.jar"
+    },
+    {
+      "id": "apocalypsenow:ruins_1",
+      "reason": "worldbuilding_mod_surface",
+      "source": "mod:apocalypsenow-3.0.5-forge-1.20.1.jar"
+    },
+    {
+      "id": "apocalypsenow:ruins_2",
+      "reason": "worldbuilding_mod_surface",
+      "source": "mod:apocalypsenow-3.0.5-forge-1.20.1.jar"
+    },
+    {
+      "id": "apocalypsenow:scrapyard",
+      "reason": "worldbuilding_mod_surface",
+      "source": "mod:apocalypsenow-3.0.5-forge-1.20.1.jar"
+    },
+    {
+      "id": "apocalypsenow:storage_st",
+      "reason": "worldbuilding_mod_surface",
+      "source": "kubejs:apocalypsenow/worldgen/structure/storage_st.json"
+    },
+    {
+      "id": "apocalypsenow:survivorcamp",
+      "reason": "worldbuilding_mod_surface",
+      "source": "mod:apocalypsenow-3.0.5-forge-1.20.1.jar"
+    },
+    {
+      "id": "apotheosis:tower_leaf",
+      "reason": "step:surface_structures",
+      "source": "mod:Apotheosis-1.20.1-7.4.8.jar"
+    },
+    {
+      "id": "apotheosis:tower_main",
+      "reason": "step:surface_structures",
+      "source": "mod:Apotheosis-1.20.1-7.4.8.jar"
+    },
+    {
+      "id": "apotheosis:tower_sand",
+      "reason": "step:surface_structures",
+      "source": "mod:Apotheosis-1.20.1-7.4.8.jar"
+    },
+    {
+      "id": "apotheosis:tower_spruce",
+      "reason": "step:surface_structures",
+      "source": "mod:Apotheosis-1.20.1-7.4.8.jar"
+    },
+    {
+      "id": "aquamirae:outpost",
+      "reason": "surface_landmark",
+      "source": "mod:aquamirae-forge-1.20.1-6.4.0.jar"
+    },
+    {
+      "id": "aquamirae:shelter",
+      "reason": "step:top_layer_modification",
+      "source": "mod:aquamirae-forge-1.20.1-6.4.0.jar"
+    },
+    {
+      "id": "aquamirae:ship",
+      "reason": "step:top_layer_modification",
+      "source": "mod:aquamirae-forge-1.20.1-6.4.0.jar"
+    },
+    {
+      "id": "aquamirae:surface/arch",
+      "reason": "surface_landmark",
+      "source": "mod:aquamirae-forge-1.20.1-6.4.0.jar"
+    },
+    {
+      "id": "aquamirae:surface/spiral",
+      "reason": "surface_landmark",
+      "source": "mod:aquamirae-forge-1.20.1-6.4.0.jar"
+    },
+    {
+      "id": "big_lost_city:bigshippingcontainer",
+      "reason": "worldbuilding_mod_surface",
+      "source": "mod:big_lost_city-1.0.1-forge-1.20.1.jar"
+    },
+    {
+      "id": "big_lost_city:blackskyscraper",
+      "reason": "worldbuilding_mod_surface",
+      "source": "mod:big_lost_city-1.0.1-forge-1.20.1.jar"
+    },
+    {
+      "id": "big_lost_city:car_1",
+      "reason": "worldbuilding_mod_surface",
+      "source": "mod:big_lost_city-1.0.1-forge-1.20.1.jar"
+    },
+    {
+      "id": "big_lost_city:car_10",
+      "reason": "worldbuilding_mod_surface",
+      "source": "mod:big_lost_city-1.0.1-forge-1.20.1.jar"
+    },
+    {
+      "id": "big_lost_city:car_2",
+      "reason": "worldbuilding_mod_surface",
+      "source": "mod:big_lost_city-1.0.1-forge-1.20.1.jar"
+    },
+    {
+      "id": "big_lost_city:car_3",
+      "reason": "worldbuilding_mod_surface",
+      "source": "mod:big_lost_city-1.0.1-forge-1.20.1.jar"
+    },
+    {
+      "id": "big_lost_city:car_4",
+      "reason": "worldbuilding_mod_surface",
+      "source": "mod:big_lost_city-1.0.1-forge-1.20.1.jar"
+    },
+    {
+      "id": "big_lost_city:car_5",
+      "reason": "worldbuilding_mod_surface",
+      "source": "mod:big_lost_city-1.0.1-forge-1.20.1.jar"
+    },
+    {
+      "id": "big_lost_city:car_6",
+      "reason": "worldbuilding_mod_surface",
+      "source": "mod:big_lost_city-1.0.1-forge-1.20.1.jar"
+    },
+    {
+      "id": "big_lost_city:car_7",
+      "reason": "worldbuilding_mod_surface",
+      "source": "mod:big_lost_city-1.0.1-forge-1.20.1.jar"
+    },
+    {
+      "id": "big_lost_city:car_8",
+      "reason": "worldbuilding_mod_surface",
+      "source": "mod:big_lost_city-1.0.1-forge-1.20.1.jar"
+    },
+    {
+      "id": "big_lost_city:car_9",
+      "reason": "worldbuilding_mod_surface",
+      "source": "mod:big_lost_city-1.0.1-forge-1.20.1.jar"
+    },
+    {
+      "id": "big_lost_city:deco_1",
+      "reason": "worldbuilding_mod_surface",
+      "source": "mod:big_lost_city-1.0.1-forge-1.20.1.jar"
+    },
+    {
+      "id": "big_lost_city:deco_10",
+      "reason": "worldbuilding_mod_surface",
+      "source": "mod:big_lost_city-1.0.1-forge-1.20.1.jar"
+    },
+    {
+      "id": "big_lost_city:deco_11",
+      "reason": "worldbuilding_mod_surface",
+      "source": "mod:big_lost_city-1.0.1-forge-1.20.1.jar"
+    },
+    {
+      "id": "big_lost_city:deco_12",
+      "reason": "worldbuilding_mod_surface",
+      "source": "mod:big_lost_city-1.0.1-forge-1.20.1.jar"
+    },
+    {
+      "id": "big_lost_city:deco_13",
+      "reason": "worldbuilding_mod_surface",
+      "source": "mod:big_lost_city-1.0.1-forge-1.20.1.jar"
+    },
+    {
+      "id": "big_lost_city:deco_14",
+      "reason": "worldbuilding_mod_surface",
+      "source": "mod:big_lost_city-1.0.1-forge-1.20.1.jar"
+    },
+    {
+      "id": "big_lost_city:deco_2",
+      "reason": "worldbuilding_mod_surface",
+      "source": "mod:big_lost_city-1.0.1-forge-1.20.1.jar"
+    },
+    {
+      "id": "big_lost_city:deco_3",
+      "reason": "worldbuilding_mod_surface",
+      "source": "mod:big_lost_city-1.0.1-forge-1.20.1.jar"
+    },
+    {
+      "id": "big_lost_city:deco_4",
+      "reason": "worldbuilding_mod_surface",
+      "source": "mod:big_lost_city-1.0.1-forge-1.20.1.jar"
+    },
+    {
+      "id": "big_lost_city:deco_5",
+      "reason": "worldbuilding_mod_surface",
+      "source": "mod:big_lost_city-1.0.1-forge-1.20.1.jar"
+    },
+    {
+      "id": "big_lost_city:deco_6",
+      "reason": "worldbuilding_mod_surface",
+      "source": "mod:big_lost_city-1.0.1-forge-1.20.1.jar"
+    },
+    {
+      "id": "big_lost_city:deco_7",
+      "reason": "worldbuilding_mod_surface",
+      "source": "mod:big_lost_city-1.0.1-forge-1.20.1.jar"
+    },
+    {
+      "id": "big_lost_city:deco_8",
+      "reason": "worldbuilding_mod_surface",
+      "source": "mod:big_lost_city-1.0.1-forge-1.20.1.jar"
+    },
+    {
+      "id": "big_lost_city:deco_9",
+      "reason": "worldbuilding_mod_surface",
+      "source": "mod:big_lost_city-1.0.1-forge-1.20.1.jar"
+    },
+    {
+      "id": "big_lost_city:ferriswheel",
+      "reason": "worldbuilding_mod_surface",
+      "source": "mod:big_lost_city-1.0.1-forge-1.20.1.jar"
+    },
+    {
+      "id": "big_lost_city:house_1",
+      "reason": "worldbuilding_mod_surface",
+      "source": "mod:big_lost_city-1.0.1-forge-1.20.1.jar"
+    },
+    {
+      "id": "big_lost_city:house_2",
+      "reason": "worldbuilding_mod_surface",
+      "source": "mod:big_lost_city-1.0.1-forge-1.20.1.jar"
+    },
+    {
+      "id": "big_lost_city:house_3",
+      "reason": "worldbuilding_mod_surface",
+      "source": "mod:big_lost_city-1.0.1-forge-1.20.1.jar"
+    },
+    {
+      "id": "big_lost_city:powerplant",
+      "reason": "worldbuilding_mod_surface",
+      "source": "mod:big_lost_city-1.0.1-forge-1.20.1.jar"
+    },
+    {
+      "id": "big_lost_city:redskyscraper",
+      "reason": "worldbuilding_mod_surface",
+      "source": "mod:big_lost_city-1.0.1-forge-1.20.1.jar"
+    },
+    {
+      "id": "big_lost_city:ruindedredskyscraper",
+      "reason": "worldbuilding_mod_surface",
+      "source": "mod:big_lost_city-1.0.1-forge-1.20.1.jar"
+    },
+    {
+      "id": "big_lost_city:ruinedblackskyscraper",
+      "reason": "worldbuilding_mod_surface",
+      "source": "mod:big_lost_city-1.0.1-forge-1.20.1.jar"
+    },
+    {
+      "id": "big_lost_city:ruinedskyscraper",
+      "reason": "worldbuilding_mod_surface",
+      "source": "mod:big_lost_city-1.0.1-forge-1.20.1.jar"
+    },
+    {
+      "id": "big_lost_city:smallshippingcontainer",
+      "reason": "worldbuilding_mod_surface",
+      "source": "mod:big_lost_city-1.0.1-forge-1.20.1.jar"
+    },
+    {
+      "id": "big_lost_city:store_1",
+      "reason": "worldbuilding_mod_surface",
+      "source": "mod:big_lost_city-1.0.1-forge-1.20.1.jar"
+    },
+    {
+      "id": "big_lost_city:tallskyscraper",
+      "reason": "worldbuilding_mod_surface",
+      "source": "mod:big_lost_city-1.0.1-forge-1.20.1.jar"
+    },
+    {
+      "id": "big_lost_city:tent_1",
+      "reason": "worldbuilding_mod_surface",
+      "source": "mod:big_lost_city-1.0.1-forge-1.20.1.jar"
+    },
+    {
+      "id": "big_lost_city:tent_2",
+      "reason": "worldbuilding_mod_surface",
+      "source": "mod:big_lost_city-1.0.1-forge-1.20.1.jar"
+    },
+    {
+      "id": "big_lost_city:tent_3",
+      "reason": "worldbuilding_mod_surface",
+      "source": "mod:big_lost_city-1.0.1-forge-1.20.1.jar"
+    },
+    {
+      "id": "big_lost_city:warehouse",
+      "reason": "worldbuilding_mod_surface",
+      "source": "mod:big_lost_city-1.0.1-forge-1.20.1.jar"
+    },
+    {
+      "id": "blocky_bikes:garage",
+      "reason": "worldbuilding_mod_surface",
+      "source": "mod:blocky_bikes-0.0.7-forge-1.20.1.jar"
+    },
+    {
+      "id": "blocky_bikes:garage_2",
+      "reason": "worldbuilding_mod_surface",
+      "source": "mod:blocky_bikes-0.0.7-forge-1.20.1.jar"
+    },
+    {
+      "id": "butchery:vindicator_butchers_house",
+      "reason": "step:surface_structures",
+      "source": "mod:butchery-5.2-forge-1.20.1.jar"
+    },
+    {
+      "id": "cataclysm:abandoned_spire",
+      "reason": "step:surface_structures",
+      "source": "mod:L_Enders_Cataclysm-3.31.jar"
+    },
+    {
+      "id": "cataclysm:abandoned_temple",
+      "reason": "step:surface_structures",
+      "source": "mod:L_Enders_Cataclysm-3.31.jar"
+    },
+    {
+      "id": "cataclysm:acropolis",
+      "reason": "step:surface_structures",
+      "source": "mod:L_Enders_Cataclysm-3.31.jar"
+    },
+    {
+      "id": "cataclysm:burning_arena",
+      "reason": "step:surface_structures",
+      "source": "mod:L_Enders_Cataclysm-3.31.jar"
+    },
+    {
+      "id": "cataclysm:cursed_pyramid",
+      "reason": "step:surface_structures",
+      "source": "mod:L_Enders_Cataclysm-3.31.jar"
+    },
+    {
+      "id": "cataclysm:desert_site",
+      "reason": "step:surface_structures",
+      "source": "mod:L_Enders_Cataclysm-3.31.jar"
+    },
+    {
+      "id": "cataclysm:frosted_prison",
+      "reason": "step:surface_structures",
+      "source": "mod:L_Enders_Cataclysm-3.31.jar"
+    },
+    {
+      "id": "cataclysm:ruined_citadel",
+      "reason": "step:surface_structures",
+      "source": "mod:L_Enders_Cataclysm-3.31.jar"
+    },
+    {
+      "id": "cataclysm:soul_black_smith",
+      "reason": "step:surface_structures",
+      "source": "mod:L_Enders_Cataclysm-3.31.jar"
+    },
+    {
+      "id": "cataclysm:sunken_city",
+      "reason": "step:surface_structures",
+      "source": "mod:L_Enders_Cataclysm-3.31.jar"
+    },
+    {
+      "id": "chaoszpack_structures:watch_tower_1",
+      "reason": "step:surface_structures",
+      "source": "mod:chaoszpack_structures-1.0.2-1.20.1.jar"
+    },
+    {
+      "id": "createmechanicalcompanion:illager_workshop",
+      "reason": "step:surface_structures",
+      "source": "mod:createmechanicalcompanion-1.8-1.20.1.jar"
+    },
+    {
+      "id": "doomsday_structures:fire_station",
+      "reason": "worldbuilding_mod_surface",
+      "source": "mod:doomsday_structures-1.0.0-forge-1.20.1.jar"
+    },
+    {
+      "id": "doomsday_structures:gas_station",
+      "reason": "worldbuilding_mod_surface",
+      "source": "mod:doomsday_structures-1.0.0-forge-1.20.1.jar"
+    },
+    {
+      "id": "doomsday_structures:shops",
+      "reason": "worldbuilding_mod_surface",
+      "source": "mod:doomsday_structures-1.0.0-forge-1.20.1.jar"
+    },
+    {
+      "id": "horror_element_mod:crucifiedsect",
+      "reason": "worldbuilding_mod_surface",
+      "source": "mod:horror_element_mod-1.6.3-forge-1.20.1.jar"
+    },
+    {
+      "id": "horror_element_mod:deathcamp",
+      "reason": "worldbuilding_mod_surface",
+      "source": "mod:horror_element_mod-1.6.3-forge-1.20.1.jar"
+    },
+    {
+      "id": "horror_element_mod:devastatedfarm",
+      "reason": "worldbuilding_mod_surface",
+      "source": "mod:horror_element_mod-1.6.3-forge-1.20.1.jar"
+    },
+    {
+      "id": "horror_element_mod:entitytower",
+      "reason": "worldbuilding_mod_surface",
+      "source": "mod:horror_element_mod-1.6.3-forge-1.20.1.jar"
+    },
+    {
+      "id": "horror_element_mod:forestbody",
+      "reason": "worldbuilding_mod_surface",
+      "source": "mod:horror_element_mod-1.6.3-forge-1.20.1.jar"
+    },
+    {
+      "id": "horror_element_mod:fortified_church",
+      "reason": "worldbuilding_mod_surface",
+      "source": "mod:horror_element_mod-1.6.3-forge-1.20.1.jar"
+    },
+    {
+      "id": "horror_element_mod:graveyard",
+      "reason": "worldbuilding_mod_surface",
+      "source": "mod:horror_element_mod-1.6.3-forge-1.20.1.jar"
+    },
+    {
+      "id": "horror_element_mod:herobrine_sanctum",
+      "reason": "worldbuilding_mod_surface",
+      "source": "mod:horror_element_mod-1.6.3-forge-1.20.1.jar"
+    },
+    {
+      "id": "horror_element_mod:laboratory",
+      "reason": "worldbuilding_mod_surface",
+      "source": "mod:horror_element_mod-1.6.3-forge-1.20.1.jar"
+    },
+    {
+      "id": "horror_element_mod:labyrinth",
+      "reason": "worldbuilding_mod_surface",
+      "source": "mod:horror_element_mod-1.6.3-forge-1.20.1.jar"
+    },
+    {
+      "id": "horror_element_mod:laststandhouse",
+      "reason": "worldbuilding_mod_surface",
+      "source": "mod:horror_element_mod-1.6.3-forge-1.20.1.jar"
+    },
+    {
+      "id": "horror_element_mod:militaryritual",
+      "reason": "worldbuilding_mod_surface",
+      "source": "mod:horror_element_mod-1.6.3-forge-1.20.1.jar"
+    },
+    {
+      "id": "horror_element_mod:psycho_house",
+      "reason": "worldbuilding_mod_surface",
+      "source": "mod:horror_element_mod-1.6.3-forge-1.20.1.jar"
+    },
+    {
+      "id": "horror_element_mod:voodoo_sanctum",
+      "reason": "worldbuilding_mod_surface",
+      "source": "mod:horror_element_mod-1.6.3-forge-1.20.1.jar"
+    },
+    {
+      "id": "hybrid_aquatic:whale_fall",
+      "reason": "step:surface_structures",
+      "source": "mod:[1.20.1-Forge] Hybrid Aquatic 1.6.8.jar"
+    },
+    {
+      "id": "infectious:abandoned_church",
+      "reason": "step:surface_structures",
+      "source": "mod:Infectious-forge-1.20.1-1.7.jar"
+    },
+    {
+      "id": "infectious:abandoned_house_huge",
+      "reason": "step:surface_structures",
+      "source": "mod:Infectious-forge-1.20.1-1.7.jar"
+    },
+    {
+      "id": "infectious:abandoned_house_medium_0",
+      "reason": "step:surface_structures",
+      "source": "mod:Infectious-forge-1.20.1-1.7.jar"
+    },
+    {
+      "id": "infectious:abandoned_house_medium_1",
+      "reason": "step:surface_structures",
+      "source": "mod:Infectious-forge-1.20.1-1.7.jar"
+    },
+    {
+      "id": "infectious:abandoned_house_medium_2",
+      "reason": "step:surface_structures",
+      "source": "mod:Infectious-forge-1.20.1-1.7.jar"
+    },
+    {
+      "id": "infectious:abandoned_house_small_0",
+      "reason": "step:surface_structures",
+      "source": "mod:Infectious-forge-1.20.1-1.7.jar"
+    },
+    {
+      "id": "infectious:abandoned_house_small_1",
+      "reason": "step:surface_structures",
+      "source": "mod:Infectious-forge-1.20.1-1.7.jar"
+    },
+    {
+      "id": "infectious:abandoned_trader_house",
+      "reason": "step:surface_structures",
+      "source": "mod:Infectious-forge-1.20.1-1.7.jar"
+    },
+    {
+      "id": "infectious:armored_truck",
+      "reason": "step:surface_structures",
+      "source": "mod:Infectious-forge-1.20.1-1.7.jar"
+    },
+    {
+      "id": "infectious:bear_trap",
+      "reason": "step:surface_structures",
+      "source": "mod:Infectious-forge-1.20.1-1.7.jar"
+    },
+    {
+      "id": "infectious:bus",
+      "reason": "step:surface_structures",
+      "source": "mod:Infectious-forge-1.20.1-1.7.jar"
+    },
+    {
+      "id": "infectious:crashed_helicopter",
+      "reason": "step:surface_structures",
+      "source": "mod:Infectious-forge-1.20.1-1.7.jar"
+    },
+    {
+      "id": "infectious:green_tank",
+      "reason": "step:surface_structures",
+      "source": "mod:Infectious-forge-1.20.1-1.7.jar"
+    },
+    {
+      "id": "infectious:military_base",
+      "reason": "step:surface_structures",
+      "source": "mod:Infectious-forge-1.20.1-1.7.jar"
+    },
+    {
+      "id": "infectious:mines",
+      "reason": "step:surface_structures",
+      "source": "mod:Infectious-forge-1.20.1-1.7.jar"
+    },
+    {
+      "id": "infectious:radio_tower",
+      "reason": "step:surface_structures",
+      "source": "mod:Infectious-forge-1.20.1-1.7.jar"
+    },
+    {
+      "id": "infectious:swat_truck",
+      "reason": "step:surface_structures",
+      "source": "mod:Infectious-forge-1.20.1-1.7.jar"
+    },
+    {
+      "id": "infectious:trader_house_crafter",
+      "reason": "step:surface_structures",
+      "source": "mod:Infectious-forge-1.20.1-1.7.jar"
+    },
+    {
+      "id": "infectious:trader_house_undead_collector",
+      "reason": "step:surface_structures",
+      "source": "mod:Infectious-forge-1.20.1-1.7.jar"
+    },
+    {
+      "id": "infectious:truck",
+      "reason": "step:surface_structures",
+      "source": "mod:Infectious-forge-1.20.1-1.7.jar"
+    },
+    {
+      "id": "infectious:yellow_tank",
+      "reason": "step:surface_structures",
+      "source": "mod:Infectious-forge-1.20.1-1.7.jar"
+    },
+    {
+      "id": "jeffs_cursed_walking_structures:collapsed_comunication_tower_desert",
+      "reason": "step:surface_structures",
+      "source": "mod:[TACZ ONLY] jeffs_cursed_walking_structures-1.0.6-forge-1.20.1.jar"
+    },
+    {
+      "id": "jeffs_cursed_walking_structures:collapsed_comunication_tower_forest",
+      "reason": "step:surface_structures",
+      "source": "mod:[TACZ ONLY] jeffs_cursed_walking_structures-1.0.6-forge-1.20.1.jar"
+    },
+    {
+      "id": "jeffs_cursed_walking_structures:collapsed_comunication_tower_tundra",
+      "reason": "step:surface_structures",
+      "source": "mod:[TACZ ONLY] jeffs_cursed_walking_structures-1.0.6-forge-1.20.1.jar"
+    },
+    {
+      "id": "jeffs_cursed_walking_structures:collapsed_radio_tower_desert",
+      "reason": "step:surface_structures",
+      "source": "mod:[TACZ ONLY] jeffs_cursed_walking_structures-1.0.6-forge-1.20.1.jar"
+    },
+    {
+      "id": "jeffs_cursed_walking_structures:collapsed_radio_tower_plains",
+      "reason": "step:surface_structures",
+      "source": "mod:[TACZ ONLY] jeffs_cursed_walking_structures-1.0.6-forge-1.20.1.jar"
+    },
+    {
+      "id": "jeffs_cursed_walking_structures:collapsed_radio_tower_tundra",
+      "reason": "step:surface_structures",
+      "source": "mod:[TACZ ONLY] jeffs_cursed_walking_structures-1.0.6-forge-1.20.1.jar"
+    },
+    {
+      "id": "jeffs_cursed_walking_structures:destroyed_radio_tower_desert",
+      "reason": "step:surface_structures",
+      "source": "mod:[TACZ ONLY] jeffs_cursed_walking_structures-1.0.6-forge-1.20.1.jar"
+    },
+    {
+      "id": "jeffs_cursed_walking_structures:destroyed_radio_tower_plains",
+      "reason": "step:surface_structures",
+      "source": "mod:[TACZ ONLY] jeffs_cursed_walking_structures-1.0.6-forge-1.20.1.jar"
+    },
+    {
+      "id": "jeffs_cursed_walking_structures:destroyed_radio_tower_tundra",
+      "reason": "step:surface_structures",
+      "source": "mod:[TACZ ONLY] jeffs_cursed_walking_structures-1.0.6-forge-1.20.1.jar"
+    },
+    {
+      "id": "jeffs_cursed_walking_structures:finaldestination",
+      "reason": "step:surface_structures",
+      "source": "mod:[TACZ ONLY] jeffs_cursed_walking_structures-1.0.6-forge-1.20.1.jar"
+    },
+    {
+      "id": "jeffs_cursed_walking_structures:nuclearreactor",
+      "reason": "step:surface_structures",
+      "source": "mod:[TACZ ONLY] jeffs_cursed_walking_structures-1.0.6-forge-1.20.1.jar"
+    },
+    {
+      "id": "jeffs_cursed_walking_structures:nuclearsilo",
+      "reason": "step:surface_structures",
+      "source": "mod:[TACZ ONLY] jeffs_cursed_walking_structures-1.0.6-forge-1.20.1.jar"
+    },
+    {
+      "id": "jeffs_cursed_walking_structures:oil_rig",
+      "reason": "step:surface_structures",
+      "source": "mod:[TACZ ONLY] jeffs_cursed_walking_structures-1.0.6-forge-1.20.1.jar"
+    },
+    {
+      "id": "jeffs_cursed_walking_structures:oil_rig_submarine_station",
+      "reason": "step:surface_structures",
+      "source": "mod:[TACZ ONLY] jeffs_cursed_walking_structures-1.0.6-forge-1.20.1.jar"
+    },
+    {
+      "id": "jeffs_cursed_walking_structures:oilrigsnow",
+      "reason": "step:surface_structures",
+      "source": "mod:[TACZ ONLY] jeffs_cursed_walking_structures-1.0.6-forge-1.20.1.jar"
+    },
+    {
+      "id": "jeffs_cursed_walking_structures:radio_tower_desert",
+      "reason": "step:surface_structures",
+      "source": "mod:[TACZ ONLY] jeffs_cursed_walking_structures-1.0.6-forge-1.20.1.jar"
+    },
+    {
+      "id": "jeffs_cursed_walking_structures:radio_tower_plains",
+      "reason": "step:surface_structures",
+      "source": "mod:[TACZ ONLY] jeffs_cursed_walking_structures-1.0.6-forge-1.20.1.jar"
+    },
+    {
+      "id": "jeffs_cursed_walking_structures:radio_tower_tundra",
+      "reason": "step:surface_structures",
+      "source": "mod:[TACZ ONLY] jeffs_cursed_walking_structures-1.0.6-forge-1.20.1.jar"
+    },
+    {
+      "id": "jeffs_cursed_walking_structures:supply_house_desert",
+      "reason": "step:surface_structures",
+      "source": "mod:[TACZ ONLY] jeffs_cursed_walking_structures-1.0.6-forge-1.20.1.jar"
+    },
+    {
+      "id": "jeffs_cursed_walking_structures:supply_house_forest",
+      "reason": "step:surface_structures",
+      "source": "mod:[TACZ ONLY] jeffs_cursed_walking_structures-1.0.6-forge-1.20.1.jar"
+    },
+    {
+      "id": "jeffs_cursed_walking_structures:supply_house_snow",
+      "reason": "step:surface_structures",
+      "source": "mod:[TACZ ONLY] jeffs_cursed_walking_structures-1.0.6-forge-1.20.1.jar"
+    },
+    {
+      "id": "jeffs_cursed_walking_structures:telecomunication_tower_desert",
+      "reason": "step:surface_structures",
+      "source": "mod:[TACZ ONLY] jeffs_cursed_walking_structures-1.0.6-forge-1.20.1.jar"
+    },
+    {
+      "id": "jeffs_cursed_walking_structures:telecomunication_tower_forest",
+      "reason": "step:surface_structures",
+      "source": "mod:[TACZ ONLY] jeffs_cursed_walking_structures-1.0.6-forge-1.20.1.jar"
+    },
+    {
+      "id": "jeffs_cursed_walking_structures:telecomunication_tower_tundra",
+      "reason": "step:surface_structures",
+      "source": "mod:[TACZ ONLY] jeffs_cursed_walking_structures-1.0.6-forge-1.20.1.jar"
+    },
+    {
+      "id": "jeffs_cursed_walking_structures:void_teleporter_lush",
+      "reason": "step:surface_structures",
+      "source": "mod:[TACZ ONLY] jeffs_cursed_walking_structures-1.0.6-forge-1.20.1.jar"
+    },
+    {
+      "id": "jeffs_cursed_walking_structures:void_teleporter_sculk",
+      "reason": "step:surface_structures",
+      "source": "mod:[TACZ ONLY] jeffs_cursed_walking_structures-1.0.6-forge-1.20.1.jar"
+    },
+    {
+      "id": "jeffs_cursed_walking_structures:warehouseofdoom",
+      "reason": "step:surface_structures",
+      "source": "mod:[TACZ ONLY] jeffs_cursed_walking_structures-1.0.6-forge-1.20.1.jar"
+    },
+    {
+      "id": "jeffs_cursed_walking_structures:wifi_tower_desert",
+      "reason": "step:surface_structures",
+      "source": "mod:[TACZ ONLY] jeffs_cursed_walking_structures-1.0.6-forge-1.20.1.jar"
+    },
+    {
+      "id": "jeffs_cursed_walking_structures:wifi_tower_forest",
+      "reason": "step:surface_structures",
+      "source": "mod:[TACZ ONLY] jeffs_cursed_walking_structures-1.0.6-forge-1.20.1.jar"
+    },
+    {
+      "id": "jeffs_cursed_walking_structures:wifi_tower_snow",
+      "reason": "step:surface_structures",
+      "source": "mod:[TACZ ONLY] jeffs_cursed_walking_structures-1.0.6-forge-1.20.1.jar"
+    },
+    {
+      "id": "minecolonies:amazon_camp",
+      "reason": "step:surface_structures",
+      "source": "mod:minecolonies-1.20.1-1.1.1276.jar"
+    },
+    {
+      "id": "minecolonies:asian_colony",
+      "reason": "step:surface_structures",
+      "source": "mod:minecolonies-1.20.1-1.1.1276.jar"
+    },
+    {
+      "id": "minecolonies:barbarian_camp",
+      "reason": "step:surface_structures",
+      "source": "mod:minecolonies-1.20.1-1.1.1276.jar"
+    },
+    {
+      "id": "minecolonies:caledonia_colony",
+      "reason": "step:surface_structures",
+      "source": "mod:minecolonies-1.20.1-1.1.1276.jar"
+    },
+    {
+      "id": "minecolonies:colonial_colony",
+      "reason": "step:surface_structures",
+      "source": "mod:minecolonies-1.20.1-1.1.1276.jar"
+    },
+    {
+      "id": "minecolonies:desert_camp",
+      "reason": "step:surface_structures",
+      "source": "mod:minecolonies-1.20.1-1.1.1276.jar"
+    },
+    {
+      "id": "minecolonies:desertoasis_colony",
+      "reason": "step:surface_structures",
+      "source": "mod:minecolonies-1.20.1-1.1.1276.jar"
+    },
+    {
+      "id": "minecolonies:incan_colony",
+      "reason": "step:surface_structures",
+      "source": "mod:minecolonies-1.20.1-1.1.1276.jar"
+    },
+    {
+      "id": "minecolonies:lostmesacity_colony",
+      "reason": "step:surface_structures",
+      "source": "mod:minecolonies-1.20.1-1.1.1276.jar"
+    },
+    {
+      "id": "minecolonies:medieval_birch_colony",
+      "reason": "step:surface_structures",
+      "source": "mod:minecolonies-1.20.1-1.1.1276.jar"
+    },
+    {
+      "id": "minecolonies:medieval_dark_oak_colony",
+      "reason": "step:surface_structures",
+      "source": "mod:minecolonies-1.20.1-1.1.1276.jar"
+    },
+    {
+      "id": "minecolonies:medieval_oak_colony",
+      "reason": "step:surface_structures",
+      "source": "mod:minecolonies-1.20.1-1.1.1276.jar"
+    },
+    {
+      "id": "minecolonies:medieval_spruce_colony",
+      "reason": "step:surface_structures",
+      "source": "mod:minecolonies-1.20.1-1.1.1276.jar"
+    },
+    {
+      "id": "minecolonies:ship",
+      "reason": "step:surface_structures",
+      "source": "mod:minecolonies-1.20.1-1.1.1276.jar"
+    },
+    {
+      "id": "minecolonies:shire_colony",
+      "reason": "step:surface_structures",
+      "source": "mod:minecolonies-1.20.1-1.1.1276.jar"
+    },
+    {
+      "id": "mowziesmobs:frostmaw_spawn",
+      "reason": "step:surface_structures",
+      "source": "mod:mowziesmobs-1.8.2.jar"
+    },
+    {
+      "id": "mowziesmobs:monastery",
+      "reason": "step:surface_structures",
+      "source": "mod:mowziesmobs-1.8.2.jar"
+    },
+    {
+      "id": "mowziesmobs:umvuthana_grove",
+      "reason": "step:surface_structures",
+      "source": "mod:mowziesmobs-1.8.2.jar"
+    },
+    {
+      "id": "mowziesmobs:wrought_chamber",
+      "reason": "step:surface_structures",
+      "source": "mod:mowziesmobs-1.8.2.jar"
+    },
+    {
+      "id": "radiotowers:airdrop",
+      "reason": "worldbuilding_mod_surface",
+      "source": "mod:radiotowers-1.0.10+1.20.1-forge.jar"
+    },
+    {
+      "id": "radiotowers:radiotower",
+      "reason": "worldbuilding_mod_surface",
+      "source": "mod:radiotowers-1.0.10+1.20.1-forge.jar"
+    },
+    {
+      "id": "radiotowers:radiotower_2",
+      "reason": "worldbuilding_mod_surface",
+      "source": "mod:radiotowers-1.0.10+1.20.1-forge.jar"
+    },
+    {
+      "id": "radiotowers:radiotoweroverrun",
+      "reason": "worldbuilding_mod_surface",
+      "source": "mod:radiotowers-1.0.10+1.20.1-forge.jar"
+    },
+    {
+      "id": "realmrpg_quests:anglers",
+      "reason": "step:surface_structures",
+      "source": "mod:realmrpg_quests-0.1.1-forge-1.20.1.jar"
+    },
+    {
+      "id": "realmrpg_quests:cooks",
+      "reason": "step:surface_structures",
+      "source": "mod:realmrpg_quests-0.1.1-forge-1.20.1.jar"
+    },
+    {
+      "id": "realmrpg_quests:lumberjacks",
+      "reason": "step:surface_structures",
+      "source": "mod:realmrpg_quests-0.1.1-forge-1.20.1.jar"
+    },
+    {
+      "id": "realmrpg_quests:miners",
+      "reason": "step:surface_structures",
+      "source": "mod:realmrpg_quests-0.1.1-forge-1.20.1.jar"
+    },
+    {
+      "id": "realmrpg_quests:monster_hunters",
+      "reason": "step:surface_structures",
+      "source": "mod:realmrpg_quests-0.1.1-forge-1.20.1.jar"
+    },
+    {
+      "id": "spore:biomass_tower",
+      "reason": "step:surface_structures",
+      "source": "mod:spore_1.20.1_2.2.0j.jar"
+    },
+    {
+      "id": "spore:cathedral",
+      "reason": "step:surface_structures",
+      "source": "mod:spore_1.20.1_2.2.0j.jar"
+    },
+    {
+      "id": "spore:cell",
+      "reason": "step:surface_structures",
+      "source": "mod:spore_1.20.1_2.2.0j.jar"
+    },
+    {
+      "id": "spore:celltower",
+      "reason": "step:surface_structures",
+      "source": "mod:spore_1.20.1_2.2.0j.jar"
+    },
+    {
+      "id": "spore:church",
+      "reason": "step:surface_structures",
+      "source": "mod:spore_1.20.1_2.2.0j.jar"
+    },
+    {
+      "id": "spore:hospital",
+      "reason": "step:surface_structures",
+      "source": "mod:spore_1.20.1_2.2.0j.jar"
+    },
+    {
+      "id": "spore:iceberg_mines",
+      "reason": "step:surface_structures",
+      "source": "mod:spore_1.20.1_2.2.0j.jar"
+    },
+    {
+      "id": "spore:lab",
+      "reason": "step:surface_structures",
+      "source": "mod:spore_1.20.1_2.2.0j.jar"
+    },
+    {
+      "id": "spore:lodge",
+      "reason": "step:surface_structures",
+      "source": "mod:spore_1.20.1_2.2.0j.jar"
+    },
+    {
+      "id": "spore:mass_grave",
+      "reason": "step:surface_structures",
+      "source": "mod:spore_1.20.1_2.2.0j.jar"
+    },
+    {
+      "id": "spore:military_camp",
+      "reason": "step:surface_structures",
+      "source": "mod:spore_1.20.1_2.2.0j.jar"
+    },
+    {
+      "id": "spore:mines",
+      "reason": "step:surface_structures",
+      "source": "mod:spore_1.20.1_2.2.0j.jar"
+    },
+    {
+      "id": "spore:prison",
+      "reason": "step:surface_structures",
+      "source": "mod:spore_1.20.1_2.2.0j.jar"
+    },
+    {
+      "id": "supplementaries:way_sign",
+      "reason": "step:strongholds",
+      "source": "mod:supplementaries-1.20-3.1.43-forge.jar"
+    },
+    {
+      "id": "survival_instinct:facility",
+      "reason": "worldbuilding_mod_surface",
+      "source": "mod:survival_instinct-1.0.2-forge-1.20.1.jar"
+    },
+    {
+      "id": "survival_instinct:fire_staton",
+      "reason": "worldbuilding_mod_surface",
+      "source": "mod:survival_instinct-1.0.2-forge-1.20.1.jar"
+    },
+    {
+      "id": "survival_instinct:gas_station",
+      "reason": "worldbuilding_mod_surface",
+      "source": "mod:survival_instinct-1.0.2-forge-1.20.1.jar"
+    },
+    {
+      "id": "survival_instinct:hardware_store",
+      "reason": "worldbuilding_mod_surface",
+      "source": "mod:survival_instinct-1.0.2-forge-1.20.1.jar"
+    },
+    {
+      "id": "survival_instinct:military_camp",
+      "reason": "worldbuilding_mod_surface",
+      "source": "mod:survival_instinct-1.0.2-forge-1.20.1.jar"
+    },
+    {
+      "id": "survival_instinct:mini_market",
+      "reason": "worldbuilding_mod_surface",
+      "source": "mod:survival_instinct-1.0.2-forge-1.20.1.jar"
+    },
+    {
+      "id": "survival_instinct:old_road",
+      "reason": "worldbuilding_mod_surface",
+      "source": "mod:survival_instinct-1.0.2-forge-1.20.1.jar"
+    },
+    {
+      "id": "survival_instinct:pharmacy",
+      "reason": "worldbuilding_mod_surface",
+      "source": "mod:survival_instinct-1.0.2-forge-1.20.1.jar"
+    },
+    {
+      "id": "survival_instinct:suburban_house",
+      "reason": "worldbuilding_mod_surface",
+      "source": "mod:survival_instinct-1.0.2-forge-1.20.1.jar"
+    },
+    {
+      "id": "survival_instinct:survivor_camp",
+      "reason": "worldbuilding_mod_surface",
+      "source": "mod:survival_instinct-1.0.2-forge-1.20.1.jar"
+    },
+    {
+      "id": "survival_instinct:survivor_house",
+      "reason": "worldbuilding_mod_surface",
+      "source": "mod:survival_instinct-1.0.2-forge-1.20.1.jar"
+    },
+    {
+      "id": "survival_instinct:the_farm",
+      "reason": "worldbuilding_mod_surface",
+      "source": "mod:survival_instinct-1.0.2-forge-1.20.1.jar"
+    },
+    {
+      "id": "terralith:desert_outpost",
+      "reason": "surface_landmark",
+      "source": "mod:Terralith_1.20.x_v2.5.4.jar"
+    },
+    {
+      "id": "terralith:glacial_hut",
+      "reason": "step:surface_structures",
+      "source": "mod:Terralith_1.20.x_v2.5.4.jar"
+    },
+    {
+      "id": "terralith:igloo",
+      "reason": "step:surface_structures",
+      "source": "mod:Terralith_1.20.x_v2.5.4.jar"
+    },
+    {
+      "id": "terralith:mage_complex",
+      "reason": "step:surface_structures",
+      "source": "mod:Terralith_1.20.x_v2.5.4.jar"
+    },
+    {
+      "id": "terralith:mage_tower",
+      "reason": "surface_landmark",
+      "source": "mod:Terralith_1.20.x_v2.5.4.jar"
+    },
+    {
+      "id": "terralith:mage_tower_autumn",
+      "reason": "surface_landmark",
+      "source": "mod:Terralith_1.20.x_v2.5.4.jar"
+    },
+    {
+      "id": "terralith:mage_tower_spring",
+      "reason": "surface_landmark",
+      "source": "mod:Terralith_1.20.x_v2.5.4.jar"
+    },
+    {
+      "id": "terralith:mage_tower_summer",
+      "reason": "surface_landmark",
+      "source": "mod:Terralith_1.20.x_v2.5.4.jar"
+    },
+    {
+      "id": "terralith:mage_tower_winter",
+      "reason": "surface_landmark",
+      "source": "mod:Terralith_1.20.x_v2.5.4.jar"
+    },
+    {
+      "id": "terralith:rubble_desert",
+      "reason": "step:surface_structures",
+      "source": "mod:Terralith_1.20.x_v2.5.4.jar"
+    },
+    {
+      "id": "terralith:rubble_forest",
+      "reason": "step:surface_structures",
+      "source": "mod:Terralith_1.20.x_v2.5.4.jar"
+    },
+    {
+      "id": "terralith:rubble_jungle",
+      "reason": "step:surface_structures",
+      "source": "mod:Terralith_1.20.x_v2.5.4.jar"
+    },
+    {
+      "id": "terralith:rubble_mesa",
+      "reason": "step:surface_structures",
+      "source": "mod:Terralith_1.20.x_v2.5.4.jar"
+    },
+    {
+      "id": "terralith:rubble_mountain",
+      "reason": "step:surface_structures",
+      "source": "mod:Terralith_1.20.x_v2.5.4.jar"
+    },
+    {
+      "id": "terralith:rubble_taiga",
+      "reason": "step:surface_structures",
+      "source": "mod:Terralith_1.20.x_v2.5.4.jar"
+    },
+    {
+      "id": "terralith:spire",
+      "reason": "step:surface_structures",
+      "source": "mod:Terralith_1.20.x_v2.5.4.jar"
+    },
+    {
+      "id": "terralith:valley_lodge",
+      "reason": "step:surface_structures",
+      "source": "mod:Terralith_1.20.x_v2.5.4.jar"
+    },
+    {
+      "id": "terralith:witch_hut",
+      "reason": "step:surface_structures",
+      "source": "mod:Terralith_1.20.x_v2.5.4.jar"
+    },
+    {
+      "id": "towns_and_towers:exclusives/pillager_outpost_classic",
+      "reason": "surface_landmark",
+      "source": "mod:Towns-and-Towers-1.12-Fabric+Forge.jar"
+    },
+    {
+      "id": "towns_and_towers:exclusives/pillager_outpost_iberian",
+      "reason": "surface_landmark",
+      "source": "mod:Towns-and-Towers-1.12-Fabric+Forge.jar"
+    },
+    {
+      "id": "towns_and_towers:exclusives/pillager_outpost_mediterranean",
+      "reason": "surface_landmark",
+      "source": "mod:Towns-and-Towers-1.12-Fabric+Forge.jar"
+    },
+    {
+      "id": "towns_and_towers:exclusives/pillager_outpost_oriental",
+      "reason": "surface_landmark",
+      "source": "mod:Towns-and-Towers-1.12-Fabric+Forge.jar"
+    },
+    {
+      "id": "towns_and_towers:exclusives/pillager_outpost_rustic",
+      "reason": "surface_landmark",
+      "source": "mod:Towns-and-Towers-1.12-Fabric+Forge.jar"
+    },
+    {
+      "id": "towns_and_towers:exclusives/pillager_outpost_swedish",
+      "reason": "surface_landmark",
+      "source": "mod:Towns-and-Towers-1.12-Fabric+Forge.jar"
+    },
+    {
+      "id": "towns_and_towers:exclusives/pillager_outpost_tudor",
+      "reason": "surface_landmark",
+      "source": "mod:Towns-and-Towers-1.12-Fabric+Forge.jar"
+    },
+    {
+      "id": "towns_and_towers:mimic_desert",
+      "reason": "step:surface_structures",
+      "source": "mod:Towns-and-Towers-1.12-Fabric+Forge.jar"
+    },
+    {
+      "id": "towns_and_towers:pillager_outpost_badlands",
+      "reason": "surface_landmark",
+      "source": "mod:Towns-and-Towers-1.12-Fabric+Forge.jar"
+    },
+    {
+      "id": "towns_and_towers:pillager_outpost_beach",
+      "reason": "surface_landmark",
+      "source": "mod:Towns-and-Towers-1.12-Fabric+Forge.jar"
+    },
+    {
+      "id": "towns_and_towers:pillager_outpost_birch_forest",
+      "reason": "surface_landmark",
+      "source": "mod:Towns-and-Towers-1.12-Fabric+Forge.jar"
+    },
+    {
+      "id": "towns_and_towers:pillager_outpost_desert",
+      "reason": "surface_landmark",
+      "source": "mod:Towns-and-Towers-1.12-Fabric+Forge.jar"
+    },
+    {
+      "id": "towns_and_towers:pillager_outpost_flower_forest",
+      "reason": "surface_landmark",
+      "source": "mod:Towns-and-Towers-1.12-Fabric+Forge.jar"
+    },
+    {
+      "id": "towns_and_towers:pillager_outpost_forest",
+      "reason": "surface_landmark",
+      "source": "mod:Towns-and-Towers-1.12-Fabric+Forge.jar"
+    },
+    {
+      "id": "towns_and_towers:pillager_outpost_grove",
+      "reason": "surface_landmark",
+      "source": "mod:Towns-and-Towers-1.12-Fabric+Forge.jar"
+    },
+    {
+      "id": "towns_and_towers:pillager_outpost_jungle",
+      "reason": "surface_landmark",
+      "source": "mod:Towns-and-Towers-1.12-Fabric+Forge.jar"
+    },
+    {
+      "id": "towns_and_towers:pillager_outpost_meadow",
+      "reason": "surface_landmark",
+      "source": "mod:Towns-and-Towers-1.12-Fabric+Forge.jar"
+    },
+    {
+      "id": "towns_and_towers:pillager_outpost_mushroom_fields",
+      "reason": "surface_landmark",
+      "source": "mod:Towns-and-Towers-1.12-Fabric+Forge.jar"
+    },
+    {
+      "id": "towns_and_towers:pillager_outpost_ocean",
+      "reason": "surface_landmark",
+      "source": "mod:Towns-and-Towers-1.12-Fabric+Forge.jar"
+    },
+    {
+      "id": "towns_and_towers:pillager_outpost_old_growth_taiga",
+      "reason": "surface_landmark",
+      "source": "mod:Towns-and-Towers-1.12-Fabric+Forge.jar"
+    },
+    {
+      "id": "towns_and_towers:pillager_outpost_savanna",
+      "reason": "surface_landmark",
+      "source": "mod:Towns-and-Towers-1.12-Fabric+Forge.jar"
+    },
+    {
+      "id": "towns_and_towers:pillager_outpost_savanna_plateau",
+      "reason": "surface_landmark",
+      "source": "mod:Towns-and-Towers-1.12-Fabric+Forge.jar"
+    },
+    {
+      "id": "towns_and_towers:pillager_outpost_snowy_beach",
+      "reason": "surface_landmark",
+      "source": "mod:Towns-and-Towers-1.12-Fabric+Forge.jar"
+    },
+    {
+      "id": "towns_and_towers:pillager_outpost_snowy_plains",
+      "reason": "surface_landmark",
+      "source": "mod:Towns-and-Towers-1.12-Fabric+Forge.jar"
+    },
+    {
+      "id": "towns_and_towers:pillager_outpost_snowy_slopes",
+      "reason": "surface_landmark",
+      "source": "mod:Towns-and-Towers-1.12-Fabric+Forge.jar"
+    },
+    {
+      "id": "towns_and_towers:pillager_outpost_snowy_taiga",
+      "reason": "surface_landmark",
+      "source": "mod:Towns-and-Towers-1.12-Fabric+Forge.jar"
+    },
+    {
+      "id": "towns_and_towers:pillager_outpost_sparse_jungle",
+      "reason": "surface_landmark",
+      "source": "mod:Towns-and-Towers-1.12-Fabric+Forge.jar"
+    },
+    {
+      "id": "towns_and_towers:pillager_outpost_sunflower_plains",
+      "reason": "surface_landmark",
+      "source": "mod:Towns-and-Towers-1.12-Fabric+Forge.jar"
+    },
+    {
+      "id": "towns_and_towers:pillager_outpost_swamp",
+      "reason": "surface_landmark",
+      "source": "mod:Towns-and-Towers-1.12-Fabric+Forge.jar"
+    },
+    {
+      "id": "towns_and_towers:pillager_outpost_taiga",
+      "reason": "surface_landmark",
+      "source": "mod:Towns-and-Towers-1.12-Fabric+Forge.jar"
+    },
+    {
+      "id": "towns_and_towers:pillager_outpost_wooded_badlands",
+      "reason": "surface_landmark",
+      "source": "mod:Towns-and-Towers-1.12-Fabric+Forge.jar"
+    },
+    {
+      "id": "towns_and_towers:wreckage_ocean",
+      "reason": "surface_landmark",
+      "source": "mod:Towns-and-Towers-1.12-Fabric+Forge.jar"
+    },
+    {
+      "id": "urushi:kakuriyo_house",
+      "reason": "step:surface_structures",
+      "source": "mod:urushi-1.20.1-6.6.3.jar"
+    },
+    {
+      "id": "urushi:shrine_portal",
+      "reason": "step:surface_structures",
+      "source": "mod:urushi-1.20.1-6.6.3.jar"
+    },
+    {
+      "id": "urushi:wood_circle",
+      "reason": "step:surface_structures",
+      "source": "mod:urushi-1.20.1-6.6.3.jar"
+    },
+    {
+      "id": "zombiekit:gas_station",
+      "reason": "worldbuilding_mod_surface",
+      "source": "mod:Zombie Survival Kit-1.20.1-forge-2.1.8.jar"
+    },
+    {
+      "id": "zombiekit:gathering_camps",
+      "reason": "worldbuilding_mod_surface",
+      "source": "mod:Zombie Survival Kit-1.20.1-forge-2.1.8.jar"
+    },
+    {
+      "id": "zombiekit:jungle_shelter",
+      "reason": "worldbuilding_mod_surface",
+      "source": "mod:Zombie Survival Kit-1.20.1-forge-2.1.8.jar"
+    },
+    {
+      "id": "zombiekit:pond",
+      "reason": "worldbuilding_mod_surface",
+      "source": "mod:Zombie Survival Kit-1.20.1-forge-2.1.8.jar"
+    },
+    {
+      "id": "zombiekit:prison",
+      "reason": "worldbuilding_mod_surface",
+      "source": "mod:Zombie Survival Kit-1.20.1-forge-2.1.8.jar"
+    },
+    {
+      "id": "zombiekit:shelter",
+      "reason": "worldbuilding_mod_surface",
+      "source": "mod:Zombie Survival Kit-1.20.1-forge-2.1.8.jar"
+    },
+    {
+      "id": "zombiekit:touring_car",
+      "reason": "worldbuilding_mod_surface",
+      "source": "mod:Zombie Survival Kit-1.20.1-forge-2.1.8.jar"
+    }
+  ],
+  "kept": [
+    {
+      "id": "betterdungeons:skeleton_dungeon",
+      "reason": "underground",
+      "source": "mod:YungsBetterDungeons-1.20-Forge-4.0.4.jar"
+    },
+    {
+      "id": "betterdungeons:small_dungeon",
+      "reason": "underground",
+      "source": "mod:YungsBetterDungeons-1.20-Forge-4.0.4.jar"
+    },
+    {
+      "id": "betterdungeons:small_nether_dungeon",
+      "reason": "underground",
+      "source": "mod:YungsBetterDungeons-1.20-Forge-4.0.4.jar"
+    },
+    {
+      "id": "betterdungeons:spider_dungeon",
+      "reason": "underground",
+      "source": "mod:YungsBetterDungeons-1.20-Forge-4.0.4.jar"
+    },
+    {
+      "id": "betterdungeons:zombie_dungeon",
+      "reason": "underground",
+      "source": "mod:YungsBetterDungeons-1.20-Forge-4.0.4.jar"
+    },
+    {
+      "id": "bettermineshafts:mineshaft_acacia",
+      "reason": "underground",
+      "source": "mod:YungsBetterMineshafts-1.20-Forge-4.0.4.jar"
+    },
+    {
+      "id": "bettermineshafts:mineshaft_desert",
+      "reason": "underground",
+      "source": "mod:YungsBetterMineshafts-1.20-Forge-4.0.4.jar"
+    },
+    {
+      "id": "bettermineshafts:mineshaft_dripstone",
+      "reason": "underground",
+      "source": "mod:YungsBetterMineshafts-1.20-Forge-4.0.4.jar"
+    },
+    {
+      "id": "bettermineshafts:mineshaft_ice",
+      "reason": "underground",
+      "source": "mod:YungsBetterMineshafts-1.20-Forge-4.0.4.jar"
+    },
+    {
+      "id": "bettermineshafts:mineshaft_jungle",
+      "reason": "underground",
+      "source": "mod:YungsBetterMineshafts-1.20-Forge-4.0.4.jar"
+    },
+    {
+      "id": "bettermineshafts:mineshaft_lush",
+      "reason": "underground",
+      "source": "mod:YungsBetterMineshafts-1.20-Forge-4.0.4.jar"
+    },
+    {
+      "id": "bettermineshafts:mineshaft_mesa",
+      "reason": "underground",
+      "source": "mod:YungsBetterMineshafts-1.20-Forge-4.0.4.jar"
+    },
+    {
+      "id": "bettermineshafts:mineshaft_mushroom",
+      "reason": "underground",
+      "source": "mod:YungsBetterMineshafts-1.20-Forge-4.0.4.jar"
+    },
+    {
+      "id": "bettermineshafts:mineshaft_oak",
+      "reason": "underground",
+      "source": "mod:YungsBetterMineshafts-1.20-Forge-4.0.4.jar"
+    },
+    {
+      "id": "bettermineshafts:mineshaft_overgrown",
+      "reason": "underground",
+      "source": "mod:YungsBetterMineshafts-1.20-Forge-4.0.4.jar"
+    },
+    {
+      "id": "bettermineshafts:mineshaft_red_desert",
+      "reason": "underground",
+      "source": "mod:YungsBetterMineshafts-1.20-Forge-4.0.4.jar"
+    },
+    {
+      "id": "bettermineshafts:mineshaft_spruce",
+      "reason": "underground",
+      "source": "mod:YungsBetterMineshafts-1.20-Forge-4.0.4.jar"
+    },
+    {
+      "id": "bettermineshafts:mineshaft_spruce_snowy",
+      "reason": "underground",
+      "source": "mod:YungsBetterMineshafts-1.20-Forge-4.0.4.jar"
+    },
+    {
+      "id": "cataclysm:abandoned_village",
+      "reason": "village",
+      "source": "mod:L_Enders_Cataclysm-3.31.jar"
+    },
+    {
+      "id": "cataclysm:amethyst_nest",
+      "reason": "underground",
+      "source": "mod:L_Enders_Cataclysm-3.31.jar"
+    },
+    {
+      "id": "cataclysm:ancient_factory",
+      "reason": "underground",
+      "source": "mod:L_Enders_Cataclysm-3.31.jar"
+    },
+    {
+      "id": "cataclysm:desert_occupied_village",
+      "reason": "village",
+      "source": "mod:L_Enders_Cataclysm-3.31.jar"
+    },
+    {
+      "id": "ctov:large/village_beach",
+      "reason": "not_randomly_placed",
+      "source": "mod:[forge]ctov-3.4.14.jar"
+    },
+    {
+      "id": "ctov:large/village_christmas",
+      "reason": "not_randomly_placed",
+      "source": "mod:[forge]ctov-3.4.14.jar"
+    },
+    {
+      "id": "ctov:large/village_dark_forest",
+      "reason": "not_randomly_placed",
+      "source": "mod:[forge]ctov-3.4.14.jar"
+    },
+    {
+      "id": "ctov:large/village_desert",
+      "reason": "not_randomly_placed",
+      "source": "mod:[forge]ctov-3.4.14.jar"
+    },
+    {
+      "id": "ctov:large/village_desert_oasis",
+      "reason": "not_randomly_placed",
+      "source": "mod:[forge]ctov-3.4.14.jar"
+    },
+    {
+      "id": "ctov:large/village_jungle",
+      "reason": "not_randomly_placed",
+      "source": "mod:[forge]ctov-3.4.14.jar"
+    },
+    {
+      "id": "ctov:large/village_jungle_tree",
+      "reason": "not_randomly_placed",
+      "source": "mod:[forge]ctov-3.4.14.jar"
+    },
+    {
+      "id": "ctov:large/village_mesa",
+      "reason": "not_randomly_placed",
+      "source": "mod:[forge]ctov-3.4.14.jar"
+    },
+    {
+      "id": "ctov:large/village_mesa_fortified",
+      "reason": "not_randomly_placed",
+      "source": "mod:[forge]ctov-3.4.14.jar"
+    },
+    {
+      "id": "ctov:large/village_mountain",
+      "reason": "not_randomly_placed",
+      "source": "mod:[forge]ctov-3.4.14.jar"
+    },
+    {
+      "id": "ctov:large/village_mountain_alpine",
+      "reason": "not_randomly_placed",
+      "source": "mod:[forge]ctov-3.4.14.jar"
+    },
+    {
+      "id": "ctov:large/village_mushroom",
+      "reason": "not_randomly_placed",
+      "source": "mod:[forge]ctov-3.4.14.jar"
+    },
+    {
+      "id": "ctov:large/village_plains",
+      "reason": "not_randomly_placed",
+      "source": "mod:[forge]ctov-3.4.14.jar"
+    },
+    {
+      "id": "ctov:large/village_plains_fortified",
+      "reason": "not_randomly_placed",
+      "source": "mod:[forge]ctov-3.4.14.jar"
+    },
+    {
+      "id": "ctov:large/village_savanna",
+      "reason": "not_randomly_placed",
+      "source": "mod:[forge]ctov-3.4.14.jar"
+    },
+    {
+      "id": "ctov:large/village_savanna_na",
+      "reason": "not_randomly_placed",
+      "source": "mod:[forge]ctov-3.4.14.jar"
+    },
+    {
+      "id": "ctov:large/village_snowy_igloo",
+      "reason": "not_randomly_placed",
+      "source": "mod:[forge]ctov-3.4.14.jar"
+    },
+    {
+      "id": "ctov:large/village_swamp",
+      "reason": "not_randomly_placed",
+      "source": "mod:[forge]ctov-3.4.14.jar"
+    },
+    {
+      "id": "ctov:large/village_swamp_fortified",
+      "reason": "not_randomly_placed",
+      "source": "mod:[forge]ctov-3.4.14.jar"
+    },
+    {
+      "id": "ctov:large/village_taiga",
+      "reason": "not_randomly_placed",
+      "source": "mod:[forge]ctov-3.4.14.jar"
+    },
+    {
+      "id": "ctov:large/village_taiga_fortified",
+      "reason": "not_randomly_placed",
+      "source": "mod:[forge]ctov-3.4.14.jar"
+    },
+    {
+      "id": "ctov:large/village_underground",
+      "reason": "not_randomly_placed",
+      "source": "mod:[forge]ctov-3.4.14.jar"
+    },
+    {
+      "id": "ctov:medium/village_beach",
+      "reason": "not_randomly_placed",
+      "source": "mod:[forge]ctov-3.4.14.jar"
+    },
+    {
+      "id": "ctov:medium/village_christmas",
+      "reason": "not_randomly_placed",
+      "source": "mod:[forge]ctov-3.4.14.jar"
+    },
+    {
+      "id": "ctov:medium/village_dark_forest",
+      "reason": "not_randomly_placed",
+      "source": "mod:[forge]ctov-3.4.14.jar"
+    },
+    {
+      "id": "ctov:medium/village_desert",
+      "reason": "not_randomly_placed",
+      "source": "mod:[forge]ctov-3.4.14.jar"
+    },
+    {
+      "id": "ctov:medium/village_desert_oasis",
+      "reason": "not_randomly_placed",
+      "source": "mod:[forge]ctov-3.4.14.jar"
+    },
+    {
+      "id": "ctov:medium/village_jungle",
+      "reason": "not_randomly_placed",
+      "source": "mod:[forge]ctov-3.4.14.jar"
+    },
+    {
+      "id": "ctov:medium/village_jungle_tree",
+      "reason": "not_randomly_placed",
+      "source": "mod:[forge]ctov-3.4.14.jar"
+    },
+    {
+      "id": "ctov:medium/village_mesa",
+      "reason": "not_randomly_placed",
+      "source": "mod:[forge]ctov-3.4.14.jar"
+    },
+    {
+      "id": "ctov:medium/village_mesa_fortified",
+      "reason": "not_randomly_placed",
+      "source": "mod:[forge]ctov-3.4.14.jar"
+    },
+    {
+      "id": "ctov:medium/village_mountain",
+      "reason": "not_randomly_placed",
+      "source": "mod:[forge]ctov-3.4.14.jar"
+    },
+    {
+      "id": "ctov:medium/village_mountain_alpine",
+      "reason": "not_randomly_placed",
+      "source": "mod:[forge]ctov-3.4.14.jar"
+    },
+    {
+      "id": "ctov:medium/village_mushroom",
+      "reason": "not_randomly_placed",
+      "source": "mod:[forge]ctov-3.4.14.jar"
+    },
+    {
+      "id": "ctov:medium/village_plains",
+      "reason": "not_randomly_placed",
+      "source": "mod:[forge]ctov-3.4.14.jar"
+    },
+    {
+      "id": "ctov:medium/village_plains_fortified",
+      "reason": "not_randomly_placed",
+      "source": "mod:[forge]ctov-3.4.14.jar"
+    },
+    {
+      "id": "ctov:medium/village_savanna",
+      "reason": "not_randomly_placed",
+      "source": "mod:[forge]ctov-3.4.14.jar"
+    },
+    {
+      "id": "ctov:medium/village_savanna_na",
+      "reason": "not_randomly_placed",
+      "source": "mod:[forge]ctov-3.4.14.jar"
+    },
+    {
+      "id": "ctov:medium/village_snowy_igloo",
+      "reason": "not_randomly_placed",
+      "source": "mod:[forge]ctov-3.4.14.jar"
+    },
+    {
+      "id": "ctov:medium/village_swamp",
+      "reason": "not_randomly_placed",
+      "source": "mod:[forge]ctov-3.4.14.jar"
+    },
+    {
+      "id": "ctov:medium/village_swamp_fortified",
+      "reason": "not_randomly_placed",
+      "source": "mod:[forge]ctov-3.4.14.jar"
+    },
+    {
+      "id": "ctov:medium/village_taiga",
+      "reason": "not_randomly_placed",
+      "source": "mod:[forge]ctov-3.4.14.jar"
+    },
+    {
+      "id": "ctov:medium/village_taiga_fortified",
+      "reason": "not_randomly_placed",
+      "source": "mod:[forge]ctov-3.4.14.jar"
+    },
+    {
+      "id": "ctov:medium/village_underground",
+      "reason": "not_randomly_placed",
+      "source": "mod:[forge]ctov-3.4.14.jar"
+    },
+    {
+      "id": "ctov:pillager_outpost_badlands",
+      "reason": "not_randomly_placed",
+      "source": "mod:[forge]ctov-3.4.14.jar"
+    },
+    {
+      "id": "ctov:pillager_outpost_beach",
+      "reason": "not_randomly_placed",
+      "source": "mod:[forge]ctov-3.4.14.jar"
+    },
+    {
+      "id": "ctov:pillager_outpost_dark_forest",
+      "reason": "not_randomly_placed",
+      "source": "mod:[forge]ctov-3.4.14.jar"
+    },
+    {
+      "id": "ctov:pillager_outpost_desert",
+      "reason": "not_randomly_placed",
+      "source": "mod:[forge]ctov-3.4.14.jar"
+    },
+    {
+      "id": "ctov:pillager_outpost_jungle",
+      "reason": "not_randomly_placed",
+      "source": "mod:[forge]ctov-3.4.14.jar"
+    },
+    {
+      "id": "ctov:pillager_outpost_mesa",
+      "reason": "not_randomly_placed",
+      "source": "mod:[forge]ctov-3.4.14.jar"
+    },
+    {
+      "id": "ctov:pillager_outpost_mountain",
+      "reason": "not_randomly_placed",
+      "source": "mod:[forge]ctov-3.4.14.jar"
+    },
+    {
+      "id": "ctov:pillager_outpost_plains",
+      "reason": "not_randomly_placed",
+      "source": "mod:[forge]ctov-3.4.14.jar"
+    },
+    {
+      "id": "ctov:pillager_outpost_savanna",
+      "reason": "not_randomly_placed",
+      "source": "mod:[forge]ctov-3.4.14.jar"
+    },
+    {
+      "id": "ctov:pillager_outpost_snowy",
+      "reason": "not_randomly_placed",
+      "source": "mod:[forge]ctov-3.4.14.jar"
+    },
+    {
+      "id": "ctov:pillager_outpost_swamp",
+      "reason": "not_randomly_placed",
+      "source": "mod:[forge]ctov-3.4.14.jar"
+    },
+    {
+      "id": "ctov:pillager_outpost_taiga",
+      "reason": "not_randomly_placed",
+      "source": "mod:[forge]ctov-3.4.14.jar"
+    },
+    {
+      "id": "ctov:small/village_beach",
+      "reason": "not_randomly_placed",
+      "source": "mod:[forge]ctov-3.4.14.jar"
+    },
+    {
+      "id": "ctov:small/village_christmas",
+      "reason": "not_randomly_placed",
+      "source": "mod:[forge]ctov-3.4.14.jar"
+    },
+    {
+      "id": "ctov:small/village_dark_forest",
+      "reason": "not_randomly_placed",
+      "source": "mod:[forge]ctov-3.4.14.jar"
+    },
+    {
+      "id": "ctov:small/village_desert",
+      "reason": "not_randomly_placed",
+      "source": "mod:[forge]ctov-3.4.14.jar"
+    },
+    {
+      "id": "ctov:small/village_desert_oasis",
+      "reason": "not_randomly_placed",
+      "source": "mod:[forge]ctov-3.4.14.jar"
+    },
+    {
+      "id": "ctov:small/village_jungle",
+      "reason": "not_randomly_placed",
+      "source": "mod:[forge]ctov-3.4.14.jar"
+    },
+    {
+      "id": "ctov:small/village_jungle_tree",
+      "reason": "not_randomly_placed",
+      "source": "mod:[forge]ctov-3.4.14.jar"
+    },
+    {
+      "id": "ctov:small/village_mesa",
+      "reason": "not_randomly_placed",
+      "source": "mod:[forge]ctov-3.4.14.jar"
+    },
+    {
+      "id": "ctov:small/village_mesa_fortified",
+      "reason": "not_randomly_placed",
+      "source": "mod:[forge]ctov-3.4.14.jar"
+    },
+    {
+      "id": "ctov:small/village_mountain",
+      "reason": "not_randomly_placed",
+      "source": "mod:[forge]ctov-3.4.14.jar"
+    },
+    {
+      "id": "ctov:small/village_mountain_alpine",
+      "reason": "not_randomly_placed",
+      "source": "mod:[forge]ctov-3.4.14.jar"
+    },
+    {
+      "id": "ctov:small/village_mushroom",
+      "reason": "not_randomly_placed",
+      "source": "mod:[forge]ctov-3.4.14.jar"
+    },
+    {
+      "id": "ctov:small/village_plains",
+      "reason": "not_randomly_placed",
+      "source": "mod:[forge]ctov-3.4.14.jar"
+    },
+    {
+      "id": "ctov:small/village_plains_fortified",
+      "reason": "not_randomly_placed",
+      "source": "mod:[forge]ctov-3.4.14.jar"
+    },
+    {
+      "id": "ctov:small/village_savanna",
+      "reason": "not_randomly_placed",
+      "source": "mod:[forge]ctov-3.4.14.jar"
+    },
+    {
+      "id": "ctov:small/village_savanna_na",
+      "reason": "not_randomly_placed",
+      "source": "mod:[forge]ctov-3.4.14.jar"
+    },
+    {
+      "id": "ctov:small/village_snowy_igloo",
+      "reason": "not_randomly_placed",
+      "source": "mod:[forge]ctov-3.4.14.jar"
+    },
+    {
+      "id": "ctov:small/village_swamp",
+      "reason": "not_randomly_placed",
+      "source": "mod:[forge]ctov-3.4.14.jar"
+    },
+    {
+      "id": "ctov:small/village_swamp_fortified",
+      "reason": "not_randomly_placed",
+      "source": "mod:[forge]ctov-3.4.14.jar"
+    },
+    {
+      "id": "ctov:small/village_taiga",
+      "reason": "not_randomly_placed",
+      "source": "mod:[forge]ctov-3.4.14.jar"
+    },
+    {
+      "id": "ctov:small/village_taiga_fortified",
+      "reason": "not_randomly_placed",
+      "source": "mod:[forge]ctov-3.4.14.jar"
+    },
+    {
+      "id": "ctov:small/village_underground",
+      "reason": "not_randomly_placed",
+      "source": "mod:[forge]ctov-3.4.14.jar"
+    },
+    {
+      "id": "horror_element_mod:villagertree",
+      "reason": "village",
+      "source": "mod:horror_element_mod-1.6.3-forge-1.20.1.jar"
+    },
+    {
+      "id": "infectious:bunker",
+      "reason": "underground",
+      "source": "mod:Infectious-forge-1.20.1-1.7.jar"
+    },
+    {
+      "id": "infectious:villager_outpost",
+      "reason": "village",
+      "source": "mod:Infectious-forge-1.20.1-1.7.jar"
+    },
+    {
+      "id": "jeffs_cursed_walking_structures:deepslatebunker",
+      "reason": "underground",
+      "source": "mod:[TACZ ONLY] jeffs_cursed_walking_structures-1.0.6-forge-1.20.1.jar"
+    },
+    {
+      "id": "jeffs_cursed_walking_structures:nuclearbunker",
+      "reason": "underground",
+      "source": "mod:[TACZ ONLY] jeffs_cursed_walking_structures-1.0.6-forge-1.20.1.jar"
+    },
+    {
+      "id": "jeffs_cursed_walking_structures:starterbunker",
+      "reason": "underground",
+      "source": "mod:[TACZ ONLY] jeffs_cursed_walking_structures-1.0.6-forge-1.20.1.jar"
+    },
+    {
+      "id": "minecolonies:warpednetherlands_colony",
+      "reason": "other_dimension",
+      "source": "mod:minecolonies-1.20.1-1.1.1276.jar"
+    },
+    {
+      "id": "natures_spirit:village_adobe",
+      "reason": "not_randomly_placed",
+      "source": "mod:natures_spirit-2.2.5-1.20.1.jar"
+    },
+    {
+      "id": "natures_spirit:village_coconut",
+      "reason": "not_randomly_placed",
+      "source": "mod:natures_spirit-2.2.5-1.20.1.jar"
+    },
+    {
+      "id": "natures_spirit:village_cypress",
+      "reason": "not_randomly_placed",
+      "source": "mod:natures_spirit-2.2.5-1.20.1.jar"
+    },
+    {
+      "id": "natures_spirit:village_wisteria",
+      "reason": "not_randomly_placed",
+      "source": "mod:natures_spirit-2.2.5-1.20.1.jar"
+    },
+    {
+      "id": "realmrpg_quests:headless_skeletons",
+      "reason": "underground",
+      "source": "mod:realmrpg_quests-0.1.1-forge-1.20.1.jar"
+    },
+    {
+      "id": "realmrpg_quests:piglin_gamblers",
+      "reason": "underground",
+      "source": "mod:realmrpg_quests-0.1.1-forge-1.20.1.jar"
+    },
+    {
+      "id": "terralith:fortified_desert_village",
+      "reason": "village",
+      "source": "mod:Terralith_1.20.x_v2.5.4.jar"
+    },
+    {
+      "id": "terralith:fortified_village",
+      "reason": "village",
+      "source": "mod:Terralith_1.20.x_v2.5.4.jar"
+    },
+    {
+      "id": "terralith:underground/frosted_dungeon",
+      "reason": "underground",
+      "source": "mod:Terralith_1.20.x_v2.5.4.jar"
+    },
+    {
+      "id": "terralith:underground/giant_bee_hive",
+      "reason": "underground",
+      "source": "mod:Terralith_1.20.x_v2.5.4.jar"
+    },
+    {
+      "id": "terralith:underground/mining_outpost",
+      "reason": "underground",
+      "source": "mod:Terralith_1.20.x_v2.5.4.jar"
+    },
+    {
+      "id": "terralith:underground/oak_cabin",
+      "reason": "underground",
+      "source": "mod:Terralith_1.20.x_v2.5.4.jar"
+    },
+    {
+      "id": "terralith:underground/old_refinery",
+      "reason": "underground",
+      "source": "mod:Terralith_1.20.x_v2.5.4.jar"
+    },
+    {
+      "id": "terralith:underground/sunken_tower",
+      "reason": "underground",
+      "source": "mod:Terralith_1.20.x_v2.5.4.jar"
+    },
+    {
+      "id": "terralith:underground/witch_hut",
+      "reason": "not_randomly_placed",
+      "source": "mod:Terralith_1.20.x_v2.5.4.jar"
+    },
+    {
+      "id": "terralith:underground_cabin",
+      "reason": "not_randomly_placed",
+      "source": "mod:Terralith_1.20.x_v2.5.4.jar"
+    },
+    {
+      "id": "towns_and_towers:exclusives/village_classic",
+      "reason": "village",
+      "source": "mod:Towns-and-Towers-1.12-Fabric+Forge.jar"
+    },
+    {
+      "id": "towns_and_towers:exclusives/village_iberian",
+      "reason": "village",
+      "source": "mod:Towns-and-Towers-1.12-Fabric+Forge.jar"
+    },
+    {
+      "id": "towns_and_towers:exclusives/village_mediterranean",
+      "reason": "village",
+      "source": "mod:Towns-and-Towers-1.12-Fabric+Forge.jar"
+    },
+    {
+      "id": "towns_and_towers:exclusives/village_nilotic",
+      "reason": "village",
+      "source": "mod:Towns-and-Towers-1.12-Fabric+Forge.jar"
+    },
+    {
+      "id": "towns_and_towers:exclusives/village_piglin",
+      "reason": "village",
+      "source": "mod:Towns-and-Towers-1.12-Fabric+Forge.jar"
+    },
+    {
+      "id": "towns_and_towers:exclusives/village_rustic",
+      "reason": "village",
+      "source": "mod:Towns-and-Towers-1.12-Fabric+Forge.jar"
+    },
+    {
+      "id": "towns_and_towers:exclusives/village_swedish",
+      "reason": "village",
+      "source": "mod:Towns-and-Towers-1.12-Fabric+Forge.jar"
+    },
+    {
+      "id": "towns_and_towers:exclusives/village_tudor",
+      "reason": "village",
+      "source": "mod:Towns-and-Towers-1.12-Fabric+Forge.jar"
+    },
+    {
+      "id": "towns_and_towers:exclusives/village_wandering_trader_camp",
+      "reason": "village",
+      "source": "mod:Towns-and-Towers-1.12-Fabric+Forge.jar"
+    },
+    {
+      "id": "towns_and_towers:village_badlands",
+      "reason": "village",
+      "source": "mod:Towns-and-Towers-1.12-Fabric+Forge.jar"
+    },
+    {
+      "id": "towns_and_towers:village_beach",
+      "reason": "village",
+      "source": "mod:Towns-and-Towers-1.12-Fabric+Forge.jar"
+    },
+    {
+      "id": "towns_and_towers:village_birch_forest",
+      "reason": "village",
+      "source": "mod:Towns-and-Towers-1.12-Fabric+Forge.jar"
+    },
+    {
+      "id": "towns_and_towers:village_flower_forest",
+      "reason": "village",
+      "source": "mod:Towns-and-Towers-1.12-Fabric+Forge.jar"
+    },
+    {
+      "id": "towns_and_towers:village_forest",
+      "reason": "village",
+      "source": "mod:Towns-and-Towers-1.12-Fabric+Forge.jar"
+    },
+    {
+      "id": "towns_and_towers:village_grove",
+      "reason": "village",
+      "source": "mod:Towns-and-Towers-1.12-Fabric+Forge.jar"
+    },
+    {
+      "id": "towns_and_towers:village_jungle",
+      "reason": "village",
+      "source": "mod:Towns-and-Towers-1.12-Fabric+Forge.jar"
+    },
+    {
+      "id": "towns_and_towers:village_meadow",
+      "reason": "village",
+      "source": "mod:Towns-and-Towers-1.12-Fabric+Forge.jar"
+    },
+    {
+      "id": "towns_and_towers:village_mushroom_fields",
+      "reason": "village",
+      "source": "mod:Towns-and-Towers-1.12-Fabric+Forge.jar"
+    },
+    {
+      "id": "towns_and_towers:village_ocean",
+      "reason": "village",
+      "source": "mod:Towns-and-Towers-1.12-Fabric+Forge.jar"
+    },
+    {
+      "id": "towns_and_towers:village_old_growth_taiga",
+      "reason": "village",
+      "source": "mod:Towns-and-Towers-1.12-Fabric+Forge.jar"
+    },
+    {
+      "id": "towns_and_towers:village_savanna_plateau",
+      "reason": "village",
+      "source": "mod:Towns-and-Towers-1.12-Fabric+Forge.jar"
+    },
+    {
+      "id": "towns_and_towers:village_snowy_slopes",
+      "reason": "village",
+      "source": "mod:Towns-and-Towers-1.12-Fabric+Forge.jar"
+    },
+    {
+      "id": "towns_and_towers:village_snowy_taiga",
+      "reason": "village",
+      "source": "mod:Towns-and-Towers-1.12-Fabric+Forge.jar"
+    },
+    {
+      "id": "towns_and_towers:village_sparse_jungle",
+      "reason": "village",
+      "source": "mod:Towns-and-Towers-1.12-Fabric+Forge.jar"
+    },
+    {
+      "id": "towns_and_towers:village_sunflower_plains",
+      "reason": "village",
+      "source": "mod:Towns-and-Towers-1.12-Fabric+Forge.jar"
+    },
+    {
+      "id": "towns_and_towers:village_swamp",
+      "reason": "village",
+      "source": "mod:Towns-and-Towers-1.12-Fabric+Forge.jar"
+    },
+    {
+      "id": "towns_and_towers:village_wooded_badlands",
+      "reason": "village",
+      "source": "mod:Towns-and-Towers-1.12-Fabric+Forge.jar"
+    },
+    {
+      "id": "underground_bunkers:underground_bunker",
+      "reason": "underground",
+      "source": "mod:UndergroundBunkers-1.0.5-1.20.x-forge.jar"
+    },
+    {
+      "id": "urushi:kakuriyo_village",
+      "reason": "village",
+      "source": "mod:urushi-1.20.1-6.6.3.jar"
+    }
+  ],
+  "review": []
+}

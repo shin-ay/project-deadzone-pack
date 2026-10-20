@@ -1,0 +1,13 @@
+name = "Ancient Obelisks"
+filename = "Ancient-Obelisks-1.20.1-1.2.4.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "45895ec00015c54dc1e874a2be40da3b93c5d369"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 8548270
+project-id = 1186288

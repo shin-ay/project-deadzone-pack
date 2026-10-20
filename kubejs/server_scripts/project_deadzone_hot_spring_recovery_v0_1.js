@@ -1,5 +1,6 @@
 // PROJECT DEADZONE - Hot Bath rehabilitation bridge v0.1
-// Plain Hot Bath water treats one LSO injury or one harmful effect every 30 sec.
+// Plain Hot Bath water keeps the mod's native effects and additionally treats
+// one localized LSO injury (or one harmful non-infection effect) every 30 sec.
 
 const PDZ_SPRING_BODY_UTIL = Java.loadClass('sfiomn.legendarysurvivaloverhaul.api.bodydamage.BodyDamageUtil')
 const PDZ_SPRING_BODY_PART = Java.loadClass('sfiomn.legendarysurvivaloverhaul.api.bodydamage.BodyPartEnum')
@@ -33,14 +34,25 @@ const PDZ_SPRING_INFECTIONS = {
 let pdzSpringState = {}
 let pdzSpringApiErrorLogged = false
 
-function pdzSpringKey(player) { return String(player.uuid) }
-function pdzSpringNow(player) { return Number(player.level.gameTime) }
+function pdzSpringKey(player) {
+  return String(player.uuid)
+}
+
+function pdzSpringNow(player) {
+  try {
+    let value=Number(player.level.getGameTime())
+    if(Number.isFinite(value))return Math.max(0,Math.floor(value))
+  } catch (ignored) {}
+  return Math.max(0,Math.floor(Date.now()/50))
+}
 
 function pdzSpringIsBathing(player) {
   let x = Math.floor(Number(player.x))
   let y = Math.floor(Number(player.y))
   let z = Math.floor(Number(player.z))
   if (String(player.level.getBlock(x, y, z).id) === PDZ_SPRING_BLOCK) return true
+  // Fluidlogged keeps the visible stair/slab as the block and stores the bath
+  // fluid separately. Level#getFluidState is mixed in to expose that fluid.
   try {
     let state = player.level.getFluidState(new PDZ_SPRING_BLOCK_POS(x, y, z))
     let id = String(PDZ_SPRING_FORGE_REGISTRIES.FLUIDS.getKey(state.getType()))
@@ -57,7 +69,8 @@ function pdzSpringWorstInjury(player) {
   try {
     let injured = []
     PDZ_SPRING_PARTS.forEach(entry => {
-      let ratio = Math.max(0, Math.min(1, Number(PDZ_SPRING_BODY_UTIL.getHealthRatio(player, entry.part))))
+      let ratio = Math.max(0, Math.min(1,
+        Number(PDZ_SPRING_BODY_UTIL.getHealthRatio(player, entry.part))))
       let max = Math.max(0, Number(PDZ_SPRING_BODY_UTIL.getMaxHealth(player, entry.part)))
       if (max > 0 && ratio < 0.995) injured.push({part: entry.part, name: entry.name, ratio: ratio, max: max})
     })
@@ -88,21 +101,26 @@ function pdzSpringHarmfulEffects(player) {
     player.getActiveEffects().forEach(instance => {
       let effect = instance.getEffect()
       let id = String(PDZ_SPRING_EFFECTS.MOB_EFFECT.getKey(effect))
-      if (id !== 'null' && !PDZ_SPRING_INFECTIONS[id] && effect.getCategory() === PDZ_SPRING_EFFECT_CATEGORY.HARMFUL) result.push(id)
+      if (id !== 'null' && !PDZ_SPRING_INFECTIONS[id] &&
+          effect.getCategory() === PDZ_SPRING_EFFECT_CATEGORY.HARMFUL) result.push(id)
     })
-  } catch (error) { console.error('[PROJECT DEADZONE][Hot Spring] Effect scan failed: ' + error) }
+  } catch (error) {
+    console.error('[PROJECT DEADZONE][Hot Spring] Effect scan failed: ' + error)
+  }
   return result
 }
 
 function pdzSpringCleanseOne(player) {
   let effects = pdzSpringHarmfulEffects(player)
   if (effects.length <= 0) return false
-  let id = effects[Math.floor(Math.random() * effects.length)]
+  let index = Math.floor(Math.random() * effects.length)
+  let id = effects[index]
   player.removeEffect(id)
   return true
 }
 
 function pdzSpringTreat(player) {
+  // Localized trauma always takes priority. Infection deliberately requires medicine.
   if (pdzSpringHealOne(player)) return true
   if (pdzSpringCleanseOne(player)) return true
   return false
@@ -113,6 +131,7 @@ function pdzSpringIsFullyRecovered(player) {
 }
 
 ServerEvents.tick(event => {
+  // One-second sampling is sufficient and avoids scanning every player every tick.
   if (Number(event.server.tickCount) % 20 !== 0) return
   event.server.players.forEach(player => {
     let key = pdzSpringKey(player)
@@ -120,6 +139,7 @@ ServerEvents.tick(event => {
       pdzSpringReset(player)
       return
     }
+
     let now = pdzSpringNow(player)
     let state = pdzSpringState[key]
     if (!state) {

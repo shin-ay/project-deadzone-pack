@@ -123,7 +123,7 @@
       },
       {
         "char": "韆",
-        "block": "minecraft:air",
+        "block": "minecraft:chest[facing=west,type=single,waterlogged=false]",
         "loot": "project_deadzone:hospital",
         "tag": {
           "z": 406,

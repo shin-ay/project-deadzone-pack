@@ -4,3 +4,4 @@
 JEIEvents.hideItems(event => {
   event.hide('@waystones')
 })
+

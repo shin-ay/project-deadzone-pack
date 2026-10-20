@@ -1,0 +1,13 @@
+{
+  "curios.identifier.sling": "ウェポンスリング",
+  "item.taczslings.sling_tier_1": "簡易ウェポンスリング",
+  "item.taczslings.sling_tier_2": "強化ウェポンスリング",
+  "item.taczslings.sling_tier_3": "タクティカルスリング",
+  "item.taczslings.sling_tier_4": "即応ウェポンスリング",
+  "sounds.taczslings.sling_use": "スリングを操作",
+  "key.categories.taczslings": "PROJECT DEADZONE：武器携行",
+  "key.taczslings.swap": "スリング武器を抜く／収める",
+  "key.taczslings.putgunaway": "武器をスリングへ収めています…",
+  "key.taczslings.drawgun": "スリングから武器を抜いています…",
+  "key.taczslings.swapping": "携行武器を交換しています…"
+}

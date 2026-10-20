@@ -8703,8 +8703,8 @@
 					type: "item"
 				}
 				{
-					id: "0BBC22333B472582"
 					count: 9
+					id: "0BBC22333B472582"
 					item: "lightmanscurrency:coin_copper"
 					team_reward: true
 					type: "item"
@@ -23231,8 +23231,8 @@
 					type: "item"
 				}
 				{
-					id: "2CDAC98836A36EB3"
 					count: 9
+					id: "2CDAC98836A36EB3"
 					item: "lightmanscurrency:coin_copper"
 					team_reward: true
 					type: "item"

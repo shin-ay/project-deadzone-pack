@@ -1,45 +1,83 @@
-# PROJECT DEADZONE industrial pollution tuning v0.1
-# Pollution is an industrial pressure system. Direct environmental punishment
-# is intentionally handled by the PDZ Horde director instead of this mod.
-
-# Keep pollution visible and meaningful, but slower than the upstream default.
+#Global rate of emissions for all pollutants and sources on the server
+#Range: 0.0 ~ 10.0
 globalEmissionRate = 0.65
-# World damage is flavor, not the main punishment.
+#How fast the surface of a polluted chunk degrades under the influence of pollutants
+#Range: 0.0 ~ 10.0
 environmentDegradationRate = 0.0
+#Experience gain after replacing the filter material in a respirator or a vacuum bag
+#Range: -10 ~ 10
 filterReplacingExpGain = 0
+#Maximum number of gas entities present at the same time in a chunk
+#Range: 0 ~ 256
 maxGasEntitiesInChunk = 8
 
 [GasExplosions]
-	# Avoid untelegraphed base destruction. Pollution escalates raids instead.
+	#Enables/disables gas explosions caused by ignition sources
 	ignitionSources = false
+	#Enables/disables gas explosions caused by emitters (machines) when they produce pollution and it has no way to go
 	enclosedEmitters = false
+	#Whether gas explosions set surrounding blocks on fire
 	setOnFire = false
+	#The way gas explosions affect surroundings
+	#Allowed Values: NONE, BLOCK, MOB, TNT
 	explosionInteraction = "NONE"
+	#Maximum gas blocks that can be involved in an explosive chain reaction
+	#Range: 0 ~ 2048
 	maxChainLength = 0
+	#Whether the enclosed emitter that caused an explosion should always be destroyed, regardless of the explosion power
 	alwaysDestroyEmitter = false
 
 [EmissionSources]
-	# Keep the score tied to machines, processing and deliberate combustion.
+	#Rate of emissions from this source
+	#Range: 0.0 ~ 10.0
 	Breakables = 0.0
+	#Rate of emissions from this source
+	#Range: 0.0 ~ 10.0
 	Entities = 0.0
+	#Rate of emissions from this source
+	#Range: 0.0 ~ 10.0
 	WallTorches = 0.0
+	#Rate of emissions from this source
+	#Range: 0.0 ~ 10.0
 	DroppedTorches = 0.0
+	#Rate of emissions from this source
+	#Range: 0.0 ~ 10.0
 	Campfires = 0.0
+	#Rate of emissions from this source
+	#Range: 0.0 ~ 10.0
 	BurntItems = 0.25
+	#Enables / disables emissions from this source
 	Furnaces = true
+	#Enables / disables emissions from this source
 	BurntBlocks = true
+	#Enables / disables emissions from this source
 	Explosion = true
+	#Enables / disables emissions from this source
 	LavaTouchingWater = false
+	#Enables / disables emissions from this source
 	HostileMobDying = false
+	#Enables / disables emissions from this source
 	HostileMobBurning = false
+	#Enables / disables emissions from this source
 	PlayerEating = false
+	#Enables / disables emissions from this source
 	PlayerBurning = false
+	#Enables / disables emissions from this source
 	AnimalBurning = false
+	#Enables / disables emissions from this source
 	AnimalFeeding = false
+	#Enables / disables emissions from this source
 	AnimalDying = false
+	#Enables / disables emissions from this source
 	PlayerDying = false
 
 	[EmissionSources.Mods]
+		#Rate of emissions from this source
+		#Range: 0.0 ~ 10.0
 		ImmersiveVehicles = 0.65
+		#Rate of emissions from this source
+		#Range: 0.0 ~ 10.0
 		TrajansTanks = 0.65
+		#Enables / disables emissions from this source
 		CreateFanProcessing = true
+

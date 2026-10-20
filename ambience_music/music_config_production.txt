@@ -81,6 +81,53 @@ playlist night = [
 // next track still rotates through the full environmental catalogue.
 playlist exploration = city ++ wild ++ rain ++ desert ++ ocean ++ underground ++ night;
 
+// Fixed-world culture palettes. Each group deliberately has five tracks so
+// the selector's no-immediate-repeat rule has enough room to feel varied.
+// These use the already accepted PDZ soundtrack; region-specific original
+// recordings can replace entries later without touching biome detection.
+playlist culture_america = [
+  "wild_long_road.ogg" <-6.0>,
+  "theme_survivor_open_road.ogg" <-6.0>,
+  "city_broken_signal.ogg" <-6.0>,
+  "theme_cdf_watchline.ogg" <-6.0>,
+  "theme_raider_scrap_horizon.ogg" <-6.0>
+];
+playlist culture_asia = [
+  "settlement_last_light.ogg" <-7.0>,
+  "wild_after_rain.ogg" <-7.0>,
+  "theme_remnant_faded_orders.ogg" <-7.0>,
+  "theme_aegis_cold_glass.ogg" <-7.0>,
+  "night_watch.ogg" <-7.0>
+];
+playlist culture_europe = [
+  "city_empty_windows.ogg" <-6.0>,
+  "theme_cdf_last_watch.ogg" <-6.0>,
+  "settlement_last_light.ogg" <-6.0>,
+  "wild_long_road.ogg" <-6.0>,
+  "theme_survivor_road_embers.ogg" <-6.0>
+];
+playlist culture_nordic = [
+  "ocean_cold_horizon.ogg" <-7.0>,
+  "night_watch.ogg" <-7.0>,
+  "theme_warden_ghost_signal.ogg" <-7.0>,
+  "theme_remnant_iron_memory.ogg" <-7.0>,
+  "underground_below_grid.ogg" <-7.0>
+];
+playlist culture_africa = [
+  "desert_dustline.ogg" <-6.0>,
+  "theme_raider_rust_and_dust.ogg" <-6.0>,
+  "theme_raider_scrap_horizon.ogg" <-6.0>,
+  "wild_long_road.ogg" <-6.0>,
+  "city_broken_signal.ogg" <-6.0>
+];
+playlist culture_south_america = [
+  "wild_after_rain.ogg" <-7.0>,
+  "theme_survivor_road_embers.ogg" <-7.0>,
+  "theme_aegis_white_room.ogg" <-7.0>,
+  "settlement_last_light.ogg" <-7.0>,
+  "night_watch.ogg" <-7.0>
+];
+
 playlist combat = [
   "combat_contact.ogg" <-3.0>,
   "combat_heavy_battle.ogg" <-3.0>,
@@ -144,17 +191,26 @@ begin
     when ( @in_combat ) play combat priority 4;
 
     // Per-player location states supplied by the PDZ server bridge.
-    when ( any effect in $effects has effect == "project_deadzone:music_camp" end ) play camp_theme priority 1;
-    when ( any effect in $effects has effect == "project_deadzone:music_survivor" end ) play survivor_theme priority 1;
-    when ( any effect in $effects has effect == "project_deadzone:music_cdf" end ) play cdf_theme priority 1;
-    when ( any effect in $effects has effect == "project_deadzone:music_raider" end ) play raider_theme priority 1;
-    when ( any effect in $effects has effect == "project_deadzone:music_remnant" end ) play remnant_theme priority 1;
-    when ( any effect in $effects has effect == "project_deadzone:music_aegis" end ) play aegis_theme priority 1;
-    when ( any effect in $effects has effect == "project_deadzone:music_warden" end ) play warden_theme priority 1;
-    when ( any effect in $effects has effect == "project_deadzone:music_infected" end ) play infected_theme priority 1;
+    when ( any effect in $effects has effect == "project_deadzone:music_camp" end ) play camp_theme priority 2;
+    when ( any effect in $effects has effect == "project_deadzone:music_survivor" end ) play survivor_theme priority 2;
+    when ( any effect in $effects has effect == "project_deadzone:music_cdf" end ) play cdf_theme priority 2;
+    when ( any effect in $effects has effect == "project_deadzone:music_raider" end ) play raider_theme priority 2;
+    when ( any effect in $effects has effect == "project_deadzone:music_remnant" end ) play remnant_theme priority 2;
+    when ( any effect in $effects has effect == "project_deadzone:music_aegis" end ) play aegis_theme priority 2;
+    when ( any effect in $effects has effect == "project_deadzone:music_warden" end ) play warden_theme priority 2;
+    when ( any effect in $effects has effect == "project_deadzone:music_infected" end ) play infected_theme priority 2;
 
-    // All natural exploration contexts use one stable rotation. Dedicated
-    // camp/site effects above and combat priorities remain contextual.
+    // Terrain/climate culture layer. Server-side hysteresis keeps the marker
+    // stable for 90 seconds after a boundary crossing, avoiding hard chatter
+    // across patchwork biome edges.
+    when ( any effect in $effects has effect == "project_deadzone:music_culture_america" end ) play culture_america priority 1;
+    when ( any effect in $effects has effect == "project_deadzone:music_culture_asia" end ) play culture_asia priority 1;
+    when ( any effect in $effects has effect == "project_deadzone:music_culture_europe" end ) play culture_europe priority 1;
+    when ( any effect in $effects has effect == "project_deadzone:music_culture_nordic" end ) play culture_nordic priority 1;
+    when ( any effect in $effects has effect == "project_deadzone:music_culture_africa" end ) play culture_africa priority 1;
+    when ( any effect in $effects has effect == "project_deadzone:music_culture_south_america" end ) play culture_south_america priority 1;
+
+    // Fallback for dimensions and the first seconds before a marker arrives.
     play exploration;
   end
 end

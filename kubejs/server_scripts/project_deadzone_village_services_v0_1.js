@@ -7,6 +7,10 @@
 // shared by every player through server persistent data.
 
 const PDZ_VILLAGE_SERVICES_REGISTRY = 'dz_village_services_registry_v1'
+// Fixed-world authoring owns public-service placement by hand. Keep the
+// discovery hook and manual setup-card support, but never place an ATM or
+// vending machine automatically when a village is discovered.
+const PDZ_VILLAGE_AUTO_PLACE_SERVICES = false
 const PDZ_VILLAGE_BLOCKPOS = Java.loadClass('net.minecraft.core.BlockPos')
 const PDZ_VILLAGE_POI_TYPES = Java.loadClass('net.minecraft.world.entity.ai.village.poi.PoiTypes')
 const PDZ_VILLAGE_POI_OCCUPANCY = Java.loadClass('net.minecraft.world.entity.ai.village.poi.PoiManager$Occupancy')
@@ -411,6 +415,7 @@ function pdzVillagePlaceMarket(player, spot, presetId) {
 }
 
 function pdzVillageEnsureServices(player, siteId, start, hint) {
+  if (!PDZ_VILLAGE_AUTO_PLACE_SERVICES) return false
   if (!pdzVillageIsVillageStructure(siteId) || !start || !start.isValid()) return false
   let key = pdzVillageStructureKey(player, siteId, start)
   let registry = pdzVillageReadServices(player.server)

@@ -17,7 +17,7 @@
       },
       {
         "char": "",
-        "block": "shelfmod:floor_shelf_dark_oak",
+        "block": "shelfmod:floor_shelf_dark_oak[facing=north,waterlogged=false]",
         "tag": {
           "Items": [
             {
@@ -35,7 +35,7 @@
       },
       {
         "char": "",
-        "block": "shelfmod:floor_shelf_dark_oak",
+        "block": "shelfmod:floor_shelf_dark_oak[facing=north,waterlogged=false]",
         "tag": {
           "LootTable": "project_deadzone:chests/shelf_display_test",
           "LootTableSeed": 987654321

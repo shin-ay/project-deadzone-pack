@@ -1,0 +1,13 @@
+name = "Enchantment Config"
+filename = "enchantmentcontrol-1.2.1-forge.jar"
+side = "client"
+
+[download]
+hash-format = "sha1"
+hash = "9847bd29d53a4fd09571c46ec475a936cd4ba9f2"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 8217500
+project-id = 1509883

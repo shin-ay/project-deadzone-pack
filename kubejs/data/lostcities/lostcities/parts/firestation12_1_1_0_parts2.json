@@ -157,7 +157,7 @@
       },
       {
         "char": "Ͷ",
-        "block": "minecraft:air",
+        "block": "minecraft:chest[facing=north,type=single,waterlogged=false]",
         "loot": "project_deadzone:firestation",
         "tag": {
           "z": 575,
@@ -173,7 +173,7 @@
       },
       {
         "char": "Ϫ",
-        "block": "minecraft:air",
+        "block": "minecraft:chest[facing=north,type=single,waterlogged=false]",
         "loot": "project_deadzone:firestation",
         "tag": {
           "z": 584,

@@ -52,7 +52,7 @@ ItemEvents.entityInteracted(event => {
   let player=event.player
   if (!player || player.level.clientSide || !dzIsRescueVillager(event.target)) return
   if (!player.persistentData.getBoolean("dz_onboarding_awake") ||
-      !player.persistentData.getBoolean("dz_job_chosen")) return
+      !player.persistentData.getBoolean("pdz_registration_complete")) return
   dzGiveRescueRadio(player)
 })
 

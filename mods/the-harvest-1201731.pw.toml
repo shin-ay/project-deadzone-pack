@@ -1,0 +1,13 @@
+name = "The Harvest"
+filename = "The-Harvest-1.20.1-1.1.4.jar"
+side = "both"
+
+[download]
+hash-format = "sha1"
+hash = "bc4d140b3c3e3a9e2a667299ce6441ede3d6ad26"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 8548268
+project-id = 1201731

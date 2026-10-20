@@ -8,7 +8,11 @@ const DZ_CAMP_STATE_KEY = "dz_auto_basecamp_state"
 // over a minute, disconnect the joining player, and trip the watchdog.
 // Fresh worlds need one Survivor Camp before the rescue radio can reveal its
 // coordinates. Established worlds remain protected by DZ_CAMP_FRESH_LIMIT.
-const DZ_CAMP_DIRECT_AUTO_ENABLED = true
+// This profile is the fixed-world authoring workspace. The rescue village and
+// survivor camp will be placed deliberately during map production, so the
+// first-login auto search must stay off here. This also prevents its retry
+// notice from filling the authoring player's chat while surveying terrain.
+const DZ_CAMP_DIRECT_AUTO_ENABLED = false
 const DZ_CAMP_LAYOUT_VERSION = 3
 // Village rescue and JOB selection must not consume the whole generation
 // window. Ten in-game days is still conservative enough to avoid mutating an
@@ -486,7 +490,7 @@ function dzCampStartBootstrap(player) {
       data.putInt(DZ_CAMP_STATE_KEY, 0)
       return
     }
-    if (!player.persistentData.getBoolean("dz_job_chosen")) {
+    if (!player.persistentData.getBoolean("pdz_registration_complete")) {
       server.scheduleInTicks(20,bootstrapCamp)
       return
     }
@@ -524,8 +528,8 @@ global.pdzStartVillageCampBootstrap = DZ_CAMP_DIRECT_AUTO_ENABLED
   ? dzCampStartBootstrap
   : null
 
-// Probe once per second and let the first player who has completed JOB
-// selection start the one-time world camp bootstrap.
+// Probe once per second and let the first registered player start the one-time
+// world camp bootstrap.
 PlayerEvents.tick(event => {
   if (!DZ_CAMP_DIRECT_AUTO_ENABLED) return
   let player=event.player
@@ -537,7 +541,7 @@ PlayerEvents.tick(event => {
   }
   player.persistentData.putInt("dz_camp_entry_probe",0)
   if (!dzCampIsOverworld(player)) return
-  if (!player.persistentData.getBoolean("dz_job_chosen")) return
+  if (!player.persistentData.getBoolean("pdz_registration_complete")) return
   if (player.server.persistentData.getInt(DZ_CAMP_STATE_KEY)!==0) return
   dzCampStartBootstrap(player)
 })

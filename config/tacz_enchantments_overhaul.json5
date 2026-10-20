@@ -1,0 +1,130 @@
+{
+	// The headshot damage bonus per level for the Bullseye enchantment.
+	// Default: 50%
+	bullseye_headshot_bonus: 0.5,
+	// The maximum level for the Bullseye enchantment.
+	// Default: 1
+	bullseye_max_level: 1,
+	// The minimum enchantability required to obtain the first level of the enchantment.
+	// Default: 35
+	bullseye_base_enchantability: 35,
+	// The additional enchantability required for each subsequent level of the enchantment.
+	// Default: 15
+	bullseye_level_enchantability: 15,
+	// When added to the base and level enchantability, this value determines the maximum enchantability where the enchantment can be obtained.
+	// Default: 50
+	bullseye_enchantability_span: 50,
+	// The armour piercing bonus per level for the Deep Impact enchantment.
+	// Default: 5%
+	deep_impact_armor_piercing_bonus: 0.05,
+	// The maximum level for the Deep Impact enchantment.
+	// Default: 3
+	deep_impact_max_level: 3,
+	// The minimum enchantability required to obtain the first level of the enchantment.
+	// Default: 15
+	deep_impact_base_enchantability: 15,
+	// The additional enchantability required for each subsequent level of the enchantment.
+	// Default: 12
+	deep_impact_level_enchantability: 12,
+	// When added to the base and level enchantability, this value determines the maximum enchantability where the enchantment can be obtained.
+	// Default: 25
+	deep_impact_enchantability_span: 25,
+	// The damage multiplier for the Firepower enchantment. This is multiplied by the enchantment level and applied to the base damage of the bullets used.
+	// Default: 10%
+	firepower_damage_multiplier: 0.1,
+	// The maximum level for the Firepower enchantment.
+	// Default: 3
+	firepower_max_level: 3,
+	// The minimum enchantability required to obtain the first level of the enchantment.
+	// Default: 1
+	firepower_base_enchantability: 1,
+	// The additional enchantability required for each subsequent level of the enchantment.
+	// Default: 11
+	firepower_level_enchantability: 11,
+	// When added to the base and level enchantability, this value determines the maximum enchantability where the enchantment can be obtained.
+	// Default: 25
+	firepower_enchantability_span: 25,
+	// The number of additional entities that can be hit per level for the Punch Through enchantment.
+	// Default: 1
+	punch_through_count: 1,
+	// The maximum level for the Punch Through enchantment.
+	// Default: 2
+	punch_through_max_level: 2,
+	// The minimum enchantability required to obtain the first level of the enchantment.
+	// Default: 20
+	punch_through_base_enchantability: 20,
+	// The additional enchantability required for each subsequent level of the enchantment.
+	// Default: 14
+	punch_through_level_enchantability: 14,
+	// When added to the base and level enchantability, this value determines the maximum enchantability where the enchantment can be obtained.
+	// Default: 40
+	punch_through_enchantability_span: 40,
+	// The accuracy bonus per level for the Precision enchantment.
+	// Default: 5%
+	precision_accuracy_bonus: 0.05,
+	// The maximum level for the Precision enchantment.
+	// Default: 3
+	precision_max_level: 3,
+	// The minimum enchantability required to obtain the first level of the enchantment.
+	// Default: 3
+	precision_base_enchantability: 3,
+	// The additional enchantability required for each subsequent level of the enchantment.
+	// Default: 12
+	precision_level_enchantability: 12,
+	// When added to the base and level enchantability, this value determines the maximum enchantability where the enchantment can be obtained.
+	// Default: 25
+	precision_enchantability_span: 25,
+	// The multiplier for how much additional ammo the Capacity enchantment grants. This is multiplied by the enchantment level and applied to the base capacity of the gun.
+	// Default: 50%
+	capacity_multiplier: 0.5,
+	// The maximum level for the Capacity enchantment.
+	// Default: 4
+	capacity_max_level: 4,
+	// The minimum enchantability required to obtain the first level of the enchantment.
+	// Default: 2
+	capacity_base_enchantability: 2,
+	// The additional enchantability required for each subsequent level of the enchantment.
+	// Default: 10
+	capacity_level_enchantability: 10,
+	// When added to the base and level enchantability, this value determines the maximum enchantability where the enchantment can be obtained.
+	// Default: 15
+	capacity_enchantability_span: 15,
+	// The chance that a bullet is not consumed when fired per level of enchant.
+	// Default: 10%
+	bullet_retention_chance: 0.1,
+	// The maximum level for the Bullet Retention enchantment.
+	// Default: 2
+	bullet_retention_max_level: 2,
+	// The minimum enchantability required to obtain the first level of the enchantment.
+	// Default: 21
+	bullet_retention_base_enchantability: 21,
+	// The additional enchantability required for each subsequent level of the enchantment.
+	// Default: 17
+	bullet_retention_level_enchantability: 17,
+	// When added to the base and level enchantability, this value determines the maximum enchantability where the enchantment can be obtained.
+	// Default: 45
+	bullet_retention_enchantability_span: 45,
+	// A list of the enchantments that all guns can accept. This is checked before the blacklist
+	enchantments_list: [
+		"minecraft:looting",
+		"tacz_eo:bullseye",
+		"tacz_eo:deep_impact",
+		"tacz_eo:firepower",
+		"tacz_eo:precision",
+		"tacz_eo:punch_through",
+		"tacz_eo:capacity",
+		"tacz_eo:bullet_retention"
+	],
+	// A map of enchantment ids to a list of gun ids that the enchantment cannot be applied to.
+	// Empty by default, meaning all enchantments can be applied to all guns.
+	enchantments_blacklist: {
+		"minecraft:looting": [],
+		"tacz_eo:bullseye": [],
+		"tacz_eo:deep_impact": [],
+		"tacz_eo:firepower": [],
+		"tacz_eo:precision": [],
+		"tacz_eo:punch_through": [],
+		"tacz_eo:capacity": [],
+		"tacz_eo:bullet_retention": []
+	}
+}

@@ -1,0 +1,13 @@
+["The Harbinger"]
+	# PDZ uses a longer TTK and avoids untelegraphed one-shots. Native attacks,
+	# missiles, laser modes, EMP and phase logic remain enabled.
+	HarbingerHealthMultiplier = 1.35
+	HarbingerDamageMultiplier = 0.55
+	HarbingerHealingMultiplier = 1.0
+	"Harbinger's WitherMissiledamage" = 5.0
+	"The Harbinger's prevent attacks from far away Range" = 35.0
+	"The Harbinger DamageCap" = 22
+	"The Harbinger Light A Fire" = true
+	"The Harbinger's charge attack Hp Damage" = 0.03
+	"Harbinger's laser damage" = 3.0
+	"The Harbinger DamageTime" = 12

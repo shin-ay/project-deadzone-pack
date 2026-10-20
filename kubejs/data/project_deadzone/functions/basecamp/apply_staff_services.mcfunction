@@ -1,8 +1,8 @@
 # Adds service buttons to Minato and Hank without replacing their random dialog texts.
 
-# Minato: class/career guidance. Promotions are validated by the server.
+# Minato: expedition loadout and qualification guidance.
 data modify entity @e[type=easy_npc:humanoid,tag=dz_basecamp_job_guide,limit=1] DialogData.Type set value "CUSTOM"
-data modify entity @e[type=easy_npc:humanoid,tag=dz_basecamp_job_guide,limit=1] DialogData.DialogDataSet[0].Buttons set value [{Actions:[{Cmd:"/deadzonecareer status",ExecAsUser:1b,PermLevel:0,Type:"COMMAND"}],Label:"career_status",Name:"クラスと進捗を確認する"},{Actions:[{Cmd:"/deadzonecareer paths",ExecAsUser:1b,PermLevel:0,Type:"COMMAND"}],Label:"career_paths",Name:"昇格できるJOBを確認する"},{Actions:[{Cmd:"/ftbquests open_book",ExecAsUser:1b,PermLevel:0,Type:"COMMAND"}],Label:"career_quests",Name:"キャリア章を開く"}]
+data modify entity @e[type=easy_npc:humanoid,tag=dz_basecamp_job_guide,limit=1] DialogData.DialogDataSet[0].Buttons set value [{Actions:[{Cmd:"/deadzoneloadout menu",ExecAsUser:1b,PermLevel:0,Type:"COMMAND"}],Label:"loadout",Name:"最初の遠征装備を確認する"},{Actions:[{Cmd:"/deadzonequalification status",ExecAsUser:1b,PermLevel:0,Type:"COMMAND"}],Label:"qualifications",Name:"取得資格を確認する"},{Actions:[{Cmd:"/ftbquests open_book",ExecAsUser:1b,PermLevel:0,Type:"COMMAND"}],Label:"training",Name:"訓練・研究記録を開く"}]
 
 # Hank: Buddy status and expensive emergency weapon/ammo reserve.
 data modify entity @e[type=easy_npc:humanoid,tag=dz_basecamp_buddy_recruiter,limit=1] DialogData.Type set value "CUSTOM"
@@ -16,7 +16,7 @@ data modify entity @e[type=easy_npc:humanoid,tag=dz_basecamp_buddy_recruiter,lim
 tag @e[type=easy_npc:humanoid,tag=dz_basecamp_buddy_recruiter] remove dz_armory_rotated
 
 # Goro / parts trader: industrial repair desk. The command runs as the player,
-# so JOB discounts and the player's own materials are applied safely.
+# so qualification discounts and the player's own materials are applied safely.
 data modify entity @e[type=easy_npc:humanoid,tag=dz_basecamp_trader_parts,limit=1] DialogData.Type set value "CUSTOM"
 data modify entity @e[type=easy_npc:humanoid,tag=dz_basecamp_trader_parts,limit=1] DialogData.DialogDataSet[0].Buttons append value {Actions:[{Cmd:"/deadzonerepair service",ExecAsUser:1b,PermLevel:0,Type:"COMMAND"}],Label:"equipment_repair",Name:"装備の完全修理を依頼する"}
 
@@ -24,4 +24,4 @@ data modify entity @e[type=easy_npc:humanoid,tag=dz_basecamp_trader_parts,limit=
 data modify entity @e[type=easy_npc:humanoid,tag=dz_basecamp_radio,limit=1] DialogData.Type set value "CUSTOM"
 data modify entity @e[type=easy_npc:humanoid,tag=dz_basecamp_radio,limit=1] DialogData.DialogDataSet[0].Buttons set value [{Actions:[{Cmd:"/deadzonestory briefing",ExecAsUser:1b,PermLevel:0,Type:"COMMAND"}],Label:"chapter1_briefing",Name:"最初の探索任務を受ける"}]
 
-tellraw @a[distance=..64] {"text":"[PROJECT DEADZONE] JOB管理とBuddy緊急装備サービスを更新しました","color":"gold"}
+tellraw @a[distance=..64] {"text":"[PROJECT DEADZONE] 遠征装備・資格案内とBuddy緊急装備サービスを更新しました","color":"gold"}

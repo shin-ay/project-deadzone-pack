@@ -1,0 +1,20 @@
+
+#コアゲームプレイに関する全ての設定項目
+[gameplay]
+	#minecolonies.config.enablecitizenvoices.comment [初期値: true]
+	enablecitizenvoices = true
+	#デフォルトでは、他の建物の近くに設計図を配置すると、既に配置されている建物はレベル5のように表示され、その周りに青い輪郭が表示されます。これをfalseに設定することで無効にすることができます。 [初期値: true]
+	neighborbuildingrendering = true
+	#ある建物が他の建物とどのくらい近ければ隣接しているとみなされるかをブロック単位で示したものです。-1 = 交差している、0 = 接触している [初期値: 4, 最低: -2, 最大: 16]
+	#Range: -2 ~ 16
+	neighborbuildingrange = 4
+	#建築家のゴーグルを装着した状態で作業指示を見るために必要な距離(ブロック単位)。 [初期値: 50, 最低: 1, 最大: 250]
+	#Range: 1 ~ 250
+	buildgogglerange = 50
+	#Trueの場合、ビルドツールを持ったときに表示されるコロニーの境界線はそのコロニーのチームカラーになります。falseの場合、あなたがいるコロニーは白、それ以外のコロニーは赤になります。 [初期値: true]
+	colonyteamborders = true
+	#休日のスペシャルコンテンツを表示しますか？ [初期値: true]
+	holidayfeatures = true
+	#染色された革製品の場合、該当する色を指定するとツールチップが表示され、どの色を使用すればよいかがわかります。 [初期値: true]
+	showdyetooltips = true
+

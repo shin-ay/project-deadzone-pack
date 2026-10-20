@@ -5,7 +5,7 @@
 	group: "23C996B606E0CFE9"
 	icon: "apocalypsenow:radio"
 	id: "6D8F010000000001"
-	order_index: 0
+	order_index: 1
 	quest_links: [ ]
 	quests: [
 		{
@@ -13,14 +13,18 @@
 				"レイの無線卓は、現在地のWorld Tier、ストーリー解禁、脅威度、確保施設、キャンプ襲撃、勢力判断をFTB QuestsのGUIへ同期する。"
 				"完了したカードが、実際に世界へ反映済みの出来事。ロック中のカードは次の変化と解放条件を示す。"
 				"World Tierはキャンプからの距離でT0～T5へ変化し、地域の敵レベルと構造物候補を担当する。ストーリー解禁S0～S4は目標達成による施設・依頼・在庫の解放だけを担当する。"
-				"脅威度はオンライン中の最高M&S Lvを基準にする。サーバー日数は表示だけで、放置しても難易度は上がらない。"
-				"JOB選択後、キャンプ外の戦闘・感染死が30分以内に3回で脅威度-1、6回で-2。最後の有効死亡から45分間だけ立て直し猶予が入る。ストーリー解禁と地域Tierは巻き戻らない。"
+				"脅威度は地域と物語イベントの固定基準で決まり、Character Levelには追従しない。サーバー日数は表示だけで、放置しても難易度は上がらない。"
+				"初期登録後、キャンプ外の戦闘・感染死が続いた場合は一時的な立て直し猶予を与える。ストーリー解禁と地域Tierは巻き戻らない。"
 				"同じ隊員の死亡は5分に1回まで集計。キャンプ中心100mは新規参加者とNPC利用のため永久安全。"
 			]
 			icon: "apocalypsenow:radio"
 			id: "6D8F010000000101"
 			subtitle: "キャンプの無線担当レイからいつでも確認可能"
-			tasks: [{ id: "6D8F010000002101", title: "無線卓へアクセスした", type: "custom" }]
+			tasks: [{
+				id: "6D8F010000002101"
+				title: "無線卓へアクセスした"
+				type: "custom"
+			}]
 			title: "レイ定時報告：現在の世界"
 			x: 0.0d
 			y: 0.0d
@@ -29,12 +33,16 @@
 			dependencies: ["6D8F010000000101"]
 			description: [
 				"Gas Stationの確保とCamp帰還で燃料ルートとストーリー解禁S1が開く。現在地のWorld Tierは距離だけで決まり、この達成では変化しない。"
-				"S1はCamp契約・発展条件・店の候補を更新する。敵のM&Sレベル帯はWorld Tierと脅威度の高い側が担当する。"
+				"S1はCamp契約・発展条件・店の候補を更新する。敵の数値ProfileはWorld Tierと地域設計が担当する。"
 			]
 			icon: "apocalypsenow:gas_canister"
 			id: "6D8F010000000102"
 			subtitle: "解放条件: Gas Stationを確保し、キャンプへ帰還"
-			tasks: [{ id: "6D8F010000002102", title: "ストーリー解禁S1へ到達", type: "custom" }]
+			tasks: [{
+				id: "6D8F010000002102"
+				title: "ストーリー解禁S1へ到達"
+				type: "custom"
+			}]
 			title: "T1報告：燃料ルート復旧"
 			x: 2.0d
 			y: -2.0d
@@ -48,7 +56,11 @@
 			icon: "minecraft:compass"
 			id: "6D8F010000000103"
 			subtitle: "解放条件: T2ストーリー目標を達成"
-			tasks: [{ id: "6D8F010000002103", title: "ストーリー解禁S2へ到達", type: "custom" }]
+			tasks: [{
+				id: "6D8F010000002103"
+				title: "ストーリー解禁S2へ到達"
+				type: "custom"
+			}]
 			title: "T2報告：地域勢力が動き出す"
 			x: 4.0d
 			y: -2.0d
@@ -62,7 +74,11 @@
 			icon: "apocalypsenow:military_communication_radio"
 			id: "6D8F010000000104"
 			subtitle: "解放条件: Radio Towerを復旧"
-			tasks: [{ id: "6D8F010000002104", title: "ストーリー解禁S3へ到達", type: "custom" }]
+			tasks: [{
+				id: "6D8F010000002104"
+				title: "ストーリー解禁S3へ到達"
+				type: "custom"
+			}]
 			title: "T3報告：都市通信網復旧"
 			x: 6.0d
 			y: -2.0d
@@ -76,7 +92,11 @@
 			icon: "superbwarfare:blueprint_research_table"
 			id: "6D8F010000000105"
 			subtitle: "解放条件: ARGUS-9処理後、T4準備3系統を完了"
-			tasks: [{ id: "6D8F010000002105", title: "ストーリー解禁S4へ到達", type: "custom" }]
+			tasks: [{
+				id: "6D8F010000002105"
+				title: "ストーリー解禁S4へ到達"
+				type: "custom"
+			}]
 			title: "T4報告：封鎖網の外から"
 			x: 8.0d
 			y: -2.0d
@@ -87,10 +107,20 @@
 				"Gas Station確保後の初回襲撃を退けると、T2導入とキャンプ防衛の進行が解放される。"
 				"襲撃はストーリー連動で一度だけ開始され、日数だけでは発生しない。"
 			]
-			icon: "minecraft:shield"
+			icon: {
+				Count: 1
+				id: "minecraft:shield"
+				tag: {
+					Damage: 0
+				}
+			}
 			id: "6D8F010000000106"
 			subtitle: "解放条件: Survivor Camp初回襲撃を撃退"
-			tasks: [{ id: "6D8F010000002106", title: "初回襲撃を撃退", type: "custom" }]
+			tasks: [{
+				id: "6D8F010000002106"
+				title: "初回襲撃を撃退"
+				type: "custom"
+			}]
 			title: "キャンプ報告：防衛線維持"
 			x: 3.0d
 			y: 1.5d
@@ -104,7 +134,11 @@
 			icon: "minecraft:emerald"
 			id: "6D8F010000000107"
 			subtitle: "解放条件: いずれかの勢力判断を確定"
-			tasks: [{ id: "6D8F010000002107", title: "世界へ影響する判断を確定", type: "custom" }]
+			tasks: [{
+				id: "6D8F010000002107"
+				title: "世界へ影響する判断を確定"
+				type: "custom"
+			}]
 			title: "勢力報告：選択の結果"
 			x: 5.0d
 			y: 1.5d
@@ -118,7 +152,11 @@
 			icon: "minecraft:comparator"
 			id: "6D8F010000000108"
 			subtitle: "解放条件: ARGUS-9の最終処理を確定"
-			tasks: [{ id: "6D8F010000002108", title: "ARGUS-9の結末を確定", type: "custom" }]
+			tasks: [{
+				id: "6D8F010000002108"
+				title: "ARGUS-9の結末を確定"
+				type: "custom"
+			}]
 			title: "終幕報告：接続済み／未接続"
 			x: 7.0d
 			y: 1.5d
@@ -132,27 +170,47 @@
 			icon: "minecraft:campfire"
 			id: "6D8F010000000109"
 			subtitle: "JOB選択 → 準備 → Gas Station → Camp帰還｜解放条件: 「レイ定時報告：現在の世界」を完了"
-			tasks: [{ id: "6D8F010000002109", title: "T0の一巡を完了", type: "custom" }]
+			tasks: [{
+				id: "6D8F010000002109"
+				title: "T0の一巡を完了"
+				type: "custom"
+			}]
 			title: "T0縦切り：最初の帰還"
 			x: 1.0d
 			y: 3.5d
 		}
 		{
-			dependencies: ["6D8F010000000109" "6D8F010000000102"]
+			dependencies: [
+				"6D8F010000000109"
+				"6D8F010000000102"
+			]
 			description: [
 				"初回Camp襲撃を退け、生活供給でCamp Lv1を成立させて無線卓へ報告する。"
 				"戦闘成果と生活成果の両方が拠点サービスへ戻ることを確認するS1の一巡。"
 			]
-			icon: "minecraft:shield"
+			icon: {
+				Count: 1
+				id: "minecraft:shield"
+				tag: {
+					Damage: 0
+				}
+			}
 			id: "6D8F010000000110"
 			subtitle: "初回防衛 → 生活供給 → Camp Lv1 → 帰還｜解放条件: 「T0縦切り：最初の帰還」・「T1報告：燃料ルート復旧」をすべて完了"
-			tasks: [{ id: "6D8F010000002110", title: "S1の一巡を完了", type: "custom" }]
+			tasks: [{
+				id: "6D8F010000002110"
+				title: "S1の一巡を完了"
+				type: "custom"
+			}]
 			title: "S1縦切り：守った場所を育てる"
 			x: 3.0d
 			y: 3.5d
 		}
 		{
-			dependencies: ["6D8F010000000110" "6D8F010000000103"]
+			dependencies: [
+				"6D8F010000000110"
+				"6D8F010000000103"
+			]
 			description: [
 				"T2支援ルートを現地で完了し、いずれかの勢力判断を確定して無線卓へ帰還する。"
 				"支援先と判断は既存の勢力・店・依頼へ渡される。新しい評判ゲージは追加しない。"
@@ -160,7 +218,11 @@
 			icon: "minecraft:compass"
 			id: "6D8F010000000111"
 			subtitle: "支援ルート → 勢力判断 → Camp帰還｜解放条件: 「S1縦切り：守った場所を育てる」・「T2報告：地域勢力が動き出す」をすべて完了"
-			tasks: [{ id: "6D8F010000002111", title: "S2の一巡を完了", type: "custom" }]
+			tasks: [{
+				id: "6D8F010000002111"
+				title: "S2の一巡を完了"
+				type: "custom"
+			}]
 			title: "S2縦切り：地域へ影響を返す"
 			x: 5.0d
 			y: 3.5d

@@ -1,9 +1,0 @@
-{
-  "replace": false,
-  "values": [
-    {
-      "id": "zombiekit:karazhan",
-      "required": false
-    }
-  ]
-}

@@ -209,7 +209,7 @@ function dzBctlFieldBehavior(player, buddy, role, tier) {
       // downed player back to visible HP without actually reviving them.
       buddy.runCommandSilent("effect give @e[tag=dz_survivor,type=!minecraft:player,distance=..10,sort=nearest,limit=3] minecraft:regeneration 4 0 true")
       // PlayerRevive keeps a downed player alive at one vanilla HP. Healing
-      // that body does not revive it and only makes the M&S HUD appear to
+      // that body does not revive it and only makes the health HUD appear to
       // recover while the player is still down. The dedicated revive bridge
       // handles this state instead.
       let ownerDown = player.persistentData.getBoolean("playerrevive:bleeding")

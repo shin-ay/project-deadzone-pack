@@ -4,7 +4,7 @@
 # copies them to every newly-created world's serverconfig directory.
 [profiles]
 specialBedBlock = "minecraft:diamond_block"
-selectedProfile = "deadzone_chaosz_v1"
+selectedProfile = ""
 selectedCustomJson = ""
 todoQueueSize = 20
 forceSaplingGrowth = false

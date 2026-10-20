@@ -1,3 +1,4 @@
+
 [model_options]
 	#put main and off hand items after x tick to display on the body! 100 tick ~ 5 sec
 	#Range: > 0
@@ -340,3 +341,4 @@
 		#scale12
 		#Range: > -100
 		scale12 = 0
+

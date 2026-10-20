@@ -1,6 +1,6 @@
 // PROJECT DEADZONE vanilla XP / enchanting policy v0.2
-// Vanilla and modded enchanting remain available. Equipment rarity, affixes,
-// requirements, modification and salvage are owned exclusively by M&S.
+// Vanilla and modded enchanting remain available. Gun growth is owned by the
+// gun itself, attachments, regional acquisition and Weapon Research.
 
 function pdzXpTalentLevel(player) {
   try { return Math.max(0,Math.floor(Number(player.xpLevel))) } catch (ignored) {}
@@ -14,7 +14,7 @@ ServerEvents.commandRegistry(event=>{
   root.then(Commands.literal('status').executes(ctx=>{
     let p=ctx.source.player
     p.tell(Text.of('XP Level: '+pdzXpTalentLevel(p)+' / 自動Talent変換: 無効').aqua())
-    p.tell(Text.of('通常XPはエンチャントなどへ自由に使用できます。装備成長と要求値はM&Sが管理します。').gray())
+    p.tell(Text.of('通常XPはエンチャントなどへ自由に使用できます。銃の成長とは分離されています。').gray())
     return 1
   }))
   root.then(Commands.literal('sync').executes(ctx=>{

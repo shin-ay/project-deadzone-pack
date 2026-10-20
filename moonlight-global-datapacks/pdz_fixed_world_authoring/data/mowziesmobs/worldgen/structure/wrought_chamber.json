@@ -1,0 +1,7 @@
+{
+  "type": "mowziesmobs:wrought_chamber",
+  "biomes": "#project_deadzone:fixed_world_disabled_surface",
+  "spawn_overrides": {},
+  "step": "surface_structures",
+  "terrain_adaptation": "none"
+}

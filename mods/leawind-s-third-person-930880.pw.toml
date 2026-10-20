@@ -1,0 +1,13 @@
+name = "Leawind's Third Person"
+filename = "leawind_third_person-v2.1.0-mc1.20.1-forge.jar"
+side = "client"
+
+[download]
+hash-format = "sha1"
+hash = "da3cc6448b0f63f347583ed7dfaca677b351fd47"
+mode = "metadata:curseforge"
+
+[update]
+[update.curseforge]
+file-id = 5680117
+project-id = 930880

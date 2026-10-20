@@ -1,0 +1,19 @@
+# Don't change this! Version used to track needed updates.
+version = 0
+holdToResearch = true
+holdDurationMillis = 700
+reduceMotion = false
+showBackgroundGrid = false
+showResearchPointNotifications = true
+canvasPadding = 20
+nodeGap = 24
+tierGap = 44
+componentGap = 24
+intraGroupGap = 24
+interGroupGap = 48
+groupPadding = 12
+groupHeaderHeight = 18
+portalPadding = 4
+maxRankBlockWidth = 960
+orderingSweeps = 6
+compactionSweeps = 6

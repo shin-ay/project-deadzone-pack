@@ -130,7 +130,9 @@
 			icon: {
 				Count: 1
 				id: "minecraft:crossbow"
-				tag: { Damage: 0 }
+				tag: {
+					Damage: 0
+				}
 			}
 			id: "6D54010000000107"
 			subtitle: "解放条件: 「この集落は誰の側か」を完了"

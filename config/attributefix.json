@@ -1,5 +1,16 @@
 {
   "attributes": {
+    "obscure_api:penetration": {
+      "enabled": false,
+      "min": {
+        "default": 0,
+        "value": 0
+      },
+      "max": {
+        "default": 100,
+        "value": 100
+      }
+    },
     "forge:step_height_addition": {
       "enabled": false,
       "min": {
@@ -9,17 +20,6 @@
       "max": {
         "default": 512,
         "value": 512
-      }
-    },
-    "legendarysurvivaloverhaul:thermal_resistance": {
-      "enabled": false,
-      "min": {
-        "default": 0,
-        "value": 0
-      },
-      "max": {
-        "default": 10000,
-        "value": 10000
       }
     },
     "attributeslib:ghost_health": {
@@ -44,15 +44,15 @@
         "value": 2048
       }
     },
-    "legendarysurvivaloverhaul:right_arm_resistance": {
+    "taa:inaccuracy_sneak": {
       "enabled": false,
       "min": {
-        "default": -200,
-        "value": -200
+        "default": 0.01,
+        "value": 0.01
       },
       "max": {
-        "default": 100,
-        "value": 100
+        "default": 1024,
+        "value": 1024
       }
     },
     "attributeslib:prot_shred": {
@@ -66,26 +66,15 @@
         "value": 1
       }
     },
-    "attributeslib:overheal": {
+    "obscure_api:dodge": {
       "enabled": false,
       "min": {
         "default": 0,
         "value": 0
       },
       "max": {
-        "default": 10,
-        "value": 10
-      }
-    },
-    "epicfight:weight": {
-      "enabled": false,
-      "min": {
-        "default": 0,
-        "value": 0
-      },
-      "max": {
-        "default": 1024,
-        "value": 1024
+        "default": 100,
+        "value": 100
       }
     },
     "attributeslib:armor_shred": {
@@ -99,15 +88,15 @@
         "value": 2
       }
     },
-    "attributeslib:healing_received": {
+    "taa:explosion_radius": {
       "enabled": false,
       "min": {
-        "default": 0,
-        "value": 0
+        "default": 0.01,
+        "value": 0.01
       },
       "max": {
-        "default": 1000,
-        "value": 1000
+        "default": 1024,
+        "value": 1024
       }
     },
     "epicfight:offhand_armor_negation": {
@@ -121,17 +110,6 @@
         "value": 100
       }
     },
-    "forge:entity_gravity": {
-      "enabled": false,
-      "min": {
-        "default": -8,
-        "value": -8
-      },
-      "max": {
-        "default": 8,
-        "value": 8
-      }
-    },
     "attributeslib:armor_pierce": {
       "enabled": false,
       "min": {
@@ -141,6 +119,28 @@
       "max": {
         "default": 1000,
         "value": 1000
+      }
+    },
+    "taa:bullet_gundamage_launcher": {
+      "enabled": false,
+      "min": {
+        "default": 0.01,
+        "value": 0.01
+      },
+      "max": {
+        "default": 1024,
+        "value": 1024
+      }
+    },
+    "obscure_api:regeneration": {
+      "enabled": false,
+      "min": {
+        "default": 0,
+        "value": 0
+      },
+      "max": {
+        "default": 100000,
+        "value": 100000
       }
     },
     "epicfight:stamina_regen": {
@@ -154,44 +154,44 @@
         "value": 30
       }
     },
-    "minecolonies:mc_mob_damage": {
-      "enabled": false,
-      "min": {
-        "default": 1,
-        "value": 1
-      },
-      "max": {
-        "default": 20,
-        "value": 20
-      }
-    },
-    "attributeslib:cold_damage": {
-      "enabled": false,
-      "min": {
-        "default": 0,
-        "value": 0
-      },
-      "max": {
-        "default": 1000,
-        "value": 1000
-      }
-    },
-    "attributeslib:experience_gained": {
-      "enabled": false,
-      "min": {
-        "default": 0,
-        "value": 0
-      },
-      "max": {
-        "default": 1000,
-        "value": 1000
-      }
-    },
     "minecraft:generic.luck": {
       "enabled": true,
       "min": {
         "default": -1024,
         "value": -1024
+      },
+      "max": {
+        "default": 1024,
+        "value": 1024
+      }
+    },
+    "spore:grinding": {
+      "enabled": false,
+      "min": {
+        "default": 0,
+        "value": 0
+      },
+      "max": {
+        "default": 64,
+        "value": 64
+      }
+    },
+    "spore:localization": {
+      "enabled": false,
+      "min": {
+        "default": 0,
+        "value": 0
+      },
+      "max": {
+        "default": 64,
+        "value": 64
+      }
+    },
+    "taa:bullet_gundamage_rifle": {
+      "enabled": false,
+      "min": {
+        "default": 0.01,
+        "value": 0.01
       },
       "max": {
         "default": 1024,
@@ -220,11 +220,33 @@
         "value": 100
       }
     },
+    "obscure_api:magic_resistance": {
+      "enabled": false,
+      "min": {
+        "default": 0,
+        "value": 0
+      },
+      "max": {
+        "default": 100,
+        "value": 100
+      }
+    },
     "forge:entity_reach": {
       "enabled": false,
       "min": {
         "default": 0,
         "value": 0
+      },
+      "max": {
+        "default": 1024,
+        "value": 1024
+      }
+    },
+    "taa:recoil": {
+      "enabled": false,
+      "min": {
+        "default": 0.01,
+        "value": 0.01
       },
       "max": {
         "default": 1024,
@@ -253,15 +275,37 @@
         "value": 100
       }
     },
-    "diet:natural_regeneration": {
+    "taa:explosion_destroy_blocknew": {
       "enabled": false,
       "min": {
-        "default": 0,
-        "value": 0
+        "default": 0.01,
+        "value": 0.01
       },
       "max": {
-        "default": 2,
-        "value": 2
+        "default": 3,
+        "value": 3
+      }
+    },
+    "taa:inaccuracy_aim": {
+      "enabled": false,
+      "min": {
+        "default": 0.01,
+        "value": 0.01
+      },
+      "max": {
+        "default": 1024,
+        "value": 1024
+      }
+    },
+    "taa:pierce": {
+      "enabled": false,
+      "min": {
+        "default": 0.01,
+        "value": 0.01
+      },
+      "max": {
+        "default": 1024,
+        "value": 1024
       }
     },
     "superbwarfare:bullet_resistance": {
@@ -275,15 +319,26 @@
         "value": 1
       }
     },
-    "attributeslib:dodge_chance": {
+    "taa:inaccuracy_move": {
       "enabled": false,
       "min": {
-        "default": 0,
-        "value": 0
+        "default": 0.01,
+        "value": 0.01
       },
       "max": {
-        "default": 1,
-        "value": 1
+        "default": 1024,
+        "value": 1024
+      }
+    },
+    "taa:reload_time": {
+      "enabled": false,
+      "min": {
+        "default": 0.01,
+        "value": 0.01
+      },
+      "max": {
+        "default": 1024,
+        "value": 1024
       }
     },
     "epicfight:offhand_impact": {
@@ -308,26 +363,15 @@
         "value": 1
       }
     },
-    "attributeslib:fire_damage": {
+    "taa:armor_ignore": {
       "enabled": false,
       "min": {
-        "default": 0,
-        "value": 0
+        "default": 0.01,
+        "value": 0.01
       },
       "max": {
-        "default": 1000,
-        "value": 1000
-      }
-    },
-    "minecraft:generic.attack_knockback": {
-      "enabled": true,
-      "min": {
-        "default": 0,
-        "value": 0
-      },
-      "max": {
-        "default": 5,
-        "value": 1000000
+        "default": 1024,
+        "value": 1024
       }
     },
     "attributeslib:crit_chance": {
@@ -341,17 +385,6 @@
         "value": 10
       }
     },
-    "forge:swim_speed": {
-      "enabled": false,
-      "min": {
-        "default": 0,
-        "value": 0
-      },
-      "max": {
-        "default": 1024,
-        "value": 1024
-      }
-    },
     "minecraft:generic.armor_toughness": {
       "enabled": true,
       "min": {
@@ -363,37 +396,15 @@
         "value": 1000000
       }
     },
-    "legendarysurvivaloverhaul:heating_temperature": {
+    "obscure_api:accuracy": {
       "enabled": false,
       "min": {
-        "default": -10000,
-        "value": -10000
-      },
-      "max": {
-        "default": 10000,
-        "value": 10000
-      }
-    },
-    "legendarysurvivaloverhaul:feet_resistance": {
-      "enabled": false,
-      "min": {
-        "default": -200,
-        "value": -200
+        "default": 0,
+        "value": 0
       },
       "max": {
         "default": 100,
         "value": 100
-      }
-    },
-    "vminus:mob_detection_range": {
-      "enabled": false,
-      "min": {
-        "default": 0,
-        "value": 0
-      },
-      "max": {
-        "default": 0,
-        "value": 0
       }
     },
     "vminus:magic_protection": {
@@ -407,18 +418,29 @@
         "value": 1024
       }
     },
-    "attributeslib:crit_damage": {
+    "taa:headshot_multiplier": {
       "enabled": false,
       "min": {
-        "default": 1,
-        "value": 1
+        "default": 0.01,
+        "value": 0.01
       },
       "max": {
-        "default": 100,
-        "value": 100
+        "default": 1024,
+        "value": 1024
       }
     },
-    "puffish_attributes:stamina": {
+    "taa:ads_time": {
+      "enabled": false,
+      "min": {
+        "default": 0.01,
+        "value": 0.01
+      },
+      "max": {
+        "default": 1024,
+        "value": 1024
+      }
+    },
+    "taa:melee_distance": {
       "enabled": false,
       "min": {
         "default": 0,
@@ -427,28 +449,6 @@
       "max": {
         "default": 1024,
         "value": 1024
-      }
-    },
-    "epicfight:impact": {
-      "enabled": false,
-      "min": {
-        "default": 0,
-        "value": 0
-      },
-      "max": {
-        "default": 1024,
-        "value": 1024
-      }
-    },
-    "forge:nametag_distance": {
-      "enabled": false,
-      "min": {
-        "default": 0,
-        "value": 0
-      },
-      "max": {
-        "default": 64,
-        "value": 64
       }
     },
     "forge:block_reach": {
@@ -462,17 +462,6 @@
         "value": 1024
       }
     },
-    "vminus:width": {
-      "enabled": false,
-      "min": {
-        "default": 0.2,
-        "value": 0.2
-      },
-      "max": {
-        "default": 5,
-        "value": 5
-      }
-    },
     "minecraft:generic.attack_speed": {
       "enabled": true,
       "min": {
@@ -484,48 +473,15 @@
         "value": 1024
       }
     },
-    "minecraft:generic.attack_damage": {
-      "enabled": true,
-      "min": {
-        "default": 0,
-        "value": 0
-      },
-      "max": {
-        "default": 2048,
-        "value": 1000000
-      }
-    },
-    "attributeslib:draw_speed": {
+    "taa:heat_cooling": {
       "enabled": false,
       "min": {
-        "default": 0,
-        "value": 0
+        "default": 0.01,
+        "value": 0.01
       },
       "max": {
-        "default": 4,
-        "value": 4
-      }
-    },
-    "legendarysurvivaloverhaul:broken_heart_resilience": {
-      "enabled": false,
-      "min": {
-        "default": 0,
-        "value": 0
-      },
-      "max": {
-        "default": 10000,
-        "value": 10000
-      }
-    },
-    "vminus:height": {
-      "enabled": false,
-      "min": {
-        "default": 0.2,
-        "value": 0.2
-      },
-      "max": {
-        "default": 5,
-        "value": 5
+        "default": 1024,
+        "value": 1024
       }
     },
     "legendarysurvivaloverhaul:cold_resistance": {
@@ -550,48 +506,26 @@
         "value": 1024
       }
     },
-    "legendarysurvivaloverhaul:heat_resistance": {
+    "taa:heat_overheat_time": {
       "enabled": false,
       "min": {
-        "default": 0,
-        "value": 0
+        "default": 0.01,
+        "value": 0.01
       },
       "max": {
-        "default": 10000,
-        "value": 10000
+        "default": 1024,
+        "value": 1024
       }
     },
-    "minecraft:generic.armor": {
-      "enabled": true,
-      "min": {
-        "default": 0,
-        "value": 0
-      },
-      "max": {
-        "default": 30,
-        "value": 1000000
-      }
-    },
-    "legendarysurvivaloverhaul:head_resistance": {
+    "taa:heat_max": {
       "enabled": false,
       "min": {
-        "default": -200,
-        "value": -200
+        "default": 0.01,
+        "value": 0.01
       },
       "max": {
-        "default": 100,
-        "value": 100
-      }
-    },
-    "legendarysurvivaloverhaul:cooling_temperature": {
-      "enabled": false,
-      "min": {
-        "default": -10000,
-        "value": -10000
-      },
-      "max": {
-        "default": 10000,
-        "value": 10000
+        "default": 1024,
+        "value": 1024
       }
     },
     "vminus:protection": {
@@ -605,22 +539,11 @@
         "value": 100
       }
     },
-    "vminus:blunt_protection": {
+    "taa:bullet_gundamage_pistol": {
       "enabled": false,
       "min": {
-        "default": 0,
-        "value": 0
-      },
-      "max": {
-        "default": 1024,
-        "value": 1024
-      }
-    },
-    "vminus:fall_protection": {
-      "enabled": false,
-      "min": {
-        "default": 0,
-        "value": 0
+        "default": 0.01,
+        "value": 0.01
       },
       "max": {
         "default": 1024,
@@ -636,17 +559,6 @@
       "max": {
         "default": 34,
         "value": 34
-      }
-    },
-    "legendarysurvivaloverhaul:left_arm_resistance": {
-      "enabled": false,
-      "min": {
-        "default": -200,
-        "value": -200
-      },
-      "max": {
-        "default": 100,
-        "value": 100
       }
     },
     "minecraft:generic.flying_speed": {
@@ -693,26 +605,15 @@
         "value": 1024
       }
     },
-    "attributeslib:current_hp_damage": {
+    "spore:toxicity": {
       "enabled": false,
       "min": {
         "default": 0,
         "value": 0
       },
       "max": {
-        "default": 1,
-        "value": 1
-      }
-    },
-    "vminus:mining_speed": {
-      "enabled": false,
-      "min": {
-        "default": 0,
-        "value": 0
-      },
-      "max": {
-        "default": 100,
-        "value": 100
+        "default": 64,
+        "value": 64
       }
     },
     "attributeslib:mining_speed": {
@@ -726,17 +627,6 @@
         "value": 10
       }
     },
-    "minecraft:generic.movement_speed": {
-      "enabled": true,
-      "min": {
-        "default": 0,
-        "value": 0
-      },
-      "max": {
-        "default": 1024,
-        "value": 1024
-      }
-    },
     "legendarysurvivaloverhaul:chest_resistance": {
       "enabled": false,
       "min": {
@@ -748,15 +638,15 @@
         "value": 100
       }
     },
-    "hordes:infection_resistance": {
+    "obscure_api:critical_damage": {
       "enabled": false,
       "min": {
         "default": 0,
         "value": 0
       },
       "max": {
-        "default": 1,
-        "value": 1
+        "default": 100,
+        "value": 100
       }
     },
     "minecraft:generic.max_health": {
@@ -792,7 +682,117 @@
         "value": 10000
       }
     },
-    "legendarysurvivaloverhaul:broken_heart": {
+    "vminus:blast_protection": {
+      "enabled": false,
+      "min": {
+        "default": 0,
+        "value": 0
+      },
+      "max": {
+        "default": 100,
+        "value": 100
+      }
+    },
+    "taa:bullet_gundamage_sniper": {
+      "enabled": false,
+      "min": {
+        "default": 0.01,
+        "value": 0.01
+      },
+      "max": {
+        "default": 1024,
+        "value": 1024
+      }
+    },
+    "minecraft:horse.jump_strength": {
+      "enabled": true,
+      "min": {
+        "default": 0,
+        "value": 0
+      },
+      "max": {
+        "default": 2,
+        "value": 2
+      }
+    },
+    "taa:inaccuracy": {
+      "enabled": false,
+      "min": {
+        "default": 0.01,
+        "value": 0.01
+      },
+      "max": {
+        "default": 1024,
+        "value": 1024
+      }
+    },
+    "legendarysurvivaloverhaul:body_resistance": {
+      "enabled": false,
+      "min": {
+        "default": -200,
+        "value": -200
+      },
+      "max": {
+        "default": 100,
+        "value": 100
+      }
+    },
+    "minecraft:generic.knockback_resistance": {
+      "enabled": true,
+      "min": {
+        "default": 0,
+        "value": 0
+      },
+      "max": {
+        "default": 1,
+        "value": 1
+      }
+    },
+    "cataclysm:nature_heal": {
+      "enabled": false,
+      "min": {
+        "default": -256,
+        "value": -256
+      },
+      "max": {
+        "default": 1024,
+        "value": 1024
+      }
+    },
+    "taa:inaccuracy_stand": {
+      "enabled": false,
+      "min": {
+        "default": 0.01,
+        "value": 0.01
+      },
+      "max": {
+        "default": 1024,
+        "value": 1024
+      }
+    },
+    "taa:recoil_pitch": {
+      "enabled": false,
+      "min": {
+        "default": 0.01,
+        "value": 0.01
+      },
+      "max": {
+        "default": 1024,
+        "value": 1024
+      }
+    },
+    "taa:knockback": {
+      "enabled": false,
+      "min": {
+        "default": 0.01,
+        "value": 0.01
+      },
+      "max": {
+        "default": 1024,
+        "value": 1024
+      }
+    },
+    "legendarysurvivaloverhaul:thermal_resistance": {
       "enabled": false,
       "min": {
         "default": 0,
@@ -803,7 +803,95 @@
         "value": 10000
       }
     },
-    "vminus:blast_protection": {
+    "legendarysurvivaloverhaul:right_arm_resistance": {
+      "enabled": false,
+      "min": {
+        "default": -200,
+        "value": -200
+      },
+      "max": {
+        "default": 100,
+        "value": 100
+      }
+    },
+    "taa:melee_damage": {
+      "enabled": false,
+      "min": {
+        "default": 0.01,
+        "value": 0.01
+      },
+      "max": {
+        "default": 1024,
+        "value": 1024
+      }
+    },
+    "taa:move_speed": {
+      "enabled": false,
+      "min": {
+        "default": 0.01,
+        "value": 0.01
+      },
+      "max": {
+        "default": 1024,
+        "value": 1024
+      }
+    },
+    "taa:silencenew": {
+      "enabled": false,
+      "min": {
+        "default": 0.01,
+        "value": 0.01
+      },
+      "max": {
+        "default": 1024,
+        "value": 1024
+      }
+    },
+    "attributeslib:overheal": {
+      "enabled": false,
+      "min": {
+        "default": 0,
+        "value": 0
+      },
+      "max": {
+        "default": 10,
+        "value": 10
+      }
+    },
+    "epicfight:weight": {
+      "enabled": false,
+      "min": {
+        "default": 0,
+        "value": 0
+      },
+      "max": {
+        "default": 1024,
+        "value": 1024
+      }
+    },
+    "attributeslib:healing_received": {
+      "enabled": false,
+      "min": {
+        "default": 0,
+        "value": 0
+      },
+      "max": {
+        "default": 1000,
+        "value": 1000
+      }
+    },
+    "taa:rounds_per_minute": {
+      "enabled": false,
+      "min": {
+        "default": 0.01,
+        "value": 0.01
+      },
+      "max": {
+        "default": 1024,
+        "value": 1024
+      }
+    },
+    "obscure_api:resilience": {
       "enabled": false,
       "min": {
         "default": 0,
@@ -812,6 +900,655 @@
       "max": {
         "default": 100,
         "value": 100
+      }
+    },
+    "forge:entity_gravity": {
+      "enabled": false,
+      "min": {
+        "default": -8,
+        "value": -8
+      },
+      "max": {
+        "default": 8,
+        "value": 8
+      }
+    },
+    "taa:heat_cooling_delay": {
+      "enabled": false,
+      "min": {
+        "default": 0.01,
+        "value": 0.01
+      },
+      "max": {
+        "default": 1024,
+        "value": 1024
+      }
+    },
+    "spore:rejuvenation": {
+      "enabled": false,
+      "min": {
+        "default": 0,
+        "value": 0
+      },
+      "max": {
+        "default": 64,
+        "value": 64
+      }
+    },
+    "taa:magazine_capacity": {
+      "enabled": false,
+      "min": {
+        "default": 0.01,
+        "value": 0.01
+      },
+      "max": {
+        "default": 1024,
+        "value": 1024
+      }
+    },
+    "minecolonies:mc_mob_damage": {
+      "enabled": false,
+      "min": {
+        "default": 1,
+        "value": 1
+      },
+      "max": {
+        "default": 20,
+        "value": 20
+      }
+    },
+    "attributeslib:cold_damage": {
+      "enabled": false,
+      "min": {
+        "default": 0,
+        "value": 0
+      },
+      "max": {
+        "default": 1000,
+        "value": 1000
+      }
+    },
+    "attributeslib:experience_gained": {
+      "enabled": false,
+      "min": {
+        "default": 0,
+        "value": 0
+      },
+      "max": {
+        "default": 1000,
+        "value": 1000
+      }
+    },
+    "spore:laceration": {
+      "enabled": false,
+      "min": {
+        "default": 0,
+        "value": 0
+      },
+      "max": {
+        "default": 64,
+        "value": 64
+      }
+    },
+    "taa:bullet_gundamage_lmg": {
+      "enabled": false,
+      "min": {
+        "default": 0.01,
+        "value": 0.01
+      },
+      "max": {
+        "default": 1024,
+        "value": 1024
+      }
+    },
+    "taa:weight": {
+      "enabled": false,
+      "min": {
+        "default": 0.01,
+        "value": 0.01
+      },
+      "max": {
+        "default": 1024,
+        "value": 1024
+      }
+    },
+    "obscure_api:magic_damage": {
+      "enabled": false,
+      "min": {
+        "default": 0,
+        "value": 0
+      },
+      "max": {
+        "default": 100000,
+        "value": 100000
+      }
+    },
+    "taa:effective_range": {
+      "enabled": false,
+      "min": {
+        "default": 0.01,
+        "value": 0.01
+      },
+      "max": {
+        "default": 1024,
+        "value": 1024
+      }
+    },
+    "diet:natural_regeneration": {
+      "enabled": false,
+      "min": {
+        "default": 0,
+        "value": 0
+      },
+      "max": {
+        "default": 2,
+        "value": 2
+      }
+    },
+    "obscure_api:healing_power": {
+      "enabled": false,
+      "min": {
+        "default": 0,
+        "value": 0
+      },
+      "max": {
+        "default": 100,
+        "value": 100
+      }
+    },
+    "taa:ignitefire": {
+      "enabled": false,
+      "min": {
+        "default": 0.01,
+        "value": 0.01
+      },
+      "max": {
+        "default": 3,
+        "value": 3
+      }
+    },
+    "taa:ammo_speed": {
+      "enabled": false,
+      "min": {
+        "default": 0.01,
+        "value": 0.01
+      },
+      "max": {
+        "default": 1024,
+        "value": 1024
+      }
+    },
+    "attributeslib:dodge_chance": {
+      "enabled": false,
+      "min": {
+        "default": 0,
+        "value": 0
+      },
+      "max": {
+        "default": 1,
+        "value": 1
+      }
+    },
+    "taa:recoil_yaw": {
+      "enabled": false,
+      "min": {
+        "default": 0.01,
+        "value": 0.01
+      },
+      "max": {
+        "default": 1024,
+        "value": 1024
+      }
+    },
+    "taa:explosion_damage": {
+      "enabled": false,
+      "min": {
+        "default": 0.01,
+        "value": 0.01
+      },
+      "max": {
+        "default": 1024,
+        "value": 1024
+      }
+    },
+    "taa:explosion_delay": {
+      "enabled": false,
+      "min": {
+        "default": 0.01,
+        "value": 0.01
+      },
+      "max": {
+        "default": 1024,
+        "value": 1024
+      }
+    },
+    "attributeslib:fire_damage": {
+      "enabled": false,
+      "min": {
+        "default": 0,
+        "value": 0
+      },
+      "max": {
+        "default": 1000,
+        "value": 1000
+      }
+    },
+    "minecraft:generic.attack_knockback": {
+      "enabled": true,
+      "min": {
+        "default": 0,
+        "value": 0
+      },
+      "max": {
+        "default": 5,
+        "value": 1000000
+      }
+    },
+    "forge:swim_speed": {
+      "enabled": false,
+      "min": {
+        "default": 0,
+        "value": 0
+      },
+      "max": {
+        "default": 1024,
+        "value": 1024
+      }
+    },
+    "legendarysurvivaloverhaul:heating_temperature": {
+      "enabled": false,
+      "min": {
+        "default": -10000,
+        "value": -10000
+      },
+      "max": {
+        "default": 10000,
+        "value": 10000
+      }
+    },
+    "legendarysurvivaloverhaul:feet_resistance": {
+      "enabled": false,
+      "min": {
+        "default": -200,
+        "value": -200
+      },
+      "max": {
+        "default": 100,
+        "value": 100
+      }
+    },
+    "vminus:mob_detection_range": {
+      "enabled": false,
+      "min": {
+        "default": 0,
+        "value": 0
+      },
+      "max": {
+        "default": 0,
+        "value": 0
+      }
+    },
+    "attributeslib:crit_damage": {
+      "enabled": false,
+      "min": {
+        "default": 1,
+        "value": 1
+      },
+      "max": {
+        "default": 100,
+        "value": 100
+      }
+    },
+    "puffish_attributes:stamina": {
+      "enabled": false,
+      "min": {
+        "default": 0,
+        "value": 0
+      },
+      "max": {
+        "default": 1024,
+        "value": 1024
+      }
+    },
+    "epicfight:impact": {
+      "enabled": false,
+      "min": {
+        "default": 0,
+        "value": 0
+      },
+      "max": {
+        "default": 1024,
+        "value": 1024
+      }
+    },
+    "forge:nametag_distance": {
+      "enabled": false,
+      "min": {
+        "default": 0,
+        "value": 0
+      },
+      "max": {
+        "default": 64,
+        "value": 64
+      }
+    },
+    "taa:explosion_enabled": {
+      "enabled": false,
+      "min": {
+        "default": 0.01,
+        "value": 0.01
+      },
+      "max": {
+        "default": 3,
+        "value": 3
+      }
+    },
+    "cataclysm:additional_critical_damage": {
+      "enabled": false,
+      "min": {
+        "default": -512,
+        "value": -512
+      },
+      "max": {
+        "default": 512,
+        "value": 512
+      }
+    },
+    "taa:bullet_gundamage_shotgun": {
+      "enabled": false,
+      "min": {
+        "default": 0.01,
+        "value": 0.01
+      },
+      "max": {
+        "default": 1024,
+        "value": 1024
+      }
+    },
+    "obscure_api:parry": {
+      "enabled": false,
+      "min": {
+        "default": 0,
+        "value": 0
+      },
+      "max": {
+        "default": 100,
+        "value": 100
+      }
+    },
+    "vminus:width": {
+      "enabled": false,
+      "min": {
+        "default": 0.2,
+        "value": 0.2
+      },
+      "max": {
+        "default": 5,
+        "value": 5
+      }
+    },
+    "minecraft:generic.attack_damage": {
+      "enabled": true,
+      "min": {
+        "default": 0,
+        "value": 0
+      },
+      "max": {
+        "default": 2048,
+        "value": 1000000
+      }
+    },
+    "attributeslib:draw_speed": {
+      "enabled": false,
+      "min": {
+        "default": 0,
+        "value": 0
+      },
+      "max": {
+        "default": 4,
+        "value": 4
+      }
+    },
+    "legendarysurvivaloverhaul:broken_heart_resilience": {
+      "enabled": false,
+      "min": {
+        "default": 0,
+        "value": 0
+      },
+      "max": {
+        "default": 10000,
+        "value": 10000
+      }
+    },
+    "vminus:height": {
+      "enabled": false,
+      "min": {
+        "default": 0.2,
+        "value": 0.2
+      },
+      "max": {
+        "default": 5,
+        "value": 5
+      }
+    },
+    "legendarysurvivaloverhaul:heat_resistance": {
+      "enabled": false,
+      "min": {
+        "default": 0,
+        "value": 0
+      },
+      "max": {
+        "default": 10000,
+        "value": 10000
+      }
+    },
+    "minecraft:generic.armor": {
+      "enabled": true,
+      "min": {
+        "default": 0,
+        "value": 0
+      },
+      "max": {
+        "default": 30,
+        "value": 1000000
+      }
+    },
+    "cataclysm:eat_speed": {
+      "enabled": false,
+      "min": {
+        "default": -100,
+        "value": -100
+      },
+      "max": {
+        "default": 100,
+        "value": 100
+      }
+    },
+    "legendarysurvivaloverhaul:head_resistance": {
+      "enabled": false,
+      "min": {
+        "default": -200,
+        "value": -200
+      },
+      "max": {
+        "default": 100,
+        "value": 100
+      }
+    },
+    "legendarysurvivaloverhaul:cooling_temperature": {
+      "enabled": false,
+      "min": {
+        "default": -10000,
+        "value": -10000
+      },
+      "max": {
+        "default": 10000,
+        "value": 10000
+      }
+    },
+    "obscure_api:critical_hit": {
+      "enabled": false,
+      "min": {
+        "default": 0,
+        "value": 0
+      },
+      "max": {
+        "default": 100,
+        "value": 100
+      }
+    },
+    "spore:corrosives": {
+      "enabled": false,
+      "min": {
+        "default": 0,
+        "value": 0
+      },
+      "max": {
+        "default": 64,
+        "value": 64
+      }
+    },
+    "vminus:blunt_protection": {
+      "enabled": false,
+      "min": {
+        "default": 0,
+        "value": 0
+      },
+      "max": {
+        "default": 1024,
+        "value": 1024
+      }
+    },
+    "vminus:fall_protection": {
+      "enabled": false,
+      "min": {
+        "default": 0,
+        "value": 0
+      },
+      "max": {
+        "default": 1024,
+        "value": 1024
+      }
+    },
+    "legendarysurvivaloverhaul:left_arm_resistance": {
+      "enabled": false,
+      "min": {
+        "default": -200,
+        "value": -200
+      },
+      "max": {
+        "default": 100,
+        "value": 100
+      }
+    },
+    "taa:inaccuracy_lie": {
+      "enabled": false,
+      "min": {
+        "default": 0.01,
+        "value": 0.01
+      },
+      "max": {
+        "default": 1024,
+        "value": 1024
+      }
+    },
+    "spore:ballistic": {
+      "enabled": false,
+      "min": {
+        "default": 0,
+        "value": 0
+      },
+      "max": {
+        "default": 64,
+        "value": 64
+      }
+    },
+    "attributeslib:current_hp_damage": {
+      "enabled": false,
+      "min": {
+        "default": 0,
+        "value": 0
+      },
+      "max": {
+        "default": 1,
+        "value": 1
+      }
+    },
+    "taa:explosion_knockbacknew": {
+      "enabled": false,
+      "min": {
+        "default": 0.01,
+        "value": 0.01
+      },
+      "max": {
+        "default": 3,
+        "value": 3
+      }
+    },
+    "vminus:mining_speed": {
+      "enabled": false,
+      "min": {
+        "default": 0,
+        "value": 0
+      },
+      "max": {
+        "default": 100,
+        "value": 100
+      }
+    },
+    "minecraft:generic.movement_speed": {
+      "enabled": true,
+      "min": {
+        "default": 0,
+        "value": 0
+      },
+      "max": {
+        "default": 1024,
+        "value": 1024
+      }
+    },
+    "cataclysm:charge_time": {
+      "enabled": false,
+      "min": {
+        "default": -100,
+        "value": -100
+      },
+      "max": {
+        "default": 512,
+        "value": 512
+      }
+    },
+    "hordes:infection_resistance": {
+      "enabled": false,
+      "min": {
+        "default": 0,
+        "value": 0
+      },
+      "max": {
+        "default": 1,
+        "value": 1
+      }
+    },
+    "taa:bullet_gundamage_smg": {
+      "enabled": false,
+      "min": {
+        "default": 0.01,
+        "value": 0.01
+      },
+      "max": {
+        "default": 1024,
+        "value": 1024
+      }
+    },
+    "legendarysurvivaloverhaul:broken_heart": {
+      "enabled": false,
+      "min": {
+        "default": 0,
+        "value": 0
+      },
+      "max": {
+        "default": 10000,
+        "value": 10000
       }
     },
     "epicfight:max_strikes": {
@@ -847,17 +1584,6 @@
         "value": 10
       }
     },
-    "minecraft:horse.jump_strength": {
-      "enabled": true,
-      "min": {
-        "default": 0,
-        "value": 0
-      },
-      "max": {
-        "default": 2,
-        "value": 2
-      }
-    },
     "attributeslib:arrow_velocity": {
       "enabled": false,
       "min": {
@@ -869,28 +1595,6 @@
         "value": 10
       }
     },
-    "legendarysurvivaloverhaul:body_resistance": {
-      "enabled": false,
-      "min": {
-        "default": -200,
-        "value": -200
-      },
-      "max": {
-        "default": 100,
-        "value": 100
-      }
-    },
-    "minecraft:generic.knockback_resistance": {
-      "enabled": true,
-      "min": {
-        "default": 0,
-        "value": 0
-      },
-      "max": {
-        "default": 1,
-        "value": 1
-      }
-    },
     "hordes:infectivity": {
       "enabled": false,
       "min": {
@@ -900,6 +1604,28 @@
       "max": {
         "default": 1,
         "value": 1
+      }
+    },
+    "taa:bullet_gundamage": {
+      "enabled": false,
+      "min": {
+        "default": 0.01,
+        "value": 0.01
+      },
+      "max": {
+        "default": 1024,
+        "value": 1024
+      }
+    },
+    "taa:bullet_count": {
+      "enabled": false,
+      "min": {
+        "default": 0.01,
+        "value": 0.01
+      },
+      "max": {
+        "default": 1024,
+        "value": 1024
       }
     },
     "attributeslib:life_steal": {

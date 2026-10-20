@@ -1,7 +1,12 @@
 
 [loot]
-	# Should killed NPCs drop their armor/ammo/gunpowder? (guns never drop)
-	dropItems = true
+	# Should killed NPCs drop any loot (ammo/gunpowder)? Guns are controlled separately below.
+	dropLoot = true
+	# Should killed NPCs be able to drop the gun they were holding?
+	dropGun = true
+	# Chance (0.0-1.0) a killed NPC drops their gun, if dropGun is enabled above.
+	#Range: 0.0 ~ 1.0
+	gunDropChance = 0.1
 
 [combat]
 	# Max health of Scavengers and Soldiers (a player has 20).
@@ -10,6 +15,17 @@
 	# Damage multiplier for NPC guns. 1.0 = full damage, 0.5 = half, etc.
 	#Range: 0.0 ~ 10.0
 	npcGunDamageMultiplier = 0.5
+	# How far (in blocks) NPCs can spot and start engaging a target.
+	#Range: 1.0 ~ 256.0
+	maxSightRange = 64.0
+	# How far (in blocks) NPCs can hear an unsuppressed gunshot and investigate.
+	#Range: 1.0 ~ 256.0
+	maxSoundRange = 64.0
+	# How far (in blocks) NPCs can hear a suppressed gunshot and investigate.
+	#Range: 1.0 ~ 256.0
+	maxSoundRangeSuppressed = 16.0
+	# Should NPCs and vanilla hostile mobs (zombies, skeletons, spiders, creepers, slimes) fight each other?
+	hostileMobConflict = true
 
 [patrol]
 	# Chance (0.0-1.0) a patrol spawns each time a player is checked.
@@ -34,4 +50,10 @@
 [debug]
 	# Dev/debug tool - don't worry about this one.
 	enableDebugLogging = false
+
+[movement]
+	# Can NPCs open closed wooden doors while pathfinding? (iron doors are never opened)
+	canOpenDoors = true
+	# Can NPCs open closed fence gates while pathfinding?
+	canOpenFenceGates = true
 

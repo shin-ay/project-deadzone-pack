@@ -121,7 +121,7 @@
       },
       {
         "char": "ϙ",
-        "block": "minecraft:air",
+        "block": "minecraft:chest[facing=north,type=single,waterlogged=false]",
         "loot": "shoploot",
         "tag": {
           "z": 588,
@@ -221,7 +221,7 @@
       },
       {
         "char": "Љ",
-        "block": "minecraft:air",
+        "block": "minecraft:chest[facing=north,type=single,waterlogged=false]",
         "loot": "shoploot",
         "tag": {
           "z": 579,
