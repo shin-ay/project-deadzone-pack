@@ -17423,6 +17423,11 @@ file = "mods/pdz-create-creative-guard-1.0.0.jar"
 hash = "d98e8c19795ba6152033325d57d60c6d10e5d0a9e9cba14199fffbb575ab82b6"
 
 [[files]]
+file = "mods/pdz-field-terminal.pw.toml"
+hash = "1663c5899775e928a8a2756577530f0b8c0d78ca70dc46c4dab024bac844155d"
+metafile = true
+
+[[files]]
 file = "mods/pdz-infectious-lifecycle-compat-1.0.5.jar"
 hash = "8d452ccd5cedbf62476db3ca90f3ee1180527603d8d89bbfa8d328ab738ddaab"
 

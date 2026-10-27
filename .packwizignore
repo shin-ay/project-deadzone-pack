@@ -42,3 +42,6 @@ kubejs/server_scripts/project_deadzone_faction_territory_v0_1.js
 # Repository documentation is not installed into the game instance
 README.md
 projectfiles/
+
+# Client-only binaries are downloaded through sided metadata, never as direct pack files.
+client_artifacts/

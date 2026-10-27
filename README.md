@@ -1,6 +1,14 @@
 # PROJECT DEADZONE Distribution
 
-Current pack version: `BETA-20261020-T097-PACKWIZ-RC1`
+Current pack version: `DEV-20261028-FIELD-UI-0.3.0`
+
+This development update adds the client-only PDZ Field Terminal 0.3.0 prototype:
+F7 terminal/dictionary/party, conditional replacement HUD, and inventory status.
+The existing world-authoring server is part of the development environment.
+No Field Terminal server JAR, server restart, or world update is required.
+Rendering, legacy HUD replacement, and multiplayer behavior still need in-game QA.
+Use `/pdzhud` to toggle the replacement HUD for the current client session.
+This is an internal development prototype, not a claim that the full game is complete.
 
 This public repository contains only the packwiz manifest and multiplayer
 client configuration required to update PROJECT DEADZONE.
