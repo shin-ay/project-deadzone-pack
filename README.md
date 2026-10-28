@@ -1,6 +1,6 @@
 # PROJECT DEADZONE Distribution
 
-Current pack version: `DEV-20261028-BUILD-DIMENSIONS-RC1`
+Current pack version: `DEV-20261028-SERVER-PARITY-RC1`
 
 This development update adds the client-only PDZ Field Terminal 0.3.0 prototype:
 F7 terminal/dictionary/party, conditional replacement HUD, and inventory status.
@@ -54,3 +54,7 @@ The installer entry point is:
 Adds Thingamajigs 1.9.1, Cluttered 3.0.3, Yuushya 2.2.3 and Beautify 2.0.2 to match the current town server. Adds Incendium 5.3.5, Nullscape 1.2.8, official IBO 3.1.0 and the vanilla-loot compatibility pack. Includes the already-installed server IR 1.11.0 / TrackAPI 1.3 / UniversalModCore 1.3.0 dependencies for client parity. Existing Field UI 0.3.0 remains client-only. This is a development build; full campaign acceptance and visual/multiplayer checks remain pending.
 
 Some CurseForge API-excluded files still require the owner-provided manual seed bundle before normal packwiz startup can finish.
+
+## 2026-10-28 server parity correction
+
+Removes retired M&S components, old JOB UI, Recipe Machine Stage and Calypso goggles from the client distribution to match the current development server. Replaces the M&S-specific SedParties build with the exact M&S-independent build already used by the server and town client. Existing client-only utilities, Field UI, building mods, IR and dimension packs are retained. This corrects client/server parity; it does not certify the whole M&S gameplay migration or full campaign as complete.

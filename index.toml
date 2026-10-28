@@ -16266,10 +16266,6 @@ file = "mods/PROJECT_DEADZONE_EpicTaCZ_Compat-0.1.1.jar"
 hash = "5e7c30632844c4b85249f69c560f241217f32b34b076f3361afc1c181a196c0b"
 
 [[files]]
-file = "mods/PROJECT_DEADZONE_JOB_UI-0.9.0.jar"
-hash = "f507e6281408d69715f295374f87a422d36893abbc25ced251993b80596bde24"
-
-[[files]]
 file = "mods/PROJECT_DEADZONE_SBW_Mounted_Holster_Compat-0.1.0.jar"
 hash = "d48e8ddc03c90eb14984da1fd9124fc7c593f3ec4c8aefdfe56c98af0e08f45c"
 
@@ -16326,11 +16322,6 @@ metafile = true
 [[files]]
 file = "mods/ambientsounds-6-254284.pw.toml"
 hash = "f9f9842000258eb405b466c7f346e3c3935c1fae5fff12c3e779691fe8ac3fdb"
-metafile = true
-
-[[files]]
-file = "mods/ancient-obelisks-1186288.pw.toml"
-hash = "c1ee44929e9075b9aa54ac67b8919dd612ca18e939f51f69cdbbcc80dd1b9e2c"
 metafile = true
 
 [[files]]
@@ -16500,11 +16491,6 @@ metafile = true
 [[files]]
 file = "mods/butchery.pw.toml"
 hash = "8f2d2639fde836a447322cba5671991f37a8de16fa7bcd4b20968b7c95578c88"
-metafile = true
-
-[[files]]
-file = "mods/calypsos-night-vision-goggles.pw.toml"
-hash = "0d0116969b348f57b63c0421f7748c835b09a07f0772e1af17b94c8c8c7e121a"
 metafile = true
 
 [[files]]
@@ -16781,11 +16767,6 @@ metafile = true
 [[files]]
 file = "mods/doomsday-translation.pw.toml"
 hash = "e33625186846520238b3b176f4b289dd0f85b4e84db3b91b0b287e1afb9621aa"
-metafile = true
-
-[[files]]
-file = "mods/dungeon-realm-1200770.pw.toml"
-hash = "e329b023ef89f1101f233487ceb21c161a009de50f99502c43a72036d001d774"
 metafile = true
 
 [[files]]
@@ -17159,11 +17140,6 @@ hash = "0c0340c165c197f65c9bcfb1505457e18ad85268d351b34c3d67a9318a69544a"
 metafile = true
 
 [[files]]
-file = "mods/library-of-exile-398780.pw.toml"
-hash = "2ee7b736ab9c013b58652738e00c20ca22e87287859e00964ab7ad9cb3cb4072"
-metafile = true
-
-[[files]]
 file = "mods/lightman-s-currency-472521.pw.toml"
 hash = "18c70df006289fddfff9cf0bc5a0fd9fefe951d451457da5e4b33baf89821882"
 metafile = true
@@ -17256,21 +17232,6 @@ metafile = true
 [[files]]
 file = "mods/melody.pw.toml"
 hash = "0b9cc190139b0eb2d5f0153f05717ed53edd499ad2a3eeee99ea75d22fd0ef1c"
-metafile = true
-
-[[files]]
-file = "mods/mine-and-slash-306575.pw.toml"
-hash = "8e021967ef1c2f1579e896f7192da098f45a79dc3e414d5d33b311310bedd79b"
-metafile = true
-
-[[files]]
-file = "mods/mine-and-slash-compatibility-1169343.pw.toml"
-hash = "636f28275e8819cbcce8a747df61a4f26a5a2850890178d2d449889cbfab0cb3"
-metafile = true
-
-[[files]]
-file = "mods/mine-and-weapons-1148069.pw.toml"
-hash = "4fdbd534e557f1d10aca177fa4cc42f075962c8f792bd75b5f33a99af82d5ac3"
 metafile = true
 
 [[files]]
@@ -17606,11 +17567,6 @@ hash = "54f341a4422dbcdfda0c981bdd5eb51e418dfc82418e7f376d43cb3503337695"
 metafile = true
 
 [[files]]
-file = "mods/sdm-recipe-machine-stages.pw.toml"
-hash = "6804b0c98cde532f8735600f3702bcf24259c8d07836014f8d3870f7867499c6"
-metafile = true
-
-[[files]]
 file = "mods/searchables.pw.toml"
 hash = "a84f8e46ba2d693bfbdec682ca66213e2e0783395c9af34f8b22d460d3952a4c"
 metafile = true
@@ -17621,8 +17577,8 @@ hash = "07018277086bf1bdc3f795777f0c15e50a88a0f5739863fb116679f29ce6db8c"
 metafile = true
 
 [[files]]
-file = "mods/sedparties-1.20.1-2.0-beta-p.7.1-pdzfix3-mnshealth.jar"
-hash = "9924c1877623cc9ad2e32305716efbf8f165b56f67a6a8d050ebd821a0c25ecf"
+file = "mods/sedparties-1.20.1-2.0-beta-p.7.1.jar"
+hash = "360fc03f424b3d6c3b98c825a4c8c6905355b3344e06ed5f65ec592467ed6b45"
 
 [[files]]
 file = "mods/selene.pw.toml"
@@ -17929,11 +17885,6 @@ hash = "89af0fe14206c8970772ec41263d91d3c2d52ee7f5fdc6143c9a078a09fd9508"
 [[files]]
 file = "mods/the-biomass-must-grow.pw.toml"
 hash = "b313c5c58005988f965b562223d8c32f2b266b4d8ec31a258a5e5995b48d80bc"
-metafile = true
-
-[[files]]
-file = "mods/the-harvest-1201731.pw.toml"
-hash = "5f89fa411e837c9f9e999cc8c4a3319a9aef1e42b50d5f05e928fa7f89023328"
 metafile = true
 
 [[files]]
