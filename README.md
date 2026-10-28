@@ -1,6 +1,6 @@
 # PROJECT DEADZONE Distribution
 
-Current pack version: `DEV-20261028-FIELD-UI-0.3.0`
+Current pack version: `DEV-20261028-BUILD-DIMENSIONS-RC1`
 
 This development update adds the client-only PDZ Field Terminal 0.3.0 prototype:
 F7 terminal/dictionary/party, conditional replacement HUD, and inventory status.
@@ -48,3 +48,9 @@ in newly generated chunks.
 The installer entry point is:
 
 `https://raw.githubusercontent.com/shin-ay/project-deadzone-pack/main/pack.toml`
+
+## 2026-10-28 development bundle
+
+Adds Thingamajigs 1.9.1, Cluttered 3.0.3, Yuushya 2.2.3 and Beautify 2.0.2 to match the current town server. Adds Incendium 5.3.5, Nullscape 1.2.8, official IBO 3.1.0 and the vanilla-loot compatibility pack. Includes the already-installed server IR 1.11.0 / TrackAPI 1.3 / UniversalModCore 1.3.0 dependencies for client parity. Existing Field UI 0.3.0 remains client-only. This is a development build; full campaign acceptance and visual/multiplayer checks remain pending.
+
+Some CurseForge API-excluded files still require the owner-provided manual seed bundle before normal packwiz startup can finish.

@@ -1,0 +1,12 @@
+name = "Incendium Biomes Only"
+filename = "ibo-3.1.0-datapack.zip"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/gmUU3UdW/versions/GPjXAUw0/ibo-3.1.0-datapack.zip"
+hash-format = "sha512"
+hash = "0e008f5c28d30cb4454edc1b3c42706a288e11f17e4c6958602c4a357ff5e5e51eea0722b89099e4c9c3b35296772b6927f67498ca66362c255388be5e2b4853"
+
+[update.modrinth]
+mod-id = "gmUU3UdW"
+version = "GPjXAUw0"

@@ -1,0 +1,12 @@
+name = "immersive-railroading"
+filename = "ImmersiveRailroading-1.20.1-forge-1.11.0.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/PVCiYbMM/versions/edpH1CFe/ImmersiveRailroading-1.20.1-forge-1.11.0.jar"
+hash-format = "sha512"
+hash = "2bbc7ca59b291f884c1a1356a889e6c1e9cf25d962465c8b0f7dca28828b308a6f2ef0714f0ad73740dc4948a523f466e4a83f7202c9b2e9d919e9e8de67da9c"
+
+[update.modrinth]
+mod-id = "PVCiYbMM"
+version = "edpH1CFe"

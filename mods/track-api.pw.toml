@@ -1,0 +1,12 @@
+name = "track-api"
+filename = "TrackAPI-1.20.1-forge-1.3.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/JMOE5Khs/versions/InOSYmZv/TrackAPI-1.20.1-forge-1.3.jar"
+hash-format = "sha512"
+hash = "21e78b89fa34516012796fed3765cf2b5937cf7378d7ecc2ffbd86778cd707fded329e4b54fe939b5ca059d277b82f29a2f93faad700c99110a780bb3a951463"
+
+[update.modrinth]
+mod-id = "JMOE5Khs"
+version = "InOSYmZv"

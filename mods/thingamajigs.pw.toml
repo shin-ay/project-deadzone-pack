@@ -1,0 +1,12 @@
+name = "thingamajigs"
+filename = "thingamajigs-1.9.1-forge-1.20.1.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/riypeXAj/versions/deCtweXm/thingamajigs-1.9.1-forge-1.20.1.jar"
+hash-format = "sha512"
+hash = "29e6623a3c85453bdf3453d2f4bbe39c33fac82f1725fa4416cd60709361ac7525ca8bfbf1abf6f6529264bbdbc5a933d2f45b140b96396871fe3bd7d5107590"
+
+[update.modrinth]
+mod-id = "riypeXAj"
+version = "deCtweXm"
