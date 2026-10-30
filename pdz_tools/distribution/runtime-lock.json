@@ -1,5 +1,5 @@
 {
-  "release": "DEV-20261030-ENV-SYNC-RC1",
+  "release": "DEV-20261030-ENV-SYNC-RC2",
   "serverOnlyMods": [
     "worldedit-mod-7.2.15.jar"
   ],
@@ -27425,6 +27425,10 @@
     {
       "path": "tacz/turrettacz_patch/data/turrettacz/recipes/ammo/81mm_mortar_shell.json",
       "sha256": "f451bf3de59ae8f4607154722e47344b62742704c10af98c7abfb6009299614e"
+    },
+    {
+      "path": "config/dustrial_decor-common.toml",
+      "sha256": "0859aa9dc822c15f5ccf26dfc9a6a212b3115ce0c1146fa06651dfca1ee8b9d6"
     }
   ],
   "serverOwnedFilesExcluded": [

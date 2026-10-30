@@ -1,12 +1,12 @@
 name = "PROJECT DEADZONE"
 author = "PROJECT DEADZONE Team"
-version = "DEV-20261030-ENV-SYNC-RC1"
+version = "DEV-20261030-ENV-SYNC-RC2"
 pack-format = "packwiz:1.1.0"
 
 [index]
 file = "index.toml"
 hash-format = "sha256"
-hash = "f9a79079bbc7162f1057fcae525796a97585d99392b8d44bcd06722baf40ffa0"
+hash = "6bcea702ec7f998162c639a8223cdd3eb28fbed7e6d626ec9e5645cc91da5ff9"
 
 [versions]
 forge = "47.4.10"

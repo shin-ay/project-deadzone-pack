@@ -1,6 +1,6 @@
 # PROJECT DEADZONE Distribution
 
-Current pack version: `DEV-20261030-ENV-SYNC-RC1`
+Current pack version: `DEV-20261030-ENV-SYNC-RC2`
 
 This development update adds the client-only PDZ Field Terminal 0.3.0 prototype:
 F7 terminal/dictionary/party, conditional replacement HUD, and inventory status.
@@ -62,3 +62,5 @@ Removes retired M&S components, old JOB UI, Recipe Machine Stage and Calypso gog
 ## 2026-10-30 environment synchronization
 
 Adds the 11 building and dependency mods already used by the development server and active authoring client, including Rechiseled/Create, Fusion, SuperMartijn libraries, Decorative Blocks, Dustrial Decor and Macaw bridges/fences/paths/roofs. Also distributes the current client-only PDZ Builder Palette without personal bookmarks. A runtime lock and read-only verifier record the exact shared JARs and portable resource hashes. WorldEdit stays server-only; personal settings and world-specific authoring scripts are not copied.
+
+The Dustrial Decor common settings match the active server: cardboard armor spawns, village houses and loot additions stay disabled.

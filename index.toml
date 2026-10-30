@@ -6233,6 +6233,10 @@ file = "config/dummmmmmy-common.toml"
 hash = "2f254d09b5e940ff86712a2b4d59b304df2e4b3c5fb78291dc7eb94e153fa63c"
 
 [[files]]
+file = "config/dustrial_decor-common.toml"
+hash = "0859aa9dc822c15f5ccf26dfc9a6a212b3115ce0c1146fa06651dfca1ee8b9d6"
+
+[[files]]
 file = "config/dynamictrees-common.toml"
 hash = "5c9ea84986bb2a67620334694249632bec9e7b80fab302d4464eba1c2a58854d"
 
@@ -26610,7 +26614,7 @@ hash = "e40ef576086d9447f58ece28c908d785af8433d178de452e330389d76c2edd4d"
 
 [[files]]
 file = "pdz_tools/distribution/runtime-lock.json"
-hash = "e3837aca9b5b031fe38cc3e11f4f80dc3da40a9953233502ccd557013d498d2c"
+hash = "e1eeb38b03244c5652d15c1233051bf02fcddcf51cac680fb0f2a5be393fcbf4"
 
 [[files]]
 file = "pdz_tools/distribution/verify_environment.py"
