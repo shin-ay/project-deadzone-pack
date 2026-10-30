@@ -1,0 +1,8 @@
+name = "PDZ Builder Palette"
+filename = "PDZBuilderPalette-0.1.1.jar"
+side = "client"
+
+[download]
+url = "https://raw.githubusercontent.com/shin-ay/project-deadzone-pack/main/client_artifacts/pdzbuilderpalette/0.1.1/PDZBuilderPalette-0.1.1.jar"
+hash-format = "sha256"
+hash = "f603d9a2b564d526b878d845aba870c075cac29c1082d04a481fc35b3d5676c5"

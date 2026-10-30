@@ -16725,6 +16725,11 @@ hash = "543d7760b3760917f1c82e8e55fbcb5f0bb920917634271e6d5bd9f1585106b2"
 metafile = true
 
 [[files]]
+file = "mods/decorative-blocks.pw.toml"
+hash = "fda1018e1f3afced5ebe6f2a93e48c47404829d39b963df259683264014749ba"
+metafile = true
+
+[[files]]
 file = "mods/delight-lib.pw.toml"
 hash = "3e6e3303d896bd62cec15d5c154a591b7448abcfe7960e74ef351b29e090a68a"
 metafile = true
@@ -16767,6 +16772,11 @@ metafile = true
 [[files]]
 file = "mods/doomsday-translation.pw.toml"
 hash = "e33625186846520238b3b176f4b289dd0f85b4e84db3b91b0b287e1afb9621aa"
+metafile = true
+
+[[files]]
+file = "mods/dustrial-decor.pw.toml"
+hash = "26bdd98e3d3cd1ab0d3a01ff5622735ed46601affc1ddd9be3f00aab23aa1513"
 metafile = true
 
 [[files]]
@@ -16917,6 +16927,11 @@ metafile = true
 [[files]]
 file = "mods/fungal-infection-spore.pw.toml"
 hash = "876556c907d5eed7a1b6b8d85bd359c5fdbba3d3f5336b179ac78e1d4a89ca71"
+metafile = true
+
+[[files]]
+file = "mods/fusion.pw.toml"
+hash = "c0d29330ca60ee0a217d018c01a8b012bb98fa58b3bb6ee687ea536c209d0bc6"
 metafile = true
 
 [[files]]
@@ -17210,6 +17225,26 @@ hash = "7e3d5a2d5e01344cc4ffb14223bcd92953c1535b17d4b7316a53c2e2e3fd0d7a"
 metafile = true
 
 [[files]]
+file = "mods/mcwbridges.pw.toml"
+hash = "6c6bf6547e63b7837f92ec3fd713c477269a541c01a30ff76cbcff0f491ae884"
+metafile = true
+
+[[files]]
+file = "mods/mcwfences.pw.toml"
+hash = "a46c6c68eba1e84f4e065890ba624e9d5ef35eb6d3628d12713d38a1fdbbe986"
+metafile = true
+
+[[files]]
+file = "mods/mcwpaths.pw.toml"
+hash = "3b9187a9d7bd2b4b682b7fc43b7f966c72bc9aa5ded785340732669c7b1bdc05"
+metafile = true
+
+[[files]]
+file = "mods/mcwroofs.pw.toml"
+hash = "0ac673524ffc01212289884d3c92fa2c6401ea7912a16e158f465030f90ada69"
+metafile = true
+
+[[files]]
 file = "mods/mekanism-additions.pw.toml"
 hash = "3bdd7558ea7cea4588722d139519e94f0d9f8f2dea642aa6db5c0a7f45636d69"
 metafile = true
@@ -17405,6 +17440,11 @@ hash = "b2cb681aaf3e6085148392a06d40899239dc299aaf5ce0adf168fc225d922c97"
 metafile = true
 
 [[files]]
+file = "mods/pdz-builder-palette.pw.toml"
+hash = "da3aad548f2f206d327f72e92f70f6f793608709748a7d13c6c03f1a60afb921"
+metafile = true
+
+[[files]]
 file = "mods/pdz-create-creative-guard-1.0.0.jar"
 hash = "d98e8c19795ba6152033325d57d60c6d10e5d0a9e9cba14199fffbb575ab82b6"
 
@@ -17519,6 +17559,16 @@ metafile = true
 [[files]]
 file = "mods/realm-rpg-quests-rewards-1021783.pw.toml"
 hash = "d8445c41a11d0e813ccf86a7b5a3ba0677280a1c1cab6054dfe2445cdb8f0744"
+metafile = true
+
+[[files]]
+file = "mods/rechiseled.pw.toml"
+hash = "b3810838c00402d39f96ef711b798f1c7e59726c0f8b992179ac21a95e031dd9"
+metafile = true
+
+[[files]]
+file = "mods/rechiseledcreate.pw.toml"
+hash = "18fa16fc26e84000ebba6255cc4c7f463fee0f79e188b7cb6da6fd3120b1ddc2"
 metafile = true
 
 [[files]]
@@ -17722,6 +17772,16 @@ metafile = true
 [[files]]
 file = "mods/superb-warfare.pw.toml"
 hash = "42b6ba778eedb22ecf1d9926862c002d920202aeba79542f049a860cbf3ac008"
+metafile = true
+
+[[files]]
+file = "mods/supermartijn642configlib.pw.toml"
+hash = "13e9854099137f6786d23c36d32113d1776171da322018c3938f4633c3adebe9"
+metafile = true
+
+[[files]]
+file = "mods/supermartijn642corelib.pw.toml"
+hash = "d23c6a6e73fe987217476229679f15f29cdde0ac7de25500b15548616c390f59"
 metafile = true
 
 [[files]]
@@ -26547,6 +26607,14 @@ hash = "8ece451b6e9d7f1428b08e7784e9396ecaded517ad7ff22994d5ced30efeeedb"
 [[files]]
 file = "options.txt"
 hash = "e40ef576086d9447f58ece28c908d785af8433d178de452e330389d76c2edd4d"
+
+[[files]]
+file = "pdz_tools/distribution/runtime-lock.json"
+hash = "e3837aca9b5b031fe38cc3e11f4f80dc3da40a9953233502ccd557013d498d2c"
+
+[[files]]
+file = "pdz_tools/distribution/verify_environment.py"
+hash = "2125a0b1beca120123caddb60f13363c93a14aeb67e4eb88edbe3a3438b2ccf5"
 
 [[files]]
 file = "pdz_tools/keymap/APPLY_KEYMAP.bat"

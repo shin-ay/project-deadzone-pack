@@ -1,0 +1,12 @@
+name = "dustrial-decor"
+filename = "DustrialDecor-1.3.5-1.20.jar"
+side = "both"
+
+[download]
+url = "https://cdn.modrinth.com/data/FbJOKNup/versions/xCmtgbUD/DustrialDecor-1.3.5-1.20.jar"
+hash-format = "sha512"
+hash = "ae3a0aa36b3c083f87999107351b328728822422588797bacbb533c2cc0f61cc9cac9f5276ef471ac2efe10f72c10cc8e8826fdd870fc3a182e2e92b14e83968"
+
+[update.modrinth]
+mod-id = "FbJOKNup"
+version = "xCmtgbUD"

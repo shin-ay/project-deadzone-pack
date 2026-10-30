@@ -1,6 +1,6 @@
 # PROJECT DEADZONE Distribution
 
-Current pack version: `DEV-20261028-SERVER-PARITY-RC1`
+Current pack version: `DEV-20261030-ENV-SYNC-RC1`
 
 This development update adds the client-only PDZ Field Terminal 0.3.0 prototype:
 F7 terminal/dictionary/party, conditional replacement HUD, and inventory status.
@@ -58,3 +58,7 @@ Some CurseForge API-excluded files still require the owner-provided manual seed 
 ## 2026-10-28 server parity correction
 
 Removes retired M&S components, old JOB UI, Recipe Machine Stage and Calypso goggles from the client distribution to match the current development server. Replaces the M&S-specific SedParties build with the exact M&S-independent build already used by the server and town client. Existing client-only utilities, Field UI, building mods, IR and dimension packs are retained. This corrects client/server parity; it does not certify the whole M&S gameplay migration or full campaign as complete.
+
+## 2026-10-30 environment synchronization
+
+Adds the 11 building and dependency mods already used by the development server and active authoring client, including Rechiseled/Create, Fusion, SuperMartijn libraries, Decorative Blocks, Dustrial Decor and Macaw bridges/fences/paths/roofs. Also distributes the current client-only PDZ Builder Palette without personal bookmarks. A runtime lock and read-only verifier record the exact shared JARs and portable resource hashes. WorldEdit stays server-only; personal settings and world-specific authoring scripts are not copied.
