@@ -1,0 +1,8 @@
+name = "PDZ Solas Lighting: Apply-PdzSolas.ps1"
+filename = "Apply-PdzSolas.ps1"
+side = "client"
+
+[download]
+url = "https://raw.githubusercontent.com/shin-ay/project-deadzone-pack/main/client_artifacts/shader_lighting/0.1.0/Apply-PdzSolas.ps1"
+hash-format = "sha256"
+hash = "0d7e17d9d161f43b6e6681bcd56702ab67324c23932fb0693034761c5c83588a"

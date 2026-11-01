@@ -1,6 +1,21 @@
 # PROJECT DEADZONE Distribution
 
-Current pack version: `DEV-20261030-ENV-SYNC-RC2`
+Current pack version: `DEV-20261101-SOLAS-PDZ-LIGHTING-RC1`
+
+The client-only PDZ lighting patch adds 394 mod fixtures to Solas 3.7b using
+lantern-reference luminance and explicit on/off states. Packwiz obtains the
+original Solas from its official Modrinth download. No modified Solas ZIP or
+upstream shader source is redistributed. The original PDZ patch generates a
+private copy on each user's PC, preserving the original Solas and preferences.
+
+Windows players: after the normal Packwiz update, close Minecraft and run
+`pdz_tools/shader_lighting/Apply-Solas-PDZ.cmd` once from the Minecraft folder.
+Select `Solas PDZ Lighting 0.1.0.zip` in shader settings. The tool configures the
+standard Prism Packwiz pre-launch command to update and regenerate automatically.
+Custom pre-launch commands are preserved; those users must rerun the tool after
+patch updates. See `pdz_tools/shader_lighting/README_JP.txt` for details.
+GPU compile and static mapping checks passed; full in-game visual QA is pending.
+This update does not change server files or require a server restart.
 
 This development update adds the client-only PDZ Field Terminal 0.3.0 prototype:
 F7 terminal/dictionary/party, conditional replacement HUD, and inventory status.

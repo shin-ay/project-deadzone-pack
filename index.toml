@@ -26614,11 +26614,11 @@ hash = "e40ef576086d9447f58ece28c908d785af8433d178de452e330389d76c2edd4d"
 
 [[files]]
 file = "pdz_tools/distribution/runtime-lock.json"
-hash = "e1eeb38b03244c5652d15c1233051bf02fcddcf51cac680fb0f2a5be393fcbf4"
+hash = "b1f510b5253ab2dea461f9ec54199140684ac1b7a9fa8663827367ea173503a2"
 
 [[files]]
 file = "pdz_tools/distribution/verify_environment.py"
-hash = "2125a0b1beca120123caddb60f13363c93a14aeb67e4eb88edbe3a3438b2ccf5"
+hash = "f8ee6a81212695fee44e74297400d0a1dd5abbd11cf4f9402e0301fb774b61eb"
 
 [[files]]
 file = "pdz_tools/keymap/APPLY_KEYMAP.bat"
@@ -26631,6 +26631,31 @@ hash = "6d49d691d0e9379f27cde4a0d1a31ca0c1570af861e806a9b094fc246851f52d"
 [[files]]
 file = "pdz_tools/keymap/apply_keymap.ps1"
 hash = "09e7c8e1a4746532e86edbde440f8758dd6752bac9ba50fb26361beefa51d33e"
+
+[[files]]
+file = "pdz_tools/shader_lighting/Apply-PdzSolas.ps1.pw.toml"
+hash = "565d51fc202b4f20b4f24b2ae2e4fdc515305573f0259d7b0d8d4671139b904d"
+metafile = true
+
+[[files]]
+file = "pdz_tools/shader_lighting/Apply-Solas-PDZ.cmd.pw.toml"
+hash = "97f420dd75bda01397557abb44d662b185d73eb19c32721168b3cb077516e316"
+metafile = true
+
+[[files]]
+file = "pdz_tools/shader_lighting/README_JP.txt.pw.toml"
+hash = "dc0f21623766b07ae4e5d1dcf2d4b493312c991d6b2937c91c05cef5fdcb33f9"
+metafile = true
+
+[[files]]
+file = "pdz_tools/shader_lighting/Update-And-Apply-Solas.ps1.pw.toml"
+hash = "0c516e149ca1445e184c5319859a9e753c2b7180776e428b046ef30c70a154e1"
+metafile = true
+
+[[files]]
+file = "pdz_tools/shader_lighting/lighting-map.json.pw.toml"
+hash = "13cb61f213a95626212b9ce39ede78fc4abd20466f674a111b0308dc18b8f66e"
+metafile = true
 
 [[files]]
 file = "resourcepacks/PDZ_Audio_Test_v0.1/assets/minecraft/sounds.json"
@@ -26647,6 +26672,11 @@ hash = "d2956469dabdbfe47b6fd4b1edfe09594549614c4b6917ce72bdac77fd3bf7cb"
 [[files]]
 file = "scripts/project_deadzone_recipe_progression_v0_1.zs"
 hash = "85d3eec25369e7b58bd0bade764bee436d4f3526766bf904fd36eaddf085f141"
+
+[[files]]
+file = "shaderpacks/solas-official-base.pw.toml"
+hash = "15eeca0cdb2262861d369cfb7229aee32864769ea99e96d7a5b276e215d2fde7"
+metafile = true
 
 [[files]]
 file = "sildurs-enhanced-default.pw.toml"

@@ -1,0 +1,8185 @@
+{
+  "revision": "0.1.0",
+  "name": "Solas PDZ Lighting 0.1.0.zip",
+  "baseFilename": "Solas Shader V3.7b.zip",
+  "baseSha256": "b7dfe4c7353d677a92cc4c86b87bc0633f1014305d927ca6a482c303427bf825",
+  "officialBaseUrl": "https://cdn.modrinth.com/data/EpQFjzrQ/versions/KcfQaN5J/Solas%20Shader%20V3.7b.zip",
+  "author": "Septonious",
+  "upstream": "https://github.com/Septonious/Solas-Shader",
+  "license": "https://github.com/Septonious/Solas-Shader/blob/main/LICENSE",
+  "distribution": "Only original PDZ mapping/installer code is distributed. Each user obtains the base from the official URL and generates a private modified copy.",
+  "groups": {
+    "warm": {
+      "blockId": 10090,
+      "rgb": [
+        1.0,
+        0.5,
+        0.15
+      ]
+    },
+    "white": {
+      "blockId": 10091,
+      "rgb": [
+        1.0,
+        0.95,
+        0.85
+      ]
+    },
+    "soul": {
+      "blockId": 10092,
+      "rgb": [
+        0.25,
+        0.8,
+        1.0
+      ]
+    },
+    "red": {
+      "blockId": 10093,
+      "rgb": [
+        1.0,
+        0.08,
+        0.03
+      ]
+    },
+    "orange": {
+      "blockId": 10094,
+      "rgb": [
+        1.0,
+        0.35,
+        0.04
+      ]
+    },
+    "yellow": {
+      "blockId": 10095,
+      "rgb": [
+        1.0,
+        0.85,
+        0.12
+      ]
+    },
+    "lime": {
+      "blockId": 10096,
+      "rgb": [
+        0.45,
+        1.0,
+        0.08
+      ]
+    },
+    "green": {
+      "blockId": 10097,
+      "rgb": [
+        0.1,
+        0.8,
+        0.14
+      ]
+    },
+    "cyan": {
+      "blockId": 10098,
+      "rgb": [
+        0.1,
+        0.85,
+        0.9
+      ]
+    },
+    "light_blue": {
+      "blockId": 10099,
+      "rgb": [
+        0.3,
+        0.65,
+        1.0
+      ]
+    },
+    "blue": {
+      "blockId": 10100,
+      "rgb": [
+        0.15,
+        0.25,
+        1.0
+      ]
+    },
+    "purple": {
+      "blockId": 10101,
+      "rgb": [
+        0.6,
+        0.12,
+        1.0
+      ]
+    },
+    "magenta": {
+      "blockId": 10102,
+      "rgb": [
+        0.95,
+        0.1,
+        0.7
+      ]
+    },
+    "pink": {
+      "blockId": 10103,
+      "rgb": [
+        1.0,
+        0.45,
+        0.6
+      ]
+    },
+    "brown": {
+      "blockId": 10104,
+      "rgb": [
+        0.75,
+        0.36,
+        0.12
+      ]
+    },
+    "gray": {
+      "blockId": 10105,
+      "rgb": [
+        0.7,
+        0.75,
+        0.8
+      ]
+    },
+    "light_gray": {
+      "blockId": 10106,
+      "rgb": [
+        0.85,
+        0.9,
+        1.0
+      ]
+    },
+    "black": {
+      "blockId": 10107,
+      "rgb": [
+        0.4,
+        0.2,
+        0.65
+      ]
+    }
+  },
+  "entries": [
+    {
+      "id": "securitycraft:reinforced_lantern",
+      "selectors": [
+        "securitycraft:reinforced_lantern"
+      ],
+      "color": "warm",
+      "properties": {
+        "hanging": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "[1.20.1] SecurityCraft v1.10.2.1.jar",
+      "statesChecked": 2
+    },
+    {
+      "id": "securitycraft:reinforced_redstone_lamp",
+      "selectors": [
+        "securitycraft:reinforced_redstone_lamp:lit=true"
+      ],
+      "color": "warm",
+      "properties": {
+        "lit": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "[1.20.1] SecurityCraft v1.10.2.1.jar",
+      "statesChecked": 2
+    },
+    {
+      "id": "securitycraft:reinforced_sea_lantern",
+      "selectors": [
+        "securitycraft:reinforced_sea_lantern"
+      ],
+      "color": "warm",
+      "properties": {},
+      "assetJar": "[1.20.1] SecurityCraft v1.10.2.1.jar",
+      "statesChecked": 1
+    },
+    {
+      "id": "securitycraft:reinforced_soul_lantern",
+      "selectors": [
+        "securitycraft:reinforced_soul_lantern"
+      ],
+      "color": "soul",
+      "properties": {
+        "hanging": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "[1.20.1] SecurityCraft v1.10.2.1.jar",
+      "statesChecked": 2
+    },
+    {
+      "id": "jeffs_cursed_walking_structures:sturdy_lamp",
+      "selectors": [
+        "jeffs_cursed_walking_structures:sturdy_lamp"
+      ],
+      "color": "warm",
+      "properties": {},
+      "assetJar": "[TACZ ONLY] jeffs_cursed_walking_structures-1.0.6-forge-1.20.1.jar",
+      "statesChecked": 1
+    },
+    {
+      "id": "another_furniture:black_lamp",
+      "selectors": [
+        "another_furniture:black_lamp:lit=true"
+      ],
+      "color": "warm",
+      "properties": {
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "up",
+          "west"
+        ],
+        "base": [
+          "false",
+          "true"
+        ],
+        "lit": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "another_furniture-forge-1.20.1-3.0.4.jar",
+      "statesChecked": 20
+    },
+    {
+      "id": "another_furniture:blue_lamp",
+      "selectors": [
+        "another_furniture:blue_lamp:lit=true"
+      ],
+      "color": "warm",
+      "properties": {
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "up",
+          "west"
+        ],
+        "base": [
+          "false",
+          "true"
+        ],
+        "lit": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "another_furniture-forge-1.20.1-3.0.4.jar",
+      "statesChecked": 20
+    },
+    {
+      "id": "another_furniture:brown_lamp",
+      "selectors": [
+        "another_furniture:brown_lamp:lit=true"
+      ],
+      "color": "warm",
+      "properties": {
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "up",
+          "west"
+        ],
+        "base": [
+          "false",
+          "true"
+        ],
+        "lit": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "another_furniture-forge-1.20.1-3.0.4.jar",
+      "statesChecked": 20
+    },
+    {
+      "id": "another_furniture:cyan_lamp",
+      "selectors": [
+        "another_furniture:cyan_lamp:lit=true"
+      ],
+      "color": "warm",
+      "properties": {
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "up",
+          "west"
+        ],
+        "base": [
+          "false",
+          "true"
+        ],
+        "lit": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "another_furniture-forge-1.20.1-3.0.4.jar",
+      "statesChecked": 20
+    },
+    {
+      "id": "another_furniture:gray_lamp",
+      "selectors": [
+        "another_furniture:gray_lamp:lit=true"
+      ],
+      "color": "warm",
+      "properties": {
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "up",
+          "west"
+        ],
+        "base": [
+          "false",
+          "true"
+        ],
+        "lit": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "another_furniture-forge-1.20.1-3.0.4.jar",
+      "statesChecked": 20
+    },
+    {
+      "id": "another_furniture:green_lamp",
+      "selectors": [
+        "another_furniture:green_lamp:lit=true"
+      ],
+      "color": "warm",
+      "properties": {
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "up",
+          "west"
+        ],
+        "base": [
+          "false",
+          "true"
+        ],
+        "lit": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "another_furniture-forge-1.20.1-3.0.4.jar",
+      "statesChecked": 20
+    },
+    {
+      "id": "another_furniture:light_blue_lamp",
+      "selectors": [
+        "another_furniture:light_blue_lamp:lit=true"
+      ],
+      "color": "warm",
+      "properties": {
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "up",
+          "west"
+        ],
+        "base": [
+          "false",
+          "true"
+        ],
+        "lit": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "another_furniture-forge-1.20.1-3.0.4.jar",
+      "statesChecked": 20
+    },
+    {
+      "id": "another_furniture:light_gray_lamp",
+      "selectors": [
+        "another_furniture:light_gray_lamp:lit=true"
+      ],
+      "color": "warm",
+      "properties": {
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "up",
+          "west"
+        ],
+        "base": [
+          "false",
+          "true"
+        ],
+        "lit": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "another_furniture-forge-1.20.1-3.0.4.jar",
+      "statesChecked": 20
+    },
+    {
+      "id": "another_furniture:lime_lamp",
+      "selectors": [
+        "another_furniture:lime_lamp:lit=true"
+      ],
+      "color": "warm",
+      "properties": {
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "up",
+          "west"
+        ],
+        "base": [
+          "false",
+          "true"
+        ],
+        "lit": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "another_furniture-forge-1.20.1-3.0.4.jar",
+      "statesChecked": 20
+    },
+    {
+      "id": "another_furniture:magenta_lamp",
+      "selectors": [
+        "another_furniture:magenta_lamp:lit=true"
+      ],
+      "color": "warm",
+      "properties": {
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "up",
+          "west"
+        ],
+        "base": [
+          "false",
+          "true"
+        ],
+        "lit": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "another_furniture-forge-1.20.1-3.0.4.jar",
+      "statesChecked": 20
+    },
+    {
+      "id": "another_furniture:orange_lamp",
+      "selectors": [
+        "another_furniture:orange_lamp:lit=true"
+      ],
+      "color": "warm",
+      "properties": {
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "up",
+          "west"
+        ],
+        "base": [
+          "false",
+          "true"
+        ],
+        "lit": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "another_furniture-forge-1.20.1-3.0.4.jar",
+      "statesChecked": 20
+    },
+    {
+      "id": "another_furniture:pink_lamp",
+      "selectors": [
+        "another_furniture:pink_lamp:lit=true"
+      ],
+      "color": "warm",
+      "properties": {
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "up",
+          "west"
+        ],
+        "base": [
+          "false",
+          "true"
+        ],
+        "lit": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "another_furniture-forge-1.20.1-3.0.4.jar",
+      "statesChecked": 20
+    },
+    {
+      "id": "another_furniture:purple_lamp",
+      "selectors": [
+        "another_furniture:purple_lamp:lit=true"
+      ],
+      "color": "warm",
+      "properties": {
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "up",
+          "west"
+        ],
+        "base": [
+          "false",
+          "true"
+        ],
+        "lit": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "another_furniture-forge-1.20.1-3.0.4.jar",
+      "statesChecked": 20
+    },
+    {
+      "id": "another_furniture:red_lamp",
+      "selectors": [
+        "another_furniture:red_lamp:lit=true"
+      ],
+      "color": "warm",
+      "properties": {
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "up",
+          "west"
+        ],
+        "base": [
+          "false",
+          "true"
+        ],
+        "lit": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "another_furniture-forge-1.20.1-3.0.4.jar",
+      "statesChecked": 20
+    },
+    {
+      "id": "another_furniture:white_lamp",
+      "selectors": [
+        "another_furniture:white_lamp:lit=true"
+      ],
+      "color": "warm",
+      "properties": {
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "up",
+          "west"
+        ],
+        "base": [
+          "false",
+          "true"
+        ],
+        "lit": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "another_furniture-forge-1.20.1-3.0.4.jar",
+      "statesChecked": 20
+    },
+    {
+      "id": "another_furniture:yellow_lamp",
+      "selectors": [
+        "another_furniture:yellow_lamp:lit=true"
+      ],
+      "color": "warm",
+      "properties": {
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "up",
+          "west"
+        ],
+        "base": [
+          "false",
+          "true"
+        ],
+        "lit": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "another_furniture-forge-1.20.1-3.0.4.jar",
+      "statesChecked": 20
+    },
+    {
+      "id": "aquamirae:luminescent_lamp",
+      "selectors": [
+        "aquamirae:luminescent_lamp"
+      ],
+      "color": "warm",
+      "properties": {},
+      "assetJar": "aquamirae-forge-1.20.1-6.4.0.jar",
+      "statesChecked": 1
+    },
+    {
+      "id": "beautify:lamp_bamboo",
+      "selectors": [
+        "beautify:lamp_bamboo:on=true"
+      ],
+      "color": "warm",
+      "properties": {
+        "hanging": [
+          "false",
+          "true"
+        ],
+        "on": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "beautify-2.0.2.jar",
+      "statesChecked": 4
+    },
+    {
+      "id": "beautify:lamp_candelabra",
+      "selectors": [
+        "beautify:lamp_candelabra:on=true"
+      ],
+      "color": "warm",
+      "properties": {
+        "on": [
+          "false",
+          "true"
+        ],
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ],
+        "hanging": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "beautify-2.0.2.jar",
+      "statesChecked": 16
+    },
+    {
+      "id": "beautify:lamp_candelabra_black",
+      "selectors": [
+        "beautify:lamp_candelabra_black:on=true"
+      ],
+      "color": "warm",
+      "properties": {
+        "on": [
+          "false",
+          "true"
+        ],
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ],
+        "hanging": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "beautify-2.0.2.jar",
+      "statesChecked": 16
+    },
+    {
+      "id": "beautify:lamp_candelabra_blue",
+      "selectors": [
+        "beautify:lamp_candelabra_blue:on=true"
+      ],
+      "color": "warm",
+      "properties": {
+        "on": [
+          "false",
+          "true"
+        ],
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ],
+        "hanging": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "beautify-2.0.2.jar",
+      "statesChecked": 16
+    },
+    {
+      "id": "beautify:lamp_candelabra_brown",
+      "selectors": [
+        "beautify:lamp_candelabra_brown:on=true"
+      ],
+      "color": "warm",
+      "properties": {
+        "on": [
+          "false",
+          "true"
+        ],
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ],
+        "hanging": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "beautify-2.0.2.jar",
+      "statesChecked": 16
+    },
+    {
+      "id": "beautify:lamp_candelabra_cyan",
+      "selectors": [
+        "beautify:lamp_candelabra_cyan:on=true"
+      ],
+      "color": "warm",
+      "properties": {
+        "on": [
+          "false",
+          "true"
+        ],
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ],
+        "hanging": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "beautify-2.0.2.jar",
+      "statesChecked": 16
+    },
+    {
+      "id": "beautify:lamp_candelabra_gray",
+      "selectors": [
+        "beautify:lamp_candelabra_gray:on=true"
+      ],
+      "color": "warm",
+      "properties": {
+        "on": [
+          "false",
+          "true"
+        ],
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ],
+        "hanging": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "beautify-2.0.2.jar",
+      "statesChecked": 16
+    },
+    {
+      "id": "beautify:lamp_candelabra_green",
+      "selectors": [
+        "beautify:lamp_candelabra_green:on=true"
+      ],
+      "color": "warm",
+      "properties": {
+        "on": [
+          "false",
+          "true"
+        ],
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ],
+        "hanging": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "beautify-2.0.2.jar",
+      "statesChecked": 16
+    },
+    {
+      "id": "beautify:lamp_candelabra_light_blue",
+      "selectors": [
+        "beautify:lamp_candelabra_light_blue:on=true"
+      ],
+      "color": "warm",
+      "properties": {
+        "on": [
+          "false",
+          "true"
+        ],
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ],
+        "hanging": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "beautify-2.0.2.jar",
+      "statesChecked": 16
+    },
+    {
+      "id": "beautify:lamp_candelabra_light_gray",
+      "selectors": [
+        "beautify:lamp_candelabra_light_gray:on=true"
+      ],
+      "color": "warm",
+      "properties": {
+        "on": [
+          "false",
+          "true"
+        ],
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ],
+        "hanging": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "beautify-2.0.2.jar",
+      "statesChecked": 16
+    },
+    {
+      "id": "beautify:lamp_candelabra_lime",
+      "selectors": [
+        "beautify:lamp_candelabra_lime:on=true"
+      ],
+      "color": "warm",
+      "properties": {
+        "on": [
+          "false",
+          "true"
+        ],
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ],
+        "hanging": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "beautify-2.0.2.jar",
+      "statesChecked": 16
+    },
+    {
+      "id": "beautify:lamp_candelabra_magenta",
+      "selectors": [
+        "beautify:lamp_candelabra_magenta:on=true"
+      ],
+      "color": "warm",
+      "properties": {
+        "on": [
+          "false",
+          "true"
+        ],
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ],
+        "hanging": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "beautify-2.0.2.jar",
+      "statesChecked": 16
+    },
+    {
+      "id": "beautify:lamp_candelabra_orange",
+      "selectors": [
+        "beautify:lamp_candelabra_orange:on=true"
+      ],
+      "color": "warm",
+      "properties": {
+        "on": [
+          "false",
+          "true"
+        ],
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ],
+        "hanging": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "beautify-2.0.2.jar",
+      "statesChecked": 16
+    },
+    {
+      "id": "beautify:lamp_candelabra_pink",
+      "selectors": [
+        "beautify:lamp_candelabra_pink:on=true"
+      ],
+      "color": "warm",
+      "properties": {
+        "on": [
+          "false",
+          "true"
+        ],
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ],
+        "hanging": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "beautify-2.0.2.jar",
+      "statesChecked": 16
+    },
+    {
+      "id": "beautify:lamp_candelabra_purple",
+      "selectors": [
+        "beautify:lamp_candelabra_purple:on=true"
+      ],
+      "color": "warm",
+      "properties": {
+        "on": [
+          "false",
+          "true"
+        ],
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ],
+        "hanging": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "beautify-2.0.2.jar",
+      "statesChecked": 16
+    },
+    {
+      "id": "beautify:lamp_candelabra_red",
+      "selectors": [
+        "beautify:lamp_candelabra_red:on=true"
+      ],
+      "color": "warm",
+      "properties": {
+        "on": [
+          "false",
+          "true"
+        ],
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ],
+        "hanging": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "beautify-2.0.2.jar",
+      "statesChecked": 16
+    },
+    {
+      "id": "beautify:lamp_candelabra_white",
+      "selectors": [
+        "beautify:lamp_candelabra_white:on=true"
+      ],
+      "color": "warm",
+      "properties": {
+        "on": [
+          "false",
+          "true"
+        ],
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ],
+        "hanging": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "beautify-2.0.2.jar",
+      "statesChecked": 16
+    },
+    {
+      "id": "beautify:lamp_candelabra_yellow",
+      "selectors": [
+        "beautify:lamp_candelabra_yellow:on=true"
+      ],
+      "color": "warm",
+      "properties": {
+        "on": [
+          "false",
+          "true"
+        ],
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ],
+        "hanging": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "beautify-2.0.2.jar",
+      "statesChecked": 16
+    },
+    {
+      "id": "beautify:lamp_jar",
+      "selectors": [
+        "beautify:lamp_jar"
+      ],
+      "color": "warm",
+      "properties": {
+        "hanging": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "beautify-2.0.2.jar",
+      "statesChecked": 2
+    },
+    {
+      "id": "beautify:lamp_light_bulb",
+      "selectors": [
+        "beautify:lamp_light_bulb:on=true"
+      ],
+      "color": "warm",
+      "properties": {
+        "hanging": [
+          "false",
+          "true"
+        ],
+        "on": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "beautify-2.0.2.jar",
+      "statesChecked": 4
+    },
+    {
+      "id": "bits_n_bobs:brass_lamp",
+      "selectors": [
+        "bits_n_bobs:brass_lamp:forced_on=false:power=1",
+        "bits_n_bobs:brass_lamp:forced_on=false:power=10",
+        "bits_n_bobs:brass_lamp:forced_on=false:power=11",
+        "bits_n_bobs:brass_lamp:forced_on=false:power=12",
+        "bits_n_bobs:brass_lamp:forced_on=false:power=13",
+        "bits_n_bobs:brass_lamp:forced_on=false:power=14",
+        "bits_n_bobs:brass_lamp:forced_on=false:power=15",
+        "bits_n_bobs:brass_lamp:forced_on=false:power=2",
+        "bits_n_bobs:brass_lamp:forced_on=false:power=3",
+        "bits_n_bobs:brass_lamp:forced_on=false:power=4",
+        "bits_n_bobs:brass_lamp:forced_on=false:power=5",
+        "bits_n_bobs:brass_lamp:forced_on=false:power=6",
+        "bits_n_bobs:brass_lamp:forced_on=false:power=7",
+        "bits_n_bobs:brass_lamp:forced_on=false:power=8",
+        "bits_n_bobs:brass_lamp:forced_on=false:power=9",
+        "bits_n_bobs:brass_lamp:forced_on=true:power=0",
+        "bits_n_bobs:brass_lamp:forced_on=true:power=1",
+        "bits_n_bobs:brass_lamp:forced_on=true:power=10",
+        "bits_n_bobs:brass_lamp:forced_on=true:power=11",
+        "bits_n_bobs:brass_lamp:forced_on=true:power=12",
+        "bits_n_bobs:brass_lamp:forced_on=true:power=13",
+        "bits_n_bobs:brass_lamp:forced_on=true:power=14",
+        "bits_n_bobs:brass_lamp:forced_on=true:power=15",
+        "bits_n_bobs:brass_lamp:forced_on=true:power=2",
+        "bits_n_bobs:brass_lamp:forced_on=true:power=3",
+        "bits_n_bobs:brass_lamp:forced_on=true:power=4",
+        "bits_n_bobs:brass_lamp:forced_on=true:power=5",
+        "bits_n_bobs:brass_lamp:forced_on=true:power=6",
+        "bits_n_bobs:brass_lamp:forced_on=true:power=7",
+        "bits_n_bobs:brass_lamp:forced_on=true:power=8",
+        "bits_n_bobs:brass_lamp:forced_on=true:power=9"
+      ],
+      "color": "warm",
+      "properties": {
+        "facing": [
+          "down",
+          "east",
+          "north",
+          "south",
+          "up",
+          "west"
+        ],
+        "forced_on": [
+          "false",
+          "true"
+        ],
+        "power": [
+          "0",
+          "1",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9"
+        ]
+      },
+      "assetJar": "bits_n_bobs-0.0.41.jar",
+      "statesChecked": 192
+    },
+    {
+      "id": "bits_n_bobs:lightbulb",
+      "selectors": [
+        "bits_n_bobs:lightbulb:forced_on=false:power=1",
+        "bits_n_bobs:lightbulb:forced_on=false:power=10",
+        "bits_n_bobs:lightbulb:forced_on=false:power=11",
+        "bits_n_bobs:lightbulb:forced_on=false:power=12",
+        "bits_n_bobs:lightbulb:forced_on=false:power=13",
+        "bits_n_bobs:lightbulb:forced_on=false:power=14",
+        "bits_n_bobs:lightbulb:forced_on=false:power=15",
+        "bits_n_bobs:lightbulb:forced_on=false:power=2",
+        "bits_n_bobs:lightbulb:forced_on=false:power=3",
+        "bits_n_bobs:lightbulb:forced_on=false:power=4",
+        "bits_n_bobs:lightbulb:forced_on=false:power=5",
+        "bits_n_bobs:lightbulb:forced_on=false:power=6",
+        "bits_n_bobs:lightbulb:forced_on=false:power=7",
+        "bits_n_bobs:lightbulb:forced_on=false:power=8",
+        "bits_n_bobs:lightbulb:forced_on=false:power=9",
+        "bits_n_bobs:lightbulb:forced_on=true:power=0",
+        "bits_n_bobs:lightbulb:forced_on=true:power=1",
+        "bits_n_bobs:lightbulb:forced_on=true:power=10",
+        "bits_n_bobs:lightbulb:forced_on=true:power=11",
+        "bits_n_bobs:lightbulb:forced_on=true:power=12",
+        "bits_n_bobs:lightbulb:forced_on=true:power=13",
+        "bits_n_bobs:lightbulb:forced_on=true:power=14",
+        "bits_n_bobs:lightbulb:forced_on=true:power=15",
+        "bits_n_bobs:lightbulb:forced_on=true:power=2",
+        "bits_n_bobs:lightbulb:forced_on=true:power=3",
+        "bits_n_bobs:lightbulb:forced_on=true:power=4",
+        "bits_n_bobs:lightbulb:forced_on=true:power=5",
+        "bits_n_bobs:lightbulb:forced_on=true:power=6",
+        "bits_n_bobs:lightbulb:forced_on=true:power=7",
+        "bits_n_bobs:lightbulb:forced_on=true:power=8",
+        "bits_n_bobs:lightbulb:forced_on=true:power=9"
+      ],
+      "color": "warm",
+      "properties": {
+        "cage": [
+          "false",
+          "true"
+        ],
+        "facing": [
+          "down",
+          "east",
+          "north",
+          "south",
+          "up",
+          "west"
+        ],
+        "forced_on": [
+          "false",
+          "true"
+        ],
+        "power": [
+          "0",
+          "1",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9"
+        ]
+      },
+      "assetJar": "bits_n_bobs-0.0.41.jar",
+      "statesChecked": 384
+    },
+    {
+      "id": "blocky_bikes:lamppost",
+      "selectors": [
+        "blocky_bikes:lamppost"
+      ],
+      "color": "warm",
+      "properties": {
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "blocky_bikes-0.0.7-forge-1.20.1.jar",
+      "statesChecked": 4
+    },
+    {
+      "id": "cluttered:antique_standing_lamp",
+      "selectors": [
+        "cluttered:antique_standing_lamp:part=2"
+      ],
+      "color": "warm",
+      "properties": {
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ],
+        "part": [
+          "1",
+          "2"
+        ]
+      },
+      "assetJar": "cluttered-[Forge]-3.0.3-1.20.1.jar",
+      "statesChecked": 8
+    },
+    {
+      "id": "cluttered:bee_lamp",
+      "selectors": [
+        "cluttered:bee_lamp"
+      ],
+      "color": "warm",
+      "properties": {
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ],
+        "waterlogged": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "cluttered-[Forge]-3.0.3-1.20.1.jar",
+      "statesChecked": 8
+    },
+    {
+      "id": "cluttered:bee_lamp_angry",
+      "selectors": [
+        "cluttered:bee_lamp_angry"
+      ],
+      "color": "warm",
+      "properties": {
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ],
+        "waterlogged": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "cluttered-[Forge]-3.0.3-1.20.1.jar",
+      "statesChecked": 8
+    },
+    {
+      "id": "cluttered:blue_mushroom_lamp",
+      "selectors": [
+        "cluttered:blue_mushroom_lamp"
+      ],
+      "color": "warm",
+      "properties": {
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ],
+        "waterlogged": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "cluttered-[Forge]-3.0.3-1.20.1.jar",
+      "statesChecked": 8
+    },
+    {
+      "id": "cluttered:caged_bulb",
+      "selectors": [
+        "cluttered:caged_bulb"
+      ],
+      "color": "warm",
+      "properties": {
+        "facing": [
+          "down",
+          "east",
+          "north",
+          "south",
+          "up",
+          "west"
+        ],
+        "waterlogged": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "cluttered-[Forge]-3.0.3-1.20.1.jar",
+      "statesChecked": 12
+    },
+    {
+      "id": "cluttered:colosseo_wall_lantern",
+      "selectors": [
+        "cluttered:colosseo_wall_lantern"
+      ],
+      "color": "warm",
+      "properties": {
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ],
+        "waterlogged": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "cluttered-[Forge]-3.0.3-1.20.1.jar",
+      "statesChecked": 8
+    },
+    {
+      "id": "cluttered:cottage_standing_lamp",
+      "selectors": [
+        "cluttered:cottage_standing_lamp:part=2"
+      ],
+      "color": "warm",
+      "properties": {
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ],
+        "part": [
+          "1",
+          "2"
+        ]
+      },
+      "assetJar": "cluttered-[Forge]-3.0.3-1.20.1.jar",
+      "statesChecked": 8
+    },
+    {
+      "id": "cluttered:flower_desk_lamp",
+      "selectors": [
+        "cluttered:flower_desk_lamp"
+      ],
+      "color": "warm",
+      "properties": {
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ],
+        "waterlogged": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "cluttered-[Forge]-3.0.3-1.20.1.jar",
+      "statesChecked": 8
+    },
+    {
+      "id": "cluttered:flower_shelf_candle_blue",
+      "selectors": [
+        "cluttered:flower_shelf_candle_blue:lit=true"
+      ],
+      "color": "warm",
+      "properties": {
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ],
+        "lit": [
+          "false",
+          "true"
+        ],
+        "waterlogged": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "cluttered-[Forge]-3.0.3-1.20.1.jar",
+      "statesChecked": 16
+    },
+    {
+      "id": "cluttered:flower_shelf_candle_green",
+      "selectors": [
+        "cluttered:flower_shelf_candle_green:lit=true"
+      ],
+      "color": "warm",
+      "properties": {
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ],
+        "lit": [
+          "false",
+          "true"
+        ],
+        "waterlogged": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "cluttered-[Forge]-3.0.3-1.20.1.jar",
+      "statesChecked": 16
+    },
+    {
+      "id": "cluttered:flower_shelf_candle_pastel_yellow",
+      "selectors": [
+        "cluttered:flower_shelf_candle_pastel_yellow:lit=true"
+      ],
+      "color": "warm",
+      "properties": {
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ],
+        "lit": [
+          "false",
+          "true"
+        ],
+        "waterlogged": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "cluttered-[Forge]-3.0.3-1.20.1.jar",
+      "statesChecked": 16
+    },
+    {
+      "id": "cluttered:flower_shelf_candle_pink",
+      "selectors": [
+        "cluttered:flower_shelf_candle_pink:lit=true"
+      ],
+      "color": "warm",
+      "properties": {
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ],
+        "lit": [
+          "false",
+          "true"
+        ],
+        "waterlogged": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "cluttered-[Forge]-3.0.3-1.20.1.jar",
+      "statesChecked": 16
+    },
+    {
+      "id": "cluttered:flower_shelf_candle_purple",
+      "selectors": [
+        "cluttered:flower_shelf_candle_purple:lit=true"
+      ],
+      "color": "warm",
+      "properties": {
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ],
+        "lit": [
+          "false",
+          "true"
+        ],
+        "waterlogged": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "cluttered-[Forge]-3.0.3-1.20.1.jar",
+      "statesChecked": 16
+    },
+    {
+      "id": "cluttered:flower_shelf_candle_yellow",
+      "selectors": [
+        "cluttered:flower_shelf_candle_yellow:lit=true"
+      ],
+      "color": "warm",
+      "properties": {
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ],
+        "lit": [
+          "false",
+          "true"
+        ],
+        "waterlogged": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "cluttered-[Forge]-3.0.3-1.20.1.jar",
+      "statesChecked": 16
+    },
+    {
+      "id": "cluttered:honeycomb_lamp",
+      "selectors": [
+        "cluttered:honeycomb_lamp"
+      ],
+      "color": "warm",
+      "properties": {
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ],
+        "waterlogged": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "cluttered-[Forge]-3.0.3-1.20.1.jar",
+      "statesChecked": 8
+    },
+    {
+      "id": "cluttered:hoppin_park_lantern",
+      "selectors": [
+        "cluttered:hoppin_park_lantern"
+      ],
+      "color": "warm",
+      "properties": {
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ],
+        "place_state": [
+          "ceiling",
+          "floor",
+          "wall"
+        ],
+        "waterlogged": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "cluttered-[Forge]-3.0.3-1.20.1.jar",
+      "statesChecked": 24
+    },
+    {
+      "id": "cluttered:red_mushroom_lamp",
+      "selectors": [
+        "cluttered:red_mushroom_lamp"
+      ],
+      "color": "warm",
+      "properties": {
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ],
+        "waterlogged": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "cluttered-[Forge]-3.0.3-1.20.1.jar",
+      "statesChecked": 8
+    },
+    {
+      "id": "cluttered:sea_gem_lantern",
+      "selectors": [
+        "cluttered:sea_gem_lantern"
+      ],
+      "color": "warm",
+      "properties": {
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ],
+        "place_state": [
+          "ceiling",
+          "floor",
+          "wall"
+        ],
+        "waterlogged": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "cluttered-[Forge]-3.0.3-1.20.1.jar",
+      "statesChecked": 24
+    },
+    {
+      "id": "cluttered:steampunk_lamp",
+      "selectors": [
+        "cluttered:steampunk_lamp"
+      ],
+      "color": "warm",
+      "properties": {
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ],
+        "waterlogged": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "cluttered-[Forge]-3.0.3-1.20.1.jar",
+      "statesChecked": 8
+    },
+    {
+      "id": "createdeco:blue_andesite_lamp",
+      "selectors": [
+        "createdeco:blue_andesite_lamp:lit=true"
+      ],
+      "color": "blue",
+      "properties": {
+        "facing": [
+          "down",
+          "east",
+          "north",
+          "south",
+          "up",
+          "west"
+        ],
+        "inverted": [
+          "false",
+          "true"
+        ],
+        "lit": [
+          "false",
+          "true"
+        ],
+        "waterlogged": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "createdeco-2.0.3-1.20.1-forge.jar",
+      "statesChecked": 48
+    },
+    {
+      "id": "createdeco:blue_brass_lamp",
+      "selectors": [
+        "createdeco:blue_brass_lamp:lit=true"
+      ],
+      "color": "blue",
+      "properties": {
+        "facing": [
+          "down",
+          "east",
+          "north",
+          "south",
+          "up",
+          "west"
+        ],
+        "inverted": [
+          "false",
+          "true"
+        ],
+        "lit": [
+          "false",
+          "true"
+        ],
+        "waterlogged": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "createdeco-2.0.3-1.20.1-forge.jar",
+      "statesChecked": 48
+    },
+    {
+      "id": "createdeco:blue_copper_lamp",
+      "selectors": [
+        "createdeco:blue_copper_lamp:lit=true"
+      ],
+      "color": "blue",
+      "properties": {
+        "facing": [
+          "down",
+          "east",
+          "north",
+          "south",
+          "up",
+          "west"
+        ],
+        "inverted": [
+          "false",
+          "true"
+        ],
+        "lit": [
+          "false",
+          "true"
+        ],
+        "waterlogged": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "createdeco-2.0.3-1.20.1-forge.jar",
+      "statesChecked": 48
+    },
+    {
+      "id": "createdeco:blue_industrial_iron_lamp",
+      "selectors": [
+        "createdeco:blue_industrial_iron_lamp:lit=true"
+      ],
+      "color": "blue",
+      "properties": {
+        "facing": [
+          "down",
+          "east",
+          "north",
+          "south",
+          "up",
+          "west"
+        ],
+        "inverted": [
+          "false",
+          "true"
+        ],
+        "lit": [
+          "false",
+          "true"
+        ],
+        "waterlogged": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "createdeco-2.0.3-1.20.1-forge.jar",
+      "statesChecked": 48
+    },
+    {
+      "id": "createdeco:blue_iron_lamp",
+      "selectors": [
+        "createdeco:blue_iron_lamp:lit=true"
+      ],
+      "color": "blue",
+      "properties": {
+        "facing": [
+          "down",
+          "east",
+          "north",
+          "south",
+          "up",
+          "west"
+        ],
+        "inverted": [
+          "false",
+          "true"
+        ],
+        "lit": [
+          "false",
+          "true"
+        ],
+        "waterlogged": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "createdeco-2.0.3-1.20.1-forge.jar",
+      "statesChecked": 48
+    },
+    {
+      "id": "createdeco:blue_zinc_lamp",
+      "selectors": [
+        "createdeco:blue_zinc_lamp:lit=true"
+      ],
+      "color": "blue",
+      "properties": {
+        "facing": [
+          "down",
+          "east",
+          "north",
+          "south",
+          "up",
+          "west"
+        ],
+        "inverted": [
+          "false",
+          "true"
+        ],
+        "lit": [
+          "false",
+          "true"
+        ],
+        "waterlogged": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "createdeco-2.0.3-1.20.1-forge.jar",
+      "statesChecked": 48
+    },
+    {
+      "id": "createdeco:green_andesite_lamp",
+      "selectors": [
+        "createdeco:green_andesite_lamp:lit=true"
+      ],
+      "color": "green",
+      "properties": {
+        "facing": [
+          "down",
+          "east",
+          "north",
+          "south",
+          "up",
+          "west"
+        ],
+        "inverted": [
+          "false",
+          "true"
+        ],
+        "lit": [
+          "false",
+          "true"
+        ],
+        "waterlogged": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "createdeco-2.0.3-1.20.1-forge.jar",
+      "statesChecked": 48
+    },
+    {
+      "id": "createdeco:green_brass_lamp",
+      "selectors": [
+        "createdeco:green_brass_lamp:lit=true"
+      ],
+      "color": "green",
+      "properties": {
+        "facing": [
+          "down",
+          "east",
+          "north",
+          "south",
+          "up",
+          "west"
+        ],
+        "inverted": [
+          "false",
+          "true"
+        ],
+        "lit": [
+          "false",
+          "true"
+        ],
+        "waterlogged": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "createdeco-2.0.3-1.20.1-forge.jar",
+      "statesChecked": 48
+    },
+    {
+      "id": "createdeco:green_copper_lamp",
+      "selectors": [
+        "createdeco:green_copper_lamp:lit=true"
+      ],
+      "color": "green",
+      "properties": {
+        "facing": [
+          "down",
+          "east",
+          "north",
+          "south",
+          "up",
+          "west"
+        ],
+        "inverted": [
+          "false",
+          "true"
+        ],
+        "lit": [
+          "false",
+          "true"
+        ],
+        "waterlogged": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "createdeco-2.0.3-1.20.1-forge.jar",
+      "statesChecked": 48
+    },
+    {
+      "id": "createdeco:green_industrial_iron_lamp",
+      "selectors": [
+        "createdeco:green_industrial_iron_lamp:lit=true"
+      ],
+      "color": "green",
+      "properties": {
+        "facing": [
+          "down",
+          "east",
+          "north",
+          "south",
+          "up",
+          "west"
+        ],
+        "inverted": [
+          "false",
+          "true"
+        ],
+        "lit": [
+          "false",
+          "true"
+        ],
+        "waterlogged": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "createdeco-2.0.3-1.20.1-forge.jar",
+      "statesChecked": 48
+    },
+    {
+      "id": "createdeco:green_iron_lamp",
+      "selectors": [
+        "createdeco:green_iron_lamp:lit=true"
+      ],
+      "color": "green",
+      "properties": {
+        "facing": [
+          "down",
+          "east",
+          "north",
+          "south",
+          "up",
+          "west"
+        ],
+        "inverted": [
+          "false",
+          "true"
+        ],
+        "lit": [
+          "false",
+          "true"
+        ],
+        "waterlogged": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "createdeco-2.0.3-1.20.1-forge.jar",
+      "statesChecked": 48
+    },
+    {
+      "id": "createdeco:green_zinc_lamp",
+      "selectors": [
+        "createdeco:green_zinc_lamp:lit=true"
+      ],
+      "color": "green",
+      "properties": {
+        "facing": [
+          "down",
+          "east",
+          "north",
+          "south",
+          "up",
+          "west"
+        ],
+        "inverted": [
+          "false",
+          "true"
+        ],
+        "lit": [
+          "false",
+          "true"
+        ],
+        "waterlogged": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "createdeco-2.0.3-1.20.1-forge.jar",
+      "statesChecked": 48
+    },
+    {
+      "id": "createdeco:red_andesite_lamp",
+      "selectors": [
+        "createdeco:red_andesite_lamp:lit=true"
+      ],
+      "color": "red",
+      "properties": {
+        "facing": [
+          "down",
+          "east",
+          "north",
+          "south",
+          "up",
+          "west"
+        ],
+        "inverted": [
+          "false",
+          "true"
+        ],
+        "lit": [
+          "false",
+          "true"
+        ],
+        "waterlogged": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "createdeco-2.0.3-1.20.1-forge.jar",
+      "statesChecked": 48
+    },
+    {
+      "id": "createdeco:red_brass_lamp",
+      "selectors": [
+        "createdeco:red_brass_lamp:lit=true"
+      ],
+      "color": "red",
+      "properties": {
+        "facing": [
+          "down",
+          "east",
+          "north",
+          "south",
+          "up",
+          "west"
+        ],
+        "inverted": [
+          "false",
+          "true"
+        ],
+        "lit": [
+          "false",
+          "true"
+        ],
+        "waterlogged": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "createdeco-2.0.3-1.20.1-forge.jar",
+      "statesChecked": 48
+    },
+    {
+      "id": "createdeco:red_copper_lamp",
+      "selectors": [
+        "createdeco:red_copper_lamp:lit=true"
+      ],
+      "color": "red",
+      "properties": {
+        "facing": [
+          "down",
+          "east",
+          "north",
+          "south",
+          "up",
+          "west"
+        ],
+        "inverted": [
+          "false",
+          "true"
+        ],
+        "lit": [
+          "false",
+          "true"
+        ],
+        "waterlogged": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "createdeco-2.0.3-1.20.1-forge.jar",
+      "statesChecked": 48
+    },
+    {
+      "id": "createdeco:red_industrial_iron_lamp",
+      "selectors": [
+        "createdeco:red_industrial_iron_lamp:lit=true"
+      ],
+      "color": "red",
+      "properties": {
+        "facing": [
+          "down",
+          "east",
+          "north",
+          "south",
+          "up",
+          "west"
+        ],
+        "inverted": [
+          "false",
+          "true"
+        ],
+        "lit": [
+          "false",
+          "true"
+        ],
+        "waterlogged": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "createdeco-2.0.3-1.20.1-forge.jar",
+      "statesChecked": 48
+    },
+    {
+      "id": "createdeco:red_iron_lamp",
+      "selectors": [
+        "createdeco:red_iron_lamp:lit=true"
+      ],
+      "color": "red",
+      "properties": {
+        "facing": [
+          "down",
+          "east",
+          "north",
+          "south",
+          "up",
+          "west"
+        ],
+        "inverted": [
+          "false",
+          "true"
+        ],
+        "lit": [
+          "false",
+          "true"
+        ],
+        "waterlogged": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "createdeco-2.0.3-1.20.1-forge.jar",
+      "statesChecked": 48
+    },
+    {
+      "id": "createdeco:red_zinc_lamp",
+      "selectors": [
+        "createdeco:red_zinc_lamp:lit=true"
+      ],
+      "color": "red",
+      "properties": {
+        "facing": [
+          "down",
+          "east",
+          "north",
+          "south",
+          "up",
+          "west"
+        ],
+        "inverted": [
+          "false",
+          "true"
+        ],
+        "lit": [
+          "false",
+          "true"
+        ],
+        "waterlogged": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "createdeco-2.0.3-1.20.1-forge.jar",
+      "statesChecked": 48
+    },
+    {
+      "id": "createdeco:yellow_andesite_lamp",
+      "selectors": [
+        "createdeco:yellow_andesite_lamp:lit=true"
+      ],
+      "color": "yellow",
+      "properties": {
+        "facing": [
+          "down",
+          "east",
+          "north",
+          "south",
+          "up",
+          "west"
+        ],
+        "inverted": [
+          "false",
+          "true"
+        ],
+        "lit": [
+          "false",
+          "true"
+        ],
+        "waterlogged": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "createdeco-2.0.3-1.20.1-forge.jar",
+      "statesChecked": 48
+    },
+    {
+      "id": "createdeco:yellow_brass_lamp",
+      "selectors": [
+        "createdeco:yellow_brass_lamp:lit=true"
+      ],
+      "color": "yellow",
+      "properties": {
+        "facing": [
+          "down",
+          "east",
+          "north",
+          "south",
+          "up",
+          "west"
+        ],
+        "inverted": [
+          "false",
+          "true"
+        ],
+        "lit": [
+          "false",
+          "true"
+        ],
+        "waterlogged": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "createdeco-2.0.3-1.20.1-forge.jar",
+      "statesChecked": 48
+    },
+    {
+      "id": "createdeco:yellow_copper_lamp",
+      "selectors": [
+        "createdeco:yellow_copper_lamp:lit=true"
+      ],
+      "color": "yellow",
+      "properties": {
+        "facing": [
+          "down",
+          "east",
+          "north",
+          "south",
+          "up",
+          "west"
+        ],
+        "inverted": [
+          "false",
+          "true"
+        ],
+        "lit": [
+          "false",
+          "true"
+        ],
+        "waterlogged": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "createdeco-2.0.3-1.20.1-forge.jar",
+      "statesChecked": 48
+    },
+    {
+      "id": "createdeco:yellow_industrial_iron_lamp",
+      "selectors": [
+        "createdeco:yellow_industrial_iron_lamp:lit=true"
+      ],
+      "color": "yellow",
+      "properties": {
+        "facing": [
+          "down",
+          "east",
+          "north",
+          "south",
+          "up",
+          "west"
+        ],
+        "inverted": [
+          "false",
+          "true"
+        ],
+        "lit": [
+          "false",
+          "true"
+        ],
+        "waterlogged": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "createdeco-2.0.3-1.20.1-forge.jar",
+      "statesChecked": 48
+    },
+    {
+      "id": "createdeco:yellow_iron_lamp",
+      "selectors": [
+        "createdeco:yellow_iron_lamp:lit=true"
+      ],
+      "color": "yellow",
+      "properties": {
+        "facing": [
+          "down",
+          "east",
+          "north",
+          "south",
+          "up",
+          "west"
+        ],
+        "inverted": [
+          "false",
+          "true"
+        ],
+        "lit": [
+          "false",
+          "true"
+        ],
+        "waterlogged": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "createdeco-2.0.3-1.20.1-forge.jar",
+      "statesChecked": 48
+    },
+    {
+      "id": "createdeco:yellow_zinc_lamp",
+      "selectors": [
+        "createdeco:yellow_zinc_lamp:lit=true"
+      ],
+      "color": "yellow",
+      "properties": {
+        "facing": [
+          "down",
+          "east",
+          "north",
+          "south",
+          "up",
+          "west"
+        ],
+        "inverted": [
+          "false",
+          "true"
+        ],
+        "lit": [
+          "false",
+          "true"
+        ],
+        "waterlogged": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "createdeco-2.0.3-1.20.1-forge.jar",
+      "statesChecked": 48
+    },
+    {
+      "id": "decorative_blocks:brazier",
+      "selectors": [
+        "decorative_blocks:brazier:lit=true"
+      ],
+      "color": "warm",
+      "properties": {
+        "lit": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "decorative_blocks-forge-1.20.1-4.1.3.jar",
+      "statesChecked": 2
+    },
+    {
+      "id": "decorative_blocks:chandelier",
+      "selectors": [
+        "decorative_blocks:chandelier"
+      ],
+      "color": "warm",
+      "properties": {},
+      "assetJar": "decorative_blocks-forge-1.20.1-4.1.3.jar",
+      "statesChecked": 1
+    },
+    {
+      "id": "decorative_blocks:soul_brazier",
+      "selectors": [
+        "decorative_blocks:soul_brazier:lit=true"
+      ],
+      "color": "soul",
+      "properties": {
+        "lit": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "decorative_blocks-forge-1.20.1-4.1.3.jar",
+      "statesChecked": 2
+    },
+    {
+      "id": "decorative_blocks:soul_chandelier",
+      "selectors": [
+        "decorative_blocks:soul_chandelier"
+      ],
+      "color": "soul",
+      "properties": {},
+      "assetJar": "decorative_blocks-forge-1.20.1-4.1.3.jar",
+      "statesChecked": 1
+    },
+    {
+      "id": "doomsday_decoration:cornerlamppost",
+      "selectors": [
+        "doomsday_decoration:cornerlamppost"
+      ],
+      "color": "warm",
+      "properties": {
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "doomsday_decoration-1.1.3-forge-1.20.1.jar",
+      "statesChecked": 4
+    },
+    {
+      "id": "doomsday_decoration:floodlight",
+      "selectors": [
+        "doomsday_decoration:floodlight"
+      ],
+      "color": "white",
+      "properties": {
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "doomsday_decoration-1.1.3-forge-1.20.1.jar",
+      "statesChecked": 4
+    },
+    {
+      "id": "doomsday_decoration:floodlight_2",
+      "selectors": [
+        "doomsday_decoration:floodlight_2"
+      ],
+      "color": "white",
+      "properties": {
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "doomsday_decoration-1.1.3-forge-1.20.1.jar",
+      "statesChecked": 4
+    },
+    {
+      "id": "doomsday_decoration:floodlight_3",
+      "selectors": [
+        "doomsday_decoration:floodlight_3"
+      ],
+      "color": "white",
+      "properties": {
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "doomsday_decoration-1.1.3-forge-1.20.1.jar",
+      "statesChecked": 4
+    },
+    {
+      "id": "doomsday_decoration:floodlight_4",
+      "selectors": [
+        "doomsday_decoration:floodlight_4"
+      ],
+      "color": "white",
+      "properties": {
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "doomsday_decoration-1.1.3-forge-1.20.1.jar",
+      "statesChecked": 4
+    },
+    {
+      "id": "doomsday_decoration:floodlight_5",
+      "selectors": [
+        "doomsday_decoration:floodlight_5"
+      ],
+      "color": "white",
+      "properties": {
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "doomsday_decoration-1.1.3-forge-1.20.1.jar",
+      "statesChecked": 4
+    },
+    {
+      "id": "doomsday_decoration:floodlight_6",
+      "selectors": [
+        "doomsday_decoration:floodlight_6"
+      ],
+      "color": "white",
+      "properties": {
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "doomsday_decoration-1.1.3-forge-1.20.1.jar",
+      "statesChecked": 4
+    },
+    {
+      "id": "doomsday_decoration:fluorescentlamp_1",
+      "selectors": [
+        "doomsday_decoration:fluorescentlamp_1"
+      ],
+      "color": "white",
+      "properties": {
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "doomsday_decoration-1.1.3-forge-1.20.1.jar",
+      "statesChecked": 4
+    },
+    {
+      "id": "doomsday_decoration:fluorescentlamp_2",
+      "selectors": [
+        "doomsday_decoration:fluorescentlamp_2"
+      ],
+      "color": "white",
+      "properties": {
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "doomsday_decoration-1.1.3-forge-1.20.1.jar",
+      "statesChecked": 4
+    },
+    {
+      "id": "doomsday_decoration:fluorescentlamp_3",
+      "selectors": [
+        "doomsday_decoration:fluorescentlamp_3"
+      ],
+      "color": "white",
+      "properties": {
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "doomsday_decoration-1.1.3-forge-1.20.1.jar",
+      "statesChecked": 4
+    },
+    {
+      "id": "doomsday_decoration:lamp",
+      "selectors": [
+        "doomsday_decoration:lamp"
+      ],
+      "color": "warm",
+      "properties": {},
+      "assetJar": "doomsday_decoration-1.1.3-forge-1.20.1.jar",
+      "statesChecked": 1
+    },
+    {
+      "id": "doomsday_decoration:lamp_2",
+      "selectors": [
+        "doomsday_decoration:lamp_2"
+      ],
+      "color": "warm",
+      "properties": {},
+      "assetJar": "doomsday_decoration-1.1.3-forge-1.20.1.jar",
+      "statesChecked": 1
+    },
+    {
+      "id": "doomsday_decoration:lamp_steps",
+      "selectors": [
+        "doomsday_decoration:lamp_steps"
+      ],
+      "color": "warm",
+      "properties": {
+        "type": [
+          "bottom",
+          "double",
+          "top"
+        ]
+      },
+      "assetJar": "doomsday_decoration-1.1.3-forge-1.20.1.jar",
+      "statesChecked": 3
+    },
+    {
+      "id": "doomsday_decoration:lamp_steps_2",
+      "selectors": [
+        "doomsday_decoration:lamp_steps_2"
+      ],
+      "color": "warm",
+      "properties": {
+        "type": [
+          "bottom",
+          "double",
+          "top"
+        ]
+      },
+      "assetJar": "doomsday_decoration-1.1.3-forge-1.20.1.jar",
+      "statesChecked": 3
+    },
+    {
+      "id": "doomsday_decoration:lampstaircase",
+      "selectors": [
+        "doomsday_decoration:lampstaircase"
+      ],
+      "color": "warm",
+      "properties": {
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ],
+        "half": [
+          "bottom",
+          "top"
+        ],
+        "shape": [
+          "inner_left",
+          "inner_right",
+          "outer_left",
+          "outer_right",
+          "straight"
+        ]
+      },
+      "assetJar": "doomsday_decoration-1.1.3-forge-1.20.1.jar",
+      "statesChecked": 40
+    },
+    {
+      "id": "doomsday_decoration:lampstaircase_2",
+      "selectors": [
+        "doomsday_decoration:lampstaircase_2"
+      ],
+      "color": "warm",
+      "properties": {
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ],
+        "half": [
+          "bottom",
+          "top"
+        ],
+        "shape": [
+          "inner_left",
+          "inner_right",
+          "outer_left",
+          "outer_right",
+          "straight"
+        ]
+      },
+      "assetJar": "doomsday_decoration-1.1.3-forge-1.20.1.jar",
+      "statesChecked": 40
+    },
+    {
+      "id": "doomsday_decoration:roundlamps",
+      "selectors": [
+        "doomsday_decoration:roundlamps"
+      ],
+      "color": "warm",
+      "properties": {
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "doomsday_decoration-1.1.3-forge-1.20.1.jar",
+      "statesChecked": 4
+    },
+    {
+      "id": "doomsday_decoration:roundlamps_2",
+      "selectors": [
+        "doomsday_decoration:roundlamps_2"
+      ],
+      "color": "warm",
+      "properties": {
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "doomsday_decoration-1.1.3-forge-1.20.1.jar",
+      "statesChecked": 4
+    },
+    {
+      "id": "doomsday_decoration:roundlamps_3",
+      "selectors": [
+        "doomsday_decoration:roundlamps_3"
+      ],
+      "color": "warm",
+      "properties": {
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "doomsday_decoration-1.1.3-forge-1.20.1.jar",
+      "statesChecked": 4
+    },
+    {
+      "id": "doomsday_decoration:spotlight",
+      "selectors": [
+        "doomsday_decoration:spotlight"
+      ],
+      "color": "white",
+      "properties": {
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "doomsday_decoration-1.1.3-forge-1.20.1.jar",
+      "statesChecked": 4
+    },
+    {
+      "id": "doomsday_decoration:spotlight_2",
+      "selectors": [
+        "doomsday_decoration:spotlight_2"
+      ],
+      "color": "white",
+      "properties": {
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "doomsday_decoration-1.1.3-forge-1.20.1.jar",
+      "statesChecked": 4
+    },
+    {
+      "id": "doomsday_decoration:streetlamp_1",
+      "selectors": [
+        "doomsday_decoration:streetlamp_1"
+      ],
+      "color": "warm",
+      "properties": {
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "doomsday_decoration-1.1.3-forge-1.20.1.jar",
+      "statesChecked": 4
+    },
+    {
+      "id": "doomsday_decoration:streetlamp_2",
+      "selectors": [
+        "doomsday_decoration:streetlamp_2"
+      ],
+      "color": "warm",
+      "properties": {
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "doomsday_decoration-1.1.3-forge-1.20.1.jar",
+      "statesChecked": 4
+    },
+    {
+      "id": "doomsday_decoration:streetlamp_3",
+      "selectors": [
+        "doomsday_decoration:streetlamp_3"
+      ],
+      "color": "warm",
+      "properties": {
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "doomsday_decoration-1.1.3-forge-1.20.1.jar",
+      "statesChecked": 4
+    },
+    {
+      "id": "doomsday_decoration:streetlamp_4",
+      "selectors": [
+        "doomsday_decoration:streetlamp_4"
+      ],
+      "color": "warm",
+      "properties": {
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "doomsday_decoration-1.1.3-forge-1.20.1.jar",
+      "statesChecked": 4
+    },
+    {
+      "id": "doomsday_decoration:tablelamp",
+      "selectors": [
+        "doomsday_decoration:tablelamp"
+      ],
+      "color": "warm",
+      "properties": {
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "doomsday_decoration-1.1.3-forge-1.20.1.jar",
+      "statesChecked": 4
+    },
+    {
+      "id": "doomsday_decoration:tablelamp_2",
+      "selectors": [
+        "doomsday_decoration:tablelamp_2"
+      ],
+      "color": "warm",
+      "properties": {
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "doomsday_decoration-1.1.3-forge-1.20.1.jar",
+      "statesChecked": 4
+    },
+    {
+      "id": "doomsday_decoration:tablelamp_3",
+      "selectors": [
+        "doomsday_decoration:tablelamp_3"
+      ],
+      "color": "warm",
+      "properties": {
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "doomsday_decoration-1.1.3-forge-1.20.1.jar",
+      "statesChecked": 4
+    },
+    {
+      "id": "doomsday_decoration:tablelamp_4",
+      "selectors": [
+        "doomsday_decoration:tablelamp_4"
+      ],
+      "color": "warm",
+      "properties": {
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "doomsday_decoration-1.1.3-forge-1.20.1.jar",
+      "statesChecked": 4
+    },
+    {
+      "id": "dustrial_decor:blue_neon_light",
+      "selectors": [
+        "dustrial_decor:blue_neon_light"
+      ],
+      "color": "blue",
+      "properties": {},
+      "assetJar": "DustrialDecor-1.3.5-1.20.jar",
+      "statesChecked": 1
+    },
+    {
+      "id": "dustrial_decor:cyan_neon_light",
+      "selectors": [
+        "dustrial_decor:cyan_neon_light"
+      ],
+      "color": "cyan",
+      "properties": {},
+      "assetJar": "DustrialDecor-1.3.5-1.20.jar",
+      "statesChecked": 1
+    },
+    {
+      "id": "dustrial_decor:green_neon_light",
+      "selectors": [
+        "dustrial_decor:green_neon_light"
+      ],
+      "color": "green",
+      "properties": {},
+      "assetJar": "DustrialDecor-1.3.5-1.20.jar",
+      "statesChecked": 1
+    },
+    {
+      "id": "dustrial_decor:large_cursed_lantern",
+      "selectors": [
+        "dustrial_decor:large_cursed_lantern"
+      ],
+      "color": "warm",
+      "properties": {},
+      "assetJar": "DustrialDecor-1.3.5-1.20.jar",
+      "statesChecked": 1
+    },
+    {
+      "id": "dustrial_decor:large_ender_lantern",
+      "selectors": [
+        "dustrial_decor:large_ender_lantern"
+      ],
+      "color": "warm",
+      "properties": {},
+      "assetJar": "DustrialDecor-1.3.5-1.20.jar",
+      "statesChecked": 1
+    },
+    {
+      "id": "dustrial_decor:large_glow_lantern",
+      "selectors": [
+        "dustrial_decor:large_glow_lantern"
+      ],
+      "color": "warm",
+      "properties": {},
+      "assetJar": "DustrialDecor-1.3.5-1.20.jar",
+      "statesChecked": 1
+    },
+    {
+      "id": "dustrial_decor:large_lantern",
+      "selectors": [
+        "dustrial_decor:large_lantern"
+      ],
+      "color": "warm",
+      "properties": {},
+      "assetJar": "DustrialDecor-1.3.5-1.20.jar",
+      "statesChecked": 1
+    },
+    {
+      "id": "dustrial_decor:large_redstone_lantern",
+      "selectors": [
+        "dustrial_decor:large_redstone_lantern:lit=true"
+      ],
+      "color": "warm",
+      "properties": {
+        "lit": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "DustrialDecor-1.3.5-1.20.jar",
+      "statesChecked": 2
+    },
+    {
+      "id": "dustrial_decor:large_soul_lantern",
+      "selectors": [
+        "dustrial_decor:large_soul_lantern"
+      ],
+      "color": "soul",
+      "properties": {},
+      "assetJar": "DustrialDecor-1.3.5-1.20.jar",
+      "statesChecked": 1
+    },
+    {
+      "id": "dustrial_decor:orange_neon_light",
+      "selectors": [
+        "dustrial_decor:orange_neon_light"
+      ],
+      "color": "orange",
+      "properties": {},
+      "assetJar": "DustrialDecor-1.3.5-1.20.jar",
+      "statesChecked": 1
+    },
+    {
+      "id": "dustrial_decor:pink_neon_light",
+      "selectors": [
+        "dustrial_decor:pink_neon_light"
+      ],
+      "color": "pink",
+      "properties": {},
+      "assetJar": "DustrialDecor-1.3.5-1.20.jar",
+      "statesChecked": 1
+    },
+    {
+      "id": "dustrial_decor:purple_neon_light",
+      "selectors": [
+        "dustrial_decor:purple_neon_light"
+      ],
+      "color": "purple",
+      "properties": {},
+      "assetJar": "DustrialDecor-1.3.5-1.20.jar",
+      "statesChecked": 1
+    },
+    {
+      "id": "dustrial_decor:rainbow_neon_light",
+      "selectors": [
+        "dustrial_decor:rainbow_neon_light"
+      ],
+      "color": "white",
+      "properties": {},
+      "assetJar": "DustrialDecor-1.3.5-1.20.jar",
+      "statesChecked": 1
+    },
+    {
+      "id": "dustrial_decor:red_neon_light",
+      "selectors": [
+        "dustrial_decor:red_neon_light"
+      ],
+      "color": "red",
+      "properties": {},
+      "assetJar": "DustrialDecor-1.3.5-1.20.jar",
+      "statesChecked": 1
+    },
+    {
+      "id": "dustrial_decor:redstone_lantern",
+      "selectors": [
+        "dustrial_decor:redstone_lantern"
+      ],
+      "color": "warm",
+      "properties": {
+        "hanging": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "DustrialDecor-1.3.5-1.20.jar",
+      "statesChecked": 2
+    },
+    {
+      "id": "dustrial_decor:yellow_neon_light",
+      "selectors": [
+        "dustrial_decor:yellow_neon_light"
+      ],
+      "color": "yellow",
+      "properties": {},
+      "assetJar": "DustrialDecor-1.3.5-1.20.jar",
+      "statesChecked": 1
+    },
+    {
+      "id": "framedblocks:framed_redstone_torch",
+      "selectors": [
+        "framedblocks:framed_redstone_torch:lit=true"
+      ],
+      "color": "warm",
+      "properties": {
+        "lit": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "FramedBlocks-9.4.3.jar",
+      "statesChecked": 2
+    },
+    {
+      "id": "framedblocks:framed_redstone_wall_torch",
+      "selectors": [
+        "framedblocks:framed_redstone_wall_torch:lit=true"
+      ],
+      "color": "warm",
+      "properties": {
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ],
+        "lit": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "FramedBlocks-9.4.3.jar",
+      "statesChecked": 8
+    },
+    {
+      "id": "framedblocks:framed_soul_torch",
+      "selectors": [
+        "framedblocks:framed_soul_torch"
+      ],
+      "color": "soul",
+      "properties": {},
+      "assetJar": "FramedBlocks-9.4.3.jar",
+      "statesChecked": 1
+    },
+    {
+      "id": "framedblocks:framed_soul_wall_torch",
+      "selectors": [
+        "framedblocks:framed_soul_wall_torch"
+      ],
+      "color": "soul",
+      "properties": {
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "FramedBlocks-9.4.3.jar",
+      "statesChecked": 4
+    },
+    {
+      "id": "framedblocks:framed_torch",
+      "selectors": [
+        "framedblocks:framed_torch"
+      ],
+      "color": "warm",
+      "properties": {},
+      "assetJar": "FramedBlocks-9.4.3.jar",
+      "statesChecked": 1
+    },
+    {
+      "id": "framedblocks:framed_wall_torch",
+      "selectors": [
+        "framedblocks:framed_wall_torch"
+      ],
+      "color": "warm",
+      "properties": {
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "FramedBlocks-9.4.3.jar",
+      "statesChecked": 4
+    },
+    {
+      "id": "heavy_bunker:heavy_sea_lantern",
+      "selectors": [
+        "heavy_bunker:heavy_sea_lantern"
+      ],
+      "color": "warm",
+      "properties": {
+        "crack_level": [
+          "0",
+          "1",
+          "2",
+          "3"
+        ]
+      },
+      "assetJar": "heavy_bunker-1.jar",
+      "statesChecked": 4
+    },
+    {
+      "id": "heavy_bunker:heavy_sea_lantern_slab",
+      "selectors": [
+        "heavy_bunker:heavy_sea_lantern_slab"
+      ],
+      "color": "warm",
+      "properties": {
+        "type": [
+          "bottom",
+          "double",
+          "top"
+        ]
+      },
+      "assetJar": "heavy_bunker-1.jar",
+      "statesChecked": 3
+    },
+    {
+      "id": "heavy_bunker:heavy_sea_lantern_stairs",
+      "selectors": [
+        "heavy_bunker:heavy_sea_lantern_stairs"
+      ],
+      "color": "warm",
+      "properties": {
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ],
+        "half": [
+          "bottom",
+          "top"
+        ],
+        "shape": [
+          "inner_left",
+          "inner_right",
+          "outer_left",
+          "outer_right",
+          "straight"
+        ]
+      },
+      "assetJar": "heavy_bunker-1.jar",
+      "statesChecked": 40
+    },
+    {
+      "id": "heavy_bunker:reinforced_sea_lantern_glass",
+      "selectors": [
+        "heavy_bunker:reinforced_sea_lantern_glass"
+      ],
+      "color": "warm",
+      "properties": {},
+      "assetJar": "heavy_bunker-1.jar",
+      "statesChecked": 1
+    },
+    {
+      "id": "heavy_bunker:reinforced_sea_lantern_glass_stairs",
+      "selectors": [
+        "heavy_bunker:reinforced_sea_lantern_glass_stairs"
+      ],
+      "color": "warm",
+      "properties": {
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ],
+        "half": [
+          "bottom",
+          "top"
+        ],
+        "shape": [
+          "inner_left",
+          "inner_right",
+          "outer_left",
+          "outer_right",
+          "straight"
+        ]
+      },
+      "assetJar": "heavy_bunker-1.jar",
+      "statesChecked": 40
+    },
+    {
+      "id": "horror_element_mod:redlantern",
+      "selectors": [
+        "horror_element_mod:redlantern"
+      ],
+      "color": "warm",
+      "properties": {},
+      "assetJar": "horror_element_mod-1.6.3-forge-1.20.1.jar",
+      "statesChecked": 1
+    },
+    {
+      "id": "immersiveengineering:electric_lantern",
+      "selectors": [
+        "immersiveengineering:electric_lantern:active=true"
+      ],
+      "color": "warm",
+      "properties": {
+        "active": [
+          "false",
+          "true"
+        ],
+        "facing": [
+          "down",
+          "up"
+        ]
+      },
+      "assetJar": "ImmersiveEngineering-1.20.1-10.2.0-183.jar",
+      "statesChecked": 4
+    },
+    {
+      "id": "immersiveengineering:floodlight",
+      "selectors": [
+        "immersiveengineering:floodlight:active=true"
+      ],
+      "color": "white",
+      "properties": {
+        "active": [
+          "false",
+          "true"
+        ],
+        "facing": [
+          "down",
+          "east",
+          "north",
+          "south",
+          "up",
+          "west"
+        ]
+      },
+      "assetJar": "ImmersiveEngineering-1.20.1-10.2.0-183.jar",
+      "statesChecked": 12
+    },
+    {
+      "id": "immersiveengineering:lantern",
+      "selectors": [
+        "immersiveengineering:lantern"
+      ],
+      "color": "warm",
+      "properties": {},
+      "assetJar": "ImmersiveEngineering-1.20.1-10.2.0-183.jar",
+      "statesChecked": 1
+    },
+    {
+      "id": "cataclysm:void_lantern_block",
+      "selectors": [
+        "cataclysm:void_lantern_block"
+      ],
+      "color": "warm",
+      "properties": {},
+      "assetJar": "L_Enders_Cataclysm-3.31.jar",
+      "statesChecked": 1
+    },
+    {
+      "id": "mcwbridges:bridge_lantern",
+      "selectors": [
+        "mcwbridges:bridge_lantern"
+      ],
+      "color": "warm",
+      "properties": {
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ],
+        "lightstate": [
+          "bridge",
+          "stair"
+        ]
+      },
+      "assetJar": "mcw-bridges-3.1.2-mc1.20.1forge.jar",
+      "statesChecked": 8
+    },
+    {
+      "id": "mcwbridges:bridge_torch",
+      "selectors": [
+        "mcwbridges:bridge_torch"
+      ],
+      "color": "warm",
+      "properties": {
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ],
+        "lightstate": [
+          "bridge",
+          "stair"
+        ]
+      },
+      "assetJar": "mcw-bridges-3.1.2-mc1.20.1forge.jar",
+      "statesChecked": 8
+    },
+    {
+      "id": "natures_spirit:black_paper_lantern",
+      "selectors": [
+        "natures_spirit:black_paper_lantern"
+      ],
+      "color": "warm",
+      "properties": {
+        "hanging": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "natures_spirit-2.2.5-1.20.1.jar",
+      "statesChecked": 2
+    },
+    {
+      "id": "natures_spirit:blue_paper_lantern",
+      "selectors": [
+        "natures_spirit:blue_paper_lantern"
+      ],
+      "color": "warm",
+      "properties": {
+        "hanging": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "natures_spirit-2.2.5-1.20.1.jar",
+      "statesChecked": 2
+    },
+    {
+      "id": "natures_spirit:brown_paper_lantern",
+      "selectors": [
+        "natures_spirit:brown_paper_lantern"
+      ],
+      "color": "warm",
+      "properties": {
+        "hanging": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "natures_spirit-2.2.5-1.20.1.jar",
+      "statesChecked": 2
+    },
+    {
+      "id": "natures_spirit:cyan_paper_lantern",
+      "selectors": [
+        "natures_spirit:cyan_paper_lantern"
+      ],
+      "color": "warm",
+      "properties": {
+        "hanging": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "natures_spirit-2.2.5-1.20.1.jar",
+      "statesChecked": 2
+    },
+    {
+      "id": "natures_spirit:gray_paper_lantern",
+      "selectors": [
+        "natures_spirit:gray_paper_lantern"
+      ],
+      "color": "warm",
+      "properties": {
+        "hanging": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "natures_spirit-2.2.5-1.20.1.jar",
+      "statesChecked": 2
+    },
+    {
+      "id": "natures_spirit:green_paper_lantern",
+      "selectors": [
+        "natures_spirit:green_paper_lantern"
+      ],
+      "color": "warm",
+      "properties": {
+        "hanging": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "natures_spirit-2.2.5-1.20.1.jar",
+      "statesChecked": 2
+    },
+    {
+      "id": "natures_spirit:light_blue_paper_lantern",
+      "selectors": [
+        "natures_spirit:light_blue_paper_lantern"
+      ],
+      "color": "warm",
+      "properties": {
+        "hanging": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "natures_spirit-2.2.5-1.20.1.jar",
+      "statesChecked": 2
+    },
+    {
+      "id": "natures_spirit:light_gray_paper_lantern",
+      "selectors": [
+        "natures_spirit:light_gray_paper_lantern"
+      ],
+      "color": "warm",
+      "properties": {
+        "hanging": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "natures_spirit-2.2.5-1.20.1.jar",
+      "statesChecked": 2
+    },
+    {
+      "id": "natures_spirit:lime_paper_lantern",
+      "selectors": [
+        "natures_spirit:lime_paper_lantern"
+      ],
+      "color": "warm",
+      "properties": {
+        "hanging": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "natures_spirit-2.2.5-1.20.1.jar",
+      "statesChecked": 2
+    },
+    {
+      "id": "natures_spirit:magenta_paper_lantern",
+      "selectors": [
+        "natures_spirit:magenta_paper_lantern"
+      ],
+      "color": "warm",
+      "properties": {
+        "hanging": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "natures_spirit-2.2.5-1.20.1.jar",
+      "statesChecked": 2
+    },
+    {
+      "id": "natures_spirit:orange_paper_lantern",
+      "selectors": [
+        "natures_spirit:orange_paper_lantern"
+      ],
+      "color": "warm",
+      "properties": {
+        "hanging": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "natures_spirit-2.2.5-1.20.1.jar",
+      "statesChecked": 2
+    },
+    {
+      "id": "natures_spirit:paper_lantern",
+      "selectors": [
+        "natures_spirit:paper_lantern"
+      ],
+      "color": "warm",
+      "properties": {
+        "hanging": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "natures_spirit-2.2.5-1.20.1.jar",
+      "statesChecked": 2
+    },
+    {
+      "id": "natures_spirit:pink_paper_lantern",
+      "selectors": [
+        "natures_spirit:pink_paper_lantern"
+      ],
+      "color": "warm",
+      "properties": {
+        "hanging": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "natures_spirit-2.2.5-1.20.1.jar",
+      "statesChecked": 2
+    },
+    {
+      "id": "natures_spirit:purple_paper_lantern",
+      "selectors": [
+        "natures_spirit:purple_paper_lantern"
+      ],
+      "color": "warm",
+      "properties": {
+        "hanging": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "natures_spirit-2.2.5-1.20.1.jar",
+      "statesChecked": 2
+    },
+    {
+      "id": "natures_spirit:red_paper_lantern",
+      "selectors": [
+        "natures_spirit:red_paper_lantern"
+      ],
+      "color": "warm",
+      "properties": {
+        "hanging": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "natures_spirit-2.2.5-1.20.1.jar",
+      "statesChecked": 2
+    },
+    {
+      "id": "natures_spirit:white_paper_lantern",
+      "selectors": [
+        "natures_spirit:white_paper_lantern"
+      ],
+      "color": "warm",
+      "properties": {
+        "hanging": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "natures_spirit-2.2.5-1.20.1.jar",
+      "statesChecked": 2
+    },
+    {
+      "id": "natures_spirit:yellow_paper_lantern",
+      "selectors": [
+        "natures_spirit:yellow_paper_lantern"
+      ],
+      "color": "warm",
+      "properties": {
+        "hanging": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "natures_spirit-2.2.5-1.20.1.jar",
+      "statesChecked": 2
+    },
+    {
+      "id": "nfm:beige_lamp",
+      "selectors": [
+        "nfm:beige_lamp:lit=true"
+      ],
+      "color": "warm",
+      "properties": {
+        "lit": [
+          "false",
+          "true"
+        ],
+        "type": [
+          "bottom",
+          "middle",
+          "single",
+          "top"
+        ]
+      },
+      "assetJar": "nfm-2026.01.30-1.20.1.jar",
+      "statesChecked": 8
+    },
+    {
+      "id": "nfm:black_lamp",
+      "selectors": [
+        "nfm:black_lamp:lit=true"
+      ],
+      "color": "warm",
+      "properties": {
+        "lit": [
+          "false",
+          "true"
+        ],
+        "type": [
+          "bottom",
+          "middle",
+          "single",
+          "top"
+        ]
+      },
+      "assetJar": "nfm-2026.01.30-1.20.1.jar",
+      "statesChecked": 8
+    },
+    {
+      "id": "nfm:blue_lamp",
+      "selectors": [
+        "nfm:blue_lamp:lit=true"
+      ],
+      "color": "warm",
+      "properties": {
+        "lit": [
+          "false",
+          "true"
+        ],
+        "type": [
+          "bottom",
+          "middle",
+          "single",
+          "top"
+        ]
+      },
+      "assetJar": "nfm-2026.01.30-1.20.1.jar",
+      "statesChecked": 8
+    },
+    {
+      "id": "nfm:brown_lamp",
+      "selectors": [
+        "nfm:brown_lamp:lit=true"
+      ],
+      "color": "warm",
+      "properties": {
+        "lit": [
+          "false",
+          "true"
+        ],
+        "type": [
+          "bottom",
+          "middle",
+          "single",
+          "top"
+        ]
+      },
+      "assetJar": "nfm-2026.01.30-1.20.1.jar",
+      "statesChecked": 8
+    },
+    {
+      "id": "nfm:candle",
+      "selectors": [
+        "nfm:candle"
+      ],
+      "color": "warm",
+      "properties": {},
+      "assetJar": "nfm-2026.01.30-1.20.1.jar",
+      "statesChecked": 1
+    },
+    {
+      "id": "nfm:cyan_lamp",
+      "selectors": [
+        "nfm:cyan_lamp:lit=true"
+      ],
+      "color": "warm",
+      "properties": {
+        "lit": [
+          "false",
+          "true"
+        ],
+        "type": [
+          "bottom",
+          "middle",
+          "single",
+          "top"
+        ]
+      },
+      "assetJar": "nfm-2026.01.30-1.20.1.jar",
+      "statesChecked": 8
+    },
+    {
+      "id": "nfm:gray_lamp",
+      "selectors": [
+        "nfm:gray_lamp:lit=true"
+      ],
+      "color": "warm",
+      "properties": {
+        "lit": [
+          "false",
+          "true"
+        ],
+        "type": [
+          "bottom",
+          "middle",
+          "single",
+          "top"
+        ]
+      },
+      "assetJar": "nfm-2026.01.30-1.20.1.jar",
+      "statesChecked": 8
+    },
+    {
+      "id": "nfm:green_lamp",
+      "selectors": [
+        "nfm:green_lamp:lit=true"
+      ],
+      "color": "warm",
+      "properties": {
+        "lit": [
+          "false",
+          "true"
+        ],
+        "type": [
+          "bottom",
+          "middle",
+          "single",
+          "top"
+        ]
+      },
+      "assetJar": "nfm-2026.01.30-1.20.1.jar",
+      "statesChecked": 8
+    },
+    {
+      "id": "nfm:light_blue_lamp",
+      "selectors": [
+        "nfm:light_blue_lamp:lit=true"
+      ],
+      "color": "warm",
+      "properties": {
+        "lit": [
+          "false",
+          "true"
+        ],
+        "type": [
+          "bottom",
+          "middle",
+          "single",
+          "top"
+        ]
+      },
+      "assetJar": "nfm-2026.01.30-1.20.1.jar",
+      "statesChecked": 8
+    },
+    {
+      "id": "nfm:light_gray_lamp",
+      "selectors": [
+        "nfm:light_gray_lamp:lit=true"
+      ],
+      "color": "warm",
+      "properties": {
+        "lit": [
+          "false",
+          "true"
+        ],
+        "type": [
+          "bottom",
+          "middle",
+          "single",
+          "top"
+        ]
+      },
+      "assetJar": "nfm-2026.01.30-1.20.1.jar",
+      "statesChecked": 8
+    },
+    {
+      "id": "nfm:lime_lamp",
+      "selectors": [
+        "nfm:lime_lamp:lit=true"
+      ],
+      "color": "warm",
+      "properties": {
+        "lit": [
+          "false",
+          "true"
+        ],
+        "type": [
+          "bottom",
+          "middle",
+          "single",
+          "top"
+        ]
+      },
+      "assetJar": "nfm-2026.01.30-1.20.1.jar",
+      "statesChecked": 8
+    },
+    {
+      "id": "nfm:magenta_lamp",
+      "selectors": [
+        "nfm:magenta_lamp:lit=true"
+      ],
+      "color": "warm",
+      "properties": {
+        "lit": [
+          "false",
+          "true"
+        ],
+        "type": [
+          "bottom",
+          "middle",
+          "single",
+          "top"
+        ]
+      },
+      "assetJar": "nfm-2026.01.30-1.20.1.jar",
+      "statesChecked": 8
+    },
+    {
+      "id": "nfm:orange_lamp",
+      "selectors": [
+        "nfm:orange_lamp:lit=true"
+      ],
+      "color": "warm",
+      "properties": {
+        "lit": [
+          "false",
+          "true"
+        ],
+        "type": [
+          "bottom",
+          "middle",
+          "single",
+          "top"
+        ]
+      },
+      "assetJar": "nfm-2026.01.30-1.20.1.jar",
+      "statesChecked": 8
+    },
+    {
+      "id": "nfm:pink_lamp",
+      "selectors": [
+        "nfm:pink_lamp:lit=true"
+      ],
+      "color": "warm",
+      "properties": {
+        "lit": [
+          "false",
+          "true"
+        ],
+        "type": [
+          "bottom",
+          "middle",
+          "single",
+          "top"
+        ]
+      },
+      "assetJar": "nfm-2026.01.30-1.20.1.jar",
+      "statesChecked": 8
+    },
+    {
+      "id": "nfm:purple_lamp",
+      "selectors": [
+        "nfm:purple_lamp:lit=true"
+      ],
+      "color": "warm",
+      "properties": {
+        "lit": [
+          "false",
+          "true"
+        ],
+        "type": [
+          "bottom",
+          "middle",
+          "single",
+          "top"
+        ]
+      },
+      "assetJar": "nfm-2026.01.30-1.20.1.jar",
+      "statesChecked": 8
+    },
+    {
+      "id": "nfm:red_lamp",
+      "selectors": [
+        "nfm:red_lamp:lit=true"
+      ],
+      "color": "warm",
+      "properties": {
+        "lit": [
+          "false",
+          "true"
+        ],
+        "type": [
+          "bottom",
+          "middle",
+          "single",
+          "top"
+        ]
+      },
+      "assetJar": "nfm-2026.01.30-1.20.1.jar",
+      "statesChecked": 8
+    },
+    {
+      "id": "nfm:white_lamp",
+      "selectors": [
+        "nfm:white_lamp:lit=true"
+      ],
+      "color": "warm",
+      "properties": {
+        "lit": [
+          "false",
+          "true"
+        ],
+        "type": [
+          "bottom",
+          "middle",
+          "single",
+          "top"
+        ]
+      },
+      "assetJar": "nfm-2026.01.30-1.20.1.jar",
+      "statesChecked": 8
+    },
+    {
+      "id": "nfm:yellow_lamp",
+      "selectors": [
+        "nfm:yellow_lamp:lit=true"
+      ],
+      "color": "warm",
+      "properties": {
+        "lit": [
+          "false",
+          "true"
+        ],
+        "type": [
+          "bottom",
+          "middle",
+          "single",
+          "top"
+        ]
+      },
+      "assetJar": "nfm-2026.01.30-1.20.1.jar",
+      "statesChecked": 8
+    },
+    {
+      "id": "prefab:block_dark_lamp",
+      "selectors": [
+        "prefab:block_dark_lamp:lit=true"
+      ],
+      "color": "warm",
+      "properties": {
+        "lit": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "prefab-1.10.0.1.jar",
+      "statesChecked": 2
+    },
+    {
+      "id": "prefab:block_paper_lantern",
+      "selectors": [
+        "prefab:block_paper_lantern"
+      ],
+      "color": "warm",
+      "properties": {},
+      "assetJar": "prefab-1.10.0.1.jar",
+      "statesChecked": 1
+    },
+    {
+      "id": "refurbished_furniture:black_lamp",
+      "selectors": [
+        "refurbished_furniture:black_lamp:powered=true"
+      ],
+      "color": "white",
+      "properties": {
+        "powered": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "refurbished_furniture-forge-1.20.1-1.0.20.jar",
+      "statesChecked": 2
+    },
+    {
+      "id": "refurbished_furniture:blue_lamp",
+      "selectors": [
+        "refurbished_furniture:blue_lamp:powered=true"
+      ],
+      "color": "white",
+      "properties": {
+        "powered": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "refurbished_furniture-forge-1.20.1-1.0.20.jar",
+      "statesChecked": 2
+    },
+    {
+      "id": "refurbished_furniture:brown_lamp",
+      "selectors": [
+        "refurbished_furniture:brown_lamp:powered=true"
+      ],
+      "color": "white",
+      "properties": {
+        "powered": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "refurbished_furniture-forge-1.20.1-1.0.20.jar",
+      "statesChecked": 2
+    },
+    {
+      "id": "refurbished_furniture:cyan_lamp",
+      "selectors": [
+        "refurbished_furniture:cyan_lamp:powered=true"
+      ],
+      "color": "white",
+      "properties": {
+        "powered": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "refurbished_furniture-forge-1.20.1-1.0.20.jar",
+      "statesChecked": 2
+    },
+    {
+      "id": "refurbished_furniture:dark_ceiling_light",
+      "selectors": [
+        "refurbished_furniture:dark_ceiling_light:powered=true"
+      ],
+      "color": "white",
+      "properties": {
+        "face": [
+          "ceiling",
+          "floor",
+          "wall"
+        ],
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ],
+        "powered": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "refurbished_furniture-forge-1.20.1-1.0.20.jar",
+      "statesChecked": 24
+    },
+    {
+      "id": "refurbished_furniture:gray_lamp",
+      "selectors": [
+        "refurbished_furniture:gray_lamp:powered=true"
+      ],
+      "color": "white",
+      "properties": {
+        "powered": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "refurbished_furniture-forge-1.20.1-1.0.20.jar",
+      "statesChecked": 2
+    },
+    {
+      "id": "refurbished_furniture:green_lamp",
+      "selectors": [
+        "refurbished_furniture:green_lamp:powered=true"
+      ],
+      "color": "white",
+      "properties": {
+        "powered": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "refurbished_furniture-forge-1.20.1-1.0.20.jar",
+      "statesChecked": 2
+    },
+    {
+      "id": "refurbished_furniture:light_blue_lamp",
+      "selectors": [
+        "refurbished_furniture:light_blue_lamp:powered=true"
+      ],
+      "color": "white",
+      "properties": {
+        "powered": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "refurbished_furniture-forge-1.20.1-1.0.20.jar",
+      "statesChecked": 2
+    },
+    {
+      "id": "refurbished_furniture:light_ceiling_light",
+      "selectors": [
+        "refurbished_furniture:light_ceiling_light:powered=true"
+      ],
+      "color": "white",
+      "properties": {
+        "face": [
+          "ceiling",
+          "floor",
+          "wall"
+        ],
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ],
+        "powered": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "refurbished_furniture-forge-1.20.1-1.0.20.jar",
+      "statesChecked": 24
+    },
+    {
+      "id": "refurbished_furniture:light_gray_lamp",
+      "selectors": [
+        "refurbished_furniture:light_gray_lamp:powered=true"
+      ],
+      "color": "white",
+      "properties": {
+        "powered": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "refurbished_furniture-forge-1.20.1-1.0.20.jar",
+      "statesChecked": 2
+    },
+    {
+      "id": "refurbished_furniture:lime_lamp",
+      "selectors": [
+        "refurbished_furniture:lime_lamp:powered=true"
+      ],
+      "color": "white",
+      "properties": {
+        "powered": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "refurbished_furniture-forge-1.20.1-1.0.20.jar",
+      "statesChecked": 2
+    },
+    {
+      "id": "refurbished_furniture:magenta_lamp",
+      "selectors": [
+        "refurbished_furniture:magenta_lamp:powered=true"
+      ],
+      "color": "white",
+      "properties": {
+        "powered": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "refurbished_furniture-forge-1.20.1-1.0.20.jar",
+      "statesChecked": 2
+    },
+    {
+      "id": "refurbished_furniture:orange_lamp",
+      "selectors": [
+        "refurbished_furniture:orange_lamp:powered=true"
+      ],
+      "color": "white",
+      "properties": {
+        "powered": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "refurbished_furniture-forge-1.20.1-1.0.20.jar",
+      "statesChecked": 2
+    },
+    {
+      "id": "refurbished_furniture:pink_lamp",
+      "selectors": [
+        "refurbished_furniture:pink_lamp:powered=true"
+      ],
+      "color": "white",
+      "properties": {
+        "powered": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "refurbished_furniture-forge-1.20.1-1.0.20.jar",
+      "statesChecked": 2
+    },
+    {
+      "id": "refurbished_furniture:purple_lamp",
+      "selectors": [
+        "refurbished_furniture:purple_lamp:powered=true"
+      ],
+      "color": "white",
+      "properties": {
+        "powered": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "refurbished_furniture-forge-1.20.1-1.0.20.jar",
+      "statesChecked": 2
+    },
+    {
+      "id": "refurbished_furniture:red_lamp",
+      "selectors": [
+        "refurbished_furniture:red_lamp:powered=true"
+      ],
+      "color": "white",
+      "properties": {
+        "powered": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "refurbished_furniture-forge-1.20.1-1.0.20.jar",
+      "statesChecked": 2
+    },
+    {
+      "id": "refurbished_furniture:white_lamp",
+      "selectors": [
+        "refurbished_furniture:white_lamp:powered=true"
+      ],
+      "color": "white",
+      "properties": {
+        "powered": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "refurbished_furniture-forge-1.20.1-1.0.20.jar",
+      "statesChecked": 2
+    },
+    {
+      "id": "refurbished_furniture:yellow_lamp",
+      "selectors": [
+        "refurbished_furniture:yellow_lamp:powered=true"
+      ],
+      "color": "white",
+      "properties": {
+        "powered": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "refurbished_furniture-forge-1.20.1-1.0.20.jar",
+      "statesChecked": 2
+    },
+    {
+      "id": "simplylight:rodlamp",
+      "selectors": [
+        "simplylight:rodlamp"
+      ],
+      "color": "white",
+      "properties": {
+        "axis": [
+          "x",
+          "y",
+          "z"
+        ]
+      },
+      "assetJar": "simplylight-1.20.1-1.4.6-build.50.jar",
+      "statesChecked": 3
+    },
+    {
+      "id": "simplylight:illuminant_light_gray_block_on",
+      "selectors": [
+        "simplylight:illuminant_light_gray_block_on:on=true"
+      ],
+      "color": "light_gray",
+      "properties": {
+        "on": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "simplylight-1.20.1-1.4.6-build.50.jar",
+      "statesChecked": 2
+    },
+    {
+      "id": "simplylight:illuminant_red_block",
+      "selectors": [
+        "simplylight:illuminant_red_block:on=true"
+      ],
+      "color": "red",
+      "properties": {
+        "on": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "simplylight-1.20.1-1.4.6-build.50.jar",
+      "statesChecked": 2
+    },
+    {
+      "id": "simplylight:lightbulb",
+      "selectors": [
+        "simplylight:lightbulb"
+      ],
+      "color": "white",
+      "properties": {
+        "facing": [
+          "down",
+          "east",
+          "north",
+          "south",
+          "up",
+          "west"
+        ]
+      },
+      "assetJar": "simplylight-1.20.1-1.4.6-build.50.jar",
+      "statesChecked": 6
+    },
+    {
+      "id": "simplylight:illuminant_pink_block",
+      "selectors": [
+        "simplylight:illuminant_pink_block:on=true"
+      ],
+      "color": "pink",
+      "properties": {
+        "on": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "simplylight-1.20.1-1.4.6-build.50.jar",
+      "statesChecked": 2
+    },
+    {
+      "id": "simplylight:illuminant_pink_block_on",
+      "selectors": [
+        "simplylight:illuminant_pink_block_on:on=true"
+      ],
+      "color": "pink",
+      "properties": {
+        "on": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "simplylight-1.20.1-1.4.6-build.50.jar",
+      "statesChecked": 2
+    },
+    {
+      "id": "simplylight:illuminant_black_block_on",
+      "selectors": [
+        "simplylight:illuminant_black_block_on:on=true"
+      ],
+      "color": "black",
+      "properties": {
+        "on": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "simplylight-1.20.1-1.4.6-build.50.jar",
+      "statesChecked": 2
+    },
+    {
+      "id": "simplylight:illuminant_cyan_block_on",
+      "selectors": [
+        "simplylight:illuminant_cyan_block_on:on=true"
+      ],
+      "color": "cyan",
+      "properties": {
+        "on": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "simplylight-1.20.1-1.4.6-build.50.jar",
+      "statesChecked": 2
+    },
+    {
+      "id": "simplylight:illuminant_purple_block_on",
+      "selectors": [
+        "simplylight:illuminant_purple_block_on:on=true"
+      ],
+      "color": "purple",
+      "properties": {
+        "on": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "simplylight-1.20.1-1.4.6-build.50.jar",
+      "statesChecked": 2
+    },
+    {
+      "id": "simplylight:illuminant_block_on",
+      "selectors": [
+        "simplylight:illuminant_block_on:on=true"
+      ],
+      "color": "white",
+      "properties": {
+        "on": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "simplylight-1.20.1-1.4.6-build.50.jar",
+      "statesChecked": 2
+    },
+    {
+      "id": "simplylight:illuminant_purple_block",
+      "selectors": [
+        "simplylight:illuminant_purple_block:on=true"
+      ],
+      "color": "purple",
+      "properties": {
+        "on": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "simplylight-1.20.1-1.4.6-build.50.jar",
+      "statesChecked": 2
+    },
+    {
+      "id": "simplylight:illuminant_lime_block",
+      "selectors": [
+        "simplylight:illuminant_lime_block:on=true"
+      ],
+      "color": "lime",
+      "properties": {
+        "on": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "simplylight-1.20.1-1.4.6-build.50.jar",
+      "statesChecked": 2
+    },
+    {
+      "id": "simplylight:illuminant_brown_block_on",
+      "selectors": [
+        "simplylight:illuminant_brown_block_on:on=true"
+      ],
+      "color": "brown",
+      "properties": {
+        "on": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "simplylight-1.20.1-1.4.6-build.50.jar",
+      "statesChecked": 2
+    },
+    {
+      "id": "simplylight:illuminant_yellow_block",
+      "selectors": [
+        "simplylight:illuminant_yellow_block:on=true"
+      ],
+      "color": "yellow",
+      "properties": {
+        "on": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "simplylight-1.20.1-1.4.6-build.50.jar",
+      "statesChecked": 2
+    },
+    {
+      "id": "simplylight:illuminant_blue_block_on",
+      "selectors": [
+        "simplylight:illuminant_blue_block_on:on=true"
+      ],
+      "color": "blue",
+      "properties": {
+        "on": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "simplylight-1.20.1-1.4.6-build.50.jar",
+      "statesChecked": 2
+    },
+    {
+      "id": "simplylight:illuminant_block",
+      "selectors": [
+        "simplylight:illuminant_block:on=true"
+      ],
+      "color": "white",
+      "properties": {
+        "on": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "simplylight-1.20.1-1.4.6-build.50.jar",
+      "statesChecked": 2
+    },
+    {
+      "id": "simplylight:illuminant_light_blue_block",
+      "selectors": [
+        "simplylight:illuminant_light_blue_block:on=true"
+      ],
+      "color": "light_blue",
+      "properties": {
+        "on": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "simplylight-1.20.1-1.4.6-build.50.jar",
+      "statesChecked": 2
+    },
+    {
+      "id": "simplylight:illuminant_green_block_on",
+      "selectors": [
+        "simplylight:illuminant_green_block_on:on=true"
+      ],
+      "color": "green",
+      "properties": {
+        "on": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "simplylight-1.20.1-1.4.6-build.50.jar",
+      "statesChecked": 2
+    },
+    {
+      "id": "simplylight:illuminant_green_block",
+      "selectors": [
+        "simplylight:illuminant_green_block:on=true"
+      ],
+      "color": "green",
+      "properties": {
+        "on": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "simplylight-1.20.1-1.4.6-build.50.jar",
+      "statesChecked": 2
+    },
+    {
+      "id": "simplylight:illuminant_yellow_block_on",
+      "selectors": [
+        "simplylight:illuminant_yellow_block_on:on=true"
+      ],
+      "color": "yellow",
+      "properties": {
+        "on": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "simplylight-1.20.1-1.4.6-build.50.jar",
+      "statesChecked": 2
+    },
+    {
+      "id": "simplylight:illuminant_blue_block",
+      "selectors": [
+        "simplylight:illuminant_blue_block:on=true"
+      ],
+      "color": "blue",
+      "properties": {
+        "on": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "simplylight-1.20.1-1.4.6-build.50.jar",
+      "statesChecked": 2
+    },
+    {
+      "id": "simplylight:illuminant_light_blue_block_on",
+      "selectors": [
+        "simplylight:illuminant_light_blue_block_on:on=true"
+      ],
+      "color": "light_blue",
+      "properties": {
+        "on": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "simplylight-1.20.1-1.4.6-build.50.jar",
+      "statesChecked": 2
+    },
+    {
+      "id": "simplylight:illuminant_red_block_on",
+      "selectors": [
+        "simplylight:illuminant_red_block_on:on=true"
+      ],
+      "color": "red",
+      "properties": {
+        "on": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "simplylight-1.20.1-1.4.6-build.50.jar",
+      "statesChecked": 2
+    },
+    {
+      "id": "simplylight:illuminant_magenta_block",
+      "selectors": [
+        "simplylight:illuminant_magenta_block:on=true"
+      ],
+      "color": "magenta",
+      "properties": {
+        "on": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "simplylight-1.20.1-1.4.6-build.50.jar",
+      "statesChecked": 2
+    },
+    {
+      "id": "simplylight:illuminant_light_gray_block",
+      "selectors": [
+        "simplylight:illuminant_light_gray_block:on=true"
+      ],
+      "color": "light_gray",
+      "properties": {
+        "on": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "simplylight-1.20.1-1.4.6-build.50.jar",
+      "statesChecked": 2
+    },
+    {
+      "id": "simplylight:illuminant_orange_block",
+      "selectors": [
+        "simplylight:illuminant_orange_block:on=true"
+      ],
+      "color": "orange",
+      "properties": {
+        "on": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "simplylight-1.20.1-1.4.6-build.50.jar",
+      "statesChecked": 2
+    },
+    {
+      "id": "simplylight:illuminant_orange_block_on",
+      "selectors": [
+        "simplylight:illuminant_orange_block_on:on=true"
+      ],
+      "color": "orange",
+      "properties": {
+        "on": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "simplylight-1.20.1-1.4.6-build.50.jar",
+      "statesChecked": 2
+    },
+    {
+      "id": "simplylight:illuminant_gray_block_on",
+      "selectors": [
+        "simplylight:illuminant_gray_block_on:on=true"
+      ],
+      "color": "gray",
+      "properties": {
+        "on": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "simplylight-1.20.1-1.4.6-build.50.jar",
+      "statesChecked": 2
+    },
+    {
+      "id": "simplylight:illuminant_slab",
+      "selectors": [
+        "simplylight:illuminant_slab"
+      ],
+      "color": "white",
+      "properties": {
+        "facing": [
+          "down",
+          "east",
+          "north",
+          "south",
+          "up",
+          "west"
+        ]
+      },
+      "assetJar": "simplylight-1.20.1-1.4.6-build.50.jar",
+      "statesChecked": 6
+    },
+    {
+      "id": "simplylight:illuminant_cyan_block",
+      "selectors": [
+        "simplylight:illuminant_cyan_block:on=true"
+      ],
+      "color": "cyan",
+      "properties": {
+        "on": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "simplylight-1.20.1-1.4.6-build.50.jar",
+      "statesChecked": 2
+    },
+    {
+      "id": "simplylight:illuminant_gray_block",
+      "selectors": [
+        "simplylight:illuminant_gray_block:on=true"
+      ],
+      "color": "gray",
+      "properties": {
+        "on": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "simplylight-1.20.1-1.4.6-build.50.jar",
+      "statesChecked": 2
+    },
+    {
+      "id": "simplylight:illuminant_magenta_block_on",
+      "selectors": [
+        "simplylight:illuminant_magenta_block_on:on=true"
+      ],
+      "color": "magenta",
+      "properties": {
+        "on": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "simplylight-1.20.1-1.4.6-build.50.jar",
+      "statesChecked": 2
+    },
+    {
+      "id": "simplylight:illuminant_black_block",
+      "selectors": [
+        "simplylight:illuminant_black_block:on=true"
+      ],
+      "color": "black",
+      "properties": {
+        "on": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "simplylight-1.20.1-1.4.6-build.50.jar",
+      "statesChecked": 2
+    },
+    {
+      "id": "simplylight:illuminant_brown_block",
+      "selectors": [
+        "simplylight:illuminant_brown_block:on=true"
+      ],
+      "color": "brown",
+      "properties": {
+        "on": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "simplylight-1.20.1-1.4.6-build.50.jar",
+      "statesChecked": 2
+    },
+    {
+      "id": "simplylight:illuminant_lime_block_on",
+      "selectors": [
+        "simplylight:illuminant_lime_block_on:on=true"
+      ],
+      "color": "lime",
+      "properties": {
+        "on": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "simplylight-1.20.1-1.4.6-build.50.jar",
+      "statesChecked": 2
+    },
+    {
+      "id": "simplylight:wall_lamp",
+      "selectors": [
+        "simplylight:wall_lamp"
+      ],
+      "color": "white",
+      "properties": {
+        "facing": [
+          "down",
+          "east",
+          "north",
+          "south",
+          "up",
+          "west"
+        ]
+      },
+      "assetJar": "simplylight-1.20.1-1.4.6-build.50.jar",
+      "statesChecked": 6
+    },
+    {
+      "id": "simplylight:illuminant_panel",
+      "selectors": [
+        "simplylight:illuminant_panel"
+      ],
+      "color": "white",
+      "properties": {
+        "facing": [
+          "down",
+          "east",
+          "north",
+          "south",
+          "up",
+          "west"
+        ]
+      },
+      "assetJar": "simplylight-1.20.1-1.4.6-build.50.jar",
+      "statesChecked": 6
+    },
+    {
+      "id": "supplementaries:blackstone_lamp",
+      "selectors": [
+        "supplementaries:blackstone_lamp"
+      ],
+      "color": "warm",
+      "properties": {
+        "axis": [
+          "x",
+          "y",
+          "z"
+        ]
+      },
+      "assetJar": "supplementaries-1.20-3.1.43-forge.jar",
+      "statesChecked": 3
+    },
+    {
+      "id": "supplementaries:candle_holder",
+      "selectors": [
+        "supplementaries:candle_holder:lit=true"
+      ],
+      "color": "warm",
+      "properties": {
+        "lit": [
+          "false",
+          "true"
+        ],
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ],
+        "face": [
+          "ceiling",
+          "floor",
+          "wall"
+        ],
+        "candles": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ]
+      },
+      "assetJar": "supplementaries-1.20-3.1.43-forge.jar",
+      "statesChecked": 96
+    },
+    {
+      "id": "supplementaries:candle_holder_black",
+      "selectors": [
+        "supplementaries:candle_holder_black:lit=true"
+      ],
+      "color": "warm",
+      "properties": {
+        "lit": [
+          "false",
+          "true"
+        ],
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ],
+        "face": [
+          "ceiling",
+          "floor",
+          "wall"
+        ],
+        "candles": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ]
+      },
+      "assetJar": "supplementaries-1.20-3.1.43-forge.jar",
+      "statesChecked": 96
+    },
+    {
+      "id": "supplementaries:candle_holder_blue",
+      "selectors": [
+        "supplementaries:candle_holder_blue:lit=true"
+      ],
+      "color": "warm",
+      "properties": {
+        "lit": [
+          "false",
+          "true"
+        ],
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ],
+        "face": [
+          "ceiling",
+          "floor",
+          "wall"
+        ],
+        "candles": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ]
+      },
+      "assetJar": "supplementaries-1.20-3.1.43-forge.jar",
+      "statesChecked": 96
+    },
+    {
+      "id": "supplementaries:candle_holder_brown",
+      "selectors": [
+        "supplementaries:candle_holder_brown:lit=true"
+      ],
+      "color": "warm",
+      "properties": {
+        "lit": [
+          "false",
+          "true"
+        ],
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ],
+        "face": [
+          "ceiling",
+          "floor",
+          "wall"
+        ],
+        "candles": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ]
+      },
+      "assetJar": "supplementaries-1.20-3.1.43-forge.jar",
+      "statesChecked": 96
+    },
+    {
+      "id": "supplementaries:candle_holder_cupric",
+      "selectors": [
+        "supplementaries:candle_holder_cupric:lit=true"
+      ],
+      "color": "warm",
+      "properties": {
+        "lit": [
+          "false",
+          "true"
+        ],
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ],
+        "face": [
+          "ceiling",
+          "floor",
+          "wall"
+        ],
+        "candles": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ]
+      },
+      "assetJar": "supplementaries-1.20-3.1.43-forge.jar",
+      "statesChecked": 96
+    },
+    {
+      "id": "supplementaries:candle_holder_cyan",
+      "selectors": [
+        "supplementaries:candle_holder_cyan:lit=true"
+      ],
+      "color": "warm",
+      "properties": {
+        "lit": [
+          "false",
+          "true"
+        ],
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ],
+        "face": [
+          "ceiling",
+          "floor",
+          "wall"
+        ],
+        "candles": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ]
+      },
+      "assetJar": "supplementaries-1.20-3.1.43-forge.jar",
+      "statesChecked": 96
+    },
+    {
+      "id": "supplementaries:candle_holder_ender",
+      "selectors": [
+        "supplementaries:candle_holder_ender:lit=true"
+      ],
+      "color": "warm",
+      "properties": {
+        "lit": [
+          "false",
+          "true"
+        ],
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ],
+        "face": [
+          "ceiling",
+          "floor",
+          "wall"
+        ],
+        "candles": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ]
+      },
+      "assetJar": "supplementaries-1.20-3.1.43-forge.jar",
+      "statesChecked": 96
+    },
+    {
+      "id": "supplementaries:candle_holder_gray",
+      "selectors": [
+        "supplementaries:candle_holder_gray:lit=true"
+      ],
+      "color": "warm",
+      "properties": {
+        "lit": [
+          "false",
+          "true"
+        ],
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ],
+        "face": [
+          "ceiling",
+          "floor",
+          "wall"
+        ],
+        "candles": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ]
+      },
+      "assetJar": "supplementaries-1.20-3.1.43-forge.jar",
+      "statesChecked": 96
+    },
+    {
+      "id": "supplementaries:candle_holder_green",
+      "selectors": [
+        "supplementaries:candle_holder_green:lit=true"
+      ],
+      "color": "warm",
+      "properties": {
+        "lit": [
+          "false",
+          "true"
+        ],
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ],
+        "face": [
+          "ceiling",
+          "floor",
+          "wall"
+        ],
+        "candles": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ]
+      },
+      "assetJar": "supplementaries-1.20-3.1.43-forge.jar",
+      "statesChecked": 96
+    },
+    {
+      "id": "supplementaries:candle_holder_light_blue",
+      "selectors": [
+        "supplementaries:candle_holder_light_blue:lit=true"
+      ],
+      "color": "warm",
+      "properties": {
+        "lit": [
+          "false",
+          "true"
+        ],
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ],
+        "face": [
+          "ceiling",
+          "floor",
+          "wall"
+        ],
+        "candles": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ]
+      },
+      "assetJar": "supplementaries-1.20-3.1.43-forge.jar",
+      "statesChecked": 96
+    },
+    {
+      "id": "supplementaries:candle_holder_light_gray",
+      "selectors": [
+        "supplementaries:candle_holder_light_gray:lit=true"
+      ],
+      "color": "warm",
+      "properties": {
+        "lit": [
+          "false",
+          "true"
+        ],
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ],
+        "face": [
+          "ceiling",
+          "floor",
+          "wall"
+        ],
+        "candles": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ]
+      },
+      "assetJar": "supplementaries-1.20-3.1.43-forge.jar",
+      "statesChecked": 96
+    },
+    {
+      "id": "supplementaries:candle_holder_lime",
+      "selectors": [
+        "supplementaries:candle_holder_lime:lit=true"
+      ],
+      "color": "warm",
+      "properties": {
+        "lit": [
+          "false",
+          "true"
+        ],
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ],
+        "face": [
+          "ceiling",
+          "floor",
+          "wall"
+        ],
+        "candles": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ]
+      },
+      "assetJar": "supplementaries-1.20-3.1.43-forge.jar",
+      "statesChecked": 96
+    },
+    {
+      "id": "supplementaries:candle_holder_magenta",
+      "selectors": [
+        "supplementaries:candle_holder_magenta:lit=true"
+      ],
+      "color": "warm",
+      "properties": {
+        "lit": [
+          "false",
+          "true"
+        ],
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ],
+        "face": [
+          "ceiling",
+          "floor",
+          "wall"
+        ],
+        "candles": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ]
+      },
+      "assetJar": "supplementaries-1.20-3.1.43-forge.jar",
+      "statesChecked": 96
+    },
+    {
+      "id": "supplementaries:candle_holder_orange",
+      "selectors": [
+        "supplementaries:candle_holder_orange:lit=true"
+      ],
+      "color": "warm",
+      "properties": {
+        "lit": [
+          "false",
+          "true"
+        ],
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ],
+        "face": [
+          "ceiling",
+          "floor",
+          "wall"
+        ],
+        "candles": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ]
+      },
+      "assetJar": "supplementaries-1.20-3.1.43-forge.jar",
+      "statesChecked": 96
+    },
+    {
+      "id": "supplementaries:candle_holder_pink",
+      "selectors": [
+        "supplementaries:candle_holder_pink:lit=true"
+      ],
+      "color": "warm",
+      "properties": {
+        "lit": [
+          "false",
+          "true"
+        ],
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ],
+        "face": [
+          "ceiling",
+          "floor",
+          "wall"
+        ],
+        "candles": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ]
+      },
+      "assetJar": "supplementaries-1.20-3.1.43-forge.jar",
+      "statesChecked": 96
+    },
+    {
+      "id": "supplementaries:candle_holder_purple",
+      "selectors": [
+        "supplementaries:candle_holder_purple:lit=true"
+      ],
+      "color": "warm",
+      "properties": {
+        "lit": [
+          "false",
+          "true"
+        ],
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ],
+        "face": [
+          "ceiling",
+          "floor",
+          "wall"
+        ],
+        "candles": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ]
+      },
+      "assetJar": "supplementaries-1.20-3.1.43-forge.jar",
+      "statesChecked": 96
+    },
+    {
+      "id": "supplementaries:candle_holder_red",
+      "selectors": [
+        "supplementaries:candle_holder_red:lit=true"
+      ],
+      "color": "warm",
+      "properties": {
+        "lit": [
+          "false",
+          "true"
+        ],
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ],
+        "face": [
+          "ceiling",
+          "floor",
+          "wall"
+        ],
+        "candles": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ]
+      },
+      "assetJar": "supplementaries-1.20-3.1.43-forge.jar",
+      "statesChecked": 96
+    },
+    {
+      "id": "supplementaries:candle_holder_soul",
+      "selectors": [
+        "supplementaries:candle_holder_soul:lit=true"
+      ],
+      "color": "soul",
+      "properties": {
+        "lit": [
+          "false",
+          "true"
+        ],
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ],
+        "face": [
+          "ceiling",
+          "floor",
+          "wall"
+        ],
+        "candles": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ]
+      },
+      "assetJar": "supplementaries-1.20-3.1.43-forge.jar",
+      "statesChecked": 96
+    },
+    {
+      "id": "supplementaries:candle_holder_spectacle",
+      "selectors": [
+        "supplementaries:candle_holder_spectacle:lit=true"
+      ],
+      "color": "warm",
+      "properties": {
+        "lit": [
+          "false",
+          "true"
+        ],
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ],
+        "face": [
+          "ceiling",
+          "floor",
+          "wall"
+        ],
+        "candles": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ]
+      },
+      "assetJar": "supplementaries-1.20-3.1.43-forge.jar",
+      "statesChecked": 96
+    },
+    {
+      "id": "supplementaries:candle_holder_white",
+      "selectors": [
+        "supplementaries:candle_holder_white:lit=true"
+      ],
+      "color": "warm",
+      "properties": {
+        "lit": [
+          "false",
+          "true"
+        ],
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ],
+        "face": [
+          "ceiling",
+          "floor",
+          "wall"
+        ],
+        "candles": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ]
+      },
+      "assetJar": "supplementaries-1.20-3.1.43-forge.jar",
+      "statesChecked": 96
+    },
+    {
+      "id": "supplementaries:candle_holder_yellow",
+      "selectors": [
+        "supplementaries:candle_holder_yellow:lit=true"
+      ],
+      "color": "warm",
+      "properties": {
+        "lit": [
+          "false",
+          "true"
+        ],
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ],
+        "face": [
+          "ceiling",
+          "floor",
+          "wall"
+        ],
+        "candles": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ]
+      },
+      "assetJar": "supplementaries-1.20-3.1.43-forge.jar",
+      "statesChecked": 96
+    },
+    {
+      "id": "supplementaries:deepslate_lamp",
+      "selectors": [
+        "supplementaries:deepslate_lamp"
+      ],
+      "color": "warm",
+      "properties": {},
+      "assetJar": "supplementaries-1.20-3.1.43-forge.jar",
+      "statesChecked": 1
+    },
+    {
+      "id": "supplementaries:end_stone_lamp",
+      "selectors": [
+        "supplementaries:end_stone_lamp"
+      ],
+      "color": "warm",
+      "properties": {
+        "rune": [
+          "a",
+          "b",
+          "c",
+          "d",
+          "e",
+          "f",
+          "g",
+          "h",
+          "i",
+          "j",
+          "k",
+          "l",
+          "m",
+          "n",
+          "o",
+          "p",
+          "q",
+          "r",
+          "s",
+          "t",
+          "u",
+          "v",
+          "w",
+          "x",
+          "y",
+          "z"
+        ]
+      },
+      "assetJar": "supplementaries-1.20-3.1.43-forge.jar",
+      "statesChecked": 26
+    },
+    {
+      "id": "supplementaries:rope_chandelier",
+      "selectors": [
+        "supplementaries:rope_chandelier"
+      ],
+      "color": "warm",
+      "properties": {},
+      "assetJar": "supplementaries-1.20-3.1.43-forge.jar",
+      "statesChecked": 1
+    },
+    {
+      "id": "supplementaries:rope_ender_chandelier",
+      "selectors": [
+        "supplementaries:rope_ender_chandelier"
+      ],
+      "color": "warm",
+      "properties": {},
+      "assetJar": "supplementaries-1.20-3.1.43-forge.jar",
+      "statesChecked": 1
+    },
+    {
+      "id": "supplementaries:rope_glow_chandelier",
+      "selectors": [
+        "supplementaries:rope_glow_chandelier"
+      ],
+      "color": "warm",
+      "properties": {},
+      "assetJar": "supplementaries-1.20-3.1.43-forge.jar",
+      "statesChecked": 1
+    },
+    {
+      "id": "supplementaries:rope_soul_chandelier",
+      "selectors": [
+        "supplementaries:rope_soul_chandelier"
+      ],
+      "color": "soul",
+      "properties": {},
+      "assetJar": "supplementaries-1.20-3.1.43-forge.jar",
+      "statesChecked": 1
+    },
+    {
+      "id": "supplementaries:sconce",
+      "selectors": [
+        "supplementaries:sconce:lit=true"
+      ],
+      "color": "warm",
+      "properties": {
+        "lit": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "supplementaries-1.20-3.1.43-forge.jar",
+      "statesChecked": 2
+    },
+    {
+      "id": "supplementaries:sconce_ender",
+      "selectors": [
+        "supplementaries:sconce_ender:lit=true"
+      ],
+      "color": "warm",
+      "properties": {
+        "lit": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "supplementaries-1.20-3.1.43-forge.jar",
+      "statesChecked": 2
+    },
+    {
+      "id": "supplementaries:sconce_glow",
+      "selectors": [
+        "supplementaries:sconce_glow:lit=true"
+      ],
+      "color": "warm",
+      "properties": {
+        "lit": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "supplementaries-1.20-3.1.43-forge.jar",
+      "statesChecked": 2
+    },
+    {
+      "id": "supplementaries:sconce_green",
+      "selectors": [
+        "supplementaries:sconce_green:lit=true"
+      ],
+      "color": "warm",
+      "properties": {
+        "lit": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "supplementaries-1.20-3.1.43-forge.jar",
+      "statesChecked": 2
+    },
+    {
+      "id": "supplementaries:sconce_lever",
+      "selectors": [
+        "supplementaries:sconce_lever:lit=true"
+      ],
+      "color": "warm",
+      "properties": {
+        "lit": [
+          "false",
+          "true"
+        ],
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ],
+        "powered": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "supplementaries-1.20-3.1.43-forge.jar",
+      "statesChecked": 16
+    },
+    {
+      "id": "supplementaries:sconce_nether_brass",
+      "selectors": [
+        "supplementaries:sconce_nether_brass:lit=true"
+      ],
+      "color": "warm",
+      "properties": {
+        "lit": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "supplementaries-1.20-3.1.43-forge.jar",
+      "statesChecked": 2
+    },
+    {
+      "id": "supplementaries:sconce_soul",
+      "selectors": [
+        "supplementaries:sconce_soul:lit=true"
+      ],
+      "color": "soul",
+      "properties": {
+        "lit": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "supplementaries-1.20-3.1.43-forge.jar",
+      "statesChecked": 2
+    },
+    {
+      "id": "supplementaries:sconce_wall",
+      "selectors": [
+        "supplementaries:sconce_wall:lit=true"
+      ],
+      "color": "warm",
+      "properties": {
+        "lit": [
+          "false",
+          "true"
+        ],
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "supplementaries-1.20-3.1.43-forge.jar",
+      "statesChecked": 8
+    },
+    {
+      "id": "supplementaries:sconce_wall_ender",
+      "selectors": [
+        "supplementaries:sconce_wall_ender:lit=true"
+      ],
+      "color": "warm",
+      "properties": {
+        "lit": [
+          "false",
+          "true"
+        ],
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "supplementaries-1.20-3.1.43-forge.jar",
+      "statesChecked": 8
+    },
+    {
+      "id": "supplementaries:sconce_wall_glow",
+      "selectors": [
+        "supplementaries:sconce_wall_glow:lit=true"
+      ],
+      "color": "warm",
+      "properties": {
+        "lit": [
+          "false",
+          "true"
+        ],
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "supplementaries-1.20-3.1.43-forge.jar",
+      "statesChecked": 8
+    },
+    {
+      "id": "supplementaries:sconce_wall_green",
+      "selectors": [
+        "supplementaries:sconce_wall_green:lit=true"
+      ],
+      "color": "warm",
+      "properties": {
+        "lit": [
+          "false",
+          "true"
+        ],
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "supplementaries-1.20-3.1.43-forge.jar",
+      "statesChecked": 8
+    },
+    {
+      "id": "supplementaries:sconce_wall_nether_brass",
+      "selectors": [
+        "supplementaries:sconce_wall_nether_brass:lit=true"
+      ],
+      "color": "warm",
+      "properties": {
+        "lit": [
+          "false",
+          "true"
+        ],
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "supplementaries-1.20-3.1.43-forge.jar",
+      "statesChecked": 8
+    },
+    {
+      "id": "supplementaries:sconce_wall_soul",
+      "selectors": [
+        "supplementaries:sconce_wall_soul:lit=true"
+      ],
+      "color": "soul",
+      "properties": {
+        "lit": [
+          "false",
+          "true"
+        ],
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "supplementaries-1.20-3.1.43-forge.jar",
+      "statesChecked": 8
+    },
+    {
+      "id": "supplementaries:stone_lamp",
+      "selectors": [
+        "supplementaries:stone_lamp"
+      ],
+      "color": "warm",
+      "properties": {},
+      "assetJar": "supplementaries-1.20-3.1.43-forge.jar",
+      "statesChecked": 1
+    },
+    {
+      "id": "tfmg:aluminum_lamp",
+      "selectors": [
+        "tfmg:aluminum_lamp:level=1",
+        "tfmg:aluminum_lamp:level=10",
+        "tfmg:aluminum_lamp:level=11",
+        "tfmg:aluminum_lamp:level=12",
+        "tfmg:aluminum_lamp:level=13",
+        "tfmg:aluminum_lamp:level=14",
+        "tfmg:aluminum_lamp:level=15",
+        "tfmg:aluminum_lamp:level=2",
+        "tfmg:aluminum_lamp:level=3",
+        "tfmg:aluminum_lamp:level=4",
+        "tfmg:aluminum_lamp:level=5",
+        "tfmg:aluminum_lamp:level=6",
+        "tfmg:aluminum_lamp:level=7",
+        "tfmg:aluminum_lamp:level=8",
+        "tfmg:aluminum_lamp:level=9"
+      ],
+      "color": "warm",
+      "properties": {
+        "facing": [
+          "down",
+          "east",
+          "north",
+          "south",
+          "up",
+          "west"
+        ],
+        "level": [
+          "0",
+          "1",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9"
+        ],
+        "waterlogged": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "tfmg-1.0.2f.jar",
+      "statesChecked": 192
+    },
+    {
+      "id": "tfmg:gas_lamp",
+      "selectors": [
+        "tfmg:gas_lamp:lit=true"
+      ],
+      "color": "warm",
+      "properties": {
+        "lit": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "tfmg-1.0.2f.jar",
+      "statesChecked": 2
+    },
+    {
+      "id": "tfmg:light_bulb",
+      "selectors": [
+        "tfmg:light_bulb:level=1",
+        "tfmg:light_bulb:level=10",
+        "tfmg:light_bulb:level=11",
+        "tfmg:light_bulb:level=12",
+        "tfmg:light_bulb:level=13",
+        "tfmg:light_bulb:level=14",
+        "tfmg:light_bulb:level=15",
+        "tfmg:light_bulb:level=2",
+        "tfmg:light_bulb:level=3",
+        "tfmg:light_bulb:level=4",
+        "tfmg:light_bulb:level=5",
+        "tfmg:light_bulb:level=6",
+        "tfmg:light_bulb:level=7",
+        "tfmg:light_bulb:level=8",
+        "tfmg:light_bulb:level=9"
+      ],
+      "color": "warm",
+      "properties": {
+        "facing": [
+          "down",
+          "east",
+          "north",
+          "south",
+          "up",
+          "west"
+        ],
+        "level": [
+          "0",
+          "1",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9"
+        ],
+        "waterlogged": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "tfmg-1.0.2f.jar",
+      "statesChecked": 192
+    },
+    {
+      "id": "tfmg:lithium_torch",
+      "selectors": [
+        "tfmg:lithium_torch"
+      ],
+      "color": "warm",
+      "properties": {
+        "facing": [
+          "down",
+          "east",
+          "north",
+          "south",
+          "up",
+          "west"
+        ],
+        "waterlogged": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "tfmg-1.0.2f.jar",
+      "statesChecked": 12
+    },
+    {
+      "id": "thingamajigs:alternative_neon_block",
+      "selectors": [
+        "thingamajigs:alternative_neon_block:lit=true"
+      ],
+      "color": "white",
+      "properties": {
+        "lit": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "thingamajigs-1.9.1-forge-1.20.1.jar",
+      "statesChecked": 2
+    },
+    {
+      "id": "thingamajigs:desk_lamp",
+      "selectors": [
+        "thingamajigs:desk_lamp"
+      ],
+      "color": "warm",
+      "properties": {
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "thingamajigs-1.9.1-forge-1.20.1.jar",
+      "statesChecked": 4
+    },
+    {
+      "id": "thingamajigs:head_candle",
+      "selectors": [
+        "thingamajigs:head_candle"
+      ],
+      "color": "warm",
+      "properties": {
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "thingamajigs-1.9.1-forge-1.20.1.jar",
+      "statesChecked": 4
+    },
+    {
+      "id": "thingamajigs:lava_lamp",
+      "selectors": [
+        "thingamajigs:lava_lamp"
+      ],
+      "color": "warm",
+      "properties": {
+        "type": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+        ]
+      },
+      "assetJar": "thingamajigs-1.9.1-forge-1.20.1.jar",
+      "statesChecked": 6
+    },
+    {
+      "id": "thingamajigs:neon_block",
+      "selectors": [
+        "thingamajigs:neon_block:lit=true"
+      ],
+      "color": "white",
+      "properties": {
+        "lit": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "thingamajigs-1.9.1-forge-1.20.1.jar",
+      "statesChecked": 2
+    },
+    {
+      "id": "thingamajigs:paper_lantern",
+      "selectors": [
+        "thingamajigs:paper_lantern"
+      ],
+      "color": "warm",
+      "properties": {},
+      "assetJar": "thingamajigs-1.9.1-forge-1.20.1.jar",
+      "statesChecked": 1
+    },
+    {
+      "id": "thingamajigs:red_lantern",
+      "selectors": [
+        "thingamajigs:red_lantern"
+      ],
+      "color": "warm",
+      "properties": {},
+      "assetJar": "thingamajigs-1.9.1-forge-1.20.1.jar",
+      "statesChecked": 1
+    },
+    {
+      "id": "thingamajigs:sculk_lantern",
+      "selectors": [
+        "thingamajigs:sculk_lantern"
+      ],
+      "color": "soul",
+      "properties": {
+        "hanging": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "thingamajigs-1.9.1-forge-1.20.1.jar",
+      "statesChecked": 2
+    },
+    {
+      "id": "thingamajigs:standing_clear_bulb",
+      "selectors": [
+        "thingamajigs:standing_clear_bulb"
+      ],
+      "color": "warm",
+      "properties": {},
+      "assetJar": "thingamajigs-1.9.1-forge-1.20.1.jar",
+      "statesChecked": 1
+    },
+    {
+      "id": "thingamajigs:standing_clear_lantern",
+      "selectors": [
+        "thingamajigs:standing_clear_lantern"
+      ],
+      "color": "warm",
+      "properties": {},
+      "assetJar": "thingamajigs-1.9.1-forge-1.20.1.jar",
+      "statesChecked": 1
+    },
+    {
+      "id": "thingamajigs:standing_full_bulb",
+      "selectors": [
+        "thingamajigs:standing_full_bulb"
+      ],
+      "color": "warm",
+      "properties": {},
+      "assetJar": "thingamajigs-1.9.1-forge-1.20.1.jar",
+      "statesChecked": 1
+    },
+    {
+      "id": "thingamajigs:standing_full_lantern",
+      "selectors": [
+        "thingamajigs:standing_full_lantern"
+      ],
+      "color": "warm",
+      "properties": {},
+      "assetJar": "thingamajigs-1.9.1-forge-1.20.1.jar",
+      "statesChecked": 1
+    },
+    {
+      "id": "thingamajigs:tall_lamp",
+      "selectors": [
+        "thingamajigs:tall_lamp:on=true"
+      ],
+      "color": "warm",
+      "properties": {
+        "on": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "thingamajigs-1.9.1-forge-1.20.1.jar",
+      "statesChecked": 2
+    },
+    {
+      "id": "thingamajigs:tri_candle_holder",
+      "selectors": [
+        "thingamajigs:tri_candle_holder:lit=true"
+      ],
+      "color": "warm",
+      "properties": {
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ],
+        "lit": [
+          "false",
+          "true"
+        ]
+      },
+      "assetJar": "thingamajigs-1.9.1-forge-1.20.1.jar",
+      "statesChecked": 8
+    },
+    {
+      "id": "thingamajigs:wall_clear_bulb",
+      "selectors": [
+        "thingamajigs:wall_clear_bulb"
+      ],
+      "color": "warm",
+      "properties": {
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "thingamajigs-1.9.1-forge-1.20.1.jar",
+      "statesChecked": 4
+    },
+    {
+      "id": "thingamajigs:wall_clear_lantern",
+      "selectors": [
+        "thingamajigs:wall_clear_lantern"
+      ],
+      "color": "warm",
+      "properties": {
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "thingamajigs-1.9.1-forge-1.20.1.jar",
+      "statesChecked": 4
+    },
+    {
+      "id": "thingamajigs:wall_full_bulb",
+      "selectors": [
+        "thingamajigs:wall_full_bulb"
+      ],
+      "color": "warm",
+      "properties": {
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "thingamajigs-1.9.1-forge-1.20.1.jar",
+      "statesChecked": 4
+    },
+    {
+      "id": "thingamajigs:wall_full_lantern",
+      "selectors": [
+        "thingamajigs:wall_full_lantern"
+      ],
+      "color": "warm",
+      "properties": {
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "thingamajigs-1.9.1-forge-1.20.1.jar",
+      "statesChecked": 4
+    },
+    {
+      "id": "thingamajigs:wall_paper_lantern",
+      "selectors": [
+        "thingamajigs:wall_paper_lantern"
+      ],
+      "color": "warm",
+      "properties": {
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "thingamajigs-1.9.1-forge-1.20.1.jar",
+      "statesChecked": 4
+    },
+    {
+      "id": "thingamajigs:wall_red_lantern",
+      "selectors": [
+        "thingamajigs:wall_red_lantern"
+      ],
+      "color": "warm",
+      "properties": {
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "thingamajigs-1.9.1-forge-1.20.1.jar",
+      "statesChecked": 4
+    },
+    {
+      "id": "urushi:kasuga_lantern",
+      "selectors": [
+        "urushi:kasuga_lantern"
+      ],
+      "color": "warm",
+      "properties": {
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "urushi-1.20.1-6.6.3.jar",
+      "statesChecked": 4
+    },
+    {
+      "id": "yuushya:desk_lamp_0",
+      "selectors": [
+        "yuushya:desk_lamp_0"
+      ],
+      "color": "warm",
+      "properties": {
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "yuushya-1.20.1-forge-2.2.3.jar",
+      "statesChecked": 4
+    },
+    {
+      "id": "yuushya:desk_lamp_1",
+      "selectors": [
+        "yuushya:desk_lamp_1"
+      ],
+      "color": "warm",
+      "properties": {
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "yuushya-1.20.1-forge-2.2.3.jar",
+      "statesChecked": 4
+    },
+    {
+      "id": "yuushya:desk_lamp_2",
+      "selectors": [
+        "yuushya:desk_lamp_2"
+      ],
+      "color": "warm",
+      "properties": {
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "yuushya-1.20.1-forge-2.2.3.jar",
+      "statesChecked": 4
+    },
+    {
+      "id": "yuushya:fluorescent_lamp",
+      "selectors": [
+        "yuushya:fluorescent_lamp"
+      ],
+      "color": "white",
+      "properties": {
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ],
+        "form": [
+          "0",
+          "1"
+        ]
+      },
+      "assetJar": "yuushya-1.20.1-forge-2.2.3.jar",
+      "statesChecked": 8
+    },
+    {
+      "id": "yuushya:goth_lantern",
+      "selectors": [
+        "yuushya:goth_lantern"
+      ],
+      "color": "warm",
+      "properties": {
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "yuushya-1.20.1-forge-2.2.3.jar",
+      "statesChecked": 4
+    },
+    {
+      "id": "yuushya:gothic_ceiling_lamp",
+      "selectors": [
+        "yuushya:gothic_ceiling_lamp"
+      ],
+      "color": "warm",
+      "properties": {
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "yuushya-1.20.1-forge-2.2.3.jar",
+      "statesChecked": 4
+    },
+    {
+      "id": "yuushya:hanging_light_black_acrylic",
+      "selectors": [
+        "yuushya:hanging_light_black_acrylic"
+      ],
+      "color": "black",
+      "properties": {
+        "face": [
+          "ceiling",
+          "floor",
+          "wall"
+        ],
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "yuushya-1.20.1-forge-2.2.3.jar",
+      "statesChecked": 12
+    },
+    {
+      "id": "yuushya:hanging_light_black_concrete",
+      "selectors": [
+        "yuushya:hanging_light_black_concrete"
+      ],
+      "color": "warm",
+      "properties": {
+        "face": [
+          "ceiling",
+          "floor",
+          "wall"
+        ],
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "yuushya-1.20.1-forge-2.2.3.jar",
+      "statesChecked": 12
+    },
+    {
+      "id": "yuushya:hanging_light_black_framed_acrylic",
+      "selectors": [
+        "yuushya:hanging_light_black_framed_acrylic"
+      ],
+      "color": "black",
+      "properties": {
+        "face": [
+          "ceiling",
+          "floor",
+          "wall"
+        ],
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "yuushya-1.20.1-forge-2.2.3.jar",
+      "statesChecked": 12
+    },
+    {
+      "id": "yuushya:hanging_light_black_wool",
+      "selectors": [
+        "yuushya:hanging_light_black_wool"
+      ],
+      "color": "warm",
+      "properties": {
+        "face": [
+          "ceiling",
+          "floor",
+          "wall"
+        ],
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "yuushya-1.20.1-forge-2.2.3.jar",
+      "statesChecked": 12
+    },
+    {
+      "id": "yuushya:hanging_light_blue_acrylic",
+      "selectors": [
+        "yuushya:hanging_light_blue_acrylic"
+      ],
+      "color": "light_blue",
+      "properties": {
+        "face": [
+          "ceiling",
+          "floor",
+          "wall"
+        ],
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "yuushya-1.20.1-forge-2.2.3.jar",
+      "statesChecked": 12
+    },
+    {
+      "id": "yuushya:hanging_light_blue_concrete",
+      "selectors": [
+        "yuushya:hanging_light_blue_concrete"
+      ],
+      "color": "warm",
+      "properties": {
+        "face": [
+          "ceiling",
+          "floor",
+          "wall"
+        ],
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "yuushya-1.20.1-forge-2.2.3.jar",
+      "statesChecked": 12
+    },
+    {
+      "id": "yuushya:hanging_light_blue_framed_acrylic",
+      "selectors": [
+        "yuushya:hanging_light_blue_framed_acrylic"
+      ],
+      "color": "light_blue",
+      "properties": {
+        "face": [
+          "ceiling",
+          "floor",
+          "wall"
+        ],
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "yuushya-1.20.1-forge-2.2.3.jar",
+      "statesChecked": 12
+    },
+    {
+      "id": "yuushya:hanging_light_blue_framed_acrylic_alt",
+      "selectors": [
+        "yuushya:hanging_light_blue_framed_acrylic_alt"
+      ],
+      "color": "light_blue",
+      "properties": {
+        "face": [
+          "ceiling",
+          "floor",
+          "wall"
+        ],
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "yuushya-1.20.1-forge-2.2.3.jar",
+      "statesChecked": 12
+    },
+    {
+      "id": "yuushya:hanging_light_blue_wool",
+      "selectors": [
+        "yuushya:hanging_light_blue_wool"
+      ],
+      "color": "warm",
+      "properties": {
+        "face": [
+          "ceiling",
+          "floor",
+          "wall"
+        ],
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "yuushya-1.20.1-forge-2.2.3.jar",
+      "statesChecked": 12
+    },
+    {
+      "id": "yuushya:hanging_light_brown_acrylic",
+      "selectors": [
+        "yuushya:hanging_light_brown_acrylic"
+      ],
+      "color": "brown",
+      "properties": {
+        "face": [
+          "ceiling",
+          "floor",
+          "wall"
+        ],
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "yuushya-1.20.1-forge-2.2.3.jar",
+      "statesChecked": 12
+    },
+    {
+      "id": "yuushya:hanging_light_brown_concrete",
+      "selectors": [
+        "yuushya:hanging_light_brown_concrete"
+      ],
+      "color": "warm",
+      "properties": {
+        "face": [
+          "ceiling",
+          "floor",
+          "wall"
+        ],
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "yuushya-1.20.1-forge-2.2.3.jar",
+      "statesChecked": 12
+    },
+    {
+      "id": "yuushya:hanging_light_brown_wool",
+      "selectors": [
+        "yuushya:hanging_light_brown_wool"
+      ],
+      "color": "warm",
+      "properties": {
+        "face": [
+          "ceiling",
+          "floor",
+          "wall"
+        ],
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "yuushya-1.20.1-forge-2.2.3.jar",
+      "statesChecked": 12
+    },
+    {
+      "id": "yuushya:hanging_light_colorful_acrylic",
+      "selectors": [
+        "yuushya:hanging_light_colorful_acrylic"
+      ],
+      "color": "warm",
+      "properties": {
+        "face": [
+          "ceiling",
+          "floor",
+          "wall"
+        ],
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "yuushya-1.20.1-forge-2.2.3.jar",
+      "statesChecked": 12
+    },
+    {
+      "id": "yuushya:hanging_light_cyan_acrylic",
+      "selectors": [
+        "yuushya:hanging_light_cyan_acrylic"
+      ],
+      "color": "cyan",
+      "properties": {
+        "face": [
+          "ceiling",
+          "floor",
+          "wall"
+        ],
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "yuushya-1.20.1-forge-2.2.3.jar",
+      "statesChecked": 12
+    },
+    {
+      "id": "yuushya:hanging_light_cyan_concrete",
+      "selectors": [
+        "yuushya:hanging_light_cyan_concrete"
+      ],
+      "color": "warm",
+      "properties": {
+        "face": [
+          "ceiling",
+          "floor",
+          "wall"
+        ],
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "yuushya-1.20.1-forge-2.2.3.jar",
+      "statesChecked": 12
+    },
+    {
+      "id": "yuushya:hanging_light_cyan_wool",
+      "selectors": [
+        "yuushya:hanging_light_cyan_wool"
+      ],
+      "color": "warm",
+      "properties": {
+        "face": [
+          "ceiling",
+          "floor",
+          "wall"
+        ],
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "yuushya-1.20.1-forge-2.2.3.jar",
+      "statesChecked": 12
+    },
+    {
+      "id": "yuushya:hanging_light_familymart_acrylic_bottom",
+      "selectors": [
+        "yuushya:hanging_light_familymart_acrylic_bottom"
+      ],
+      "color": "warm",
+      "properties": {
+        "face": [
+          "ceiling",
+          "floor",
+          "wall"
+        ],
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "yuushya-1.20.1-forge-2.2.3.jar",
+      "statesChecked": 12
+    },
+    {
+      "id": "yuushya:hanging_light_familymart_acrylic_top",
+      "selectors": [
+        "yuushya:hanging_light_familymart_acrylic_top"
+      ],
+      "color": "warm",
+      "properties": {
+        "face": [
+          "ceiling",
+          "floor",
+          "wall"
+        ],
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "yuushya-1.20.1-forge-2.2.3.jar",
+      "statesChecked": 12
+    },
+    {
+      "id": "yuushya:hanging_light_gray_acrylic",
+      "selectors": [
+        "yuushya:hanging_light_gray_acrylic"
+      ],
+      "color": "light_gray",
+      "properties": {
+        "face": [
+          "ceiling",
+          "floor",
+          "wall"
+        ],
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "yuushya-1.20.1-forge-2.2.3.jar",
+      "statesChecked": 12
+    },
+    {
+      "id": "yuushya:hanging_light_gray_concrete",
+      "selectors": [
+        "yuushya:hanging_light_gray_concrete"
+      ],
+      "color": "warm",
+      "properties": {
+        "face": [
+          "ceiling",
+          "floor",
+          "wall"
+        ],
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "yuushya-1.20.1-forge-2.2.3.jar",
+      "statesChecked": 12
+    },
+    {
+      "id": "yuushya:hanging_light_gray_wool",
+      "selectors": [
+        "yuushya:hanging_light_gray_wool"
+      ],
+      "color": "warm",
+      "properties": {
+        "face": [
+          "ceiling",
+          "floor",
+          "wall"
+        ],
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "yuushya-1.20.1-forge-2.2.3.jar",
+      "statesChecked": 12
+    },
+    {
+      "id": "yuushya:hanging_light_green_acrylic",
+      "selectors": [
+        "yuushya:hanging_light_green_acrylic"
+      ],
+      "color": "green",
+      "properties": {
+        "face": [
+          "ceiling",
+          "floor",
+          "wall"
+        ],
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "yuushya-1.20.1-forge-2.2.3.jar",
+      "statesChecked": 12
+    },
+    {
+      "id": "yuushya:hanging_light_green_concrete",
+      "selectors": [
+        "yuushya:hanging_light_green_concrete"
+      ],
+      "color": "warm",
+      "properties": {
+        "face": [
+          "ceiling",
+          "floor",
+          "wall"
+        ],
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "yuushya-1.20.1-forge-2.2.3.jar",
+      "statesChecked": 12
+    },
+    {
+      "id": "yuushya:hanging_light_green_wool",
+      "selectors": [
+        "yuushya:hanging_light_green_wool"
+      ],
+      "color": "warm",
+      "properties": {
+        "face": [
+          "ceiling",
+          "floor",
+          "wall"
+        ],
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "yuushya-1.20.1-forge-2.2.3.jar",
+      "statesChecked": 12
+    },
+    {
+      "id": "yuushya:hanging_light_light_blue_acrylic",
+      "selectors": [
+        "yuushya:hanging_light_light_blue_acrylic"
+      ],
+      "color": "light_blue",
+      "properties": {
+        "face": [
+          "ceiling",
+          "floor",
+          "wall"
+        ],
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "yuushya-1.20.1-forge-2.2.3.jar",
+      "statesChecked": 12
+    },
+    {
+      "id": "yuushya:hanging_light_light_blue_concrete",
+      "selectors": [
+        "yuushya:hanging_light_light_blue_concrete"
+      ],
+      "color": "warm",
+      "properties": {
+        "face": [
+          "ceiling",
+          "floor",
+          "wall"
+        ],
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "yuushya-1.20.1-forge-2.2.3.jar",
+      "statesChecked": 12
+    },
+    {
+      "id": "yuushya:hanging_light_light_blue_framed_acrylic",
+      "selectors": [
+        "yuushya:hanging_light_light_blue_framed_acrylic"
+      ],
+      "color": "light_blue",
+      "properties": {
+        "face": [
+          "ceiling",
+          "floor",
+          "wall"
+        ],
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "yuushya-1.20.1-forge-2.2.3.jar",
+      "statesChecked": 12
+    },
+    {
+      "id": "yuushya:hanging_light_light_blue_wool",
+      "selectors": [
+        "yuushya:hanging_light_light_blue_wool"
+      ],
+      "color": "warm",
+      "properties": {
+        "face": [
+          "ceiling",
+          "floor",
+          "wall"
+        ],
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "yuushya-1.20.1-forge-2.2.3.jar",
+      "statesChecked": 12
+    },
+    {
+      "id": "yuushya:hanging_light_light_gray_acrylic",
+      "selectors": [
+        "yuushya:hanging_light_light_gray_acrylic"
+      ],
+      "color": "light_gray",
+      "properties": {
+        "face": [
+          "ceiling",
+          "floor",
+          "wall"
+        ],
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "yuushya-1.20.1-forge-2.2.3.jar",
+      "statesChecked": 12
+    },
+    {
+      "id": "yuushya:hanging_light_light_gray_concrete",
+      "selectors": [
+        "yuushya:hanging_light_light_gray_concrete"
+      ],
+      "color": "warm",
+      "properties": {
+        "face": [
+          "ceiling",
+          "floor",
+          "wall"
+        ],
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "yuushya-1.20.1-forge-2.2.3.jar",
+      "statesChecked": 12
+    },
+    {
+      "id": "yuushya:hanging_light_light_gray_wool",
+      "selectors": [
+        "yuushya:hanging_light_light_gray_wool"
+      ],
+      "color": "warm",
+      "properties": {
+        "face": [
+          "ceiling",
+          "floor",
+          "wall"
+        ],
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "yuushya-1.20.1-forge-2.2.3.jar",
+      "statesChecked": 12
+    },
+    {
+      "id": "yuushya:hanging_light_lime_acrylic",
+      "selectors": [
+        "yuushya:hanging_light_lime_acrylic"
+      ],
+      "color": "lime",
+      "properties": {
+        "face": [
+          "ceiling",
+          "floor",
+          "wall"
+        ],
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "yuushya-1.20.1-forge-2.2.3.jar",
+      "statesChecked": 12
+    },
+    {
+      "id": "yuushya:hanging_light_lime_concrete",
+      "selectors": [
+        "yuushya:hanging_light_lime_concrete"
+      ],
+      "color": "warm",
+      "properties": {
+        "face": [
+          "ceiling",
+          "floor",
+          "wall"
+        ],
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "yuushya-1.20.1-forge-2.2.3.jar",
+      "statesChecked": 12
+    },
+    {
+      "id": "yuushya:hanging_light_lime_framed_acrylic",
+      "selectors": [
+        "yuushya:hanging_light_lime_framed_acrylic"
+      ],
+      "color": "lime",
+      "properties": {
+        "face": [
+          "ceiling",
+          "floor",
+          "wall"
+        ],
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "yuushya-1.20.1-forge-2.2.3.jar",
+      "statesChecked": 12
+    },
+    {
+      "id": "yuushya:hanging_light_lime_wool",
+      "selectors": [
+        "yuushya:hanging_light_lime_wool"
+      ],
+      "color": "warm",
+      "properties": {
+        "face": [
+          "ceiling",
+          "floor",
+          "wall"
+        ],
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "yuushya-1.20.1-forge-2.2.3.jar",
+      "statesChecked": 12
+    },
+    {
+      "id": "yuushya:hanging_light_magenta_acrylic",
+      "selectors": [
+        "yuushya:hanging_light_magenta_acrylic"
+      ],
+      "color": "magenta",
+      "properties": {
+        "face": [
+          "ceiling",
+          "floor",
+          "wall"
+        ],
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "yuushya-1.20.1-forge-2.2.3.jar",
+      "statesChecked": 12
+    },
+    {
+      "id": "yuushya:hanging_light_magenta_concrete",
+      "selectors": [
+        "yuushya:hanging_light_magenta_concrete"
+      ],
+      "color": "warm",
+      "properties": {
+        "face": [
+          "ceiling",
+          "floor",
+          "wall"
+        ],
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "yuushya-1.20.1-forge-2.2.3.jar",
+      "statesChecked": 12
+    },
+    {
+      "id": "yuushya:hanging_light_magenta_wool",
+      "selectors": [
+        "yuushya:hanging_light_magenta_wool"
+      ],
+      "color": "warm",
+      "properties": {
+        "face": [
+          "ceiling",
+          "floor",
+          "wall"
+        ],
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "yuushya-1.20.1-forge-2.2.3.jar",
+      "statesChecked": 12
+    },
+    {
+      "id": "yuushya:hanging_light_orange_acrylic",
+      "selectors": [
+        "yuushya:hanging_light_orange_acrylic"
+      ],
+      "color": "orange",
+      "properties": {
+        "face": [
+          "ceiling",
+          "floor",
+          "wall"
+        ],
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "yuushya-1.20.1-forge-2.2.3.jar",
+      "statesChecked": 12
+    },
+    {
+      "id": "yuushya:hanging_light_orange_concrete",
+      "selectors": [
+        "yuushya:hanging_light_orange_concrete"
+      ],
+      "color": "warm",
+      "properties": {
+        "face": [
+          "ceiling",
+          "floor",
+          "wall"
+        ],
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "yuushya-1.20.1-forge-2.2.3.jar",
+      "statesChecked": 12
+    },
+    {
+      "id": "yuushya:hanging_light_orange_wool",
+      "selectors": [
+        "yuushya:hanging_light_orange_wool"
+      ],
+      "color": "warm",
+      "properties": {
+        "face": [
+          "ceiling",
+          "floor",
+          "wall"
+        ],
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "yuushya-1.20.1-forge-2.2.3.jar",
+      "statesChecked": 12
+    },
+    {
+      "id": "yuushya:hanging_light_pink_acrylic",
+      "selectors": [
+        "yuushya:hanging_light_pink_acrylic"
+      ],
+      "color": "pink",
+      "properties": {
+        "face": [
+          "ceiling",
+          "floor",
+          "wall"
+        ],
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "yuushya-1.20.1-forge-2.2.3.jar",
+      "statesChecked": 12
+    },
+    {
+      "id": "yuushya:hanging_light_pink_concrete",
+      "selectors": [
+        "yuushya:hanging_light_pink_concrete"
+      ],
+      "color": "warm",
+      "properties": {
+        "face": [
+          "ceiling",
+          "floor",
+          "wall"
+        ],
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "yuushya-1.20.1-forge-2.2.3.jar",
+      "statesChecked": 12
+    },
+    {
+      "id": "yuushya:hanging_light_pink_wool",
+      "selectors": [
+        "yuushya:hanging_light_pink_wool"
+      ],
+      "color": "warm",
+      "properties": {
+        "face": [
+          "ceiling",
+          "floor",
+          "wall"
+        ],
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "yuushya-1.20.1-forge-2.2.3.jar",
+      "statesChecked": 12
+    },
+    {
+      "id": "yuushya:hanging_light_purple_acrylic",
+      "selectors": [
+        "yuushya:hanging_light_purple_acrylic"
+      ],
+      "color": "purple",
+      "properties": {
+        "face": [
+          "ceiling",
+          "floor",
+          "wall"
+        ],
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "yuushya-1.20.1-forge-2.2.3.jar",
+      "statesChecked": 12
+    },
+    {
+      "id": "yuushya:hanging_light_purple_concrete",
+      "selectors": [
+        "yuushya:hanging_light_purple_concrete"
+      ],
+      "color": "warm",
+      "properties": {
+        "face": [
+          "ceiling",
+          "floor",
+          "wall"
+        ],
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "yuushya-1.20.1-forge-2.2.3.jar",
+      "statesChecked": 12
+    },
+    {
+      "id": "yuushya:hanging_light_purple_framed_acrylic",
+      "selectors": [
+        "yuushya:hanging_light_purple_framed_acrylic"
+      ],
+      "color": "purple",
+      "properties": {
+        "face": [
+          "ceiling",
+          "floor",
+          "wall"
+        ],
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "yuushya-1.20.1-forge-2.2.3.jar",
+      "statesChecked": 12
+    },
+    {
+      "id": "yuushya:hanging_light_purple_framed_acrylic_alt",
+      "selectors": [
+        "yuushya:hanging_light_purple_framed_acrylic_alt"
+      ],
+      "color": "purple",
+      "properties": {
+        "face": [
+          "ceiling",
+          "floor",
+          "wall"
+        ],
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "yuushya-1.20.1-forge-2.2.3.jar",
+      "statesChecked": 12
+    },
+    {
+      "id": "yuushya:hanging_light_purple_wool",
+      "selectors": [
+        "yuushya:hanging_light_purple_wool"
+      ],
+      "color": "warm",
+      "properties": {
+        "face": [
+          "ceiling",
+          "floor",
+          "wall"
+        ],
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "yuushya-1.20.1-forge-2.2.3.jar",
+      "statesChecked": 12
+    },
+    {
+      "id": "yuushya:hanging_light_quartz_acrylic",
+      "selectors": [
+        "yuushya:hanging_light_quartz_acrylic"
+      ],
+      "color": "warm",
+      "properties": {
+        "face": [
+          "ceiling",
+          "floor",
+          "wall"
+        ],
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "yuushya-1.20.1-forge-2.2.3.jar",
+      "statesChecked": 12
+    },
+    {
+      "id": "yuushya:hanging_light_red_acrylic",
+      "selectors": [
+        "yuushya:hanging_light_red_acrylic"
+      ],
+      "color": "red",
+      "properties": {
+        "face": [
+          "ceiling",
+          "floor",
+          "wall"
+        ],
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "yuushya-1.20.1-forge-2.2.3.jar",
+      "statesChecked": 12
+    },
+    {
+      "id": "yuushya:hanging_light_red_concrete",
+      "selectors": [
+        "yuushya:hanging_light_red_concrete"
+      ],
+      "color": "warm",
+      "properties": {
+        "face": [
+          "ceiling",
+          "floor",
+          "wall"
+        ],
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "yuushya-1.20.1-forge-2.2.3.jar",
+      "statesChecked": 12
+    },
+    {
+      "id": "yuushya:hanging_light_red_framed_acrylic",
+      "selectors": [
+        "yuushya:hanging_light_red_framed_acrylic"
+      ],
+      "color": "red",
+      "properties": {
+        "face": [
+          "ceiling",
+          "floor",
+          "wall"
+        ],
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "yuushya-1.20.1-forge-2.2.3.jar",
+      "statesChecked": 12
+    },
+    {
+      "id": "yuushya:hanging_light_red_wool",
+      "selectors": [
+        "yuushya:hanging_light_red_wool"
+      ],
+      "color": "warm",
+      "properties": {
+        "face": [
+          "ceiling",
+          "floor",
+          "wall"
+        ],
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "yuushya-1.20.1-forge-2.2.3.jar",
+      "statesChecked": 12
+    },
+    {
+      "id": "yuushya:hanging_light_sandstone_acrylic",
+      "selectors": [
+        "yuushya:hanging_light_sandstone_acrylic"
+      ],
+      "color": "warm",
+      "properties": {
+        "face": [
+          "ceiling",
+          "floor",
+          "wall"
+        ],
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "yuushya-1.20.1-forge-2.2.3.jar",
+      "statesChecked": 12
+    },
+    {
+      "id": "yuushya:hanging_light_white_acrylic",
+      "selectors": [
+        "yuushya:hanging_light_white_acrylic"
+      ],
+      "color": "white",
+      "properties": {
+        "face": [
+          "ceiling",
+          "floor",
+          "wall"
+        ],
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "yuushya-1.20.1-forge-2.2.3.jar",
+      "statesChecked": 12
+    },
+    {
+      "id": "yuushya:hanging_light_white_concrete",
+      "selectors": [
+        "yuushya:hanging_light_white_concrete"
+      ],
+      "color": "warm",
+      "properties": {
+        "face": [
+          "ceiling",
+          "floor",
+          "wall"
+        ],
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "yuushya-1.20.1-forge-2.2.3.jar",
+      "statesChecked": 12
+    },
+    {
+      "id": "yuushya:hanging_light_white_wool",
+      "selectors": [
+        "yuushya:hanging_light_white_wool"
+      ],
+      "color": "warm",
+      "properties": {
+        "face": [
+          "ceiling",
+          "floor",
+          "wall"
+        ],
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "yuushya-1.20.1-forge-2.2.3.jar",
+      "statesChecked": 12
+    },
+    {
+      "id": "yuushya:hanging_light_yellow_acrylic",
+      "selectors": [
+        "yuushya:hanging_light_yellow_acrylic"
+      ],
+      "color": "yellow",
+      "properties": {
+        "face": [
+          "ceiling",
+          "floor",
+          "wall"
+        ],
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "yuushya-1.20.1-forge-2.2.3.jar",
+      "statesChecked": 12
+    },
+    {
+      "id": "yuushya:hanging_light_yellow_concrete",
+      "selectors": [
+        "yuushya:hanging_light_yellow_concrete"
+      ],
+      "color": "warm",
+      "properties": {
+        "face": [
+          "ceiling",
+          "floor",
+          "wall"
+        ],
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "yuushya-1.20.1-forge-2.2.3.jar",
+      "statesChecked": 12
+    },
+    {
+      "id": "yuushya:hanging_light_yellow_framed_acrylic",
+      "selectors": [
+        "yuushya:hanging_light_yellow_framed_acrylic"
+      ],
+      "color": "yellow",
+      "properties": {
+        "face": [
+          "ceiling",
+          "floor",
+          "wall"
+        ],
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "yuushya-1.20.1-forge-2.2.3.jar",
+      "statesChecked": 12
+    },
+    {
+      "id": "yuushya:hanging_light_yellow_wool",
+      "selectors": [
+        "yuushya:hanging_light_yellow_wool"
+      ],
+      "color": "warm",
+      "properties": {
+        "face": [
+          "ceiling",
+          "floor",
+          "wall"
+        ],
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "yuushya-1.20.1-forge-2.2.3.jar",
+      "statesChecked": 12
+    },
+    {
+      "id": "yuushya:incandescent_bulb",
+      "selectors": [
+        "yuushya:incandescent_bulb"
+      ],
+      "color": "warm",
+      "properties": {
+        "face": [
+          "ceiling",
+          "floor",
+          "wall"
+        ],
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "yuushya-1.20.1-forge-2.2.3.jar",
+      "statesChecked": 12
+    },
+    {
+      "id": "yuushya:incandescent_lamp",
+      "selectors": [
+        "yuushya:incandescent_lamp"
+      ],
+      "color": "warm",
+      "properties": {
+        "face": [
+          "ceiling",
+          "floor",
+          "wall"
+        ],
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "yuushya-1.20.1-forge-2.2.3.jar",
+      "statesChecked": 12
+    },
+    {
+      "id": "yuushya:luorescent_lamp",
+      "selectors": [
+        "yuushya:luorescent_lamp"
+      ],
+      "color": "white",
+      "properties": {
+        "face": [
+          "ceiling",
+          "floor",
+          "wall"
+        ],
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "yuushya-1.20.1-forge-2.2.3.jar",
+      "statesChecked": 12
+    },
+    {
+      "id": "yuushya:medieval_lamp",
+      "selectors": [
+        "yuushya:medieval_lamp"
+      ],
+      "color": "warm",
+      "properties": {
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "yuushya-1.20.1-forge-2.2.3.jar",
+      "statesChecked": 4
+    },
+    {
+      "id": "yuushya:medieval_street_light",
+      "selectors": [
+        "yuushya:medieval_street_light"
+      ],
+      "color": "warm",
+      "properties": {
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "yuushya-1.20.1-forge-2.2.3.jar",
+      "statesChecked": 4
+    },
+    {
+      "id": "yuushya:modern_lamp_0",
+      "selectors": [
+        "yuushya:modern_lamp_0"
+      ],
+      "color": "white",
+      "properties": {
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "yuushya-1.20.1-forge-2.2.3.jar",
+      "statesChecked": 4
+    },
+    {
+      "id": "yuushya:modern_lamp_1",
+      "selectors": [
+        "yuushya:modern_lamp_1"
+      ],
+      "color": "white",
+      "properties": {
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "yuushya-1.20.1-forge-2.2.3.jar",
+      "statesChecked": 4
+    },
+    {
+      "id": "yuushya:modern_lamp_2",
+      "selectors": [
+        "yuushya:modern_lamp_2"
+      ],
+      "color": "white",
+      "properties": {
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "yuushya-1.20.1-forge-2.2.3.jar",
+      "statesChecked": 4
+    },
+    {
+      "id": "yuushya:modern_lamp_ceiling",
+      "selectors": [
+        "yuushya:modern_lamp_ceiling"
+      ],
+      "color": "white",
+      "properties": {
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "yuushya-1.20.1-forge-2.2.3.jar",
+      "statesChecked": 4
+    },
+    {
+      "id": "yuushya:oriental_lantern",
+      "selectors": [
+        "yuushya:oriental_lantern"
+      ],
+      "color": "warm",
+      "properties": {
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "yuushya-1.20.1-forge-2.2.3.jar",
+      "statesChecked": 4
+    },
+    {
+      "id": "yuushya:round_ceiling_lamp",
+      "selectors": [
+        "yuushya:round_ceiling_lamp"
+      ],
+      "color": "white",
+      "properties": {
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ]
+      },
+      "assetJar": "yuushya-1.20.1-forge-2.2.3.jar",
+      "statesChecked": 4
+    },
+    {
+      "id": "yuushya:street_light",
+      "selectors": [
+        "yuushya:street_light"
+      ],
+      "color": "warm",
+      "properties": {
+        "facing": [
+          "east",
+          "north",
+          "south",
+          "west"
+        ],
+        "form": [
+          "0",
+          "1"
+        ]
+      },
+      "assetJar": "yuushya-1.20.1-forge-2.2.3.jar",
+      "statesChecked": 8
+    }
+  ]
+}

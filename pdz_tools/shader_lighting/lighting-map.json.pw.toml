@@ -1,0 +1,8 @@
+name = "PDZ Solas Lighting: lighting-map.json"
+filename = "lighting-map.json"
+side = "client"
+
+[download]
+url = "https://raw.githubusercontent.com/shin-ay/project-deadzone-pack/main/client_artifacts/shader_lighting/0.1.0/lighting-map.json"
+hash-format = "sha256"
+hash = "50bcd45415f27b934a7020ad82b3580b4c47eef17764fea10faff74d31094f9b"

@@ -1,0 +1,8 @@
+name = "PDZ Solas Lighting: README_JP.txt"
+filename = "README_JP.txt"
+side = "client"
+
+[download]
+url = "https://raw.githubusercontent.com/shin-ay/project-deadzone-pack/main/client_artifacts/shader_lighting/0.1.0/README_JP.txt"
+hash-format = "sha256"
+hash = "593c41dff1532022640c22bac11871c3df9389c7d1134d108d1beba694139bf0"

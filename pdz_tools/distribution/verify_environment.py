@@ -18,11 +18,12 @@ for name,row in expected.items():
     elif hashlib.sha256(p.read_bytes()).hexdigest()!=row['sha256']:problems.append({'path':'mods/'+name,'problem':'different_hash'})
 unexpected=[p.name for p in (root/'mods').glob('*.jar') if p.name not in expected]
 for name in unexpected:problems.append({'path':'mods/'+name,'problem':'unexpected_active_jar'})
-for row in lock['sharedFiles']:
+files=lock['sharedFiles']+(lock.get('clientFiles',[]) if args.role=='client' else [])
+for row in files:
     p=root/row['path']
     if not p.is_file():problems.append({'path':row['path'],'problem':'missing'})
     elif hashlib.sha256(p.read_bytes()).hexdigest()!=row['sha256']:problems.append({'path':row['path'],'problem':'different_hash'})
-result={'release':lock['release'],'instance':str(root),'role':args.role,'expectedMods':len(expected),'sharedFiles':len(lock['sharedFiles']),'pass':not problems,'problems':problems}
+result={'release':lock['release'],'instance':str(root),'role':args.role,'expectedMods':len(expected),'sharedFiles':len(lock['sharedFiles']),'clientFiles':len(lock.get('clientFiles',[])) if args.role=='client' else 0,'pass':not problems,'problems':problems}
 if args.output:
     args.output.parent.mkdir(parents=True,exist_ok=True)
     args.output.write_text(json.dumps(result,ensure_ascii=False,indent=2),encoding='utf-8')

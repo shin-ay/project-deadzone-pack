@@ -1,5 +1,5 @@
 {
-  "release": "DEV-20261030-ENV-SYNC-RC2",
+  "release": "DEV-20261101-SOLAS-PDZ-LIGHTING-RC1",
   "serverOnlyMods": [
     "worldedit-mod-7.2.15.jar"
   ],
@@ -27821,5 +27821,32 @@
     "moonlight-global-datapacks/pdz_fixed_world_authoring/data/zombiekit/worldgen/structure/touring_car.json",
     "tacz/.export-state.json"
   ],
-  "scope": "Shared mods and portable resources must match. Server scripts, authoring world data, generated reports, personal client settings are owned separately."
+  "scope": "Shared mods and portable resources must match. Server scripts, authoring world data, generated reports, personal client settings are owned separately.",
+  "clientFiles": [
+    {
+      "path": "pdz_tools/shader_lighting/Apply-PdzSolas.ps1",
+      "sha256": "0d7e17d9d161f43b6e6681bcd56702ab67324c23932fb0693034761c5c83588a"
+    },
+    {
+      "path": "pdz_tools/shader_lighting/Update-And-Apply-Solas.ps1",
+      "sha256": "34092e59ebd1baa640ac3bf7225286b5ecd9658e005035184e489b276e277f4d"
+    },
+    {
+      "path": "pdz_tools/shader_lighting/Apply-Solas-PDZ.cmd",
+      "sha256": "4853c433bdf65ee452af3c4d99094642d0649ebbde64536e1787e38efe6e1b08"
+    },
+    {
+      "path": "pdz_tools/shader_lighting/README_JP.txt",
+      "sha256": "593c41dff1532022640c22bac11871c3df9389c7d1134d108d1beba694139bf0"
+    },
+    {
+      "path": "pdz_tools/shader_lighting/lighting-map.json",
+      "sha256": "50bcd45415f27b934a7020ad82b3580b4c47eef17764fea10faff74d31094f9b"
+    },
+    {
+      "path": "shaderpacks/Solas Shader V3.7b.zip",
+      "sha256": "b7dfe4c7353d677a92cc4c86b87bc0633f1014305d927ca6a482c303427bf825"
+    }
+  ],
+  "clientOverlayNote": "Client-only Solas lighting patch; shared/server runtime unchanged from DEV-20261030-ENV-SYNC-RC2. Generated private ZIP is intentionally not distributed or hash-locked across compression runtimes."
 }
