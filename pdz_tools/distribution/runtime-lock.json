@@ -1,5 +1,5 @@
 {
-  "release": "DEV-20261101-SOLAS-PDZ-LIGHTING-RC1",
+  "release": "DEV-20261107-LOOT-ID-RC1",
   "serverOnlyMods": [
     "worldedit-mod-7.2.15.jar"
   ],
@@ -5704,7 +5704,7 @@
     },
     {
       "path": "kubejs/data/project_deadzone/loot_tables/chests/gunstore_weapons.json",
-      "sha256": "bba1010678db743785d1217d89407335863a00509b5f6d2ab631af96565a53f7"
+      "sha256": "68c03fcb8c8c0cf0889904456a07b21a27f9700989d55db681763a318cbd8b90"
     },
     {
       "path": "kubejs/data/project_deadzone/loot_tables/chests/hospital.json",

@@ -1,12 +1,12 @@
 name = "PROJECT DEADZONE"
 author = "PROJECT DEADZONE Team"
-version = "DEV-20261101-SOLAS-PDZ-LIGHTING-RC1"
+version = "DEV-20261107-LOOT-ID-RC1"
 pack-format = "packwiz:1.1.0"
 
 [index]
 file = "index.toml"
 hash-format = "sha256"
-hash = "61fb90e27d22e5c27642f28c8b68f6a75cf548c7270daa47f29a3523ba549110"
+hash = "7329c2e69692d5746a5ddb844c7123cd7be8f8aadd0cda443887c6efa78f4d21"
 
 [versions]
 forge = "47.4.10"

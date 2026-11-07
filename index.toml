@@ -14238,7 +14238,7 @@ hash = "052cba83bf9ce6d7892e25a4a7f852f01816739e3f45a36f594d05838c170b99"
 
 [[files]]
 file = "kubejs/data/project_deadzone/loot_tables/chests/gunstore_weapons.json"
-hash = "bba1010678db743785d1217d89407335863a00509b5f6d2ab631af96565a53f7"
+hash = "68c03fcb8c8c0cf0889904456a07b21a27f9700989d55db681763a318cbd8b90"
 
 [[files]]
 file = "kubejs/data/project_deadzone/loot_tables/chests/hospital.json"
@@ -26614,7 +26614,7 @@ hash = "e40ef576086d9447f58ece28c908d785af8433d178de452e330389d76c2edd4d"
 
 [[files]]
 file = "pdz_tools/distribution/runtime-lock.json"
-hash = "b1f510b5253ab2dea461f9ec54199140684ac1b7a9fa8663827367ea173503a2"
+hash = "61289792c408e96b3c958ce63c57b17eee9e1b92495139fe8d80827bfe627a49"
 
 [[files]]
 file = "pdz_tools/distribution/verify_environment.py"

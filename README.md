@@ -1,6 +1,10 @@
 # PROJECT DEADZONE Distribution
 
-Current pack version: `DEV-20261101-SOLAS-PDZ-LIGHTING-RC1`
+Current pack version: `DEV-20261107-LOOT-ID-RC1`
+
+The 2026-11-07 Loot correction replaces one unregistered gun ID in the gun-store
+Loot table with the installed TaCZ HK MP5A5 ID. Other Loot weights and counts
+are preserved. Runtime generation and expedition balance still need in-game QA.
 
 The client-only PDZ lighting patch adds 394 mod fixtures to Solas 3.7b using
 lantern-reference luminance and explicit on/off states. Packwiz obtains the

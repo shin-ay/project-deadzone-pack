@@ -47,7 +47,7 @@
           "functions": [
             {
               "function": "minecraft:set_nbt",
-              "tag": "{GunFireMode:\"AUTO\",GunId:\"tacz:mp5a5\",HasBulletInBarrel:1b}"
+              "tag": "{GunFireMode:\"AUTO\",GunId:\"tacz:hk_mp5a5\",HasBulletInBarrel:1b}"
             }
           ]
         },
