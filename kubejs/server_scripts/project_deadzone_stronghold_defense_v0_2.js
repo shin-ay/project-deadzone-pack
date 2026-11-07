@@ -122,9 +122,23 @@ function dzSdSpawnOne(core, type, role) {
     else fn="project_deadzone:factions/spawn/remnant_soldier"
   }
   let dimension=String(core.level.dimension)
-  core.server.runCommandSilent("execute in "+dimension+" positioned "+x+" "+y+" "+z+" run function "+fn)
-  core.server.runCommandSilent("execute in "+dimension+" positioned "+x+" "+y+" "+z+
-    " run tag @e[tag="+def.factionTag+",tag=!dz_stronghold_defender,sort=nearest,limit=1,distance=..8] add dz_stronghold_defender")
+  let before={}
+  core.level.entities.forEach(entity=>{ before[String(entity.uuid)]=true })
+  let spawned=core.server.runCommandSilent("execute in "+dimension+" positioned "+x+" "+y+" "+z+" run function "+fn)
+  if (!(spawned>0)) return
+  let fresh=[]
+  core.level.entities.forEach(entity=>{
+    if (before[String(entity.uuid)] || !entity.tags || !entity.tags.contains(def.factionTag) || entity.tags.contains('dz_stronghold_defender')) return
+    let dx=entity.x-x,dy=entity.y-y,dz=entity.z-z
+    if (dx*dx+dy*dy+dz*dz<=64) fresh.push(entity)
+  })
+  if (fresh.length!==1) {
+    console.warn('[PDZ participation] ambiguous defender spawn rejected: '+fresh.length)
+    return
+  }
+  // Exact newly observed entity reference/UUID; no nearest selector can grab old NPCs.
+  fresh[0].persistentData.putString('pdz_reward_encounter_uuid',String(core.uuid))
+  fresh[0].addTag('dz_stronghold_defender')
 }
 
 function dzSdSpawnBatch(core, type, amount, initial) {

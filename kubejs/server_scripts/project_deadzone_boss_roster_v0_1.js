@@ -45,11 +45,12 @@ EntityEvents.death(event=>{
   if(!boss||boss.level.clientSide||pdzBossRosterTestEntity(boss))return
   let quest=PDZ_BOSS_ROSTER[String(boss.type)]
   if(!quest||boss.persistentData.getBoolean('dz_boss_roster_recorded'))return
-  if(!pdzBossRosterPlayerCredit(event,boss)){
+  let participants=global.pdzRewardParticipants ? global.pdzRewardParticipants(boss,128) : []
+  if(participants.length===0){
     console.info('[PROJECT DEADZONE][Boss Roster] ignored '+String(boss.type)+': no recent player credit')
     return
   }
   boss.persistentData.putBoolean('dz_boss_roster_recorded',true)
-  boss.runCommandSilent('ftbquests change_progress @a[distance=..128,gamemode=!spectator] complete '+quest)
+  participants.forEach(player=>player.server.runCommandSilent('ftbquests change_progress '+String(player.uuid)+' complete '+quest))
   console.info('[PROJECT DEADZONE][Boss Roster] completed '+quest+' from '+String(boss.type))
 })

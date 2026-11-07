@@ -283,6 +283,12 @@ BlockEvents.broken(event => {
     player.level.entities.forEach(e => {
       if (!e.tags || !e.tags.contains("dz_stronghold_objective")) return
       if (Math.abs(e.x-(block.x+0.5))<1.5 && Math.abs(e.y-block.y)<2 && Math.abs(e.z-(block.z+0.5))<1.5) {
+        let owner=String(e.persistentData.getString("dz_stronghold_id"))
+        player.level.entities.forEach(core=>{
+          if (core.tags && core.tags.contains("dz_stronghold_core") && core.tags.contains("dz_stronghold_active") &&
+              String(core.persistentData.getString("dz_stronghold_id"))===owner && global.pdzRewardRecordAction)
+            global.pdzRewardRecordAction(core,player,'objective')
+        })
         e.discard(); removed=true
       }
     })
@@ -309,6 +315,8 @@ BlockEvents.broken(event => {
     return
   }
   let type=dzShType(core), faction=dzShFaction(core), id=core.persistentData.getString("dz_stronghold_id")
+  if (global.pdzRewardRecordAction) global.pdzRewardRecordAction(core,player,'capture')
+  let participants=global.pdzRewardParticipants ? global.pdzRewardParticipants(core,80) : []
   core.tags.remove("dz_stronghold_active"); core.addTag("dz_stronghold_captured")
   player.server.persistentData.putInt("dz_stronghold_"+faction+"_captured",player.server.persistentData.getInt("dz_stronghold_"+faction+"_captured")+1)
   player.persistentData.putBoolean("dz_story_branch_first_core",true)
@@ -320,21 +328,19 @@ BlockEvents.broken(event => {
     player.tell(Text.of("[TERRITORY] Captured site transferred to the Survivor Network.").green())
   }
   player.server.runCommandSilent('tellraw @a [{"text":"[FACTION] ","color":"gold","bold":true},{"text":"'+DZ_SH[type].name+'を制圧した。敵の巡回が停止する。","color":"green"}]')
-  player.runCommandSilent("playsound minecraft:ui.toast.challenge_complete master @s ~ ~ ~ 0.8 1")
-  player.level.players.forEach(member => {
-    let dx=member.x-core.x, dy=member.y-core.y, dz=member.z-core.z
-    if (dx*dx+dy*dy+dz*dz>80*80) return
+  player.server.runCommandSilent("execute at " + String(player.uuid) + " run playsound minecraft:ui.toast.challenge_complete master " + String(player.uuid) + " ~ ~ ~ 0.8 1")
+  participants.forEach(member => {
     if (faction==="raider") {
-      member.runCommandSilent("give @s lightmanscurrency:coin_copper 6")
-      member.runCommandSilent('give @s tacz:ammo{AmmoId:"tacz:9mm"} 24')
-      member.runCommandSilent("give @s apocalypsenow:bandage 2")
+      member.give(Item.of('lightmanscurrency:coin_copper',6))
+      member.give(Item.of('tacz:ammo',24,{AmmoId:'tacz:9mm'}))
+      member.give(Item.of('apocalypsenow:bandage',2))
     } else {
-      member.runCommandSilent("give @s lightmanscurrency:coin_copper 10")
-      member.runCommandSilent('give @s tacz:ammo{AmmoId:"tacz:45acp"} 24')
-      member.runCommandSilent("give @s create:electron_tube 2")
+      member.give(Item.of('lightmanscurrency:coin_copper',10))
+      member.give(Item.of('tacz:ammo',24,{AmmoId:'tacz:45acp'}))
+      member.give(Item.of('create:electron_tube',2))
     }
     member.tell(Text.of("[制圧報酬] "+DZ_SH[type].name+" の戦果を受領した。").gold())
-    member.runCommandSilent("playsound minecraft:entity.player.levelup player @s ~ ~ ~ 0.45 1.2")
+    member.server.runCommandSilent("execute at " + String(member.uuid) + " run playsound minecraft:entity.player.levelup player " + String(member.uuid) + " ~ ~ ~ 0.45 1.2")
   })
   // Easy NPC staff are bound to the captured site. Hostile officers are
   // removed with the command network; traders survive as neutral contacts.

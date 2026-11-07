@@ -1,6 +1,6 @@
 # PROJECT DEADZONE Distribution
 
-Current pack version: `DEV-20261107-LOOT-ID-RC1`
+Current pack version: `DEV-20261107-ECON-FIX-RC1`
 
 The 2026-11-07 Loot correction replaces one unregistered gun ID in the gun-store
 Loot table with the installed TaCZ HK MP5A5 ID. Other Loot weights and counts
@@ -83,3 +83,10 @@ Removes retired M&S components, old JOB UI, Recipe Machine Stage and Calypso gog
 Adds the 11 building and dependency mods already used by the development server and active authoring client, including Rechiseled/Create, Fusion, SuperMartijn libraries, Decorative Blocks, Dustrial Decor and Macaw bridges/fences/paths/roofs. Also distributes the current client-only PDZ Builder Palette without personal bookmarks. A runtime lock and read-only verifier record the exact shared JARs and portable resource hashes. WorldEdit stays server-only; personal settings and world-specific authoring scripts are not copied.
 
 The Dustrial Decor common settings match the active server: cardboard armor spawns, village houses and loot additions stay disabled.
+
+ECON fix: camp buyback does not rise under sale discounts; known camp goods
+are capped at half their lowest catalog purchase cost. Boss/capture rewards
+use encounter-scoped action records instead of proximity alone. The new
+Forge participation hooks require a full game/server restart.
+Managed script hashes are now explicitly checked without claiming ownership
+of every world-specific server script. Multiplayer gameplay QA remains pending.

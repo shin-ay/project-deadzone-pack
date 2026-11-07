@@ -104,6 +104,7 @@ ItemEvents.entityInteracted(event => {
   if (String(target.uuid) === String(healer.uuid)) return
   if (!dzIssueDressing(healer, target, event.item)) return
   let infected = dzFieldKitCureInfection(target)
+  if (infected && global.pdzRewardRecordSupport) global.pdzRewardRecordSupport(healer,target)
   if (typeof dzHealthMedicStabilize === "function") dzHealthMedicStabilize(healer, target)
   if (infected) healer.tell(Text.of(target.username + " の感染症治療を完了しました。").green())
   healer.tell(Text.of(target.username + " に応急処置用品を渡しました。").aqua())

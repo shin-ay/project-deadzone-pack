@@ -220,6 +220,7 @@ function pdzAxelRouteRearWeakpoint(event, boss) {
   if (hp <= 0) hp = 28
   hp -= Math.min(12, Math.max(1, Number(event.damage || 0)))
   boss.persistentData.putDouble(key, Math.max(0, hp))
+  if (global.pdzRewardRecordAction) global.pdzRewardRecordAction(boss,attacker,'objective')
   boss.runCommandSilent("particle minecraft:electric_spark ~ ~1.65 ~ 0.35 0.25 0.35 0.04 7 force @a[distance=..64]")
   if (hp <= 0) pdzAxelDestroyModelTank(boss, left)
   return true
@@ -372,12 +373,12 @@ EntityEvents.hurt(event => {
   let max = Math.max(1, Number(boss.maxHealth))
   let incoming = Math.max(0, Number(event.damage || 0))
   let ratio = Math.max(0, hp - incoming) / max
-  boss.runCommandSilent("tag @a[distance=..64,gamemode=!spectator] add " + PDZ_BOSS_AXEL_PARTICIPANT_TAG)
+  // Participation comes from confirmed final damage, not bystanders.
 
   if (ratio <= 0.65 && !boss.tags.contains("dz_axel_phase2")) {
     boss.addTag("dz_axel_phase2")
     let bearerTags = pdzAxelRuntimeTags([PDZ_BOSS_AXEL_BEARER_TAG, "dz_pdz_boss_minion"])
-    let bearerSpawned = boss.runCommandSilent('summon ' + PDZ_BOSS_AXEL_BEARER_ENTITY + ' ~3 ~ ~ {CustomName:\'{"text":"弾薬手ラチェット","color":"gold"}\',CustomNameVisible:1b,PersistenceRequired:1b,Tags:' + pdzAxelTagsNbt(bearerTags) + ',Team:"pdz_axel"}')
+    let bearerSpawned = boss.runCommandSilent('summon ' + PDZ_BOSS_AXEL_BEARER_ENTITY + ' ~3 ~ ~ {CustomName:\'{"text":"弾薬手ラチェット","color":"gold"}\',CustomNameVisible:1b,PersistenceRequired:1b,Tags:' + pdzAxelTagsNbt(bearerTags) + ',ForgeData:{pdz_reward_encounter_uuid:"'+String(boss.uuid)+'"},Team:"pdz_axel"}')
     if (!boss.tags.contains("dz_axel_tanks_destroyed")) boss.runCommandSilent("effect give @s minecraft:resistance 9999 1 true")
     pdzAxelSpawnPhaseCylinders(boss)
     pdzAxelBroadcast(boss, "弾薬手ラチェットが防護支援を開始。支援役を崩し、排熱中の本体を狙え！", "gold")
@@ -417,12 +418,15 @@ EntityEvents.death(event => {
   }
 
   if (!entity.tags.contains(PDZ_BOSS_AXEL_TAG) || entity.tags.contains("dz_boss_rewarded")) return
+  let participants=global.pdzRewardParticipants ? global.pdzRewardParticipants(entity,64) : []
   entity.addTag("dz_boss_rewarded")
-  entity.runCommandSilent("tag @a[tag=" + PDZ_BOSS_AXEL_PARTICIPANT_TAG + ",distance=..64,gamemode=!spectator] add " + PDZ_BOSS_AXEL_CLEAR_TAG)
-  entity.runCommandSilent("ftbquests change_progress @a[tag=" + PDZ_BOSS_AXEL_PARTICIPANT_TAG + ",distance=..64,gamemode=!spectator] complete " + PDZ_BOSS_AXEL_QUEST)
-  entity.runCommandSilent("give @a[tag=" + PDZ_BOSS_AXEL_PARTICIPANT_TAG + ",distance=..64,gamemode=!spectator] lightmanscurrency:coin_copper 10")
-  entity.runCommandSilent("give @a[tag=" + PDZ_BOSS_AXEL_PARTICIPANT_TAG + ",distance=..64,gamemode=!spectator] immersiveengineering:ingot_steel 4")
-  entity.runCommandSilent("give @a[tag=" + PDZ_BOSS_AXEL_PARTICIPANT_TAG + ",distance=..64,gamemode=!spectator] apocalypsenow:bandage 3")
+  participants.forEach(player=>{
+    player.addTag(PDZ_BOSS_AXEL_CLEAR_TAG)
+    player.server.runCommandSilent("ftbquests change_progress " + String(player.uuid) + " complete " + PDZ_BOSS_AXEL_QUEST)
+    player.give(Item.of('lightmanscurrency:coin_copper',10))
+    player.give(Item.of('immersiveengineering:ingot_steel',4))
+    player.give(Item.of('apocalypsenow:bandage',3))
+  })
   pdzAxelCleanupAround(entity, 96)
   entity.runCommandSilent("tag @a[tag=" + PDZ_BOSS_AXEL_PARTICIPANT_TAG + "] remove " + PDZ_BOSS_AXEL_PARTICIPANT_TAG)
   pdzAxelBroadcast(entity, "アクセル撃破。周辺参加者へ個人報酬を支給した。", "green")
@@ -526,7 +530,7 @@ ServerEvents.commandRegistry(event => {
       let found = server.runCommandSilent(positioned + " if entity @e[type=" + PDZ_BOSS_AXEL_ENTITY + ",tag=" + PDZ_BOSS_AXEL_TAG + ",distance=..16,sort=nearest,limit=1]")
       server.runCommandSilent(positioned + " as @e[tag=" + PDZ_BOSS_AXEL_TAG + ",distance=..16,sort=nearest,limit=1] run tag @s add dz_pdz_boss")
       server.runCommandSilent(positioned + " as @e[tag=" + PDZ_BOSS_AXEL_TAG + ",distance=..16,sort=nearest,limit=1] run team join pdz_axel @s")
-      server.runCommandSilent(positioned + " run tag @a[distance=..64,gamemode=!spectator] add " + PDZ_BOSS_AXEL_PARTICIPANT_TAG)
+      // Summoning/standing nearby does not grant participation.
       if (found > 0) {
         server.runCommandSilent(positioned + ' run tellraw @a[distance=..96] {"text":"[BOSS] アクセルを識別。戦闘システムを接続中…","color":"gold","bold":true}')
       } else {

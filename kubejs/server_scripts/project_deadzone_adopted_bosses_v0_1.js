@@ -86,17 +86,17 @@ EntityEvents.hurt(event=>{
 
 function pdzAdoptedReward(boss,def){
   if(boss.tags.contains('dz_adopted_rewarded'))return
-  let lastHit=Number(boss.persistentData.getLong('dz_adopted_last_player_hit_ms'))
-  if(lastHit<=0||Date.now()-lastHit>90000){
+  let participants=global.pdzRewardParticipants ? global.pdzRewardParticipants(boss,128) : []
+  if(participants.length===0){
     console.info('[PROJECT DEADZONE][Adopted Boss] no campaign reward: no recent player credit for '+def.key)
     return
   }
   boss.addTag('dz_adopted_rewarded')
   boss.server.persistentData.putBoolean('dz_adopted_boss_complete_'+def.key,true)
   if(def.story)boss.server.persistentData.putBoolean('dz_story_boss_complete_'+def.key,true)
-  def.reward.forEach(entry=>{
-    boss.runCommandSilent('give @a[distance=..128,gamemode=!spectator] '+entry[0]+' '+entry[1])
-  })
+  participants.forEach(player=>def.reward.forEach(entry=>{
+    player.give(Item.of(entry[0],entry[1]))
+  }))
   boss.runCommandSilent('title @a[distance=..128,gamemode=!spectator] title {"text":"'+def.name+' CLEAR","color":"gold","bold":true}')
   boss.runCommandSilent('title @a[distance=..128,gamemode=!spectator] subtitle {"text":"固有戦利品は元MODのドロップを維持","color":"aqua"}')
   console.info('[PROJECT DEADZONE][Adopted Boss] campaign clear '+def.key)

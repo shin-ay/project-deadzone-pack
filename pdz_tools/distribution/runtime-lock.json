@@ -1,5 +1,5 @@
 {
-  "release": "DEV-20261107-LOOT-ID-RC1",
+  "release": "DEV-20261107-ECON-FIX-RC1",
   "serverOnlyMods": [
     "worldedit-mod-7.2.15.jar"
   ],
@@ -27429,6 +27429,10 @@
     {
       "path": "config/dustrial_decor-common.toml",
       "sha256": "0859aa9dc822c15f5ccf26dfc9a6a212b3115ce0c1146fa06651dfca1ee8b9d6"
+    },
+    {
+      "path": "kubejs/startup_scripts/project_deadzone_reward_participation_events_v1.js",
+      "sha256": "8092b7bd10c1507d22cd5a463cc5fbd3ca9724fa7de96bdc6634d6c13faaef2f"
     }
   ],
   "serverOwnedFilesExcluded": [
@@ -27848,5 +27852,43 @@
       "sha256": "b7dfe4c7353d677a92cc4c86b87bc0633f1014305d927ca6a482c303427bf825"
     }
   ],
-  "clientOverlayNote": "Client-only Solas lighting patch; shared/server runtime unchanged from DEV-20261030-ENV-SYNC-RC2. Generated private ZIP is intentionally not distributed or hash-locked across compression runtimes."
+  "clientOverlayNote": "Client-only Solas lighting patch; shared/server runtime unchanged from DEV-20261030-ENV-SYNC-RC2. Generated private ZIP is intentionally not distributed or hash-locked across compression runtimes.",
+  "managedScriptFiles": [
+    {
+      "path": "kubejs/server_scripts/000_pdz_reward_participation_v1.js",
+      "sha256": "4c9945da2fd42623e20d91107ddb74fd02bd48cef93531830f0e00361bbb56c5"
+    },
+    {
+      "path": "kubejs/server_scripts/project_deadzone_adopted_bosses_v0_1.js",
+      "sha256": "328f95a93d17b11aaaf55a6fe011110a2a620d31e7da37a7a522b2278a77e1fe"
+    },
+    {
+      "path": "kubejs/server_scripts/project_deadzone_boss_encounters_v1.js",
+      "sha256": "15faf8696266b3eb5b8f047982d0e08c9a420826fd9c040f7858d5a5da9a3a8f"
+    },
+    {
+      "path": "kubejs/server_scripts/project_deadzone_boss_roster_v0_1.js",
+      "sha256": "cfecdd9cae1ee21cf8e89a3bb4ebb4e8c619431b3c27e63dd1856cf1c3eda62c"
+    },
+    {
+      "path": "kubejs/server_scripts/project_deadzone_camp_shop_rotation_v0_1.js",
+      "sha256": "bba45ce39737599e41397570cdbf8cabdbd7671863c54d0b1ed482ae2ba3ee59"
+    },
+    {
+      "path": "kubejs/server_scripts/project_deadzone_faction_strongholds_v0_1.js",
+      "sha256": "58577f13779fc2e1ca4332cfa25fc5a805ca81aaab3e4a3d175c7de88b34b2a4"
+    },
+    {
+      "path": "kubejs/server_scripts/project_deadzone_field_medical_kit_v0_1.js",
+      "sha256": "ddf1008faf3859137fbc0891eb682b6178fb027a99c7d508a7fdfc5cbd39d780"
+    },
+    {
+      "path": "kubejs/server_scripts/project_deadzone_story_boss_bridge_rewards_v0_1.js",
+      "sha256": "fb05786f80977f05e74c8289900100727db3c542cbe44a841d34e1275abc4f07"
+    },
+    {
+      "path": "kubejs/server_scripts/project_deadzone_stronghold_defense_v0_2.js",
+      "sha256": "688574ca1d5b068fa4d4592e9f4f26355f02381930e909d411b08b0d9ef6de56"
+    }
+  ]
 }

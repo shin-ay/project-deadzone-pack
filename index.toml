@@ -15381,6 +15381,10 @@ file = "kubejs/server_scripts.zip"
 hash = "d4cfcadb89a9b5325b59c0f0b78bf553a9961d7d511dea7661f62668c74be7d5"
 
 [[files]]
+file = "kubejs/server_scripts/000_pdz_reward_participation_v1.js"
+hash = "4c9945da2fd42623e20d91107ddb74fd02bd48cef93531830f0e00361bbb56c5"
+
+[[files]]
 file = "kubejs/server_scripts/example.js"
 hash = "a19b7c81a150bd965b153ded9c45ee7649eaad9e10d0a5ec1d662e7b15ceadb2"
 
@@ -15390,7 +15394,7 @@ hash = "1ecebe0dbd39deff110ae76a804002bf3ad6c40c85cf82822e3efe1383298161"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_adopted_bosses_v0_1.js"
-hash = "ee41d4552b52b3852aa25d880fb3662dafc622d0897d367ec7870fc3722e1a4c"
+hash = "328f95a93d17b11aaaf55a6fe011110a2a620d31e7da37a7a522b2278a77e1fe"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_ammo_reload_perks_v0_1.js"
@@ -15434,11 +15438,11 @@ hash = "27cf154fef2255fddc790c1cc5ec59e3cdbeb8fcedd191670af9de39064acebc"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_boss_encounters_v1.js"
-hash = "e07203f99c19008603b227acb68134d489060ed86cb06e14fcd7a179fa4fda37"
+hash = "15faf8696266b3eb5b8f047982d0e08c9a420826fd9c040f7858d5a5da9a3a8f"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_boss_roster_v0_1.js"
-hash = "1d6a492fac7a38dd00851d35bd6f3383cbed5ad518fef72a8b018d590139d27b"
+hash = "cfecdd9cae1ee21cf8e89a3bb4ebb4e8c619431b3c27e63dd1856cf1c3eda62c"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_buddy_control_v0_1.js"
@@ -15466,7 +15470,7 @@ hash = "b5965da32e508918d0890957ba7138467fcfec37e98693e8c0e30ba1b76523e0"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_camp_shop_rotation_v0_1.js"
-hash = "5fb09ad6c01414bbf8b916edc56c9d435dff40cea283ff5a3a8553e7f11d298f"
+hash = "bba45ce39737599e41397570cdbf8cabdbd7671863c54d0b1ed482ae2ba3ee59"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_character_level_v0_1.js"
@@ -15530,7 +15534,7 @@ hash = "6448e51290093793dd58158c0325820bda78b96a319556f60b80c20a961f5bc1"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_faction_strongholds_v0_1.js"
-hash = "6ee8b3055d36793858395f01cea4f7dbc0d48990558845083d4038f6a6a23881"
+hash = "58577f13779fc2e1ca4332cfa25fc5a805ca81aaab3e4a3d175c7de88b34b2a4"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_faction_test_commands_v0_1.js"
@@ -15542,7 +15546,7 @@ hash = "a9e24315b1f516963f365f6201741a2ebb33450063c094f2150f145d5e8de55c"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_field_medical_kit_v0_1.js"
-hash = "442d6f603dabc0576098128e21bf03a34fb5cb8979f35b3bd63f81e714d8f21b"
+hash = "ddf1008faf3859137fbc0891eb682b6178fb027a99c7d508a7fdfc5cbd39d780"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_field_repair_v0_1.js"
@@ -15754,7 +15758,7 @@ hash = "f3bed48f3c1d046dabf13c2f664cbb1d5ac5537b14b08431967e1c5ce6fb1477"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_story_boss_bridge_rewards_v0_1.js"
-hash = "d602bff0c8a9f26a7d89720c41b27488beaa831341af9a46561a131ab91e08bb"
+hash = "fb05786f80977f05e74c8289900100727db3c542cbe44a841d34e1275abc4f07"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_story_boss_site_triggers_v0_1.js"
@@ -15774,7 +15778,7 @@ hash = "b61a912c05ed2c01924187c492405557cc072ad2b97f0471d622fec15a0328de"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_stronghold_defense_v0_2.js"
-hash = "edab579cd9e52e66f2dc0099ecad0b60d9223da0c443ec63f5a3afe09c949989"
+hash = "688574ca1d5b068fa4d4592e9f4f26355f02381930e909d411b08b0d9ef6de56"
 
 [[files]]
 file = "kubejs/server_scripts/project_deadzone_survival_perks_v0_1.js"
@@ -15903,6 +15907,10 @@ hash = "25adbbc1eab0938a7c037b79059cb02c052d8c1d4358c3c86917cb3e9b54b6cd"
 [[files]]
 file = "kubejs/startup_scripts/project_deadzone_player_survivability_v0_1.js"
 hash = "e672009d965e358d09bfeca836f101645971eb75e1876b08e211d68aee900490"
+
+[[files]]
+file = "kubejs/startup_scripts/project_deadzone_reward_participation_events_v1.js"
+hash = "8092b7bd10c1507d22cd5a463cc5fbd3ca9724fa7de96bdc6634d6c13faaef2f"
 
 [[files]]
 file = "local/ftblibrary-client.snbt"
@@ -26614,11 +26622,11 @@ hash = "e40ef576086d9447f58ece28c908d785af8433d178de452e330389d76c2edd4d"
 
 [[files]]
 file = "pdz_tools/distribution/runtime-lock.json"
-hash = "61289792c408e96b3c958ce63c57b17eee9e1b92495139fe8d80827bfe627a49"
+hash = "295f66204ef2609bf26a725f6640ffbcd0f3effbb531236894bbe0d4fbb28228"
 
 [[files]]
 file = "pdz_tools/distribution/verify_environment.py"
-hash = "f8ee6a81212695fee44e74297400d0a1dd5abbd11cf4f9402e0301fb774b61eb"
+hash = "bb8781b976b4d978e9bf64e22bd4f543194bc00f801c53990574d932a46553d8"
 
 [[files]]
 file = "pdz_tools/keymap/APPLY_KEYMAP.bat"

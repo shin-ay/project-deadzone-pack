@@ -78,6 +78,7 @@ function dzShopPickWithoutRepeat(server,key,values,count){
 }
 function dzShopNextKey(shop){return "dz_camp_shop_next_"+shop.key}
 function dzShopDue(server,shop,now){
+  if(server.persistentData.getInt("dz_camp_shop_price_schema_"+shop.key)<1)return true
   let next=Number(server.persistentData.getLong(dzShopNextKey(shop)))
   if(next<=0){
     // Migrate the old shared deadline without postponing an overdue shop.
@@ -124,7 +125,33 @@ function dzShopStoryFactor(server,shopKey){
   return Math.max(0.55,Math.min(1.45,factor))
 }
 function dzShopOffer(s,factor){let price=Math.max(1,Math.round(s.price*factor));return '{buy:{Count:'+price+'b,id:"lightmanscurrency:coin_copper"},buyB:{},demand:0,maxUses:'+s.uses+',priceMultiplier:0.0f,rewardExp:0b,sell:{Count:'+s.count+'b,id:"'+s.id+'"},specialPrice:0,uses:0,xp:0}'}
-function dzShopBuybackOffer(s,factor){let money=Math.max(1,Math.round(s.money/Math.max(0.55,factor)));return '{buy:{Count:'+s.count+'b,id:"'+s.id+'"},buyB:{},demand:0,maxUses:'+s.uses+',priceMultiplier:0.0f,rewardExp:0b,sell:{Count:'+money+'b,id:"lightmanscurrency:coin_copper"},specialPrice:0,uses:0,xp:0}'}
+// Buyback never rises as sale discounts deepen. Use the entire camp catalog,
+// including stock not selected this rotation, at the deepest legal discount.
+// Harvest-only commodities retain their nominal quote pending the NPC price audit.
+function dzShopBuybackQuote(s){
+  let unit=Infinity
+  DZ_SHOPS.forEach(shop=>shop.fixed.concat(shop.pool).forEach(sale=>{
+    if(sale.id===s.id)unit=Math.min(unit,Math.max(1,Math.round(sale.price*0.55))/sale.count)
+  }))
+  let count=s.count
+  let money=s.money
+  if(unit!==Infinity){
+    let cap=Math.floor(unit*count*0.5+0.00000001)
+    // Whole-Credit rounding must not turn a cheap item into a profitable loop.
+    while(cap<1&&count+s.count<=Math.min(64,Number(Item.of(s.id).maxStackSize))){
+      count+=s.count
+      cap=Math.floor(unit*count*0.5+0.00000001)
+    }
+    if(cap<1)return null
+    money=Math.min(money,cap)
+  }
+  return {id:s.id,count:count,money:money,uses:s.uses}
+}
+function dzShopBuybackOffer(s,factor){
+  let quote=dzShopBuybackQuote(s)
+  if(!quote)return null
+  return '{buy:{Count:'+quote.count+'b,id:"'+quote.id+'"},buyB:{},demand:0,maxUses:'+quote.uses+',priceMultiplier:0.0f,rewardExp:0b,sell:{Count:'+quote.money+'b,id:"lightmanscurrency:coin_copper"},specialPrice:0,uses:0,xp:0}'
+}
 function dzRotateOneShop(server,shop){
   let selector="@e[type=easy_npc:humanoid,tag="+shop.tag+",limit=1]"
   if(server.runCommandSilent("execute if entity "+selector)<=0)return false
@@ -140,9 +167,10 @@ function dzRotateOneShop(server,shop){
   // any single renewable resource a permanent money farm.
   let buyback=dzShopPickWithoutRepeat(server,shop.key+"_buy",eligibleBuyback,4+(campLevel>=2?1:0)+(communityRank>=2?1:0))
   let storyFactor=dzShopStoryFactor(server,shop.key)
-  let recipes=stock.map(s=>dzShopOffer(s,storyFactor)).concat(buyback.map(s=>dzShopBuybackOffer(s,storyFactor)))
+  let recipes=stock.map(s=>dzShopOffer(s,storyFactor)).concat(buyback.map(s=>dzShopBuybackOffer(s,storyFactor)).filter(v=>v!==null))
   let nbt='{Offers:{Inventory:{},Recipes:{Recipes:['+recipes.join(",")+']}},TradingData:{TradingDataSet:{LastReset:0L,MaxUses:24,ResetsEveryMin:120,RewardedXP:0,Type:"BASIC"}}}'
   if(server.runCommandSilent("data merge entity "+selector+" "+nbt)<=0)return false
+  server.persistentData.putInt("dz_camp_shop_price_schema_"+shop.key,1)
   server.persistentData.putLong(dzShopNextKey(shop),Date.now()+DZ_SHOP_INTERVAL)
   console.info("[PROJECT DEADZONE][Camp Shop] "+shop.key+" Story S"+storyUnlock+" lifeRank="+lifeRank+" campLevel="+campLevel+" communityRank="+communityRank+" storyFactor="+storyFactor.toFixed(2)+" stock="+stock.map(v=>v.id).join(", ")+" buyback="+buyback.map(v=>v.id).join(", "))
   return true

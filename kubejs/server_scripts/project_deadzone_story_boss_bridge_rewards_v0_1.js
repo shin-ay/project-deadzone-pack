@@ -142,13 +142,12 @@ EntityEvents.death(event => {
   if (!boss || boss.level.clientSide || !boss.tags) return
   let spec = dzBridgeRewardSpec(boss)
   if (!spec) return
-  if (!dzBridgeBossHasPlayerCredit(event, boss)) {
+  let participants = global.pdzRewardParticipants ? global.pdzRewardParticipants(boss,128) : []
+  if (participants.length===0) {
     console.warn('[BOSS REWARD] Ignored uncredited boss death: ' + String(boss.type))
     return
   }
-  event.server.players.forEach(player => {
-    if (dzBridgeParticipant(player, boss)) dzGiveBridgeReward(player, spec)
-  })
+  participants.forEach(player => dzGiveBridgeReward(player, spec))
 })
 
 // Story authorization is server-wide. Players who were offline for a boss kill
