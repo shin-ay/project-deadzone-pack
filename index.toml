@@ -17462,7 +17462,7 @@ hash = "d98e8c19795ba6152033325d57d60c6d10e5d0a9e9cba14199fffbb575ab82b6"
 
 [[files]]
 file = "mods/pdz-field-terminal.pw.toml"
-hash = "a0211f2efb8a5be7a7d88f9fe68d05f10817066c3bdc94639e2818ef1a0768f7"
+hash = "2e0e63587663097312a88f0f17048382e29d00a9818eeb61e445a83fdf49368a"
 metafile = true
 
 [[files]]
@@ -26622,7 +26622,7 @@ hash = "e40ef576086d9447f58ece28c908d785af8433d178de452e330389d76c2edd4d"
 
 [[files]]
 file = "pdz_tools/distribution/runtime-lock.json"
-hash = "80d7390836c8246d6849fa67253c2d4feca128419f5afc6bb9b374a2ba6b416f"
+hash = "c6e8cbcddb5048cd3e184a978fff7092d3a47aa6f537a0ccf9b9ac30c9644917"
 
 [[files]]
 file = "pdz_tools/distribution/verify_environment.py"
