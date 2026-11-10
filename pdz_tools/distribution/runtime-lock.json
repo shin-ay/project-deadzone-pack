@@ -1,5 +1,5 @@
 {
-  "release": "DEV-20261111-FIELD-TERMINAL-0.4.2",
+  "release": "DEV-20261111-FIELD-TERMINAL-0.4.3",
   "serverOnlyMods": [
     "worldedit-mod-7.2.15.jar"
   ],
@@ -2611,8 +2611,8 @@
       ]
     },
     {
-      "name": "PROJECT_DEADZONE_FieldTerminal-0.4.2.jar",
-      "sha256": "b95d677c717fdc5204e65f91946c4e30cc3909490739b20e19b8ea2acc21b881",
+      "name": "PROJECT_DEADZONE_FieldTerminal-0.4.3.jar",
+      "sha256": "958460fb1982c667f2c39e29ce246ab8347a2c42933931ac8277bab61076acc8",
       "ids": [
         "pdzfieldui"
       ]

@@ -1,8 +1,8 @@
 name = "PROJECT DEADZONE Field Terminal"
-filename = "PROJECT_DEADZONE_FieldTerminal-0.4.2.jar"
+filename = "PROJECT_DEADZONE_FieldTerminal-0.4.3.jar"
 side = "client"
 
 [download]
-url = "https://raw.githubusercontent.com/shin-ay/project-deadzone-pack/main/client_artifacts/pdzfieldui/0.4.2/PROJECT_DEADZONE_FieldTerminal-0.4.2.jar"
+url = "https://raw.githubusercontent.com/shin-ay/project-deadzone-pack/main/client_artifacts/pdzfieldui/0.4.3/PROJECT_DEADZONE_FieldTerminal-0.4.3.jar"
 hash-format = "sha256"
-hash = "b95d677c717fdc5204e65f91946c4e30cc3909490739b20e19b8ea2acc21b881"
+hash = "958460fb1982c667f2c39e29ce246ab8347a2c42933931ac8277bab61076acc8"
