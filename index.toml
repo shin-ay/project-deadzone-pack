@@ -9469,6 +9469,454 @@ file = "kubejs/assets/lightmanscurrency/lang/ja_jp.json"
 hash = "0e219671fa5c9513f92a687034e3753f053d12e38184f3e8b314929cec50e5f1"
 
 [[files]]
+file = "kubejs/assets/pdz_signage/lang/en_us.json"
+hash = "aac3a68c1b93f816c0a6fd79e3480d9cd98053a901c782a473f3fa3ce8d2da85"
+
+[[files]]
+file = "kubejs/assets/pdz_signage/lang/ja_jp.json"
+hash = "aac3a68c1b93f816c0a6fd79e3480d9cd98053a901c782a473f3fa3ce8d2da85"
+
+[[files]]
+file = "kubejs/assets/pdz_signage/models/block/pdz_sign_black_tag_cluster.json"
+hash = "b7d963ddd574bca00b4d48c8bf833c64fb951ce2a88d6bcb37cbf401431527d8"
+
+[[files]]
+file = "kubejs/assets/pdz_signage/models/block/pdz_sign_chrome_vask.json"
+hash = "bcbcecae1e38a9cfdb29d5d4bef8b6ce8f6102643ffc470cfe0a57e8369e4a2e"
+
+[[files]]
+file = "kubejs/assets/pdz_signage/models/block/pdz_sign_cinema.json"
+hash = "8eefaa197ba9b28f581a6f3b8d63615147ae41c0d9076784a7b27d4f90c02fd4"
+
+[[files]]
+file = "kubejs/assets/pdz_signage/models/block/pdz_sign_clinic.json"
+hash = "fdb3c054d13c3dd44a38ec002e0017f414f50e7b81451848820adc28f0026cfa"
+
+[[files]]
+file = "kubejs/assets/pdz_signage/models/block/pdz_sign_coach_poster.json"
+hash = "b1fb90e16140ac6af1a5bd578f3ad1d59958dce222ca6da739925ce1ac5dc948"
+
+[[files]]
+file = "kubejs/assets/pdz_signage/models/block/pdz_sign_crane_warning.json"
+hash = "d8782a305d7cff6894a720c443be77d25764929697bc8228bef10e83f76b84ed"
+
+[[files]]
+file = "kubejs/assets/pdz_signage/models/block/pdz_sign_diner.json"
+hash = "8fc540a842077df67b3860dec895bb055c8843d2aa3e739a08566e28139bafe6"
+
+[[files]]
+file = "kubejs/assets/pdz_signage/models/block/pdz_sign_ferry.json"
+hash = "b041d7ac1478d854f7611cd78b9224d5788d4a9f7fb406efbc9078e7f2d82839"
+
+[[files]]
+file = "kubejs/assets/pdz_signage/models/block/pdz_sign_graffiti_piece_rivet.json"
+hash = "2f33c758b809243fb3fce45c2d6fe0c6be624f9151a2eb9d20dc7f5539947c05"
+
+[[files]]
+file = "kubejs/assets/pdz_signage/models/block/pdz_sign_graffiti_rat.json"
+hash = "3bc39263d0f088f9db0fd5d240ccf774f7f17d20372c69b13ddc7c4d79445965"
+
+[[files]]
+file = "kubejs/assets/pdz_signage/models/block/pdz_sign_graffiti_throwup.json"
+hash = "cbd23bae0603340ec1a675940b3d099cf79039fa1f44311331bb9f575f1ded86"
+
+[[files]]
+file = "kubejs/assets/pdz_signage/models/block/pdz_sign_handstyle_kelt.json"
+hash = "29337e82e0cc07b4d84ef42111f59cdcab180e93a9e6fe19af393b100d069562"
+
+[[files]]
+file = "kubejs/assets/pdz_signage/models/block/pdz_sign_jobs.json"
+hash = "10c8fd5516022a1fbb456df28360f6f3c04e9a1f46a87bdbf086ada10eecfe31"
+
+[[files]]
+file = "kubejs/assets/pdz_signage/models/block/pdz_sign_lodging.json"
+hash = "832b5b1c21523d791a221a2de0dc25d4be1eb249652120300b895cbbad759a8f"
+
+[[files]]
+file = "kubejs/assets/pdz_signage/models/block/pdz_sign_market.json"
+hash = "a422fc25b76a1b993d1ef202c80aeabd58cd82de43e8057af878c1b0034a12a9"
+
+[[files]]
+file = "kubejs/assets/pdz_signage/models/block/pdz_sign_missing_poster.json"
+hash = "f651419aeda023045923ec981389e19c38845bd170c3e98954054c183030f60b"
+
+[[files]]
+file = "kubejs/assets/pdz_signage/models/block/pdz_sign_motel_ad.json"
+hash = "1c677a6161fc3fd2df8b30e8a77b3a06e2834db0c0297628ef10eebbd7d4bc6a"
+
+[[files]]
+file = "kubejs/assets/pdz_signage/models/block/pdz_sign_notice_layers.json"
+hash = "001e3adeac36e2fd7d04b4247c980c3fd5e00b5a1867590b19845d5e3b776a47"
+
+[[files]]
+file = "kubejs/assets/pdz_signage/models/block/pdz_sign_pharmacy.json"
+hash = "ff082c96629577373bad1f3d78179ed5603f2daef94388fe3a03fc23274bc975"
+
+[[files]]
+file = "kubejs/assets/pdz_signage/models/block/pdz_sign_post.json"
+hash = "b4e8adeb996ea13691bf2017895baf2bd472c496f97b0df4758194979a8537d7"
+
+[[files]]
+file = "kubejs/assets/pdz_signage/models/block/pdz_sign_public_health.json"
+hash = "ceda67ad2f20ab8c43954888051369a8e6a052879cc129d29a233de7d79ae46d"
+
+[[files]]
+file = "kubejs/assets/pdz_signage/models/block/pdz_sign_radio.json"
+hash = "c2078295a08a96a0aa4f47ba1e69e227b592682080c6f985c5886c86e3717947"
+
+[[files]]
+file = "kubejs/assets/pdz_signage/models/block/pdz_sign_repair.json"
+hash = "cf76f0cab7bdb758c61a5fb6fb4358bb9b47836083c1776eb613a4368ed8425c"
+
+[[files]]
+file = "kubejs/assets/pdz_signage/models/block/pdz_sign_retro_diner.json"
+hash = "39b703aa5fd856683933685f47b050a1fca485e049a16de42eb24948e7a92314"
+
+[[files]]
+file = "kubejs/assets/pdz_signage/models/block/pdz_sign_retro_ferry.json"
+hash = "4c05cf37820aba2cd9ffcd57a526e128ed8a66e470e479e6ec9b6832ca8f0cfc"
+
+[[files]]
+file = "kubejs/assets/pdz_signage/models/block/pdz_sign_retro_fuel.json"
+hash = "5574c0167ee8dcfdb8866464c40fadf47e9b488107252ce301720c32a0ef60fe"
+
+[[files]]
+file = "kubejs/assets/pdz_signage/models/block/pdz_sign_retro_rail.json"
+hash = "a99f85dc9e48d097c1afda6eea5c1edea53ff8c3d4849a314056d87aa2242460"
+
+[[files]]
+file = "kubejs/assets/pdz_signage/models/block/pdz_sign_road_billboard.json"
+hash = "40d14ef2d2dad5a1912c603603cb126585d3b1593f8c9b1a2a8477a647f4fa94"
+
+[[files]]
+file = "kubejs/assets/pdz_signage/models/block/pdz_sign_salvage.json"
+hash = "47de74c8801ec84f8490501269349954366d3ba75dde04c386ab0412eb90362b"
+
+[[files]]
+file = "kubejs/assets/pdz_signage/models/block/pdz_sign_shelter.json"
+hash = "5b7def2b8c687fa93307ce3fc2b03e85227affd4bdc027e30e886d6700dc6a4d"
+
+[[files]]
+file = "kubejs/assets/pdz_signage/models/block/pdz_sign_timber.json"
+hash = "2d2f88ced88663f20b9892cba41e1cb8b34b6a3ceb5ce9907dce8d91402b7a95"
+
+[[files]]
+file = "kubejs/assets/pdz_signage/models/block/pdz_sign_works_sign.json"
+hash = "a3f0d332a3246ed26f5327ce65f5315cde4d2ad64592dd404e5a9bb5944934f2"
+
+[[files]]
+file = "kubejs/assets/pdz_signage/models/block/pdz_sign_z01_down.json"
+hash = "6b4c0c6e77771e9afc012b513e20995e8c7f243f9ef79ab7ae2dc118ae5ffa74"
+
+[[files]]
+file = "kubejs/assets/pdz_signage/models/block/pdz_sign_z01_up.json"
+hash = "36728038af8ef9ac68b5e29c72a8d7b8af82df1d4bd93fdd5b9523d4b6f934dc"
+
+[[files]]
+file = "kubejs/assets/pdz_signage/models/block/pdz_sign_z02_down.json"
+hash = "92e199a26832c436b51147fb530f7ccfff507e68e2bec61f8d2ab4464caa67d1"
+
+[[files]]
+file = "kubejs/assets/pdz_signage/models/block/pdz_sign_z02_up.json"
+hash = "aae03b149fdc78f246816d93060353a8a7764a5d56cd8b89467fe997436cd6cb"
+
+[[files]]
+file = "kubejs/assets/pdz_signage/models/block/pdz_sign_z03_down.json"
+hash = "189ba949e909f459f39e23b086fed56e8cab118ee25271ba51ddc23f3cbd415e"
+
+[[files]]
+file = "kubejs/assets/pdz_signage/models/block/pdz_sign_z03_up.json"
+hash = "40d4b746dc85921f349c3eb67c4751cb99f1f09ebd63f2e2a60212be79cc1ad6"
+
+[[files]]
+file = "kubejs/assets/pdz_signage/models/block/pdz_sign_z04_down.json"
+hash = "c93615b164ab454c4c2070088074cb97a5a61ed39817b0d139c274bd7a71b33d"
+
+[[files]]
+file = "kubejs/assets/pdz_signage/models/block/pdz_sign_z04_up.json"
+hash = "d311028abaeefc09ab8d913c8cda0cb09f4ad368e341e2cf29c689fff5e60a91"
+
+[[files]]
+file = "kubejs/assets/pdz_signage/models/block/pdz_sign_z05_down.json"
+hash = "34e0e5ec50e6acda92baee3c3bec6463e6f7aae628195ca443170be0b9193ed7"
+
+[[files]]
+file = "kubejs/assets/pdz_signage/models/block/pdz_sign_z05_up.json"
+hash = "6b73e8c2338d901772d7a4a214ea256252ecadeb3c11867693249c1e9c6e6665"
+
+[[files]]
+file = "kubejs/assets/pdz_signage/models/block/pdz_sign_z06_down.json"
+hash = "77e86e2be6e1bab77f9ad3bfb295a9bc9046417407fbe9e04006d587a410e5d4"
+
+[[files]]
+file = "kubejs/assets/pdz_signage/models/block/pdz_sign_z06_up.json"
+hash = "8b7989a077a8bbef0a7eb4660ff19c987d634065e6c1095b32db943519f03632"
+
+[[files]]
+file = "kubejs/assets/pdz_signage/models/block/pdz_sign_z07_down.json"
+hash = "03a5e4a6862951c53fdf977a91e390bbefc3eaf9e2cde9cf4c584e91d98fb9ad"
+
+[[files]]
+file = "kubejs/assets/pdz_signage/models/block/pdz_sign_z07_up.json"
+hash = "bc780055d1b324cfa663a425d7db3c2632071e665c88928c45910ca2c4ee7010"
+
+[[files]]
+file = "kubejs/assets/pdz_signage/models/block/pdz_sign_z08_down.json"
+hash = "200381844b95aefa642494928872ed16d4074b82f3a43cf0029356f0a0ec701f"
+
+[[files]]
+file = "kubejs/assets/pdz_signage/models/block/pdz_sign_z08_up.json"
+hash = "a80553e28f1db536d258417c776be6681469c4ecc071b9e2c5094b48f68340c9"
+
+[[files]]
+file = "kubejs/assets/pdz_signage/models/block/pdz_sign_z09_down.json"
+hash = "ebf08e253f7dddfb3ca4abe7aadd0e63adb3b4714eff3fb23dc640822a7baabe"
+
+[[files]]
+file = "kubejs/assets/pdz_signage/models/block/pdz_sign_z09_up.json"
+hash = "9f0f236907a5275f92506edc4ebbb0483d151ea8b7697dfaf3359f0a0de0a4f1"
+
+[[files]]
+file = "kubejs/assets/pdz_signage/models/block/pdz_sign_z10_down.json"
+hash = "5b1e6bf33da53fd10d676b78940004dda9ed4c7e341fcd41a8ba4998437f4bd6"
+
+[[files]]
+file = "kubejs/assets/pdz_signage/models/block/pdz_sign_z10_up.json"
+hash = "cb788d819046e9b40d891ff10fbb473908db54cbd1abcf63d501634ce3fb292b"
+
+[[files]]
+file = "kubejs/assets/pdz_signage/models/block/pdz_sign_z11_down.json"
+hash = "615f283e8f6a0b1cd22d4365ef9d409605c316bdbe48f3f075e7f86f9adfc5a6"
+
+[[files]]
+file = "kubejs/assets/pdz_signage/models/block/pdz_sign_z11_up.json"
+hash = "2d5b1614dea8ded14d40d374bba97c5ca322c86c91d9fd89dc4f1cbbfa4b4ecc"
+
+[[files]]
+file = "kubejs/assets/pdz_signage/textures/block/012f9aa069c994287ebf.png"
+hash = "012f9aa069c994287ebfc3fea69f9a1b94f355ece0a12efe16875622c53e34db"
+
+[[files]]
+file = "kubejs/assets/pdz_signage/textures/block/014030f4ce5865ad2585.png"
+hash = "014030f4ce5865ad258546d63ab2984db79a6ae1622235734982266f218b71ef"
+
+[[files]]
+file = "kubejs/assets/pdz_signage/textures/block/02213b3e2364e86cd570.png"
+hash = "02213b3e2364e86cd57035c4f9031955e0806455abfe8465b7e42aba789d2bf5"
+
+[[files]]
+file = "kubejs/assets/pdz_signage/textures/block/033cda8b16c4b157fd6d.png"
+hash = "033cda8b16c4b157fd6d682ce0499c93e43881750cb95ca99da8919e58124ef7"
+
+[[files]]
+file = "kubejs/assets/pdz_signage/textures/block/091003d7552db8006ef9.png"
+hash = "091003d7552db8006ef9cab237755eabb188619a7efcf5edc268e6f618abdc50"
+
+[[files]]
+file = "kubejs/assets/pdz_signage/textures/block/099383cf8cd2c3000acb.png"
+hash = "099383cf8cd2c3000acbfecc109a26e4f733701c0f1592cb54bfacdbc7129be2"
+
+[[files]]
+file = "kubejs/assets/pdz_signage/textures/block/0c0ff562cd57334df5cd.png"
+hash = "0c0ff562cd57334df5cdb75bcd3462a46a066f9cf8f9a6200d245019e3713ba6"
+
+[[files]]
+file = "kubejs/assets/pdz_signage/textures/block/1496f56ff2b6ef945290.png"
+hash = "1496f56ff2b6ef9452903026038f6533ba21b29a0ca85f86a40de04d91d0aee6"
+
+[[files]]
+file = "kubejs/assets/pdz_signage/textures/block/183bcee4ea19ac16f00b.png"
+hash = "183bcee4ea19ac16f00b541ae7ead360c015bdd8aeaaf4f7fce1faf7782175f1"
+
+[[files]]
+file = "kubejs/assets/pdz_signage/textures/block/271d7835a8978e86a39c.png"
+hash = "271d7835a8978e86a39c59c97095a2c95ce1c7d9214d1b2e8b47575c301769e5"
+
+[[files]]
+file = "kubejs/assets/pdz_signage/textures/block/273be6220f394a7cc21a.png"
+hash = "273be6220f394a7cc21aee2bbad86e945814bf104d130b7989f316be20c23f53"
+
+[[files]]
+file = "kubejs/assets/pdz_signage/textures/block/2a560be4903f60bd0467.png"
+hash = "2a560be4903f60bd046795bfc2728e807b698c4d29280074d6be9043040d3045"
+
+[[files]]
+file = "kubejs/assets/pdz_signage/textures/block/358379ab5f448b281c41.png"
+hash = "358379ab5f448b281c41586e9e2753325ab2a0a35fa85892fc8a13ba1ba24ec2"
+
+[[files]]
+file = "kubejs/assets/pdz_signage/textures/block/3c79356fb1d88d6e7de9.png"
+hash = "3c79356fb1d88d6e7de9b51168a1e8662a84d572eef0171bf5e7d71d1c77eb4f"
+
+[[files]]
+file = "kubejs/assets/pdz_signage/textures/block/416bc7764fb5826c1ceb.png"
+hash = "416bc7764fb5826c1cebce9571dc11c79f64277417f2ff189ef367ec7668f885"
+
+[[files]]
+file = "kubejs/assets/pdz_signage/textures/block/43355d80d4beb73bb5c4.png"
+hash = "43355d80d4beb73bb5c47fa1dcf74257df94e75085c74c0445c2215486ae32f7"
+
+[[files]]
+file = "kubejs/assets/pdz_signage/textures/block/44dd6d962096ed116593.png"
+hash = "44dd6d962096ed11659342431955190016f0494187bd7967bcc17ddb326bb6d7"
+
+[[files]]
+file = "kubejs/assets/pdz_signage/textures/block/5317d4572df781fadff5.png"
+hash = "5317d4572df781fadff5e7953014be03b3fd2745e83aae41414c5191a8d648b1"
+
+[[files]]
+file = "kubejs/assets/pdz_signage/textures/block/53c6d76e8eeaf293cd35.png"
+hash = "53c6d76e8eeaf293cd357c28982752d7aec4cb1e226b8de82abfe38bb317ddaf"
+
+[[files]]
+file = "kubejs/assets/pdz_signage/textures/block/560d0c5864ef2c52dc26.png"
+hash = "560d0c5864ef2c52dc26533630438c4f35ccd0416733531be3f751f720158b9b"
+
+[[files]]
+file = "kubejs/assets/pdz_signage/textures/block/56adbafd15ee666e1bb6.png"
+hash = "56adbafd15ee666e1bb66c345e0ddb97be4042e973bbc0e169d51e82ffc9fdb0"
+
+[[files]]
+file = "kubejs/assets/pdz_signage/textures/block/594488c28627d792dd96.png"
+hash = "594488c28627d792dd96b1dff335971d0ea5b559b3fc3106e8fe995aa6c1493c"
+
+[[files]]
+file = "kubejs/assets/pdz_signage/textures/block/64d4bfd73268e81b8624.png"
+hash = "64d4bfd73268e81b8624437e6f54af3b69ff1076421cbb392eaf5990962e266b"
+
+[[files]]
+file = "kubejs/assets/pdz_signage/textures/block/683e5e138e8dd0970dba.png"
+hash = "683e5e138e8dd0970dbab4486008660c09cdb34d8d2c823fa715ab282528c81b"
+
+[[files]]
+file = "kubejs/assets/pdz_signage/textures/block/6b31bf580faaedfdc542.png"
+hash = "6b31bf580faaedfdc5426192086e5adb6a35c2ea491e47d693648aeec731924d"
+
+[[files]]
+file = "kubejs/assets/pdz_signage/textures/block/6e2f72a1e17a1e58e51f.png"
+hash = "6e2f72a1e17a1e58e51f1a821bc613e3d7e679d78c78b595a423ce52266bacf9"
+
+[[files]]
+file = "kubejs/assets/pdz_signage/textures/block/6f5a5867114b153a8f71.png"
+hash = "6f5a5867114b153a8f718a826ae573a0d272bab9d633319175e47f3b74372389"
+
+[[files]]
+file = "kubejs/assets/pdz_signage/textures/block/76d5db58ee57bdac001a.png"
+hash = "76d5db58ee57bdac001afbe9ab2e9af3fb6367ac4b496bc991c8529e662ac81c"
+
+[[files]]
+file = "kubejs/assets/pdz_signage/textures/block/7ad507a2120f0c8fd1c8.png"
+hash = "7ad507a2120f0c8fd1c80df789210edcae83f19458b77f41d0c1f337d1cdb1a4"
+
+[[files]]
+file = "kubejs/assets/pdz_signage/textures/block/8ac970ccda903511eddc.png"
+hash = "8ac970ccda903511eddc8ac1cc82d96ca37e8ad37f1e4d5ddbedf390d73e858e"
+
+[[files]]
+file = "kubejs/assets/pdz_signage/textures/block/9076332872cf1086d553.png"
+hash = "9076332872cf1086d5530ea11baf5d95ab12616aebe396ec3669690e80576c9e"
+
+[[files]]
+file = "kubejs/assets/pdz_signage/textures/block/91a8ba246daac505b0c0.png"
+hash = "91a8ba246daac505b0c0e4c40cfcfcc239d0e46527aaf12dd8c49b1a75ef35f4"
+
+[[files]]
+file = "kubejs/assets/pdz_signage/textures/block/91ce69de53e9aab0fe80.png"
+hash = "91ce69de53e9aab0fe8064e05ce3f8d3c66f375e6e5a1c4b00755d946318752e"
+
+[[files]]
+file = "kubejs/assets/pdz_signage/textures/block/92df388febb825abc55b.png"
+hash = "92df388febb825abc55be4ad5d88c7b6be5fd1ebb26ec9a9f672d4102d1394f4"
+
+[[files]]
+file = "kubejs/assets/pdz_signage/textures/block/97d3efd44e92a5eaafb5.png"
+hash = "97d3efd44e92a5eaafb5d138bb4040db9e1b1c4187301fb2da33c1f847b6a3d2"
+
+[[files]]
+file = "kubejs/assets/pdz_signage/textures/block/9e9568e8512f40a49cb6.png"
+hash = "9e9568e8512f40a49cb6b7a66d672b10ffd10f7852f4bb51474832050006678e"
+
+[[files]]
+file = "kubejs/assets/pdz_signage/textures/block/a02226e2b384864ed471.png"
+hash = "a02226e2b384864ed471970f2f90ece17371fafe3e8fe360adf40630c545d5b0"
+
+[[files]]
+file = "kubejs/assets/pdz_signage/textures/block/a9d0d9237b42be4aef7d.png"
+hash = "a9d0d9237b42be4aef7d327372a130373ce720969183f901c778edb5f026725c"
+
+[[files]]
+file = "kubejs/assets/pdz_signage/textures/block/ae664fc070c8a65c4c16.png"
+hash = "ae664fc070c8a65c4c16790c6d3124939e408588691a16c5c2f3193eee0f34d9"
+
+[[files]]
+file = "kubejs/assets/pdz_signage/textures/block/aeb684cef5f7f23ae19d.png"
+hash = "aeb684cef5f7f23ae19d3e8c3ed374d8aa5a419e252bc63e09e4d8c2de5cb6f7"
+
+[[files]]
+file = "kubejs/assets/pdz_signage/textures/block/bd2802543333ee04c3cb.png"
+hash = "bd2802543333ee04c3cb5bd37af4dd9b315ca83e2b0c71fd74814f49afd95700"
+
+[[files]]
+file = "kubejs/assets/pdz_signage/textures/block/c1f83925ef5e7605c7cb.png"
+hash = "c1f83925ef5e7605c7cbfe293fb1e6b154afb24b0094b0889a8970a524cd35ce"
+
+[[files]]
+file = "kubejs/assets/pdz_signage/textures/block/c5b889c80c3b24a27474.png"
+hash = "c5b889c80c3b24a27474f65d5632a66474457b93fe6e6c4978a5fa62abb5ac66"
+
+[[files]]
+file = "kubejs/assets/pdz_signage/textures/block/ccdd5d8045855f52e97b.png"
+hash = "ccdd5d8045855f52e97b87c1791989f212c066b8894cda5bd94af3b0e6b213fc"
+
+[[files]]
+file = "kubejs/assets/pdz_signage/textures/block/d6571b21400411bb4ccd.png"
+hash = "d6571b21400411bb4ccde1aa7a329c07813011fe897e9caebd3c20b6b64eb317"
+
+[[files]]
+file = "kubejs/assets/pdz_signage/textures/block/d7e72bf31a84f40a3544.png"
+hash = "d7e72bf31a84f40a3544288899455871cbf7472f41c37f147f19e9ce9c548263"
+
+[[files]]
+file = "kubejs/assets/pdz_signage/textures/block/dbfc6baa8b7b65d96e01.png"
+hash = "dbfc6baa8b7b65d96e017e49b96fca3ef210c0ba642f5ad2c54ab80f5139b1ac"
+
+[[files]]
+file = "kubejs/assets/pdz_signage/textures/block/dccdade22b78ad519251.png"
+hash = "dccdade22b78ad5192519e13f25e3f219b865a66e239fbc376853053a57a2210"
+
+[[files]]
+file = "kubejs/assets/pdz_signage/textures/block/dd19ca9c51ecddc21413.png"
+hash = "dd19ca9c51ecddc2141351da71420808e7c1225717fa9946ea7d5f2d14281f50"
+
+[[files]]
+file = "kubejs/assets/pdz_signage/textures/block/dd6033ed0f66b57fd66b.png"
+hash = "dd6033ed0f66b57fd66b3d6839280267521e6a442be7f228be1770559cb30218"
+
+[[files]]
+file = "kubejs/assets/pdz_signage/textures/block/e25e30b494d52bbbfb44.png"
+hash = "e25e30b494d52bbbfb44fa900deec34bcb26c5597cb5ca946d19865110736461"
+
+[[files]]
+file = "kubejs/assets/pdz_signage/textures/block/e2fa7475e65d11e7f1dc.png"
+hash = "e2fa7475e65d11e7f1dc1c38465e39c0678a3c3769f6aa7c0f010ee202b258bf"
+
+[[files]]
+file = "kubejs/assets/pdz_signage/textures/block/e32bd949c504cbc44c9c.png"
+hash = "e32bd949c504cbc44c9ccbbcd27afd9a622f0cefc1fafe7022be8b85acf99a29"
+
+[[files]]
+file = "kubejs/assets/pdz_signage/textures/block/e6bfd659df5e54e5ee90.png"
+hash = "e6bfd659df5e54e5ee9024678a74b7d10866b1a0b0a699092d1d4baaa2dc36d5"
+
+[[files]]
+file = "kubejs/assets/pdz_signage/textures/block/ea56da904b8f3ceced44.png"
+hash = "ea56da904b8f3ceced44cbbc6285dd08af2bb54c5072298ee6f55954becc6449"
+
+[[files]]
+file = "kubejs/assets/pdz_signage/textures/block/f5b38e820365d13aa160.png"
+hash = "f5b38e820365d13aa160aed4bd3768e3e91c2d74d9c3bc9a99708d8ba844fd24"
+
+[[files]]
 file = "kubejs/assets/project_deadzone/lang/en_us.json"
 hash = "96056125c7adb08b74319348f5d148db023137a6dbccdb6b092beeaa190bb80b"
 
@@ -15911,6 +16359,10 @@ hash = "e672009d965e358d09bfeca836f101645971eb75e1876b08e211d68aee900490"
 [[files]]
 file = "kubejs/startup_scripts/project_deadzone_reward_participation_events_v1.js"
 hash = "8092b7bd10c1507d22cd5a463cc5fbd3ca9724fa7de96bdc6634d6c13faaef2f"
+
+[[files]]
+file = "kubejs/startup_scripts/project_deadzone_signage_v1.js"
+hash = "16141fbf5a4cedb917a5e8f261c469879fad9afe9d54f16082409be817e0ef47"
 
 [[files]]
 file = "local/ftblibrary-client.snbt"
@@ -26622,7 +27074,7 @@ hash = "e40ef576086d9447f58ece28c908d785af8433d178de452e330389d76c2edd4d"
 
 [[files]]
 file = "pdz_tools/distribution/runtime-lock.json"
-hash = "3f1c9a382c1a67a714394a44b27d023725c6da929088653ebff1faee405cdd55"
+hash = "56f73766a1b3e39c09d5f316c24276cbbad191c35aa11df0af0346ecbfc1b4c5"
 
 [[files]]
 file = "pdz_tools/distribution/verify_environment.py"
