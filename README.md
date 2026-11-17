@@ -1,6 +1,6 @@
 # PROJECT DEADZONE Distribution
 
-Current pack version: `DEV-20261117-FIELD-TERMINAL-0.4.5`
+Current pack version: `DEV-20261117-FIELD-TERMINAL-0.4.6`
 
 The 2026-11-07 Loot correction replaces one unregistered gun ID in the gun-store
 Loot table with the installed TaCZ HK MP5A5 ID. Other Loot weights and counts
